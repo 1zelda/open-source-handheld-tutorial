@@ -1,0 +1,29 @@
+{
+    "version": 4,
+    "name": "Diablo.zip",
+    "items": [
+        "Diablo.sh",
+        "diablo"
+    ],
+    "items_opt": null,
+    "attr": {
+        "title": "Diablo (DevilutionX)",
+        "desc": "DevilutionX 1.6.0-dev（Diablo 的源码级重制引擎）交叉编译成 aarch64，随包带引擎界面资源 assets/。游戏数据不在包内：正版 DIABDAT.MPQ 或免费分享版 spawn.mpq 由玩家自己放进 diablo/。",
+        "inst": "You must add your own game data to ports/diablo/: DIABDAT.MPQ from the retail game (e.g. the GOG release), or spawn.mpq from the free shareware version.",
+        "genres": [
+            "rpg"
+        ],
+        "porter": [
+            "教程示例"
+        ],
+        "image": {},
+        "rtr": false,
+        "exp": false,
+        "runtime": [],
+        "min_glibc": "2.29",
+        "reqs": [],
+        "arch": [
+            "aarch64"
+        ]
+    }
+}

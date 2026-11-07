@@ -1,0 +1,17 @@
+[06:23:29] == 端口包抓取开始（PortsMaster/PortMaster-New）==
+[06:23:31]   PortsMaster/PortMaster-New HEAD 相符但工作树缺 150415 个条目，分轮补齐
+[06:23:32]   PortsMaster/PortMaster-New 第 1 批（12 个目录堆，还缺 150415 个文件）：., .github, .github/ISSUE_TEMPLATE, .github/workflows …
+[06:24:02]   PortsMaster/PortMaster-New 收包中（0.00 GB，30 s）
+[06:24:02]   PortsMaster/PortMaster-New 收包中 本轮新增 0.00 GB｜30 s｜0.00 MB/s｜CPU -1.0 s｜无连接
+[06:24:02]   PortsMaster/PortMaster-New 第 1 批中断 rc=128：ps/100 Lil Jumps.sh (b2b4cfd24350c53a3485d11154f62977790e225f)
+warning: unable to unlink 'ports': Directory not empty
+fatal: cannot create directory at 'ports': Directory not empty
+[06:24:02]   PortsMaster/PortMaster-New 第 1 批落地：缺 150415 -> 150414｜收包中 到 0.00 GB
+[06:24:03]   PortsMaster/PortMaster-New 第 2 批（12 个目录堆，还缺 150414 个文件）：., .github, .github/ISSUE_TEMPLATE, .github/workflows …
+[06:24:33]   PortsMaster/PortMaster-New 收包中（0.08 GB，30 s）
+[06:24:33]   PortsMaster/PortMaster-New 收包中 本轮新增 0.08 GB｜30 s｜2.77 MB/s｜CPU -1.0 s｜无连接
+[06:24:34]   PortsMaster/PortMaster-New 第 2 批中断 rc=128：o.aarch64 (dd98e05e57ac76754aba823410a632723c9a37f5)
+warning: unable to unlink 'ports/2048': Directory not empty
+fatal: cannot create directory at 'ports/2048': Directory not empty
+[06:24:34]   PortsMaster/PortMaster-New 这批没有进展（还缺 150423 个，连续 1 次）
+[06:24:35]   PortsMaster/PortMaster-New 第 3 批（12 个目录堆，还缺 150423 个文件）：., .github, .github/ISSUE_TEMPLATE, .github/workflows …

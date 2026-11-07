@@ -1,0 +1,29 @@
+{
+    "version": 4,
+    "name": "Quake3.zip",
+    "items": [
+        "Quake3.sh",
+        "quake3"
+    ],
+    "items_opt": null,
+    "attr": {
+        "title": "Quake III Arena (ioquake3)",
+        "desc": "ioquake3（GPL-2.0 的 Quake III Arena 引擎）交叉编译成 aarch64，渲染器 renderer_opengl1.so 运行时加载；没有桌面 GL 的机器自动改走随包的 gl4es。游戏数据要自备：把原版 Quake III Arena 的 baseq3/pak0.pk3 到 pak8.pk3 放进 quake3/baseq3/ 再启动；单机和局域网不需要序列号。",
+        "inst": "Add your own Quake III Arena baseq3/pak0.pk3 through pak8.pk3 to ports/quake3/baseq3/. No CD key is needed for single player or LAN; only pure online servers may ask for one (a q3key file goes in baseq3/).",
+        "genres": [
+            "fps"
+        ],
+        "porter": [
+            "教程示例"
+        ],
+        "image": {},
+        "rtr": false,
+        "exp": false,
+        "runtime": [],
+        "min_glibc": "2.29",
+        "reqs": [],
+        "arch": [
+            "aarch64"
+        ]
+    }
+}

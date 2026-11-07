@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='utf-8'?>
+<gameList>
+  <game>
+    <path>./Quake3.sh</path>
+    <name>Quake III Arena (ioquake3)</name>
+    <desc>Quake III Arena running on ioquake3 (GPL-2.0 engine) compiled from source for aarch64. Bring your own baseq3/pak files and CD key.</desc>
+    <releasedate>19991202T000000</releasedate>
+    <developer>id Software</developer>
+    <publisher>Activision</publisher>
+    <genre>FPS</genre>
+    <image>./quake3/screenshot.png</image>
+  </game>
+</gameList>

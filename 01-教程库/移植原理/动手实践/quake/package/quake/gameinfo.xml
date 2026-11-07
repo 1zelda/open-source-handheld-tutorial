@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='utf-8'?>
+<gameList>
+  <game>
+    <path>./Quake.sh</path>
+    <name>Quake (LibreQuake)</name>
+    <desc>Quake, running on QuakeSpasm 0.97.0 (GPL-2.0 source port) compiled from source for aarch64. LibreQuake v0.09-beta free data is included (BSD-3 assets, GPL-2.0 QuakeC).</desc>
+    <releasedate>20251105T000000</releasedate>
+    <developer>id Software</developer>
+    <publisher>LibreQuake Project</publisher>
+    <genre>FPS</genre>
+    <image>./quake/screenshot.png</image>
+  </game>
+</gameList>

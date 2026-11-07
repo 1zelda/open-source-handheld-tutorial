@@ -1,0 +1,21 @@
+[21:25:17] 目标档：成品移植游戏库 ｜ 命令 all
+[21:25:19] 代理 7890 不通，走直连
+[21:25:36] 跳过（登记不下，policy=meta）：christianhaitian/PortMaster — 707★｜.git 8186MB｜PortMaster 初代（Ark/Wayla
+[21:25:36] 跳过（登记不下，policy=meta）：PortsMaster/PortMaster-New — 386★｜.git 37913MB｜掌机端口大集合：Switch/PS1/N64
+[21:26:23] 待处理 203 个：其中盘上还没有的 104 个（排前面先落地）
+[21:26:23] clone mariopartyrd/partyboard（连历史，可能几分钟）
+[21:30:16]   ok：1560 个文件 / 42.2 MB / HEAD cccbf87e7
+[21:30:17] clone MaryNCRT/Ultimate-Mortal-Kombat-3-iOS-Decompiled（连历史，可能几分钟）
+[21:42:28]   失败：Cloning into 'F:\开源掌机教程\06-资讯监控\成品移植游戏库\源码\MaryNCRT__Ultimate-Mortal-Kombat-3-iOS-Decompiled'...
+error: RPC failed; curl 56 Recv failure: Connection was reset
+error: 6842 bytes of body are still expec
+[21:42:28] clone Masterllgod/naruto-rise-of-a-ninja-port-nativo（连历史，可能几分钟）
+[21:42:43]   ok：9 个文件 / 1.6 MB / HEAD fd4427af5
+[21:42:43] clone Masterllgod/naruto-storm-generations-port-nativo（连历史，可能几分钟）
+[21:42:50]   ok：9 个文件 / 1.1 MB / HEAD 9d8897e56
+[21:42:50] clone matiaszanolli/sega-vr-disasm（连历史，可能几分钟）
+[22:06:02]   失败：Cloning into 'F:\开源掌机教程\06-资讯监控\成品移植游戏库\源码\matiaszanolli__sega-vr-disasm'...
+error: RPC failed; curl 56 Recv failure: Connection was reset
+error: 9070 bytes of body are still expected
+fetch-pack: unex
+[22:06:02] clone MaxDeadBear/NaughtyBear_ReStuff（连历史，可能几分钟）

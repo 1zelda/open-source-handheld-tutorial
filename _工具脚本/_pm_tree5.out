@@ -1,0 +1,16 @@
+[00:33:36] == 端口包抓取开始（全部）==
+[00:34:01]   christianhaitian/PortMaster 追认：3.48 GB / 920 文件｜最大 billyfrontier.zip 79.4 MB
+[00:35:31]   PortsMaster-MV/PortMaster-MV-New 追认：3.35 GB / 21346 文件｜最大 ports/vdrift/vdrift/data/tracks/baku/objects/objects.jpk 67.6 MB
+[00:35:32]   PortsMaster/PortMaster-New 是上次 clone 打断的残留（1 个条目、无 HEAD），清掉重下
+[00:35:32]   PortsMaster/PortMaster-New 开始浅克隆（预算 22.0 GB，代理 http://127.0.0.1:7891 可用）
+[00:36:02]   PortsMaster/PortMaster-New 收包中（0.00 GB，30 s）
+[00:36:02]   PortsMaster/PortMaster-New 收包中 0.00 GB｜30 s｜0.00 MB/s｜CPU 0.4 s
+[00:36:32]   PortsMaster/PortMaster-New 收包中 0.00 GB｜60 s｜体积与 CPU 都没动（1/6）
+[00:37:02]   PortsMaster/PortMaster-New 收包中 0.00 GB｜90 s｜体积与 CPU 都没动（2/6）
+[00:37:32]   PortsMaster/PortMaster-New 收包中 0.00 GB｜120 s｜体积与 CPU 都没动（3/6）
+[00:38:02]   PortsMaster/PortMaster-New 收包中 0.00 GB｜150 s｜体积与 CPU 都没动（4/6）
+[00:38:32]   PortsMaster/PortMaster-New 收包中 0.00 GB｜180 s｜体积与 CPU 都没动（5/6）
+[00:39:02]   PortsMaster/PortMaster-New 收包中 0.00 GB｜210 s｜体积与 CPU 都没动（6/6）
+[00:39:02]   PortsMaster/PortMaster-New 卡死：连续 6 次采样体积和 CPU 都没动，杀掉重来
+[00:39:02]   PortsMaster/PortMaster-New clone 失败 rc=-9：Cloning into 'F:\开源掌机教程\06-资讯监控\成品移植游戏库\掌机端口包\PortsMaster__PortMaster-New'...
+[00:39:02] 完成：成功 2 / 失败 1｜盘上目录 F:\开源掌机教程\06-资讯监控\成品移植游戏库\掌机端口包

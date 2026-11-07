@@ -1,0 +1,29 @@
+这个目录里只有引擎和开源库，没有任何商业游戏数据。
+
+cnc/td/vanillatd.aarch64、cnc/ra/vanillara.aarch64
+    Vanilla Conquer，commit ce83b59edd99cccac6cebaae054ca04962c744b7（vanilla 分支）。
+    源码来自 EA 公开的 CnC_Remastered_Collection，泰伯利亚黎明与红色警戒 1 的
+    源码以 GPL v3 发布，并附 EA 的附加条款（见 licenses/Vanilla-Conquer-GPL-3.0.txt
+    文件末尾）。https://github.com/TheAssemblyArmada/Vanilla-Conquer
+
+    本端口没有改动游戏逻辑，只修了三处会导致崩溃/画面全黑的缺陷（见 README.md 的
+    "打了哪些补丁"）：显示层的重映射表越界、调色板插值表被读短文件后不重建、
+    电影播放后插值表被清零且无人重建。补丁以 patch 形式随 build.sh 提供，
+    按 GPL v3 的要求，改后的完整源码 = 上述 commit + 该 patch。
+
+cnc/libs.aarch64/libopenal.so.1
+    OpenAL Soft 1.24.2，LGPL v2（原文 licenses/OpenAL-Soft-LGPL-2.0.txt）。
+    以动态库形式随包分发（未静态链接进主程序），
+    https://github.com/kcat/openal-soft ；需要替换成自己版本时直接覆盖这个 .so 即可。
+
+运行时由 CFW 提供、不随包分发的：
+    libSDL2-2.0.so.0      SDL2，zlib 许可（原文 licenses/SDL2.txt），PortMaster 的 SDL2
+    libc / libm / libpthread / libdl / ld-linux-aarch64.so.1  设备自带
+
+静态链接进主程序的 C++ 标准库是 zig 自带 libc++（Apache-2.0 with LLVM exception）。
+
+游戏数据不在包内，需要玩家自己提供：
+    - 泰伯利亚黎明：C&C Gold（正版，GOG/Steam 的 C&C 终极合集里那份）的 *.MIX，
+      或 2007 年 EA 免费放出的 GDI95/NOD95 版数据；
+    - 红色警戒 1：Red Alert（正版）或 2008 年 EA 免费放出的 Red Alert 版数据。
+    本包不附带、也不提供下载。数据放在 cnc/td/ 和 cnc/ra/，各自独立，不要混放。

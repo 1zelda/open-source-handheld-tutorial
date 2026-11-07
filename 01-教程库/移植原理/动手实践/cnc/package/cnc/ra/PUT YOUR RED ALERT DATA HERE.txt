@@ -1,0 +1,19 @@
+把《命令与征服：红色警戒》1 代的游戏数据放在这个目录（ports/cnc/cnc/ra/）。
+
+需要的是 Red Alert 的那一组 *.MIX（关键的一个是 REDALERT.MIX）：
+
+  REDALERT.MIX / MAIN.MIX / LOCAL.MIX / LORES.MIX / HIRES.MIX /
+  MOVIES1.MIX（或多碟版的 MOVIES2.MIX）/ SCORES.MIX / SPEECH.MIX /
+  SOUNDS.MIX / TEMPERAT.MIX / WINTER.MIX / SNOW.MIX / EXPAND.MIX
+
+可以来自：
+  - 正版 Red Alert（GOG / Steam 的终极合集里那份），把安装目录里的 *.MIX 拷过来；
+  - 或 2008 年 EA 免费放出的 Red Alert 光盘镜像，挂载后拷根目录的 *.MIX。
+
+注意：
+  * 只有资料片 Counterstrike / Aftermath 时，把 EXPAND.MIX / EXPAND2.MIX 一起拷来，
+    资料片任务才会出现；
+  * 泰伯利亚黎明与红色警戒的数据不要混放（C&C 放 cnc/td/）；
+  * REDALERT.INI 是引擎的配置文件，第一次启动时如果没有会自动生成。
+
+本包不附带、也不提供任何商业游戏数据的下载。

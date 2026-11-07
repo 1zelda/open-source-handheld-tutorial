@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='utf-8'?>
+<gameList>
+  <game>
+    <path>./Tyrian.sh</path>
+    <name>Tyrian</name>
+    <desc>OpenTyrian: an open-source reimplementation of the 1995 DOS shooter Tyrian. Fly Trent Hawkins' ship against the MicroSol megacorporation. Tyrian 2.1 freeware data included.</desc>
+    <releasedate>19950610T000000</releasedate>
+    <developer>Eclipse Software</developer>
+    <publisher>Epic MegaGames</publisher>
+    <genre>Shooter</genre>
+    <image>./tyrian/screenshot.png</image>
+  </game>
+</gameList>

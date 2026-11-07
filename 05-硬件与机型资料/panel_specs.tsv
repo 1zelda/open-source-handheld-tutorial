@@ -1,0 +1,120 @@
+device	source	dtb	console	known	iface	h	v	clk_mhz	lanes	w_mm	h_mm	diag_in	dpi	panel	px_tag	joystick	hotkey	rotation	led	volume
+a10mini	arkos4clone	rk3326-a10mini-linux.dtb	a10mini	dtb	MIPI-DSI	640	480	22.4	4	52	70	3.43	233	simple-panel-dsi	480p	none	happy5	0	unsupported	gpio
+a10miniv4	arkos4clone	rk3326-a10mini-v4-linux.dtb	a10miniv4	dtb	MIPI-DSI	720	540	30.0	4	43	57	2.81	320	simple-panel-dsi	540p	none	happy5	180	unsupported	gpio
+clone type1 panel1	arkos4clone	rk3326-r36s-type1-panel1-linux.dtb	clone-r36s	dtb	MIPI-DSI	640	480	30.0	4	153	85	6.89	116	simple-panel-dsi	480p	dual	happy5	0	unsupported	adc
+clone type1 panel1 amp	arkos4clone	rk3326-r36s-type1-panel1-with-amp-linux.dtb	clone-r36s	dtb	MIPI-DSI	640	480	30.0	4	153	85	6.89	116	simple-panel-dsi	480p	dual	happy5	0	unsupported	adc
+clone type1 panel1 invert	arkos4clone	rk3326-r36s-type1-panel1-invert-linux.dtb	clone-r36s	dtb	MIPI-DSI	640	480	30.0	4	153	85	6.89	116	simple-panel-dsi	480p	dual	happy5	0	unsupported	adc
+clone type1 panel2	arkos4clone	rk3326-r36s-type1-panel2-linux.dtb	clone-r36s	dtb	MIPI-DSI	640	480	30.0	4	153	85	6.89	116	simple-panel-dsi	480p	dual	happy5	0	unsupported	adc
+clone type1 panel3	arkos4clone	rk3326-r36s-type1-panel3-linux.dtb	clone-r36s	dtb	MIPI-DSI	640	480	30.0	4	153	85	6.89	116	simple-panel-dsi	480p	dual	happy5	0	unsupported	adc
+clone type1 panel4	arkos4clone	rk3326-r36s-type1-panel4-linux.dtb	clone-r36s	dtb	MIPI-DSI	640	480	32.0	4	153	85	6.89	116	simple-panel-dsi	480p	dual	happy5	0	unsupported	adc
+clone type1 panel5	arkos4clone	rk3326-r36s-type1-panel5-linux.dtb	clone-r36s	dtb	MIPI-DSI	640	480	30.0	4	153	85	6.89	116	simple-panel-dsi	480p	dual	happy5	0	unsupported	adc
+clone type1 panel5 invert	arkos4clone	rk3326-r36s-type1-panel5-invert-linux.dtb	clone-r36s	dtb	MIPI-DSI	640	480	30.0	4	153	85	6.89	116	simple-panel-dsi	480p	dual	happy5	0	unsupported	adc
+clone type1 panel6	arkos4clone	rk3326-r36s-type1-panel6-linux.dtb	clone-r36s	dtb	MIPI-DSI	640	480	30.0	4	153	85	6.89	116	simple-panel-dsi	480p	dual	happy5	0	unsupported	adc
+clone type2 panel1	arkos4clone	rk3326-r36s-type2-panel1-linux.dtb	clone-r36s	dtb	MIPI-DSI	640	480	30.0	4	153	85	6.89	116	simple-panel-dsi	480p	dual	happy5	0	unsupported	adc
+clone type2 panel1 amp	arkos4clone	rk3326-r36s-type2-panel1-with-amp-linux.dtb	clone-r36s	dtb	MIPI-DSI	640	480	30.0	4	153	85	6.89	116	simple-panel-dsi	480p	dual	happy5	0	unsupported	adc
+clone type2 panel2	arkos4clone	rk3326-r36s-type2-panel2-linux.dtb	clone-r36s	dtb	MIPI-DSI	640	480	30.0	4	153	85	6.89	116	simple-panel-dsi	480p	dual	happy5	0	unsupported	adc
+d007	arkos4clone	rk3326-d007-linux.dtb	d007	dtb	MIPI-DSI	640	480	33.0	4	64	48	3.15	254	simple-panel-dsi	480p	dual	select	0	dual-gpio	adc
+dc35v	arkos4clone	rk3326-dc35v-linux.dtb	dc35v	dtb	MIPI-DSI	640	480	30.0	4	153	85	6.89	116	simple-panel-dsi	480p	dual	happy5	0	ws2812	adc
+dc40v	arkos4clone	rk3326-dc40v-linux.dtb	dc40v	dtb	MIPI-DSI	720	720	50.0	4	153	85	6.89	148	simple-panel-dsi	720p	dual	happy5	0	ws2812	adc
+dc45v	arkos4clone	rk3326-dc45v-linux.dtb	dc45v	dtb	MIPI-DSI	1024	768	62.0	4	153	85	6.89	186	simple-panel-dsi	768p	dual	happy5	0	ws2812	adc
+dr28s	arkos4clone	rk3326-dr28s-linux.dtb	dr28s	dtb	MIPI-DSI	480	640	30.0	4	153	85	6.89	116	simple-panel-dsi	480p	none	happy5	270	unsupported	adc
+g350	arkos4clone	rk3326-g350-linux.dtb	g350	dtb	MIPI-DSI	640	480	50.0	4	52	70	3.43	233	simple-panel-dsi	480p	dual	happy5	0	unsupported	gpio
+go2	arkos4clone	rk3326-go2-linux.dtb	go2	dtb	MIPI-DSI	1024	768	62.0	4	153	85	6.89	186	simple-panel-dsi	768p	single	happy5	0	ws2812	gpio
+h7	arkos4clone	rk3326-h7-linux.dtb	h7	dtb	MIPI-DSI	1024	768	62.0	4	153	85	6.89	186	simple-panel-dsi	768p	single	happy5	0	ws2812	gpio
+hg36	arkos4clone	rk3326-hg36-linux.dtb	hg36	dtb	MIPI-DSI	640	480	30.0	4	153	85	6.89	116	simple-panel-dsi	480p	dual	happy5	0	unsupported	adc
+k36	arkos4clone	rk3326-k36-linux.dtb	k36	dtb	MIPI-DSI	640	480	30.0	4	153	85	6.89	116	simple-panel-dsi	480p	dual	happy5	0	unsupported	adc
+k36s	arkos4clone	rk3326-k36s-linux.dtb	k36s	dtb	MIPI-DSI	640	480	30.0	4	153	85	6.89	116	simple-panel-dsi	480p	single	happy5	0	mcu_led	adc
+mini40	arkos4clone	rk3326-mini40-linux.dtb	mini40	dtb	MIPI-DSI	720	720	50.0	4	153	85	6.89	148	simple-panel-dsi	720p	single	select	0	gpio	gpio
+mymini	arkos4clone	rk3326-mymini-linux.dtb	mymini	dtb	MIPI-DSI	640	480	30.0	4	153	85	6.89	116	simple-panel-dsi	480p	single	select	0	gpio	gpio
+o30s	arkos4clone	rk3326-o30s-linux.dtb	o30s	dtb	MIPI-DSI	640	480	29.0	4	52	70	3.43	233	simple-panel-dsi	480p	dual	happy5	0	unsupported	gpio
+origin panel0	arkos4clone	rk3326-r36s-panel0-linux.dtb		no	MIPI-DSI	640	480	50.0	4	52	70	3.43	233	simple-panel-dsi						
+origin panel1	arkos4clone	rk3326-r36s-panel1-linux.dtb		no	MIPI-DSI	640	480	29.0	4	52	70	3.43	233	simple-panel-dsi						
+origin panel2	arkos4clone	rk3326-r36s-panel2-linux.dtb		no	MIPI-DSI	640	480	29.0	4	52	70	3.43	233	simple-panel-dsi						
+origin panel3	arkos4clone	rk3326-r36s-panel3-linux.dtb		no	MIPI-DSI	640	480	29.0	4	52	70	3.43	233	simple-panel-dsi						
+origin panel4 type1	arkos4clone	rk3326-r36s-panel4-type1-linux.dtb		no	MIPI-DSI	640	480	29.0	4	52	70	3.43	233	simple-panel-dsi						
+origin panel4 type2	arkos4clone	rk3326-r36s-panel4-type2-linux.dtb		no	MIPI-DSI	640	480	58.0	4	52	70	3.43	233	simple-panel-dsi						
+r33s	arkos4clone	rk3326-r33s-linux.dtb	r33s	dtb	MIPI-DSI	640	480	50.0	4	52	70	3.43	233	simple-panel-dsi	480p	none	select	0	unsupported	gpio
+r36h	arkos4clone	rk3326-r36h-linux.dtb	r36h	dtb	MIPI-DSI	640	480	29.0	4	52	70	3.43	233	simple-panel-dsi	480p	dual	select	0	unsupported	gpio
+r36hpromax	arkos4clone	rk3326-r36hpromax-linux.dtb	r36hpromax	dtb	MIPI-DSI	1024	768	60.0	4	52	70	3.43	373	simple-panel-dsi	768p	dual	happy5	0	unsupported	gpio
+r36max type1	arkos4clone	rk3326-r36max-type1-linux.dtb	r36max	dtb	MIPI-DSI	720	720	50.0	4	153	85	6.89	148	simple-panel-dsi	720p	dual	happy5	0	unsupported	adc
+r36max type2	arkos4clone	rk3326-r36max-type2-linux.dtb	r36max	dtb	MIPI-DSI	720	720	50.0	4	153	85	6.89	148	simple-panel-dsi	720p	dual	happy5	0	unsupported	adc
+r36max type3	arkos4clone	rk3326-r36max-type3-linux.dtb	r36max	dtb	MIPI-DSI	720	720	50.0	4	153	85	6.89	148	simple-panel-dsi	720p	dual	happy5	0	unsupported	adc
+r36max2	arkos4clone	rk3326-r36max2-linux.dtb	r36max2	dtb	MIPI-DSI	1024	768	62.0	4	153	85	6.89	186	simple-panel-dsi	768p	dual	happy5	0	ws2812	adc
+r36pro	arkos4clone	rk3326-r36pro-linux.dtb	r36pro	dtb	MIPI-DSI	640	480	30.0	4	153	85	6.89	116	simple-panel-dsi	480p	dual	happy5	0	unsupported	adc
+r36splus	arkos4clone	rk3326-r36splus-linux.dtb	r36splus	dtb	MIPI-DSI	720	720	36.5	4	153	85	6.89	148	simple-panel-dsi	720p	dual	happy5	0	unsupported	gpio
+r36t	arkos4clone	rk3326-r36t-linux.dtb	r36t	dtb	MIPI-DSI	640	480	30.0	4	153	85	6.89	116	simple-panel-dsi	480p	single	happy5	0	mcu_led	adc
+r36tmax	arkos4clone	rk3326-r36tmax-linux.dtb	r36tmax	dtb	MIPI-DSI	720	720	50.0	4	153	85	6.89	148	simple-panel-dsi	720p	dual	happy5	0	mcu_led	adc
+r36ultra	arkos4clone	rk3326-r36ultra-linux.dtb	r36ultra	dtb	MIPI-DSI	720	720	50.0	4	153	85	6.89	148	simple-panel-dsi	720p	dual	happy5	0	r36ultra	adc
+r36ultrax	arkos4clone	rk3326-r36ultrax-linux.dtb	r36ultrax	dtb	MIPI-DSI	1024	768	62.0	4	153	85	6.89	186	simple-panel-dsi	768p	dual	happy5	0	ws2812	adc
+r36xx	arkos4clone	rk3326-r36xx-linux.dtb	r36xx	dtb	MIPI-DSI	640	480	29.0	4	52	70	3.43	233	simple-panel-dsi	480p	dual	select	0	unsupported	gpio
+r40s	arkos4clone	rk3326-r40s-linux.dtb	r40s	dtb	MIPI-DSI	480	800	30.0	4	42	82	3.63	257	simple-panel-dsi	800p480	dual	happy5	270	unsupported	gpio
+r40xx	arkos4clone	rk3326-r40xx-linux.dtb	r40xx	dtb	MIPI-DSI	1024	768	60.0	4	52	70	3.43	373	simple-panel-dsi	768p	dual	happy5	0	unsupported	gpio
+r40xxpromax	arkos4clone	rk3326-r40xxpromax-linux.dtb	r40xxpromax	dtb	MIPI-DSI	1024	768	60.0	4	52	70	3.43	373	simple-panel-dsi	768p	dual	happy5	0	unsupported	gpio
+r45h	arkos4clone	rk3326-r45h-linux.dtb	r45h	dtb	MIPI-DSI	1024	768	60.0	4	52	70	3.43	373	simple-panel-dsi	768p	dual	happy5	0	unsupported	gpio
+r46h	arkos4clone	rk3326-r46h-linux.dtb	r46h	dtb	MIPI-DSI	1024	768	60.0	4	52	70	3.43	373	simple-panel-dsi	768p	dual	select	0	unsupported	gpio
+r50h	arkos4clone	rk3326-r50h-linux.dtb	r50h	dtb	MIPI-DSI	720	1280	64.0	4	62	110	4.97	295	simple-panel-dsi	720p1280	dual	happy5	270	unsupported	gpio
+r50s	arkos4clone	rk3326-r50s-linux.dtb	r50s	dtb	MIPI-DSI	480	854	27.5	4	69	139	6.11	160	simple-panel-dsi	854p480	dual	happy5	270	unsupported	gpio
+rf35h	arkos4clone	rk3326-rf35h-linux.dtb	rf35h	dtb	MIPI-DSI	640	480	30.0	4	153	85	6.89	116	simple-panel-dsi	480p	dual	select	0	mcu_led	adc
+rf40h	arkos4clone	rk3326-rf40h-linux.dtb	rf40h	dtb	MIPI-DSI	720	720	50.0	4	153	85	6.89	148	simple-panel-dsi	720p	dual	select	0	mcu_led	adc
+rf45h	arkos4clone	rk3326-rf45h-linux.dtb	rf45h	dtb	MIPI-DSI	1024	768	62.0	4	153	85	6.89	186	simple-panel-dsi	768p	dual	happy5	0	ws2812	adc
+rf45v	arkos4clone	rk3326-rf45v-linux.dtb	rf45v	dtb	MIPI-DSI	1024	768	62.0	4	153	85	6.89	186	simple-panel-dsi	768p	dual	happy5	0	ws2812	adc
+rf55h	arkos4clone	rk3326-rf55h-linux.dtb	rf55h	dtb	MIPI-DSI	720	1280	64.0	4	153	85	6.89	213	simple-panel-dsi	720p1280	dual	happy5	90	ws2812	adc
+rg351mp	arkos4clone	rk3326-rg351mp-linux.dtb	rg351mp	dtb	MIPI-DSI	640	480	26.4	4	52	70	3.43	233	simple-panel-dsi	480p	dual	select	0	unsupported	gpio
+rg351p	arkos4clone	rk3326-rg351p-linux.dtb	rg351p	dtb	MIPI-DSI	320	480	12.0	4	42	82	3.63	159	simple-panel-dsi	320p	single	select	270	unsupported	
+rg351v panel1	arkos4clone	rk3326-rg351v-panel1-linux.dtb	rg351v	dtb	MIPI-DSI	640	480	25.5	4	52	70	3.43	233	simple-panel-dsi	480p	single	happy5	0	unsupported	gpio
+rg351v panel2	arkos4clone	rk3326-rg351v-panel2-linux.dtb	rg351v	dtb	MIPI-DSI	640	480	50.0	4	52	70	3.43	233	simple-panel-dsi	480p	single	happy5	0	unsupported	gpio
+rg36	arkos4clone	rk3326-rg36-linux.dtb	rg36	dtb	MIPI-DSI	640	480	50.0	4	52	70	3.43	233	simple-panel-dsi	480p	dual	happy5	0	unsupported	gpio
+rg36pro	arkos4clone	rk3326-rg36pro-linux.dtb	rg36pro	dtb	MIPI-DSI	640	480	50.0	4	52	70	3.43	233	simple-panel-dsi	480p	dual	happy5	0	single-gpio	gpio
+rgb10	arkos4clone	rk3326-rgb10-linux.dtb	rgb10	dtb	MIPI-DSI	320	480	17.0	4	42	82	3.63	159	simple-panel-dsi	320p	single	select	270	unsupported	gpio
+rgb10max1	arkos4clone	rk3326-rgb10max1-linux.dtb	rgb10max1	dtb	MIPI-DSI	480	854	27.5	4	69	139	6.11	160	simple-panel-dsi	854p480	dual	happy5	270	unsupported	gpio
+rgb10max2	arkos4clone	rk3326-rgb10max2-linux.dtb	rgb10max2	dtb	MIPI-DSI	480	854	27.5	4	69	139	6.11	160	simple-panel-dsi	854p480	dual	happy5	270	unsupported	gpio
+rgb10x	arkos4clone	rk3326-rgb10x-linux.dtb	rgb10x	dtb	MIPI-DSI	640	480	26.4	4	52	70	3.43	233	simple-panel-dsi	480p	single	happy5	0	unsupported	gpio
+rgb20s	arkos4clone	rk3326-rgb20s-linux.dtb	rgb20s	dtb	MIPI-DSI	640	480	50.0	4	52	70	3.43	233	simple-panel-dsi	480p	dual	happy5	0	unsupported	gpio
+rgbv10	arkos4clone	rk3326-rgbv10-linux.dtb	rgbv10	dtb	MIPI-DSI	320	480	17.0	4	42	82	3.63	159	simple-panel-dsi	320p	none	select	270	unsupported	gpio
+rp1	arkos4clone	rk3326-rp1-linux.dtb	rp1	dtb	MIPI-DSI	640	480	30.6	4	73	60	3.72	215	simple-panel-dsi	480p	single	happy5	0	unsupported	gpio
+rs16	arkos4clone	rk3326-rs16-linux.dtb	rs16	dtb	MIPI-DSI	640	480	30.0	4	153	85	6.89	116	simple-panel-dsi	480p	dual	happy5	0	ws2812	adc
+rx6h	arkos4clone	rk3326-rx6h-linux.dtb	rx6h	dtb	MIPI-DSI	640	480	30.0	4	153	85	6.89	116	simple-panel-dsi	480p	dual	select	0	unsupported	adc
+sauce panel1	arkos4clone	rk3326-r36s-sauce-panel1-linux.dtb		no	MIPI-DSI	640	480	40.0	4	71	71	3.95	202	simple-panel-dsi						
+sauce panel2	arkos4clone	rk3326-r36s-sauce-panel2-linux.dtb		no	MIPI-DSI	640	480	40.0	4	71	71	3.95	202	simple-panel-dsi						
+sauce panel3	arkos4clone	rk3326-r36s-sauce-panel3-linux.dtb		no	MIPI-DSI	640	480	40.0	4	71	71	3.95	202	simple-panel-dsi						
+sauce panel4	arkos4clone	rk3326-r36s-sauce-panel4-linux.dtb		no	MIPI-DSI	640	480	40.0	4	71	71	3.95	202	simple-panel-dsi						
+sauce panel5	arkos4clone	rk3326-r36s-sauce-panel5-linux.dtb		no	MIPI-DSI	640	480	40.0	4	153	85	6.89	116	simple-panel-dsi						
+t16max	arkos4clone	rk3326-t16max-linux.dtb	t16max	dtb	MIPI-DSI	720	720	34.0	4	153	85	6.89	148	simple-panel-dsi	720p	dual	happy5	0	unsupported	adc
+u8 panel1	arkos4clone	rk3326-u8-panel1-linux.dtb	u8	dtb	MIPI-DSI	480	800	30.0	4	153	85	6.89	135	simple-panel-dsi	800p480	dual	happy5	270	unsupported	adc
+u8 panel2	arkos4clone	rk3326-u8-panel2-linux.dtb	u8	dtb	MIPI-DSI	480	800	30.0	4	153	85	6.89	135	simple-panel-dsi	800p480	dual	happy5	270	unsupported	adc
+v21 panel4 rumble test	arkos4clone	rk3326-r36s-v21-linux.dtb		no	MIPI-DSI	640	480	29.0	4	52	70	3.43	233	simple-panel-dsi						
+xf28	arkos4clone	rk3326-xf28-linux.dtb	xf28	dtb	MIPI-DSI	480	640	23.0	4	153	85	6.89	116	simple-panel-dsi	480p	single	select	90	ws2812	adc
+xf35h	arkos4clone	rk3326-xf35h-linux.dtb	xf35h	dtb	MIPI-DSI	640	480	30.0	4	153	85	6.89	116	simple-panel-dsi	480p	dual	select	0	mcu_led	adc
+xf40h	arkos4clone	rk3326-xf40h-linux.dtb	xf40h	dtb	MIPI-DSI	720	720	50.0	4	153	85	6.89	148	simple-panel-dsi	720p	dual	select	0	mcu_led	adc
+xf40v	arkos4clone	rk3326-xf40v-linux.dtb	xf40v	dtb	MIPI-DSI	720	720	50.0	4	153	85	6.89	148	simple-panel-dsi	720p	dual	happy5	0	ws2812	adc
+xf45v	arkos4clone	rk3326-xf45v-linux.dtb	xf45v	dtb	MIPI-DSI	1024	768	62.0	4	153	85	6.89	186	simple-panel-dsi	768p	dual	happy5	0	ws2812	adc
+xgb36	arkos4clone	rk3326-xgb36-linux.dtb	xgb36	dtb	MIPI-DSI	640	480	30.0	4	153	85	6.89	116	simple-panel-dsi	480p	single	happy5	0	gpio	gpio
+xu10	arkos4clone	rk3326-xu10-linux.dtb	xu10	dtb	MIPI-DSI	640	480	26.4	4	52	70	3.43	233	simple-panel-dsi	480p	none	happy5	0	unsupported	gpio
+R36S/Panel 0	R36S-DTB	rg351mp-kernel.dtb		no	MIPI-DSI	640	480	50.0	4	52	70	3.43	233	elida,kd35t133;simple-panel-dsi						
+R36S/Panel 0	R36S-DTB	rk3326-r35s-linux.dtb		no	MIPI-DSI	640	480	50.0	4	52	70	3.43	233	elida,kd35t133;simple-panel-dsi						
+R36S/Panel 0	R36S-DTB	rk3326-rg351mp-linux.dtb	rg351mp	dtb	MIPI-DSI	640	480	26.4	4	52	70	3.43	233	elida,kd35t133;simple-panel-dsi	480p	dual	select	0	unsupported	gpio
+R36S/Panel 1	R36S-DTB	rg351mp-kernel.dtb		no	MIPI-DSI	640	480	29.0	4	52	70	3.43	233	elida,kd35t133;simple-panel-dsi						
+R36S/Panel 1	R36S-DTB	rk3326-r35s-linux.dtb		no	MIPI-DSI	640	480	29.0	4	52	70	3.43	233	elida,kd35t133;simple-panel-dsi						
+R36S/Panel 1	R36S-DTB	rk3326-rg351mp-linux.dtb	rg351mp	dtb	MIPI-DSI	640	480	26.4	4	52	70	3.43	233	elida,kd35t133;simple-panel-dsi	480p	dual	select	0	unsupported	gpio
+R36S/Panel 2	R36S-DTB	rg351mp-kernel.dtb		no	MIPI-DSI	640	480	29.0	4	52	70	3.43	233	elida,kd35t133;simple-panel-dsi						
+R36S/Panel 2	R36S-DTB	rk3326-r35s-linux.dtb		no	MIPI-DSI	640	480	29.0	4	52	70	3.43	233	elida,kd35t133;simple-panel-dsi						
+R36S/Panel 2	R36S-DTB	rk3326-rg351mp-linux.dtb	rg351mp	dtb	MIPI-DSI	640	480	26.4	4	52	70	3.43	233	elida,kd35t133;simple-panel-dsi	480p	dual	select	0	unsupported	gpio
+R36S/Panel 3	R36S-DTB	rg351mp-kernel.dtb		no	MIPI-DSI	640	480	29.0	4	52	70	3.43	233	elida,kd35t133;simple-panel-dsi						
+R36S/Panel 3	R36S-DTB	rk3326-r35s-linux.dtb		no	MIPI-DSI	640	480	29.0	4	52	70	3.43	233	elida,kd35t133;simple-panel-dsi						
+R36S/Panel 3	R36S-DTB	rk3326-rg351mp-linux.dtb	rg351mp	dtb	MIPI-DSI	640	480	26.4	4	52	70	3.43	233	elida,kd35t133;simple-panel-dsi	480p	dual	select	0	unsupported	gpio
+R36S/Panel 4	R36S-DTB	rg351mp-kernel.dtb		no	MIPI-DSI	640	480	29.0	4	52	70	3.43	233	elida,kd35t133;simple-panel-dsi						
+R36S/Panel 4	R36S-DTB	rk3326-r35s-linux.dtb		no	MIPI-DSI	640	480	29.0	4	52	70	3.43	233	elida,kd35t133;simple-panel-dsi						
+R36S/Panel 4	R36S-DTB	rk3326-rg351mp-linux.dtb	rg351mp	dtb	MIPI-DSI	640	480	26.4	4	52	70	3.43	233	elida,kd35t133;simple-panel-dsi	480p	dual	select	0	unsupported	gpio
+R36S/Panel 4 - V22	R36S-DTB	rg351mp-kernel.dtb		no	MIPI-DSI	640	480	29.0	4	52	70	3.43	233	elida,kd35t133;simple-panel-dsi						
+R36S/Panel 4 - V22	R36S-DTB	rk3326-r35s-linux.dtb		no	MIPI-DSI	640	480	58.0	4	52	70	3.43	233	elida,kd35t133;simple-panel-dsi						
+R36S/Panel 4 - V22	R36S-DTB	rk3326-rg351mp-linux.dtb	rg351mp	dtb	MIPI-DSI	640	480	26.4	4	52	70	3.43	233	elida,kd35t133;simple-panel-dsi	480p	dual	select	0	unsupported	gpio
+R36S/Panel 5	R36S-DTB	rg351mp-kernel.dtb		no	MIPI-DSI	640	480	40.0	1,2,4	71	71	3.95	202	elida,kd35t133;simple-panel-dsi						
+R36S/Panel 5	R36S-DTB	rg351p-kernel.dtb		no	MIPI-DSI	640	480	40.0	1,2,4	71	71	3.95	202	elida,kd35t133;simple-panel-dsi						
+R36S/Panel 5	R36S-DTB	rk3326-r35s-linux.dtb		no	MIPI-DSI	640	480	40.0	4	71	71	3.95	202	elida,kd35t133;simple-panel-dsi						
+R36S/Panel 6	R36S-DTB	rg351mp-kernel.dtb		no	MIPI-DSI	640	480	40.0	1,2,4	71	71	3.95	202	elida,kd35t133;simple-panel-dsi						
+R36S/Panel 6	R36S-DTB	rg351p-kernel.dtb		no	MIPI-DSI	640	480	40.0	1,2,4	71	71	3.95	202	elida,kd35t133;simple-panel-dsi						
+R36S/Panel 6	R36S-DTB	rk3326-r35s-linux.dtb		no	MIPI-DSI	640	480	40.0	4	71	71	3.95	202	elida,kd35t133;simple-panel-dsi						
+R46H	R36S-DTB	rk3326-r46h-linux.dtb	r46h	dtb	MIPI-DSI	1024	768	60.0	4	52	70	3.43	373	elida,kd35t133;simple-panel-dsi	768p	dual	select	0	unsupported	gpio
+RGB20S	R36S-DTB	rg351mp-kernel.dtb		no	MIPI-DSI	640	480	25.5	4	52	70	3.43	233	elida,kd35t133;simple-panel-dsi						
+RGB20S	R36S-DTB	rk3326-rg351mp-linux.dtb	rg351mp	dtb	MIPI-DSI	640	480	26.4	4	52	70	3.43	233	elida,kd35t133;simple-panel-dsi	480p	dual	select	0	unsupported	gpio
+RGB20S	R36S-DTB	rk3326-rgb20s-linux.dtb	rgb20s	dtb	MIPI-DSI	640	480	26.4	4	52	70	3.43	233	elida,kd35t133;simple-panel-dsi	480p	dual	happy5	0	unsupported	gpio

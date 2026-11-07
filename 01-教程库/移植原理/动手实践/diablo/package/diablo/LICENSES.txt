@@ -1,0 +1,35 @@
+这个目录里只有引擎、开源库和引擎自带界面资源，没有任何商业游戏数据。
+
+devilutionx.aarch64
+    DevilutionX 1.6.0-dev，commit aa3dc7b10e35abaad57548f0fca6ed94e8f4d611。
+    许可为 Sustainable Use License 1.0（原文见 licenses/DevilutionX.txt）：
+    允许免费、非商业地使用/修改/再分发，必须附带许可条款；本项目未修改其源码。
+    https://github.com/diasurgical/devilutionX
+
+assets/
+    引擎自带界面资源（CLX 字体、UI、Lua mod 脚本、txtdata 数据表），由上述源码的
+    assets 目录生成/拷贝，随引擎同许可分发。不含 Blizzard 的美术/音乐/地图。
+
+静态链接进二进制的第三方库（每份许可原文都在 licenses/ 里）：
+    SDL2_image      zlib 许可        licenses/SDL2_image.txt
+    libpng          libpng-2.0       licenses/libpng.txt
+    zlib            zlib 许可        licenses/zlib.txt
+    bzip2           bzip2-1.0.6      licenses/bzip2.txt
+    Lua 5.4.7       MIT              licenses/Lua.txt
+    sol2            MIT              licenses/sol2.txt
+    magic_enum      MIT              licenses/magic_enum.txt
+    unordered_dense MIT              licenses/unordered_dense.txt
+    mpqfs           MIT              licenses/mpqfs.txt
+    SheenBidi       Apache-2.0       licenses/SheenBidi-Apache-2.0.txt
+    SDL_audiolib    LGPL-3.0         licenses/SDL_audiolib-LGPL-3.0.txt
+    libsmackerdec   LGPL-2.1         licenses/libsmackerdec-LGPL-2.1.txt
+
+    说明：LGPL 的两个库是静态链进去的。本端口的 build.sh 与上游 commit 都写在
+    README.md 里，任何人可以照着重编；需要换用自己版本的这两个库时，重新链接即可。
+
+运行时用的 libSDL2-2.0.so.0 不随包发布，由 CFW（PortMaster 的 SDL2）提供。
+
+游戏数据不在包内，需要玩家自己提供：
+    - 正版 DIABDAT.MPQ（GOG/战网买的 Diablo 里那个文件，改名后放进来）；
+    - 或免费分享版 spawn.mpq（只开放战士 + 前两层地牢）。
+    本包不附带、也不提供下载。

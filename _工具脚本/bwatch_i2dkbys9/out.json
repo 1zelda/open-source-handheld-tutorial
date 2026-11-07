@@ -1,0 +1,33 @@
+{
+ "bw_psxplace": {
+  "ok": true,
+  "name": "PSX-Place(PS Vita/PS3 自制场景,curl 403)",
+  "url": "https://www.psx-place.com/forums/",
+  "title": "Just a moment...",
+  "finalUrl": "https://www.psx-place.com/forums/?__cf_chl_rt_tk=mvXAlnIpYirQV5RIDwR9jDVJCz7GN0HfKI1d5OhsZLQ-1792595388-1.0.1.1-CsE5oDGPgWjqMgrR3OtOFXnD4Tq.Wj_Sq5BNIIxn5gE",
+  "items": []
+ },
+ "bw_pcsx2forum": {
+  "ok": true,
+  "name": "PCSX2 官方论坛(curl 403)",
+  "url": "https://forums.pcsx2.net/",
+  "title": "Just a moment...",
+  "finalUrl": "https://forums.pcsx2.net/?__cf_chl_rt_tk=8J8uaqr2hLQ9r4T.HzmymnWtlDVv3oEvco0KJDwRGQc-1792595390-1.0.1.1-sMxOFWtBtJoZCMzNUVfrC58s6KtfQB1tWTvTzwSl808",
+  "items": []
+ },
+ "bw_gtforums": {
+  "ok": false,
+  "name": "GTForums(Gran Turismo 论坛,curl 403/直连 RST)",
+  "url": "https://gtforums.net/forum/",
+  "error": "Error: page.goto: net::ERR_CONNECTION_CLOSED at https://gtforums.net/forum/",
+  "items": []
+ },
+ "bw_linuxdo": {
+  "ok": true,
+  "name": "linux.do 中文 Linux 社区(Cloudflare 403)",
+  "url": "https://linux.do/latest",
+  "title": "Just a moment...",
+  "finalUrl": "https://linux.do/latest?__cf_chl_rt_tk=mR0wIbJ4OxXQz.PimK_e8zaJCcNGzOx_Dcbx.CL9B1o-1792595395-1.0.1.1-Ib0pAiVPpc4VrcqttktugFhWlX74ZPeySMgd9gdRjwo",
+  "items": []
+ }
+}

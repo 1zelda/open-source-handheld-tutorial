@@ -1,0 +1,29 @@
+{
+    "version": 4,
+    "name": "Duke3D.zip",
+    "items": [
+        "Duke3D.sh",
+        "duke3d"
+    ],
+    "items_opt": null,
+    "attr": {
+        "title": "Duke Nukem 3D",
+        "desc": "EDuke32（GPL-2.0 引擎）交叉编译的 aarch64 版，640x480 软件渲染，SDL2 音频。游戏数据 DUKE3D.GRP 由玩家自备，包内不含任何商业数据。",
+        "inst": "Copy your own DUKE3D.GRP (retail or shareware) into ports/duke3d/ next to the engine, then launch.",
+        "genres": [
+            "fps"
+        ],
+        "porter": [
+            "教程示例"
+        ],
+        "image": {},
+        "rtr": false,
+        "exp": false,
+        "runtime": [],
+        "min_glibc": "2.29",
+        "reqs": [],
+        "arch": [
+            "aarch64"
+        ]
+    }
+}

@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='utf-8'?>
+<gameList>
+  <game>
+    <path>./Quake2.sh</path>
+    <name>Quake II (YamagiQ2)</name>
+    <desc>Quake II, running on Yamagi Quake II (GPL-2.0 source port) compiled from source for aarch64. Bring your own baseq2/pak files.</desc>
+    <releasedate>19971209T000000</releasedate>
+    <developer>id Software</developer>
+    <publisher>Activision</publisher>
+    <genre>FPS</genre>
+    <image>./quake2/screenshot.png</image>
+  </game>
+</gameList>

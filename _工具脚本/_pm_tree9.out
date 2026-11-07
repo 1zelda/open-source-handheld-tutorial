@@ -1,0 +1,27 @@
+[06:19:36] == 端口包抓取开始（PortsMaster/PortMaster-New）==
+[06:19:38]   PortsMaster/PortMaster-New HEAD 相符但工作树缺 150416 个条目，分轮补齐
+[06:19:39]   抹掉 PortsMaster__PortMaster-New 留下的过期 index.lock（384 s 前）
+[06:19:39]   PortsMaster/PortMaster-New 第 1 批（12 个目录堆，还缺 150416 个文件）：., .github, .github/ISSUE_TEMPLATE, .github/workflows …
+[06:20:09]   PortsMaster/PortMaster-New 收包中（0.00 GB，30 s）
+[06:20:09]   PortsMaster/PortMaster-New 收包中 本轮新增 0.00 GB｜30 s｜0.00 MB/s｜CPU -1.0 s｜无连接
+[06:20:09]   PortsMaster/PortMaster-New 第 1 批中断 rc=1：any file(s) known to git
+error: pathspec 'ports/abbayedesmorts' did not match any file(s) known to git
+error: pathspec 'ports/abes_adventure' did not match any file(s) known to git
+[06:20:09]   PortsMaster/PortMaster-New 这批没有进展（还缺 150416 个，连续 1 次）
+[06:20:09]   PortsMaster/PortMaster-New 第 2 批（12 个目录堆，还缺 150416 个文件）：., .github, .github/ISSUE_TEMPLATE, .github/workflows …
+[06:20:39]   PortsMaster/PortMaster-New 收包中（0.00 GB，30 s）
+[06:20:39]   PortsMaster/PortMaster-New 收包中 本轮新增 0.00 GB｜30 s｜0.00 MB/s｜CPU -1.0 s｜无连接
+[06:20:40]   PortsMaster/PortMaster-New 第 2 批中断 rc=1：any file(s) known to git
+error: pathspec 'ports/abbayedesmorts' did not match any file(s) known to git
+error: pathspec 'ports/abes_adventure' did not match any file(s) known to git
+[06:20:40]   PortsMaster/PortMaster-New 这批没有进展（还缺 150416 个，连续 2 次）
+[06:20:40]   PortsMaster/PortMaster-New 第 3 批（12 个目录堆，还缺 150416 个文件）：., .github, .github/ISSUE_TEMPLATE, .github/workflows …
+[06:21:10]   PortsMaster/PortMaster-New 收包中（0.00 GB，30 s）
+[06:21:10]   PortsMaster/PortMaster-New 收包中 本轮新增 0.00 GB｜30 s｜0.00 MB/s｜CPU -1.0 s｜无连接
+[06:21:10]   PortsMaster/PortMaster-New 第 3 批中断 rc=1：any file(s) known to git
+error: pathspec 'ports/abbayedesmorts' did not match any file(s) known to git
+error: pathspec 'ports/abes_adventure' did not match any file(s) known to git
+[06:21:10]   PortsMaster/PortMaster-New 这批没有进展（还缺 150416 个，连续 3 次）
+[06:21:10]   PortsMaster/PortMaster-New 连 3 批零进展，本轮收手——链路或对端在拒，不是本地能修的
+[06:21:10]   PortsMaster/PortMaster-New 补了 8 轮仍缺 150416 个文件，本轮判失败，不动台账
+[06:21:10] 完成：成功 0 / 失败 1｜盘上目录 F:\开源掌机教程\06-资讯监控\成品移植游戏库\掌机端口包

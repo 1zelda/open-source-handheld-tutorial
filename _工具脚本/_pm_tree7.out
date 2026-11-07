@@ -1,0 +1,18 @@
+[05:59:46] == 端口包抓取开始（PortsMaster/PortMaster-New）==
+[05:59:47]   PortsMaster/PortMaster-New 开始浅克隆（预算 22.0 GB，骨架+分轮落 blob，代理 http://127.0.0.1:7890 可用）
+[06:00:17]   PortsMaster/PortMaster-New 收包中（0.00 GB，30 s）
+[06:00:17]   PortsMaster/PortMaster-New 收包中 0.00 GB｜30 s｜0.16 MB/s｜CPU -1.0 s｜无连接
+[06:00:17]   PortsMaster/PortMaster-New 落文件第 1/8 轮：还缺 150416 个（已落盘的走本地对象库，不重下）
+[06:00:47]   PortsMaster/PortMaster-New 检出中（0.00 GB，30 s）
+[06:00:47]   PortsMaster/PortMaster-New 检出中 0.00 GB｜30 s｜0.16 MB/s｜CPU 14.7 s｜TCP 连着
+[06:01:18]   PortsMaster/PortMaster-New 检出中 0.00 GB｜60 s｜体积和 CPU 全没动（1 次 / 30 s）｜TCP 还挂着（隧道半死）
+[06:01:48]   PortsMaster/PortMaster-New 检出中 0.00 GB｜90 s｜体积和 CPU 全没动（2 次 / 60 s）｜TCP 还挂着（隧道半死）
+[06:02:18]   PortsMaster/PortMaster-New 检出中 0.00 GB｜120 s｜体积和 CPU 全没动（3 次 / 90 s）｜TCP 还挂着（隧道半死）
+[06:02:48]   PortsMaster/PortMaster-New 检出中 0.00 GB｜150 s｜体积和 CPU 全没动（4 次 / 120 s）｜TCP 还挂着（隧道半死）
+[06:03:18]   PortsMaster/PortMaster-New 检出中 0.00 GB｜180 s｜体积和 CPU 全没动（5 次 / 150 s）｜TCP 还挂着（隧道半死）
+[06:03:49]   PortsMaster/PortMaster-New 检出中 0.00 GB｜211 s｜体积和 CPU 全没动（6 次 / 180 s）｜TCP 还挂着（隧道半死）
+[06:04:19]   PortsMaster/PortMaster-New 检出中 0.00 GB｜241 s｜体积和 CPU 全没动（7 次 / 210 s）｜TCP 还挂着（隧道半死）
+[06:04:49]   PortsMaster/PortMaster-New 检出中 0.00 GB｜271 s｜体积和 CPU 全没动（8 次 / 240 s）｜TCP 还挂着（隧道半死）
+[06:05:19]   PortsMaster/PortMaster-New 检出中 0.00 GB｜301 s｜体积和 CPU 全没动（9 次 / 270 s）｜TCP 还挂着（隧道半死）
+[06:05:49]   PortsMaster/PortMaster-New 检出中 0.00 GB｜331 s｜体积和 CPU 全没动（10 次 / 300 s）｜TCP 还挂着（隧道半死）
+[06:06:19]   PortsMaster/PortMaster-New 检出中 0.00 GB｜361 s｜体积和 CPU 全没动（11 次 / 330 s）｜TCP 还挂着（隧道半死）

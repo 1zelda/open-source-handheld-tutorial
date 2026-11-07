@@ -1,0 +1,16 @@
+这里没有游戏数据。
+
+把下面任一组文件放进这个目录（也就是 ports/wolf3d/）再启动：
+
+  分享版（第一章，免费发布，可自行下载）
+    AUDIOHED.WL1  AUDIOT.WL1  GAMEMAPS.WL1  MAPHEAD.WL1
+    VGADICT.WL1   VGAGRAPH.WL1  VGAHEAD.WL1  VSWAP.WL1
+
+  正式版 Wolfenstein 3D（商业版，自备）
+    *.WL6（同样是 8 个同名文件，扩展名换成 .WL6）
+
+  资料片 Spear of Destiny（商业版，自备）
+    *.SOD
+
+注意：只要数据文件，不要放原版 WOLF3D.EXE —— 那是 DOS 可执行文件，这里用不上，
+也没有随包分发。

@@ -1,0 +1,30 @@
+# Yamagi Quake II 自带 SDL2 手柄支持，摇杆/扳机/菜单都由引擎直接读，
+# 所以这里只把 START（菜单）和 BACK 交给 gptokeyb 伪造键盘，其余留空，
+# 手柄事件原样给引擎。这一版布局取自 PortMaster 官方 Quake 2 端口。
+back = delete
+start = esc
+
+a =
+b =
+x =
+y =
+
+l1 =
+l2 =
+r1 =
+r2 =
+
+up =
+down =
+left =
+right =
+
+left_analog_up =
+left_analog_down =
+left_analog_left =
+left_analog_right =
+
+right_analog_up =
+right_analog_down =
+right_analog_left =
+right_analog_right =

@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='utf-8'?>
+<gameList>
+  <game>
+    <path>./Wolfenstein 3D.sh</path>
+    <name>Wolfenstein 3D (ECWolf)</name>
+    <desc>Wolfenstein 3D running on ECWolf 1.4.2 (GPL-2.0 engine) built from source for aarch64. Bring your own WL1/WL6/SOD game data.</desc>
+    <releasedate>19920505T000000</releasedate>
+    <developer>id Software</developer>
+    <publisher>Apogee Software</publisher>
+    <genre>FPS</genre>
+    <image>./wolf3d/screenshot.png</image>
+  </game>
+  <game>
+    <path>./Wolfenstein 3D.sh</path>
+    <name>Spear of Destiny (ECWolf)</name>
+    <desc>Spear of Destiny on ECWolf. Put the *.SOD data files into ports/wolf3d/.</desc>
+    <releasedate>19920918T000000</releasedate>
+    <developer>id Software</developer>
+    <publisher>FormGen</publisher>
+    <genre>FPS</genre>
+    <image>./wolf3d/screenshot.png</image>
+  </game>
+</gameList>

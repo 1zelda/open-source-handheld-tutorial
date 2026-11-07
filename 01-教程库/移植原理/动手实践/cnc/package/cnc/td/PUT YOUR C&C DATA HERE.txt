@@ -1,0 +1,20 @@
+把《命令与征服：泰伯利亚黎明》的游戏数据放在这个目录（ports/cnc/cnc/td/）。
+
+需要的是 C&C Gold 的那一组 *.MIX（关键的一个是 CONQUER.MIX）：
+
+  CONQUER.MIX / GENERAL.MIX / AUD.MIX / SOUNDS.MIX / SPEECH.MIX /
+  MOVIES.MIX / SCORES.MIX / TEMPERAT.MIX / WINTER.MIX / DESERT.MIX /
+  TRANSIT.MIX / UPDATE.MIX / UPDATA.MIX / UPDATEC.MIX / CCLOCAL.MIX / LOCAL.MIX
+
+可以来自：
+  - 正版 C&C Gold（GOG / Steam 的 Command & Conquer 终极合集里那份），
+    把安装目录里的 *.MIX 全部拷过来；
+  - 或 2007 年 EA 免费放出的 GDI95 / NOD95 光盘镜像，挂载后把根目录的 *.MIX 拷过来。
+
+注意：
+  * 只要 *.MIX，不要把整张光盘的 .EXE/.DLL 拷来；
+  * 泰伯利亚黎明与红色警戒的数据不要混放（红警放 cnc/ra/）；
+  * CONQUER.INI 是引擎的配置文件，第一次启动时如果没有会自动生成，
+    手柄支持（ControllerEnabled=yes）就在里面。
+
+本包不附带、也不提供任何商业游戏数据的下载。

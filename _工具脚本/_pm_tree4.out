@@ -1,0 +1,12 @@
+[00:26:51] == 端口包抓取开始（全部）==
+[00:26:58]   christianhaitian/PortMaster HEAD 相符但工作树缺 8 个文件（上次检出被打断），从本地 pack 重检出
+[00:29:16]   christianhaitian/PortMaster 补检出：4.18 GB / 928 文件｜最大 UbermoshCollection.zip 97.6 MB
+[00:29:31]   红线复检：8 个文件 / 0.70 GB 挪到 待复核/掌机端口包/christianhaitian/PortMaster
+[00:31:27]   PortsMaster-MV/PortMaster-MV-New 追认：3.44 GB / 21347 文件｜最大 ports/chaoresortisland/chaoresortisland/chaoresortisland.por 90.5 MB
+[00:31:34]   红线复检：1 个文件 / 0.09 GB 挪到 待复核/掌机端口包/PortsMaster-MV/PortMaster-MV-New
+[00:31:36]   PortsMaster/PortMaster-New 是上次 clone 打断的残留（1 个条目、无 HEAD），清掉重下
+[00:31:36]   PortsMaster/PortMaster-New 开始浅克隆（预算 22.0 GB，代理 http://127.0.0.1:7891 可用）
+[00:32:06]   PortsMaster/PortMaster-New 收包中（0.00 GB，30 s）
+[00:32:06]   PortsMaster/PortMaster-New 收包中 0.00 GB｜30 s｜0.00 MB/s｜CPU -1.0 s
+[00:32:06]   PortsMaster/PortMaster-New clone 失败 rc=128：fatal: destination path 'F:\开源掌机教程\06-资讯监控\成品移植游戏库\掌机端口包\PortsMaster__PortMaster-New' already exists and is not an empty directory.
+[00:32:06] 完成：成功 2 / 失败 1｜盘上目录 F:\开源掌机教程\06-资讯监控\成品移植游戏库\掌机端口包

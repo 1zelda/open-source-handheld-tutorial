@@ -1,0 +1,104 @@
+diff --git a/common/interpal.cpp b/common/interpal.cpp
+index 6091774..74c39db 100644
+--- a/common/interpal.cpp
++++ b/common/interpal.cpp
+@@ -74,9 +74,16 @@ void Read_Interpolation_Palette(char const* palette_file_name)
+ 
+     if (InterpolationTable && palette_file.Is_Available()) {
+         palette_file.Open(READ);
+-        palette_file.Read(&InterpolationTable->PaletteInterpolationTable[0][0], 256 * 256);
++        int got = palette_file.Read(&InterpolationTable->PaletteInterpolationTable[0][0], 256 * 256);
+         palette_file.Close();
+-        InterpolationPaletteChanged = false;
++        /*
++        **	Some installs ship a short .PAL of the same name (a plain 768 byte palette), and
++        **	reading that leaves the table almost entirely zero, which paints every
++        **	interpolated pixel black. Only a complete table may mark itself as loaded.
++        */
++        if (got == 256 * 256) {
++            InterpolationPaletteChanged = false;
++        }
+     }
+ }
+ 
+diff --git a/common/interpal.h b/common/interpal.h
+index 24d560a..9f6b172 100644
+--- a/common/interpal.h
++++ b/common/interpal.h
+@@ -25,6 +25,7 @@ void Interpolate_2X_Scale(GraphicBufferClass* source,
+                           GraphicViewPortClass* dest,
+                           char const* palette_file_name,
+                           int mode);
++void Create_Palette_Interpolation_Table(void);
+ void Read_Interpolation_Palette(char const* palette_file_name);
+ void Write_Interpolation_Palette(char const* palette_file_name);
+ void Increase_Palette_Luminance(unsigned char* InterpolationPalette,
+diff --git a/common/vqapalette.cpp b/common/vqapalette.cpp
+index 4e4fd1f..d43ccc4 100644
+--- a/common/vqapalette.cpp
++++ b/common/vqapalette.cpp
+@@ -46,10 +46,20 @@ void VQA_SetPalette(uint8_t* palette, int numbytes, bool slowpal)
+ 
+     Increase_Palette_Luminance(palette, 15, 15, 15, 63);
+ 
+-    if (PalettesRead && InterpolationTable) {
+-        void* paletteinterpol = (void*)&InterpolationTable->PaletteInterpolationTable;
+-        size_t table_size = sizeof(InterpolationTable->PaletteInterpolationTable);
+-        memcpy(paletteinterpol, InterpolatedPalettes[PaletteCounter++], table_size);
++    if (InterpolationTable) {
++        if (PalettesRead) {
++            void* paletteinterpol = (void*)&InterpolationTable->PaletteInterpolationTable;
++            size_t table_size = sizeof(InterpolationTable->PaletteInterpolationTable);
++            memcpy(paletteinterpol, InterpolatedPalettes[PaletteCounter++], table_size);
++        } else {
++            /*
++            **	No .VQP cache for this movie, so build the table from the movie's own palette
++            **	instead of leaving whatever the previous screen produced.
++            */
++            InterpolationPalette = palette;
++            InterpolationPaletteChanged = true;
++            Create_Palette_Interpolation_Table();
++        }
+     }
+ 
+     Set_Palette(palette);
+diff --git a/tiberiandawn/conquer.cpp b/tiberiandawn/conquer.cpp
+index a8aebd8..5cada81 100644
+--- a/tiberiandawn/conquer.cpp
++++ b/tiberiandawn/conquer.cpp
+@@ -2149,7 +2149,12 @@ void Play_Movie(char const* name, ThemeType theme, bool clrscrn)
+         return;
+     }
+ 
+-    if (InterpolationTable)
++    /*
++    **	The table is cleared so VQA_SetPalette can refill it with the movie's own palette, but
++    **	that only happens when the matching .VQP cache was loaded. Without it the table would
++    **	stay zeroed, painting every interpolated pixel black, so keep the current one instead.
++    */
++    if (InterpolationTable && PalettesRead)
+         memset(&InterpolationTable->PaletteInterpolationTable[0][0], 0, 65536);
+ 
+     if (name) {
+diff --git a/tiberiandawn/display.cpp b/tiberiandawn/display.cpp
+index 20ff4f6..ae81c39 100644
+--- a/tiberiandawn/display.cpp
++++ b/tiberiandawn/display.cpp
+@@ -243,8 +243,15 @@ void DisplayClass::One_Time(void)
+                 Mem_Copy(FadingShade, RemapTables[hindex][fade], 256);
+                 break;
+             }
+-            Mem_Copy(
+-                &RemapTables[hindex][fade][((int)hindex + 11) * 16], &RemapTables[hindex][fade][(0 + 11) * 16], 16);
++            /*
++            **	Houses past the five 8-bit remap bands would put this copy past the end of
++            **	the 256-entry row (house 6 lands on index 272), spilling into the next fade
++            **	table and finally past RemapTables itself. Only copy bands that fit.
++            */
++            int band = ((int)hindex + 11) * 16;
++            if (band + 16 <= 256) {
++                Mem_Copy(&RemapTables[hindex][fade][band], &RemapTables[hindex][fade][(0 + 11) * 16], 16);
++            }
+         }
+     }
+ }

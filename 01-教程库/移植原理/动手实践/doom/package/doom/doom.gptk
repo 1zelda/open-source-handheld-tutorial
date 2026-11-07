@@ -1,0 +1,29 @@
+# doomgeneric 只认键盘事件；这里把掌机按键翻译成 Doom 默认键位。
+# a=fire(ctrl) b=use(space) x=run(shift) y=menu(enter) start=esc select=tab(自动地图)
+deadzone_mode = scaled_radial
+deadzone = 2000
+deadzone_scale = 8
+deadzone_delay = 16
+
+back = tab
+start = esc
+
+a = leftctrl
+b = space
+x = leftshift
+y = enter
+
+l1 = leftalt
+l2 = 1
+r1 = leftalt
+r2 = 2
+
+up = up
+down = down
+left = left
+right = right
+
+left_analog_up = up
+left_analog_down = down
+left_analog_left = left
+left_analog_right = right

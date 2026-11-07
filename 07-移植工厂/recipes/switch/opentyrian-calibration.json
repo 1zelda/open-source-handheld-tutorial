@@ -1,0 +1,88 @@
+{
+  "id": "switch-opentyrian-calibration",
+  "title": "Switch 制品校准（OpenTyrian .nro）",
+  "device_families": ["switch-homebrew"],
+  "requires": {
+    "capabilities": ["nro"]
+  },
+  "release_stage": "release",
+  "stages": [
+    {
+      "id": "artifact",
+      "title": "制品检查",
+      "gates": [
+        {
+          "id": "nro_present",
+          "type": "file_exists",
+          "path": "${input}",
+          "min_size": 2097152,
+          "missing": "blocked"
+        },
+        {
+          "id": "nro_header",
+          "type": "nro_header",
+          "path": "${input}"
+        },
+        {
+          "id": "nro_sha256",
+          "type": "sha256",
+          "path": "${input}"
+        }
+      ]
+    },
+    {
+      "id": "package",
+      "title": "封装与整包校验",
+      "steps": [
+        {
+          "id": "build_zip",
+          "type": "package",
+          "output": "${dist_dir}/OpenTyrian-calibration.zip",
+          "kind": "switch-nro-package",
+          "files": [
+            {
+              "src": "${input}",
+              "arcname": "opentyrian.nro"
+            }
+          ]
+        }
+      ],
+      "gates": [
+        {
+          "id": "package_integrity",
+          "type": "package_integrity",
+          "path": "${dist_dir}/OpenTyrian-calibration.zip"
+        }
+      ]
+    },
+    {
+      "id": "device_test",
+      "title": "Switch 真机验收",
+      "gates": [
+        {
+          "id": "device_proof",
+          "type": "manual_attestation",
+          "path": "${evidence_dir}/device_test.json",
+          "evidence_dir": "${evidence_dir}",
+          "required_checks": [
+            "boots_to_title",
+            "new_game_playable",
+            "input_works",
+            "audio_works",
+            "saves_and_reloads"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "release",
+      "title": "发布闸门",
+      "gates": [
+        {
+          "id": "release_ready",
+          "type": "release_ready"
+        }
+      ]
+    }
+  ]
+}

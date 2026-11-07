@@ -1,0 +1,24 @@
+[01:12:35] 计划开始：先问 releases/latest，取不到再退回全量 release 列表，本次问 6177 个仓
+[01:12:35]   复用旧计划：6189 行 / 1419 个仓没再问 API
+[01:12:39]   latest 取不到，改用 0bAndyWirus/DQ9-Decomp v0.5.0 [pre-release]
+[01:13:01]   latest 取不到，改用 12feihu/BodyHarvest-PC-Port v0.01 [pre-release]
+[01:13:19]   进度 25/6177，本轮问到资产的仓 7 个（已落盘 6222 行）
+[01:13:25]   latest 取不到，改用 3dfxdev/EDGE v2.1.0-RC1 [pre-release]
+[01:13:55]   latest 取不到，改用 7v0biscuit/OpenKai2 v0.1.80 [pre-release]
+[01:14:06]   latest 取不到，改用 999sian/soh-3ds v0.1.0-alpha.4 [pre-release]
+[01:15:01]   进度 75/6177，本轮问到资产的仓 18 个（已落盘 6294 行）
+[01:15:23]   latest 取不到，改用 Acranon/kf1-enhanced v0.1.0-pre.3 [pre-release]
+[01:15:26]   latest 取不到，改用 Acranon/kf3-enhanced v0.1.0 [pre-release]
+[01:16:35]   进度 125/6177，本轮问到资产的仓 36 个（已落盘 6367 行）
+[01:16:42]   latest 取不到，改用 AgitationSkeleton/lsw2ds-pc v0.3.3 [pre-release]
+[01:17:00]   latest 取不到，改用 AH64-dll/DeepSea v1.0.0-beta.4 [pre-release]
+[01:17:39]   API 失败（非 404）：repos/ajxs/jsFO/releases?per_page=100 <- Get "https://api.github.com/repos/ajxs/jsFO/releases?per_page=100": unexpected EOF
+[01:17:49]   latest 取不到，改用 akaWolf/LostVikings latest [pre-release]
+[01:18:25]   latest 取不到，改用 alanwoolley/CorsixTH-Android 1.0.0-SNAPSHOT [pre-release]
+[01:18:40]   API 失败（非 404）：repos/aldonunez/Loz/releases?per_page=100 <- Get "https://api.github.com/repos/aldonunez/Loz/releases?per_page=100": EOF
+[01:19:08]   API 失败（非 404）：repos/AleBello7276/LCE-Recomp-RexGlue/releases?per_page=100 <- Get "https://api.github.com/repos/AleBello7276/LCE-Recomp-RexGlue/releases?per_page=100": unexpected EOF
+[01:19:17]   latest 取不到，改用 alechurri/2ship2harkinian-ps4 v0.1.0 [pre-release]
+[01:20:02]   latest 取不到，改用 Alexbeav/forza-motorsport-2-recompilation v0.1.0-alpha.2 [pre-release]
+[01:22:23]   进度 300/6177，本轮问到资产的仓 142 个（已落盘 6936 行）
+[01:22:47]   latest 取不到，改用 alondero/kirbysdreamcourse-recomp v0.1.1-experimental [pre-release]
+[01:23:05]   进度 325/6177，本轮问到资产的仓 151 个（已落盘 6968 行）

@@ -1,0 +1,48 @@
+{
+ "bw_psxplace": {
+  "ok": true,
+  "name": "PSX-Place(PS Vita/PS3 自制场景,curl 403)",
+  "url": "https://www.psx-place.com/forums/",
+  "title": "Just a moment...",
+  "finalUrl": "https://www.psx-place.com/forums/?__cf_chl_rt_tk=SBCmZr56cn8K52dEf5rR2xd_l3OzHbL1sql42Bx7vlQ-1792594983-1.0.1.1-LVGnM9Rovb8SC5WC97oRC5z19jkXOkx6Uw44qxEoqHY",
+  "items": []
+ },
+ "bw_gtforums": {
+  "ok": false,
+  "name": "GTForums(Gran Turismo 论坛,curl 403)",
+  "url": "https://gtforums.net/forum/",
+  "error": "Error: page.goto: net::ERR_CONNECTION_CLOSED at https://gtforums.net/forum/",
+  "items": []
+ },
+ "bw_a9vg": {
+  "ok": true,
+  "name": "A9VG 中文游戏社区(Discuz,要 auth key)",
+  "url": "https://www.a9vg.com/",
+  "title": "A9VG电玩部落-核心玩家聚集地",
+  "finalUrl": "https://www.a9vg.com/",
+  "items": []
+ },
+ "bw_mydigit": {
+  "ok": false,
+  "name": "MYDIGIT 数码之家论坛(Discuz,要 auth key)",
+  "url": "https://bbs.mydigit.cn/forum.php",
+  "error": "Error: page.goto: net::ERR_CONNECTION_CLOSED at https://bbs.mydigit.cn/forum.php",
+  "items": []
+ },
+ "bw_linuxdo": {
+  "ok": true,
+  "name": "linux.do 中文 Linux 社区(Cloudflare 403)",
+  "url": "https://linux.do/latest",
+  "title": "LINUX DO - 新的理想型社区",
+  "finalUrl": "https://linux.do/latest",
+  "items": []
+ },
+ "bw_pcsx2forum": {
+  "ok": true,
+  "name": "PCSX2 官方论坛(curl 403)",
+  "url": "https://forums.pcsx2.net/",
+  "title": "Just a moment...",
+  "finalUrl": "https://forums.pcsx2.net/?__cf_chl_rt_tk=3NUHhUeaQXdWCzBhjSjGNA_mY92oMtKom_9dyoyKJmM-1792595007-1.0.1.1-oN8y2GOVnEoH3f746NXLMouFxYl.tcLbEWY2LIu3nfw",
+  "items": []
+ }
+}

@@ -1,0 +1,31 @@
+[19:43:16] 范围：只取 RecompHub 目录点名的仓库，84/548 个资产（4.15 GB / 全量 19.47 GB）
+[19:43:16] 开始下载：84 个资产 / 4.15 GB
+[19:43:19]   1/84 已相符 0herculabs/hl360-forza4/FM4-v0.3.10-windows-x64.zip（78.5 MB，复检 43 成员）
+[19:43:22]   2/84 已相符 2ship2harkinian/2ship2harkinian/2Ship-Battler-Bravo-Win64.zip（42.9 MB，复检 1335 成员）
+[19:43:23]   3/84 已相符 abedegno/underworld-exhumed/UW1-v1.0.2-windows-x86_64.zip（3.6 MB，复检 20 成员）
+[19:43:25]   4/84 已相符 BanjoRecomp/BanjoRecomp/BanjoRecompiled-v1.0.2-Windows.zip（17.8 MB，复检 44 成员）
+[19:43:35]   5/84 已相符 beatrixzy/PGR4-Recomp/PGR4-Recomp-v1.2.2.zip（15.6 MB，复检 7 成员）
+[19:43:36]   6/84 已相符 birabittoh/EternalSonataReprise/eternalsonata-v1.3.8-win-amd64.zip（25.5 MB，复检 2 成员）
+[19:43:40]   7/84 已相符 BlackLabelHQ/MediEvilRecomp/MediEvilRecomp-v1.0.3-windows-x64.zip（40.7 MB，复检 51 成员）
+[19:43:49]   8/84 已相符 BlackLabelHQ/SymphonyRecomp/SymphonyRecomp-v1.1.2p-linux-x64.tar.gz（55.9 MB，复检 58 成员）
+[19:43:55]   9/84 已相符 BlackLabelHQ/SymphonyRecomp/SymphonyRecomp-v1.1.2p-macos-arm64.zip（54.0 MB，复检 56 成员）
+[19:44:00]   10/84 已相符 BlackLabelHQ/SymphonyRecomp/SymphonyRecomp-v1.1.2p-macos-x64.zip（55.5 MB，复检 56 成员）
+[19:44:04]   11/84 已相符 BlackLabelHQ/SymphonyRecomp/SymphonyRecomp-v1.1.2p-windows-arm64.zip（53.4 MB，复检 55 成员）
+[19:44:09]   12/84 已相符 BlackLabelHQ/SymphonyRecomp/SymphonyRecomp-v1.1.2p-windows-x64.zip（55.0 MB，复检 56 成员）
+[19:44:24]   13/84 已相符 carl0srmz/littleplanet/littleplanet-windows-portable.zip（152.1 MB，复检 9 成员）
+[19:44:26]   14/84 已相符 cdlewis/snowboardkids2-recomp/SnowboardKids2Recompiled-Windows.zip（19.1 MB，复检 33 成员）
+[19:44:39]   15/84 已相符 Cellenseres/SSSV_Recomp/SSSVRecompiled_v0.2.0_Windows.zip（44.4 MB，复检 42 成员）
+[19:44:40]   16/84 已相符 christianortel/skate2-recompile-pc/Skate2-PC-v0.1.1-Windows-x64.zip（22.2 MB，复检 75 成员）
+[19:44:49]   17/84 已相符 ChunchunQ/fifa09-recomp/NOBK-FIFA09-1.4.0.zip（114.9 MB，复检 68 成员）
+[19:44:51]   18/84 已相符 distilledorion-sketch/Initial-D-Arcade-Stage-3-Native-SH-4-Recompilation-WIP-/Initial.D.Arcade.Stage.3.Recompiled.v2489.zip（17.6 MB，复检 18 成员）
+[19:44:59]   19/84 已相符 drakolordx7/KillzoneRecomp/Killzone-PC-v0.1.6-alpha.zip（72.9 MB，复检 213 成员）
+[19:45:00]   20/84 已相符 Drommedhar/mgs-reintegral/reintegral-0.3.0-windows-x86.zip（15.5 MB，复检 595 成员）
+[19:45:03]   21/84 已相符 eandis/SDOJ-Recomp/sdoj.recomp.1.51.4.win-amd64.vulkan.zip（15.9 MB，复检 15 成员）
+[19:45:09]   22/84 已相符 ExpansionPak/ModernGekko/KirbyWiiRecomp-Windows-x86_64.zip（42.1 MB，复检 2643 成员）
+[19:45:22]   23/84 已相符 FishB0nes98/Tekken3Recompiled/Tekken3Recompiled-v0.1.4-Easy-Setup.zip（131.0 MB，复检 5112 成员）
+[19:45:31]   24/84 已相符 GiZcesi/OpenTricky/OpenTricky-0.1.5-win64.zip（70.2 MB，复检 133 成员）
+[19:45:50]   25/84 已相符 goliathret/EdgeOfTimeRecomp/EdgeOfTimeRecomp-v1.0.0-20261030_1906-win-amd64.zip（183.3 MB，复检 6 成员）
+[19:47:03]   失败 GTTeancum/SpideyPS1recomp/Spider-Man-2-1.1-Windows-x64.zip：read tcp 192.168.1.99:25742->185.199.111.133:443: wsarecv: A connection attempt failed because the connected party did not properly respond after a pe
+[19:59:32]   27/84 新下 HarbourMasters/Ghostship/Nautilus-Alfa-Win64.zip（19.4 MB，复检 952 成员）
+[20:02:44]   失败 HarbourMasters/Shipwright/SoH-Dewey-Bravo-Win64.zip：read tcp 192.168.1.99:29334->185.199.111.133:443: wsarecv: A connection attempt failed because the connected party did not properly respond after a pe
+[20:04:47]   29/84 新下 HarbourMasters/Starship/Starship-Barnard-Alfa-Windows.zip（4.0 MB，复检 119 成员）

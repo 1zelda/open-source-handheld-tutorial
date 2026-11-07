@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<gameList>
+	<game>
+		<path>./Tiberian Dawn.sh</path>
+		<name>Command &amp; Conquer: Tiberian Dawn</name>
+		<desc>1995 年的 RTS 开山之作。Vanilla Conquer 引擎，玩家自备 C&amp;C Gold 的 MIX 数据。</desc>
+		<image>./screenshot.png</image>
+		<genre>Strategy</genre>
+		<developer>Westwood Studios</developer>
+		<publisher>Electronic Arts</publisher>
+		<releasedate>19950831T000000</releasedate>
+	</game>
+	<game>
+		<path>./Red Alert.sh</path>
+		<name>Command &amp; Conquer: Red Alert</name>
+		<desc>1996 年的红警初代。同一个引擎的 Red Alert 分支，玩家自备 Red Alert 的 MIX 数据。</desc>
+		<image>./screenshot.png</image>
+		<genre>Strategy</genre>
+		<developer>Westwood Studios</developer>
+		<publisher>Electronic Arts</publisher>
+		<releasedate>19961031T000000</releasedate>
+	</game>
+</gameList>

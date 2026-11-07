@@ -1,0 +1,131 @@
+[16:08:32] 跳过（登记不下，policy=meta）：christianhaitian/PortMaster — 707★｜.git 8186MB｜PortMaster 初代（Ark/Wayla
+[16:08:32] 跳过（登记不下，policy=meta）：PortsMaster/PortMaster-New — 386★｜.git 37913MB｜掌机端口大集合：Switch/PS1/N64
+[16:08:33] 代理 7890 不通，走直连
+[16:08:34] clone 0herculabs/hl360-forza4（连历史，可能几分钟）
+[16:08:45]   ok：187 个文件 / 15.6 MB / HEAD d6597d7d5
+[16:08:46] clone 0xl0cal/repentogxm（连历史，可能几分钟）
+[16:08:54]   ok：877 个文件 / 16.0 MB / HEAD 8f931dd1f
+[16:08:55] clone 2ship2harkinian/2ship2harkinian（连历史，可能几分钟）
+[16:09:36]   ok：5864 个文件 / 48.5 MB / HEAD fd9fb03bd
+[16:09:37] clone abedegno/underworld-exhumed（连历史，可能几分钟）
+[16:09:53]   ok：3275 个文件 / 63.0 MB / HEAD e5deadd69
+[16:09:54] clone Adolini1715/Concrete-Jungle-PC（连历史，可能几分钟）
+[16:10:00]   ok：334 个文件 / 20.6 MB / HEAD 7ea73d273
+[16:10:01] clone Alexbeav/fm4-recomp（连历史，可能几分钟）
+[16:10:19]   ok：44 个文件 / 42.8 MB / HEAD e2108085c
+[16:10:20] clone andeecollard/jsrf-recomp（连历史，可能几分钟）
+[16:10:51]   ok：1150 个文件 / 16.0 MB / HEAD 4242eb696
+[16:10:52] clone andrebrumdev/gow2-recomp（连历史，可能几分钟）
+[16:11:01]   ok：929 个文件 / 8.3 MB / HEAD a7c1f64c8
+[16:11:02] clone arcanite24/pinyon-shift（连历史，可能几分钟）
+[16:11:18]   ok：906 个文件 / 11.5 MB / HEAD 9494adade
+[16:11:19] clone Awis13/liberty-pro-max（连历史，可能几分钟）
+[16:11:23]   ok：88 个文件 / 3.0 MB / HEAD 64af7c467
+[16:11:24] clone badcompany94-rcmp/project-tandem（连历史，可能几分钟）
+[16:11:40]   ok：414 个文件 / 245.1 MB / HEAD 130f64194
+[16:11:41] clone BanjoRecomp/BanjoRecomp（连历史，可能几分钟）
+[16:11:45]   ok：165 个文件 / 2.5 MB / HEAD dbd52154b
+[16:11:46] clone beatrixzy/PGR4-Recomp（连历史，可能几分钟）
+[16:11:50]   ok：47 个文件 / 0.4 MB / HEAD 989c36137
+[16:11:51] clone ben16w/minui-portmaster（连历史，可能几分钟）
+[16:12:13]   ok：24 个文件 / 70.5 MB / HEAD 08b57fd2f
+[16:12:14] clone bgyss/SwitchRecomp（连历史，可能几分钟）
+[16:12:17]   红线：删掉 8 个疑似密钥/固件/镜像：crates/recomp-pipeline/tests/fixtures/formats/homebrew.nro（游戏镜像/密钥后缀）; crates/recomp-pipeline/tests/fixtures/formats/program.nca（游戏镜像/密钥后缀）; crates/recomp-pipeline/tests/fixtures/formats/sample.keys（游戏镜像/密钥后缀）; crates/recomp-pipeline/tests/fixtures/formats/sample.xci（游戏镜像/密钥后缀）
+[16:12:28]   ok：236 个文件 / 0.9 MB / HEAD 0f99e1c5c
+[16:12:29] clone birabittoh/EternalSonataReprise（连历史，可能几分钟）
+[16:12:35]   ok：417 个文件 / 17.2 MB / HEAD b2ba4f7b8
+[16:12:36] clone BlackLabelHQ/MediEvilRecomp（连历史，可能几分钟）
+[16:12:39]   ok：65 个文件 / 1.2 MB / HEAD 69a411415
+[16:12:40] clone BlackLabelHQ/SymphonyRecomp（连历史，可能几分钟）
+[16:12:45]   ok：551 个文件 / 9.7 MB / HEAD 297e378a4
+[16:12:46] clone Buku313/Skate3-Mobile（连历史，可能几分钟）
+[16:12:55]   ok：223 个文件 / 26.2 MB / HEAD e1b28c185
+[16:12:56] clone CaiusCodes/GoldenEye-007-XBLA-PC-Recomp（连历史，可能几分钟）
+[16:13:07]   ok：129 个文件 / 10.0 MB / HEAD 8b5573b7d
+[16:13:08] clone CaiusCodes/Perfect-Dark-XBLA-PC-Recomp（连历史，可能几分钟）
+[16:13:15]   ok：74 个文件 / 3.1 MB / HEAD cd9c211fb
+[16:13:16] clone carl0srmz/littleplanet（连历史，可能几分钟）
+[16:13:25]   ok：398 个文件 / 17.6 MB / HEAD 093f58a04
+[16:13:26] clone cdlewis/snowboardkids2-recomp（连历史，可能几分钟）
+[16:13:39]   ok：101 个文件 / 4.6 MB / HEAD 59d162155
+[16:13:40] clone Cellenseres/SSSV_Recomp（连历史，可能几分钟）
+[16:13:53]   ok：132 个文件 / 31.9 MB / HEAD a4dbfe40e
+[16:13:54] clone centollOS/SwitchWakerHD（连历史，可能几分钟）
+[16:14:33]   ok：3080 个文件 / 49.4 MB / HEAD 78fd5af8d
+[16:14:35] clone chiikabu/the-browsing-of-isaac（连历史，可能几分钟）
+[16:14:43]   ok：470 个文件 / 52.6 MB / HEAD e346ce66a
+[16:14:44] clone chrissotraidis/projectreach（连历史，可能几分钟）
+[16:14:50]   ok：504 个文件 / 13.3 MB / HEAD fa965f38e
+[16:14:51] clone christianortel/skate2-recompile-pc（连历史，可能几分钟）
+[16:14:55]   ok：121 个文件 / 0.6 MB / HEAD 1202c9ae8
+[16:14:56] clone ChunchunQ/fifa09-recomp（连历史，可能几分钟）
+[16:15:00]   ok：111 个文件 / 2.0 MB / HEAD 4dba1063d
+[16:15:01] clone Cor3Duo/kirikae（连历史，可能几分钟）
+[16:15:06]   ok：212 个文件 / 2.7 MB / HEAD 726c4a1bc
+[16:15:07] clone Coz-0/smo-recomp（连历史，可能几分钟）
+[16:15:15]   ok：124 个文件 / 2.9 MB / HEAD 041434147
+[16:15:15] clone daniel-madrid-07/weeping-of-the-empire（连历史，可能几分钟）
+[16:15:21]   ok：1009 个文件 / 18.7 MB / HEAD f2c81da2a
+[16:15:22] clone Dhaiwat10/cricket07-browser（连历史，可能几分钟）
+[16:15:25]   ok：58 个文件 / 0.6 MB / HEAD 4febc615b
+[16:15:26] clone distilledorion-sketch/Initial-D-Arcade-Stage-3-Native-SH-4-Recompilation-WIP-（连历史，可能几分钟）
+[16:15:30]   ok：74 个文件 / 2.4 MB / HEAD 7f182756e
+[16:15:31] clone drakolordx7/KillzoneRecomp（连历史，可能几分钟）
+[16:15:36]   ok：344 个文件 / 3.3 MB / HEAD aa5d3ae6a
+[16:15:37] clone drakolordx7/pokopia-recomp（连历史，可能几分钟）
+[16:15:42]   红线：删掉 1 个疑似密钥/固件/镜像：tools/test/scripts/play_title_key.nxs（名字就是 keys 资产）
+[16:15:43]   ok：1410 个文件 / 17.5 MB / HEAD 2c29515b2
+[16:15:44] clone Drommedhar/mgs-reintegral（连历史，可能几分钟）
+[16:15:50]   ok：1856 个文件 / 34.8 MB / HEAD 85b05f7ed
+[16:15:51] clone DrummingBird1/gow-psp-recomp（连历史，可能几分钟）
+[16:15:58]   ok：180 个文件 / 18.8 MB / HEAD afc345b40
+[16:15:59] clone Dyotson/RecompiledHaloReach（连历史，可能几分钟）
+[16:16:03]   ok：175 个文件 / 1.6 MB / HEAD 329148bb1
+[16:16:03] clone eandis/SDOJ-Recomp（连历史，可能几分钟）
+[16:19:27]   红线：删掉 2 个疑似密钥/固件/镜像：thirdparty/rexglue-sdk/tools/binutils/powerpc-none-elf-objdump（疑似固件/镜像 blob（1 MB））; thirdparty/rexglue-sdk/tools/binutils/powerpc-none-elf-objdump.exe（疑似固件/镜像 blob（8 MB））
+[16:19:35]   ok：20138 个文件 / 621.4 MB / HEAD cf0afe107
+[16:19:36] clone elprogramadorloco-arch/fuc-recomp（连历史，可能几分钟）
+[16:19:58]   失败：Cloning into 'F:\开源掌机教程\06-资讯监控\成品移植游戏库\源码\elprogramadorloco-arch__fuc-recomp'...
+fatal: unable to access 'https://github.com/elprogramadorloco-arch/fuc-recomp/': Recv failure: Connection was reset
+
+[16:19:59] clone elripalda/RecompStore（连历史，可能几分钟）
+[16:20:20]   失败：Cloning into 'F:\开源掌机教程\06-资讯监控\成品移植游戏库\源码\elripalda__RecompStore'...
+fatal: unable to access 'https://github.com/elripalda/RecompStore/': Failed to connect to github.com port 443 after 21117 ms: Coul
+[16:20:21] clone exoteric33/ps2-native-recomp（连历史，可能几分钟）
+[16:20:42]   失败：Cloning into 'F:\开源掌机教程\06-资讯监控\成品移植游戏库\源码\exoteric33__ps2-native-recomp'...
+fatal: unable to access 'https://github.com/exoteric33/ps2-native-recomp/': Failed to connect to github.com port 443 after 
+[16:20:43] clone ExpansionPak/ModernGekko（连历史，可能几分钟）
+[16:21:05]   失败：Cloning into 'F:\开源掌机教程\06-资讯监控\成品移植游戏库\源码\ExpansionPak__ModernGekko'...
+fatal: unable to access 'https://github.com/ExpansionPak/ModernGekko/': Failed to connect to github.com port 443 after 21133 ms
+[16:21:06] clone faligame/lost-odyssey-hd-remaster（连历史，可能几分钟）
+[16:21:27]   失败：Cloning into 'F:\开源掌机教程\06-资讯监控\成品移植游戏库\源码\faligame__lost-odyssey-hd-remaster'...
+fatal: unable to access 'https://github.com/faligame/lost-odyssey-hd-remaster/': Failed to connect to github.com port 
+[16:21:28] clone fearkov/3dsrecomp（连历史，可能几分钟）
+[16:21:50]   失败：Cloning into 'F:\开源掌机教程\06-资讯监控\成品移植游戏库\源码\fearkov__3dsrecomp'...
+fatal: unable to access 'https://github.com/fearkov/3dsrecomp/': Failed to connect to github.com port 443 after 21131 ms: Could not co
+[16:21:51] clone FH1-ReImagined/ForzaHorizon1-ReImagined（连历史，可能几分钟）
+[16:22:12]   失败：Cloning into 'F:\开源掌机教程\06-资讯监控\成品移植游戏库\源码\FH1-ReImagined__ForzaHorizon1-ReImagined'...
+fatal: unable to access 'https://github.com/FH1-ReImagined/ForzaHorizon1-ReImagined/': Failed to connect to gith
+[16:22:13] clone FishB0nes98/Tekken3Recompiled（连历史，可能几分钟）
+[16:22:33]   失败：Cloning into 'F:\开源掌机教程\06-资讯监控\成品移植游戏库\源码\FishB0nes98__Tekken3Recompiled'...
+fatal: unable to access 'https://github.com/FishB0nes98/Tekken3Recompiled/': Recv failure: Connection was reset
+
+[16:22:34] clone Flippage/gears-of-war-3-recomp（连历史，可能几分钟）
+[16:22:55]   失败：Cloning into 'F:\开源掌机教程\06-资讯监控\成品移植游戏库\源码\Flippage__gears-of-war-3-recomp'...
+fatal: unable to access 'https://github.com/Flippage/gears-of-war-3-recomp/': Failed to connect to github.com port 443 af
+[16:22:56] clone fungalspores/prototype-switch（连历史，可能几分钟）
+[16:23:17]   失败：Cloning into 'F:\开源掌机教程\06-资讯监控\成品移植游戏库\源码\fungalspores__prototype-switch'...
+fatal: unable to access 'https://github.com/fungalspores/prototype-switch/': Failed to connect to github.com port 443 afte
+[16:23:18] clone gamboozino/ngbrecomp（连历史，可能几分钟）
+[16:23:39]   失败：Cloning into 'F:\开源掌机教程\06-资讯监控\成品移植游戏库\源码\gamboozino__ngbrecomp'...
+fatal: unable to access 'https://github.com/gamboozino/ngbrecomp/': Failed to connect to github.com port 443 after 21069 ms: Could 
+[16:23:40] clone GenryTheFox0/Project-2099（连历史，可能几分钟）
+[16:24:01]   失败：Cloning into 'F:\开源掌机教程\06-资讯监控\成品移植游戏库\源码\GenryTheFox0__Project-2099'...
+fatal: unable to access 'https://github.com/GenryTheFox0/Project-2099/': Failed to connect to github.com port 443 after 21037 
+[16:24:02] clone get-starboard/starboard（连历史，可能几分钟）
+[16:24:23]   失败：Cloning into 'F:\开源掌机教程\06-资讯监控\成品移植游戏库\源码\get-starboard__starboard'...
+fatal: unable to access 'https://github.com/get-starboard/starboard/': Failed to connect to github.com port 443 after 21094 ms: 
+[16:24:24] clone giangra/stuntdouble-reignition（连历史，可能几分钟）
+[16:24:45]   失败：Cloning into 'F:\开源掌机教程\06-资讯监控\成品移植游戏库\源码\giangra__stuntdouble-reignition'...
+fatal: unable to access 'https://github.com/giangra/stuntdouble-reignition/': Failed to connect to github.com port 443 af
+[16:24:46] clone GiZcesi/OpenTricky（连历史，可能几分钟）

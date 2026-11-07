@@ -1,0 +1,38 @@
+# QuakeSpasm 支持 SDL2 手柄和键盘/鼠标事件；gptokeyb 在系统层伪造键鼠，
+# 所以引擎自己的摇杆读法要关掉（autoexec.cfg 里 joy_enable 0），否则会双倍输入。
+# 左摇杆=移动，右摇杆=鼠标转身；键位与 autoexec.cfg 的 bind 一一对应。
+mouse_scale = 8192
+mouse_delay = 16
+
+deadzone_mode = scaled_radial
+deadzone = 2000
+deadzone_scale = 8
+deadzone_delay = 16
+
+back = tab
+start = esc
+
+a = space
+b = leftctrl
+x = q
+y = v
+
+l1 = r
+r1 = z
+l2 = mouse_right
+r2 = mouse_left
+
+up = q
+down = r
+left = left
+right = right
+
+left_analog_up = w
+left_analog_down = s
+left_analog_left = a
+left_analog_right = d
+
+right_analog_up = mouse_movement_up
+right_analog_down = mouse_movement_down
+right_analog_left = mouse_movement_left
+right_analog_right = mouse_movement_right

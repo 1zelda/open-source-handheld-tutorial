@@ -1,0 +1,82 @@
+[00:40:00] == 端口包抓取开始（PortsMaster/PortMaster-New）==
+[00:40:02]   PortsMaster/PortMaster-New 是上次 clone 打断的残留（1 个条目、无 HEAD），清掉重下
+[00:40:02]   PortsMaster/PortMaster-New 开始浅克隆（预算 22.0 GB，代理 http://127.0.0.1:7891 可用）
+[00:40:32]   PortsMaster/PortMaster-New 收包中（0.00 GB，30 s）
+[00:40:32]   PortsMaster/PortMaster-New 收包中 0.00 GB｜30 s｜0.00 MB/s｜CPU 0.3 s｜TCP 连着
+[00:41:02]   PortsMaster/PortMaster-New 收包中 0.00 GB｜60 s｜0.00 MB/s｜CPU 0.4 s｜TCP 连着
+[00:41:32]   PortsMaster/PortMaster-New 收包中 0.00 GB｜90 s｜0.00 MB/s｜CPU 0.4 s｜TCP 连着
+[00:42:02]   PortsMaster/PortMaster-New 收包中 0.00 GB｜120 s｜0.00 MB/s｜CPU 0.4 s｜TCP 连着
+[00:42:32]   PortsMaster/PortMaster-New 收包中 0.00 GB｜150 s｜0.00 MB/s｜CPU 0.4 s｜TCP 连着
+[00:43:02]   PortsMaster/PortMaster-New 收包中 0.00 GB｜180 s｜0.00 MB/s｜CPU 0.4 s｜TCP 连着
+[00:43:32]   PortsMaster/PortMaster-New 收包中 0.00 GB｜210 s｜0.00 MB/s｜CPU 0.4 s｜TCP 连着
+[00:44:02]   PortsMaster/PortMaster-New 收包中 0.00 GB｜240 s｜0.00 MB/s｜CPU 0.4 s｜TCP 连着
+[00:44:32]   PortsMaster/PortMaster-New 收包中 0.00 GB｜270 s｜0.00 MB/s｜CPU 0.4 s｜TCP 连着
+[00:45:04]   PortsMaster/PortMaster-New 收包中 0.52 GB｜302 s｜1.76 MB/s｜CPU 8.4 s｜TCP 连着
+[00:45:34]   PortsMaster/PortMaster-New 收包中 1.08 GB｜333 s｜3.33 MB/s｜CPU 17.0 s｜TCP 连着
+[00:46:05]   PortsMaster/PortMaster-New 收包中 1.56 GB｜363 s｜4.39 MB/s｜CPU 25.4 s｜TCP 连着
+[00:46:35]   PortsMaster/PortMaster-New 收包中 1.96 GB｜393 s｜5.10 MB/s｜CPU 31.2 s｜TCP 连着
+[00:47:05]   PortsMaster/PortMaster-New 收包中 2.23 GB｜423 s｜5.41 MB/s｜CPU 34.9 s｜TCP 连着
+[00:47:38]   PortsMaster/PortMaster-New 收包中 2.68 GB｜456 s｜6.02 MB/s｜CPU 41.5 s｜TCP 连着
+[00:48:08]   PortsMaster/PortMaster-New 收包中 2.92 GB｜486 s｜6.14 MB/s｜CPU 46.0 s｜TCP 连着
+[00:48:38]   PortsMaster/PortMaster-New 收包中 3.17 GB｜516 s｜6.29 MB/s｜CPU 50.2 s｜TCP 连着
+[00:49:08]   PortsMaster/PortMaster-New 收包中 3.44 GB｜547 s｜6.45 MB/s｜CPU 54.6 s｜TCP 连着
+[00:49:40]   PortsMaster/PortMaster-New 收包中 3.84 GB｜578 s｜6.80 MB/s｜CPU 60.8 s｜TCP 连着
+[00:50:10]   PortsMaster/PortMaster-New 收包中 4.19 GB｜608 s｜7.06 MB/s｜CPU 67.4 s｜TCP 连着
+[00:50:40]   PortsMaster/PortMaster-New 收包中 4.41 GB｜638 s｜7.08 MB/s｜CPU 70.8 s｜TCP 连着
+[00:51:17]   PortsMaster/PortMaster-New 收包中 4.60 GB｜675 s｜6.98 MB/s｜CPU 73.9 s｜TCP 连着
+[00:51:47]   PortsMaster/PortMaster-New 收包中 5.05 GB｜705 s｜7.34 MB/s｜CPU 80.0 s｜TCP 连着
+[00:52:17]   PortsMaster/PortMaster-New 收包中 5.36 GB｜735 s｜7.46 MB/s｜CPU 86.4 s｜TCP 连着
+[00:52:47]   PortsMaster/PortMaster-New 收包中 5.67 GB｜765 s｜7.59 MB/s｜CPU 91.2 s｜TCP 连着
+[00:53:19]   PortsMaster/PortMaster-New 收包中 6.11 GB｜797 s｜7.85 MB/s｜CPU 99.0 s｜TCP 连着
+[00:53:50]   PortsMaster/PortMaster-New 收包中 6.58 GB｜828 s｜8.14 MB/s｜CPU 106.8 s｜TCP 连着
+[00:54:20]   PortsMaster/PortMaster-New 收包中 7.03 GB｜858 s｜8.39 MB/s｜CPU 116.0 s｜TCP 连着
+[00:54:52]   PortsMaster/PortMaster-New 收包中 7.41 GB｜891 s｜8.52 MB/s｜CPU 122.1 s｜TCP 连着
+[00:55:23]   PortsMaster/PortMaster-New 收包中 7.84 GB｜921 s｜8.72 MB/s｜CPU 129.5 s｜TCP 连着
+[00:55:53]   PortsMaster/PortMaster-New 收包中 8.22 GB｜951 s｜8.85 MB/s｜CPU 136.5 s｜TCP 连着
+[00:56:23]   PortsMaster/PortMaster-New 收包中 8.61 GB｜981 s｜8.99 MB/s｜CPU 144.0 s｜TCP 连着
+[00:56:53]   PortsMaster/PortMaster-New 收包中 8.94 GB｜1011 s｜9.06 MB/s｜CPU 150.1 s｜TCP 连着
+[00:57:23]   PortsMaster/PortMaster-New 收包中 9.22 GB｜1041 s｜9.07 MB/s｜CPU 155.2 s｜TCP 连着
+[00:57:55]   PortsMaster/PortMaster-New 收包中 9.53 GB｜1073 s｜9.10 MB/s｜CPU 160.1 s｜TCP 连着
+[00:58:25]   PortsMaster/PortMaster-New 收包中 9.98 GB｜1103 s｜9.27 MB/s｜CPU 168.5 s｜TCP 连着
+[00:58:55]   PortsMaster/PortMaster-New 收包中 10.31 GB｜1133 s｜9.32 MB/s｜CPU 174.3 s｜TCP 连着
+[00:59:25]   PortsMaster/PortMaster-New 收包中 10.51 GB｜1163 s｜9.25 MB/s｜CPU 177.5 s｜TCP 连着
+[00:59:55]   PortsMaster/PortMaster-New 收包中 10.89 GB｜1193 s｜9.35 MB/s｜CPU 183.7 s｜TCP 连着
+[01:00:25]   PortsMaster/PortMaster-New 收包中 11.12 GB｜1224 s｜9.30 MB/s｜CPU 188.8 s｜TCP 连着
+[01:00:56]   PortsMaster/PortMaster-New 收包中 11.42 GB｜1254 s｜9.33 MB/s｜CPU 194.7 s｜TCP 连着
+[01:01:26]   PortsMaster/PortMaster-New 收包中 11.74 GB｜1284 s｜9.36 MB/s｜CPU 200.7 s｜TCP 连着
+[01:01:56]   PortsMaster/PortMaster-New 收包中 12.13 GB｜1315 s｜9.45 MB/s｜CPU 206.5 s｜TCP 连着
+[01:02:27]   PortsMaster/PortMaster-New 收包中 12.42 GB｜1345 s｜9.46 MB/s｜CPU 211.0 s｜TCP 连着
+[01:02:57]   PortsMaster/PortMaster-New 收包中 12.43 GB｜1375 s｜9.26 MB/s｜CPU 211.2 s｜TCP 连着
+[01:03:27]   PortsMaster/PortMaster-New 收包中 12.43 GB｜1405 s｜9.06 MB/s｜CPU 211.2 s｜TCP 连着
+[01:03:57]   PortsMaster/PortMaster-New 收包中 12.50 GB｜1435 s｜8.92 MB/s｜CPU 212.2 s｜TCP 连着
+[01:04:27]   PortsMaster/PortMaster-New 收包中 12.69 GB｜1465 s｜8.87 MB/s｜CPU 215.7 s｜TCP 连着
+[01:04:57]   PortsMaster/PortMaster-New 收包中 13.08 GB｜1495 s｜8.95 MB/s｜CPU 220.9 s｜TCP 连着
+[01:05:28]   PortsMaster/PortMaster-New 收包中 13.35 GB｜1526 s｜8.96 MB/s｜CPU 226.6 s｜TCP 连着
+[01:05:58]   PortsMaster/PortMaster-New 收包中 13.78 GB｜1557 s｜9.07 MB/s｜CPU 233.6 s｜TCP 连着
+[01:06:35]   PortsMaster/PortMaster-New 收包中 14.10 GB｜1593 s｜9.06 MB/s｜CPU 241.9 s｜TCP 连着
+[01:07:05]   PortsMaster/PortMaster-New 收包中 14.41 GB｜1623 s｜9.09 MB/s｜CPU 247.2 s｜TCP 连着
+[01:07:35]   PortsMaster/PortMaster-New 收包中 14.73 GB｜1654 s｜9.12 MB/s｜CPU 256.7 s｜TCP 连着
+[01:08:05]   PortsMaster/PortMaster-New 收包中 15.16 GB｜1684 s｜9.22 MB/s｜CPU 263.7 s｜TCP 连着
+[01:08:36]   PortsMaster/PortMaster-New 收包中 15.43 GB｜1714 s｜9.22 MB/s｜CPU 268.8 s｜TCP 连着
+[01:09:06]   PortsMaster/PortMaster-New 收包中 15.81 GB｜1744 s｜9.28 MB/s｜CPU 275.3 s｜TCP 连着
+[01:09:36]   PortsMaster/PortMaster-New 收包中 16.12 GB｜1775 s｜9.30 MB/s｜CPU 280.1 s｜TCP 连着
+[01:10:06]   PortsMaster/PortMaster-New 收包中 16.45 GB｜1805 s｜9.33 MB/s｜CPU 285.8 s｜TCP 连着
+[01:10:37]   PortsMaster/PortMaster-New 收包中 16.45 GB｜1835 s｜9.18 MB/s｜CPU 285.8 s｜TCP 连着
+[01:11:07]   PortsMaster/PortMaster-New 收包中 16.45 GB｜1865 s｜9.03 MB/s｜CPU 285.8 s｜TCP 连着
+[01:11:37]   PortsMaster/PortMaster-New 收包中 16.45 GB｜1895 s｜8.89 MB/s｜CPU 285.8 s｜TCP 连着
+[01:12:07]   PortsMaster/PortMaster-New 收包中 16.45 GB｜1925 s｜8.75 MB/s｜CPU 285.8 s｜TCP 连着
+[01:12:37]   PortsMaster/PortMaster-New 收包中 16.45 GB｜1955 s｜8.62 MB/s｜CPU 285.8 s｜TCP 连着
+[01:13:07]   PortsMaster/PortMaster-New 收包中 16.45 GB｜1985 s｜8.49 MB/s｜CPU 285.8 s｜TCP 连着
+[01:13:37]   PortsMaster/PortMaster-New 收包中 16.45 GB｜2015 s｜8.36 MB/s｜CPU 285.8 s｜TCP 连着
+[01:14:07]   PortsMaster/PortMaster-New 收包中 16.45 GB｜2045 s｜8.24 MB/s｜CPU 285.8 s｜TCP 连着
+[01:14:37]   PortsMaster/PortMaster-New 收包中 16.45 GB｜2075 s｜8.12 MB/s｜CPU 285.8 s｜TCP 连着
+[01:15:21]   PortsMaster/PortMaster-New 收包中 16.45 GB｜2119 s｜体积/CPU/TCP 全没动（1）
+[01:15:51]   PortsMaster/PortMaster-New 收包中 0.00 GB｜2149 s｜0.00 MB/s｜CPU -1.0 s｜无连接
+[01:15:51]   PortsMaster/PortMaster-New 等第一个字节等了 36 分钟（上限 20 分钟）还没来，杀掉判失败——这种是链路或对端的问题，不是本地卡死
+[01:15:51]   PortsMaster/PortMaster-New clone 失败 rc=-9：教程\06-资讯监控\成品移植游戏库\掌机端口包\PortsMaster__PortMaster-New'...
+error: RPC failed; curl 56 OpenSSL SSL_read: SSL_ERROR_SYSCALL, errno 0
+error: 11050 bytes of body are still expected
+fetch-pack: unexpected disconnect while reading sideband packet
+fatal: early EOF
+fatal: fetch-pack: invalid index-pack output
+[01:15:51] 完成：成功 0 / 失败 1｜盘上目录 F:\开源掌机教程\06-资讯监控\成品移植游戏库\掌机端口包

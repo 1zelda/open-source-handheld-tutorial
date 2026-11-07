@@ -1,0 +1,25 @@
+====================================================================================================
+【安卓掌机大全对比表】
+====================================================================================================
+
+                  型号         CPU 核心/线程          GPU              内存        存储                    屏幕       电池    重量            系统              特色      价格(参考)
+     AYANEO Pocket S 骁龙 G3x Gen2    8C   Adreno 740 12-16GB LPDDR5X 128-512GB 6" 1440P AMOLED 144Hz ~6000mAh ~350g       Android     安卓掌机天花板/毕业机       3999起
+       AYANEO S2 Pro 骁龙 G3x Gen2    8C   Adreno 740         12-16GB 256-512GB       6" 1440P AMOLED 10000mAh ~380g       Android     1万毫安时电池/堆料王       3999起
+          AYANEO Fit   骁龙 8 Gen3    8C   Adreno 750          8-12GB 128-256GB            5.5" 1080P ~5000mAh ~280g       Android     1699起/性价比安卓       1699起
+        奥丁2 (Odin 2)   骁龙 8 Gen2    8C   Adreno 740          8-16GB 128-512GB              6" 1080P ~8000mAh ~420g       Android 首款骁龙8Gen2掌机/毕业机   1999-2999
+            奥丁2 Mini   骁龙 8 Gen2    8C   Adreno 740          8-12GB 128-256GB              5" 1080P ~5000mAh ~300g       Android           小屏便携版       1799起
+    Retroid Pocket 5      骁龙 865    8C   Adreno 650             8GB     128GB            5.5" 1080P ~5000mAh ~280g       Android       经典设计/适中性能   1399-1599
+Retroid Pocket 4 Pro     联发科 G99    8C Mali-G57 MC2             8GB     128GB             4.7" 750P ~5000mAh ~260g       Android       小屏入门/复古游戏    999-1199
+   Retroid Pocket 2S     联发科 G99    8C     Mali-G57             4GB      64GB             3.5" 640P ~4000mAh ~200g       Android           超低价入门     599-799
+        RG556 (安伯尼克)    全志 A133P    4C     Mali-G31             2GB      32GB        4.96" 720P IPS ~4000mAh ~200g Android/Linux        399起/超低价     399-499
+              RG405M     虎贲 T618    8C     Mali-G52     4GB LPDDR4X     128GB           4" 640P IPS ~4500mAh ~260g       Android      899起/复古模拟器     899-999
+              RG405V     虎贲 T618    8C     Mali-G52     4GB LPDDR4X     128GB           4" 640P IPS ~4500mAh ~280g       Android         竖版设计/复古        899起
+            RG35XX H     全志 H700    4C     Mali-G31             1GB      64GB             3.5" 640P ~2600mAh ~180g         Linux       超低价复古/仅2D     299-399
+         RG35XX Plus     全志 H700    4C     Mali-G31             1GB      64GB             3.5" 640P ~2600mAh ~180g         Linux        经典竖版/仅2D     299-399
+    Trimui Smart Pro    全志 A133P    4C     Mali-G31             2GB      32GB        4.96" 720P IPS ~4000mAh ~200g Linux/Android         399起/入门     399-499
+        Trimui Brick    全志 A133P    4C     Mali-G31             1GB      32GB             3.2" 480P ~2000mAh ~150g         Linux        199起/超迷你     199-249
+     Miyoo Mini Plus      全志 V3s    1C     Mali-400           128MB      32GB             3.5" 640P ~1900mAh ~160g         Linux    超迷你/仅8-16bit     199-259
+    Anbernic RG Cube     联发科 G99    8C     Mali-G57             8GB     128GB            3.95" 720P ~5200mAh ~280g       Android         方屏设计/复古    899-1099
+            ABXY 云掌机     骁龙 720G    8C   Adreno 618             4GB      64GB              7" 1080P      大电池 ~430g       Android        云游戏/串流专用        899起
+              罗技G云掌机     骁龙 720G    8C   Adreno 618             4GB      64GB              7" 1080P      大电池 ~460g       Android     云游戏/串流/大厂做工 600-800(二手)
+

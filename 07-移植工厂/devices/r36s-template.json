@@ -1,0 +1,10 @@
+{
+  "id": "r36s-template",
+  "name": "R36S（Linux 掌机模板）",
+  "family": "linux-handheld",
+  "os": "linux",
+  "arch": "aarch64",
+  "capabilities": ["portmaster", "sdcard"],
+  "verified": false,
+  "notes": "按实际固件登记；真机型号、固件版本与可用库仍需逐台确认。"
+}

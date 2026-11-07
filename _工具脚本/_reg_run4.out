@@ -1,0 +1,23 @@
+索引 recompiled-games.json：331 条 -> 320 个仓库，3 条不是 github 仓库页
+  跳过（非仓库页）：Spyro the Dragon <- https://openpete.com/
+  跳过（非仓库页）：Resident Evil Outbreak (File #1 and #2) <- https://outbreakweb.com/
+  跳过（非仓库页）：Sonic Dream Team <- https://gitlab.com/adokova1111/project-dream-release
+  元数据已探 20 个，落盘 仓库元数据.tsv
+  元数据已探 40 个，落盘 仓库元数据.tsv
+  元数据已探 60 个，落盘 仓库元数据.tsv
+  元数据已探 80 个，落盘 仓库元数据.tsv
+  元数据已探 100 个，落盘 仓库元数据.tsv
+  元数据已探 120 个，落盘 仓库元数据.tsv
+  元数据已探 140 个，落盘 仓库元数据.tsv
+  元数据已探 160 个，落盘 仓库元数据.tsv
+  元数据已探 180 个，落盘 仓库元数据.tsv
+  元数据已探 200 个，落盘 仓库元数据.tsv
+  元数据已探 220 个，落盘 仓库元数据.tsv
+  元数据已探 240 个，落盘 仓库元数据.tsv
+  元数据已探 260 个，落盘 仓库元数据.tsv
+  元数据已探 280 个，落盘 仓库元数据.tsv
+登记表：F:\开源掌机教程\06-资讯监控\成品移植游戏库\仓库登记表.tsv
+  总 505 行｜启用 505｜停用（已在别的档）0
+  档位：{'成品移植体': 424, '移植工具链': 27, '目录/商店': 15, '掌机可玩': 36, 'Switch2 移植体': 3}
+  策略：{'full': 492, 'meta': 9, 'blobless': 4}
+  启用仓库 .git 合计 67.35 GB（其中 policy=full 的部分才算要连历史下）

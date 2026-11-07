@@ -1,0 +1,19 @@
+# ECWolf 默认键位：方向键移动/转身、Ctrl 开火、空格 开门/使用、
+# Alt 横移、Shift 跑、1~4 换武器、Tab 地图。左摇杆推成方向键。
+back = esc
+start = enter
+a = ctrl
+b = space
+x = shift
+y = alt
+l1 = 1
+r1 = tab
+up = up
+down = down
+left = left
+right = right
+left_analog_up = up
+left_analog_down = down
+left_analog_left = left
+left_analog_right = right
+deadzone_triggers = 3000

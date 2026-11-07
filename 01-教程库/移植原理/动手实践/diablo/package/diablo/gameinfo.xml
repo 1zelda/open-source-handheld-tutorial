@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<gameList>
+	<game>
+		<path>./Diablo.sh</path>
+		<name>Diablo</name>
+		<desc>1996 年的动作 RPG 鼻祖。DevilutionX 引擎，玩家自备 DIABDAT.MPQ 或 spawn.mpq。</desc>
+		<image>./screenshot.png</image>
+		<genre>RPG</genre>
+		<developer>Blizzard North</developer>
+		<publisher>Blizzard Entertainment</publisher>
+		<releasedate>19970101T000000</releasedate>
+	</game>
+</gameList>

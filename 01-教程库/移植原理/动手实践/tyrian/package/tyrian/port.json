@@ -1,0 +1,29 @@
+{
+    "version": 4,
+    "name": "Tyrian.zip",
+    "items": [
+        "Tyrian.sh",
+        "tyrian"
+    ],
+    "items_opt": null,
+    "attr": {
+        "title": "Tyrian",
+        "desc": "OpenTyrian 是 DOS 射击游戏 Tyrian 的开源重实现。本教程示例从上游源码交叉编译而成，Tyrian 2.1 免费数据已随包提供。",
+        "inst": "Ready to run. Tyrian 2.1 freeware data is included.",
+        "genres": [
+            "shooter"
+        ],
+        "porter": [
+            "教程示例"
+        ],
+        "image": {},
+        "rtr": true,
+        "exp": false,
+        "runtime": [],
+        "min_glibc": "2.29",
+        "reqs": [],
+        "arch": [
+            "aarch64"
+        ]
+    }
+}

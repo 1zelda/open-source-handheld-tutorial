@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<gameList>
+	<game>
+		<path>./OpenTTD.sh</path>
+		<name>OpenTTD</name>
+		<desc>开源重写的《运输大亨豪华版》（Transport Tycoon Deluxe）：修铁路、开线路、赚运货钱。自带 OpenGFX/OpenSFX/OpenMSX 自由素材，开箱即玩。</desc>
+		<image>./screenshot.png</image>
+		<genre>Simulation</genre>
+		<developer>OpenTTD 团队（原版 Chris Sawyer）</developer>
+		<publisher>OpenTTD</publisher>
+		<releasedate>20040301T000000</releasedate>
+	</game>
+</gameList>

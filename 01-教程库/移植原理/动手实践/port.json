@@ -1,0 +1,30 @@
+{
+  "version": 4,
+  "name": "fbcheck.zip",
+  "items": [
+    "fbcheck.sh",
+    "fbcheck"
+  ],
+  "items_opt": [],
+  "attr": {
+    "title": "Framebuffer Check",
+    "desc": "探测掌机的 /dev/fb0 分辨率、显存大小和 /dev/input 手柄节点，可以顺手涂一屏颜色验证画面通路。纯 C，静态链接，不依赖任何库。",
+    "inst": "把 fbcheck.zip 丢进 SD 卡的 PortMaster 目录，开机进 Ports 应用里选 Download Port > Tools 或者直接解压到 /roms/ports/fbcheck/，然后在 EmulationStation 的 Ports 列表里启动。",
+    "genres": [
+      "tool"
+    ],
+    "porter": [
+      "1zelda"
+    ],
+    "image": {},
+    "rtr": true,
+    "exp": false,
+    "runtime": [],
+    "min_glibc": "",
+    "reqs": [],
+    "arch": [
+      "aarch64",
+      "armhf"
+    ]
+  }
+}

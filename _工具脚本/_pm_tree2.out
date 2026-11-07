@@ -1,0 +1,29 @@
+[23:53:31] == 端口包抓取开始（全部）==
+[23:53:33]   christianhaitian/PortMaster 已相符（HEAD 4ee5bcc5bf）
+[23:53:34]   PortsMaster-MV/PortMaster-MV-New 开始浅克隆（预算 5.0 GB，代理 http://127.0.0.1:7891 可用）
+[23:54:04]   PortsMaster-MV/PortMaster-MV-New 收包中（0.00 GB，30 s）
+[23:54:04]   PortsMaster-MV/PortMaster-MV-New 收包中 0.00 GB｜30 s｜0.00 MB/s
+[23:57:04]   PortsMaster-MV/PortMaster-MV-New 检出中（0.01 GB，210 s）
+[23:57:05]   PortsMaster-MV/PortMaster-MV-New 检出中 0.01 GB｜210 s｜0.04 MB/s
+[23:57:35]   PortsMaster-MV/PortMaster-MV-New 检出中 0.29 GB｜241 s｜1.24 MB/s
+[23:58:17]   PortsMaster-MV/PortMaster-MV-New 检出中 0.48 GB｜283 s｜1.74 MB/s
+[23:58:48]   PortsMaster-MV/PortMaster-MV-New 检出中 0.53 GB｜313 s｜1.72 MB/s
+[23:59:18]   PortsMaster-MV/PortMaster-MV-New 检出中 0.68 GB｜344 s｜2.03 MB/s
+[00:00:04]   PortsMaster-MV/PortMaster-MV-New 检出中 0.86 GB｜389 s｜2.26 MB/s
+[00:00:34]   PortsMaster-MV/PortMaster-MV-New 检出中 1.09 GB｜420 s｜2.67 MB/s
+[00:01:06]   PortsMaster-MV/PortMaster-MV-New 检出中 1.19 GB｜452 s｜2.70 MB/s
+[00:01:44]   PortsMaster-MV/PortMaster-MV-New 检出中 1.41 GB｜490 s｜2.94 MB/s
+[00:02:21]   PortsMaster-MV/PortMaster-MV-New 检出中 1.51 GB｜527 s｜2.94 MB/s
+[00:02:53]   PortsMaster-MV/PortMaster-MV-New 检出中 1.64 GB｜558 s｜3.00 MB/s
+[00:03:24]   PortsMaster-MV/PortMaster-MV-New 检出中 1.76 GB｜590 s｜3.06 MB/s
+[00:03:56]   PortsMaster-MV/PortMaster-MV-New 检出中 1.89 GB｜622 s｜3.11 MB/s
+[00:05:03]   PortsMaster-MV/PortMaster-MV-New 检出中 2.07 GB｜689 s｜3.08 MB/s
+[00:09:48]   PortsMaster-MV/PortMaster-MV-New 检出中 2.69 GB｜974 s｜2.82 MB/s
+[00:12:27]   PortsMaster-MV/PortMaster-MV-New 检出中 3.44 GB｜1133 s｜3.11 MB/s
+[00:13:17]   PortsMaster-MV/PortMaster-MV-New 完成：3.44 GB / 21347 文件｜1133 s｜最大 ports/chaoresortisland/chaoresortisland/chaoresortisland.por 90.5 MB
+[00:13:19]   PortsMaster/PortMaster-New 开始浅克隆（预算 22.0 GB，代理 http://127.0.0.1:7891 可用）
+[00:13:49]   PortsMaster/PortMaster-New 收包中（0.00 GB，30 s）
+[00:13:49]   PortsMaster/PortMaster-New 收包中 0.00 GB｜30 s｜0.00 MB/s
+[00:16:49]   PortsMaster/PortMaster-New 卡死：连续 6 次采样都是 0.00 GB / 收包中，杀掉重来
+[00:16:49]   PortsMaster/PortMaster-New clone 失败 rc=-9：Cloning into 'F:\开源掌机教程\06-资讯监控\成品移植游戏库\掌机端口包\PortsMaster__PortMaster-New'...
+[00:16:49] 完成：成功 2 / 失败 1｜盘上目录 F:\开源掌机教程\06-资讯监控\成品移植游戏库\掌机端口包

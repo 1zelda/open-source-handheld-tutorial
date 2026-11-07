@@ -1,0 +1,131 @@
+[tree-loop] 第 1 轮开始 06:53:58｜PortsMaster/PortMaster-New
+[06:53:59] == 端口包抓取开始（PortsMaster/PortMaster-New）==
+[06:54:12]   PortsMaster/PortMaster-New HEAD 相符但工作树缺 150423 个条目，分轮补齐
+[06:54:14]   PortsMaster/PortMaster-New 第 1 批（12 个目录堆，还缺 150423 个文件）：., .github, .github/ISSUE_TEMPLATE, .github/workflows …
+[06:54:44]   PortsMaster/PortMaster-New 检出中（0.00 GB，30 s）
+[06:54:44]   PortsMaster/PortMaster-New 检出中 本轮新增 0.00 GB｜30 s｜0.00 MB/s｜CPU 1.2 s｜无连接
+[06:55:14]   PortsMaster/PortMaster-New 检出中 本轮新增 0.01 GB｜60 s｜0.14 MB/s｜CPU 1.6 s｜无连接
+[06:55:44]   PortsMaster/PortMaster-New 收包中（0.01 GB，90 s）
+[06:55:44]   PortsMaster/PortMaster-New 收包中 本轮新增 0.01 GB｜90 s｜体积和 CPU 全没动（1 次 / 30 s）｜TCP 已断
+[06:55:44]   PortsMaster/PortMaster-New 第 1 批中断 rc=128：dd62b61fe)
+warning: unable to unlink 'ports/6feetunder/6feetunder/lib': Directory not empty
+fatal: cannot create directory at 'ports/6feetunder/6feetunder/lib': Directory not empty
+[06:55:44]   PortsMaster/PortMaster-New 这批没有进展（还缺 150423 个，对象库只进 8.43 MB，连续 1 次）
+[06:55:45]   PortsMaster/PortMaster-New 第 2 批（12 个目录堆，还缺 150423 个文件）：., .github, .github/ISSUE_TEMPLATE, .github/workflows …
+[06:56:34]   PortsMaster/PortMaster-New 检出中（0.24 GB，49 s）
+[06:56:34]   PortsMaster/PortMaster-New 检出中 本轮新增 0.24 GB｜49 s｜4.95 MB/s｜CPU 6.0 s｜无连接
+[06:57:04]   PortsMaster/PortMaster-New 检出中 本轮新增 0.14 GB｜79 s｜1.85 MB/s｜CPU 1.7 s｜无连接
+[06:57:34]   PortsMaster/PortMaster-New 收包中（0.14 GB，109 s）
+[06:57:34]   PortsMaster/PortMaster-New 收包中 本轮新增 0.14 GB｜109 s｜1.34 MB/s｜CPU -1.0 s｜无连接
+[06:57:34]   PortsMaster/PortMaster-New 第 2 批中断 rc=128：fd868da50e6b216f1d2918e4c0eccad21)
+warning: unable to unlink 'ports/8bitbuccaneer': Directory not empty
+fatal: cannot create directory at 'ports/8bitbuccaneer': Directory not empty
+[06:57:34]   PortsMaster/PortMaster-New 第 2 批：半截但对象库在涨（还缺 150423 -> 150423）｜本轮对象库进 145.91 MB｜收包中 到 0.47 GB
+[06:57:35]   PortsMaster/PortMaster-New 第 3 批（12 个目录堆，还缺 150423 个文件）：., .github, .github/ISSUE_TEMPLATE, .github/workflows …
+[06:58:05]   PortsMaster/PortMaster-New 检出中（0.01 GB，30 s）
+[06:58:05]   PortsMaster/PortMaster-New 检出中 本轮新增 0.01 GB｜30 s｜0.35 MB/s｜CPU 1.9 s｜TCP 连着
+[06:58:35]   PortsMaster/PortMaster-New 收包中（0.01 GB，60 s）
+[06:58:35]   PortsMaster/PortMaster-New 收包中 本轮新增 0.01 GB｜60 s｜0.18 MB/s｜CPU -1.0 s｜无连接
+[06:58:35]   PortsMaster/PortMaster-New 第 3 批中断 rc=128：g/a7xpg (432676efa290cbac12b70f1d8e2b28d5e5387e69)
+warning: unable to unlink 'ports/a7xpg': Directory not empty
+fatal: cannot create directory at 'ports/a7xpg': Directory not empty
+[06:58:35]   PortsMaster/PortMaster-New 这批没有进展（还缺 150423 个，对象库只进 10.69 MB，连续 1 次）
+[06:58:36]   PortsMaster/PortMaster-New 第 4 批（12 个目录堆，还缺 150423 个文件）：., .github, .github/ISSUE_TEMPLATE, .github/workflows …
+[06:59:21]   PortsMaster/PortMaster-New 检出中（0.25 GB，45 s）
+[06:59:21]   PortsMaster/PortMaster-New 检出中 本轮新增 0.25 GB｜45 s｜5.68 MB/s｜CPU 6.5 s｜无连接
+[06:59:51]   PortsMaster/PortMaster-New 检出中 本轮新增 0.02 GB｜75 s｜0.23 MB/s｜CPU 2.1 s｜无连接
+[07:00:21]   PortsMaster/PortMaster-New 检出中 本轮新增 0.27 GB｜105 s｜2.61 MB/s｜CPU 2.5 s｜无连接
+[07:00:51]   PortsMaster/PortMaster-New 收包中（0.02 GB，135 s）
+[07:00:51]   PortsMaster/PortMaster-New 收包中 本轮新增 0.02 GB｜135 s｜0.13 MB/s｜CPU -1.0 s｜无连接
+[07:00:52]   PortsMaster/PortMaster-New 第 4 批中断 rc=128：d3859793618152ea559a168bbcbb5e2)
+warning: unable to unlink 'ports/abbayedesmorts': Directory not empty
+fatal: cannot create directory at 'ports/abbayedesmorts': Directory not empty
+[07:00:52]   PortsMaster/PortMaster-New 这批没有进展（还缺 150423 个，对象库只进 17.97 MB，连续 2 次）
+[07:00:53]   PortsMaster/PortMaster-New 第 5 批（12 个目录堆，还缺 150423 个文件）：., .github, .github/ISSUE_TEMPLATE, .github/workflows …
+[07:01:23]   PortsMaster/PortMaster-New 检出中（0.00 GB，30 s）
+[07:01:23]   PortsMaster/PortMaster-New 检出中 本轮新增 0.00 GB｜30 s｜0.00 MB/s｜CPU 2.1 s｜TCP 连着
+[07:01:53]   PortsMaster/PortMaster-New 检出中 本轮新增 0.01 GB｜60 s｜0.11 MB/s｜CPU 2.3 s｜无连接
+[07:02:23]   PortsMaster/PortMaster-New 检出中 本轮新增 0.01 GB｜90 s｜0.10 MB/s｜CPU 2.6 s｜TCP 连着
+[07:02:53]   PortsMaster/PortMaster-New 检出中 本轮新增 0.01 GB｜120 s｜0.09 MB/s｜CPU 2.9 s｜TCP 连着
+[07:03:23]   PortsMaster/PortMaster-New 收包中（0.01 GB，150 s）
+[07:03:23]   PortsMaster/PortMaster-New 收包中 本轮新增 0.01 GB｜150 s｜0.07 MB/s｜CPU -1.0 s｜无连接
+[07:03:24]   PortsMaster/PortMaster-New 第 5 批中断 rc=128：6a123e3f1132cc1b727ee2abe28086b)
+warning: unable to unlink 'ports/abes_adventure': Directory not empty
+fatal: cannot create directory at 'ports/abes_adventure': Directory not empty
+[07:03:24]   PortsMaster/PortMaster-New 这批没有进展（还缺 150423 个，对象库只进 10.54 MB，连续 3 次）
+[07:03:24]   PortsMaster/PortMaster-New 连 3 批零进展，本轮收手——链路或对端在拒，不是本地能修的
+[07:03:24]   PortsMaster/PortMaster-New 补跑到上限仍缺 150423 个文件，本轮判失败，不动台账
+[07:03:24] 完成：成功 0 / 失败 1｜盘上目录 F:\开源掌机教程\06-资讯监控\成品移植游戏库\掌机端口包
+[tree-loop] 第 1 轮退出码 1（0=工作树落满或已相符）07:03:24
+[tree-loop] 第 2 轮开始 07:04:24｜PortsMaster/PortMaster-New
+[07:04:25] == 端口包抓取开始（PortsMaster/PortMaster-New）==
+[07:04:27]   PortsMaster/PortMaster-New HEAD 相符但工作树缺 150423 个条目，分轮补齐
+[07:04:27]   PortsMaster/PortMaster-New 第 1 批（这批 300 个文件，还缺 150423 个）：.github/FUNDING.yml, .github/FUNDING.yml, .github/ISSUE_TEMPLATE/ …
+[07:04:57]   PortsMaster/PortMaster-New 检出中（0.00 GB，30 s）
+[07:04:58]   PortsMaster/PortMaster-New 检出中 本轮新增 0.00 GB｜30 s｜0.06 MB/s｜CPU 2.5 s｜TCP 连着
+[07:05:28]   PortsMaster/PortMaster-New 收包中（0.00 GB，60 s）
+[07:05:28]   PortsMaster/PortMaster-New 收包中 本轮新增 0.00 GB｜60 s｜0.07 MB/s｜CPU -1.0 s｜无连接
+[07:05:28]   PortsMaster/PortMaster-New 第 1 批中断 rc=128：97be325bc4cce7a2045e4e2cd137b5d9c7e94)
+warning: unable to unlink 'ports/abombniball': Directory not empty
+fatal: cannot create directory at 'ports/abombniball': Directory not empty
+[07:05:28]   PortsMaster/PortMaster-New 这批没有进展（还缺 150423 个，对象库只进 4.31 MB，连续 1 次）
+[07:05:28]   PortsMaster/PortMaster-New 第 2 批（这批 300 个文件，还缺 150423 个）：.github/FUNDING.yml, .github/FUNDING.yml, .github/ISSUE_TEMPLATE/ …
+[07:05:58]   PortsMaster/PortMaster-New 检出中（0.26 GB，30 s）
+[07:05:58]   PortsMaster/PortMaster-New 检出中 本轮新增 0.26 GB｜30 s｜8.86 MB/s｜CPU 4.0 s｜无连接
+[07:06:29]   PortsMaster/PortMaster-New 检出中 本轮新增 0.27 GB｜60 s｜4.57 MB/s｜CPU 2.6 s｜无连接
+[07:06:59]   PortsMaster/PortMaster-New 检出中 本轮新增 0.01 GB｜90 s｜0.09 MB/s｜CPU 2.9 s｜无连接
+[07:07:29]   PortsMaster/PortMaster-New 检出中 本轮新增 0.27 GB｜120 s｜2.29 MB/s｜CPU 3.0 s｜无连接
+[07:07:59]   PortsMaster/PortMaster-New 检出中 本轮新增 0.27 GB｜150 s｜1.83 MB/s｜CPU 3.3 s｜无连接
+[07:08:31]   PortsMaster/PortMaster-New 检出中 本轮新增 0.01 GB｜183 s｜0.05 MB/s｜CPU 3.3 s｜无连接
+[07:09:01]   PortsMaster/PortMaster-New 检出中 本轮新增 0.01 GB｜213 s｜0.04 MB/s｜CPU 3.8 s｜TCP 连着
+[07:09:31]   PortsMaster/PortMaster-New 收包中（0.01 GB，243 s）
+[07:09:31]   PortsMaster/PortMaster-New 收包中 本轮新增 0.01 GB｜243 s｜0.04 MB/s｜CPU -1.0 s｜无连接
+[07:09:32]   PortsMaster/PortMaster-New 第 2 批中断 rc=128：2f2a4b44b0930565078eac35eda7028)
+warning: unable to unlink 'ports/absolutereflex': Directory not empty
+fatal: cannot create directory at 'ports/absolutereflex': Directory not empty
+[07:09:32]   PortsMaster/PortMaster-New 这批没有进展（还缺 150423 个，对象库只进 9.01 MB，连续 2 次）
+[07:09:32]   PortsMaster/PortMaster-New 第 3 批（这批 300 个文件，还缺 150423 个）：.github/FUNDING.yml, .github/FUNDING.yml, .github/ISSUE_TEMPLATE/ …
+[07:10:02]   PortsMaster/PortMaster-New 检出中（0.00 GB，30 s）
+[07:10:02]   PortsMaster/PortMaster-New 检出中 本轮新增 0.00 GB｜30 s｜0.03 MB/s｜CPU 2.3 s｜TCP 连着
+[07:10:32]   PortsMaster/PortMaster-New 收包中（0.00 GB，60 s）
+[07:10:32]   PortsMaster/PortMaster-New 收包中 本轮新增 0.00 GB｜60 s｜0.04 MB/s｜CPU -1.0 s｜无连接
+[07:10:32]   PortsMaster/PortMaster-New 第 3 批中断 rc=128：://github.com/PortsMaster/PortMaster-New/': TLS connect error: error:00000000:lib(0)::reason(0)
+fatal: could not fetch 729a3cda1900dc4211f51bb3e15dd62045a3fd5f from promisor remote
+[07:10:32]   PortsMaster/PortMaster-New 这批没有进展（还缺 150423 个，对象库只进 2.66 MB，连续 3 次）
+[07:10:32]   PortsMaster/PortMaster-New 连 3 批零进展，本轮收手——链路或对端在拒，不是本地能修的
+[07:10:32]   PortsMaster/PortMaster-New 补跑到上限仍缺 150423 个文件，本轮判失败，不动台账
+[07:10:32] 完成：成功 0 / 失败 1｜盘上目录 F:\开源掌机教程\06-资讯监控\成品移植游戏库\掌机端口包
+[tree-loop] 第 2 轮退出码 1（0=工作树落满或已相符）07:10:32
+[tree-loop] 第 3 轮开始 07:11:33｜PortsMaster/PortMaster-New
+[07:11:34] == 端口包抓取开始（PortsMaster/PortMaster-New）==
+[07:11:36]   PortsMaster/PortMaster-New HEAD 相符但工作树缺 150423 个条目，分轮补齐
+[07:11:36]   PortsMaster/PortMaster-New 第 1 批（这批 300 个文件，还缺 150423 个）：.github/FUNDING.yml, .github/FUNDING.yml, .github/ISSUE_TEMPLATE/ …
+[tree-loop] 第 3 轮退出码 127（0=工作树落满或已相符）07:11:48
+[tree-loop] 第 4 轮开始 07:12:48｜PortsMaster/PortMaster-New
+[07:12:50] == 端口包抓取开始（PortsMaster/PortMaster-New）==
+[07:12:51]   PortsMaster/PortMaster-New HEAD 相符但工作树缺 150417 个条目，分轮补齐
+[07:12:52]   PortsMaster/PortMaster-New 第 1 批（这批 300 个文件，还缺 150417 个）：.github/ISSUE_TEMPLATE/, .github/ISSUE_TEMPLATE/01-portmaster-gui.yml, .github/ISSUE_TEMPLATE/02-port-issue.yml …
+[07:13:22]   PortsMaster/PortMaster-New 收包中（0.00 GB，30 s）
+[07:13:22]   PortsMaster/PortMaster-New 收包中 本轮新增 0.00 GB｜30 s｜0.01 MB/s｜CPU -1.0 s｜无连接
+[07:13:22]   PortsMaster/PortMaster-New 第 1 批中断 rc=128：5e2f0d84576251a02f0)
+warning: unable to unlink 'ports/abuse/Abuse/gamedata': Directory not empty
+fatal: cannot create directory at 'ports/abuse/Abuse/gamedata': Directory not empty
+[07:13:22]   PortsMaster/PortMaster-New 这批没有进展（还缺 150417 个，对象库只进 0.43 MB，连续 1 次）
+[07:13:23]   PortsMaster/PortMaster-New 第 2 批（这批 300 个文件，还缺 150417 个）：.github/ISSUE_TEMPLATE/, .github/ISSUE_TEMPLATE/01-portmaster-gui.yml, .github/ISSUE_TEMPLATE/02-port-issue.yml …
+[07:14:01]   PortsMaster/PortMaster-New 检出中（0.26 GB，38 s）
+[07:14:01]   PortsMaster/PortMaster-New 检出中 本轮新增 0.26 GB｜38 s｜7.01 MB/s｜CPU 4.6 s｜无连接
+[07:14:31]   PortsMaster/PortMaster-New 检出中 本轮新增 0.00 GB｜69 s｜0.04 MB/s｜CPU 2.9 s｜TCP 连着
+[07:15:01]   PortsMaster/PortMaster-New 检出中 本轮新增 0.00 GB｜99 s｜0.03 MB/s｜CPU 3.1 s｜TCP 连着
+[07:15:31]   PortsMaster/PortMaster-New 检出中 本轮新增 0.00 GB｜129 s｜0.03 MB/s｜CPU 3.3 s｜无连接
+[07:16:01]   PortsMaster/PortMaster-New 检出中 本轮新增 0.00 GB｜159 s｜0.02 MB/s｜CPU 3.4 s｜无连接
+[07:16:31]   PortsMaster/PortMaster-New 收包中（0.00 GB，189 s）
+[07:16:31]   PortsMaster/PortMaster-New 收包中 本轮新增 0.00 GB｜189 s｜0.02 MB/s｜CPU -1.0 s｜无连接
+[07:16:32]   PortsMaster/PortMaster-New 第 2 批中断 rc=128：arning: unable to unlink 'ports/abuse/Abuse/gamedata/addon/leon': Directory not empty
+fatal: cannot create directory at 'ports/abuse/Abuse/gamedata/addon/leon': Directory not empty
+[07:16:32]   PortsMaster/PortMaster-New 这批没有进展（还缺 150417 个，对象库只进 3.46 MB，连续 2 次）
+[07:16:32]   PortsMaster/PortMaster-New 第 3 批（这批 300 个文件，还缺 150417 个）：.github/ISSUE_TEMPLATE/, .github/ISSUE_TEMPLATE/01-portmaster-gui.yml, .github/ISSUE_TEMPLATE/02-port-issue.yml …
+[07:17:02]   PortsMaster/PortMaster-New 检出中（0.00 GB，30 s）
+[07:17:02]   PortsMaster/PortMaster-New 检出中 本轮新增 0.00 GB｜30 s｜0.03 MB/s｜CPU 2.5 s｜无连接
+[07:17:32]   PortsMaster/PortMaster-New 检出中 本轮新增 0.00 GB｜60 s｜0.01 MB/s｜CPU 2.7 s｜TCP 连着
+[07:18:02]   PortsMaster/PortMaster-New 检出中 本轮新增 0.00 GB｜90 s｜0.01 MB/s｜CPU 2.7 s｜TCP 连着
+[tree-loop] 第 4 轮退出码 127（0=工作树落满或已相符）07:18:15

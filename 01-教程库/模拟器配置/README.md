@@ -1,0 +1,2 @@
+- `00-RetroArch关键设置.md` — 通用前端层设置。
+- 各核心自己的选项(`Quick Menu > Core Options`)差异很大:PS1 的 BIOS/区域、N64 的插件(anglesxl/gliden64)、PSP 的渲染分辨率,都在核心层而不是全局层。

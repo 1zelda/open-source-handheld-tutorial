@@ -1,0 +1,4 @@
+Put your original Quake II data here.
+
+Needed: baseq2/pak0.pak (plus pak1.pak / pak2.pak if your copy has them).
+拷原版 Quake II 的 baseq2/pak*.pak 到这个目录（本端口不自带任何商业游戏数据）。

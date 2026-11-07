@@ -1,0 +1,31 @@
+[06:40:29] == 端口包抓取开始（PortsMaster/PortMaster-New）==
+[06:40:38]   PortsMaster/PortMaster-New HEAD 相符但工作树缺 150423 个条目，分轮补齐
+[06:40:39]   PortsMaster/PortMaster-New 第 1 批（12 个目录堆，还缺 150423 个文件）：., .github, .github/ISSUE_TEMPLATE, .github/workflows …
+[06:41:09]   PortsMaster/PortMaster-New 收包中（0.00 GB，30 s）
+[06:41:09]   PortsMaster/PortMaster-New 收包中 本轮新增 0.00 GB｜30 s｜0.03 MB/s｜CPU -1.0 s｜无连接
+[06:41:10]   PortsMaster/PortMaster-New 第 1 批中断 rc=128：z (2036d80c0589c8e996ca179708cf16a866eef20b)
+warning: unable to unlink 'ports/2048plus': Directory not empty
+fatal: cannot create directory at 'ports/2048plus': Directory not empty
+[06:41:10]   PortsMaster/PortMaster-New 这批没有进展（还缺 150423 个，连续 1 次）
+[06:41:10]   PortsMaster/PortMaster-New 第 2 批（12 个目录堆，还缺 150423 个文件）：., .github, .github/ISSUE_TEMPLATE, .github/workflows …
+[06:41:40]   PortsMaster/PortMaster-New 收包中（0.01 GB，30 s）
+[06:41:40]   PortsMaster/PortMaster-New 收包中 本轮新增 0.01 GB｜30 s｜0.22 MB/s｜CPU -1.0 s｜无连接
+[06:41:41]   PortsMaster/PortMaster-New 第 2 批中断 rc=128：c347f17)
+warning: unable to unlink 'ports/2048plus/2048plus/gamedata': Directory not empty
+fatal: cannot create directory at 'ports/2048plus/2048plus/gamedata': Directory not empty
+[06:41:41]   PortsMaster/PortMaster-New 这批没有进展（还缺 150423 个，连续 2 次）
+[06:41:42]   PortsMaster/PortMaster-New 第 3 批（12 个目录堆，还缺 150423 个文件）：., .github, .github/ISSUE_TEMPLATE, .github/workflows …
+[06:42:13]   PortsMaster/PortMaster-New 检出中（0.07 GB，31 s）
+[06:42:13]   PortsMaster/PortMaster-New 检出中 本轮新增 0.07 GB｜31 s｜2.27 MB/s｜CPU 0.8 s｜无连接
+[06:42:43]   PortsMaster/PortMaster-New 检出中 本轮新增 0.23 GB｜61 s｜3.77 MB/s｜CPU 1.1 s｜无连接
+[06:43:13]   PortsMaster/PortMaster-New 检出中 本轮新增 0.23 GB｜91 s｜2.53 MB/s｜CPU 1.2 s｜TCP 连着
+[06:43:43]   PortsMaster/PortMaster-New 检出中 本轮新增 0.23 GB｜121 s｜1.91 MB/s｜CPU 1.4 s｜TCP 连着
+[06:44:13]   PortsMaster/PortMaster-New 收包中（0.23 GB，151 s）
+[06:44:13]   PortsMaster/PortMaster-New 收包中 本轮新增 0.23 GB｜151 s｜1.53 MB/s｜CPU -1.0 s｜无连接
+[06:44:13]   PortsMaster/PortMaster-New 第 3 批中断 rc=128：432ca17dba63eb2c220a93042f9568a15ddc156)
+warning: unable to unlink 'ports/6feetunder': Directory not empty
+fatal: cannot create directory at 'ports/6feetunder': Directory not empty
+[06:44:13]   PortsMaster/PortMaster-New 这批没有进展（还缺 150423 个，连续 3 次）
+[06:44:13]   PortsMaster/PortMaster-New 连 3 批零进展，本轮收手——链路或对端在拒，不是本地能修的
+[06:44:13]   PortsMaster/PortMaster-New 补了 8 轮仍缺 150423 个文件，本轮判失败，不动台账
+[06:44:13] 完成：成功 0 / 失败 1｜盘上目录 F:\开源掌机教程\06-资讯监控\成品移植游戏库\掌机端口包

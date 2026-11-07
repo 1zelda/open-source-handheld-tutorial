@@ -1,0 +1,29 @@
+{
+    "version": 4,
+    "name": "Quake2.zip",
+    "items": [
+        "Quake2.sh",
+        "quake2"
+    ],
+    "items_opt": null,
+    "attr": {
+        "title": "Quake II (YamagiQ2)",
+        "desc": "Yamagi Quake II（GPL-2.0 的 Quake II 引擎源码）交叉编译成 aarch64，自带 ref_gles1 / ref_gl1 / ref_soft 三个渲染器与 baseq2/game.so。游戏数据要自备：把原版 Quake II 的 baseq2/pak*.pak 放进 quake2/baseq2/。",
+        "inst": "You must add your own full game pak files (baseq2/pak0.pak, ...) to ports/quake2/baseq2/.",
+        "genres": [
+            "fps"
+        ],
+        "porter": [
+            "教程示例"
+        ],
+        "image": {},
+        "rtr": false,
+        "exp": false,
+        "runtime": [],
+        "min_glibc": "2.29",
+        "reqs": [],
+        "arch": [
+            "aarch64"
+        ]
+    }
+}

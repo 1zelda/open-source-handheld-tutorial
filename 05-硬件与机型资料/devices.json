@@ -1,0 +1,316 @@
+{
+  "_meta": {
+    "generated": "2026-10-02",
+    "source": "https://github.com/southoz/dArkOSRE-R36/wiki/Firmware-Installation + README 支持表",
+    "note": "本文件只收录 southoz/dArkOSRE-R36 wiki 承认的 R36S 家族板型:Rockchip RK3326,4 × Cortex-A35,GPU Mali-G31 MP2 @520MHz,1GB DDR3L,双 microSD 槽,3000/3200mAh 可拆电池(型号804066),这些板子配 3.5寸 IPS 640x480(至少5种面板版本)。规格来源:本地存档 上游wiki/R36S-LINKS/The-R36S.md 的 Specification 表。板型丝印在主板上,或用 dtbIdentify 工具确认。",
+    "_caution": "若原厂 BOOT 分区的 dtb 是 rk3326-evb-lp3-v12-linux.dtb,则为 EmuELEC 克隆版,ArkOS/AmberELEC/dArkOS 均不适用,需走 EmuELEC(K36)路线。",
+    "_do_not_generalize": "不要把\"RK3326 = 640x480\"当成全平台事实:同一颗 SoC 的机型面板从 320x480 一直到 1024x768 甚至 720x1280 都有(如 XiFan XF45V / R46H 是 1024x768,RGB10max 是 854x480,rf55h 是 720x1280)。逐机型像素时钟与接口见 arkos4clone_devices.json 与 屏幕真值表.md,那是直接解析镜像自带 dtb 得到的,不是抄文档。",
+    "status_legend": {
+      "completed": "dArkOS 已正式支持",
+      "beta": "Beta 测试中,可刷但可能要手动修 dtb",
+      "untested": "上游收录但无人验证",
+      "archived_ArkOS": "AeolusUX/ArkOS-R3XS 已于 2026-06 停止维护,由 dArkOS 取代"
+    },
+    "see_also": {
+      "arkos4clone_devices.json": "109 个机型条目 / 119 个 .dtb 的完整真值表(dtb + console-detect 行为参数 join)",
+      "屏幕真值表.md": "上面那份 JSON 的人类可读版,含倍率对比与不可信字段说明",
+      "panel_specs.tsv": "同一数据的表格版,方便在 Excel/筛选器里查",
+      "F:/开源掌机教程/01-教程库/机型固件/XiFan_XF45V/00-XF45V完全指南.md": "本机(XiFan XF45V)的专篇"
+    }
+  },
+  "family": "R36S (RK3326)",
+  "boards": [
+    {
+      "board_id": "R36S-V12 2023-08-18 Panel 0",
+      "type": "r36s",
+      "status": "completed",
+      "dtb_path": "dtb/r36s/R36S-V12 2023-08-18 Panel 0"
+    },
+    {
+      "board_id": "R36S-V12 2023-08-18 Panel 4",
+      "type": "r36s",
+      "status": "completed",
+      "dtb_path": "dtb/r36s/R36S-V12 2023-08-18 Panel 4"
+    },
+    {
+      "board_id": "R36S-V21 2024-12-18 2550",
+      "type": "r36s",
+      "status": "beta",
+      "dtb_path": "dtb/r36s/R36S-V21 2024-12-18"
+    },
+    {
+      "board_id": "R36S-V21 2024-12-18 2551",
+      "type": "r36s",
+      "status": "beta",
+      "dtb_path": "dtb/r36s/R36S-V21 2024-12-18"
+    },
+    {
+      "board_id": "R36S-V21 2024-12-18 2552",
+      "type": "r36s",
+      "status": "beta",
+      "dtb_path": "dtb/r36s/R36S-V21 2024-12-18"
+    },
+    {
+      "board_id": "R36S-V22 2024-12-18",
+      "type": "r36s",
+      "status": "untested",
+      "dtb_path": "dtb/r36s/R36S-V22 2024-12-18"
+    },
+    {
+      "board_id": "R36S-V30 2025-11-18 2552",
+      "type": "r36s",
+      "status": "beta",
+      "dtb_path": "见 release 说明(2026-03 版新增)"
+    },
+    {
+      "board_id": "R36S-Y02 2024-12-18",
+      "type": "r36s",
+      "status": "completed",
+      "dtb_path": "dtb/r36s/R36S-Y02 2024-12-18"
+    },
+    {
+      "board_id": "R36XX-V21 2024-12-18",
+      "type": "r36s",
+      "status": "completed",
+      "dtb_path": "dtb/r36s/(按 V21)"
+    },
+    {
+      "board_id": "HL-R36H-V20 2024-05-18",
+      "type": "r36s",
+      "status": "beta",
+      "dtb_path": "dtb/r36s/HL-R36H-V20 2024-05-18"
+    },
+    {
+      "board_id": "HL-R36H-V21 2024-11-18",
+      "type": "r36s",
+      "status": "beta",
+      "dtb_path": "dtb/r36s/(按 V21)"
+    },
+    {
+      "board_id": "R36S Plus-V20 2025-03-18",
+      "type": "r36s",
+      "status": "beta",
+      "dtb_path": "见 release;2551 批次在最新 Beta 可用,其他批次有电量上报问题"
+    },
+    {
+      "board_id": "G80C-MB V1.1-20250319 Panel 8",
+      "type": "clone",
+      "status": "untested",
+      "dtb_path": "dtb/clone/G80C-MB V1.1-20250319 Panel 8"
+    },
+    {
+      "board_id": "G80C-MB V1.1-20250319 Panel 9",
+      "type": "clone",
+      "status": "untested",
+      "dtb_path": "dtb/clone/G80C-MB V1.1-20250319 Panel 9"
+    },
+    {
+      "board_id": "G80CA-MB V1.2-20250422 Panel 8",
+      "type": "clone",
+      "status": "completed",
+      "dtb_path": "dtb/clone/G80CA-MB V1.2-20250422 Panel 8"
+    },
+    {
+      "board_id": "G80CA-MB V1.2-20250422 Panel 9",
+      "type": "clone",
+      "status": "untested",
+      "dtb_path": "dtb/clone/G80CA-MB V1.2-20250422 Panel 9"
+    },
+    {
+      "board_id": "G80CA-MB V1.2-20250423 Panel 8",
+      "type": "clone",
+      "status": "completed",
+      "dtb_path": "dtb/clone/G80CA-MB V1.2-20250423 Panel 8"
+    },
+    {
+      "board_id": "G80CA-MB V1.2-20250423 Panel 9",
+      "type": "clone",
+      "status": "untested",
+      "dtb_path": "dtb/clone/G80CA-MB V1.2-20250423 Panel 9"
+    },
+    {
+      "board_id": "G80CA-MB V1.3-20251212 Panel 8",
+      "type": "clone",
+      "status": "completed",
+      "dtb_path": "dtb/clone/G80CA-MB V1.3-20251212 Panel 8"
+    },
+    {
+      "board_id": "G80D-MB V1.0-20250609 Panel 8",
+      "type": "clone",
+      "status": "beta",
+      "dtb_path": "见 release"
+    },
+    {
+      "board_id": "GR36S-MB V1.4-2025-07-30 (R36 Ultra)",
+      "type": "clone",
+      "status": "beta",
+      "dtb_path": "见 release"
+    },
+    {
+      "board_id": "R36S-V12 2023-08-18 (R36 MAX)",
+      "type": "clone",
+      "status": "beta",
+      "dtb_path": "见 release"
+    },
+    {
+      "board_id": "R36S-V12 2023-08-18 Variant 1 Panel 3 A",
+      "type": "clone",
+      "status": "untested",
+      "dtb_path": "dtb/clone/R36S-V12 2023-08-18 Variant 1 Panel 3 A"
+    },
+    {
+      "board_id": "R36S-V12 2023-08-18 Variant 1 Panel 8 A",
+      "type": "clone",
+      "status": "untested",
+      "dtb_path": "dtb/clone/R36S-V12 2023-08-18 Variant 1 Panel 8 A"
+    },
+    {
+      "board_id": "R36S-V12 2023-08-18 Variant 2 Panel 1",
+      "type": "clone",
+      "status": "completed",
+      "dtb_path": "dtb/clone/R36S-V12 2023-08-18 Variant 2 Panel 1"
+    },
+    {
+      "board_id": "R36S-V12 2023-08-18 Variant 2 Panel 1 A",
+      "type": "clone",
+      "status": "untested",
+      "dtb_path": "dtb/clone/R36S-V12 2023-08-18 Variant 2 Panel 1 A"
+    },
+    {
+      "board_id": "R36S-V12 2023-08-18 Variant 3 Panel A",
+      "type": "clone",
+      "status": "completed",
+      "dtb_path": "dtb/clone/R36S-V12 2023-08-18 Variant 3 Panel A"
+    },
+    {
+      "board_id": "R36S-V12 2023-08-18 Variant 3 Panel 3",
+      "type": "clone",
+      "status": "completed",
+      "dtb_path": "dtb/clone/R36S-V12 2023-08-18 Variant 3 Panel 3"
+    },
+    {
+      "board_id": "R36S-V20 2025-05-18 2541",
+      "type": "clone",
+      "status": "beta",
+      "dtb_path": "见 release"
+    },
+    {
+      "board_id": "R36S-V20 2025-05-18 2548",
+      "type": "clone",
+      "status": "beta",
+      "dtb_path": "见 release"
+    },
+    {
+      "board_id": "R36S-V20 2025-05-18 2549",
+      "type": "clone",
+      "status": "beta/untested",
+      "dtb_path": "见 release"
+    },
+    {
+      "board_id": "Y3506_V03_20241104",
+      "type": "soysauce",
+      "status": "completed",
+      "dtb_path": "dtb/soysauce/Y3506_V03_20241104"
+    },
+    {
+      "board_id": "Y3506_V03_20241210",
+      "type": "soysauce",
+      "status": "completed",
+      "dtb_path": "dtb/soysauce/Y3506_V03_20241210"
+    },
+    {
+      "board_id": "Y3506_V03_20250317",
+      "type": "soysauce",
+      "status": "completed",
+      "dtb_path": "dtb/soysauce/Y3506_V03_20250317"
+    },
+    {
+      "board_id": "Y3506_V04_20250529 2533",
+      "type": "soysauce",
+      "status": "completed",
+      "dtb_path": "dtb/soysauce/Y3506_V04_20250529 2533"
+    },
+    {
+      "board_id": "Y3506_V04_20250529 2537",
+      "type": "soysauce",
+      "status": "completed",
+      "dtb_path": "dtb/soysauce/Y3506_V04_20250529 2537"
+    },
+    {
+      "board_id": "Y3506_V04_20250529 2548",
+      "type": "soysauce",
+      "status": "completed",
+      "dtb_path": "dtb/soysauce/Y3506_V04_20250529 2548"
+    },
+    {
+      "board_id": "Y3506_V05_20251215 2551",
+      "type": "soysauce",
+      "status": "beta",
+      "dtb_path": "dtb/soysauce/Y3506_V05_20251215 2551"
+    },
+    {
+      "board_id": "Y3506_V05_20251215 2601",
+      "type": "soysauce",
+      "status": "beta",
+      "dtb_path": "dtb/soysauce/Y3506_V05_20251215 2601"
+    }
+  ],
+  "panel_picker": {
+    "applies_to": "AeolusUX/ArkOS-R3XS 的 MultiPanel 镜像(已归档);dArkOS 改用 boot 分区的 SELECT MODEL 脚本 + dtb 复制",
+    "combination": "开机瞬间按住 R1(Hotkey) + 一个方向键",
+    "map": {
+      "R1+UP": "Panel 1",
+      "R1+RIGHT": "Panel 2",
+      "R1+DOWN": "Panel 3",
+      "R1+LEFT": "Panel 4",
+      "R1+A": "原厂/Stock Panel 0",
+      "R1+音量减": "关闭 Panel Picker"
+    },
+    "warning": "首次开机不要进 Panel Picker:系统首启要做初始展开,最长 10 分钟"
+  },
+  "identification_tools": [
+    {
+      "name": "dtbIdentify",
+      "url": "https://aeolusux.github.io/ArkOS-R3XS/tools/dtbIdentify.htm",
+      "use": "把原厂卡的 dtb 文件拖进网页,判断屏幕面板型号"
+    },
+    {
+      "name": "拆机看丝印",
+      "use": "主板上直接印着 R36S-V12 / V21 / V30 / Y02 / G80CA-MB 等编号"
+    },
+    {
+      "name": "系统内确认",
+      "use": "dArkOS 里终端执行 cat /proc/device-tree/compatible 与 ls /dev/ 对照;或看 Tools > R36S Control"
+    }
+  ],
+  "scope_note": "本文件的 boards[] 只描述 southoz/dArkOSRE-R36(以及它上游 AeolusUX/ArkOS-R3XS)认得的板子,status 也是按那套固件打的,不要拿它当“所有 RK3326 掌机”的支持名单。XiFan(稀范)、GameConsole、Diium、UDT、AISLPC 等厂商机型不在其中;这些机型由 christianhaitian/arkos4clone + console-detect 收录,逐机型的面板真值与固件行为参数见 arkos4clone_devices.json。",
+  "local_device": {
+    "board_id": "XiFan XF45V(本机)",
+    "vendor": "XiFan HandHelds / 稀范科技",
+    "soc": "Rockchip RK3326, 4xCortex-A35, Mali-G31 MP2 @520MHz, 1GB DDR3L",
+    "panel": {
+      "resolution": "1024x768",
+      "interface": "MIPI-DSI 4 lanes",
+      "pixel_clock_mhz": 62.0,
+      "rotation": 0,
+      "dtb": "rk3326-xf45v-linux.dtb",
+      "evidence": "解析 arkos4clone/boot/dArkOS/consoles/xf45v/*.dtb 的 display-timings 得到"
+    },
+    "behavior": {
+      "console": "xf45v",
+      "hotkey_type": "happy5",
+      "joystick": "dual",
+      "led_type": "ws2812",
+      "volume_type": "adc",
+      "otg_type": "manual",
+      "source": "console-detect/console_detect.c device_configs + dtb_mapping"
+    },
+    "firmware": {
+      "arkos4clone": "支持(唯一在维护的开源方案);20260930 镜像已下载并校验",
+      "darkos4clone": "支持,但上游自述测试少、暂不支持 OTA",
+      "xifan_official_emuelec": "支持(TF 卡刷机包 grc803_xf45v-ee-r-TF-20260207-zh-mod.img 已下载并校验)",
+      "arkos_r3xs / darkos / darkosre / darkosen / rocknix / pan4elec / onionos / muos / minui / knulli": "不支持(无 xf45v dtb 或无对应板级配置)"
+    },
+    "detail_doc": "01-教程库/机型固件/XiFan_XF45V/00-XF45V完全指南.md"
+  }
+}

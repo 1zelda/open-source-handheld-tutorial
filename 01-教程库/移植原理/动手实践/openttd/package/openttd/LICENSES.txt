@@ -1,0 +1,38 @@
+OpenTTD 端口包 - 组件与许可
+================================
+
+本包由三部分组成：游戏引擎（我们交叉编译的二进制）、三套自由素材（图形/音效/音乐）、
+以及端口胶水（启动脚本、手柄映射、元数据）。所有组件都允许再分发。
+
+1. OpenTTD 15.3（引擎，openttd.aarch64）
+   许可: GNU General Public License v2.0
+   原文: licenses/OpenTTD-GPL-2.0.txt
+   来源: https://github.com/OpenTTD/OpenTTD  标签 15.3
+         commit 14ec60f248547d4d062a1160f0fc26d742319888
+   说明: 用 zig 0.17.0 交叉编译成 aarch64-linux-gnu，C++ 标准库为静态链入的 libc++；
+         SQLite/curl/PNG/zlib 等可选依赖未启用。完整源码 = 上述 commit（无补丁）。
+
+2. OpenGFX 7.1（图形素材，baseset/opengfx-7.1/）
+   许可: GNU General Public License v2.0
+   原文: licenses/OpenGFX.txt（素材自带 license.txt 的副本）
+   来源: https://cdn.openttd.org/opengfx-releases/7.1/opengfx-7.1-all.zip
+
+3. OpenSFX 1.0.3（音效素材，baseset/opensfx-1.0.3/）
+   许可: Creative Commons Attribution-ShareAlike 3.0 Unported
+   原文: licenses/OpenSFX.txt（素材自带 license.txt 的副本）
+   来源: https://cdn.openttd.org/opensfx-releases/1.0.3/opensfx-1.0.3-all.zip
+
+4. OpenMSX 0.4.2（音乐素材，baseset/openmsx-0.4.2/）
+   许可: GNU General Public License v2.0
+   原文: licenses/OpenMSX.txt（素材自带 license.txt 的副本）
+   来源: https://cdn.openttd.org/openmsx-releases/0.4.2/openmsx-0.4.2-all.zip
+
+5. SDL2（运行时由 CFW 提供，包里不带）
+   许可: zlib
+   原文: licenses/SDL2.txt
+
+6. gptokeyb（运行时由 PortMaster 提供，包里不带）
+   许可: GNU General Public License v3.0（见 PortMaster 仓库）
+
+原版 Transport Tycoon Deluxe 的素材（sample.cat、trg*.grf、gm/*.gm 等）版权属于
+Chris Sawyer / Atari 等权利人，本包**不包含**，也不需要。

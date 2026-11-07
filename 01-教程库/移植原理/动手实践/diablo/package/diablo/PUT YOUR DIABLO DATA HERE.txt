@@ -1,0 +1,13 @@
+把 Diablo 的游戏数据放在这个目录（ports/diablo/）里，二选一：
+
+  1) 正版：DIABDAT.MPQ
+     GOG 或战网买的正版 Diablo 安装目录里有这个文件，直接拷过来。
+     （Hellfire 资料片再放 hellfire.mpq / hfmonk.mpq / hfmusic.mpq / hfvoice.mpq）
+
+  2) 分享版：spawn.mpq
+     1996 年的免费分享版数据，只有战士一个职业、地牢前两层。
+     DevilutionX 官方资源仓库提供：
+     https://github.com/diasurgical/devilutionx-assets/releases/latest/download/spawn.mpq
+
+本包不附带、也不提供任何商业游戏数据的下载。
+存档写在 ports/diablo/saves/，配置写在 ports/diablo/diablo.ini。

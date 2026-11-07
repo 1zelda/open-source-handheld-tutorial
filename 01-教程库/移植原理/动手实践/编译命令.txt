@@ -1,0 +1,73 @@
+$ 交叉编译命令清单（2026-10-14 本机 Windows 上真实跑过，zig 0.17.0）
+$ 工具链：F:\工具链\zig-x86_64-windows-0.17.0\zig.exe   （zig version → 0.17.0）
+$ 源码：  fbcheck.c（本目录，3,984 B）
+$ 工作目录：F:\开源掌机教程\_scratch\port_build
+
+=========================================================================
+能用的四条
+=========================================================================
+
+先设一个变量，免得每行都写全路径（Git Bash 里）：
+    Z="/f/工具链/zig-x86_64-windows-0.17.0/zig.exe"
+
+# ① 64 位 ARM（XF45V / RK3326 这种 ARMv8 芯片）＋ musl 全静态 —— 主力产物
+    "$Z" cc -target aarch64-linux-musl -static -O2 -Wall -o fbcheck_a64_musl_static fbcheck.c
+#   第一次跑约 4 分钟（zig 现场把 musl 编译了一遍并缓存），之后 22.3 秒
+#   产物 1,588,784 B   sha256 前 16 位 a01295fa03dcdb4c
+#   ELF 校验：class=2(64位) e_machine=183(AArch64) e_type=2(EXEC)
+#   程序头 8 段：PT_PHDR PT LOAD×4 PT_GNU_RELRO PT_GNU_EH_FRAME PT_GNU_STACK
+#   没有 PT_DYNAMIC，没有 PT_INTERP → 拷到任何固件都能直接跑
+
+# ② 32 位 ARM（老固件 / armhf 的机器）
+    "$Z" cc -target arm-linux-musleabihf -mcpu=cortex_a9 -static -O2 -Wall -o fbcheck_armv7_musl_static fbcheck.c
+#   产物 1,537,812 B   sha256 前 16 位 cb6ef9630510074c
+#   ELF 校验：class=1(32位) e_machine=40(ARM)
+
+# ③ glibc 动态链接（默认版本）—— 用来做对比，不推荐发出去
+    "$Z" cc -target aarch64-linux-gnu -O2 -Wall -o fbcheck_a64_gnu_default fbcheck.c
+#   产物 23,624 B（比静态小 67 倍）
+#   程序头里有 PT_INTERP=/lib/ld-linux-aarch64.so.1，NEEDED=libc.so.6，版本串 GLIBC_2.17
+
+# ④ 指定 glibc 版本（zig 只接受它自己带的那几个版本）
+    "$Z" cc -target aarch64-linux-gnu.2.17 -O2 -o fbcheck_a64_gnu217 fbcheck.c
+#   产物 23,624 B，sha256 和 ③ 完全一致（9e925e13c07a9d46…）
+#   → 说明这个 zig 的 aarch64 glibc 默认就是 2.17 档
+
+=========================================================================
+踩到的三个坑（原样记录，别改成"应该这样"）
+=========================================================================
+
+坑 1：-target armv7-linux-musleabihf
+  error: unknown architecture: 'armv7'
+  → zig 的架构名表里只有 arm / aarch64 / thumb…，"armv7" 是 CPU 不是架构。
+    写法是 -target arm-linux-musleabihf -mcpu=…
+
+坑 2：-mcpu=cortex-a9
+  error: unknown CPU: 'cortex'
+  → zig 按 '-' 断词了。CPU 名要用下划线：-mcpu=cortex_a9
+    （`zig cc -target arm-linux-musleabihf -mcpu=help` 能列出全部 CPU）
+
+坑 3：-target aarch64-linux.2.28-gnu / 2.34-gnu
+  error: unable to provide libc for target "aarch64-linux.2.28...7.2-gnu.2.31"
+  info: zig can provide libc for related target aarch64-linux.3.7.0-gnu.2.17
+  → 想在 Windows 上钉 glibc 版本，zig 只给它自带的那些档。
+    这也正是 PortMaster 圈子里大家偏好 musl 静态的原因：不用猜对方固件的 glibc。
+
+坑 4（预期内）：本机原生编译
+      "$Z" cc -O2 -o fbcheck_windows.exe fbcheck.c
+  fbcheck.c:7:10: fatal error: 'linux/fb.h' file not found
+  → 不是工具链坏，是这个程序本来就只吃 Linux 内核 ABI。Windows 没有 /dev/fb0。
+
+坑 5：zig build-exe 编 C 找不到 errno.h，zig cc 却正常
+  → 编 C/C++ 一律用 zig cc（它是完整的编译器驱动，会自己挂 include 路径）；
+    zig build-exe 是给 zig 项目用的。
+
+=========================================================================
+打包
+=========================================================================
+$ py -3 -X utf8 make_package.py
+  校验 port.json 的 5 个顶层键 + 12 个 attr 键（对照
+  PortMaster/pylibs/harbourmaster/info.py:18-40）
+  产出 package/fbcheck.zip = 864,160 B（843.9 KiB）sha256 前 16 位 72871952cd953ad7
+  内层：fbcheck.sh(2,321 B) + fbcheck/fbcheck_a64_musl_static(1,588,784 B)
+        + fbcheck/fbcheck_armhf_musl_static(1,537,812 B)

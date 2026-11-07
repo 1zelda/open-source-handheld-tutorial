@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>开源掌机 · 数据看板</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand">开源掌机 · 数据看板</div>
+  <nav id="nav" class="nav">
+    <button data-view="overview" class="active">概览</button>
+    <button data-view="news">资讯</button>
+    <button data-view="games">游戏</button>
+    <button data-view="repos">库</button>
+    <button data-view="factory">工厂</button>
+    <button data-view="reports">报告</button>
+    <button data-view="sources">源</button>
+    <button data-view="netdisk">网盘</button>
+  </nav>
+  <div class="topright">
+    <span id="loadHint" class="muted"></span>
+    <button id="reload" class="ghost" title="重新读一遍台账文件(数据变了点这个)">重读数据</button>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- 概览 -->
+  <section id="view-overview" class="view active">
+    <div id="cards" class="cards"></div>
+    <div class="grid2">
+      <div class="panel">
+        <h3>每日入库量(按台账 first_seen)</h3>
+        <div id="trend" class="trend"></div>
+      </div>
+      <div class="panel">
+        <h3>数据集底账(行数 = 台账行数)</h3>
+        <table class="tbl compact" id="dsTable"></table>
+      </div>
+    </div>
+    <div class="grid2">
+      <div class="panel">
+        <h3>最新 HOT <span class="muted">(点击开原文)</span></h3>
+        <ul id="hotList" class="linklist"></ul>
+      </div>
+      <div class="panel">
+        <h3>大作/经典登陆平台 <span class="muted">(ARR 标记)</span></h3>
+        <ul id="arrList" class="linklist"></ul>
+      </div>
+    </div>
+    <div class="panel">
+      <h3>最近一轮抓取失败的源 <span class="muted">(_last_run.json,不许静默跳过)</span></h3>
+      <table class="tbl compact" id="failTable"></table>
+    </div>
+  </section>
+
+  <!-- 资讯 -->
+  <section id="view-news" class="view">
+    <div class="filters">
+      <input id="nq" type="search" placeholder="搜标题 / URL / 备注(回车即搜)">
+      <select id="nflag">
+        <option value="">全部标记</option>
+        <option value="hot">HOT</option>
+        <option value="arrival">大作登陆 ARR</option>
+        <option value="focus">有聚焦标签</option>
+        <option value="plain">无 HOT/ARR</option>
+      </select>
+      <select id="nkind"></select>
+      <select id="nsource" class="wide"></select>
+      <input id="nsince" type="date" title="起始日期(按发布日期)">
+      <input id="nuntil" type="date" title="结束日期">
+      <select id="norder">
+        <option value="date">按发布日期 新→旧</option>
+        <option value="date_asc">按发布日期 旧→新</option>
+        <option value="seen">按入库时间 新→旧</option>
+      </select>
+      <button id="nreset" class="ghost">清空筛选</button>
+      <span id="nstat" class="stat"></span>
+    </div>
+    <div class="tablewrap"><table class="tbl" id="newsTable"></table></div>
+    <div class="pager"><button id="nprev">上一页</button><span id="npages" class="muted"></span><button id="nnext">下一页</button></div>
+  </section>
+
+  <!-- 游戏 -->
+  <section id="view-games" class="view">
+    <div class="filters">
+      <input id="gq" type="search" placeholder="搜游戏名 / 简介 / 仓库 / 本地路径">
+      <select id="gflag">
+        <option value="">全部</option>
+        <option value="needs">要自备游戏数据</option>
+        <option value="local">本地已落盘</option>
+        <option value="missing">台账有记录、本地没文件</option>
+        <option value="broken">校验不一致</option>
+      </select>
+      <select id="gsort">
+        <option value="name">按名称</option>
+        <option value="size">按体积</option>
+        <option value="date">按日期</option>
+      </select>
+      <button id="greset" class="ghost">清空</button>
+      <span id="gstat" class="stat"></span>
+    </div>
+    <div id="gchips" class="chips"></div>
+    <div class="tablewrap"><table class="tbl" id="gamesTable"></table></div>
+    <div class="pager"><button id="gprev">上一页</button><span id="gpages" class="muted"></span><button id="gnext">下一页</button></div>
+  </section>
+
+  <!-- 库 -->
+  <section id="view-repos" class="view">
+    <div class="filters">
+      <input id="rq" type="search" placeholder="搜仓库 / 说明 / 本地路径">
+      <select id="rflag">
+        <option value="">全部</option>
+        <option value="needs">要自备本体/数据</option>
+        <option value="local">本地已落盘</option>
+        <option value="missing">台账有记录、本地没文件</option>
+        <option value="broken">校验不一致</option>
+      </select>
+      <select id="rsort">
+        <option value="name">按仓库名</option>
+        <option value="size">按体积</option>
+        <option value="date">按最近活动</option>
+      </select>
+      <button id="rreset" class="ghost">清空</button>
+      <span id="rstat" class="stat"></span>
+    </div>
+    <div id="rchips" class="chips"></div>
+    <div class="tablewrap"><table class="tbl" id="reposTable"></table></div>
+    <div class="pager"><button id="rprev">上一页</button><span id="rpages" class="muted"></span><button id="rnext">下一页</button></div>
+  </section>
+
+  <!-- 工厂 -->
+  <section id="view-factory" class="view">
+    <div class="filters">
+      <input id="fq" type="search" placeholder="搜任务 / 游戏 / 函数地址 / 本地路径">
+      <select id="fstatus"></select>
+      <select id="fflag">
+        <option value="">全部</option>
+        <option value="local">本地有这份产物</option>
+        <option value="missing">库里记了路径、磁盘上没有</option>
+      </select>
+      <select id="fsort">
+        <option value="name">按名称</option>
+        <option value="date">按时间</option>
+        <option value="ds">按数据集</option>
+      </select>
+      <button id="freset" class="ghost">清空</button>
+      <span id="fstat" class="stat"></span>
+    </div>
+    <div id="fchips" class="chips"></div>
+    <p class="muted note">读的是 <span class="mono">07-移植工厂/state/factory.db</span>(只读打开,不改库)。
+      函数级判定 = 每个函数一条,`verified` 才是真过了差分;<b>函数样本通过 ≠ 整款游戏移植完成</b>。</p>
+    <div class="tablewrap"><table class="tbl" id="factoryTable"></table></div>
+    <div class="pager"><button id="fprev">上一页</button><span id="fpages" class="muted"></span><button id="fnext">下一页</button></div>
+  </section>
+
+  <!-- 报告 -->
+  <section id="view-reports" class="view">
+    <div class="reportsplit">
+      <aside class="doclist">
+        <div class="filters tight">
+          <input id="dq" type="search" placeholder="筛文件名/路径">
+          <select id="dgroup"></select>
+        </div>
+        <ul id="docList"></ul>
+      </aside>
+      <article class="docpane">
+        <header id="docHead" class="muted">左边选一个报告</header>
+        <div id="docBody" class="markdown"></div>
+      </article>
+    </div>
+  </section>
+
+  <!-- 源 -->
+  <section id="view-sources" class="view">
+    <div class="filters">
+      <input id="sq" type="search" placeholder="搜源名 / URL / 备注">
+      <select id="sonly">
+        <option value="">全部源</option>
+        <option value="dead">停用 或 本轮非 200</option>
+        <option value="empty">台账里 0 条</option>
+      </select>
+      <span id="sstat" class="stat"></span>
+    </div>
+    <div class="tablewrap"><table class="tbl" id="sourcesTable"></table></div>
+  </section>
+
+  <!-- 网盘 -->
+  <section id="view-netdisk" class="view">
+    <div id="ndCards" class="cards"></div>
+
+    <div class="panel">
+      <h3>登录 / 管账号 <span class="muted">(这一页是看板唯一的写路径:值只 POST 给本机 127.0.0.1,由账号台当场 DPAPI 加密入库 —— 页面不回显、不打印、不落盘任何凭据值)</span></h3>
+      <div id="ndLock"></div>
+
+      <div class="qrhead">
+        <div class="filters">
+          <label class="fld">盘<select id="ndDriver" class="wide"></select></label>
+          <label class="fld">登录位<select id="qrSlot" class="wide" title="一格 = 一个独立 profile = 一个号的登录态。换号扫就换一格，不会顶掉上一格的号。"></select></label>
+          <label class="fld">用哪个浏览器<select id="qrExe" class="wide" title="这一格的窗口用哪个浏览器开；Firefox 没有 CDP，用不了。"></select></label>
+          <button id="qrStart" class="biglink primary">▶ 打开扫码窗口</button>
+          <button id="qrClose" class="ghost">关掉窗口</button>
+          <button id="qrPurge" class="ghost danger">清掉窗口留下的 profile</button>
+          <button id="ndStart" class="ghost">拉起 OpenList</button>
+        </div>
+        <p class="qrstate" id="qrState">还没开窗口 —— 按上面那个蓝色大按钮。</p>
+        <p class="muted note" id="qrHowto"></p>
+      </div>
+
+      <div class="qrgrid">
+        <div class="shot" id="qrShot">
+          <img id="qrImg" alt="扫码窗口的实时画面" hidden>
+          <span class="shothint" id="qrShotHint">窗口没开着，这里就没有画面。按『▶ 打开扫码窗口』。</span>
+        </div>
+        <table class="tbl compact" id="qrInfo"></table>
+      </div>
+
+      <details id="ndForm">
+        <summary>手填凭据 <span class="muted">(扫码不灵、或者百度/迅雷这种在 OpenList 里不吃 cookie 的盘，才走这条)</span></summary>
+        <div class="filters">
+          <label class="fld">别名<input id="ndAlias" class="mono" placeholder="quark-03" autocomplete="off" spellcheck="false"></label>
+          <label class="fld">备注<input id="ndRemark" placeholder="哪个号、什么会员" autocomplete="off"></label>
+        </div>
+        <div id="ndFields" class="fieldgrid"></div>
+        <div class="filters">
+          <button id="ndSave" class="biglink">保存并挂载 + 立刻探测</button>
+          <button id="ndClear" class="ghost">清空重填</button>
+          <a class="biglink" id="ndOlLink" href="#" target="_blank" rel="noreferrer">OpenList 后台</a>
+          <span id="ndMsg" class="stat"></span>
+        </div>
+      </details>
+    </div>
+
+    <div class="grid2">
+      <div class="panel">
+        <h3>账号库底账 <span class="muted">(F:\OpenList\账号库.json 的元数据:条数、密文长度;值一个都不显示)</span></h3>
+        <table class="tbl compact" id="ndDriverTable"></table>
+      </div>
+      <div class="panel">
+        <h3>要留意的</h3>
+        <ul id="ndWarn" class="linklist"></ul>
+      </div>
+    </div>
+
+    <div class="panel">
+      <h3>账号明细 <span class="muted">每行四个按钮:探测 / 切活跃 / 改凭据(把这条灌回上面的表单)/ 删。ID 和账号名是登录时向网盘现问的;secret、plain、密文一律不读不显示。</span></h3>
+      <table class="tbl" id="ndAccountTable"></table>
+    </div>
+
+    <div class="panel">
+      <h3>上传档位 <span class="muted">(_工具脚本/网盘上传清单.tsv —— enable 不为 1 的档位跑上传会被跳过)</span></h3>
+      <table class="tbl" id="ndScopeTable"></table>
+    </div>
+
+    <div class="panel">
+      <h3>上传台账 <span class="muted">(06-资讯监控/网盘上传/网盘上传台账.tsv)</span></h3>
+      <table class="tbl compact" id="ndLedgerTable"></table>
+      <p class="muted note" id="ndNotes"></p>
+    </div>
+  </section>
+
+</main>
+<script src="app.js"></script>
+</body>
+</html>

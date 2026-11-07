@@ -1,0 +1,245 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><title>Foundation Sunshine 部署运行说明书</title><style>
+@page { size: A4; margin: 16mm 14mm; }
+body { font-family: "Microsoft YaHei","PingFang SC",sans-serif; font-size: 10.5pt;
+       line-height: 1.62; color: #1c2430; max-width: none; margin: 0; }
+h1 { font-size: 20pt; border-bottom: 3px solid #2f6fed; padding-bottom: 6px; margin: 0 0 14px; }
+h2 { font-size: 15pt; color: #14418c; margin: 18px 0 8px; padding-left: 8px;
+     border-left: 5px solid #2f6fed; page-break-after: avoid; }
+h3 { font-size: 12.5pt; color: #1b1b1b; margin: 14px 0 6px; page-break-after: avoid; }
+p { margin: 5px 0; }
+h2 + p { page-break-inside: avoid; }
+hr { border: 0; border-top: 1px solid #d3dae6; margin: 12px 0; }
+table { border-collapse: collapse; width: 100%; margin: 8px 0 10px; font-size: 9.6pt; }
+th, td { border: 1px solid #c6cfdd; padding: 5px 7px; vertical-align: top; text-align: left; }
+th { background: #eef3fb; font-weight: 600; }
+thead { display: table-header-group; }
+tr { page-break-inside: avoid; }
+tbody tr:nth-child(even) { background: #fafbfe; }
+code { font-family: Consolas,"Courier New",monospace; background: #f1f3f7;
+       padding: 1px 4px; border-radius: 3px; font-size: 9.4pt; color: #9d2233; }
+pre { background: #f6f8fa; border: 1px solid #dfe4ec; border-left: 4px solid #2f6fed;
+      padding: 7px 10px; border-radius: 4px; overflow-x: hidden; page-break-inside: avoid; }
+pre code { background: none; color: #24292f; padding: 0; font-size: 9.2pt; }
+blockquote { margin: 8px 0; padding: 6px 11px; background: #fff8e6;
+             border-left: 4px solid #e0a800; border-radius: 3px; }
+ul, ol { margin: 5px 0 8px; padding-left: 22px; }
+li { margin: 2px 0; }
+img { display: block; max-width: 100%; max-height: 200mm; margin: 12px auto;
+      border: 1px solid #ccd5e2; border-radius: 4px; page-break-inside: avoid; }
+a { color: #2f6fed; word-break: break-all; }
+strong { color: #10233f; }
+</style></head><body><h1>Foundation Sunshine 部署运行说明书</h1>
+<p><strong>适用版本</strong>：v2026.1031.121458（2026-10-31 发布，<code>AlkaidLab/foundation-sunshine</code>）<br><strong>适用系统</strong>：Windows 10 22H2（19045）及以上<br><strong>本机部署形态</strong>：便携版，装在 <code>F:\foundation-sunshine\</code>，C 盘零写入<br><strong>编写日期</strong>：2026-11-02</p>
+<p>Foundation Sunshine 是 Sunshine 的 Windows 优化分支，作用是把这台电脑变成一台"串流主机"：掌机、手机、平板上的 Moonlight 客户端连上来，就能看电脑桌面、玩电脑上的游戏。它是<strong>发送端</strong>（主机），Moonlight 是<strong>接收端</strong>（客户端）。</p>
+<hr>
+<h2>0. 本机当前状态一览</h2>
+<table>
+<thead><tr>
+<th>项目</th>
+<th>实测结果</th>
+</tr></thead><tbody>
+<tr><td>程序位置</td><td><code>F:\foundation-sunshine\Sunshine\sunshine.exe</code></td></tr>
+<tr><td>配置位置</td><td><code>F:\foundation-sunshine\Sunshine\config\</code></td></tr>
+<tr><td>占用空间</td><td>整个 <code>F:\foundation-sunshine\</code> 共 144MB</td></tr>
+<tr><td>运行方式</td><td>普通用户进程（<strong>不是</strong> Windows 服务）</td></tr>
+<tr><td>管理界面</td><td><code>https://127.0.0.1:47990/</code></td></tr>
+<tr><td>监听端口</td><td>TCP 47984 / 47989 / 47990 / 48010 / 48020</td></tr>
+<tr><td>显卡编码</td><td>RTX 5060 Ti 上 H.264 / HEVC / AV1 三套 NvEnc 全部可用，10bit 可用</td></tr>
+<tr><td>采集</td><td>桌面 1920x1080 @ 60Hz，SDR</td></tr>
+<tr><td>手柄驱动 ViGEmBus</td><td>已装，服务 Running</td></tr>
+<tr><td>虚拟显示器 ZakoVDD</td><td>已装 v15.0.15.10，设备 <code>ROOT\DISPLAY\0001</code> 状态 OK</td></tr>
+<tr><td>防火墙</td><td>2 条入站放行规则（TCP+UDP），绑定 sunshine.exe，Profile=Any</td></tr>
+<tr><td>开机自启</td><td><strong>未装</strong>（部署时明确选择跳过）</td></tr>
+<tr><td>本机局域网地址</td><td>WLAN <code>192.168.2.14</code> ／ 有线 <code>192.168.1.99</code>（两块网卡都是 Public 档）</td></tr>
+</tbody></table>
+<hr>
+<h2>1. 下载与校验</h2>
+<h3>1.1 该下哪个文件</h3>
+<p>到 <code>https://github.com/AlkaidLab/foundation-sunshine/releases/latest</code> 看最新版，Windows 用户面前有两个包：</p>
+<table>
+<thead><tr>
+<th>文件</th>
+<th>大小</th>
+<th>给谁用</th>
+</tr></thead><tbody>
+<tr><td><code>Sunshine.vXXXX.WindowsInstaller.exe</code></td><td>约 36MB</td><td>官方推荐大多数用户：装成 Windows 服务，开机自启，锁屏也能连</td></tr>
+<tr><td><code>Sunshine.vXXXX.Portable-x64.zip</code></td><td>约 41MB</td><td>便携部署：程序待在自己指定的盘，不占 C 盘</td></tr>
+<tr><td><code>Sunshine.Ds5Sidecar.x64.zip</code></td><td>约 89MB</td><td>额外组件，只在需要 DualSense 原生特性时下载</td></tr>
+<tr><td><code>SHA256SUMS.txt</code></td><td>1KB</td><td>校验用，务必一起下</td></tr>
+</tbody></table>
+<blockquote><p><strong>注意</strong>：便携包里的 <code>install_portable.bat</code> 一样会装虚拟显示器驱动、虚拟麦克风、改防火墙、要管理员权限。"便携"只意味着<strong>不装服务、程序本体不在 C 盘</strong>，不意味着"不碰系统"。</p></blockquote>
+<h3>1.2 核对下载没被动过（每次都要做）</h3>
+<p>PowerShell 里跑：</p>
+<pre><code>
+Get-FileHash -Algorithm SHA256 .\Sunshine.v2026.1031.Portable-x64.zip
+</code></pre>
+<p>把输出的哈希和 <code>SHA256SUMS.txt</code> 里对应那一行逐字比对，完全一致才算下载干净。</p>
+<h3>1.3 版本要求（官方写明的两条）</h3>
+<ul><li>虚拟显示器功能要求 <strong>Windows 10 22H2 或更高</strong>；Win10 21H2 及以下装了也不可用。</li><li><strong>N 卡要避开 616.55 和 616.64 两个驱动版本</strong>，会导致虚拟显示器无法激活、串流报 503。查自己版本：<code>nvidia-smi</code> 第一行。（本机 617.42，安全。）</li></ul>
+<hr>
+<h2>2. 部署</h2>
+<h3>2.1 便携版部署（本机走的就是这条）</h3>
+<ol><li>解压 <code>Portable-x64.zip</code> 到一个<strong>纯英文路径</strong>，例如 <code>F:\foundation-sunshine</code>。解压后里面还有一层 <code>Sunshine\</code>，最终结构是 <code>F:\foundation-sunshine\Sunshine\sunshine.exe</code>。</li></ol>
+<ul><li>中文路径虽然多数情况能用，但本机已知的编码坑不少，没必要冒险。</li></ul>
+<ol><li>设一个管理界面账号（<strong>只需一次</strong>）：</li></ol>
+<pre><code>
+   F:\foundation-sunshine\Sunshine\sunshine.exe --creds 用户名 你的密码
+</code></pre>
+<p>看到 <code>New credentials have been created</code> 即成功。密码以加盐哈希存在 <code>config\sunshine_state.json</code>，明文不落盘。</p>
+<ol><li>启动：双击 <code>sunshine.exe</code>，或跑本说明书第 3 节的启动脚本。</li><li>装可选组件（手柄 / 虚拟显示器 / 虚拟麦克风 / 防火墙），见 2.2。</li></ol>
+<h3>2.2 组件的单独安装与卸载</h3>
+<p>全部在 <code>F:\foundation-sunshine\Sunshine\scripts\</code> 下，<strong>右键以管理员身份运行</strong>即可。这些脚本都是离线自带安装包，不联网。</p>
+<table>
+<thead><tr>
+<th>想要的能力</th>
+<th>装</th>
+<th>卸</th>
+</tr></thead><tbody>
+<tr><td>防火墙放行（远程设备连进来的前提）</td><td><code>add-firewall-rule.bat</code></td><td><code>delete-firewall-rule.bat</code></td></tr>
+<tr><td>手柄映射（虚拟 Xbox 手柄，ViGEmBus）</td><td><code>install-gamepad.bat</code></td><td><code>uninstall-gamepad.bat</code></td></tr>
+<tr><td>虚拟显示器（独立分辨率串流）</td><td><code>install-vdd.bat</code></td><td><code>uninstall-vdd.bat</code></td></tr>
+<tr><td>虚拟麦克风（把麦克风声音一起传过去）</td><td><code>install-vsink.bat</code></td><td><code>uninstall-vsink.bat</code></td></tr>
+<tr><td>虚拟鼠标（相对鼠标模式，部分老游戏需要）</td><td><code>vmouse\install-vmouse.bat</code></td><td><code>vmouse\uninstall-vmouse.bat</code></td></tr>
+<tr><td>Windows 服务（开机自启 + 锁屏可连）</td><td><code>install-service.bat</code></td><td><code>uninstall-service.bat</code></td></tr>
+<tr><td>服务设为自动启动</td><td><code>autostart-service.bat</code></td><td>—</td></tr>
+</tbody></table>
+<p><code>install-gamepad.bat</code> 支持两个参数：<code>force</code> 强制重装；<code>--verify-only</code> 只校验安装包哈希不安装。它内置 SHA256 校验，包被篡改会直接拒绝安装。</p>
+<h3>2.3 一次把多个组件装完（免逐个点管理员）</h3>
+<p>把要跑的脚本串进一个 bat，用管理员权限跑一次，输出重定向到日志留档。本机这次用的就是这个办法，脚本和日志在：</p>
+<ul><li><code>F:\foundation-sunshine\deploy_components.bat</code></li><li><code>F:\foundation-sunshine\deploy_components.log</code></li></ul>
+<p>照着改一份即可，里面每一步都会写 <code>XXX_EXIT=错误码</code>。</p>
+<h3>2.4 便携版 → 服务版怎么迁</h3>
+<p>直接跑 <code>Sunshine.vXXXX.WindowsInstaller.exe</code> 覆盖安装即可，它会接管同一份配置。服务模式的配置目录在 <code>%LOCALAPPDATA%\LizardByte\Sunshine</code>，和便携版的 <code>config\</code> 不是同一个位置——迁移前先用 <code>scripts\migrate-config.bat</code> 把配置搬过去，别裸装。</p>
+<hr>
+<h2>3. 运行与日常启停</h2>
+<h3>3.1 三个入口</h3>
+<table>
+<thead><tr>
+<th>入口</th>
+<th>说明</th>
+</tr></thead><tbody>
+<tr><td><code>F:\foundation-sunshine\启动Sunshine.bat</code></td><td>后台无窗口启动 + 4 秒后自动打开管理网页；已在运行则只开网页</td></tr>
+<tr><td><code>F:\foundation-sunshine\停止Sunshine.bat</code></td><td>连同托盘程序一起结束</td></tr>
+<tr><td>系统托盘图标</td><td><code>sunshine.exe</code> 启动时会带起 <code>assets\gui\sunshine-gui.exe</code>，托盘可控制</td></tr>
+</tbody></table>
+<h3>3.2 命令行参数（<code>sunshine.exe --help</code> 实测）</h3>
+<pre><code>
+sunshine.exe [选项] [配置文件路径] [--cmd]
+  --creds 用户名 密码    设置/修改管理界面账号
+  --help                打印帮助
+  --version             打印版本
+  -0                    从标准输入读 PIN
+  -1                    当作首次运行，不读也不写已保存状态（配对不受影响）
+  -2                    强制替换视频流头部
+  -p                    启用/关闭 UPnP
+  任意配置项可用 名字=值 临时覆盖
+</code></pre>
+<h3>3.3 管理界面怎么进</h3>
+<p>浏览器打开 <code>https://127.0.0.1:47990/</code>。</p>
+<ul><li><strong>一定会先弹"当前连接不是私密连接"</strong>。这是 Sunshine 自签证书，不是网站有问题，点「高级」→「继续前往」。</li><li><strong>从本机浏览器进去是免登录的</strong>（实测：本机回环访问接口直接返回数据）。<code>--creds</code> 设的账号密码是给<strong>从局域网访问</strong>时用的——实测从局域网地址访问一律 401，也就是说远程设备不能免密控制这台机器。</li></ul>
+<h3>3.4 第一次进界面：五步向导</h3>
+<p>首次打开会看到 <code>Welcome to Foundation Sunshine</code> 设置向导，按顺序填：</p>
+<ol><li><strong>Language</strong> — 选 简体中文 / English</li><li><strong>Select Adapter</strong> — 选哪块显卡负责采集编码（本机选 RTX 5060 Ti）</li><li><strong>Display Selection</strong> — 选串流哪个显示器（装了虚拟显示器后这里会多出 Zako 那一项）</li><li><strong>Display Strategy</strong> — 显示器策略</li><li><strong>Complete</strong> — 完成</li></ol>
+<p>左下角 <code>Skip Setup Wizard</code> 可以整段跳过，用默认值直接进主界面。</p>
+<p><img alt="首跑五步向导" src="Sunshine说明书-图/01-首跑五步向导.png"></p>
+<h3>3.5 界面结构（实测截图）</h3>
+<p>顶部导航五条：<code>Home</code> / <code>Download Clients</code>（各平台 Moonlight 客户端下载指引）/ <code>Clients &amp; pairing</code>（配对与已配对设备）/ <code>Applications</code>（要串流启动的游戏和应用）/ <code>Configuration</code>（全部参数）。右上角是 <code>Theme</code> 主题切换和账号菜单。</p>
+<p><code>Configuration</code> 页内有 7 个分页：<strong>General / Input / Audio/Video / Network / Config Files / Advanced / Encoders</strong>。</p>
+<p>General 页能改的：界面语言 Locale、主机显示名 Sunshine Name（Moonlight 里看到的就是这个名字）、日志级别 Log Level、睡眠模式 Sleep Mode、全局准备命令 Preparation Commands、预发布版本提醒、托盘开关 Enable System Tray、"所有客户端断开即结束串流"开关。改完点右下角软盘图标保存。</p>
+<p><img alt="配置页七个分页" src="Sunshine说明书-图/03-配置页七个分页.png"></p>
+<p><code>Applications</code> 页是串流启动项的管理处：顶部一排按钮依次是搜索框、网格/列表视图切换、<code>+</code> 新增、<code>↺</code> 重载、<code>■</code> 停止正在跑的应用、<code>ⓘ</code> 详情、<code>💾</code> 保存；每张应用卡片右上角是拖拽排序柄，下方是编辑（笔）和删除（垃圾桶）。默认自带 <code>Desktop</code>（带 Menu 子菜单和 Auto detach），<code>Menu</code> 里的触屏键盘实际调的是 <code>tools\qiin-tabtip.exe</code>。</p>
+<p><img alt="应用页" src="Sunshine说明书-图/04-应用页.png"></p>
+<hr>
+<h2>4. 掌机 / 手机连接（Moonlight 端）</h2>
+<h3>4.1 步骤</h3>
+<ol><li><strong>电脑侧</strong>：确认 Sunshine 在跑（<code>启动Sunshine.bat</code>），确认两块网卡里掌机要落在哪个网段。</li><li><strong>掌机侧</strong>：装 Moonlight 类客户端。Foundation 分支特别适配 <strong>Moonlight VPlus</strong> 与 <strong>Moonlight Enhanced</strong>，电脑侧界面 <code>Download Clients</code> 页有各平台入口。</li><li>客户端里添加主机，填电脑 IP：</li></ol>
+<ul><li>掌机连的是 WiFi 那个路由 → <code>192.168.2.14</code></li><li>掌机走的是有线那台路由（192.168.1.x 网段）→ <code>192.168.1.99</code></li><li><strong>掌机必须和电脑在同一个网段</strong>，这是最常见的连不上的原因。</li><li>同网段且 UPnP/mDNS 正常时，客户端会自动列出主机，不用手填 IP。</li></ul>
+<ol><li>客户端给出 <strong>4 位 PIN</strong> → 电脑侧 <code>Clients &amp; pairing</code> 页点 Add client，填 PIN 和设备名 → <code>Pair</code>。也支持 <strong>QR Code Pairing</strong> 扫码配对。</li><li>配对成功后客户端会列出 <code>Desktop</code> 等应用，选一个即可开始串流。</li></ol>
+<p><img alt="配对客户端弹窗" src="Sunshine说明书-图/02-配对客户端弹窗.png"></p>
+<h3>4.2 取消配对 / 换设备</h3>
+<p><code>Clients &amp; pairing</code> 页里删掉对应客户端即可；换电脑重装时把整个 <code>config\</code> 目录拷走，配对关系一起带走。</p>
+<h3>4.3 端口清单</h3>
+<p>串流建立前只会监听 TCP：47984（画面服务）/ 47989（HTTP）/ 47990（HTTPS 界面）/ 48010（会话）/ 48020（本机 WebSocket）。视频、控制、音频用的 UDP 端口在<strong>客户端连上之后才打开</strong>——本次实测启动状态下确实查不到 UDP 监听，这是正常现象。因为防火墙规则是<strong>按程序</strong>放行 TCP+UDP，所以这些动态端口不用单独开。</p>
+<hr>
+<h2>5. 常用操作速查</h2>
+<table>
+<thead><tr>
+<th>我要做什么</th>
+<th>怎么做</th>
+</tr></thead><tbody>
+<tr><td>开机后启动串流</td><td>双击 <code>F:\foundation-sunshine\启动Sunshine.bat</code></td></tr>
+<tr><td>停止串流</td><td>双击 <code>停止Sunshine.bat</code>，或托盘图标退出</td></tr>
+<tr><td>改管理界面密码</td><td><code>sunshine.exe --creds 用户名 新密码</code>，然后重启 Sunshine</td></tr>
+<tr><td>看运行日志</td><td><code>F:\foundation-sunshine\Sunshine\config\sunshine.log</code>；历史归档在 <code>config\logs_archive\</code></td></tr>
+<tr><td>改分辨率 / 码率 / 帧率 / 编码器</td><td>界面 <code>Configuration → Audio/Video</code> 与 <code>Encoders</code></td></tr>
+<tr><td>加一个游戏到串流列表</td><td>界面 <code>Applications</code> 页点 <code>+</code></td></tr>
+<tr><td>删掉某个已配对设备</td><td>界面 <code>Clients &amp; pairing</code></td></tr>
+<tr><td>让主机名显示成中文/自定义</td><td><code>Configuration → General → Sunshine Name</code></td></tr>
+<tr><td>补装开机自启</td><td>便携版：<code>Configuration → General → Enable System Tray</code> + 在「启动」文件夹放快捷方式；服务版：<code>autostart-service.bat</code></td></tr>
+<tr><td>装虚拟麦克风</td><td><code>scripts\install-vsink.bat</code></td></tr>
+<tr><td>装虚拟鼠标（老游戏相对鼠标）</td><td><code>scripts\vmouse\install-vmouse.bat</code></td></tr>
+<tr><td>装 DualSense 原生特性</td><td>下载 <code>Sunshine.Ds5Sidecar.x64.zip</code>，解压到 <code>Sunshine\</code> 下后重启</td></tr>
+<tr><td>改完配置不生效</td><td>界面保存后仍需<strong>重启 Sunshine 进程</strong>（便携版：停止再启动）</td></tr>
+<tr><td>彻底卸载</td><td>依次跑 <code>delete-firewall-rule.bat</code>、<code>uninstall-gamepad.bat</code>、<code>uninstall-vdd.bat</code>、<code>uninstall-vsink.bat</code>，再删 <code>F:\foundation-sunshine</code> 整个目录</td></tr>
+</tbody></table>
+<h3>5.1 附加工具（<code>Sunshine\tools\</code> 里，按需手动调用）</h3>
+<table>
+<thead><tr>
+<th>工具</th>
+<th>用途</th>
+</tr></thead><tbody>
+<tr><td><code>SetDpi.exe</code></td><td>改系统 DPI 缩放（串流分辨率/缩放相关）</td></tr>
+<tr><td><code>DevManView.exe</code> / <code>device-toggler.exe</code> / <code>nefconw.exe</code></td><td>查看、启用/禁用设备（虚拟显示器排障用）</td></tr>
+<tr><td><code>dxgi-info.exe</code></td><td>打印采集卡/显示器 DXGI 信息，排查黑屏选不到屏</td></tr>
+<tr><td><code>audio-info.exe</code></td><td>打印音频设备枚举，排查没声音</td></tr>
+<tr><td><code>restart64.exe</code></td><td>重启资源管理器</td></tr>
+<tr><td><code>qiin-tabtip.exe</code></td><td>唤起触屏键盘（<code>Desktop</code> 应用菜单项就是调它）</td></tr>
+<tr><td><code>sunshinesvc.exe</code></td><td>服务模式宿主，只有装了服务才用得上</td></tr>
+</tbody></table>
+<hr>
+<h2>6. 故障排查</h2>
+<table>
+<thead><tr>
+<th>现象</th>
+<th>先看这里</th>
+</tr></thead><tbody>
+<tr><td>掌机搜不到主机</td><td>① 电脑 Sunshine 在跑吗 ② 掌机和电脑同网段吗（<code>192.168.1.x</code> 和 <code>192.168.2.x</code> 是两张网！）③ 路由器有没有开 AP 隔离 ④ 防火墙规则还在吗：<code>netsh advfirewall firewall show rule name=Sunshine</code></td></tr>
+<tr><td>连上就报 503 / 虚拟显示器起不来</td><td>显卡驱动是不是 616.55 或 616.64 —— 换掉</td></tr>
+<tr><td>网页弹"不是私密连接"</td><td>自签证书，正常。点高级 → 继续前往</td></tr>
+<tr><td>从局域网打开界面 401</td><td>设计如此，远程访问要登录；管理界面建议只在本机开</td></tr>
+<tr><td>掌机手柄没反应</td><td>① ViGEmBus 服务在跑吗：<code>Get-Service ViGEmBus</code> ② 日志里还有没有 <code>ViGEmBus is not installed</code> ③ 装完手柄驱动<strong>必须重启 Sunshine</strong> 才生效（本机实测：装完不重启，日志仍是 Fatal）</td></tr>
+<tr><td>画面黑屏 / 选不到屏</td><td>跑 <code>tools\dxgi-info.exe</code> 看枚举；多显卡机器注意 <code>Select Adapter</code> 要选实际输出显示的那块</td></tr>
+<tr><td>没有声音</td><td>① <code>Configuration → Audio/Video</code> 音频设备 ② 跑 <code>tools\audio-info.exe</code> ③ 需要把麦克风传过去才装 <code>install-vsink.bat</code></td></tr>
+<tr><td>分辨率不对 / 想按掌机原生分辨率串</td><td>装 <code>install-vdd.bat</code>，然后在向导第 3 步或 <code>Configuration</code> 里选 Zako 虚拟显示器</td></tr>
+<tr><td>重启电脑后连不上</td><td>便携版没自启，双击 <code>启动Sunshine.bat</code> 即可；要真正开机自启请用服务安装包</td></tr>
+<tr><td>锁屏 / UAC 弹窗串不过去</td><td>便携版进程跟着登录会话走，安全桌面抓不到。要覆盖这种场景得装服务</td></tr>
+<tr><td>延迟高</td><td><code>Configuration → Audio/Video</code>：编码器优先 HEVC 或 AV1、降低码率、开 5GHz WiFi 或改有线；<code>HAGS</code>（硬件加速 GPU 计划）本机当前是 disabled</td></tr>
+<tr><td>日志里 4 条 <code>Failed to get UTF-16 buffer size: 1113</code></td><td>本机启动时稳定复现，<strong>尚未定位来源</strong>；已排除 <code>apps.json</code>（纯 ASCII）。不影响编码器建立、端口监听与界面访问</td></tr>
+</tbody></table>
+<hr>
+<h2>7. 文件与路径清单</h2>
+<table>
+<thead><tr>
+<th>路径</th>
+<th>是什么</th>
+</tr></thead><tbody>
+<tr><td><a href="file:///F:/foundation-sunshine/Sunshine/sunshine.exe">F:\foundation-sunshine\Sunshine\sunshine.exe</a></td><td>主程序</td></tr>
+<tr><td><a href="file:///F:/foundation-sunshine/Sunshine/config">F:\foundation-sunshine\Sunshine\config\</a></td><td>配置、账号、日志、配对状态</td></tr>
+<tr><td><code>config\sunshine.conf</code></td><td>主配置文件（本机 0 字节 = 全默认值）</td></tr>
+<tr><td><code>config\apps.json</code></td><td>串流应用列表</td></tr>
+<tr><td><code>config\sunshine_state.json</code></td><td>账号凭据（加盐哈希）</td></tr>
+<tr><td><code>config\client-fingerprint-rules.json</code></td><td>客户端识别规则</td></tr>
+<tr><td><code>config\logs_archive\sunshine.log</code></td><td>上一轮运行日志归档</td></tr>
+<tr><td><a href="file:///F:/foundation-sunshine/%E5%90%AF%E5%8A%A8Sunshine.bat">F:\foundation-sunshine\启动Sunshine.bat</a></td><td>启动脚本</td></tr>
+<tr><td><a href="file:///F:/foundation-sunshine/%E5%81%9C%E6%AD%A2Sunshine.bat">F:\foundation-sunshine\停止Sunshine.bat</a></td><td>停止脚本</td></tr>
+<tr><td><a href="file:///F:/foundation-sunshine/Sunshine/scripts">F:\foundation-sunshine\Sunshine\scripts\</a></td><td>全部组件安装/卸载脚本</td></tr>
+<tr><td><a href="file:///F:/foundation-sunshine/Sunshine/tools">F:\foundation-sunshine\Sunshine\tools\</a></td><td>排障与设备管理小工具</td></tr>
+<tr><td><a href="file:///F:/foundation-sunshine/%E5%AE%98%E6%96%B9%E5%AE%89%E8%A3%85%E5%8C%85%E5%A4%87%E4%BB%BD">F:\foundation-sunshine\官方安装包备份\</a></td><td>服务安装包 + 官方 SHA256SUMS，留作以后切换路线</td></tr>
+</tbody></table>
+<hr>
+<h2>8. 本机这套部署的已知缺口</h2>
+<p>诚实列出，别当成"全都配好了"：</p>
+<ol><li><strong>没装开机自启</strong>（部署时你明确跳过）→ 每次重启电脑要手动双击启动脚本。</li><li><strong>没装 Windows 服务</strong> → 锁屏后掌机取不到画面、UAC 安全桌面串不过去。这条是按 Sunshine 常规行为推断，<strong>未在你机器上实测</strong>。</li><li><strong>DS5 sidecar 未装</strong> → 日志 <code>Gamepad ds5 is disabled</code>。只影响 DualSense 手柄的原生特性，普通 XInput 映射不受影响。</li><li><strong>motion server 未装</strong> → 日志 <code>Gamepad switch is disabled</code>。只影响 Switch 形态手柄的体感。</li><li><strong>虚拟鼠标驱动未装</strong> → 日志 <code>Virtual mouse driver not available, falling back to SendInput</code>，退回系统注入，一般够用；个别老游戏的相对鼠标会飘。</li><li><strong>虚拟显示器装了但还没启用一次</strong> → 设备在，但没实际用它串过一路画面。</li><li><strong>端到端串流未实测</strong> → 本说明书里所有"能连"的结论来自端口、防火墙、编码器、驱动四项实测；<strong>真正的掌机配对 + 画面 + 延迟，需要你在设备上跑一次才算闭环</strong>。</li><li><code>Applications</code> 页截图里显示 Desktop / Steam Big Picture / Xbox Game 三张卡片，但 <code>api/apps</code> 实测只返回 <code>Desktop</code> 一条。我的理解是后两张是界面预置示例、保存后才写入配置——<strong>这个解释未验证</strong>。</li></ol>
+<hr>
+<h2>9. 参考</h2>
+<p>项目主页与发布页 <a href="https://github.com/AlkaidLab/foundation-sunshine/releases">https://github.com/AlkaidLab/foundation-sunshine/releases</a> ；上游 Sunshine（LizardByte）<a href="https://github.com/lizardbyte/sunshine">https://github.com/lizardbyte/sunshine</a> 。出问题先查本机日志 <code>config\sunshine.log</code>，带着日志去项目 Issues 提。</p></body></html>

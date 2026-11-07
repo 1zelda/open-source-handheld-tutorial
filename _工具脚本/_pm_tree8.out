@@ -1,0 +1,41 @@
+[06:06:41] == 端口包抓取开始（PortsMaster/PortMaster-New）==
+[06:06:42]   PortsMaster/PortMaster-New HEAD 相符但工作树缺 150416 个条目，分轮补齐
+[06:06:43]   PortsMaster/PortMaster-New 落文件第 1/8 轮：还缺 150416 个（已落盘的走本地对象库，不重下）
+[06:06:43]   抹掉 PortsMaster__PortMaster-New 留下的过期 index.lock（385 s 前）
+[06:07:13]   PortsMaster/PortMaster-New 检出中（0.00 GB，30 s）
+[06:07:13]   PortsMaster/PortMaster-New 检出中 本轮新增 0.00 GB｜30 s｜0.00 MB/s｜CPU 14.4 s｜TCP 连着
+[06:07:43]   PortsMaster/PortMaster-New 检出中 本轮新增 0.00 GB｜60 s｜体积和 CPU 全没动（1 次 / 30 s）｜TCP 还挂着（隧道半死）
+[06:08:13]   PortsMaster/PortMaster-New 检出中 本轮新增 0.00 GB｜90 s｜体积和 CPU 全没动（2 次 / 60 s）｜TCP 还挂着（隧道半死）
+[06:08:43]   PortsMaster/PortMaster-New 检出中 本轮新增 0.00 GB｜121 s｜体积和 CPU 全没动（3 次 / 90 s）｜TCP 还挂着（隧道半死）
+[06:09:13]   PortsMaster/PortMaster-New 检出中 本轮新增 0.00 GB｜151 s｜体积和 CPU 全没动（4 次 / 120 s）｜TCP 还挂着（隧道半死）
+[06:09:43]   PortsMaster/PortMaster-New 检出中 本轮新增 0.00 GB｜181 s｜体积和 CPU 全没动（5 次 / 150 s）｜TCP 还挂着（隧道半死）
+[06:10:14]   PortsMaster/PortMaster-New 检出中 本轮新增 0.00 GB｜211 s｜体积和 CPU 全没动（6 次 / 180 s）｜TCP 还挂着（隧道半死）
+[06:10:44]   PortsMaster/PortMaster-New 检出中 本轮新增 0.00 GB｜241 s｜体积和 CPU 全没动（7 次 / 210 s）｜TCP 还挂着（隧道半死）
+[06:11:14]   PortsMaster/PortMaster-New 检出中 本轮新增 0.00 GB｜271 s｜体积和 CPU 全没动（8 次 / 240 s）｜TCP 还挂着（隧道半死）
+[06:11:44]   PortsMaster/PortMaster-New 收包中（0.00 GB，301 s）
+[06:11:44]   PortsMaster/PortMaster-New 收包中 本轮新增 0.00 GB｜301 s｜体积和 CPU 全没动（9 次 / 270 s）｜TCP 已断
+[06:11:44]   PortsMaster/PortMaster-New 第 1 轮中断 rc=128：error: RPC failed; curl 56 OpenSSL SSL_read: SSL_ERROR_SYSCALL, errno 0
+fatal: protocol error: bad pack header
+fatal: could not fetch 4976f86880a892386acf1990ed9ec2d293877e6c from promisor remote｜剩下的下一轮接着落
+[06:11:44]   PortsMaster/PortMaster-New 落文件第 2/8 轮：还缺 150416 个（已落盘的走本地对象库，不重下）
+[06:12:14]   PortsMaster/PortMaster-New 检出中（0.00 GB，30 s）
+[06:12:14]   PortsMaster/PortMaster-New 检出中 本轮新增 0.00 GB｜30 s｜0.00 MB/s｜CPU 18.6 s｜TCP 连着
+[06:12:44]   PortsMaster/PortMaster-New 检出中 本轮新增 0.00 GB｜60 s｜体积和 CPU 全没动（1 次 / 30 s）｜TCP 已断
+[06:13:14]   PortsMaster/PortMaster-New 收包中（0.00 GB，90 s）
+[06:13:14]   PortsMaster/PortMaster-New 收包中 本轮新增 0.00 GB｜90 s｜体积和 CPU 全没动（2 次 / 60 s）｜TCP 已断
+[06:13:14]   PortsMaster/PortMaster-New 第 2 轮中断 rc=128：error: RPC failed; curl 56 OpenSSL SSL_read: SSL_ERROR_SYSCALL, errno 0
+fatal: protocol error: bad pack header
+fatal: could not fetch 4976f86880a892386acf1990ed9ec2d293877e6c from promisor remote｜剩下的下一轮接着落
+[06:13:15]   PortsMaster/PortMaster-New 落文件第 3/8 轮：还缺 150416 个（已落盘的走本地对象库，不重下）
+[06:13:45]   PortsMaster/PortMaster-New 检出中（0.00 GB，30 s）
+[06:13:45]   PortsMaster/PortMaster-New 检出中 本轮新增 0.00 GB｜30 s｜0.00 MB/s｜CPU 18.1 s｜TCP 连着
+[06:14:15]   PortsMaster/PortMaster-New 检出中 本轮新增 0.00 GB｜60 s｜体积和 CPU 全没动（1 次 / 30 s）｜TCP 还挂着（隧道半死）
+[06:14:45]   PortsMaster/PortMaster-New 检出中 本轮新增 0.00 GB｜90 s｜体积和 CPU 全没动（2 次 / 60 s）｜TCP 还挂着（隧道半死）
+[06:15:15]   PortsMaster/PortMaster-New 检出中 本轮新增 0.00 GB｜120 s｜体积和 CPU 全没动（3 次 / 90 s）｜TCP 还挂着（隧道半死）
+[06:15:45]   PortsMaster/PortMaster-New 检出中 本轮新增 0.00 GB｜150 s｜体积和 CPU 全没动（4 次 / 120 s）｜TCP 还挂着（隧道半死）
+[06:16:15]   PortsMaster/PortMaster-New 检出中 本轮新增 0.00 GB｜180 s｜体积和 CPU 全没动（5 次 / 150 s）｜TCP 还挂着（隧道半死）
+[06:16:45]   PortsMaster/PortMaster-New 检出中 本轮新增 0.00 GB｜210 s｜体积和 CPU 全没动（6 次 / 180 s）｜TCP 还挂着（隧道半死）
+[06:17:15]   PortsMaster/PortMaster-New 检出中 本轮新增 0.00 GB｜240 s｜体积和 CPU 全没动（7 次 / 210 s）｜TCP 还挂着（隧道半死）
+[06:17:45]   PortsMaster/PortMaster-New 检出中 本轮新增 0.00 GB｜270 s｜体积和 CPU 全没动（8 次 / 240 s）｜TCP 还挂着（隧道半死）
+[06:18:15]   PortsMaster/PortMaster-New 检出中 本轮新增 0.00 GB｜301 s｜体积和 CPU 全没动（9 次 / 270 s）｜TCP 还挂着（隧道半死）
+[06:18:46]   PortsMaster/PortMaster-New 检出中 本轮新增 0.00 GB｜331 s｜体积和 CPU 全没动（10 次 / 300 s）｜TCP 还挂着（隧道半死）

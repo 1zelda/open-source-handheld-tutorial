@@ -1,0 +1,122 @@
+[16:31:02] 代理 7890 不通，走直连
+[16:31:04] 跳过（登记不下，policy=meta）：christianhaitian/PortMaster — 707★｜.git 8186MB｜PortMaster 初代（Ark/Wayla
+[16:31:04] 跳过（登记不下，policy=meta）：PortsMaster/PortMaster-New — 386★｜.git 37913MB｜掌机端口大集合：Switch/PS1/N64
+[16:31:07] 跳过 0herculabs/hl360-forza4（HEAD 就是最新 d6597d7d5）
+[16:31:12] 跳过 0xl0cal/repentogxm（HEAD 就是最新 8f931dd1f）
+[16:31:17] 跳过 2ship2harkinian/2ship2harkinian（HEAD 就是最新 fd9fb03bd）
+[16:31:39] 跳过 abedegno/underworld-exhumed（HEAD 就是最新 e5deadd69）
+[16:32:02] 跳过 Adolini1715/Concrete-Jungle-PC（HEAD 就是最新 7ea73d273）
+[16:32:05] 跳过 Alexbeav/fm4-recomp（HEAD 就是最新 e2108085c）
+[16:32:09] 跳过 andeecollard/jsrf-recomp（HEAD 就是最新 4242eb696）
+[16:32:17] 跳过 andrebrumdev/gow2-recomp（HEAD 就是最新 a7c1f64c8）
+[16:32:20] 跳过 arcanite24/pinyon-shift（HEAD 就是最新 9494adade）
+[16:32:25] 跳过 Awis13/liberty-pro-max（HEAD 就是最新 64af7c467）
+[16:32:28] 跳过 badcompany94-rcmp/project-tandem（HEAD 就是最新 130f64194）
+[16:32:31] 跳过 BanjoRecomp/BanjoRecomp（HEAD 就是最新 dbd52154b）
+[16:32:33] 跳过 beatrixzy/PGR4-Recomp（HEAD 就是最新 989c36137）
+[16:32:36] 跳过 ben16w/minui-portmaster（HEAD 就是最新 08b57fd2f）
+[16:32:39] 跳过 bgyss/SwitchRecomp（HEAD 就是最新 0f99e1c5c）
+[16:32:41] 跳过 birabittoh/EternalSonataReprise（HEAD 就是最新 b2ba4f7b8）
+[16:32:44] 跳过 BlackLabelHQ/MediEvilRecomp（HEAD 就是最新 69a411415）
+[16:32:46] 跳过 BlackLabelHQ/SymphonyRecomp（HEAD 就是最新 297e378a4）
+[16:32:48] 跳过 Buku313/Skate3-Mobile（HEAD 就是最新 e1b28c185）
+[16:32:51] 跳过 CaiusCodes/GoldenEye-007-XBLA-PC-Recomp（HEAD 就是最新 8b5573b7d）
+[16:32:54] 跳过 CaiusCodes/Perfect-Dark-XBLA-PC-Recomp（HEAD 就是最新 cd9c211fb）
+[16:32:57] 跳过 carl0srmz/littleplanet（HEAD 就是最新 093f58a04）
+[16:32:59] 跳过 cdlewis/snowboardkids2-recomp（HEAD 就是最新 59d162155）
+[16:33:01] 跳过 Cellenseres/SSSV_Recomp（HEAD 就是最新 a4dbfe40e）
+[16:33:04] 跳过 centollOS/SwitchWakerHD（HEAD 就是最新 78fd5af8d）
+[16:33:08] 跳过 chiikabu/the-browsing-of-isaac（HEAD 就是最新 e346ce66a）
+[16:33:13] 跳过 chrissotraidis/projectreach（HEAD 就是最新 fa965f38e）
+[16:33:17] 跳过 christianortel/skate2-recompile-pc（HEAD 就是最新 1202c9ae8）
+[16:33:20] 跳过 ChunchunQ/fifa09-recomp（HEAD 就是最新 4dba1063d）
+[16:33:25] 跳过 Cor3Duo/kirikae（HEAD 就是最新 726c4a1bc）
+[16:33:32] 跳过 Coz-0/smo-recomp（HEAD 就是最新 041434147）
+[16:33:35] 跳过 daniel-madrid-07/weeping-of-the-empire（HEAD 就是最新 f2c81da2a）
+[16:33:38] 跳过 Dhaiwat10/cricket07-browser（HEAD 就是最新 4febc615b）
+[16:33:43] 跳过 distilledorion-sketch/Initial-D-Arcade-Stage-3-Native-SH-4-Recompilation-WIP-（HEAD 就是最新 7f182756e）
+[16:33:46] 跳过 drakolordx7/KillzoneRecomp（HEAD 就是最新 aa5d3ae6a）
+[16:33:49] 跳过 drakolordx7/pokopia-recomp（HEAD 就是最新 2c29515b2）
+[16:33:56] 跳过 Drommedhar/mgs-reintegral（HEAD 就是最新 85b05f7ed）
+[16:34:02] 跳过 DrummingBird1/gow-psp-recomp（HEAD 就是最新 afc345b40）
+[16:34:05] 跳过 Dyotson/RecompiledHaloReach（HEAD 就是最新 329148bb1）
+[16:34:08] 跳过 eandis/SDOJ-Recomp（HEAD 就是最新 cf0afe107）
+[16:35:04] clone elprogramadorloco-arch/fuc-recomp（连历史，可能几分钟）
+[16:35:09]   ok：105 个文件 / 1.2 MB / HEAD 2ce98889e
+[16:35:10] clone elripalda/RecompStore（连历史，可能几分钟）
+[16:35:17]   ok：535 个文件 / 34.8 MB / HEAD 9d9216bea
+[16:35:18] clone exoteric33/ps2-native-recomp（连历史，可能几分钟）
+[16:35:22]   ok：168 个文件 / 2.5 MB / HEAD 263508314
+[16:35:23] clone ExpansionPak/ModernGekko（连历史，可能几分钟）
+[16:35:28]   ok：941 个文件 / 8.6 MB / HEAD a2e4e2b02
+[16:35:29] clone faligame/lost-odyssey-hd-remaster（连历史，可能几分钟）
+[16:35:41]   ok：704 个文件 / 73.1 MB / HEAD 4e2f96366
+[16:35:42] clone fearkov/3dsrecomp（连历史，可能几分钟）
+[16:35:46]   ok：32 个文件 / 0.5 MB / HEAD 73b8f9caf
+[16:35:47] clone FH1-ReImagined/ForzaHorizon1-ReImagined（连历史，可能几分钟）
+[16:35:53]   ok：1169 个文件 / 18.9 MB / HEAD aa37cb85a
+[16:35:54] clone FishB0nes98/Tekken3Recompiled（连历史，可能几分钟）
+[16:36:31]   ok：2099 个文件 / 190.4 MB / HEAD 3d3acc81b
+[16:36:32] clone Flippage/gears-of-war-3-recomp（连历史，可能几分钟）
+[16:36:51]   失败：Cloning into 'F:\开源掌机教程\06-资讯监控\成品移植游戏库\源码\Flippage__gears-of-war-3-recomp'...
+fatal: unable to access 'https://github.com/Flippage/gears-of-war-3-recomp/': Recv failure: Connection was reset
+
+[16:36:52] clone fungalspores/prototype-switch（连历史，可能几分钟）
+[16:47:14]   失败：Cloning into 'F:\开源掌机教程\06-资讯监控\成品移植游戏库\源码\fungalspores__prototype-switch'...
+error: RPC failed; curl 56 Recv failure: Connection was reset
+fatal: expected 'packfile'
+
+[16:47:15] clone gamboozino/ngbrecomp（连历史，可能几分钟）
+[16:47:36]   失败：Cloning into 'F:\开源掌机教程\06-资讯监控\成品移植游戏库\源码\gamboozino__ngbrecomp'...
+fatal: unable to access 'https://github.com/gamboozino/ngbrecomp/': Failed to connect to github.com port 443 after 21108 ms: Could 
+[16:47:37] clone GenryTheFox0/Project-2099（连历史，可能几分钟）
+[16:47:58]   失败：Cloning into 'F:\开源掌机教程\06-资讯监控\成品移植游戏库\源码\GenryTheFox0__Project-2099'...
+fatal: unable to access 'https://github.com/GenryTheFox0/Project-2099/': Failed to connect to github.com port 443 after 21119 
+[16:47:59] clone get-starboard/starboard（连历史，可能几分钟）
+[16:48:19]   失败：Cloning into 'F:\开源掌机教程\06-资讯监控\成品移植游戏库\源码\get-starboard__starboard'...
+fatal: unable to access 'https://github.com/get-starboard/starboard/': Recv failure: Connection was reset
+
+[16:48:20] clone giangra/stuntdouble-reignition（连历史，可能几分钟）
+[16:48:41]   失败：Cloning into 'F:\开源掌机教程\06-资讯监控\成品移植游戏库\源码\giangra__stuntdouble-reignition'...
+fatal: unable to access 'https://github.com/giangra/stuntdouble-reignition/': Failed to connect to github.com port 443 af
+[16:48:42]   GiZcesi/OpenTricky 目录已存在但不是仓库，且有 1 个残留条目，跳过不动：F:\开源掌机教程\06-资讯监控\成品移植游戏库\源码\GiZcesi__OpenTricky
+[16:48:43] clone goliathret/EdgeOfTimeRecomp（连历史，可能几分钟）
+[16:49:04]   失败：Cloning into 'F:\开源掌机教程\06-资讯监控\成品移植游戏库\源码\goliathret__EdgeOfTimeRecomp'...
+fatal: unable to access 'https://github.com/goliathret/EdgeOfTimeRecomp/': Failed to connect to github.com port 443 after 21
+[16:49:05] clone griches/EternalDarknessRecomp（连历史，可能几分钟）
+[16:49:26]   失败：Cloning into 'F:\开源掌机教程\06-资讯监控\成品移植游戏库\源码\griches__EternalDarknessRecomp'...
+fatal: unable to access 'https://github.com/griches/EternalDarknessRecomp/': Failed to connect to github.com port 443 afte
+[16:49:27] clone GTTeancum/SpideyPS1recomp（连历史，可能几分钟）
+[16:49:48]   失败：Cloning into 'F:\开源掌机教程\06-资讯监控\成品移植游戏库\源码\GTTeancum__SpideyPS1recomp'...
+fatal: unable to access 'https://github.com/GTTeancum/SpideyPS1recomp/': Failed to connect to github.com port 443 after 21052 
+[16:49:49] clone HarbourMasters/Ghostship（连历史，可能几分钟）
+[16:50:10]   失败：Cloning into 'F:\开源掌机教程\06-资讯监控\成品移植游戏库\源码\HarbourMasters__Ghostship'...
+fatal: unable to access 'https://github.com/HarbourMasters/Ghostship/': Failed to connect to github.com port 443 after 21083 ms
+[16:50:12] clone HarbourMasters/Shipwright（连历史，可能几分钟）
+[16:50:33]   失败：Cloning into 'F:\开源掌机教程\06-资讯监控\成品移植游戏库\源码\HarbourMasters__Shipwright'...
+fatal: unable to access 'https://github.com/HarbourMasters/Shipwright/': Failed to connect to github.com port 443 after 21098 
+[16:50:34] clone HarbourMasters/Starship（连历史，可能几分钟）
+[16:50:55]   失败：Cloning into 'F:\开源掌机教程\06-资讯监控\成品移植游戏库\源码\HarbourMasters__Starship'...
+fatal: unable to access 'https://github.com/HarbourMasters/Starship/': Failed to connect to github.com port 443 after 21084 ms: 
+[16:50:56] clone HarvestMoon64Recomp/HarvestMoon64Recomp（连历史，可能几分钟）
+[16:51:17]   失败：Cloning into 'F:\开源掌机教程\06-资讯监控\成品移植游戏库\源码\HarvestMoon64Recomp__HarvestMoon64Recomp'...
+fatal: unable to access 'https://github.com/HarvestMoon64Recomp/HarvestMoon64Recomp/': Failed to connect to gith
+[16:51:18] clone hedge-dev/UnleashedRecomp（连历史，可能几分钟）
+[16:51:40]   失败：Cloning into 'F:\开源掌机教程\06-资讯监控\成品移植游戏库\源码\hedge-dev__UnleashedRecomp'...
+fatal: unable to access 'https://github.com/hedge-dev/UnleashedRecomp/': Failed to connect to github.com port 443 after 21103 
+[16:51:40] clone HenryKun55/celosia（连历史，可能几分钟）
+[16:52:00]   失败：Cloning into 'F:\开源掌机教程\06-资讯监控\成品移植游戏库\源码\HenryKun55__celosia'...
+fatal: unable to access 'https://github.com/HenryKun55/celosia/': Recv failure: Connection was reset
+
+[16:52:01] clone HollywoodAkeem/SVR07-Recomp（连历史，可能几分钟）
+[16:52:22]   失败：Cloning into 'F:\开源掌机教程\06-资讯监控\成品移植游戏库\源码\HollywoodAkeem__SVR07-Recomp'...
+fatal: unable to access 'https://github.com/HollywoodAkeem/SVR07-Recomp/': Failed to connect to github.com port 443 after 21
+[16:52:23] clone iExplosiveRage/DBZ-Burst-Limit-Recompiled（连历史，可能几分钟）
+[16:52:44]   失败：Cloning into 'F:\开源掌机教程\06-资讯监控\成品移植游戏库\源码\iExplosiveRage__DBZ-Burst-Limit-Recompiled'...
+fatal: unable to access 'https://github.com/iExplosiveRage/DBZ-Burst-Limit-Recompiled/': Failed to connect to 
+[16:52:45] clone iHaiDeeZ/SSBU（连历史，可能几分钟）
+[16:53:12]   失败：Cloning into 'F:\开源掌机教程\06-资讯监控\成品移植游戏库\源码\iHaiDeeZ__SSBU'...
+fatal: unable to access 'https://github.com/iHaiDeeZ/SSBU/': Recv failure: Connection was reset
+
+[16:53:13] clone iMrBurn/wwe12-pc（连历史，可能几分钟）
+EXIT=1

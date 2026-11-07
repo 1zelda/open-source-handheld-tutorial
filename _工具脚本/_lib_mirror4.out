@@ -1,0 +1,137 @@
+[18:01:08] 代理 7890 不通，走直连
+[18:01:11] 跳过（登记不下，policy=meta）：christianhaitian/PortMaster — 707★｜.git 8186MB｜PortMaster 初代（Ark/Wayla
+[18:01:11] 跳过（登记不下，policy=meta）：PortsMaster/PortMaster-New — 386★｜.git 37913MB｜掌机端口大集合：Switch/PS1/N64
+[18:01:14] 跳过 0herculabs/hl360-forza4（HEAD 就是最新 d6597d7d5）
+[18:01:18] 跳过 0xl0cal/repentogxm（HEAD 就是最新 8f931dd1f）
+[18:01:23] 跳过 2ship2harkinian/2ship2harkinian（HEAD 就是最新 fd9fb03bd）
+[18:01:33] 跳过 abedegno/underworld-exhumed（HEAD 就是最新 e5deadd69）
+[18:01:39] 跳过 Adolini1715/Concrete-Jungle-PC（HEAD 就是最新 7ea73d273）
+[18:01:41] 跳过 Alexbeav/fm4-recomp（HEAD 就是最新 e2108085c）
+[18:01:43] 跳过 andeecollard/jsrf-recomp（HEAD 就是最新 4242eb696）
+[18:01:47] 跳过 andrebrumdev/gow2-recomp（HEAD 就是最新 a7c1f64c8）
+[18:01:50] 跳过 arcanite24/pinyon-shift（HEAD 就是最新 9494adade）
+[18:02:06] 更新 Awis13/liberty-pro-max 64af7c467 -> 091887cc3
+[18:02:09]   ok：88 个文件 / 3.0 MB / HEAD 091887cc3
+[18:02:11] 跳过 badcompany94-rcmp/project-tandem（HEAD 就是最新 130f64194）
+[18:02:14] 跳过 BanjoRecomp/BanjoRecomp（HEAD 就是最新 dbd52154b）
+[18:02:16] 跳过 beatrixzy/PGR4-Recomp（HEAD 就是最新 989c36137）
+[18:02:18] 跳过 ben16w/minui-portmaster（HEAD 就是最新 08b57fd2f）
+[18:02:20] 跳过 bgyss/SwitchRecomp（HEAD 就是最新 0f99e1c5c）
+[18:02:23] 跳过 birabittoh/EternalSonataReprise（HEAD 就是最新 b2ba4f7b8）
+[18:02:27] 跳过 BlackLabelHQ/MediEvilRecomp（HEAD 就是最新 69a411415）
+[18:02:30] 跳过 BlackLabelHQ/SymphonyRecomp（HEAD 就是最新 297e378a4）
+[18:02:34] 跳过 Buku313/Skate3-Mobile（HEAD 就是最新 e1b28c185）
+[18:02:37] 跳过 CaiusCodes/GoldenEye-007-XBLA-PC-Recomp（HEAD 就是最新 8b5573b7d）
+[18:02:40] 跳过 CaiusCodes/Perfect-Dark-XBLA-PC-Recomp（HEAD 就是最新 cd9c211fb）
+[18:02:42] 跳过 carl0srmz/littleplanet（HEAD 就是最新 093f58a04）
+[18:02:44] 跳过 cdlewis/snowboardkids2-recomp（HEAD 就是最新 59d162155）
+[18:02:46] 跳过 Cellenseres/SSSV_Recomp（HEAD 就是最新 a4dbfe40e）
+[18:02:49] 跳过 centollOS/SwitchWakerHD（HEAD 就是最新 78fd5af8d）
+[18:02:56] 跳过 chiikabu/the-browsing-of-isaac（HEAD 就是最新 e346ce66a）
+[18:03:02] 跳过 chrissotraidis/projectreach（HEAD 就是最新 fa965f38e）
+[18:03:06] 跳过 christianortel/skate2-recompile-pc（HEAD 就是最新 1202c9ae8）
+[18:03:09] 跳过 ChunchunQ/fifa09-recomp（HEAD 就是最新 4dba1063d）
+[18:03:13] 跳过 Cor3Duo/kirikae（HEAD 就是最新 726c4a1bc）
+[18:03:17] 跳过 Coz-0/smo-recomp（HEAD 就是最新 041434147）
+[18:03:21] 跳过 daniel-madrid-07/weeping-of-the-empire（HEAD 就是最新 f2c81da2a）
+[18:03:29] 跳过 Dhaiwat10/cricket07-browser（HEAD 就是最新 4febc615b）
+[18:03:32] 跳过 distilledorion-sketch/Initial-D-Arcade-Stage-3-Native-SH-4-Recompilation-WIP-（HEAD 就是最新 7f182756e）
+[18:03:36] 跳过 drakolordx7/KillzoneRecomp（HEAD 就是最新 aa5d3ae6a）
+[18:03:40] 跳过 drakolordx7/pokopia-recomp（HEAD 就是最新 2c29515b2）
+[18:03:46] 跳过 Drommedhar/mgs-reintegral（HEAD 就是最新 85b05f7ed）
+[18:04:01] 跳过 DrummingBird1/gow-psp-recomp（HEAD 就是最新 afc345b40）
+[18:04:04] 跳过 Dyotson/RecompiledHaloReach（HEAD 就是最新 329148bb1）
+[18:04:08] 跳过 eandis/SDOJ-Recomp（HEAD 就是最新 cf0afe107）
+[18:04:36] 跳过 elprogramadorloco-arch/fuc-recomp（HEAD 就是最新 2ce98889e）
+[18:04:39] 跳过 elripalda/RecompStore（HEAD 就是最新 9d9216bea）
+[18:04:42] 跳过 exoteric33/ps2-native-recomp（HEAD 就是最新 263508314）
+[18:04:44] 跳过 ExpansionPak/ModernGekko（HEAD 就是最新 a2e4e2b02）
+[18:04:46] 跳过 faligame/lost-odyssey-hd-remaster（HEAD 就是最新 4e2f96366）
+[18:04:49] 跳过 fearkov/3dsrecomp（HEAD 就是最新 73b8f9caf）
+[18:04:51] 跳过 FH1-ReImagined/ForzaHorizon1-ReImagined（HEAD 就是最新 aa37cb85a）
+[18:05:03] 跳过 FishB0nes98/Tekken3Recompiled（HEAD 就是最新 3d3acc81b）
+[18:05:13] 跳过 Flippage/gears-of-war-3-recomp（HEAD 就是最新 81076705b）
+[18:05:16] 跳过 fungalspores/prototype-switch（HEAD 就是最新 ea65b2e18）
+[18:05:20] 跳过 gamboozino/ngbrecomp（HEAD 就是最新 7fe6d96be）
+[18:05:23] 跳过 GenryTheFox0/Project-2099（HEAD 就是最新 1830cb5ed）
+[18:05:25] 跳过 get-starboard/starboard（HEAD 就是最新 17de0d084）
+[18:05:27] 跳过 giangra/stuntdouble-reignition（HEAD 就是最新 b65211e04）
+[18:05:29] 跳过 GiZcesi/OpenTricky（HEAD 就是最新 4bc6d4c0a）
+[18:05:46] 跳过 goliathret/EdgeOfTimeRecomp（HEAD 就是最新 ebf7bb904）
+[18:05:48] 跳过 griches/EternalDarknessRecomp（HEAD 就是最新 7cfbe6427）
+[18:05:54] 跳过 GTTeancum/SpideyPS1recomp（HEAD 就是最新 c6ae7c2c4）
+[18:06:20] 跳过 HarbourMasters/Ghostship（HEAD 就是最新 aefb89b85）
+[18:06:28] 跳过 HarbourMasters/Shipwright（HEAD 就是最新 d4bf6528a）
+[18:07:11] clone HarbourMasters/Starship（连历史，可能几分钟）
+[18:07:36]   ok：687 个文件 / 10.1 MB / HEAD 3322643f0
+[18:08:00] 更新 HarvestMoon64Recomp/HarvestMoon64Recomp ddd991cf5 -> 
+[18:08:21]   fetch 失败：fatal: unable to access 'https://github.com/HarvestMoon64Recomp/HarvestMoon64Recomp/': Failed to connect to github.com port 443 after 21086 ms: Could not connec
+[18:08:23]   ok：122 个文件 / 3.1 MB / HEAD ddd991cf5
+[18:08:45] 更新 hedge-dev/UnleashedRecomp cf829a9ec -> 
+[18:09:06]   fetch 失败：fatal: unable to access 'https://github.com/hedge-dev/UnleashedRecomp/': Failed to connect to github.com port 443 after 21068 ms: Could not connect to server
+
+[18:09:12]   ok：262 个文件 / 3.5 MB / HEAD cf829a9ec
+[18:09:34] 更新 HenryKun55/celosia 7ffcfd37b -> 
+[18:09:57]   fetch 失败：fatal: unable to access 'https://github.com/HenryKun55/celosia/': Failed to connect to github.com port 443 after 21065 ms: Could not connect to server
+
+[18:09:58]   ok：582 个文件 / 28.4 MB / HEAD 7ffcfd37b
+[18:10:21] 更新 HollywoodAkeem/SVR07-Recomp 2cd2793d5 -> 
+[18:10:42]   fetch 失败：fatal: unable to access 'https://github.com/HollywoodAkeem/SVR07-Recomp/': Failed to connect to github.com port 443 after 21106 ms: Could not connect to server
+
+[18:10:43]   ok：74 个文件 / 113.4 MB / HEAD 2cd2793d5
+[18:11:05] 更新 iExplosiveRage/DBZ-Burst-Limit-Recompiled 8faff03f1 -> 
+[18:11:26]   fetch 失败：fatal: unable to access 'https://github.com/iExplosiveRage/DBZ-Burst-Limit-Recompiled/': Failed to connect to github.com port 443 after 21067 ms: Could not conn
+[18:11:27]   ok：70 个文件 / 8.7 MB / HEAD 8faff03f1
+[18:11:49] 更新 iHaiDeeZ/SSBU 7e83c0eb9 -> 
+[18:12:11]   fetch 失败：fatal: unable to access 'https://github.com/iHaiDeeZ/SSBU/': Failed to connect to github.com port 443 after 21048 ms: Could not connect to server
+
+[18:12:14]   ok：78 个文件 / 1.1 MB / HEAD 7e83c0eb9
+[18:12:36] 更新 iMrBurn/wwe12-pc 52cbdebb9 -> 
+[18:12:59]   fetch 失败：fatal: unable to access 'https://github.com/iMrBurn/wwe12-pc/': Failed to connect to github.com port 443 after 21086 ms: Could not connect to server
+
+[18:13:04]   ok：499 个文件 / 8.7 MB / HEAD 52cbdebb9
+[18:13:06] 跳过 invinceble55-wq/Estacado-The-Darkness-Recomp（HEAD 就是最新 b5603ac42）
+[18:13:31] 更新 ioncodes/llvm8 7876738a6 -> 
+[18:13:35]   ok：119 个文件 / 4.7 MB / HEAD 7876738a6
+[18:13:37] 跳过 JackandBeans/Snap64Recomp（HEAD 就是最新 28087c636）
+[18:13:44] 跳过 Jakeschincariol/console-skill（HEAD 就是最新 a508929f1）
+[18:13:51] 跳过 jedijosh920/SWROTS-PC（HEAD 就是最新 5be69c562）
+[18:13:56] 跳过 jessetbh/WCWnWoRevengeRecomp（HEAD 就是最新 c1c43a694）
+[18:14:00] 跳过 jessetbh/WCWvsNWOWorldTourRecomp（HEAD 就是最新 89739f7a4）
+[18:14:07] 跳过 jessetbh/WWFNoMercyRecomp（HEAD 就是最新 abb5641a3）
+[18:14:11] 跳过 jillsandwich1998/reGH2（HEAD 就是最新 5411819f0）
+[18:14:14] 跳过 jjmhalew/RampageRE（HEAD 就是最新 1740663b6）
+[18:14:17] 跳过 jorjbarbosa/broken-bond-recomp（HEAD 就是最新 37b72e657）
+[18:14:23] 跳过 Juansolo457/fear360-recomp（HEAD 就是最新 10547cf17）
+[18:14:32] 跳过 justxor/awesome-decomp-games-ru（HEAD 就是最新 317f4dd73）
+[18:14:39] 跳过 KaikoClanworth1/wwe-svr2011-pc（HEAD 就是最新 335ffdcd2）
+[18:15:00] 跳过 kanapitsas/portal2-recomp（HEAD 就是最新 c4c738d82）
+[18:15:03] 跳过 kastieloficial/RE-Code-Veronica-PS3-HD-Recomp-PC（HEAD 就是最新 1b73fe5a3）
+[18:15:20] 跳过 kazuyette/rr-decomp（HEAD 就是最新 3b42b36e2）
+[18:15:26] 跳过 KIexster/god-of-war-recomp（HEAD 就是最新 2d3c91dc1）
+[18:15:32] 跳过 kittycache9/OpenSA2（HEAD 就是最新 5aa34bce7）
+[18:15:39] 跳过 klorfmorf/Goemon64Recomp（HEAD 就是最新 6661abc43）
+[18:15:42] 跳过 kuraeow/ultratears（HEAD 就是最新 57bf619e7）
+[18:15:45] clone lakshya16157/midtown-madness-3-PC-Native（连历史，可能几分钟）
+[18:15:52]   ok：694 个文件 / 10.1 MB / HEAD 9d96fe2dc
+[18:15:52] clone lesca-191204/killzone-shadowfall-pc（连历史，可能几分钟）
+[18:15:57]   ok：975 个文件 / 15.6 MB / HEAD 60a753eec
+[18:15:58] clone linkssy2/DarkwatchDarkerEdition（连历史，可能几分钟）
+[18:16:20]   ok：341 个文件 / 140.9 MB / HEAD 57f1e3236
+[18:16:21] clone LittleBitUA/DownpourRecomp（连历史，可能几分钟）
+[18:16:43]   失败：Cloning into 'F:\开源掌机教程\06-资讯监控\成品移植游戏库\源码\LittleBitUA__DownpourRecomp'...
+fatal: unable to access 'https://github.com/LittleBitUA/DownpourRecomp/': Failed to connect to github.com port 443 after 2111
+[18:16:43] clone LittleBitUA/DPRecomp（连历史，可能几分钟）
+[18:17:05]   失败：Cloning into 'F:\开源掌机教程\06-资讯监控\成品移植游戏库\源码\LittleBitUA__DPRecomp'...
+fatal: unable to access 'https://github.com/LittleBitUA/DPRecomp/': Failed to connect to github.com port 443 after 21098 ms: Could 
+[18:17:05] clone Lucas-blip-png/dkb-pc-recomp（连历史，可能几分钟）
+[18:17:27]   失败：Cloning into 'F:\开源掌机教程\06-资讯监控\成品移植游戏库\源码\Lucas-blip-png__dkb-pc-recomp'...
+fatal: unable to access 'https://github.com/Lucas-blip-png/dkb-pc-recomp/': Failed to connect to github.com port 443 after 
+[18:17:29] clone luisxl15/METAL-GEAR-SOLID-2-Sons-of-Liberty-for-Android（连历史，可能几分钟）
+[18:17:53]   失败：Cloning into 'F:\开源掌机教程\06-资讯监控\成品移植游戏库\源码\luisxl15__METAL-GEAR-SOLID-2-Sons-of-Liberty-for-Android'...
+fatal: unable to access 'https://github.com/luisxl15/METAL-GEAR-SOLID-2-Sons-of-Liberty-for-Andr
+[18:17:53] 连续 4 个失败，重探主站（最后一个是 luisxl15/METAL-GEAR-SOLID-2-Sons-of-Liberty-for-Android）
+[18:18:16] 闸门：主站 clone 通道不通（fatal: unable to access 'https://github.com/octocat/Hello-World.git/': Failed to connect to github.com port 443 after 21），api.github.com 也不通（URLError）；本次不动盘。要么等 github.com 自己恢复，要么把 7890 代理起来再跑——重跑是幂等的，已镜像的会跳。
+[18:18:16] 中止：链路已断，停在 luisxl15/METAL-GEAR-SOLID-2-Sons-of-Liberty-for-Android（第 96/203 个）。已镜像的不动，恢复后重跑 all 会接着补剩下的 107 个
+[18:24:12] 台账：F:\开源掌机教程\06-资讯监控\成品移植游戏库\抓取台账.tsv（92 行）
+[18:24:12] 完成：中止 成功 92 / 失败 4 / 工作树合计 3.28 GB

@@ -1,0 +1,29 @@
+{
+    "version": 4,
+    "name": "Quake.zip",
+    "items": [
+        "Quake.sh",
+        "quake"
+    ],
+    "items_opt": null,
+    "attr": {
+        "title": "Quake (LibreQuake)",
+        "desc": "QuakeSpasm 0.97.0（GPL-2.0 的 Quake 引擎源码）交叉编译成 aarch64，配 LibreQuake v0.09-beta 免费数据（美术 BSD-3、QuakeC GPL-2.0）。640x480 全屏，音效有、OGG 音乐未接。",
+        "inst": "Ready to run. LibreQuake v0.09-beta free data is included.",
+        "genres": [
+            "fps"
+        ],
+        "porter": [
+            "教程示例"
+        ],
+        "image": {},
+        "rtr": true,
+        "exp": false,
+        "runtime": [],
+        "min_glibc": "2.27",
+        "reqs": [],
+        "arch": [
+            "aarch64"
+        ]
+    }
+}

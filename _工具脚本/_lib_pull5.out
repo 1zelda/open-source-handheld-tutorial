@@ -1,0 +1,37 @@
+[20:15:08] 范围：只取 RecompHub 目录点名的仓库，84/548 个资产（4.15 GB / 全量 19.47 GB）
+[20:15:09] 开始下载：84 个资产 / 4.15 GB
+[20:15:11]   1/84 已相符 0herculabs/hl360-forza4/FM4-v0.3.10-windows-x64.zip（78.5 MB，复检 43 成员）
+[20:15:14]   2/84 已相符 2ship2harkinian/2ship2harkinian/2Ship-Battler-Bravo-Win64.zip（42.9 MB，复检 1335 成员）
+[20:15:14]   3/84 已相符 abedegno/underworld-exhumed/UW1-v1.0.2-windows-x86_64.zip（3.6 MB，复检 20 成员）
+[20:15:16]   4/84 已相符 BanjoRecomp/BanjoRecomp/BanjoRecompiled-v1.0.2-Windows.zip（17.8 MB，复检 44 成员）
+[20:15:17]   5/84 已相符 beatrixzy/PGR4-Recomp/PGR4-Recomp-v1.2.2.zip（15.6 MB，复检 7 成员）
+[20:15:18]   6/84 已相符 birabittoh/EternalSonataReprise/eternalsonata-v1.3.8-win-amd64.zip（25.5 MB，复检 2 成员）
+[20:15:21]   7/84 已相符 BlackLabelHQ/MediEvilRecomp/MediEvilRecomp-v1.0.3-windows-x64.zip（40.7 MB，复检 51 成员）
+[20:15:25]   8/84 已相符 BlackLabelHQ/SymphonyRecomp/SymphonyRecomp-v1.1.2p-linux-x64.tar.gz（55.9 MB，复检 58 成员）
+[20:15:28]   9/84 已相符 BlackLabelHQ/SymphonyRecomp/SymphonyRecomp-v1.1.2p-macos-arm64.zip（54.0 MB，复检 56 成员）
+[20:15:32]   10/84 已相符 BlackLabelHQ/SymphonyRecomp/SymphonyRecomp-v1.1.2p-macos-x64.zip（55.5 MB，复检 56 成员）
+[20:15:35]   11/84 已相符 BlackLabelHQ/SymphonyRecomp/SymphonyRecomp-v1.1.2p-windows-arm64.zip（53.4 MB，复检 55 成员）
+[20:15:38]   12/84 已相符 BlackLabelHQ/SymphonyRecomp/SymphonyRecomp-v1.1.2p-windows-x64.zip（55.0 MB，复检 56 成员）
+[20:15:48]   13/84 已相符 carl0srmz/littleplanet/littleplanet-windows-portable.zip（152.1 MB，复检 9 成员）
+[20:15:49]   14/84 已相符 cdlewis/snowboardkids2-recomp/SnowboardKids2Recompiled-Windows.zip（19.1 MB，复检 33 成员）
+[20:15:51]   15/84 已相符 Cellenseres/SSSV_Recomp/SSSVRecompiled_v0.2.0_Windows.zip（44.4 MB，复检 42 成员）
+[20:15:53]   16/84 已相符 christianortel/skate2-recompile-pc/Skate2-PC-v0.1.1-Windows-x64.zip（22.2 MB，复检 75 成员）
+[20:16:00]   17/84 已相符 ChunchunQ/fifa09-recomp/NOBK-FIFA09-1.4.0.zip（114.9 MB，复检 68 成员）
+[20:16:01]   18/84 已相符 distilledorion-sketch/Initial-D-Arcade-Stage-3-Native-SH-4-Recompilation-WIP-/Initial.D.Arcade.Stage.3.Recompiled.v2489.zip（17.6 MB，复检 18 成员）
+[20:16:08]   19/84 已相符 drakolordx7/KillzoneRecomp/Killzone-PC-v0.1.6-alpha.zip（72.9 MB，复检 213 成员）
+[20:16:09]   20/84 已相符 Drommedhar/mgs-reintegral/reintegral-0.3.0-windows-x86.zip（15.5 MB，复检 595 成员）
+[20:16:11]   21/84 已相符 eandis/SDOJ-Recomp/sdoj.recomp.1.51.4.win-amd64.vulkan.zip（15.9 MB，复检 15 成员）
+[20:16:14]   22/84 已相符 ExpansionPak/ModernGekko/KirbyWiiRecomp-Windows-x86_64.zip（42.1 MB，复检 2643 成员）
+[20:16:27]   23/84 已相符 FishB0nes98/Tekken3Recompiled/Tekken3Recompiled-v0.1.4-Easy-Setup.zip（131.0 MB，复检 5112 成员）
+[20:16:36]   24/84 已相符 GiZcesi/OpenTricky/OpenTricky-0.1.5-win64.zip（70.2 MB，复检 133 成员）
+[20:16:50]   25/84 已相符 goliathret/EdgeOfTimeRecomp/EdgeOfTimeRecomp-v1.0.0-20261030_1906-win-amd64.zip（183.3 MB，复检 6 成员）
+Traceback (most recent call last):
+  File "F:\开源掌机教程\_工具脚本\recomp_lib_assets.py", line 408, in <module>
+    sys.exit(main())
+             ~~~~^^
+  File "F:\开源掌机教程\_工具脚本\recomp_lib_assets.py", line 404, in main
+    return fn(rest)
+  File "F:\开源掌机教程\_工具脚本\recomp_lib_assets.py", line 295, in cmd_pull
+    t0 = time.time()
+         ^^^^
+NameError: name 'time' is not defined. Did you forget to import 'time'?

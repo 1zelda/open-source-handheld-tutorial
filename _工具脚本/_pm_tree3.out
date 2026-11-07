@@ -1,0 +1,4 @@
+[23:57:11] == 端口包抓取开始（christianhaitian/PortMaster）==
+[23:57:14]   christianhaitian/PortMaster HEAD 相符但工作树缺 1137 个文件（上次检出被打断），从本地 pack 重检出
+[23:57:14]   christianhaitian/PortMaster 重检出后仍缺 1137 个文件，本轮判失败，不动台账
+[23:57:14] 完成：成功 0 / 失败 1｜盘上目录 F:\开源掌机教程\06-资讯监控\成品移植游戏库\掌机端口包

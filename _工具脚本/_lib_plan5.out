@@ -1,0 +1,225 @@
+[23:51:07] 计划开始：先问 releases/latest，取不到再退回全量 release 列表，共 2462 个仓
+[23:51:18]   latest 取不到，改用 15cyber/marvel-nemesis-recomp v0.1.0-alpha.4 [pre-release]
+[23:51:29]   latest 取不到，改用 3dge7161/jiggle-or-physics 0.1.0 [pre-release]
+[23:51:45]   latest 取不到，改用 96dot/dragon-age-origins-recomp v1.0.0-dev.4 [pre-release]
+[23:52:20]   进度 50/2462，已命中 29 个仓
+[23:52:30]   latest 取不到，改用 adventuret/opentoshi nightly [pre-release]
+[23:52:44]   latest 取不到，改用 aikatore/recvx-enhanced-port v0.7.3 [pre-release]
+[23:53:10]   latest 取不到，改用 alexbatalov/fallout2-re nightly [pre-release]
+[23:53:53]   latest 取不到，改用 aloaf812/gd v0.1.0-beta [pre-release]
+[23:54:24]   API 失败（非 404）：repos/andreapavoni/parabellum/releases/latest <- Get "https://api.github.com/repos/andreapavoni/parabellum/releases/latest": EOF
+[23:54:51]   latest 取不到，改用 anishchandra24/juiced2-recompiled v0.1.0-preview [pre-release]
+[23:54:53]   latest 取不到，改用 anishchandra24/maddennfl08-recompiled v0.1.0 [pre-release]
+[23:54:57]   进度 150/2462，已命中 89 个仓
+[23:55:20]   latest 取不到，改用 armac911/carmageddon-android-port v0.9.2 [pre-release]
+[23:55:27]   latest 取不到，改用 arnaldolima1/gow-chains-of-olympus-pc v0.1.0 [pre-release]
+[23:55:29]   latest 取不到，改用 arnaldolima1/gow-ghost-of-sparta-pc v0.1.8 [pre-release]
+[23:55:32]   latest 取不到，改用 arnautdaniel/openhuey openhuey-latest [pre-release]
+[23:55:34]   latest 取不到，改用 arnoansems/catacombgl v0.5.7-beta [pre-release]
+[23:55:36]   latest 取不到，改用 artfulrascal8/rage-wars-recompiled v0.5.0-beta.1 [pre-release]
+[23:55:57]   latest 取不到，改用 Awis13/liberty-pro-max v0.3.3-beta [pre-release]
+[23:56:05]   latest 取不到，改用 badcompany94-rcmp/project-tandem v0.1.0-beta.14 [pre-release]
+[23:56:18]   进度 200/2462，已命中 122 个仓
+[23:56:52]   latest 取不到，改用 bifftannen1/Dead-Space-2-Recomp tu2-playtest-20261017 [pre-release]
+[23:57:39]   进度 250/2462，已命中 150 个仓
+[23:58:24]   latest 取不到，改用 btr-rj/redbaron_recomp v0.10 [pre-release]
+[23:58:32]   进度 275/2462，已命中 164 个仓
+[23:59:14]   latest 取不到，改用 Capridog/SpaceRanger v0.1.0 [pre-release]
+[23:59:20]   API 失败（非 404）：repos/caramelcupcakes842/on-the-run-2-decomp/releases/latest <- Get "https://api.github.com/repos/caramelcupcakes842/on-the-run-2-decomp/releases/latest": EOF
+[23:59:23]   进度 300/2462，已命中 171 个仓
+[23:59:48]   latest 取不到，改用 cellenseres/lufia2snesrecomp v0.9.2 [pre-release]
+[00:00:42]   latest 取不到，改用 clergyman0013/arizona-vamp-recomp v0.5.5 [pre-release]
+[00:01:06]   latest 取不到，改用 coccofresco/mgsone-recomp alpha.1 [pre-release]
+[00:01:08]   latest 取不到，改用 coccofresco/triaevum v0.8.0-beta.1.2 [pre-release]
+[00:01:11]   latest 取不到，改用 codenamecpp/carnage3d test_2 [pre-release]
+[00:01:14]   latest 取不到，改用 codenamecpp/glkeeper dev-8 [pre-release]
+[00:01:16]   latest 取不到，改用 codepdbh/melee360 v0.1.0-alpha.3 [pre-release]
+[00:01:27]   latest 取不到，改用 codepdbh/psprecomp-lcs-android v0.1.2-beta [pre-release]
+[00:01:33]   latest 取不到，改用 codepdbh/psprecomp-vcs-android v0.3.0-beta [pre-release]
+[00:01:35]   latest 取不到，改用 codepdbh/the-simpsons-game-android v0.3.0-experimental [pre-release]
+[00:01:40]   latest 取不到，改用 collinsmith/riiablo v0.0.4 [pre-release]
+[00:01:52]   latest 取不到，改用 conker64recomp/conker64-recompiled v0.1.0-beta [pre-release]
+[00:02:12]   latest 取不到，改用 cortex-command-community/cortex-command-community-project-source v0.1.0-pre5.2 [pre-release]
+[00:03:02]   latest 取不到，改用 crowded-street/3sx rolling-pre-release [pre-release]
+[00:03:22]   API 失败（非 404）：repos/cscarletter/drakan-the-ancient-gates-decompilation-/releases/lat <- Get "https://api.github.com/repos/cscarletter/drakan-the-ancient-gates-decompilation-/releases/latest": unexpected EOF
+[00:03:40]   latest 取不到，改用 ctr-tools/ctr-native beta-7.1 [pre-release]
+[00:04:00]   进度 425/2462，已命中 238 个仓
+[00:04:51]   latest 取不到，改用 daniel-madrid-07/weeping-of-the-empire v0.1.9.1
+[00:05:06]   latest 取不到，改用 danielalves96/gow-pc-port launcher-v0.3.0
+[00:05:25]   latest 取不到，改用 danielgomesvieira2000/burnout3-pc v0.8.0-alpha [pre-release]
+[00:05:33]   进度 450/2462，已命中 255 个仓
+[00:06:28]   latest 取不到，改用 derrickgold/ar-recomp v0805 [pre-release]
+[00:06:47]   latest 取不到，改用 diasurgical/devilution 0.10.0 [pre-release]
+[00:06:51]   latest 取不到，改用 differentnet/barony-android-port 5.0.2-android-beta11 [pre-release]
+[00:06:54]   latest 取不到，改用 digdat0/acgc-switch-port v1.0.1 [pre-release]
+[00:07:19]   latest 取不到，改用 doc-haz/infinite-undiscovery-recomp v1.0.0-rc1 [pre-release]
+[00:07:45]   进度 525/2462，已命中 290 个仓
+[00:07:57]   latest 取不到，改用 dq9-remastered/dq9-remastered v0.5.0 [pre-release]
+[00:08:09]   latest 取不到，改用 drakolordx7/KillzoneRecomp v0.1.6-alpha [pre-release]
+[00:08:58]   进度 575/2462，已命中 319 个仓
+[00:09:28]   进度 600/2462，已命中 338 个仓
+[00:09:41]   latest 取不到，改用 enriquesomolinos/dreerally v0.1.0 [pre-release]
+[00:10:07]   latest 取不到，改用 erikomis/infamous2-recomp v0.2.16 [pre-release]
+[00:10:09]   进度 625/2462，已命中 351 个仓
+[00:10:40]   进度 650/2462，已命中 363 个仓
+[00:11:17]   latest 取不到，改用 fataldecomp/roller v0.1.1-dev.20261027 [pre-release]
+[00:11:32]   latest 取不到，改用 FishB0nes98/Tekken3Recompiled v0.1.4 [pre-release]
+[00:11:58]   latest 取不到，改用 foreverwip/s1-port test-release-62325 [pre-release]
+[00:12:15]   进度 700/2462，已命中 384 个仓
+[00:12:23]   latest 取不到，改用 frankhun88453/cod3recomp v0.5.0 [pre-release]
+[00:12:33]   latest 取不到，改用 frenkels/keensource456tandy v20221115 [pre-release]
+[00:12:47]   latest 取不到，改用 fwgs/cs16-client continuous [pre-release]
+[00:12:49]   latest 取不到，改用 fwgs/xash3d-fwgs continuous [pre-release]
+[00:12:54]   进度 725/2462，已命中 400 个仓
+[00:12:57]   latest 取不到，改用 gabrick75/fh2-recompiled v0.4.4 [pre-release]
+[00:13:06]   latest 取不到，改用 gamboozino/ngbrecomp v0.9.55 [pre-release]
+[00:13:18]   latest 取不到，改用 gbsphenx/skproject rel-20210703 [pre-release]
+[00:13:36]   latest 取不到，改用 ggdrn/kh_com_vita v0.08.08 [pre-release]
+[00:13:42]   latest 取不到，改用 gh0stblade/kain2 B6007 [pre-release]
+[00:14:38]   latest 取不到，改用 goshavindtburg/nx1recomp 0.9.2 [pre-release]
+[00:15:02]   进度 800/2462，已命中 437 个仓
+[00:15:35]   进度 825/2462，已命中 456 个仓
+[00:15:41]   latest 取不到，改用 hankmorgan/underworldgodot Release-31-main [pre-release]
+[00:16:12]   进度 850/2462，已命中 470 个仓
+[00:17:08]   latest 取不到，改用 iandrewjj/enchantedarmsrecomp v0.5.8 [pre-release]
+[00:17:40]   进度 900/2462，已命中 500 个仓
+[00:18:10]   latest 取不到，改用 interkarma/daggerfall-unity v1.1.1-cve-2025
+[00:18:15]   latest 取不到，改用 invictus-potens/smt4-recomp v0.1.9 [pre-release]
+[00:18:17]   latest 取不到，改用 invinceble55-wq/Estacado-The-Darkness-Recomp v0.9.8 [pre-release]
+[00:18:53]   latest 取不到，改用 itseniy/pvz-console-edition v0.7.0 [pre-release]
+[00:19:09]   latest 取不到，改用 izzy2lost/perfect_dark 2.0.0
+[00:19:19]   latest 取不到，改用 jackgllghr/bigmission-recomp v0.2.1 [pre-release]
+[00:19:24]   latest 取不到，改用 jackrushante/dbz-super-saiya-densetsu-rust v0.3.13 [pre-release]
+[00:19:38]   进度 950/2462，已命中 530 个仓
+[00:20:17]   latest 取不到，改用 jedijosh920/SWROTS-PC v0.5.0 [pre-release]
+[00:20:28]   latest 取不到，改用 jessetbh/vpw2recomp v0.2.0 [pre-release]
+[00:20:31]   latest 取不到，改用 jessetbh/vpw64recomp v0.2.0 [pre-release]
+[00:20:33]   latest 取不到，改用 jessetbh/WCWnWoRevengeRecomp v0.2.0 [pre-release]
+[00:20:35]   latest 取不到，改用 jessetbh/WCWvsNWOWorldTourRecomp v0.2.0 [pre-release]
+[00:20:37]   latest 取不到，改用 jessetbh/WWFNoMercyRecomp v0.2.0 [pre-release]
+[00:20:40]   latest 取不到，改用 jessetbh/wwfwrestlemania2000recomp v0.2.0 [pre-release]
+[00:21:04]   latest 取不到，改用 jillsandwich1998/reGH2 v0.2.0 [pre-release]
+[00:21:10]   latest 取不到，改用 jlagedo/dreams-to-reality-re v0.2.0 [pre-release]
+[00:21:37]   latest 取不到，改用 JonathanDC64/FFCCEOT-Recomp v0.3.1-alpha [pre-release]
+[00:22:22]   latest 取不到，改用 jstar269/nakagawa-recomp v0.0.1 [pre-release]
+[00:22:32]   进度 1050/2462，已命中 590 个仓
+[00:23:18]   latest 取不到，改用 kerokline/breathoffire3pcport latest [pre-release]
+[00:24:03]   latest 取不到，改用 kittycache9/OpenSA2 v0.1.0-alpha.6.1 [pre-release]
+[00:24:47]   进度 1125/2462，已命中 622 个仓
+[00:24:57]   latest 取不到，改用 kyra422/skybreak v0.23.0-alpha.3 [pre-release]
+[00:25:07]   latest 取不到，改用 lamb2k/re4dc test-638521db-20261102 [pre-release]
+[00:25:31]   进度 1150/2462，已命中 634 个仓
+[00:26:12]   latest 取不到，改用 llamapixels/tenchuzrecomp v0.1.4-alpha [pre-release]
+[00:26:51]   进度 1200/2462，已命中 657 个仓
+[00:27:03]   latest 取不到，改用 maddog847/mvp-baseball-2005-xberecomp v0.3.0-beta [pre-release]
+[00:27:17]   latest 取不到，改用 mamcjr/botwrecompandroid v0.3.1-beta [pre-release]
+[00:27:31]   进度 1225/2462，已命中 670 个仓
+[00:27:36]   latest 取不到，改用 mariopartyrd/marioparty4 partyboard_0.2.0 [pre-release]
+[00:27:52]   latest 取不到，改用 mariopartyrd/partyboard partyboard_0.2.0 [pre-release]
+[00:28:34]   进度 1250/2462，已命中 673 个仓
+[00:28:43]   latest 取不到，改用 MaryNCRT/Ultimate-Mortal-Kombat-3-iOS-Decompiled v0.1.23-beta [pre-release]
+[00:29:07]   latest 取不到，改用 mattkuhnqaai/sfiii-native v0.6.1-preview1 [pre-release]
+[00:29:20]   latest 取不到，改用 MaxDeadBear/Re-Cherry beta [pre-release]
+[00:29:23]   latest 取不到，改用 maxevans60/cm0102-bosman-edition v0.6.1 [pre-release]
+[00:29:49]   latest 取不到，改用 menaman123/sly-2-recomp win-test-7 [pre-release]
+[00:30:29]   latest 取不到，改用 mikompilation/mikupan nightly [pre-release]
+[00:30:49]   进度 1325/2462，已命中 714 个仓
+[00:31:06]   latest 取不到，改用 monstercameron/libertyflux latest-build [pre-release]
+[00:31:30]   进度 1350/2462，已命中 730 个仓
+[00:32:25]   latest 取不到，改用 mstan/sonicthehedgehogsmsrecomp v0.0.4 [pre-release]
+[00:32:29]   latest 取不到，改用 mstan/supermarioadvance2recomp v0.0.4 [pre-release]
+[00:32:32]   latest 取不到，改用 mstan/supermarioadvance4recomp v0.0.3 [pre-release]
+[00:32:42]   latest 取不到，改用 mstan/WarioWareTwistedRecomp v0.0.2 [pre-release]
+[00:33:06]   latest 取不到，改用 n0zom1z0/th04 portable64-2026.10.27 [pre-release]
+[00:34:05]   latest 取不到，改用 negroiso/doax3-fortune-pc steamdeck-native-2026.10.26 [pre-release]
+[00:34:07]   latest 取不到，改用 negroiso/doax3-scarlet-pc steamdeck-native-2026.10.26 [pre-release]
+[00:34:22]   latest 取不到，改用 nevercookfirst/dimensionsrecomp v0.1.38 [pre-release]
+[00:34:56]   latest 取不到，改用 nlwstein/skullburglar issue-12-test-build [pre-release]
+[00:35:05]   latest 取不到，改用 noahbaxter/ghclassic v0.8.7 [pre-release]
+[00:35:10]   latest 取不到，改用 nolffan/nolf2src nightly [pre-release]
+[00:35:12]   latest 取不到，改用 nolffan/nolfsrc nightly [pre-release]
+[00:35:50]   latest 取不到，改用 nycolazs/eowrecomp alpha_1 [pre-release]
+[00:35:54]   latest 取不到，改用 nyperyuhgard/ctr-pc-port Open-Beta-1.7 [pre-release]
+[00:36:13]   latest 取不到，改用 ogdanimal/skiesofarcadialegends-recomp perftest1 [pre-release]
+[00:36:24]   latest 取不到，改用 omegakatana92/gundam-seed-battle-assault-recomp WIP [pre-release]
+[00:36:41]   latest 取不到，改用 openbiohazard2/openbiohazard2 OpenBiohazard-0.1.0 [pre-release]
+[00:36:59]   latest 取不到，改用 openenroth/openenroth nightly [pre-release]
+[00:37:14]   latest 取不到，改用 opennfs/opennfs v0.3 [pre-release]
+[00:37:36]   latest 取不到，改用 opensage/opensage v0.3.0 [pre-release]
+[00:37:42]   latest 取不到，改用 opensmash-ultimate/ssbu-recomp runtime-daa0938 [pre-release]
+[00:37:46]   进度 1575/2462，已命中 901 个仓
+[00:38:08]   latest 取不到，改用 OpokXeno/xenogears-recomp v0.11.3 [pre-release]
+[00:38:45]   进度 1600/2462，已命中 911 个仓
+[00:39:12]   latest 取不到，改用 parkerallan/doa2u-recomp netplay-v1.0.1 [pre-release]
+[00:39:22]   latest 取不到，改用 pascalpixel/alchemy decomp-reports-2 [pre-release]
+[00:39:47]   latest 取不到，改用 pauloubirajara/asuras-wrath-recomp v0.3.1.2 [pre-release]
+[00:40:24]   latest 取不到，改用 phi1ow/mkwii-ps5 v1.0.0-rc1 [pre-release]
+[00:40:40]   latest 取不到，改用 pipeknight/drig-race-driver macos-arm64-preview-2026-11-02 [pre-release]
+[00:40:46]   latest 取不到，改用 pixiecatsupreme/anodynesharp v0.2 [pre-release]
+[00:41:12]   latest 取不到，改用 portingpete/Black-2006-Recomp v0.1.0-alpha.5 [pre-release]
+[00:41:16]   latest 取不到，改用 portingpete/the-darkness-recomp v0.1.8 [pre-release]
+[00:41:48]   进度 1675/2462，已命中 947 个仓
+[00:42:51]   进度 1700/2462，已命中 953 个仓
+[00:42:53]   latest 取不到，改用 ptitty12/mvp2005-decomp progress-report [pre-release]
+[00:43:21]   latest 取不到，改用 r4dius/outrun2-decomp test-1 [pre-release]
+[00:44:23]   latest 取不到，改用 re-rac/rerac-launcher v0.3.1-alpha [pre-release]
+[00:45:11]   latest 取不到，改用 retroreplay82/legendary-wings-nes-to-pc v0.1.0-beta.1 [pre-release]
+[00:45:17]   进度 1775/2462，已命中 994 个仓
+[00:45:27]   latest 取不到，改用 revivedx/savagewindrecomp v0.4.1-alpha.4 [pre-release]
+[00:45:30]   latest 取不到，改用 RevoSucks/BMHeroRecomp v0.7.1 [pre-release]
+[00:46:16]   进度 1800/2462，已命中 1005 个仓
+[00:46:35]   latest 取不到，改用 rossmeikleham/dxx-3ds 0.1 [pre-release]
+[00:47:03]   进度 1825/2462，已命中 1017 个仓
+[00:47:37]   latest 取不到，改用 sal063/ac6_recomp v1.0.0-beta.2 [pre-release]
+[00:47:47]   latest 取不到，改用 samsteprojects/legend-of-legaia-recomp v0.1.7-diagnostic-playtest [pre-release]
+[00:48:16]   latest 取不到，改用 schans-arg/ufc4-pc-port ufc4-v0.0.11-preview.1 [pre-release]
+[00:48:58]   latest 取不到，改用 sergiomanzur/issd-native v0.6.0-beta.1 [pre-release]
+[00:49:00]   latest 取不到，改用 sergiomanzur/noble-archimedes v0.9.1b [pre-release]
+[00:49:34]   latest 取不到，改用 shinyquagsire23/openjkdf2 v0.9.9 [pre-release]
+[00:49:39]   latest 取不到，改用 shmargus/gsrecomp 0.7.1 [pre-release]
+[00:50:05]   进度 1925/2462，已命中 1068 个仓
+[00:50:25]   latest 取不到，改用 sk8-engine/skate-3-rust-engine experimental [pre-release]
+[00:50:52]   latest 取不到，改用 slippygetbackhere/strike-gunner-stg-recomp v0.3.0
+[00:50:58]   进度 1950/2462，已命中 1080 个仓
+[00:51:12]   latest 取不到，改用 smcgames/paper-mario-recut-deprecated v0.1.2 [pre-release]
+[00:52:15]   latest 取不到，改用 some-scurvy-dog/banjo-tooie-scurvy-dog-port v0.1.0-alpha.4.5 [pre-release]
+[00:53:01]   latest 取不到，改用 soyjxck/dod3-recomp v0.5.0-alpha [pre-release]
+[00:53:28]   latest 取不到，改用 sp00nznet/Rampage v0.3.0 [pre-release]
+[00:53:37]   进度 2025/2462，已命中 1113 个仓
+[00:53:43]   latest 取不到，改用 sp00nznet/tiberiansun-recomp v0.1.0-alpha.2 [pre-release]
+[00:53:57]   latest 取不到，改用 spacefarergames/ecstaticarecompiled 1.0_Staging [pre-release]
+[00:54:12]   latest 取不到，改用 spyrosadventure/cloud-patrol-decomp test [pre-release]
+[00:54:18]   latest 取不到，改用 ssenegas/kickoff v0.4 [pre-release]
+[00:54:36]   latest 取不到，改用 stellargames/bakagain v0.5.0-beta [pre-release]
+[00:54:38]   latest 取不到，改用 stephini/smas_launcher idunno [pre-release]
+[00:54:48]   latest 取不到，改用 suijingfeng/vkquake3 0.01 [pre-release]
+[00:55:13]   latest 取不到，改用 swaymun/ac-recomp v0.1.0 [pre-release]
+[00:56:42]   进度 2150/2462，已命中 1196 个仓
+[00:56:52]   latest 取不到，改用 theassemblyarmada/vanilla-conquer latest [pre-release]
+[00:57:02]   latest 取不到，改用 thefixinhixon/ultracombo v1.1.0 [pre-release]
+[00:57:10]   latest 取不到，改用 thefixinhixon/woohoo-flight-school v0.1.1 [pre-release]
+[00:57:23]   进度 2175/2462，已命中 1213 个仓
+[00:58:07]   latest 取不到，改用 thiagolira/trouble-makers-pc-recomp v0.8.4 [pre-release]
+[00:58:24]   latest 取不到，改用 tmcleroy/muscle-march-recomp v0.1.0-beta.5 [pre-release]
+[00:58:26]   latest 取不到，改用 tmcleroy/vampire-savior-recomp v0.1.0-beta.7 [pre-release]
+[00:58:31]   latest 取不到，改用 tomb5/tomb5 c3716 [pre-release]
+[00:58:35]   latest 取不到，改用 tonihele/openkeeper latest [pre-release]
+[00:58:56]   latest 取不到，改用 try/opengothic v0.92 [pre-release]
+[00:59:09]   latest 取不到，改用 ttdpatch/ttdpatch v2.5-b9 [pre-release]
+[00:59:24]   进度 2250/2462，已命中 1258 个仓
+[00:59:40]   latest 取不到，改用 undecuple/project-helghast v0.1.8 [pre-release]
+[00:59:42]   latest 取不到，改用 undecuple/project-pyrrhus v0.1.9 [pre-release]
+[01:00:51]   latest 取不到，改用 victor-takai/dragon-valor-recomp v0.1.0 [pre-release]
+[01:00:53]   latest 取不到，改用 victor-takai/rogue-galaxy-recomp v0.1.0 [pre-release]
+[01:01:07]   latest 取不到，改用 vladtrc/iw4l v0.1.0-demo.23 [pre-release]
+[01:01:17]   latest 取不到，改用 voicedrew11/verdite1 preview [pre-release]
+[01:02:19]   latest 取不到，改用 woodys-workshop/spaceranger v0.1.0 [pre-release]
+[01:05:06]   进度 2400/2462，已命中 1337 个仓
+[01:06:34]   latest 取不到，改用 zeranemesis/marioparty4 v0.21.0 [pre-release]
+[01:06:47]   latest 取不到，改用 zmbkilla/psp2i_recomp android-latest [pre-release]
+[01:07:01]   latest 取不到，改用 Zumbo06/Crash2Recomp v0.9.6
+[01:07:04] API 计数：网络类失败 22 / 404 1156
+[01:07:04] 计划：成品包计划.tsv｜要 4442 个资产 / 246.29 GB｜被拦 1747 个｜单仓超 8000MB 的 1 个仓
+[01:07:04]   其中 RecompHub 目录点名的：86 个资产 / 5.40 GB（pull catalog 就只下这一批）
+[01:07:04]   超单仓预算：playopenz/openz 12.52 GB
+[01:07:04]   闸门：整批 246.29 GB 超预算 200.0 GB，pull 不会自动放行，先人工圈

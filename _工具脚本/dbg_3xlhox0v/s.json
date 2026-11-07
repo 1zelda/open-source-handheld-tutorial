@@ -1,0 +1,1 @@
+[{"id": "bw_mydigit", "name": "mydigit digest", "url": "https://www.mydigit.cn/forum.php?mod=guide&view=digest", "max_links": 10, "wait_ms": 5000, "proxy": false, "link_pattern": "thread-\\d+-\\d+-\\d+\\.html"}]

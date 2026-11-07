@@ -1,0 +1,56 @@
+索引 recompiled-games.json：331 条 -> 320 个仓库，3 条不是 github 仓库页
+  跳过（非仓库页）：Spyro the Dragon <- https://openpete.com/
+  跳过（非仓库页）：Resident Evil Outbreak (File #1 and #2) <- https://outbreakweb.com/
+  跳过（非仓库页）：Sonic Dream Team <- https://gitlab.com/adokova1111/project-dream-release
+索引 awesome-decomp-games：2629 条游戏 -> 2317 个仓库（同仓多游戏合并 0 条，非游戏档已排除）
+  点名：63 条既没有 repo 字段、url 也不是 github 仓库页，接不进登记表（不静默丢）
+    - Quake III Arena (q3js)
+    - Halo 3 (Project Reclaimer)
+    - Super Smash Bros
+    - Ratchet & Clank (PC port)
+    - Call of Duty: Black Ops Zombies
+    - Command & Conquer: Generals Zero Hour
+    - Command & Conquer: Red Alert 2
+    - Counter-Strike 1.6
+    - Counter-Strike: Source Bunnyhop (bunnyhop.lol)
+    - Counter-Strike: Source Surf (Surfd)
+索引 recomphub.com 种子：227 条 -> 205 个仓库
+索引 recomp-games(6544)：6544 条 -> 6396 个 github 仓（同仓多条目合并 0，非 github/无仓 148）
+    跳过：3D Lemmings
+    跳过：Adventure
+    跳过：Air-Sea Battle
+    跳过：Airball
+    跳过：Aliens Versus Predator
+    跳过：Amplitude
+    跳过：Another World
+    跳过：Art Alive!
+    跳过：Banjo-Kazooie
+    跳过：Barbarian (Psygnosis, 1987)
+    跳过：Berzerk
+    跳过：Bio Menace
+    （其余 136 条同类，见 recomp-games-projects.json 原文）
+索引 recomp.fyi(3050)：3050 条 -> 3011 个 github 仓（同仓多条目合并 38，非 github/无仓 1）
+    跳过：Rugrats in Paris: The Movie
+索引 ProsperoStore(PS5)：177 条 -> 175 个 github 仓（同仓多条目合并 2，非 github/无仓 0）
+索引 RecompStore 在线目录：171 条 app（apps+newerStoreApps+v2Apps）-> 168 个仓，同仓多 app 合并 3；目录版本 1 / 更新 2026-11-04T03:01:40+00:00
+索引 unbaked.games：6517 款（有公开代码 4727 / 有原生构建 3498）——**没有内联 repo**，本档只登记条数，逐款仓名要 6517 次 API，未接
+  增量哨 additions.json：按周新增 [('2026-11-02', 3, 1), ('2026-10-26', 7, 4), ('2026-10-19', 246, 91), ('2026-10-12', 191, 56)]
+  元数据已探 20 个，落盘 仓库元数据.tsv
+  元数据已探 40 个，落盘 仓库元数据.tsv
+  元数据已探 60 个，落盘 仓库元数据.tsv
+  元数据已探 80 个，落盘 仓库元数据.tsv
+  元数据已探 100 个，落盘 仓库元数据.tsv
+  元数据已探 120 个，落盘 仓库元数据.tsv
+  元数据已探 140 个，落盘 仓库元数据.tsv
+  元数据已探 160 个，落盘 仓库元数据.tsv
+  元数据已探 180 个，落盘 仓库元数据.tsv
+  元数据已探 200 个，落盘 仓库元数据.tsv
+登记表：F:\开源掌机教程\06-资讯监控\成品移植游戏库\仓库登记表.tsv
+  总 7718 行｜启用 7596｜停用（已在别的档）122
+  档位：{'成品移植体': 7072, '移植工具链': 128, 'PS5 移植体': 87, '掌机可玩': 264, '目录/商店': 27, 'Switch2 移植体': 18}
+  策略：{'meta': 6975, 'full': 616, 'blobless': 5}
+  ADG 库覆盖 2317 个仓（其中 6963 个是这次新接进来的，只登记+抓成品包、不 clone 源码）
+  净新增（上一版登记表里没有的仓）5256 个：recomp-games 4315｜recomp.fyi 1757｜ProsperoStore 173｜RecompStore 165
+  只登记不下源码（policy=meta，批量库独有）6963 个仓｜商店目录点名、按大小定档 210 个仓
+  unbaked.games 6517 款**没接进仓名**（每款只有一个自己的 json，逐款要 6517 次 API）；它的 additions.json 当增量哨：[('2026-11-02', 3, 1), ('2026-10-26', 7, 4), ('2026-10-19', 246, 91), ('2026-10-12', 191, 56)]
+  启用仓库 .git 合计 73.20 GB（其中 policy=full 的部分才算要连历史下）

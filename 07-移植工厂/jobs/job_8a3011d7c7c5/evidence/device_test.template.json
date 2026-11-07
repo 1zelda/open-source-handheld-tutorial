@@ -1,0 +1,33 @@
+{
+  "job_id": "job_8a3011d7c7c5",
+  "tester": "",
+  "device": "",
+  "date": "",
+  "checks": [
+    {
+      "id": "boots_to_title",
+      "result": "",
+      "evidence": "boots_to_title.jpg"
+    },
+    {
+      "id": "new_game_playable",
+      "result": "",
+      "evidence": "new_game_playable.jpg"
+    },
+    {
+      "id": "input_works",
+      "result": "",
+      "evidence": "input_works.jpg"
+    },
+    {
+      "id": "audio_works",
+      "result": "",
+      "evidence": "audio_works.jpg"
+    },
+    {
+      "id": "saves_and_reloads",
+      "result": "",
+      "evidence": "saves_and_reloads.jpg"
+    }
+  ]
+}

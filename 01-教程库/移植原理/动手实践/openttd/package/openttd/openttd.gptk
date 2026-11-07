@@ -1,0 +1,20 @@
+# OpenTTD：左摇杆当鼠标，A/B 当左右键，L1 慢速移动（造铁路/铺路时用）
+# deadzone_scale 越小移动越快；掌机 640x480 上 6 比较跟手
+left_analog_up = mouse_movement_up
+left_analog_down = mouse_movement_down
+left_analog_left = mouse_movement_left
+left_analog_right = mouse_movement_right
+
+deadzone_mode = scaled_radial
+deadzone = 2000
+deadzone_scale = 6
+deadzone_delay = 16
+
+a = mouse_left
+b = mouse_right
+x = mouse_middle
+y = space
+l1 = mouse_slow
+r1 = leftshift
+back = esc
+start = enter

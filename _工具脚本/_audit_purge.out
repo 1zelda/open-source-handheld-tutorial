@@ -1,0 +1,25 @@
+== 成品移植游戏库（94 仓）
+  扫 20/94 仓，累计挂着删除标记的文件 0 个
+  扫 40/94 仓，累计挂着删除标记的文件 0 个
+  扫 60/94 仓，累计挂着删除标记的文件 11 个
+  扫 80/94 仓，累计挂着删除标记的文件 11 个
+  扫 94/94 仓，累计挂着删除标记的文件 11 个
+== Switch2模拟器（39 仓）
+  扫 20/39 仓，累计挂着删除标记的文件 11 个
+  扫 39/39 仓，累计挂着删除标记的文件 11 个
+
+索引里挂着删除标记的文件：11 个，涉及 3 个仓
+改成词边界后不再是红线（误杀，该还原）：2
+  误杀 eandis__SDOJ-Recomp :: thirdparty/rexglue-sdk/tools/binutils/powerpc-none-elf-objdump（1.6 MB，旧判据=疑似固件/镜像 blob（1 MB））
+  误杀 eandis__SDOJ-Recomp :: thirdparty/rexglue-sdk/tools/binutils/powerpc-none-elf-objdump.exe（8.8 MB，旧判据=疑似固件/镜像 blob（8 MB））
+仍是红线（删得对，不动）：9
+  红线 bgyss__SwitchRecomp :: crates/recomp-pipeline/tests/fixtures/formats/homebrew.nro（0.0 MB，游戏镜像/密钥后缀）
+  红线 bgyss__SwitchRecomp :: crates/recomp-pipeline/tests/fixtures/formats/program.nca（0.0 MB，游戏镜像/密钥后缀）
+  红线 bgyss__SwitchRecomp :: crates/recomp-pipeline/tests/fixtures/formats/sample.keys（0.0 MB，游戏镜像/密钥后缀）
+  红线 bgyss__SwitchRecomp :: crates/recomp-pipeline/tests/fixtures/formats/sample.xci（0.0 MB，游戏镜像/密钥后缀）
+  红线 bgyss__SwitchRecomp :: samples/homebrew-intake/inputs/homebrew.nro（0.0 MB，游戏镜像/密钥后缀）
+  红线 bgyss__SwitchRecomp :: samples/title-a24b9e807b456252/inputs/c68ddc13f5d1f0ed.xci（0.0 MB，游戏镜像/密钥后缀）
+  红线 bgyss__SwitchRecomp :: samples/title-a24b9e807b456252/inputs/program.nca（0.0 MB，游戏镜像/密钥后缀）
+  红线 bgyss__SwitchRecomp :: samples/title-a24b9e807b456252/inputs/title.keys（0.0 MB，游戏镜像/密钥后缀）
+  红线 drakolordx7__pokopia-recomp :: tools/test/scripts/play_title_key.nxs（0.0 MB，名字就是 keys 资产）
+现判据已经不算红线、却仍挂着删除标记（别的路径动的手，比如上游改名）：0

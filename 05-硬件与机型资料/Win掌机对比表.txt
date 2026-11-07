@@ -1,0 +1,21 @@
+====================================================================================================
+【Win掌机大全对比表】
+====================================================================================================
+
+              型号                     CPU          核心/线程                 核显              内存            存储                        屏幕      电池     重量     形态            特色         价格(参考)
+       GPD Win 4 Ryzen 5 7640U / 7 7840U  6C12T / 8C16T Radeon 760M / 780M 16-64GB LPDDR5X 512GB-2TB SSD             6" 1080P 60Hz 45.62Wh   566g 滑盖实体键盘   OcuLink外接显卡      3441起(二手)
+    GPD Win Mini Ryzen 5 7640U / 7 7840U  6C12T / 8C16T Radeon 760M / 780M  16-32GB LPDDR5 512GB-2TB SSD            7" 1080P 120Hz 44.24Wh  ~555g  翻盖带键盘         便携+键盘  3500-4000(二手)
+    OneXPlayer 2           Ryzen 7 6800U          8C16T Radeon 680M (12CU)    16GB LPDDR5x       1TB SSD       8.4" 2560×1600 60Hz  65.5Wh   862g  可拆卸手柄       大屏+手柄可拆  3000-3500(二手)
+OneXPlayer 2 Pro           Ryzen 7 7840U          8C16T Radeon 780M (12CU)    32GB LPDDR5X   1TB-2TB SSD            8.4" 2560×1600  65.5Wh  ~862g  可拆卸手柄   EVA联名/升级CPU       7999(全新)
+    OneXPlayer 3    Intel Arc G3 Extreme             定制     Arc G3 Extreme         16-32GB         1-2TB         8.8" AMOLED 144Hz    85Wh ~1000g    三合一  掌机/平板/笔记本/主机     8999-10799
+        AYANEO 3  R7-8840U / AI 9 HX 370 8C16T / 12C24T Radeon 780M / 890M         16-32GB     512GB-2TB 7" 120Hz IPS / 144Hz OLED   ~50Wh  ~650g  模块化手柄       56种手柄布局          4999起
+ AYANEO Air Plus           Ryzen 7 6800U          8C16T        Radeon 680M         16-32GB     512GB-1TB                  6" 1080P   ~46Wh  ~520g   传统掌机       轻薄6800U     890-1400美元
+   AYANEO NEXT 2                     旗舰级             旗舰               旗舰核显         32-64GB         2-4TB                      OLED     大电池  ~700g   传统掌机        探索未来旗舰         12999起
+   ROG Ally (一代)          AMD Z1 Extreme          8C16T        Radeon 780M     16GB LPDDR5         512GB            7" 1080P 120Hz    40Wh   608g   传统掌机   大厂售后/4999定价  4999(全新)/二手更低
+  Steam Deck LCD            AMD定制 Aerith           4C8T          RDNA2 8CU     16GB LPDDR5      64-512GB          7" 1280×800 60Hz    40Wh   669g   传统掌机   Steam生态/性价比 399美元起(约2700元)
+ Steam Deck OLED         AMD定制 Sephiroth           4C8T          RDNA2 8CU     16GB LPDDR5     512GB-1TB        7.4" 1280×800 90Hz    50Wh   640g   传统掌机    OLED屏/续航提升 549美元起(约3800元)
+   联想Legion Go 2          AMD定制(SteamOS)          8C16T              RDNA3            16GB     512GB-1TB                 8.8" OLED     大电池  ~850g  可拆卸手柄 SteamOS/65W释放 1199美元(约8380元)
+       GPD Win 3               i7-1165G7           4C8T       Iris Xe 96EU    16GB LPDDR4X           1TB                 5.5" 720P    45Wh   560g   滑盖键盘       老款/性价比高  1500-2000(二手)
+       GPD Win 2            Core m3-7Y30           2C4T             HD 615             8GB         128GB                   6" 720P   ~30Wh   460g   翻盖键盘       古董级/仅怀旧    500-800(二手)
+AYANEO NEXT LITE           Ryzen 5 4500U           6C6T             Vega 6            16GB         512GB                   7" 800P   ~47Wh  ~520g   传统掌机      入门级Win掌机     1300左右(二手)
+

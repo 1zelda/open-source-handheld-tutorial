@@ -1,0 +1,11 @@
+----- run at 2026-11-01 11:00:00 -----
+浏览器层补抓 6 个站点(patchright 无头 chromium)...
+==========================================================================
+bw_a9vg        OK  抓到 30 条,新 20 条  | A9VG电玩部落-核心玩家聚集地
+bw_mydigit     OK  抓到 25 条,新  4 条  | 导读-最新精华 数码之家
+bw_psxplace    OK  抓到  0 条,新  0 条  | Attention Required! | Cloudflare
+bw_pcsx2forum  OK  抓到  0 条,新  0 条  | Just a moment...
+bw_gtforums    FAIL Error: page.goto: net::ERR_CONNECTION_CLOSED at https://gtforums.net/forum/
+bw_linuxdo     OK  抓到  0 条,新  0 条  | Just a moment...
+==========================================================================
+已入账 24 条(kind=browser,源=bw_a9vg,bw_mydigit)

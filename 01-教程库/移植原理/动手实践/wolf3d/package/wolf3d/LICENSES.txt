@@ -1,0 +1,23 @@
+这个目录里只有引擎与开源库，没有任何商业游戏数据。
+
+ecwolf.aarch64 / ecwolf.pk3
+    ECWolf 1.4.2，GPL-2+（见 COPYING.GPL-2.0）。
+    其中由 ZDoom 派生的部分按 BSD-3-Clause 授权，原始版权声明见下：
+      Copyright 1998-2016 Randy Heit
+      Copyright 2008-2018 Braden "Blzut3" Obrzut
+      Copyright 2005-2018 Christoph Oelckers
+      Copyright 2015-2018 Teemu Piippo
+    ecwolf.pk3 是用 ECWolf 自带的 wadsrc 生成的引擎资源（XLAT/DECORATE/SNDINFO 等
+    文本定义），来源同样是 GPL 源码，不含 id 的美术/地图/音效。
+
+libs.aarch64/libSDL2_mixer-2.0.so.0
+libs.aarch64/libSDL2_net-2.0.so.0
+    SDL2_mixer 2.8.1 / SDL2_net 2.2.0，zlib 许可（见 LICENSE.SDL2_mixer.txt /
+    LICENSE.SDL2_net.txt）。两者都由源码用 zig cc 交叉编译，只启用 WAV/AIFF/VOC/
+    Ogg-Vorbis(stb) 解码，没有链接任何外部编解码库。
+    运行时用的 libSDL2-2.0.so.0 不随包发布，由 CFW 自带（ECWolf 只用到 SDL2 的
+    公共 API，ABI 稳定）。
+
+游戏数据（*.WL1 / *.WL6 / *.SOD）不在包内，需要玩家自己提供：
+    - 分享版 Wolfenstein 3D（第一章）由 id/Apogee 免费发布，可自行获取；
+    - 正式版 WL6 与资料片 SOD 属于商业数据，本包不附带、也不提供下载。

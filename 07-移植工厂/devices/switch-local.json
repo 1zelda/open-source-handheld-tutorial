@@ -1,0 +1,10 @@
+{
+  "id": "switch-local",
+  "name": "Switch 1（本机构建，真机待接线）",
+  "family": "switch-homebrew",
+  "os": "horizon",
+  "arch": "aarch64",
+  "capabilities": ["nro", "hbmenu", "sdcard"],
+  "verified": false,
+  "notes": "只代表已具备构建与 .nro 制品检查条件；没有真机验收记录前，不得把任务标为完整成品。"
+}

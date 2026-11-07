@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='utf-8'?>
+<gameList>
+  <game>
+    <path>./Doom.sh</path>
+    <name>Freedoom</name>
+    <desc>Freedoom: Phase 1, running on doomgeneric (a GPL-2.0 Doom source port) compiled from source for aarch64. Freedoom 0.13.0 free data is included under its BSD license.</desc>
+    <releasedate>20240129T000000</releasedate>
+    <developer>Freedoom Project</developer>
+    <publisher>Freedoom Project</publisher>
+    <genre>FPS</genre>
+    <image>./doom/screenshot.png</image>
+  </game>
+</gameList>

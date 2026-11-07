@@ -1,0 +1,989 @@
+[pull-loop] 第 1 轮开始 06:06:57
+[06:07:01] 盘量：F 盘当前余 299.1 GB｜计划要下 4903 个 / 248.64 GB，其中盘上已有 609 个、真要下 4294 个 / 220.44 GB
+[06:07:01] 闸门：本轮真要写 220.44 GB > 预算 200.0 GB，不动盘。用 `pull <tier关键词>` 分波下（先 PS5/掌机），或人工圈计划
+[pull-loop] 第 1 轮退出码 1（0=本轮 0 失败，全落地）06:07:01
+[pull-loop] 第 2 轮开始 06:09:01
+[06:09:01] 盘量：F 盘当前余 297.7 GB｜计划要下 4938 个 / 251.40 GB，其中盘上已有 609 个、真要下 4329 个 / 223.19 GB
+[06:09:01] 开始下载：4938 个资产 / 251.40 GB
+[06:09:05]   1/4938 新下 wiredforwar/machines/the-dragon-001.7z（0.0 MB，实测 0.00 MB/s，复检 格式不扫）
+[06:09:07]   2/4938 新下 wiredforwar/machines/the-bird-001.7z（0.0 MB，实测 0.00 MB/s，复检 格式不扫）
+[06:09:09]   3/4938 新下 portingpete/the-darkness-recomp/The-Darkness-Recomp-v0.1.8-diagnostic-launchers.zip（0.0 MB，实测 0.00 MB/s，复检 4 成员）
+[06:09:12]   4/4938 新下 sennecaelen/melee-ace-unlocked/Smash-ACE-Unlocked-Setup.zip（0.0 MB，实测 0.00 MB/s，复检 2 成员）
+[06:09:15]   5/4938 新下 shipa-2/xerenge/Xerenge-mod-locale_rus.zip（0.0 MB，实测 0.00 MB/s，复检 4 成员）
+[06:09:17]   6/4938 新下 0iy/opengoal-ps5/bootstrap.sh（0.0 MB，实测 0.00 MB/s，复检 格式不扫）
+[06:09:20]   7/4938 新下 afwbkbc/glsmac/scanbuild-report-No-bugs.zip（0.0 MB，实测 0.00 MB/s，复检 2 成员）
+[06:09:24]   8/4938 新下 pauloubirajara/asuras-wrath-recomp/B13EBABEBABEBABE.zip（0.0 MB，实测 0.00 MB/s，复检 8 成员）
+[06:09:26]   9/4938 新下 kerokline/breathoffire3pcport/furigana-0.1.0.zip（0.0 MB，实测 0.00 MB/s，复检 2 成员）
+[06:09:26]   10/4938 已相符 PortsMaster/PortMaster-Releases/Boni.zip（0.0 MB，复检 8 成员）
+[06:09:26]   11/4938 已相符 PortsMaster/PortMaster-Releases/defshot.zip（0.0 MB，复检 6 成员）
+[06:09:26]   12/4938 已相符 PortsMaster/PortMaster-Releases/Humming.Out.zip（0.0 MB，复检 8 成员）
+[06:09:26]   13/4938 已相符 PortsMaster/PortMaster-Releases/Murtop.zip（0.0 MB，复检 8 成员）
+[06:09:26]   14/4938 已相符 PortsMaster/PortMaster-Releases/StarBoy.zip（0.0 MB，复检 8 成员）
+[06:09:26]   15/4938 已相符 PortsMaster/PortMaster-Releases/SuperDrome.Bugs.zip（0.0 MB，复检 8 成员）
+[06:09:26]   16/4938 已相符 PortsMaster/PortMaster-Releases/Gumgem.zip（0.0 MB，复检 8 成员）
+[06:09:26]   17/4938 已相符 PortsMaster/PortMaster-Releases/Donut.Dodo.zip（0.0 MB，复检 8 成员）
+[06:09:26]   18/4938 已相符 PortsMaster/PortMaster-Releases/DROID7.zip（0.0 MB，复检 8 成员）
+[06:09:29]   19/4938 新下 sergiomanzur/issd-native/independent_stadium_example-v0.6.0-beta.1.zip（0.0 MB，实测 0.00 MB/s，复检 16 成员）
+[06:09:31]   20/4938 新下 360recomper/UFC3ReX/UFC3-DLSS5-Addon-v1.0.7.zip（0.0 MB，实测 0.00 MB/s，复检 7 成员）
+[06:09:33]   21/4938 新下 sunjaycy/goldeneye-recomp-server/Goldeneye-Server-Win.rar（0.0 MB，实测 0.00 MB/s，复检 格式不扫）
+[06:09:36]   22/4938 新下 reburndev/reburn3/reburn3.zip（0.0 MB，实测 0.01 MB/s，复检 2 成员）
+[06:09:38]   23/4938 新下 alexbeavs-ps1-ports/psxrecomp-ports/psxrecomp-diablo-usa-v0.3.4-owned-input-win64.zip（0.0 MB，实测 0.01 MB/s，复检 13 成员）
+[06:09:38]   24/4938 已相符 PortsMaster/PortMaster-Releases/2048.zip（0.0 MB，复检 3 成员）
+[06:09:39]   25/4938 新下 am2r-community-developers/am2rlauncher/AM2RLauncher_2.3.0_win.zip（0.0 MB，实测 0.01 MB/s，复检 5 成员）
+[06:09:41]   26/4938 新下 dialight/flame/Quuz-LevelFixes-LordsOnly-20261029.zip（0.0 MB，实测 0.01 MB/s，复检 6 成员）
+[06:09:43]   27/4938 新下 chrissotraidis/kartpad/KartPad-v0.8.7-notices.zip（0.0 MB，实测 0.02 MB/s，复检 4 成员）
+[06:09:45]   28/4938 新下 gymzatan/smt-nine-recomp/Updater.exe（0.0 MB，实测 0.02 MB/s，复检 格式不扫）
+[06:09:45]   29/4938 已相符 PortsMaster/PortMaster-Releases/WordleSDL.zip（0.0 MB，复检 9 成员）
+[06:09:47]   30/4938 新下 bigmak94/galaxyquest/GalaxyQuest-converter.zip（0.0 MB，实测 0.02 MB/s，复检 17 成员）
+[06:09:48]   31/4938 新下 elprogramadorloco-arch/jim2-recomp/EarthwormJim2Recomp-update.zip（0.0 MB，实测 0.02 MB/s，复检 44 成员）
+[06:09:50]   32/4938 新下 sergiomanzur/issd-native/world_cup_2026.zip（0.0 MB，实测 0.02 MB/s，复检 39 成员）
+[06:09:54]   33/4938 新下 anishchandra24/juiced2-recompiled/Juiced2-Recompiled-Setup.exe（0.0 MB，实测 0.01 MB/s，复检 格式不扫）
+[06:09:54]   34/4938 已相符 PortsMaster/PortMaster-Releases/SDLSopwith.zip（0.1 MB，复检 8 成员）
+[06:09:56]   35/4938 新下 asiekierka/reconstruction-of-super-zzt/RecSZZT.zip（0.1 MB，实测 0.03 MB/s，复检 2 成员）
+[06:09:59]   36/4938 新下 elprogramadorloco-arch/korokoro-recomp/KoroKoroRecomp-v0.1.zip（0.1 MB，实测 0.02 MB/s，复检 34 成员）
+[06:09:59]   37/4938 已相符 PortsMaster/PortMaster-Releases/Invaders.zip（0.1 MB，复检 8 成员）
+[06:10:01]   38/4938 新下 anpage/demech2/MECH2.exe（0.1 MB，实测 0.03 MB/s，复检 格式不扫）
+[06:10:04]   体积不符 AmarilloNL/ssx-recomp/SSX-Installer.exe：本地 64000，API 63488（半个包已删）
+[06:10:05]   40/4938 新下 yuutatsubasa/free-riders-recompiled/FreeRidersRecompiled-0.10.45-android-arm64-licenses.zip（0.1 MB，实测 0.04 MB/s，复检 14 成员）
+[06:10:05]   41/4938 已相符 PortsMaster/gptokeyb/gptokeyb-all.zip（0.1 MB，复检 3 成员）
+[06:10:05]   42/4938 已相符 MysteriousAeon/rayman3-hd-recompiled/rayman3hd-turkish-1.0.1.zip（0.1 MB，复检 2 成员）
+[06:10:08]   43/4938 新下 pascalpixel/alchemy/4ad295f228a130e16a3e22aff60ee9e08fba922e.site.tar.gz（0.1 MB，实测 0.04 MB/s，复检 4 成员）
+[06:10:10]   44/4938 新下 pascalpixel/alchemy/eff053316902c72e95c01c4bdcab4117d8c581fa.site.tar.gz（0.1 MB，实测 0.04 MB/s，复检 4 成员）
+[06:10:13]   45/4938 新下 pascalpixel/alchemy/36f49e51619f0609aec03e3493065a80b65e1c45.site.tar.gz（0.1 MB，实测 0.02 MB/s，复检 4 成员）
+[06:10:15]   46/4938 新下 pascalpixel/alchemy/4f7d4d4f5e942a6014aac77a0d3c99e5e9252ece.site.tar.gz（0.1 MB，实测 0.04 MB/s，复检 4 成员）
+[06:10:18]   47/4938 新下 pascalpixel/alchemy/e76d1c7ae56cbc0df400df5f15289af91eb737cc.site.tar.gz（0.1 MB，实测 0.03 MB/s，复检 4 成员）
+[06:10:21]   48/4938 新下 pascalpixel/alchemy/b2142be82c39ab5dc68b12ab273653f23f972308.site.tar.gz（0.1 MB，实测 0.03 MB/s，复检 4 成员）
+[06:10:23]   49/4938 新下 pascalpixel/alchemy/dc627aa68b5d0c195392bd1e3819c449003696f5.site.tar.gz（0.1 MB，实测 0.03 MB/s，复检 4 成员）
+[06:10:25]   50/4938 新下 pascalpixel/alchemy/3c63eeaecfc159bf87e7be21c97b639c206637c9.site.tar.gz（0.1 MB，实测 0.03 MB/s，复检 4 成员）
+[06:10:27]   51/4938 新下 pascalpixel/alchemy/4b4da14eb70ae0066224a60457921d2a6a8535be.site.tar.gz（0.1 MB，实测 0.04 MB/s，复检 4 成员）
+[06:10:29]   52/4938 新下 pascalpixel/alchemy/6ea7c21004b26726d29d2f0db4fc366dd77ad348.site.tar.gz（0.1 MB，实测 0.04 MB/s，复检 4 成员）
+[06:10:31]   53/4938 新下 pascalpixel/alchemy/603a4b4b20575fe97bd5a64da287b0d30dcd0dea.site.tar.gz（0.1 MB，实测 0.04 MB/s，复检 4 成员）
+[06:10:34]   54/4938 新下 pascalpixel/alchemy/20df2eb7e485b32f0a4aa5c182346c195fa05bb4.site.tar.gz（0.1 MB，实测 0.04 MB/s，复检 4 成员）
+[06:10:36]   55/4938 新下 pascalpixel/alchemy/46db4ada6f0b46d1c755b82c06f86d976bafb0cb.site.tar.gz（0.1 MB，实测 0.04 MB/s，复检 4 成员）
+[06:10:38]   56/4938 新下 pascalpixel/alchemy/b4d96a2e0994d22398470ce4f3f2505e7994b028.site.tar.gz（0.1 MB，实测 0.04 MB/s，复检 4 成员）
+[06:10:40]   57/4938 新下 pascalpixel/alchemy/00d2abb3e21b2c5c4abebdc169e82e46c331d5db.site.tar.gz（0.1 MB，实测 0.04 MB/s，复检 4 成员）
+[06:10:42]   58/4938 新下 pascalpixel/alchemy/f380189b98f40243658e5d9d1d2be95dcbec7a64.site.tar.gz（0.1 MB，实测 0.04 MB/s，复检 4 成员）
+[06:10:44]   59/4938 新下 pascalpixel/alchemy/0340ed9c84c6a872d42fb91ecbdc0cd4da789c0e.site.tar.gz（0.1 MB，实测 0.04 MB/s，复检 4 成员）
+[06:10:47]   60/4938 新下 pascalpixel/alchemy/6f1c980c90452ca78e0b99e0dbaad21c1703559a.site.tar.gz（0.1 MB，实测 0.03 MB/s，复检 4 成员）
+[06:10:50]   61/4938 新下 pascalpixel/alchemy/bdf05711c00c61924ee8185aa19f15a477fdec18.site.tar.gz（0.1 MB，实测 0.02 MB/s，复检 4 成员）
+[06:10:52]   62/4938 新下 pascalpixel/alchemy/64239160b427d1d65da8f99784ef4c803977c6a2.site.tar.gz（0.1 MB，实测 0.04 MB/s，复检 4 成员）
+[06:10:55]   63/4938 新下 pascalpixel/alchemy/549b1dfb0580f24b4d73b32f654695343c0fca6f.site.tar.gz（0.1 MB，实测 0.04 MB/s，复检 4 成员）
+[06:10:57]   64/4938 新下 hopeaero/mlbpowerpros2008recomp/powerpros_stadium-0.8.2.zip（0.1 MB，实测 0.03 MB/s，复检 27 成员）
+[06:11:00]   65/4938 新下 pascalpixel/alchemy/50d8032eba7ac36c8f24b6444c7482a64715fbdb.site.tar.gz（0.1 MB，实测 0.03 MB/s，复检 4 成员）
+[06:11:02]   66/4938 新下 pascalpixel/alchemy/8ebe770b84351c3ef0eda627a958f112d6da6d94.site.tar.gz（0.1 MB，实测 0.04 MB/s，复检 4 成员）
+[06:11:05]   67/4938 新下 pascalpixel/alchemy/42dac2e201b00c2af2af8b9ef78c78186a1b2245.site.tar.gz（0.1 MB，实测 0.03 MB/s，复检 4 成员）
+[06:11:08]   68/4938 新下 pascalpixel/alchemy/9b44da54f48995e4590e4f19aaae0728128853b0.site.tar.gz（0.1 MB，实测 0.03 MB/s，复检 4 成员）
+[06:11:10]   69/4938 新下 pascalpixel/alchemy/e73055b23908fa464d112186998d297c42ed33d4.site.tar.gz（0.1 MB，实测 0.04 MB/s，复检 4 成员）
+[06:11:12]   70/4938 新下 pascalpixel/alchemy/943d9ce98f69d9f24e15875402c99d407dc54ad1.site.tar.gz（0.1 MB，实测 0.04 MB/s，复检 4 成员）
+[06:11:15]   71/4938 新下 pascalpixel/alchemy/f6c08e64dd947e449baf8db86ab8e12f3ed5749e.site.tar.gz（0.1 MB，实测 0.03 MB/s，复检 4 成员）
+[06:11:17]   失败 pascalpixel/alchemy/d1250bead93a69c8c27a097c8c87bd28e576fd51.site.tar.gz：Get "https://release-assets.githubusercontent.com/github-production-release-asset/1304202664/086f0b31-fe33-45f9-9d78-c796c2c1c269?sp=r&sv=2018-11-09&s
+[06:11:20]   73/4938 新下 pascalpixel/alchemy/45e322e33ee7e6a88e728529b3999db28f6f488d.site.tar.gz（0.1 MB，实测 0.03 MB/s，复检 4 成员）
+[06:11:23]   74/4938 新下 pascalpixel/alchemy/d824bff0aecaf1fa93a0b7806960a55dc821b02c.site.tar.gz（0.1 MB，实测 0.02 MB/s，复检 4 成员）
+[06:11:25]   75/4938 新下 pascalpixel/alchemy/52077b5cc44104f9a20f8140b0fafeda3c8b817c.site.tar.gz（0.1 MB，实测 0.04 MB/s，复检 4 成员）
+[06:11:26]   失败 pascalpixel/alchemy/443a3d1aadc88d3b05f0d64c95b13d508791440c.site.tar.gz：Get "https://api.github.com/repos/pascalpixel/alchemy/releases/tags/decomp-reports-2": unexpected EOF
+
+[06:11:28]   77/4938 新下 pascalpixel/alchemy/b2a6023090175514eb7909f1a1e0a5aefcc9467a.site.tar.gz（0.1 MB，实测 0.03 MB/s，复检 4 成员）
+[06:11:31]   78/4938 新下 pascalpixel/alchemy/4fcff263cacaa7b51ab26af350a5ef5a7914bac4.site.tar.gz（0.1 MB，实测 0.03 MB/s，复检 4 成员）
+[06:11:33]   79/4938 新下 pascalpixel/alchemy/45a7001a0cafeedebb4f2b65738d3bc63d5cbe19.site.tar.gz（0.1 MB，实测 0.03 MB/s，复检 4 成员）
+[06:11:36]   80/4938 新下 pascalpixel/alchemy/37681d805db798957bcb7d365fb1de70cfcb080e.site.tar.gz（0.1 MB，实测 0.04 MB/s，复检 4 成员）
+[06:11:38]   81/4938 新下 pascalpixel/alchemy/ee405d922ecb0828111bc29ec6f4573799c945ff.site.tar.gz（0.1 MB，实测 0.03 MB/s，复检 4 成员）
+[06:11:40]   82/4938 新下 pascalpixel/alchemy/f264d218a61df3af934f8cbfe2ca788587eb5a71.site.tar.gz（0.1 MB，实测 0.04 MB/s，复检 4 成员）
+[06:11:45]   83/4938 新下 pascalpixel/alchemy/5508777750433a7960d1424ef7f7ec53a24a5cfb.site.tar.gz（0.1 MB，实测 0.02 MB/s，复检 4 成员）
+[06:11:47]   84/4938 新下 pascalpixel/alchemy/a6e80ea777aebbcb87b0a862eeff01b4eb5ded6d.site.tar.gz（0.1 MB，实测 0.04 MB/s，复检 4 成员）
+[06:11:51]   85/4938 新下 pascalpixel/alchemy/0033cb64eff4b796659b5112f90f8d6edb67d740.site.tar.gz（0.1 MB，实测 0.02 MB/s，复检 4 成员）
+[06:11:55]   86/4938 新下 pascalpixel/alchemy/3ed79024b7ec155f4c19fa398a2a354e7b101039.site.tar.gz（0.1 MB，实测 0.02 MB/s，复检 4 成员）
+[06:11:58]   87/4938 新下 pascalpixel/alchemy/f45dc09d8d71bb875f62d6c66d53261a74ffecc4.site.tar.gz（0.1 MB，实测 0.03 MB/s，复检 4 成员）
+[06:12:00]   88/4938 新下 pascalpixel/alchemy/24b72a325ea53017e22052eafb4f82cf3ee23ce4.site.tar.gz（0.1 MB，实测 0.03 MB/s，复检 4 成员）
+[06:12:03]   89/4938 新下 pascalpixel/alchemy/032b405fc4e2590a86d99a311ea8a7ab800f8baf.site.tar.gz（0.1 MB，实测 0.03 MB/s，复检 4 成员）
+[06:12:07]   90/4938 新下 isledecomp/isle/ISLE.EXE（0.1 MB，实测 0.02 MB/s，复检 格式不扫）
+[06:12:10]   91/4938 新下 pascalpixel/alchemy/bc09751438b7ccf35bc52b6101282ecf22c811ee.site.tar.gz（0.1 MB，实测 0.03 MB/s，复检 4 成员）
+[06:12:12]   92/4938 新下 pascalpixel/alchemy/c91a95ae8fd72fec382db7c66042c8e5cac12acd.site.tar.gz（0.1 MB，实测 0.04 MB/s，复检 4 成员）
+[06:12:15]   93/4938 新下 pascalpixel/alchemy/e320972595f539c0105c3d1357d9b8a2238ed013.site.tar.gz（0.1 MB，实测 0.03 MB/s，复检 4 成员）
+[06:12:19]   94/4938 新下 pascalpixel/alchemy/b5ddbeda55582e449aa1f175ea4aa8bcdc58bb70.site.tar.gz（0.1 MB，实测 0.03 MB/s，复检 4 成员）
+[06:12:22]   95/4938 新下 pascalpixel/alchemy/e87c659757533902920554977f4207eba1604347.site.tar.gz（0.1 MB，实测 0.03 MB/s，复检 4 成员）
+[06:12:25]   96/4938 新下 pascalpixel/alchemy/0ec7a70652e5560a7a1e88edd41737f529b9cf4d.site.tar.gz（0.1 MB，实测 0.02 MB/s，复检 4 成员）
+[06:12:28]   97/4938 新下 pascalpixel/alchemy/29ccae929f0a3daaff0bd816f765fd10d76d3060.site.tar.gz（0.1 MB，实测 0.03 MB/s，复检 4 成员）
+[06:12:31]   98/4938 新下 pascalpixel/alchemy/5b29839343508a3587e5a297cd8d5581770405bf.site.tar.gz（0.1 MB，实测 0.03 MB/s，复检 4 成员）
+[06:12:34]   99/4938 新下 pascalpixel/alchemy/623a0f8c1a50fe2adb9d57093e125aff7e78872d.site.tar.gz（0.1 MB，实测 0.03 MB/s，复检 4 成员）
+[06:12:36]   100/4938 新下 pascalpixel/alchemy/d3edb86935d07fc6d1f3f7e27eef6e07c861ae16.site.tar.gz（0.1 MB，实测 0.04 MB/s，复检 4 成员）
+[06:12:36]   失败 pascalpixel/alchemy/99c1ec22dd8a51538d25df3e79f9cff7677f3514.site.tar.gz：Get "https://api.github.com/repos/pascalpixel/alchemy/releases/tags/decomp-reports-2": unexpected EOF
+
+[06:12:39]   102/4938 新下 pascalpixel/alchemy/06575a3e1affbc51c6d5f6e63380887357bad783.site.tar.gz（0.1 MB，实测 0.03 MB/s，复检 4 成员）
+[06:12:43]   103/4938 新下 pascalpixel/alchemy/462b8c41726746d4fa7e89d46453ac220079c20c.site.tar.gz（0.1 MB，实测 0.02 MB/s，复检 4 成员）
+[06:12:43]   104/4938 已相符 PortsMaster/PortMaster-Releases/Bermuda_Syndrome.zip（0.1 MB，复检 6 成员）
+[06:12:47]   105/4938 新下 petarov/saboteur2/saboteur2-1.1-linux-x86_64.tar.gz（0.1 MB，实测 0.02 MB/s，复检 2 成员）
+[06:12:50]   106/4938 新下 edw590/f1dp/F1DP_v1.3.zip（0.1 MB，实测 0.03 MB/s，复检 7 成员）
+[06:12:54]   107/4938 新下 isledecomp/isle/CONFIG.EXE（0.1 MB，实测 0.02 MB/s，复检 格式不扫）
+[06:12:57]   108/4938 新下 simutrans/simutrans/makeobj-arm-nightly.zip（0.1 MB，实测 0.03 MB/s，复检 1 成员）
+[06:12:57]   109/4938 已相符 neuviemeporte/f15se2-re/f15_se2-v0.9.3.zip（0.1 MB，复检 4 成员）
+[06:13:00]   110/4938 新下 nadult/freeft/libzip_1.11.4.zip（0.1 MB，实测 0.03 MB/s，复检 5 成员）
+[06:13:04]   111/4938 新下 sergiomanzur/issd-native/liga_mx_expansion.zip（0.1 MB，实测 0.02 MB/s，复检 73 成员）
+[06:13:10]   112/4938 新下 rac-native/rac1-native-game/rac1-launcher.exe（0.1 MB，实测 0.02 MB/s，复检 格式不扫）
+[06:13:17]   113/4938 新下 mkst/esa/psyq-obj-parser.tar.gz（0.1 MB，实测 0.01 MB/s，复检 1 成员）
+[06:13:25]   114/4938 新下 qbism/q2tools-220/macOS.7z（0.1 MB，实测 0.01 MB/s，复检 格式不扫）
+[06:13:33]   115/4938 新下 petarov/alleycat.exe/alleycat-1.3-linux-x86_64.tar.gz（0.1 MB，实测 0.01 MB/s，复检 2 成员）
+[06:13:40]   116/4938 新下 sdw-community/sdw-decomp/sdw-mod-loader-v0.1.zip（0.1 MB，实测 0.01 MB/s，复检 25 成员）
+[06:13:40]   117/4938 已相符 PortsMaster/PortMaster-Releases/turbotabletennis.zip（0.1 MB，复检 10 成员）
+[06:13:49]   118/4938 新下 alondero/kirbysdreamcourse-recomp/kirbysdreamcourse-recomp-source-v0.1.1.zip（0.1 MB，实测 0.01 MB/s，复检 92 成员）
+[06:13:49]   119/4938 已相符 PortsMaster/PortMaster-Releases/HOTA.zip（0.1 MB，复检 8 成员）
+[06:13:55]   120/4938 新下 anishchandra24/nhl2k8-recompiled/NHL2K8-Recompiled-Setup.exe（0.1 MB，实测 0.02 MB/s，复检 格式不扫）
+[06:14:02]   121/4938 新下 simutrans/simutrans/makeobj_linux-x64-nightly.zip（0.1 MB，实测 0.02 MB/s，复检 1 成员）
+[06:14:08]   122/4938 新下 0iy/opengoal-ps5/OpenGOAL-PS5-gui.zip（0.1 MB，实测 0.02 MB/s，复检 8 成员）
+[06:14:15]   123/4938 新下 qbism/q2tools-220/Linux.7z（0.1 MB，实测 0.02 MB/s，复检 格式不扫）
+[06:14:21]   124/4938 新下 qbism/q2tools-220/Windows-MinGW.7z（0.1 MB，实测 0.02 MB/s，复检 格式不扫）
+[06:14:28]   125/4938 新下 enriquesomolinos/dreerally/DreeRally.zip（0.1 MB，实测 0.02 MB/s，复检 1 成员）
+[06:14:33]   126/4938 新下 iortcw/iortcw/patch-data-SP_deutsch.zip（0.1 MB，实测 0.03 MB/s，复检 3 成员）
+[06:14:40]   127/4938 新下 iortcw/iortcw/patch-data-SP_italiano.zip（0.1 MB，实测 0.02 MB/s，复检 3 成员）
+[06:14:47]   128/4938 新下 iortcw/iortcw/patch-data-SP_francais.zip（0.1 MB，实测 0.02 MB/s，复检 3 成员）
+[06:14:54]   129/4938 新下 iortcw/iortcw/patch-data-SP_espanol.zip（0.1 MB，实测 0.02 MB/s，复检 3 成员）
+[06:15:03]   130/4938 新下 sciaschi/cbfd-recompiled/ConkerRecompiled-V0.1.6-Mods.zip（0.1 MB，实测 0.02 MB/s，复检 4 成员）
+[06:15:11]   131/4938 新下 nwnxee/unified/NWScript.zip（0.2 MB，实测 0.02 MB/s，复检 52 成员）
+[06:15:20]   132/4938 新下 int19h/aow-patch/AoW_MapViewer.ShowScene_patch.exe（0.2 MB，实测 0.02 MB/s，复检 格式不扫）
+[06:15:20]   133/4938 已相符 PortsMaster/PortMaster-Releases/F1Race.zip（0.2 MB，复检 45 成员）
+[06:15:28]   134/4938 新下 AdamLovattDevOps/relapse-resistance/relapse-resistance-linux-x86_64.tar.gz（0.2 MB，实测 0.02 MB/s，复检 10 成员）
+[06:15:38]   135/4938 新下 cookgreen/openmb/GoogleTranslateAPI-2.2.1.7z（0.2 MB，实测 0.02 MB/s，复检 格式不扫）
+[06:15:47]   136/4938 新下 am2r-android/am2r-autopatcher-android/AM2R-Autopatcher-1.5.5.14-source.zip（0.2 MB，实测 0.02 MB/s，复检 52 成员）
+[06:15:51]   137/4938 新下 opendune/opendune/opendune-0.9-windows-win32.zip（0.2 MB，实测 0.05 MB/s，复检 6 成员）
+[06:15:54]   138/4938 新下 therealsark02/defender/defender.zip（0.2 MB，实测 0.07 MB/s，复检 6 成员）
+[06:15:57]   139/4938 新下 sean-gugler/u4remastereda2/u4remasteredA2_v1212.zip（0.2 MB，实测 0.07 MB/s，复检 8 成员）
+[06:15:57]   140/4938 已相符 PortsMaster/PortMaster-Releases/Heart.of.Darkness.zip（0.2 MB，复检 9 成员）
+[06:15:57]   141/4938 已相符 PortsMaster/PortMaster-Releases/Cannonball-lr.zip（0.2 MB，复检 10 成员）
+[06:16:00]   142/4938 新下 dpt/the-great-escape-in-c/TheGreatEscape-a9d2315.zip（0.2 MB，实测 0.08 MB/s，复检 27 成员）
+[06:16:03]   143/4938 新下 dogparty/ipodclickwheelrecomps/minigolf-1.0.1-linux-x86_64.zip（0.2 MB，实测 0.08 MB/s，复检 4 成员）
+[06:16:06]   144/4938 新下 neuromancer/wc1-re/wc1-re-v0.9.1-win32-msvc420.zip（0.2 MB，实测 0.08 MB/s，复检 3 成员）
+[06:16:09]   145/4938 新下 daniel-madrid-07/weeping-of-the-empire/Weeping-of-the-Empire-Setup-v0.1.9.1.exe（0.3 MB，实测 0.09 MB/s，复检 格式不扫）
+[06:16:12]   146/4938 新下 davidptrssvea/table-tennis-rockstar-pc/Table-Tennis-Local-Build-v1.1.2.zip（0.3 MB，实测 0.09 MB/s，复检 44 成员）
+[06:16:16]   147/4938 新下 neuromancer/wc2-re/wc2-re-v0.0.14-win32-msvc410.zip（0.3 MB，实测 0.07 MB/s，复检 3 成员）
+[06:16:19]   148/4938 新下 8street/bedlam2/Bedlam2.linux.i386.zip（0.3 MB，实测 0.08 MB/s，复检 2 成员）
+[06:16:22]   149/4938 新下 usernamefodder/pmdsky-debug/headers.zip（0.3 MB，实测 0.09 MB/s，复检 106 成员）
+[06:16:26]   150/4938 新下 davidptrssvea/table-tennis-rockstar-pc/Install-Table-Tennis.exe（0.3 MB，实测 0.07 MB/s，复检 格式不扫）
+[06:16:30]   151/4938 新下 gerev/bumpy-reverse/BUMPYP.EXE（0.3 MB，实测 0.08 MB/s，复检 格式不扫）
+[06:16:33]   152/4938 新下 commonloon102/restunts-bb11/restunts-amiga-m68k.tar.gz（0.3 MB，实测 0.09 MB/s，复检 13 成员）
+[06:16:36]   153/4938 新下 reglacier/rehitman/ReHitman.zip（0.3 MB，实测 0.10 MB/s，复检 2 成员）
+[06:16:39]   154/4938 新下 opendune/opendune/opendune-0.9-windows-win64.zip（0.3 MB，实测 0.09 MB/s，复检 6 成员）
+[06:16:43]   155/4938 新下 x86matthew/playable3dmaze/Playable3DMaze.zip（0.3 MB，实测 0.08 MB/s，复检 3 成员）
+[06:16:46]   156/4938 新下 usernamefodder/pmdsky-debug/symbols-sym.zip（0.3 MB，实测 0.10 MB/s，复检 142 成员）
+[06:16:46]   157/4938 已相符 elprogramadorloco-arch/fuc-recomp/FateUnlimitedCodesRecomp-update.zip（0.3 MB，复检 129 成员）
+[06:16:49]   158/4938 新下 usernamefodder/pmdsky-debug/symbols-ghidra.zip（0.3 MB，实测 0.11 MB/s，复检 142 成员）
+[06:16:54]   159/4938 新下 RSDKModding/RSDKv3-Decompilation/v3-linux.zip（0.3 MB，实测 0.08 MB/s，复检 1 成员）
+[06:16:54]   160/4938 已相符 PortsMaster/PortMaster-Releases/Multris.zip（0.3 MB，复检 21 成员）
+[06:16:57]   161/4938 新下 opendune/opendune/opendune-0.9-macosx-ppc.dmg（0.3 MB，实测 0.11 MB/s，复检 格式不扫）
+[06:17:00]   162/4938 新下 opendune/opendune/opendune-0.9-macosx-ppc-sdl-dynamic.dmg（0.3 MB，实测 0.10 MB/s，复检 格式不扫）
+[06:17:05]   163/4938 新下 alistert/openjazz/openjazz-3ds.zip（0.3 MB，实测 0.06 MB/s，复检 6 成员）
+[06:17:05]   164/4938 已相符 PortsMaster/PortMaster-Releases/Cannonball-st.zip（0.3 MB，复检 15 成员）
+[06:17:12]   165/4938 新下 vitomiguelf/crashott-pc/CrashRecomp-v1.07-legendas.zip（0.3 MB，实测 0.06 MB/s，复检 2 成员）
+[06:17:17]   166/4938 新下 mustafasamer93/apocalypse-pc-native-port/Repocalypse-v1.0-source.zip（0.3 MB，实测 0.06 MB/s，复检 99 成员）
+[06:17:23]   167/4938 新下 opendune/opendune/opendune-0.9-AtariTOS.zip（0.3 MB，实测 0.06 MB/s，复检 6 成员）
+[06:17:30]   168/4938 新下 openphantom/openphantom/dsoal-r694-5c65e5fe.tar.gz（0.4 MB，实测 0.05 MB/s，复检 132 成员）
+[06:17:38]   169/4938 新下 azmawee/emperorreborn/EmperorReborn-v2.5.zip（0.4 MB，实测 0.05 MB/s，复检 7 成员）
+[06:17:46]   170/4938 新下 simutrans/simutrans/makeobj-win-nightly.zip（0.4 MB，实测 0.05 MB/s，复检 1 成员）
+[06:17:55]   171/4938 新下 dhewm/dhewm3/dhewm3-wide-guis-v0.2.zip（0.4 MB，实测 0.04 MB/s，复检 8 成员）
+[06:18:02]   172/4938 新下 5C8/sk83_na_m/OpenVR-Windows-x64.zip（0.4 MB，实测 0.06 MB/s，复检 2 成员）
+[06:18:07]   173/4938 新下 5C8/skate3recomp/OpenVR-Windows-x64.zip（0.4 MB，实测 0.07 MB/s，复检 2 成员）
+[06:18:13]   174/4938 新下 cyberheater/xbox-360-quake4-decomp/Quake4-Setup-0.2.0.exe（0.4 MB，实测 0.07 MB/s，复检 格式不扫）
+[06:18:13]   175/4938 已相符 PortsMaster/PortMaster-Releases/psebay.zip（0.4 MB，复检 15 成员）
+[06:18:17]   176/4938 新下 trxyebeep/tomb5/dll.only.zip（0.4 MB，实测 0.11 MB/s，复检 1 成员）
+[06:18:21]   177/4938 新下 swfans/syndicatfx/syndicatfx-0_0_6_1022-ubuntu-sdl1-patch.zip（0.4 MB，实测 0.09 MB/s，复检 14 成员）
+[06:18:26]   178/4938 新下 zofo007/nfs-carbon-nx/nfscarbon-1.1.0-src.zip（0.4 MB，实测 0.08 MB/s，复检 194 成员）
+[06:18:30]   179/4938 新下 swfans/syndicatfx/syndicatfx-0_0_6_1022-ubuntu-patch.zip（0.4 MB，实测 0.11 MB/s，复检 14 成员）
+[06:18:34]   180/4938 新下 frenkels/keensource456tandy/KEEN4-EGA-v20221115.zip（0.4 MB，实测 0.13 MB/s，复检 4 成员）
+[06:18:37]   181/4938 新下 miggas/jsrf-recomp/jsrf_launcher-linux.tar.gz（0.4 MB，实测 0.14 MB/s，复检 1 成员）
+[06:18:40]   182/4938 新下 alexbatalov/fallout2-re/fallout2-re.zip（0.4 MB，实测 0.15 MB/s，复检 1 成员）
+[06:18:40]   183/4938 已相符 centollOS/SwitchWakerHD/SwitchWakerHD-Installer.exe（0.4 MB，复检 格式不扫）
+[06:18:43]   184/4938 新下 theassemblyarmada/vanilla-conquer/vanilla-td-remaster-mod-msvc-ce83b59.zip（0.5 MB，实测 0.15 MB/s，复检 5 成员）
+[06:18:43]   185/4938 已相符 PortsMaster/PortMaster-Releases/Cosmo-Engine.zip（0.5 MB，复检 12 成员）
+[06:18:49]   186/4938 新下 enrique363/voldorium/Voldorium-1.1.3-linux.tar.gz（0.5 MB，实测 0.09 MB/s，复检 24 成员）
+[06:18:53]   187/4938 新下 usernamefodder/pmdsky-debug/headers-with-aliases-and-docstrings.zip（0.5 MB，实测 0.12 MB/s，复检 106 成员）
+[06:18:56]   188/4938 新下 nadult/freeft/mpg123_1.31.2.zip（0.5 MB，实测 0.12 MB/s，复检 9 成员）
+[06:18:57]   189/4938 已相符 PortsMaster/PortMaster-Releases/Reminiscence.zip（0.5 MB，复检 12 成员）
+[06:19:00]   190/4938 新下 alistert/openjazz/openjazz-web.zip（0.5 MB，实测 0.13 MB/s，复检 10 成员）
+[06:19:04]   191/4938 新下 opencrystalcaves/opencrystalcaves/OpenCrystalCaves-0.7.0-Linux-occ.tar.gz（0.5 MB，实测 0.14 MB/s，复检 31 成员）
+[06:19:07]   192/4938 新下 aikatore/recvx-enhanced-port/recvx-server-0.7.3-linux-x86_64.tar.gz（0.5 MB，实测 0.15 MB/s，复检 11 成员）
+[06:19:12]   193/4938 新下 AdrienTD/wkbre/wkbre_v0_1_0.zip（0.5 MB，实测 0.11 MB/s，复检 6 成员）
+[06:19:15]   194/4938 新下 jjmhalew/woodyre/WoodyRE-v1.0.11-linux-x86_64.tar.gz（0.5 MB，实测 0.14 MB/s，复检 4 成员）
+[06:19:18]   195/4938 新下 anishchandra24/maddennfl08-recompiled/MaddenNFL08-Recompiled-Setup.exe（0.5 MB，实测 0.16 MB/s，复检 格式不扫）
+[06:19:18]   196/4938 已相符 PortsMaster/PortMaster-Releases/Prehistorik.2.zip（0.5 MB，复检 22 成员）
+[06:19:22]   197/4938 新下 holdmysocks/mcla-recomp/mcla-recomp-v1.0.14.zip（0.5 MB，实测 0.15 MB/s，复检 75 成员）
+[06:19:22]   198/4938 已相符 PortsMaster/PortMaster-Releases/Tomb.Raider.1.zip（0.5 MB，复检 16 成员）
+[06:19:24]   199/4938 新下 arnoansems/catacombgl/CatacombGL-Linux-0-5-7.tar.xz（0.5 MB，实测 0.25 MB/s，复检 格式不扫）
+[06:19:26]   200/4938 新下 RSDKModding/RSDKv4-Decompilation/v4-linux.zip（0.5 MB，实测 0.23 MB/s，复检 1 成员）
+[06:19:26]   201/4938 已相符 PortsMaster/PortMaster-Releases/Luck.be.a.Landlord.zip（0.5 MB，复检 12 成员）
+[06:19:31]   202/4938 新下 alistert/openjazz/openjazz-20260301.tar.gz（0.5 MB，实测 0.11 MB/s，复检 300 成员）
+[06:19:36]   203/4938 新下 elprogramadorloco-arch/korokoro-recomp/KoroKoroRecomp-Android-v0.1.zip（0.6 MB，实测 0.11 MB/s，复检 73 成员）
+[06:19:39]   204/4938 新下 tools81/nfl-head-coach-09-static-recomp/HC09Setup.exe（0.6 MB，实测 0.21 MB/s，复检 格式不扫）
+[06:19:39]   205/4938 已相符 PortsMaster/PortMaster-Releases/Fallout2.zip（0.6 MB，复检 7 成员）
+[06:19:44]   206/4938 新下 commonloon102/restunts-bb11/restunts-templeos.zip（0.6 MB，实测 0.12 MB/s，复检 11 成员）
+[06:19:44]   207/4938 已相符 PortsMaster/PortMaster-Releases/Fallout1.zip（0.6 MB，复检 7 成员）
+[06:19:44]   208/4938 已相符 badcompany94-rcmp/project-tandem/ProjectTandem.exe（0.6 MB，复检 格式不扫）
+[06:19:47]   红线复检：andrei-drexler/ironwail/ironwail-0.8.2-linux-x64.tar.gz → 待复核（.pak）
+[06:19:47]   209/4938 待复核 andrei-drexler/ironwail/ironwail-0.8.2-linux-x64.tar.gz（0.6 MB，实测 0.17 MB/s，复检 7 成员）
+[06:19:50]   210/4938 新下 jval1972/xgreed/xGreed_1.1.12.55_src.zip（0.6 MB，实测 0.23 MB/s，复检 87 成员）
+[06:19:53]   211/4938 新下 theassemblyarmada/vanilla-conquer/vanilla-ra-remaster-mod-msvc-ce83b59.zip（0.6 MB，实测 0.17 MB/s，复检 4 成员）
+[06:19:56]   212/4938 新下 codenamecpp/carnage3d/bin_windows.7z（0.6 MB，实测 0.18 MB/s，复检 格式不扫）
+[06:19:59]   213/4938 新下 tx00100xt/serioussamalpharemake/SeriousSamAlphaRemake-1.5.3-win32-bin.7z（0.6 MB，实测 0.23 MB/s，复检 格式不扫）
+[06:20:02]   214/4938 新下 lancommander/tonywasaproskater/thps-linux-x86-1.4.0.tar.gz（0.6 MB，实测 0.16 MB/s，复检 3 成员）
+[06:20:06]   215/4938 新下 dogparty/ipodclickwheelrecomps/minigolf-1.0.1-switch.zip（0.6 MB，实测 0.18 MB/s，复检 3 成员）
+[06:20:09]   216/4938 新下 lancommander/tonywasaproskater/thps-linux-x64-1.4.0.tar.gz（0.6 MB，实测 0.16 MB/s，复检 3 成员）
+[06:20:12]   217/4938 新下 cdarrow/dxx-retro/d2x-retro-1.3a.Windows.zip（0.6 MB，实测 0.18 MB/s，复检 1 成员）
+[06:20:17]   218/4938 新下 jval1972/xgreed/xGreed_1.1.12.55_bin.zip（0.6 MB，实测 0.15 MB/s，复检 4 成员）
+[06:20:21]   219/4938 新下 opendune/opendune/opendune-0.9-macosx-x86_64-sdl2.dmg（0.6 MB，实测 0.13 MB/s，复检 格式不扫）
+[06:20:25]   220/4938 新下 dogparty/ipodclickwheelrecomps/vortex-1.0.1-linux-x86_64.zip（0.6 MB，实测 0.15 MB/s，复检 4 成员）
+[06:20:28]   221/4938 新下 opencoduo/coduomp/opencoduo-server-linux-i386-e23642dc5.tar.gz（0.6 MB，实测 0.24 MB/s，复检 7 成员）
+[06:20:30]   222/4938 新下 n0zom1z0/th08-web/th08-web-v0.1.0.tar.gz（0.6 MB，实测 0.25 MB/s，复检 6 成员）
+[06:20:33]   223/4938 新下 bbelgg/rs-rearmed/RS.Re-ARMed.Installer.app.zip（0.6 MB，实测 0.23 MB/s，复检 9 成员）
+[06:20:35]   224/4938 新下 trxyebeep/tomb4/tomb4.zip（0.6 MB，实测 0.26 MB/s，复检 1 成员）
+[06:20:38]   225/4938 新下 opencoduo/coduomp/opencoduo-server-linux-x86_64-e23642dc5.tar.gz（0.6 MB，实测 0.27 MB/s，复检 7 成员）
+[06:20:38]   226/4938 已相符 PortsMaster/PortMaster-Releases/Space.Cadet.Pinball.zip（0.6 MB，复检 3 成员）
+[06:20:40]   227/4938 新下 opencoduo/coduomp/opencoduo-server-windows-i686-e23642dc5.zip（0.6 MB，实测 0.26 MB/s，复检 7 成员）
+[06:20:43]   228/4938 新下 tx00100xt/serioussamalpharemake/SeriousSamAlphaRemake-1.5.3-macos-amd64-bin.tar.xz（0.6 MB，实测 0.26 MB/s，复检 格式不扫）
+[06:20:45]   229/4938 新下 leoetlino/project-restoration/mm3d_project_restoration_v1.5.9-0-ge099fcc.7z（0.6 MB，实测 0.24 MB/s，复检 格式不扫）
+[06:20:48]   230/4938 新下 alistert/openjazz/openjazz-20260301.zip（0.7 MB，实测 0.29 MB/s，复检 299 成员）
+[06:20:50]   231/4938 新下 rsdkmodding/rsdkv2-decompilation/win_x86.zip（0.7 MB，实测 0.27 MB/s，复检 3 成员）
+[06:20:52]   232/4938 新下 leoetlino/project-restoration/mm3d_project_restoration_plus_hd_hud_v1.5.9-5-g8bb2a7b.7z（0.7 MB，实测 0.30 MB/s，复检 格式不扫）
+[06:20:52]   233/4938 已相符 PortsMaster/PortMaster-Releases/Blues.Brothers.zip（0.7 MB，复检 34 成员）
+[06:20:55]   234/4938 新下 zlatkok/swos-port/swpe-0.99.2026.zip（0.7 MB，实测 0.26 MB/s，复检 5 成员）
+[06:20:58]   235/4938 新下 jjmhalew/woodyre/WoodyRE-v1.0.11.zip（0.7 MB，实测 0.26 MB/s，复检 3 成员）
+[06:21:00]   236/4938 新下 tx00100xt/serioussamalpharemake/SeriousSamAlphaRemake-1.5.3-win64-bin.7z（0.7 MB，实测 0.26 MB/s，复检 格式不扫）
+[06:21:03]   237/4938 新下 opendune/opendune/opendune-0.9-macosx-ppc-sdl2.dmg（0.7 MB，实测 0.28 MB/s，复检 格式不扫）
+[06:21:05]   238/4938 新下 nukep/smb-vanilla/smb-vanilla-linux-x64_0.1.0.tar.gz（0.7 MB，实测 0.30 MB/s，复检 4 成员）
+[06:21:08]   红线复检：PortsMaster/PortMaster-Releases/BBJA.zip → 待复核（.mod）
+[06:21:08]   239/4938 待复核 PortsMaster/PortMaster-Releases/BBJA.zip（0.7 MB，实测 0.20 MB/s，复检 37 成员）
+[06:21:11]   240/4938 新下 banteg/crimson/crimsonland-0.24.0.tar.gz（0.7 MB，实测 0.30 MB/s，复检 478 成员）
+[06:21:13]   241/4938 新下 tx00100xt/serioussamalpharemake/SeriousSamAlphaRemake-1.5.3-rpios-armv7l-bin.tar.xz（0.7 MB，实测 0.32 MB/s，复检 格式不扫）
+[06:21:16]   242/4938 新下 bvschaik/julius/julius-1.8.0-linux-x86_64.zip（0.7 MB，实测 0.26 MB/s，复检 1 成员）
+[06:21:18]   243/4938 新下 commonloon102/restunts-bb11/restunts-dos16.zip（0.7 MB，实测 0.28 MB/s，复检 16 成员）
+[06:21:19]   244/4938 已相符 PortsMaster/PortMaster-Releases/SDLPoP.zip（0.7 MB，复检 1060 成员）
+[06:21:26]   245/4938 新下 dogparty/ipodclickwheelrecomps/holdem-1.0.1-linux-x86_64.zip（0.7 MB，实测 0.10 MB/s，复检 4 成员）
+[06:21:28]   246/4938 新下 induktio/thinker/Thinker_v5.5.zip（0.7 MB，实测 0.31 MB/s，复检 31 成员）
+[06:21:31]   247/4938 新下 petarov/saboteur2/saboteur2-1.1-macos-x86_64.zip（0.7 MB，实测 0.27 MB/s，复检 19 成员）
+[06:21:34]   248/4938 新下 nmlgc/rec98/2026-03-16-ReC98.zip（0.7 MB，实测 0.22 MB/s，复检 30 成员）
+[06:21:37]   249/4938 新下 theassemblyarmada/vanilla-conquer/vanilla-conquer-internal-macos-clang-universal2--ce83b59-debug.zip（0.7 MB，实测 0.25 MB/s，复检 11 成员）
+[06:21:39]   250/4938 新下 tx00100xt/serioussamalpharemake/SeriousSamAlphaRemake-1.5.3-rpios-aarch64-bin.tar.xz（0.7 MB，实测 0.33 MB/s，复检 格式不扫）
+[06:21:42]   251/4938 新下 theassemblyarmada/vanilla-conquer/vanilla-conquer-internal-macos-clang-universal2--ce83b59.zip（0.7 MB，实测 0.26 MB/s，复检 1 成员）
+[06:21:45]   252/4938 新下 diasurgical/devilution/Diablo.exe（0.7 MB，实测 0.24 MB/s，复检 格式不扫）
+[06:21:47]   253/4938 新下 tx00100xt/serioussamalpharemake/SeriousSamAlphaRemake-1.5.3-lnx-s390x-bin.tar.xz（0.7 MB，实测 0.38 MB/s，复检 格式不扫）
+[06:21:49]   254/4938 新下 djyt/cannonball/cannonball-v034-w64.zip（0.8 MB，实测 0.37 MB/s，复检 9 成员）
+[06:21:49]   255/4938 已相符 PortsMaster/PortMaster-Releases/FreeSerf.zip（0.8 MB，复检 10 成员）
+[06:21:52]   256/4938 新下 rsdkmodding/rsdkv2-decompilation/win_x64.zip（0.8 MB，实测 0.27 MB/s，复检 3 成员）
+[06:21:54]   257/4938 新下 tx00100xt/serioussamalpharemake/SeriousSamAlphaRemake-1.5.3-bsd-amd64-bin.tar.xz（0.8 MB，实测 0.38 MB/s，复检 格式不扫）
+[06:21:56]   258/4938 新下 isledecomp/racers/LEGORacers.exe（0.8 MB，实测 0.31 MB/s，复检 格式不扫）
+[06:21:59]   259/4938 新下 petarov/saboteur2/saboteur2-1.1-windows-x86_64.zip（0.8 MB，实测 0.29 MB/s，复检 3 成员）
+[06:21:59]   260/4938 已相符 PortsMaster/PortMaster-Releases/Burst.zip（0.8 MB，复检 9 成员）
+[06:22:01]   261/4938 新下 gameflorist/dunedynasty/dunedynasty-v1.6.4-linux-arm64.zip（0.8 MB，实测 0.36 MB/s，复检 82 成员）
+[06:22:03]   262/4938 新下 gameflorist/dunedynasty/dunedynasty-v1.6.4-linux-x86-64.zip（0.8 MB，实测 0.37 MB/s，复检 82 成员）
+[06:22:06]   263/4938 新下 petarov/alleycat.exe/alleycat-1.3-windows-x86_64.zip（0.8 MB，实测 0.31 MB/s，复检 3 成员）
+[06:22:08]   264/4938 新下 alistert/openjazz/openjazz-linux-glibc2.35-x86_64.zip（0.8 MB，实测 0.37 MB/s，复检 6 成员）
+[06:22:09]   265/4938 已相符 PortsMaster/PortMaster-Releases/Exhumed.zip（0.8 MB，复检 12 成员）
+[06:22:11]   266/4938 新下 dogparty/ipodclickwheelrecomps/cubis-1.0.1-linux-x86_64.zip（0.8 MB，实测 0.34 MB/s，复检 4 成员）
+[06:22:14]   267/4938 新下 then00p/reflappy/flappybird-1.4.0-release.apk（0.8 MB，实测 0.32 MB/s，复检 格式不扫）
+[06:22:16]   268/4938 新下 angeldev07/ninja-gaiden-black-port/ngb-port-v0.8.0-win32.zip（0.8 MB，实测 0.38 MB/s，复检 6 成员）
+[06:22:19]   269/4938 新下 jbalcomb/remom/remom_0.0.10_amd64.deb（0.8 MB，实测 0.24 MB/s，复检 格式不扫）
+[06:22:22]   270/4938 新下 tx00100xt/serioussamalpharemake/SeriousSamAlphaRemake-1.5.3-lnx-riscv64-bin.tar.xz（0.8 MB，实测 0.34 MB/s，复检 格式不扫）
+[06:22:24]   271/4938 新下 urxp/drally/dRally_Linux_x64.zip（0.8 MB，实测 0.37 MB/s，复检 3 成员）
+[06:22:26]   272/4938 新下 tx00100xt/serioussamalpharemake/SeriousSamAlphaRemake-1.5.3-alpne-x86_64-bin.tar.xz（0.8 MB，实测 0.40 MB/s，复检 格式不扫）
+[06:22:29]   273/4938 新下 alistert/openjazz/openjazz-wii.zip（0.8 MB，实测 0.30 MB/s，复检 9 成员）
+[06:22:31]   274/4938 新下 dogparty/ipodclickwheelrecomps/lost-1.0.1-linux-x86_64.zip（0.8 MB，实测 0.33 MB/s，复检 4 成员）
+[06:22:33]   275/4938 新下 gh0stblade/kain2/KAIN2-B6007-Win32-Release.zip（0.8 MB，实测 0.37 MB/s，复检 1 成员）
+[06:22:36]   276/4938 新下 tx00100xt/serioussamalpharemake/SeriousSamAlphaRemake-1.5.3-lnx-amd64-bin.tar.xz（0.8 MB，实测 0.32 MB/s，复检 格式不扫）
+[06:22:39]   277/4938 新下 tx00100xt/serioussamalpharemake/SeriousSamAlphaRemake-1.5.3-lnx-ppc64le-bin.tar.xz（0.8 MB，实测 0.30 MB/s，复检 格式不扫）
+[06:22:41]   278/4938 新下 timftw21/burnout2-recompilation/Installation.zip（0.8 MB，实测 0.39 MB/s，复检 143 成员）
+[06:22:43]   279/4938 新下 tx00100xt/serioussamalpharemake/SeriousSamAlphaRemake-1.5.3-alpine-x86-bin.tar.xz（0.8 MB，实测 0.37 MB/s，复检 格式不扫）
+[06:22:45]   280/4938 新下 konovalov-aleks/resl/resl-1.1.3-windows.zip（0.8 MB，实测 0.40 MB/s，复检 30 成员）
+[06:22:48]   281/4938 新下 monstercameron/libertyflux/libertyflux-macos-arm64-20eb560.zip（0.8 MB，实测 0.36 MB/s，复检 5 成员）
+[06:22:50]   282/4938 新下 bigsnek9/wario-world-recomp/WarioWorldRecomp-v1.0-source.zip（0.9 MB，实测 0.39 MB/s，复检 182 成员）
+[06:22:52]   283/4938 新下 deivid22srk/pinyon-shift-android/session_20261009_142143_1791566657283.zip（0.9 MB，实测 0.35 MB/s，复检 15 成员）
+[06:22:55]   284/4938 新下 alistert/openjazz/openjazz-psp.zip（0.9 MB，实测 0.34 MB/s，复检 6 成员）
+[06:22:57]   285/4938 新下 lunarmeadow/barrett/barrett-linux.zip（0.9 MB，实测 0.38 MB/s，复检 2 成员）
+[06:23:01]   286/4938 新下 ttdpatch/ttdpatch/25b9.zip（0.9 MB，实测 0.25 MB/s，复检 3 成员）
+[06:23:01]   287/4938 已相符 PortsMaster/PortMaster-Releases/brogue.zip（0.9 MB，复检 16 成员）
+[06:23:04]   288/4938 新下 lunarmeadow/barrett/barrett-macOS.zip（0.9 MB，实测 0.34 MB/s，复检 2 成员）
+[06:23:06]   289/4938 新下 codenamecpp/glkeeper/bin_win.zip（0.9 MB，实测 0.30 MB/s，复检 33 成员）
+[06:23:10]   290/4938 新下 tmewett/broguece/BrogueCE-1.15.1-linux-x86_64.tar.gz（0.9 MB，实测 0.26 MB/s，复检 14 成员）
+[06:23:12]   291/4938 新下 sulix/omnispeak/omnispeak-dos-1.1.zip（0.9 MB，实测 0.43 MB/s，复检 58 成员）
+[06:23:15]   292/4938 新下 conker64recomp/conker64-recompiled/Conker64-Recompiled-v0.1.0-beta.zip（0.9 MB，实测 0.34 MB/s，复检 4 成员）
+[06:23:17]   293/4938 新下 spark198rus/black-pc/black-pc-0.3.0-win32.zip（0.9 MB，实测 0.42 MB/s，复检 4 成员）
+[06:23:22]   294/4938 新下 junior-jones/jungle-strike-snes-static-recomp/Jungle-Strike-SNES-Static-Recomp-1.1.0-Source.zip（0.9 MB，实测 0.16 MB/s，复检 239 成员）
+[06:23:25]   295/4938 新下 usernamefodder/pmdsky-debug/symbols-json.zip（0.9 MB，实测 0.31 MB/s，复检 142 成员）
+[06:23:28]   296/4938 新下 interrupt/ultima-underworld/uw1-pocketpc-decomp-v0.5.1-linux-x86_64.zip（0.9 MB，实测 0.42 MB/s，复检 3 成员）
+[06:23:28]   297/4938 已相符 PortsMaster/PortMaster-Releases/Tamatool.zip（0.9 MB，复检 9 成员）
+[06:23:30]   298/4938 新下 tx00100xt/serioussamalpharemake/SeriousSamAlphaRemake-1.5.3-lnx-glibc-2.24-amd64-bin.tar.xz（0.9 MB，实测 0.37 MB/s，复检 格式不扫）
+[06:23:32]   299/4938 新下 gasparegas/tkdr-recomp/tkdr-web-host.zip（0.9 MB，实测 0.42 MB/s，复检 17 成员）
+[06:23:34]   300/4938 新下 trxyebeep/tomb5/exe.+.dll.zip（0.9 MB，实测 0.47 MB/s，复检 2 成员）
+[06:23:36]   301/4938 新下 monstercameron/libertyflux/libertyflux-linux-x64-20eb560.zip（0.9 MB，实测 0.43 MB/s，复检 5 成员）
+[06:23:37]   302/4938 已相符 PortsMaster/PortMaster-Releases/wetspot2.zip（0.9 MB，复检 154 成员）
+[06:23:40]   303/4938 新下 tx00100xt/serioussamalpharemake/SeriousSamAlphaRemake-1.5.3-lnx-glibc-2.24-i386-bin.tar.xz（1.0 MB，实测 0.30 MB/s，复检 格式不扫）
+[06:23:40]   304/4938 已相符 PortsMaster/PortMaster-Releases/SimpleSokoban.zip（1.0 MB，复检 140 成员）
+[06:23:42]   305/4938 新下 tx00100xt/serioussamalpharemake/SeriousSamAlphaRemake-1.5.3-lnx-glibc-2.27-amd64-bin.tar.xz（1.0 MB，实测 0.42 MB/s，复检 格式不扫）
+[06:23:45]   306/4938 新下 xeeynamo/ff7-decomp/cc1-psx-26.gz（1.0 MB，实测 0.38 MB/s，复检 格式不扫）
+[06:23:47]   307/4938 新下 mkst/esa/psyq3.3.tar.gz（1.0 MB，实测 0.45 MB/s，复检 12 成员）
+[06:23:47]   308/4938 已相符 PortsMaster/PortMaster-Releases/bstone-aog.zip（1.0 MB，复检 16 成员）
+[06:23:47]   309/4938 已相符 PortsMaster/PortMaster-Releases/bstone-ps.zip（1.0 MB，复检 17 成员）
+[06:23:49]   310/4938 新下 xeeynamo/sotn-decomp/cc1-psx-26.tar.gz（1.0 MB，实测 0.46 MB/s，复检 1 成员）
+[06:23:52]   311/4938 新下 isledecomp/isle-portable/isle-0.1-Emscripten-emscripten.tar.gz（1.0 MB，实测 0.44 MB/s，复检 4 成员）
+[06:23:54]   312/4938 新下 elasota/aerofoil/Aerofoil-1.1.7-win64-tools.zip（1.0 MB，实测 0.37 MB/s，复检 10 成员）
+[06:23:57]   313/4938 新下 tx00100xt/serioussamalpharemake/SeriousSamAlphaRemake-1.5.3-lnx-glibc-2.27-i586-bin.tar.xz（1.0 MB，实测 0.44 MB/s，复检 格式不扫）
+[06:24:00]   314/4938 新下 halkuncode/anothermind-decomp/cc1-psx-272.gz（1.0 MB，实测 0.30 MB/s，复检 格式不扫）
+[06:24:02]   315/4938 新下 xeeynamo/ff7-decomp/cc1-psx-272.gz（1.0 MB，实测 0.37 MB/s，复检 格式不扫）
+[06:24:05]   316/4938 新下 openphantom/openphantom/x264-v0.165.3223-0480cb05.tar.gz（1.0 MB，实测 0.41 MB/s，复检 289 成员）
+[06:24:07]   317/4938 新下 bishop-333/omega-engine/omega-engine_3.4.1_amd64.deb（1.0 MB，实测 0.45 MB/s，复检 格式不扫）
+[06:24:10]   318/4938 新下 mkst/esa/psyq3.5.tar.gz（1.0 MB，实测 0.41 MB/s，复检 13 成员）
+[06:24:13]   319/4938 新下 darhkfox/busterbustsloose/BusterBustsLoose-V1.0-win64.zip（1.0 MB，实测 0.33 MB/s，复检 8 成员）
+[06:24:16]   320/4938 新下 theassemblyarmada/vanilla-conquer/vanilla-conquer-remasterdll-msvc-ce83b59.zip（1.0 MB，实测 0.32 MB/s，复检 2 成员）
+[06:24:16]   321/4938 已相符 PortsMaster/PortMaster-Releases/NAM.zip（1.0 MB，复检 16 成员）
+[06:24:17]   322/4938 已相符 PortsMaster/PortMaster-Releases/Redneck.Rampage.Rides.Again.zip（1.0 MB，复检 16 成员）
+[06:24:19]   323/4938 新下 gameflorist/dunedynasty/dunedynasty-v1.6.4-linux-arm64-flatpak.zip（1.0 MB，实测 0.48 MB/s，复检 1 成员）
+[06:24:21]   324/4938 新下 frozensand/ioq3-for-urbanterror-4/Quake3-UrT-Ded.exe（1.0 MB，实测 0.44 MB/s，复检 格式不扫）
+[06:24:24]   325/4938 新下 an1n-dya/kururin/kururin_pc_linux_x86.tar.gz（1.0 MB，实测 0.40 MB/s，复检 10 成员）
+[06:24:26]   326/4938 新下 fragglet/sdl-sopwith/sdl-sopwith-2.9.0.tar.gz（1.0 MB，实测 0.49 MB/s，复检 139 成员）
+[06:24:26]   327/4938 已相符 PortsMaster/PortMaster-Releases/World.War.II.GI.zip（1.1 MB，复检 11 成员）
+[06:24:26]   328/4938 已相符 PortsMaster/PortMaster-Releases/Redneck.Rampage.zip（1.1 MB，复检 11 成员）
+[06:24:29]   329/4938 新下 alexbatalov/fallout1-ce/fallout-ce-windows-x86.zip（1.1 MB，实测 0.48 MB/s，复检 1 成员）
+[06:24:31]   330/4938 新下 erick194/doomiirpg-re/DoomIIRPG.v0.1.zip（1.1 MB，实测 0.42 MB/s，复检 4 成员）
+[06:24:33]   331/4938 新下 panzerschrek/chasm-reverse/PanzerChasm.zip（1.1 MB，实测 0.46 MB/s，复检 60 成员）
+[06:24:36]   332/4938 新下 RSDKModding/RSDKv3-Decompilation/v3-windows.zip（1.1 MB，实测 0.50 MB/s，复检 1 成员）
+[06:24:36]   333/4938 已相符 PortsMaster/PortMaster-Releases/Laserkombat.zip（1.1 MB，复检 137 成员）
+[06:24:39]   334/4938 新下 fragglet/sdl-sopwith/sdl-sopwith-2.9.0-win32.zip（1.1 MB，实测 0.39 MB/s，复检 9 成员）
+[06:24:42]   335/4938 新下 interrupt/ultima-underworld/uw1-pocketpc-decomp-v0.5.1-macos-arm64.zip（1.1 MB，实测 0.42 MB/s，复检 3 成员）
+[06:24:48]   336/4938 新下 fragglet/sdl-sopwith/sdl-sopwith-2.9.0-win64.zip（1.1 MB，实测 0.16 MB/s，复检 9 成员）
+[06:24:50]   337/4938 新下 miggas/jsrf-recomp/jsrf_launcher-windows.zip（1.1 MB，实测 0.50 MB/s，复检 1 成员）
+[06:24:53]   338/4938 新下 dogparty/ipodclickwheelrecomps/bowling-1.0.1-linux-x86_64.zip（1.1 MB，实测 0.49 MB/s，复检 4 成员）
+[06:24:57]   339/4938 新下 bvschaik/julius/julius-1.8.0-emscripten.zip（1.1 MB，实测 0.23 MB/s，复检 1 成员）
+[06:25:09]   340/4938 新下 erick194/wolfensteinrpg-re/WolfensteinRPG.v0.1.zip（1.1 MB，实测 0.10 MB/s，复检 4 成员）
+[06:25:15]   失败 interrupt/ultima-underworld/uw1-pocketpc-decomp-v0.5.1-windows-x86_64.zip：Get "https://release-assets.githubusercontent.com/github-production-release-asset/1354146705/cfe7ee1c-f5e9-4ce4-ba6a-76ed6ca8797b?sp=r&sv=2018-11-09&s
+[06:25:17]   342/4938 新下 openbiohazard2/openbiohazard2/OpenBiohazard2-win64-0.1.0.zip（1.1 MB，实测 0.50 MB/s，复检 1 成员）
+[06:25:24]   失败 sebsebseb1982/crusader-no-remorse-decomp/crusader-1.23.3-windows-x64.zip：Get "https://release-assets.githubusercontent.com/github-production-release-asset/1419706688/afa2aa67-028b-4e10-a61f-eb1b18b55b7d?sp=r&sv=2018-11-09&s
+[06:25:26]   344/4938 新下 sebsebseb1982/crusader-no-remorse-decomp/crusader-1.23.3-linux-x64.tar.gz（1.1 MB，实测 0.45 MB/s，复检 5 成员）
+[06:25:34]   345/4938 新下 wemino/madnesspatch/MadnessPatch.zip（1.1 MB，实测 0.15 MB/s，复检 55 成员）
+[06:25:38]   346/4938 新下 01y/bstone-vita/data-sw.zip（1.1 MB，实测 0.30 MB/s，复检 12 成员）
+[06:25:40]   347/4938 新下 gameflorist/dunedynasty/dunedynasty-v1.6.4-linux-amd64-flatpak.zip（1.1 MB，实测 0.47 MB/s，复检 1 成员）
+[06:25:46]   348/4938 新下 frozensand/ioq3-for-urbanterror-4/Quake3-UrT.app.zip（1.1 MB，实测 0.17 MB/s，复检 9 成员）
+[06:25:47]   349/4938 已相符 PortsMaster/PortMaster-Releases/avp.zip（1.1 MB，复检 11 成员）
+[06:25:49]   350/4938 新下 kitrinx/ultima7_decomp/ultima7-modern-v0.5.1-windows-x64.zip（1.1 MB，实测 0.56 MB/s，复检 8 成员）
+[06:25:49]   351/4938 已相符 PortsMaster/PortMaster-Releases/Carmageddon.zip（1.1 MB，复检 9 成员）
+[06:25:51]   352/4938 新下 artknighty/tagforcerecomp-preview/TagForceRecomp-Mods-0.6.0.zip（1.1 MB，实测 0.47 MB/s，复检 45 成员）
+[06:25:57]   353/4938 新下 RSDKModding/RSDKv4-Decompilation/v4-windows.zip（1.1 MB，实测 0.19 MB/s，复检 1 成员）
+[06:25:57]   354/4938 已相符 PortsMaster/PortMaster-Releases/Duke.Nukem.3D.zip（1.1 MB，复检 14 成员）
+[06:25:59]   355/4938 新下 alexbatalov/fallout2-ce/fallout2-ce-windows-x86.zip（1.2 MB，实测 0.53 MB/s，复检 1 成员）
+[06:26:02]   356/4938 新下 team-eternity/calico-doom/calico-v2.zip（1.2 MB，实测 0.45 MB/s，复检 14 成员）
+[06:26:05]   357/4938 新下 signus-game/signus/signus-1.96.1-0.x86_64.rpm（1.2 MB，实测 0.45 MB/s，复检 格式不扫）
+[06:26:05]   358/4938 已相符 PortsMaster/PortMaster-Releases/Blood.zip（1.2 MB，复检 11 成员）
+[06:26:11]   失败 AdamLovattDevOps/relapse-resistance/Relapse-Resistance-x86_64.AppImage：Get "https://release-assets.githubusercontent.com/github-production-release-asset/1337504617/61122e4c-f21f-4111-90ac-58e675ff8c7f?sp=r&sv=2018-11-09&s
+[06:26:25]   360/4938 新下 elliotttate/bombermanrecomp/BombermanRecomp-windows-x64-v0.1.1.zip（1.2 MB，实测 0.08 MB/s，复检 7 成员）
+[06:26:28]   361/4938 新下 i2kiselev/fm4-static-recomp/fm4-static-recomp-source.zip（1.2 MB，实测 0.55 MB/s，复检 127 成员）
+[06:26:30]   362/4938 新下 monstercameron/libertyflux/libertyflux-windows-x64-20eb560.zip（1.2 MB，实测 0.52 MB/s，复检 9 成员）
+[06:26:33]   363/4938 新下 RSDKModding/RSDKv3-Decompilation/v3-windows-x64.zip（1.2 MB，实测 0.39 MB/s，复检 1 成员）
+[06:26:38]   失败 skynettx/raptor/raptor-0.8.2-win32.exe：Get "https://api.github.com/repos/skynettx/raptor/releases/tags/v0.8.2": EOF
+
+[06:26:41]   365/4938 新下 sobomax/digger/debian-12_packages.zip（1.2 MB，实测 0.47 MB/s，复检 6 成员）
+[06:26:41]   366/4938 已相符 PortsMaster/PortMaster-Releases/Anodyne.zip（1.2 MB，复检 34 成员）
+[06:26:44]   367/4938 新下 alexbatalov/fallout1-ce/fallout-ce-windows-x64.zip（1.2 MB，实测 0.35 MB/s，复检 1 成员）
+[06:26:47]   368/4938 新下 0bAndyWirus/DQ9-Decomp/dq9-decomp-windows-kit-v0.5.0.zip（1.2 MB，实测 0.41 MB/s，复检 417 成员）
+[06:26:53]   369/4938 新下 dq9-remastered/dq9-remastered/dq9-decomp-windows-kit-v0.5.0.zip（1.2 MB，实测 0.24 MB/s，复检 417 成员）
+[06:26:53]   370/4938 已相符 PortsMaster/PortMaster-Releases/RigelEngine.zip（1.2 MB，复检 12 成员）
+[06:26:55]   371/4938 新下 sobomax/digger/debian-11_packages.zip（1.2 MB，实测 0.56 MB/s，复检 6 成员）
+[06:26:57]   372/4938 新下 nfroggy/openmadoola/openmadoola-1.26-windows-amd64.zip（1.2 MB，实测 0.58 MB/s，复检 21 成员）
+[06:26:59]   373/4938 新下 nlwstein/skullburglar/NOT-A-RELEASE-issue12-test-only-windows.zip（1.2 MB，实测 0.66 MB/s，复检 2 成员）
+[06:27:05]   失败 fragglet/sdl-sopwith/sdl-sopwith-2.9.0-js.zip：Get "https://release-assets.githubusercontent.com/github-production-release-asset/294003354/e59d4f6f-81a1-4e38-bcd6-00d7b5f2fb71?sp=r&sv=2018-11-09&sr
+[06:27:05]   375/4938 已相符 PortsMaster/PortMaster-Releases/pinball_disc_room.zip（1.3 MB，复检 13 成员）
+[06:27:07]   376/4938 新下 sobomax/digger/debian-13_packages.zip（1.3 MB，实测 0.56 MB/s，复检 6 成员）
+[06:27:07]   377/4938 已相符 PortsMaster/PortMaster-Releases/Fheroes2.zip（1.3 MB，复检 15 成员）
+[06:27:10]   378/4938 新下 hiburn8/futurama-the-game-the-recomp/FuturamaRecomp-v1.5.0-win64.zip（1.3 MB，实测 0.57 MB/s，复检 2 成员）
+[06:27:12]   379/4938 新下 dcurrent/openbor/OpenBOR.v4.0.Build.7533.rar（1.3 MB，实测 0.55 MB/s，复检 格式不扫）
+[06:27:20]   失败 sobomax/digger/ubuntu-24.04_packages.zip：Get "https://release-assets.githubusercontent.com/github-production-release-asset/21509409/f25a845b-e067-47f4-b944-c1fc6e4d36c1?sp=r&sv=2018-11-09&sr=
+[06:27:22]   381/4938 新下 sulix/omnispeak/omnispeak-win32-1.1.zip（1.3 MB，实测 0.49 MB/s，复检 57 成员）
+[06:27:28]   失败 k4zmu2a/spacecadetpinball/SpaceCadetPinballx86Win.zip：Get "https://release-assets.githubusercontent.com/github-production-release-asset/334165650/dd395e07-e914-45bf-84b4-82ac6258ab9a?sp=r&sv=2018-11-09&sr
+[06:27:31]   383/4938 新下 k4zmu2a/spacecadetpinball/SpaceCadetPinballx86WinXP.zip（1.3 MB，实测 0.62 MB/s，复检 3 成员）
+[06:27:33]   384/4938 新下 sobomax/digger/ubuntu-26.04_packages.zip（1.3 MB，实测 0.59 MB/s，复检 6 成员）
+[06:27:33]   385/4938 已相符 PortsMaster/PortMaster-Releases/AM2R.zip（1.3 MB，复检 13 成员）
+[06:27:38]   失败 RSDKModding/RSDKv4-Decompilation/v4-windows-x64.zip：Get "https://api.github.com/repos/RSDKModding/RSDKv4-Decompilation/releases/tags/1.3.3": EOF
+
+[06:27:40]   387/4938 新下 an1n-dya/kururin/kururin_pc_win32.zip（1.3 MB，实测 0.59 MB/s，复检 8 成员）
+[06:27:42]   388/4938 新下 rsdkmodding/rsdkv5-decompilation/v5-windows.zip（1.3 MB，实测 0.61 MB/s，复检 2 成员）
+[06:27:45]   389/4938 新下 shinyquagsire23/openjkdf2/nintendo-dsi-debug.zip（1.3 MB，实测 0.42 MB/s，复检 238 成员）
+[06:27:48]   390/4938 新下 arnoansems/catacombgl/CatacombGL-Windows-32bit-0-5-7.zip（1.3 MB，实测 0.53 MB/s，复检 4 成员）
+[06:27:50]   391/4938 新下 skynettx/raptor/raptor-0.8.2-win64.exe（1.3 MB，实测 0.60 MB/s，复检 格式不扫）
+[06:27:50]   392/4938 已相符 PortsMaster/PortMaster-Releases/hyper.JUMP.zip（1.3 MB，复检 9 成员）
+[06:27:53]   393/4938 新下 xeeynamo/sotn-decomp/mwccpsp_3.0.1_147.tar.gz（1.3 MB，实测 0.56 MB/s，复检 2 成员）
+[06:27:55]   394/4938 新下 alexbatalov/fallout2-ce/fallout2-ce-windows-x64.zip（1.3 MB，实测 0.62 MB/s，复检 1 成员）
+[06:27:57]   395/4938 新下 xeeynamo/sotn-decomp/mwccpsp_219.tar.gz（1.3 MB，实测 0.60 MB/s，复检 2 成员）
+[06:27:59]   396/4938 新下 theassemblyarmada/vanilla-conquer/vanilla-conquer-release-linux-clang-ubuntu-22.04-x86_64-ce83b59.zip（1.3 MB，实测 0.58 MB/s，复检 2 成员）
+[06:28:02]   397/4938 新下 theassemblyarmada/vanilla-conquer/vanilla-conquer-release-linux-clang-ubuntu-24.04-x86_64-ce83b59.zip（1.4 MB，实测 0.50 MB/s，复检 2 成员）
+[06:28:04]   398/4938 新下 fragglet/sdl-sopwith/sdl-sopwith-2.9.0-macos-arm64.zip（1.4 MB，实测 0.63 MB/s，复检 1 成员）
+[06:28:07]   399/4938 新下 smlu/openjones3d/oj3d-0.3.0.zip（1.4 MB，实测 0.52 MB/s，复检 11 成员）
+[06:28:07]   400/4938 已相符 PortsMaster/PortMaster-Releases/tube64.zip（1.4 MB，复检 44 成员）
+[06:28:09]   401/4938 新下 zaps166/nfsiise/nfs2se-win32-v1.4.0.zip（1.4 MB，实测 0.61 MB/s，复检 15 成员）
+[06:28:12]   402/4938 新下 sobomax/digger/digger-0.5.tar.gz（1.4 MB，实测 0.54 MB/s，复检 422 成员）
+[06:28:15]   403/4938 新下 wyrelade/dw2-pc/DW2-PC-linux-x64.zip（1.4 MB，实测 0.42 MB/s，复检 3 成员）
+[06:28:15]   404/4938 已相符 PortsMaster/PortMaster-Releases/missdriller.zip（1.4 MB，复检 115 成员）
+[06:28:17]   405/4938 新下 isledecomp/isle-portable/isle-0.1-Windows-x86.zip（1.4 MB，实测 0.59 MB/s，复检 4 成员）
+[06:28:20]   406/4938 新下 zaps166/nfsiise/nfs2se-linux-x86-v1.4.0.tar.gz（1.4 MB，实测 0.63 MB/s，复检 16 成员）
+[06:28:22]   407/4938 新下 deivid22srk/pinyon-shift-android/build42.zip（1.4 MB，实测 0.64 MB/s，复检 4 成员）
+[06:28:24]   408/4938 新下 8street/bedlam2/Bedlam2.WindowsX86.zip（1.4 MB，实测 0.61 MB/s，复检 7 成员）
+[06:28:26]   409/4938 新下 xeeynamo/ff7-decomp/clang-format.gz（1.4 MB，实测 0.62 MB/s，复检 格式不扫）
+[06:28:29]   410/4938 新下 deivid22srk/pinyon-shift-android/log.zip（1.4 MB，实测 0.62 MB/s，复检 2 成员）
+[06:28:31]   411/4938 新下 sobomax/digger/digger-win64.zip（1.4 MB，实测 0.55 MB/s，复检 5 成员）
+[06:28:35]   412/4938 新下 jeff-strutb/stuntracefx/StuntRaceFXBuilder-0.91-Windows.zip（1.4 MB，实测 0.38 MB/s，复检 4 成员）
+[06:28:38]   413/4938 新下 thextech/thextech/moondust-devkit-config-pack-thextech-sdk-v1.7.4.1.zip（1.4 MB，实测 0.52 MB/s，复检 2403 成员）
+[06:28:40]   414/4938 新下 01y/bstone-vita/bstone-0.3.vpk（1.4 MB，实测 0.66 MB/s，复检 格式不扫）
+[06:28:42]   415/4938 新下 zaps166/nfsiise/nfs2se-src-v1.4.0.tar.gz（1.4 MB，实测 0.53 MB/s，复检 70 成员）
+[06:28:45]   416/4938 新下 sulix/omnispeak/omnispeak-win64-1.1.zip（1.4 MB，实测 0.66 MB/s，复检 57 成员）
+[06:28:47]   417/4938 新下 fragglet/sdl-sopwith/sdl-sopwith-2.9.0-macos-x86_64.zip（1.4 MB，实测 0.65 MB/s，复检 1 成员）
+[06:28:49]   418/4938 新下 k4zmu2a/spacecadetpinball/SpaceCadetPinballx64Win.zip（1.4 MB，实测 0.66 MB/s，复检 3 成员）
+[06:28:51]   419/4938 新下 theassemblyarmada/vanilla-conquer/vanilla-conquer-release-linux-gcc-ubuntu-22.04-x86_64-ce83b59.zip（1.4 MB，实测 0.61 MB/s，复检 2 成员）
+[06:28:54]   420/4938 新下 theassemblyarmada/vanilla-conquer/vanilla-conquer-release-linux-gcc-ubuntu-24.04-x86_64-ce83b59.zip（1.4 MB，实测 0.55 MB/s，复检 2 成员）
+[06:28:54]   421/4938 已相符 PortsMaster/PortMaster-Releases/Shadow.Warrior.zip（1.4 MB，复检 15 成员）
+[06:28:54]   422/4938 已相符 PortsMaster/PortMaster-Releases/OpenGGS.zip（1.4 MB，复检 45 成员）
+[06:28:56]   423/4938 新下 rsdkmodding/rsdkv5-decompilation/v5-windows-x64.zip（1.5 MB，实测 0.69 MB/s，复检 2 成员）
+[06:28:58]   424/4938 新下 junior-jones/adventure-island-ii-nes-static-recomp/Adventure-Island-II-NES-Static-Recomp-1.0.0-Windows.zip（1.5 MB，实测 0.66 MB/s，复检 7 成员）
+[06:29:00]   425/4938 新下 signus-game/signus/signus-1.96.1-win32.zip（1.5 MB，实测 0.67 MB/s，复检 5 成员）
+[06:29:03]   426/4938 新下 kugelrund/speed-academy/jasp.exe（1.5 MB，实测 0.56 MB/s，复检 格式不扫）
+[06:29:05]   427/4938 新下 2003scape/rsc-c/mudclient177-linux-x86_64.tar.gz（1.5 MB，实测 0.61 MB/s，复检 16 成员）
+[06:29:08]   428/4938 新下 BodbDearg/PsyDoom/PsyDoom_1.1.1_Windows_x86_64.zip（1.5 MB，实测 0.68 MB/s，复检 1 成员）
+[06:29:10]   429/4938 新下 opendune/opendune/opendune-0.9-macosx-ppc-sdl.dmg（1.5 MB，实测 0.64 MB/s，复检 格式不扫）
+[06:29:12]   430/4938 新下 Adoregabriel2005/Cebola-RECOMPILED/CebolaRecompiled-v0.10.1-fontes.zip（1.5 MB，实测 0.60 MB/s，复检 65 成员）
+[06:29:15]   431/4938 新下 Adoregabriel2005/monica-no-castelo-do-dragao-recomp/CebolaRecompiled-v0.10.1-fontes.zip（1.5 MB，实测 0.65 MB/s，复检 65 成员）
+[06:29:15]   432/4938 已相符 PortsMaster/PortMaster-Releases/cceleste.zip（1.5 MB，复检 38 成员）
+[06:29:17]   433/4938 新下 bibendovsky/bstone/bstone-1.3.4+e65a6b40-Darwin.zip（1.5 MB，实测 0.59 MB/s，复检 4 成员）
+[06:29:20]   434/4938 新下 AntAir267/1nsane-recompiled/mingw-w64-7zip-26.04-1.src.tar.zst（1.5 MB，实测 0.67 MB/s，复检 格式不扫）
+[06:29:22]   435/4938 新下 kitrinx/ultima7_decomp/ultima7-modern-v0.5.1-linux-x64.zip（1.5 MB，实测 0.54 MB/s，复检 8 成员）
+[06:29:24]   436/4938 新下 lancommander/tonywasaproskater/thps-windows-x64-1.4.0.zip（1.5 MB，实测 0.77 MB/s，复检 3 成员）
+[06:29:27]   437/4938 新下 lbalab/lba2-classic-community/lba2cc-0.13.2-windows-x64-symbols.tar.xz（1.5 MB，实测 0.64 MB/s，复检 格式不扫）
+[06:29:29]   438/4938 新下 moshferatu/zombies-ate-my-neighbors-pc-port/zamn-windows-x86_64.zip（1.5 MB，实测 0.68 MB/s，复检 5 成员）
+[06:29:31]   439/4938 新下 acklavidian/decomp_wots2/wots2-linux-x86_64.tar.gz（1.5 MB，实测 0.67 MB/s，复检 21 成员）
+[06:29:33]   440/4938 新下 openmc2/openmc2/OpenMC2.zip（1.5 MB，实测 0.68 MB/s，复检 2 成员）
+[06:29:35]   441/4938 新下 lethal-guitar/rigelengine/rigelengine_linux_gles_x64.deb（1.5 MB，实测 0.70 MB/s，复检 格式不扫）
+[06:29:38]   442/4938 新下 snzhkhd/king-s-field-pc/KF2.Coop.v.1.zip（1.5 MB，实测 0.63 MB/s，复检 6 成员）
+[06:29:40]   443/4938 新下 lethal-guitar/rigelengine/rigelengine_linux_x64.deb（1.5 MB，实测 0.67 MB/s，复检 格式不扫）
+[06:29:43]   444/4938 新下 adanft/TekkenTagDecomp/ttt-v0.1.1-linux-x86_64.tar.gz（1.5 MB，实测 0.56 MB/s，复检 33 成员）
+[06:29:45]   445/4938 新下 comoria08/defjam_recomp/DJFFNY-Recomp-MSVC-DLSS.zip（1.5 MB，实测 0.64 MB/s，复检 355 成员）
+[06:29:48]   446/4938 新下 blizz127/parasite-eve-decomp-port/parasite-eve-native-only-e26d98fd-linux-x64.tar.gz（1.5 MB，实测 0.66 MB/s，复检 8 成员）
+[06:29:48]   447/4938 已相符 PortsMaster/PortMaster-Releases/Cave.Story.zip（1.5 MB，复检 443 成员）
+[06:29:50]   448/4938 新下 openphantom/openphantom/openal-soft-r10633-2dc741b5.tar.gz（1.5 MB，实测 0.63 MB/s，复检 519 成员）
+[06:29:53]   449/4938 新下 toolassisted-run/sdlpop2/sdlpop2-linux-x86_64-61fd1a28.tar.gz（1.5 MB，实测 0.67 MB/s，复检 9 成员）
+[06:29:55]   450/4938 新下 signus-game/signus/signus-1.96.1-win64.zip（1.5 MB，实测 0.65 MB/s，复检 5 成员）
+[06:30:00]   451/4938 新下 arnoansems/catacombgl/CatacombGL-Windows-64bit-0-5-7.zip（1.6 MB，实测 0.33 MB/s，复检 4 成员）
+[06:30:02]   452/4938 新下 lancommander/tonywasaproskater/thps-windows-x86-1.4.0.zip（1.6 MB，实测 0.54 MB/s，复检 3 成员）
+[06:30:05]   453/4938 新下 mkst/esa/psyq4.3.tar.gz（1.6 MB，实测 0.67 MB/s，复检 6 成员）
+[06:30:07]   454/4938 新下 rsdkmodding/rsdkv5-decompilation/v5-linux.zip（1.6 MB，实测 0.73 MB/s，复检 1 成员）
+[06:30:10]   455/4938 新下 cruxxxxxx/gdx-3ds/gdx-extract-windows-x64.zip（1.6 MB，实测 0.67 MB/s，复检 34 成员）
+[06:30:12]   456/4938 新下 toolassisted-run/sdlpop2/sdlpop2-windows-x86_64-61fd1a28.zip（1.6 MB，实测 0.70 MB/s，复检 8 成员）
+[06:30:14]   457/4938 新下 yeoldpress/alttp-dx/zelda3-tools-v1.8-macos-arm64.zip（1.6 MB，实测 0.71 MB/s，复检 11 成员）
+[06:30:17]   458/4938 新下 lbalab/lba2-classic-community/lba2cc-0.13.2-appimage-aarch64-symbols.tar.xz（1.6 MB，实测 0.54 MB/s，复检 格式不扫）
+[06:30:19]   459/4938 新下 lbalab/lba2-classic-community/lba2cc-0.13.2-appimage-x86_64-symbols.tar.xz（1.6 MB，实测 0.68 MB/s，复检 格式不扫）
+[06:30:20]   460/4938 已相符 NoRain211/doaxvb-re/DOAXBV-0.6.2-macOS.zip（1.6 MB，复检 522 成员）
+[06:30:20]   461/4938 已相符 NoRain211/doaxvb-re/DOAXBV-0.6.2-Linux.zip（1.6 MB，复检 522 成员）
+[06:30:20]   462/4938 已相符 PortsMaster/PortMaster-Releases/falling_time.zip（1.6 MB，复检 49 成员）
+[06:30:23]   463/4938 新下 jbalcomb/remom/ReMoM-0.0.10-Linux-x86_64.zip（1.6 MB，实测 0.74 MB/s，复检 2 成员）
+[06:30:25]   464/4938 新下 jbalcomb/remom/ReMoM-0.0.10-Linux-x86_64.tar.gz（1.6 MB，实测 0.73 MB/s，复检 2 成员）
+[06:30:25]   465/4938 已相符 jedijosh920/SWROTS-PC/SWROTS-PC-v0.5.0.zip（1.7 MB，复检 36 成员）
+[06:30:27]   466/4938 新下 etroimcasso/kirpich/Kirpich-windows-arm64.zip（1.7 MB，实测 0.73 MB/s，复检 1 成员）
+[06:30:30]   467/4938 新下 zaps166/nfsiise/nfs2se-android-armv7-v1.4.0.zip（1.7 MB，实测 0.71 MB/s，复检 11 成员）
+[06:30:33]   468/4938 新下 bvschaik/julius/julius-1.8.0-windows.zip（1.7 MB，实测 0.50 MB/s，复检 3 成员）
+[06:30:36]   469/4938 新下 snesrev/smw/smw_0.1.zip（1.7 MB，实测 0.68 MB/s，复检 5 成员）
+[06:30:38]   470/4938 新下 tmewett/broguece/BrogueCE-1.15.1-windows-x86_64.zip（1.7 MB，实测 0.71 MB/s，复检 14 成员）
+[06:30:40]   471/4938 新下 enrique363/voldorium/Voldorium-1.1.3-windows.zip（1.7 MB，实测 0.77 MB/s，复检 28 成员）
+[06:30:43]   472/4938 新下 lbalab/lba2-classic-community/lba2cc-0.13.2-linux-x86_64-symbols.tar.xz（1.7 MB，实测 0.63 MB/s，复检 格式不扫）
+[06:30:46]   473/4938 新下 kitrinx/ultima7_decomp/ultima7-portable-v0.5.1-windows-x64.zip（1.7 MB，实测 0.53 MB/s，复检 9 成员）
+[06:30:48]   474/4938 新下 lbalab/lba2-classic-community/lba2cc-0.13.2-linux-aarch64-symbols.tar.xz（1.7 MB，实测 0.78 MB/s，复检 格式不扫）
+[06:30:49]   475/4938 已相符 PortsMaster/PortMaster-Releases/Chasm.zip（1.7 MB，复检 30 成员）
+[06:30:52]   476/4938 新下 n0zom1z0/th04/th04-portable64-windows-x64-2026.10.27.zip（1.7 MB，实测 0.51 MB/s，复检 9 成员）
+[06:30:55]   477/4938 新下 mkst/esa/psyq4.1.tar.gz（1.7 MB，实测 0.79 MB/s，复检 11 成员）
+[06:30:58]   478/4938 新下 petarov/alleycat.exe/alleycat-1.3-macos-x86_64.zip（1.7 MB，实测 0.61 MB/s，复检 87 成员）
+[06:31:00]   479/4938 新下 abduznik/ZumaPortable/zuma-portable-wasm.zip（1.7 MB，实测 0.72 MB/s，复检 3 成员）
+[06:31:02]   480/4938 新下 jbalcomb/remom/ReMoM-0.0.10-linux-diagnostics.zip（1.7 MB，实测 0.76 MB/s，复检 6 成员）
+[06:31:08]   481/4938 新下 AdrienTD/wkbre2/wkbre2_first_preview.zip（1.7 MB，实测 0.31 MB/s，复检 11 成员）
+[06:31:11]   482/4938 新下 y0oshi/lain-psx-decompiled/Lain-macos.zip（1.7 MB，实测 0.62 MB/s，复检 49 成员）
+[06:31:13]   483/4938 新下 jacoders/openjk/OpenJO-linux-x86_64.tar.gz（1.7 MB，实测 0.75 MB/s，复检 4 成员）
+[06:31:15]   红线复检：opencrystalcaves/opencrystalcaves/OpenCrystalCaves-0.7.0-win64-occ.zip → 待复核（.mod）
+[06:31:15]   484/4938 待复核 opencrystalcaves/opencrystalcaves/OpenCrystalCaves-0.7.0-win64-occ.zip（1.7 MB，实测 0.79 MB/s，复检 42 成员）
+[06:31:16]   485/4938 已相符 PortsMaster/PortMaster-Releases/zeldoschallenge.zip（1.7 MB，复检 15 成员）
+[06:31:16]   486/4938 已相符 PortsMaster/PortMaster-Releases/zeldoschallenge2.zip（1.7 MB，复检 15 成员）
+[06:31:16]   487/4938 已相符 PortsMaster/PortMaster-Releases/zeldaxd-mercurischess.zip（1.7 MB，复检 15 成员）
+[06:31:19]   488/4938 新下 nebadasswifty/masseffect-nx/masseffect_prewarm_list-en.bin（1.8 MB，实测 0.62 MB/s，复检 格式不扫）
+[06:31:21]   489/4938 新下 nebadasswifty/masseffect-nx/masseffect_prewarm_list-ru.bin（1.8 MB，实测 0.79 MB/s，复检 格式不扫）
+[06:31:24]   490/4938 新下 snesrev/zelda3/zelda3_v0.3.zip（1.8 MB，实测 0.57 MB/s，复检 5 成员）
+[06:31:27]   491/4938 新下 doyagu/ballanced/ballance-static-player-win32.zip（1.8 MB，实测 0.77 MB/s，复检 2 成员）
+[06:31:30]   492/4938 新下 junior-jones/jungle-strike-snes-static-recomp/Jungle-Strike-SNES-Static-Recomp-1.1.0-Windows-x64.zip（1.8 MB，实测 0.59 MB/s，复检 8 成员）
+[06:31:30]   493/4938 已相符 SulphurS16/AC4-Port/AC4-Port-0.6.0.zip（1.8 MB，复检 2 成员）
+[06:31:32]   494/4938 新下 mstan/sonicthehedgehogsmsrecomp/SonicTheHedgehogSMSRecomp-windows-x64.zip（1.8 MB，实测 0.86 MB/s，复检 7 成员）
+[06:31:34]   495/4938 新下 mkst/esa/psyq4.4.tar.gz（1.8 MB，实测 0.83 MB/s，复检 15 成员）
+[06:31:35]   496/4938 已相符 PortsMaster/PortMaster-Releases/Jazz2.zip（1.8 MB，复检 280 成员）
+[06:31:37]   497/4938 新下 etroimcasso/kirpich/Kirpich-windows-x64.zip（1.8 MB，实测 0.81 MB/s，复检 1 成员）
+[06:31:40]   498/4938 新下 maximqaxd/halflife_dc/0WINCEOS.BIN（1.8 MB，实测 0.63 MB/s，复检 格式不扫）
+[06:31:43]   499/4938 新下 krazyjakee/ninja-master/ninja-master-0.1.4-linux-x86_64.deb（1.8 MB，实测 0.78 MB/s，复检 格式不扫）
+[06:31:45]   500/4938 新下 maximqaxd/halflife_dc/HALFLIFE_DC.EXE（1.8 MB，实测 0.68 MB/s，复检 格式不扫）
+[06:31:48]   501/4938 新下 jacoders/openjk/OpenJO-linux-x86.tar.gz（1.8 MB，实测 0.82 MB/s，复检 4 成员）
+[06:31:50]   502/4938 新下 xeeynamo/sotn-decomp/clang-format.tar.gz（1.9 MB，实测 0.84 MB/s，复检 1 成员）
+[06:31:52]   503/4938 新下 kandowontu2/starfox-enhanced/StarFoxAssetBuilder-0.0.8.8.3-windows-x64.zip（1.9 MB，实测 0.81 MB/s，复检 3 成员）
+[06:31:54]   504/4938 新下 opencoduo/coduomp/opencoduo-linux-x86_64-e23642dc5.tar.gz（1.9 MB，实测 0.82 MB/s，复检 9 成员）
+[06:31:57]   505/4938 新下 minibandit/mkw-3ds/MKW-3DS-Builder-v0.6.0-macOS.zip（1.9 MB，实测 0.84 MB/s，复检 443 成员）
+[06:31:59]   506/4938 新下 minibandit/mkw-3ds/MKW-3DS-Builder-v0.6.0-Windows.zip（1.9 MB，实测 0.88 MB/s，复检 443 成员）
+[06:32:01]   507/4938 新下 megaglest/megaglest-source/megaglest-source-3.13.0.tar.xz（1.9 MB，实测 0.82 MB/s，复检 格式不扫）
+[06:32:01]   508/4938 已相符 PortsMaster/PortMaster-Releases/dRally.zip（1.9 MB，复检 9 成员）
+[06:32:03]   509/4938 新下 jacoders/openjk/OpenJO-windows-x86.zip（1.9 MB，实测 0.88 MB/s，复检 7 成员）
+[06:32:04]   510/4938 已相符 PortsMaster/PortMaster-Releases/Hurrican.zip（1.9 MB，复检 27 成员）
+[06:32:04]   511/4938 已相符 Vnnc1/gow-native-pc/gow-native-pc-linux-x86_64-ubuntu26.04-experimental.tar.gz（1.9 MB，复检 264 成员）
+[06:32:06]   512/4938 新下 lunarmeadow/barrett/barrett-win64.zip（1.9 MB，实测 0.85 MB/s，复检 4 成员）
+[06:32:08]   513/4938 新下 jessicanataliagta/backstabrecomp/BackstabRecomp.0.1.zip（1.9 MB，实测 0.83 MB/s，复检 4 成员）
+[06:32:08]   514/4938 已相符 PortsMaster/PortMaster-Releases/abombniball.zip（1.9 MB，复检 106 成员）
+[06:32:08]   515/4938 已相符 PortsMaster/PortMaster-Releases/zelda-bookofmudora.zip（1.9 MB，复检 15 成员）
+[06:32:08]   516/4938 已相符 PortsMaster/PortMaster-Releases/yarntown.zip（1.9 MB，复检 15 成员）
+[06:32:09]   517/4938 已相符 PortsMaster/PortMaster-Releases/zelda-roth-se.zip（1.9 MB，复检 15 成员）
+[06:32:09]   518/4938 已相符 PortsMaster/PortMaster-Releases/hallowseve.zip（1.9 MB，复检 15 成员）
+[06:32:09]   519/4938 已相符 PortsMaster/PortMaster-Releases/zelda-mysteryofsolarusdx.zip（1.9 MB，复检 15 成员）
+[06:32:09]   520/4938 已相符 PortsMaster/PortMaster-Releases/zelda-mysteryofsolarusxd.zip（1.9 MB，复检 15 成员）
+[06:32:11]   521/4938 新下 skynettx/raptor/raptor-0.8.2-aarch64.dmg（1.9 MB，实测 0.87 MB/s，复检 格式不扫）
+[06:32:14]   522/4938 新下 n0zom1z0/th08/th08-portable-linux-aarch64.tar.gz（1.9 MB，实测 0.76 MB/s，复检 6 成员）
+[06:32:14]   523/4938 已相符 PortsMaster/PortMaster-Releases/Gmu.Music.Player.zip（1.9 MB，复检 109 成员）
+[06:32:14]   524/4938 已相符 PortsMaster/PortMaster-Releases/tunics.zip（1.9 MB，复检 17 成员）
+[06:32:16]   525/4938 新下 skynettx/raptor/raptor-0.8.2-x86-64.dmg（1.9 MB，实测 0.87 MB/s，复检 格式不扫）
+[06:32:16]   526/4938 已相符 PortsMaster/PortMaster-Releases/RAWGL.zip（1.9 MB，复检 32 成员）
+[06:32:18]   体积不符 al4xdev/dw3/dw3.zip：本地 2051901，API 2051435（半个包已删）
+[06:32:18]   528/4938 已相符 PortsMaster/PortMaster-Releases/Bleed2.zip（2.0 MB，复检 21 成员）
+[06:32:21]   529/4938 新下 n0zom1z0/th08/th08-modern-linux-i386.tar.gz（2.0 MB，实测 0.82 MB/s，复检 7 成员）
+[06:32:24]   530/4938 新下 bibendovsky/bstone/bstone-1.3.4+e65a6b40-win32.zip（2.0 MB，实测 0.67 MB/s，复检 4 成员）
+[06:32:24]   531/4938 已相符 SulphurS16/ACFA-Port/ACFA-Port-0.7.5.zip（2.0 MB，复检 2 成员）
+[06:32:26]   532/4938 新下 n0zom1z0/th08/th08-portable-linux-x86_64.tar.gz（2.0 MB，实测 0.86 MB/s，复检 6 成员）
+[06:32:26]   533/4938 已相符 PortsMaster/PortMaster-Releases/OpenJazz.zip（2.0 MB，复检 110 成员）
+[06:32:29]   534/4938 新下 qw-group/ezquake-source/ezquake-source-3.6.9.tar.gz（2.0 MB，实测 0.85 MB/s，复检 647 成员）
+[06:32:31]   535/4938 新下 bibendovsky/bstone/bstone-1.3.4+e65a6b40-win64.zip（2.0 MB，实测 0.90 MB/s，复检 4 成员）
+[06:32:33]   536/4938 新下 fte-team/fteqw/fteqw-web-c781d13.zip（2.0 MB，实测 0.81 MB/s，复检 2 成员）
+[06:32:36]   537/4938 新下 whamemer/dod13-client/dod13-client-v1.0.1-macos_arm64.zip（2.0 MB，实测 0.82 MB/s，复检 5 成员）
+[06:32:38]   538/4938 新下 tools81/hotel-mario-static-recomp/HotelMarioRecomp-1.0.2-win64.zip（2.0 MB，实测 0.78 MB/s，复检 8 成员）
+[06:32:41]   539/4938 新下 techprogabe/melee-x/Melee-X-v4.2.zip（2.0 MB，实测 0.84 MB/s，复检 5 成员）
+[06:32:43]   540/4938 新下 kugelrund/speed-outcast/jk2sp.exe（2.0 MB，实测 0.84 MB/s，复检 格式不扫）
+[06:32:46]   541/4938 新下 etroimcasso/kirpich/Kirpich-macOS-arm64.dmg（2.0 MB，实测 0.64 MB/s，复检 格式不扫）
+[06:32:49]   542/4938 新下 rehlds/regamedll_cs/regamedll-bin-5.30.0.814.zip（2.0 MB，实测 0.91 MB/s，复检 203 成员）
+[06:32:51]   543/4938 新下 theassemblyarmada/vanilla-conquer/vanilla-conquer-internal-linux-clang-ubuntu-24.04-x86_64-ce83b59.zip（2.0 MB，实测 0.82 MB/s，复检 3 成员）
+[06:32:54]   544/4938 新下 theassemblyarmada/vanilla-conquer/vanilla-conquer-internal-linux-clang-ubuntu-22.04-x86_64-ce83b59.zip（2.0 MB，实测 0.77 MB/s，复检 3 成员）
+[06:32:57]   545/4938 新下 ec-/quake3e/quake3e-linux-arm64.zip（2.0 MB，实测 0.62 MB/s，复检 3 成员）
+[06:32:59]   546/4938 新下 whamemer/dod13-client/dod13-client-v1.0.1-macos_x64.zip（2.0 MB，实测 0.94 MB/s，复检 5 成员）
+[06:33:01]   547/4938 新下 nukep/smb-vanilla/smb-vanilla-win32-x64_0.1.0.zip（2.0 MB，实测 0.97 MB/s，复检 6 成员）
+[06:33:03]   548/4938 新下 whamemer/dod13-client/dod13-client-v1.0.1-windows.zip（2.0 MB，实测 0.95 MB/s，复检 5 成员）
+[06:33:03]   549/4938 已相符 PortsMaster/PortMaster-Releases/Raptor.zip（2.1 MB，复检 11 成员）
+[06:33:06]   550/4938 新下 lbalab/lba2-classic-community/lba2cc-0.13.2-macos-universal-symbols.tar.xz（2.1 MB，实测 0.93 MB/s，复检 格式不扫）
+[06:33:08]   551/4938 新下 tools81/mutant-rampage-bodyslam-static-recomp/MutantRampageBodyslam-1.0.0-win64-portable.zip（2.1 MB，实测 0.93 MB/s，复检 5 成员）
+[06:33:10]   552/4938 新下 2003scape/rsc-c/mudclient177-wii.zip（2.1 MB，实测 0.92 MB/s，复检 4 成员）
+[06:33:10]   553/4938 已相符 PortsMaster/PortMaster-Releases/Quake3.zip（2.1 MB，复检 20 成员）
+[06:33:13]   554/4938 新下 bishop-333/omega-engine/omega-engine-linux-arm64.tar.gz（2.1 MB，实测 0.87 MB/s，复检 5 成员）
+[06:33:13]   555/4938 已相符 PortsMaster/PortMaster-Releases/Sonic.Mania.zip（2.1 MB，复检 11 成员）
+[06:33:15]   556/4938 新下 OAleex/MojoRecomp/MojoRecomp-COT-Localization-Pack-1.0.0.zip（2.1 MB，实测 0.94 MB/s，复检 5 成员）
+[06:33:17]   557/4938 新下 ec-/quake3e/quake3e-linux-x86_64.zip（2.1 MB，实测 0.80 MB/s，复检 3 成员）
+[06:33:20]   558/4938 新下 whamemer/dod13-client/dod13-client-v1.0.1-linux.zip（2.1 MB，实测 0.93 MB/s，复检 5 成员）
+[06:33:22]   559/4938 新下 trxyebeep/tomb3/tomb3.zip（2.1 MB，实测 0.93 MB/s，复检 15 成员）
+[06:33:25]   560/4938 新下 AntonioDOrazio/gromada-android/gromada-installer.apk（2.1 MB，实测 0.79 MB/s，复检 格式不扫）
+[06:33:25]   561/4938 已相符 PortsMaster/PortMaster-Releases/SorR.zip（2.1 MB，复检 31 成员）
+[06:33:27]   562/4938 新下 doyagu/ballanced/ballance-static-player-x64.zip（2.1 MB，实测 0.92 MB/s，复检 2 成员）
+[06:33:30]   563/4938 新下 AdamLovattDevOps/relapse-resistance/relapse-resistance-windows-x86_64.zip（2.1 MB，实测 0.81 MB/s，复检 3 成员）
+[06:33:32]   564/4938 新下 rsdkmodding/sonic-mania-decompilation/mania-windows.zip（2.1 MB，实测 0.93 MB/s，复检 2 成员）
+[06:33:35]   565/4938 新下 theassemblyarmada/vanilla-conquer/vanilla-conquer-internal-linux-gcc-ubuntu-22.04-x86_64-ce83b59.zip（2.1 MB，实测 0.80 MB/s，复检 3 成员）
+[06:33:38]   566/4938 新下 theassemblyarmada/vanilla-conquer/vanilla-conquer-internal-linux-gcc-ubuntu-24.04-x86_64-ce83b59.zip（2.1 MB，实测 0.62 MB/s，复检 3 成员）
+[06:33:41]   567/4938 新下 isledecomp/isle-portable/isle-0.1-Windows-arm64.zip（2.1 MB，实测 0.90 MB/s，复检 4 成员）
+[06:33:43]   568/4938 新下 ec-/quake3e/quake3e-linux-x86.zip（2.1 MB，实测 0.91 MB/s，复检 3 成员）
+[06:33:45]   569/4938 新下 ec-/quake3e/quake3e-windows-msvc-arm64.zip（2.1 MB，实测 0.94 MB/s，复检 3 成员）
+[06:33:48]   570/4938 新下 bishop-333/omega-engine/omega-engine-linux-x86_64.tar.gz（2.1 MB，实测 0.81 MB/s，复检 5 成员）
+[06:33:51]   571/4938 新下 bibendovsky/bstone/bstone-1.3.4+e65a6b40-Linux.zip（2.1 MB，实测 0.65 MB/s，复检 4 成员）
+[06:33:54]   572/4938 新下 2003scape/rsc-c/mudclient177-windows-x86_64.zip（2.2 MB，实测 0.82 MB/s，复检 17 成员）
+[06:33:56]   573/4938 新下 kitrinx/ultima7_decomp/ultima7-portable-v0.5.1-linux-x64.zip（2.2 MB，实测 0.95 MB/s，复检 9 成员）
+[06:34:00]   574/4938 新下 kitrinx/ultima7_decomp/ultima7-modern-v0.5.1-macos-arm64.dmg（2.2 MB，实测 0.57 MB/s，复检 格式不扫）
+[06:34:03]   575/4938 新下 mkst/esa/psyq4.5.tar.gz（2.2 MB，实测 0.64 MB/s，复检 18 成员）
+[06:34:07]   576/4938 新下 swaymun/ac-recomp/AC-Recomp-v0.1.0-macos.zip（2.2 MB，实测 0.66 MB/s，复检 73 成员）
+[06:34:09]   577/4938 新下 jacoders/openjk/OpenJO-windows-x86_64.zip（2.2 MB，实测 0.80 MB/s，复检 7 成员）
+[06:34:11]   578/4938 新下 jacoders/openjk/OpenJO-macos-arm64.tar.gz（2.2 MB，实测 0.98 MB/s，复检 14 成员）
+[06:34:14]   579/4938 新下 facundosterzerforino/legoland-port/LEGOLAND-port-windows-2026-10-23-3c099240.zip（2.2 MB，实测 0.81 MB/s，复检 9 成员）
+[06:34:16]   580/4938 新下 whamemer/dod13-client/dod13-client-v1.0.1-windows_x64.zip（2.2 MB，实测 0.97 MB/s，复检 5 成员）
+[06:34:19]   581/4938 新下 mkst/esa/psyq3.6.tar.gz（2.2 MB，实测 1.07 MB/s，复检 15 成员）
+[06:34:21]   582/4938 新下 adamkulik/pocket-wormhole/PocketWormhole-v0.2.7.apk（2.2 MB，实测 1.02 MB/s，复检 格式不扫）
+[06:34:21]   583/4938 已相符 PortsMaster/PortMaster-Releases/rocksndiamonds.zip（2.2 MB，复检 827 成员）
+[06:34:21]   584/4938 已相符 jjmhalew/RampageRE/RampageRE-windows-v1.2.1.zip（2.2 MB，复检 6 成员）
+[06:34:24]   585/4938 新下 isledecomp/isle-portable/isle-0.1-Xbox_One_Series_XS-x64.zip（2.2 MB，实测 0.87 MB/s，复检 24 成员）
+[06:34:27]   586/4938 新下 tools81/link-faces-of-evil-static-recomp/LinkFacesOfEvil-v1.0.0-portable.zip（2.2 MB，实测 0.75 MB/s，复检 4 成员）
+[06:34:29]   587/4938 新下 hk21x/007eon-recomp/EoNLauncher.exe（2.2 MB，实测 1.04 MB/s，复检 格式不扫）
+[06:34:31]   588/4938 新下 djultra64/clayfighter64/clayfighter64-2.1.1-source.tar.gz（2.2 MB，实测 0.86 MB/s，复检 1130 成员）
+[06:34:33]   589/4938 新下 slickamogus/silent-hill-decomp/SilentHill_Xbox_Beta_081226_3.zip（2.2 MB，实测 1.17 MB/s，复检 3 成员）
+[06:34:36]   590/4938 新下 lbalab/lba2-classic-community/lba2cc-0.13.2-linux-aarch64.tar.gz（2.2 MB，实测 0.93 MB/s，复检 4 成员）
+[06:34:36]   591/4938 已相符 PortsMaster/PortMaster-Releases/skijump3.zip（2.2 MB，复检 51 成员）
+[06:34:38]   592/4938 新下 etroimcasso/kirpich/Kirpich-linux-arm64.zip（2.2 MB，实测 1.02 MB/s，复检 2 成员）
+[06:34:40]   593/4938 新下 ec-/quake3e/quake3e-windows-mingw-x86.zip（2.2 MB，实测 0.96 MB/s，复检 3 成员）
+[06:34:41]   594/4938 已相符 PortsMaster/PortMaster-Releases/fade_to_black.zip（2.2 MB，复检 11 成员）
+[06:34:46]   595/4938 新下 lethal-guitar/rigelengine/rigelengine_win_x64.zip（2.3 MB，实测 0.44 MB/s，复检 11 成员）
+[06:34:48]   596/4938 新下 tools81/zelda-adventures-static-recomp/zelda-1.0.0-portable.zip（2.3 MB，实测 1.03 MB/s，复检 7 成员）
+[06:34:50]   597/4938 新下 moshferatu/zombies-ate-my-neighbors-pc-port/zamn-linux-x86_64.tar.gz（2.3 MB，实测 1.02 MB/s，复检 6 成员）
+[06:34:53]   598/4938 新下 mkst/esa/psyq4.6.tar.gz（2.3 MB，实测 0.92 MB/s，复检 21 成员）
+[06:34:55]   599/4938 新下 krazyjakee/ninja-master/ninja-master-0.1.4-linux-x86_64.tar.gz（2.3 MB，实测 0.83 MB/s，复检 235 成员）
+[06:34:59]   600/4938 新下 ec-/quake3e/quake3e-windows-mingw-x86_64.zip（2.3 MB，实测 0.66 MB/s，复检 3 成员）
+[06:35:03]   601/4938 新下 isledecomp/isle-portable/isle-0.1-DOS-x86.tar.gz（2.3 MB，实测 0.62 MB/s，复检 2 成员）
+[06:35:06]   602/4938 新下 endercodezz/p3p3ds/P3P3DS-Builder-0.3.1.zip（2.3 MB，实测 0.62 MB/s，复检 23 成员）
+[06:35:09]   603/4938 新下 jacoders/openjk/OpenJO-macos-x86_64.tar.gz（2.3 MB，实测 0.96 MB/s，复检 14 成员）
+[06:35:12]   红线复检：andrei-drexler/ironwail/ironwail-0.8.2-win32.zip → 待复核（.pak）
+[06:35:12]   604/4938 待复核 andrei-drexler/ironwail/ironwail-0.8.2-win32.zip（2.3 MB，实测 0.80 MB/s，复检 19 成员）
+[06:35:14]   605/4938 新下 mkst/esa/psyq4.0.tar.gz（2.3 MB，实测 1.06 MB/s，复检 12 成员）
+[06:35:16]   606/4938 新下 isledecomp/isle-portable/isle-0.1-iOS-arm64.ipa（2.3 MB，实测 0.99 MB/s，复检 格式不扫）
+[06:35:16]   607/4938 已相符 Rinnegatamante/Crash-Team-Racing-High-Octane/ctr-high-octane-x64.win.zip（2.3 MB，复检 3 成员）
+[06:35:16]   608/4938 已相符 PortsMaster/PortMaster-Releases/Owlboy.zip（2.3 MB，复检 28 成员）
+[06:35:17]   609/4938 已相符 PortsMaster/PortMaster-Releases/SteelAssault.zip（2.3 MB，复检 26 成员）
+[06:35:19]   610/4938 新下 hk21x/pgr2-recomp/PGR2Launcher.exe（2.3 MB，实测 1.03 MB/s，复检 格式不扫）
+[06:35:22]   611/4938 新下 akronman1/town-native/townplay-win.exe（2.3 MB，实测 0.81 MB/s，复检 格式不扫）
+[06:35:24]   612/4938 新下 theassemblyarmada/vanilla-conquer/vanilla-conquer-release-win-msvc-i686-ce83b59.zip（2.3 MB，实测 0.97 MB/s，复检 4 成员）
+[06:35:25]   613/4938 已相符 PortsMaster/PortMaster-Releases/Nonny.zip（2.3 MB，复检 260 成员）
+[06:35:27]   614/4938 新下 isledecomp/isle-portable/org.legoisland.Isle.aarch64.flatpak（2.3 MB，实测 1.04 MB/s，复检 格式不扫）
+[06:35:29]   615/4938 新下 sulix/omnispeak/omnispeak-linux-1.1.tar.gz（2.3 MB，实测 1.01 MB/s，复检 63 成员）
+[06:35:32]   616/4938 新下 AgitationSkeleton/legobattles-pc/LegoBattles-PC-0.4.8-runner-source.zip（2.4 MB，实测 1.05 MB/s，复检 416 成员）
+[06:35:36]   617/4938 新下 crowded-street/3sx/3SX-6187364-macos.dmg（2.4 MB，实测 0.49 MB/s，复检 格式不扫）
+[06:35:39]   618/4938 新下 krazyjakee/ninja-master/ninja-master-0.1.4-linux-x86_64.rpm（2.4 MB，实测 1.03 MB/s，复检 格式不扫）
+[06:35:41]   619/4938 新下 spacestate1/namco22-decompile/PropCycle-x86_64.AppImage（2.4 MB，实测 1.03 MB/s，复检 格式不扫）
+[06:35:44]   620/4938 新下 lbalab/lba2-classic-community/lba2cc-0.13.2-linux-x86_64.tar.gz（2.4 MB，实测 0.89 MB/s，复检 4 成员）
+[06:35:46]   621/4938 新下 arx/arxlibertatis/arx-libertatis-1.2.1.tar.xz（2.4 MB，实测 0.95 MB/s，复检 格式不扫）
+[06:35:48]   622/4938 新下 melindil/ftse/FTSE_0.60a.zip（2.4 MB，实测 1.02 MB/s，复检 138 成员）
+[06:35:51]   623/4938 新下 toolassisted-run/opensamurai/opensamurai-windows-x86_64-b40625a3.zip（2.4 MB，实测 1.05 MB/s，复检 11 成员）
+[06:35:53]   624/4938 新下 openkingdoms/openkingdoms/openkingdoms-0.5.7-macos-arm64.tar.gz（2.4 MB，实测 1.02 MB/s，复检 8 成员）
+[06:35:55]   625/4938 新下 hk21x/pgr1-recomp/PGR1Launcher.exe（2.4 MB，实测 1.03 MB/s，复检 格式不扫）
+[06:35:58]   626/4938 新下 dcurrent/openbor/OpenBOR-Linux-x86-v4.0.Build.7533.AppImage（2.4 MB，实测 1.07 MB/s，复检 格式不扫）
+[06:36:00]   红线复检：andrei-drexler/ironwail/ironwail-0.8.2-win64.zip → 待复核（.pak）
+[06:36:00]   627/4938 待复核 andrei-drexler/ironwail/ironwail-0.8.2-win64.zip（2.4 MB，实测 1.05 MB/s，复检 19 成员）
+[06:36:02]   628/4938 新下 etroimcasso/kirpich/Kirpich-linux-x64.zip（2.4 MB，实测 1.18 MB/s，复检 2 成员）
+[06:36:04]   629/4938 新下 cruxxxxxx/gdx-3ds/gdx-extract-linux-x64.zip（2.4 MB，实测 1.08 MB/s，复检 34 成员）
+[06:36:07]   630/4938 新下 RSDKModding/RSDKv3-Decompilation/v3-android.zip（2.4 MB，实测 1.06 MB/s，复检 2 成员）
+[06:36:07]   631/4938 已相符 PortsMaster/PortMaster-Releases/iortcw.zip（2.4 MB，复检 28 成员）
+[06:36:10]   632/4938 新下 diegodedios/alienrerecomp/AlienResurrection-0.1.8-linux-x86_64.tar.gz（2.4 MB，实测 0.82 MB/s，复检 11 成员）
+[06:36:12]   633/4938 新下 pablocpas/opencmr2/OpenCMR2-macOS-arm64.zip（2.5 MB，实测 0.98 MB/s，复检 8 成员）
+[06:36:15]   634/4938 新下 openblack/openblack/openblack-test-data-v0.1.0.zip（2.5 MB，实测 0.94 MB/s，复检 80 成员）
+[06:36:17]   635/4938 新下 lethal-guitar/rigelengine/rigelengine_mac_x64.dmg（2.5 MB，实测 1.05 MB/s，复检 格式不扫）
+[06:36:17]   636/4938 已相符 PortsMaster/PortMaster-Releases/OpenSyobon.zip（2.5 MB，复检 47 成员）
+[06:36:21]   637/4938 新下 kylofon/testdrive-enhanced/testdrive-enhanced-v1.0.4-win64.zip（2.5 MB，实测 0.64 MB/s，复检 8 成员）
+[06:36:21]   638/4938 已相符 PortsMaster/PortMaster-Releases/Bleed.zip（2.5 MB，复检 47 成员）
+[06:36:24]   639/4938 新下 doyagu/ballanced/ballance-runtime-win32.zip（2.5 MB，实测 1.08 MB/s，复检 36 成员）
+[06:36:26]   640/4938 新下 exl/gish/Gish_v1.2_01-MAR-2018.apk（2.5 MB，实测 1.15 MB/s，复检 格式不扫）
+[06:36:28]   641/4938 新下 frozensand/ioq3-for-urbanterror-4/Quake3-UrT.exe（2.5 MB，实测 1.04 MB/s，复检 格式不扫）
+[06:36:31]   体积不符 fwgs/xash3d-fwgs/xash3d-fwgs-android-mappings.tar.zst：本地 2651468，API 2651440（半个包已删）
+[06:36:35]   643/4938 新下 isledecomp/isle-portable/org.legoisland.Isle.x86_64.flatpak（2.5 MB，实测 0.60 MB/s，复检 格式不扫）
+[06:36:38]   644/4938 新下 toolassisted-run/opensamurai/opensamurai-linux-x86_64-b40625a3.tar.gz（2.5 MB，实测 1.00 MB/s，复检 12 成员）
+[06:36:40]   645/4938 新下 alistert/openjazz/openjazz-android-debug.zip（2.5 MB，实测 1.12 MB/s，复检 1 成员）
+[06:36:43]   646/4938 新下 mgrz18/sdlpop-android/sdlpop-android-v1.0.0-debug.apk（2.5 MB，实测 0.86 MB/s，复检 格式不扫）
+[06:36:47]   647/4938 新下 sdlpal/sdlpal/sdlpal-win32-mingw.zip（2.6 MB，实测 0.68 MB/s，复检 1 成员）
+[06:36:49]   648/4938 新下 theassemblyarmada/vanilla-conquer/vanilla-conquer-release-win-msvc-x86_64-ce83b59.zip（2.6 MB，实测 1.10 MB/s，复检 4 成员）
+[06:36:50]   649/4938 已相符 Petexy/Tekken-Tag-2-Ultimate-Edition/Ultimate_Launcher-x86_64.tar.gz（2.6 MB，复检 189 成员）
+[06:36:52]   650/4938 新下 yeoldpress/alttp-dx/zelda3-tools-v1.8-windows-x86_64.zip（2.6 MB，实测 1.11 MB/s，复检 3 成员）
+[06:36:53]   651/4938 已相符 PortsMaster/PortMaster-Releases/oceansheart.zip（2.6 MB，复检 22 成员）
+[06:36:53]   652/4938 已相符 PortsMaster/PortMaster-New/olduvai.zip（2.6 MB，复检 28 成员）
+[06:36:56]   653/4938 新下 nblood/nblood/pcexhumed_win64_20260914-r14388.7z（2.6 MB，实测 1.12 MB/s，复检 格式不扫）
+[06:36:58]   654/4938 新下 thextech/thextech/thextech-plain-runtime-v1.7.4.1-win-arm64.7z（2.6 MB，实测 1.06 MB/s，复检 格式不扫）
+[06:37:02]   655/4938 新下 diegodedios/alienrerecomp/AlienResurrection-0.1.8-windows-x64.zip（2.6 MB，实测 0.79 MB/s，复检 8 成员）
+[06:37:04]   656/4938 新下 z2442/oot-psp/OOTPSP.zip（2.6 MB，实测 1.21 MB/s，复检 10 成员）
+[06:37:06]   657/4938 新下 wiredforwar/machines/machines-win64-editor-wfw-20260911.7z（2.6 MB，实测 1.12 MB/s，复检 格式不扫）
+[06:37:09]   658/4938 新下 AlmazProud/metal-slug-3-recomp/metal-slug-3-recomp-v1.2.0-win64.zip（2.6 MB，实测 1.04 MB/s，复检 13 成员）
+[06:37:11]   659/4938 新下 AlmazProud/metal-slug-4-recomp/metal-slug-4-recomp-v1.0.0-win64.zip（2.7 MB，实测 1.13 MB/s，复检 13 成员）
+[06:37:13]   660/4938 新下 AlmazProud/metal-slug-5-recomp/metal-slug-5-recomp-v1.0.2-win64.zip（2.7 MB，实测 1.16 MB/s，复检 13 成员）
+[06:37:16]   661/4938 新下 AlmazProud/metal-slug-x-recomp/metal-slug-x-recomp-v2.0.0-win64.zip（2.7 MB，实测 1.10 MB/s，复检 13 成员）
+[06:37:18]   662/4938 新下 bvschaik/julius/julius-1.8.0-linux.flatpak（2.7 MB，实测 1.05 MB/s，复检 格式不扫）
+[06:37:21]   663/4938 新下 nblood/nblood/pcexhumed_win32_20260914-r14388.7z（2.7 MB，实测 1.12 MB/s，复检 格式不扫）
+[06:37:24]   664/4938 新下 nblood/nblood/rednukem_win64_20260914-r14388.7z（2.7 MB，实测 0.95 MB/s，复检 格式不扫）
+[06:37:26]   665/4938 新下 fabiangreffrath/taradino/taradino-2025.12.22-win64.zip（2.7 MB，实测 1.13 MB/s，复检 2 成员）
+[06:37:29]   666/4938 新下 bvschaik/julius/julius-1.8.0-vita.vpk（2.7 MB，实测 1.02 MB/s，复检 格式不扫）
+[06:37:32]   667/4938 新下 nblood/nblood/rednukem_win32_20260914-r14388.7z（2.7 MB，实测 0.92 MB/s，复检 格式不扫）
+[06:37:34]   668/4938 新下 elasota/aerofoil/Aerofoil-1.1.7-win64-PDBs.7z（2.7 MB，实测 1.07 MB/s，复检 格式不扫）
+[06:37:37]   669/4938 新下 nblood/nblood/nblood_win64_20260914-r14388.7z（2.7 MB，实测 1.13 MB/s，复检 格式不扫）
+[06:37:37]   670/4938 已相符 PortsMaster/PortMaster-Releases/Sonic.CD.zip（2.7 MB，复检 630 成员）
+[06:37:39]   671/4938 新下 wemino/vorpalfix/VorpalFix.zip（2.8 MB，实测 1.14 MB/s，复检 14 成员）
+[06:37:42]   672/4938 新下 theassemblyarmada/vanilla-conquer/vanilla-conquer-release-win-gcc-x86_64-ce83b59.zip（2.8 MB，实测 0.99 MB/s，复检 4 成员）
+[06:37:45]   673/4938 新下 opencoduo/coduomp/opencoduo-windows-i686-e23642dc5.zip（2.8 MB，实测 1.02 MB/s，复检 9 成员）
+[06:37:45]   674/4938 已相符 PortsMaster/PortMaster-Releases/Oddworld.zip（2.8 MB，复检 17 成员）
+[06:37:47]   675/4938 新下 sdlpal/sdlpal/sdlpal-win32-msvc.zip（2.8 MB，实测 1.17 MB/s，复检 1 成员）
+[06:37:47]   676/4938 已相符 PortsMaster/PortMaster-Releases/clockwind.zip（2.8 MB，复检 126 成员）
+[06:37:50]   677/4938 新下 sobomax/digger/DiggerRemastered-Setup.exe（2.8 MB，实测 0.96 MB/s，复检 格式不扫）
+[06:37:54]   678/4938 新下 nblood/nblood/nblood_win32_20260914-r14388.7z（2.8 MB，实测 0.80 MB/s，复检 格式不扫）
+[06:37:56]   679/4938 新下 theassemblyarmada/vanilla-conquer/vanilla-conquer-release-win-gcc-i686-ce83b59.zip（2.8 MB，实测 1.13 MB/s，复检 4 成员）
+[06:37:59]   680/4938 新下 rsdkmodding/sonic-mania-decompilation/mania-windows-x64.zip（2.8 MB，实测 1.26 MB/s，复检 2 成员）
+[06:38:01]   681/4938 新下 endercodezz/p3p3ds/P3P3DS-Builder-0.3.1-linux.tar.gz（2.8 MB，实测 1.23 MB/s，复检 29 成员）
+[06:38:03]   682/4938 新下 alistert/openjazz/openjazz-switch.zip（2.8 MB，实测 1.22 MB/s，复检 6 成员）
+[06:38:07]   683/4938 新下 sdlpal/sdlpal/sdlpal-emscripten.zip（2.8 MB，实测 0.85 MB/s，复检 7 成员）
+[06:38:09]   684/4938 新下 dialight/flame/Flame-1.7.0-260228.zip（2.8 MB，实测 1.07 MB/s，复检 7 成员）
+[06:38:12]   685/4938 新下 jjmhalew/woodyre/WoodyRE-v1.0.11-switch.zip（2.8 MB，实测 1.19 MB/s，复检 5 成员）
+[06:38:14]   686/4938 新下 pablocpas/opencmr2/OpenCMR2-Windows-x64.zip（2.8 MB，实测 1.28 MB/s，复检 11 成员）
+[06:38:16]   687/4938 新下 yeoldpress/alttp-dx/alttp-dx-v1.8-macos-arm64.zip（2.8 MB，实测 1.17 MB/s，复检 11 成员）
+[06:38:19]   688/4938 新下 swfans/syndwarsfx/swars-0_3_8_3283-ubuntu-sdl1-patch.zip（2.8 MB，实测 1.21 MB/s，复检 68 成员）
+[06:38:21]   689/4938 新下 RSDKModding/RSDKv4-Decompilation/v4-android.zip（2.8 MB，实测 1.20 MB/s，复检 2 成员）
+[06:38:24]   690/4938 新下 swfans/syndwarsfx/swars-0_3_8_3283-ubuntu-patch.zip（2.8 MB，实测 1.01 MB/s，复检 68 成员）
+[06:38:27]   691/4938 新下 theassemblyarmada/vanilla-conquer/vanilla-conquer-internal-win-msvc-i686-ce83b59.zip（2.8 MB，实测 0.92 MB/s，复检 5 成员）
+[06:38:29]   692/4938 新下 sc2kfix/sc2kfix/sc2kfix-r11b.zip（2.8 MB，实测 1.27 MB/s，复检 7 成员）
+[06:38:33]   693/4938 新下 khasinski/rage-racer-pc/Rage-Racer-0.6.14-alpha-windows-x86_64.zip（2.9 MB，实测 0.84 MB/s，复检 15 成员）
+[06:38:35]   694/4938 新下 akratch/mgb64/mgb64-linux-v0.3.2.tar.gz（2.9 MB，实测 1.23 MB/s，复检 11 成员）
+[06:38:37]   695/4938 新下 doyagu/ballanced/ballance-runtime-x64.zip（2.9 MB，实测 1.27 MB/s，复检 36 成员）
+[06:38:38]   696/4938 已相符 PortsMaster/PortMaster-Releases/Rick.Dangerous.zip（2.9 MB，复检 34 成员）
+[06:38:40]   697/4938 新下 spacestate1/namco22-decompile/RidgeRacer2-x86_64.AppImage（2.9 MB，实测 1.13 MB/s，复检 格式不扫）
+[06:38:43]   698/4938 新下 comoria08/defjam_recomp/DJFFNY.exe（2.9 MB，实测 1.25 MB/s，复检 格式不扫）
+[06:38:43]   699/4938 已相符 PortsMaster/PortMaster-Releases/nothing.zip（2.9 MB，复检 29 成员）
+[06:38:45]   700/4938 新下 openkingdoms/openkingdoms/openkingdoms-0.5.7-linux-x86_64.tar.gz（2.9 MB，实测 1.24 MB/s，复检 8 成员）
+[06:38:45]   701/4938 已相符 PortsMaster/PortMaster-Releases/kenslabyrinth.zip（2.9 MB，复检 44 成员）
+[06:38:48]   702/4938 新下 foreverwip/s1-port/Sonic.1.C.Port.-.Test.release.62325.zip（3.0 MB，实测 1.21 MB/s，复检 4 成员）
+[06:38:50]   703/4938 新下 techprogabe/opencrossing-xbox/OpenCrossing-Xbox-v1.2.zip（3.0 MB，实测 1.33 MB/s，复检 7 成员）
+[06:38:52]   704/4938 新下 urxp/drally/dRally_Windows_x64.zip（3.0 MB，实测 1.30 MB/s，复检 7 成员）
+[06:38:57]   705/4938 新下 krazyjakee/ninja-master/ninja-master-0.1.4-windows-x86_64.zip（3.0 MB，实测 0.67 MB/s，复检 235 成员）
+[06:38:59]   706/4938 新下 rehlds/rehlds/rehlds-bin-3.15.0.896.zip（3.0 MB，实测 1.33 MB/s，复检 251 成员）
+[06:39:01]   707/4938 新下 tools81/hotel-mario-static-recomp/HotelMarioRecomp-1.0.2-setup.exe（3.0 MB，实测 1.14 MB/s，复检 格式不扫）
+[06:39:06]   708/4938 新下 isledecomp/isle/ReproBit-Debug-Companion.zip（3.0 MB，实测 0.67 MB/s，复检 686 成员）
+[06:39:09]   709/4938 新下 dethrace-labs/dethrace/dethrace-v0.10.1-macos-arm64-x64.dmg（3.0 MB，实测 1.08 MB/s，复检 格式不扫）
+[06:39:09]   710/4938 已相符 PortsMaster/PortMaster-Releases/Meritous.zip（3.0 MB，复检 102 成员）
+[06:39:11]   711/4938 新下 aleph-one-marathon/alephone/AlephOne-20260930.flatpak（3.0 MB，实测 1.23 MB/s，复检 格式不扫）
+[06:39:14]   712/4938 新下 mstan/legendofzeldanesrecomp/LegendOfZeldaNESRecomp-windows-x64-symbols.zip（3.0 MB，实测 1.35 MB/s，复检 1 成员）
+[06:39:14]   713/4938 已相符 PortsMaster/PortMaster-Releases/Commander.Genius.zip（3.0 MB，复检 105 成员）
+[06:39:16]   714/4938 新下 vinceip/fci-recomp/fci-recomp-0.2.3.zip（3.0 MB，实测 1.25 MB/s，复检 163 成员）
+[06:39:18]   715/4938 新下 krazyjakee/ninja-master/ninja-master-0.1.4-windows-x86_64.msi（3.1 MB，实测 1.36 MB/s，复检 格式不扫）
+[06:39:21]   716/4938 新下 opencoduo/coduomp/opencoduo-windows-x86_64-e23642dc5.zip（3.1 MB，实测 1.31 MB/s，复检 9 成员）
+[06:39:23]   717/4938 新下 tools81/link-faces-of-evil-static-recomp/LinkFacesOfEvil-v1.0.0-setup.exe（3.1 MB，实测 1.34 MB/s，复检 格式不扫）
+[06:39:26]   体积不符 fwgs/xash3d-fwgs/xashds-linux-riscv64.tar.gz：本地 3215768，API 3215723（半个包已删）
+[06:39:28]   719/4938 新下 arnautdaniel/openhuey/openhuey-0.2.32-11ed60c-linux-x86_64.tar.gz（3.1 MB，实测 1.38 MB/s，复检 362 成员）
+[06:39:31]   720/4938 新下 ec-/quake3e/quake3e-macos-aarch64.zip（3.1 MB，实测 1.31 MB/s，复检 4 成员）
+[06:39:33]   721/4938 新下 akratch/mgb64/mgb64-macos-v0.3.2.zip（3.1 MB，实测 1.29 MB/s，复检 11 成员）
+[06:39:35]   722/4938 新下 tools81/zelda-adventures-static-recomp/zelda-1.0.0-setup.exe（3.1 MB，实测 1.36 MB/s，复检 格式不扫）
+[06:39:38]   723/4938 新下 yokimitsuro/khdays-port/KH-Studio-0.1.4.zip（3.1 MB，实测 1.16 MB/s，复检 8 成员）
+[06:39:40]   724/4938 新下 openblack/openblack/openblack-v0.1.0.flatpak（3.1 MB，实测 1.39 MB/s，复检 格式不扫）
+[06:39:41]   725/4938 已相符 PortsMaster/PortMaster-Releases/Mr.Boom.zip（3.1 MB，复检 3 成员）
+[06:39:43]   726/4938 新下 tools81/mutant-rampage-bodyslam-static-recomp/MutantRampageBodyslam-1.0.0-win64-setup.exe（3.1 MB，实测 1.33 MB/s，复检 格式不扫）
+[06:39:46]   727/4938 新下 thextech/thextech/thextech-bin-v1.7.4.1-arm64.flatpak（3.1 MB，实测 1.30 MB/s，复检 格式不扫）
+[06:39:48]   728/4938 新下 swfans/syndicatfx/syndicatfx-0_0_6_1022-win32-sdl1-patch.zip（3.1 MB，实测 1.35 MB/s，复检 23 成员）
+[06:39:50]   729/4938 新下 theassemblyarmada/vanilla-conquer/vanilla-conquer-internal-win-msvc-x86_64-ce83b59.zip（3.1 MB，实测 1.36 MB/s，复检 5 成员）
+[06:39:54]   730/4938 新下 catmidori/gogoackman1recomp/GoGoAckmanRecompiled-1.0-Linux-x86_64.flatpak（3.1 MB，实测 0.85 MB/s，复检 格式不扫）
+[06:39:54]   731/4938 已相符 PortsMaster/PortMaster-Releases/worship_vector.zip（3.1 MB，复检 34 成员）
+[06:39:57]   732/4938 新下 codepdbh/melee360/MELEE360-v0.1.0-alpha.3-xbox360.zip（3.2 MB，实测 1.16 MB/s，复检 6 成员）
+[06:39:59]   733/4938 新下 adanft/TekkenTagDecomp/ttt-v0.1.1-windows-x86_64.zip（3.2 MB，实测 1.37 MB/s，复检 37 成员）
+[06:39:59]   734/4938 已相符 PortsMaster/PortMaster-Releases/derclou.zip（3.2 MB，复检 450 成员）
+[06:40:02]   735/4938 新下 leanndroguedes/re3-19feb21/reVC-macos-gl3-1_0.zip（3.2 MB，实测 1.24 MB/s，复检 1 成员）
+[06:40:04]   736/4938 新下 m-x-d/heretic2r/Heretic2R_R6.zip（3.2 MB，实测 1.31 MB/s，复检 12 成员）
+[06:40:08]   737/4938 新下 xeeynamo/sotn-decomp/cygnus-2.7-96Q3-bin.tar.gz（3.2 MB，实测 0.89 MB/s，复检 30 成员）
+[06:40:08]   738/4938 已相符 Petexy/Tekken-Tag-2-Ultimate-Edition/Ultimate_Launcher-x86_64.AppImage（3.2 MB，复检 格式不扫）
+[06:40:10]   739/4938 新下 deathkiller/jazz2/Jazz2_3.9.0_PSP.zip（3.2 MB，实测 1.43 MB/s，复检 382 成员）
+[06:40:13]   体积不符 fwgs/xash3d-fwgs/xashds-linux-armhf.tar.gz：本地 3375559，API 3375571（半个包已删）
+[06:40:15]   741/4938 新下 dogparty/ipodclickwheelrecomps/minigolf-1.0.1-macos.zip（3.2 MB，实测 1.28 MB/s，复检 106 成员）
+[06:40:17]   742/4938 新下 spacestate1/namco22-decompile/RaveRacer-x86_64.AppImage（3.2 MB，实测 1.46 MB/s，复检 格式不扫）
+[pull-loop] 第 2 轮退出码 127（0=本轮 0 失败，全落地）06:40:19
+[pull-loop] 第 3 轮开始 06:42:19
+[06:42:19] 范围：单仓超 8000 MB 被拦 1 个仓（abrandau/shattered-paradise-sdk）——这些是'同一款游戏多平台包'那种，要放开就人工圈
+[06:42:19] 盘量：F 盘当前余 278.4 GB｜计划要下 214 个 / 5.54 GB，其中盘上已有 20 个、真要下 194 个 / 5.37 GB
+[06:42:19] 开始下载：214 个资产 / 5.54 GB（其中本轮真下 194 个）
+[06:42:19]   1/214 已相符 0iy/opengoal-ps5/bootstrap.sh（0.0 MB，复检 格式不扫）
+[06:42:23]   2/214 新下 360recomper/UFC3ReX/UFC3-DLSS5-Addon-v1.0.3.zip（0.0 MB，实测 0.00 MB/s，复检 7 成员）
+[06:42:24]   3/214 新下 360recomper/UFC3ReX/UFC3-DLSS5-Addon-v1.0.2.zip（0.0 MB，实测 0.00 MB/s，复检 7 成员）
+[06:42:26]   4/214 新下 360recomper/UFC3ReX/UFC3-DLSS5-Addon-v1.0.1.zip（0.0 MB，实测 0.00 MB/s，复检 7 成员）
+[06:42:28]   5/214 新下 360recomper/UFC3ReX/UFC3-DLSS5-Addon-v1.0.zip（0.0 MB，实测 0.00 MB/s，复检 7 成员）
+[06:42:28]   6/214 已相符 360recomper/UFC3ReX/UFC3-DLSS5-Addon-v1.0.7.zip（0.0 MB，复检 7 成员）
+[06:42:31]   7/214 新下 360recomper/UFC3ReX/UFC3-DLSS5-Addon-v1.0.6.zip（0.0 MB，实测 0.00 MB/s，复检 7 成员）
+[06:42:33]   8/214 新下 360recomper/UFC3ReX/UFC3-DLSS5-Addon-v1.0.5.zip（0.0 MB，实测 0.00 MB/s，复检 7 成员）
+[06:42:34]   9/214 新下 360recomper/UFC3ReX/UFC3-DLSS5-Addon-v1.0.4.zip（0.0 MB，实测 0.00 MB/s，复检 7 成员）
+[06:42:34]   10/214 已相符 0iy/opengoal-ps5/OpenGOAL-PS5-gui.zip（0.1 MB，复检 8 成员）
+[06:42:36]   11/214 新下 8street/Bedlam2/Bedlam2.ddraw.WindowsX86.zip（0.2 MB，实测 0.11 MB/s，复检 1 成员）
+[06:42:39]   12/214 新下 8street/Bedlam2/bedlam2.linux.i386.zip（0.3 MB，实测 0.13 MB/s，复检 2 成员）
+[06:42:41]   13/214 新下 8street/Bedlam2/Bedlam2.linux.i386.zip（0.3 MB，实测 0.12 MB/s，复检 2 成员）
+[06:42:41]   14/214 已相符 5C8/sk83_na_m/OpenVR-Windows-x64.zip（0.4 MB，复检 2 成员）
+[06:42:42]   15/214 已相符 5C8/skate3recomp/OpenVR-Windows-x64.zip（0.4 MB，复检 2 成员）
+[06:42:44]   16/214 新下 8street/Bedlam2/bedlam2.WindowsX86.zip（0.6 MB，实测 0.29 MB/s，复检 4 成员）
+[06:42:47]   17/214 新下 0bAndyWirus/DQ9-Decomp/dq9-decomp-windows-kit-v0.2.0.zip（1.0 MB，实测 0.35 MB/s，复检 363 成员）
+[06:42:49]   18/214 新下 0bAndyWirus/DQ9-Decomp/dq9-decomp-windows-kit-v0.2.1.zip（1.0 MB，实测 0.39 MB/s，复检 367 成员）
+[06:42:53]   19/214 新下 0bAndyWirus/DQ9-Decomp/dq9-decomp-windows-kit-v0.2.2.zip（1.0 MB，实测 0.29 MB/s，复检 371 成员）
+[06:42:56]   20/214 新下 0bAndyWirus/DQ9-Decomp/dq9-decomp-windows-kit-v0.2.3.zip（1.0 MB，实测 0.35 MB/s，复检 371 成员）
+[06:42:59]   21/214 新下 0bAndyWirus/DQ9-Decomp/dq9-decomp-windows-kit-v0.2.4.zip（1.1 MB，实测 0.34 MB/s，复检 371 成员）
+[06:43:02]   22/214 新下 0bAndyWirus/DQ9-Decomp/dq9-decomp-windows-kit-v0.2.5.zip（1.1 MB，实测 0.40 MB/s，复检 371 成员）
+[06:43:04]   23/214 新下 0bAndyWirus/DQ9-Decomp/dq9-decomp-windows-kit-v0.2.6.zip（1.1 MB，实测 0.41 MB/s，复检 371 成员）
+[06:43:07]   24/214 新下 0bAndyWirus/DQ9-Decomp/dq9-decomp-windows-kit-v0.2.7.zip（1.1 MB，实测 0.40 MB/s，复检 371 成员）
+[06:43:10]   25/214 新下 0bAndyWirus/DQ9-Decomp/dq9-decomp-windows-kit-v0.2.8.zip（1.1 MB，实测 0.39 MB/s，复检 371 成员）
+[06:43:13]   26/214 新下 0bAndyWirus/DQ9-Decomp/dq9-decomp-windows-kit-v0.2.9.zip（1.1 MB，实测 0.34 MB/s，复检 376 成员）
+[06:43:16]   27/214 新下 0bAndyWirus/DQ9-Decomp/dq9-decomp-windows-kit-v0.3.0.zip（1.1 MB，实测 0.37 MB/s，复检 384 成员）
+[06:43:16]   28/214 已相符 01y/bstone-vita/data-sw.zip（1.1 MB，复检 12 成员）
+[06:43:19]   29/214 新下 0bAndyWirus/DQ9-Decomp/dq9-decomp-windows-kit-v0.3.1.zip（1.1 MB，实测 0.43 MB/s，复检 385 成员）
+[06:43:22]   30/214 新下 0bAndyWirus/DQ9-Decomp/dq9-decomp-windows-kit-v0.4.0.zip（1.1 MB，实测 0.41 MB/s，复检 387 成员）
+[06:43:26]   31/214 新下 0bAndyWirus/DQ9-Decomp/dq9-decomp-windows-kit-v0.4.1.zip（1.2 MB，实测 0.25 MB/s，复检 396 成员）
+[06:43:29]   32/214 新下 0bAndyWirus/DQ9-Decomp/dq9-decomp-windows-kit-v0.4.2.zip（1.2 MB，实测 0.44 MB/s，复检 396 成员）
+[06:43:32]   33/214 新下 0bAndyWirus/DQ9-Decomp/dq9-decomp-windows-kit-v0.4.3.zip（1.2 MB，实测 0.44 MB/s，复检 396 成员）
+[06:43:34]   34/214 新下 0bAndyWirus/DQ9-Decomp/dq9-decomp-windows-kit-v0.4.4.zip（1.2 MB，实测 0.46 MB/s，复检 396 成员）
+[06:43:38]   35/214 新下 0bAndyWirus/DQ9-Decomp/dq9-decomp-windows-kit-v0.4.5.zip（1.2 MB，实测 0.38 MB/s，复检 402 成员）
+[06:43:38]   36/214 已相符 0bAndyWirus/DQ9-Decomp/dq9-decomp-windows-kit-v0.5.0.zip（1.2 MB，复检 417 成员）
+[06:43:40]   37/214 新下 01y/bstone-vita/bstone-0.1.vpk（1.3 MB，实测 0.53 MB/s，复检 格式不扫）
+[06:43:42]   38/214 新下 01y/bstone-vita/bstone-0.1.1.vpk（1.3 MB，实测 0.58 MB/s，复检 格式不扫）
+[06:43:45]   39/214 新下 01y/bstone-vita/bstone-0.0.1.vpk（1.3 MB，实测 0.48 MB/s，复检 格式不扫）
+[06:43:49]   40/214 新下 01y/bstone-vita/bstone-0.2.vpk（1.3 MB，实测 0.39 MB/s，复检 格式不扫）
+[06:43:51]   41/214 新下 8street/Bedlam2/Bedlam2.WindowsX86.zip（1.4 MB，实测 0.59 MB/s，复检 7 成员）
+[06:43:51]   42/214 已相符 01y/bstone-vita/bstone-0.3.vpk（1.4 MB，复检 格式不扫）
+[06:43:52]   43/214 已相符 2003scape/rsc-c/mudclient177-linux-x86_64.tar.gz（1.5 MB，复检 16 成员）
+[06:43:53]   44/214 已相符 acklavidian/decomp_wots2/wots2-linux-x86_64.tar.gz（1.5 MB，复检 21 成员）
+[06:43:53]   45/214 已相符 abduznik/ZumaPortable/zuma-portable-wasm.zip（1.7 MB，复检 3 成员）
+[06:43:56]   46/214 新下 8bitninja64/TenchuZ-PC/ffmpeg-tenchu-n8.1.2-windows-x64.zip（1.9 MB，实测 0.85 MB/s，复检 184 成员）
+[06:43:56]   47/214 已相符 2003scape/rsc-c/mudclient177-wii.zip（2.1 MB，复检 4 成员）
+[06:43:56]   48/214 已相符 2003scape/rsc-c/mudclient177-windows-x86_64.zip（2.2 MB，复检 17 成员）
+[06:44:00]   49/214 新下 ACR-GD/icarus-recomp/Icarus-Windows.zip（3.3 MB，实测 0.99 MB/s，复检 6 成员）
+[06:44:04]   50/214 新下 ACR-GD/icarus-recomp/Icarus-Linux-x86_64.tar.gz（3.3 MB，实测 0.90 MB/s，复检 18 成员）
+[06:44:06]   51/214 新下 Acranon/kf1-enhanced/KingsFieldEnhanced-v0.1.0-pre.3-windows.zip（3.3 MB，实测 1.48 MB/s，复检 19 成员）
+[06:44:08]   52/214 新下 ACR-GD/quarantine-recomp/Quarantine-0.1.0-Windows-x64.zip（3.4 MB，实测 1.44 MB/s，复检 3 成员）
+[06:44:11]   53/214 新下 abedegno/underworld-exhumed/UW1-v1.0.0-rc4-windows-x86_64.zip（3.6 MB，实测 1.52 MB/s，复检 20 成员）
+[06:44:14]   54/214 新下 Acranon/kf1-enhanced/KingsFieldEnhanced-v0.1.0-pre.1-windows.zip（3.6 MB，实测 1.19 MB/s，复检 19 成员）
+[06:44:16]   55/214 新下 Acranon/kf1-enhanced/KingsFieldEnhanced-v0.1.0-pre.2-windows.zip（3.6 MB，实测 1.47 MB/s，复检 19 成员）
+[06:44:19]   56/214 新下 abedegno/underworld-exhumed/UW1-v1.0.0-rc5-windows-x86_64.zip（3.6 MB，实测 1.42 MB/s，复检 20 成员）
+[06:44:21]   57/214 新下 abedegno/underworld-exhumed/UW1-v1.0.0-windows-x86_64.zip（3.6 MB，实测 1.52 MB/s，复检 20 成员）
+[06:44:24]   58/214 新下 abedegno/underworld-exhumed/UW1-v1.0.0-rc6-windows-x86_64.zip（3.6 MB，实测 1.30 MB/s，复检 20 成员）
+[06:44:27]   59/214 新下 abedegno/underworld-exhumed/UW1-v1.0.1-windows-x86_64.zip（3.6 MB，实测 1.06 MB/s，复检 20 成员）
+[06:44:27]   60/214 已相符 abedegno/underworld-exhumed/UW1-v1.0.2-windows-x86_64.zip（3.6 MB，复检 20 成员）
+[06:44:30]   61/214 新下 999sian/tmc/tmc-multi-macos-arm64-v0.9.5.tar.gz（3.9 MB，实测 1.53 MB/s，复检 1 成员）
+[06:44:33]   62/214 新下 2003scape/rsc-c/mudclient177-web.zip（3.9 MB，实测 1.35 MB/s，复检 19 成员）
+[06:44:35]   63/214 新下 999sian/tmc/tmc-multi-macos-arm64-v0.9.6.tar.gz（4.0 MB，实测 1.59 MB/s，复检 3 成员）
+[06:44:38]   64/214 新下 999sian/tmc/tmc-multi-macos-x86_64-v0.9.5.tar.gz（4.1 MB，实测 1.77 MB/s，复检 1 成员）
+[06:44:40]   65/214 新下 2gifts/george-decomp/gcc29-windows.zip（4.2 MB，实测 1.84 MB/s，复检 39 成员）
+[06:44:43]   66/214 新下 8bitninja64/TenchuZ-PC/TenchuZ-windows-x64.zip（4.3 MB，实测 1.58 MB/s，复检 84 成员）
+[06:44:46]   67/214 新下 999sian/tmc/tmc-multi-macos-x86_64-v0.9.6.tar.gz（4.3 MB，实测 1.28 MB/s，复检 3 成员）
+[06:44:49]   68/214 新下 abilliontokens/bmx-xxx-recomp/BMX.zip（4.3 MB，实测 1.59 MB/s，复检 6 成员）
+[06:44:52]   69/214 新下 ACR-GD/quarantine-recomp/Quarantine-0.1.0-Linux-x64.tar.gz（4.4 MB，实测 1.50 MB/s，复检 5 成员）
+[06:44:55]   70/214 新下 abilliontokens/sims1-recomp/Sims1-win64.zip（4.8 MB，实测 1.64 MB/s，复检 7 成员）
+[06:44:58]   71/214 新下 1oom-fork/1oom/1oom-v1.11.7-msdos.zip（5.0 MB，实测 1.79 MB/s，复检 8 成员）
+[06:45:01]   72/214 新下 1oom-fork/1oom/1oom-v1.11.9-msdos.zip（5.2 MB，实测 1.72 MB/s，复检 8 成员）
+[06:45:03]   73/214 新下 abduznik/ZumaPortable/zuma-portable-windows-msvc-x86-static.exe（5.3 MB，实测 2.22 MB/s，复检 格式不扫）
+[06:45:06]   74/214 新下 ACR-GD/icarus-recomp/Icarus-macOS.zip（5.4 MB，实测 1.86 MB/s，复检 15 成员）
+[06:45:08]   75/214 新下 abilliontokens/fuzionfrenzy-recomp/FuzionFrenzy-win64.zip（5.4 MB，实测 2.28 MB/s，复检 7 成员）
+[06:45:11]   76/214 新下 abilliontokens/urbz-recomp/Urbz.zip（5.6 MB，实测 2.04 MB/s，复检 6 成员）
+[06:45:14]   77/214 新下 acklavidian/decomp_wots2/wots2-windows-x86_64.zip（5.8 MB，实测 2.21 MB/s，复检 31 成员）
+[06:45:16]   78/214 新下 abilliontokens/sims2-recomp/Sims2.zip（5.8 MB，实测 2.50 MB/s，复检 4 成员）
+[06:45:20]   79/214 新下 abilliontokens/sims2-recomp/Sims2-win64.zip（5.8 MB，实测 1.54 MB/s，复检 7 成员）
+[06:45:22]   80/214 新下 abilliontokens/bustinout-recomp/SimsBustinOut-win64.zip（5.8 MB，实测 2.43 MB/s，复检 7 成员）
+[06:45:25]   81/214 新下 aarcangeli/Serious-Sam-Android/SeriousSamRelease-V1.02.apk（6.0 MB，实测 2.20 MB/s，复检 格式不扫）
+[06:45:27]   82/214 新下 abduznik/ZumaPortable/zuma-portable-windows-msvc-x64-static.exe（6.1 MB，实测 2.62 MB/s，复检 格式不扫）
+[06:45:30]   83/214 新下 aarcangeli/Serious-Sam-Android/SeriousSamRelease-V1.03.0.apk（6.2 MB，实测 2.62 MB/s，复检 格式不扫）
+[06:45:32]   84/214 新下 aarcangeli/Serious-Sam-Android/SeriousSamRelease-V1.03.1.apk（6.2 MB，实测 2.29 MB/s，复检 格式不扫）
+[06:45:35]   85/214 新下 aarcangeli/Serious-Sam-Android/SeriousSamRelease-V1.03.2.apk（6.2 MB，实测 2.25 MB/s，复检 格式不扫）
+[06:45:38]   86/214 新下 aarcangeli/Serious-Sam-Android/SeriousSamRelease-V1.03.3.apk（6.2 MB，实测 2.25 MB/s，复检 格式不扫）
+[06:45:41]   87/214 新下 aarcangeli/Serious-Sam-Android/SeriousSamRelease-V1.04.0.apk（6.8 MB，实测 2.64 MB/s，复检 格式不扫）
+[06:45:43]   88/214 新下 ACR-GD/quarantine-recomp/Quarantine-0.1.0-macOS.zip（7.5 MB，实测 2.97 MB/s，复检 105 成员）
+[06:45:45]   89/214 新下 abduznik/ZumaPortable/zuma-portable-android-arm64-v8a.apk（7.7 MB，实测 3.37 MB/s，复检 格式不扫）
+[06:45:48]   90/214 新下 0lvin/heretic2/yquake2remaster-win32-8.71H16.tar.gz（8.2 MB，实测 3.11 MB/s，复检 67 成员）
+[06:45:51]   91/214 新下 abilliontokens/bmx-xxx-recomp/BMX-linux-x64.tar.zst（8.2 MB，实测 3.08 MB/s，复检 格式不扫）
+[06:45:53]   92/214 新下 0x1F9F1/Open1560/Open1560.zip（8.2 MB，实测 3.30 MB/s，复检 6 成员）
+[06:45:57]   93/214 新下 0lvin/heretic2/yquake2remaster-win64-8.71H16.tar.gz（8.4 MB，实测 2.27 MB/s，复检 67 成员）
+[06:46:01]   94/214 新下 aarcangeli/Serious-Sam-Android/SeriousSamRelease-V1.01.apk（8.5 MB，实测 2.21 MB/s，复检 格式不扫）
+[06:46:03]   95/214 新下 abilliontokens/sims1-recomp/Sims1-linux-x64.tar.zst（8.6 MB，实测 3.70 MB/s，复检 格式不扫）
+[06:46:06]   96/214 新下 aarcangeli/Serious-Sam-Android/SeriousSamRelease-V1.02.1.apk（8.7 MB，实测 2.96 MB/s，复检 格式不扫）
+[06:46:09]   97/214 新下 1oom-fork/1oom/1oom-vanilla-beta-RC3.zip（9.0 MB，实测 3.13 MB/s，复检 28 成员）
+[06:46:12]   98/214 新下 3dge7161/jiggle-or-physics/Jiggle.or.Physics.v0.1.0.zip（9.0 MB，实测 3.80 MB/s，复检 57 成员）
+[06:46:14]   99/214 新下 abilliontokens/fuzionfrenzy-recomp/FuzionFrenzy-linux-x64.tar.zst（9.3 MB，实测 3.23 MB/s，复检 格式不扫）
+[06:46:17]   100/214 新下 0lvin/heretic2/yquake2remaster-i686-8.71H15.zip（9.3 MB，实测 3.60 MB/s，复检 65 成员）
+[06:46:19]   101/214 新下 0lvin/heretic2/yquake2remaster-x86_64-8.71H15.zip（9.5 MB，实测 4.09 MB/s，复检 65 成员）
+[06:46:22]   102/214 新下 abilliontokens/urbz-recomp/Urbz-linux-x64.tar.zst（9.6 MB，实测 3.48 MB/s，复检 格式不扫）
+[06:46:25]   103/214 新下 999sian/melee-pc/Melee-iOS-arm64.ipa（9.7 MB，实测 3.97 MB/s，复检 格式不扫）
+[06:46:27]   104/214 新下 abilliontokens/sims2-recomp/Sims2-linux-x64.tar.zst（9.7 MB，实测 4.02 MB/s，复检 格式不扫）
+[06:46:29]   105/214 新下 1oom-fork/1oom/1oom-vanilla-beta-RC5-testing.zip（9.9 MB，实测 4.08 MB/s，复检 29 成员）
+[06:46:32]   106/214 新下 abilliontokens/bustinout-recomp/SimsBustinOut-linux-x64.tar.zst（10.1 MB，实测 3.58 MB/s，复检 格式不扫）
+[06:46:35]   107/214 新下 abduznik/ZumaPortable/zuma-portable-windows-ucrt64-static.exe（10.2 MB，实测 3.73 MB/s，复检 格式不扫）
+[06:46:38]   108/214 新下 999sian/melee-pc/Melee-macOS-arm64.zip（12.1 MB，实测 3.83 MB/s，复检 34 成员）
+[06:46:41]   109/214 新下 1oom-fork/1oom/1oom-v1.11.9-x64.zip（12.2 MB，实测 4.73 MB/s，复检 34 成员）
+[06:46:44]   110/214 新下 1oom-fork/1oom/1oom-v1.11.8-x64.zip（12.2 MB，实测 4.43 MB/s，复检 34 成员）
+[06:46:47]   111/214 新下 1oom-fork/1oom/1oom-v1.11.7-x64.zip（12.2 MB，实测 3.73 MB/s，复检 34 成员）
+[06:46:50]   112/214 新下 1oom-fork/1oom/1oom-v1.11.9-x86.zip（12.2 MB，实测 4.38 MB/s，复检 34 成员）
+[06:46:54]   113/214 新下 1oom-fork/1oom/1oom-v1.11.7-x86.zip（12.2 MB，实测 2.82 MB/s，复检 34 成员）
+[06:46:58]   114/214 新下 3dfxdev/EDGE/EDGE-x86-2.1.0-RC-1-Win32.7z（12.7 MB，实测 3.26 MB/s，复检 格式不扫）
+[06:46:58]   115/214 已相符 0xl0cal/repentogxm/eboot.bin（12.7 MB，复检 格式不扫）
+[06:47:01]   116/214 新下 2gifts/george-decomp/gcc29-corresponding-source.zip（12.8 MB，实测 4.48 MB/s，复检 5904 成员）
+[06:47:04]   117/214 新下 aarcangeli/Serious-Sam-Android/SeriousSamRelease-V1.03.0-symbols.7z（12.9 MB，实测 4.67 MB/s，复检 格式不扫）
+[06:47:08]   118/214 新下 3dfxdev/EDGE/EDGE-x64-2.1.0-RC-1-Win64.7z（12.9 MB，实测 3.56 MB/s，复检 格式不扫）
+[06:47:12]   119/214 新下 aarcangeli/Serious-Sam-Android/SeriousSamRelease-V1.03.1-symbols.7z（12.9 MB，实测 2.88 MB/s，复检 格式不扫）
+[06:47:15]   120/214 新下 aarcangeli/Serious-Sam-Android/SeriousSamRelease-V1.03.3-symbols.7z（13.0 MB，实测 4.04 MB/s，复检 格式不扫）
+[06:47:22]   121/214 新下 aarcangeli/Serious-Sam-Android/SeriousSamRelease-V1.03.2-symbols.7z（13.0 MB，实测 1.81 MB/s，复检 格式不扫）
+[06:47:26]   122/214 新下 aarcangeli/Serious-Sam-Android/SeriousSamRelease-V1.04.0-symbols.7z（13.0 MB，实测 3.51 MB/s，复检 格式不扫）
+[06:47:29]   123/214 新下 999sian/melee-pc/Melee-macOS-x86_64.zip（13.2 MB，实测 4.13 MB/s，复检 32 成员）
+[06:47:33]   124/214 新下 12feihu/BodyHarvest-PC-Port/BodyHarvest.Release.zip（14.3 MB，实测 4.40 MB/s，复检 6 成员）
+[06:47:36]   125/214 新下 999sian/tmc/tmc-multi-windows-arm64-v0.9.5.tar.gz（15.3 MB，实测 4.61 MB/s，复检 1 成员）
+[06:47:40]   126/214 新下 999sian/tmc/tmc-multi-windows-arm64-v0.9.6.tar.gz（16.1 MB，实测 4.60 MB/s，复检 3 成员）
+[06:47:44]   127/214 新下 0xl0cal/repentogxm/repentogxm-v0.1.0-alpha.vpk（16.7 MB，实测 4.86 MB/s，复检 格式不扫）
+[06:47:45]   128/214 已相符 0xl0cal/repentogxm/repentogxm-v0.1.1-alpha.vpk（16.7 MB，复检 格式不扫）
+[06:47:49]   129/214 新下 8bitninja64/NFLBlitz2003-PC/NFLBlitz2003-windows-x64.zip（17.4 MB，实测 4.24 MB/s，复检 33 成员）
+[06:47:53]   130/214 新下 0herculabs/hl360-forza2/Forza2-Native-0.1.0-windows-x64.zip（18.1 MB，实测 4.53 MB/s，复检 19 成员）
+[06:47:57]   131/214 新下 0herculabs/hl360-forza2/Forza2-Native-0.2.0-windows-x64.zip（18.2 MB，实测 4.99 MB/s，复检 19 成员）
+[06:48:01]   132/214 新下 0herculabs/hl360-forza2/Forza2-Native-0.3.0-windows-x64.zip（18.2 MB，实测 4.75 MB/s，复检 19 成员）
+[06:48:05]   133/214 新下 0iy/opengoal-ps5/opengoal-ps5-pack.tgz（18.7 MB，实测 5.43 MB/s，复检 4877 成员）
+[06:48:09]   134/214 新下 999sian/melee-pc/Melee-aarch64.AppImage（19.0 MB，实测 4.22 MB/s，复检 格式不扫）
+[06:48:13]   135/214 新下 96dot/Dragon-Age-Origins-Recomp/DAORecomp.hotfix.exe（19.1 MB，实测 4.55 MB/s，复检 格式不扫）
+[06:48:18]   136/214 新下 999sian/melee-pc/Melee-x86_64.AppImage（19.8 MB，实测 4.58 MB/s，复检 格式不扫）
+[06:48:21]   137/214 新下 0herculabs/hl360-forza2/Forza2-Native-0.3.1-windows-x64.zip（20.1 MB，实测 6.62 MB/s，复检 20 成员）
+[06:48:28]   138/214 新下 999sian/melee-pc/melee-linux-aarch64.tar.gz（20.3 MB，实测 2.91 MB/s，复检 28 成员）
+[06:48:33]   139/214 新下 7v0biscuit/OpenKai2/OpenKai2.exe（20.6 MB，实测 3.85 MB/s，复检 格式不扫）
+[06:48:38]   140/214 新下 7v0biscuit/OpenKai2/OpenKai2-Setup.exe（20.7 MB，实测 4.95 MB/s，复检 格式不扫）
+[06:48:41]   141/214 新下 999sian/melee-pc/melee-linux-x86_64.tar.gz（20.9 MB，实测 6.85 MB/s，复检 28 成员）
+[06:48:47]   142/214 新下 999sian/tmc/tmc-multi-linux-arm64-v0.9.5.tar.gz（20.9 MB，实测 3.73 MB/s，复检 1 成员）
+[06:48:51]   143/214 新下 999sian/tmc/tmc-multi-linux-x86_64-v0.9.5.tar.gz（21.5 MB，实测 5.38 MB/s，复检 1 成员）
+[06:48:55]   144/214 新下 999sian/tmc/tmc-multi-linux-arm64-v0.9.6.tar.gz（22.2 MB，实测 5.81 MB/s，复检 3 成员）
+[06:48:59]   145/214 新下 999sian/tmc/tmc-multi-linux-x86_64-v0.9.6.tar.gz（22.9 MB，实测 6.85 MB/s，复检 3 成员）
+[06:49:02]   146/214 新下 0herculabs/hl360-forza3/FM3.zip（23.7 MB，实测 7.10 MB/s，复检 21 成员）
+[06:49:07]   147/214 新下 999sian/tmc/tmc-multi-windows-x86_64-v0.9.5.tar.gz（23.9 MB，实测 4.61 MB/s，复检 1 成员）
+[06:49:12]   148/214 新下 2ship2harkinian/2ship2harkinian/2Ship-Rika-Alfa-Win64.zip（24.2 MB，实测 5.88 MB/s，复检 1331 成员）
+[06:49:16]   149/214 新下 999sian/melee-pc/Melee-Windows-arm64.zip（24.8 MB，实测 5.25 MB/s，复检 37 成员）
+[06:49:20]   150/214 新下 999sian/tmc/tmc-multi-windows-x86_64-v0.9.6.tar.gz（25.3 MB，实测 6.80 MB/s，复检 3 成员）
+[06:49:24]   151/214 新下 999sian/melee-pc/Melee-Windows-x86_64.zip（25.4 MB，实测 6.53 MB/s，复检 35 成员）
+[06:49:29]   152/214 新下 2ship2harkinian/2ship2harkinian/2Ship-Rika-Bravo-Win64.zip（25.4 MB，实测 5.77 MB/s，复检 1331 成员）
+[06:49:32]   153/214 新下 2ship2harkinian/2ship2harkinian/2Ship-Rika-Charlie-Win64.zip（25.7 MB，实测 7.16 MB/s，复检 1331 成员）
+[06:49:37]   154/214 新下 2ship2harkinian/2ship2harkinian/2Ship-Satoko-Bravo-Win64.zip（28.1 MB，实测 6.75 MB/s，复检 1331 成员）
+[06:49:42]   155/214 新下 2ship2harkinian/2ship2harkinian/2Ship-Satoko-Charlie-Win64.zip（28.6 MB，实测 5.61 MB/s，复检 1331 成员）
+[06:49:46]   156/214 新下 2gifts/smash64-3ds/Smash64-3DS-CIA-Builder-v1.1.0.zip（29.4 MB，实测 7.39 MB/s，复检 11105 成员）
+[06:49:51]   157/214 新下 7v0biscuit/OpenKai2/OpenKai2-windows-x64.zip（32.0 MB，实测 6.62 MB/s，复检 45 成员）
+[06:49:56]   158/214 新下 96dot/Dragon-Age-Origins-Recomp/DAORecomp-Installer.exe（32.1 MB，实测 5.85 MB/s，复检 格式不扫）
+[06:50:01]   159/214 新下 96dot/Dragon-Age-Origins-Recomp/DAORecomp.exe（32.1 MB，实测 6.73 MB/s，复检 格式不扫）
+[06:50:08]   160/214 新下 2ship2harkinian/2ship2harkinian/2Ship-Satoko-Alfa-Win64.zip（32.3 MB，实测 4.51 MB/s，复检 1331 成员）
+[06:50:13]   161/214 新下 999sian/melee-pc/Melee-Android-arm64-debug.apk（33.6 MB，实测 6.37 MB/s，复检 格式不扫）
+[06:50:20]   162/214 新下 Acranon/kf3-enhanced/KF3Enhanced-0.1.0-win-x64-setup.exe（33.8 MB，实测 5.27 MB/s，复检 格式不扫）
+[06:50:24]   163/214 新下 0c0de/splatterhouse-decomp/splatterhouse-decomp-release.zip（34.0 MB，实测 7.58 MB/s，复检 22 成员）
+[06:50:31]   红线复检：5C8/skate3recomp/skate3recomp-Linux-x64.zip → 待复核（.xexp）
+[06:50:31]   164/214 待复核 5C8/skate3recomp/skate3recomp-Linux-x64.zip（34.8 MB，实测 5.54 MB/s，复检 67 成员）
+[06:50:35]   红线复检：5C8/skate3recomp/skate3recomp-Windows-x64.zip → 待复核（.xexp）
+[06:50:35]   165/214 待复核 5C8/skate3recomp/skate3recomp-Windows-x64.zip（36.3 MB，实测 8.78 MB/s，复检 71 成员）
+[06:50:39]   166/214 新下 999sian/melee-pc/Melee-Android-arm64.apk（36.7 MB，实测 9.06 MB/s，复检 格式不扫）
+[06:50:44]   167/214 新下 0c0de/splatterhouse-decomp/splatter-decom.zip（38.6 MB，实测 7.92 MB/s，复检 20 成员）
+[06:50:50]   168/214 新下 0iy/opengoal-ps5/OpenGOAL-PS5.zip（38.7 MB，实测 6.69 MB/s，复检 55 成员）
+[06:50:56]   169/214 新下 5C8/sk83_na_m/sk83_na_m-Windows-x64.zip（40.3 MB，实测 6.43 MB/s，复检 69 成员）
+[06:51:04]   170/214 新下 0herculabs/hl360-forza4/FM4-v0.3.9-windows-x64.zip（42.7 MB，实测 5.72 MB/s，复检 34 成员）
+[06:51:05]   171/214 已相符 2ship2harkinian/2ship2harkinian/2Ship-Battler-Bravo-Win64.zip（42.9 MB，复检 1335 成员）
+[06:51:11]   172/214 新下 2ship2harkinian/2ship2harkinian/2Ship-Battler-Alfa-Win64.zip（42.9 MB，实测 7.05 MB/s，复检 1335 成员）
+[06:51:16]   173/214 新下 0herculabs/hl360-forza4/FM4-v0.3.8-windows-x64.zip（43.1 MB，实测 8.01 MB/s，复检 31 成员）
+[06:51:24]   174/214 新下 Acranon/kf3-enhanced/KF3Enhanced-0.1.0-win-x64.zip（45.2 MB，实测 5.92 MB/s，复检 341 成员）
+[06:51:31]   175/214 新下 2ship2harkinian/2ship2harkinian/2Ship-Keiichi-Charlie-Win64.zip（47.4 MB，实测 6.49 MB/s，复检 1335 成员）
+[06:51:38]   176/214 新下 2ship2harkinian/2ship2harkinian/2Ship-Keiichi-Alfa-Win64.zip（47.5 MB，实测 6.72 MB/s，复检 1335 成员）
+[06:51:44]   177/214 新下 2ship2harkinian/2ship2harkinian/2Ship-Keiichi-Bravo-Win64.zip（47.7 MB，实测 8.72 MB/s，复检 1335 成员）
+[06:51:50]   178/214 新下 2ship2harkinian/2ship2harkinian/2Ship-Rena-Bravo-Win64.zip（47.7 MB，实测 7.73 MB/s，复检 1327 成员）
+[06:51:56]   179/214 新下 2ship2harkinian/2ship2harkinian/2Ship-Rena-Alfa-Win64.zip（47.7 MB，实测 8.46 MB/s，复检 1327 成员）
+[06:52:01]   180/214 新下 2ship2harkinian/2ship2harkinian/2Ship-Mion-Alfa-Win64.zip（49.4 MB，实测 9.79 MB/s，复检 1335 成员）
+[06:52:09]   181/214 新下 8bitninja64/NFLBlitz2003-PC/NFLBlitz2003-linux-x64.tar.xz（49.6 MB，实测 6.24 MB/s，复检 格式不扫）
+[06:52:17]   182/214 新下 8bitninja64/HangtimeRecomp/HangtimeRecomp-linux-x86_64-0.1.1.tar.gz（49.7 MB，实测 6.26 MB/s，复检 63 成员）
+[06:52:24]   183/214 新下 8bitninja64/TenchuZ-PC/TenchuZ-linux-x64.tar.xz（49.8 MB，实测 6.75 MB/s，复检 格式不扫）
+[06:52:30]   184/214 新下 2ship2harkinian/2ship2harkinian/2Ship-Mion-Bravo-Win64.zip（49.9 MB，实测 8.93 MB/s，复检 1335 成员）
+[06:52:38]   185/214 新下 2ship2harkinian/2ship2harkinian/2Ship-Mion-Charlie-Win64.zip（50.3 MB，实测 7.56 MB/s，复检 1335 成员）
+[06:52:49]   红线复检：12feihu/TwistedMetal2Recomp/TM2Recomp-Win.zip → 待复核（.mod）
+[06:52:49]   186/214 待复核 12feihu/TwistedMetal2Recomp/TM2Recomp-Win.zip（64.5 MB，实测 6.92 MB/s，复检 3972 成员）
+[06:53:08]   红线复检：8bitninja64/HangtimeRecomp/HangtimeRecomp-linux-x86_64-0.1.0.tar.gz → 待复核（.mod）
+[06:53:08]   187/214 待复核 8bitninja64/HangtimeRecomp/HangtimeRecomp-linux-x86_64-0.1.0.tar.gz（69.7 MB，实测 3.89 MB/s，复检 5110 成员）
+[06:53:15]   188/214 新下 abdelmoumendeghbouche/knack_pc/knack-windows.zip（72.3 MB，实测 11.20 MB/s，复检 1105 成员）
+[06:53:23]   189/214 新下 abdelmoumendeghbouche/wipeout_pc/wipeout-windows.zip（72.6 MB，实测 8.97 MB/s，复检 1111 成员）
+[06:53:30]   190/214 新下 15Cyber/marvel-nemesis-recomp/MarvelNemesis-Windows-x64.zip（75.0 MB，实测 10.63 MB/s，复检 39 成员）
+[06:53:43]   191/214 已相符 0herculabs/hl360-forza4/FM4-v0.3.10-windows-x64.zip（78.5 MB，复检 43 成员）
+[06:53:54]   红线复检：8bitninja64/HangtimeRecomp/HangtimeRecomp-win64-0.1.0.zip → 待复核（.mod）
+[06:53:54]   192/214 待复核 8bitninja64/HangtimeRecomp/HangtimeRecomp-win64-0.1.0.zip（89.4 MB，实测 8.36 MB/s，复检 6286 成员）
+[06:54:00]   红线复检：8bitninja64/HangtimeRecomp/HangtimeRecomp-win64-0.1.1.zip → 待复核（.mod）
+[06:54:00]   193/214 待复核 8bitninja64/HangtimeRecomp/HangtimeRecomp-win64-0.1.1.zip（89.4 MB，实测 15.00 MB/s，复检 6286 成员）
+[06:54:13]   194/214 新下 aabrole/HuntersRecomp/HuntersRecomp-v0.2.2-thor-arm64.apk（90.3 MB，实测 7.31 MB/s，复检 格式不扫）
+[06:54:26]   195/214 新下 aabrole/HuntersRecomp/HuntersRecomp-v0.2.3-thor-arm64.apk（90.3 MB，实测 6.53 MB/s，复检 格式不扫）
+[06:54:38]   196/214 新下 aabrole/HuntersRecomp/HuntersRecomp-v0.2.1-thor-arm64.apk（90.3 MB，实测 8.10 MB/s，复检 格式不扫）
+[06:54:51]   197/214 新下 aabrole/HuntersRecomp/HuntersRecomp-v0.2.0-thor-arm64.apk（90.3 MB，实测 7.06 MB/s，复检 格式不扫）
+[06:55:03]   198/214 新下 aabrole/HuntersRecomp/HuntersRecomp-v0.2.4-thor-arm64.apk（90.3 MB，实测 7.15 MB/s，复检 格式不扫）
+[06:55:15]   199/214 新下 360recomper/UFC3ReX/UFC3-Recomp-v1.0.zip（95.5 MB，实测 8.42 MB/s，复检 17 成员）
+[06:55:29]   200/214 新下 360recomper/UFC3ReX/UFC3-Recomp-v1.0.1.zip（95.5 MB，实测 6.93 MB/s，复检 17 成员）
+[06:55:41]   201/214 新下 360recomper/UFC3ReX/UFC3-Recomp-v1.0.2.zip（95.5 MB，实测 7.60 MB/s，复检 17 成员）
+[06:55:56]   202/214 新下 360recomper/UFC3ReX/UFC3-Recomp-v1.0.3.zip（95.5 MB，实测 6.42 MB/s，复检 17 成员）
+[06:56:07]   203/214 新下 360recomper/UFC3ReX/UFC3-Recomp-v1.0.4.zip（95.5 MB，实测 8.69 MB/s，复检 17 成员）
+[06:56:22]   204/214 新下 360recomper/UFC3ReX/UFC3-Recomp-v1.0.5.zip（95.6 MB，实测 6.63 MB/s，复检 17 成员）
+[06:56:30]   205/214 新下 360recomper/UFC3ReX/UFC3-Recomp-v1.0.6.zip（95.7 MB，实测 11.71 MB/s，复检 17 成员）
+[06:56:42]   206/214 新下 360recomper/UFC3ReX/UFC3-Recomp-v1.0.7.zip（95.7 MB，实测 7.88 MB/s，复检 17 成员）
+[06:56:55]   207/214 新下 999sian/tmc/tmc-multi-android-v0.9.5.apk（98.4 MB，实测 8.05 MB/s，复检 格式不扫）
+[06:57:07]   208/214 新下 aabrole/HuntersRecomp/HuntersRecomp-v0.2.5-thor-arm64.apk（102.3 MB，实测 8.19 MB/s，复检 格式不扫）
+[06:57:17]   209/214 新下 999sian/tmc/tmc-multi-android-v0.9.6.apk（102.5 MB，实测 10.96 MB/s，复检 格式不扫）
+[06:57:31]   210/214 新下 abdelmoumendeghbouche/wipeout_pc/wipeout-x86_64.AppImage（130.2 MB，实测 9.15 MB/s，复检 格式不扫）
+[06:57:47]   211/214 新下 abdelmoumendeghbouche/knack_pc/knack-x86_64.AppImage（130.8 MB，实测 8.21 MB/s，复检 格式不扫）
+[06:58:14]   212/214 新下 aabrole/HuntersRecomp/HuntersRecomp-v0.3.0-thor-arm64.apk（207.9 MB，实测 7.72 MB/s，复检 格式不扫）
+[06:58:42]   红线复检：7tg/futbol13/PPSA99405.zip → 待复核（.mod）
+[06:58:42]   213/214 待复核 7tg/futbol13/PPSA99405.zip（275.7 MB，实测 10.02 MB/s，复检 1852 成员）
+[06:59:14]   红线复检：7tg/sahin/PPSA99404.zip → 待复核（.mod）
+[06:59:14]   214/214 待复核 7tg/sahin/PPSA99404.zip（276.2 MB，实测 8.61 MB/s，复检 1854 成员）
+[06:59:14] 完成：新下 196 / 已相符 18 / 失败 0 / 挪待复核 8
+[06:59:15] 台账：成品包台账.tsv（980 行，逐格落盘）
+[pull-loop] 第 3 轮退出码 0（0=本轮 0 失败，全落地）06:59:15
+[pull-loop] 计划里要的全部资产都已落地，收工

@@ -1,0 +1,154 @@
+{
+  "schema": 1,
+  "id": "tyrian",
+  "title": "Tyrian",
+  "family": "open-engine",
+  "source": {
+    "repo": "https://github.com/opentyrian/opentyrian.git",
+    "commit": "ac5d0e71f4245744350c6116ce24f10624da58f8",
+    "local": "F:/_scratch/tyrian_git"
+  },
+  "data": {
+    "policy": "free-download",
+    "rights_proof": "Tyrian 2.1 由原作者 Jason Emery / World Tree Games 以免费软件形式发布，OpenTyrian 官方说明指向 camanis.net 的 tyrian21.zip 镜像；这份数据本身就是免费发布版，可以随包分发。",
+    "downloads": [
+      {
+        "url": "https://camanis.net/tyrian/tyrian21.zip",
+        "sha256": "7790d09a2a3addcd33c66ef063d5900eb81cc9c342f4807eb8356364dd1d9277",
+        "name": "tyrian21.zip",
+        "format": "zip",
+        "lowercase": true,
+        "strip_root": true
+      }
+    ]
+  },
+  "license": {
+    "engine": "GPL-2.0-or-later",
+    "data": "Tyrian 2.1 freeware（作者免费发布）"
+  },
+  "targets": {
+    "handheld": {
+      "profile": "zig-aarch64",
+      "arch": "aarch64",
+      "min_glibc": "2.29",
+      "deps": [
+        {
+          "id": "sdl2"
+        }
+      ],
+      "build": {
+        "system": "custom",
+        "artifact": "opentyrian",
+        "timeout": 1800,
+        "commands": [
+          "mkdir -p \"${build}/obj\"",
+          "for f in src/*.c; do cc -O2 -std=iso9899:1999 -DNDEBUG -DTARGET_UNIX -DTYRIAN_DIR='\"data\"' $(pkg-config --cflags sdl2) -ffile-prefix-map=${src}=. -c -o \"${build}/obj/$(basename \"$f\" .c).o\" \"$f\" || exit 1; done",
+          "cc -O2 -o \"${artifact}\" ${build}/obj/*.o $(pkg-config --libs sdl2) -lm -Wl,--strip-debug"
+        ]
+      },
+      "package": {
+        "platform": "portmaster",
+        "port_dir": "tyrian",
+        "launcher_file": "Tyrian.sh",
+        "binary": "./opentyrian.aarch64",
+        "zip_name": "Tyrian.zip",
+        "files": [
+          {
+            "src": "${artifact}",
+            "dst": "tyrian/opentyrian.aarch64"
+          },
+          {
+            "src": "${data}",
+            "dst": "tyrian/data"
+          }
+        ],
+        "license_files": [
+          "tyrian/COPYING"
+        ],
+        "screenshot": "tyrian/screenshot.png",
+        "data_required": [
+          "data/tyrian1.lvl"
+        ],
+        "data_message": "包内数据不完整：请重新解压 Tyrian.zip。",
+        "data_message_en": "Game data missing: please re-extract Tyrian.zip.",
+        "attr": {
+          "title": "Tyrian",
+          "desc": "OpenTyrian（GPL-2.0 引擎）交叉编译的 aarch64 版，Tyrian 2.1 免费数据随包，解压即玩。640x400，SDL2 音频。",
+          "inst": "Ready to run. Tyrian 2.1 freeware data is included.",
+          "genres": [
+            "shmup"
+          ],
+          "porter": [
+            "教程示例"
+          ],
+          "image": {},
+          "rtr": true,
+          "exp": false,
+          "runtime": [],
+          "min_glibc": "2.29",
+          "reqs": [],
+          "arch": [
+            "aarch64"
+          ]
+        }
+      },
+      "gates": [
+        "elf",
+        "no_build_paths",
+        "portmaster_layout",
+        "data_policy",
+        "licenses",
+        "deterministic_zip",
+        "screenshot"
+      ]
+    },
+    "switch": {
+      "profile": "devkitpro",
+      "build": {
+        "system": "gnumake",
+        "makefile": "Makefile.switch",
+        "artifact": "opentyrian.nro",
+        "timeout": 1800,
+        "env": {
+          "MSYS2_ARG_CONV_EXCL": "-DTYRIAN_DIR"
+        },
+        "patches": [
+          "patches/tyrian-switch-romfs.patch"
+        ],
+        "assets": [
+          {
+            "src": "tyrian/switch-Makefile",
+            "dst": "Makefile.switch"
+          },
+          {
+            "src": "tyrian/icon.jpg",
+            "dst": "icon.jpg"
+          },
+          {
+            "src": "${data}",
+            "dst": "romfs/data"
+          }
+        ]
+      },
+      "package": {
+        "platform": "nro-zip",
+        "zip_name": "Tyrian-switch.zip",
+        "nro_name": "opentyrian.nro",
+        "license_files": [
+          "tyrian/COPYING"
+        ],
+        "readme_text": "OpenTyrian for Nintendo Switch (Atmosphere).\nPut opentyrian.nro anywhere on the SD card and launch it from the homebrew menu.\nTyrian 2.1 freeware data is embedded in the NRO romfs; no extra files needed.\nEngine: GPL-2.0-or-later (see licenses/COPYING). Data: freeware, released by the author.\n"
+      },
+      "gates": [
+        "nro",
+        "no_build_paths",
+        "licenses",
+        "deterministic_zip"
+      ],
+      "build_path_needles": [
+        "_scratch",
+        "F:/"
+      ]
+    }
+  }
+}

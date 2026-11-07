@@ -1,0 +1,39 @@
+diff --git a/source/audiolib/src/drivers.cpp b/source/audiolib/src/drivers.cpp
+index f4f2ac631..f4ab0518f 100644
+--- a/source/audiolib/src/drivers.cpp
++++ b/source/audiolib/src/drivers.cpp
+@@ -43,6 +43,12 @@
+ # include "driver_alsa.h"
+ #endif
+ 
++#if defined(__linux__) && defined(EDUKE32_NO_ALSA)
++// driver_alsa.cpp 不参与编译时，这两个全局仍被 fx_man/menus 引用
++int ALSA_ClientID = 0;
++int ALSA_PortID   = 0;
++#endif
++
+ int ASS_PCMSoundDriver  = ASS_AutoDetect;
+ int ASS_MIDISoundDriver = ASS_AutoDetect;
+ int ASS_EMIDICard = -1;
+@@ -176,7 +182,7 @@ static struct
+     // ALSA MIDI synthesiser
+     {
+         "ALSA",
+-    #ifdef __linux__
++    #if defined(__linux__) && !defined(EDUKE32_NO_ALSA)
+         ALSADrv_GetError,
+         ALSADrv_ErrorString,
+ 
+diff --git a/source/duke3d/src/menus.cpp b/source/duke3d/src/menus.cpp
+index d265b9625..277c7870b 100644
+--- a/source/duke3d/src/menus.cpp
++++ b/source/duke3d/src/menus.cpp
+@@ -3843,7 +3843,7 @@ static void Menu_RefreshSoundProperties()
+     ud.config.MixRate     = FX_MixRate;
+     ud.config.MusicDevice = MIDI_GetDevice();
+ 
+-#if !defined(EDUKE32_RETAIL_MENU) && defined (__linux__)
++#if !defined(EDUKE32_RETAIL_MENU) && defined (__linux__) && !defined(EDUKE32_NO_ALSA)
+     MEOS_SOUND_ALSADEVICE.numOptions = 0;
+     alsadevices = ALSADrv_MIDI_ListPorts();
+     if (alsadevices.size() == 0)

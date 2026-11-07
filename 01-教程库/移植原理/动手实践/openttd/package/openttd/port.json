@@ -1,0 +1,30 @@
+{
+    "version": 4,
+    "name": "OpenTTD.zip",
+    "items": [
+        "OpenTTD.sh",
+        "openttd"
+    ],
+    "items_opt": null,
+    "attr": {
+        "title": "OpenTTD",
+        "desc": "OpenTTD 15.3：开源重写的《运输大亨豪华版》（Transport Tycoon Deluxe），交叉编译成 aarch64。包内自带 OpenGFX / OpenSFX / OpenMSX 三套自由素材，不需要原版光盘数据，装好就能玩。手柄用 PortMaster 的 gptokeyb，左摇杆当鼠标。",
+        "inst": "Nothing to install. The free base sets OpenGFX 7.1 (graphics), OpenSFX 1.0.3 (sound) and OpenMSX 0.4.2 (music) are already included in this port, so it runs straight after copying. Only if you own the original Transport Tycoon Deluxe data can you optionally copy it into ports/openttd/openttd/ to use it instead.",
+        "genres": [
+            "simulation",
+            "strategy"
+        ],
+        "porter": [
+            "教程示例"
+        ],
+        "image": {},
+        "rtr": true,
+        "exp": false,
+        "runtime": [],
+        "min_glibc": "2.30",
+        "reqs": [],
+        "arch": [
+            "aarch64"
+        ]
+    }
+}

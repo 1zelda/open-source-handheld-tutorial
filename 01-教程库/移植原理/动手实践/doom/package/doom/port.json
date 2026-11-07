@@ -1,0 +1,29 @@
+{
+    "version": 4,
+    "name": "Doom.zip",
+    "items": [
+        "Doom.sh",
+        "doom"
+    ],
+    "items_opt": null,
+    "attr": {
+        "title": "Freedoom",
+        "desc": "doomgeneric + Freedoom：GPL-2.0 的 Doom 引擎源码交叉编译成 aarch64，配 Freedoom 0.13.0 免费数据（BSD 许可）。无音效（未接 SDL2_mixer）。",
+        "inst": "Ready to run. Freedoom 0.13.0 free data is included.",
+        "genres": [
+            "fps"
+        ],
+        "porter": [
+            "教程示例"
+        ],
+        "image": {},
+        "rtr": true,
+        "exp": false,
+        "runtime": [],
+        "min_glibc": "2.17",
+        "reqs": [],
+        "arch": [
+            "aarch64"
+        ]
+    }
+}

@@ -1,0 +1,26 @@
+[21:08:47] 计划开始：先问 releases/latest，取不到再退回全量 release 列表，共 205 个仓
+[21:09:19]   latest 取不到，改用 Awis13/liberty-pro-max v0.3.3-beta [pre-release]
+[21:09:24]   latest 取不到，改用 badcompany94-rcmp/project-tandem v0.1.0-beta.14 [pre-release]
+[21:10:59]   latest 取不到，改用 drakolordx7/KillzoneRecomp v0.1.6-alpha [pre-release]
+[21:11:43]   latest 取不到，改用 FishB0nes98/Tekken3Recompiled v0.1.4 [pre-release]
+[21:11:55]   latest 取不到，改用 gamboozino/ngbrecomp v0.9.55 [pre-release]
+[21:12:50]   latest 取不到，改用 invinceble55-wq/Estacado-The-Darkness-Recomp v0.9.8 [pre-release]
+[21:13:16]   latest 取不到，改用 jedijosh920/SWROTS-PC v0.5.0 [pre-release]
+[21:13:22]   latest 取不到，改用 jessetbh/WCWnWoRevengeRecomp v0.2.0 [pre-release]
+[21:13:29]   latest 取不到，改用 jessetbh/WCWvsNWOWorldTourRecomp v0.2.0 [pre-release]
+[21:13:39]   latest 取不到，改用 jessetbh/WWFNoMercyRecomp v0.2.0 [pre-release]
+[21:13:45]   latest 取不到，改用 jillsandwich1998/reGH2 v0.2.0 [pre-release]
+[21:14:21]   latest 取不到，改用 kittycache9/OpenSA2 v0.1.0-alpha.6.1 [pre-release]
+[21:15:04]   latest 取不到，改用 mariopartyrd/partyboard partyboard_0.2.0 [pre-release]
+[21:15:10]   latest 取不到，改用 MaryNCRT/Ultimate-Mortal-Kombat-3-iOS-Decompiled v0.1.23-beta [pre-release]
+[21:15:30]   latest 取不到，改用 MaxDeadBear/Re-Cherry beta [pre-release]
+[21:15:36]   latest 取不到，改用 maxevans60/cm0102-bosman-edition v0.6.1 [pre-release]
+[21:16:36]   latest 取不到，改用 OpokXeno/xenogears-recomp v0.11.3 [pre-release]
+[21:17:36]   latest 取不到，改用 RevoSucks/BMHeroRecomp v0.7.1 [pre-release]
+[21:18:25]   latest 取不到，改用 some-scurvy-dog/banjo-tooie-scurvy-dog-port v0.1.0-alpha.4.5 [pre-release]
+[21:19:27]   latest 取不到，改用 undecuple/project-helghast v0.1.8 [pre-release]
+[21:19:32]   latest 取不到，改用 undecuple/project-pyrrhus v0.1.9 [pre-release]
+[21:19:41]   latest 取不到，改用 victor-takai/rogue-galaxy-recomp v0.1.0 [pre-release]
+[21:20:02]   进度 200/205，已命中 167 个仓
+[21:20:17] 计划：成品包计划.tsv｜要 637 个资产 / 31.97 GB｜被拦 461 个｜单仓超 8000MB 的 0 个仓
+[21:20:17]   其中 RecompHub 目录点名的：86 个资产 / 5.40 GB（pull catalog 就只下这一批）

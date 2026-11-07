@@ -1,0 +1,4 @@
+Put your original Quake III Arena data here.
+
+Needed: baseq3/pak0.pk3 ... pak8.pk3 (whatever your copy has).
+拷原版 Quake III Arena 的 baseq3/pak*.pk3 到这个目录（本端口不自带任何商业游戏数据，也不带序列号）。

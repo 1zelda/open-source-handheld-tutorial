@@ -1,0 +1,93 @@
+[06:06:40] 计划开始：先问 releases/latest，取不到再退回全量 release 列表，本次问 5858 个仓
+[06:06:40]   复用旧计划：6976 行 / 1738 个仓没再问 API
+[06:07:22]   latest 取不到，改用 andreoka-debug/ssf2xj-recomp v0.1.1-preview [pre-release]
+[06:07:30]   latest 取不到，改用 andrew17182/Fable-2-Recomp-macOS v0.1.1 [pre-release]
+[06:07:45]   进度 50/5858，本轮问到资产的仓 14 个（已落盘 7029 行）
+[06:07:59]   latest 取不到，改用 Angle-Brackets/PaperBoat-Switch-Port switch-v1.0.3-rc1 [pre-release]
+[06:08:10]   latest 取不到，改用 anpage/demech2 continuous [pre-release]
+[06:08:15]   latest 取不到，改用 ant0-blase/GekkoAOT v0.0.9 [pre-release]
+[06:08:30]   进度 75/5858，本轮问到资产的仓 18 个（已落盘 7089 行）
+[06:08:34]   latest 取不到，改用 AntAir267/1nsane-recompiled v0.1.1-alpha [pre-release]
+[06:08:38]   latest 取不到，改用 AntAir267/double-steal-2-recompiled v0.1.0-alpha [pre-release]
+[06:08:41]   latest 取不到，改用 AntAir267/test-drive-6-here-in-my-recomp v0.1.1-alpha [pre-release]
+[06:08:43]   latest 取不到，改用 AntAir267/wreckless-recomp v0.1.0-alpha [pre-release]
+[06:08:45]   latest 取不到，改用 antarusch/killzone-shadow-fall-android alpha7.16-master [pre-release]
+[06:08:54]   latest 取不到，改用 AntonioDOrazio/gromada-android nightly [pre-release]
+[06:09:12]   进度 100/5858，本轮问到资产的仓 28 个（已落盘 7132 行）
+[06:10:00]   进度 125/5858，本轮问到资产的仓 28 个（已落盘 7157 行）
+[06:10:43]   进度 150/5858，本轮问到资产的仓 28 个（已落盘 7182 行）
+[06:11:17]   API 失败（链路类）：repos/antxiko/TimePilot-disassembly/releases/latest <- Get "https://api.github.com/repos/antxiko/TimePilot-disassembly/releases/latest": unexpected EOF
+[06:11:26]   API 失败（链路类）：repos/antxiko/VampireKiller-disassembly/releases/latest <- Get "https://api.github.com/repos/antxiko/VampireKiller-disassembly/releases/latest": unexpected EOF
+[06:11:31]   进度 175/5858，本轮问到资产的仓 28 个（已落盘 7205 行）
+[06:12:19]   进度 200/5858，本轮问到资产的仓 33 个（已落盘 7243 行）
+[06:12:34]   latest 取不到，改用 arjunkl/eDukeiOS touch-controls-preview-1 [pre-release]
+[06:12:36]   API 失败（链路类）：repos/armageddongames/zeldaclassic/releases/latest <- Get "https://api.github.com/repos/armageddongames/zeldaclassic/releases/latest": unexpected EOF
+[06:13:19]   进度 225/5858，本轮问到资产的仓 39 个（已落盘 7278 行）
+[06:13:50]   latest 取不到，改用 Ash01Live/BF2MC-Recomp v0.1-beta [pre-release]
+[06:14:04]   latest 取不到，改用 AstrohackerML/Descent2-WinMobile v0.3.4 [pre-release]
+[06:14:28]   latest 取不到，改用 AsukaNeo/titanium-legion v0.1.0-prealpha [pre-release]
+[06:15:52]   latest 取不到，改用 aurelioochoa/re4mepc v0.1.0-experimental.20261014 [pre-release]
+[06:16:09]   latest 取不到，改用 avaraline/Avara 0.7.0-nightly.20201230 [pre-release]
+[06:16:56]   latest 取不到，改用 b4ttycre4se/Spider-Man-3-Recomp v0.4.0 [pre-release]
+[06:17:08]   进度 300/5858，本轮问到资产的仓 71 个（已落盘 7389 行）
+[06:18:04]   latest 取不到，改用 bartando/ttrecomp v0.2.1-alpha.1 [pre-release]
+[06:18:17]   latest 取不到，改用 batatinhafcbatatinha-pixel/ben10-alien-force-pc v0.1.5 [pre-release]
+[06:18:22]   latest 取不到，改用 batatinhafcbatatinha-pixel/black-xbox-pc v0.1.6 [pre-release]
+[06:18:25]   latest 取不到，改用 batatinhafcbatatinha-pixel/boku-no-natsuyasumi-2-pc v0.1.5 [pre-release]
+[06:18:27]   latest 取不到，改用 batatinhafcbatatinha-pixel/cod-world-at-war-final-fronts-pc v0.1.5 [pre-release]
+[06:18:49]   latest 取不到，改用 BBQGiraffe/OpenNitemare3D 0.2 [pre-release]
+[06:19:19]   进度 350/5858，本轮问到资产的仓 97 个（已落盘 7480 行）
+[06:20:12]   进度 375/5858，本轮问到资产的仓 102 个（已落盘 7531 行）
+[06:20:15]   latest 取不到，改用 bgyss/snatcher-port v0.1.0-rc1 [pre-release]
+[06:20:23]   latest 取不到，改用 bibendovsky/rtcw 20210101204103 [pre-release]
+[06:21:39]   进度 425/5858，本轮问到资产的仓 120 个（已落盘 7608 行）
+[06:21:51]   latest 取不到，改用 Blizz127/Companions-Of-Xanth-Decompile v0.1.0-alpha.5 [pre-release]
+[06:22:16]   进度 450/5858，本轮问到资产的仓 126 个（已落盘 7638 行）
+[06:22:53]   latest 取不到，改用 Botarguirix/ShotgunK2Vita v0.78-alpha [pre-release]
+[06:23:16]   latest 取不到，改用 bradhannah/Ultima5Redux Aug-13-2022-PreAlpha [pre-release]
+[06:23:20]   latest 取不到，改用 brandongillespie17-jpg/third-age-pc-recomp windows-preview-hd-2026-10-26 [pre-release]
+[06:23:27]   进度 500/5858，本轮问到资产的仓 148 个（已落盘 7739 行）
+[06:23:46]   latest 取不到，改用 brkovv/sh2-macos v0.1.0-alpha.4 [pre-release]
+[06:23:52]   latest 取不到，改用 Bruce303lee/sudokuzen 01.000.010 [pre-release]
+[06:24:04]   进度 525/5858，本轮问到资产的仓 154 个（已落盘 7766 行）
+[06:24:36]   latest 取不到，改用 busyDuckman/OpenXeen v0.1.0-alpha [pre-release]
+[06:24:40]   进度 550/5858，本轮问到资产的仓 161 个（已落盘 7801 行）
+[06:24:59]   latest 取不到，改用 C-GBL/P3FES-Decompilation recompiled [pre-release]
+[06:25:53]   进度 575/5858，本轮问到资产的仓 166 个（已落盘 7825 行）
+[06:25:59]   latest 取不到，改用 CalenCyr/SlugfestRecompiled v0.1.0-beta.1 [pre-release]
+[06:27:25]   latest 取不到，改用 camybiohazard/Project-VeronicaX v0.4.0 [pre-release]
+[06:27:27]   latest 取不到，改用 CanavarIT/Chocolate-doom-android-port v1.1 [pre-release]
+[06:27:34]   进度 600/5858，本轮问到资产的仓 170 个（已落盘 7846 行）
+[06:27:47]   latest 取不到，改用 CanavarIT/GoDoom beta-1.0.0 [pre-release]
+[06:28:26]   latest 取不到，改用 Castlesea/infamous-second-son-pc-port v2026.10.19-controls [pre-release]
+[06:28:31]   latest 取不到，改用 catsandsoup/2Xtreme-recomp v0.1.0-preview [pre-release]
+[06:28:59]   进度 650/5858，本轮问到资产的仓 185 个（已落盘 7915 行）
+[06:29:33]   latest 取不到，改用 ChaDea1/Bedlam2-PS5 01.000.000-rc.4 [pre-release]
+[06:29:56]   latest 取不到，改用 ChanseyIsTheBest/katamari-nx v1.0.0
+[06:30:22]   进度 700/5858，本轮问到资产的仓 197 个（已落盘 8019 行）
+[06:30:57]   进度 725/5858，本轮问到资产的仓 205 个（已落盘 8054 行）
+[06:30:58]   latest 取不到，改用 chowder908/WWE-Smackdown-Vs-Raw-2007-Recomp--REXGLUE- superunfinishedprerelease [pre-release]
+[06:31:09]   latest 取不到，改用 chrispelletier-gif/Diddy-Kong-Racing-3DS v0.2.0-alpha [pre-release]
+[06:31:15]   latest 取不到，改用 chrissotraidis/deviltouch v1.5.5-preview.1 [pre-release]
+[06:31:21]   latest 取不到，改用 chrissotraidis/peonpad v0.1.0-preview.1 [pre-release]
+[06:32:00]   进度 775/5858，本轮问到资产的仓 223 个（已落盘 8180 行）
+[06:32:02]   latest 取不到，改用 classicrob/Astral-Italian v0.1.0 [pre-release]
+[06:32:35]   进度 800/5858，本轮问到资产的仓 232 个（已落盘 8210 行）
+[06:32:54]   latest 取不到，改用 codepdbh/re3-gta-advance-port v0.1.0 [pre-release]
+[06:33:17]   latest 取不到，改用 CommitteeOfZero/impacto 0.10.8.937 [pre-release]
+[06:34:24]   进度 875/5858，本轮问到资产的仓 260 个（已落盘 8329 行）
+[06:34:53]   latest 取不到，改用 CrownParkComputing/Chihiro-XBERecomp v0.1.0-preview.1 [pre-release]
+[06:35:00]   进度 900/5858，本轮问到资产的仓 267 个（已落盘 8372 行）
+[06:35:35]   latest 取不到，改用 CyberLifeYT/mw2-crossplay v0.1.0-alpha.13 [pre-release]
+[06:35:50]   latest 取不到，改用 cyscott/dkr-recomp v0.1.18-alpha [pre-release]
+[06:36:18]   进度 950/5858，本轮问到资产的仓 275 个（已落盘 8431 行）
+[06:36:58]   进度 975/5858，本轮问到资产的仓 280 个（已落盘 8459 行）
+[06:37:16]   latest 取不到，改用 danny199012/StreetFighter-X-Tekken-Recomp Releases [pre-release]
+[06:37:34]   latest 取不到，改用 Darkluiside305/Extreme-G-2-Recompilation v0.1.0-alpha.1 [pre-release]
+[06:38:03]   进度 1025/5858，本轮问到资产的仓 305 个（已落盘 8528 行）
+[06:38:20]   latest 取不到，改用 dawoodtogoo2020-code/folklore-native-port source-preview-2026.10.20 [pre-release]
+[06:38:29]   latest 取不到，改用 DCRecomp/BlueStingerRecomp v0.8.0 [pre-release]
+[06:38:31]   latest 取不到，改用 DCRecomp/HeadHunterRecomp v0.11.0 [pre-release]
+[06:39:10]   进度 1075/5858，本轮问到资产的仓 324 个（已落盘 8652 行）
+[06:39:18]   latest 取不到，改用 Denkishi/ssbu-recomp runtime-daa0938 [pre-release]
+[06:39:48]   进度 1100/5858，本轮问到资产的仓 330 个（已落盘 8687 行）
