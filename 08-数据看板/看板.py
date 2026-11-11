@@ -1256,7 +1256,13 @@ def api_netdisk():
     store["ok"] = len([a for a in accounts if a.get("last_ok")])
     store["unprobed"] = len([a for a in accounts if not a.get("last_check")])
 
-    drivers = [{"driver": d, "label": DISK_LABELS[d]} for d in (mod.DISKS if mod else DISK_LABELS)]
+    # 每个盘顺带带上「怎么登录」和那句短提示：这些是常量，不用问 OpenList，
+    # 切盘时提示能立刻变（以前要等一次 2~9 秒的字段接口，字是空的，看着像坏了）。
+    _qrdisks = getattr(getattr(mod, "qr", None), "DISKS", {}) or {}
+    drivers = [{"driver": d, "label": DISK_LABELS[d],
+                "login_kind": (_qrdisks.get(d) or {}).get("kind", ""),
+                "login_howto": (_qrdisks.get(d) or {}).get("howto", "")}
+               for d in (mod.DISKS if mod else DISK_LABELS)]
     # 默认盘那一份顺手带出去,界面首屏就不用再问一次;走同一个缓存,切盘才多发一问
     schema = (api_netdisk_fields({"driver": [drivers[0]["driver"]]})
               if acct["has_api"] and drivers else
@@ -1469,6 +1475,29 @@ def qr_watch_loop():
                 _watch["why"] = block
                 continue
             _watch["why"] = ""
+            # 顺手体检：每 20 个周期（约 5 分钟看一次门）才真正探一轮，账号台自己再按 6 小时节流。
+            # 用户要的是「哪个号失效了就把登录位释放出来」，别等人手动点。
+            if _watch["cycle"] % 20 == 0 and hasattr(mod, "reap_dead"):
+                try:
+                    auth = mod.nd.Auth()
+                    if auth.token():
+                        rr = mod.reap_dead(auth)
+                        if rr.get("freed"):
+                            print("[体检] 释放 %s" % "、".join("%s(第%d槽)" % (a, s) for a, s, _ in rr["freed"]),
+                                  flush=True)
+                except BaseException:
+                    pass
+            # 顺手扫空壳格：扫一次码就留一个 profile 目录，不扫会越用越少（用户 11-08 撞上的
+            # 「只登了 4 个号却说十格满」就是空壳堆出来的）。只清「库里没号 + 窗口没开」的格。
+            if _watch["cycle"] % 20 == 5 and hasattr(mod, "_reap_orphan_profiles"):
+                try:
+                    db = mod.load_db()
+                    for _d in ("Quark", "BaiduNetdisk", "Thunder"):
+                        n = mod._reap_orphan_profiles(_d, db)
+                        if n:
+                            print("[清空壳] %s 清掉 %d 个没号也没窗口的登录位" % (_d, n), flush=True)
+                except BaseException:
+                    pass
             due, live = qr_watch_sweep(mod)
             held &= set(live)                       # 窗口关了就把这格忘掉,下次再开重新算
             _watch["cycle"] += 1
@@ -1537,7 +1566,9 @@ class Handler(BaseHTTPRequestHandler):
         self.end_headers()
         try:
             self.wfile.write(body)
-        except (BrokenPipeError, ConnectionResetError):
+        except (BrokenPipeError, ConnectionResetError, ConnectionAbortedError, OSError):
+            # 客户端中断连接(刷新/关标签/取消下载)时 Windows 抛 ConnectionAbortedError
+            # (WinError 10053)，不捕获会累积把进程带崩。
             pass
 
     def do_GET(self):
@@ -1552,6 +1583,8 @@ class Handler(BaseHTTPRequestHandler):
         if path.startswith("/api/"):
             if path == "/api/netdisk/shot":
                 return self._shot(q)
+            if path == "/api/netdisk/download":
+                return self._download(q)
             fn = API.get(path)
             if not fn:
                 return self._send(404, json.dumps({"error": "no such api", "path": path}, ensure_ascii=False))
@@ -1614,7 +1647,7 @@ class Handler(BaseHTTPRequestHandler):
         driver = ((q.get("driver") or ["Quark"])[0] or "").strip()[:30]
         slot = ((q.get("slot") or ["1"])[0] or "1").strip()[:6]
         try:
-            slot = max(1, min(10, int(slot or 1)))      # 越界只当第 1 槽；账号台那边还会再夹一次
+            slot = max(1, int(slot or 1))      # 下限夹到 1；上限交给账号台 qr._slot 按 MAX_SLOTS 夹（别写死 10，现在 20 格）
         except (TypeError, ValueError):
             slot = 1
         if BIND not in ("127.0.0.1", "::1"):
@@ -1625,12 +1658,131 @@ class Handler(BaseHTTPRequestHandler):
             return self._send(503, json.dumps(
                 {"ok": False, "msg": "账号台没给截图接口：%s" % (why or "模块读不进来")}, ensure_ascii=False))
         try:
-            png, err = mod.screenshot(driver, slot)
+            fn = getattr(mod, "screenshot_ex", None)
+            if fn:
+                png, err, mode = fn(driver, slot)
+            else:
+                png, err = mod.screenshot(driver, slot)
+                mode = ""
         except BaseException as e:
-            png, err = None, "%s: %s" % (type(e).__name__, str(e)[:200])
+            png, err, mode = None, "%s: %s" % (type(e).__name__, str(e)[:200]), ""
         if not png:
             return self._send(503, json.dumps({"ok": False, "msg": err or "窗口没开着"}, ensure_ascii=False))
-        return self._send(200, png, "image/png")
+        # 这张图用的裁剪框（x/y/scale）：前端把「点在图上哪」换算回网页坐标，点刷新/页签才落得准。
+        clip = {}
+        mfn = getattr(mod, "screenshot_meta", None)
+        if mfn:
+            try:
+                clip = (mfn(driver, slot) or {}).get("clip") or {}
+            except BaseException:
+                clip = {}
+        # X-Shot-Mode 让前端知道这张图是「二维码卡片」还是「整页首屏」——后者要打个角标，
+        # 否则用户会以为卡片定位坏了。
+        self.send_response(200)
+        self.send_header("Content-Type", "image/png")
+        self.send_header("Content-Length", str(len(png)))
+        self.send_header("Cache-Control", "no-store")
+        self.send_header("X-Shot-Mode", mode or "card")
+        self.send_header("X-Shot-Clip", json.dumps(clip))
+        self.end_headers()
+        try:
+            self.wfile.write(png)
+        except (BrokenPipeError, ConnectionResetError, ConnectionAbortedError, OSError):
+            pass
+
+    def _download(self, q):
+        """把网盘里某个文件经看板流式转发给浏览器（浏览器直接下，不落看板磁盘）。
+        path 是挂载点起的路径（如 /quark-03/xx.zip），第一段就是账号别名。
+        实测夸克直链 raw_url 要带 cookie + Referer + UA 才放行（否则 Tengine 412），
+        而且得走本机代理；所以这里用 fs/get 拿 raw_url，再带上该账号的 cookie 去拉。"""
+        if BIND not in ("127.0.0.1", "::1"):
+            return self._send(403, json.dumps(
+                {"ok": False, "msg": "看板绑的是 %s，下载不外发" % BIND}, ensure_ascii=False))
+        path = ((q.get("path") or ["/"])[0] or "/").strip()
+        if not path or path == "/" or ".." in path:
+            return self._send(400, json.dumps({"ok": False, "msg": "路径不对"}, ensure_ascii=False))
+        mod, why = acct_mod()
+        if not mod:
+            return self._send(503, json.dumps({"ok": False, "msg": "账号台读不进来：%s" % why},
+                                              ensure_ascii=False))
+        try:
+            auth = mod._auth()
+            tok = auth.token()
+        except BaseException as e:
+            return self._send(503, json.dumps(
+                {"ok": False, "msg": "拿不到 OpenList 登录态：%s" % (str(e)[:160])},
+                ensure_ascii=False))
+        import urllib.request
+        name = path.rstrip("/").rsplit("/", 1)[-1]
+        # 第一段 = 账号别名；用 fs/get 拿带签名的直链 raw_url
+        try:
+            got = auth.api("/api/fs/get", {"path": path})
+            raw_url = ((got.get("data") or {}).get("raw_url")) or ""
+        except BaseException:
+            raw_url = ""
+        if not raw_url:
+            return self._send(503, json.dumps(
+                {"ok": False, "msg": "OpenList 没给这个文件的下载直链（raw_url 空）"},
+                ensure_ascii=False))
+        # 该账号的 cookie（只在这条下载请求的内存里用，不落盘不打印）
+        cookie = ""
+        try:
+            alias = path.strip("/").split("/")[0]
+            db = mod.load_db()
+            for a in db.get("accounts") or []:
+                if a.get("alias") == alias:
+                    sec = mod.secret_of(a) if a.get("secret") else {}
+                    cookie = sec.get("cookie") or sec.get("Cookie") or ""
+                    break
+        except BaseException:
+            cookie = ""
+        # 走代理（网盘直链是外网地址）
+        _pxy = ""
+        try:
+            import importlib.util as _ilu
+            _pspec = _ilu.spec_from_file_location("net_proxy", P("_工具脚本", "net_proxy.py"))
+            _pmod = _ilu.module_from_spec(_pspec)
+            _pspec.loader.exec_module(_pmod)
+            _pxy = _pmod.proxy_url()
+        except Exception:
+            _pxy = ""
+        opener = urllib.request.build_opener(
+            urllib.request.ProxyHandler({"http": _pxy, "https": _pxy})) if _pxy \
+            else urllib.request.build_opener()
+        req = urllib.request.Request(raw_url)
+        if cookie:
+            req.add_header("Cookie", cookie)
+        req.add_header("Referer", "https://pan.quark.cn/")
+        req.add_header("User-Agent",
+                       "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
+                       "(KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36")
+        try:
+            resp = opener.open(req, timeout=600)
+            clen = resp.headers.get("Content-Length")
+        except urllib.error.HTTPError as e:
+            return self._send(e.code, json.dumps(
+                {"ok": False, "msg": "下载失败 HTTP %d：%s" % (e.code, (e.read()[:160] or b"").decode("utf-8", "replace"))},
+                ensure_ascii=False))
+        except Exception as e:
+            return self._send(503, json.dumps(
+                {"ok": False, "msg": "下载失败：%s: %s" % (type(e).__name__, str(e)[:160])},
+                ensure_ascii=False))
+        self.send_response(200)
+        self.send_header("Content-Type", "application/octet-stream")
+        self.send_header("Content-Disposition",
+                         "attachment; filename*=UTF-8''%s" % urllib.parse.quote(name))
+        if clen:
+            self.send_header("Content-Length", str(clen))
+        self.send_header("Cache-Control", "no-store")
+        self.end_headers()
+        try:
+            while True:
+                chunk = resp.read(1024 * 256)
+                if not chunk:
+                    break
+                self.wfile.write(chunk)
+        except (BrokenPipeError, ConnectionResetError, ConnectionAbortedError, OSError):
+            pass
 
     def _static(self, name):
         info = STATIC.get(name)
@@ -1644,9 +1796,15 @@ class Handler(BaseHTTPRequestHandler):
         return self._send(200, data, info[1], cache="no-cache")
 
     def log_message(self, fmt, *args):
-        if "/api/" in (args[0] if args else ""):
+        # args[0] 可能是 HTTPStatus 枚举(501 等 send_error 路径)，先安全转 str，
+        # 否则 "/api/" in HTTPStatus 会抛 TypeError 累积到把进程带崩。
+        head = str(args[0]) if args else ""
+        if "/api/" in head:
             return
-        sys.stderr.write("%s - %s\n" % (self.address_string(), fmt % args))
+        try:
+            sys.stderr.write("%s - %s\n" % (self.address_string(), fmt % args))
+        except Exception:
+            sys.stderr.write("%s - %s\n" % (self.address_string(), fmt))
 
 
 def lan_ips():

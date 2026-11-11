@@ -385,10 +385,13 @@ s_code, s_type, s_head = get_raw("/api/netdisk/shot", driver="NoSuchDisk")
 check("网盘 扫码画面:没窗口/不认识的盘 → 503 且是 JSON",
       (s_code, "json" in s_type), (503, True))
 s_code2, s_type2, s_head2 = get_raw("/api/netdisk/shot", driver="Quark")
-check("网盘 扫码画面:窗口开着就吐真 PNG,否则 503(不许 500/HTML)",
-      (s_code2, s_type2 if s_code2 == 200 else "json" in s_type2,
-       s_head2[:4] == b"\x89PNG" if s_code2 == 200 else True),
-      (True, True, True) if s_code2 == 200 else (503, True, True))
+# 窗口开着 → 200 + image/png + PNG 魔数;没开 → 503 + JSON。两支都把「码/类型/魔数」归一成同一种判据,
+# 别拿原始 200/'image/png' 去跟 True 比(那永远不等,第 1 槽一开着就假红)。
+if s_code2 == 200:
+    _shot_got, _shot_want = (s_code2 == 200, "image/png" in s_type2, s_head2[:4] == b"\x89PNG"), (True, True, True)
+else:
+    _shot_got, _shot_want = (s_code2, "json" in s_type2, True), (503, True, True)
+check("网盘 扫码画面:窗口开着就吐真 PNG,否则 503(不许 500/HTML)", _shot_got, _shot_want)
 note("网盘 现在:扫码窗口", "画面拿得到(有窗口在开)" if s_code2 == 200 else "没开着(按钮点了才开)")
 
 # ---- 登录位(槽位):一个 profile 只有一个登录位,多账号靠多开槽位,后扫的不顶掉先扫的 ----
@@ -397,7 +400,7 @@ check("网盘 登录位表满格(格数=上限,上限不只一格)",
       (len(_sl) > 1, len(_sl) == nd["schema"]["qr_max_slot"]), (True, True))
 check("网盘 每个登录位都交代端口/profile/在不在听/被哪个浏览器占着",
       sorted({k for s in _sl for k in s}),
-      ["exe", "listening", "port", "profile", "profile_exists", "slot", "started_at"])
+      ["exe", "foreign_url", "listening", "page_ok", "port", "profile", "profile_exists", "slot", "started_at"])
 check("网盘 登录位编号从 1 排到底、端口两两不撞",
       ([s["slot"] for s in _sl], len({s["port"] for s in _sl})),
       (list(range(1, len(_sl) + 1)), len(_sl)))
@@ -449,6 +452,31 @@ check("网盘 界面把看守状态画出来(不然用户只能靠猜)",
       ("ndWatch(r.account.watch)" in _static_js and "服务端看守" in _static_js), True)
 check("网盘 界面切回这一页时会跟到真开着的那格(不死盯第 1 槽)",
       ("s.qr_slots" in _static_js and "other.slot" in _static_js), True)
+
+# ---- 11-08 「槽位别让我选 / 不弹窗 / 聚焦登录框 / 失效自动释放」的闸门 ----
+with open(os.path.join(ROOT, "08-数据看板", "index.html"), encoding="utf-8") as _f:
+    _idx_html = _f.read()
+with open(os.path.join(ROOT, "_工具脚本", "网盘账号台.py"), encoding="utf-8") as _f:
+    _acct_py = _f.read()
+with open(os.path.join(ROOT, "_工具脚本", "网盘扫码登录.py"), encoding="utf-8") as _f:
+    _qr_py = _f.read()
+check("网盘 页面给 app.js 带版本号(不然旧脚本在内存/缓存里继续按老逻辑发请求)",
+      ("app.js?v=" in _idx_html), True)
+check("网盘 登录位不再让人选(下拉隐藏,由服务端自动分配)",
+      ('id="qrSlot" hidden' in _idx_html and "自动分配" in _static_js), True)
+check("网盘 start 一律自己挑最干净的格子、十格满要明说",
+      ("clean = _clean_slot(driver, db0)" in _acct_py and "十格都占满了" in _acct_py), True)
+check("网盘 扫码默认无窗口(headless),不再弹浏览器",
+      ("--headless=new" in _qr_py and "QR_HEADED" in _qr_py), True)
+check("网盘 画面按登录卡片裁剪(只给二维码那一块)",
+      ("CARD_JS" in _qr_py and "def card_clip" in _qr_py and "scale" in _qr_py), True)
+check("网盘 停在「客户端已登录」卡上时用真鼠标点回扫码页签",
+      ("QR_TAB_JS" in _qr_py and "Input.dispatchMouseEvent" in _qr_py), True)
+check("网盘 失效的号自动释放登录位(dead 不占槽 + 体检节流)",
+      ("def _live_slots" in _acct_py and 'a.get("state") == "dead"' in _acct_py
+       and "def reap_dead" in _acct_py), True)
+check("网盘 三个盘都在盘表里(夸克/百度/迅雷)",
+      all(k in _qr_py for k in ('"Quark"', '"BaiduNetdisk"', '"Thunder"')), True)
 
 scope_f = tsv_dicts(ND_SCOPES_REL)
 ledger_f = tsv_dicts(ND_LEDGER_REL)
@@ -554,20 +582,162 @@ if _qrm:
                _qrm.port_of("Quark", _mx), _qrm.port_of("BaiduNetdisk", _mx), _qrm.port_of("Thunder", _mx)}),
           6)
     check("探针 登录位号越界/乱填一律夹回合法格",
-          [_qrm._slot(x) for x in (0, -5, "abc", "", None, 999, "3", "10")],
+          [_qrm._slot(x) for x in (0, -5, "abc", "", None, 999, "3", str(_mx))],
           [1, 1, 1, 1, 1, _mx, 3, _mx])
+    # 11-08 用户：「每个平台 15-20 个」—— 十格早就不够了
+    check("探针 每个盘的登录位 ≥15 格(用户要 15~20)", _mx >= 15, True)
     check("探针 下一个空登录位跳过占着的格、按盘各算各的",
           pmod._next_slot("Quark", {"accounts": [{"driver": "Quark", "slot": 1},
                                                  {"driver": "Quark"},          # 老记录没这栏 = 占第 1 格
                                                  {"driver": "Quark", "slot": 3},
                                                  {"driver": "Thunder", "slot": 2}]}), 2)
-    check("探针 十格占满了报 0(调用方才好说「这盘没空位了」)",
+    check("探针 空位用光了才报 0(调用方才好说「这盘没空位了」)",
           pmod._next_slot("Quark", {"accounts": [{"driver": "Quark", "slot": _n}
                                                  for _n in range(1, _mx + 1)]}), 0)
+    # 11-08 改口径:以前「没找到二维码」就回 None(界面只剩一句提示);现在退回整页首屏
+    # (用户:「没显示出二维码 那就显示页面 然后想办法稍微聚焦一点也行」),所以这里只验
+    # 「按槽位取、有明确交代」,不再要求必须是 None。
+    _s3 = pmod.screenshot("Quark", 3)
     check("探针 截图接口按槽位取(第 1 槽以外也认,不是写死第一格)",
-          pmod.screenshot("Quark", 3)[0] is None, True)
+          (isinstance(_s3, tuple) and len(_s3) == 2
+           and (_s3[0] is not None or bool(_s3[1]))), True)
     note("网盘 现在:登录位上限", "每个盘 %d 格(第 1 槽 %d / 第 %d 槽 %d)" %
          (_mx, _qrm.port_of("Quark", 1), _mx, _qrm.port_of("Quark", _mx)))
+    # 端口通 ≠ 我们的登录窗口:别的程序(录播)会连上我们的调试端口把页面导航走(11-08 撞过:
+    # 夸克第 4 槽 9361 被导到 file:///.../reaction.html,截图串项目、start 又假就绪)。
+    # 只认明确外来 URL 才算被占;空白/新标签/取不到都不算(别误杀刚开好的窗口)。纯函数,不碰真浏览器。
+    check("探针 页面被导到本地文件=被占用(录播 reaction.html 那一路)",
+          _qrm._page_hijacked("Quark", "file:///F:/录播程序10月2日/全平台录播系统 抢救版/webui/reaction.html"), True)
+    check("探针 停在夸克登录页=没被占(反证:正常窗口不许误杀)",
+          _qrm._page_hijacked("Quark", "https://pan.quark.cn/"), False)
+    check("探针 别的 http 域=被占用", _qrm._page_hijacked("Quark", "https://example.com/x"), True)
+    check("探针 别的盘的域也算被占用(夸克槽不该停百度)",
+          _qrm._page_hijacked("Quark", "https://pan.baidu.com/"), True)
+    check("探针 空白/新标签/取不到都不算被占(刚开窗还在加载)",
+          [_qrm._page_hijacked("Quark", u) for u in ("", "about:blank", "edge://newtab/", "chrome://newtab/")],
+          [False, False, False, False])
+    # 接线:光有判据不够,截图/状态/选槽三处都得真用上它(照这个库的源码断言风格)。
+    _qr_src = open(os.path.join(ROOT, "_工具脚本", "网盘扫码登录.py"), encoding="utf-8").read()
+    check("探针 截图前先验页面没被占用(shot 里挡掉外来页,不再串项目)",
+          ("_page_hijacked(driver, _tab_url(port))" in _qr_src and "窗口被别的程序占用" in _qr_src), True)
+    check("探针 slots 与 status 都带 page_ok(前端据此跳过被占的槽)",
+          _qr_src.count('"page_ok"') >= 2, True)
+    # 11-08 用户「点击扫码登录什么都没有」:被占的窗口以前直接报错了事,现在要关掉它自己重开。
+    check("探针 start 撞上被别的程序占用的窗口:先关掉再开干净的(不再报错了事)",
+          ("_page_hijacked(driver, occupied)" in _qr_src and "close(driver, n)" in _qr_src), True)
+    check("探针 start 支持 fresh(点「扫码登录」就要一张新码,不复用挂了一上午的旧窗口)",
+          "fresh=False" in _qr_src and "elif fresh:" in _qr_src, True)
+    _app_js = open(os.path.join(HERE, "app.js"), encoding="utf-8").read()
+    check("界面 自动选槽/跟槽跳过被占用的格(page_ok),不再弹回串项目那格",
+          ("page_ok" in _app_js and "被别的程序占用" in _app_js), True)
+    _acct_src = open(os.path.join(ROOT, "_工具脚本", "网盘账号台.py"), encoding="utf-8").read()
+    check("探针 账号台选槽/跟槽都认 page_ok(跳过被占槽)", "page_ok" in _acct_src, True)
+    # 11-08「4 个号却说十格满」:异常不许被吞成「满了」这句话
+    check("探针 挑登录位出错时如实报错,不再一律说成「占满」",
+          "except BaseException://n            clean = 0" in _acct_src, False)
+    # 选槽只看「号 + 活窗口」:profile 残留一律不算占位,否则扫一次留一个空壳,很快假满
+    _orig_slots = _qrm.slots
+    try:
+        _qrm.slots = lambda d: [{"slot": _n, "listening": False, "page_ok": True,
+                                 "profile_exists": True} for _n in range(1, _mx + 1)]
+        _db_4 = {"accounts": [{"driver": "Quark", "slot": _n} for _n in (1, 2, 3, 5)]}
+        check("探针 剩下全是 profile 残留也照样挑得出空格(4 个号不会说满)",
+              pmod._clean_slot("Quark", _db_4), 4)
+        _qrm.slots = lambda d: [{"slot": _n, "listening": True, "page_ok": True,
+                                 "profile_exists": True} for _n in range(1, _mx + 1)]
+        check("探针 号 + 活窗口才算占位:全满才回 0", pmod._clean_slot("Quark", _db_4), 0)
+        check("探针 满了那句话要交代几个号、几个窗口",
+              ("4 个号" in pmod._why_full("Quark", _db_4)), True)
+    finally:
+        _qrm.slots = _orig_slots
+    check("界面 扫码登录排在工作台前面(先登号,再操作网盘)",
+          _static_html.index('id="qrStart"') < _static_html.index('id="ndAccount"'), True)
+    check("界面 登录位用量那一行真有地方落(几个号 / 共几格)",
+          'id="qrSlotsNote"' in _static_html and "qrSlotsNote" in _app_js, True)
+    # 11-08 用户「这些值摆到右边占一栏浪费空间,在上面一行一行显示不行吗」:
+    # 明细必须排在二维码上面(不在 .qrgrid 里);第二轮又嫌「太啰嗦」→ 现在压成一行小标签。
+    _style_css = open(os.path.join(HERE, "style.css"), encoding="utf-8").read()
+    check("界面 扫码明细排在二维码上面(不占右边那一栏)",
+          _static_html.index('id="qrInfo"') < _static_html.index('class="qrgrid"'), True)
+    check("界面 扫码明细压成一行小标签(槽位/端口/cookie/认账,不再五行)",
+          ("#qrInfo .kv" in _style_css and _app_js.count('<span class="kv">') == 4), True)
+    # ---- 11-08 「内嵌浏览器要能交互,不只是显示」:扫码画面点得动(过期码点刷新/切登录页签) ----
+    # 点在图上哪要换算回网页坐标,靠的是截图那一刻的裁剪框;只存坐标不存图,回给前端发 header。
+    check("探针 扫码模块记得住每张截图的裁剪框(last_shot/_LAST_SHOT)",
+          (hasattr(_qrm, "last_shot"), hasattr(_qrm, "_LAST_SHOT")), (True, True))
+    _key = ("Quark", 1)
+    _saved_shot = _qrm._LAST_SHOT.get(_key)
+    _qrm._LAST_SHOT[_key] = {"mode": "card", "clip": {"x": 10.0, "y": 20.0, "scale": 2}}
+    try:
+        _got_clip = _qrm.last_shot("Quark", 1).get("clip")
+        _mut = _qrm.last_shot("Quark", 1)
+        _mut["clip"]["x"] = 999                      # 改副本不该动到存的那份
+        check("探针 last_shot 回裁剪框且是副本(前端改它不污染下一张的换算)",
+              (_got_clip, _qrm._LAST_SHOT[_key]["clip"]["x"]),
+              ({"x": 10.0, "y": 20.0, "scale": 2}, 10.0))
+        check("探针 账号台 screenshot_meta 把裁剪框交给看板发 header",
+              (hasattr(pmod, "screenshot_meta"),
+               (pmod.screenshot_meta("Quark", 1) or {}).get("clip", {}).get("scale")),
+              (True, 2))
+    finally:
+        if _saved_shot is None:
+            _qrm._LAST_SHOT.pop(_key, None)
+        else:
+            _qrm._LAST_SHOT[_key] = _saved_shot
+    check("探针 shot_ex 截完就把裁剪框记下来(前端换算靠它)",
+          '_LAST_SHOT[(driver, _slot(slot))] = {"mode": mode, "clip": used_clip}' in _qr_src, True)
+    # 卡片截图先拉视口再量框,可那尺寸过会儿会退回自然值;点之前不重拉,坐标就落卡片外。
+    # 整页视图(view_shot)用自然视口、前后一致,所以这个开关只给扫码卡片那条路置 True。
+    check("探针 view_click 带 ensure_view 开关(卡片点前重拉视口,整页视图不受影响)",
+          ("def view_click(driver, slot=1, x=0, y=0, ensure_view=False)" in _qr_src
+           and "if ensure_view:" in _qr_src and "_ensure_viewport(port)" in _qr_src), True)
+    check("探针 账号台把前端的 ensure 转成 view_click 的 ensure_view",
+          'ensure_view=bool(p.get("ensure"))' in _acct_src, True)
+    _kb_src2 = open(os.path.join(HERE, "看板.py"), encoding="utf-8").read()
+    check("看板 截图回 X-Shot-Clip 头(前端拿它换算点击坐标)",
+          ('"X-Shot-Clip"' in _kb_src2 and "screenshot_meta" in _kb_src2), True)
+    check("看板 登录位上限不再写死 10(交给扫码模块按 MAX_SLOTS 夹)",
+          ("max(1, int(slot or 1))" in _kb_src2 and "min(10, int(slot" not in _kb_src2), True)
+    check("界面 扫码画面可点:读 X-Shot-Clip、按 c.x+ix/c.scale 换算、带 ensure 回传",
+          ("X-Shot-Clip" in _app_js and "c.x + ix / c.scale" in _app_js
+           and "ensure: 1" in _app_js and "$('#qrImg').addEventListener('click'" in _app_js), True)
+    check("界面 有「点画面就能点网页」的提示位(qrClickHint)",
+          ('id="qrClickHint"' in _static_html and "qrClickHint" in _app_js), True)
+    # ---- 11-08 「一开始显示的不是二维码,聚焦两次,能快一点吗」:start() 先把页面驱到码再返回 ----
+    check("探针 start() 返回就绪前先调 focus_login(第一枪就是码,不等下一拍)",
+          '    focus_login(port)\n    return {"ok": True' in _qr_src, True)
+    check("探针 focus_login 带超时参数且可调用",
+          (hasattr(_qrm, "focus_login"), "def focus_login(port, timeout=" in _qr_src), (True, True))
+    # 真函数微测:替身掉各步,模拟「首页没码 → 点一次登录入口 → 码出现」,该返回 True 且入口只点一次
+    _fl_saved = {k: getattr(_qrm, k) for k in
+                 ("_ensure_viewport", "port_alive", "_clear_overlays", "_clip_by_canvas",
+                  "_click_login_entry", "_click_qr_tab", "_CARD_TRY")}
+    _fl_calls = {"entry": 0, "tab": 0}
+    _fl_canvas = {"up": False}
+    try:
+        _qrm._ensure_viewport = lambda port, *a, **k: False
+        _qrm.port_alive = lambda port, *a, **k: True
+        _qrm._clear_overlays = lambda port: 0
+        _qrm._clip_by_canvas = lambda port, pad=10: (
+            {"x": 0, "y": 0, "width": 200, "height": 200, "scale": 2} if _fl_canvas["up"] else None)
+
+        def _fl_entry(port):
+            _fl_calls["entry"] += 1            # 客户端已登录卡上不该点顶栏「直接登录」(会去登客户端那个号)
+            return True
+        _qrm._click_login_entry = _fl_entry
+
+        def _fl_tab(port):
+            _fl_calls["tab"] += 1
+            _fl_canvas["up"] = True            # 点「扫码登录」页签,二维码画布冒出来
+            return True
+        _qrm._click_qr_tab = _fl_tab
+        _qrm._CARD_TRY = {}
+        check("探针 focus_login 真函数:客户端已登录卡→先点扫码页签出码,不点顶栏直接登录",
+              (_qrm.focus_login(9999, timeout=3.0), _fl_calls["entry"], _fl_calls["tab"]),
+              (True, 0, 1))
+    finally:
+        for _k, _v in _fl_saved.items():
+            setattr(_qrm, _k, _v)
 pj = kb.api_netdisk()
 pt = json.dumps(pj, ensure_ascii=False)
 check("探针 假账号被数出来了", (pj["store"]["total"], pj["accounts"][0]["alias"]), (1, "probe-01"))
@@ -593,6 +763,9 @@ kb.BIND = "127.0.0.1"
 _kb_ok, _kb_why = kb._watch_allowed()
 check("探针 看守和界面走同一道写侧门(绑 0.0.0.0 时它自己也不动写路径)",
       (_lan_ok, "0.0.0.0" in _lan_why, _kb_ok, _kb_why), (False, True, True, ""))
+_kb_src = open(os.path.join(HERE, "看板.py"), encoding="utf-8").read()
+check("探针 看守会顺手扫掉「没号也没窗口」的空壳登录位(不许越攒越少)",
+      "_reap_orphan_profiles" in _kb_src, True)
 check("探针 看守说的「扫上了」只认登录标志齐不齐(窗口没开/缺一条/没盘都不算)",
       [kb._watch_ready(x) for x in (
           {"listening": False, "markers": ["__pus"], "markers_have": ["__pus"]},
@@ -737,8 +910,15 @@ check("闸门 拦下的条数算进「这一轮有没传的」(退出码非 0,�
       (_rc, len([l for l in _logs if "一个字节都没动" in l]), "1 个文件" in _os), (1, 1, True))
 os.remove(_gate_file)
 
-check("探针 没写过真账号库", os.path.isfile(os.path.join(OL_DIR, "账号库.json")) and
-      json.load(open(os.path.join(OL_DIR, "账号库.json"), encoding="utf-8")).get("accounts") == accts, True)
+# 比「身份指纹」而不是整条记录：看守线程每轮体检会刷 checked_ts / fail_n 这类时间戳，
+# 那是它该干的活；这条断言只问「这一轮自测有没有把关卡写进真账号库」（别名/盘/槽/ID 不许变）。
+def _fingerprint(alist):
+    return sorted((a.get("alias"), a.get("driver"), a.get("slot"), a.get("uid")) for a in alist)
+
+
+check("探针 没写过真账号库",
+      _fingerprint(json.load(open(os.path.join(OL_DIR, "账号库.json"), encoding="utf-8")).get("accounts") or [])
+      == _fingerprint(accts), True)
 note("网盘 现在:OpenList", "在听" if nd["openlist"]["listening"] else "没在听")
 note("网盘 现在:账号台", "模块读进来 · 可写" if nd["account"]["writable"] else
      "模块读进来 · 锁着(%s)" % (nd["account"]["write_blocked"] or nd["bind"]))

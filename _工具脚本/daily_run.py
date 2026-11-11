@@ -10,6 +10,14 @@
   0) rsshub_ctl.py up   —— 自建 RSSHub 没起就起(中文层唯一通路,2026-10-21 补建)。
                          放在最前面:scene_monitor 要抓 127.0.0.1:1200 的四个 cn_rsshub_* 源。
                          起进程时清代理变量(header-generator 与代理头互斥),幂等,已在跑就跳过。
+  0a) netdisk_upload.py start —— 网盘网关 OpenList 没起就起(幂等,127.0.0.1:5244)。保活和上传都要它
+                         在听;起进程清代理变量,已在跑就跳过。放在保活前:没网关保活只能优雅跳过、续不了命。
+  0b) 网盘账号台.py keepalive --prepare-qr —— 网盘 cookie 保活:夸克号先开独立 profile 让服务器
+                         滚新 cookie 回写 OpenList(下载态 __puus 只活 ≈18h,快照不滚必过期),再实测字节下载
+                         +列目录探测;两次连败才判死(防一回网络抖动误杀好号);预警报告写到
+                         06-资讯监控/网盘保活/保活报告.json(含 cookie_refresh/refresh_failed);失效盘预开一格扫码窗
+                         (复用活窗,不堆进程),重登只需扫一次。
+                         凭据仍走 DPAPI,值不进报告/日志/仓库;没设 OPENLIST_ADMIN_PASSWORD 就优雅跳过(exit 0,不拖垮调度)。
   1) scene_monitor.py  —— 抓全部启用源、追加台账、重算爆款与"大作登陆平台"专线、生成当天日报。
   2) rescue_watch.py   —— 下架抢救层:盯"会被立即下架"的目标(见 06-资讯监控/下架抢救登记表.tsv),
                          活着就立刻抓、新镜像雷达、已挂源存在性巡检、下架新闻里的 GitHub 链接。
@@ -66,6 +74,8 @@ def run(script, extra=None):
 
 if __name__ == "__main__":
     rc0 = run("rsshub_ctl.py", ["up"])   # 中文层基础设施:没起就先起(幂等)
+    rc_ol = run("netdisk_upload.py", ["start"])   # 网盘网关 OpenList:保活/上传都要它在听(幂等)
+    rc_ka = run("网盘账号台.py", ["keepalive", "--prepare-qr"])   # cookie 保活+到期预警+失效盘预备扫码(没设口令则优雅跳过)
     rc1 = run("scene_monitor.py", ["--retry-failed"])   # 带错峰重试:Reddit 429 隔几分钟能捞回大半
     rc2 = run("rescue_watch.py")     # 抢救层必须在 scene_monitor 之后:日报是它重写的,抢救段要追加在当天日报尾部
     rc3 = run("scene_dl.py")
@@ -73,4 +83,4 @@ if __name__ == "__main__":
     rc5 = run("scene_topic.py")      # 离线,只按台账重生成专题表
     rc6 = run("weekly_digest.py")    # 离线,刷新本周周报(趋势视角:入库量/聚焦/HOT/常败源)
     print("日志: %s" % LOG)
-    sys.exit(0 if rc0 == 0 and rc1 == 0 and rc2 == 0 and rc3 == 0 and rc4 == 0 and rc5 == 0 and rc6 == 0 else 1)
+    sys.exit(0 if all(rc == 0 for rc in (rc0, rc_ol, rc_ka, rc1, rc2, rc3, rc4, rc5, rc6)) else 1)

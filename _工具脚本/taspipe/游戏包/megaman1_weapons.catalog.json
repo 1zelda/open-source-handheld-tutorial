@@ -1,0 +1,43 @@
+{
+  "game_id": "megaman1_nes_us",
+  "game_title": "Mega Man (NES, USA, 1987 Capcom)",
+  "platform": "NES",
+  "backend_id": "bizhawk_neshawk",
+  "job_type": "items",
+  "catalog_kind": "weapons",
+  "status": "blocked_resource",
+  "blockers": [
+    "local mega_man_usa.nes / megamanhd.nes cannot reach gameplay: stage-select D-pad inert (held 40 frames), Start jumps straight to a 'CUTMAN / CLEAR POINTS / 80000' cutscene and returns to select; weapon-energy region pre-full at boot. Suspected modified/trained or bad dump (see 测试问题与闸门说明书.md §23).",
+    "need a clean MM1 US ROM ([!]/no-intro) or a verified navigation reference before authoring triggers/detectors",
+    "web RAM-map fetches 403 (datacrystal/neoseeker); only search snippets available, so addresses below are UNVERIFIED"
+  ],
+  "rom_candidates": [
+    {"path": "04-游戏资源库/TAS输入录像库/roms_verify/NES/mega_man_usa.nes", "sha1": "d8b8c5e2ee76f2ec1820123bb9f8c70f5e603923", "bytes": 131088, "mapper": 2, "clean_boot_verified": false},
+    {"path": "04-游戏资源库/TAS输入录像库/roms_verify/NES/megamanhd.nes", "sha1": "2f88381557339a14c20428455f6991c1eb902c99", "bytes": 131088, "mapper": 2, "clean_boot_verified": false}
+  ],
+  "ram_documented_unverified": {
+    "life": "0x006A",
+    "invincible": "0x0055 (=04)",
+    "all_stages_complete": "0x005D (=FF)",
+    "weapon_energy_range": "0x006B..0x0071",
+    "current_weapon": null,
+    "owned_flags": null,
+    "note": "addresses from DataCrystal/nesmaps search snippets only; NOT confirmed in-game. current-weapon and owned-flags addresses unknown; must be discovered by in-game ramdump diff once a clean ROM reaches gameplay, then each verified with detector pos/neg."
+  },
+  "elements": [
+    {"element_id": "mega_buster", "label": "Mega Buster (P)", "kind": "weapon", "source_boss": null, "energy_address": null, "energy_address_confirmed": false, "trigger": {"input": "B", "note": "default weapon, always owned"}, "expected_visual": "small yellow pellet projectile"},
+    {"element_id": "rolling_cutter", "label": "Rolling Cutter (C)", "kind": "weapon", "source_boss": "Cut Man", "energy_address": "0x006B", "energy_address_confirmed": false, "trigger": {"input": "B", "note": "select weapon then B"}, "expected_visual": "boomerang scissor arc"},
+    {"element_id": "ice_slasher", "label": "Ice Slasher (I)", "kind": "weapon", "source_boss": "Ice Man", "energy_address": "0x006C", "energy_address_confirmed": false, "trigger": {"input": "B", "note": "select weapon then B"}, "expected_visual": "white/ice shard projectile"},
+    {"element_id": "hyper_bomb", "label": "Hyper Bomb (B)", "kind": "weapon", "source_boss": "Bomb Man", "energy_address": "0x006D", "energy_address_confirmed": false, "trigger": {"input": "B", "note": "select weapon then B"}, "expected_visual": "thrown bomb arc + explosion"},
+    {"element_id": "fire_storm", "label": "Fire Storm (F)", "kind": "weapon", "source_boss": "Fire Man", "energy_address": "0x006E", "energy_address_confirmed": false, "trigger": {"input": "B", "note": "select weapon then B"}, "expected_visual": "fireball + flame shield"},
+    {"element_id": "thunder_beam", "label": "Thunder Beam (E)", "kind": "weapon", "source_boss": "Elec Man", "energy_address": "0x006F", "energy_address_confirmed": false, "trigger": {"input": "B", "note": "select weapon then B"}, "expected_visual": "three-way lightning bolts"},
+    {"element_id": "super_arm", "label": "Super Arm (G)", "kind": "weapon", "source_boss": "Guts Man", "energy_address": "0x0070", "energy_address_confirmed": false, "trigger": {"input": "B near block", "note": "lifts/throws blocks; needs a block in range"}, "expected_visual": "Mega Man lifting/throwing a block"},
+    {"element_id": "magnet_beam", "label": "Magnet Beam (M)", "kind": "weapon_utility", "source_boss": null, "energy_address": "0x0071", "energy_address_confirmed": false, "trigger": {"input": "B", "note": "utility platform beam, found in Elec Man stage"}, "expected_visual": "horizontal green platform beam"}
+  ],
+  "sources": [
+    "https://datacrystal.tcrf.net/wiki/Mega_Man_(NES)/RAM_map (search snippet only; fetch 403)",
+    "https://nesmaps.com/maps/MegaMan/MegaMan.html (memory codes 006A/0055/005D)",
+    "https://www.neoseeker.com/mega-man-legacy-collection/faqs/85172-mega-man-m.html (snippet: Clear Points / platform maker; fetch 403)"
+  ],
+  "acceptance": "every element above displayed one-by-one in-game and detector-verified (pos+neg), compiled into a reel; NOT met yet (blocked_resource)"
+}

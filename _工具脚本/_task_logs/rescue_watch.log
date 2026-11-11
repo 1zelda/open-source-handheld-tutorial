@@ -2232,3 +2232,990 @@ git 镜像无新提交 https://git.eden-emu.dev/eden-emu/eden.git(HEAD 5df599128
 无变化 devkitPro/citro3d @9f21cf7b
 存在性巡检:查 133 个已挂 GitHub 源,异常 0 个
 耗时 198.5s;台账 F:\开源掌机教程\04-游戏资源库\下架抢救\收录台账.tsv
+----- run at 2026-11-07 09:25:00 -----
+本轮:抓取 2 / 告警 2 / 雷达命中 0(登记表 24 项 +新闻信号)
+无变化 citron-neo/emulator @7dc47bab
+无变化 suyu-emu/suyu-v0.0.4 @c0dd2ff5
+无变化 NextendoNetwork/Ryujinx-Nextendo @81dfe2f7
+无变化 hottabxp/re3 @3233ffe1
+无变化 skyline-dev/skyline @2eb226fa
+无变化 skyline-emu/skyline @21d31f74
+⚠ **仓库已被清空** MeloNX/MeloNX(空仓库留证)(MeloNX/MeloNX)——内容被剥离,等同下架,留证
+git 镜像无新提交 https://git.eden-emu.dev/eden-emu/eden.git(HEAD 885b333c0876)
+抓取页面快照 https://git.eden-emu.dev/eden-ci/nightly/releases(8d7904df)
+抓取页面快照 https://eden-emu.dev/(4d531380)
+站点返回 JS 挑战页(未存快照;不是下架,是 bot 墙)https://citron-emu.com/
+页面无变化 https://ryujinx.io/
+⚠ 站点异常 https://skyline-emu.com/(521)
+残存仓仍在 Kenji-NX 残存 issue 仓(60f5e762)
+雷达目标 mizfitxtm/re3-REDUX -> NOCHANGE
+雷达目标 frilxy/AM2R_3DS_CN -> NOCHANGE
+无变化 RetroFW/RetroFW @ebc4125a
+无变化 theheroGAC/Autoplugin @4a17a9a3
+无变化 libretro/Lakka @33830351
+无变化 djyt/cannonball @27493ebf
+无变化 devkitPro/citro3d @9f21cf7b
+存在性巡检:查 0 个已挂 GitHub 源,异常 0 个
+耗时 67.2s;台账 F:\开源掌机教程\04-游戏资源库\下架抢救\收录台账.tsv
+----- run at 2026-11-07 11:25:00 -----
+本轮:抓取 3 / 告警 2 / 雷达命中 0(登记表 24 项 +新闻信号)
+无变化 citron-neo/emulator @7dc47bab
+无变化 suyu-emu/suyu-v0.0.4 @c0dd2ff5
+无变化 NextendoNetwork/Ryujinx-Nextendo @81dfe2f7
+无变化 hottabxp/re3 @3233ffe1
+无变化 skyline-dev/skyline @2eb226fa
+无变化 skyline-emu/skyline @21d31f74
+⚠ **仓库已被清空** MeloNX/MeloNX(空仓库留证)(MeloNX/MeloNX)——内容被剥离,等同下架,留证
+抓取 git 裸库镜像 https://git.eden-emu.dev/eden-emu/eden.git(HEAD d85005b2b27e)
+抓取页面快照 https://git.eden-emu.dev/eden-ci/nightly/releases(415718c3)
+抓取页面快照 https://eden-emu.dev/(f1fa8875)
+页面无变化 https://citron-emu.com/
+页面无变化 https://ryujinx.io/
+⚠ 站点异常 https://skyline-emu.com/(521)
+残存仓仍在 Kenji-NX 残存 issue 仓(60f5e762)
+雷达目标 mizfitxtm/re3-REDUX -> NOCHANGE
+雷达目标 frilxy/AM2R_3DS_CN -> NOCHANGE
+无变化 RetroFW/RetroFW @ebc4125a
+无变化 theheroGAC/Autoplugin @4a17a9a3
+无变化 libretro/Lakka @33830351
+无变化 djyt/cannonball @27493ebf
+无变化 devkitPro/citro3d @9f21cf7b
+存在性巡检:查 0 个已挂 GitHub 源,异常 0 个
+耗时 86.7s;台账 F:\开源掌机教程\04-游戏资源库\下架抢救\收录台账.tsv
+----- run at 2026-11-07 13:25:01 -----
+本轮:抓取 2 / 告警 1 / 雷达命中 0(登记表 24 项 +新闻信号)
+无变化 citron-neo/emulator @7dc47bab
+无变化 suyu-emu/suyu-v0.0.4 @c0dd2ff5
+无变化 NextendoNetwork/Ryujinx-Nextendo @81dfe2f7
+无变化 hottabxp/re3 @3233ffe1
+无变化 skyline-dev/skyline @2eb226fa
+无变化 skyline-emu/skyline @21d31f74
+⚠ **仓库已被清空** MeloNX/MeloNX(空仓库留证)(MeloNX/MeloNX)——内容被剥离,等同下架,留证
+git 镜像无新提交 https://git.eden-emu.dev/eden-emu/eden.git(HEAD d85005b2b27e)
+抓取页面快照 https://git.eden-emu.dev/eden-ci/nightly/releases(d173e60f)
+抓取页面快照 https://eden-emu.dev/(e02cd530)
+站点返回 JS 挑战页(未存快照;不是下架,是 bot 墙)https://citron-emu.com/
+页面无变化 https://ryujinx.io/
+页面无变化 https://skyline-emu.com/
+残存仓仍在 Kenji-NX 残存 issue 仓(60f5e762)
+雷达目标 mizfitxtm/re3-REDUX -> NOCHANGE
+雷达目标 frilxy/AM2R_3DS_CN -> NOCHANGE
+无变化 RetroFW/RetroFW @ebc4125a
+无变化 theheroGAC/Autoplugin @4a17a9a3
+无变化 libretro/Lakka @33830351
+无变化 djyt/cannonball @27493ebf
+无变化 devkitPro/citro3d @9f21cf7b
+存在性巡检:查 133 个已挂 GitHub 源,异常 0 个
+耗时 405.8s;台账 F:\开源掌机教程\04-游戏资源库\下架抢救\收录台账.tsv
+----- run at 2026-11-07 15:25:00 -----
+本轮:抓取 2 / 告警 2 / 雷达命中 0(登记表 24 项 +新闻信号)
+无变化 citron-neo/emulator @7dc47bab
+无变化 suyu-emu/suyu-v0.0.4 @c0dd2ff5
+无变化 NextendoNetwork/Ryujinx-Nextendo @81dfe2f7
+无变化 hottabxp/re3 @3233ffe1
+无变化 skyline-dev/skyline @2eb226fa
+无变化 skyline-emu/skyline @21d31f74
+⚠ **仓库已被清空** MeloNX/MeloNX(空仓库留证)(MeloNX/MeloNX)——内容被剥离,等同下架,留证
+git 镜像无新提交 https://git.eden-emu.dev/eden-emu/eden.git(HEAD d85005b2b27e)
+抓取页面快照 https://git.eden-emu.dev/eden-ci/nightly/releases(1f62fb42)
+抓取页面快照 https://eden-emu.dev/(925d30cc)
+站点返回 JS 挑战页(未存快照;不是下架,是 bot 墙)https://citron-emu.com/
+页面无变化 https://ryujinx.io/
+⚠ 站点异常 https://skyline-emu.com/(521)
+残存仓仍在 Kenji-NX 残存 issue 仓(60f5e762)
+雷达目标 mizfitxtm/re3-REDUX -> NOCHANGE
+雷达目标 frilxy/AM2R_3DS_CN -> NOCHANGE
+无变化 RetroFW/RetroFW @ebc4125a
+无变化 theheroGAC/Autoplugin @4a17a9a3
+无变化 libretro/Lakka @33830351
+无变化 djyt/cannonball @27493ebf
+无变化 devkitPro/citro3d @9f21cf7b
+存在性巡检:查 0 个已挂 GitHub 源,异常 0 个
+耗时 69.3s;台账 F:\开源掌机教程\04-游戏资源库\下架抢救\收录台账.tsv
+----- run at 2026-11-07 17:25:05 -----
+本轮:抓取 2 / 告警 3 / 雷达命中 0(登记表 24 项 +新闻信号)
+无变化 citron-neo/emulator @7dc47bab
+无变化 suyu-emu/suyu-v0.0.4 @c0dd2ff5
+⚠ **已消失** Ryujinx 延续 NextendoNetwork/Ryujinx-Nextendo NextendoNetwork/Ryujinx-Nextendo(gh: Not Found (HTTP 404)|curl=404)——立刻去 Wayback 找快照
+无变化 hottabxp/re3 @3233ffe1
+无变化 skyline-dev/skyline @2eb226fa
+无变化 skyline-emu/skyline @21d31f74
+⚠ **仓库已被清空** MeloNX/MeloNX(空仓库留证)(MeloNX/MeloNX)——内容被剥离,等同下架,留证
+git 镜像无新提交 https://git.eden-emu.dev/eden-emu/eden.git(HEAD d85005b2b27e)
+抓取页面快照 https://git.eden-emu.dev/eden-ci/nightly/releases(b6e025cc)
+抓取页面快照 https://eden-emu.dev/(64c5e5f7)
+站点返回 JS 挑战页(未存快照;不是下架,是 bot 墙)https://citron-emu.com/
+页面无变化 https://ryujinx.io/
+⚠ 站点异常 https://skyline-emu.com/(521)
+残存仓仍在 Kenji-NX 残存 issue 仓(60f5e762)
+雷达目标 mizfitxtm/re3-REDUX -> NOCHANGE
+雷达目标 frilxy/AM2R_3DS_CN -> NOCHANGE
+无变化 RetroFW/RetroFW @ebc4125a
+无变化 theheroGAC/Autoplugin @4a17a9a3
+无变化 libretro/Lakka @33830351
+无变化 djyt/cannonball @27493ebf
+无变化 devkitPro/citro3d @9f21cf7b
+存在性巡检:查 0 个已挂 GitHub 源,异常 0 个
+耗时 281.3s;台账 F:\开源掌机教程\04-游戏资源库\下架抢救\收录台账.tsv
+----- run at 2026-11-07 19:25:00 -----
+本轮:抓取 0 / 告警 5 / 雷达命中 0(登记表 24 项 +新闻信号)
+检查未确认 citron-neo/emulator(gh api 瞬态,双轨复核仍活着,下轮再查)
+检查未确认 suyu-emu/suyu-v0.0.4(gh api 瞬态,双轨复核仍活着,下轮再查)
+检查未确认 NextendoNetwork/Ryujinx-Nextendo(gh api 瞬态,双轨复核仍活着,下轮再查)
+检查未确认 hottabxp/re3(gh api 瞬态,双轨复核仍活着,下轮再查)
+检查未确认 skyline-dev/skyline(gh api 瞬态,双轨复核仍活着,下轮再查)
+检查未确认 skyline-emu/skyline(gh api 瞬态,双轨复核仍活着,下轮再查)
+检查未确认 MeloNX/MeloNX(gh api 瞬态,双轨复核仍活着,下轮再查)
+git 镜像异常 https://git.eden-emu.dev/eden-emu/eden.git(fatal: unable to access 'https://git.eden-emu.dev/eden-emu/eden.git/': TLS connect error: error:00000000:lib(0)::reason()
+⚠ 站点异常 https://git.eden-emu.dev/eden-ci/nightly/releases(curl_err_35)
+⚠ 站点异常 https://eden-emu.dev/(curl_err_35)
+⚠ 站点异常 https://citron-emu.com/(curl_err_35)
+⚠ 站点异常 https://ryujinx.io/(curl_err_35)
+⚠ 站点异常 https://skyline-emu.com/(curl_err_35)
+残存仓仍在 Kenji-NX 残存 issue 仓(Get "https://api.github.com/repos/Kenji-NX/Issues": EOF)
+雷达查询失败 yuzu(Get "https://api.github.com/search/repositories?q=yuzu&sort=created&order=desc&per_page=30": EOF)
+雷达查询失败 ryujinx(Get "https://api.github.com/search/repositories?q=ryujinx&sort=created&order=desc&per_page=30": EOF)
+雷达查询失败 re3 gta(Get "https://api.github.com/search/repositories?q=re3%20gta&sort=created&order=desc&per_page=30": EOF)
+雷达查询失败 AM2R(Get "https://api.github.com/search/repositories?q=AM2R&sort=created&order=desc&per_page=30": EOF)
+雷达查询失败 ps2 sdk leak(Get "https://api.github.com/search/repositories?q=ps2%20sdk%20leak&sort=created&order=desc&per_page=30": EOF)
+检查未确认 RetroFW/RetroFW(gh api 瞬态,双轨复核仍活着,下轮再查)
+检查未确认 theheroGAC/Autoplugin(gh api 瞬态,双轨复核仍活着,下轮再查)
+检查未确认 libretro/Lakka(gh api 瞬态,双轨复核仍活着,下轮再查)
+检查未确认 djyt/cannonball(gh api 瞬态,双轨复核仍活着,下轮再查)
+检查未确认 devkitPro/citro3d(gh api 瞬态,双轨复核仍活着,下轮再查)
+存在性巡检:查 0 个已挂 GitHub 源,异常 0 个
+耗时 274.7s;台账 F:\开源掌机教程\04-游戏资源库\下架抢救\收录台账.tsv
+----- run at 2026-11-07 21:25:00 -----
+本轮:抓取 2 / 告警 3 / 雷达命中 0(登记表 24 项 +新闻信号)
+无变化 citron-neo/emulator @7dc47bab
+无变化 suyu-emu/suyu-v0.0.4 @c0dd2ff5
+⚠ **已消失** Ryujinx 延续 NextendoNetwork/Ryujinx-Nextendo NextendoNetwork/Ryujinx-Nextendo(gh: Not Found (HTTP 404)|curl=404)——立刻去 Wayback 找快照
+无变化 hottabxp/re3 @3233ffe1
+无变化 skyline-dev/skyline @2eb226fa
+无变化 skyline-emu/skyline @21d31f74
+⚠ **仓库已被清空** MeloNX/MeloNX(空仓库留证)(MeloNX/MeloNX)——内容被剥离,等同下架,留证
+git 镜像无新提交 https://git.eden-emu.dev/eden-emu/eden.git(HEAD d85005b2b27e)
+抓取页面快照 https://git.eden-emu.dev/eden-ci/nightly/releases(77d874fe)
+抓取页面快照 https://eden-emu.dev/(d7c01c36)
+站点返回 JS 挑战页(未存快照;不是下架,是 bot 墙)https://citron-emu.com/
+页面无变化 https://ryujinx.io/
+⚠ 站点异常 https://skyline-emu.com/(521)
+残存仓仍在 Kenji-NX 残存 issue 仓(60f5e762)
+雷达目标 mizfitxtm/re3-REDUX -> NOCHANGE
+雷达目标 frilxy/AM2R_3DS_CN -> NOCHANGE
+无变化 RetroFW/RetroFW @ebc4125a
+无变化 theheroGAC/Autoplugin @4a17a9a3
+无变化 libretro/Lakka @33830351
+无变化 djyt/cannonball @27493ebf
+无变化 devkitPro/citro3d @9f21cf7b
+存在性巡检:查 133 个已挂 GitHub 源,异常 0 个
+耗时 204.5s;台账 F:\开源掌机教程\04-游戏资源库\下架抢救\收录台账.tsv
+----- run at 2026-11-07 23:25:05 -----
+本轮:抓取 2 / 告警 2 / 雷达命中 0(登记表 24 项 +新闻信号)
+无变化 citron-neo/emulator @7dc47bab
+无变化 suyu-emu/suyu-v0.0.4 @c0dd2ff5
+⚠ **已消失** Ryujinx 延续 NextendoNetwork/Ryujinx-Nextendo NextendoNetwork/Ryujinx-Nextendo(gh: Not Found (HTTP 404)|curl=404)——立刻去 Wayback 找快照
+无变化 hottabxp/re3 @3233ffe1
+无变化 skyline-dev/skyline @2eb226fa
+无变化 skyline-emu/skyline @21d31f74
+⚠ **仓库已被清空** MeloNX/MeloNX(空仓库留证)(MeloNX/MeloNX)——内容被剥离,等同下架,留证
+git 镜像无新提交 https://git.eden-emu.dev/eden-emu/eden.git(HEAD d85005b2b27e)
+抓取页面快照 https://git.eden-emu.dev/eden-ci/nightly/releases(5b917f45)
+抓取页面快照 https://eden-emu.dev/(45990b86)
+站点返回 JS 挑战页(未存快照;不是下架,是 bot 墙)https://citron-emu.com/
+页面无变化 https://ryujinx.io/
+页面无变化 https://skyline-emu.com/
+残存仓仍在 Kenji-NX 残存 issue 仓(60f5e762)
+雷达目标 mizfitxtm/re3-REDUX -> NOCHANGE
+雷达目标 frilxy/AM2R_3DS_CN -> NOCHANGE
+无变化 RetroFW/RetroFW @ebc4125a
+无变化 theheroGAC/Autoplugin @4a17a9a3
+无变化 libretro/Lakka @33830351
+无变化 djyt/cannonball @27493ebf
+无变化 devkitPro/citro3d @9f21cf7b
+存在性巡检:查 0 个已挂 GitHub 源,异常 0 个
+耗时 300.9s;台账 F:\开源掌机教程\04-游戏资源库\下架抢救\收录台账.tsv
+----- run at 2026-11-08 01:25:00 -----
+本轮:抓取 2 / 告警 2 / 雷达命中 0(登记表 24 项 +新闻信号)
+无变化 citron-neo/emulator @7dc47bab
+无变化 suyu-emu/suyu-v0.0.4 @c0dd2ff5
+⚠ **已消失** Ryujinx 延续 NextendoNetwork/Ryujinx-Nextendo NextendoNetwork/Ryujinx-Nextendo(gh: Not Found (HTTP 404)|curl=404)——立刻去 Wayback 找快照
+无变化 hottabxp/re3 @3233ffe1
+无变化 skyline-dev/skyline @2eb226fa
+无变化 skyline-emu/skyline @21d31f74
+⚠ **仓库已被清空** MeloNX/MeloNX(空仓库留证)(MeloNX/MeloNX)——内容被剥离,等同下架,留证
+git 镜像无新提交 https://git.eden-emu.dev/eden-emu/eden.git(HEAD d85005b2b27e)
+抓取页面快照 https://git.eden-emu.dev/eden-ci/nightly/releases(25ad6e43)
+抓取页面快照 https://eden-emu.dev/(201fa0b0)
+站点返回 JS 挑战页(未存快照;不是下架,是 bot 墙)https://citron-emu.com/
+页面无变化 https://ryujinx.io/
+页面无变化 https://skyline-emu.com/
+残存仓仍在 Kenji-NX 残存 issue 仓(60f5e762)
+雷达目标 mizfitxtm/re3-REDUX -> NOCHANGE
+雷达目标 frilxy/AM2R_3DS_CN -> NOCHANGE
+无变化 RetroFW/RetroFW @ebc4125a
+无变化 theheroGAC/Autoplugin @4a17a9a3
+无变化 libretro/Lakka @33830351
+无变化 djyt/cannonball @27493ebf
+无变化 devkitPro/citro3d @9f21cf7b
+存在性巡检:查 0 个已挂 GitHub 源,异常 0 个
+耗时 92.8s;台账 F:\开源掌机教程\04-游戏资源库\下架抢救\收录台账.tsv
+----- run at 2026-11-08 07:25:01 -----
+本轮:抓取 3 / 告警 2 / 雷达命中 0(登记表 24 项 +新闻信号)
+无变化 citron-neo/emulator @7dc47bab
+无变化 suyu-emu/suyu-v0.0.4 @c0dd2ff5
+⚠ **已消失** Ryujinx 延续 NextendoNetwork/Ryujinx-Nextendo NextendoNetwork/Ryujinx-Nextendo(gh: Not Found (HTTP 404)|curl=404)——立刻去 Wayback 找快照
+无变化 hottabxp/re3 @3233ffe1
+无变化 skyline-dev/skyline @2eb226fa
+无变化 skyline-emu/skyline @21d31f74
+⚠ **仓库已被清空** MeloNX/MeloNX(空仓库留证)(MeloNX/MeloNX)——内容被剥离,等同下架,留证
+git 镜像异常 https://git.eden-emu.dev/eden-emu/eden.git(timeout)
+抓取页面快照 https://git.eden-emu.dev/eden-ci/nightly/releases(4d2ae16c)
+抓取页面快照 https://eden-emu.dev/(48e8924c)
+站点返回 JS 挑战页(未存快照;不是下架,是 bot 墙)https://citron-emu.com/
+抓取页面快照 https://ryujinx.io/(89ed595a)
+页面无变化 https://skyline-emu.com/
+残存仓仍在 Kenji-NX 残存 issue 仓(60f5e762)
+雷达目标 mizfitxtm/re3-REDUX -> NOCHANGE
+雷达目标 frilxy/AM2R_3DS_CN -> NOCHANGE
+无变化 RetroFW/RetroFW @ebc4125a
+无变化 theheroGAC/Autoplugin @4a17a9a3
+无变化 libretro/Lakka @33830351
+无变化 djyt/cannonball @27493ebf
+无变化 devkitPro/citro3d @9f21cf7b
+存在性巡检:查 133 个已挂 GitHub 源,异常 0 个
+耗时 5850.1s;台账 F:\开源掌机教程\04-游戏资源库\下架抢救\收录台账.tsv
+----- run at 2026-11-08 09:25:08 -----
+本轮:抓取 2 / 告警 3 / 雷达命中 0(登记表 24 项 +新闻信号)
+无变化 citron-neo/emulator @7dc47bab
+无变化 suyu-emu/suyu-v0.0.4 @c0dd2ff5
+⚠ **已消失** Ryujinx 延续 NextendoNetwork/Ryujinx-Nextendo NextendoNetwork/Ryujinx-Nextendo(gh: Not Found (HTTP 404)|curl=404)——立刻去 Wayback 找快照
+无变化 hottabxp/re3 @3233ffe1
+无变化 skyline-dev/skyline @2eb226fa
+无变化 skyline-emu/skyline @21d31f74
+⚠ **仓库已被清空** MeloNX/MeloNX(空仓库留证)(MeloNX/MeloNX)——内容被剥离,等同下架,留证
+git 镜像异常 https://git.eden-emu.dev/eden-emu/eden.git(timeout)
+抓取页面快照 https://git.eden-emu.dev/eden-ci/nightly/releases(66a4babf)
+抓取页面快照 https://eden-emu.dev/(43471123)
+站点返回 JS 挑战页(未存快照;不是下架,是 bot 墙)https://citron-emu.com/
+页面无变化 https://ryujinx.io/
+⚠ 站点异常 https://skyline-emu.com/(521)
+残存仓仍在 Kenji-NX 残存 issue 仓(60f5e762)
+雷达目标 mizfitxtm/re3-REDUX -> NOCHANGE
+雷达目标 frilxy/AM2R_3DS_CN -> NOCHANGE
+无变化 RetroFW/RetroFW @ebc4125a
+无变化 theheroGAC/Autoplugin @4a17a9a3
+无变化 libretro/Lakka @33830351
+无变化 djyt/cannonball @27493ebf
+无变化 devkitPro/citro3d @9f21cf7b
+存在性巡检:查 0 个已挂 GitHub 源,异常 0 个
+耗时 417.8s;台账 F:\开源掌机教程\04-游戏资源库\下架抢救\收录台账.tsv
+----- run at 2026-11-08 11:25:05 -----
+本轮:抓取 3 / 告警 3 / 雷达命中 0(登记表 24 项 +新闻信号)
+无变化 citron-neo/emulator @7dc47bab
+无变化 suyu-emu/suyu-v0.0.4 @c0dd2ff5
+⚠ **已消失** Ryujinx 延续 NextendoNetwork/Ryujinx-Nextendo NextendoNetwork/Ryujinx-Nextendo(gh: Not Found (HTTP 404)|curl=404)——立刻去 Wayback 找快照
+无变化 hottabxp/re3 @3233ffe1
+无变化 skyline-dev/skyline @2eb226fa
+无变化 skyline-emu/skyline @21d31f74
+⚠ **仓库已被清空** MeloNX/MeloNX(空仓库留证)(MeloNX/MeloNX)——内容被剥离,等同下架,留证
+抓取 git 裸库镜像 https://git.eden-emu.dev/eden-emu/eden.git(HEAD 6e24dcb4b549)
+抓取页面快照 https://git.eden-emu.dev/eden-ci/nightly/releases(7d05705c)
+抓取页面快照 https://eden-emu.dev/(e88ee49d)
+站点返回 JS 挑战页(未存快照;不是下架,是 bot 墙)https://citron-emu.com/
+页面无变化 https://ryujinx.io/
+⚠ 站点异常 https://skyline-emu.com/(521)
+残存仓仍在 Kenji-NX 残存 issue 仓(60f5e762)
+雷达目标 mizfitxtm/re3-REDUX -> NOCHANGE
+雷达目标 frilxy/AM2R_3DS_CN -> NOCHANGE
+无变化 RetroFW/RetroFW @ebc4125a
+无变化 theheroGAC/Autoplugin @4a17a9a3
+无变化 libretro/Lakka @33830351
+无变化 djyt/cannonball @27493ebf
+无变化 devkitPro/citro3d @9f21cf7b
+存在性巡检:查 0 个已挂 GitHub 源,异常 0 个
+耗时 112.3s;台账 F:\开源掌机教程\04-游戏资源库\下架抢救\收录台账.tsv
+----- run at 2026-11-08 13:25:01 -----
+本轮:抓取 2 / 告警 2 / 雷达命中 0(登记表 24 项 +新闻信号)
+无变化 citron-neo/emulator @7dc47bab
+无变化 suyu-emu/suyu-v0.0.4 @c0dd2ff5
+⚠ **已消失** Ryujinx 延续 NextendoNetwork/Ryujinx-Nextendo NextendoNetwork/Ryujinx-Nextendo(gh: Not Found (HTTP 404)|curl=404)——立刻去 Wayback 找快照
+无变化 hottabxp/re3 @3233ffe1
+无变化 skyline-dev/skyline @2eb226fa
+无变化 skyline-emu/skyline @21d31f74
+⚠ **仓库已被清空** MeloNX/MeloNX(空仓库留证)(MeloNX/MeloNX)——内容被剥离,等同下架,留证
+git 镜像无新提交 https://git.eden-emu.dev/eden-emu/eden.git(HEAD 6e24dcb4b549)
+抓取页面快照 https://git.eden-emu.dev/eden-ci/nightly/releases(65c49a65)
+抓取页面快照 https://eden-emu.dev/(f11a8517)
+站点返回 JS 挑战页(未存快照;不是下架,是 bot 墙)https://citron-emu.com/
+页面无变化 https://ryujinx.io/
+页面无变化 https://skyline-emu.com/
+残存仓仍在 Kenji-NX 残存 issue 仓(60f5e762)
+雷达目标 mizfitxtm/re3-REDUX -> NOCHANGE
+雷达目标 frilxy/AM2R_3DS_CN -> NOCHANGE
+无变化 RetroFW/RetroFW @ebc4125a
+无变化 theheroGAC/Autoplugin @4a17a9a3
+无变化 libretro/Lakka @33830351
+无变化 djyt/cannonball @27493ebf
+无变化 devkitPro/citro3d @9f21cf7b
+存在性巡检:查 0 个已挂 GitHub 源,异常 0 个
+耗时 123.8s;台账 F:\开源掌机教程\04-游戏资源库\下架抢救\收录台账.tsv
+----- run at 2026-11-08 15:25:01 -----
+本轮:抓取 1 / 告警 5 / 雷达命中 0(登记表 24 项 +新闻信号)
+无变化 citron-neo/emulator @7dc47bab
+无变化 suyu-emu/suyu-v0.0.4 @c0dd2ff5
+⚠ **已消失** Ryujinx 延续 NextendoNetwork/Ryujinx-Nextendo NextendoNetwork/Ryujinx-Nextendo(gh: Not Found (HTTP 404)|curl=404)——立刻去 Wayback 找快照
+无变化 hottabxp/re3 @3233ffe1
+无变化 skyline-dev/skyline @2eb226fa
+无变化 skyline-emu/skyline @21d31f74
+⚠ **仓库已被清空** MeloNX/MeloNX(空仓库留证)(MeloNX/MeloNX)——内容被剥离,等同下架,留证
+git 镜像异常 https://git.eden-emu.dev/eden-emu/eden.git(fatal: unable to access 'https://git.eden-emu.dev/eden-emu/eden.git/': TLS connect error: error:00000000:lib(0)::reason()
+⚠ 站点异常 https://git.eden-emu.dev/eden-ci/nightly/releases(curl_err_35)
+抓取页面快照 https://eden-emu.dev/(4ebe5244)
+⚠ 站点异常 https://citron-emu.com/(curl_err_35)
+页面无变化 https://ryujinx.io/
+⚠ 站点异常 https://skyline-emu.com/(521)
+残存仓仍在 Kenji-NX 残存 issue 仓(60f5e762)
+雷达目标 mizfitxtm/re3-REDUX -> NOCHANGE
+雷达目标 frilxy/AM2R_3DS_CN -> NOCHANGE
+无变化 RetroFW/RetroFW @ebc4125a
+无变化 theheroGAC/Autoplugin @4a17a9a3
+无变化 libretro/Lakka @33830351
+无变化 djyt/cannonball @27493ebf
+无变化 devkitPro/citro3d @9f21cf7b
+存在性巡检:查 133 个已挂 GitHub 源,异常 0 个
+耗时 275.1s;台账 F:\开源掌机教程\04-游戏资源库\下架抢救\收录台账.tsv
+----- run at 2026-11-08 17:25:01 -----
+本轮:抓取 2 / 告警 2 / 雷达命中 0(登记表 24 项 +新闻信号)
+无变化 citron-neo/emulator @7dc47bab
+无变化 suyu-emu/suyu-v0.0.4 @c0dd2ff5
+检查未确认 NextendoNetwork/Ryujinx-Nextendo(gh api 瞬态,双轨复核仍活着,下轮再查)
+无变化 hottabxp/re3 @3233ffe1
+无变化 skyline-dev/skyline @2eb226fa
+无变化 skyline-emu/skyline @21d31f74
+⚠ **仓库已被清空** MeloNX/MeloNX(空仓库留证)(MeloNX/MeloNX)——内容被剥离,等同下架,留证
+git 镜像无新提交 https://git.eden-emu.dev/eden-emu/eden.git(HEAD 6e24dcb4b549)
+抓取页面快照 https://git.eden-emu.dev/eden-ci/nightly/releases(305176b1)
+抓取页面快照 https://eden-emu.dev/(deedf59f)
+⚠ 站点异常 https://citron-emu.com/(429)
+页面无变化 https://ryujinx.io/
+页面无变化 https://skyline-emu.com/
+残存仓仍在 Kenji-NX 残存 issue 仓(60f5e762)
+雷达目标 mizfitxtm/re3-REDUX -> NOCHANGE
+雷达目标 frilxy/AM2R_3DS_CN -> NOCHANGE
+无变化 RetroFW/RetroFW @ebc4125a
+无变化 theheroGAC/Autoplugin @4a17a9a3
+无变化 libretro/Lakka @33830351
+无变化 djyt/cannonball @27493ebf
+无变化 devkitPro/citro3d @9f21cf7b
+存在性巡检:查 0 个已挂 GitHub 源,异常 0 个
+耗时 72.7s;台账 F:\开源掌机教程\04-游戏资源库\下架抢救\收录台账.tsv
+----- run at 2026-11-08 19:25:01 -----
+本轮:抓取 0 / 告警 5 / 雷达命中 0(登记表 24 项 +新闻信号)
+检查未确认 citron-neo/emulator(gh api 瞬态,双轨复核仍活着,下轮再查)
+检查未确认 suyu-emu/suyu-v0.0.4(gh api 瞬态,双轨复核仍活着,下轮再查)
+检查未确认 NextendoNetwork/Ryujinx-Nextendo(gh api 瞬态,双轨复核仍活着,下轮再查)
+检查未确认 hottabxp/re3(gh api 瞬态,双轨复核仍活着,下轮再查)
+检查未确认 skyline-dev/skyline(gh api 瞬态,双轨复核仍活着,下轮再查)
+检查未确认 skyline-emu/skyline(gh api 瞬态,双轨复核仍活着,下轮再查)
+检查未确认 MeloNX/MeloNX(gh api 瞬态,双轨复核仍活着,下轮再查)
+git 镜像异常 https://git.eden-emu.dev/eden-emu/eden.git(fatal: unable to access 'https://git.eden-emu.dev/eden-emu/eden.git/': TLS connect error: error:00000000:lib(0)::reason()
+⚠ 站点异常 https://git.eden-emu.dev/eden-ci/nightly/releases(curl_err_35)
+⚠ 站点异常 https://eden-emu.dev/(curl_err_35)
+⚠ 站点异常 https://citron-emu.com/(curl_err_35)
+⚠ 站点异常 https://ryujinx.io/(curl_err_35)
+⚠ 站点异常 https://skyline-emu.com/(curl_err_35)
+残存仓仍在 Kenji-NX 残存 issue 仓(Get "https://api.github.com/repos/Kenji-NX/Issues": EOF)
+雷达查询失败 yuzu(Get "https://api.github.com/search/repositories?q=yuzu&sort=created&order=desc&per_page=30": EOF)
+雷达查询失败 ryujinx(Get "https://api.github.com/search/repositories?q=ryujinx&sort=created&order=desc&per_page=30": EOF)
+雷达查询失败 re3 gta(Get "https://api.github.com/search/repositories?q=re3%20gta&sort=created&order=desc&per_page=30": EOF)
+雷达查询失败 AM2R(Get "https://api.github.com/search/repositories?q=AM2R&sort=created&order=desc&per_page=30": EOF)
+雷达查询失败 ps2 sdk leak(Get "https://api.github.com/search/repositories?q=ps2%20sdk%20leak&sort=created&order=desc&per_page=30": EOF)
+检查未确认 RetroFW/RetroFW(gh api 瞬态,双轨复核仍活着,下轮再查)
+检查未确认 theheroGAC/Autoplugin(gh api 瞬态,双轨复核仍活着,下轮再查)
+检查未确认 libretro/Lakka(gh api 瞬态,双轨复核仍活着,下轮再查)
+检查未确认 djyt/cannonball(gh api 瞬态,双轨复核仍活着,下轮再查)
+检查未确认 devkitPro/citro3d(gh api 瞬态,双轨复核仍活着,下轮再查)
+存在性巡检:查 0 个已挂 GitHub 源,异常 0 个
+耗时 259.8s;台账 F:\开源掌机教程\04-游戏资源库\下架抢救\收录台账.tsv
+----- run at 2026-11-08 23:25:01 -----
+本轮:抓取 2 / 告警 2 / 雷达命中 0(登记表 24 项 +新闻信号)
+无变化 citron-neo/emulator @7dc47bab
+无变化 suyu-emu/suyu-v0.0.4 @c0dd2ff5
+⚠ **已消失** Ryujinx 延续 NextendoNetwork/Ryujinx-Nextendo NextendoNetwork/Ryujinx-Nextendo(gh: Not Found (HTTP 404)|curl=404)——立刻去 Wayback 找快照
+无变化 hottabxp/re3 @3233ffe1
+无变化 skyline-dev/skyline @2eb226fa
+无变化 skyline-emu/skyline @21d31f74
+⚠ **仓库已被清空** MeloNX/MeloNX(空仓库留证)(MeloNX/MeloNX)——内容被剥离,等同下架,留证
+git 镜像无新提交 https://git.eden-emu.dev/eden-emu/eden.git(HEAD 6e24dcb4b549)
+抓取页面快照 https://git.eden-emu.dev/eden-ci/nightly/releases(a7d6a75e)
+抓取页面快照 https://eden-emu.dev/(e1e81c4f)
+页面无变化 https://citron-emu.com/
+页面无变化 https://ryujinx.io/
+页面无变化 https://skyline-emu.com/
+残存仓仍在 Kenji-NX 残存 issue 仓(60f5e762)
+雷达目标 mizfitxtm/re3-REDUX -> NOCHANGE
+雷达目标 frilxy/AM2R_3DS_CN -> NOCHANGE
+无变化 RetroFW/RetroFW @ebc4125a
+无变化 theheroGAC/Autoplugin @4a17a9a3
+无变化 libretro/Lakka @33830351
+无变化 djyt/cannonball @27493ebf
+无变化 devkitPro/citro3d @9f21cf7b
+存在性巡检:查 133 个已挂 GitHub 源,异常 0 个
+耗时 400.1s;台账 F:\开源掌机教程\04-游戏资源库\下架抢救\收录台账.tsv
+----- run at 2026-11-09 01:25:01 -----
+本轮:抓取 2 / 告警 3 / 雷达命中 0(登记表 24 项 +新闻信号)
+无变化 citron-neo/emulator @7dc47bab
+无变化 suyu-emu/suyu-v0.0.4 @c0dd2ff5
+⚠ **已消失** Ryujinx 延续 NextendoNetwork/Ryujinx-Nextendo NextendoNetwork/Ryujinx-Nextendo(gh: Not Found (HTTP 404)|curl=404)——立刻去 Wayback 找快照
+无变化 hottabxp/re3 @3233ffe1
+无变化 skyline-dev/skyline @2eb226fa
+无变化 skyline-emu/skyline @21d31f74
+⚠ **仓库已被清空** MeloNX/MeloNX(空仓库留证)(MeloNX/MeloNX)——内容被剥离,等同下架,留证
+git 镜像异常 https://git.eden-emu.dev/eden-emu/eden.git(timeout)
+抓取页面快照 https://git.eden-emu.dev/eden-ci/nightly/releases(febfb82a)
+抓取页面快照 https://eden-emu.dev/(13f2a111)
+站点返回 JS 挑战页(未存快照;不是下架,是 bot 墙)https://citron-emu.com/
+页面无变化 https://ryujinx.io/
+⚠ 站点异常 https://skyline-emu.com/(521)
+残存仓仍在 Kenji-NX 残存 issue 仓(60f5e762)
+雷达目标 mizfitxtm/re3-REDUX -> NOCHANGE
+雷达目标 frilxy/AM2R_3DS_CN -> NOCHANGE
+无变化 RetroFW/RetroFW @ebc4125a
+无变化 theheroGAC/Autoplugin @4a17a9a3
+无变化 libretro/Lakka @33830351
+无变化 djyt/cannonball @27493ebf
+无变化 devkitPro/citro3d @9f21cf7b
+存在性巡检:查 0 个已挂 GitHub 源,异常 0 个
+耗时 2439.4s;台账 F:\开源掌机教程\04-游戏资源库\下架抢救\收录台账.tsv
+----- run at 2026-11-09 07:25:01 -----
+本轮:抓取 3 / 告警 2 / 雷达命中 0(登记表 24 项 +新闻信号)
+无变化 citron-neo/emulator @7dc47bab
+无变化 suyu-emu/suyu-v0.0.4 @c0dd2ff5
+⚠ **已消失** Ryujinx 延续 NextendoNetwork/Ryujinx-Nextendo NextendoNetwork/Ryujinx-Nextendo(gh: Not Found (HTTP 404)|curl=404)——立刻去 Wayback 找快照
+无变化 hottabxp/re3 @3233ffe1
+无变化 skyline-dev/skyline @2eb226fa
+无变化 skyline-emu/skyline @21d31f74
+⚠ **仓库已被清空** MeloNX/MeloNX(空仓库留证)(MeloNX/MeloNX)——内容被剥离,等同下架,留证
+抓取 git 裸库镜像 https://git.eden-emu.dev/eden-emu/eden.git(HEAD ae60f8e7f859)
+抓取页面快照 https://git.eden-emu.dev/eden-ci/nightly/releases(051518e0)
+抓取页面快照 https://eden-emu.dev/(76d3a5d6)
+站点返回 JS 挑战页(未存快照;不是下架,是 bot 墙)https://citron-emu.com/
+页面无变化 https://ryujinx.io/
+页面无变化 https://skyline-emu.com/
+残存仓仍在 Kenji-NX 残存 issue 仓(60f5e762)
+雷达目标 mizfitxtm/re3-REDUX -> NOCHANGE
+雷达目标 frilxy/AM2R_3DS_CN -> NOCHANGE
+无变化 RetroFW/RetroFW @ebc4125a
+无变化 theheroGAC/Autoplugin @4a17a9a3
+无变化 libretro/Lakka @33830351
+无变化 djyt/cannonball @27493ebf
+无变化 devkitPro/citro3d @9f21cf7b
+存在性巡检:查 133 个已挂 GitHub 源,异常 0 个
+耗时 209.9s;台账 F:\开源掌机教程\04-游戏资源库\下架抢救\收录台账.tsv
+----- run at 2026-11-09 09:25:02 -----
+本轮:抓取 2 / 告警 2 / 雷达命中 0(登记表 24 项 +新闻信号)
+无变化 citron-neo/emulator @7dc47bab
+无变化 suyu-emu/suyu-v0.0.4 @c0dd2ff5
+⚠ **已消失** Ryujinx 延续 NextendoNetwork/Ryujinx-Nextendo NextendoNetwork/Ryujinx-Nextendo(gh: Not Found (HTTP 404)|curl=404)——立刻去 Wayback 找快照
+无变化 hottabxp/re3 @3233ffe1
+无变化 skyline-dev/skyline @2eb226fa
+无变化 skyline-emu/skyline @21d31f74
+⚠ **仓库已被清空** MeloNX/MeloNX(空仓库留证)(MeloNX/MeloNX)——内容被剥离,等同下架,留证
+git 镜像无新提交 https://git.eden-emu.dev/eden-emu/eden.git(HEAD ae60f8e7f859)
+抓取页面快照 https://git.eden-emu.dev/eden-ci/nightly/releases(d9e8ef34)
+抓取页面快照 https://eden-emu.dev/(7280ffa1)
+页面无变化 https://citron-emu.com/
+页面无变化 https://ryujinx.io/
+页面无变化 https://skyline-emu.com/
+残存仓仍在 Kenji-NX 残存 issue 仓(60f5e762)
+雷达目标 mizfitxtm/re3-REDUX -> NOCHANGE
+雷达目标 frilxy/AM2R_3DS_CN -> NOCHANGE
+无变化 RetroFW/RetroFW @ebc4125a
+无变化 theheroGAC/Autoplugin @4a17a9a3
+无变化 libretro/Lakka @33830351
+无变化 djyt/cannonball @27493ebf
+无变化 devkitPro/citro3d @9f21cf7b
+存在性巡检:查 0 个已挂 GitHub 源,异常 0 个
+耗时 69.6s;台账 F:\开源掌机教程\04-游戏资源库\下架抢救\收录台账.tsv
+----- run at 2026-11-09 11:25:00 -----
+本轮:抓取 2 / 告警 3 / 雷达命中 0(登记表 24 项 +新闻信号)
+无变化 citron-neo/emulator @7dc47bab
+无变化 suyu-emu/suyu-v0.0.4 @c0dd2ff5
+⚠ **已消失** Ryujinx 延续 NextendoNetwork/Ryujinx-Nextendo NextendoNetwork/Ryujinx-Nextendo(gh: Not Found (HTTP 404)|curl=404)——立刻去 Wayback 找快照
+无变化 hottabxp/re3 @3233ffe1
+无变化 skyline-dev/skyline @2eb226fa
+无变化 skyline-emu/skyline @21d31f74
+⚠ **仓库已被清空** MeloNX/MeloNX(空仓库留证)(MeloNX/MeloNX)——内容被剥离,等同下架,留证
+git 镜像无新提交 https://git.eden-emu.dev/eden-emu/eden.git(HEAD ae60f8e7f859)
+抓取页面快照 https://git.eden-emu.dev/eden-ci/nightly/releases(ad9a4293)
+抓取页面快照 https://eden-emu.dev/(d054a582)
+页面无变化 https://citron-emu.com/
+页面无变化 https://ryujinx.io/
+⚠ 站点异常 https://skyline-emu.com/(521)
+残存仓仍在 Kenji-NX 残存 issue 仓(60f5e762)
+雷达查询失败 re3 gta(Get "https://api.github.com/search/repositories?q=re3%20gta&sort=created&order=desc&per_page=30": EOF)
+雷达目标 frilxy/AM2R_3DS_CN -> NOCHANGE
+无变化 RetroFW/RetroFW @ebc4125a
+无变化 theheroGAC/Autoplugin @4a17a9a3
+无变化 libretro/Lakka @33830351
+无变化 djyt/cannonball @27493ebf
+无变化 devkitPro/citro3d @9f21cf7b
+存在性巡检:查 0 个已挂 GitHub 源,异常 0 个
+耗时 107.2s;台账 F:\开源掌机教程\04-游戏资源库\下架抢救\收录台账.tsv
+----- run at 2026-11-09 13:25:01 -----
+本轮:抓取 3 / 告警 2 / 雷达命中 1(登记表 24 项 +新闻信号)
+无变化 citron-neo/emulator @7dc47bab
+无变化 suyu-emu/suyu-v0.0.4 @c0dd2ff5
+检查未确认 NextendoNetwork/Ryujinx-Nextendo(gh api 瞬态,双轨复核仍活着,下轮再查)
+无变化 hottabxp/re3 @3233ffe1
+无变化 skyline-dev/skyline @2eb226fa
+无变化 skyline-emu/skyline @21d31f74
+⚠ **仓库已被清空** MeloNX/MeloNX(空仓库留证)(MeloNX/MeloNX)——内容被剥离,等同下架,留证
+git 镜像无新提交 https://git.eden-emu.dev/eden-emu/eden.git(HEAD ae60f8e7f859)
+抓取页面快照 https://git.eden-emu.dev/eden-ci/nightly/releases(d539fbfc)
+抓取页面快照 https://eden-emu.dev/(e3fd0d0b)
+站点返回 JS 挑战页(未存快照;不是下架,是 bot 墙)https://citron-emu.com/
+页面无变化 https://ryujinx.io/
+⚠ 站点异常 https://skyline-emu.com/(521)
+残存仓仍在 Kenji-NX 残存 issue 仓(60f5e762)
+雷达目标 mizfitxtm/re3-REDUX -> NOCHANGE
+雷达命中并抓取 **frilxy/AM2R_3DS_CN** @7b6c0bde
+无变化 RetroFW/RetroFW @ebc4125a
+无变化 theheroGAC/Autoplugin @4a17a9a3
+无变化 libretro/Lakka @33830351
+无变化 djyt/cannonball @27493ebf
+无变化 devkitPro/citro3d @9f21cf7b
+存在性巡检:查 133 个已挂 GitHub 源,异常 0 个
+耗时 210.0s;台账 F:\开源掌机教程\04-游戏资源库\下架抢救\收录台账.tsv
+----- run at 2026-11-09 15:25:10 -----
+本轮:抓取 2 / 告警 3 / 雷达命中 0(登记表 24 项 +新闻信号)
+⚠ **已消失** Citron 延续仓 citron-neo/emulator citron-neo/emulator(timeout|curl=404)——立刻去 Wayback 找快照
+检查未确认 suyu-emu/suyu-v0.0.4(gh api 瞬态,双轨复核仍活着,下轮再查)
+检查未确认 NextendoNetwork/Ryujinx-Nextendo(gh api 瞬态,双轨复核仍活着,下轮再查)
+检查未确认 hottabxp/re3(gh api 瞬态,双轨复核仍活着,下轮再查)
+检查未确认 skyline-dev/skyline(gh api 瞬态,双轨复核仍活着,下轮再查)
+检查未确认 skyline-emu/skyline(gh api 瞬态,双轨复核仍活着,下轮再查)
+检查未确认 MeloNX/MeloNX(gh api 瞬态,双轨复核仍活着,下轮再查)
+git 镜像异常 https://git.eden-emu.dev/eden-emu/eden.git(fatal: unable to access 'https://git.eden-emu.dev/eden-emu/eden.git/': OpenSSL SSL_read: SSL_ERROR_SYSCALL, errno 0)
+抓取页面快照 https://git.eden-emu.dev/eden-ci/nightly/releases(4d84cac1)
+抓取页面快照 https://eden-emu.dev/(b2536cb0)
+⚠ 站点异常 https://citron-emu.com/(429)
+页面无变化 https://ryujinx.io/
+⚠ 站点异常 https://skyline-emu.com/(521)
+残存仓仍在 Kenji-NX 残存 issue 仓(timeout)
+雷达查询失败 yuzu(timeout)
+雷达查询失败 ryujinx(timeout)
+雷达查询失败 re3 gta(timeout)
+雷达查询失败 AM2R(timeout)
+雷达查询失败 ps2 sdk leak(timeout)
+检查未确认 RetroFW/RetroFW(gh api 瞬态,双轨复核仍活着,下轮再查)
+检查未确认 theheroGAC/Autoplugin(gh api 瞬态,双轨复核仍活着,下轮再查)
+检查未确认 libretro/Lakka(gh api 瞬态,双轨复核仍活着,下轮再查)
+检查未确认 djyt/cannonball(gh api 瞬态,双轨复核仍活着,下轮再查)
+检查未确认 devkitPro/citro3d(gh api 瞬态,双轨复核仍活着,下轮再查)
+存在性巡检:查 0 个已挂 GitHub 源,异常 0 个
+耗时 2800.8s;台账 F:\开源掌机教程\04-游戏资源库\下架抢救\收录台账.tsv
+----- run at 2026-11-09 17:25:02 -----
+本轮:抓取 3 / 告警 3 / 雷达命中 0(登记表 24 项 +新闻信号)
+⚠ **已消失** Citron 延续仓 citron-neo/emulator citron-neo/emulator(gh: Not Found (HTTP 404)|curl=404)——立刻去 Wayback 找快照
+无变化 suyu-emu/suyu-v0.0.4 @c0dd2ff5
+⚠ **已消失** Ryujinx 延续 NextendoNetwork/Ryujinx-Nextendo NextendoNetwork/Ryujinx-Nextendo(gh: Not Found (HTTP 404)|curl=404)——立刻去 Wayback 找快照
+无变化 hottabxp/re3 @3233ffe1
+无变化 skyline-dev/skyline @2eb226fa
+无变化 skyline-emu/skyline @21d31f74
+⚠ **仓库已被清空** MeloNX/MeloNX(空仓库留证)(MeloNX/MeloNX)——内容被剥离,等同下架,留证
+git 镜像无新提交 https://git.eden-emu.dev/eden-emu/eden.git(HEAD ae60f8e7f859)
+抓取页面快照 https://git.eden-emu.dev/eden-ci/nightly/releases(5c682237)
+抓取页面快照 https://eden-emu.dev/(393b9674)
+抓取页面快照 https://citron-emu.com/(54d0b62b)
+页面无变化 https://ryujinx.io/
+页面无变化 https://skyline-emu.com/
+残存仓仍在 Kenji-NX 残存 issue 仓(60f5e762)
+雷达目标 mizfitxtm/re3-REDUX -> NOCHANGE
+雷达目标 frilxy/AM2R_3DS_CN -> NOCHANGE
+无变化 RetroFW/RetroFW @ebc4125a
+无变化 theheroGAC/Autoplugin @4a17a9a3
+无变化 libretro/Lakka @33830351
+无变化 djyt/cannonball @27493ebf
+无变化 devkitPro/citro3d @9f21cf7b
+存在性巡检:查 0 个已挂 GitHub 源,异常 0 个
+耗时 114.5s;台账 F:\开源掌机教程\04-游戏资源库\下架抢救\收录台账.tsv
+----- run at 2026-11-09 19:25:05 -----
+本轮:抓取 2 / 告警 3 / 雷达命中 0(登记表 24 项 +新闻信号)
+⚠ **已消失** Citron 延续仓 citron-neo/emulator citron-neo/emulator(gh: Not Found (HTTP 404)|curl=404)——立刻去 Wayback 找快照
+无变化 suyu-emu/suyu-v0.0.4 @c0dd2ff5
+⚠ **已消失** Ryujinx 延续 NextendoNetwork/Ryujinx-Nextendo NextendoNetwork/Ryujinx-Nextendo(gh: Not Found (HTTP 404)|curl=404)——立刻去 Wayback 找快照
+无变化 hottabxp/re3 @3233ffe1
+无变化 skyline-dev/skyline @2eb226fa
+无变化 skyline-emu/skyline @21d31f74
+⚠ **仓库已被清空** MeloNX/MeloNX(空仓库留证)(MeloNX/MeloNX)——内容被剥离,等同下架,留证
+git 镜像无新提交 https://git.eden-emu.dev/eden-emu/eden.git(HEAD ae60f8e7f859)
+抓取页面快照 https://git.eden-emu.dev/eden-ci/nightly/releases(db81cf26)
+抓取页面快照 https://eden-emu.dev/(a85a7062)
+站点返回 JS 挑战页(未存快照;不是下架,是 bot 墙)https://citron-emu.com/
+页面无变化 https://ryujinx.io/
+页面无变化 https://skyline-emu.com/
+残存仓仍在 Kenji-NX 残存 issue 仓(60f5e762)
+雷达目标 mizfitxtm/re3-REDUX -> NOCHANGE
+雷达目标 frilxy/AM2R_3DS_CN -> NOCHANGE
+无变化 RetroFW/RetroFW @ebc4125a
+无变化 theheroGAC/Autoplugin @4a17a9a3
+无变化 libretro/Lakka @33830351
+无变化 djyt/cannonball @27493ebf
+无变化 devkitPro/citro3d @9f21cf7b
+存在性巡检:查 133 个已挂 GitHub 源,异常 0 个
+耗时 296.6s;台账 F:\开源掌机教程\04-游戏资源库\下架抢救\收录台账.tsv
+----- run at 2026-11-09 21:25:04 -----
+本轮:抓取 2 / 告警 3 / 雷达命中 0(登记表 24 项 +新闻信号)
+⚠ **已消失** Citron 延续仓 citron-neo/emulator citron-neo/emulator(gh: Not Found (HTTP 404)|curl=404)——立刻去 Wayback 找快照
+无变化 suyu-emu/suyu-v0.0.4 @c0dd2ff5
+⚠ **已消失** Ryujinx 延续 NextendoNetwork/Ryujinx-Nextendo NextendoNetwork/Ryujinx-Nextendo(gh: Not Found (HTTP 404)|curl=404)——立刻去 Wayback 找快照
+无变化 hottabxp/re3 @3233ffe1
+无变化 skyline-dev/skyline @2eb226fa
+无变化 skyline-emu/skyline @21d31f74
+⚠ **仓库已被清空** MeloNX/MeloNX(空仓库留证)(MeloNX/MeloNX)——内容被剥离,等同下架,留证
+git 镜像无新提交 https://git.eden-emu.dev/eden-emu/eden.git(HEAD ae60f8e7f859)
+抓取页面快照 https://git.eden-emu.dev/eden-ci/nightly/releases(3659aac9)
+抓取页面快照 https://eden-emu.dev/(633c27be)
+站点返回 JS 挑战页(未存快照;不是下架,是 bot 墙)https://citron-emu.com/
+页面无变化 https://ryujinx.io/
+页面无变化 https://skyline-emu.com/
+残存仓仍在 Kenji-NX 残存 issue 仓(60f5e762)
+雷达目标 mizfitxtm/re3-REDUX -> NOCHANGE
+雷达目标 frilxy/AM2R_3DS_CN -> NOCHANGE
+无变化 RetroFW/RetroFW @ebc4125a
+无变化 theheroGAC/Autoplugin @4a17a9a3
+无变化 libretro/Lakka @33830351
+无变化 djyt/cannonball @27493ebf
+无变化 devkitPro/citro3d @9f21cf7b
+存在性巡检:查 1 个已挂 GitHub 源,异常 0 个
+耗时 114.8s;台账 F:\开源掌机教程\04-游戏资源库\下架抢救\收录台账.tsv
+----- run at 2026-11-09 23:25:00 -----
+本轮:抓取 2 / 告警 3 / 雷达命中 0(登记表 24 项 +新闻信号)
+⚠ **已消失** Citron 延续仓 citron-neo/emulator citron-neo/emulator(gh: Not Found (HTTP 404)|curl=404)——立刻去 Wayback 找快照
+无变化 suyu-emu/suyu-v0.0.4 @c0dd2ff5
+⚠ **已消失** Ryujinx 延续 NextendoNetwork/Ryujinx-Nextendo NextendoNetwork/Ryujinx-Nextendo(gh: Not Found (HTTP 404)|curl=404)——立刻去 Wayback 找快照
+无变化 hottabxp/re3 @3233ffe1
+无变化 skyline-dev/skyline @2eb226fa
+无变化 skyline-emu/skyline @21d31f74
+⚠ **仓库已被清空** MeloNX/MeloNX(空仓库留证)(MeloNX/MeloNX)——内容被剥离,等同下架,留证
+git 镜像无新提交 https://git.eden-emu.dev/eden-emu/eden.git(HEAD ae60f8e7f859)
+抓取页面快照 https://git.eden-emu.dev/eden-ci/nightly/releases(70cca07f)
+抓取页面快照 https://eden-emu.dev/(fbea4a95)
+站点返回 JS 挑战页(未存快照;不是下架,是 bot 墙)https://citron-emu.com/
+页面无变化 https://ryujinx.io/
+页面无变化 https://skyline-emu.com/
+残存仓仍在 Kenji-NX 残存 issue 仓(60f5e762)
+雷达目标 mizfitxtm/re3-REDUX -> NOCHANGE
+雷达目标 frilxy/AM2R_3DS_CN -> NOCHANGE
+无变化 RetroFW/RetroFW @ebc4125a
+无变化 theheroGAC/Autoplugin @4a17a9a3
+无变化 libretro/Lakka @33830351
+无变化 djyt/cannonball @27493ebf
+无变化 devkitPro/citro3d @9f21cf7b
+存在性巡检:查 0 个已挂 GitHub 源,异常 0 个
+耗时 107.5s;台账 F:\开源掌机教程\04-游戏资源库\下架抢救\收录台账.tsv
+----- run at 2026-11-10 09:25:03 -----
+本轮:抓取 0 / 告警 5 / 雷达命中 0(登记表 24 项 +新闻信号)
+检查未确认 citron-neo/emulator(gh api 瞬态,双轨复核仍活着,下轮再查)
+检查未确认 suyu-emu/suyu-v0.0.4(gh api 瞬态,双轨复核仍活着,下轮再查)
+检查未确认 NextendoNetwork/Ryujinx-Nextendo(gh api 瞬态,双轨复核仍活着,下轮再查)
+检查未确认 hottabxp/re3(gh api 瞬态,双轨复核仍活着,下轮再查)
+检查未确认 skyline-dev/skyline(gh api 瞬态,双轨复核仍活着,下轮再查)
+检查未确认 skyline-emu/skyline(gh api 瞬态,双轨复核仍活着,下轮再查)
+检查未确认 MeloNX/MeloNX(gh api 瞬态,双轨复核仍活着,下轮再查)
+git 镜像异常 https://git.eden-emu.dev/eden-emu/eden.git(fatal: unable to access 'https://git.eden-emu.dev/eden-emu/eden.git/': TLS connect error: error:00000000:lib(0)::reason()
+⚠ 站点异常 https://git.eden-emu.dev/eden-ci/nightly/releases(curl_err_35)
+⚠ 站点异常 https://eden-emu.dev/(curl_err_35)
+⚠ 站点异常 https://citron-emu.com/(curl_err_35)
+⚠ 站点异常 https://ryujinx.io/(curl_err_35)
+⚠ 站点异常 https://skyline-emu.com/(curl_err_35)
+残存仓仍在 Kenji-NX 残存 issue 仓(Get "https://api.github.com/repos/Kenji-NX/Issues": EOF)
+雷达查询失败 yuzu(Get "https://api.github.com/search/repositories?q=yuzu&sort=created&order=desc&per_page=30": EOF)
+雷达查询失败 ryujinx(Get "https://api.github.com/search/repositories?q=ryujinx&sort=created&order=desc&per_page=30": EOF)
+雷达查询失败 re3 gta(Get "https://api.github.com/search/repositories?q=re3%20gta&sort=created&order=desc&per_page=30": EOF)
+雷达查询失败 AM2R(Get "https://api.github.com/search/repositories?q=AM2R&sort=created&order=desc&per_page=30": EOF)
+雷达查询失败 ps2 sdk leak(Get "https://api.github.com/search/repositories?q=ps2%20sdk%20leak&sort=created&order=desc&per_page=30": EOF)
+检查未确认 RetroFW/RetroFW(gh api 瞬态,双轨复核仍活着,下轮再查)
+检查未确认 theheroGAC/Autoplugin(gh api 瞬态,双轨复核仍活着,下轮再查)
+无变化 libretro/Lakka @33830351
+无变化 djyt/cannonball @27493ebf
+检查失败 devkitPro/citro3d(ERROR)
+存在性巡检:查 0 个已挂 GitHub 源,异常 0 个
+耗时 178.0s;台账 F:\开源掌机教程\04-游戏资源库\下架抢救\收录台账.tsv
+----- run at 2026-11-10 11:25:00 -----
+本轮:抓取 1 / 告警 6 / 雷达命中 0(登记表 24 项 +新闻信号)
+⚠ **已消失** Citron 延续仓 citron-neo/emulator citron-neo/emulator(gh: Not Found (HTTP 404)|curl=404)——立刻去 Wayback 找快照
+无变化 suyu-emu/suyu-v0.0.4 @c0dd2ff5
+⚠ **已消失** Ryujinx 延续 NextendoNetwork/Ryujinx-Nextendo NextendoNetwork/Ryujinx-Nextendo(gh: Not Found (HTTP 404)|curl=404)——立刻去 Wayback 找快照
+无变化 hottabxp/re3 @3233ffe1
+无变化 skyline-dev/skyline @2eb226fa
+检查未确认 skyline-emu/skyline(gh api 瞬态,双轨复核仍活着,下轮再查)
+⚠ **仓库已被清空** MeloNX/MeloNX(空仓库留证)(MeloNX/MeloNX)——内容被剥离,等同下架,留证
+git 镜像无新提交 https://git.eden-emu.dev/eden-emu/eden.git(HEAD 6a767ac43a08)
+抓取页面快照 https://git.eden-emu.dev/eden-ci/nightly/releases(c8883bb0)
+⚠ 站点异常 https://eden-emu.dev/(curl_err_35)
+站点返回 JS 挑战页(未存快照;不是下架,是 bot 墙)https://citron-emu.com/
+⚠ 站点异常 https://ryujinx.io/(curl_err_35)
+⚠ 站点异常 https://skyline-emu.com/(curl_err_35)
+残存仓仍在 Kenji-NX 残存 issue 仓(60f5e762)
+雷达目标 mizfitxtm/re3-REDUX -> NOCHANGE
+雷达目标 frilxy/AM2R_3DS_CN -> ERROR
+检查未确认 RetroFW/RetroFW(gh api 瞬态,双轨复核仍活着,下轮再查)
+无变化 theheroGAC/Autoplugin @4a17a9a3
+无变化 libretro/Lakka @33830351
+检查未确认 djyt/cannonball(gh api 瞬态,双轨复核仍活着,下轮再查)
+无变化 devkitPro/citro3d @9f21cf7b
+存在性巡检:查 0 个已挂 GitHub 源,异常 0 个
+耗时 191.9s;台账 F:\开源掌机教程\04-游戏资源库\下架抢救\收录台账.tsv
+----- run at 2026-11-10 13:25:00 -----
+本轮:抓取 2 / 告警 3 / 雷达命中 0(登记表 24 项 +新闻信号)
+⚠ **已消失** Citron 延续仓 citron-neo/emulator citron-neo/emulator(gh: Not Found (HTTP 404)|curl=404)——立刻去 Wayback 找快照
+无变化 suyu-emu/suyu-v0.0.4 @c0dd2ff5
+⚠ **已消失** Ryujinx 延续 NextendoNetwork/Ryujinx-Nextendo NextendoNetwork/Ryujinx-Nextendo(gh: Not Found (HTTP 404)|curl=404)——立刻去 Wayback 找快照
+无变化 hottabxp/re3 @3233ffe1
+无变化 skyline-dev/skyline @2eb226fa
+无变化 skyline-emu/skyline @21d31f74
+⚠ **仓库已被清空** MeloNX/MeloNX(空仓库留证)(MeloNX/MeloNX)——内容被剥离,等同下架,留证
+git 镜像无新提交 https://git.eden-emu.dev/eden-emu/eden.git(HEAD 6a767ac43a08)
+抓取页面快照 https://git.eden-emu.dev/eden-ci/nightly/releases(eb67a769)
+抓取页面快照 https://eden-emu.dev/(474a8cbc)
+站点返回 JS 挑战页(未存快照;不是下架,是 bot 墙)https://citron-emu.com/
+页面无变化 https://ryujinx.io/
+页面无变化 https://skyline-emu.com/
+残存仓仍在 Kenji-NX 残存 issue 仓(60f5e762)
+雷达目标 mizfitxtm/re3-REDUX -> NOCHANGE
+雷达目标 frilxy/AM2R_3DS_CN -> NOCHANGE
+无变化 RetroFW/RetroFW @ebc4125a
+无变化 theheroGAC/Autoplugin @4a17a9a3
+无变化 libretro/Lakka @33830351
+无变化 djyt/cannonball @27493ebf
+无变化 devkitPro/citro3d @9f21cf7b
+存在性巡检:查 0 个已挂 GitHub 源,异常 0 个
+耗时 99.5s;台账 F:\开源掌机教程\04-游戏资源库\下架抢救\收录台账.tsv
+----- run at 2026-11-10 15:25:00 -----
+本轮:抓取 3 / 告警 4 / 雷达命中 0(登记表 24 项 +新闻信号)
+⚠ **已消失** Citron 延续仓 citron-neo/emulator citron-neo/emulator(gh: Not Found (HTTP 404)|curl=404)——立刻去 Wayback 找快照
+无变化 suyu-emu/suyu-v0.0.4 @c0dd2ff5
+⚠ **已消失** Ryujinx 延续 NextendoNetwork/Ryujinx-Nextendo NextendoNetwork/Ryujinx-Nextendo(gh: Not Found (HTTP 404)|curl=404)——立刻去 Wayback 找快照
+无变化 hottabxp/re3 @3233ffe1
+无变化 skyline-dev/skyline @2eb226fa
+无变化 skyline-emu/skyline @21d31f74
+⚠ **仓库已被清空** MeloNX/MeloNX(空仓库留证)(MeloNX/MeloNX)——内容被剥离,等同下架,留证
+git 镜像无新提交 https://git.eden-emu.dev/eden-emu/eden.git(HEAD 6a767ac43a08)
+抓取页面快照 https://git.eden-emu.dev/eden-ci/nightly/releases(af03b655)
+抓取页面快照 https://eden-emu.dev/(4853e8c2)
+抓取页面快照 https://citron-emu.com/(54d0b62b)
+页面无变化 https://ryujinx.io/
+⚠ 站点异常 https://skyline-emu.com/(521)
+残存仓仍在 Kenji-NX 残存 issue 仓(60f5e762)
+雷达目标 mizfitxtm/re3-REDUX -> ERROR
+雷达目标 frilxy/AM2R_3DS_CN -> NOCHANGE
+无变化 RetroFW/RetroFW @ebc4125a
+无变化 theheroGAC/Autoplugin @4a17a9a3
+无变化 libretro/Lakka @33830351
+无变化 djyt/cannonball @27493ebf
+无变化 devkitPro/citro3d @9f21cf7b
+存在性巡检:查 133 个已挂 GitHub 源,异常 0 个
+耗时 340.6s;台账 F:\开源掌机教程\04-游戏资源库\下架抢救\收录台账.tsv
+----- run at 2026-11-10 17:25:00 -----
+本轮:抓取 2 / 告警 3 / 雷达命中 0(登记表 24 项 +新闻信号)
+⚠ **已消失** Citron 延续仓 citron-neo/emulator citron-neo/emulator(gh: Not Found (HTTP 404)|curl=404)——立刻去 Wayback 找快照
+无变化 suyu-emu/suyu-v0.0.4 @c0dd2ff5
+⚠ **已消失** Ryujinx 延续 NextendoNetwork/Ryujinx-Nextendo NextendoNetwork/Ryujinx-Nextendo(gh: Not Found (HTTP 404)|curl=404)——立刻去 Wayback 找快照
+无变化 hottabxp/re3 @3233ffe1
+无变化 skyline-dev/skyline @2eb226fa
+无变化 skyline-emu/skyline @21d31f74
+⚠ **仓库已被清空** MeloNX/MeloNX(空仓库留证)(MeloNX/MeloNX)——内容被剥离,等同下架,留证
+git 镜像无新提交 https://git.eden-emu.dev/eden-emu/eden.git(HEAD 6a767ac43a08)
+抓取页面快照 https://git.eden-emu.dev/eden-ci/nightly/releases(1138a05e)
+抓取页面快照 https://eden-emu.dev/(2da74634)
+站点返回 JS 挑战页(未存快照;不是下架,是 bot 墙)https://citron-emu.com/
+页面无变化 https://ryujinx.io/
+页面无变化 https://skyline-emu.com/
+残存仓仍在 Kenji-NX 残存 issue 仓(60f5e762)
+雷达目标 mizfitxtm/re3-REDUX -> NOCHANGE
+雷达目标 frilxy/AM2R_3DS_CN -> NOCHANGE
+无变化 RetroFW/RetroFW @ebc4125a
+无变化 theheroGAC/Autoplugin @4a17a9a3
+无变化 libretro/Lakka @33830351
+无变化 djyt/cannonball @27493ebf
+无变化 devkitPro/citro3d @9f21cf7b
+存在性巡检:查 0 个已挂 GitHub 源,异常 0 个
+耗时 105.4s;台账 F:\开源掌机教程\04-游戏资源库\下架抢救\收录台账.tsv
+----- run at 2026-11-10 19:25:00 -----
+本轮:抓取 4 / 告警 3 / 雷达命中 0(登记表 24 项 +新闻信号)
+⚠ **已消失** Citron 延续仓 citron-neo/emulator citron-neo/emulator(gh: Not Found (HTTP 404)|curl=404)——立刻去 Wayback 找快照
+无变化 suyu-emu/suyu-v0.0.4 @c0dd2ff5
+⚠ **已消失** Ryujinx 延续 NextendoNetwork/Ryujinx-Nextendo NextendoNetwork/Ryujinx-Nextendo(gh: Not Found (HTTP 404)|curl=404)——立刻去 Wayback 找快照
+无变化 hottabxp/re3 @3233ffe1
+无变化 skyline-dev/skyline @2eb226fa
+无变化 skyline-emu/skyline @21d31f74
+⚠ **仓库已被清空** MeloNX/MeloNX(空仓库留证)(MeloNX/MeloNX)——内容被剥离,等同下架,留证
+抓取 git 裸库镜像 https://git.eden-emu.dev/eden-emu/eden.git(HEAD 89d1a1cd7015)
+抓取页面快照 https://git.eden-emu.dev/eden-ci/nightly/releases(2a77a20d)
+抓取页面快照 https://eden-emu.dev/(4a58de51)
+抓取页面快照 https://citron-emu.com/(d4c2d6ea)
+页面无变化 https://ryujinx.io/
+页面无变化 https://skyline-emu.com/
+残存仓仍在 Kenji-NX 残存 issue 仓(60f5e762)
+雷达目标 mizfitxtm/re3-REDUX -> NOCHANGE
+雷达目标 frilxy/AM2R_3DS_CN -> NOCHANGE
+无变化 RetroFW/RetroFW @ebc4125a
+无变化 theheroGAC/Autoplugin @4a17a9a3
+无变化 libretro/Lakka @33830351
+无变化 djyt/cannonball @27493ebf
+无变化 devkitPro/citro3d @9f21cf7b
+存在性巡检:查 0 个已挂 GitHub 源,异常 0 个
+耗时 108.2s;台账 F:\开源掌机教程\04-游戏资源库\下架抢救\收录台账.tsv
+----- run at 2026-11-10 21:25:00 -----
+本轮:抓取 2 / 告警 3 / 雷达命中 0(登记表 24 项 +新闻信号)
+⚠ **已消失** Citron 延续仓 citron-neo/emulator citron-neo/emulator(gh: Not Found (HTTP 404)|curl=404)——立刻去 Wayback 找快照
+无变化 suyu-emu/suyu-v0.0.4 @c0dd2ff5
+⚠ **已消失** Ryujinx 延续 NextendoNetwork/Ryujinx-Nextendo NextendoNetwork/Ryujinx-Nextendo(gh: Not Found (HTTP 404)|curl=404)——立刻去 Wayback 找快照
+无变化 hottabxp/re3 @3233ffe1
+无变化 skyline-dev/skyline @2eb226fa
+无变化 skyline-emu/skyline @21d31f74
+⚠ **仓库已被清空** MeloNX/MeloNX(空仓库留证)(MeloNX/MeloNX)——内容被剥离,等同下架,留证
+git 镜像无新提交 https://git.eden-emu.dev/eden-emu/eden.git(HEAD 89d1a1cd7015)
+抓取页面快照 https://git.eden-emu.dev/eden-ci/nightly/releases(e0e86321)
+抓取页面快照 https://eden-emu.dev/(96ad89a1)
+站点返回 JS 挑战页(未存快照;不是下架,是 bot 墙)https://citron-emu.com/
+页面无变化 https://ryujinx.io/
+页面无变化 https://skyline-emu.com/
+残存仓仍在 Kenji-NX 残存 issue 仓(60f5e762)
+雷达目标 mizfitxtm/re3-REDUX -> NOCHANGE
+雷达目标 frilxy/AM2R_3DS_CN -> NOCHANGE
+无变化 RetroFW/RetroFW @ebc4125a
+无变化 theheroGAC/Autoplugin @4a17a9a3
+无变化 libretro/Lakka @33830351
+无变化 djyt/cannonball @27493ebf
+无变化 devkitPro/citro3d @9f21cf7b
+存在性巡检:查 0 个已挂 GitHub 源,异常 0 个
+耗时 96.7s;台账 F:\开源掌机教程\04-游戏资源库\下架抢救\收录台账.tsv
+----- run at 2026-11-11 09:25:04 -----
+本轮:抓取 2 / 告警 4 / 雷达命中 0(登记表 24 项 +新闻信号)
+⚠ **已消失** Citron 延续仓 citron-neo/emulator citron-neo/emulator(gh: Not Found (HTTP 404)|curl=404)——立刻去 Wayback 找快照
+无变化 suyu-emu/suyu-v0.0.4 @c0dd2ff5
+⚠ **已消失** Ryujinx 延续 NextendoNetwork/Ryujinx-Nextendo NextendoNetwork/Ryujinx-Nextendo(gh: Not Found (HTTP 404)|curl=404)——立刻去 Wayback 找快照
+无变化 hottabxp/re3 @3233ffe1
+无变化 skyline-dev/skyline @2eb226fa
+无变化 skyline-emu/skyline @21d31f74
+⚠ **仓库已被清空** MeloNX/MeloNX(空仓库留证)(MeloNX/MeloNX)——内容被剥离,等同下架,留证
+git 镜像无新提交 https://git.eden-emu.dev/eden-emu/eden.git(HEAD cf654052c416)
+抓取页面快照 https://git.eden-emu.dev/eden-ci/nightly/releases(1ac688a2)
+抓取页面快照 https://eden-emu.dev/(9c8d026d)
+页面无变化 https://citron-emu.com/
+页面无变化 https://ryujinx.io/
+⚠ 站点异常 https://skyline-emu.com/(521)
+残存仓仍在 Kenji-NX 残存 issue 仓(60f5e762)
+雷达目标 mizfitxtm/re3-REDUX -> NOCHANGE
+雷达目标 frilxy/AM2R_3DS_CN -> NOCHANGE
+无变化 RetroFW/RetroFW @ebc4125a
+无变化 theheroGAC/Autoplugin @4a17a9a3
+无变化 libretro/Lakka @33830351
+无变化 djyt/cannonball @27493ebf
+无变化 devkitPro/citro3d @9f21cf7b
+存在性巡检:查 0 个已挂 GitHub 源,异常 0 个
+耗时 65.1s;台账 F:\开源掌机教程\04-游戏资源库\下架抢救\收录台账.tsv
+----- run at 2026-11-11 11:25:00 -----
+本轮:抓取 2 / 告警 3 / 雷达命中 0(登记表 24 项 +新闻信号)
+⚠ **已消失** Citron 延续仓 citron-neo/emulator citron-neo/emulator(gh: Not Found (HTTP 404)|curl=404)——立刻去 Wayback 找快照
+无变化 suyu-emu/suyu-v0.0.4 @c0dd2ff5
+⚠ **已消失** Ryujinx 延续 NextendoNetwork/Ryujinx-Nextendo NextendoNetwork/Ryujinx-Nextendo(gh: Not Found (HTTP 404)|curl=404)——立刻去 Wayback 找快照
+无变化 hottabxp/re3 @3233ffe1
+无变化 skyline-dev/skyline @2eb226fa
+无变化 skyline-emu/skyline @21d31f74
+⚠ **仓库已被清空** MeloNX/MeloNX(空仓库留证)(MeloNX/MeloNX)——内容被剥离,等同下架,留证
+git 镜像无新提交 https://git.eden-emu.dev/eden-emu/eden.git(HEAD cf654052c416)
+抓取页面快照 https://git.eden-emu.dev/eden-ci/nightly/releases(47d54e78)
+抓取页面快照 https://eden-emu.dev/(6e1fe1a3)
+站点返回 JS 挑战页(未存快照;不是下架,是 bot 墙)https://citron-emu.com/
+页面无变化 https://ryujinx.io/
+页面无变化 https://skyline-emu.com/
+残存仓仍在 Kenji-NX 残存 issue 仓(60f5e762)
+雷达目标 mizfitxtm/re3-REDUX -> NOCHANGE
+雷达目标 frilxy/AM2R_3DS_CN -> NOCHANGE
+无变化 RetroFW/RetroFW @ebc4125a
+无变化 theheroGAC/Autoplugin @4a17a9a3
+无变化 libretro/Lakka @33830351
+无变化 djyt/cannonball @27493ebf
+无变化 devkitPro/citro3d @9f21cf7b
+存在性巡检:查 0 个已挂 GitHub 源,异常 0 个
+耗时 68.8s;台账 F:\开源掌机教程\04-游戏资源库\下架抢救\收录台账.tsv
+----- run at 2026-11-11 13:25:00 -----
+本轮:抓取 2 / 告警 3 / 雷达命中 0(登记表 24 项 +新闻信号)
+⚠ **已消失** Citron 延续仓 citron-neo/emulator citron-neo/emulator(gh: Not Found (HTTP 404)|curl=404)——立刻去 Wayback 找快照
+无变化 suyu-emu/suyu-v0.0.4 @c0dd2ff5
+⚠ **已消失** Ryujinx 延续 NextendoNetwork/Ryujinx-Nextendo NextendoNetwork/Ryujinx-Nextendo(gh: Not Found (HTTP 404)|curl=404)——立刻去 Wayback 找快照
+无变化 hottabxp/re3 @3233ffe1
+无变化 skyline-dev/skyline @2eb226fa
+无变化 skyline-emu/skyline @21d31f74
+⚠ **仓库已被清空** MeloNX/MeloNX(空仓库留证)(MeloNX/MeloNX)——内容被剥离,等同下架,留证
+git 镜像无新提交 https://git.eden-emu.dev/eden-emu/eden.git(HEAD cf654052c416)
+抓取页面快照 https://git.eden-emu.dev/eden-ci/nightly/releases(29888ae4)
+抓取页面快照 https://eden-emu.dev/(35080063)
+站点返回 JS 挑战页(未存快照;不是下架,是 bot 墙)https://citron-emu.com/
+页面无变化 https://ryujinx.io/
+页面无变化 https://skyline-emu.com/
+残存仓仍在 Kenji-NX 残存 issue 仓(60f5e762)
+雷达目标 mizfitxtm/re3-REDUX -> NOCHANGE
+雷达目标 frilxy/AM2R_3DS_CN -> NOCHANGE
+无变化 RetroFW/RetroFW @ebc4125a
+无变化 theheroGAC/Autoplugin @4a17a9a3
+无变化 libretro/Lakka @33830351
+无变化 djyt/cannonball @27493ebf
+无变化 devkitPro/citro3d @9f21cf7b
+存在性巡检:查 0 个已挂 GitHub 源,异常 0 个
+耗时 71.4s;台账 F:\开源掌机教程\04-游戏资源库\下架抢救\收录台账.tsv
+----- run at 2026-11-11 15:25:00 -----
+本轮:抓取 2 / 告警 3 / 雷达命中 0(登记表 24 项 +新闻信号)
+⚠ **已消失** Citron 延续仓 citron-neo/emulator citron-neo/emulator(gh: Not Found (HTTP 404)|curl=404)——立刻去 Wayback 找快照
+无变化 suyu-emu/suyu-v0.0.4 @c0dd2ff5
+⚠ **已消失** Ryujinx 延续 NextendoNetwork/Ryujinx-Nextendo NextendoNetwork/Ryujinx-Nextendo(gh: Not Found (HTTP 404)|curl=404)——立刻去 Wayback 找快照
+无变化 hottabxp/re3 @3233ffe1
+无变化 skyline-dev/skyline @2eb226fa
+无变化 skyline-emu/skyline @21d31f74
+⚠ **仓库已被清空** MeloNX/MeloNX(空仓库留证)(MeloNX/MeloNX)——内容被剥离,等同下架,留证
+git 镜像无新提交 https://git.eden-emu.dev/eden-emu/eden.git(HEAD cf654052c416)
+抓取页面快照 https://git.eden-emu.dev/eden-ci/nightly/releases(b596bd6c)
+抓取页面快照 https://eden-emu.dev/(f41457ec)
+站点返回 JS 挑战页(未存快照;不是下架,是 bot 墙)https://citron-emu.com/
+页面无变化 https://ryujinx.io/
+页面无变化 https://skyline-emu.com/
+残存仓仍在 Kenji-NX 残存 issue 仓(60f5e762)
+雷达目标 mizfitxtm/re3-REDUX -> NOCHANGE
+雷达目标 frilxy/AM2R_3DS_CN -> NOCHANGE
+无变化 RetroFW/RetroFW @ebc4125a
+无变化 theheroGAC/Autoplugin @4a17a9a3
+无变化 libretro/Lakka @33830351
+无变化 djyt/cannonball @27493ebf
+无变化 devkitPro/citro3d @9f21cf7b
+存在性巡检:查 133 个已挂 GitHub 源,异常 0 个
+耗时 185.5s;台账 F:\开源掌机教程\04-游戏资源库\下架抢救\收录台账.tsv
+----- run at 2026-11-11 21:25:01 -----
+本轮:抓取 2 / 告警 4 / 雷达命中 0(登记表 24 项 +新闻信号)
+⚠ **已消失** Citron 延续仓 citron-neo/emulator citron-neo/emulator(gh: Not Found (HTTP 404)|curl=404)——立刻去 Wayback 找快照
+无变化 suyu-emu/suyu-v0.0.4 @c0dd2ff5
+⚠ **已消失** Ryujinx 延续 NextendoNetwork/Ryujinx-Nextendo NextendoNetwork/Ryujinx-Nextendo(gh: Not Found (HTTP 404)|curl=404)——立刻去 Wayback 找快照
+无变化 hottabxp/re3 @3233ffe1
+无变化 skyline-dev/skyline @2eb226fa
+无变化 skyline-emu/skyline @21d31f74
+⚠ **仓库已被清空** MeloNX/MeloNX(空仓库留证)(MeloNX/MeloNX)——内容被剥离,等同下架,留证
+git 镜像无新提交 https://git.eden-emu.dev/eden-emu/eden.git(HEAD cf654052c416)
+抓取页面快照 https://git.eden-emu.dev/eden-ci/nightly/releases(227f6dae)
+抓取页面快照 https://eden-emu.dev/(b96886b1)
+⚠ 站点异常 https://citron-emu.com/(curl_err_35)
+页面无变化 https://ryujinx.io/
+页面无变化 https://skyline-emu.com/
+残存仓仍在 Kenji-NX 残存 issue 仓(60f5e762)
+雷达目标 mizfitxtm/re3-REDUX -> NOCHANGE
+雷达目标 frilxy/AM2R_3DS_CN -> NOCHANGE
+无变化 RetroFW/RetroFW @ebc4125a
+无变化 theheroGAC/Autoplugin @4a17a9a3
+无变化 libretro/Lakka @33830351
+无变化 djyt/cannonball @27493ebf
+无变化 devkitPro/citro3d @9f21cf7b
+存在性巡检:查 133 个已挂 GitHub 源,异常 0 个
+耗时 278.4s;台账 F:\开源掌机教程\04-游戏资源库\下架抢救\收录台账.tsv

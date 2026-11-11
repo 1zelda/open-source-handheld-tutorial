@@ -1,0 +1,350 @@
+[index] 32X
+  page 0: 5 (total 5)
+[index] 3DO
+  page 0: 3 (total 3)
+[index] 3DS
+  page 0: 25 (total 25)
+[index] A2600
+  page 0: 100 (total 100)
+  page 1: 100 (total 200)
+  page 2: 7 (total 207)
+[index] A7800
+  page 0: 11 (total 11)
+[index] Amiga
+  page 0: 14 (total 14)
+[index] AppleII
+  page 0: 5 (total 5)
+[index] Arcade
+  page 0: 100 (total 100)
+  page 1: 100 (total 200)
+  page 2: 58 (total 258)
+[index] BSX
+  page 0: 3 (total 3)
+[index] C64
+  page 0: 100 (total 100)
+  page 1: 100 (total 200)
+  page 2: 65 (total 265)
+[index] CDi
+  page 0: 1 (total 1)
+[skip] ChannelF already indexed
+[index] Coleco
+  page 0: 22 (total 22)
+[index] DOS
+  page 0: 100 (total 100)
+  page 1: 100 (total 200)
+  page 2: 10 (total 210)
+[index] DS
+  page 0: 100 (total 100)
+  page 1: 100 (total 200)
+  page 2: 54 (total 254)
+[index] DSi
+  page 0: 7 (total 7)
+[index] FDS
+  page 0: 24 (total 24)
+[index] Flash
+  page 0: 100 (total 100)
+  page 1: 100 (total 200)
+  page 2: 100 (total 300)
+  page 3: 61 (total 361)
+[index] GB
+  page 0: 100 (total 100)
+  page 1: 100 (total 200)
+  page 2: 79 (total 279)
+[index] GBA
+  page 0: 100 (total 100)
+  page 1: 100 (total 200)
+  page 2: 100 (total 300)
+  page 3: 100 (total 400)
+  page 4: 36 (total 436)
+[index] GBC
+  page 0: 100 (total 100)
+  page 1: 100 (total 200)
+  page 2: 82 (total 282)
+[index] GC
+  page 0: 100 (total 100)
+  page 1: 100 (total 200)
+  page 2: 7 (total 207)
+[index] GG
+  page 0: 25 (total 25)
+[index] Genesis
+  page 0: 100 (total 100)
+  page 1: 100 (total 200)
+  page 2: 100 (total 300)
+  page 3: 100 (total 400)
+  page 4: 66 (total 466)
+[index] INTV
+  page 0: 42 (total 42)
+[index] J2ME
+  page 0: 2 (total 2)
+[index] Jaguar
+  page 0: 1 (total 1)
+[index] JaguarCD
+  page 0: 2 (total 2)
+[index] Lynx
+  page 0: 9 (total 9)
+[index] MSX
+  page 0: 28 (total 28)
+[index] MacOS
+  page 0: 3 (total 3)
+[index] N64
+  page 0: 100 (total 100)
+  page 1: 100 (total 200)
+  page 2: 5 (total 205)
+[index] N64DD
+  page 0: 1 (total 1)
+[index] NES
+  page 0: 100 (total 100)
+  page 1: 100 (total 200)
+  page 2: 100 (total 300)
+  page 3: 100 (total 400)
+  page 4: 100 (total 500)
+  page 5: 100 (total 600)
+  page 6: 100 (total 700)
+  page 7: 100 (total 800)
+  page 8: 100 (total 900)
+  page 9: 100 (total 1000)
+  page 10: 65 (total 1065)
+[index] NGP
+  page 0: 7 (total 7)
+[index] O2
+  page 0: 7 (total 7)
+[index] PC
+  page 0: 100 (total 100)
+  page 1: 100 (total 200)
+  page 2: 84 (total 284)
+[index] PC98
+  page 0: 3 (total 3)
+[index] PCE
+  page 0: 31 (total 31)
+[index] PCECD
+  page 0: 12 (total 12)
+[index] PCFX
+  page 0: 1 (total 1)
+[index] PICO8
+  page 0: 20 (total 20)
+[index] PSX
+  page 0: 100 (total 100)
+  page 1: 100 (total 200)
+  page 2: 100 (total 300)
+  page 3: 59 (total 359)
+[index] SG1000
+  page 0: 6 (total 6)
+[index] SGB
+  page 0: 10 (total 10)
+[index] SGX
+  page 0: 1 (total 1)
+[index] SMS
+  page 0: 75 (total 75)
+[index] SNES
+  page 0: 100 (total 100)
+  page 1: 100 (total 200)
+  page 2: 100 (total 300)
+  page 3: 100 (total 400)
+  page 4: 100 (total 500)
+  page 5: 60 (total 560)
+[index] SVI3x8
+  page 0: 1 (total 1)
+[index] Saturn
+  page 0: 20 (total 20)
+[index] SegaCD
+  page 0: 23 (total 23)
+[index] TI83
+  page 0: 4 (total 4)
+[index] TIC80
+  page 0: 2 (total 2)
+[index] Uzebox
+  page 0: 9 (total 9)
+[index] VBoy
+  page 0: 12 (total 12)
+[index] VEC
+  page 0: 2 (total 2)
+[index] WSWAN
+  page 0: 10 (total 10)
+[index] Wii
+  page 0: 39 (total 39)
+[index] X1
+[index] ZXS
+  page 0: 66 (total 66)
+index done: 4694 publications
+  downloaded 50 (skip 0, fail 0)
+  downloaded 100 (skip 0, fail 0)
+  downloaded 150 (skip 0, fail 0)
+  downloaded 200 (skip 0, fail 0)
+  downloaded 250 (skip 0, fail 0)
+  downloaded 300 (skip 0, fail 0)
+  downloaded 350 (skip 0, fail 0)
+  downloaded 400 (skip 0, fail 0)
+  downloaded 450 (skip 0, fail 0)
+  downloaded 500 (skip 0, fail 0)
+  downloaded 550 (skip 0, fail 0)
+  downloaded 600 (skip 0, fail 0)
+  downloaded 650 (skip 0, fail 0)
+  downloaded 700 (skip 0, fail 0)
+  downloaded 750 (skip 0, fail 0)
+  downloaded 800 (skip 0, fail 0)
+  downloaded 850 (skip 0, fail 0)
+  downloaded 900 (skip 0, fail 0)
+  downloaded 950 (skip 0, fail 0)
+  downloaded 1000 (skip 0, fail 0)
+  downloaded 1050 (skip 0, fail 0)
+  downloaded 1100 (skip 0, fail 0)
+  downloaded 1150 (skip 0, fail 0)
+  downloaded 1200 (skip 0, fail 0)
+  downloaded 1250 (skip 0, fail 0)
+  downloaded 1300 (skip 0, fail 0)
+  retry 1/4 https://tasvideos.org/3451M?handler=Download (<urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1028)>) wait 3s
+  downloaded 1350 (skip 0, fail 0)
+  downloaded 1400 (skip 0, fail 0)
+  downloaded 1450 (skip 0, fail 0)
+  downloaded 1500 (skip 0, fail 0)
+  downloaded 1550 (skip 0, fail 0)
+  downloaded 1600 (skip 0, fail 0)
+  downloaded 1650 (skip 0, fail 0)
+  downloaded 1700 (skip 0, fail 0)
+  downloaded 1750 (skip 0, fail 0)
+  downloaded 1800 (skip 0, fail 0)
+  downloaded 1850 (skip 0, fail 0)
+  downloaded 1900 (skip 0, fail 0)
+  downloaded 1950 (skip 0, fail 0)
+  downloaded 2000 (skip 0, fail 0)
+  downloaded 2050 (skip 0, fail 0)
+  downloaded 2100 (skip 0, fail 0)
+  downloaded 2150 (skip 0, fail 0)
+  downloaded 2200 (skip 0, fail 0)
+  downloaded 2250 (skip 0, fail 0)
+  downloaded 2300 (skip 0, fail 0)
+  downloaded 2350 (skip 0, fail 0)
+  downloaded 2400 (skip 0, fail 0)
+  downloaded 2450 (skip 0, fail 0)
+  retry 1/4 https://tasvideos.org/5020M?handler=Download (<urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1028)>) wait 3s
+  downloaded 2500 (skip 0, fail 0)
+  downloaded 2550 (skip 0, fail 0)
+  downloaded 2600 (skip 0, fail 0)
+  downloaded 2650 (skip 0, fail 0)
+  downloaded 2700 (skip 1, fail 0)
+  downloaded 2750 (skip 1, fail 0)
+  downloaded 2800 (skip 1, fail 0)
+  downloaded 2850 (skip 1, fail 0)
+  downloaded 2900 (skip 1, fail 0)
+  downloaded 2950 (skip 1, fail 0)
+  downloaded 3000 (skip 1, fail 0)
+  downloaded 3050 (skip 1, fail 0)
+  downloaded 3100 (skip 1, fail 0)
+  downloaded 3150 (skip 1, fail 0)
+  downloaded 3200 (skip 1, fail 0)
+  downloaded 3250 (skip 1, fail 0)
+  downloaded 3300 (skip 1, fail 0)
+  downloaded 3350 (skip 1, fail 0)
+  downloaded 3400 (skip 1, fail 0)
+  downloaded 3450 (skip 1, fail 0)
+  downloaded 3500 (skip 1, fail 0)
+  downloaded 3550 (skip 1, fail 0)
+  downloaded 3600 (skip 1, fail 0)
+  downloaded 3650 (skip 1, fail 0)
+  downloaded 3700 (skip 3, fail 0)
+  downloaded 3750 (skip 3, fail 0)
+  downloaded 3800 (skip 3, fail 0)
+  downloaded 3850 (skip 3, fail 0)
+  downloaded 3900 (skip 3, fail 0)
+  downloaded 3950 (skip 3, fail 0)
+  downloaded 4000 (skip 3, fail 0)
+  retry 1/4 https://tasvideos.org/6767M?handler=Download (<urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1028)>) wait 3s
+  downloaded 4050 (skip 3, fail 0)
+  downloaded 4100 (skip 3, fail 0)
+  downloaded 4150 (skip 3, fail 0)
+  downloaded 4200 (skip 3, fail 0)
+  downloaded 4250 (skip 3, fail 0)
+  downloaded 4300 (skip 3, fail 0)
+  downloaded 4350 (skip 3, fail 0)
+  downloaded 4400 (skip 3, fail 0)
+  downloaded 4450 (skip 3, fail 0)
+  downloaded 4500 (skip 3, fail 0)
+  downloaded 4550 (skip 3, fail 0)
+  downloaded 4600 (skip 3, fail 0)
+  downloaded 4650 (skip 3, fail 0)
+movies done: new 4691, existing 3, failed 0
+  versions 50 (skip 0, fail 0)
+  versions 100 (skip 0, fail 0)
+  versions 150 (skip 0, fail 0)
+  versions 200 (skip 0, fail 0)
+  versions 250 (skip 0, fail 0)
+  versions 300 (skip 0, fail 0)
+  versions 350 (skip 0, fail 0)
+  versions 400 (skip 0, fail 0)
+  versions 450 (skip 0, fail 0)
+  versions 500 (skip 0, fail 0)
+  versions 550 (skip 0, fail 0)
+  versions 600 (skip 0, fail 0)
+  versions 650 (skip 0, fail 0)
+  versions 700 (skip 0, fail 0)
+  versions 750 (skip 0, fail 0)
+  versions 800 (skip 0, fail 0)
+  versions 850 (skip 0, fail 0)
+  versions 900 (skip 0, fail 0)
+  retry 1/4 https://tasvideos.org/Games/1949/Versions/View/1573 (<urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1028)>) wait 3s
+  versions 950 (skip 0, fail 0)
+  versions 1000 (skip 0, fail 0)
+  versions 1050 (skip 0, fail 0)
+  versions 1100 (skip 0, fail 0)
+  versions 1150 (skip 0, fail 0)
+  versions 1200 (skip 0, fail 0)
+  versions 1250 (skip 0, fail 0)
+  versions 1300 (skip 0, fail 0)
+  versions 1350 (skip 0, fail 0)
+  versions 1400 (skip 0, fail 0)
+  versions 1450 (skip 0, fail 0)
+  versions 1500 (skip 0, fail 0)
+  versions 1550 (skip 0, fail 0)
+  versions 1600 (skip 0, fail 0)
+  versions 1650 (skip 0, fail 0)
+  versions 1700 (skip 0, fail 0)
+  versions 1750 (skip 0, fail 0)
+  versions 1800 (skip 0, fail 0)
+  versions 1850 (skip 0, fail 0)
+  versions 1900 (skip 0, fail 0)
+  versions 1950 (skip 0, fail 0)
+  versions 2000 (skip 0, fail 0)
+  versions 2050 (skip 0, fail 0)
+  versions 2100 (skip 0, fail 0)
+  versions 2150 (skip 0, fail 0)
+  versions 2200 (skip 0, fail 0)
+  versions 2250 (skip 0, fail 0)
+  versions 2300 (skip 0, fail 0)
+  versions 2350 (skip 0, fail 0)
+  versions 2400 (skip 0, fail 0)
+  versions 2450 (skip 0, fail 0)
+  versions 2500 (skip 0, fail 0)
+  versions 2550 (skip 0, fail 0)
+  versions 2600 (skip 0, fail 0)
+  versions 2650 (skip 0, fail 0)
+  retry 1/4 https://tasvideos.org/Games/4366/Versions/View/5074 (<urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1028)>) wait 3s
+  versions 2700 (skip 0, fail 0)
+  versions 2750 (skip 0, fail 0)
+  versions 2800 (skip 0, fail 0)
+  versions 2850 (skip 0, fail 0)
+  versions 2900 (skip 2, fail 0)
+  retry 1/4 https://tasvideos.org/Games/4693/Versions/View/5584 (HTTP Error 503: Service Temporarily Unavailable) wait 3s
+  versions 2950 (skip 2, fail 0)
+  versions 3000 (skip 2, fail 0)
+  versions 3050 (skip 2, fail 0)
+  versions 3100 (skip 2, fail 0)
+  versions 3150 (skip 2, fail 0)
+  versions 3200 (skip 2, fail 0)
+  versions 3250 (skip 2, fail 0)
+  versions 3300 (skip 2, fail 0)
+  versions 3350 (skip 2, fail 0)
+  versions 3400 (skip 2, fail 0)
+  versions 3450 (skip 2, fail 0)
+  versions 3500 (skip 2, fail 0)
+  versions 3550 (skip 2, fail 0)
+  versions 3600 (skip 2, fail 0)
+  versions 3650 (skip 2, fail 0)
+  versions 3700 (skip 2, fail 0)
+  versions 3750 (skip 2, fail 0)
+  versions 3800 (skip 2, fail 0)
+  versions 3850 (skip 2, fail 0)
+  retry 1/4 https://tasvideos.org/Games/853/Versions/View/181 (<urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1028)>) wait 3s
+  versions 3900 (skip 2, fail 0)
+  versions 3950 (skip 2, fail 0)
+  versions 4000 (skip 2, fail 0)
+versions done: new 4015, existing 2, failed 0, unique 4017

@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>开源掌机 · 数据看板</title>
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style.css?v=20261108t">
 </head>
 <body>
 <header class="topbar">
@@ -37,7 +37,7 @@
       </div>
       <div class="panel">
         <h3>数据集底账(行数 = 台账行数)</h3>
-        <table class="tbl compact" id="dsTable"></table>
+        <div class="tablewrap"><table class="tbl compact" id="dsTable"></table></div>
       </div>
     </div>
     <div class="grid2">
@@ -52,7 +52,7 @@
     </div>
     <div class="panel">
       <h3>最近一轮抓取失败的源 <span class="muted">(_last_run.json,不许静默跳过)</span></h3>
-      <table class="tbl compact" id="failTable"></table>
+      <div class="tablewrap"><table class="tbl compact" id="failTable"></table></div>
     </div>
   </section>
 
@@ -189,36 +189,37 @@
 
   <!-- 网盘 -->
   <section id="view-netdisk" class="view">
-    <div id="ndCards" class="cards"></div>
-
     <div class="panel">
-      <h3>登录 / 管账号 <span class="muted">(这一页是看板唯一的写路径:值只 POST 给本机 127.0.0.1,由账号台当场 DPAPI 加密入库 —— 页面不回显、不打印、不落盘任何凭据值)</span></h3>
-      <div id="ndLock"></div>
+      <h3>① 扫码登录 <span class="muted">(先在这儿把号登进来 —— 值只发到本机 127.0.0.1，DPAPI 加密入库；页面不回显)</span></h3>
 
       <div class="qrhead">
         <div class="filters">
           <label class="fld">盘<select id="ndDriver" class="wide"></select></label>
-          <label class="fld">登录位<select id="qrSlot" class="wide" title="一格 = 一个独立 profile = 一个号的登录态。换号扫就换一格，不会顶掉上一格的号。"></select></label>
-          <label class="fld">用哪个浏览器<select id="qrExe" class="wide" title="这一格的窗口用哪个浏览器开；Firefox 没有 CDP，用不了。"></select></label>
-          <button id="qrStart" class="biglink primary">▶ 打开扫码窗口</button>
-          <button id="qrClose" class="ghost">关掉窗口</button>
-          <button id="qrPurge" class="ghost danger">清掉窗口留下的 profile</button>
+          <select id="qrSlot" hidden></select>
+          <label class="fld">浏览器<select id="qrExe" class="wide"></select></label>
+          <button id="qrStart" class="biglink primary">▶ 扫码登录</button>
+          <button id="qrClose" class="ghost">关掉</button>
+          <button id="qrReap" class="ghost" title="现在探一遍每个号，登不上的自动释放登录位">体检失效号</button>
+          <button id="qrPurge" class="ghost danger">清空这格</button>
           <button id="ndStart" class="ghost">拉起 OpenList</button>
         </div>
-        <p class="qrstate" id="qrState">还没开窗口 —— 按上面那个蓝色大按钮。</p>
+        <p class="qrstate" id="qrState">还没开始 —— 点『▶ 扫码登录』。</p>
+        <table class="tbl compact qrinfo" id="qrInfo"></table>
+        <p class="muted note" id="qrSlotsNote"></p>
         <p class="muted note" id="qrHowto"></p>
       </div>
 
       <div class="qrgrid">
         <div class="shot" id="qrShot">
-          <img id="qrImg" alt="扫码窗口的实时画面" hidden>
-          <span class="shothint" id="qrShotHint">窗口没开着，这里就没有画面。按『▶ 打开扫码窗口』。</span>
+          <img id="qrImg" alt="登录二维码" hidden>
+          <span class="shotbadge" id="qrShotBadge" hidden>整页画面 · 没找到二维码</span>
+          <span class="shothint" id="qrShotHint">点『扫码登录』，这里直接出二维码（后台跑，不弹窗口）。</span>
         </div>
-        <table class="tbl compact" id="qrInfo"></table>
+        <p class="muted note" id="qrClickHint" hidden>点画面就能点网页：二维码过期点中间的刷新按钮，「手机登录 / 微信登录」也能点。</p>
       </div>
 
       <details id="ndForm">
-        <summary>手填凭据 <span class="muted">(扫码不灵、或者百度/迅雷这种在 OpenList 里不吃 cookie 的盘，才走这条)</span></summary>
+        <summary>手填凭据 <span class="muted">(百度 refresh_token / 迅雷账号密码走这条)</span></summary>
         <div class="filters">
           <label class="fld">别名<input id="ndAlias" class="mono" placeholder="quark-03" autocomplete="off" spellcheck="false"></label>
           <label class="fld">备注<input id="ndRemark" placeholder="哪个号、什么会员" autocomplete="off"></label>
@@ -233,10 +234,53 @@
       </details>
     </div>
 
+
+    <div class="panel">
+      <h3>② 账号工作台 <span class="muted">(选账号 → 内嵌浏览器操作网盘 → 目录树传文件)</span></h3>
+      <div id="ndLock"></div>
+
+      <div class="ndbar">
+        <div class="filters">
+          <label class="fld">当前账号<select id="ndAccount" class="wide"></select></label>
+          <button id="ndOpenView" class="biglink primary">▶ 打开内嵌浏览器</button>
+          <button id="ndCloseView" class="ghost">关窗口</button>
+          <button id="ndGotoHome" class="ghost">回盘首页</button>
+          <button id="ndRefreshView" class="ghost">刷新画面</button>
+          <span id="ndViewState" class="stat"></span>
+        </div>
+        <p class="muted note" id="ndViewHint">选一个账号 → 点「打开内嵌浏览器」，这一格就会在下面开一个能点的网页视图；没窗口时先点开。</p>
+        <p class="muted note" id="ndViewKbd">点一下画面就能直接打字（手机号、验证码、密码都行），回车/退格/Tab 也照发；打完按「刷新画面」看结果。</p>
+      </div>
+
+      <div class="ndsplit">
+        <div class="ndview">
+          <div class="ndview-stage" id="ndViewStage" tabindex="0">
+            <img id="ndViewImg" alt="内嵌浏览器视图" hidden>
+            <span class="shothint" id="ndViewHint2">还没开窗口。选账号后点上面的「▶ 打开内嵌浏览器」。</span>
+          </div>
+          <textarea id="ndKeys" class="ndkbd" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="发送到内嵌浏览器的键盘输入"></textarea>
+          <div class="ndview-foot muted" id="ndViewFoot"></div>
+        </div>
+        <div class="ndfiles">
+          <div class="ndfiles-head">
+            <div class="crumb" id="ndCrumb"></div>
+            <div class="filters tight">
+              <button id="ndUpDir" class="ghost">上一级</button>
+              <button id="ndRefreshDir" class="ghost">刷新</button>
+              <button id="ndUploadPick" class="ghost">上传文件到此</button>
+              <input id="ndUploadFile" type="file" multiple hidden>
+            </div>
+          </div>
+          <div class="tablewrap ndfiles-body"><table class="tbl compact" id="ndFilesTable"></table></div>
+          <div class="ndfiles-foot muted" id="ndFilesFoot"></div>
+        </div>
+      </div>
+    </div>
+
     <div class="grid2">
       <div class="panel">
         <h3>账号库底账 <span class="muted">(F:\OpenList\账号库.json 的元数据:条数、密文长度;值一个都不显示)</span></h3>
-        <table class="tbl compact" id="ndDriverTable"></table>
+        <div class="tablewrap"><table class="tbl compact" id="ndDriverTable"></table></div>
       </div>
       <div class="panel">
         <h3>要留意的</h3>
@@ -246,22 +290,25 @@
 
     <div class="panel">
       <h3>账号明细 <span class="muted">每行四个按钮:探测 / 切活跃 / 改凭据(把这条灌回上面的表单)/ 删。ID 和账号名是登录时向网盘现问的;secret、plain、密文一律不读不显示。</span></h3>
-      <table class="tbl" id="ndAccountTable"></table>
+      <div class="tablewrap scrolly"><table class="tbl compact" id="ndAccountTable"></table></div>
     </div>
 
     <div class="panel">
       <h3>上传档位 <span class="muted">(_工具脚本/网盘上传清单.tsv —— enable 不为 1 的档位跑上传会被跳过)</span></h3>
-      <table class="tbl" id="ndScopeTable"></table>
+      <div class="tablewrap scrolly"><table class="tbl" id="ndScopeTable"></table></div>
     </div>
 
     <div class="panel">
       <h3>上传台账 <span class="muted">(06-资讯监控/网盘上传/网盘上传台账.tsv)</span></h3>
-      <table class="tbl compact" id="ndLedgerTable"></table>
+      <div class="tablewrap"><table class="tbl compact" id="ndLedgerTable"></table></div>
       <p class="muted note" id="ndNotes"></p>
     </div>
+
+    <!-- 服务状态压成一行,放页签最底下(2026-11-08:原来五张大卡顶在页首,占太多位置) -->
+    <div id="ndCards" class="ndstrip"></div>
   </section>
 
 </main>
-<script src="app.js"></script>
+<script src="app.js?v=20261108t"></script>
 </body>
 </html>

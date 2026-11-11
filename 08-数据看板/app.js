@@ -27,20 +27,34 @@ function hint(msg) {
   el.innerHTML = msg ? ('<span class="spin"></span> ' + esc(msg)) : '';
 }
 
-async function get(url) {
+async function get(url, tries) {
+  // 看板服务偶尔会被重启（改了后端就得重启），重启那一两秒里 fetch 会直接抛
+  // "Failed to fetch"。以前这里一抛就弹 alert 打断操作，其实等半秒再来一次就好 ——
+  // 先自己重试几轮，全都失败才提示，而且不再用 alert 挡着页面。
   hint('读取中');
-  try {
-    const r = await fetch(url, { cache: 'no-store' });
-    const j = await r.json();
-    if (!r.ok) throw new Error(j.error || ('HTTP ' + r.status));
-    return j;
-  } catch (e) {
-    hint('');
-    alert('读取失败:' + e.message + '\n(服务是否还开着?)');
-    throw e;
-  } finally {
-    hint('');
+  const n = tries || 5;
+  let last = null;
+  for (let i = 0; i < n; i++) {
+    try {
+      const r = await fetch(url, { cache: 'no-store' });
+      const j = await r.json().catch(() => ({}));
+      if (!r.ok) throw new Error(j.error || ('HTTP ' + r.status));
+      hint('');
+      return j;
+    } catch (e) {
+      last = e;
+      if (i < n - 1) {
+        hint('服务在重启,自动重连中…(' + (i + 1) + '/' + (n - 1) + ')');
+        await new Promise((ok) => setTimeout(ok, 600 * (i + 1)));
+      }
+    }
   }
+  hint('');
+  const el = $('#loadHint');
+  if (el) el.innerHTML = '<span style="color:var(--bad)">读取失败:' + esc(last && last.message)
+    + ' —— 看板服务没响应。</span> <a href="javascript:location.reload()">点这里刷新重试</a>'
+    + ' <span class="muted">（要重开服务:双击 08-数据看板/启动看板.bat）</span>';
+  throw last;
 }
 
 const qs = (params) => {
@@ -423,7 +437,11 @@ async function loadSources() {
 /* ---------------------------------------------------------------- 网盘(读 + 这一页的写) */
 
 const nd = { last: null, cache: {}, gridDriver: '', edit: false, wired: false,
-             timer: null, busy: false, shotUrl: '', ticks: 0, slot: '1' };
+             timer: null, busy: false, shotUrl: '', ticks: 0, slot: '1', picked: false,
+             // 账号工作台:内嵌浏览器视图 + 文件面板
+             acct: '', acctDriver: '', viewTimer: null, viewBusy: false,
+             shotW: 0, shotH: 0, scale: 1, viewSlot: '', viewUrl: '',
+             cwd: '/', fsBusy: false };
 
 async function ndFields(driver) {
   if (nd.cache[driver]) return nd.cache[driver];
@@ -476,16 +494,39 @@ function qrPaintSlots(driver, s) {
   // 一格登录位 = 一个独立 profile = 一个号的登录态;十格并排摆出来,谁占着哪格一目了然
   const sel = $('#qrSlot');
   const who = {};
-  (((nd.last || {}).accounts) || []).filter((a) => a.driver === driver)
-    .forEach((a) => { who[a.slot || 1] = a.alias; });
-  const rows = s.qr_slots || [];
+  (((nd.last || {}).accounts) || []).filter((a) => a.driver === driver && (a.slot || 0) > 0)
+    .forEach((a) => { who[a.slot] = a.alias; });
+  const rows = (s || {}).qr_slots || [];
+  const usable = (r) => r.listening && r.page_ok !== false;   // 端口通且页面还停在网盘登录页
   sel.innerHTML = rows.length ? rows.map((r) => {
-    const st = r.listening ? '窗口开着' : (who[r.slot] ? ('登着 ' + who[r.slot])
-      : (r.profile_exists ? '有登录态残留' : '空'));
-    return `<option value="${r.slot}">第 ${r.slot} 槽 · 端口 ${r.port} · ${st}</option>`;
-  }).join('') : '<option value="1">第 1 槽 ·（账号台没带登录位表）</option>';
-  if (!rows.length || !rows.some((r) => String(r.slot) === String(sel.value))) sel.value = '1';
-  nd.slot = sel.value;
+    const st = (r.listening && r.page_ok === false) ? '被别的程序占用'
+      : r.listening ? '开着' : (who[r.slot] ? ('登着 ' + who[r.slot])
+      : (r.profile_exists ? '有残留' : '空'));
+    return `<option value="${r.slot}">第 ${r.slot} 槽 · ${st}</option>`;
+  }).join('') : '<option value="1">第 1 槽</option>';
+  // ★ 11-08 修「点开扫码窗口却自动登录同一个号」：innerHTML 一重建，select.value 就
+  //   自动回到第一个 option（第 1 槽），原来那句判断永远读不到用户真正选的那格 ——
+  //   每次刷新/切盘/开完窗口都悄悄退回第 1 槽。那一格的 profile 里早登着号，夸克
+  //   直接进文件列表、根本不出二维码，看起来就像「没开新窗口、又是同一个账号」。
+  //   没手动挑过登录位时，默认停在第一个「库里没号 + 没有 profile 残留」的干净格子。
+  if (!rows.length) {
+    // 登录位表还没取到：先别动 nd.slot，qrRefreshSlots() 拿到表会再画一次
+  } else {
+    // 已经开着窗口的那格优先（别让下拉跳到「空格子」而页面对着另一格轮询，看起来就像窗口没开）
+    // 当前格还开着且没被占用,就留在这一格 —— 修「点扫码登录开了新格,刷新又弹回被占用的旧格(串项目)」
+    const cur = rows.find((r) => String(r.slot) === String(nd.slot) && usable(r));
+    const live = rows.filter(usable)[0];
+    const clean = rows.filter((r) => !who[r.slot] && !r.profile_exists && !(r.listening && r.page_ok === false))[0]
+               || rows.filter((r) => !who[r.slot])[0];
+    nd.nextClean = clean ? String(clean.slot) : '';
+    if (!nd.picked) {
+      if (cur) nd.slot = String(cur.slot);
+      else if (live) nd.slot = String(live.slot);
+      else if (clean) nd.slot = String(clean.slot);
+    }
+    if (rows.some((r) => String(r.slot) === String(nd.slot))) sel.value = String(nd.slot);
+    else { sel.value = '1'; nd.slot = '1'; }
+  }
 
   const ex = $('#qrExe');
   const bs = (s.qr_browsers || {}).ok || [];
@@ -494,22 +535,30 @@ function qrPaintSlots(driver, s) {
     : '<option value="">（本机没找到能开调试端口的浏览器）</option>';
   const bad = ((s.qr_browsers || {}).unusable || []).map((u) => u.file + '(' + u.why + ')').join(' ');
   ex.title = '这一格的窗口用哪个浏览器开。' + (bad ? ' 本机装了但用不了:' + bad : '');
+
+  // 登录位用量：用户第四次困惑就是「只登了 4 个号，界面却说十格满了」——
+  // 把「几个号 / 共几格 / 下一个空位」摆在按钮下面，占没占满一眼就能核对。
+  const note = $('#qrSlotsNote');
+  if (note) {
+    const mx = num(s.qr_max_slot || (nd.last || {}).qr_max_slot || rows.length || 0);
+    const usedN = Object.keys(who).length;
+    const next = nd.nextClean;
+    note.innerHTML = `登录位：<b>${usedN}</b> 个号 / 共 <b>${mx}</b> 格`
+      + (next ? `，下一个空位在 <b>第 ${next} 槽</b>` : '，<span class="tag bad">没有空位了</span>（删一个号，或点『体检失效号』释放）')
+      + '。一格一个号，扫新号自动挑空格，不用你选。';
+  }
 }
 
 function qrHead() {
   const driver = $('#ndDriver').value;
   const s = ndSchema(driver);
-  const kind = s.login_kind || '';
-  $('#qrStart').textContent = kind === 'qrcode' ? '▶ 打开扫码窗口' : '▶ 打开登录窗口';
-  $('#qrShotHint').textContent = kind === 'qrcode'
-    ? '窗口没开着。按上面『▶ 打开扫码窗口』,这里就实时显示那个二维码。'
-    : '这个盘在 OpenList 里不吃 cookie,扫码/开窗口只当看内容;挂载要的东西在下面「手填凭据」里。';
+  const meta = (((nd.last || {}).drivers) || []).filter((d) => d.driver === driver)[0] || {};
+  const kind = s.login_kind || meta.login_kind || '';
+  $('#qrStart').textContent = kind === 'password' ? '▶ 开始登录' : '▶ 扫码登录';
+  $('#qrShotHint').textContent = '点『扫码登录』，这里直接出二维码（后台跑，不弹窗口）。';
   qrPaintSlots(driver, s);
-  $('#qrHowto').innerHTML = esc(s.login_howto || '账号台没说这个盘怎么登录 —— 只能走下面「手填凭据」。')
-    .replace(/\n/g, '<br>')
-    + '<br><b>换第 2 个号怎么做:</b>把上面『登录位』调到第 2 槽再点打开 —— 每一格是一个独立 profile、'
-    + '各装一个号的登录态,扫第二个号不会把第一个号顶掉;十个号就是十格。'
-    + '(日常浏览器里已经登着的号捞不过来:Edge/Chrome 新版 cookie 是 App-Bound 加密,别的进程解不开,而且本机日常浏览器里也没登夸克 —— 详见 06-资讯监控\\网盘上传\\README.md 第 10 节。)';
+  qrRefreshSlots();                       // 切盘/刷新后按当前盘现探一次登录位表，别拿旧盘那张表画下拉
+  $('#qrHowto').innerHTML = esc(s.login_howto || meta.login_howto || '');
   if (kind === 'password' || kind === 'oauth') $('#ndForm').open = true;
 }
 
@@ -525,43 +574,60 @@ function qrStartPoll() {
 }
 
 function qrPaintInfo(q) {
-  const rows = [
-    ['登录位', `第 <b>${num(q.slot || 1)}</b> 槽 <span class="muted">${esc(q.profile || '')}${q.profile_exists ? '(profile 在)' : '(还没建)'} · 一共 ${num(q.max_slot || 10)} 格</span>`],
-    ['窗口', q.listening ? `<span class="tag ok">在听</span> <span class="mono">127.0.0.1:${num(q.port)}</span>${q.exe ? ' <span class="muted">' + esc(q.exe) + '</span>' : ''}` : '<span class="tag off">没开着</span>'],
-    ['开于', esc(q.started_at || '—')],
-    ['页面到', `<span class="mono clamp" title="${esc(q.url || '')}">${esc(q.url || '—')}</span>`],
-    ['抓到 cookie', `${num(q.cookie_count || 0)} 条 <span class="muted">${esc((q.cookie_names || q.names || []).slice(0, 12).join(' '))}${(q.cookie_names || q.names || []).length > 12 ? ' …' : ''}</span>`],
-    ['登录标志', (q.markers || []).map((m) => {
-      const has = (q.markers_have || []).indexOf(m) >= 0;
-      return `<span class="tag ${has ? 'ok' : 'off'}">${esc(m)}</span>`;
-    }).join(' ') || '<span class="muted">—</span>'],
-    ['网盘认账', q.login_ok ? '<span class="tag ok">认了(是真账号)</span>'
-      : '<span class="tag off">还没认(游客不算登录)</span>'],
-    ['这一问的话', `<span class="muted" title="${esc(q.msg || '')}">${esc((q.msg || '').slice(0, 90)) || '—'}</span>`]
+  // 11-08 用户「太啰嗦了,只显示关键的状态就行」:原来五行(登录位/状态/cookie/认账/最后那句话)
+  // 压成一行小标签。状态和最新那句话上面 #qrState 每 2 秒都在说,这里不再重复一遍;
+  // 「自动分配」「后台·不弹窗」是同义反复,去掉。
+  const port = q.listening
+    ? (q.page_ok === false ? '<span class="tag bad">被占用</span>'
+      : `<span class="mono">:${esc(String(q.port || ''))}</span>`)
+    : '<span class="muted">没在跑</span>';
+  const bits = [
+    `<span class="kv"><i>槽位</i>第 ${num(q.slot || 1)} 槽</span>`,
+    `<span class="kv"><i>端口</i>${port}</span>`,
+    `<span class="kv"><i>cookie</i>${num(q.cookie_count || 0)} 条</span>`,
+    `<span class="kv"><i>认账</i>${q.login_ok ? '<span class="tag ok">已认</span>' : '<span class="tag off">未认</span>'}</span>`
   ];
-  $('#qrInfo').innerHTML = '<tbody>' + rows.map((r) => `<tr><td class="name nowrap">${r[0]}</td><td>${r[1]}</td></tr>`).join('') + '</tbody>';
+  $('#qrInfo').innerHTML = '<tbody><tr><td>' + bits.join('') + '</td></tr></tbody>';
 }
 
 async function qrShot() {
   const driver = $('#ndDriver').value;
   const img = $('#qrImg');
+  const badge = $('#qrShotBadge');
   try {
     const r = await fetch('/api/netdisk/shot?driver=' + encodeURIComponent(driver)
       + '&slot=' + encodeURIComponent(nd.slot) + '&t=' + Date.now());
     if (!r.ok) {
       img.hidden = true;
+      if (badge) badge.hidden = true;
       $('#qrShotHint').hidden = false;
-      $('#qrShotHint').textContent = '现在没画面(窗口没开着,或调试端口没回话)';
+      // 服务端会交代为什么没画面(没找到登录卡片 / 窗口没开 / 被别的程序占了),
+      // 别一律写成『没画面』—— 那句没用,用户不知道下一步点哪个。
+      let msg = '';
+      try { msg = (await r.json()).msg || ''; } catch (e) { msg = ''; }
+      $('#qrShotHint').textContent = msg || '现在没画面(窗口没开着,或调试端口没回话)';
       return;
     }
+    // 后端会用 X-Shot-Mode 说清这张是「二维码卡片」还是「找不到码时的整页首屏」
+    const mode = r.headers.get('X-Shot-Mode') || 'card';
+    // X-Shot-Clip 是这张图的裁剪框：有它，点画面才能换算回网页坐标（点刷新/切换登录方式）
+    let clip = null;
+    try { clip = JSON.parse(r.headers.get('X-Shot-Clip') || 'null'); } catch (e) { clip = null; }
+    nd.qrClip = (clip && typeof clip.x === 'number' && typeof clip.y === 'number'
+                 && typeof clip.scale === 'number' && clip.scale > 0) ? clip : null;
     const url = URL.createObjectURL(await r.blob());
     if (nd.shotUrl) URL.revokeObjectURL(nd.shotUrl);
     nd.shotUrl = url;
     img.src = url;
     img.hidden = false;
+    img.style.cursor = nd.qrClip ? 'pointer' : 'default';
+    img.title = nd.qrClip ? '点画面 = 点网页：二维码过期点中间刷新，登录方式也能点' : '';
     $('#qrShotHint').hidden = true;
+    const ch = $('#qrClickHint'); if (ch) ch.hidden = !nd.qrClip;
+    if (badge) badge.hidden = (mode !== 'page');
   } catch (e) {
     img.hidden = true;
+    if (badge) badge.hidden = true;
   }
 }
 
@@ -571,7 +637,24 @@ async function qrTick() {
   const driver = $('#ndDriver').value;
   try {
     const j = await ndPost({ action: 'qr', phase: 'poll', driver, slot: nd.slot }, true);
+    // 服务端可能跟到了别的登录位（这一格没有窗口、另一格开着）：下拉和后续轮询都得跟着走，
+    // 否则界面会一直喊着「窗口没开着」，而窗口其实好好地开在旁边那格里（11-08 就栽在这）。
+    const real = (j.qr || {}).slot;
+    if (real && String(real) !== String(nd.slot)) {
+      nd.slot = String(real);
+      const sel = $('#qrSlot'); if (sel) sel.value = nd.slot;
+    }
     nd.ticks++;
+    const fol = (j.qr || {}).followed_from;
+    if (fol) qrText('<span class="tag off">第 ' + esc(fol) + ' 槽没开着</span> 真正开着的窗口在第 '
+      + esc(nd.slot) + ' 槽，已经跟过来了。');
+    if (j.qr && j.qr.duplicate) {              // 扫的是库里已有的号:不新增、不改槽,只把多扫那格清掉
+      qrStopPoll();
+      qrPaintInfo(j.qr);
+      qrText('<span class="tag bad">这个号已经在库里了</span> ' + esc(j.msg), 'bad');
+      await loadNetdisk();
+      return;
+    }
     if (j.qr && j.qr.already) {                // 这一槽登着的就是库里那个号:别再转圈,也别再写库
       qrStopPoll();
       qrPaintInfo(j.qr);
@@ -588,10 +671,16 @@ async function qrTick() {
       return;
     }
     if (j.qr) qrPaintInfo(Object.assign({ phase: 'poll' }, j.qr));
-    qrText((j.ok ? '<span class="tag off">等着扫码</span> ' : '<span class="tag bad">没成</span> ')
-      + esc(j.msg || '网盘还没认这个会话')
-      + ` <span class="muted">(第 ${num(nd.ticks)} 问)</span>`);
-    if (j.qr && j.qr.listening) await qrShot();
+    const waiting = !j.ok && /还没扫上|还没抓到|窗口没开着|游客/.test(j.msg || '');
+    qrText((waiting ? '<span class="tag off">等扫码</span> '
+      : (j.ok ? '<span class="tag ok">就绪</span> ' : '<span class="tag bad">没成</span> '))
+      + esc(j.msg || '网盘还没认这个会话'));
+    if (j.qr && j.qr.listening && j.qr.page_ok !== false) await qrShot();
+    else if (j.qr && j.qr.page_ok === false) {
+      $('#qrImg').hidden = true;
+      $('#qrShotHint').hidden = false;
+      $('#qrShotHint').textContent = '这一格的窗口被别的程序占用了，点『扫码登录』另开一格干净的。';
+    }
   } finally {
     nd.busy = false;
   }
@@ -601,7 +690,12 @@ async function qrRefreshSlots() {
   const driver = $('#ndDriver').value;
   delete nd.cache[driver];                    // 窗口开没开是端口的事,登录位表不能拿缓存
   const s = await ndFields(driver);
-  if (s && s.ok) qrPaintSlots(driver, s);
+  if ($('#ndDriver').value !== driver) return;  // 这当中用户换盘了,别拿旧盘的表盖新盘的
+  if (s && s.ok) {
+    qrPaintSlots(driver, s);
+    if (s.login_howto) $('#qrHowto').innerHTML = esc(s.login_howto);
+    if (s.login_kind === 'password') $('#qrStart').textContent = '▶ 开始登录';
+  }
 }
 
 async function qrPhase(phase) {
@@ -609,18 +703,61 @@ async function qrPhase(phase) {
   const slot = nd.slot;
   const r = (nd.last || {}).account || {};
   if (!r.writable) return qrText('<span class="tag bad">写侧锁着</span> ' + esc(r.write_blocked || '看板绑了非回环地址'), 'bad');
-  if (phase === 'purge' && !confirm('删掉第 ' + slot + ' 槽那套独立 profile(' + driver + ')?\n里面是浏览器自己存的登录态,删了这一格下次要重新扫;别的槽不受影响,账号库里的凭据也不受影响。')) return;
+  if (phase === 'purge' && !confirm('清空第 ' + slot + ' 槽的登录态？\n这一格以后要重新扫；别的槽和账号库里的凭据都不受影响。')) return;
   qrStopPoll();
-  qrText('<span class="tag off">处理中</span> ' + esc(phase === 'start' ? ('在第 ' + slot + ' 槽开浏览器窗口……') : '问账号台……'));
-  const j = await ndPost({ action: 'qr', phase, driver, slot, exe: $('#qrExe').value });
+  // 点下去必须立刻有反应：按钮变成「正在开…」并禁掉，避免连点开出好几格
+  const btn = $('#qrStart');
+  const label = btn.textContent;
+  if (phase === 'start') { btn.disabled = true; btn.textContent = '▶ 正在开窗口…'; }
+  qrText('<span class="tag off">处理中</span> ' + esc(phase === 'start' ? '正在后台起一个干净登录位（开浏览器 → 等调试端口 → 探登录页，约 3~8 秒）……' : '问账号台……'));
+  // 开窗口这几秒原来是一句不动的灰字，看着就像卡死了；把秒数打出来，至少知道还在动
+  let tick = null;
+  if (phase === 'start') {
+    const t0 = Date.now();
+    tick = setInterval(() => {
+      const s = ((Date.now() - t0) / 1000).toFixed(0);
+      qrText('<span class="tag off">处理中 ' + s + 's</span> 开浏览器 → 等调试端口 → 探登录页…… 一般 3~8 秒，'
+        + '要是超过 15 秒还没动静，多半是本机浏览器被组策略挡了调试端口。');
+    }, 500);
+  }
+  let j;
+  try {
+    j = await ndPost({ action: 'qr', phase, driver, slot, exe: $('#qrExe').value,
+                       auto_new: 1 });
+  } finally {
+    if (tick) { clearInterval(tick); tick = null; }
+    if (phase === 'start') { btn.disabled = false; btn.textContent = label; }
+  }
+  // 服务端自动挑的槽（永远是空槽）要同步回来，后面轮询才盯着对的那一格
+  const used = (j.qr || {}).slot;
+  if (used && String(used) !== String(nd.slot)) {
+    nd.slot = String(used);
+    $('#qrSlot').value = nd.slot;
+  }
   if (j.qr) qrPaintInfo(Object.assign({ phase }, j.qr));
-  await qrRefreshSlots();
+  // 窗口一开好就先把二维码拿出来(别等 2 秒那一拍 + 字段接口那一问),
+  // 用户点完按钮最想看的就是那张码,晚 2 秒就等于"点了没反应"
+  if (phase === 'start' && j.ok) qrShot();
+  if (j.qr && j.qr.duplicate) {           // 扫的是库里已有的号：不新增账号，只把多扫的那格清掉
+    await qrRefreshSlots();
+    await loadNetdisk();
+    qrText('<span class="tag bad">这个号已经登在第 ' + esc(String((j.qr.slot != null ? j.qr.slot : ''))) + ' 槽了</span> '
+      + esc(j.msg), 'bad');
+    return j;
+  }
+  // 开窗口这条别让「登录位下拉刷新」挡在前面:窗口一好就把轮询和画面跑起来,
+  // 那张表慢一步没关系(它只是让人看还有几格空着)
+  if (phase === 'start' && j.ok) qrRefreshSlots();
+  else await qrRefreshSlots();
   if (phase === 'start' && j.ok) {
-    qrText('<span class="tag ok">窗口开好了</span> ' + esc(j.msg) + ' <span class="muted">这里每 2 秒自动问一次,这一页关着也有看板服务端每 15 秒自己巡一遍,扫上就自己入库,不用回来填东西。</span>', 'ok');
+    qrText('<span class="tag ok">第 ' + esc(nd.slot) + ' 槽就绪</span> 扫下面的码，扫完自动入库。', 'ok');
+    const box = $('#qrShot');
+    if (box && box.scrollIntoView) box.scrollIntoView({ block: 'center', behavior: 'smooth' });
     qrStartPoll();
   } else {
     $('#qrImg').hidden = true;
     $('#qrShotHint').hidden = false;
+    $('#qrShotHint').textContent = phase === 'start' ? '窗口没开成，看上面那句红字。' : '现在没画面。';
     qrText((j.ok ? '<span class="tag ok">好了</span> ' : '<span class="tag bad">没成</span> ') + esc(j.msg));
     if (phase !== 'start' && j.qr && j.qr.listening) qrStartPoll();
   }
@@ -628,14 +765,9 @@ async function qrPhase(phase) {
 }
 
 function ndWatch(w) {
-  // 网页没开着也能收号,靠的是看板自己起的那根看守线程 —— 状态得让人看见,不然又是一次"没反应"。
-  if (!w || !w.on) return '<span class="tag bad">服务端看守没起</span> 扫完号得把这一页开着才会入库(重启看板才有看守)';
-  const bits = ['每 <b>' + num(w.every_sec) + '</b> 秒自己问一遍开着的窗口(这一页没开着也收)'];
-  if (w.cycle) bits.push('已问 <b>' + num(w.cycle) + '</b> 轮' + (w.last_at ? '(最后 ' + esc(w.last_at) + ')' : ''));
-  if ((w.held || []).length) bits.push('已处理过、不重复问:' + w.held.map(esc).join('、'));
-  if (w.why) bits.push('<span class="tag bad">' + esc(w.why) + '</span>');
-  if (w.last_err) bits.push('最近一次没成:' + esc(w.last_err));
-  return '<span class="tag ok">服务端看守在跑</span> ' + bits.join(' · ');
+  // 网页没开着也能收号,靠的是看板自己起的那根看守线程 —— 状态条里只留一句,细节看服务端日志。
+  if (!w || !w.on) return '<span class="tag bad">服务端看守没起</span>';
+  return '<span class="tag ok">服务端看守在跑</span> <b>' + num(w.every_sec) + 's</b>/' + num(w.cycle) + '轮';
 }
 
 function qrResume(r) {
@@ -648,8 +780,8 @@ function qrResume(r) {
   // 不然页面盯着一格空位问,真扫上号的那格没人管(11-05 就这么"没反应"过一次)。
   const rows = s.qr_slots || [];
   const cur = rows.filter((x) => String(x.slot) === String(nd.slot))[0];
-  if (!cur || !cur.listening) {
-    const other = rows.filter((x) => x.listening)[0];
+  if (!cur || !cur.listening || cur.page_ok === false) {
+    const other = rows.filter((x) => x.listening && x.page_ok !== false)[0];
     if (other && String(other.slot) !== String(nd.slot)) {
       nd.slot = String(other.slot);
       $('#qrSlot').value = nd.slot;
@@ -727,7 +859,7 @@ function ndPaintDrivers(r) {
 async function ndLockPane(r) {
   const a = r.account || {};
   const box = $('#ndLock');
-  const inputs = $$('#ndForm input, #ndForm button, #ndForm select, #ndDriver, #qrSlot, #qrExe, #qrStart, #qrClose, #qrPurge');
+  const inputs = $$('#ndForm input, #ndForm button, #ndForm select, #ndDriver, #qrSlot, #qrExe, #qrStart, #qrClose, #qrPurge, #qrReap');
   if (a.writable) {
     box.innerHTML = '';
     inputs.forEach((i) => { i.disabled = false; });
@@ -744,23 +876,49 @@ async function ndLockPane(r) {
 function ndWireOnce() {
   if (nd.wired) return;
   nd.wired = true;
-  $('#ndDriver').onchange = () => { nd.edit = false; qrHead(); ndPaintFields(true); };
-  $('#qrSlot').onchange = () => {
-    nd.slot = $('#qrSlot').value || '1';
+  $('#ndDriver').onchange = () => {
+    nd.edit = false;
+    nd.picked = false;
+    // 换盘就把上一盘残留的二维码/信息清掉，否则会拿夸克的码配着「迅雷」的标题，看着像坏了
     qrStopPoll();
     $('#qrImg').hidden = true;
     $('#qrShotHint').hidden = false;
-    qrText('<span class="tag off">换到第 ' + esc(nd.slot) + ' 槽</span> 这一格是另一个独立 profile;'
-      + '按『▶ 打开扫码窗口』开这一格的窗口,扫进去的是新号,不会动别的槽那个号。');
+    $('#qrInfo').innerHTML = '';
+    qrHead();
+    ndPaintFields(true);
+    if (nd.shotUrl) { URL.revokeObjectURL(nd.shotUrl); nd.shotUrl = ''; }
   };
+  // 登录位不再让人选（用户要求：每次自动加一格、失效自动释放）。这个 select 留在 DOM 里只当状态容器。
+  $('#qrSlot').onchange = () => { nd.slot = $('#qrSlot').value || '1'; };
   $('#qrExe').onchange = () => {
     const t = ($('#qrExe').selectedOptions[0] || {}).textContent || '';
-    qrText('<span class="tag off">窗口改用 ' + esc(t) + '</span> 只管下一格新开的窗口;'
-      + '已经开着的那个不受影响 —— 要换浏览器就先按『关掉窗口』再重开。');
+    qrText('<span class="tag off">下一格改用 ' + esc(t) + '</span> 已经跑着的那个不受影响。');
   };
   $('#qrStart').onclick = () => qrPhase('start');
   $('#qrClose').onclick = () => qrPhase('close');
   $('#qrPurge').onclick = () => qrPhase('purge');
+  // 扫码画面可点：把点在图上的位置换算回网页坐标，回传真浏览器（过期码点中间刷新、登录页签可切换）
+  $('#qrImg').addEventListener('click', async (e) => {
+    const img = $('#qrImg');
+    const c = nd.qrClip;
+    if (img.hidden || !c) return;
+    const r = img.getBoundingClientRect();
+    if (!r.width || !r.height || !img.naturalWidth || !img.naturalHeight) return;
+    const ix = (e.clientX - r.left) * (img.naturalWidth / r.width);    // 图上物理像素
+    const iy = (e.clientY - r.top) * (img.naturalHeight / r.height);
+    const x = c.x + ix / c.scale;                                     // → 网页 CSS 坐标
+    const y = c.y + iy / c.scale;
+    const j = await ndPost({ action: 'nav', op: 'click', driver: $('#ndDriver').value,
+                             slot: nd.slot, x, y, ensure: 1 }, true);   // ensure:卡片截图拉过视口,点前再拉一次同几何
+    if (j.ok) setTimeout(qrShot, 350);                  // 点完立刻补一张，看页面反应
+    else qrText('<span class="tag bad">这一下没点进去</span> ' + esc(j.msg || '窗口可能已经关了'), 'bad');
+  });
+  $('#qrReap').onclick = async () => {
+    qrText('<span class="tag off">体检中</span> 探一遍每个号的挂载还通不通……');
+    const j = await ndPost({ action: 'reap' });
+    qrText((j.ok ? '<span class="tag ok">体检完了</span> ' : '<span class="tag bad">没成</span> ') + esc(j.msg));
+    await loadNetdisk();
+  };
   $('#ndSave').onclick = () => {
     const b = ndCollect();
     if (!b.alias) return ndMsg('先起个别名(小写字母/数字/-/_,2~24 位,例如 quark-03)', false);
@@ -781,7 +939,444 @@ function ndWireOnce() {
     if (b.dataset.act === 'edit') return ndStartEdit(b.dataset.driver, alias, b.dataset.remark);
     ndRun({ action: b.dataset.act, alias });
   };
+
+  /* ---- 账号工作台:内嵌浏览器视图 + 文件面板 ---- */
+  $('#ndAccount').onchange = () => { ndSwitchAccount($('#ndAccount').value); };
+  $('#ndOpenView').onclick = () => ndViewOpen();
+  $('#ndCloseView').onclick = () => ndViewClose();
+  $('#ndGotoHome').onclick = () => ndViewGoto('');
+  $('#ndRefreshView').onclick = () => ndViewShot();
+  $('#ndUpDir').onclick = () => ndFsGo('..');
+  $('#ndRefreshDir').onclick = () => ndFsList(true);
+  $('#ndUploadPick').onclick = () => $('#ndUploadFile').click();
+  $('#ndUploadFile').onchange = (e) => ndFsUpload(e.target.files);
+  $('#ndFilesTable').onclick = (e) => {
+    const tr = e.target.closest('tr');
+    if (!tr || !tr.dataset.name) return;
+    const b = e.target.closest('button');
+    if (b && b.dataset.act === 'dl') { ndFsDownload(tr.dataset.name); return; }
+    if (b && b.dataset.act === 'rm') { ndFsRemove(tr.dataset.name); return; }
+    if (tr.dataset.dir === '1') ndFsGo(tr.dataset.name);
+  };
+  // 视图区交互:点击回传坐标、滚轮回传滚动、滚轮不冒泡到页面
+  const stage = $('#ndViewStage');
+  stage.addEventListener('click', (e) => {
+    if (e.target.closest('.shothint')) return;
+    const img = $('#ndViewImg');
+    if (img.hidden) return;
+    const r = img.getBoundingClientRect();
+    const px = (e.clientX - r.left) / nd.scale;   // 物理像素坐标
+    const py = (e.clientY - r.top) / nd.scale;
+    if (px < 0 || py < 0 || px > nd.shotW || py > nd.shotH) return;
+    // CDP 的鼠标事件要 CSS 像素，物理像素 ÷ dpr
+    ndViewClick(px / (nd.dpr || 1), py / (nd.dpr || 1));
+    // 11-08「登录码完全不聚焦」:点完画面要把焦点抢到这个隐形输入框上,不然一个字母都打不进去,
+    // 网页里那个光标看着就像"点不动"。preventScroll 免得页面被浏览器带着跳一下。
+    try { $('#ndKeys').focus({ preventScroll: true }); } catch (err) { /* 老浏览器没有 options 就忽略 */ }
+  });
+  stage.addEventListener('wheel', (e) => {
+    const img = $('#ndViewImg');
+    // 没画面的时候别拦滚轮 —— 这一格是空的也照拦,光标停在这儿整页就滚不动,
+    // 用户只能去够右边的滚动条(11-08「非常难滑动」的一半是这么来的)
+    if (img.hidden) return;
+    e.preventDefault();
+    // 滚轮事件带光标位置一起发:投到 (0,0) 的时候,页面左上角那个元素不接滚轮,整页就纹丝不动
+    const r = img.getBoundingClientRect();
+    const cx = (e.clientX - r.left) / nd.scale / (nd.dpr || 1);
+    const cy = (e.clientY - r.top) / nd.scale / (nd.dpr || 1);
+    ndViewScroll(0, e.deltaY, cx, cy);
+  }, { passive: false });
+  // 点哪儿都把焦点交给这个隐形 textarea:打中文时输入法要有个真元素挂着才能组字
+  stage.addEventListener('mousedown', (e) => {
+    if (e.target.closest('.shothint') || $('#ndViewImg').hidden) return;
+    try { $('#ndKeys').focus({ preventScroll: true }); } catch (err) { /* ignore */ }
+  });
+  ndKeysBind();
 }
+
+/* ---- 键盘通道:把这一页的按键原样送进真浏览器 ----
+   走的是 CDP 的 Input.insertText / dispatchKeyEvent,不是往截图里塞字:
+   所以网页自己的校验、length 限制、输入法联想都跟人在浏览器里敲一样。 */
+const ND_SPECIAL = {
+  Enter: 'Enter', Backspace: 'Backspace', Tab: 'Tab', Escape: 'Escape', Delete: 'Delete',
+  ArrowUp: 'ArrowUp', ArrowDown: 'ArrowDown', ArrowLeft: 'ArrowLeft', ArrowRight: 'ArrowRight',
+  Home: 'Home', End: 'End', PageUp: 'PageUp', PageDown: 'PageDown'
+};
+
+function ndKeysBind() {
+  const ta = $('#ndKeys');
+  if (!ta || ta.dataset.bound) return;
+  ta.dataset.bound = '1';
+  ta.addEventListener('input', () => {
+    const v = ta.value;
+    if (!v) return;
+    ta.value = '';                            // 立刻清空:下一页截图不需要再带着这串
+    ndViewType(v);
+  });
+  ta.addEventListener('keydown', (e) => {
+    if (e.ctrlKey && (e.key === 'v' || e.key === 'V')) return;   // 粘贴走 paste 事件
+    const k = ND_SPECIAL[e.key];
+    if (!k) return;
+    if (e.key === 'Tab') return;              // Tab 留给页面自己走焦点,别把用户困在这儿
+    e.preventDefault();
+    ndViewKey(k);
+  });
+  ta.addEventListener('paste', (e) => {
+    const t = (e.clipboardData || window.clipboardData || {}).getData('text');
+    if (!t) return;
+    e.preventDefault();
+    ndViewType(t);
+  });
+  // 焦点丢了也别让人一脸问号:点画面会重新抢回来,这里只在状态条上说一句
+  ta.addEventListener('blur', () => { /* 什么都不做,避免每次点击都刷状态 */ });
+}
+
+/* ================================================================ 账号工作台 */
+
+function ndAccounts(r) {
+  return (r || nd.last || {}).accounts || [];
+}
+
+function ndAcctByAlias(r, alias) {
+  return ndAccounts(r).find((a) => a.alias === alias) || null;
+}
+
+function ndPaintAccountSelect(r) {
+  const sel = $('#ndAccount');
+  const accs = ndAccounts(r);
+  if (!accs.length) {
+    sel.innerHTML = '<option value="">（账号库是空的，先到下面扫码登录）</option>';
+    nd.acct = '';
+    return;
+  }
+  // 当前选中保留；默认选活跃的那个
+  if (!accs.some((a) => a.alias === nd.acct)) {
+    const active = accs.find((a) => a.active) || accs[0];
+    nd.acct = active.alias;
+  }
+  sel.innerHTML = accs.map((a) => {
+    const lbl = [a.driver_label || a.driver, a.alias];
+    if (a.nickname) lbl.push(a.nickname);
+    if (a.active) lbl.push('活跃');
+    return `<option value="${esc(a.alias)}">${esc(lbl.join(' · '))}${a.last_ok ? '' : ' (失效)'}</option>`;
+  }).join('');
+  sel.value = nd.acct;
+  nd.acctDriver = (ndAcctByAlias(r, nd.acct) || {}).driver || '';
+}
+
+function ndSwitchAccount(alias) {
+  nd.acct = alias;
+  nd.acctDriver = (ndAcctByAlias(nd.last, alias) || {}).driver || '';
+  nd.cwd = '/';
+  ndViewStop();
+  $('#ndViewImg').hidden = true;
+  $('#ndViewStage').querySelector('.shothint').hidden = false;
+  ndViewState('');
+  ndFsList(true);
+  const a = ndAcctByAlias(nd.last, alias);
+  if (a) ndViewState('已选「' + esc(a.alias) + '」' + (a.active ? '' : '（非活跃，点下面明细里的「切」可设为活跃）'));
+}
+
+/* ---- 内嵌浏览器视图 ---- */
+function ndViewState(msg, cls) {
+  const el = $('#ndViewState');
+  el.className = 'stat' + (cls ? ' ' + cls : '');
+  el.textContent = msg || '';
+}
+
+function ndViewStop() {
+  if (nd.viewTimer) { clearInterval(nd.viewTimer); nd.viewTimer = null; }
+}
+
+async function ndNav(body, quiet) {
+  const j = await ndPost(Object.assign({ action: 'nav' }, body), quiet);
+  return j;
+}
+
+async function ndViewOpen() {
+  const a = ndAcctByAlias(nd.last, nd.acct);
+  if (!a) return ndViewState('先选一个账号', 'bad');
+  nd.acctDriver = a.driver;
+  ndViewStop();
+  ndViewState('正在开窗口……');
+  const j = await ndNav({ op: 'open', driver: a.driver, slot: a.slot || 1, url: '' });
+  if (!j.ok) { ndViewState(j.msg, 'bad'); return; }
+  const q = j.account || {};
+  nd.viewSlot = String(q.slot || a.slot || 1);
+  ndViewState('窗口已开（第 ' + nd.viewSlot + ' 槽）');
+  await ndViewShot();
+  ndViewStart();
+}
+
+async function ndViewClose() {
+  ndViewStop();
+  ndViewState('正在关窗口……');
+  const j = await ndNav({ op: 'close', driver: nd.acctDriver, slot: nd.viewSlot || 1 });
+  $('#ndViewImg').hidden = true;
+  $('#ndViewStage').querySelector('.shothint').hidden = false;
+  ndViewState(j.msg || '已关', j.ok ? '' : 'bad');
+}
+
+async function ndViewGoto(url) {
+  const j = await ndNav({ op: 'goto', driver: nd.acctDriver, slot: nd.viewSlot || 1, url });
+  ndViewState(j.msg, j.ok ? '' : 'bad');
+  if (j.ok) setTimeout(ndViewShot, 800);
+}
+
+async function ndViewShot() {
+  if (nd.viewBusy) return;
+  nd.viewBusy = true;
+  try {
+    const j = await ndNav({ op: 'shot', driver: nd.acctDriver, slot: nd.viewSlot || 1, focus: false }, true);
+    if (!j.ok || !j.account || !j.account.png) {
+      if (!j.ok) {
+        ndViewState(j.msg, 'bad');
+        // 窗口没了就把旧画面收起来 —— 以前那张图留在那儿不动，看着像活的，
+        // 其实点上去一个字节都没落到网页上（用户 11-08：「根本没有可操作的页面」）。
+        if (/窗口没开着|没截到|没开/.test(j.msg || '')) {
+          ndViewStop();
+          $('#ndViewImg').hidden = true;
+          const hint = $('#ndViewStage').querySelector('.shothint');
+          if (hint) {
+            hint.hidden = false;
+            hint.textContent = '这个号的浏览器窗口没开着（' + (j.msg || '没截到画面') + '）'
+              + ' —— 点上面「▶ 打开内嵌浏览器」再开一次。';
+          }
+          $('#ndViewFoot').innerHTML = '窗口没开着 · 先点「▶ 打开内嵌浏览器」';
+        }
+      }
+      return;
+    }
+    const img = $('#ndViewImg');
+    const png = 'data:image/png;base64,' + j.account.png;
+    img.src = png;
+    img.hidden = false;
+    $('#ndViewStage').querySelector('.shothint').hidden = true;
+    nd.viewUrl = j.account.url || '';
+    // shot 返回里已带视口尺寸(CSS 像素)与 dpr，直接用；截图是物理像素 = CSS×dpr
+    const m = j.account.metrics;
+    if (m && m.viewport_w) {
+      nd.dpr = m.dpr || 1;
+      nd.shotW = Math.round(m.viewport_w * nd.dpr);   // 物理像素：截图真实宽
+      nd.shotH = Math.round(m.viewport_h * nd.dpr);
+      ndFitView();
+    }
+    $('#ndViewFoot').innerHTML = '当前地址：<span class="mono">' + esc(nd.viewUrl || '') + '</span>'
+      + (nd.shotW ? ' · 视口 ' + num(nd.shotW) + '×' + num(nd.shotH) : '')
+      + ' · 点画面=点击网页 · 滚轮=滚动网页 · 点一下画面后可直接打字';
+  } finally {
+    nd.viewBusy = false;
+  }
+}
+
+function ndFitView() {
+  // 把截图缩放到能完整塞进视图区(自适应窗口大小),算出缩放比用于坐标映射
+  const stage = $('#ndViewStage');
+  const img = $('#ndViewImg');
+  if (img.hidden || !nd.shotW || !nd.shotH) return;
+  img.onload = () => {
+    const cw = stage.clientWidth - 8, ch = stage.clientHeight - 8;
+    nd.scale = Math.min(cw / nd.shotW, ch / nd.shotH, 1);
+    if (nd.scale <= 0) nd.scale = 1;
+    img.style.width = (nd.shotW * nd.scale) + 'px';
+    img.style.height = (nd.shotH * nd.scale) + 'px';
+  };
+  // 若已加载完成则直接触发
+  if (img.complete) img.onload();
+}
+
+async function ndViewClick(x, y) {
+  const j = await ndNav({ op: 'click', driver: nd.acctDriver, slot: nd.viewSlot || 1, x, y }, true);
+  if (j.ok) ndViewAfterAction();
+  else ndViewState(j.msg || '这一下没点进去（窗口可能已经关了）', 'bad');
+}
+
+async function ndViewScroll(dx, dy, x, y) {
+  // 滚一下会连发十几个 wheel 事件,一事件一请求会把队列堵住(每次都要连一遍 CDP);
+  // 攒 60ms 一起发:手感跟连续滚一样,请求数却少一个量级。
+  if (!nd.whl) nd.whl = { dx: 0, dy: 0, x: -1, y: -1 };
+  nd.whl.dx += dx; nd.whl.dy += dy;
+  if (x != null && x >= 0) { nd.whl.x = x; nd.whl.y = y; }
+  if (nd.whlT) return;
+  nd.whlT = setTimeout(async () => {
+    nd.whlT = null;
+    const w = nd.whl; nd.whl = null;
+    const j = await ndNav({ op: 'scroll', driver: nd.acctDriver, slot: nd.viewSlot || 1,
+                            dx: w.dx, dy: w.dy, x: w.x, y: w.y }, true);
+    if (!j.ok) return;
+    // 网页那边一点都没动(已经到顶/到底,或这块区域不吃滚轮)→ 让看板自己跟着滚,
+    // 否则光标停在画面上时整页像被粘住一样,只能去拖右边那条滚动条(用户 11-08 的原话)
+    if (j.moved === false) {
+      const se = document.scrollingElement || document.documentElement;
+      se.scrollTop += w.dy;
+      return;
+    }
+    ndViewAfterAction();
+  }, 60);
+}
+
+/* 打字/按键之后立刻补一张图 —— 等 2 秒那一拍太慢,用户会以为没生效 */
+function ndViewAfterAction() {
+  clearTimeout(nd._actT);
+  nd._actT = setTimeout(ndViewShot, 260);
+}
+
+async function ndViewType(text) {
+  if (!text) return;
+  const j = await ndNav({ op: 'text', driver: nd.acctDriver, slot: nd.viewSlot || 1, text }, true);
+  if (!j.ok) ndViewState(j.msg || '字没送进去', 'bad');
+  else ndViewAfterAction();
+}
+
+async function ndViewKey(key) {
+  const j = await ndNav({ op: 'key', driver: nd.acctDriver, slot: nd.viewSlot || 1, key }, true);
+  if (!j.ok) ndViewState(j.msg || '按键没送进去', 'bad');
+  else ndViewAfterAction();
+}
+
+function ndViewStart() {
+  ndViewStop();
+  nd.viewTimer = setInterval(() => { ndViewShot(); }, 2000);
+}
+
+/* ---- 文件面板 ---- */
+/* 当前目录只允许落在「这个号的挂载点」里面。以前 cwd 初值是 '/'，跟面包屑显示的挂载点
+   对不上：列表列的是 OpenList 根(别人的挂载点)、而「上一级」在 '/' 上又直接 return ——
+   用户看到的就是「点了上一级没反应」。现在以挂载点为界，越界一律拉回挂载点。 */
+function ndFsPin() {
+  const base = ndFsBasePath();
+  if (!nd.cwd || nd.cwd === '/' || !(nd.cwd === base || nd.cwd.indexOf(base + '/') === 0)) {
+    nd.cwd = base;
+    return true;
+  }
+  return false;
+}
+
+function ndFsGo(path) {
+  if (nd.fsBusy) return;
+  const base = ndFsBasePath();
+  if (path === '..') {
+    if (!nd.cwd || nd.cwd === '/' || nd.cwd === base) {
+      nd.cwd = base;
+      ndFsList(true);
+      return;                       // 已经在挂载点根上，再往上就是别人的目录了
+    }
+    let up = nd.cwd.replace(/\/[^\/]+\/?$/, '');
+    if (up !== base && up.indexOf(base + '/') !== 0) up = base;
+    nd.cwd = up;
+  } else {
+    nd.cwd = ((nd.cwd && nd.cwd !== '/' ? nd.cwd : base) + '/' + path).replace(/\/+/g, '/');
+  }
+  ndFsList(true);
+}
+
+function ndFsBasePath() {
+  const a = ndAcctByAlias(nd.last, nd.acct);
+  return a ? ('/' + (a.mount_path || '').replace(/^\/+|\/+$/g, '')) : '/';
+}
+
+function ndFsFullPath(rel) {
+  const base = ndFsBasePath();
+  const cwd = nd.cwd;
+  if (rel == null) return cwd;
+  if (rel === '.') return cwd;
+  // 传给后端的是完整挂载点路径
+  return cwd === '/' ? (base + '/' + rel).replace(/\/+/g, '/') : (cwd + '/' + rel).replace(/\/+/g, '/');
+}
+
+function ndFsPaintCrumb() {
+  const base = ndFsBasePath();
+  const rel = nd.cwd.replace(base, '').replace(/^\/+|\/+$/g, '');
+  const parts = rel ? rel.split('/').filter(Boolean) : [];
+  let acc = base;
+  let html = '<a data-p="' + esc(base) + '">' + esc(base) + '</a>';
+  parts.forEach((p) => {
+    acc = (acc + '/' + p).replace(/\/+/g, '/');
+    html += ' / <a data-p="' + esc(acc) + '">' + esc(p) + '</a>';
+  });
+  $('#ndCrumb').innerHTML = html;
+  $('#ndCrumb').onclick = (e) => {
+    const a = e.target.closest('a');
+    if (!a || !a.dataset.p) return;
+    nd.cwd = a.dataset.p;
+    ndFsList(true);
+  };
+}
+
+async function ndFsList(force) {
+  if (!nd.acct) { $('#ndFilesTable').innerHTML = ''; return; }
+  if (nd.fsBusy && !force) return;
+  ndFsPin();                        // 换号/首屏时把 cwd 拉回这个号的挂载点
+  nd.fsBusy = true;
+  const path = ndFsFullPath(null);
+  $('#ndFilesFoot').innerHTML = '读取中……';
+  try {
+    const j = await ndPost({ action: 'fs', op: 'list', path, per_page: 200 }, true);
+    ndFsPaintCrumb();
+    if (!j.ok) {
+      $('#ndFilesTable').innerHTML = '<tbody><tr><td class="empty">' + esc(j.msg || '列目录失败') + '</td></tr></tbody>';
+      $('#ndFilesFoot').innerHTML = '';
+      return;
+    }
+    const d = j.account || {};
+    const rows = d.rows || [];
+    if (!rows.length) {
+      $('#ndFilesTable').innerHTML = '<tbody><tr><td class="empty">这个目录是空的</td></tr></tbody>';
+      $('#ndFilesFoot').innerHTML = '0 项 · ' + esc(path);
+      return;
+    }
+    const dirs = rows.filter((x) => x.is_dir);
+    const files = rows.filter((x) => !x.is_dir);
+    const rowHtml = (x) => `<tr data-name="${esc(x.name)}" data-dir="${x.is_dir ? '1' : '0'}">
+      <td class="${x.is_dir ? 'dir' : ''}">${x.is_dir ? '📁 ' : '📄 '}${esc(x.name)}</td>
+      <td class="num">${x.is_dir ? '<span class="muted">—</span>' : bytes(x.size)}</td>
+      <td class="num nowrap">${esc(x.modified || '')}</td>
+      <td class="ops">${x.is_dir ? '' :
+        '<button class="ghost" data-act="dl">下载</button><button class="ghost" data-act="rm">删</button>'}</td>
+    </tr>`;
+    $('#ndFilesTable').innerHTML = '<thead><tr><th>名称</th><th class="num">大小</th><th class="num">修改时间</th><th>操作</th></tr></thead><tbody>'
+      + dirs.map(rowHtml).join('') + files.map(rowHtml).join('') + '</tbody>';
+    $('#ndFilesFoot').innerHTML = num(dirs.length) + ' 目录 + ' + num(files.length) + ' 文件 · ' + esc(path);
+  } finally {
+    nd.fsBusy = false;
+  }
+}
+
+function ndFsDownload(name) {
+  const path = ndFsFullPath(name);
+  const a = ndAcctByAlias(nd.last, nd.acct);
+  if (!a) return;
+  const url = '/api/netdisk/download?path=' + encodeURIComponent(path);
+  const link = document.createElement('a');
+  link.href = url;
+  link.download = name;
+  document.body.appendChild(link);
+  link.click();
+  link.remove();
+}
+
+async function ndFsRemove(name) {
+  const path = ndFsFullPath(name);
+  if (!confirm('删除网盘里的 ' + path + ' ?\n这是删网盘侧的文件，不可恢复。')) return;
+  const j = await ndPost({ action: 'fs', op: 'rm', path }, true);
+  ndViewState(j.msg, j.ok ? '' : 'bad');
+  if (j.ok) ndFsList(true);
+}
+
+async function ndFsUpload(fileList) {
+  const files = Array.from(fileList || []);
+  if (!files.length) return;
+  const path = ndFsFullPath(null);
+  ndViewState('上传中……');
+  for (const f of files) {
+    const j = await ndPost({ action: 'fs', op: 'upload', path, local: f.path }, true);
+    ndViewState(j.msg, j.ok ? '' : 'bad');
+  }
+  $('#ndUploadFile').value = '';
+  ndFsList(true);
+}
+
+
 
 async function ndStartEdit(driver, alias, remark) {
   $('#ndDriver').value = driver;
@@ -801,16 +1396,20 @@ async function loadNetdisk() {
   const state = (b) => b ? '<span class="tag ok">在跑</span>' : '<span class="tag bad">没在跑</span>';
   const yn = (b, a, c) => b ? `<span class="tag ok">${a}</span>` : `<span class="tag off">${c}</span>`;
 
+  // 2026-11-08:五张大卡压成页签最底下的一行小字,只留"是什么状态",不铺路径/体积/时间戳。
   $('#ndCards').innerHTML = [
-    { k: 'OpenList 服务', v: r.openlist.listening ? '在跑' : '没在跑', s: `127.0.0.1:${num(r.openlist.port)} ${state(r.openlist.listening)} · 程序 <b>${r.openlist.exists ? '在' : '缺失'}</b> ${bytes(r.openlist.bytes)}(${esc(r.openlist.mtime || '')})<br><span class="mono clamp">${esc(r.openlist.path)}</span>` },
-    { k: '账号台(逻辑层)', v: r.account.writable ? '能写' : '只读', s: `模块 ${r.account.loadable ? '<span class="tag ok">读进来了</span>' : '<span class="tag bad">读不进来</span>'} · 接口齐 <b>${r.account.has_api ? '是' : '否'}</b> · 扫码模块 ${yn(r.account.qr_ready, '在', '没装好')} · 当前绑 <b class="mono">${esc(r.bind || '')}</b><br>管理员口令环境变量 ${yn(r.account.needs_admin_pw, '已设', '没设')}(只看有没有设,不取值)<br>${ndWatch(r.account.watch)}<br><span class="mono clamp">${esc(r.account.path)}</span>` },
-    { k: '账号库', v: num(r.store.total) + ' 个号', s: `活跃 <b>${num(r.store.active)}</b> · 探测有效 <b>${num(r.store.ok)}</b> · 没探过 <b>${num(r.store.unprobed)}</b> · 库里实际 <b>${num(r.store.raw_total)}</b> 条<br>文件 ${r.store.exists ? (r.store.readable ? '在且能解析' : '在但解析不出 JSON') : '不存在'} ${bytes(r.store.bytes)}(${esc(r.store.mtime || '')})<br><span class="mono clamp">${esc(r.store.path)}</span>` },
-    { k: '上传台账', v: num(r.ledger.total) + ' 条', s: Object.entries(r.ledger.by_status).map(([k, v]) => `${esc(k)} <b>${num(v)}</b>`).join(' · ') + ` · 记录体积 <b>${bytes(r.ledger.bytes)}</b><br>挂载点分布:${Object.entries(r.ledger.by_mount).map(([k, v]) => ` ${esc(k)} <b>${num(v)}</b>`).join(' · ') || ' —'}<br>最近一条 ${esc(r.ledger.last_at || '—')}` },
-    { k: '上传档位', v: num(r.scopes.length) + ' 档', s: `enable=1 的 <b>${num(r.scopes.filter((s) => s.enable === '1').length)}</b> · 还指着 /本地暂存的 <b>${num(r.scopes.filter((s) => s.mount.indexOf('本地暂存') >= 0).length)}</b> · 目录缺失 <b>${num(r.scopes.filter((s) => !s.dir_exists).length)}</b>` },
-  ].map((c) => `<div class="card"><div class="k">${c.k}</div><div class="v">${c.v}</div><div class="s">${c.s}</div></div>`).join('');
+    { k: 'OpenList', v: state(r.openlist.listening) },
+    { k: '账号台', v: yn(r.account.writable, '可写', '只读') },
+    { k: '账号库', v: '<b>' + num(r.store.total) + '</b> 个号' },
+    { k: '上传台账', v: '<b>' + num(r.ledger.total) + '</b> 条' },
+    { k: '档位', v: '<b>' + num(r.scopes.length) + '</b> 档' },
+  ].map((c) => `<span class="it">${c.k} ${c.v}</span>`).join('') +
+    `<span class="it">${ndWatch(r.account.watch)}</span>`;
 
   ndPaintDrivers(r);
   if (r.schema && r.schema.ok) nd.cache[r.schema.driver] = r.schema;
+  // 顺手把另外几个盘的字段表也预取回来：切盘时提示/按钮是立刻变的，不用干等 2~3 秒
+  (r.drivers || []).forEach((d) => { if (!nd.cache[d.driver]) ndFields(d.driver).catch(() => {}); });
   ndWireOnce();
   $('#ndOlLink').href = r.openlist.url || '#';
   await ndPaintFields(false);
@@ -831,7 +1430,7 @@ async function loadNetdisk() {
       <td class="num">${num(d.total - d.ok - d.bad)}</td></tr>`).join('') + '</tbody>';
 
   $('#ndAccountTable').innerHTML = r.accounts.length ?
-    '<thead><tr><th>盘</th><th>别名</th><th>ID</th><th>账号名</th><th>登录位</th><th>会员档</th><th>挂载点</th><th>活跃</th><th>最近探测</th><th>结论</th><th>文件数</th><th>备注</th><th>密文长</th><th>缺必填</th><th>操作</th></tr></thead><tbody>' +
+    '<thead><tr><th>盘</th><th>别名</th><th>ID</th><th>账号名</th><th>登录位</th><th>会员档</th><th>挂载点</th><th>活跃</th><th>最近探测</th><th>结论</th><th>文件数</th><th>备注</th><th>密文长</th><th>缺必填</th><th class="ops">操作</th></tr></thead><tbody>' +
     r.accounts.map((a) => `<tr>
       <td class="nowrap">${esc(a.driver_label || a.driver)}</td>
       <td class="mono nowrap">${esc(a.alias)}</td>
@@ -879,6 +1478,10 @@ async function loadNetdisk() {
     r.warnings.map((w) => `<li><span class="tag bad">注意</span> ${esc(w)}</li>`).join('')
     : '<li><span class="tag ok">全绿</span> OpenList 与账号台都在跑、账号库有号、档位都开了。</li>';
   $('#ndNotes').innerHTML = esc((r.notes || []).join(' ')) + ` <span class="muted">(探测时间 ${esc(r.checked_at)})</span>`;
+
+  // 账号工作台：渲染账号下拉（保留当前选中），并刷新文件面板
+  ndPaintAccountSelect(r);
+  if (nd.acct) ndFsList(true);
 }
 
 /* ---------------------------------------------------------------- 路由与事件 */

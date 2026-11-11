@@ -14,6 +14,22 @@
 }
 
 * { box-sizing: border-box; }
+
+/* 滚动条(11-08 用户:『滑动条拖拽判定很奇怪，非常难滑动』)
+   原来吃的是浏览器默认那条 8px 的细条,贴着窗口最右边,按下时还常常点到边上的空白;
+   这里统一成 13px、有轨道、有悬停高亮的实心条,四种滚动区(整页/表格/文件面板/报告)一致。
+   scrollbar-gutter: stable 让「内容变高变矮」时滚动条位置不左右横跳 ——
+   网盘页每 2 秒重截一张图,容器高度一变,拇指就跟着跳,那只手根本按不住。 */
+::-webkit-scrollbar { width: 13px; height: 13px; }
+::-webkit-scrollbar-track { background: #10141b; }
+::-webkit-scrollbar-thumb {
+  background: #3f4a5e; border: 3px solid #10141b; border-radius: 8px;
+}
+::-webkit-scrollbar-thumb:hover { background: #5d6d8b; }
+::-webkit-scrollbar-thumb:active { background: var(--accent); }
+::-webkit-scrollbar-corner { background: #10141b; }
+html { scrollbar-color: #3f4a5e #10141b; scrollbar-width: auto; }
+
 html, body { height: 100%; }
 body {
   margin: 0; background: var(--bg); color: var(--fg);
@@ -36,7 +52,7 @@ body {
 .nav button.active { color: #0b0e13; background: var(--accent); font-weight: 600; }
 .topright { margin-left: auto; display: flex; align-items: center; gap: 10px; }
 
-main { flex: 1; overflow: auto; padding: 12px 14px 40px; }
+main { flex: 1; overflow: auto; padding: 12px 14px 40px; scrollbar-gutter: stable; }
 .view { display: none; }
 .view.active { display: block; }
 
@@ -66,10 +82,22 @@ input:focus, select:focus { outline: none; border-color: var(--accent); }
 .card .s { color: var(--muted); font-size: 12px; }
 .card .s b { color: var(--fg); }
 
+/* 网盘页的服务状态:一行小字,放页签最底下,不占版面(2026-11-08) */
+.ndstrip { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 16px;
+           margin: 10px 0 2px; padding: 7px 10px; border-top: 1px solid var(--line);
+           font-size: 12px; color: var(--muted); }
+.ndstrip .it { white-space: nowrap; }
+.ndstrip .it b { color: var(--fg); font-weight: 600; }
+.ndstrip .tag { font-size: 11px; }
+
 .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px; }
 @media (max-width: 1100px) { .grid2 { grid-template-columns: 1fr; } }
-.panel { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 12px 14px; margin-bottom: 12px; }
+.panel { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 12px 14px; margin-bottom: 12px; min-width: 0; }
 .panel h3 { margin: 0 0 10px; font-size: 14px; font-weight: 600; }
+
+/* 网格子项默认 min-width:auto —— 里面一张宽表就能把整页顶宽,于是页面底部多出一条
+   横向滚动条,整屏跟着左右晃。一律给 0,让表格自己在那一条 .tablewrap 里滚。 */
+.grid2 > *, .ndsplit > *, .qrgrid > *, .reportsplit > * { min-width: 0; }
 
 .trend { display: flex; align-items: flex-end; gap: 3px; height: 130px; }
 .trend .bar { flex: 1; background: #2f6f9e; border-radius: 2px 2px 0 0; position: relative; min-height: 2px; }
@@ -86,8 +114,16 @@ input:focus, select:focus { outline: none; border-color: var(--accent); }
 .chip b { color: var(--fg); font-weight: 600; }
 .chip.on { border-color: var(--accent); color: var(--fg); background: #21384a; }
 
-.tablewrap { overflow: auto; border: 1px solid var(--line); border-radius: 10px; background: var(--panel); }
+.tablewrap { overflow: auto; border: 1px solid var(--line); border-radius: 10px; background: var(--panel); scrollbar-gutter: stable; }
+/* 宽表(账号明细 15 列 / 上传档位)在面板里自己滚,别再撑破整页;高度封顶,免得一页滑不到头 */
+.tablewrap.scrolly { max-height: 460px; }
+/* 表还没数据的时候别留一个空框(扫码那格里那条信息表在窗口没开时是空的) */
+.tablewrap > .tbl:empty, .tablewrap:has(> .tbl:empty) { display: none; }
+.tbl.qrinfo:empty { display: none; }
 .tbl { width: 100%; border-collapse: collapse; font-size: 13px; }
+/* 操作列钉在右边:横向滚到哪儿都还能点到「探测/切/改/删」 */
+.tbl th.ops, .tbl td.ops { position: sticky; right: 0; background: var(--panel); box-shadow: -8px 0 10px -8px rgba(0,0,0,.75); }
+.tbl thead th.ops { background: #202633; }
 .tbl th {
   text-align: left; position: sticky; top: 0; background: #202633; color: var(--muted);
   font-weight: 600; padding: 7px 10px; border-bottom: 1px solid var(--line); white-space: nowrap; z-index: 5;
@@ -192,17 +228,94 @@ tr.detail td.kv { padding: 3px 0; font-family: var(--mono); word-break: break-al
 .biglink.primary { background: var(--accent); color: #08101a; border-color: var(--accent); font-size: 15px; padding: 10px 20px; }
 .biglink.primary:hover { color: #08101a; filter: brightness(1.12); }
 button.ghost.danger:hover { border-color: var(--bad); color: var(--bad); }
-.qrstate { margin: 10px 0 2px; font-size: 13px; }
+.qrstate { margin: 8px 0 0; font-size: 12px; line-height: 1.5; }
 .qrstate.ok { color: var(--arr); }
 .qrstate.bad { color: var(--bad); }
-.qrgrid { display: grid; grid-template-columns: minmax(280px, 1fr) minmax(320px, 1.2fr); gap: 14px; align-items: start; margin-top: 8px; }
-.shot { position: relative; min-height: 300px; border: 1px dashed var(--line); border-radius: 10px; background: #0f1218; display: flex; align-items: center; justify-content: center; overflow: hidden; }
-.shot img { width: 100%; display: block; }
+/* 11-08 用户:「这些值摆到二维码右边占一栏,不是纯属浪费空间?在上面一行一行显示不行吗」
+   → 明细整块从右栏挪进上面的 .qrhead,一行一项(标签列只占内容宽、值紧跟其后);
+   二维码画面独占下面一整行,不再被挤在左半边。
+   11-08 再一轮:用户「右边那么大一坨空白 不是浪费空间?」—— 画面不再锁 760px,
+   铺满整行;高度跟着图走,不写死(写死的话整页图会被压成一条)。 */
+.qrgrid { margin-top: 10px; }
+#qrShot { width: 100%; }
+/* 11-08 第二轮:用户「太啰嗦了,字小一点,显示关键的状态就行」。
+   五行明细压成一行小标签(槽位 / 端口 / cookie / 认账),「状态」和「最近那句」
+   由上面的 #qrState 说过了不再重复;两条说明合成一行小字。
+   选择器一律走 #qrInfo:否则压不过 .tbl.compact td 的 padding 和 .tbl td.name 的字重。 */
+#qrInfo { width: auto; margin: 5px 0 0; font-size: 11.5px; line-height: 1.5; }
+#qrInfo tbody, #qrInfo tr, #qrInfo td { display: block; }
+#qrInfo td { border: 0; padding: 0; }
+#qrInfo .kv { display: inline-block; white-space: nowrap; margin: 0 16px 0 0; }
+#qrInfo .kv i { font-style: normal; color: #6b7383; font-size: 10.5px; margin-right: 5px; }
+#qrInfo .kv .mono, #qrInfo .kv .muted { color: var(--muted); }
+#qrSlotsNote, #qrHowto { display: inline; font-size: 11px; margin: 4px 16px 0 0; }
+/* 扫码画面框:不再写死高度 —— 「二维码卡片」和「整页首屏」比例差很多,
+   写死高度就会把整页图压成一条(或者四周留一大圈黑边)。
+   现在高度跟着图走,只给一个最小高度兜住「还没图」时的纯文字提示。 */
+.shot {
+  position: relative; width: 100%; min-height: 340px;
+  border: 1px dashed var(--line); border-radius: 10px; background: #0f1218;
+  display: flex; align-items: center; justify-content: center; overflow: hidden;
+}
+.shot img { max-width: 100%; max-height: 80vh; width: auto; height: auto; display: block; }
 .shot .shothint { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; padding: 18px; text-align: center; color: var(--muted); font-size: 13px; }
-/* 上面两条都写了 display,会把 hidden 属性默认的 display:none 盖掉 —— 显式让 hidden 说话算 */
-.shot img[hidden], .shot .shothint[hidden] { display: none; }
+/* 「这张是整页、不是二维码」的角标:没找到码时让用户一眼知道现在是页面而不是定位坏了 */
+.shot .shotbadge {
+  position: absolute; left: 8px; top: 8px; z-index: 2;
+  padding: 2px 8px; border-radius: 999px; font-size: 11px;
+  color: #d7c6a8; background: rgba(20, 16, 10, .78); border: 1px solid #4a3f2c;
+  pointer-events: none;
+}
+/* 上面几条都写了 display,会把 hidden 属性默认的 display:none 盖掉 —— 显式让 hidden 说话算 */
+.shot img[hidden], .shot .shothint[hidden], .shot .shotbadge[hidden] { display: none; }
+/* 图没显示时角标也别留着(它是 img 的后一个兄弟,可以这么选) */
+.shot img[hidden] ~ .shotbadge { display: none; }
+/* 「画面可点」提示：只在有图且能映射坐标时露出来；图一藏起来这条也跟着藏 */
+#qrClickHint { margin: 6px 2px 0; font-size: 11px; }
+#qrClickHint[hidden] { display: none; }
+#qrShot:has(#qrImg[hidden]) ~ #qrClickHint { display: none; }
 #ndForm { margin-top: 14px; }
 #ndForm summary { cursor: pointer; color: var(--muted); font-size: 13px; padding: 4px 0; }
 #ndForm summary:hover { color: var(--accent); }
 #ndForm[open] summary { color: var(--fg); }
-@media (max-width: 1100px) { .qrgrid { grid-template-columns: 1fr; } }
+
+/* 账号工作台(11-08):账号下拉切换 + 内嵌浏览器视图 + 目录树文件面板 */
+.ndbar { border: 1px solid var(--line); border-left: 4px solid var(--arr); border-radius: 10px; padding: 10px 14px; background: #1a1f29; margin-bottom: 12px; }
+.ndbar .stat { margin-left: 0; }
+.ndbar .filters { margin-bottom: 0; }
+
+.ndsplit { display: grid; grid-template-columns: minmax(420px, 1.35fr) minmax(320px, 1fr); gap: 12px; align-items: stretch; }
+@media (max-width: 1100px) { .ndsplit { grid-template-columns: 1fr; } }
+
+.ndview { display: flex; flex-direction: column; border: 1px solid var(--line); border-radius: 10px; overflow: hidden; background: #0f1218; }
+.ndview-stage { position: relative; flex: 1; height: clamp(420px, 56vh, 620px); display: flex; align-items: center; justify-content: center; overflow: auto; background: #0f1218; cursor: crosshair; scrollbar-gutter: stable; outline: none; }
+.ndview-stage:focus-visible { box-shadow: inset 0 0 0 2px var(--accent); }
+/* 内嵌浏览器视图:截图按容器自适应缩放,可滚动;点击坐标回传给真浏览器 */
+.ndview-stage img { display: block; max-width: 100%; max-height: 100%; width: auto; height: auto; }
+.ndview-stage.drag { cursor: grabbing; }
+.ndview-stage .shothint { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; padding: 18px; text-align: center; color: var(--muted); font-size: 13px; }
+.ndview-stage img[hidden], .ndview-stage .shothint[hidden] { display: none; }
+.ndview-foot { padding: 6px 10px; font-size: 12px; border-top: 1px solid var(--line); background: #171b24; }
+
+.ndfiles { display: flex; flex-direction: column; border: 1px solid var(--line); border-radius: 10px; overflow: hidden; background: var(--panel); }
+.ndfiles-head { padding: 8px 10px; border-bottom: 1px solid var(--line); background: #171b24; }
+.ndfiles-head .crumb { font-family: var(--mono); font-size: 12.5px; color: var(--accent); margin-bottom: 6px; word-break: break-all; }
+.ndfiles-head .filters { margin-bottom: 0; }
+.ndfiles-head .ghost { padding: 3px 10px; font-size: 12px; }
+.ndfiles-body { flex: 1; min-height: 320px; max-height: 520px; overflow: auto; border: none; border-radius: 0; background: var(--panel); scrollbar-gutter: stable; }
+.ndfiles-body .tbl td { cursor: default; }
+.ndfiles-body td.dir { cursor: pointer; }
+.ndfiles-body td.dir:hover { color: var(--accent); }
+.ndfiles-foot { padding: 6px 10px; font-size: 12px; border-top: 1px solid var(--line); background: #171b24; }
+
+.crumb a { color: var(--accent); cursor: pointer; }
+.crumb a:hover { text-decoration: underline; }
+
+/* 键盘通道:点过画面之后,打字要能落到真浏览器里(输入框可以是"看不见但真实存在"的,
+   不能用 display:none —— 那样中文输入法拿不到焦点,一个字都组不出来) */
+.ndkbd {
+  position: fixed; left: 0; bottom: 0; width: 1px; height: 1px;
+  padding: 0; border: 0; opacity: 0; resize: none; z-index: -1;
+}
+.ndbar .kbdhint { color: var(--muted); font-size: 12px; }
+.ndbar .kbdhint b { color: var(--fg); }

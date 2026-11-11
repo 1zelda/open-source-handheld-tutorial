@@ -2,3 +2,35 @@
 备份完成:D:\库备份\开源掌机教程_知识库_20261101_100001.zip
   1071 个文件,156.7 MB
   建议:每周至少一次;换了机器/盘之后先从这里恢复 06 与 01,再 gh clone 补 02
+----- run at 2026-11-08 10:00:01 -----
+Traceback (most recent call last):
+  File "C:\Python313\Lib\zipfile\__init__.py", line 1908, in write
+    shutil.copyfileobj(src, dest, 1024*8)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\Python313\Lib\shutil.py", line 204, in copyfileobj
+    fdst_write(buf)
+    ~~~~~~~~~~^^^^^
+  File "C:\Python313\Lib\zipfile\__init__.py", line 1252, in write
+    self._fileobj.write(data)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^
+OSError: [Errno 28] No space left on device
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "F:\开源掌机教程\_工具脚本\backup.py", line 107, in <module>
+    sys.exit(main())
+             ~~~~^^
+  File "F:\开源掌机教程\_工具脚本\backup.py", line 99, in main
+    total += zip_dir(zf, p, prefix)
+             ~~~~~~~^^^^^^^^^^^^^^^
+  File "F:\开源掌机教程\_工具脚本\backup.py", line 54, in zip_dir
+    zf.write(p, rel)
+    ~~~~~~~~^^^^^^^^
+  File "C:\Python313\Lib\zipfile\__init__.py", line 1907, in write
+    with open(filename, "rb") as src, self.open(zinfo, 'w') as dest:
+                                      ~~~~~~~~~^^^^^^^^^^^^
+  File "C:\Python313\Lib\zipfile\__init__.py", line 1264, in close
+    self._fileobj.write(buf)
+    ~~~~~~~~~~~~~~~~~~~^^^^^
+OSError: [Errno 28] No space left on device

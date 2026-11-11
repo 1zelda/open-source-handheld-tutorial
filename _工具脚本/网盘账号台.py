@@ -21,7 +21,9 @@ import json
 import os
 import re
 import sys
+import time
 import urllib.error
+import urllib.parse
 import urllib.request
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
@@ -113,9 +115,24 @@ def get_acct(db, alias):
     return None
 
 
+_AUTH = None
+
+
+def _auth():
+    """整个进程共用一份 OpenList 登录态。
+
+    11-08：原来每次 do_action 都 new 一个 Auth()，而扫码页每 2 秒 poll 一次 ——
+    等于每 2 秒拿管理员密码登一次 OpenList（日志刷屏、界面「等好久」）。
+    token 本身在 Auth 里缓存 40 小时，把它挂到进程级就够了。"""
+    global _AUTH
+    if _AUTH is None:
+        _AUTH = nd.Auth()
+    return _AUTH
+
+
 def fields_of(driver):
     """从跑着的 OpenList 现取该驱动的字段表，不写死字段名。"""
-    a = nd.Auth()
+    a = _auth()
     dl = a.get("/api/admin/driver/list").get("data") or {}
     if driver not in dl:
         raise SystemExit("OpenList 里没有驱动 %s，可选：%s"
@@ -183,16 +200,30 @@ def find_storage(auth, mount_path):
     return None
 
 
+_STORAGE_MANAGED = {"id", "modified", "status", "mount_path", "order", "remark",
+                    "enabled", "disabled", "driver", "cache_expiration", "addition"}
+
+
+def _carry_storage_opts(ex, body):
+    """纯函数：OpenList update 是整行覆盖，旧行里账号库不管的存储级设置（web_proxy/
+    down_proxy_url 等）必须带回来，否则一次 activate/重扫就冲成零值，夸克直链本机下载必 412。
+    11-10 实测踩过：重扫后 web_proxy 被冲 False，下载 412。自检钉死。"""
+    out = {k: v for k, v in (ex or {}).items() if k not in _STORAGE_MANAGED}
+    out.update(body)
+    return out
+
+
 def register(auth, acct, remark=None):
     """把这条账号写成 OpenList 挂载点：没有就 create，有就 update。
     OpenList 对『凭据不对』的处理是照样建行、把它标成 work=failed 并回一条错误，
     所以这里不看 code 当结论，一律回查挂载点在不在，再决定怎么报。"""
     add = build_addition(acct)
-    body = {"mount_path": acct["mount_path"], "order": acct.get("order", 0),
-            "remark": remark if remark is not None else (acct.get("remark") or acct["alias"]),
-            "enabled": bool(acct.get("active", True)), "driver": acct["driver"],
-            "cache_expiration": 30, "addition": json.dumps(add, ensure_ascii=False)}
     ex = find_storage(auth, acct["mount_path"])
+    body = _carry_storage_opts(ex, {
+        "mount_path": acct["mount_path"], "order": acct.get("order", 0),
+        "remark": remark if remark is not None else (acct.get("remark") or acct["alias"]),
+        "enabled": bool(acct.get("active", True)), "driver": acct["driver"],
+        "cache_expiration": 30, "addition": json.dumps(add, ensure_ascii=False)})
     if ex:
         body["id"] = ex["id"]
         r = auth.api("/api/admin/storage/update", body)
@@ -295,7 +326,9 @@ def use_only(db, auth, target):
 
 SAFE_KEYS = ("alias", "driver", "mount_path", "created", "active", "remark",
              "last_check", "last_ok", "last_msg", "items", "mount_msg",
-             "uid", "nickname", "member", "ident_msg", "ident_at", "slot")
+             "uid", "nickname", "member", "ident_msg", "ident_at", "slot",
+             "state", "fail_n", "needs_relogin", "last_ok_at", "checked_ts",
+             "cookie_refresh")
 
 
 def safe_rec(a):
@@ -374,6 +407,30 @@ def screenshot(driver, slot=1):
     if not qr:
         return None, "扫码模块没装好（%s）" % QR_ERR
     return qr.shot(driver, qr._slot(slot))
+
+
+def screenshot_ex(driver, slot=1):
+    """同 screenshot，但多回一个 mode：'card'(截到二维码卡片) / 'page'(没找到卡片，
+    退成首屏整页) / ''。看板拿它给前端打一个「这是整页画面」的小角标。"""
+    if driver not in DISKS:
+        return None, "不认识的盘 %s" % driver, ""
+    if not qr:
+        return None, "扫码模块没装好（%s）" % QR_ERR, ""
+    fn = getattr(qr, "shot_ex", None)
+    if fn:
+        return fn(driver, qr._slot(slot))
+    # 老版本扫码模块没有 shot_ex：退回两元组，有图就当卡片
+    png, err = qr.shot(driver, qr._slot(slot))
+    return png, err, ("card" if png else "")
+
+
+def screenshot_meta(driver, slot=1):
+    """这一格最近那张扫码画面的裁剪框（{mode, clip}）。看板拿 clip 经 X-Shot-Clip 头给前端，
+    前端据此把「点在二维码图上哪」换算回网页坐标，点击才能真落到刷新按钮/页签上。"""
+    if not qr or driver not in DISKS:
+        return {}
+    fn = getattr(qr, "last_shot", None)
+    return fn(driver, qr._slot(slot)) if fn else {}
 
 
 # ---------------------------------------------------------------- 「到底登录上没、这是谁」
@@ -565,15 +622,411 @@ def _qr_state(driver, slot, extra=None):
     return st
 
 
+def _live_slots(driver, db):
+    """还算「在用」的登录位。state=dead（体检发现登不上）的号不再占槽 —— 用户要的就是
+    「哪个失效了就把槽释放出来，下次登录自动挑空闲的」。"""
+    out = set()
+    for a in db["accounts"]:
+        if a.get("driver") != driver or a.get("state") == "dead":
+            continue
+        try:
+            n = int(a.get("slot") or 0)
+        except Exception:
+            n = 0
+        if n > 0:
+            out.add(n)
+    return out
+
+
 def _next_slot(driver, db):
-    """这个盘下一个没人占的登录位；十格都占了回 0（调用方据此说「满了」）。"""
+    """这个盘下一个没人占的登录位；一个空位都没有才回 0（调用方据此说「满了」）。"""
     if not qr:
         return 0
-    used = {int(a.get("slot") or 1) for a in db["accounts"] if a.get("driver") == driver}
+    used = _live_slots(driver, db)
     for n in range(1, qr.MAX_SLOTS + 1):
         if n not in used:
             return n
     return 0
+
+
+def _slot_state(driver):
+    """一次现探：{槽号: 行}。探不到(扫码模块没装/端口全不通)回 {}。"""
+    if not qr:
+        return {}
+    try:
+        return {int(r["slot"]): r for r in (qr.slots(driver) or [])}
+    except Exception:
+        return {}
+
+
+def _clean_slot(driver, db):
+    """「开新号」该落在哪一格。
+
+    11-08 用户第四次困惑：「只登了 4 个号，却说十格满了」。老写法把两种东西都当成「占着」：
+    ① 账号库里的号；② profile 目录还在（哪怕库里根本没这个号）。于是扫一次留一个空壳，
+    几次下来十格全成空壳，界面就喊「满了」——其实一个号都没多。
+    现在的判据只看**真占着**的两样：
+      · 账号库里有号且没判死（state != dead）；
+      · 这一格的窗口真开着、且页面还在网盘登录页（被别的程序导航走的不算，可以关掉重开）。
+    profile 残留一律不算占位：挑中它就在开窗前清掉（start 段会做）。所以「4 个号 + 20 格」
+    永远挑得到第 5、6…格。只有「号 + 活窗口」把 20 格填满了才回 0。
+    """
+    if not qr:
+        return 0
+    used = _live_slots(driver, db)
+    rows = _slot_state(driver)
+    span = range(1, qr.MAX_SLOTS + 1)
+
+    def listening(n):
+        return bool((rows.get(n) or {}).get("listening"))
+
+    def live_page(n):                       # 窗口开着且还停在网盘登录页 = 正在用
+        r = rows.get(n) or {}
+        return r.get("listening") and r.get("page_ok", True)
+
+    free = [n for n in span if n not in used and not listening(n)]
+    clean = [n for n in free if not (rows.get(n) or {}).get("profile_exists")]
+    if clean:
+        return clean[0]                     # 首选：没号、没窗口、连 profile 都没有
+    if free:
+        return free[0]                      # 次选：有 profile 残留，开窗前一并清掉
+    hijack = [n for n in span if n not in used and not live_page(n) and listening(n)]
+    if hijack:
+        return hijack[0]                    # 只剩被别的程序占着的窗口：关掉重开
+    return 0
+
+
+def _why_full(driver, db):
+    """满了的时候把话说清楚：几个号、几个开着的窗口，免得再出「4 个号说十格满」这种鬼话。"""
+    used = _live_slots(driver, db)
+    rows = _slot_state(driver)
+    live = [n for n in range(1, qr.MAX_SLOTS + 1)
+            if (rows.get(n) or {}).get("listening") and (rows.get(n) or {}).get("page_ok", True)]
+    return ("%d 个登录位全占着了：%d 个号（第 %s 槽）+ %d 个开着的窗口（第 %s 槽）。"
+            "关掉多余的窗口，或删一个号／点『体检失效号』释放，再点扫码登录。"
+            % (qr.MAX_SLOTS, len(used), "、".join(str(x) for x in sorted(used)) or "—",
+               len(live), "、".join(str(x) for x in live) or "—"))
+
+
+def _prepare_slot(driver, slot):
+    """把这一格弄回游客态：关窗口 → 删 profile → 清状态文件。返回做了什么，给界面交代。
+    只在「这一格没有号」时才被调用（_clean_slot 保证），不会动到已有账号的登录态。"""
+    if not qr:
+        return []
+    did = []
+    try:
+        if qr.port_alive(qr.port_of(driver, slot)):
+            qr.close(driver, slot)
+            did.append("关掉上一轮的窗口")
+            time.sleep(0.2)          # close() 自己已经等到端口没了,这里只留一点点余量
+    except Exception:
+        pass
+    try:
+        if os.path.isdir(qr.profile_of(driver, slot)):
+            if _hard_purge(driver, slot):
+                did.append("清掉残留的登录态")
+            else:
+                did.append("残留登录态清不掉（窗口还占着文件），照样新开")
+    except Exception:
+        pass
+    return did
+
+
+def reap_dead(auth, db=None, hours=6, force=False):
+    """体检：把已经登不上的号标成失效、腾出它的槽并清掉那一格 profile。
+
+    保守两条：① 6 小时内查过就不再查（探一次要真去列目录）；② 要连续两次探失败才判死，
+    免得一次网络抖动就把好号释放掉。返回 {"checked":n, "freed":[(alias, slot, why)]}。
+    """
+    db = db or load_db()
+    now = time.time()
+    checked, freed = 0, []
+    for a in list(db["accounts"]):
+        if not force:
+            try:
+                last = float(a.get("checked_ts") or 0)
+            except Exception:
+                last = 0
+            if now - last < hours * 3600:
+                continue
+        try:
+            ok, why, _n = probe(auth, a)
+        except SystemExit as e:                 # 管理员口令没设：整轮别做了
+            return {"checked": checked, "freed": freed, "err": str(e)[:160]}
+        except Exception as e:
+            ok, why = False, "%s: %s" % (type(e).__name__, str(e)[:120])
+        checked += 1
+        a["checked_ts"] = int(now)
+        a["checked_msg"] = (why or "")[:120]
+        if ok:
+            a["state"] = "ok"
+            a["fail_n"] = 0
+            continue
+        a["fail_n"] = int(a.get("fail_n") or 0) + 1
+        if a["fail_n"] < 2:
+            continue                            # 一次失败先记着，下一轮再说
+        slot = int(a.get("slot") or 0)
+        a["state"] = "dead"
+        a["dead_at"] = time.strftime("%Y-%m-%d %H:%M:%S")
+        a["slot"] = 0
+        if slot:
+            a["released_slot"] = slot
+            freed.append((a.get("alias"), slot, why))
+            _hard_purge(a.get("driver") or "Quark", slot)
+    save_db(db)
+    return {"checked": checked, "freed": freed}
+
+
+def _act_reap(p, auth):
+    """界面上的「体检失效号」：现在就去问一遍每个号的挂载还通不通。"""
+    if not auth:
+        return False, "没有管理员口令（OPENLIST_ADMIN_PASSWORD），体检不了", None
+    r = reap_dead(auth, force=bool(p.get("force")))
+    if r.get("err"):
+        return False, r["err"], None
+    if not r["checked"]:
+        return True, "刚体检过（6 小时内不重复探），没动任何号", None
+    if not r["freed"]:
+        return True, "体检 %d 个号：都还能用" % r["checked"], None
+    return True, "体检 %d 个号，释放 %d 格：%s" % (
+        r["checked"], len(r["freed"]),
+        "、".join("%s（第 %d 槽）" % (al, sl) for al, sl, _ in r["freed"])), None
+
+
+def _act_fs(p, auth):
+    """文件面板：列目录 / 拿详情 / 删除 / 上传指定文件 —— 全走 OpenList 的 /api/fs/*。
+    op 取值：list(列目录) / stat(拿一个路径详情) / rm(删) / upload(把本地文件传到指定目录)。
+    路径一律挂载点起头(如 /quark-03/某个目录)，先夹到合法，再交给 OpenList。
+    上传的本地路径只在服务端这一侧被读，不回界面、不写日志；上传本体走 netdisk_upload 的裸流。"""
+    if not auth or not auth.token():
+        return False, "登不上 OpenList：管理员口令没设或不对", None
+    op = (p.get("op") or "list").strip()
+    alias = (p.get("alias") or "").strip()
+    path = _clean_fs_path(p.get("path"))
+
+    if op == "list":
+        page = max(1, min(1000, int(p.get("page") or 1)))
+        pp = max(1, min(200, int(p.get("per_page") or 100)))
+        r = auth.api("/api/fs/list", {"path": path, "page": page, "per_page": pp,
+                                      "refresh": bool(p.get("refresh"))})
+        if r.get("code") != 200:
+            return False, "列目录失败：%s" % (str(r.get("message") or "")[:180]), None
+        data = r.get("data") or {}
+        content = data.get("content") or []
+        rows = [{"name": x.get("name"), "is_dir": bool(x.get("is_dir")),
+                 "size": x.get("size"), "modified": x.get("modified")}
+                for x in content]
+        return True, "列到 %d 项" % len(rows), {"path": path, "total": data.get("total"),
+                                               "rows": rows}
+
+    if op == "stat":
+        r = auth.api("/api/fs/get", {"path": path})
+        if r.get("code") != 200:
+            return False, "拿不到这个路径：%s" % (str(r.get("message") or "")[:180]), None
+        return True, "ok", {"path": path, "meta": (r.get("data") or {})}
+
+    if op == "rm":
+        if not path or path.rstrip("/") in ("", "/"):
+            return False, "不能删根目录", None
+        d, name = path.rsplit("/", 1) if "/" in path.strip("/") else ("/", path.strip("/"))
+        if not name:
+            return False, "路径不对", None
+        r = auth.api("/api/fs/remove", {"dir": "/" + d.strip("/"),
+                                        "names": [name]})
+        if r.get("code") != 200:
+            return False, "删不掉：%s" % (str(r.get("message") or "")[:180]), None
+        return True, "已删 %s" % path, None
+
+    if op == "upload":
+        local = (p.get("local") or "").strip()
+        if not local or not os.path.isfile(local):
+            return False, "本地文件不存在：%s" % (local or "(空)"), None
+        remote_dir = ("/" + path.strip("/")) if path.strip("/") else "/"
+        name = os.path.basename(local)
+        remote = (remote_dir.rstrip("/") + "/" + name)
+        size = os.path.getsize(local)
+        sha = nd.sha256(local)
+        try:
+            r = nd.put_stream(auth, local, remote, size, sha)
+        except Exception as e:
+            return False, "上传失败：%s: %s" % (type(e).__name__, str(e)[:180]), None
+        if r.get("code") != 200 and r.get("code") != 0:
+            return False, "上传没成：%s" % (str(r.get("message") or "")[:180]), None
+        return True, "已传 %s → %s（%d 字节）" % (name, remote, size), {"path": remote, "size": size}
+
+    return False, "不认识的文件操作 %s（可选 list/stat/rm/upload）" % op, None
+
+
+def _clean_fs_path(path):
+    """夹一个挂载点路径：去掉危险字符，保证在 / 之下、不带 ..、不指向库外。"""
+    s = (path or "").replace("\\", "/").strip()
+    if not s or s == "/":
+        return "/"
+    s = "/" + s.strip("/")
+    while "/../" in s:
+        s = s.replace("/../", "/")
+    if s.endswith("/.."):
+        s = s.rsplit("/", 1)[0]
+    while "//" in s:
+        s = s.replace("//", "/")
+    return s or "/"
+
+
+# ---------------------------------------------------------------- 视图占用登记
+#
+# 11-08 用户的原话：「内嵌浏览器应该能够操作啊，现在根本没有操作页面」。
+# 查下来的根子是**看板自己的看守**：它每 15 秒把每个「看着已经登进去」的格子 poll 一遍，
+# poll 成功那条路一律 qr.close(slot) —— 用户刚点开的内嵌浏览器，十几秒后就被自家看守关了，
+# 界面上只剩一张不再更新的旧图，点哪儿都没反应。实测：同一个 profile 直接开（不经过看守）
+# 能活 40 秒以上，经过看板 10~15 秒必掉，和看守周期严丝合缝。
+# 所以这里登记「这一格正在被内嵌浏览器用」，收尾关窗口的时候先看一眼。
+_VIEW_USE = {}
+VIEW_KEEP_SEC = 900          # 15 分钟没人动这一格，才允许看守把它收掉
+
+
+def _mark_view(driver, slot, op=""):
+    try:
+        _VIEW_USE[(driver, int(slot))] = (time.time(), op or "")
+    except (TypeError, ValueError):
+        pass
+
+
+def _view_in_use(driver, slot, sec=None):
+    try:
+        t = _VIEW_USE.get((driver, int(slot)))
+    except (TypeError, ValueError):
+        return False
+    if not t:
+        return False
+    return (time.time() - t[0]) < (sec or VIEW_KEEP_SEC)
+
+
+def _close_view(driver, slot):
+    """扫码这条链收尾要关窗口时走这里：用户正在内嵌浏览器里用这一格就不关。
+    回 True = 真关了，False = 给他留着。"""
+    if _view_in_use(driver, slot):
+        return False
+    try:
+        qr.close(driver, slot)
+    except Exception:
+        return False
+    return True
+
+
+def _act_nav(p, auth):
+    """内嵌浏览器视图：把前端对「那一格浏览器」的操作落到 CDP 真事件上。
+    op：open(开窗口并导航)/shot(整页截图)/metrics(视口尺寸)/click(点击)/scroll(滚动)/
+        goto(导航)/url(当前地址)。driver+slot 指定哪一格(哪一号的登录态)。"""
+    if not qr:
+        return False, "扫码/浏览器模块没装好（%s）" % QR_ERR, None
+    driver = (p.get("driver") or "Quark").strip()
+    if driver not in DISKS:
+        return False, "不认识的盘 %s" % driver, None
+    slot = qr._slot(p.get("slot"))
+    op = (p.get("op") or "shot").strip()
+    _mark_view(driver, slot, op)          # → 看守别把这一格收掉（见 _VIEW_USE 那段注释）
+
+    if op == "open":
+        r = qr.start(driver, slot, str(p.get("exe") or ""))
+        if not r.get("ok"):
+            return False, r.get("msg", ""), None
+        # 开窗后把页面带到该盘首页(或指定地址)，并给前端最新视口
+        url = (p.get("url") or "").strip()
+        if url:
+            qr.view_navigate(driver, slot, url)
+        m, _ = qr.view_metrics(driver, slot)
+        return True, "第 %d 槽已开窗" % slot, {"slot": slot, "port": r.get("port"),
+                                               "metrics": m}
+    if op == "close":
+        r = qr.close(driver, slot)
+        return bool(r.get("ok")), r.get("msg", ""), {"slot": slot}
+    if op == "shot":
+        png, err = qr.view_shot(driver, slot, focus=bool(p.get("focus")))
+        if png is None:
+            return False, err or "没截到", None
+        import base64
+        m, _m = qr.view_metrics(driver, slot)
+        return True, "ok", {"slot": slot, "png": base64.b64encode(png).decode(),
+                            "url": qr.view_url(driver, slot), "metrics": m}
+    if op == "metrics":
+        m, err = qr.view_metrics(driver, slot)
+        if m is None:
+            return False, err or "窗口没开着", None
+        return True, "ok", {"slot": slot, "metrics": m, "url": qr.view_url(driver, slot)}
+    if op == "click":
+        r = qr.view_click(driver, slot, float(p.get("x") or 0), float(p.get("y") or 0),
+                          ensure_view=bool(p.get("ensure")))
+        return r.get("ok", False), r.get("msg", ""), None
+    if op == "scroll":
+        r = qr.view_scroll(driver, slot, float(p.get("dx") or 0), float(p.get("dy") or 0),
+                           float(p.get("x", -1) if p.get("x") is not None else -1),
+                           float(p.get("y", -1) if p.get("y") is not None else -1))
+        return r.get("ok", False), r.get("msg", ""), {"moved": r.get("moved")}
+    if op == "text":
+        r = qr.view_text(driver, slot, str(p.get("text") or ""))
+        return r.get("ok", False), r.get("msg", ""), None
+    if op == "key":
+        r = qr.view_key(driver, slot, str(p.get("key") or ""))
+        return r.get("ok", False), r.get("msg", ""), None
+    if op == "goto":
+        r = qr.view_navigate(driver, slot, str(p.get("url") or ""))
+        return r.get("ok", False), r.get("msg", ""), None
+    if op == "url":
+        return True, "ok", {"url": qr.view_url(driver, slot)}
+    return False, "不认识的浏览器操作 %s（可选 open/close/shot/metrics/click/scroll/text/key/goto/url）" % op, None
+
+
+def _hard_purge(driver, slot):
+    """直接删掉某一格的 profile 目录（不经过 CDP 关窗口那套）。
+
+    为什么不用 qr.purge：它在看板进程里偶尔抛 SystemExit(1)（底层 close/CDP 那条链），
+    被吞掉之后 profile 还在，下一轮又占着格子 —— 实测「自动挑空槽」一直挑不到第 4 格。
+    自己 rmtree 只看目录，失败就返回 False，语义清楚。
+    """
+    if not qr:
+        return False
+    try:
+        p = qr.profile_of(driver, slot)
+    except Exception:
+        return False
+    if not p.startswith(qr.BASE_DIR):
+        return False
+    import shutil
+    try:
+        shutil.rmtree(p, ignore_errors=True)
+    except Exception:
+        pass
+    try:
+        st = qr._read_state(driver, slot) or {}
+        if st and not qr.port_alive(qr.port_of(driver, slot)):
+            qr._rm_state(driver, slot)
+    except Exception:
+        pass
+    return not os.path.isdir(p)
+
+
+def _reap_orphan_profiles(driver, db):
+    """清掉「有 profile 但库里没有号、窗口也没开着」的孤儿格。
+
+    不扫地的话每扫一次就永久占掉一格（实测 11-08 一上午就攒了 4/6/7 三个空壳），
+    格数越用越少，最后明明没几个号却喊「占满」。只清我们自己的 profile 目录。
+    """
+    if not qr:
+        return 0
+    used = _live_slots(driver, db)
+    try:
+        live = {int(r["slot"]) for r in (qr.slots(driver) or []) if r.get("listening")}
+    except Exception:
+        live = set()
+    killed = 0
+    for n in range(1, qr.MAX_SLOTS + 1):
+        if n in used or n in live:
+            continue
+        if not os.path.isdir(qr.profile_of(driver, n)):
+            continue
+        if _hard_purge(driver, n):
+            killed += 1
+    return killed
 
 
 def _act_qr(p, auth):
@@ -589,8 +1042,59 @@ def _act_qr(p, auth):
         return False, "不认识的盘 %s" % driver, None
     slot = qr._slot(p.get("slot"))
     if phase == "start":
-        r = qr.start(driver, slot, str(p.get("exe") or ""))
-        return bool(r.get("ok")), r.get("msg", ""), _qr_state(driver, slot, {"phase": "start"})
+        # 11-08 用户要求：「槽位别让我选，每次自动加一个」。
+        # 所以 start 一律自己挑一格：库里没号 + 没有活窗口（详见 _clean_slot）。
+        # 之前那套「前端发 slot + auto_new 兜底」全撤了 —— 它已经连着坑了三次
+        # （下拉回第 1 槽、老脚本不带 auto_new、并号改槽位）。
+        db0 = load_db()
+        req = qr._slot(p.get("slot"))
+        # 但「这一格还开着、又不是哪个号的」就别再开新格了：点一次扫码登录开一格浏览器，
+        # 一上午能攒出六个 headless 进程 + 六个空壳 profile（11-08 实测：第 6/8/9/10 格都是这么来的），
+        # 探测越来越慢、格数越用越少,用户看到的就是「启动越来越慢」。同一格重开,秒回。
+        reuse = 0
+        try:
+            used = _live_slots(driver, db0)
+            r0 = (_slot_state(driver).get(req) or {})
+            if req not in used and r0.get("listening") and r0.get("page_ok", True):
+                reuse = req
+        except BaseException:
+            reuse = 0
+        try:
+            clean = reuse or _clean_slot(driver, db0)
+        except BaseException as e:
+            # 以前这里 `except BaseException: clean = 0` 把异常吞成「满了」，
+            # 于是任何一个意外都长成同一句「十格都占满了」——用户当然觉得莫名其妙。
+            return False, ("挑登录位时出错了：%s: %s —— 这跟「占满」无关，"
+                           "把这句话发给开发者看。" % (type(e).__name__, str(e)[:120])), None
+        if not clean:
+            # 真的一个空位都没有：先扫掉「有 profile 但库里没号、窗口也没开」的空壳格，再试一次
+            try:
+                _reap_orphan_profiles(driver, db0)
+            except BaseException:
+                pass
+            db0 = load_db()
+            try:
+                clean = _clean_slot(driver, db0)
+            except BaseException as e:
+                return False, ("挑登录位时出错了：%s: %s" % (type(e).__name__, str(e)[:120])), None
+        if not clean:
+            return False, _why_full(driver, db0), None
+        slot = clean
+        if reuse:
+            # 同一格重开:profile 留着(游客态),省掉删 20~100MB 目录那几秒
+            did = []
+            r = qr.start(driver, slot, str(p.get("exe") or ""), fresh=True)
+        else:
+            # 这一格没号（_clean_slot 保证），开窗前一并收拾干净：关掉上一轮残留的窗口、
+            # 删掉旧 profile —— 否则窗口一开就是「已登录某个号」的状态，压根不出二维码，
+            # 用户看到的就是「点了扫码登录什么都没有」。
+            did = _prepare_slot(driver, slot)
+            r = qr.start(driver, slot, str(p.get("exe") or ""), fresh=True)
+        st = _qr_state(driver, slot, {"phase": "start"})
+        msg = r.get("msg", "")
+        if did:
+            msg += "（%s）" % "、".join(did)
+        return bool(r.get("ok")), msg, st
     if phase == "close":
         r = qr.close(driver, slot)
         return bool(r.get("ok")), r.get("msg", ""), _qr_state(driver, slot, {"phase": "close"})
@@ -601,8 +1105,21 @@ def _act_qr(p, auth):
         return False, "不认识的扫码阶段 %s" % phase, None
 
     st = _qr_state(driver, slot)
-    if not st.get("listening"):
-        return False, st.get("msg") or "第 %d 槽的登录窗口没开着（先点『打开扫码窗口』）" % slot, st
+    if not st.get("listening") or not st.get("page_ok", True):
+        # 11-08「明明开着窗口，界面却说没开成」+「串项目」：页面可能盯着一格早就关掉的老槽，
+        # 或这一格的窗口被别的程序(录播)连上调试端口导航走了。先看谁真开着**且还停在登录页**，跟过去再问。
+        try:
+            live = [r for r in (qr.slots(driver) or []) if r.get("listening") and r.get("page_ok", True)]
+        except Exception:
+            live = []
+        follow = next((r for r in live if int(r.get("slot") or 0) != slot), None)
+        if follow:
+            was, slot = slot, int(follow["slot"])
+            st = _qr_state(driver, slot)
+            st["followed_from"] = was
+            st["msg"] = "第 %d 槽没在登录页，跟到真正开着的第 %d 槽" % (was, slot)
+        else:
+            return False, st.get("msg") or "第 %d 槽的登录窗口没开着（先点『扫码登录』）" % slot, st
     target = (qr.DISKS.get(driver) or {}).get("field") or ""
     if not target:
         return False, "%s 在 OpenList 里不吃 cookie，扫码只当看内容——挂载请按下面的表单填" % DISKS[driver], st
@@ -629,7 +1146,25 @@ def _act_qr(p, auth):
                 break
     nxt = _next_slot(driver, db)
     if same:                                   # 同一个账号重扫 = 换凭据，不新开一条
-        prev = int(same.get("slot") or 1)
+        prev = int(same.get("slot") or 0)
+        if not prev:
+            # 这个号之前体检判死、槽已经释放了（slot=0）。重新扫上就重新占一个空槽，
+            # 不能走下面「并号」那条（会把它当成"库里已有"直接拒掉）。
+            clean = _clean_slot(driver, db) or slot
+            sec0 = secret_of(same) if same.get("secret") else {}
+            sec0.update({k: v for k, v in fields.items() if SECRET_RE.search(k)})
+            store_secret(same, sec0)
+            for k, v in fields.items():
+                if not SECRET_RE.search(k) and v:
+                    same.setdefault("plain", {})[k] = v
+            same["slot"] = clean
+            same.pop("state", None)
+            same.pop("released_slot", None)
+            same["fail_n"] = 0
+            fill_identity(db, same, fields)
+            ok, msg = activate(db, auth, same)
+            _close_view(driver, clean)
+            return ok, "这个号之前失效、槽已释放；这次重新登进第 %d 槽 —— %s" % (clean, msg), safe_rec(same)
         try:
             stored = (secret_of(same) or {}).get(target) or ""
         except Exception:
@@ -639,7 +1174,7 @@ def _act_qr(p, auth):
                            "要加另一个号：把上面『登录位』调到%s再点『打开扫码窗口』，"
                            "那是另一个独立 profile，不会顶掉这个号。"
                            % (slot, same.get("nickname") or same["alias"], same["alias"],
-                              ("第 %d 槽 " % nxt) if nxt else "（十格已占满，先删一个号）")), \
+                              ("第 %d 槽 " % nxt) if nxt else "（%d 个登录位都占着了，先删一个号）" % qr.MAX_SLOTS)), \
                 dict(st, already=True, alias=same["alias"], next_slot=nxt)
         sec = secret_of(same) if same.get("secret") else {}
         sec.update({k: v for k, v in fields.items() if SECRET_RE.search(k)})
@@ -647,13 +1182,27 @@ def _act_qr(p, auth):
         for k, v in fields.items():
             if not SECRET_RE.search(k) and v:
                 same.setdefault("plain", {})[k] = v
-        same["slot"] = slot
+        if prev != slot:
+            # 11-08 用户第三次困惑的正是这里：扫的这个号**库里已经有了**，只是扫进了另一格。
+            # 原来的写法把记录从第 3 槽直接改记到第 5 槽、再关掉窗口 —— 用户看到的是
+            # 「扫完窗口自己关了、也没多出账号」，而且第 3 槽那格 profile 还登着同一个号，留下两格并号。
+            # 正确做法：槽位一概不动，把这一格多扫出来的窗口清掉，并明确告诉用户这不是新号。
+            same["slot"] = prev
+            fill_identity(db, same, fields)      # 只刷新昵称/ID 这类身份信息，槽位保持原样
+            save_db(db)
+            qr.purge(driver, slot)               # 这一格是并号扫出来的，删掉别留重复登录态
+            return False, ("扫的这个号库里已经有了：「%s」（%s，一直登在第 %d 槽）—— 不是新号，所以没有新增账号；"
+                           "第 %d 槽那个多扫出来的窗口已经关掉清空。"
+                           "要加下一个号：先在手机夸克 App 里退出/切换到另一个账号，再点『打开扫码窗口』扫。"
+                           % (same.get("nickname") or same["alias"], same["alias"], prev, slot)), \
+                   dict(st, already=True, duplicate=True, alias=same["alias"],
+                        slot=prev, scanned_slot=slot, next_slot=nxt)
         fill_identity(db, same, fields)
         ok, msg = activate(db, auth, same)
-        qr.close(driver, slot)
-        where = "" if prev == slot else "（原来登在第 %d 槽，现在改记第 %d 槽）" % (prev, slot)
-        return ok, "同一个账号重扫好了：%s（%s凭据已更新，第 %d 槽的窗口关掉）—— %s" % (
-            same["alias"], where, slot, msg), safe_rec(same)
+        kept = not _close_view(driver, slot)
+        return ok, "同一个账号重扫好了：%s（凭据已更新%s）—— %s" % (
+            same["alias"], "、窗口给你留着（内嵌浏览器正在用这一格）" if kept
+            else "、第 %d 槽的窗口关掉" % slot, msg), safe_rec(same)
     alias = auto_alias(driver, seed, db)
     remark = ("%s %s" % (DISKS[driver], ident.get("nickname") or "")).strip()[:60]
     add_account(driver, alias, fields, remark=remark)
@@ -662,10 +1211,11 @@ def _act_qr(p, auth):
     acct["slot"] = slot
     fill_identity(db, acct, fields)
     ok, msg = activate(db, auth, acct)
-    qr.close(driver, slot)
-    return ok, ("扫码登录成功：自动起名 %s（ID %s，账号名 %s，登在第 %d 槽）—— %s；"
-                "窗口已关，这一槽的 profile 留着，下次点开还是这个号"
-                % (alias, acct.get("uid") or "网盘没给", acct.get("nickname") or "网盘没给", slot, msg))[:400], \
+    kept = not _close_view(driver, slot)
+    return ok, ("扫码登录成功：自动起名 %s（ID %s，账号名 %s，登在第 %d 槽）—— %s；%s"
+                % (alias, acct.get("uid") or "网盘没给", acct.get("nickname") or "网盘没给", slot, msg,
+                   "窗口给你留着（内嵌浏览器正在用这一格），这一槽的 profile 还是这个号"
+                   if kept else "窗口已关，这一槽的 profile 留着，下次点开还是这个号"))[:400], \
         safe_rec(acct)
 
 
@@ -782,10 +1332,263 @@ def _act_del(p, auth):
     return True, "挂载点删掉了，库里这条（含密文）也一起抹了%s" % tail, None
 
 
-ACTIONS = {"save": _act_save, "check": _act_check, "use": _act_use, "del": _act_del, "qr": _act_qr}
+# ---------------------------------------------------------------- 定时保活
+# 痛点：cookie 寿命由网盘服务器定，闲置会更快到期；以前只有手动点「检查」才探，
+# 下载中途才发现失效。这里把「探」变成定时轻量请求：① 每次探都是一次带凭据的真实
+# 请求，能续闲置寿命；② 提前发现到期、写预警报告；③ 失效盘预备扫码（重登只需扫一次）。
+# 不保证永不过期（服务器说了算），只把重登 friction 降到最低。凭据值仍走 DPAPI，绝不进报告。
+
+KA_REPORT = os.path.join(nd.ROOT, "06-资讯监控", "网盘保活", "保活报告.json")
+
+
+def _ka_mark(a, ok, msg, n, ts):
+    """纯函数：把一次探测结果记进账号（两次连败才判死，免得一回网络抖动误杀好号）。
+    不联网、不写库，方便离线自检钉死状态机。ts 是 epoch 秒。"""
+    stamp = dt.datetime.fromtimestamp(ts).strftime("%Y-%m-%d %H:%M:%S")
+    a["last_check"], a["last_ok"], a["last_msg"], a["items"] = stamp, bool(ok), (msg or "")[:200], n
+    a["checked_ts"], a["checked_msg"] = int(ts), (msg or "")[:120]
+    if ok:
+        a["state"], a["fail_n"], a["needs_relogin"] = "ok", 0, False
+        a["last_ok_at"] = stamp
+    else:
+        a["fail_n"] = int(a.get("fail_n") or 0) + 1
+        dead = a["fail_n"] >= 2
+        a["state"] = "dead" if dead else "warn"
+        a["needs_relogin"] = dead
+    return a
+
+
+def _prepared_window(driver, db):
+    """这个盘是不是已经有一格开着的、还没扫上号的登录窗（listening+page_ok 且不属于任何活号）。
+    有就回那格槽号、别再开新格——否则每天保活给同一个失效盘各开一扇窗，几天就堆满 headless 进程
+    （_clean_slot 会避开活窗另挑空格，正是堆积的根）。回 0 表示没有现成预备窗。"""
+    if not qr:
+        return 0
+    used = _live_slots(driver, db)
+    rows = _slot_state(driver)
+    for n in range(1, qr.MAX_SLOTS + 1):
+        r = rows.get(n) or {}
+        if n not in used and r.get("listening") and r.get("page_ok", True):
+            return n
+    return 0
+
+
+def _puus_fresh(cookies, now_ts):
+    """纯函数：__puus 是夸克下载态的命根（TTL≈18h），expiry 距现在 >17h 才算这次访问
+    真滚到了新 cookie。光看 cookie 在不在不够——profile 磁盘里那份旧的也在。"""
+    for c in cookies or []:
+        if c.get("name") == "__puus":
+            try:
+                return float(c.get("expires") or 0) - now_ts > 17 * 3600
+            except (TypeError, ValueError):
+                return False
+    return False
+
+
+def _download_probe(auth, a):
+    """字节级下载探针：挂载点根目录挑最小文件（≤1MB）拉前 256 字节。
+    列目录只要 __pus（≈9 天）就绿，下载要 __puus（≈18h）——不实测字节就是假绿（11-10 踩过）。
+    返回 (ok, msg)；ok=None 表示没探成（根目录没小文件），不算失败也不算通过。"""
+    r = auth.api("/api/fs/list", {"path": a["mount_path"], "page": 1, "per_page": 100, "refresh": True})
+    items = ((r.get("data") or {}).get("content") or [])
+    files = [it for it in items if not it.get("is_dir") and 0 < (it.get("size") or 0) <= 1024 * 1024]
+    if not files:
+        return None, "根目录没有 ≤1MB 的文件，字节探针没探"
+    it = min(files, key=lambda x: x["size"])
+    p = a["mount_path"].rstrip("/") + "/" + it["name"]
+    d = auth.api("/api/fs/get", {"path": p})
+    x = d.get("data") or {}
+    if not x.get("sign"):
+        return False, "fs/get 没给 sign：%s" % str(d.get("message") or "")[:100]
+    url = nd.BASE + "/d" + urllib.parse.quote(p) + "?sign=" + urllib.parse.quote(x["sign"])
+    req = urllib.request.Request(url, headers={"Range": "bytes=0-255"})
+    try:
+        with urllib.request.urlopen(req, timeout=60) as resp:
+            data, code = resp.read(), resp.status
+    except urllib.error.HTTPError as e:
+        return False, "HTTP %d" % e.code
+    except Exception as e:
+        return False, "%s: %s" % (type(e).__name__, str(e)[:100])
+    want = min(256, it["size"])
+    if code not in (200, 206) or len(data) != want:
+        return False, "HTTP %d 回了 %d 字节（要 %d）" % (code, len(data), want)
+    return True, "下载实测 OK（%s 前 %d 字节）" % (it["name"][:30], want)
+
+
+def refresh_from_profile(db, auth, a):
+    """夸克持久化续期：开独立 profile 访问 pan.quark.cn 让服务器滚动 cookie，抓回来走
+    store_secret+activate 生产路径回写 OpenList，再实测字节下载。
+    返回 (ok, msg)，msg 只含人话结论、不含凭据值。
+    为什么需要它：OpenList 存的是 cookie 快照不会自己滚，__puus ≈18h 一过下载就 403/412，
+    而列目录要的 __pus ≈9 天还活着——保活只列目录就一直是假绿。浏览器 profile 每次访问
+    都会被服务器滚新 cookie，所以每天开两次窗抓回来回写，登录态就能一直续下去。"""
+    if a.get("driver") != "Quark" or not qr:
+        return False, "非夸克或没扫码模块，续不了期"
+    slot = int(a.get("slot") or 1)
+    if not os.path.isdir(qr.profile_of("Quark", slot)):
+        return False, "没有 profile，续不了期（要重扫一次）"
+    r = qr.start("Quark", slot)
+    if not r.get("ok"):
+        return False, "开窗口失败：%s" % (r.get("msg") or "")[:120]
+    opened = not r.get("reused")
+    grabbed = False
+    try:
+        if r.get("reused"):
+            # 窗口已开着时页面停在旧响应上，不重新导航服务器就不滚 cookie
+            try:
+                qr._cdp(qr.port_of("Quark", slot), "Page.navigate",
+                        {"url": qr.DISKS["Quark"]["url"]})
+            except Exception:
+                pass
+        cookies = None
+        for _ in range(15):                     # 等服务器把 __puus 滚新（页面加载+set-cookie 才算）
+            time.sleep(2)
+            cookies, _why = qr.cookie_names("Quark", slot)
+            if cookies and _puus_fresh(cookies, time.time()):
+                break
+        else:
+            return False, "profile 没登录态或 cookie 没滚动（要重扫一次）"
+        ck, why, _names = qr.build_cookie("Quark", slot)
+        if ck is None:
+            return False, "抓 cookie 失败：%s" % (why or "")[:120]
+        grabbed = True                          # 登录态确认，用完可以关窗；没登录的窗留着给用户扫码
+        target = (qr.DISKS.get("Quark") or {}).get("field") or "cookie"
+        fields = dict(_default_values("Quark"))
+        fields[target] = ck
+        ident = identity_of("Quark", fields)
+        if not ident.get("ok"):
+            return False, "新 cookie 网盘没认：%s" % (ident.get("msg") or "")[:120]
+        if ident.get("uid") and a.get("uid") and str(ident["uid"]) != str(a["uid"]):
+            return False, "profile 登的是别的账号（uid 不符），拒写"
+        sec = secret_of(a) if a.get("secret") else {}
+        sec.update({k: v for k, v in fields.items() if SECRET_RE.search(k)})
+        store_secret(a, sec)
+        for k, v in fields.items():
+            if not SECRET_RE.search(k) and v:
+                a.setdefault("plain", {})[k] = v
+        fill_identity(db, a, fields)
+        ok, msg = activate(db, auth, a)
+        if not ok:
+            return False, "回写后列目录失败：%s" % msg[:120]
+        pok, pmsg = _download_probe(auth, a)
+        if pok is False:
+            return False, "续期后下载实测失败：%s" % pmsg[:120]
+        return True, "cookie 已续期；%s" % pmsg[:100]
+    finally:
+        if opened and grabbed:
+            qr.close("Quark", slot)             # 用完就关，不堆 headless 进程
+
+
+def keepalive(auth=None, hours=6, force=False, prepare_qr=False, alias=None,
+              report_path=None):
+    """对账号逐个轻量保活探测，写预警报告；失效盘可选预备扫码。返回汇总（不含凭据值）。"""
+    db = load_db()
+    auth = auth or _auth()
+    try:
+        auth.token()
+    except SystemExit as e:
+        return {"ok": False, "skipped": "no_password", "msg": str(e)[:200],
+                "checked": 0, "accounts": []}
+    except Exception as e:
+        return {"ok": False, "skipped": "auth_error",
+                "msg": "%s: %s" % (type(e).__name__, str(e)[:160]),
+                "checked": 0, "accounts": []}
+    now_ts = time.time()
+    todo = [a for a in db["accounts"] if (not alias or a["alias"] == alias)]
+    checked, skipped, recs = 0, 0, []
+    for a in todo:
+        if not force:
+            try:
+                last = float(a.get("checked_ts") or 0)
+            except Exception:
+                last = 0
+            if now_ts - last < hours * 3600:
+                skipped += 1
+                recs.append(safe_rec(a))
+                continue
+        refresh_msg = ""
+        if a.get("driver") == "Quark" and a.get("active", True):
+            try:
+                rok, rmsg = refresh_from_profile(db, auth, a)
+            except SystemExit as e:
+                return {"ok": False, "skipped": "no_password", "msg": str(e)[:200],
+                        "checked": checked, "accounts": recs}
+            except Exception as e:
+                rok, rmsg = False, "%s: %s" % (type(e).__name__, str(e)[:100])
+            a["cookie_refresh"] = {"ok": bool(rok), "msg": rmsg[:160], "at": now()}
+            refresh_msg = rmsg
+        try:
+            ok, msg, n = probe(auth, a)
+        except SystemExit as e:
+            return {"ok": False, "skipped": "no_password", "msg": str(e)[:200],
+                    "checked": checked, "accounts": recs}
+        except Exception as e:
+            ok, msg, n = False, "%s: %s" % (type(e).__name__, str(e)[:120]), -1
+        if refresh_msg:
+            msg = "%s；%s" % (msg, refresh_msg)
+        _ka_mark(a, ok, msg, n, now_ts)
+        checked += 1
+        recs.append(safe_rec(a))
+    save_db(db)
+    need = [a["alias"] for a in db["accounts"] if a.get("needs_relogin")]
+    prepared = []
+    if prepare_qr and need and qr:
+        drivers = []
+        for a in db["accounts"]:
+            if a.get("needs_relogin") and a.get("driver") not in drivers:
+                drivers.append(a["driver"])
+        for drv in drivers:                      # 每盘只留一格预备扫码窗：已有活窗就复用，不每天重开堆进程
+            have = _prepared_window(drv, db)
+            if have:
+                prepared.append({"driver": drv, "ok": True, "slot": have,
+                                 "msg": "第 %d 槽已有预备扫码窗，复用不重开（扫一次即可）" % have})
+                continue
+            r = do_action("qr", {"phase": "start", "driver": drv})
+            prepared.append({"driver": drv, "ok": bool(r.get("ok")),
+                             "slot": (r.get("qr") or {}).get("slot"),
+                             "msg": (r.get("msg") or "")[:160]})
+    summary = {
+        "ok": True, "checked": checked, "skipped_throttle": skipped,
+        "ok_n": sum(1 for a in db["accounts"] if a.get("state") == "ok"),
+        "warn_n": sum(1 for a in db["accounts"] if a.get("state") == "warn"),
+        "dead_n": sum(1 for a in db["accounts"] if a.get("state") == "dead"),
+        "needs_relogin": need, "prepared_qr": prepared,
+        "refresh_failed": [a["alias"] for a in db["accounts"]
+                           if a.get("active", True) and a.get("driver") == "Quark"
+                           and not (a.get("cookie_refresh") or {}).get("ok")],
+        "at": now(), "accounts": recs,
+    }
+    rp = report_path or KA_REPORT
+    try:
+        os.makedirs(os.path.dirname(rp), exist_ok=True)
+        with open(rp, "w", encoding="utf-8") as fh:
+            json.dump(summary, fh, ensure_ascii=False, indent=1)
+        summary["report_path"] = rp
+    except Exception as e:
+        summary["report_err"] = "%s: %s" % (type(e).__name__, str(e)[:120])
+    return summary
+
+
+def _act_keepalive(p, auth):
+    if not auth:
+        return False, "没有管理员口令（OPENLIST_ADMIN_PASSWORD），保活不了", None
+    r = keepalive(auth, hours=float(p.get("hours") or 6),
+                  force=bool(p.get("force")), prepare_qr=bool(p.get("prepare_qr")),
+                  alias=(p.get("alias") or "").strip() or None)
+    if r.get("skipped"):
+        return False, r.get("msg") or "保活跳过", None
+    msg = "保活 %d 个（节流跳过 %d）：有效 %d / 预警 %d / 失效 %d%s" % (
+        r["checked"], r["skipped_throttle"], r["ok_n"], r["warn_n"], r["dead_n"],
+        ("；待重登：" + "、".join(r["needs_relogin"])) if r["needs_relogin"] else "")
+    return True, msg, r
+
+
+ACTIONS = {"save": _act_save, "check": _act_check, "use": _act_use, "del": _act_del, "qr": _act_qr,
+           "reap": _act_reap, "fs": _act_fs, "nav": _act_nav, "keepalive": _act_keepalive}
 # 扫码这四个阶段里，只有「真的扫上了要入库」才需要 OpenList 管理员口令；
 # 开窗口/看进度/关窗口/清 profile 跟 OpenList 无关，所以口令没设也能用。
-NO_AUTH_NEEDED = ("qr",)
+# nav(浏览器视图)同样不碰 OpenList、不碰凭据值，纯 CDP 回环，口令没设也能用。
+NO_AUTH_NEEDED = ("qr", "nav")
 
 
 def do_action(kind, payload=None):
@@ -803,18 +1606,34 @@ def do_action(kind, payload=None):
     fn = ACTIONS.get(kind)
     if not fn:
         return out(False, "不认识的动作 %s（可选：%s）" % (kind, "、".join(sorted(ACTIONS) + ["start"])))
-    auth = nd.Auth()
-    if not auth.token():
+    auth = _auth()
+    login_err = ""
+    try:
+        tok = auth.token()
+    except SystemExit as e:                # 口令没设/不对、或 OpenList 没在听：token() 走 SystemExit
+        tok, login_err = "", str(e)[:200]
+    except Exception as e:                 # 兜底：契约是「永远回 dict」，别让登录异常炸到界面线程
+        tok, login_err = "", "%s: %s" % (type(e).__name__, str(e)[:160])
+    if not tok:
         if kind not in NO_AUTH_NEEDED:
-            return out(False, "登不上 OpenList：环境变量 OPENLIST_ADMIN_PASSWORD 没设或不对（值不进日志、不进库）")
+            return out(False, "登不上 OpenList：%s（值不进日志、不进库）"
+                       % (login_err or "环境变量 OPENLIST_ADMIN_PASSWORD 没设或不对"))
         auth = None                        # 扫码的开窗口/看进度/关窗口跟 OpenList 无关，口令没设也能用
     try:
         ok, msg, rec = fn(p, auth)
     except SystemExit as e:                       # 命令行那套「错就 SystemExit」在这里接住
-        ok, msg, rec = False, str(e)[:300], None
+        _t = str(e)[:300]
+        # 有时底层工具直接 sys.exit(1)，str(e) 就只有个 "1"，对用户等于没说
+        ok, msg, rec = False, (_t if _t.strip() and not _t.strip().isdigit() else "这一步被内部工具中断了，再点一次通常就好"), None
     except Exception as e:
         ok, msg, rec = False, "%s: %s" % (type(e).__name__, str(e)[:260]), None
     res = out(ok, msg, rec)
+    if kind == "nav" and isinstance(rec, dict):
+        # 内嵌浏览器那些回执(滚轮到底没到底 = moved)摊到顶层,前端直接读 json.moved;
+        # account 还是照旧留给 shot 的 png/url/metrics,两边不打架。
+        for k in ("moved", "slot", "url", "metrics"):
+            if k in rec:
+                res[k] = rec[k]
     if kind == "qr":
         # _act_qr 的第三个返回值两种都有：入库成功时是账号记录，看进度时是扫码状态。
         # 这里分成两个字段给界面，省得前端猜 account 里装的是哪一类。
@@ -848,10 +1667,12 @@ def cmd_list(args):
 def cmd_qr(args):
     """命令行版扫码：poll 一次就能看到「窗口在不在、抓到几个名字、网盘认不认这个会话」。"""
     r = do_action("qr", {"phase": args.phase, "driver": args.driver,
-                         "slot": args.slot, "exe": args.exe})
+                         "slot": args.slot, "exe": args.exe,
+                         "auto_new": "1" if getattr(args, "auto_new", False) else "0"})
     keep = ("listening", "port", "url", "login_url", "cookie_count", "cookie_names",
             "names", "markers", "markers_have", "login_ok", "phase", "howto", "msg",
-            "slot", "max_slot", "profile", "already", "next_slot")
+            "slot", "max_slot", "profile", "already", "next_slot",
+            "switched_from", "switched_to")
     print(json.dumps({k: r.get("qr", {}).get(k) for k in keep if (r.get("qr") or {}).get(k) is not None},
                      ensure_ascii=False, indent=1))
     print("结论：%s" % r.get("msg"))
@@ -880,7 +1701,7 @@ def cmd_add(args):
     db = load_db()
     acct = get_acct(db, args.alias)
     fill_identity(db, acct, vals)
-    ok, msg = activate(db, nd.Auth(), acct)
+    ok, msg = activate(db, _auth(), acct)
     print("%s 加好：%s（%s）ID %s 账号名 %s"
           % (args.alias, "有效" if ok else "已存但探测没过", msg,
              acct.get("uid") or "没认出", acct.get("nickname") or "没认出"))
@@ -889,7 +1710,7 @@ def cmd_add(args):
 
 def cmd_check(args):
     db = load_db()
-    auth = nd.Auth()
+    auth = _auth()
     todo = [a for a in db["accounts"]
             if args.alias in ("", "all", None) or a["alias"] == args.alias]
     if not todo:
@@ -910,14 +1731,38 @@ def cmd_check(args):
     return 1 if bad else 0
 
 
+def cmd_keepalive(args):
+    r = keepalive(hours=args.hours, force=args.force, prepare_qr=args.prepare_qr,
+                  alias=(args.alias or "").strip() or None)
+    if r.get("skipped"):
+        print("保活跳过：%s" % (r.get("msg") or r["skipped"]))
+        print("（计划任务里这属正常：设了 OPENLIST_ADMIN_PASSWORD 才会真探；本轮不写报告）")
+        return 0
+    print("保活 %d 个（节流跳过 %d）：有效 %d / 预警 %d / 失效 %d"
+          % (r["checked"], r["skipped_throttle"], r["ok_n"], r["warn_n"], r["dead_n"]))
+    for a in r["accounts"]:
+        if a.get("state") in ("warn", "dead"):
+            print("  %-12s %-5s %s" % (a.get("alias"), a.get("state"), (a.get("last_msg") or "")[:60]))
+    if r["needs_relogin"]:
+        print("待重登：%s（跑 `keepalive --prepare-qr` 或在看板点『扫码登录』预开窗口，扫一次即可）"
+              % "、".join(r["needs_relogin"]))
+    if r.get("refresh_failed"):
+        print("cookie 未续期：%s（夸克下载态 ≈18h，不重扫一次建 profile 就续不了）"
+              % "、".join(r["refresh_failed"]))
+    for pq in r.get("prepared_qr", []):
+        print("  预备扫码 %s：%s %s" % (pq["driver"], "OK" if pq["ok"] else "没开成", pq["msg"]))
+    print("报告：%s" % (r.get("report_path") or r.get("report_err", "")))
+    return 0
+
+
 def cmd_use(args):
     db = load_db()
     a = get_acct(db, args.alias)
     if not a:
         print("没有这个账号")
         return 1
-    use_only(db, nd.Auth(), a)
-    ok, msg, n = probe(nd.Auth(), a)
+    use_only(db, _auth(), a)
+    ok, msg, n = probe(_auth(), a)
     a["last_check"], a["last_ok"], a["last_msg"] = now(), ok, msg
     save_db(db)
     print("%s 现在是 %s 的活跃号：%s" % (a["alias"], DISKS.get(a["driver"], a["driver"]), msg))
@@ -928,7 +1773,7 @@ def cmd_orphans(args):
     """列/删「OpenList 里有挂载点、账号库里没有对应账号」的孤儿（删号失败或手工建过会留下）。
     默认只列不删，删必须点名 --drop。"""
     db = load_db()
-    auth = nd.Auth()
+    auth = _auth()
     owned = {a["mount_path"] for a in db["accounts"]}
     r = auth.get("/api/admin/storage/list?page=1&per_page=200")
     items = (r.get("data") or {}).get("content") or []
@@ -978,6 +1823,72 @@ def cmd_selftest(args):
         fails.append("没给 cookie 却判成已登录")
     if identity_of("Thunder", {"username": "abc"}).get("ok") is not True:
         fails.append("迅雷填了 username 该给账号名（这条不联网）")
+    # 保活状态机（纯函数 _ka_mark，不联网不写库）：一次败预警、两次连败判死待重登、复活清零
+    ka = {"alias": "quark-x", "driver": "Quark"}
+    _ka_mark(ka, True, "列到 3 项", 3, 1000.0)
+    if ka.get("state") != "ok" or ka.get("fail_n") != 0 or ka.get("needs_relogin"):
+        fails.append("保活：探测成功该 state=ok/fail_n=0/不需重登")
+    if not ka.get("last_ok_at"):
+        fails.append("保活：成功该记 last_ok_at")
+    _ka_mark(ka, False, "401", -1, 2000.0)
+    if ka.get("state") != "warn" or ka.get("needs_relogin"):
+        fails.append("保活：一次失败该预警(warn)但不判死（防网络抖动误杀）")
+    _ka_mark(ka, False, "401", -1, 3000.0)
+    if ka.get("state") != "dead" or not ka.get("needs_relogin"):
+        fails.append("保活：两次连败该判死(dead)且待重登")
+    _ka_mark(ka, True, "列到 3 项", 3, 4000.0)
+    if ka.get("state") != "ok" or ka.get("fail_n") != 0 or ka.get("needs_relogin"):
+        fails.append("保活：重登成功后该复活 ok、fail_n 清零、取消待重登")
+    # 存储级设置保留（纯函数 _carry_storage_opts）：11-10 重扫把 web_proxy 冲 False、下载 412，钉死
+    ex = {"id": 10, "modified": "x", "status": "work", "mount_path": "/old", "order": 9,
+          "remark": "旧", "disabled": False, "driver": "Quark", "cache_expiration": 1,
+          "addition": "{\"cookie\":\"旧值\"}", "web_proxy": True, "down_proxy_url": "",
+          "proxy_range": True, "extract_folder": "front", "webdav_policy": "native_proxy"}
+    body = _carry_storage_opts(ex, {"mount_path": "/new", "order": 0, "remark": "新",
+                                    "enabled": True, "driver": "Quark", "cache_expiration": 30,
+                                    "addition": "{\"cookie\":\"新值\"}"})
+    if body.get("web_proxy") is not True or body.get("proxy_range") is not True:
+        fails.append("回写挂载点把 web_proxy/proxy_range 冲掉了（夸克下载会 412）")
+    if body.get("extract_folder") != "front" or body.get("webdav_policy") != "native_proxy":
+        fails.append("回写挂载点把 extract_folder/webdav_policy 冲掉了")
+    if body.get("mount_path") != "/new" or body.get("cache_expiration") != 30 or "旧值" in body.get("addition", ""):
+        fails.append("回写挂载点该覆盖的字段没覆盖（mount_path/cache_expiration/addition）")
+    if "id" in body or "status" in body or "modified" in body or "disabled" in body:
+        fails.append("回写挂载点把只读/反向字段（id/status/modified/disabled）发回去了")
+    if _carry_storage_opts(None, {"driver": "Quark"}) != {"driver": "Quark"}:
+        fails.append("新建挂载点（无旧行）该只用 body 本身")
+    # __puus 新鲜度（纯函数 _puus_fresh）：TTL≈18h，>17h 才算这次访问真滚到了新 cookie
+    now = 1000000.0
+    if not _puus_fresh([{"name": "__puus", "expires": now + 18 * 3600}], now):
+        fails.append("__puus 刚滚新（18h）该判新鲜")
+    if _puus_fresh([{"name": "__puus", "expires": now + 3600}], now):
+        fails.append("__puus 只剩 1h（旧快照）该判不新鲜")
+    if _puus_fresh([{"name": "__pus", "expires": now + 9 * 86400}], now):
+        fails.append("只有 __pus 没有 __puus 该判不新鲜（列目录绿≠下载态活）")
+    if _puus_fresh([], now) or _puus_fresh(None, now):
+        fails.append("空 cookie 该判不新鲜")
+    if _puus_fresh([{"name": "__puus", "expires": "不是数字"}], now):
+        fails.append("expires 不是数字该判不新鲜而不是炸")
+    if safe_rec(ka).get("state") != "ok" or "needs_relogin" not in safe_rec(ka):
+        fails.append("保活：state/needs_relogin 该能上界面（在 SAFE_KEYS 里）")
+    # 预备扫码复用：已有活登录窗就复用、别每天给同一失效盘堆窗（monkeypatch 掉真探端口，纯离线）
+    if qr:
+        _ss, _ls = _slot_state, _live_slots
+        try:
+            globals()["_slot_state"] = lambda d: {1: {"listening": True, "page_ok": True},
+                                                  2: {"listening": False}}
+            globals()["_live_slots"] = lambda d, db: set()
+            if _prepared_window("Quark", {"accounts": []}) != 1:
+                fails.append("预备扫码：第1槽有活登录窗该复用回1（不重开堆窗）")
+            globals()["_live_slots"] = lambda d, db: {1}
+            if _prepared_window("Quark", {"accounts": []}) != 0:
+                fails.append("预备扫码：活窗属于活号时不算预备窗（该回0）")
+            globals()["_slot_state"] = lambda d: {1: {"listening": True, "page_ok": False}}
+            globals()["_live_slots"] = lambda d, db: set()
+            if _prepared_window("Quark", {"accounts": []}) != 0:
+                fails.append("预备扫码：窗口被导航走(page_ok=False)不算预备窗")
+        finally:
+            globals()["_slot_state"], globals()["_live_slots"] = _ss, _ls
     if do_action("qr", {"phase": "nope", "driver": "Quark"}).get("ok"):
         fails.append("不认识的扫码阶段本该失败")
     if do_action("qr", {"phase": "poll", "driver": "NoSuchDisk"}).get("ok"):
@@ -1018,15 +1929,23 @@ def cmd_selftest(args):
                          % os.path.basename(qr.profile_of("Quark", 1)))
         if os.path.basename(qr.profile_of("Quark", 2)) != "profile-Quark-02":
             fails.append("第 2 槽该开新 profile，实际是 %s" % os.path.basename(qr.profile_of("Quark", 2)))
-        got = [qr._slot(x) for x in ("0", "-3", "", "x", None, "99", 7)]
-        if got != [1, 1, 1, 1, 1, 10, 7]:
-            fails.append("slot 没夹在 1~10 里：%s" % got)
+        got = [qr._slot(x) for x in ("0", "-3", "", "x", None, "999", 7)]
+        if got != [1, 1, 1, 1, 1, qr.MAX_SLOTS, 7]:
+            fails.append("slot 没夹在 1~%d 里：%s" % (qr.MAX_SLOTS, got))
+        if qr.MAX_SLOTS < 15:
+            fails.append("登录位只要了 %d 格，用户要的是每盘 15~20 格" % qr.MAX_SLOTS)
         if _next_slot("Quark", {"accounts": [{"driver": "Quark", "slot": 1},
                                              {"driver": "Quark"},
                                              {"driver": "Thunder", "slot": 2}]}) != 2:
             fails.append("下一个空登录位算错（第 1 槽被占、没标 slot 的老记录按第 1 槽算）")
-        if _next_slot("Quark", {"accounts": [{"driver": "Quark", "slot": n} for n in range(1, 11)]}) != 0:
-            fails.append("十格占满了还让开新槽")
+        if _next_slot("Quark", {"accounts": [{"driver": "Quark", "slot": n}
+                                            for n in range(1, qr.MAX_SLOTS + 1)]}) != 0:
+            fails.append("空位用光了还让开新槽")
+        if _next_slot("Quark", {"accounts": [{"driver": "Quark", "slot": 1},
+                                             {"driver": "Quark", "slot": 2},
+                                             {"driver": "Quark", "slot": 3},
+                                             {"driver": "Quark", "slot": 5}]}) != 4:
+            fails.append("4 个号占了 1/2/3/5，下一格该是第 4 槽")
         if sch.get("ok") and not sch.get("qr_slots"):
             fails.append("字段表没带出登录位表，界面出不了『登录位』下拉")
         if sch.get("ok") and len(sch.get("qr_slots") or []) != qr.MAX_SLOTS:
@@ -1095,9 +2014,17 @@ def main():
     a.add_argument("--driver", default="Quark")
     a.add_argument("--slot", default="1", help="登录位第几格：一格一个独立 profile，换号扫就换格，不顶掉上一个号")
     a.add_argument("--exe", default="", help="用哪个浏览器开这个窗口（默认本机第一个能用的）")
+    a.add_argument("--auto-new", action="store_true",
+                   help="这一格已登着号就自动换到干净的空登录位（登新号用；要重扫老号就别加）")
     a.set_defaults(fn=cmd_qr)
     a = sp.add_parser("selftest", help="不写库的自检")
     a.set_defaults(fn=cmd_selftest)
+    a = sp.add_parser("keepalive", help="定时保活：轻量探测续命+到期预警+可选预备扫码（计划任务用）")
+    a.add_argument("--hours", type=float, default=6, help="节流：距上次探测不足这么多小时就跳过（--force 无视）")
+    a.add_argument("--force", action="store_true", help="无视听节流，现在就探")
+    a.add_argument("--prepare-qr", action="store_true", help="为失效盘预开扫码窗口（重登只需扫一次）")
+    a.add_argument("--alias", default="", help="只保活这一个号（默认全部）")
+    a.set_defaults(fn=cmd_keepalive)
     args = p.parse_args()
     if not getattr(args, "cmd", None):
         p.print_help()
