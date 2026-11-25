@@ -1,0 +1,540 @@
+{
+  "schema_version": "ram_calibration/1.0",
+  "game_id": "castlevania_aria_gba",
+  "note": "能力魂启用位候选0x1338A逐bit菜单开关验收；库存固定0xFF，OFF/ON两臂走同一真实A键切换。0x1338B未被本配方宣称。",
+  "profile": {
+    "rom": "F:/BaiduNetdiskDownload/rom/gba/恶魔城晓月圆舞曲.gba",
+    "rom_sha1": "40aab076a528f52e93260bb98d91a40039e0da02",
+    "bizhawk": "F:/开源掌机教程/02-模拟器库/BizHawk/BizHawk-2.11.1",
+    "isolated_slot": true,
+    "core": "mGBA",
+    "system": "GBA",
+    "domain": "EWRAM",
+    "state_package": {
+      "game_id": "castlevania_aria_gba",
+      "profile_id": "aria_us_40aab076",
+      "revision": "r20261125T224904"
+    },
+    "window": {
+      "start": 78726,
+      "length": 128
+    }
+  },
+  "base_state": "base",
+  "macros": {
+    "menu01": ",,,,,,,,,,,,,,,,,Start,,,,,,,,,,,,,,,,,A,,,,,,,,,,,,,,,,,Down,,,,,,,,,,,,,,,,,Down,,,,,,,,,,,,,,,,,Down,,,,,,,,,,,,,,,,,A,,,,,,,,,,,,,,,,,A,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,",
+    "menu02": ",,,,,,,,,,,,,,,,,Start,,,,,,,,,,,,,,,,,A,,,,,,,,,,,,,,,,,Down,,,,,,,,,,,,,,,,,Down,,,,,,,,,,,,,,,,,Down,,,,,,,,,,,,,,,,,A,,,,,,,,,,,,,,,,,Right,,,,,,,,,,,,,,,,,A,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,",
+    "menu03": ",,,,,,,,,,,,,,,,,Start,,,,,,,,,,,,,,,,,A,,,,,,,,,,,,,,,,,Down,,,,,,,,,,,,,,,,,Down,,,,,,,,,,,,,,,,,Down,,,,,,,,,,,,,,,,,A,,,,,,,,,,,,,,,,,Down,,,,,,,,,,,,,,,,,A,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,",
+    "menu04": ",,,,,,,,,,,,,,,,,Start,,,,,,,,,,,,,,,,,A,,,,,,,,,,,,,,,,,Down,,,,,,,,,,,,,,,,,Down,,,,,,,,,,,,,,,,,Down,,,,,,,,,,,,,,,,,A,,,,,,,,,,,,,,,,,Down,,,,,,,,,,,,,,,,,Right,,,,,,,,,,,,,,,,,A,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,",
+    "menu05": ",,,,,,,,,,,,,,,,,Start,,,,,,,,,,,,,,,,,A,,,,,,,,,,,,,,,,,Down,,,,,,,,,,,,,,,,,Down,,,,,,,,,,,,,,,,,Down,,,,,,,,,,,,,,,,,A,,,,,,,,,,,,,,,,,Down,,,,,,,,,,,,,,,,,Down,,,,,,,,,,,,,,,,,A,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,",
+    "menu06": ",,,,,,,,,,,,,,,,,Start,,,,,,,,,,,,,,,,,A,,,,,,,,,,,,,,,,,Down,,,,,,,,,,,,,,,,,Down,,,,,,,,,,,,,,,,,Down,,,,,,,,,,,,,,,,,A,,,,,,,,,,,,,,,,,Down,,,,,,,,,,,,,,,,,Down,,,,,,,,,,,,,,,,,Right,,,,,,,,,,,,,,,,,A,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,",
+    "menu07": ",,,,,,,,,,,,,,,,,Start,,,,,,,,,,,,,,,,,A,,,,,,,,,,,,,,,,,Down,,,,,,,,,,,,,,,,,Down,,,,,,,,,,,,,,,,,Down,,,,,,,,,,,,,,,,,A,,,,,,,,,,,,,,,,,Down,,,,,,,,,,,,,,,,,Down,,,,,,,,,,,,,,,,,Down,,,,,,,,,,,,,,,,,A,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,",
+    "menu08": ",,,,,,,,,,,,,,,,,Start,,,,,,,,,,,,,,,,,A,,,,,,,,,,,,,,,,,Down,,,,,,,,,,,,,,,,,Down,,,,,,,,,,,,,,,,,Down,,,,,,,,,,,,,,,,,A,,,,,,,,,,,,,,,,,Down,,,,,,,,,,,,,,,,,Down,,,,,,,,,,,,,,,,,Down,,,,,,,,,,,,,,,,,Right,,,,,,,,,,,,,,,,,A,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,"
+  },
+  "cases": [
+    {
+      "id": "ability_enable_01_skeleton_blow",
+      "kind": "scenario",
+      "base_state": "base",
+      "arms": [
+        {
+          "name": "off_toggle",
+          "steps": [
+            {
+              "macro": "@menu01",
+              "extra": 0,
+              "patches": [
+                {"addr": 78726, "value": 255},
+                {"addr": 78727, "value": 255},
+                {"addr": 78728, "value": 255},
+                {"addr": 78729, "value": 255},
+                {"addr": 78730, "value": 0},
+                {"addr": 78731, "value": 0}
+              ],
+              "expect": [
+                {"addr": 78726, "value": 255},
+                {"addr": 78727, "value": 255},
+                {"addr": 78728, "value": 255},
+                {"addr": 78729, "value": 255},
+                {"addr": 78730, "value": 1},
+                {"addr": 78731, "value": 0}
+              ]
+            }
+          ]
+        },
+        {
+          "name": "on_toggle",
+          "steps": [
+            {
+              "macro": "@menu01",
+              "extra": 0,
+              "patches": [
+                {"addr": 78726, "value": 255},
+                {"addr": 78727, "value": 255},
+                {"addr": 78728, "value": 255},
+                {"addr": 78729, "value": 255},
+                {"addr": 78730, "value": 1},
+                {"addr": 78731, "value": 0}
+              ],
+              "expect": [
+                {"addr": 78726, "value": 255},
+                {"addr": 78727, "value": 255},
+                {"addr": 78728, "value": 255},
+                {"addr": 78729, "value": 255},
+                {"addr": 78730, "value": 0},
+                {"addr": 78731, "value": 0}
+              ]
+            }
+          ]
+        }
+      ],
+      "comparisons": [
+        {"left": "off_toggle", "right": "on_toggle", "left_step": 0, "right_step": 0, "relation": "different", "frames": ["final"]}
+      ],
+      "claims": [
+        {"name": "ability_enable_bit_01", "addr": 78730, "width": 1, "level": "menu", "note": "飞粘腔A键从OFF切ON时bit0置位，从ON切OFF时清零。"}
+      ]
+    },
+    {
+      "id": "ability_enable_02_guardian",
+      "kind": "scenario",
+      "base_state": "base",
+      "arms": [
+        {
+          "name": "off_toggle",
+          "steps": [
+            {
+              "macro": "@menu02",
+              "extra": 0,
+              "patches": [
+                {"addr": 78726, "value": 255},
+                {"addr": 78727, "value": 255},
+                {"addr": 78728, "value": 255},
+                {"addr": 78729, "value": 255},
+                {"addr": 78730, "value": 0},
+                {"addr": 78731, "value": 0}
+              ],
+              "expect": [
+                {"addr": 78726, "value": 255},
+                {"addr": 78727, "value": 255},
+                {"addr": 78728, "value": 255},
+                {"addr": 78729, "value": 255},
+                {"addr": 78730, "value": 2},
+                {"addr": 78731, "value": 0}
+              ]
+            }
+          ]
+        },
+        {
+          "name": "on_toggle",
+          "steps": [
+            {
+              "macro": "@menu02",
+              "extra": 0,
+              "patches": [
+                {"addr": 78726, "value": 255},
+                {"addr": 78727, "value": 255},
+                {"addr": 78728, "value": 255},
+                {"addr": 78729, "value": 255},
+                {"addr": 78730, "value": 2},
+                {"addr": 78731, "value": 0}
+              ],
+              "expect": [
+                {"addr": 78726, "value": 255},
+                {"addr": 78727, "value": 255},
+                {"addr": 78728, "value": 255},
+                {"addr": 78729, "value": 255},
+                {"addr": 78730, "value": 0},
+                {"addr": 78731, "value": 0}
+              ]
+            }
+          ]
+        }
+      ],
+      "comparisons": [
+        {"left": "off_toggle", "right": "on_toggle", "left_step": 0, "right_step": 0, "relation": "different", "frames": ["final"]}
+      ],
+      "claims": [
+        {"name": "ability_enable_bit_02", "addr": 78730, "width": 1, "level": "menu", "note": "守夜者A键从OFF切ON时bit1置位，从ON切OFF时清零。"}
+      ]
+    },
+    {
+      "id": "ability_enable_03_black_panther",
+      "kind": "scenario",
+      "base_state": "base",
+      "arms": [
+        {
+          "name": "off_toggle",
+          "steps": [
+            {
+              "macro": "@menu03",
+              "extra": 0,
+              "patches": [
+                {"addr": 78726, "value": 255},
+                {"addr": 78727, "value": 255},
+                {"addr": 78728, "value": 255},
+                {"addr": 78729, "value": 255},
+                {"addr": 78730, "value": 0},
+                {"addr": 78731, "value": 0}
+              ],
+              "expect": [
+                {"addr": 78726, "value": 255},
+                {"addr": 78727, "value": 255},
+                {"addr": 78728, "value": 255},
+                {"addr": 78729, "value": 255},
+                {"addr": 78730, "value": 4},
+                {"addr": 78731, "value": 0}
+              ]
+            }
+          ]
+        },
+        {
+          "name": "on_toggle",
+          "steps": [
+            {
+              "macro": "@menu03",
+              "extra": 0,
+              "patches": [
+                {"addr": 78726, "value": 255},
+                {"addr": 78727, "value": 255},
+                {"addr": 78728, "value": 255},
+                {"addr": 78729, "value": 255},
+                {"addr": 78730, "value": 4},
+                {"addr": 78731, "value": 0}
+              ],
+              "expect": [
+                {"addr": 78726, "value": 255},
+                {"addr": 78727, "value": 255},
+                {"addr": 78728, "value": 255},
+                {"addr": 78729, "value": 255},
+                {"addr": 78730, "value": 0},
+                {"addr": 78731, "value": 0}
+              ]
+            }
+          ]
+        }
+      ],
+      "comparisons": [
+        {"left": "off_toggle", "right": "on_toggle", "left_step": 0, "right_step": 0, "relation": "different", "frames": ["final"]}
+      ],
+      "claims": [
+        {"name": "ability_enable_bit_03", "addr": 78730, "width": 1, "level": "menu", "note": "黑豹A键从OFF切ON时bit2置位，从ON切OFF时清零。"}
+      ]
+    },
+    {
+      "id": "ability_enable_04_manticore",
+      "kind": "scenario",
+      "base_state": "base",
+      "arms": [
+        {
+          "name": "off_toggle",
+          "steps": [
+            {
+              "macro": "@menu04",
+              "extra": 0,
+              "patches": [
+                {"addr": 78726, "value": 255},
+                {"addr": 78727, "value": 255},
+                {"addr": 78728, "value": 255},
+                {"addr": 78729, "value": 255},
+                {"addr": 78730, "value": 0},
+                {"addr": 78731, "value": 0}
+              ],
+              "expect": [
+                {"addr": 78726, "value": 255},
+                {"addr": 78727, "value": 255},
+                {"addr": 78728, "value": 255},
+                {"addr": 78729, "value": 255},
+                {"addr": 78730, "value": 8},
+                {"addr": 78731, "value": 0}
+              ]
+            }
+          ]
+        },
+        {
+          "name": "on_toggle",
+          "steps": [
+            {
+              "macro": "@menu04",
+              "extra": 0,
+              "patches": [
+                {"addr": 78726, "value": 255},
+                {"addr": 78727, "value": 255},
+                {"addr": 78728, "value": 255},
+                {"addr": 78729, "value": 255},
+                {"addr": 78730, "value": 8},
+                {"addr": 78731, "value": 0}
+              ],
+              "expect": [
+                {"addr": 78726, "value": 255},
+                {"addr": 78727, "value": 255},
+                {"addr": 78728, "value": 255},
+                {"addr": 78729, "value": 255},
+                {"addr": 78730, "value": 0},
+                {"addr": 78731, "value": 0}
+              ]
+            }
+          ]
+        }
+      ],
+      "comparisons": [
+        {"left": "off_toggle", "right": "on_toggle", "left_step": 0, "right_step": 0, "relation": "different", "frames": ["final"]}
+      ],
+      "claims": [
+        {"name": "ability_enable_bit_04", "addr": 78730, "width": 1, "level": "menu", "note": "曼提柯尔A键从OFF切ON时bit3置位，从ON切OFF时清零。"}
+      ]
+    },
+    {
+      "id": "ability_enable_05_golem",
+      "kind": "scenario",
+      "base_state": "base",
+      "arms": [
+        {
+          "name": "off_toggle",
+          "steps": [
+            {
+              "macro": "@menu05",
+              "extra": 0,
+              "patches": [
+                {"addr": 78726, "value": 255},
+                {"addr": 78727, "value": 255},
+                {"addr": 78728, "value": 255},
+                {"addr": 78729, "value": 255},
+                {"addr": 78730, "value": 0},
+                {"addr": 78731, "value": 0}
+              ],
+              "expect": [
+                {"addr": 78726, "value": 255},
+                {"addr": 78727, "value": 255},
+                {"addr": 78728, "value": 255},
+                {"addr": 78729, "value": 255},
+                {"addr": 78730, "value": 16},
+                {"addr": 78731, "value": 0}
+              ]
+            }
+          ]
+        },
+        {
+          "name": "on_toggle",
+          "steps": [
+            {
+              "macro": "@menu05",
+              "extra": 0,
+              "patches": [
+                {"addr": 78726, "value": 255},
+                {"addr": 78727, "value": 255},
+                {"addr": 78728, "value": 255},
+                {"addr": 78729, "value": 255},
+                {"addr": 78730, "value": 16},
+                {"addr": 78731, "value": 0}
+              ],
+              "expect": [
+                {"addr": 78726, "value": 255},
+                {"addr": 78727, "value": 255},
+                {"addr": 78728, "value": 255},
+                {"addr": 78729, "value": 255},
+                {"addr": 78730, "value": 0},
+                {"addr": 78731, "value": 0}
+              ]
+            }
+          ]
+        }
+      ],
+      "comparisons": [
+        {"left": "off_toggle", "right": "on_toggle", "left_step": 0, "right_step": 0, "relation": "different", "frames": ["final"]}
+      ],
+      "claims": [
+        {"name": "ability_enable_bit_05", "addr": 78730, "width": 1, "level": "menu", "note": "魔像A键从OFF切ON时bit4置位，从ON切OFF时清零。"}
+      ]
+    },
+    {
+      "id": "ability_enable_06_mandragora",
+      "kind": "scenario",
+      "base_state": "base",
+      "arms": [
+        {
+          "name": "off_toggle",
+          "steps": [
+            {
+              "macro": "@menu06",
+              "extra": 0,
+              "patches": [
+                {"addr": 78726, "value": 255},
+                {"addr": 78727, "value": 255},
+                {"addr": 78728, "value": 255},
+                {"addr": 78729, "value": 255},
+                {"addr": 78730, "value": 0},
+                {"addr": 78731, "value": 0}
+              ],
+              "expect": [
+                {"addr": 78726, "value": 255},
+                {"addr": 78727, "value": 255},
+                {"addr": 78728, "value": 255},
+                {"addr": 78729, "value": 255},
+                {"addr": 78730, "value": 32},
+                {"addr": 78731, "value": 0}
+              ]
+            }
+          ]
+        },
+        {
+          "name": "on_toggle",
+          "steps": [
+            {
+              "macro": "@menu06",
+              "extra": 0,
+              "patches": [
+                {"addr": 78726, "value": 255},
+                {"addr": 78727, "value": 255},
+                {"addr": 78728, "value": 255},
+                {"addr": 78729, "value": 255},
+                {"addr": 78730, "value": 32},
+                {"addr": 78731, "value": 0}
+              ],
+              "expect": [
+                {"addr": 78726, "value": 255},
+                {"addr": 78727, "value": 255},
+                {"addr": 78728, "value": 255},
+                {"addr": 78729, "value": 255},
+                {"addr": 78730, "value": 0},
+                {"addr": 78731, "value": 0}
+              ]
+            }
+          ]
+        }
+      ],
+      "comparisons": [
+        {"left": "off_toggle", "right": "on_toggle", "left_step": 0, "right_step": 0, "relation": "different", "frames": ["final"]}
+      ],
+      "claims": [
+        {"name": "ability_enable_bit_06", "addr": 78730, "width": 1, "level": "menu", "note": "曼德拉草A键从OFF切ON时bit5置位，从ON切OFF时清零。"}
+      ]
+    },
+    {
+      "id": "ability_enable_07_minotaur",
+      "kind": "scenario",
+      "base_state": "base",
+      "arms": [
+        {
+          "name": "off_toggle",
+          "steps": [
+            {
+              "macro": "@menu07",
+              "extra": 0,
+              "patches": [
+                {"addr": 78726, "value": 255},
+                {"addr": 78727, "value": 255},
+                {"addr": 78728, "value": 255},
+                {"addr": 78729, "value": 255},
+                {"addr": 78730, "value": 0},
+                {"addr": 78731, "value": 0}
+              ],
+              "expect": [
+                {"addr": 78726, "value": 255},
+                {"addr": 78727, "value": 255},
+                {"addr": 78728, "value": 255},
+                {"addr": 78729, "value": 255},
+                {"addr": 78730, "value": 64},
+                {"addr": 78731, "value": 0}
+              ]
+            }
+          ]
+        },
+        {
+          "name": "on_toggle",
+          "steps": [
+            {
+              "macro": "@menu07",
+              "extra": 0,
+              "patches": [
+                {"addr": 78726, "value": 255},
+                {"addr": 78727, "value": 255},
+                {"addr": 78728, "value": 255},
+                {"addr": 78729, "value": 255},
+                {"addr": 78730, "value": 64},
+                {"addr": 78731, "value": 0}
+              ],
+              "expect": [
+                {"addr": 78726, "value": 255},
+                {"addr": 78727, "value": 255},
+                {"addr": 78728, "value": 255},
+                {"addr": 78729, "value": 255},
+                {"addr": 78730, "value": 0},
+                {"addr": 78731, "value": 0}
+              ]
+            }
+          ]
+        }
+      ],
+      "comparisons": [
+        {"left": "off_toggle", "right": "on_toggle", "left_step": 0, "right_step": 0, "relation": "different", "frames": ["final"]}
+      ],
+      "claims": [
+        {"name": "ability_enable_bit_07", "addr": 78730, "width": 1, "level": "menu", "note": "米诺陶斯A键从OFF切ON时bit6置位，从ON切OFF时清零。"}
+      ]
+    },
+    {
+      "id": "ability_enable_08_undine",
+      "kind": "scenario",
+      "base_state": "base",
+      "arms": [
+        {
+          "name": "off_toggle",
+          "steps": [
+            {
+              "macro": "@menu08",
+              "extra": 0,
+              "patches": [
+                {"addr": 78726, "value": 255},
+                {"addr": 78727, "value": 255},
+                {"addr": 78728, "value": 255},
+                {"addr": 78729, "value": 255},
+                {"addr": 78730, "value": 0},
+                {"addr": 78731, "value": 0}
+              ],
+              "expect": [
+                {"addr": 78726, "value": 255},
+                {"addr": 78727, "value": 255},
+                {"addr": 78728, "value": 255},
+                {"addr": 78729, "value": 255},
+                {"addr": 78730, "value": 128},
+                {"addr": 78731, "value": 0}
+              ]
+            }
+          ]
+        },
+        {
+          "name": "on_toggle",
+          "steps": [
+            {
+              "macro": "@menu08",
+              "extra": 0,
+              "patches": [
+                {"addr": 78726, "value": 255},
+                {"addr": 78727, "value": 255},
+                {"addr": 78728, "value": 255},
+                {"addr": 78729, "value": 255},
+                {"addr": 78730, "value": 128},
+                {"addr": 78731, "value": 0}
+              ],
+              "expect": [
+                {"addr": 78726, "value": 255},
+                {"addr": 78727, "value": 255},
+                {"addr": 78728, "value": 255},
+                {"addr": 78729, "value": 255},
+                {"addr": 78730, "value": 0},
+                {"addr": 78731, "value": 0}
+              ]
+            }
+          ]
+        }
+      ],
+      "comparisons": [
+        {"left": "off_toggle", "right": "on_toggle", "left_step": 0, "right_step": 0, "relation": "different", "frames": ["final"]}
+      ],
+      "claims": [
+        {"name": "ability_enable_bit_08", "addr": 78730, "width": 1, "level": "menu", "note": "水之精灵A键从OFF切ON时bit7置位，从ON切OFF时清零。"}
+      ]
+    }
+  ]
+}

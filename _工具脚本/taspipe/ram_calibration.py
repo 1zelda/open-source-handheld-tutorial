@@ -562,19 +562,18 @@ def _execute(recipe: dict, case: dict, profile: dict, out_dir: Path,
                 extra = int(step.get("extra", 0))
                 if extra < 0:
                     raise SchemaError("extra 不能为负")
-                patches = step.get("patches") or []
+                patches = [
+                    {**patch, "domain": patch.get("domain", profile["domain"])}
+                    for patch in step.get("patches") or []
+                ]
                 attempt_source = ascii_state
-                if patches:
-                    attempt_source = out_dir / f"{stem}_input.state"
-                    sess.attempt(ascii_state, spec="-", extra=0, save=str(attempt_source),
-                                 patches=[{**patch, "domain": profile["domain"]} for patch in patches])
-                    report["evidence"].append(str(attempt_source))
                 ram = out_dir / f"{stem}.bin"
                 result = sess.attempt(str(attempt_source), spec=spec, extra=extra,
                                       shot=str(shot), save=str(saved), ram=str(ram),
                                       probe_domain=profile["domain"],
                                       ram_start=profile["window_start"],
-                                      ram_length=profile["window_length"])
+                                      ram_length=profile["window_length"],
+                                      patches=patches)
                 if ram.stat().st_size != profile["window_length"]:
                     raise RuntimeError(f"RAM 窗口长度不符: {ram} {ram.stat().st_size}")
                 row = {"index": index, "source_state": str(source), "attempt_state": str(attempt_source),

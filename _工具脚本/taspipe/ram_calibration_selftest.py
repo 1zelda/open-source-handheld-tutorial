@@ -342,6 +342,65 @@ def t_case_base_execution():
               str(provenance))
 
 
+def t_atomic_patches():
+    with tempfile.TemporaryDirectory() as td:
+        root = Path(td)
+        emu = root / "emu"
+        emu.mkdir()
+        (emu / "EmuHawk.exe").write_bytes(b"emuhawk")
+        base = root / "base.state"
+        base.write_bytes(b"base")
+        doc = recipe()
+        case = {"id": "atomic_patch", "kind": "scenario", "base_state": "base",
+                "arms": [{"name": "patched", "steps": [
+                    {"macro": "@attack",
+                     "patches": [{"addr": 170, "value": 3}],
+                     "expect": [{"addr": 170, "value": 3}]}]}],
+                "comparisons": [], "claims": []}
+        doc["cases"] = [case]
+        profile = {"rom_path": root / "game.nes", "bizhawk_path": emu,
+                   "rom_sha1_actual": "00", "core": "NesHawk", "system": "NES",
+                   "domain": "RAM", "base_state_path": base,
+                   "case_base_state_paths": {case["id"]: base},
+                   "window_start": 170, "window_length": 16}
+        calls = []
+
+        class Session:
+            def __enter__(self):
+                return self
+
+            def __exit__(self, *args):
+                return False
+
+            def use_state(self, path, name):
+                return str(path)
+
+            def attempt(self, state, spec="-", extra=0, shot=None, save=None, ram=None, **kwargs):
+                calls.append({"state": state, "spec": spec, "save": save, **kwargs})
+                if shot:
+                    Image.new("RGB", (8, 8), "black").save(shot)
+                if save:
+                    Path(save).write_bytes(b"saved")
+                if ram:
+                    Path(ram).write_bytes(bytes([3]) + bytes(15))
+                return {"ok": True}
+
+            def dump(self, path, spec, extra=0, state=None):
+                return 0
+
+        with patch.object(RC.SJ, "StateSession", return_value=Session()), \
+             patch.object(RC.SJ, "saved_core_type", return_value="NesHawk"):
+            report = RC._execute(doc, case, profile, root / "out", root / "work", "scout", force=True)
+        macro_calls = [call for call in calls if call["spec"] == "B,,,,"]
+        row = report["arms"]["patched"]["steps"][0]
+        check("R45 一次性补丁与宏同一次原子attempt生效",
+              len(macro_calls) == 1
+              and macro_calls[0]["patches"] == [{"addr": 170, "value": 3, "domain": "RAM"}]
+              and macro_calls[0]["state"] == str(base)
+              and row["attempt_state"] == str(base)
+              and not any("_input.state" in str(call["save"]) for call in calls), str(calls))
+
+
 def t_isolated_slot_session():
     with tempfile.TemporaryDirectory() as td:
         root = Path(td)
@@ -444,6 +503,7 @@ def main():
     t_protocol()
     t_cache_archive()
     t_case_base_execution()
+    t_atomic_patches()
     t_isolated_slot_session()
     t_reuse()
     t_batch()

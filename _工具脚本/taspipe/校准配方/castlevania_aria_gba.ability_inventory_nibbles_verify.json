@@ -1,0 +1,676 @@
+{
+  "schema_version": "ram_calibration/1.0",
+  "game_id": "castlevania_aria_gba",
+  "note": "能力魂库存0x13386-0x13389逐nibble菜单消费验收；每项只置一个nibble为1，与全空库存走同一真实导航。仅证明中文版菜单消费，不证明启用位或gameplay。",
+  "profile": {
+    "rom": "F:/BaiduNetdiskDownload/rom/gba/恶魔城晓月圆舞曲.gba",
+    "rom_sha1": "40aab076a528f52e93260bb98d91a40039e0da02",
+    "bizhawk": "F:/开源掌机教程/02-模拟器库/BizHawk/BizHawk-2.11.1",
+    "isolated_slot": true,
+    "core": "mGBA",
+    "system": "GBA",
+    "domain": "EWRAM",
+    "state_package": {
+      "game_id": "castlevania_aria_gba",
+      "profile_id": "aria_us_40aab076",
+      "revision": "r20261125T224904"
+    },
+    "window": {
+      "start": 78726,
+      "length": 128
+    }
+  },
+  "base_state": "base",
+  "macros": {
+    "menu01": ",,,,,,,,,,,,,,,,,Start,,,,,,,,,,,,,,,,,A,,,,,,,,,,,,,,,,,Down,,,,,,,,,,,,,,,,,Down,,,,,,,,,,,,,,,,,Down,,,,,,,,,,,,,,,,,A,,,,,,,,,,,,,,,,,A,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,",
+    "menu02": ",,,,,,,,,,,,,,,,,Start,,,,,,,,,,,,,,,,,A,,,,,,,,,,,,,,,,,Down,,,,,,,,,,,,,,,,,Down,,,,,,,,,,,,,,,,,Down,,,,,,,,,,,,,,,,,A,,,,,,,,,,,,,,,,,Right,,,,,,,,,,,,,,,,,A,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,",
+    "menu03": ",,,,,,,,,,,,,,,,,Start,,,,,,,,,,,,,,,,,A,,,,,,,,,,,,,,,,,Down,,,,,,,,,,,,,,,,,Down,,,,,,,,,,,,,,,,,Down,,,,,,,,,,,,,,,,,A,,,,,,,,,,,,,,,,,Down,,,,,,,,,,,,,,,,,A,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,",
+    "menu04": ",,,,,,,,,,,,,,,,,Start,,,,,,,,,,,,,,,,,A,,,,,,,,,,,,,,,,,Down,,,,,,,,,,,,,,,,,Down,,,,,,,,,,,,,,,,,Down,,,,,,,,,,,,,,,,,A,,,,,,,,,,,,,,,,,Down,,,,,,,,,,,,,,,,,Right,,,,,,,,,,,,,,,,,A,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,",
+    "menu05": ",,,,,,,,,,,,,,,,,Start,,,,,,,,,,,,,,,,,A,,,,,,,,,,,,,,,,,Down,,,,,,,,,,,,,,,,,Down,,,,,,,,,,,,,,,,,Down,,,,,,,,,,,,,,,,,A,,,,,,,,,,,,,,,,,Down,,,,,,,,,,,,,,,,,Down,,,,,,,,,,,,,,,,,A,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,",
+    "menu06": ",,,,,,,,,,,,,,,,,Start,,,,,,,,,,,,,,,,,A,,,,,,,,,,,,,,,,,Down,,,,,,,,,,,,,,,,,Down,,,,,,,,,,,,,,,,,Down,,,,,,,,,,,,,,,,,A,,,,,,,,,,,,,,,,,Down,,,,,,,,,,,,,,,,,Down,,,,,,,,,,,,,,,,,Right,,,,,,,,,,,,,,,,,A,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,",
+    "menu07": ",,,,,,,,,,,,,,,,,Start,,,,,,,,,,,,,,,,,A,,,,,,,,,,,,,,,,,Down,,,,,,,,,,,,,,,,,Down,,,,,,,,,,,,,,,,,Down,,,,,,,,,,,,,,,,,A,,,,,,,,,,,,,,,,,Down,,,,,,,,,,,,,,,,,Down,,,,,,,,,,,,,,,,,Down,,,,,,,,,,,,,,,,,A,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,",
+    "menu08": ",,,,,,,,,,,,,,,,,Start,,,,,,,,,,,,,,,,,A,,,,,,,,,,,,,,,,,Down,,,,,,,,,,,,,,,,,Down,,,,,,,,,,,,,,,,,Down,,,,,,,,,,,,,,,,,A,,,,,,,,,,,,,,,,,Down,,,,,,,,,,,,,,,,,Down,,,,,,,,,,,,,,,,,Down,,,,,,,,,,,,,,,,,Right,,,,,,,,,,,,,,,,,A,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,"
+  },
+  "cases": [
+    {
+      "id": "ability_01_skeleton_blow",
+      "kind": "scenario",
+      "base_state": "base",
+      "arms": [
+        {
+          "name": "nibble01",
+          "steps": [
+            {
+              "macro": "-",
+              "extra": 0,
+              "patches": [
+                {"addr": 78726, "value": 0},
+                {"addr": 78727, "value": 0},
+                {"addr": 78728, "value": 0},
+                {"addr": 78729, "value": 0}
+              ],
+              "expect": [
+                {"addr": 78726, "value": 0},
+                {"addr": 78727, "value": 0},
+                {"addr": 78728, "value": 0},
+                {"addr": 78729, "value": 0}
+              ],
+              "screen": {"reference": "$base", "relation": "equal"}
+            },
+            {
+              "state": "$previous",
+              "macro": "@menu01",
+              "extra": 0,
+              "patches": [{"addr": 78726, "value": 1}],
+              "expect": [
+                {"addr": 78726, "value": 1},
+                {"addr": 78727, "value": 0},
+                {"addr": 78728, "value": 0},
+                {"addr": 78729, "value": 0}
+              ]
+            }
+          ]
+        },
+        {
+          "name": "empty_inventory",
+          "steps": [
+            {
+              "macro": "-",
+              "extra": 0,
+              "patches": [
+                {"addr": 78726, "value": 0},
+                {"addr": 78727, "value": 0},
+                {"addr": 78728, "value": 0},
+                {"addr": 78729, "value": 0}
+              ],
+              "expect": [
+                {"addr": 78726, "value": 0},
+                {"addr": 78727, "value": 0},
+                {"addr": 78728, "value": 0},
+                {"addr": 78729, "value": 0}
+              ],
+              "screen": {"reference": "$base", "relation": "equal"}
+            },
+            {
+              "state": "$previous",
+              "macro": "@menu01",
+              "extra": 0,
+              "expect": [
+                {"addr": 78726, "value": 0},
+                {"addr": 78727, "value": 0},
+                {"addr": 78728, "value": 0},
+                {"addr": 78729, "value": 0}
+              ]
+            }
+          ]
+        }
+      ],
+      "comparisons": [
+        {"left": "nibble01", "right": "empty_inventory", "left_step": 1, "right_step": 1, "relation": "different", "frames": ["final"]}
+      ],
+      "claims": [
+        {"name": "ability_inventory_nibble_01", "addr": 78726, "width": 1, "level": "menu", "note": "0x13386低nibble=1时，能力页显示飞粘腔；同导航全空库存无该项。"}
+      ]
+    },
+    {
+      "id": "ability_02_guardian",
+      "kind": "scenario",
+      "base_state": "base",
+      "arms": [
+        {
+          "name": "nibble02",
+          "steps": [
+            {
+              "macro": "-",
+              "extra": 0,
+              "patches": [
+                {"addr": 78726, "value": 0},
+                {"addr": 78727, "value": 0},
+                {"addr": 78728, "value": 0},
+                {"addr": 78729, "value": 0}
+              ],
+              "expect": [
+                {"addr": 78726, "value": 0},
+                {"addr": 78727, "value": 0},
+                {"addr": 78728, "value": 0},
+                {"addr": 78729, "value": 0}
+              ],
+              "screen": {"reference": "$base", "relation": "equal"}
+            },
+            {
+              "state": "$previous",
+              "macro": "@menu02",
+              "extra": 0,
+              "patches": [{"addr": 78726, "value": 16}],
+              "expect": [
+                {"addr": 78726, "value": 16},
+                {"addr": 78727, "value": 0},
+                {"addr": 78728, "value": 0},
+                {"addr": 78729, "value": 0}
+              ]
+            }
+          ]
+        },
+        {
+          "name": "empty_inventory",
+          "steps": [
+            {
+              "macro": "-",
+              "extra": 0,
+              "patches": [
+                {"addr": 78726, "value": 0},
+                {"addr": 78727, "value": 0},
+                {"addr": 78728, "value": 0},
+                {"addr": 78729, "value": 0}
+              ],
+              "expect": [
+                {"addr": 78726, "value": 0},
+                {"addr": 78727, "value": 0},
+                {"addr": 78728, "value": 0},
+                {"addr": 78729, "value": 0}
+              ],
+              "screen": {"reference": "$base", "relation": "equal"}
+            },
+            {
+              "state": "$previous",
+              "macro": "@menu02",
+              "extra": 0,
+              "expect": [
+                {"addr": 78726, "value": 0},
+                {"addr": 78727, "value": 0},
+                {"addr": 78728, "value": 0},
+                {"addr": 78729, "value": 0}
+              ]
+            }
+          ]
+        }
+      ],
+      "comparisons": [
+        {"left": "nibble02", "right": "empty_inventory", "left_step": 1, "right_step": 1, "relation": "different", "frames": ["final"]}
+      ],
+      "claims": [
+        {"name": "ability_inventory_nibble_02", "addr": 78726, "width": 1, "level": "menu", "note": "0x13386高nibble=1时，能力页显示守夜者；同导航全空库存无该项。"}
+      ]
+    },
+    {
+      "id": "ability_03_black_panther",
+      "kind": "scenario",
+      "base_state": "base",
+      "arms": [
+        {
+          "name": "nibble03",
+          "steps": [
+            {
+              "macro": "-",
+              "extra": 0,
+              "patches": [
+                {"addr": 78726, "value": 0},
+                {"addr": 78727, "value": 0},
+                {"addr": 78728, "value": 0},
+                {"addr": 78729, "value": 0}
+              ],
+              "expect": [
+                {"addr": 78726, "value": 0},
+                {"addr": 78727, "value": 0},
+                {"addr": 78728, "value": 0},
+                {"addr": 78729, "value": 0}
+              ],
+              "screen": {"reference": "$base", "relation": "equal"}
+            },
+            {
+              "state": "$previous",
+              "macro": "@menu03",
+              "extra": 0,
+              "patches": [{"addr": 78727, "value": 1}],
+              "expect": [
+                {"addr": 78726, "value": 0},
+                {"addr": 78727, "value": 1},
+                {"addr": 78728, "value": 0},
+                {"addr": 78729, "value": 0}
+              ]
+            }
+          ]
+        },
+        {
+          "name": "empty_inventory",
+          "steps": [
+            {
+              "macro": "-",
+              "extra": 0,
+              "patches": [
+                {"addr": 78726, "value": 0},
+                {"addr": 78727, "value": 0},
+                {"addr": 78728, "value": 0},
+                {"addr": 78729, "value": 0}
+              ],
+              "expect": [
+                {"addr": 78726, "value": 0},
+                {"addr": 78727, "value": 0},
+                {"addr": 78728, "value": 0},
+                {"addr": 78729, "value": 0}
+              ],
+              "screen": {"reference": "$base", "relation": "equal"}
+            },
+            {
+              "state": "$previous",
+              "macro": "@menu03",
+              "extra": 0,
+              "expect": [
+                {"addr": 78726, "value": 0},
+                {"addr": 78727, "value": 0},
+                {"addr": 78728, "value": 0},
+                {"addr": 78729, "value": 0}
+              ]
+            }
+          ]
+        }
+      ],
+      "comparisons": [
+        {"left": "nibble03", "right": "empty_inventory", "left_step": 1, "right_step": 1, "relation": "different", "frames": ["final"]}
+      ],
+      "claims": [
+        {"name": "ability_inventory_nibble_03", "addr": 78727, "width": 1, "level": "menu", "note": "0x13387低nibble=1时，能力页显示黑豹；同导航全空库存无该项。"}
+      ]
+    },
+    {
+      "id": "ability_04_manticore",
+      "kind": "scenario",
+      "base_state": "base",
+      "arms": [
+        {
+          "name": "nibble04",
+          "steps": [
+            {
+              "macro": "-",
+              "extra": 0,
+              "patches": [
+                {"addr": 78726, "value": 0},
+                {"addr": 78727, "value": 0},
+                {"addr": 78728, "value": 0},
+                {"addr": 78729, "value": 0}
+              ],
+              "expect": [
+                {"addr": 78726, "value": 0},
+                {"addr": 78727, "value": 0},
+                {"addr": 78728, "value": 0},
+                {"addr": 78729, "value": 0}
+              ],
+              "screen": {"reference": "$base", "relation": "equal"}
+            },
+            {
+              "state": "$previous",
+              "macro": "@menu04",
+              "extra": 0,
+              "patches": [{"addr": 78727, "value": 16}],
+              "expect": [
+                {"addr": 78726, "value": 0},
+                {"addr": 78727, "value": 16},
+                {"addr": 78728, "value": 0},
+                {"addr": 78729, "value": 0}
+              ]
+            }
+          ]
+        },
+        {
+          "name": "empty_inventory",
+          "steps": [
+            {
+              "macro": "-",
+              "extra": 0,
+              "patches": [
+                {"addr": 78726, "value": 0},
+                {"addr": 78727, "value": 0},
+                {"addr": 78728, "value": 0},
+                {"addr": 78729, "value": 0}
+              ],
+              "expect": [
+                {"addr": 78726, "value": 0},
+                {"addr": 78727, "value": 0},
+                {"addr": 78728, "value": 0},
+                {"addr": 78729, "value": 0}
+              ],
+              "screen": {"reference": "$base", "relation": "equal"}
+            },
+            {
+              "state": "$previous",
+              "macro": "@menu04",
+              "extra": 0,
+              "expect": [
+                {"addr": 78726, "value": 0},
+                {"addr": 78727, "value": 0},
+                {"addr": 78728, "value": 0},
+                {"addr": 78729, "value": 0}
+              ]
+            }
+          ]
+        }
+      ],
+      "comparisons": [
+        {"left": "nibble04", "right": "empty_inventory", "left_step": 1, "right_step": 1, "relation": "different", "frames": ["final"]}
+      ],
+      "claims": [
+        {"name": "ability_inventory_nibble_04", "addr": 78727, "width": 1, "level": "menu", "note": "0x13387高nibble=1时，能力页显示曼提柯尔；同导航全空库存无该项。"}
+      ]
+    },
+    {
+      "id": "ability_05_golem",
+      "kind": "scenario",
+      "base_state": "base",
+      "arms": [
+        {
+          "name": "nibble05",
+          "steps": [
+            {
+              "macro": "-",
+              "extra": 0,
+              "patches": [
+                {"addr": 78726, "value": 0},
+                {"addr": 78727, "value": 0},
+                {"addr": 78728, "value": 0},
+                {"addr": 78729, "value": 0}
+              ],
+              "expect": [
+                {"addr": 78726, "value": 0},
+                {"addr": 78727, "value": 0},
+                {"addr": 78728, "value": 0},
+                {"addr": 78729, "value": 0}
+              ],
+              "screen": {"reference": "$base", "relation": "equal"}
+            },
+            {
+              "state": "$previous",
+              "macro": "@menu05",
+              "extra": 0,
+              "patches": [{"addr": 78728, "value": 1}],
+              "expect": [
+                {"addr": 78726, "value": 0},
+                {"addr": 78727, "value": 0},
+                {"addr": 78728, "value": 1},
+                {"addr": 78729, "value": 0}
+              ]
+            }
+          ]
+        },
+        {
+          "name": "empty_inventory",
+          "steps": [
+            {
+              "macro": "-",
+              "extra": 0,
+              "patches": [
+                {"addr": 78726, "value": 0},
+                {"addr": 78727, "value": 0},
+                {"addr": 78728, "value": 0},
+                {"addr": 78729, "value": 0}
+              ],
+              "expect": [
+                {"addr": 78726, "value": 0},
+                {"addr": 78727, "value": 0},
+                {"addr": 78728, "value": 0},
+                {"addr": 78729, "value": 0}
+              ],
+              "screen": {"reference": "$base", "relation": "equal"}
+            },
+            {
+              "state": "$previous",
+              "macro": "@menu05",
+              "extra": 0,
+              "expect": [
+                {"addr": 78726, "value": 0},
+                {"addr": 78727, "value": 0},
+                {"addr": 78728, "value": 0},
+                {"addr": 78729, "value": 0}
+              ]
+            }
+          ]
+        }
+      ],
+      "comparisons": [
+        {"left": "nibble05", "right": "empty_inventory", "left_step": 1, "right_step": 1, "relation": "different", "frames": ["final"]}
+      ],
+      "claims": [
+        {"name": "ability_inventory_nibble_05", "addr": 78728, "width": 1, "level": "menu", "note": "0x13388低nibble=1时，能力页显示魔像；同导航全空库存无该项。"}
+      ]
+    },
+    {
+      "id": "ability_06_mandragora",
+      "kind": "scenario",
+      "base_state": "base",
+      "arms": [
+        {
+          "name": "nibble06",
+          "steps": [
+            {
+              "macro": "-",
+              "extra": 0,
+              "patches": [
+                {"addr": 78726, "value": 0},
+                {"addr": 78727, "value": 0},
+                {"addr": 78728, "value": 0},
+                {"addr": 78729, "value": 0}
+              ],
+              "expect": [
+                {"addr": 78726, "value": 0},
+                {"addr": 78727, "value": 0},
+                {"addr": 78728, "value": 0},
+                {"addr": 78729, "value": 0}
+              ],
+              "screen": {"reference": "$base", "relation": "equal"}
+            },
+            {
+              "state": "$previous",
+              "macro": "@menu06",
+              "extra": 0,
+              "patches": [{"addr": 78728, "value": 16}],
+              "expect": [
+                {"addr": 78726, "value": 0},
+                {"addr": 78727, "value": 0},
+                {"addr": 78728, "value": 16},
+                {"addr": 78729, "value": 0}
+              ]
+            }
+          ]
+        },
+        {
+          "name": "empty_inventory",
+          "steps": [
+            {
+              "macro": "-",
+              "extra": 0,
+              "patches": [
+                {"addr": 78726, "value": 0},
+                {"addr": 78727, "value": 0},
+                {"addr": 78728, "value": 0},
+                {"addr": 78729, "value": 0}
+              ],
+              "expect": [
+                {"addr": 78726, "value": 0},
+                {"addr": 78727, "value": 0},
+                {"addr": 78728, "value": 0},
+                {"addr": 78729, "value": 0}
+              ],
+              "screen": {"reference": "$base", "relation": "equal"}
+            },
+            {
+              "state": "$previous",
+              "macro": "@menu06",
+              "extra": 0,
+              "expect": [
+                {"addr": 78726, "value": 0},
+                {"addr": 78727, "value": 0},
+                {"addr": 78728, "value": 0},
+                {"addr": 78729, "value": 0}
+              ]
+            }
+          ]
+        }
+      ],
+      "comparisons": [
+        {"left": "nibble06", "right": "empty_inventory", "left_step": 1, "right_step": 1, "relation": "different", "frames": ["final"]}
+      ],
+      "claims": [
+        {"name": "ability_inventory_nibble_06", "addr": 78728, "width": 1, "level": "menu", "note": "0x13388高nibble=1时，能力页显示曼德拉草；同导航全空库存无该项。"}
+      ]
+    },
+    {
+      "id": "ability_07_minotaur",
+      "kind": "scenario",
+      "base_state": "base",
+      "arms": [
+        {
+          "name": "nibble07",
+          "steps": [
+            {
+              "macro": "-",
+              "extra": 0,
+              "patches": [
+                {"addr": 78726, "value": 0},
+                {"addr": 78727, "value": 0},
+                {"addr": 78728, "value": 0},
+                {"addr": 78729, "value": 0}
+              ],
+              "expect": [
+                {"addr": 78726, "value": 0},
+                {"addr": 78727, "value": 0},
+                {"addr": 78728, "value": 0},
+                {"addr": 78729, "value": 0}
+              ],
+              "screen": {"reference": "$base", "relation": "equal"}
+            },
+            {
+              "state": "$previous",
+              "macro": "@menu07",
+              "extra": 0,
+              "patches": [{"addr": 78729, "value": 1}],
+              "expect": [
+                {"addr": 78726, "value": 0},
+                {"addr": 78727, "value": 0},
+                {"addr": 78728, "value": 0},
+                {"addr": 78729, "value": 1}
+              ]
+            }
+          ]
+        },
+        {
+          "name": "empty_inventory",
+          "steps": [
+            {
+              "macro": "-",
+              "extra": 0,
+              "patches": [
+                {"addr": 78726, "value": 0},
+                {"addr": 78727, "value": 0},
+                {"addr": 78728, "value": 0},
+                {"addr": 78729, "value": 0}
+              ],
+              "expect": [
+                {"addr": 78726, "value": 0},
+                {"addr": 78727, "value": 0},
+                {"addr": 78728, "value": 0},
+                {"addr": 78729, "value": 0}
+              ],
+              "screen": {"reference": "$base", "relation": "equal"}
+            },
+            {
+              "state": "$previous",
+              "macro": "@menu07",
+              "extra": 0,
+              "expect": [
+                {"addr": 78726, "value": 0},
+                {"addr": 78727, "value": 0},
+                {"addr": 78728, "value": 0},
+                {"addr": 78729, "value": 0}
+              ]
+            }
+          ]
+        }
+      ],
+      "comparisons": [
+        {"left": "nibble07", "right": "empty_inventory", "left_step": 1, "right_step": 1, "relation": "different", "frames": ["final"]}
+      ],
+      "claims": [
+        {"name": "ability_inventory_nibble_07", "addr": 78729, "width": 1, "level": "menu", "note": "0x13389低nibble=1时，能力页显示米诺陶斯；同导航全空库存无该项。"}
+      ]
+    },
+    {
+      "id": "ability_08_undine",
+      "kind": "scenario",
+      "base_state": "base",
+      "arms": [
+        {
+          "name": "nibble08",
+          "steps": [
+            {
+              "macro": "-",
+              "extra": 0,
+              "patches": [
+                {"addr": 78726, "value": 0},
+                {"addr": 78727, "value": 0},
+                {"addr": 78728, "value": 0},
+                {"addr": 78729, "value": 0}
+              ],
+              "expect": [
+                {"addr": 78726, "value": 0},
+                {"addr": 78727, "value": 0},
+                {"addr": 78728, "value": 0},
+                {"addr": 78729, "value": 0}
+              ],
+              "screen": {"reference": "$base", "relation": "equal"}
+            },
+            {
+              "state": "$previous",
+              "macro": "@menu08",
+              "extra": 0,
+              "patches": [{"addr": 78729, "value": 16}],
+              "expect": [
+                {"addr": 78726, "value": 0},
+                {"addr": 78727, "value": 0},
+                {"addr": 78728, "value": 0},
+                {"addr": 78729, "value": 16}
+              ]
+            }
+          ]
+        },
+        {
+          "name": "empty_inventory",
+          "steps": [
+            {
+              "macro": "-",
+              "extra": 0,
+              "patches": [
+                {"addr": 78726, "value": 0},
+                {"addr": 78727, "value": 0},
+                {"addr": 78728, "value": 0},
+                {"addr": 78729, "value": 0}
+              ],
+              "expect": [
+                {"addr": 78726, "value": 0},
+                {"addr": 78727, "value": 0},
+                {"addr": 78728, "value": 0},
+                {"addr": 78729, "value": 0}
+              ],
+              "screen": {"reference": "$base", "relation": "equal"}
+            },
+            {
+              "state": "$previous",
+              "macro": "@menu08",
+              "extra": 0,
+              "expect": [
+                {"addr": 78726, "value": 0},
+                {"addr": 78727, "value": 0},
+                {"addr": 78728, "value": 0},
+                {"addr": 78729, "value": 0}
+              ]
+            }
+          ]
+        }
+      ],
+      "comparisons": [
+        {"left": "nibble08", "right": "empty_inventory", "left_step": 1, "right_step": 1, "relation": "different", "frames": ["final"]}
+      ],
+      "claims": [
+        {"name": "ability_inventory_nibble_08", "addr": 78729, "width": 1, "level": "menu", "note": "0x13389高nibble=1时，能力页显示水之精灵；同导航全空库存无该项。"}
+      ]
+    }
+  ]
+}
