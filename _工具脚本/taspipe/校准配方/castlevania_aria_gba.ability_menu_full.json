@@ -24,7 +24,7 @@
       "slot_addr": null,
       "slot_readback": false,
       "count": 8,
-      "menu_steps": ["Start", "Down", "Down", "Down", "Down", "A"],
+      "menu_steps": ["Start", "A", "Down", "Down", "Down", "A"],
       "identity_region": [6, 78, 234, 126],
       "base_patches": [
         {"addr": 78726, "value": 255},

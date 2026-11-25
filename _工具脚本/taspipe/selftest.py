@@ -5201,8 +5201,11 @@ def test_smv_converter_contract():
             return False
 
     diag_root = root / "diag"
+    rom_fixture = bytearray(0x8000)
+    rom_fixture[0x7FD5] = 0x20
+    rom_fixture[0x7FD8] = 0
     with patch.object(SJ, "emuhawk_processes", return_value=[]), \
-         patch.object(tas_replay, "materialize_rom", side_effect=lambda src, dst: Path(dst).write_bytes(b"rom")), \
+         patch.object(tas_replay, "materialize_rom", side_effect=lambda src, dst: Path(dst).write_bytes(rom_fixture)), \
          patch.object(SJ, "StateSession", BrokenSession):
         try:
             MC.bake_snes9x_core_state(parsed, root / "rom.sfc", root / "BizHawk-2.9.1", work=diag_root)
