@@ -1,0 +1,22 @@
+洛克人1 官方说明书：六名 Robot Master 身份 职业 专长（美国NES手册第6至7页）
+
+来源：Capcom 美国 NES 官方说明书扫描件。
+核验：已读扫描页；中文为说明，英文为短引文；未收全本。
+
+Cutman 设计为 lumberjack，使用强力锯状工具并能穿过巨大森林。
+> Cutman: Designed to function as a lumberjack ... capable of gnawing through giant forest timbers.
+
+Iceman 用于 sub-zero 极寒环境，能在极端气候下行动。
+> Iceman: Impervious to chilling sub-zero temperatures ... under extreme climatic conditions.
+
+Gutsman 能举起并搬运巨大石块。
+> Gutsman: ... capable of lifting and transporting huge boulders.
+
+Bombman 能徒手掀翻强力爆炸物，为 Dr. Wright 的建设项目开垦土地。
+> Bombman: ... utilizes intensely explosive explosives to clear lands for Dr. Wright's construction projects.
+
+Fireman 用火焰融化并铸造金属。
+> Fireman: Melts and molds metals with flame-throwing torch ...
+
+Elecman 计划承担电气操作及超级核电厂供电。
+> Elecman: ... planned for conducting electrical operations ... supervising nuclear power plants.

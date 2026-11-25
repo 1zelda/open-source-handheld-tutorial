@@ -1,0 +1,272 @@
+{
+  "schema_version": 1,
+  "revisions": {
+    "megaman2_nes_tasvideos_rockman2": {
+      "game_id": "megaman2",
+      "platform": "NES",
+      "name": "洛克人2 / Rockman 2 — TASVideos 技术文档范围（未绑定地区 ROM 哈希）",
+      "note": "authoritative 仅限 TASVideos GameResources 原文明确记载的 Rockman 2 技术事实；不等于 PAL/美版/日版 ROM 等价。"
+    },
+    "megaman2_nes_memory_dictionary_unverified": {
+      "game_id": "megaman2",
+      "platform": "NES",
+      "name": "洛克人2 NES — 本地二手内存字典（身份与逐字段来源未核）",
+      "note": "reference_only；不得把 stable-retro/libretro/DataCrystal/Pugsy 的整合字段当作本机实测或地区权威。"
+    },
+    "megaman2_nes_title_catalog": {
+      "game_id": "megaman2",
+      "platform": "NES",
+      "name": "洛克人2 NES — 本地标题目录（二手元数据）",
+      "note": "reference_only；仅保留目录中的标题、平台、别名与 basis 字段。"
+    },
+    "megaman2_nes_tas_publications": {
+      "game_id": "megaman2",
+      "platform": "NES",
+      "name": "洛克人2 NES — 本地 TAS 出版物元数据（reference_only）",
+      "note": "只证明本地目录记录了哪些 TAS/声明版本；不证明 ROM 在本机可用，也不证明玩法事实。"
+    },
+    "megaman2_nes_us_manual": {
+      "game_id": "megaman2",
+      "platform": "NES",
+      "name": "洛克人2 / Mega Man 2 — 美国 NES 官方说明书短摘录",
+      "note": "authoritative 仅限任天堂官方数字复刻手册中直接读图的短摘录；不证明 PAL/日版 ROM 等价，也不是整款游戏知识库。"
+    }
+  },
+  "entries": [
+    {
+      "path": "知识库P1_20261118/megaman2_candidate_v2_manual_20261125/evidence/mm2_tasvideos_coordinates_20261125.txt",
+      "source_id": "tasvideos_rockman_data_mm2_extract",
+      "revision": "megaman2_nes_tasvideos_rockman2",
+      "kind": "prose",
+      "authority": "authoritative",
+      "index": true,
+      "element_types": [
+        "帧数据",
+        "基础档案"
+      ],
+      "note": "TASVideos 原文：对象坐标属性、十六进制口径与坐标轴方向。"
+    },
+    {
+      "path": "知识库P1_20261118/megaman2_candidate_v2_manual_20261125/evidence/mm2_tasvideos_jump_20261125.txt",
+      "source_id": "tasvideos_rockman_data_mm2_extract",
+      "revision": "megaman2_nes_tasvideos_rockman2",
+      "kind": "prose",
+      "authority": "authoritative",
+      "index": true,
+      "element_types": [
+        "帧数据",
+        "基础档案"
+      ],
+      "note": "TASVideos 原文：Rockman 1/2 起跳 Y speed 04.DF、重力与松开 A 的速度限制。"
+    },
+    {
+      "path": "知识库P1_20261118/megaman2_candidate_v2_manual_20261125/evidence/mm2_tasvideos_climb_transform_20261125.txt",
+      "source_id": "tasvideos_rockman_data_mm2_extract",
+      "revision": "megaman2_nes_tasvideos_rockman2",
+      "kind": "prose",
+      "authority": "authoritative",
+      "index": true,
+      "element_types": [
+        "帧数据",
+        "基础档案"
+      ],
+      "note": "TASVideos 原文：Rockman 2 攀爬速度与暂停/变换状态行为。"
+    },
+    {
+      "path": "知识库P1_20261118/megaman2_candidate_v2_manual_20261125/evidence/mm2_tasvideos_jump_horizontal_20261125.txt",
+      "source_id": "tasvideos_rockman_data_mm2_extract",
+      "revision": "megaman2_nes_tasvideos_rockman2",
+      "kind": "prose",
+      "authority": "authoritative",
+      "index": true,
+      "element_types": [
+        "帧数据",
+        "基础档案"
+      ],
+      "note": "TASVideos 原文：Rockman 2 跳跃/下落方向速度与停止输入后的行为。"
+    },
+    {
+      "path": "知识库P1_20261118/megaman2_candidate_v2_manual_20261125/evidence/mm2_tasvideos_walking_20261125.txt",
+      "source_id": "tasvideos_rockman_data_mm2_extract",
+      "revision": "megaman2_nes_tasvideos_rockman2",
+      "kind": "prose",
+      "authority": "authoritative",
+      "index": true,
+      "element_types": [
+        "帧数据",
+        "基础档案"
+      ],
+      "note": "TASVideos 原文：Rockman 1/2 walking X speed 01.60。"
+    },
+    {
+      "path": "知识库P1_20261118/megaman2_candidate_v2_manual_20261125/evidence/mm2_tasvideos_acceleration_20261125.txt",
+      "source_id": "tasvideos_rockman_data_mm2_extract",
+      "revision": "megaman2_nes_tasvideos_rockman2",
+      "kind": "prose",
+      "authority": "authoritative",
+      "index": true,
+      "element_types": [
+        "帧数据",
+        "基础档案"
+      ],
+      "note": "TASVideos 原文：Rockman 2 加速 7 帧、减速 8 帧（十进制帧数按原文）。"
+    },
+    {
+      "path": "知识库P1_20261118/megaman2_candidate_v2_manual_20261125/evidence/mm2_tasvideos_object_table_20261125.txt",
+      "source_id": "tasvideos_rockman_data_mm2_extract",
+      "revision": "megaman2_nes_tasvideos_rockman2",
+      "kind": "table",
+      "authority": "authoritative",
+      "index": true,
+      "element_types": [
+        "帧数据",
+        "基础档案"
+      ],
+      "note": "TASVideos 反汇编表：Rockman 2 Screen/X/Xspd/Y/Yspd 地址与对象 n 规则。"
+    },
+    {
+      "path": "知识库P1_20261118/megaman2_candidate_v2_manual_20261125/evidence/mm2_local_memory_dictionary_20261125.txt",
+      "source_id": "local_megaman2_memory_dictionary",
+      "revision": "megaman2_nes_memory_dictionary_unverified",
+      "kind": "table",
+      "authority": "reference_only",
+      "index": true,
+      "element_types": [
+        "金手指",
+        "基础档案"
+      ],
+      "note": "本地整合字典原始字段；缺逐字段原始来源、ROM SHA1 与本机实测，不能升 authoritative。"
+    },
+    {
+      "path": "知识库P1_20261118/megaman2_candidate_v2_manual_20261125/evidence/mm2_local_title_catalog_20261125.txt",
+      "source_id": "local_megaman2_title_catalog",
+      "revision": "megaman2_nes_title_catalog",
+      "kind": "table",
+      "authority": "reference_only",
+      "index": true,
+      "element_types": [
+        "基础档案",
+        "身份"
+      ],
+      "note": "本地热门作品目录：NES、Mega Man 2、洛克人2、Rockman 2 与维基销量 basis。"
+    },
+    {
+      "path": "知识库P1_20261118/megaman2_candidate_v2_manual_20261125/evidence/mm2_local_tas_publications_20261125.txt",
+      "source_id": "local_megaman2_tas_publications",
+      "revision": "megaman2_nes_tas_publications",
+      "kind": "table",
+      "authority": "reference_only",
+      "index": true,
+      "element_types": [
+        "基础档案",
+        "身份",
+        "视频验证"
+      ],
+      "note": "本地 TAS 目录中 4057/4410 的版本名、声明 SHA1 与格式；registry 仍为 blocked/unresolved。"
+    },
+    {
+      "path": "知识库P1_20261118/megaman2_candidate_v2_manual_20261125/evidence/mm2_manual_controls_20261125.txt",
+      "source_id": "nintendo_mega_man_2_nes_us_manual",
+      "revision": "megaman2_nes_us_manual",
+      "kind": "prose",
+      "authority": "authoritative",
+      "index": true,
+      "element_types": [
+        "说明书",
+        "基础档案"
+      ],
+      "note": "任天堂官方托管的美国NES说明书数字复刻短摘录；逐页读图核对，不是整本手册再分发。"
+    },
+    {
+      "path": "知识库P1_20261118/megaman2_candidate_v2_manual_20261125/evidence/mm2_manual_stage_select_20261125.txt",
+      "source_id": "nintendo_mega_man_2_nes_us_manual",
+      "revision": "megaman2_nes_us_manual",
+      "kind": "prose",
+      "authority": "authoritative",
+      "index": true,
+      "element_types": [
+        "说明书",
+        "基础档案"
+      ],
+      "note": "任天堂官方托管的美国NES说明书数字复刻短摘录；逐页读图核对，不是整本手册再分发。"
+    },
+    {
+      "path": "知识库P1_20261118/megaman2_candidate_v2_manual_20261125/evidence/mm2_manual_energy_20261125.txt",
+      "source_id": "nintendo_mega_man_2_nes_us_manual",
+      "revision": "megaman2_nes_us_manual",
+      "kind": "prose",
+      "authority": "authoritative",
+      "index": true,
+      "element_types": [
+        "说明书",
+        "基础档案"
+      ],
+      "note": "任天堂官方托管的美国NES说明书数字复刻短摘录；逐页读图核对，不是整本手册再分发。"
+    },
+    {
+      "path": "知识库P1_20261118/megaman2_candidate_v2_manual_20261125/evidence/mm2_manual_special_items_20261125.txt",
+      "source_id": "nintendo_mega_man_2_nes_us_manual",
+      "revision": "megaman2_nes_us_manual",
+      "kind": "prose",
+      "authority": "authoritative",
+      "index": true,
+      "element_types": [
+        "说明书",
+        "基础档案"
+      ],
+      "note": "任天堂官方托管的美国NES说明书数字复刻短摘录；逐页读图核对，不是整本手册再分发。"
+    },
+    {
+      "path": "知识库P1_20261118/megaman2_candidate_v2_manual_20261125/evidence/mm2_manual_passwords_20261125.txt",
+      "source_id": "nintendo_mega_man_2_nes_us_manual",
+      "revision": "megaman2_nes_us_manual",
+      "kind": "prose",
+      "authority": "authoritative",
+      "index": true,
+      "element_types": [
+        "说明书",
+        "基础档案"
+      ],
+      "note": "任天堂官方托管的美国NES说明书数字复刻短摘录；逐页读图核对，不是整本手册再分发。"
+    },
+    {
+      "path": "知识库P1_20261118/megaman2_candidate_v2_manual_20261125/evidence/mm2_manual_airman_20261125.txt",
+      "source_id": "nintendo_mega_man_2_nes_us_manual",
+      "revision": "megaman2_nes_us_manual",
+      "kind": "prose",
+      "authority": "authoritative",
+      "index": true,
+      "element_types": [
+        "说明书",
+        "基础档案"
+      ],
+      "note": "任天堂官方托管的美国NES说明书数字复刻短摘录；逐页读图核对，不是整本手册再分发。"
+    },
+    {
+      "path": "知识库P1_20261118/megaman2_candidate_v2_manual_20261125/evidence/mm2_manual_robot_masters_20261125.txt",
+      "source_id": "nintendo_mega_man_2_nes_us_manual",
+      "revision": "megaman2_nes_us_manual",
+      "kind": "prose",
+      "authority": "authoritative",
+      "index": true,
+      "element_types": [
+        "说明书",
+        "基础档案"
+      ],
+      "note": "任天堂官方托管的美国NES说明书数字复刻短摘录；逐页读图核对，不是整本手册再分发。"
+    },
+    {
+      "path": "知识库P1_20261118/megaman2_candidate_v2_manual_20261125/evidence/mm2_manual_weapons_20261125.txt",
+      "source_id": "nintendo_mega_man_2_nes_us_manual",
+      "revision": "megaman2_nes_us_manual",
+      "kind": "prose",
+      "authority": "authoritative",
+      "index": true,
+      "element_types": [
+        "说明书",
+        "基础档案"
+      ],
+      "note": "任天堂官方托管的美国NES说明书数字复刻短摘录；逐页读图核对，不是整本手册再分发。"
+    }
+  ]
+}

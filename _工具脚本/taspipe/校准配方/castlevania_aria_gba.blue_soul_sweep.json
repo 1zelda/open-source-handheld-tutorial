@@ -1,0 +1,135 @@
+{
+  "schema_version": "ram_calibration/1.0",
+  "game_id": "castlevania_aria_gba",
+  "profile": {
+    "rom": "F:/BaiduNetdiskDownload/rom/gba/恶魔城晓月圆舞曲.gba",
+    "rom_sha1": "40aab076a528f52e93260bb98d91a40039e0da02",
+    "bizhawk": "F:/开源掌机教程/02-模拟器库/BizHawk/BizHawk-2.11.1",
+    "isolated_slot": true,
+    "core": "mGBA",
+    "system": "GBA",
+    "domain": "EWRAM",
+    "state_package": {
+      "game_id": "castlevania_aria_gba",
+      "profile_id": "aria_us_40aab076",
+      "revision": "r20261125T120000"
+    },
+    "window": {
+      "start": 78429,
+      "length": 128
+    }
+  },
+  "base_state": "blue_buer",
+  "macros": {
+    "guardian_120": "R"
+  },
+  "matrix": {
+    "case_id": "blue_soul_{value}_vs_empty",
+    "values": [
+      1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12,
+      13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24
+    ],
+    "template": {
+      "kind": "scenario",
+      "base_state": "blue_buer",
+      "arms": [
+        {
+          "name": "blue_{value}",
+          "steps": [
+            {
+              "macro": "-",
+              "extra": 0,
+              "patches": [
+                {
+                  "addr": 78430,
+                  "value": "{value}"
+                }
+              ],
+              "expect": [
+                {
+                  "addr": 78430,
+                  "value": "{value}"
+                },
+                {
+                  "addr": 78448,
+                  "width": 2,
+                  "value": 80
+                }
+              ],
+              "screen": {
+                "reference": "$base",
+                "relation": "equal"
+              }
+            },
+            {
+              "state": "$previous",
+              "macro": "@guardian_120",
+              "extra": 119,
+              "capture_frames": 120,
+              "expect": [
+                {
+                  "addr": 78430,
+                  "value": "{value}"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "blue0",
+          "steps": [
+            {
+              "macro": "-",
+              "extra": 0,
+              "patches": [
+                {
+                  "addr": 78430,
+                  "value": 0
+                }
+              ],
+              "expect": [
+                {
+                  "addr": 78430,
+                  "value": 0
+                },
+                {
+                  "addr": 78448,
+                  "width": 2,
+                  "value": 80
+                }
+              ],
+              "screen": {
+                "reference": "$base",
+                "relation": "equal"
+              }
+            },
+            {
+              "state": "$previous",
+              "macro": "@guardian_120",
+              "extra": 119,
+              "capture_frames": 120,
+              "expect": [
+                {
+                  "addr": 78430,
+                  "value": 0
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "comparisons": [
+        {
+          "left": "blue_{value}",
+          "right": "blue0",
+          "left_step": 1,
+          "right_step": 1,
+          "relation": "different",
+          "frames": [
+            12, 30, 60, 90, "final"
+          ]
+        }
+      ]
+    }
+  }
+}

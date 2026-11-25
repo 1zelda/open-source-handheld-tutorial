@@ -1,0 +1,30 @@
+{
+  "status": "isolated_candidate_v2_manual_not_production",
+  "revision": "megaman1_nes_us",
+  "coverage": [
+    "对象RAM表",
+    "BizHawk内存写机制",
+    "本机武器RAM实测",
+    "本机对象表定位实测",
+    "官方说明书操作按键",
+    "官方说明书选关流程",
+    "官方说明书能量与奖励道具",
+    "官方说明书Magnet Beam",
+    "官方说明书Robot Master身份",
+    "官方说明书进度奖励与得分"
+  ],
+  "reference_only_coverage": [
+    "FM2导入社区流程",
+    "segmented TAS通用术语"
+  ],
+  "not_covered": [
+    "整款游戏内容知识库",
+    "全部敌人与关卡数据",
+    "PAL-B等价性",
+    "目标时刻存档点续作",
+    "生产路由切换"
+  ],
+  "production_defaults_unchanged": true,
+  "external_generative_model_calls": 0,
+  "paid_api_calls": 0
+}

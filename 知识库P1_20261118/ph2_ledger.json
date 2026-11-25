@@ -1,0 +1,300 @@
+{
+ "回归": [],
+ "修错": [
+  {
+   "arm": "bm25",
+   "id": "Q18",
+   "类别": "假pass暴露",
+   "v1": true,
+   "v2": false,
+   "selected": "_工具脚本/taspipe/游戏包/热血足球联盟_必杀全清单.md#L24-L33",
+   "why": "status=pass, selected_gold=False, direct_recall=True"
+  },
+  {
+   "arm": "hybrid",
+   "id": "Q10",
+   "类别": "假pass暴露",
+   "v1": true,
+   "v2": false,
+   "selected": "F:/tas_rig/docs/素材生产规范.md#L18-L31",
+   "why": "status=pass, selected_gold=False, direct_recall=True"
+  },
+  {
+   "arm": "hybrid",
+   "id": "Q18",
+   "类别": "假pass暴露",
+   "v1": true,
+   "v2": false,
+   "selected": "_工具脚本/taspipe/游戏包/热血足球联盟_必杀全清单.md#L137-L158",
+   "why": "status=pass, selected_gold=False, direct_recall=True"
+  }
+ ],
+ "策略变化": [],
+ "金标修订": [
+  {
+   "arm": "bm25",
+   "id": "Q02",
+   "old_q": "燕返原生只有哪个角色会使？",
+   "new_q": "热血队内，燕返原生只有哪个角色会使？",
+   "v1_old": true,
+   "v1_new": false,
+   "v2_new": false
+  },
+  {
+   "arm": "hybrid",
+   "id": "Q02",
+   "old_q": "燕返原生只有哪个角色会使？",
+   "new_q": "热血队内，燕返原生只有哪个角色会使？",
+   "v1_old": false,
+   "v1_new": false,
+   "v2_new": false
+  }
+ ],
+ "未变": [
+  {
+   "arm": "bm25",
+   "id": "Q01",
+   "ok": true
+  },
+  {
+   "arm": "bm25",
+   "id": "Q02",
+   "ok": false
+  },
+  {
+   "arm": "bm25",
+   "id": "Q03",
+   "ok": false
+  },
+  {
+   "arm": "bm25",
+   "id": "Q04",
+   "ok": true
+  },
+  {
+   "arm": "bm25",
+   "id": "Q05",
+   "ok": true
+  },
+  {
+   "arm": "bm25",
+   "id": "Q06",
+   "ok": false
+  },
+  {
+   "arm": "bm25",
+   "id": "Q07",
+   "ok": true
+  },
+  {
+   "arm": "bm25",
+   "id": "Q08",
+   "ok": false
+  },
+  {
+   "arm": "bm25",
+   "id": "Q09",
+   "ok": true
+  },
+  {
+   "arm": "bm25",
+   "id": "Q10",
+   "ok": true
+  },
+  {
+   "arm": "bm25",
+   "id": "Q11",
+   "ok": true
+  },
+  {
+   "arm": "bm25",
+   "id": "Q12",
+   "ok": true
+  },
+  {
+   "arm": "bm25",
+   "id": "Q13",
+   "ok": true
+  },
+  {
+   "arm": "bm25",
+   "id": "Q14",
+   "ok": true
+  },
+  {
+   "arm": "bm25",
+   "id": "Q15",
+   "ok": true
+  },
+  {
+   "arm": "bm25",
+   "id": "Q16",
+   "ok": true
+  },
+  {
+   "arm": "bm25",
+   "id": "Q17",
+   "ok": true
+  },
+  {
+   "arm": "bm25",
+   "id": "P19",
+   "ok": true
+  },
+  {
+   "arm": "bm25",
+   "id": "P20",
+   "ok": true
+  },
+  {
+   "arm": "bm25",
+   "id": "P21",
+   "ok": true
+  },
+  {
+   "arm": "bm25",
+   "id": "P22",
+   "ok": true
+  },
+  {
+   "arm": "bm25",
+   "id": "P23",
+   "ok": true
+  },
+  {
+   "arm": "bm25",
+   "id": "P24",
+   "ok": true
+  },
+  {
+   "arm": "bm25",
+   "id": "P25",
+   "ok": true
+  },
+  {
+   "arm": "bm25",
+   "id": "P26",
+   "ok": true
+  },
+  {
+   "arm": "hybrid",
+   "id": "Q01",
+   "ok": true
+  },
+  {
+   "arm": "hybrid",
+   "id": "Q02",
+   "ok": false
+  },
+  {
+   "arm": "hybrid",
+   "id": "Q03",
+   "ok": true
+  },
+  {
+   "arm": "hybrid",
+   "id": "Q04",
+   "ok": true
+  },
+  {
+   "arm": "hybrid",
+   "id": "Q05",
+   "ok": true
+  },
+  {
+   "arm": "hybrid",
+   "id": "Q06",
+   "ok": true
+  },
+  {
+   "arm": "hybrid",
+   "id": "Q07",
+   "ok": true
+  },
+  {
+   "arm": "hybrid",
+   "id": "Q08",
+   "ok": false
+  },
+  {
+   "arm": "hybrid",
+   "id": "Q09",
+   "ok": true
+  },
+  {
+   "arm": "hybrid",
+   "id": "Q11",
+   "ok": true
+  },
+  {
+   "arm": "hybrid",
+   "id": "Q12",
+   "ok": true
+  },
+  {
+   "arm": "hybrid",
+   "id": "Q13",
+   "ok": true
+  },
+  {
+   "arm": "hybrid",
+   "id": "Q14",
+   "ok": true
+  },
+  {
+   "arm": "hybrid",
+   "id": "Q15",
+   "ok": true
+  },
+  {
+   "arm": "hybrid",
+   "id": "Q16",
+   "ok": true
+  },
+  {
+   "arm": "hybrid",
+   "id": "Q17",
+   "ok": true
+  },
+  {
+   "arm": "hybrid",
+   "id": "P19",
+   "ok": true
+  },
+  {
+   "arm": "hybrid",
+   "id": "P20",
+   "ok": true
+  },
+  {
+   "arm": "hybrid",
+   "id": "P21",
+   "ok": true
+  },
+  {
+   "arm": "hybrid",
+   "id": "P22",
+   "ok": true
+  },
+  {
+   "arm": "hybrid",
+   "id": "P23",
+   "ok": true
+  },
+  {
+   "arm": "hybrid",
+   "id": "P24",
+   "ok": true
+  },
+  {
+   "arm": "hybrid",
+   "id": "P25",
+   "ok": true
+  },
+  {
+   "arm": "hybrid",
+   "id": "P26",
+   "ok": true
+  }
+ ]
+}

@@ -1,0 +1,399 @@
+{
+  "schema_version": "ram_calibration/1.0",
+  "game_id": "castlevania_aria_gba",
+  "profile": {
+    "rom": "F:/BaiduNetdiskDownload/rom/gba/恶魔城晓月圆舞曲.gba",
+    "rom_sha1": "40aab076a528f52e93260bb98d91a40039e0da02",
+    "bizhawk": "F:/开源掌机教程/02-模拟器库/BizHawk/BizHawk-2.11.1",
+    "isolated_slot": true,
+    "core": "mGBA",
+    "system": "GBA",
+    "domain": "EWRAM",
+    "state_package": {
+      "game_id": "castlevania_aria_gba",
+      "profile_id": "aria_us_40aab076",
+      "revision": "r20261125T120000"
+    },
+    "window": {
+      "start": 78429,
+      "length": 128
+    }
+  },
+  "base_state": "base",
+  "macros": {
+    "up_b_120": "Up+B,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,",
+    "guardian_120": "R,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,",
+    "yellow_damage_165": "Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,B,B,B,B,B,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,"
+  },
+  "cases": [
+    {
+      "id": "wingcutter_same_state",
+      "kind": "scenario",
+      "base_state": "base",
+      "arms": [
+        {
+          "name": "red24",
+          "steps": [
+            {
+              "macro": "-",
+              "extra": 0,
+              "patches": [
+                {
+                  "addr": 78429,
+                  "value": 24
+                }
+              ],
+              "expect": [
+                {
+                  "addr": 78429,
+                  "value": 24
+                },
+                {
+                  "addr": 78448,
+                  "width": 2,
+                  "value": 80
+                }
+              ],
+              "screen": {
+                "reference": "$base",
+                "relation": "equal"
+              }
+            },
+            {
+              "state": "$previous",
+              "macro": "@up_b_120",
+              "capture_frames": 120,
+              "expect": [
+                {
+                  "addr": 78429,
+                  "value": 24
+                },
+                {
+                  "addr": 78448,
+                  "width": 2,
+                  "op": "<",
+                  "value": 80
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "red0",
+          "steps": [
+            {
+              "macro": "-",
+              "extra": 0,
+              "patches": [
+                {
+                  "addr": 78429,
+                  "value": 0
+                }
+              ],
+              "expect": [
+                {
+                  "addr": 78429,
+                  "value": 0
+                },
+                {
+                  "addr": 78448,
+                  "width": 2,
+                  "value": 80
+                }
+              ],
+              "screen": {
+                "reference": "$base",
+                "relation": "equal"
+              }
+            },
+            {
+              "state": "$previous",
+              "macro": "@up_b_120",
+              "capture_frames": 120,
+              "expect": [
+                {
+                  "addr": 78429,
+                  "value": 0
+                },
+                {
+                  "addr": 78448,
+                  "width": 2,
+                  "value": 80
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "comparisons": [
+        {
+          "left": "red24",
+          "right": "red0",
+          "left_step": 1,
+          "right_step": 1,
+          "relation": "different",
+          "frames": [
+            8,
+            12,
+            20,
+            60,
+            "final"
+          ]
+        }
+      ],
+      "claims": [
+        {
+          "name": "red_soul_slot",
+          "addr": 78429,
+          "width": 1,
+          "level": "gameplay",
+          "note": "同一 base 状态只改红槽 24/0；羽刃画面与 MP 消耗同步区分。"
+        },
+        {
+          "name": "current_mp",
+          "addr": 78448,
+          "width": 2,
+          "level": "consumption",
+          "note": "红槽 24 时 MP 下降，红槽 0 时不变。"
+        }
+      ]
+    },
+    {
+      "id": "guardian_same_state",
+      "kind": "scenario",
+      "base_state": "blue_buer",
+      "arms": [
+        {
+          "name": "blue4",
+          "steps": [
+            {
+              "macro": "-",
+              "extra": 0,
+              "patches": [
+                {
+                  "addr": 78430,
+                  "value": 4
+                }
+              ],
+              "expect": [
+                {
+                  "addr": 78430,
+                  "value": 4
+                },
+                {
+                  "addr": 78448,
+                  "width": 2,
+                  "value": 80
+                }
+              ],
+              "screen": {
+                "reference": "$base",
+                "relation": "equal"
+              }
+            },
+            {
+              "state": "$previous",
+              "macro": "@guardian_120",
+              "capture_frames": 120,
+              "expect": [
+                {
+                  "addr": 78430,
+                  "value": 4
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "blue0",
+          "steps": [
+            {
+              "macro": "-",
+              "extra": 0,
+              "patches": [
+                {
+                  "addr": 78430,
+                  "value": 0
+                }
+              ],
+              "expect": [
+                {
+                  "addr": 78430,
+                  "value": 0
+                },
+                {
+                  "addr": 78448,
+                  "width": 2,
+                  "value": 80
+                }
+              ],
+              "screen": {
+                "reference": "$base",
+                "relation": "equal"
+              }
+            },
+            {
+              "state": "$previous",
+              "macro": "@guardian_120",
+              "capture_frames": 120,
+              "expect": [
+                {
+                  "addr": 78430,
+                  "value": 0
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "comparisons": [
+        {
+          "left": "blue4",
+          "right": "blue0",
+          "left_step": 1,
+          "right_step": 1,
+          "relation": "different",
+          "frames": [
+            12,
+            60,
+            "final"
+          ]
+        }
+      ],
+      "claims": [
+        {
+          "name": "blue_soul_slot",
+          "addr": 78430,
+          "width": 1,
+          "level": "gameplay",
+          "note": "同一 blue_buer 初态只改蓝槽 4/0；R 键正反例画面不同。"
+        }
+      ]
+    },
+    {
+      "id": "yellow_damage_same_state",
+      "kind": "scenario",
+      "base_state": "yellow_damage_route",
+      "arms": [
+        {
+          "name": "yellow22",
+          "steps": [
+            {
+              "macro": "-",
+              "extra": 0,
+              "patches": [
+                {
+                  "addr": 78431,
+                  "value": 22
+                }
+              ],
+              "expect": [
+                {
+                  "addr": 78431,
+                  "value": 22
+                },
+                {
+                  "addr": 78448,
+                  "width": 2,
+                  "value": 80
+                }
+              ],
+              "screen": {
+                "reference": "$base",
+                "relation": "equal"
+              }
+            },
+            {
+              "state": "$previous",
+              "macro": "@yellow_damage_165",
+              "capture_frames": 165,
+              "expect": [
+                {
+                  "addr": 78431,
+                  "value": 22
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "yellow0",
+          "steps": [
+            {
+              "macro": "-",
+              "extra": 0,
+              "patches": [
+                {
+                  "addr": 78431,
+                  "value": 0
+                }
+              ],
+              "expect": [
+                {
+                  "addr": 78431,
+                  "value": 0
+                },
+                {
+                  "addr": 78448,
+                  "width": 2,
+                  "value": 80
+                }
+              ],
+              "screen": {
+                "reference": "$base",
+                "relation": "equal"
+              }
+            },
+            {
+              "state": "$previous",
+              "macro": "@yellow_damage_165",
+              "capture_frames": 165,
+              "expect": [
+                {
+                  "addr": 78431,
+                  "value": 0
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "comparisons": [
+        {
+          "left": "yellow22",
+          "right": "yellow0",
+          "left_step": 1,
+          "right_step": 1,
+          "relation": "equal",
+          "frames": [
+            80,
+            85
+          ]
+        },
+        {
+          "left": "yellow22",
+          "right": "yellow0",
+          "left_step": 1,
+          "right_step": 1,
+          "relation": "different",
+          "frames": [
+            86,
+            90,
+            100,
+            120,
+            164
+          ]
+        }
+      ],
+      "claims": [
+        {
+          "name": "yellow_soul_slot",
+          "addr": 78431,
+          "width": 1,
+          "level": "gameplay",
+          "note": "同一路线初态只改黄槽 22/0；实测伤害 22/17。基础 STR 不作为验收字段。"
+        }
+      ]
+    }
+  ]
+}

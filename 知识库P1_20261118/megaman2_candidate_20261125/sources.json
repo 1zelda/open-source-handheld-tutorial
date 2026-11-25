@@ -1,0 +1,109 @@
+{
+  "schema_version": 1,
+  "updated": "2026-11-25",
+  "note": "洛克人2候选专用来源库；不含生产来源，不写生产 sources.json。verified_read 表示真实本地正文已读且取证非空，不等同所有事实 authoritative。",
+  "sources": [
+    {
+      "source_id": "tasvideos_rockman_data_mm2_extract",
+      "name": "TASVideos GameResources NES/Rockman/Data — Rockman 2 技术条目",
+      "kind": "site",
+      "layer": "en_tech",
+      "platforms": [
+        "NES"
+      ],
+      "element_types": [
+        "帧数据",
+        "基础档案"
+      ],
+      "status": "verified_read",
+      "last_verified": "2026-11-25",
+      "urls": [
+        "https://tasvideos.org/GameResources/NES/Rockman/Data"
+      ],
+      "evidence": [
+        "知识库P1_20261118/megaman2_candidate_20261125/evidence/mm2_tasvideos_coordinates_20261125.txt",
+        "知识库P1_20261118/megaman2_candidate_20261125/evidence/mm2_tasvideos_jump_20261125.txt",
+        "知识库P1_20261118/megaman2_candidate_20261125/evidence/mm2_tasvideos_climb_transform_20261125.txt",
+        "知识库P1_20261118/megaman2_candidate_20261125/evidence/mm2_tasvideos_jump_horizontal_20261125.txt",
+        "知识库P1_20261118/megaman2_candidate_20261125/evidence/mm2_tasvideos_walking_20261125.txt",
+        "知识库P1_20261118/megaman2_candidate_20261125/evidence/mm2_tasvideos_acceleration_20261125.txt",
+        "知识库P1_20261118/megaman2_candidate_20261125/evidence/mm2_tasvideos_object_table_20261125.txt"
+      ],
+      "notes": "真实本地取证文件逐字摘录；原页 2026-11-23 取回。authoritative 只限原文技术条目，未建立 PAL/美版/日版 ROM 等价。",
+      "games_hit": [
+        "megaman2"
+      ]
+    },
+    {
+      "source_id": "local_megaman2_memory_dictionary",
+      "name": "本地 expanded_50_games_memory_maps.json 的 MegaMan2_NES 条目",
+      "kind": "local",
+      "layer": "local_docs",
+      "platforms": [
+        "NES"
+      ],
+      "element_types": [
+        "金手指",
+        "基础档案"
+      ],
+      "status": "verified_read",
+      "last_verified": "2026-11-25",
+      "urls": [],
+      "evidence": [
+        "知识库P1_20261118/megaman2_candidate_20261125/evidence/mm2_local_memory_dictionary_20261125.txt"
+      ],
+      "notes": "已读本地正文，但它是多来源二手整合；逐字段原始出处、ROM SHA1 和本机实测均缺，authority 保持 reference_only。",
+      "games_hit": [
+        "megaman2"
+      ]
+    },
+    {
+      "source_id": "local_megaman2_title_catalog",
+      "name": "本地 popular_titles.json 的 Mega Man 2 目录条目",
+      "kind": "local",
+      "layer": "local_docs",
+      "platforms": [
+        "NES"
+      ],
+      "element_types": [
+        "基础档案",
+        "身份"
+      ],
+      "status": "verified_read",
+      "last_verified": "2026-11-25",
+      "urls": [],
+      "evidence": [
+        "知识库P1_20261118/megaman2_candidate_20261125/evidence/mm2_local_title_catalog_20261125.txt"
+      ],
+      "notes": "已读本地目录；basis 指向 EN 维基但未附原页快照，authority 保持 reference_only。",
+      "games_hit": [
+        "megaman2"
+      ]
+    },
+    {
+      "source_id": "local_megaman2_tas_publications",
+      "name": "本地 TAS publications.json 的 Mega Man 2 / 4057 / 4410 元数据",
+      "kind": "local",
+      "layer": "local_docs",
+      "platforms": [
+        "NES"
+      ],
+      "element_types": [
+        "基础档案",
+        "身份",
+        "视频验证"
+      ],
+      "status": "verified_read",
+      "last_verified": "2026-11-25",
+      "urls": [],
+      "evidence": [
+        "知识库P1_20261118/megaman2_candidate_20261125/evidence/mm2_local_tas_publications_20261125.txt"
+      ],
+      "notes": "已读本地出版物目录；只证明目录记录与声明哈希，不证明 ROM 可用、console_verified 或玩法事实。",
+      "games_hit": [
+        "megaman2"
+      ]
+    }
+  ],
+  "absence_claims": []
+}

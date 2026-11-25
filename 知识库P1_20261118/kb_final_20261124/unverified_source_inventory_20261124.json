@@ -1,0 +1,232 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-11-24T10:36:47.694998+00:00",
+  "criterion": "只有 verified_read + authoritative 且身份与机制正文相符才提升；verified_read 不等于 authoritative。",
+  "promoted": [],
+  "kept_unverified": [
+    "arcade_hack_multi",
+    "kof98um",
+    "nekketsu_kakutou_densetsu_fc_revB_patch",
+    "nekketsu_soccer2_fc_cn_hack",
+    "nekketsu_soccer2_fc_unspecified",
+    "nekketsu_soccer_mobile"
+  ],
+  "revisions": [
+    {
+      "revision": "arcade_hack_multi",
+      "coverage_status": "present_unverified",
+      "decision": "keep_unverified",
+      "reason": "社区整合贴只提供 8200 款改版候选与命名对照，未给逐 set 的官方身份或机制权威。",
+      "missing_to_promote": "逐 set 的官方/作者身份说明与可核机制正文；查表前仍须先过本地 FBNeo setlist。",
+      "entries": [
+        {
+          "corpus_path": "_工具脚本/taspipe/游戏包/来源库/取证/quanjizhong_thread677_街机改版整合_20261118.md",
+          "source_id": "quanjizhong_top",
+          "source_status": "verified_read",
+          "authority": "reference_only",
+          "source_evidence": [
+            {
+              "path": "_工具脚本/taspipe/游戏包/来源库/取证/quanjizhong_thread677_街机改版整合_20261118.md",
+              "bytes": 1131517,
+              "sha256": "ea5c3b37375de80fd063807c30ea1e587585f5333d1067739ccf740069e3ed75"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "revision": "kof98um",
+      "coverage_status": "present_unverified",
+      "decision": "keep_unverified",
+      "reason": "正文明确是拳皇98终极对决，来源为游侠论坛转载；已结案本地卡为 KOF98 ECK hack，不能把 UM 指令表当 ECK 权威。",
+      "missing_to_promote": "ECK 本版官方指令表或经本机录输入核对的指令证据。",
+      "entries": [
+        {
+          "corpus_path": "_工具脚本/taspipe/游戏包/来源库/取证/gamersky_kof98um全角色出招表_20261118.md",
+          "source_id": "gamersky_handbook",
+          "source_status": "verified_read",
+          "authority": "cross_version",
+          "source_evidence": [
+            {
+              "path": "_工具脚本/taspipe/游戏包/来源库/取证/gamersky_kof98um全角色出招表_20261118.md",
+              "bytes": 37435,
+              "sha256": "a64c5eea41ce9be14e8484a6edcc45bd81f488eb154c1a879b2651e8b25a4e14"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "revision": "nekketsu_kakutou_densetsu_fc_revB_patch",
+      "coverage_status": "present_unverified",
+      "decision": "keep_unverified",
+      "reason": "DvD README 只证明 Rev.B 四人补丁边界，且明示不得回填原版 FC 能力；不是原版机制权威。",
+      "missing_to_promote": "Rev.B 补丁作者可核的逐机制说明或本机实测记录。",
+      "entries": [
+        {
+          "corpus_path": "_工具脚本/taspipe/游戏包/来源库/取证/dvd_熱血格闘伝説_RevB版本边界_20261124.md",
+          "source_id": "dvd_nkd_revb",
+          "source_status": "verified_read",
+          "authority": "reference_only",
+          "source_evidence": [
+            {
+              "path": "_工具脚本/taspipe/游戏包/来源库/取证/dvd_熱血格闘伝説_RevB版本边界_20261124.md",
+              "bytes": 1206,
+              "sha256": "75e04ad639708614dbde6e1e8bc4a7be8ab9c6666cb4edb8b9447fa998d367e7"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "revision": "nekketsu_soccer2_fc_cn_hack",
+      "coverage_status": "present_unverified",
+      "decision": "keep_unverified",
+      "reason": "小鸡条目页只有 hack/汉化版身份与下载信息，没有逐帧机制正文。",
+      "missing_to_promote": "该 hack/汉化版身份对应的作者说明、说明书或本机实测。",
+      "entries": [
+        {
+          "corpus_path": "_工具脚本/taspipe/游戏包/来源库/取证/xiaoji001_热血足球hack汉化版_20261118.md",
+          "source_id": "xiaoji001",
+          "source_status": "verified_read",
+          "authority": "reference_only",
+          "source_evidence": [
+            {
+              "path": "_工具脚本/taspipe/游戏包/来源库/取证/xiaoji001_热血足球hack汉化版_20261118.md",
+              "bytes": 3328,
+              "sha256": "eb9fadbb3162eca62e1d47d60ec30cac2630da4abf95d7fe7916feb6f483c89a"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "revision": "nekketsu_soccer2_fc_unspecified",
+      "coverage_status": "present_unverified",
+      "decision": "keep_unverified",
+      "reason": "CSDN/搜狐/腾讯材料未统一锁定日版或汉化版；其中隐藏结局文自承情报来自百度，且混入初代线索，不能作联盟权威。",
+      "missing_to_promote": "先定 ROM/set 身份，再收该身份的官方说明书或本机实测证据。",
+      "entries": [
+        {
+          "corpus_path": "_工具脚本/taspipe/游戏包/来源库/取证/csdn_wangsitan_热血足球Bug记录_20261118.md",
+          "source_id": "csdn_wangsitan_bug",
+          "source_status": "verified_read",
+          "authority": "reference_only",
+          "source_evidence": [
+            {
+              "path": "_工具脚本/taspipe/游戏包/来源库/取证/csdn_wangsitan_热血足球Bug记录_20261118.md",
+              "bytes": 69100,
+              "sha256": "1b99f64c7852e41b0426c1b016b5df42a43df746d0b3f1317a0d5ce7710cbb51"
+            }
+          ]
+        },
+        {
+          "corpus_path": "_工具脚本/taspipe/游戏包/来源库/取证/sohu_必杀最强小辫子_20261118.md",
+          "source_id": "sohu_game",
+          "source_status": "verified_read",
+          "authority": "reference_only",
+          "source_evidence": [
+            {
+              "path": "_工具脚本/taspipe/游戏包/来源库/取证/sohu_必杀最强小辫子_20261118.md",
+              "bytes": 12682,
+              "sha256": "01116672c6f9e1970eaf51e2ee0efe9a0487fd7c35c0d4ad4fcc40c18b517ea6"
+            },
+            {
+              "path": "_工具脚本/taspipe/游戏包/来源库/取证/sohu_一直输球隐藏大结局_20261118.md",
+              "bytes": 12870,
+              "sha256": "5fc04407f98f28dccef3e88c8010e3fc1082f829d4508d4bbdc8a3629e4dd5e1"
+            },
+            {
+              "path": "_工具脚本/taspipe/游戏包/来源库/取证/sohu_热血队队员必杀集锦_20261118.md",
+              "bytes": 8358,
+              "sha256": "98d3a7dbf95bef1badd5b2a4696fc130c43dfff84a6ca2de08d825372e479557"
+            }
+          ]
+        },
+        {
+          "corpus_path": "_工具脚本/taspipe/游戏包/来源库/取证/sohu_热血队队员必杀集锦_20261118.md",
+          "source_id": "sohu_game",
+          "source_status": "verified_read",
+          "authority": "reference_only",
+          "source_evidence": [
+            {
+              "path": "_工具脚本/taspipe/游戏包/来源库/取证/sohu_必杀最强小辫子_20261118.md",
+              "bytes": 12682,
+              "sha256": "01116672c6f9e1970eaf51e2ee0efe9a0487fd7c35c0d4ad4fcc40c18b517ea6"
+            },
+            {
+              "path": "_工具脚本/taspipe/游戏包/来源库/取证/sohu_一直输球隐藏大结局_20261118.md",
+              "bytes": 12870,
+              "sha256": "5fc04407f98f28dccef3e88c8010e3fc1082f829d4508d4bbdc8a3629e4dd5e1"
+            },
+            {
+              "path": "_工具脚本/taspipe/游戏包/来源库/取证/sohu_热血队队员必杀集锦_20261118.md",
+              "bytes": 8358,
+              "sha256": "98d3a7dbf95bef1badd5b2a4696fc130c43dfff84a6ca2de08d825372e479557"
+            }
+          ]
+        },
+        {
+          "corpus_path": "_工具脚本/taspipe/游戏包/来源库/取证/sohu_一直输球隐藏大结局_20261118.md",
+          "source_id": "sohu_game",
+          "source_status": "verified_read",
+          "authority": "reference_only",
+          "source_evidence": [
+            {
+              "path": "_工具脚本/taspipe/游戏包/来源库/取证/sohu_必杀最强小辫子_20261118.md",
+              "bytes": 12682,
+              "sha256": "01116672c6f9e1970eaf51e2ee0efe9a0487fd7c35c0d4ad4fcc40c18b517ea6"
+            },
+            {
+              "path": "_工具脚本/taspipe/游戏包/来源库/取证/sohu_一直输球隐藏大结局_20261118.md",
+              "bytes": 12870,
+              "sha256": "5fc04407f98f28dccef3e88c8010e3fc1082f829d4508d4bbdc8a3629e4dd5e1"
+            },
+            {
+              "path": "_工具脚本/taspipe/游戏包/来源库/取证/sohu_热血队队员必杀集锦_20261118.md",
+              "bytes": 8358,
+              "sha256": "98d3a7dbf95bef1badd5b2a4696fc130c43dfff84a6ca2de08d825372e479557"
+            }
+          ]
+        },
+        {
+          "corpus_path": "_工具脚本/taspipe/游戏包/来源库/取证/tencentcloud_热血足球联盟杂谈_20261118.md",
+          "source_id": "tencent_cloud_dev",
+          "source_status": "verified_read",
+          "authority": "reference_only",
+          "source_evidence": [
+            {
+              "path": "_工具脚本/taspipe/游戏包/来源库/取证/tencentcloud_热血足球联盟杂谈_20261118.md",
+              "bytes": 25896,
+              "sha256": "0a92cd93377a0cacff2fe85f49ecb45ea388ac586d0bc75924bdeae58c32fbbc"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "revision": "nekketsu_soccer_mobile",
+      "coverage_status": "present_unverified",
+      "decision": "keep_unverified",
+      "reason": "九游正文是 ARC SYSTEM WORKS 授权手游，不是 FC 联盟；当前 authority=not_applicable 是正确边界。",
+      "missing_to_promote": "手游官方规则/说明书或本机实测；永远不得回填 FC 联盟。",
+      "entries": [
+        {
+          "corpus_path": "_工具脚本/taspipe/游戏包/来源库/取证/9game_热血足球技能攻略_20261118.md",
+          "source_id": "9game",
+          "source_status": "verified_read",
+          "authority": "not_applicable",
+          "source_evidence": [
+            {
+              "path": "_工具脚本/taspipe/游戏包/来源库/取证/9game_热血足球技能攻略_20261118.md",
+              "bytes": 28762,
+              "sha256": "e105742e94a1f4ccae5a1ff65aa571da1b2c1dcf61eecd1ae774ce39c162149e"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "source_registry_sha256": "177d14bc9a7a95cade7790c06b6c061834b16167454e28dd30679682a3117667",
+  "corpus_map_sha256": "0a1590e5fada5e4d7afd26dd9928b873e45de1bebb9c94f74e3bfb97b4a0c49b"
+}

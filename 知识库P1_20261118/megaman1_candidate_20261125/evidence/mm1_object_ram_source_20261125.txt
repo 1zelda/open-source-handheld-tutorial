@@ -1,0 +1,466 @@
+来源：https://tasvideos.org/GameResources/NES/Rockman/Data
+抓取：2026-11-23（最终 URL https://tasvideos.org/GameResources/NES/Rockman/Data）
+用途：NES 元祖洛克人 1 RAM 权威坐标表（玩家/敌人/子弹各自 X hi:lo、速度、屏号）
+sha256=07535cc8d85ae489
+
+GameResources/NES/Rockman/Data - TASVideos 
+
+ TASVideos
+
+ Tool-assisted game movies
+
+ When human skills are just not enough
+
+ Home 
+
+ Games 
+ Games List 
+ Game Resources 
+ Platforms 
+
+ Movies 
+ Publications 
+ User Files 
+ Stars 
+ Recommended for Newcomers 
+ Movie Classes 
+
+ Submissions 
+ Submission Workbench 
+ Submit a Movie 
+
+ Tools 
+ BizHawk 
+ libTAS 
+ Emulator List 
+
+ Forum 
+
+ Chat 
+ Discord and IRC 
+ Other TAS Communities 
+
+ Resources 
+ Articles 
+ FAQ 
+ How to TAS 
+
+ About 
+ TASVideos 
+ Site Rules 
+ AI Policy 
+ Staff 
+ How to Help 
+ Site History 
+
+ Dark 
+ Light 
+ Auto 
+
+ Register 
+
+ Log in 
+
+ Game Resources 
+
+ NES 
+
+ Rockman 
+
+ Data
+
+ This page documents information about Mega Man 
+ , 
+ Mega Man 3 
+ , 
+ Mega Man 3, 4, 5 & 6 
+ , 
+ Mega Man 5 
+ , 
+ Mega Man 4 
+ , 
+ Mega Man 6 
+ , 
+ Rockman no Constancy 
+ , 
+ Rockman Exile 
+ , 
+ Megaman V Fly 
+ , 
+ Rockman: Deus Ex Machina 
+ , 
+ Rockman 4 Minus Infinity 
+ , 
+ Rockman 3: Burst Chaser 
+ , 
+ Rockman 4 Burst Chaser &#xD7; Air Sliding 
+ , 
+ Rockman 6: Unique Harassment 
+ , 
+ Mega Man 4 Voyage 
+ , 
+ Rockman: Spirits of Hackers 
+ , 
+ Rockman 2: Basic Master 
+ , 
+ Rockman Exhaust 
+ , 
+ Rockman 2 MIN 
+ , 
+ Rockman L (Last) 
+ , 
+ Rockman 2 Dash 
+ , 
+ Rockman Claw 
+ , 
+ Mega Man 2 
+ , 
+ Rockman Kai 
+ 
+. Many of the tricks demonstrated here are near impossible in real time and documented for the purposes of creating Tool-assisted Speedruns .
+
+ Rockman technical data
+
+ Introduction
+
+ This is technical data that has been analyzed from the Rockman game ROM
+for the purpose of making Rockman tool-assisted speedruns as precise as possible.
+
+ The disassembly of the game
+has been an invaluable help in discovering these.
+
+ All numbers on this page are hexadecimal unless otherwise mentioned.
+
+ Table of contents 
+ Rockman technical data
+ Introduction
+ 
+ Coordinate system
+ 
+ Vertical motion
+ Jump curve
+ 
+ Walking on lifts / magnet beam
+ 
+ Walking on solid ground
+ 
+ Magical Y coordinates
+ 
+ Climbing
+ 
+ Transforming
+
+ Horizontal motion
+ Jumping
+ 
+ Walking
+
+ Magnet beams (Rockman 1)
+ Lifecycle
+ 
+ Beam center position
+
+ Randomness
+ 
+ Memory addresses
+
+ Coordinate system
+
+ In Rockman and Rockman 2, every object of the game has the following properties:
+
+ Screen number (00―FF), it tells which screen the object resides in.
+
+ X position (00.00―FF.FF), it tells where in the screen the object is in.
+
+ Y position (00.00―FF.FF), it tells where in the screen the object is in.
+
+ X speed (−80.00―7F.FF).
+
+ Y speed (−80.00―7F.FF).
+
+ The position of the object has 8 bits of decimal part,
+but only the integer part can be observed on the screen.
+
+ Y coordinates increase towards the bottom of the screen
+
+ X coordinates increase towards the right
+
+ Negative Y speed means falling, positive Y speed means ascending
+
+ X speed is always positive. It is subtracted or added depending on Rockman’s facing.
+
+ Vertical motion
+
+ Jump curve
+
+ In Rockman 1 and 2, when Rockman jumps, his Y speed is set to 04.DF.
+
+ In Rockman 3, when Rockman jumps, his Y speed is set to 04.A5.
+
+ In Rockman 4, when Rockman jumps, his Y speed is set to 04.C0.
+
+ Every frame, 00.40 is subtracted from his Y speed (0.25 in decimal).
+
+ In Rockman 1 and 2, if the Y speed grows smaller than −0C.00 (−12 in decimal), it is set to −0C.00.
+
+ In Rockman 3 and 4, if the Y speed grows smaller than −07.00, it is set to −07.00.
+
+ In Rockman 1 and 2, if the Y speed is larger than 02.1F and the player is not holding the A button, the speed is immediately set to 01.00.
+
+ In Rockman 3 if [rules unknown and] the player is not holding the A button, the speed is immediately set to −00.80.
+
+ In Rockman 4 if [rules unknown and] the player is not holding the A button, the speed is immediately set to −00.00.
+
+ Walking on lifts / magnet beam
+
+ During walking on a magnet beam or a lift, Rockman’s Y speed grows
+continuously as if he was falling. However the lift/beam forces
+his Y position (actually, only the integer part of it) to be stable.
+
+ This effect happens in Rockman, but not in Rockman 2.
+
+ In Rockman 2, Item 1 forces Rockman’s Y speed to be 01.00.
+
+ In Rockman 3, RC makes Rockman’s Y speed first 06.AE, then the rest is decided by gravity.
+
+ Walking on solid ground
+
+ Every frame when Rockman bumps into an platform either from top or below
+(magnet beams and lifts don’t count), Rockman’s Y speed is set into a constant.
+
+ Rockman 1: −00.C0.
+
+ Rockman 2: −00.40.
+
+ Top collision checked only when moving upwards, bottom collision
+checked only when moving downwards.
+
+ If he has an obstacle below him, his Y position is adjusted accordingly.
+
+ Magical Y coordinates
+
+ Y coordinate F8 (−08) means a dead object.
+
+ When Rockman jumps, the game prevents the coordinate from decreasing below −04 (FC). (Only true in Rockman 1.)
+ However it is possible to land on a beam that forces the coordinate to be −05. This is the highest possible coordinate where Rockman can be.
+
+ To zip through ceiling at screen top, Y speed must be −08.C0 or faster. (Smaller speed leads to death on attempt to zip.)
+
+ To survive the spikes in Bombman stage when performing finalfighter ’s r1bombsuper.mpg trick, Y speed must be −01.C0 or faster before scrolling.
+
+ Climbing
+
+ In Rockman 1 and 2, Rockman climbs at speed of 00.C0.
+
+ In Rockman 3, Rockman climbs at speed of 01.4C.
+
+ Transforming
+
+ In Rockman 1, Rockman’s Y speed and position are accumulated even during transforming. (Which allows him to pass through enemies without hurting himself.)
+
+ In Rockman 2, Y speed is reset when pausing. During transforming, enemies move. (Which allows them to pass through Rockman without hurting him.)
+
+ In Rockman 3, transformation is an extension to pause. Game continues after transformation from the same situation that was before pause.
+
+ Since Rockman 4, Rockman no longer transforms after pause/weapon switch.
+
+ Horizontal motion
+
+ Jumping
+
+ In Rockman 1 and 2, during jumping/falling into some direction, Rockman’s X speed is 01.50.
+
+ In Rockman 3 and 4, during jumping/falling, Rockman’s X speed is the same as when walking.
+
+ If the player stops pressing the directional button, the speed falls immediately into 00.00.
+
+ In Rockman 1, if Rockman starts moving after not moving, his X speed first goes to 00.20, then back to 01.50.
+
+ In Rockman 2, if Rockman starts moving after not moving, his X speed goes immediately back to 01.50.
+
+ Walking
+
+ Walking speed 
+
+ In Rockman 1 and 2, during walking, Rockman’s X speed is 01.60.
+
+ In Rockman 3 and 4, during walking, Rockman’s X speed is 01.4C.
+
+ Sliding speed 
+
+ In Rockman 3 and 4, during sliding, Rockman’s X speed is 02.80.
+
+ Acceleration 
+
+ In Rockman 1, when Rockman accelerates from non-full speed (full halt or deacceleration), his X speed is 00.20 for 9 frames before gaining full speed.
+
+ In Rockman 2, when Rockman accelerates from non-full speed (full halt or deacceleration, item-throwing halt excluded), his X speed is 00.20 for 7 frames before gaining full speed.
+
+ In Rockman 3, when Rockman accelerates from non-full speed, he walks normally the first frame (as far as speed is concerned), then is completely in stall for 8 frames, after which he has the full speed again.
+
+ Deceleration 
+
+ In Rockman 1, when Rockman decelerates from full speed (not from acceleration), his X speed is 00.80 for 13 (decimal) frames before halting completely.
+
+ In Rockman 2, when Rockman decelerates from full speed (not from acceleration), his X speed is 00.80 for 8 (decimal) frames before halting completely.
+
+ In Rockman 3, when Rockman decelerates from full speed (not from acceleration), he moves normally for 1 frame, after which he halts immediately (though the sprite indicates deceleration for 8 frames).
+
+ Magnet beams (Rockman 1)
+
+ There may be at maximum 5 magnet beams simultaneously active.
+
+ Every magnet beam has the following properties:
+
+ Screen number where the center of the beam is anchored in
+
+ X position within that screen (00―FF)
+
+ Y position within that screen (00―FF)
+
+ Length (00―41)
+
+ Life (00―9C)
+
+ Cycle position (00―10) 
+
+ Lifecycle
+
+ Beams die when 
+
+ Their Life is 00
+
+ A boss battle starts
+
+ A stage is loaded (death for example)
+
+ Beams don’t die when 
+
+ Screen scrolls
+
+ When a new magnet beam is created: 
+
+ Length=1
+
+ Cycle=0
+
+ Life=9C
+
+ As long as B button is held: 
+
+ Life does not decrease
+
+ Length increases by 1 every frame, unless it is already 41
+
+ Beam center position is readjusted, see below
+
+ If the beam far end is inside a wall, the beam is released (as if B button was no longer held)
+
+ When B button is no longer held: 
+
+ Life decreases by 1 every frame, unless it is already 00
+
+ If Life is 0, the beam is forgotten
+
+ Every frame when the beam exists: 
+
+ Cycle position is increased by 1
+
+ If (Cycle_position×8) == (Length×2), Cycle position is reset to 0
+
+ Beam center position
+
+ Note: All numbers in this section are decimal, not hexadecimal.
+
+ As long as the player holds B, the beam center is adjusted according to Rockman’s position.
+
+ Beam Y position is set to Rockman’s Y position
+
+ A temporary variable is calculated:
+ Temp = (Beam_length_before_growth × 2 + 16)
+
+ If(Temp & 7)==0, then Temp = Temp+8
+
+ If Rockman looks to the right, then Beam X position = Rockman’s X position + Temp
+
+ If Rockman looks to the left, then Beam X position = Rockman’s X position − Temp
+
+ For lengths 1-65, the X position of the beam is therefore adjusted in the following ways:
+
+ 1:+24[1]M>32 17:+56[5]M>96 33:+88[9]M>160 49:+120[13]M>224 65:+152[17]M>288 
+ 2:+18[1]>26 18:+50[5]>90 34:+82[9]>154 50:+114[13]>218 65:+146[17]>282 
+ 3:+20[1]>28 19:+52[5]>92 35:+84[9]>156 51:+116[13]>220 
+ 4:+22[2]m>38 20:+54[6]m>102 36:+86[10]m>166 52:+118[14]m>230 
+ 5:+24[2]>40 21:+56[6]>104 37:+88[10]>168 53:+120[14]>232 
+ 6:+26[2]>42 22:+58[6]>106 38:+90[10]>170 54:+122[14]>234 
+ 7:+28[2]>44 23:+60[6]>108 39:+92[10]>172 55:+124[14]>236 
+ 
+ 8:+30[3]m>54 24:+62[7]m>118 40:+94[11]m>182 56:+126[15]m>246 
+ 9:+40[3]M>64 25:+72[7]M>128 41:+104[11]M>192 57:+136[15]M>256 
+10:+34[3]>58 26:+66[7]>122 42:+98[11]>186 58:+130[15]>250 
+11:+36[3]>60 27:+68[7]>124 43:+100[11]>188 59:+132[15]>252 
+12:+38[4]m>70 28:+70[8]m>134 44:+102[12]m>198 60:+134[16]m>262 
+13:+40[4]>72 29:+72[8]>136 45:+104[12]>200 61:+136[16]>264 
+14:+42[4]>74 30:+74[8]>138 46:+106[12]>202 62:+138[16]>266 
+15:+44[4]>76 31:+76[8]>140 47:+108[12]>204 63:+140[16]>268 
+16:+46[5]m>86 32:+78[9]m>150 48:+110[13]m>214 64:+142[17]m>278 
+ Note: The second “65” is when the beam no longer grows. The number in [brackets] is the beam length in units.
+
+ Add 1 and multiply by 16 to get the carrying width of the beam.
+ 32 at minimum, 272 at maximum.
+
+ The game actually uses half of this value (range for each side from the center of the beam), so it does not overflow even when ≥ 256.
+
+ m = nearest distance of beam for each length (important when operating on next screen (different than displayed))
+
+ M = biggest distance of beam (often the optimal choice for zipping)
+
+ >number = location of the far end of the beam
+
+ Randomness
+
+ See the main article .
+
+ Memory addresses
+
+ Read from the disassembly .
+
+ Game Screen# X (hi,lo) Xspd (hi,lo) Y (hi,lo) Yspd (hi,lo)
+ 
+ Rockman 1 $460 $480:$4A0 $4C0:$4E0 $600:$620 $660:$680
+ 
+ Rockman 2 $440 $460:$480 $600:$620 $4A0:$4C0 $640:$660
+ 
+ Rockman 3 $380 $360:$340 no RAM address? $3C0:$3A0 $460:$440
+ 
+ Rockman 4 $348 $330:$318 no RAM address? $378:$360 $3F0:$3D8
+ 
+ Rockman 5 
+ Rockman 6 
+ 
+ The variables for object # n can be found by adding n to each address.
+
+Boss has n =1 in RM1/2, Rockman always has n =0.
+
+ Rockman Tricks 
+
+ See also
+
+ Game Resources - we have resource pages for other games too!
+
+ Common Tricks - tricks common to many games
+
+ Boss Fighting Guide - tricks specific to boss fights
+
+ GameResources/NES/Rockman/Data last edited by Samsara on 8/7/2023 3:23 AM 
+
+ Page History 
+ Latest diff 
+ List referrers 
+ View Source 
+
+ &copy; 2026 - TASVideos v2.6-6601994 
+ License 
+ Terms 
+ Privacy 
+ API

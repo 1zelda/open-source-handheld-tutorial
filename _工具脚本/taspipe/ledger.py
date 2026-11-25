@@ -5,15 +5,17 @@
   * 登记只记元数据，不顺手触发下载或编码（register 不跑任何生产）；
   * 成功必须对应实际存在、可校验的产物（complete 校验 uri 存在 + sha256 匹配）；
   * 新尝试保留旧证据，不覆盖失败历史（entries 追加式，fail 后重跑是新 attempt）；
-  * 复用按阶段计算指纹（reusable 比对 fingerprint + 产物校验 + verdict!=fail）；
+  * 复用按阶段计算指纹（reusable 只接受 fingerprint + 产物校验 + verdict=pass）；
   * 已通过条目直接计数（summary 逐条数 done，不用总数减失败倒推）。
 """
 import json
 import os
 import time
+import uuid
+from contextlib import contextmanager
 
 from .schema import (SCHEMA_VERSION, Stage, JobStatus, FailureCode, Verdict,
-                     sha256_file, asset, _enum)
+                     sha256_file, sha256_resource, asset, _enum)
 
 
 def fingerprint(files=(), params=None):
@@ -22,7 +24,7 @@ def fingerprint(files=(), params=None):
     h = hashlib.sha256()
     for p in sorted(str(x) for x in files):
         h.update(os.path.basename(p).encode())
-        h.update(sha256_file(p).encode())
+        h.update(sha256_resource(p).encode())
     h.update(json.dumps(params or {}, sort_keys=True, ensure_ascii=False).encode())
     return h.hexdigest()
 
@@ -46,16 +48,54 @@ class Ledger:
     def __init__(self, path):
         self.path = str(path)
         self.entries = []
+        with self._locked():
+            pass
+
+    def _reload(self):
         if os.path.isfile(self.path):
             with open(self.path, encoding="utf-8") as f:
                 d = json.load(f)
             self.entries = d.get("entries", [])
 
+    @contextmanager
+    def _locked(self):
+        os.makedirs(os.path.dirname(os.path.abspath(self.path)), exist_ok=True)
+        lock_path = self.path + ".lock"
+        with open(lock_path, "a+b") as fh:
+            if os.name == "nt":
+                import msvcrt
+                fh.seek(0)
+                msvcrt.locking(fh.fileno(), msvcrt.LK_LOCK, 1)
+                fh.seek(0, os.SEEK_END)
+                if fh.tell() == 0:
+                    fh.write(b"\0")
+                    fh.flush()
+            else:
+                import fcntl
+                fcntl.flock(fh.fileno(), fcntl.LOCK_EX)
+            try:
+                self._reload()
+                yield
+            finally:
+                if os.name == "nt":
+                    fh.seek(0)
+                    msvcrt.locking(fh.fileno(), msvcrt.LK_UNLCK, 1)
+                else:
+                    fcntl.flock(fh.fileno(), fcntl.LOCK_UN)
+
     def _save(self):
         os.makedirs(os.path.dirname(os.path.abspath(self.path)), exist_ok=True)
-        with open(self.path, "w", encoding="utf-8") as f:
-            json.dump({"schema_version": SCHEMA_VERSION, "entries": self.entries},
-                      f, ensure_ascii=False, indent=1)
+        temp = self.path + "." + uuid.uuid4().hex + ".tmp"
+        try:
+            with open(temp, "w", encoding="utf-8") as f:
+                json.dump({"schema_version": SCHEMA_VERSION, "entries": self.entries},
+                          f, ensure_ascii=False, indent=1)
+                f.flush()
+                os.fsync(f.fileno())
+            os.replace(temp, self.path)
+        finally:
+            if os.path.exists(temp):
+                os.unlink(temp)
 
     def _latest(self, stage, key):
         stage = _enum(stage, Stage, "ledger.stage").value
@@ -64,24 +104,29 @@ class Ledger:
                 return e
         return None
 
-    def attempt_no(self, stage, key):
+    def _attempt_no(self, stage, key):
         e = self._latest(stage, key)
         return (e["attempt"] + 1) if e else 1
+
+    def attempt_no(self, stage, key):
+        with self._locked():
+            return self._attempt_no(stage, key)
 
     def register(self, stage, key, fp, deps=()):
         """只登记元数据（pending），不触发任何生产。返回 job_id。"""
         stage = _enum(stage, Stage, "ledger.stage").value
-        n = self.attempt_no(stage, key)
-        job_id = f"{stage}:{key}:a{n}"
-        self.entries.append({
-            "job_id": job_id, "stage": stage, "idempotency_key": key,
-            "fingerprint": fp, "attempt": n, "status": JobStatus.PENDING.value,
-            "dependency_ids": list(deps), "artifact_refs": [],
-            "verification_verdict": None, "failure_code": None,
-            "ts": time.time(),
-        })
-        self._save()
-        return job_id
+        with self._locked():
+            n = self._attempt_no(stage, key)
+            job_id = f"{stage}:{key}:a{n}"
+            self.entries.append({
+                "job_id": job_id, "stage": stage, "idempotency_key": key,
+                "fingerprint": fp, "attempt": n, "status": JobStatus.PENDING.value,
+                "dependency_ids": list(deps), "artifact_refs": [],
+                "verification_verdict": None, "failure_code": None,
+                "ts": time.time(),
+            })
+            self._save()
+            return job_id
 
     def _entry(self, job_id):
         for e in self.entries:
@@ -90,52 +135,60 @@ class Ledger:
         raise KeyError(job_id)
 
     def complete(self, job_id, artifacts, verdict):
-        """标记 done 前校验产物真实存在且指纹一致；verdict 如实记录（inconclusive 不算 fail）。"""
-        e = self._entry(job_id)
-        refs = []
-        for a in artifacts:
-            if isinstance(a, dict):
-                refs.append(a)
-            elif os.path.isfile(str(a)):
-                refs.append(asset(str(a)))
-            else:   # 缺失产物：登记一个校验必拒的引用，交给 _verify_artifacts 判 fail
-                refs.append({"uri": str(a).replace("\\", "/"), "sha256": None, "byte_size": None})
-        ok, why = _verify_artifacts(refs)
-        if not ok:
-            return self.fail(job_id, FailureCode.SCHEMA_INVALID, why)
-        e.update(status=JobStatus.DONE.value, artifact_refs=refs,
-                 verification_verdict=_enum(verdict, Verdict, "ledger.verdict").value,
-                 done_ts=time.time())
-        self._save()
-        return job_id
+        """标记 done 前校验产物真实存在且指纹一致；verdict 如实记录。"""
+        verdict = _enum(verdict, Verdict, "ledger.verdict").value
+        with self._locked():
+            e = self._entry(job_id)
+            refs = []
+            for a in artifacts:
+                if isinstance(a, dict):
+                    refs.append(a)
+                elif os.path.isfile(str(a)):
+                    refs.append(asset(str(a)))
+                else:
+                    refs.append({"uri": str(a).replace("\\", "/"), "sha256": None, "byte_size": None})
+            ok, why = _verify_artifacts(refs)
+            if not ok:
+                self._mark_failed(e, FailureCode.SCHEMA_INVALID, why)
+            else:
+                e.update(status=JobStatus.DONE.value, artifact_refs=refs,
+                         verification_verdict=verdict, done_ts=time.time())
+            self._save()
+            return job_id
+
+    def _mark_failed(self, entry, code, reason):
+        entry.update(status=JobStatus.FAILED.value,
+                     failure_code=_enum(code, FailureCode, "ledger.failure_code").value,
+                     reason=reason, failed_ts=time.time())
 
     def fail(self, job_id, code, reason=""):
         """保留失败现场：只改本 attempt 状态，历史 entries 不动。"""
-        e = self._entry(job_id)
-        e.update(status=JobStatus.FAILED.value,
-                 failure_code=_enum(code, FailureCode, "ledger.failure_code").value,
-                 reason=reason, failed_ts=time.time())
-        self._save()
-        return job_id
+        with self._locked():
+            self._mark_failed(self._entry(job_id), code, reason)
+            self._save()
+            return job_id
 
     def reusable(self, stage, key, fp):
-        """可复用 = 最新 attempt 为 done + 指纹一致 + 产物校验通过 + verdict!=fail。"""
-        e = self._latest(stage, key)
-        if not e or e["status"] != JobStatus.DONE.value:
-            return None
-        if e["fingerprint"] != fp:
-            return None
-        if e.get("verification_verdict") == Verdict.FAIL.value:
-            return None
-        ok, _ = _verify_artifacts(e["artifact_refs"])
-        return e if ok else None
+        """可复用 = 最新 attempt 为 done + 指纹一致 + 产物校验通过 + verdict=pass。"""
+        stage = _enum(stage, Stage, "ledger.stage").value
+        with self._locked():
+            e = self._latest(stage, key)
+            if not e or e["status"] != JobStatus.DONE.value:
+                return None
+            if e["fingerprint"] != fp:
+                return None
+            if e.get("verification_verdict") != Verdict.PASS.value:
+                return None
+            ok, _ = _verify_artifacts(e["artifact_refs"])
+            return e if ok else None
 
     def summary(self):
         """逐条直接计数最新 attempt 的状态（不用总数减失败倒推）。"""
-        latest = {}
-        for e in self.entries:
-            latest[(e["stage"], e["idempotency_key"])] = e
-        counts = {s.value: 0 for s in JobStatus}
-        for e in latest.values():
-            counts[e["status"]] += 1
-        return {"stages": len(latest), "attempts": len(self.entries), **counts}
+        with self._locked():
+            latest = {}
+            for e in self.entries:
+                latest[(e["stage"], e["idempotency_key"])] = e
+            counts = {s.value: 0 for s in JobStatus}
+            for e in latest.values():
+                counts[e["status"]] += 1
+            return {"stages": len(latest), "attempts": len(self.entries), **counts}

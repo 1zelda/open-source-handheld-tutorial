@@ -1,0 +1,660 @@
+{
+  "schema_version": "ram_calibration/1.0",
+  "mode": "verify",
+  "game_id": "castlevania_aria_cn",
+  "case_id": "red24_vs_empty",
+  "rom_sha1": "40AAB076A528F52E93260BB98D91A40039E0DA02",
+  "core": "mGBA",
+  "system": "GBA",
+  "domain": "EWRAM",
+  "recipe": {
+    "schema_version": "ram_calibration/1.0",
+    "game_id": "castlevania_aria_cn",
+    "profile": {
+      "rom": "F:/BaiduNetdiskDownload/rom/gba/恶魔城晓月圆舞曲.gba",
+      "rom_sha1": "40aab076a528f52e93260bb98d91a40039e0da02",
+      "bizhawk": "F:/开源掌机教程/02-模拟器库/BizHawk/BizHawk-2.11.1",
+      "core": "mGBA",
+      "system": "GBA",
+      "domain": "EWRAM",
+      "window": {
+        "start": 78336,
+        "length": 512
+      }
+    },
+    "base_state": "F:/taspipe_scratch/gba_parallel_20261124/aria_clean_gameplay1/base.state",
+    "macros": {
+      "red24_menu": ",,,,,,,,,,,,,,,,,Start,,,,,,,,,,,,,,,,,A,,,,,,,,,,,,,,,,,A,,,,,,,,,,,,,,,,,Down,,,,,,,,,,,,,,,,,Down,,,,,,,,,,,,,,,,,Down,,,,,,,,,,,,,,,,,Down,,,,,,,,,,,,,,,,,Down,,,,,,,,,,,,,,,,,Down,,,,,,,,,,,,,,,,,Down,,,,,,,,,,,,,,,,,Down,,,,,,,,,,,,,,,,,Down,,,,,,,,,,,,,,,,,Down,,,,,,,,,,,,,,,,,Down,,,,,,,,,,,,,,,,,Down,,,,,,,,,,,,,,,,,A,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,",
+      "close_menu": ",,,,,,,,,,,,,,,,,B,,,,,,,,,,,,,,,,,B,,,,,,,,,,,,,,,,,B,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,",
+      "reopen_red_menu": ",,,,,,,,,,,,,,,,,Start,,,,,,,,,,,,,,,,,A,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,",
+      "up_b_hold": "Up+B,,,,,,,,,,,,,,,,,,,,,,,,,,,,,"
+    },
+    "prepare": [
+      {
+        "id": "red24_menu",
+        "macro": "@red24_menu",
+        "expect": [
+          {
+            "addr": 78429,
+            "value": 24
+          }
+        ],
+        "screen": {
+          "reference": "$base",
+          "relation": "different"
+        },
+        "extra": 1
+      },
+      {
+        "id": "red24_game",
+        "macro": "@close_menu",
+        "expect": [
+          {
+            "addr": 78429,
+            "value": 24
+          },
+          {
+            "addr": 78446,
+            "width": 2,
+            "value": 320
+          },
+          {
+            "addr": 78448,
+            "width": 2,
+            "value": 80
+          }
+        ],
+        "screen": {
+          "reference": "$base",
+          "relation": "near",
+          "max_changed_fraction": 0.02
+        },
+        "extra": 1
+      },
+      {
+        "id": "red24_reopen",
+        "macro": "@reopen_red_menu",
+        "expect": [
+          {
+            "addr": 78429,
+            "value": 24
+          }
+        ],
+        "screen": {
+          "reference": "$base",
+          "relation": "different"
+        },
+        "extra": 1
+      }
+    ],
+    "cases": [
+      {
+        "id": "red24_vs_empty",
+        "kind": "scenario",
+        "base_state": "red24_game",
+        "arms": [
+          {
+            "name": "red24",
+            "steps": [
+              {
+                "macro": "-",
+                "extra": 0,
+                "expect": [
+                  {
+                    "addr": 78429,
+                    "value": 24
+                  },
+                  {
+                    "addr": 78448,
+                    "width": 2,
+                    "value": 80
+                  }
+                ],
+                "screen": {
+                  "reference": "$base",
+                  "relation": "equal"
+                }
+              },
+              {
+                "state": "$previous",
+                "macro": "@up_b_hold",
+                "capture_frames": 30,
+                "expect": [
+                  {
+                    "addr": 78429,
+                    "value": 24
+                  },
+                  {
+                    "addr": 78448,
+                    "width": 2,
+                    "op": "<",
+                    "value": 80
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "empty",
+            "steps": [
+              {
+                "macro": "-",
+                "extra": 0,
+                "patches": [
+                  {
+                    "addr": 78429,
+                    "value": 0
+                  }
+                ],
+                "expect": [
+                  {
+                    "addr": 78429,
+                    "value": 0
+                  },
+                  {
+                    "addr": 78448,
+                    "width": 2,
+                    "value": 80
+                  }
+                ],
+                "screen": {
+                  "reference": "$base",
+                  "relation": "equal"
+                }
+              },
+              {
+                "state": "$previous",
+                "macro": "@up_b_hold",
+                "capture_frames": 30,
+                "expect": [
+                  {
+                    "addr": 78429,
+                    "value": 0
+                  },
+                  {
+                    "addr": 78448,
+                    "width": 2,
+                    "value": 80
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "comparisons": [
+          {
+            "left": "red24",
+            "right": "empty",
+            "left_step": 1,
+            "right_step": 1,
+            "relation": "different",
+            "frames": [
+              12,
+              20,
+              "final"
+            ]
+          }
+        ],
+        "claims": [
+          {
+            "name": "red_soul_equipped_id",
+            "addr": 78429,
+            "width": 1,
+            "level": "gameplay",
+            "note": "真实菜单装备 ID=24、关闭回游戏、重开确认持久化后，同状态 Up+B 正反例；仅验收该 ID，不外推全部红魂，也不确认飞冰魂别名。"
+          },
+          {
+            "name": "current_mp",
+            "addr": 78448,
+            "width": 2,
+            "level": "consumption",
+            "note": "同一菜单持久化状态下，ID=24 的 Up+B 使 MP 低于 80，空槽保持 80；不把菜单 USE 25 当作实际消耗。"
+          }
+        ]
+      }
+    ]
+  },
+  "base_state": {
+    "name": "red24_game",
+    "path": "F:\\taspipe_scratch\\ram_calibration\\aria_red24_installed_v5\\red24_vs_empty_prepare_red24_game.state"
+  },
+  "cache_key": "13f31a713436a7c266c7f9f2a9e928ea2bf7e8c4fc4aabec378c844bf67720aa",
+  "arms": {
+    "red24": {
+      "steps": [
+        {
+          "index": 0,
+          "source_state": "F:\\taspipe_scratch\\ram_calibration\\aria_red24_installed_v5\\red24_vs_empty_prepare_red24_game.state",
+          "attempt_state": "F:/taspipe_scratch/ram_calibration/1ebf1f6644558645/red24_vs_empty_red24_0.state",
+          "patches": [],
+          "macro": "-",
+          "frames": 0,
+          "attempt": {
+            "id": 7,
+            "ok": true,
+            "data": "9393"
+          },
+          "shot": "F:\\taspipe_scratch\\ram_calibration\\aria_red24_installed_v5\\red24_vs_empty_red24_s00.png",
+          "state": "F:\\taspipe_scratch\\ram_calibration\\aria_red24_installed_v5\\red24_vs_empty_red24_s00.state",
+          "ram": "F:\\taspipe_scratch\\ram_calibration\\aria_red24_installed_v5\\red24_vs_empty_red24_s00.bin",
+          "expect": [
+            {
+              "addr": 78429,
+              "width": 1,
+              "op": "==",
+              "want": 24,
+              "got": 24,
+              "pass": true
+            },
+            {
+              "addr": 78448,
+              "width": 2,
+              "op": "==",
+              "want": 80,
+              "got": 80,
+              "pass": true
+            }
+          ],
+          "actual_core": "BizHawk.Emulation.Cores.Nintendo.GBA.MGBAHawk",
+          "screen": {
+            "reference": "F:\\taspipe_scratch\\ram_calibration\\aria_red24_installed_v5\\red24_vs_empty_base_anchor.png",
+            "relation": "equal",
+            "max_changed_fraction": null,
+            "pass": true,
+            "changed_pixels": 0,
+            "changed_fraction": 0.0,
+            "total_pixels": 38400,
+            "equal": true,
+            "bbox": null
+          }
+        },
+        {
+          "index": 1,
+          "source_state": "F:\\taspipe_scratch\\ram_calibration\\aria_red24_installed_v5\\red24_vs_empty_red24_s00.state",
+          "attempt_state": "F:/taspipe_scratch/ram_calibration/1ebf1f6644558645/red24_vs_empty_red24_1.state",
+          "patches": [],
+          "macro": "Up+B,,,,,,,,,,,,,,,,,,,,,,,,,,,,,",
+          "frames": 30,
+          "attempt": {
+            "id": 8,
+            "ok": true,
+            "data": "9423"
+          },
+          "shot": "F:\\taspipe_scratch\\ram_calibration\\aria_red24_installed_v5\\red24_vs_empty_red24_s01.png",
+          "state": "F:\\taspipe_scratch\\ram_calibration\\aria_red24_installed_v5\\red24_vs_empty_red24_s01.state",
+          "ram": "F:\\taspipe_scratch\\ram_calibration\\aria_red24_installed_v5\\red24_vs_empty_red24_s01.bin",
+          "expect": [
+            {
+              "addr": 78429,
+              "width": 1,
+              "op": "==",
+              "want": 24,
+              "got": 24,
+              "pass": true
+            },
+            {
+              "addr": 78448,
+              "width": 2,
+              "op": "<",
+              "want": 80,
+              "got": 56,
+              "pass": true
+            }
+          ],
+          "actual_core": "BizHawk.Emulation.Cores.Nintendo.GBA.MGBAHawk",
+          "frames_dir": "F:\\taspipe_scratch\\ram_calibration\\aria_red24_installed_v5\\red24_vs_empty_red24_s01_frames",
+          "captured_frames": 30
+        }
+      ]
+    },
+    "empty": {
+      "steps": [
+        {
+          "index": 0,
+          "source_state": "F:\\taspipe_scratch\\ram_calibration\\aria_red24_installed_v5\\red24_vs_empty_prepare_red24_game.state",
+          "attempt_state": "F:\\taspipe_scratch\\ram_calibration\\aria_red24_installed_v5\\red24_vs_empty_empty_s00_input.state",
+          "patches": [
+            {
+              "addr": 78429,
+              "value": 0
+            }
+          ],
+          "macro": "-",
+          "frames": 0,
+          "attempt": {
+            "id": 11,
+            "ok": true,
+            "data": "9393"
+          },
+          "shot": "F:\\taspipe_scratch\\ram_calibration\\aria_red24_installed_v5\\red24_vs_empty_empty_s00.png",
+          "state": "F:\\taspipe_scratch\\ram_calibration\\aria_red24_installed_v5\\red24_vs_empty_empty_s00.state",
+          "ram": "F:\\taspipe_scratch\\ram_calibration\\aria_red24_installed_v5\\red24_vs_empty_empty_s00.bin",
+          "expect": [
+            {
+              "addr": 78429,
+              "width": 1,
+              "op": "==",
+              "want": 0,
+              "got": 0,
+              "pass": true
+            },
+            {
+              "addr": 78448,
+              "width": 2,
+              "op": "==",
+              "want": 80,
+              "got": 80,
+              "pass": true
+            }
+          ],
+          "actual_core": "BizHawk.Emulation.Cores.Nintendo.GBA.MGBAHawk",
+          "screen": {
+            "reference": "F:\\taspipe_scratch\\ram_calibration\\aria_red24_installed_v5\\red24_vs_empty_base_anchor.png",
+            "relation": "equal",
+            "max_changed_fraction": null,
+            "pass": true,
+            "changed_pixels": 0,
+            "changed_fraction": 0.0,
+            "total_pixels": 38400,
+            "equal": true,
+            "bbox": null
+          }
+        },
+        {
+          "index": 1,
+          "source_state": "F:\\taspipe_scratch\\ram_calibration\\aria_red24_installed_v5\\red24_vs_empty_empty_s00.state",
+          "attempt_state": "F:/taspipe_scratch/ram_calibration/1ebf1f6644558645/red24_vs_empty_empty_1.state",
+          "patches": [],
+          "macro": "Up+B,,,,,,,,,,,,,,,,,,,,,,,,,,,,,",
+          "frames": 30,
+          "attempt": {
+            "id": 12,
+            "ok": true,
+            "data": "9423"
+          },
+          "shot": "F:\\taspipe_scratch\\ram_calibration\\aria_red24_installed_v5\\red24_vs_empty_empty_s01.png",
+          "state": "F:\\taspipe_scratch\\ram_calibration\\aria_red24_installed_v5\\red24_vs_empty_empty_s01.state",
+          "ram": "F:\\taspipe_scratch\\ram_calibration\\aria_red24_installed_v5\\red24_vs_empty_empty_s01.bin",
+          "expect": [
+            {
+              "addr": 78429,
+              "width": 1,
+              "op": "==",
+              "want": 0,
+              "got": 0,
+              "pass": true
+            },
+            {
+              "addr": 78448,
+              "width": 2,
+              "op": "==",
+              "want": 80,
+              "got": 80,
+              "pass": true
+            }
+          ],
+          "actual_core": "BizHawk.Emulation.Cores.Nintendo.GBA.MGBAHawk",
+          "frames_dir": "F:\\taspipe_scratch\\ram_calibration\\aria_red24_installed_v5\\red24_vs_empty_empty_s01_frames",
+          "captured_frames": 30
+        }
+      ]
+    }
+  },
+  "preparation": [
+    {
+      "id": "red24_menu",
+      "index": 0,
+      "macro": ",,,,,,,,,,,,,,,,,Start,,,,,,,,,,,,,,,,,A,,,,,,,,,,,,,,,,,A,,,,,,,,,,,,,,,,,Down,,,,,,,,,,,,,,,,,Down,,,,,,,,,,,,,,,,,Down,,,,,,,,,,,,,,,,,Down,,,,,,,,,,,,,,,,,Down,,,,,,,,,,,,,,,,,Down,,,,,,,,,,,,,,,,,Down,,,,,,,,,,,,,,,,,Down,,,,,,,,,,,,,,,,,Down,,,,,,,,,,,,,,,,,Down,,,,,,,,,,,,,,,,,Down,,,,,,,,,,,,,,,,,Down,,,,,,,,,,,,,,,,,A,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,",
+      "frames": 354,
+      "attempt": {
+        "id": 3,
+        "ok": true,
+        "data": "9280"
+      },
+      "shot": "F:\\taspipe_scratch\\ram_calibration\\aria_red24_installed_v5\\red24_vs_empty_prepare_red24_menu.png",
+      "state": "F:\\taspipe_scratch\\ram_calibration\\aria_red24_installed_v5\\red24_vs_empty_prepare_red24_menu.state",
+      "ram": "F:\\taspipe_scratch\\ram_calibration\\aria_red24_installed_v5\\red24_vs_empty_prepare_red24_menu.bin",
+      "expect": [
+        {
+          "addr": 78429,
+          "width": 1,
+          "op": "==",
+          "want": 24,
+          "got": 24,
+          "pass": true
+        }
+      ],
+      "screen": {
+        "reference": "F:\\taspipe_scratch\\ram_calibration\\aria_red24_installed_v5\\red24_vs_empty_prepare_base.png",
+        "relation": "different",
+        "max_changed_fraction": null,
+        "pass": true,
+        "changed_pixels": 38391,
+        "changed_fraction": 0.999765625,
+        "total_pixels": 38400,
+        "equal": false,
+        "bbox": [
+          0,
+          0,
+          240,
+          160
+        ]
+      },
+      "actual_core": "BizHawk.Emulation.Cores.Nintendo.GBA.MGBAHawk"
+    },
+    {
+      "id": "red24_game",
+      "index": 1,
+      "macro": ",,,,,,,,,,,,,,,,,B,,,,,,,,,,,,,,,,,B,,,,,,,,,,,,,,,,,B,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,",
+      "frames": 113,
+      "attempt": {
+        "id": 4,
+        "ok": true,
+        "data": "9393"
+      },
+      "shot": "F:\\taspipe_scratch\\ram_calibration\\aria_red24_installed_v5\\red24_vs_empty_prepare_red24_game.png",
+      "state": "F:\\taspipe_scratch\\ram_calibration\\aria_red24_installed_v5\\red24_vs_empty_prepare_red24_game.state",
+      "ram": "F:\\taspipe_scratch\\ram_calibration\\aria_red24_installed_v5\\red24_vs_empty_prepare_red24_game.bin",
+      "expect": [
+        {
+          "addr": 78429,
+          "width": 1,
+          "op": "==",
+          "want": 24,
+          "got": 24,
+          "pass": true
+        },
+        {
+          "addr": 78446,
+          "width": 2,
+          "op": "==",
+          "want": 320,
+          "got": 320,
+          "pass": true
+        },
+        {
+          "addr": 78448,
+          "width": 2,
+          "op": "==",
+          "want": 80,
+          "got": 80,
+          "pass": true
+        }
+      ],
+      "screen": {
+        "reference": "F:\\taspipe_scratch\\ram_calibration\\aria_red24_installed_v5\\red24_vs_empty_prepare_base.png",
+        "relation": "near",
+        "max_changed_fraction": 0.02,
+        "pass": true,
+        "changed_pixels": 123,
+        "changed_fraction": 0.003203125,
+        "total_pixels": 38400,
+        "equal": false,
+        "bbox": [
+          110,
+          112,
+          129,
+          141
+        ]
+      },
+      "actual_core": "BizHawk.Emulation.Cores.Nintendo.GBA.MGBAHawk"
+    },
+    {
+      "id": "red24_reopen",
+      "index": 2,
+      "macro": ",,,,,,,,,,,,,,,,,Start,,,,,,,,,,,,,,,,,A,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,",
+      "frames": 96,
+      "attempt": {
+        "id": 5,
+        "ok": true,
+        "data": "9489"
+      },
+      "shot": "F:\\taspipe_scratch\\ram_calibration\\aria_red24_installed_v5\\red24_vs_empty_prepare_red24_reopen.png",
+      "state": "F:\\taspipe_scratch\\ram_calibration\\aria_red24_installed_v5\\red24_vs_empty_prepare_red24_reopen.state",
+      "ram": "F:\\taspipe_scratch\\ram_calibration\\aria_red24_installed_v5\\red24_vs_empty_prepare_red24_reopen.bin",
+      "expect": [
+        {
+          "addr": 78429,
+          "width": 1,
+          "op": "==",
+          "want": 24,
+          "got": 24,
+          "pass": true
+        }
+      ],
+      "screen": {
+        "reference": "F:\\taspipe_scratch\\ram_calibration\\aria_red24_installed_v5\\red24_vs_empty_prepare_base.png",
+        "relation": "different",
+        "max_changed_fraction": null,
+        "pass": true,
+        "changed_pixels": 38391,
+        "changed_fraction": 0.999765625,
+        "total_pixels": 38400,
+        "equal": false,
+        "bbox": [
+          0,
+          0,
+          240,
+          160
+        ]
+      },
+      "actual_core": "BizHawk.Emulation.Cores.Nintendo.GBA.MGBAHawk"
+    }
+  ],
+  "evidence": [
+    "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_clean_gameplay1\\base.state",
+    "F:\\taspipe_scratch\\ram_calibration\\aria_red24_installed_v5\\red24_vs_empty_base_anchor.png",
+    "F:\\taspipe_scratch\\ram_calibration\\aria_red24_installed_v5\\red24_vs_empty_empty_s00.bin",
+    "F:\\taspipe_scratch\\ram_calibration\\aria_red24_installed_v5\\red24_vs_empty_empty_s00.png",
+    "F:\\taspipe_scratch\\ram_calibration\\aria_red24_installed_v5\\red24_vs_empty_empty_s00.state",
+    "F:\\taspipe_scratch\\ram_calibration\\aria_red24_installed_v5\\red24_vs_empty_empty_s00_input.state",
+    "F:\\taspipe_scratch\\ram_calibration\\aria_red24_installed_v5\\red24_vs_empty_empty_s01.bin",
+    "F:\\taspipe_scratch\\ram_calibration\\aria_red24_installed_v5\\red24_vs_empty_empty_s01.png",
+    "F:\\taspipe_scratch\\ram_calibration\\aria_red24_installed_v5\\red24_vs_empty_empty_s01.state",
+    "F:\\taspipe_scratch\\ram_calibration\\aria_red24_installed_v5\\red24_vs_empty_empty_s01_frames\\f0012.png",
+    "F:\\taspipe_scratch\\ram_calibration\\aria_red24_installed_v5\\red24_vs_empty_empty_s01_frames\\f0020.png",
+    "F:\\taspipe_scratch\\ram_calibration\\aria_red24_installed_v5\\red24_vs_empty_prepare_base.png",
+    "F:\\taspipe_scratch\\ram_calibration\\aria_red24_installed_v5\\red24_vs_empty_prepare_red24_game.bin",
+    "F:\\taspipe_scratch\\ram_calibration\\aria_red24_installed_v5\\red24_vs_empty_prepare_red24_game.png",
+    "F:\\taspipe_scratch\\ram_calibration\\aria_red24_installed_v5\\red24_vs_empty_prepare_red24_game.state",
+    "F:\\taspipe_scratch\\ram_calibration\\aria_red24_installed_v5\\red24_vs_empty_prepare_red24_menu.bin",
+    "F:\\taspipe_scratch\\ram_calibration\\aria_red24_installed_v5\\red24_vs_empty_prepare_red24_menu.png",
+    "F:\\taspipe_scratch\\ram_calibration\\aria_red24_installed_v5\\red24_vs_empty_prepare_red24_menu.state",
+    "F:\\taspipe_scratch\\ram_calibration\\aria_red24_installed_v5\\red24_vs_empty_prepare_red24_reopen.bin",
+    "F:\\taspipe_scratch\\ram_calibration\\aria_red24_installed_v5\\red24_vs_empty_prepare_red24_reopen.png",
+    "F:\\taspipe_scratch\\ram_calibration\\aria_red24_installed_v5\\red24_vs_empty_prepare_red24_reopen.state",
+    "F:\\taspipe_scratch\\ram_calibration\\aria_red24_installed_v5\\red24_vs_empty_red24_s00.bin",
+    "F:\\taspipe_scratch\\ram_calibration\\aria_red24_installed_v5\\red24_vs_empty_red24_s00.png",
+    "F:\\taspipe_scratch\\ram_calibration\\aria_red24_installed_v5\\red24_vs_empty_red24_s00.state",
+    "F:\\taspipe_scratch\\ram_calibration\\aria_red24_installed_v5\\red24_vs_empty_red24_s01.bin",
+    "F:\\taspipe_scratch\\ram_calibration\\aria_red24_installed_v5\\red24_vs_empty_red24_s01.png",
+    "F:\\taspipe_scratch\\ram_calibration\\aria_red24_installed_v5\\red24_vs_empty_red24_s01.state",
+    "F:\\taspipe_scratch\\ram_calibration\\aria_red24_installed_v5\\red24_vs_empty_red24_s01_frames\\f0012.png",
+    "F:\\taspipe_scratch\\ram_calibration\\aria_red24_installed_v5\\red24_vs_empty_red24_s01_frames\\f0020.png"
+  ],
+  "comparisons": [
+    {
+      "left": "red24",
+      "right": "empty",
+      "relation": "different",
+      "frames": [
+        {
+          "frame": 12,
+          "left": "F:\\taspipe_scratch\\ram_calibration\\aria_red24_installed_v5\\red24_vs_empty_red24_s01_frames\\f0012.png",
+          "right": "F:\\taspipe_scratch\\ram_calibration\\aria_red24_installed_v5\\red24_vs_empty_empty_s01_frames\\f0012.png",
+          "pass": true,
+          "changed_pixels": 752,
+          "changed_fraction": 0.019583333333333335,
+          "total_pixels": 38400,
+          "equal": false,
+          "bbox": [
+            74,
+            111,
+            206,
+            144
+          ]
+        },
+        {
+          "frame": 20,
+          "left": "F:\\taspipe_scratch\\ram_calibration\\aria_red24_installed_v5\\red24_vs_empty_red24_s01_frames\\f0020.png",
+          "right": "F:\\taspipe_scratch\\ram_calibration\\aria_red24_installed_v5\\red24_vs_empty_empty_s01_frames\\f0020.png",
+          "pass": true,
+          "changed_pixels": 743,
+          "changed_fraction": 0.019348958333333333,
+          "total_pixels": 38400,
+          "equal": false,
+          "bbox": [
+            54,
+            111,
+            226,
+            144
+          ]
+        },
+        {
+          "frame": "final",
+          "left": "F:\\taspipe_scratch\\ram_calibration\\aria_red24_installed_v5\\red24_vs_empty_red24_s01.png",
+          "right": "F:\\taspipe_scratch\\ram_calibration\\aria_red24_installed_v5\\red24_vs_empty_empty_s01.png",
+          "pass": true,
+          "changed_pixels": 419,
+          "changed_fraction": 0.010911458333333334,
+          "total_pixels": 38400,
+          "equal": false,
+          "bbox": [
+            32,
+            110,
+            131,
+            144
+          ]
+        }
+      ],
+      "pass": true
+    }
+  ],
+  "checks": {
+    "preparation": true,
+    "expectations": true,
+    "comparisons": true,
+    "frame_counts": true,
+    "screen_anchors": true,
+    "gba_core": true
+  },
+  "status": "pass",
+  "verified_fields": [
+    {
+      "name": "red_soul_equipped_id",
+      "addr": 78429,
+      "width": 1,
+      "level": "gameplay",
+      "note": "真实菜单装备 ID=24、关闭回游戏、重开确认持久化后，同状态 Up+B 正反例；仅验收该 ID，不外推全部红魂，也不确认飞冰魂别名。",
+      "case_id": "red24_vs_empty"
+    },
+    {
+      "name": "current_mp",
+      "addr": 78448,
+      "width": 2,
+      "level": "consumption",
+      "note": "同一菜单持久化状态下，ID=24 的 Up+B 使 MP 低于 80，空槽保持 80；不把菜单 USE 25 当作实际消耗。",
+      "case_id": "red24_vs_empty"
+    }
+  ]
+}

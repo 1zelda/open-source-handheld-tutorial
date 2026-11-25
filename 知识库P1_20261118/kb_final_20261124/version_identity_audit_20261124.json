@@ -1,0 +1,298 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-24",
+  "criterion": "身份证据与机制权威分开；只有 verified_read + authoritative 且身份与机制正文相符才提升。",
+  "production_paths": {
+    "rom_index": "taspipe.registry.index_roms",
+    "set_identity": "taspipe.sources.resolve_identity"
+  },
+  "rom_exact_hash_hits": {
+    "nekketsu_soccer2_fc_jp": [
+      "F:\\开源掌机教程\\04-游戏资源库\\TAS输入录像库\\roms_verify\\NES\\nekketsu_soccer_league_cn_jf.nes"
+    ],
+    "megaman1_nes_us": [
+      "F:\\开源掌机教程\\04-游戏资源库\\TAS输入录像库\\roms_verify\\NES\\megamanhd.nes"
+    ]
+  },
+  "set_identity": {
+    "kof98eck": {
+      "game": "kof98eck",
+      "platform": "ARCADE",
+      "status": "resolved",
+      "authority": "fbneo_local",
+      "set": "kof98eck",
+      "ini": "F:\\工具链\\fbneo\\nightly\\config\\games\\kof98eck.ini",
+      "in_setlist": true,
+      "full_name": "// FinalBurn Neo v1.0.0.03 --- Config File for kof98eck (The King of Fighters '98 - The Slugfest / King of Fighters '98 - Dream Match Never Ends (Easy Combo Edition, Hack))",
+      "rom": {
+        "path": "F:\\工具链\\fbneo\\nightly\\roms\\kof98eck.zip",
+        "byte_size": 41735830,
+        "sha1": "c5947d193d2d01cbf9343e3f7ef70a7bb3bbf6ed"
+      },
+      "resolved": true
+    },
+    "kof98um": {
+      "game": "kof98um",
+      "platform": "ARCADE",
+      "status": "unresolved",
+      "authority": "fbneo_local",
+      "set": "kof98um",
+      "ini": "F:\\工具链\\fbneo\\nightly\\config\\games\\kof98um.ini",
+      "in_setlist": false,
+      "full_name": null,
+      "rom": null,
+      "resolved": false,
+      "reason": "本地 FBNeo 无 kof98um 的 ini/setlist 记录；先确认 set 名（archive_fbnarcade / hbmame），别拿中文叫法当身份"
+    },
+    "kof98umh": {
+      "game": "kof98umh",
+      "platform": "ARCADE",
+      "status": "unresolved",
+      "authority": "fbneo_local",
+      "set": "kof98umh",
+      "ini": "F:\\工具链\\fbneo\\nightly\\config\\games\\kof98umh.ini",
+      "in_setlist": false,
+      "full_name": null,
+      "rom": null,
+      "resolved": false,
+      "reason": "本地 FBNeo 无 kof98umh 的 ini/setlist 记录；先确认 set 名（archive_fbnarcade / hbmame），别拿中文叫法当身份"
+    },
+    "kof98umhd": {
+      "game": "kof98umhd",
+      "platform": "ARCADE",
+      "status": "unresolved",
+      "authority": "fbneo_local",
+      "set": "kof98umhd",
+      "ini": "F:\\工具链\\fbneo\\nightly\\config\\games\\kof98umhd.ini",
+      "in_setlist": false,
+      "full_name": null,
+      "rom": null,
+      "resolved": false,
+      "reason": "本地 FBNeo 无 kof98umhd 的 ini/setlist 记录；先确认 set 名（archive_fbnarcade / hbmame），别拿中文叫法当身份"
+    }
+  },
+  "revisions": {
+    "arcade_hack_multi": {
+      "corpus_entries": [
+        {
+          "path": "_工具脚本/taspipe/游戏包/来源库/取证/quanjizhong_thread677_街机改版整合_20261118.md",
+          "source_id": "quanjizhong_top",
+          "authority": "reference_only",
+          "source_status": "verified_read",
+          "index": true
+        }
+      ],
+      "mechanism_authority_available": false,
+      "promoted": false,
+      "identity_status": "aggregate_not_single_identity",
+      "identity_evidence": {
+        "resolved_child_set": {
+          "game": "kof98eck",
+          "platform": "ARCADE",
+          "status": "resolved",
+          "authority": "fbneo_local",
+          "set": "kof98eck",
+          "ini": "F:\\工具链\\fbneo\\nightly\\config\\games\\kof98eck.ini",
+          "in_setlist": true,
+          "full_name": "// FinalBurn Neo v1.0.0.03 --- Config File for kof98eck (The King of Fighters '98 - The Slugfest / King of Fighters '98 - Dream Match Never Ends (Easy Combo Edition, Hack))",
+          "rom": {
+            "path": "F:\\工具链\\fbneo\\nightly\\roms\\kof98eck.zip",
+            "byte_size": 41735830,
+            "sha1": "c5947d193d2d01cbf9343e3f7ef70a7bb3bbf6ed"
+          },
+          "resolved": true
+        }
+      },
+      "identity_note": "8200 款总表不是单卡身份；ECK 子集已解析不等于整表或任一未点名 hack 已解析。"
+    },
+    "kof98um": {
+      "corpus_entries": [
+        {
+          "path": "_工具脚本/taspipe/游戏包/来源库/取证/gamersky_kof98um全角色出招表_20261118.md",
+          "source_id": "gamersky_handbook",
+          "authority": "cross_version",
+          "source_status": "verified_read",
+          "index": true
+        }
+      ],
+      "mechanism_authority_available": false,
+      "promoted": false,
+      "identity_status": "unresolved_local_set",
+      "identity_evidence": {
+        "kof98eck": {
+          "game": "kof98eck",
+          "platform": "ARCADE",
+          "status": "resolved",
+          "authority": "fbneo_local",
+          "set": "kof98eck",
+          "ini": "F:\\工具链\\fbneo\\nightly\\config\\games\\kof98eck.ini",
+          "in_setlist": true,
+          "full_name": "// FinalBurn Neo v1.0.0.03 --- Config File for kof98eck (The King of Fighters '98 - The Slugfest / King of Fighters '98 - Dream Match Never Ends (Easy Combo Edition, Hack))",
+          "rom": {
+            "path": "F:\\工具链\\fbneo\\nightly\\roms\\kof98eck.zip",
+            "byte_size": 41735830,
+            "sha1": "c5947d193d2d01cbf9343e3f7ef70a7bb3bbf6ed"
+          },
+          "resolved": true
+        },
+        "kof98um": {
+          "game": "kof98um",
+          "platform": "ARCADE",
+          "status": "unresolved",
+          "authority": "fbneo_local",
+          "set": "kof98um",
+          "ini": "F:\\工具链\\fbneo\\nightly\\config\\games\\kof98um.ini",
+          "in_setlist": false,
+          "full_name": null,
+          "rom": null,
+          "resolved": false,
+          "reason": "本地 FBNeo 无 kof98um 的 ini/setlist 记录；先确认 set 名（archive_fbnarcade / hbmame），别拿中文叫法当身份"
+        },
+        "kof98umh": {
+          "game": "kof98umh",
+          "platform": "ARCADE",
+          "status": "unresolved",
+          "authority": "fbneo_local",
+          "set": "kof98umh",
+          "ini": "F:\\工具链\\fbneo\\nightly\\config\\games\\kof98umh.ini",
+          "in_setlist": false,
+          "full_name": null,
+          "rom": null,
+          "resolved": false,
+          "reason": "本地 FBNeo 无 kof98umh 的 ini/setlist 记录；先确认 set 名（archive_fbnarcade / hbmame），别拿中文叫法当身份"
+        },
+        "kof98umhd": {
+          "game": "kof98umhd",
+          "platform": "ARCADE",
+          "status": "unresolved",
+          "authority": "fbneo_local",
+          "set": "kof98umhd",
+          "ini": "F:\\工具链\\fbneo\\nightly\\config\\games\\kof98umhd.ini",
+          "in_setlist": false,
+          "full_name": null,
+          "rom": null,
+          "resolved": false,
+          "reason": "本地 FBNeo 无 kof98umhd 的 ini/setlist 记录；先确认 set 名（archive_fbnarcade / hbmame），别拿中文叫法当身份"
+        }
+      },
+      "identity_note": "本地 setlist 有 kof98umh/kof98umhd 的占位行但无可用 ini；kof98um 本身未解析。UM 出招表对 ECK 仅跨版本参考。"
+    },
+    "nekketsu_kakutou_densetsu_fc_revB_patch": {
+      "corpus_entries": [
+        {
+          "path": "_工具脚本/taspipe/游戏包/来源库/取证/dvd_熱血格闘伝説_RevB版本边界_20261124.md",
+          "source_id": "dvd_nkd_revb",
+          "authority": "reference_only",
+          "source_status": "verified_read",
+          "index": true
+        }
+      ],
+      "mechanism_authority_available": false,
+      "promoted": false,
+      "identity_status": "documented_patch_boundary",
+      "identity_evidence": {
+        "path": "F:\\开源掌机教程\\_工具脚本\\taspipe\\游戏包\\来源库\\取证\\dvd_熱血格闘伝説_RevB版本边界_20261124.md",
+        "sha256": "75e04ad639708614dbde6e1e8bc4a7be8ab9c6666cb4edb8b9447fa998d367e7"
+      },
+      "identity_note": "DvD Rev.B 补丁边界有本机取证；它不是原版 FC ROM，身份证据不得回填原版能力。"
+    },
+    "nekketsu_soccer2_fc_cn_hack": {
+      "corpus_entries": [
+        {
+          "path": "_工具脚本/taspipe/游戏包/来源库/取证/xiaoji001_热血足球hack汉化版_20261118.md",
+          "source_id": "xiaoji001",
+          "authority": "reference_only",
+          "source_status": "verified_read",
+          "index": true
+        }
+      ],
+      "mechanism_authority_available": false,
+      "promoted": false,
+      "identity_status": "unresolved_exact_rom",
+      "identity_evidence": {
+        "required": "精确 ROM SHA-1 或官方/作者版本身份说明",
+        "present": false
+      },
+      "identity_note": "现有汉化条目只有身份/下载线索，无逐帧机制正文；不能继承日版实测。"
+    },
+    "nekketsu_soccer2_fc_unspecified": {
+      "corpus_entries": [
+        {
+          "path": "_工具脚本/taspipe/游戏包/来源库/取证/csdn_wangsitan_热血足球Bug记录_20261118.md",
+          "source_id": "csdn_wangsitan_bug",
+          "authority": "reference_only",
+          "source_status": "verified_read",
+          "index": true
+        },
+        {
+          "path": "_工具脚本/taspipe/游戏包/来源库/取证/sohu_必杀最强小辫子_20261118.md",
+          "source_id": "sohu_game",
+          "authority": "reference_only",
+          "source_status": "verified_read",
+          "index": true
+        },
+        {
+          "path": "_工具脚本/taspipe/游戏包/来源库/取证/sohu_热血队队员必杀集锦_20261118.md",
+          "source_id": "sohu_game",
+          "authority": "reference_only",
+          "source_status": "verified_read",
+          "index": true
+        },
+        {
+          "path": "_工具脚本/taspipe/游戏包/来源库/取证/sohu_一直输球隐藏大结局_20261118.md",
+          "source_id": "sohu_game",
+          "authority": "reference_only",
+          "source_status": "verified_read",
+          "index": true
+        },
+        {
+          "path": "_工具脚本/taspipe/游戏包/来源库/取证/tencentcloud_热血足球联盟杂谈_20261118.md",
+          "source_id": "tencent_cloud_dev",
+          "authority": "reference_only",
+          "source_status": "verified_read",
+          "index": true
+        }
+      ],
+      "mechanism_authority_available": false,
+      "promoted": false,
+      "identity_status": "intentionally_unspecified",
+      "identity_evidence": {
+        "required": "逐来源锁定 JP/CN/hack",
+        "present": false
+      },
+      "identity_note": "该 revision 专为未点名版本线索而设；升级前必须逐来源定版，不能整体提升。"
+    },
+    "nekketsu_soccer_mobile": {
+      "corpus_entries": [
+        {
+          "path": "_工具脚本/taspipe/游戏包/来源库/取证/9game_热血足球技能攻略_20261118.md",
+          "source_id": "9game",
+          "authority": "not_applicable",
+          "source_status": "verified_read",
+          "index": true
+        }
+      ],
+      "mechanism_authority_available": false,
+      "promoted": false,
+      "identity_status": "separate_mobile_title",
+      "identity_evidence": {
+        "source_id": "9game",
+        "platform": "MOBILE"
+      },
+      "identity_note": "正文是 ARC SYSTEM WORKS 授权手游，不是 FC 联盟；not_applicable 是正确隔离而非缺口。"
+    }
+  },
+  "promoted": [],
+  "summary": {
+    "retained_unverified": 6,
+    "promoted": 0,
+    "identity_status_counts": {
+      "aggregate_not_single_identity": 1,
+      "unresolved_local_set": 1,
+      "documented_patch_boundary": 1,
+      "unresolved_exact_rom": 1,
+      "intentionally_unspecified": 1,
+      "separate_mobile_title": 1
+    }
+  }
+}

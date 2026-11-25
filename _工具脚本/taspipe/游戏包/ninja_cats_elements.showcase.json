@@ -1,0 +1,342 @@
+{
+  "schema_version": 1,
+  "kind": "statejump_showcase",
+  "game_id": "kyatto_ninden_teyandee_fc_jp",
+  "game_title": "Kyatto Ninden Teyandee / 忍者猫 (FC, 1991 Tecmo)",
+  "platform": "NES",
+  "core": "NesHawk",
+  "system": "NES",
+  "rom": "F:/taspipe_scratch/ninjacats_showcase/ninjacats.nes",
+  "bizhawk": "F:/开源掌机教程/02-模拟器库/BizHawk/BizHawk-2.8",
+  "base_state": "F:/taspipe_scratch/ninjacats_showcase/base.state",
+  "fps": 60.0988,
+  "template": "fc_tianma_mask",
+  "catalog": {
+    "status": "complete",
+    "expected_total": 7,
+    "sources": [
+      {
+        "source_id": "strategywiki",
+        "url": "https://strategywiki.org/wiki/Kyatto_Ninden_Teyandee",
+        "status": "unreachable",
+        "verified_date": "2026-11-18",
+        "element_ids": [
+          "yattarou_katana_slash",
+          "nyankee_ninpo_special",
+          "pururun_claw_heart",
+          "sukashii_umbrella_shot",
+          "gotton_wall_breaker",
+          "mietoru_flight_wing",
+          "otamage_swim_dive"
+        ],
+        "note": "本机直连 403，只有搜索快照。"
+      },
+      {
+        "source_id": "datacrystal",
+        "url": "https://datacrystal.tcrf.net/wiki/Kyatto_Ninden_Teyandee",
+        "status": "snippet_only",
+        "verified_date": "2026-11-18",
+        "element_ids": [
+          "yattarou_katana_slash",
+          "nyankee_ninpo_special",
+          "pururun_claw_heart",
+          "sukashii_umbrella_shot",
+          "gotton_wall_breaker",
+          "mietoru_flight_wing",
+          "otamage_swim_dive"
+        ],
+        "note": "只有搜索快照，未全文核对。"
+      }
+    ],
+    "coverage_note": "忍者猫 (FC) 三大主力角色基础攻击/全屏忍法必杀 + 四大支援成员（破墙/飞行/钻地水下/爆破）特殊能力完整盘点"
+  },
+  "elements": [
+    {
+      "element_id": "yattarou_katana_slash",
+      "label": "Yattarou Katana Slash (白猫ヤッ太郎·双刀斩)",
+      "kind": "move",
+      "base_state": null,
+      "trigger": {
+        "macro": "B,,,,B,,,,B,,,,,,,,,,,,,,,,,,,,",
+        "extra": 25,
+        "patches": []
+      },
+      "detection": {
+        "frame": 8,
+        "success_checks": [
+          {
+            "check_id": "yattarou_slash_sig",
+            "plugin_id": "frame_region_color_fraction",
+            "params": {
+              "region": [
+                0.2,
+                0.35,
+                0.78,
+                0.78
+              ],
+              "rgb": [
+                248,
+                248,
+                248
+              ],
+              "tol": 26,
+              "min_fraction": 0.01
+            },
+            "required": true
+          }
+        ]
+      },
+      "negative_control": {
+        "macro": null,
+        "patches": []
+      },
+      "note": "主力白猫近身双刀连斩展示；运行 universal_authoring calibrate 自动实测更新帧与区域。"
+    },
+    {
+      "element_id": "nyankee_ninpo_special",
+      "label": "Nyankee Ninpo Special (全屏忍法必杀技)",
+      "kind": "skill",
+      "base_state": null,
+      "trigger": {
+        "macro": "Up+B,Up+B,Up+B,Up+B,Up+B,Up+B,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,",
+        "extra": 45,
+        "patches": []
+      },
+      "detection": {
+        "frame": 20,
+        "success_checks": [
+          {
+            "check_id": "ninpo_fullscreen_sig",
+            "plugin_id": "frame_region_color_fraction",
+            "params": {
+              "region": [
+                0.1,
+                0.1,
+                0.9,
+                0.85
+              ],
+              "rgb": [
+                248,
+                216,
+                120
+              ],
+              "tol": 28,
+              "min_fraction": 0.02
+            },
+            "required": true
+          }
+        ]
+      },
+      "negative_control": {
+        "macro": null,
+        "patches": []
+      },
+      "note": "消耗忍法槽释放全屏电光/火鸟忍法必杀。"
+    },
+    {
+      "element_id": "pururun_claw_heart",
+      "label": "Pururun Claw & Heart Attack (红猫プルルン切换与飞爪)",
+      "kind": "transform",
+      "base_state": null,
+      "trigger": {
+        "macro": "Start,Start,Start,Start,Start,,,,,,,,Right,Right,Right,Right,,,,,,,,Start,Start,Start,Start,,,,,,,,B,,,,B,,,,,,,,",
+        "extra": 30,
+        "patches": []
+      },
+      "detection": {
+        "frame": 38,
+        "success_checks": [
+          {
+            "check_id": "pururun_attack_sig",
+            "plugin_id": "frame_region_color_fraction",
+            "params": {
+              "region": [
+                0.2,
+                0.35,
+                0.8,
+                0.78
+              ],
+              "rgb": [
+                248,
+                120,
+                168
+              ],
+              "tol": 28,
+              "min_fraction": 0.01
+            },
+            "required": true
+          }
+        ]
+      },
+      "negative_control": {
+        "macro": null,
+        "patches": []
+      },
+      "note": "呼出子菜单切换至红猫 Pururun 并施展攻击。"
+    },
+    {
+      "element_id": "sukashii_umbrella_shot",
+      "label": "Sukashii Umbrella & Glide (蓝猫スカシー切换与伞击)",
+      "kind": "transform",
+      "base_state": null,
+      "trigger": {
+        "macro": "Start,Start,Start,Start,Start,,,,,,,,Right,Right,Right,Right,,,,,,,,Right,Right,Right,Right,,,,,,,,Start,Start,Start,Start,,,,,,,,B,,,,B,,,,,,,,",
+        "extra": 30,
+        "patches": []
+      },
+      "detection": {
+        "frame": 46,
+        "success_checks": [
+          {
+            "check_id": "sukashii_attack_sig",
+            "plugin_id": "frame_region_color_fraction",
+            "params": {
+              "region": [
+                0.2,
+                0.35,
+                0.8,
+                0.78
+              ],
+              "rgb": [
+                104,
+                184,
+                248
+              ],
+              "tol": 28,
+              "min_fraction": 0.01
+            },
+            "required": true
+          }
+        ]
+      },
+      "negative_control": {
+        "macro": null,
+        "patches": []
+      },
+      "note": "呼出子菜单切换至蓝猫 Sukashii 并施展机关伞攻击。"
+    },
+    {
+      "element_id": "gotton_wall_breaker",
+      "label": "Gotton Drill / Wall Breaker (支援成员ゴットン·破岩重击)",
+      "kind": "skill",
+      "base_state": "F:/taspipe_scratch/ninjacats_showcase/base_wall.state",
+      "trigger": {
+        "macro": "B,B,B,B,B,B,,,,,,,,,,,,,,,,,,,,,,,,",
+        "extra": 30,
+        "patches": []
+      },
+      "detection": {
+        "frame": 14,
+        "success_checks": [
+          {
+            "check_id": "gotton_smash_sig",
+            "plugin_id": "frame_region_color_fraction",
+            "params": {
+              "region": [
+                0.22,
+                0.3,
+                0.82,
+                0.78
+              ],
+              "rgb": [
+                240,
+                180,
+                96
+              ],
+              "tol": 28,
+              "min_fraction": 0.012
+            },
+            "required": true
+          }
+        ]
+      },
+      "negative_control": {
+        "macro": null,
+        "patches": []
+      },
+      "note": "支援角色 Gotton 击碎岩石障碍物（可绑定专用障碍物快照 base_wall.state）。"
+    },
+    {
+      "element_id": "mietoru_flight_wing",
+      "label": "Mietoru Flight (支援成员ミエトル·高空飞行)",
+      "kind": "skill",
+      "base_state": null,
+      "trigger": {
+        "macro": "A,A,A,A,A,A,,,,A,A,A,A,A,A,,,,A,A,A,A,A,A,,,,,,,,,,,,,,,,",
+        "extra": 30,
+        "patches": []
+      },
+      "detection": {
+        "frame": 22,
+        "success_checks": [
+          {
+            "check_id": "mietoru_flight_sig",
+            "plugin_id": "frame_region_color_fraction",
+            "params": {
+              "region": [
+                0.2,
+                0.15,
+                0.78,
+                0.65
+              ],
+              "rgb": [
+                248,
+                248,
+                248
+              ],
+              "tol": 28,
+              "min_fraction": 0.01
+            },
+            "required": true
+          }
+        ]
+      },
+      "negative_control": {
+        "macro": null,
+        "patches": []
+      },
+      "note": "支援角色 Mietoru 连续振翅升空跨越地形。"
+    },
+    {
+      "element_id": "otamage_swim_dive",
+      "label": "Otamage Dive & Jet (支援成员オタマサ·钻地与潜泳)",
+      "kind": "skill",
+      "base_state": null,
+      "trigger": {
+        "macro": "B,B,B,B,B,B,,,,Right+B,Right+B,Right+B,Right+B,,,,,,,,,,,,,,,,,,,,",
+        "extra": 30,
+        "patches": []
+      },
+      "detection": {
+        "frame": 16,
+        "success_checks": [
+          {
+            "check_id": "otamage_skill_sig",
+            "plugin_id": "frame_region_color_fraction",
+            "params": {
+              "region": [
+                0.2,
+                0.3,
+                0.82,
+                0.78
+              ],
+              "rgb": [
+                120,
+                232,
+                168
+              ],
+              "tol": 28,
+              "min_fraction": 0.01
+            },
+            "required": true
+          }
+        ]
+      },
+      "negative_control": {
+        "macro": null,
+        "patches": []
+      },
+      "note": "支援角色 Otamage 特殊能力展示。"
+    }
+  ]
+}

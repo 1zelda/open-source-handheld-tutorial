@@ -1,0 +1,34 @@
+{
+  "version": 1,
+  "id": "pub_5254",
+  "mode": "session",
+  "purpose": "playthrough",
+  "game": "Donkey Kong",
+  "platform": "NES",
+  "rom": {
+    "path": "F:\\开源掌机教程\\04-游戏资源库\\TAS输入录像库\\roms_verify\\NES\\donkey_kong_world_rev_1.nes",
+    "sha1": "d8dfacbfec34cdc871d73c901811551fe1706923"
+  },
+  "profile": {
+    "bizhawk": "F:\\开源掌机教程\\02-模拟器库\\BizHawk\\BizHawk-2.9",
+    "core": "NesHawk",
+    "system": "NES"
+  },
+  "start": {
+    "kind": "movie",
+    "path": "F:\\开源掌机教程\\04-游戏资源库\\TAS输入录像库\\movies\\NES\\5254.bk2",
+    "sha256": "0c238766101ccd6c1fb85dea023f7054cd7df989fa746926246f2345468771d7"
+  },
+  "steps": [
+    {
+      "id": "full_movie",
+      "op": "replay",
+      "frames": "end"
+    }
+  ],
+  "record": {
+    "video": false,
+    "audio": false,
+    "fps": 60.0988
+  }
+}

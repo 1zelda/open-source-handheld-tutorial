@@ -1,0 +1,16 @@
+洛克人2 官方说明书：HOW TO BEAT AIRMAN Air Tikk Lightning Lord Air Flend 龙卷风（美国NES手册第10至13页）
+
+来源：Capcom《MEGA MAN 2》美国 NES 官方说明书，任天堂官方数字复刻。
+核验：已读扫描页；中文为说明，英文为短引文；未收全本。
+
+选Air Man关卡后，在每节末尾按START暂停，再按START返回游戏。
+> Push the START button to pause at the end of each section. (Remember: You must push START again to return to the game.)
+
+Air Tikk出现时跳上其角，射击Lump，并等待角降下后重复，五次后召唤下一只。
+> Jump onto it as soon as it starts to lower its horns, run across and jump to the platform on the other side.
+
+射击Lightning Lord，跳上其战车；随后对付Air Flend并进入Air Man房间。
+> Jump up and shoot him until he explodes. Then jump onto his Thunder Chariot.
+
+Airman投出会偏转子弹并造成伤害的小龙卷风；接近后快速射击。
+> Airman throws small tornados which deflect your shots and damage you.

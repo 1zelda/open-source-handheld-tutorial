@@ -1,0 +1,58 @@
+{
+  "schema_version": "menu_catalog/1.0",
+  "game_id": "castlevania_aria_gba",
+  "note": "三类魂菜单与能力魂候选菜单的小样探针；只验证打开序列、槽位回读和菜单截图，不把候选地址升级为已验证字段。",
+  "profile": {
+    "rom": "F:/BaiduNetdiskDownload/rom/gba/恶魔城晓月圆舞曲.gba",
+    "rom_sha1": "40aab076a528f52e93260bb98d91a40039e0da02",
+    "bizhawk": "F:/开源掌机教程/02-模拟器库/BizHawk/BizHawk-2.11.1",
+    "core": "mGBA",
+    "system": "GBA",
+    "domain": "EWRAM",
+    "state_package": {
+      "game_id": "castlevania_aria_gba",
+      "profile_id": "aria_us_40aab076",
+      "revision": "r20261125T120000"
+    }
+  },
+  "base_state": "base",
+  "workers": 4,
+  "groups": [
+    {
+      "id": "red",
+      "label": "红魂",
+      "slot_addr": 78429,
+      "count": 2,
+      "menu_steps": ["Start", "A", "A"],
+      "key_gap": 16,
+      "tail": 40
+    },
+    {
+      "id": "blue",
+      "label": "蓝魂",
+      "slot_addr": 78430,
+      "count": 2,
+      "menu_steps": ["Start", "A", "Down", "A"],
+      "key_gap": 16,
+      "tail": 40
+    },
+    {
+      "id": "yellow",
+      "label": "黄魂",
+      "slot_addr": 78431,
+      "count": 2,
+      "menu_steps": ["Start", "A", "Down", "Down", "A"],
+      "key_gap": 16,
+      "tail": 40
+    },
+    {
+      "id": "ability",
+      "label": "能力魂候选",
+      "slot_addr": 78726,
+      "count": 2,
+      "menu_steps": ["Start", "A", "Down", "Down", "Down", "A"],
+      "key_gap": 16,
+      "tail": 40
+    }
+  ]
+}

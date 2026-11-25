@@ -1,0 +1,2841 @@
+{
+  "schema": "kb_source_inheritance_regression_partial_v1",
+  "taken_at": "2026-11-25 00:14:31",
+  "arms": [
+    "base_default",
+    "base_strict"
+  ],
+  "rows": [
+    {
+      "id": "Q01",
+      "q": "热血足球联盟一共有多少种必杀射门？",
+      "frozen_tier": "strict_pass",
+      "frozen_kind": null,
+      "arms": {
+        "base_default": {
+          "status": "pass",
+          "grade_v2": {
+            "id": "Q01",
+            "tier": "strict_pass",
+            "ok": true,
+            "why": "status=pass, selected_gold=True, direct_recall=True",
+            "status": "pass",
+            "n_hits": 30,
+            "top1": "_工具脚本/taspipe/游戏包/来源库/取证/1ang_热血足球联盟图文攻略_20261118.md#L1-L129",
+            "direct_recall": true,
+            "equivalent_recall": null,
+            "correct_evidence": true,
+            "wrong_evidence": false,
+            "missed_answer": false,
+            "citation_valid": true,
+            "version_condition_error": false,
+            "selected_locator": "_工具脚本/taspipe/游戏包/热血足球联盟_必杀全清单.md#L3-L7"
+          },
+          "selected": [
+            {
+              "chunk_id": "a3e5a236ca2e",
+              "locator": "_工具脚本/taspipe/游戏包/热血足球联盟_必杀全清单.md#L3-L7",
+              "source_id": "local_soccer2_super_list",
+              "authority": "authoritative",
+              "excerpt": null,
+              "provenance": null
+            }
+          ],
+          "retrieval": "bm25_only",
+          "retrieval_note": "稠密指纹件未建（py -3 -m taspipe.kb dense）",
+          "index_used": "index.json",
+          "refusal": null,
+          "condition": "权威可答件在第3位，非最高分；出证须附此条件",
+          "authority_warnings": [
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "sohu_game 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "sohu_game 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "sohu_game 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "sohu_game 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "sohu_game 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "sohu_game 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "csdn_wangsitan_bug 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "csdn_wangsitan_bug 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "tencent_cloud_dev 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "xiaoji001 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "sohu_game 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "csdn_wangsitan_bug 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "csdn_wangsitan_bug 是二手件（reference_only），须与官方件或我方实测交叉核对"
+          ],
+          "elapsed_ms": 184.1
+        },
+        "base_strict": {
+          "status": "inconclusive",
+          "grade_v2": {
+            "id": "Q01",
+            "tier": "strict_pass",
+            "ok": false,
+            "why": "status=inconclusive, selected_gold=False, direct_recall=True",
+            "status": "inconclusive",
+            "n_hits": 30,
+            "top1": "_工具脚本/taspipe/游戏包/来源库/取证/1ang_热血足球联盟图文攻略_20261118.md#L1-L129",
+            "direct_recall": true,
+            "equivalent_recall": null,
+            "correct_evidence": false,
+            "wrong_evidence": false,
+            "missed_answer": true,
+            "citation_valid": true,
+            "version_condition_error": false,
+            "selected_locator": null
+          },
+          "selected": [],
+          "retrieval": "bm25_only",
+          "retrieval_note": "稠密指纹件未建（py -3 -m taspipe.kb dense）",
+          "index_used": "index.json",
+          "refusal": null,
+          "condition": null,
+          "authority_warnings": [
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "sohu_game 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "sohu_game 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "sohu_game 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "sohu_game 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "sohu_game 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "sohu_game 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "csdn_wangsitan_bug 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "csdn_wangsitan_bug 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "tencent_cloud_dev 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "xiaoji001 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "sohu_game 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "csdn_wangsitan_bug 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "csdn_wangsitan_bug 是二手件（reference_only），须与官方件或我方实测交叉核对"
+          ],
+          "elapsed_ms": 203.0
+        }
+      }
+    },
+    {
+      "id": "Q02",
+      "q": "热血队内，燕返原生只有哪个角色会使？",
+      "frozen_tier": "strict_pass",
+      "frozen_kind": null,
+      "arms": {
+        "base_default": {
+          "status": "pass",
+          "grade_v2": {
+            "id": "Q02",
+            "tier": "strict_pass",
+            "ok": true,
+            "why": "status=pass, selected_gold=True, direct_recall=True",
+            "status": "pass",
+            "n_hits": 19,
+            "top1": "_工具脚本/taspipe/游戏包/热血足球联盟_必杀全清单.md#L70-L85",
+            "direct_recall": true,
+            "equivalent_recall": null,
+            "correct_evidence": true,
+            "wrong_evidence": false,
+            "missed_answer": false,
+            "citation_valid": true,
+            "version_condition_error": false,
+            "selected_locator": "_工具脚本/taspipe/游戏包/热血足球联盟_必杀全清单.md#L70-L85"
+          },
+          "selected": [
+            {
+              "chunk_id": "f7f8e8316295",
+              "locator": "_工具脚本/taspipe/游戏包/热血足球联盟_必杀全清单.md#L70-L85",
+              "source_id": "local_soccer2_super_list",
+              "authority": "authoritative",
+              "excerpt": null,
+              "provenance": null
+            }
+          ],
+          "retrieval": "bm25_only",
+          "retrieval_note": "稠密指纹件未建（py -3 -m taspipe.kb dense）",
+          "index_used": "index.json",
+          "refusal": null,
+          "condition": null,
+          "authority_warnings": [
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "sohu_game 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "sohu_game 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对"
+          ],
+          "elapsed_ms": 63.7
+        },
+        "base_strict": {
+          "status": "inconclusive",
+          "grade_v2": {
+            "id": "Q02",
+            "tier": "strict_pass",
+            "ok": false,
+            "why": "status=inconclusive, selected_gold=False, direct_recall=True",
+            "status": "inconclusive",
+            "n_hits": 19,
+            "top1": "_工具脚本/taspipe/游戏包/热血足球联盟_必杀全清单.md#L70-L85",
+            "direct_recall": true,
+            "equivalent_recall": null,
+            "correct_evidence": false,
+            "wrong_evidence": false,
+            "missed_answer": true,
+            "citation_valid": true,
+            "version_condition_error": false,
+            "selected_locator": null
+          },
+          "selected": [],
+          "retrieval": "bm25_only",
+          "retrieval_note": "稠密指纹件未建（py -3 -m taspipe.kb dense）",
+          "index_used": "index.json",
+          "refusal": null,
+          "condition": null,
+          "authority_warnings": [
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "sohu_game 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "sohu_game 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对"
+          ],
+          "elapsed_ms": 149.1
+        }
+      }
+    },
+    {
+      "id": "Q03",
+      "q": "热血足球2 暂停秘技的按键输入是什么？",
+      "frozen_tier": "strict_pass",
+      "frozen_kind": null,
+      "arms": {
+        "base_default": {
+          "status": "pass",
+          "grade_v2": {
+            "id": "Q03",
+            "tier": "strict_pass",
+            "ok": true,
+            "why": "status=pass, selected_gold=True, direct_recall=True",
+            "status": "pass",
+            "n_hits": 30,
+            "top1": "_工具脚本/taspipe/游戏包/来源库/取证/1ang_热血足球联盟图文攻略_20261118.md#L823-L839",
+            "direct_recall": true,
+            "equivalent_recall": null,
+            "correct_evidence": true,
+            "wrong_evidence": false,
+            "missed_answer": false,
+            "citation_valid": true,
+            "version_condition_error": false,
+            "selected_locator": "_工具脚本/taspipe/游戏包/热血足球联盟_必杀全清单.md#L24-L33"
+          },
+          "selected": [
+            {
+              "chunk_id": "42b773880ef0",
+              "locator": "_工具脚本/taspipe/游戏包/热血足球联盟_必杀全清单.md#L24-L33",
+              "source_id": "local_soccer2_super_list",
+              "authority": "authoritative",
+              "excerpt": null,
+              "provenance": null
+            }
+          ],
+          "retrieval": "bm25_only",
+          "retrieval_note": "稠密指纹件未建（py -3 -m taspipe.kb dense）",
+          "index_used": "index.json",
+          "refusal": null,
+          "condition": "权威可答件在第2位，非最高分；出证须附此条件",
+          "authority_warnings": [
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "csdn_wangsitan_bug 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "sohu_game 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "sohu_game 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "csdn_wangsitan_bug 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "csdn_wangsitan_bug 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对"
+          ],
+          "elapsed_ms": 75.7
+        },
+        "base_strict": {
+          "status": "inconclusive",
+          "grade_v2": {
+            "id": "Q03",
+            "tier": "strict_pass",
+            "ok": false,
+            "why": "status=inconclusive, selected_gold=False, direct_recall=True",
+            "status": "inconclusive",
+            "n_hits": 30,
+            "top1": "_工具脚本/taspipe/游戏包/来源库/取证/1ang_热血足球联盟图文攻略_20261118.md#L823-L839",
+            "direct_recall": true,
+            "equivalent_recall": null,
+            "correct_evidence": false,
+            "wrong_evidence": false,
+            "missed_answer": true,
+            "citation_valid": true,
+            "version_condition_error": false,
+            "selected_locator": null
+          },
+          "selected": [],
+          "retrieval": "bm25_only",
+          "retrieval_note": "稠密指纹件未建（py -3 -m taspipe.kb dense）",
+          "index_used": "index.json",
+          "refusal": null,
+          "condition": null,
+          "authority_warnings": [
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "csdn_wangsitan_bug 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "sohu_game 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "sohu_game 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "csdn_wangsitan_bug 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "csdn_wangsitan_bug 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对"
+          ],
+          "elapsed_ms": 214.4
+        }
+      }
+    },
+    {
+      "id": "Q04",
+      "q": "容易难度下对手能不能发动必杀射门？",
+      "frozen_tier": "gold_in_topk",
+      "frozen_kind": null,
+      "arms": {
+        "base_default": {
+          "status": "pass",
+          "grade_v2": {
+            "id": "Q04",
+            "tier": "gold_in_topk",
+            "ok": true,
+            "why": "status=pass, gold_in_top30=True",
+            "status": "pass",
+            "n_hits": 30,
+            "top1": "_工具脚本/taspipe/游戏包/热血足球联盟_必杀全清单.md#L24-L33",
+            "direct_recall": true,
+            "equivalent_recall": null,
+            "correct_evidence": true,
+            "wrong_evidence": false,
+            "missed_answer": false,
+            "citation_valid": true,
+            "version_condition_error": false,
+            "selected_locator": "_工具脚本/taspipe/游戏包/热血足球联盟_必杀全清单.md#L24-L33"
+          },
+          "selected": [
+            {
+              "chunk_id": "42b773880ef0",
+              "locator": "_工具脚本/taspipe/游戏包/热血足球联盟_必杀全清单.md#L24-L33",
+              "source_id": "local_soccer2_super_list",
+              "authority": "authoritative",
+              "excerpt": null,
+              "provenance": null
+            }
+          ],
+          "retrieval": "bm25_only",
+          "retrieval_note": "稠密指纹件未建（py -3 -m taspipe.kb dense）",
+          "index_used": "index.json",
+          "refusal": null,
+          "condition": null,
+          "authority_warnings": [
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "sohu_game 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "sohu_game 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "sohu_game 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "sohu_game 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "tencent_cloud_dev 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "sohu_game 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "sohu_game 是二手件（reference_only），须与官方件或我方实测交叉核对"
+          ],
+          "elapsed_ms": 71.9
+        },
+        "base_strict": {
+          "status": "inconclusive",
+          "grade_v2": {
+            "id": "Q04",
+            "tier": "gold_in_topk",
+            "ok": true,
+            "why": "status=inconclusive, gold_in_top30=True",
+            "status": "inconclusive",
+            "n_hits": 30,
+            "top1": "_工具脚本/taspipe/游戏包/热血足球联盟_必杀全清单.md#L24-L33",
+            "direct_recall": true,
+            "equivalent_recall": null,
+            "correct_evidence": false,
+            "wrong_evidence": false,
+            "missed_answer": true,
+            "citation_valid": true,
+            "version_condition_error": false,
+            "selected_locator": null
+          },
+          "selected": [],
+          "retrieval": "bm25_only",
+          "retrieval_note": "稠密指纹件未建（py -3 -m taspipe.kb dense）",
+          "index_used": "index.json",
+          "refusal": null,
+          "condition": null,
+          "authority_warnings": [
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "sohu_game 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "sohu_game 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "sohu_game 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "sohu_game 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "tencent_cloud_dev 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "sohu_game 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "sohu_game 是二手件（reference_only），须与官方件或我方实测交叉核对"
+          ],
+          "elapsed_ms": 209.5
+        }
+      }
+    },
+    {
+      "id": "Q05",
+      "q": "我想控制队长以外的队员，该怎么换人？",
+      "frozen_tier": "strict_pass",
+      "frozen_kind": null,
+      "arms": {
+        "base_default": {
+          "status": "pass",
+          "grade_v2": {
+            "id": "Q05",
+            "tier": "strict_pass",
+            "ok": true,
+            "why": "status=pass, selected_gold=True, direct_recall=True",
+            "status": "pass",
+            "n_hits": 30,
+            "top1": "_工具脚本/taspipe/游戏包/来源库/取证/1ang_热血足球联盟图文攻略_20261118.md#L511-L522",
+            "direct_recall": true,
+            "equivalent_recall": null,
+            "correct_evidence": true,
+            "wrong_evidence": false,
+            "missed_answer": false,
+            "citation_valid": true,
+            "version_condition_error": false,
+            "selected_locator": "_工具脚本/taspipe/游戏包/热血足球联盟_必杀全清单.md#L24-L33"
+          },
+          "selected": [
+            {
+              "chunk_id": "42b773880ef0",
+              "locator": "_工具脚本/taspipe/游戏包/热血足球联盟_必杀全清单.md#L24-L33",
+              "source_id": "local_soccer2_super_list",
+              "authority": "authoritative",
+              "excerpt": null,
+              "provenance": null
+            }
+          ],
+          "retrieval": "bm25_only",
+          "retrieval_note": "稠密指纹件未建（py -3 -m taspipe.kb dense）",
+          "index_used": "index.json",
+          "refusal": null,
+          "condition": "权威可答件在第2位，非最高分；出证须附此条件",
+          "authority_warnings": [
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "csdn_wangsitan_bug 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "tencent_cloud_dev 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "csdn_wangsitan_bug 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "sohu_game 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "csdn_wangsitan_bug 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "csdn_wangsitan_bug 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "sohu_game 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "csdn_wangsitan_bug 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对"
+          ],
+          "elapsed_ms": 81.9
+        },
+        "base_strict": {
+          "status": "inconclusive",
+          "grade_v2": {
+            "id": "Q05",
+            "tier": "strict_pass",
+            "ok": false,
+            "why": "status=inconclusive, selected_gold=False, direct_recall=True",
+            "status": "inconclusive",
+            "n_hits": 30,
+            "top1": "_工具脚本/taspipe/游戏包/来源库/取证/1ang_热血足球联盟图文攻略_20261118.md#L511-L522",
+            "direct_recall": true,
+            "equivalent_recall": null,
+            "correct_evidence": false,
+            "wrong_evidence": false,
+            "missed_answer": true,
+            "citation_valid": true,
+            "version_condition_error": false,
+            "selected_locator": null
+          },
+          "selected": [],
+          "retrieval": "bm25_only",
+          "retrieval_note": "稠密指纹件未建（py -3 -m taspipe.kb dense）",
+          "index_used": "index.json",
+          "refusal": null,
+          "condition": null,
+          "authority_warnings": [
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "csdn_wangsitan_bug 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "tencent_cloud_dev 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "csdn_wangsitan_bug 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "sohu_game 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "csdn_wangsitan_bug 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "csdn_wangsitan_bug 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "sohu_game 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "csdn_wangsitan_bug 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对"
+          ],
+          "elapsed_ms": 208.2
+        }
+      }
+    },
+    {
+      "id": "Q06",
+      "q": "热血足球联盟每队上场几名球员？",
+      "frozen_tier": "gold_in_topk",
+      "frozen_kind": null,
+      "arms": {
+        "base_default": {
+          "status": "pass",
+          "grade_v2": {
+            "id": "Q06",
+            "tier": "gold_in_topk",
+            "ok": true,
+            "why": "status=pass, gold_in_top30=True",
+            "status": "pass",
+            "n_hits": 30,
+            "top1": "_工具脚本/taspipe/游戏包/来源库/取证/setsumei_热血足球说明书扫描_20261118.md#L47-L48",
+            "direct_recall": true,
+            "equivalent_recall": null,
+            "correct_evidence": true,
+            "wrong_evidence": false,
+            "missed_answer": false,
+            "citation_valid": true,
+            "version_condition_error": false,
+            "selected_locator": "_工具脚本/taspipe/游戏包/来源库/取证/setsumei_热血足球说明书扫描_20261118.md#L47-L48"
+          },
+          "selected": [
+            {
+              "chunk_id": "b52a862e000a",
+              "locator": "_工具脚本/taspipe/游戏包/来源库/取证/setsumei_热血足球说明书扫描_20261118.md#L47-L48",
+              "source_id": "setsumei_cloudfree",
+              "authority": "authoritative",
+              "excerpt": null,
+              "provenance": null
+            }
+          ],
+          "retrieval": "bm25_only",
+          "retrieval_note": "稠密指纹件未建（py -3 -m taspipe.kb dense）",
+          "index_used": "index.json",
+          "refusal": null,
+          "condition": null,
+          "authority_warnings": [
+            "game_urawaza 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "game_urawaza 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "xiaoji001 属 nekketsu_soccer2_fc_cn_hack，与所问 nekketsu_soccer2_fc_jp 不是同一版本，只作线索",
+            "game_urawaza 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "game_urawaza 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "game_urawaza 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "game_urawaza 是二手件（reference_only），须与官方件或我方实测交叉核对"
+          ],
+          "elapsed_ms": 77.4
+        },
+        "base_strict": {
+          "status": "pass",
+          "grade_v2": {
+            "id": "Q06",
+            "tier": "gold_in_topk",
+            "ok": true,
+            "why": "status=pass, gold_in_top30=True",
+            "status": "pass",
+            "n_hits": 30,
+            "top1": "_工具脚本/taspipe/游戏包/来源库/取证/setsumei_热血足球说明书扫描_20261118.md#L47-L48",
+            "direct_recall": true,
+            "equivalent_recall": null,
+            "correct_evidence": true,
+            "wrong_evidence": false,
+            "missed_answer": false,
+            "citation_valid": true,
+            "version_condition_error": false,
+            "selected_locator": "_工具脚本/taspipe/游戏包/来源库/取证/setsumei_热血足球说明书扫描_20261118.md#L47-L48"
+          },
+          "selected": [
+            {
+              "chunk_id": "b52a862e000a",
+              "locator": "_工具脚本/taspipe/游戏包/来源库/取证/setsumei_热血足球说明书扫描_20261118.md#L47-L48",
+              "source_id": "setsumei_cloudfree",
+              "authority": "authoritative",
+              "excerpt": "　まず、「熱血サッカーリーグ」の試合ルールから説明するわよ",
+              "provenance": {
+                "policy": "strict",
+                "eligible": true,
+                "reason": "eligible_fragment",
+                "relevant_segments": 5,
+                "eligible_segments": 5,
+                "reference_segments": 0,
+                "retracted_segments": 0,
+                "evidence_excerpt": "　まず、「熱血サッカーリーグ」の試合ルールから説明するわよ"
+              }
+            }
+          ],
+          "retrieval": "bm25_only",
+          "retrieval_note": "稠密指纹件未建（py -3 -m taspipe.kb dense）",
+          "index_used": "index.json",
+          "refusal": null,
+          "condition": null,
+          "authority_warnings": [
+            "game_urawaza 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "game_urawaza 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "xiaoji001 属 nekketsu_soccer2_fc_cn_hack，与所问 nekketsu_soccer2_fc_jp 不是同一版本，只作线索",
+            "game_urawaza 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "game_urawaza 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "game_urawaza 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "game_urawaza 是二手件（reference_only），须与官方件或我方实测交叉核对"
+          ],
+          "elapsed_ms": 200.1
+        }
+      }
+    },
+    {
+      "id": "Q07",
+      "q": "热血联赛模式一共有多少场比赛？",
+      "frozen_tier": "gold_in_topk",
+      "frozen_kind": null,
+      "arms": {
+        "base_default": {
+          "status": "pass",
+          "grade_v2": {
+            "id": "Q07",
+            "tier": "gold_in_topk",
+            "ok": true,
+            "why": "status=pass, gold_in_top30=True",
+            "status": "pass",
+            "n_hits": 30,
+            "top1": "_工具脚本/taspipe/游戏包/来源库/取证/sohu_一直输球隐藏大结局_20261118.md#L65-L81",
+            "direct_recall": true,
+            "equivalent_recall": null,
+            "correct_evidence": true,
+            "wrong_evidence": false,
+            "missed_answer": false,
+            "citation_valid": true,
+            "version_condition_error": false,
+            "selected_locator": "_工具脚本/taspipe/游戏包/来源库/取证/setsumei_热血足球说明书扫描_20261118.md#L76-L85"
+          },
+          "selected": [
+            {
+              "chunk_id": "7f3b75bcbe61",
+              "locator": "_工具脚本/taspipe/游戏包/来源库/取证/setsumei_热血足球说明书扫描_20261118.md#L76-L85",
+              "source_id": "setsumei_cloudfree",
+              "authority": "authoritative",
+              "excerpt": null,
+              "provenance": null
+            }
+          ],
+          "retrieval": "bm25_only",
+          "retrieval_note": "稠密指纹件未建（py -3 -m taspipe.kb dense）",
+          "index_used": "index.json",
+          "refusal": null,
+          "condition": "权威可答件在第3位，非最高分；出证须附此条件",
+          "authority_warnings": [
+            "sohu_game 属 nekketsu_soccer2_fc_unspecified，与所问 nekketsu_soccer2_fc_jp 不是同一版本，只作线索",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "sohu_game 属 nekketsu_soccer2_fc_unspecified，与所问 nekketsu_soccer2_fc_jp 不是同一版本，只作线索",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "tencent_cloud_dev 属 nekketsu_soccer2_fc_unspecified，与所问 nekketsu_soccer2_fc_jp 不是同一版本，只作线索",
+            "sohu_game 属 nekketsu_soccer2_fc_unspecified，与所问 nekketsu_soccer2_fc_jp 不是同一版本，只作线索",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "csdn_wangsitan_bug 属 nekketsu_soccer2_fc_unspecified，与所问 nekketsu_soccer2_fc_jp 不是同一版本，只作线索",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对"
+          ],
+          "elapsed_ms": 86.3
+        },
+        "base_strict": {
+          "status": "pass",
+          "grade_v2": {
+            "id": "Q07",
+            "tier": "gold_in_topk",
+            "ok": true,
+            "why": "status=pass, gold_in_top30=True",
+            "status": "pass",
+            "n_hits": 30,
+            "top1": "_工具脚本/taspipe/游戏包/来源库/取证/sohu_一直输球隐藏大结局_20261118.md#L65-L81",
+            "direct_recall": true,
+            "equivalent_recall": null,
+            "correct_evidence": true,
+            "wrong_evidence": false,
+            "missed_answer": false,
+            "citation_valid": true,
+            "version_condition_error": false,
+            "selected_locator": "_工具脚本/taspipe/游戏包/来源库/取证/setsumei_热血足球说明书扫描_20261118.md#L76-L85"
+          },
+          "selected": [
+            {
+              "chunk_id": "7f3b75bcbe61",
+              "locator": "_工具脚本/taspipe/游戏包/来源库/取证/setsumei_热血足球说明书扫描_20261118.md#L76-L85",
+              "source_id": "setsumei_cloudfree",
+              "authority": "authoritative",
+              "excerpt": "＜熱血リーグ・モード＞",
+              "provenance": {
+                "policy": "strict",
+                "eligible": true,
+                "reason": "eligible_fragment",
+                "relevant_segments": 4,
+                "eligible_segments": 4,
+                "reference_segments": 0,
+                "retracted_segments": 0,
+                "evidence_excerpt": "＜熱血リーグ・モード＞"
+              }
+            }
+          ],
+          "retrieval": "bm25_only",
+          "retrieval_note": "稠密指纹件未建（py -3 -m taspipe.kb dense）",
+          "index_used": "index.json",
+          "refusal": null,
+          "condition": "权威可答件在第3位，非最高分；出证须附此条件",
+          "authority_warnings": [
+            "sohu_game 属 nekketsu_soccer2_fc_unspecified，与所问 nekketsu_soccer2_fc_jp 不是同一版本，只作线索",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "sohu_game 属 nekketsu_soccer2_fc_unspecified，与所问 nekketsu_soccer2_fc_jp 不是同一版本，只作线索",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "tencent_cloud_dev 属 nekketsu_soccer2_fc_unspecified，与所问 nekketsu_soccer2_fc_jp 不是同一版本，只作线索",
+            "sohu_game 属 nekketsu_soccer2_fc_unspecified，与所问 nekketsu_soccer2_fc_jp 不是同一版本，只作线索",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "csdn_wangsitan_bug 属 nekketsu_soccer2_fc_unspecified，与所问 nekketsu_soccer2_fc_jp 不是同一版本，只作线索",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对"
+          ],
+          "elapsed_ms": 235.8
+        }
+      }
+    },
+    {
+      "id": "Q08",
+      "q": "双人合作模式下二号玩家操作什么位置？",
+      "frozen_tier": "gold_in_topk",
+      "frozen_kind": null,
+      "arms": {
+        "base_default": {
+          "status": "pass",
+          "grade_v2": {
+            "id": "Q08",
+            "tier": "gold_in_topk",
+            "ok": true,
+            "why": "status=pass, gold_in_top20=True",
+            "status": "pass",
+            "n_hits": 20,
+            "top1": "_工具脚本/taspipe/游戏包/来源库/取证/setsumei_热血足球说明书扫描_20261118.md#L52-L72",
+            "direct_recall": true,
+            "equivalent_recall": null,
+            "correct_evidence": true,
+            "wrong_evidence": false,
+            "missed_answer": false,
+            "citation_valid": true,
+            "version_condition_error": false,
+            "selected_locator": "_工具脚本/taspipe/游戏包/来源库/取证/setsumei_热血足球说明书扫描_20261118.md#L47-L48"
+          },
+          "selected": [
+            {
+              "chunk_id": "b52a862e000a",
+              "locator": "_工具脚本/taspipe/游戏包/来源库/取证/setsumei_热血足球说明书扫描_20261118.md#L47-L48",
+              "source_id": "setsumei_cloudfree",
+              "authority": "authoritative",
+              "excerpt": null,
+              "provenance": null
+            }
+          ],
+          "retrieval": "bm25_only",
+          "retrieval_note": "稠密指纹件未建（py -3 -m taspipe.kb dense）",
+          "index_used": "index.json",
+          "refusal": null,
+          "condition": "权威可答件在第2位，非最高分；出证须附此条件",
+          "authority_warnings": [
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "csdn_wangsitan_bug 属 nekketsu_soccer2_fc_unspecified，与所问 nekketsu_soccer2_fc_jp 不是同一版本，只作线索",
+            "csdn_wangsitan_bug 属 nekketsu_soccer2_fc_unspecified，与所问 nekketsu_soccer2_fc_jp 不是同一版本，只作线索",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "tencent_cloud_dev 属 nekketsu_soccer2_fc_unspecified，与所问 nekketsu_soccer2_fc_jp 不是同一版本，只作线索"
+          ],
+          "elapsed_ms": 85.6
+        },
+        "base_strict": {
+          "status": "pass",
+          "grade_v2": {
+            "id": "Q08",
+            "tier": "gold_in_topk",
+            "ok": true,
+            "why": "status=pass, gold_in_top20=True",
+            "status": "pass",
+            "n_hits": 20,
+            "top1": "_工具脚本/taspipe/游戏包/来源库/取证/setsumei_热血足球说明书扫描_20261118.md#L52-L72",
+            "direct_recall": true,
+            "equivalent_recall": null,
+            "correct_evidence": true,
+            "wrong_evidence": false,
+            "missed_answer": false,
+            "citation_valid": true,
+            "version_condition_error": false,
+            "selected_locator": "_工具脚本/taspipe/游戏包/来源库/取证/setsumei_热血足球说明书扫描_20261118.md#L47-L48"
+          },
+          "selected": [
+            {
+              "chunk_id": "b52a862e000a",
+              "locator": "_工具脚本/taspipe/游戏包/来源库/取证/setsumei_热血足球说明书扫描_20261118.md#L47-L48",
+              "source_id": "setsumei_cloudfree",
+              "authority": "authoritative",
+              "excerpt": "２Ｐ協力プレイでは、１ＰはＭＦ・キャラを、２ＰはＧＫ・キャラを操作するのよ",
+              "provenance": {
+                "policy": "strict",
+                "eligible": true,
+                "reason": "eligible_fragment",
+                "relevant_segments": 2,
+                "eligible_segments": 2,
+                "reference_segments": 0,
+                "retracted_segments": 0,
+                "evidence_excerpt": "２Ｐ協力プレイでは、１ＰはＭＦ・キャラを、２ＰはＧＫ・キャラを操作するのよ"
+              }
+            }
+          ],
+          "retrieval": "bm25_only",
+          "retrieval_note": "稠密指纹件未建（py -3 -m taspipe.kb dense）",
+          "index_used": "index.json",
+          "refusal": null,
+          "condition": "权威可答件在第2位，非最高分；出证须附此条件",
+          "authority_warnings": [
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "csdn_wangsitan_bug 属 nekketsu_soccer2_fc_unspecified，与所问 nekketsu_soccer2_fc_jp 不是同一版本，只作线索",
+            "csdn_wangsitan_bug 属 nekketsu_soccer2_fc_unspecified，与所问 nekketsu_soccer2_fc_jp 不是同一版本，只作线索",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "tencent_cloud_dev 属 nekketsu_soccer2_fc_unspecified，与所问 nekketsu_soccer2_fc_jp 不是同一版本，只作线索"
+          ],
+          "elapsed_ms": 205.5
+        }
+      }
+    },
+    {
+      "id": "Q09",
+      "q": "KOF98 ECK 这张卡 ROM 的 SHA1 指纹是多少？",
+      "frozen_tier": "refuse",
+      "frozen_kind": null,
+      "arms": {
+        "base_default": {
+          "status": "inconclusive",
+          "grade_v2": {
+            "id": "Q09",
+            "tier": "refuse",
+            "ok": true,
+            "why": "status=inconclusive（pass 即失败：缺证据不许冒充事实）",
+            "status": "inconclusive",
+            "n_hits": 9,
+            "top1": "F:/tas_rig/docs/素材生产规范.md#L107-L121",
+            "direct_recall": false,
+            "equivalent_recall": null,
+            "correct_evidence": true,
+            "wrong_evidence": false,
+            "missed_answer": false,
+            "citation_valid": true,
+            "version_condition_error": false,
+            "selected_locator": null
+          },
+          "selected": [],
+          "retrieval": "bm25_only",
+          "retrieval_note": "稠密指纹件未建（py -3 -m taspipe.kb dense）",
+          "index_used": "index.json",
+          "refusal": "unanswerable",
+          "condition": null,
+          "authority_warnings": [],
+          "elapsed_ms": 70.2
+        },
+        "base_strict": {
+          "status": "inconclusive",
+          "grade_v2": {
+            "id": "Q09",
+            "tier": "refuse",
+            "ok": true,
+            "why": "status=inconclusive（pass 即失败：缺证据不许冒充事实）",
+            "status": "inconclusive",
+            "n_hits": 9,
+            "top1": "F:/tas_rig/docs/素材生产规范.md#L107-L121",
+            "direct_recall": false,
+            "equivalent_recall": null,
+            "correct_evidence": true,
+            "wrong_evidence": false,
+            "missed_answer": false,
+            "citation_valid": true,
+            "version_condition_error": false,
+            "selected_locator": null
+          },
+          "selected": [],
+          "retrieval": "bm25_only",
+          "retrieval_note": "稠密指纹件未建（py -3 -m taspipe.kb dense）",
+          "index_used": "index.json",
+          "refusal": "unanswerable",
+          "condition": null,
+          "authority_warnings": [],
+          "elapsed_ms": 167.5
+        }
+      }
+    },
+    {
+      "id": "Q10",
+      "q": "KOF98 ECK 能不能关掉队友改成 1v1？",
+      "frozen_tier": "strict_pass",
+      "frozen_kind": null,
+      "arms": {
+        "base_default": {
+          "status": "pass",
+          "grade_v2": {
+            "id": "Q10",
+            "tier": "strict_pass",
+            "ok": true,
+            "why": "status=pass, selected_gold=True, direct_recall=True",
+            "status": "pass",
+            "n_hits": 5,
+            "top1": "F:/tas_rig/docs/素材生产规范.md#L185-L190",
+            "direct_recall": true,
+            "equivalent_recall": null,
+            "correct_evidence": true,
+            "wrong_evidence": false,
+            "missed_answer": false,
+            "citation_valid": true,
+            "version_condition_error": false,
+            "selected_locator": "F:/tas_rig/docs/素材生产规范.md#L185-L190"
+          },
+          "selected": [
+            {
+              "chunk_id": "51fcabcc7db8",
+              "locator": "F:/tas_rig/docs/素材生产规范.md#L185-L190",
+              "source_id": "local_fbneo_rig",
+              "authority": "authoritative",
+              "excerpt": null,
+              "provenance": null
+            }
+          ],
+          "retrieval": "bm25_only",
+          "retrieval_note": "稠密指纹件未建（py -3 -m taspipe.kb dense）",
+          "index_used": "index.json",
+          "refusal": null,
+          "condition": null,
+          "authority_warnings": [],
+          "elapsed_ms": 81.5
+        },
+        "base_strict": {
+          "status": "pass",
+          "grade_v2": {
+            "id": "Q10",
+            "tier": "strict_pass",
+            "ok": true,
+            "why": "status=pass, selected_gold=True, direct_recall=True",
+            "status": "pass",
+            "n_hits": 5,
+            "top1": "F:/tas_rig/docs/素材生产规范.md#L185-L190",
+            "direct_recall": true,
+            "equivalent_recall": null,
+            "correct_evidence": true,
+            "wrong_evidence": false,
+            "missed_answer": false,
+            "citation_valid": true,
+            "version_condition_error": false,
+            "selected_locator": "F:/tas_rig/docs/素材生产规范.md#L185-L190"
+          },
+          "selected": [
+            {
+              "chunk_id": "51fcabcc7db8",
+              "locator": "F:/tas_rig/docs/素材生产规范.md#L185-L190",
+              "source_id": "local_fbneo_rig",
+              "authority": "authoritative",
+              "excerpt": "6. 3v3 队战是 ROM 侧限制，素材里必带一个队友入镜（四条输入路径实测全否，已结案，不再重开）",
+              "provenance": {
+                "policy": "strict",
+                "eligible": true,
+                "reason": "eligible_fragment",
+                "relevant_segments": 1,
+                "eligible_segments": 1,
+                "reference_segments": 0,
+                "retracted_segments": 0,
+                "evidence_excerpt": "6. 3v3 队战是 ROM 侧限制，素材里必带一个队友入镜（四条输入路径实测全否，已结案，不再重开）"
+              }
+            }
+          ],
+          "retrieval": "bm25_only",
+          "retrieval_note": "稠密指纹件未建（py -3 -m taspipe.kb dense）",
+          "index_used": "index.json",
+          "refusal": null,
+          "condition": null,
+          "authority_warnings": [],
+          "elapsed_ms": 131.2
+        }
+      }
+    },
+    {
+      "id": "Q11",
+      "q": "草薙京的出招表指令",
+      "frozen_tier": "version_guard",
+      "frozen_kind": null,
+      "arms": {
+        "base_default": {
+          "status": "inconclusive",
+          "grade_v2": {
+            "id": "Q11",
+            "tier": "version_guard",
+            "ok": true,
+            "why": "status=inconclusive, um_hits=2, top1_um=True, sel_um=False, warned=True",
+            "status": "inconclusive",
+            "n_hits": 7,
+            "top1": "_工具脚本/taspipe/游戏包/来源库/取证/gamersky_kof98um全角色出招表_20261118.md#L3-L305",
+            "direct_recall": false,
+            "equivalent_recall": null,
+            "correct_evidence": false,
+            "wrong_evidence": false,
+            "missed_answer": false,
+            "citation_valid": true,
+            "version_condition_error": false,
+            "selected_locator": null
+          },
+          "selected": [],
+          "retrieval": "bm25_only",
+          "retrieval_note": "稠密指纹件未建（py -3 -m taspipe.kb dense）",
+          "index_used": "index.json",
+          "refusal": null,
+          "condition": null,
+          "authority_warnings": [
+            "gamersky_handbook 是 kof98um 的跨版本参考件，不得当 kof98eck 的权威依据",
+            "gamersky_handbook 是 kof98um 的跨版本参考件，不得当 kof98eck 的权威依据"
+          ],
+          "elapsed_ms": 99.0
+        },
+        "base_strict": {
+          "status": "inconclusive",
+          "grade_v2": {
+            "id": "Q11",
+            "tier": "version_guard",
+            "ok": true,
+            "why": "status=inconclusive, um_hits=2, top1_um=True, sel_um=False, warned=True",
+            "status": "inconclusive",
+            "n_hits": 7,
+            "top1": "_工具脚本/taspipe/游戏包/来源库/取证/gamersky_kof98um全角色出招表_20261118.md#L3-L305",
+            "direct_recall": false,
+            "equivalent_recall": null,
+            "correct_evidence": false,
+            "wrong_evidence": false,
+            "missed_answer": false,
+            "citation_valid": true,
+            "version_condition_error": false,
+            "selected_locator": null
+          },
+          "selected": [],
+          "retrieval": "bm25_only",
+          "retrieval_note": "稠密指纹件未建（py -3 -m taspipe.kb dense）",
+          "index_used": "index.json",
+          "refusal": null,
+          "condition": null,
+          "authority_warnings": [
+            "gamersky_handbook 是 kof98um 的跨版本参考件，不得当 kof98eck 的权威依据",
+            "gamersky_handbook 是 kof98um 的跨版本参考件，不得当 kof98eck 的权威依据"
+          ],
+          "elapsed_ms": 132.8
+        }
+      }
+    },
+    {
+      "id": "Q12",
+      "q": "2025年英雄联盟全球总决赛冠军是哪支战队？",
+      "frozen_tier": "refuse",
+      "frozen_kind": null,
+      "arms": {
+        "base_default": {
+          "status": "miss",
+          "grade_v2": {
+            "id": "Q12",
+            "tier": "refuse",
+            "ok": true,
+            "why": "status=miss（pass 即失败：缺证据不许冒充事实）",
+            "status": "miss",
+            "n_hits": 0,
+            "top1": null,
+            "direct_recall": false,
+            "equivalent_recall": null,
+            "correct_evidence": true,
+            "wrong_evidence": false,
+            "missed_answer": false,
+            "citation_valid": true,
+            "version_condition_error": false,
+            "selected_locator": null
+          },
+          "selected": [],
+          "retrieval": null,
+          "retrieval_note": null,
+          "index_used": "index.json",
+          "refusal": "out_of_scope",
+          "condition": null,
+          "authority_warnings": null,
+          "elapsed_ms": 70.4
+        },
+        "base_strict": {
+          "status": "miss",
+          "grade_v2": {
+            "id": "Q12",
+            "tier": "refuse",
+            "ok": true,
+            "why": "status=miss（pass 即失败：缺证据不许冒充事实）",
+            "status": "miss",
+            "n_hits": 0,
+            "top1": null,
+            "direct_recall": false,
+            "equivalent_recall": null,
+            "correct_evidence": true,
+            "wrong_evidence": false,
+            "missed_answer": false,
+            "citation_valid": true,
+            "version_condition_error": false,
+            "selected_locator": null
+          },
+          "selected": [],
+          "retrieval": null,
+          "retrieval_note": null,
+          "index_used": "index.json",
+          "refusal": "out_of_scope",
+          "condition": null,
+          "authority_warnings": null,
+          "elapsed_ms": 81.6
+        }
+      }
+    },
+    {
+      "id": "Q13",
+      "q": "DOTA2 TI14 国际邀请赛赛程和奖金池",
+      "frozen_tier": "refuse",
+      "frozen_kind": null,
+      "arms": {
+        "base_default": {
+          "status": "miss",
+          "grade_v2": {
+            "id": "Q13",
+            "tier": "refuse",
+            "ok": true,
+            "why": "status=miss（pass 即失败：缺证据不许冒充事实）",
+            "status": "miss",
+            "n_hits": 0,
+            "top1": null,
+            "direct_recall": false,
+            "equivalent_recall": null,
+            "correct_evidence": true,
+            "wrong_evidence": false,
+            "missed_answer": false,
+            "citation_valid": true,
+            "version_condition_error": false,
+            "selected_locator": null
+          },
+          "selected": [],
+          "retrieval": null,
+          "retrieval_note": null,
+          "index_used": "index.json",
+          "refusal": "out_of_scope",
+          "condition": null,
+          "authority_warnings": null,
+          "elapsed_ms": 69.0
+        },
+        "base_strict": {
+          "status": "miss",
+          "grade_v2": {
+            "id": "Q13",
+            "tier": "refuse",
+            "ok": true,
+            "why": "status=miss（pass 即失败：缺证据不许冒充事实）",
+            "status": "miss",
+            "n_hits": 0,
+            "top1": null,
+            "direct_recall": false,
+            "equivalent_recall": null,
+            "correct_evidence": true,
+            "wrong_evidence": false,
+            "missed_answer": false,
+            "citation_valid": true,
+            "version_condition_error": false,
+            "selected_locator": null
+          },
+          "selected": [],
+          "retrieval": null,
+          "retrieval_note": null,
+          "index_used": "index.json",
+          "refusal": "out_of_scope",
+          "condition": null,
+          "authority_warnings": null,
+          "elapsed_ms": 58.7
+        }
+      }
+    },
+    {
+      "id": "Q14",
+      "q": "原神纳西妲圣遗物搭配推荐",
+      "frozen_tier": "refuse",
+      "frozen_kind": null,
+      "arms": {
+        "base_default": {
+          "status": "miss",
+          "grade_v2": {
+            "id": "Q14",
+            "tier": "refuse",
+            "ok": true,
+            "why": "status=miss（pass 即失败：缺证据不许冒充事实）",
+            "status": "miss",
+            "n_hits": 0,
+            "top1": null,
+            "direct_recall": false,
+            "equivalent_recall": null,
+            "correct_evidence": true,
+            "wrong_evidence": false,
+            "missed_answer": false,
+            "citation_valid": true,
+            "version_condition_error": false,
+            "selected_locator": null
+          },
+          "selected": [],
+          "retrieval": null,
+          "retrieval_note": null,
+          "index_used": "index.json",
+          "refusal": "out_of_scope",
+          "condition": null,
+          "authority_warnings": null,
+          "elapsed_ms": 65.2
+        },
+        "base_strict": {
+          "status": "miss",
+          "grade_v2": {
+            "id": "Q14",
+            "tier": "refuse",
+            "ok": true,
+            "why": "status=miss（pass 即失败：缺证据不许冒充事实）",
+            "status": "miss",
+            "n_hits": 0,
+            "top1": null,
+            "direct_recall": false,
+            "equivalent_recall": null,
+            "correct_evidence": true,
+            "wrong_evidence": false,
+            "missed_answer": false,
+            "citation_valid": true,
+            "version_condition_error": false,
+            "selected_locator": null
+          },
+          "selected": [],
+          "retrieval": null,
+          "retrieval_note": null,
+          "index_used": "index.json",
+          "refusal": "out_of_scope",
+          "condition": null,
+          "authority_warnings": null,
+          "elapsed_ms": 62.3
+        }
+      }
+    },
+    {
+      "id": "Q15",
+      "q": "热血足球联盟的转会市场怎么买卖球员？",
+      "frozen_tier": "refuse",
+      "frozen_kind": null,
+      "arms": {
+        "base_default": {
+          "status": "inconclusive",
+          "grade_v2": {
+            "id": "Q15",
+            "tier": "refuse",
+            "ok": true,
+            "why": "status=inconclusive（pass 即失败：缺证据不许冒充事实）",
+            "status": "inconclusive",
+            "n_hits": 30,
+            "top1": "_工具脚本/taspipe/游戏包/来源库/取证/1ang_热血足球联盟图文攻略_20261118.md#L161-L164",
+            "direct_recall": false,
+            "equivalent_recall": null,
+            "correct_evidence": true,
+            "wrong_evidence": false,
+            "missed_answer": false,
+            "citation_valid": true,
+            "version_condition_error": false,
+            "selected_locator": null
+          },
+          "selected": [],
+          "retrieval": "bm25_only",
+          "retrieval_note": "稠密指纹件未建（py -3 -m taspipe.kb dense）",
+          "index_used": "index.json",
+          "refusal": "unanswerable",
+          "condition": null,
+          "authority_warnings": [
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "sohu_game 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "sohu_game 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "sohu_game 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "csdn_wangsitan_bug 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "sohu_game 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "xiaoji001 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "sohu_game 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "sohu_game 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "csdn_wangsitan_bug 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "tencent_cloud_dev 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "csdn_wangsitan_bug 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "csdn_wangsitan_bug 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "csdn_wangsitan_bug 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "csdn_wangsitan_bug 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "sohu_game 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对"
+          ],
+          "elapsed_ms": 79.4
+        },
+        "base_strict": {
+          "status": "inconclusive",
+          "grade_v2": {
+            "id": "Q15",
+            "tier": "refuse",
+            "ok": true,
+            "why": "status=inconclusive（pass 即失败：缺证据不许冒充事实）",
+            "status": "inconclusive",
+            "n_hits": 30,
+            "top1": "_工具脚本/taspipe/游戏包/来源库/取证/1ang_热血足球联盟图文攻略_20261118.md#L161-L164",
+            "direct_recall": false,
+            "equivalent_recall": null,
+            "correct_evidence": true,
+            "wrong_evidence": false,
+            "missed_answer": false,
+            "citation_valid": true,
+            "version_condition_error": false,
+            "selected_locator": null
+          },
+          "selected": [],
+          "retrieval": "bm25_only",
+          "retrieval_note": "稠密指纹件未建（py -3 -m taspipe.kb dense）",
+          "index_used": "index.json",
+          "refusal": "unanswerable",
+          "condition": null,
+          "authority_warnings": [
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "sohu_game 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "sohu_game 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "sohu_game 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "csdn_wangsitan_bug 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "sohu_game 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "xiaoji001 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "sohu_game 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "sohu_game 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "csdn_wangsitan_bug 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "tencent_cloud_dev 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "csdn_wangsitan_bug 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "csdn_wangsitan_bug 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "csdn_wangsitan_bug 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "csdn_wangsitan_bug 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "sohu_game 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对"
+          ],
+          "elapsed_ms": 221.6
+        }
+      }
+    },
+    {
+      "id": "Q16",
+      "q": "怎么射门才能让守门员扑不到？",
+      "frozen_tier": "gold_in_topk",
+      "frozen_kind": null,
+      "arms": {
+        "base_default": {
+          "status": "inconclusive",
+          "grade_v2": {
+            "id": "Q16",
+            "tier": "gold_in_topk",
+            "ok": true,
+            "why": "status=inconclusive, gold_in_top30=True",
+            "status": "inconclusive",
+            "n_hits": 30,
+            "top1": "_工具脚本/taspipe/游戏包/来源库/取证/sohu_必杀最强小辫子_20261118.md#L71-L89",
+            "direct_recall": true,
+            "equivalent_recall": null,
+            "correct_evidence": false,
+            "wrong_evidence": false,
+            "missed_answer": true,
+            "citation_valid": true,
+            "version_condition_error": false,
+            "selected_locator": null
+          },
+          "selected": [],
+          "retrieval": "bm25_only",
+          "retrieval_note": "稠密指纹件未建（py -3 -m taspipe.kb dense）",
+          "index_used": "index.json",
+          "refusal": null,
+          "condition": null,
+          "authority_warnings": [
+            "sohu_game 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "game_urawaza 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "sohu_game 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "sohu_game 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "sohu_game 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "tencent_cloud_dev 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "game_urawaza 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "sohu_game 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "game_urawaza 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "csdn_wangsitan_bug 是二手件（reference_only），须与官方件或我方实测交叉核对"
+          ],
+          "elapsed_ms": 75.8
+        },
+        "base_strict": {
+          "status": "inconclusive",
+          "grade_v2": {
+            "id": "Q16",
+            "tier": "gold_in_topk",
+            "ok": true,
+            "why": "status=inconclusive, gold_in_top30=True",
+            "status": "inconclusive",
+            "n_hits": 30,
+            "top1": "_工具脚本/taspipe/游戏包/来源库/取证/sohu_必杀最强小辫子_20261118.md#L71-L89",
+            "direct_recall": true,
+            "equivalent_recall": null,
+            "correct_evidence": false,
+            "wrong_evidence": false,
+            "missed_answer": true,
+            "citation_valid": true,
+            "version_condition_error": false,
+            "selected_locator": null
+          },
+          "selected": [],
+          "retrieval": "bm25_only",
+          "retrieval_note": "稠密指纹件未建（py -3 -m taspipe.kb dense）",
+          "index_used": "index.json",
+          "refusal": null,
+          "condition": null,
+          "authority_warnings": [
+            "sohu_game 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "game_urawaza 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "sohu_game 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "sohu_game 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "sohu_game 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "tencent_cloud_dev 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "game_urawaza 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "sohu_game 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "game_urawaza 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "csdn_wangsitan_bug 是二手件（reference_only），须与官方件或我方实测交叉核对"
+          ],
+          "elapsed_ms": 205.2
+        }
+      }
+    },
+    {
+      "id": "Q17",
+      "q": "一直输球会不会触发隐藏结局？",
+      "frozen_tier": "gold_in_topk",
+      "frozen_kind": null,
+      "arms": {
+        "base_default": {
+          "status": "inconclusive",
+          "grade_v2": {
+            "id": "Q17",
+            "tier": "gold_in_topk",
+            "ok": true,
+            "why": "status=inconclusive, gold_in_top28=True",
+            "status": "inconclusive",
+            "n_hits": 28,
+            "top1": "_工具脚本/taspipe/游戏包/来源库/取证/sohu_一直输球隐藏大结局_20261118.md#L65-L81",
+            "direct_recall": true,
+            "equivalent_recall": null,
+            "correct_evidence": false,
+            "wrong_evidence": false,
+            "missed_answer": true,
+            "citation_valid": true,
+            "version_condition_error": false,
+            "selected_locator": null
+          },
+          "selected": [],
+          "retrieval": "bm25_only",
+          "retrieval_note": "稠密指纹件未建（py -3 -m taspipe.kb dense）",
+          "index_used": "index.json",
+          "refusal": null,
+          "condition": null,
+          "authority_warnings": [
+            "sohu_game 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "sohu_game 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "sohu_game 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "sohu_game 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "tencent_cloud_dev 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "sohu_game 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "sohu_game 是二手件（reference_only），须与官方件或我方实测交叉核对"
+          ],
+          "elapsed_ms": 86.5
+        },
+        "base_strict": {
+          "status": "inconclusive",
+          "grade_v2": {
+            "id": "Q17",
+            "tier": "gold_in_topk",
+            "ok": true,
+            "why": "status=inconclusive, gold_in_top28=True",
+            "status": "inconclusive",
+            "n_hits": 28,
+            "top1": "_工具脚本/taspipe/游戏包/来源库/取证/sohu_一直输球隐藏大结局_20261118.md#L65-L81",
+            "direct_recall": true,
+            "equivalent_recall": null,
+            "correct_evidence": false,
+            "wrong_evidence": false,
+            "missed_answer": true,
+            "citation_valid": true,
+            "version_condition_error": false,
+            "selected_locator": null
+          },
+          "selected": [],
+          "retrieval": "bm25_only",
+          "retrieval_note": "稠密指纹件未建（py -3 -m taspipe.kb dense）",
+          "index_used": "index.json",
+          "refusal": null,
+          "condition": null,
+          "authority_warnings": [
+            "sohu_game 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "sohu_game 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "sohu_game 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "sohu_game 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "tencent_cloud_dev 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "sohu_game 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "sohu_game 是二手件（reference_only），须与官方件或我方实测交叉核对"
+          ],
+          "elapsed_ms": 207.4
+        }
+      }
+    },
+    {
+      "id": "Q18",
+      "q": "暂停秘技成功的判定签名是什么？",
+      "frozen_tier": "strict_pass",
+      "frozen_kind": null,
+      "arms": {
+        "base_default": {
+          "status": "pass",
+          "grade_v2": {
+            "id": "Q18",
+            "tier": "strict_pass",
+            "ok": true,
+            "why": "status=pass, selected_gold=True, direct_recall=True",
+            "status": "pass",
+            "n_hits": 29,
+            "top1": "_工具脚本/taspipe/游戏包/热血足球联盟_必杀全清单.md#L251-L259",
+            "direct_recall": true,
+            "equivalent_recall": null,
+            "correct_evidence": true,
+            "wrong_evidence": false,
+            "missed_answer": false,
+            "citation_valid": true,
+            "version_condition_error": false,
+            "selected_locator": "_工具脚本/taspipe/游戏包/热血足球联盟_必杀全清单.md#L251-L259"
+          },
+          "selected": [
+            {
+              "chunk_id": "0c728e701059",
+              "locator": "_工具脚本/taspipe/游戏包/热血足球联盟_必杀全清单.md#L251-L259",
+              "source_id": "local_soccer2_super_list",
+              "authority": "authoritative",
+              "excerpt": null,
+              "provenance": null
+            }
+          ],
+          "retrieval": "bm25_only",
+          "retrieval_note": "稠密指纹件未建（py -3 -m taspipe.kb dense）",
+          "index_used": "index.json",
+          "refusal": null,
+          "condition": null,
+          "authority_warnings": [
+            "game_urawaza 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "game_urawaza 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "csdn_wangsitan_bug 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "csdn_wangsitan_bug 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "sohu_game 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "sohu_game 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "csdn_wangsitan_bug 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "sohu_game 是二手件（reference_only），须与官方件或我方实测交叉核对"
+          ],
+          "elapsed_ms": 71.4
+        },
+        "base_strict": {
+          "status": "inconclusive",
+          "grade_v2": {
+            "id": "Q18",
+            "tier": "strict_pass",
+            "ok": false,
+            "why": "status=inconclusive, selected_gold=False, direct_recall=True",
+            "status": "inconclusive",
+            "n_hits": 29,
+            "top1": "_工具脚本/taspipe/游戏包/热血足球联盟_必杀全清单.md#L251-L259",
+            "direct_recall": true,
+            "equivalent_recall": null,
+            "correct_evidence": false,
+            "wrong_evidence": false,
+            "missed_answer": true,
+            "citation_valid": true,
+            "version_condition_error": false,
+            "selected_locator": null
+          },
+          "selected": [],
+          "retrieval": "bm25_only",
+          "retrieval_note": "稠密指纹件未建（py -3 -m taspipe.kb dense）",
+          "index_used": "index.json",
+          "refusal": null,
+          "condition": null,
+          "authority_warnings": [
+            "game_urawaza 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "game_urawaza 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "csdn_wangsitan_bug 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "csdn_wangsitan_bug 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "sohu_game 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "sohu_game 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "csdn_wangsitan_bug 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "sohu_game 是二手件（reference_only），须与官方件或我方实测交叉核对"
+          ],
+          "elapsed_ms": 202.6
+        }
+      }
+    },
+    {
+      "id": "P19",
+      "q": "热血足球的世界杯模式怎么触发？",
+      "frozen_tier": "gold_in_topk",
+      "frozen_kind": null,
+      "arms": {
+        "base_default": {
+          "status": "inconclusive",
+          "grade_v2": {
+            "id": "P19",
+            "tier": "gold_in_topk",
+            "ok": true,
+            "why": "status=inconclusive, gold_in_top30=True",
+            "status": "inconclusive",
+            "n_hits": 30,
+            "top1": "_工具脚本/taspipe/游戏包/来源库/取证/sohu_一直输球隐藏大结局_20261118.md#L1-L63",
+            "direct_recall": true,
+            "equivalent_recall": null,
+            "correct_evidence": false,
+            "wrong_evidence": false,
+            "missed_answer": true,
+            "citation_valid": true,
+            "version_condition_error": false,
+            "selected_locator": null
+          },
+          "selected": [],
+          "retrieval": "bm25_only",
+          "retrieval_note": "稠密指纹件未建（py -3 -m taspipe.kb dense）",
+          "index_used": "index.json",
+          "refusal": null,
+          "condition": null,
+          "authority_warnings": [
+            "sohu_game 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "sohu_game 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "tencent_cloud_dev 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "sohu_game 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "xiaoji001 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "sohu_game 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "sohu_game 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对"
+          ],
+          "elapsed_ms": 72.7
+        },
+        "base_strict": {
+          "status": "inconclusive",
+          "grade_v2": {
+            "id": "P19",
+            "tier": "gold_in_topk",
+            "ok": true,
+            "why": "status=inconclusive, gold_in_top30=True",
+            "status": "inconclusive",
+            "n_hits": 30,
+            "top1": "_工具脚本/taspipe/游戏包/来源库/取证/sohu_一直输球隐藏大结局_20261118.md#L1-L63",
+            "direct_recall": true,
+            "equivalent_recall": null,
+            "correct_evidence": false,
+            "wrong_evidence": false,
+            "missed_answer": true,
+            "citation_valid": true,
+            "version_condition_error": false,
+            "selected_locator": null
+          },
+          "selected": [],
+          "retrieval": "bm25_only",
+          "retrieval_note": "稠密指纹件未建（py -3 -m taspipe.kb dense）",
+          "index_used": "index.json",
+          "refusal": null,
+          "condition": null,
+          "authority_warnings": [
+            "sohu_game 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "sohu_game 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "tencent_cloud_dev 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "sohu_game 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "xiaoji001 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "sohu_game 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "sohu_game 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对"
+          ],
+          "elapsed_ms": 193.6
+        }
+      }
+    },
+    {
+      "id": "P20",
+      "q": "2025年MSI季中冠军赛冠军是哪支战队？",
+      "frozen_tier": "refuse",
+      "frozen_kind": null,
+      "arms": {
+        "base_default": {
+          "status": "miss",
+          "grade_v2": {
+            "id": "P20",
+            "tier": "refuse",
+            "ok": true,
+            "why": "status=miss（pass 即失败：缺证据不许冒充事实）",
+            "status": "miss",
+            "n_hits": 0,
+            "top1": null,
+            "direct_recall": false,
+            "equivalent_recall": null,
+            "correct_evidence": true,
+            "wrong_evidence": false,
+            "missed_answer": false,
+            "citation_valid": true,
+            "version_condition_error": false,
+            "selected_locator": null
+          },
+          "selected": [],
+          "retrieval": null,
+          "retrieval_note": null,
+          "index_used": "index.json",
+          "refusal": "out_of_scope",
+          "condition": null,
+          "authority_warnings": null,
+          "elapsed_ms": 59.2
+        },
+        "base_strict": {
+          "status": "miss",
+          "grade_v2": {
+            "id": "P20",
+            "tier": "refuse",
+            "ok": true,
+            "why": "status=miss（pass 即失败：缺证据不许冒充事实）",
+            "status": "miss",
+            "n_hits": 0,
+            "top1": null,
+            "direct_recall": false,
+            "equivalent_recall": null,
+            "correct_evidence": true,
+            "wrong_evidence": false,
+            "missed_answer": false,
+            "citation_valid": true,
+            "version_condition_error": false,
+            "selected_locator": null
+          },
+          "selected": [],
+          "retrieval": null,
+          "retrieval_note": null,
+          "index_used": "index.json",
+          "refusal": "out_of_scope",
+          "condition": null,
+          "authority_warnings": null,
+          "elapsed_ms": 62.6
+        }
+      }
+    },
+    {
+      "id": "P21",
+      "q": "热血足球联盟卡带 ROM 的 SHA1 校验和是多少？",
+      "frozen_tier": "refuse",
+      "frozen_kind": null,
+      "arms": {
+        "base_default": {
+          "status": "inconclusive",
+          "grade_v2": {
+            "id": "P21",
+            "tier": "refuse",
+            "ok": true,
+            "why": "status=inconclusive（pass 即失败：缺证据不许冒充事实）",
+            "status": "inconclusive",
+            "n_hits": 30,
+            "top1": "_工具脚本/taspipe/游戏包/来源库/取证/1ang_热血足球联盟图文攻略_20261118.md#L1-L129",
+            "direct_recall": false,
+            "equivalent_recall": null,
+            "correct_evidence": true,
+            "wrong_evidence": false,
+            "missed_answer": false,
+            "citation_valid": true,
+            "version_condition_error": false,
+            "selected_locator": null
+          },
+          "selected": [],
+          "retrieval": "bm25_only",
+          "retrieval_note": "稠密指纹件未建（py -3 -m taspipe.kb dense）",
+          "index_used": "index.json",
+          "refusal": "unanswerable",
+          "condition": null,
+          "authority_warnings": [
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "sohu_game 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "sohu_game 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "sohu_game 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "xiaoji001 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "sohu_game 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "sohu_game 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "csdn_wangsitan_bug 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "csdn_wangsitan_bug 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "csdn_wangsitan_bug 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "csdn_wangsitan_bug 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "sohu_game 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "csdn_wangsitan_bug 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "csdn_wangsitan_bug 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "tencent_cloud_dev 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "sohu_game 是二手件（reference_only），须与官方件或我方实测交叉核对"
+          ],
+          "elapsed_ms": 86.1
+        },
+        "base_strict": {
+          "status": "inconclusive",
+          "grade_v2": {
+            "id": "P21",
+            "tier": "refuse",
+            "ok": true,
+            "why": "status=inconclusive（pass 即失败：缺证据不许冒充事实）",
+            "status": "inconclusive",
+            "n_hits": 30,
+            "top1": "_工具脚本/taspipe/游戏包/来源库/取证/1ang_热血足球联盟图文攻略_20261118.md#L1-L129",
+            "direct_recall": false,
+            "equivalent_recall": null,
+            "correct_evidence": true,
+            "wrong_evidence": false,
+            "missed_answer": false,
+            "citation_valid": true,
+            "version_condition_error": false,
+            "selected_locator": null
+          },
+          "selected": [],
+          "retrieval": "bm25_only",
+          "retrieval_note": "稠密指纹件未建（py -3 -m taspipe.kb dense）",
+          "index_used": "index.json",
+          "refusal": "unanswerable",
+          "condition": null,
+          "authority_warnings": [
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "sohu_game 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "sohu_game 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "sohu_game 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "xiaoji001 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "sohu_game 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "sohu_game 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "csdn_wangsitan_bug 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "csdn_wangsitan_bug 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "csdn_wangsitan_bug 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "csdn_wangsitan_bug 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "sohu_game 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "csdn_wangsitan_bug 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "csdn_wangsitan_bug 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "tencent_cloud_dev 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "sohu_game 是二手件（reference_only），须与官方件或我方实测交叉核对"
+          ],
+          "elapsed_ms": 248.7
+        }
+      }
+    },
+    {
+      "id": "P22",
+      "q": "说明书里的 PK 战模式怎么玩？",
+      "frozen_tier": "gold_in_topk",
+      "frozen_kind": null,
+      "arms": {
+        "base_default": {
+          "status": "pass",
+          "grade_v2": {
+            "id": "P22",
+            "tier": "gold_in_topk",
+            "ok": true,
+            "why": "status=pass, gold_in_top30=True",
+            "status": "pass",
+            "n_hits": 30,
+            "top1": "_工具脚本/taspipe/游戏包/来源库/取证/setsumei_热血足球说明书扫描_20261118.md#L327-L341",
+            "direct_recall": true,
+            "equivalent_recall": null,
+            "correct_evidence": true,
+            "wrong_evidence": false,
+            "missed_answer": false,
+            "citation_valid": true,
+            "version_condition_error": false,
+            "selected_locator": "_工具脚本/taspipe/游戏包/来源库/取证/setsumei_热血足球说明书扫描_20261118.md#L327-L341"
+          },
+          "selected": [
+            {
+              "chunk_id": "518b15638c5f",
+              "locator": "_工具脚本/taspipe/游戏包/来源库/取证/setsumei_热血足球说明书扫描_20261118.md#L327-L341",
+              "source_id": "setsumei_cloudfree",
+              "authority": "authoritative",
+              "excerpt": null,
+              "provenance": null
+            }
+          ],
+          "retrieval": "bm25_only",
+          "retrieval_note": "稠密指纹件未建（py -3 -m taspipe.kb dense）",
+          "index_used": "index.json",
+          "refusal": null,
+          "condition": null,
+          "authority_warnings": [
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "tencent_cloud_dev 属 nekketsu_soccer2_fc_unspecified，与所问 nekketsu_soccer2_fc_jp 不是同一版本，只作线索",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "csdn_wangsitan_bug 属 nekketsu_soccer2_fc_unspecified，与所问 nekketsu_soccer2_fc_jp 不是同一版本，只作线索",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "csdn_wangsitan_bug 属 nekketsu_soccer2_fc_unspecified，与所问 nekketsu_soccer2_fc_jp 不是同一版本，只作线索",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对"
+          ],
+          "elapsed_ms": 90.8
+        },
+        "base_strict": {
+          "status": "pass",
+          "grade_v2": {
+            "id": "P22",
+            "tier": "gold_in_topk",
+            "ok": true,
+            "why": "status=pass, gold_in_top30=True",
+            "status": "pass",
+            "n_hits": 30,
+            "top1": "_工具脚本/taspipe/游戏包/来源库/取证/setsumei_热血足球说明书扫描_20261118.md#L327-L341",
+            "direct_recall": true,
+            "equivalent_recall": null,
+            "correct_evidence": true,
+            "wrong_evidence": false,
+            "missed_answer": false,
+            "citation_valid": true,
+            "version_condition_error": false,
+            "selected_locator": "_工具脚本/taspipe/游戏包/来源库/取证/setsumei_热血足球说明书扫描_20261118.md#L327-L341"
+          },
+          "selected": [
+            {
+              "chunk_id": "518b15638c5f",
+              "locator": "_工具脚本/taspipe/游戏包/来源库/取证/setsumei_热血足球说明书扫描_20261118.md#L327-L341",
+              "source_id": "setsumei_cloudfree",
+              "authority": "authoritative",
+              "excerpt": "　ＰＫ戦プレイ・１Ｐモードは1Ｐ ｖｓ ＣＯＭの対戦で、この時はすべての選手を操作してね",
+              "provenance": {
+                "policy": "strict",
+                "eligible": true,
+                "reason": "eligible_fragment",
+                "relevant_segments": 6,
+                "eligible_segments": 6,
+                "reference_segments": 0,
+                "retracted_segments": 0,
+                "evidence_excerpt": "　ＰＫ戦プレイ・１Ｐモードは1Ｐ ｖｓ ＣＯＭの対戦で、この時はすべての選手を操作してね"
+              }
+            }
+          ],
+          "retrieval": "bm25_only",
+          "retrieval_note": "稠密指纹件未建（py -3 -m taspipe.kb dense）",
+          "index_used": "index.json",
+          "refusal": null,
+          "condition": null,
+          "authority_warnings": [
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "tencent_cloud_dev 属 nekketsu_soccer2_fc_unspecified，与所问 nekketsu_soccer2_fc_jp 不是同一版本，只作线索",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "csdn_wangsitan_bug 属 nekketsu_soccer2_fc_unspecified，与所问 nekketsu_soccer2_fc_jp 不是同一版本，只作线索",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "csdn_wangsitan_bug 属 nekketsu_soccer2_fc_unspecified，与所问 nekketsu_soccer2_fc_jp 不是同一版本，只作线索",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对"
+          ],
+          "elapsed_ms": 223.0
+        }
+      }
+    },
+    {
+      "id": "P23",
+      "q": "说明书里状态（ステータス）一节讲了哪些参数？",
+      "frozen_tier": "gold_in_topk",
+      "frozen_kind": null,
+      "arms": {
+        "base_default": {
+          "status": "pass",
+          "grade_v2": {
+            "id": "P23",
+            "tier": "gold_in_topk",
+            "ok": true,
+            "why": "status=pass, gold_in_top30=True",
+            "status": "pass",
+            "n_hits": 30,
+            "top1": "_工具脚本/taspipe/游戏包/来源库/取证/setsumei_热血足球说明书扫描_20261118.md#L267-L288",
+            "direct_recall": true,
+            "equivalent_recall": null,
+            "correct_evidence": true,
+            "wrong_evidence": false,
+            "missed_answer": false,
+            "citation_valid": true,
+            "version_condition_error": false,
+            "selected_locator": "_工具脚本/taspipe/游戏包/来源库/取证/setsumei_热血足球说明书扫描_20261118.md#L267-L288"
+          },
+          "selected": [
+            {
+              "chunk_id": "603f864db3d7",
+              "locator": "_工具脚本/taspipe/游戏包/来源库/取证/setsumei_热血足球说明书扫描_20261118.md#L267-L288",
+              "source_id": "setsumei_cloudfree",
+              "authority": "authoritative",
+              "excerpt": null,
+              "provenance": null
+            }
+          ],
+          "retrieval": "bm25_only",
+          "retrieval_note": "稠密指纹件未建（py -3 -m taspipe.kb dense）",
+          "index_used": "index.json",
+          "refusal": null,
+          "condition": null,
+          "authority_warnings": [
+            "csdn_wangsitan_bug 属 nekketsu_soccer2_fc_unspecified，与所问 nekketsu_soccer2_fc_jp 不是同一版本，只作线索",
+            "csdn_wangsitan_bug 属 nekketsu_soccer2_fc_unspecified，与所问 nekketsu_soccer2_fc_jp 不是同一版本，只作线索",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "csdn_wangsitan_bug 属 nekketsu_soccer2_fc_unspecified，与所问 nekketsu_soccer2_fc_jp 不是同一版本，只作线索",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "csdn_wangsitan_bug 属 nekketsu_soccer2_fc_unspecified，与所问 nekketsu_soccer2_fc_jp 不是同一版本，只作线索",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "csdn_wangsitan_bug 属 nekketsu_soccer2_fc_unspecified，与所问 nekketsu_soccer2_fc_jp 不是同一版本，只作线索",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "sohu_game 属 nekketsu_soccer2_fc_unspecified，与所问 nekketsu_soccer2_fc_jp 不是同一版本，只作线索",
+            "sohu_game 属 nekketsu_soccer2_fc_unspecified，与所问 nekketsu_soccer2_fc_jp 不是同一版本，只作线索"
+          ],
+          "elapsed_ms": 79.7
+        },
+        "base_strict": {
+          "status": "pass",
+          "grade_v2": {
+            "id": "P23",
+            "tier": "gold_in_topk",
+            "ok": true,
+            "why": "status=pass, gold_in_top30=True",
+            "status": "pass",
+            "n_hits": 30,
+            "top1": "_工具脚本/taspipe/游戏包/来源库/取证/setsumei_热血足球说明书扫描_20261118.md#L267-L288",
+            "direct_recall": true,
+            "equivalent_recall": null,
+            "correct_evidence": true,
+            "wrong_evidence": false,
+            "missed_answer": false,
+            "citation_valid": true,
+            "version_condition_error": false,
+            "selected_locator": "_工具脚本/taspipe/游戏包/来源库/取证/setsumei_热血足球说明书扫描_20261118.md#L267-L288"
+          },
+          "selected": [
+            {
+              "chunk_id": "603f864db3d7",
+              "locator": "_工具脚本/taspipe/游戏包/来源库/取证/setsumei_热血足球说明书扫描_20261118.md#L267-L288",
+              "source_id": "setsumei_cloudfree",
+              "authority": "authoritative",
+              "excerpt": "＜ステータスについて＞",
+              "provenance": {
+                "policy": "strict",
+                "eligible": true,
+                "reason": "eligible_fragment",
+                "relevant_segments": 2,
+                "eligible_segments": 2,
+                "reference_segments": 0,
+                "retracted_segments": 0,
+                "evidence_excerpt": "＜ステータスについて＞"
+              }
+            }
+          ],
+          "retrieval": "bm25_only",
+          "retrieval_note": "稠密指纹件未建（py -3 -m taspipe.kb dense）",
+          "index_used": "index.json",
+          "refusal": null,
+          "condition": null,
+          "authority_warnings": [
+            "csdn_wangsitan_bug 属 nekketsu_soccer2_fc_unspecified，与所问 nekketsu_soccer2_fc_jp 不是同一版本，只作线索",
+            "csdn_wangsitan_bug 属 nekketsu_soccer2_fc_unspecified，与所问 nekketsu_soccer2_fc_jp 不是同一版本，只作线索",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "csdn_wangsitan_bug 属 nekketsu_soccer2_fc_unspecified，与所问 nekketsu_soccer2_fc_jp 不是同一版本，只作线索",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "csdn_wangsitan_bug 属 nekketsu_soccer2_fc_unspecified，与所问 nekketsu_soccer2_fc_jp 不是同一版本，只作线索",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "csdn_wangsitan_bug 属 nekketsu_soccer2_fc_unspecified，与所问 nekketsu_soccer2_fc_jp 不是同一版本，只作线索",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "sohu_game 属 nekketsu_soccer2_fc_unspecified，与所问 nekketsu_soccer2_fc_jp 不是同一版本，只作线索",
+            "sohu_game 属 nekketsu_soccer2_fc_unspecified，与所问 nekketsu_soccer2_fc_jp 不是同一版本，只作线索"
+          ],
+          "elapsed_ms": 222.5
+        }
+      }
+    },
+    {
+      "id": "P24",
+      "q": "测试问题与闸门说明书里，ROM 修订版对不上该怎么办？",
+      "frozen_tier": "gold_in_topk",
+      "frozen_kind": null,
+      "arms": {
+        "base_default": {
+          "status": "pass",
+          "grade_v2": {
+            "id": "P24",
+            "tier": "gold_in_topk",
+            "ok": true,
+            "why": "status=pass, gold_in_top30=True",
+            "status": "pass",
+            "n_hits": 30,
+            "top1": "测试问题与闸门说明书.md#L76-L79",
+            "direct_recall": true,
+            "equivalent_recall": null,
+            "correct_evidence": true,
+            "wrong_evidence": false,
+            "missed_answer": false,
+            "citation_valid": true,
+            "version_condition_error": false,
+            "selected_locator": "测试问题与闸门说明书.md#L76-L79"
+          },
+          "selected": [
+            {
+              "chunk_id": "b4545c140456",
+              "locator": "测试问题与闸门说明书.md#L76-L79",
+              "source_id": "local_project_manual",
+              "authority": "authoritative",
+              "excerpt": null,
+              "provenance": null
+            }
+          ],
+          "retrieval": "bm25_only",
+          "retrieval_note": "稠密指纹件未建（py -3 -m taspipe.kb dense）",
+          "index_used": "index.json",
+          "refusal": null,
+          "condition": null,
+          "authority_warnings": [],
+          "elapsed_ms": 78.3
+        },
+        "base_strict": {
+          "status": "pass",
+          "grade_v2": {
+            "id": "P24",
+            "tier": "gold_in_topk",
+            "ok": true,
+            "why": "status=pass, gold_in_top30=True",
+            "status": "pass",
+            "n_hits": 30,
+            "top1": "测试问题与闸门说明书.md#L76-L79",
+            "direct_recall": true,
+            "equivalent_recall": null,
+            "correct_evidence": true,
+            "wrong_evidence": false,
+            "missed_answer": false,
+            "citation_valid": true,
+            "version_condition_error": false,
+            "selected_locator": "测试问题与闸门说明书.md#L76-L79"
+          },
+          "selected": [
+            {
+              "chunk_id": "b4545c140456",
+              "locator": "测试问题与闸门说明书.md#L76-L79",
+              "source_id": "local_project_manual",
+              "authority": "authoritative",
+              "excerpt": "现象**：想拿 Mega Man 1 做要素，本地 dump 的 sha1 不等于任何 Mega Man 1 出版物要求的 sha1，回放无法对齐",
+              "provenance": {
+                "policy": "strict",
+                "eligible": true,
+                "reason": "eligible_fragment",
+                "relevant_segments": 5,
+                "eligible_segments": 5,
+                "reference_segments": 0,
+                "retracted_segments": 0,
+                "evidence_excerpt": "现象**：想拿 Mega Man 1 做要素，本地 dump 的 sha1 不等于任何 Mega Man 1 出版物要求的 sha1，回放无法对齐"
+              }
+            }
+          ],
+          "retrieval": "bm25_only",
+          "retrieval_note": "稠密指纹件未建（py -3 -m taspipe.kb dense）",
+          "index_used": "index.json",
+          "refusal": null,
+          "condition": null,
+          "authority_warnings": [],
+          "elapsed_ms": 330.3
+        }
+      }
+    },
+    {
+      "id": "P25",
+      "q": "热血足球联盟的转会窗口期是多久？",
+      "frozen_tier": "refuse",
+      "frozen_kind": null,
+      "arms": {
+        "base_default": {
+          "status": "inconclusive",
+          "grade_v2": {
+            "id": "P25",
+            "tier": "refuse",
+            "ok": true,
+            "why": "status=inconclusive（pass 即失败：缺证据不许冒充事实）",
+            "status": "inconclusive",
+            "n_hits": 30,
+            "top1": "_工具脚本/taspipe/游戏包/来源库/取证/1ang_热血足球联盟图文攻略_20261118.md#L161-L164",
+            "direct_recall": false,
+            "equivalent_recall": null,
+            "correct_evidence": true,
+            "wrong_evidence": false,
+            "missed_answer": false,
+            "citation_valid": true,
+            "version_condition_error": false,
+            "selected_locator": null
+          },
+          "selected": [],
+          "retrieval": "bm25_only",
+          "retrieval_note": "稠密指纹件未建（py -3 -m taspipe.kb dense）",
+          "index_used": "index.json",
+          "refusal": "unanswerable",
+          "condition": null,
+          "authority_warnings": [
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "sohu_game 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "sohu_game 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "csdn_wangsitan_bug 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "sohu_game 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "xiaoji001 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "sohu_game 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "sohu_game 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "csdn_wangsitan_bug 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "csdn_wangsitan_bug 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "csdn_wangsitan_bug 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "csdn_wangsitan_bug 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "sohu_game 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "csdn_wangsitan_bug 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "tencent_cloud_dev 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "sohu_game 是二手件（reference_only），须与官方件或我方实测交叉核对"
+          ],
+          "elapsed_ms": 71.0
+        },
+        "base_strict": {
+          "status": "inconclusive",
+          "grade_v2": {
+            "id": "P25",
+            "tier": "refuse",
+            "ok": true,
+            "why": "status=inconclusive（pass 即失败：缺证据不许冒充事实）",
+            "status": "inconclusive",
+            "n_hits": 30,
+            "top1": "_工具脚本/taspipe/游戏包/来源库/取证/1ang_热血足球联盟图文攻略_20261118.md#L161-L164",
+            "direct_recall": false,
+            "equivalent_recall": null,
+            "correct_evidence": true,
+            "wrong_evidence": false,
+            "missed_answer": false,
+            "citation_valid": true,
+            "version_condition_error": false,
+            "selected_locator": null
+          },
+          "selected": [],
+          "retrieval": "bm25_only",
+          "retrieval_note": "稠密指纹件未建（py -3 -m taspipe.kb dense）",
+          "index_used": "index.json",
+          "refusal": "unanswerable",
+          "condition": null,
+          "authority_warnings": [
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "sohu_game 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "sohu_game 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "csdn_wangsitan_bug 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "sohu_game 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "xiaoji001 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "sohu_game 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "sohu_game 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "csdn_wangsitan_bug 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "csdn_wangsitan_bug 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "csdn_wangsitan_bug 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "csdn_wangsitan_bug 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "sohu_game 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "csdn_wangsitan_bug 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "tencent_cloud_dev 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "sohu_game 是二手件（reference_only），须与官方件或我方实测交叉核对"
+          ],
+          "elapsed_ms": 217.8
+        }
+      }
+    },
+    {
+      "id": "P26",
+      "q": "DOTA2 TI14 预选赛赛程安排",
+      "frozen_tier": "refuse",
+      "frozen_kind": null,
+      "arms": {
+        "base_default": {
+          "status": "miss",
+          "grade_v2": {
+            "id": "P26",
+            "tier": "refuse",
+            "ok": true,
+            "why": "status=miss（pass 即失败：缺证据不许冒充事实）",
+            "status": "miss",
+            "n_hits": 0,
+            "top1": null,
+            "direct_recall": false,
+            "equivalent_recall": null,
+            "correct_evidence": true,
+            "wrong_evidence": false,
+            "missed_answer": false,
+            "citation_valid": true,
+            "version_condition_error": false,
+            "selected_locator": null
+          },
+          "selected": [],
+          "retrieval": null,
+          "retrieval_note": null,
+          "index_used": "index.json",
+          "refusal": "out_of_scope",
+          "condition": null,
+          "authority_warnings": null,
+          "elapsed_ms": 62.4
+        },
+        "base_strict": {
+          "status": "miss",
+          "grade_v2": {
+            "id": "P26",
+            "tier": "refuse",
+            "ok": true,
+            "why": "status=miss（pass 即失败：缺证据不许冒充事实）",
+            "status": "miss",
+            "n_hits": 0,
+            "top1": null,
+            "direct_recall": false,
+            "equivalent_recall": null,
+            "correct_evidence": true,
+            "wrong_evidence": false,
+            "missed_answer": false,
+            "citation_valid": true,
+            "version_condition_error": false,
+            "selected_locator": null
+          },
+          "selected": [],
+          "retrieval": null,
+          "retrieval_note": null,
+          "index_used": "index.json",
+          "refusal": "out_of_scope",
+          "condition": null,
+          "authority_warnings": null,
+          "elapsed_ms": 58.9
+        }
+      }
+    },
+    {
+      "id": "X03",
+      "q": "热血足球 龙卷拳谁能用？",
+      "frozen_tier": null,
+      "frozen_kind": "positive_control",
+      "arms": {
+        "base_default": {
+          "status": "pass",
+          "grade_v2": null,
+          "selected": [
+            {
+              "chunk_id": "f7f8e8316295",
+              "locator": "_工具脚本/taspipe/游戏包/热血足球联盟_必杀全清单.md#L70-L85",
+              "source_id": "local_soccer2_super_list",
+              "authority": "authoritative",
+              "excerpt": null,
+              "provenance": null
+            }
+          ],
+          "retrieval": "bm25_only",
+          "retrieval_note": "稠密指纹件未建（py -3 -m taspipe.kb dense）",
+          "index_used": "index.json",
+          "refusal": null,
+          "condition": "权威可答件在第2位，非最高分；出证须附此条件",
+          "authority_warnings": [
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对"
+          ],
+          "elapsed_ms": 72.3
+        },
+        "base_strict": {
+          "status": "inconclusive",
+          "grade_v2": null,
+          "selected": [],
+          "retrieval": "bm25_only",
+          "retrieval_note": "稠密指纹件未建（py -3 -m taspipe.kb dense）",
+          "index_used": "index.json",
+          "refusal": null,
+          "condition": null,
+          "authority_warnings": [
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对"
+          ],
+          "elapsed_ms": 97.0
+        }
+      }
+    },
+    {
+      "id": "X04",
+      "q": "热血足球 三倍加速怎么发动？",
+      "frozen_tier": null,
+      "frozen_kind": "ambiguous",
+      "arms": {
+        "base_default": {
+          "status": "pass",
+          "grade_v2": null,
+          "selected": [
+            {
+              "chunk_id": "84195609bde8",
+              "locator": "_工具脚本/taspipe/游戏包/热血足球联盟_必杀全清单.md#L36-L49",
+              "source_id": "local_soccer2_super_list",
+              "authority": "authoritative",
+              "excerpt": null,
+              "provenance": null
+            }
+          ],
+          "retrieval": "bm25_only",
+          "retrieval_note": "稠密指纹件未建（py -3 -m taspipe.kb dense）",
+          "index_used": "index.json",
+          "refusal": null,
+          "condition": "权威可答件在第3位，非最高分；出证须附此条件",
+          "authority_warnings": [
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对"
+          ],
+          "elapsed_ms": 77.8
+        },
+        "base_strict": {
+          "status": "inconclusive",
+          "grade_v2": null,
+          "selected": [],
+          "retrieval": "bm25_only",
+          "retrieval_note": "稠密指纹件未建（py -3 -m taspipe.kb dense）",
+          "index_used": "index.json",
+          "refusal": null,
+          "condition": null,
+          "authority_warnings": [
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对"
+          ],
+          "elapsed_ms": 108.8
+        }
+      }
+    },
+    {
+      "id": "X21",
+      "q": "热血足球 元永在队里打什么位置？",
+      "frozen_tier": null,
+      "frozen_kind": "positive_control",
+      "arms": {
+        "base_default": {
+          "status": "pass",
+          "grade_v2": null,
+          "selected": [
+            {
+              "chunk_id": "1439bdc2bb1f",
+              "locator": "_工具脚本/taspipe/游戏包/来源库/取证/setsumei_热血足球说明书扫描_20261118.md#L376-L401",
+              "source_id": "setsumei_cloudfree",
+              "authority": "authoritative",
+              "excerpt": null,
+              "provenance": null
+            }
+          ],
+          "retrieval": "bm25_only",
+          "retrieval_note": "稠密指纹件未建（py -3 -m taspipe.kb dense）",
+          "index_used": "index.json",
+          "refusal": null,
+          "condition": null,
+          "authority_warnings": [
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "sohu_game 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对"
+          ],
+          "elapsed_ms": 80.3
+        },
+        "base_strict": {
+          "status": "pass",
+          "grade_v2": null,
+          "selected": [
+            {
+              "chunk_id": "1439bdc2bb1f",
+              "locator": "_工具脚本/taspipe/游戏包/来源库/取证/setsumei_热血足球说明书扫描_20261118.md#L376-L401",
+              "source_id": "setsumei_cloudfree",
+              "authority": "authoritative",
+              "excerpt": "げんえい\nポジション ： ＧＫ",
+              "provenance": {
+                "policy": "strict",
+                "eligible": true,
+                "reason": "eligible_fragment",
+                "relevant_segments": 3,
+                "eligible_segments": 3,
+                "reference_segments": 0,
+                "retracted_segments": 0,
+                "evidence_excerpt": "げんえい\nポジション ： ＧＫ"
+              }
+            }
+          ],
+          "retrieval": "bm25_only",
+          "retrieval_note": "稠密指纹件未建（py -3 -m taspipe.kb dense）",
+          "index_used": "index.json",
+          "refusal": null,
+          "condition": null,
+          "authority_warnings": [
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "sohu_game 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对"
+          ],
+          "elapsed_ms": 113.5
+        }
+      }
+    },
+    {
+      "id": "X23",
+      "q": "热血足球 倒挂金钩怎么使出来？",
+      "frozen_tier": null,
+      "frozen_kind": "insufficient_source",
+      "arms": {
+        "base_default": {
+          "status": "pass",
+          "grade_v2": null,
+          "selected": [
+            {
+              "chunk_id": "42b773880ef0",
+              "locator": "_工具脚本/taspipe/游戏包/热血足球联盟_必杀全清单.md#L24-L33",
+              "source_id": "local_soccer2_super_list",
+              "authority": "authoritative",
+              "excerpt": null,
+              "provenance": null
+            }
+          ],
+          "retrieval": "bm25_only",
+          "retrieval_note": "稠密指纹件未建（py -3 -m taspipe.kb dense）",
+          "index_used": "index.json",
+          "refusal": null,
+          "condition": null,
+          "authority_warnings": [
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对"
+          ],
+          "elapsed_ms": 111.1
+        },
+        "base_strict": {
+          "status": "inconclusive",
+          "grade_v2": null,
+          "selected": [],
+          "retrieval": "bm25_only",
+          "retrieval_note": "稠密指纹件未建（py -3 -m taspipe.kb dense）",
+          "index_used": "index.json",
+          "refusal": null,
+          "condition": null,
+          "authority_warnings": [
+            "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对"
+          ],
+          "elapsed_ms": 146.2
+        }
+      }
+    }
+  ],
+  "isolation": {
+    "ok": true,
+    "changed_paths": []
+  },
+  "production_defaults": {
+    "top_window": 3,
+    "fragment_policy": null,
+    "fact_selector": null
+  },
+  "fingerprints": {
+    "files": {
+      "questions": {
+        "path": "F:\\开源掌机教程\\知识库P1_20261118\\p2_questions_ext.json",
+        "sha256": "b24712dc023ead293c7631f104d7e96fcefdcf5d8d2678e69ff6c47e29f48368",
+        "bytes": 13594
+      },
+      "probes": {
+        "path": "F:\\开源掌机教程\\知识库P1_20261118\\probe_questions_ext.json",
+        "sha256": "6ebdd464a7b0345df3113622622698bf4628387037db3caa5002b4ce2d900683",
+        "bytes": 14978
+      },
+      "corpus_map": {
+        "path": "F:\\开源掌机教程\\_工具脚本\\taspipe\\游戏包\\知识库\\corpus_map.json",
+        "sha256": "907d4c719a9e93e2ad62c9c21d5e1aac916c5d7a0fea759818cd5c6414d8f19e",
+        "bytes": 23464
+      },
+      "source_registry": {
+        "path": "F:\\开源掌机教程\\_工具脚本\\taspipe\\游戏包\\来源库\\sources.json",
+        "sha256": "177d14bc9a7a95cade7790c06b6c061834b16167454e28dd30679682a3117667",
+        "bytes": 57733
+      },
+      "base_index": {
+        "path": "F:\\开源掌机教程\\_工具脚本\\taspipe\\游戏包\\知识库\\index.json",
+        "sha256": "5c6fdb832cac502845d2e9dce269f25023dd435af42a5f59c772efbe9169596b",
+        "bytes": 3608260
+      },
+      "hybrid_index": {
+        "path": "F:\\开源掌机教程\\_工具脚本\\taspipe\\游戏包\\知识库\\index_hybrid.json",
+        "sha256": "c3db477371d2eb5f00a63f5678f04d3b4caabe778a693ce57c83d65c39845ee3",
+        "bytes": 3645745
+      },
+      "super_list": {
+        "path": "F:\\开源掌机教程\\_工具脚本\\taspipe\\游戏包\\热血足球联盟_必杀全清单.md",
+        "sha256": "13380518bf791e6abf22ffeb5422428b4dd845673a1be2241eeac53d1b148d14",
+        "bytes": 29371
+      },
+      "base_dense": {
+        "path": "F:\\开源掌机教程\\_工具脚本\\taspipe\\游戏包\\知识库\\embeddings_5c6fdb832cac.npz",
+        "sha256": null,
+        "bytes": null
+      },
+      "hybrid_dense": {
+        "path": "F:\\开源掌机教程\\_工具脚本\\taspipe\\游戏包\\知识库\\embeddings_c3db477371d2.npz",
+        "sha256": null,
+        "bytes": null
+      }
+    },
+    "modules": {
+      "kb": {
+        "path": "F:\\开源掌机教程\\_工具脚本\\taspipe\\kb.py",
+        "sha256": "1844d8baceb5ce65f2432908a84425ee1fcb8cb1f6e35e8d10c2f3a25331d08f"
+      },
+      "kb_dense": {
+        "path": "F:\\开源掌机教程\\_工具脚本\\taspipe\\kb_dense.py",
+        "sha256": "76ae1934b59d798b582b406cd940a01892f4226bc8ae01fb707fb13c718d0dbe"
+      },
+      "kb_provenance": {
+        "path": "F:\\开源掌机教程\\_工具脚本\\taspipe\\kb_provenance.py",
+        "sha256": "4bcf3411ab460320ecff0120458141f44315b6cb0af1713143cc75470a6e7463"
+      },
+      "kb_selector": {
+        "path": "F:\\开源掌机教程\\_工具脚本\\taspipe\\kb_selector.py",
+        "sha256": "5843b007d66e88e2d6ac2d6d7fd3a62249d80308d6f153879739227af358be71"
+      },
+      "eval_common": {
+        "path": "F:\\开源掌机教程\\知识库小样_20261118\\eval_common.py",
+        "sha256": "461aad1af957eaccc8124efafb375e44812255af34e91faaddbd7362b6ef57a8"
+      },
+      "producer": {
+        "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261124_source_inheritance\\regression_source_inheritance_20261124.py",
+        "sha256": "cde2294c63cddabe4a8427e8188c3717913b3a49b69e1085c7e5a6689e10c444"
+      }
+    },
+    "models": {
+      "embed": "BAAI/bge-m3",
+      "embed_rev": "5617a9f61b028005a4858fdac845db406aefb181",
+      "rerank": "BAAI/bge-reranker-v2-m3",
+      "rerank_rev": "953dc6f6f85a1b2dbfca4c34a2796e7dde08d41e"
+    }
+  }
+}

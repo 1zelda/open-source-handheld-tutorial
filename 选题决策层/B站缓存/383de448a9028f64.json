@@ -1,0 +1,43 @@
+{
+ "keyword": "街机改版",
+ "status": "ok",
+ "ts": "2026-11-19T05:38:59Z",
+ "ts_epoch": 1795066739.6836298,
+ "supply_num_results": 1000,
+ "n_videos": 20,
+ "relevant_count": 18,
+ "core_hit_rate": 0.9,
+ "full_hit_rate": 0.05,
+ "play_median": 6596.0,
+ "relevant_play_median": 6210.5,
+ "play_mean": 25244.9,
+ "play_max": 178599,
+ "play_total": 454409,
+ "engagement_median": 0.0316,
+ "recent_count": 9,
+ "recent_play_median": 1203,
+ "top3": [
+  {
+   "bvid": "BV1bT411e74g",
+   "title": "是不是你印象中的《拳皇》？",
+   "author": "卡尔Ka",
+   "play": 729054,
+   "pubdate": "2023-03-06"
+  },
+  {
+   "bvid": "BV1jE411Q7rh",
+   "title": "街机游戏：三国志2 修改版合集",
+   "author": "林小伟哈",
+   "play": 178599,
+   "pubdate": "2019-10-02"
+  },
+  {
+   "bvid": "BV1EW4y1v79g",
+   "title": "经典街机，如今最爽的改版，刀光一出方圆十里再无生机",
+   "author": "回味街机",
+   "play": 102858,
+   "pubdate": "2022-09-22"
+  }
+ ],
+ "cache_hit": false
+}

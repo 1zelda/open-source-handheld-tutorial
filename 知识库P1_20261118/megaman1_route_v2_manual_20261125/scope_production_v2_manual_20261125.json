@@ -1,0 +1,65 @@
+{
+  "status": "production_candidate_route_wired_v2_manual",
+  "taken_at": "2026-11-25T07:43:40Z",
+  "revision": "megaman1_nes_us",
+  "production_domain": "megaman1",
+  "backend": "megaman1_candidate",
+  "production_entry_point": "taspipe.kb.query_auto",
+  "candidate_only": true,
+  "whole_game_knowledge_base": false,
+  "candidate_index": "知识库P1_20261118/megaman1_candidate_v2_manual_20261125/index.json",
+  "candidate_index_sha256": "d8de2bcf742e5a7df4df86a29b6162bcc815c1977719009b5cfe3542bc86c6be",
+  "frozen_questions": "知识库P1_20261118/megaman1_questions_frozen_v2_manual_20261125.json",
+  "frozen_questions_sha256": "edc1ad88e807b68a247f90622505e5a5193ea30a1a0b1390a56eb33afbc176bb",
+  "question_counts": {
+    "total": 23,
+    "strict_pass": 20,
+    "refuse": 3
+  },
+  "coverage": [
+    "对象RAM表",
+    "坐标轴与小数位置",
+    "BizHawk内存写机制",
+    "本机武器RAM实测",
+    "本机对象表定位实测",
+    "官方说明书操作按键",
+    "官方说明书选关流程",
+    "官方说明书能量与奖励道具",
+    "官方说明书Magnet Beam",
+    "官方说明书Robot Master身份",
+    "官方说明书进度奖励与得分"
+  ],
+  "reference_only_coverage": [
+    "FM2导入社区流程",
+    "segmented TAS通用术语"
+  ],
+  "not_covered": [
+    "整款游戏内容知识库",
+    "全部敌人、关卡与隐藏要素",
+    "PAL-B与其他版本跨版等价",
+    "目标时刻存档点与续作流程",
+    "角色创建系统（官方说明书无证，拒答）"
+  ],
+  "manual_source": {
+    "source_id": "archive_mega_man_nes_us_manual",
+    "archive_item": "https://archive.org/details/mega-man-nes-manual",
+    "original_pdf_sha1": "4e5dd2d36bdd2f592eded91f996e7a751862d24b",
+    "downloaded_pdf_sha256": "0fa36c585743a67e76839a67a4fee88894d64eecc455e6b1bf9c4ae7f7937445",
+    "pdf_pages": 10,
+    "short_excerpts": 8,
+    "full_manual_stored_in_candidate": false,
+    "typed_transcription_role": "navigation_only_not_indexed"
+  },
+  "route_boundaries": {
+    "explicit_alias": "candidate",
+    "explicit_revision_without_alias": "candidate",
+    "series_generic_without_installment": "ambiguous_series",
+    "other_installment": "not_borrowed",
+    "pal_or_european_version": "version_not_collected",
+    "multi_domain": "domain_local_evidence_only; outer inconclusive without evidence",
+    "missing_or_invalid_candidate_index": "fail_closed_without_production_fallback"
+  },
+  "production_defaults_unchanged": true,
+  "external_generative_model_calls": 0,
+  "paid_api_calls": 0
+}

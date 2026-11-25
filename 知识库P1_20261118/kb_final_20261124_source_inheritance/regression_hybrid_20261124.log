@@ -1,0 +1,34 @@
+W1124 23:58:30.706000 51840 E:\SHARE\py313-cuda\torch\distributed\elastic\multiprocessing\redirects.py:29] NOTE: Redirects are currently not supported in Windows or MacOs.
+Loading weights:   0%|          | 0/391 [00:00<?, ?it/s]Loading weights: 100%|██████████| 391/391 [00:00<00:00, 28637.31it/s]
+Loading weights:   0%|          | 0/393 [00:00<?, ?it/s]Loading weights:   1%|          | 2/393 [00:01<03:35,  1.82it/s]Loading weights:   1%|          | 3/393 [00:01<03:50,  1.69it/s]Loading weights:   2%|▏         | 9/393 [00:01<00:59,  6.49it/s]Loading weights:   3%|▎         | 11/393 [00:04<02:59,  2.12it/s]Loading weights:   3%|▎         | 12/393 [00:05<03:32,  1.79it/s]Loading weights:   3%|▎         | 13/393 [00:05<03:14,  1.95it/s]Loading weights:   4%|▎         | 14/393 [00:07<05:17,  1.19it/s]Loading weights:   4%|▍         | 15/393 [00:08<04:16,  1.48it/s]Loading weights:   4%|▍         | 16/393 [00:09<05:37,  1.12it/s]Loading weights:   4%|▍         | 17/393 [00:09<04:27,  1.41it/s]Loading weights:   5%|▍         | 18/393 [00:10<03:30,  1.78it/s]Loading weights:   5%|▍         | 19/393 [00:10<03:07,  2.00it/s]Loading weights:   5%|▌         | 20/393 [00:10<03:04,  2.02it/s]Loading weights:   5%|▌         | 21/393 [00:11<03:54,  1.59it/s]Loading weights:   6%|▌         | 22/393 [00:12<03:25,  1.81it/s]Loading weights:   6%|▌         | 23/393 [00:13<04:13,  1.46it/s]Loading weights:   6%|▌         | 24/393 [00:13<03:40,  1.67it/s]Loading weights:   6%|▋         | 25/393 [00:13<03:17,  1.86it/s]Loading weights:   7%|▋         | 29/393 [00:14<01:46,  3.41it/s]Loading weights:   8%|▊         | 30/393 [00:14<01:40,  3.61it/s]Loading weights:   8%|▊         | 31/393 [00:15<02:48,  2.15it/s]Loading weights:   8%|▊         | 33/393 [00:16<02:55,  2.05it/s]Loading weights:   9%|▉         | 35/393 [00:17<02:03,  2.90it/s]Loading weights:   9%|▉         | 36/393 [00:18<03:00,  1.98it/s]Loading weights:  10%|▉         | 38/393 [00:18<02:12,  2.68it/s]Loading weights:  10%|▉         | 39/393 [00:19<02:27,  2.41it/s]Loading weights:  10%|█         | 40/393 [00:20<04:11,  1.41it/s]Loading weights:  10%|█         | 41/393 [00:21<03:35,  1.63it/s]Loading weights:  11%|█         | 42/393 [00:21<03:39,  1.60it/s]Loading weights:  11%|█         | 43/393 [00:23<05:01,  1.16it/s]Loading weights:  12%|█▏        | 48/393 [00:23<02:04,  2.78it/s]Loading weights:  12%|█▏        | 49/393 [00:23<01:50,  3.12it/s]Loading weights: 100%|██████████| 393/393 [00:23<00:00, 16.40it/s]
+Q01 hybrid_default=pass hybrid_strict=inconclusive
+Q02 hybrid_default=inconclusive hybrid_strict=inconclusive
+Q03 hybrid_default=pass hybrid_strict=inconclusive
+Q04 hybrid_default=pass hybrid_strict=inconclusive
+Q05 hybrid_default=pass hybrid_strict=pass
+Q06 hybrid_default=pass hybrid_strict=pass
+Q07 hybrid_default=pass hybrid_strict=pass
+Q08 hybrid_default=pass hybrid_strict=pass
+Q09 hybrid_default=inconclusive hybrid_strict=inconclusive
+Q10 hybrid_default=pass hybrid_strict=pass
+Q11 hybrid_default=pass hybrid_strict=pass
+Q12 hybrid_default=miss hybrid_strict=miss
+Q13 hybrid_default=miss hybrid_strict=miss
+Q14 hybrid_default=miss hybrid_strict=miss
+Q15 hybrid_default=inconclusive hybrid_strict=inconclusive
+Q16 hybrid_default=pass hybrid_strict=pass
+Q17 hybrid_default=inconclusive hybrid_strict=inconclusive
+Q18 hybrid_default=pass hybrid_strict=inconclusive
+P19 hybrid_default=inconclusive hybrid_strict=inconclusive
+P20 hybrid_default=miss hybrid_strict=miss
+P21 hybrid_default=inconclusive hybrid_strict=inconclusive
+P22 hybrid_default=pass hybrid_strict=pass
+P23 hybrid_default=pass hybrid_strict=pass
+P24 hybrid_default=pass hybrid_strict=pass
+P25 hybrid_default=inconclusive hybrid_strict=inconclusive
+P26 hybrid_default=miss hybrid_strict=miss
+X03 hybrid_default=pass hybrid_strict=inconclusive
+X04 hybrid_default=pass hybrid_strict=inconclusive
+X21 hybrid_default=pass hybrid_strict=pass
+X23 hybrid_default=pass hybrid_strict=inconclusive
+DONE F:\开源掌机教程\知识库P1_20261118\kb_final_20261124_source_inheritance\regression_hybrid_20261124.json isolation True

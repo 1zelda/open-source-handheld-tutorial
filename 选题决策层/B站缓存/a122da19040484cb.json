@@ -1,0 +1,43 @@
+{
+ "keyword": "星之卡比",
+ "status": "ok",
+ "ts": "2026-11-19T05:39:01Z",
+ "ts_epoch": 1795066741.6337757,
+ "supply_num_results": 1000,
+ "n_videos": 20,
+ "relevant_count": 20,
+ "core_hit_rate": 1.0,
+ "full_hit_rate": 0.9,
+ "play_median": 63136.5,
+ "relevant_play_median": 63136.5,
+ "play_mean": 249537.4,
+ "play_max": 912555,
+ "play_total": 4990748,
+ "engagement_median": 0.0264,
+ "recent_count": 0,
+ "recent_play_median": 0,
+ "top3": [
+  {
+   "bvid": "BV1MF411W7BR",
+   "title": "星之卡比探索发现100%流程（包含星耀世界）",
+   "author": "幸运的eagr",
+   "play": 912555,
+   "pubdate": "2022-03-25"
+  },
+  {
+   "bvid": "BV1UY411E79S",
+   "title": "【全收集】星之卡比：探索发现实况解说全流程100%攻略【完结】",
+   "author": "这里是BO叔叔",
+   "play": 840890,
+   "pubdate": "2022-03-24"
+  },
+  {
+   "bvid": "BV1cD4y1V7Mx",
+   "title": "《星之卡比Wii 豪华版》100%全收集通关攻略~",
+   "author": "卓帅丶",
+   "play": 614108,
+   "pubdate": "2023-02-24"
+  }
+ ],
+ "cache_hit": false
+}

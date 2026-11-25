@@ -1,0 +1,253 @@
+{
+  "status": "finalized_isolated_candidate_consumer",
+  "date": "2026-11-25",
+  "candidate_revision": "megaman1_nes_us",
+  "candidate_index_sha256": "5e126eddf0eae98e6b8a446cd54f37400b861d5e93ecf89d3004f16d3a252581",
+  "consumer": "taspipe.kb_megaman1.ask",
+  "summary": {
+    "route_total": 13,
+    "route_ok": 13,
+    "default_ok": 12,
+    "strict_ok": 12,
+    "default_wrong": 0,
+    "strict_wrong": 0,
+    "default_missed": 0,
+    "strict_missed": 0
+  },
+  "checks": {
+    "route_cases_13": true,
+    "default_12": true,
+    "strict_12": true,
+    "wrong_zero": true,
+    "missed_zero": true,
+    "failure_close_4": true,
+    "consumer_logs_24": true,
+    "consumer_log_hash": true,
+    "candidate_index_hash": true,
+    "readiness_status": true,
+    "production_not_ready": true,
+    "production_not_wired": true,
+    "production_domain_absent": true,
+    "production_mm1_entries_disabled": true,
+    "render_checks_green": true,
+    "render_pages_3": true,
+    "render_links_resolve": true,
+    "artifacts_17": true,
+    "eval_isolation_green": true,
+    "finalizer_real_state_unchanged": true
+  },
+  "check_passed": 20,
+  "check_total": 20,
+  "artifact_count": 17,
+  "total_bytes": 1140499,
+  "total_fingerprint_sha256": "b79eafef7722168265648c677b79a8931f5ab041dac33fe470825b6ecc02a9ef",
+  "fingerprint_rule": "sha256 of lines: relative_path\\0sha256\\0bytes, sorted by relative_path; manifest itself excluded",
+  "artifacts": [
+    {
+      "path": "_工具脚本/taspipe/kb_megaman1.py",
+      "bytes": 8579,
+      "sha256": "cee422be580dca1bbf9c9038b04997e7753734975b026af5659bb5cfa61cf563"
+    },
+    {
+      "path": "洛克人1候选路由与问答消费方交付_2026-11-25.md",
+      "bytes": 5565,
+      "sha256": "81acfab84a2872fbc505e7a6cfc2dad3618b1247e395e2f275c47b4bf274f36b"
+    },
+    {
+      "path": "洛克人1候选路由与问答消费方交付_2026-11-25.pdf",
+      "bytes": 340296,
+      "sha256": "8c9bd1dc3dc81b2f21bc246df31440460e4bfad4339a9cc02f9e1a60aaba80f1"
+    },
+    {
+      "path": "知识库P1_20261118/eval_megaman1_candidate_consumer_20261125.py",
+      "bytes": 11586,
+      "sha256": "0931ce60bf174dc4e05d8acc002253901e01fee4a864797c3b813a4cfb862e0e"
+    },
+    {
+      "path": "知识库P1_20261118/finalize_megaman1_consumer_20261125.py",
+      "bytes": 11399,
+      "sha256": "c3f5bd244b3d447a9f3785f0c9f505560f33d53de97090862bc1c90b06c18731"
+    },
+    {
+      "path": "知识库P1_20261118/megaman1_candidate_20261125/index.json",
+      "bytes": 21057,
+      "sha256": "5e126eddf0eae98e6b8a446cd54f37400b861d5e93ecf89d3004f16d3a252581"
+    },
+    {
+      "path": "知识库P1_20261118/megaman1_candidate_20261125/qc/consumer/contact_sheet.png",
+      "bytes": 217906,
+      "sha256": "6e35f6adec9cb02ccf5d931dab5a7b3f93dfb10cb1d913f5b4cf8543b161c66f"
+    },
+    {
+      "path": "知识库P1_20261118/megaman1_candidate_20261125/qc/consumer/page_01.png",
+      "bytes": 185227,
+      "sha256": "7c4805507f21f82e3777df55831ea70ed6e0eeff2ecf4204b592bcecd8b8237e"
+    },
+    {
+      "path": "知识库P1_20261118/megaman1_candidate_20261125/qc/consumer/page_02.png",
+      "bytes": 114183,
+      "sha256": "ef2d2e1241c521274378f3b4ce98e811ed6912cc52b588887fcac5eeaec5e6ba"
+    },
+    {
+      "path": "知识库P1_20261118/megaman1_candidate_20261125/qc/consumer/page_03.png",
+      "bytes": 120767,
+      "sha256": "36dddec8b753d09802b9e3078e04abea8af128f2452a9df58d60a5ea10ad3ab8"
+    },
+    {
+      "path": "知识库P1_20261118/megaman1_candidate_20261125/qc/consumer/render_qa.json",
+      "bytes": 1999,
+      "sha256": "d872ad7e19b73843b8fefc7eb86834d7ccea7bcc4e37cc8fa02450b3ed684bed"
+    },
+    {
+      "path": "知识库P1_20261118/megaman1_candidate_20261125/qc/consumer/report.html",
+      "bytes": 10084,
+      "sha256": "64d8f99b1e3ffe062b4bac59201320e8dfab8a6c90568d82b8ae5e5d9dd727bc"
+    },
+    {
+      "path": "知识库P1_20261118/megaman1_candidate_20261125/qc/consumer_query_log_20261125.jsonl",
+      "bytes": 34378,
+      "sha256": "a8ccea9f04e67f5f82ce04fa19d48f625797658b824304057b281f5bc0451597"
+    },
+    {
+      "path": "知识库P1_20261118/megaman1_candidate_consumer_eval_20261125.json",
+      "bytes": 37982,
+      "sha256": "f1e54b86ef286d79bfd21b2af19ae4bf106f8e2a234a722ff077c2a0757121b6"
+    },
+    {
+      "path": "知识库P1_20261118/megaman1_candidate_consumer_eval_20261125.md",
+      "bytes": 2817,
+      "sha256": "aa20189c710f28b1202c10aad54fb5e0870a94db302d6e55c47645efa7becf1d"
+    },
+    {
+      "path": "知识库P1_20261118/megaman1_candidate_consumer_readiness_20261125.json",
+      "bytes": 4939,
+      "sha256": "559f90bedb3fac50bbb42d8b04cebca86892787652cb0bd482e6e9142da64af4"
+    },
+    {
+      "path": "知识库P1_20261118/render_qc_megaman1_consumer_20261125.py",
+      "bytes": 11735,
+      "sha256": "933917f9da515d8ecfbb5db585585500659f58398e1b390b3e4db1428ef7f1b5"
+    }
+  ],
+  "production_defaults_unchanged": true,
+  "production_route_wired": false,
+  "production_consumer_wired": false,
+  "production_ready": false,
+  "whole_game_knowledge_base": false,
+  "external_generative_model_calls": 0,
+  "paid_api_calls": 0,
+  "finalizer_isolation": {
+    "ok": true,
+    "changed_paths": [],
+    "real_state_before": {
+      "F:\\开源掌机教程\\_工具脚本\\taspipe\\游戏包\\知识库\\index.json": {
+        "present": true,
+        "bytes": 3682167,
+        "mtime_ns": 1795541157149583400,
+        "sha256": "fe56dc5427418a6c5a4d60cc16610e1920ea0fafa4ba42ce479c294e80f95f8b"
+      },
+      "F:\\开源掌机教程\\_工具脚本\\taspipe\\游戏包\\知识库\\corpus_map.json": {
+        "present": true,
+        "bytes": 26962,
+        "mtime_ns": 1795541147914463200,
+        "sha256": "eb8b727a832dbf1aec7555e0bbe431193c6a1d46a0318102095c58e425c1b77d"
+      },
+      "F:\\开源掌机教程\\_工具脚本\\taspipe\\游戏包\\来源库\\sources.json": {
+        "present": true,
+        "bytes": 62632,
+        "mtime_ns": 1795542085993128300,
+        "sha256": "0407abdb9b10f4b1dcb77b7592b1858fc117007486fbe24669bde98dfdb60614"
+      },
+      "F:\\开源掌机教程\\_工具脚本\\taspipe\\游戏包\\来源库\\检索台账.json": {
+        "present": true,
+        "bytes": 3188,
+        "mtime_ns": 1795540789186842400,
+        "sha256": "95a6079f9927de0fb7b0fce9dd4c313e0cd55daeec33342364a4fc18d736f1b6"
+      },
+      "F:\\开源掌机教程\\_工具脚本\\taspipe\\游戏包\\知识库\\query_log.jsonl": {
+        "present": true,
+        "bytes": 1044,
+        "mtime_ns": 1795463914085772600,
+        "sha256": "f73c57ae2080d8f525bdd5cdfb52b0a50f1cc5cf0cca5b89c4003b803602a91d"
+      },
+      "F:\\开源掌机教程\\_工具脚本\\taspipe\\游戏包\\电竞事实库\\facts_v1.db": {
+        "present": true,
+        "bytes": 2056192,
+        "mtime_ns": 1795464415053952300,
+        "sha256": "32f029f41629cb3774e701a705d521aa49550c76deabbc0affc760bec264d5c1"
+      },
+      "F:\\开源掌机教程\\选题决策层\\kb快照\\index.json": {
+        "present": true,
+        "bytes": 3607419,
+        "mtime_ns": 1795533626202927000,
+        "sha256": "2a93e76d5876c1181e7784a20eca0f4d84888d0292d281fc6eea3564090b9260"
+      },
+      "F:\\开源掌机教程\\_工具脚本\\taspipe\\游戏包\\知识库\\index_hybrid.json": {
+        "present": true,
+        "bytes": 3719641,
+        "mtime_ns": 1795541157731106500,
+        "sha256": "fa3c4bfe7788db629a98d7529289baf2e325a98d6fea470b4ba32071c7e4cce8"
+      }
+    },
+    "real_state_after": {
+      "F:\\开源掌机教程\\_工具脚本\\taspipe\\游戏包\\知识库\\index.json": {
+        "present": true,
+        "bytes": 3682167,
+        "mtime_ns": 1795541157149583400,
+        "sha256": "fe56dc5427418a6c5a4d60cc16610e1920ea0fafa4ba42ce479c294e80f95f8b"
+      },
+      "F:\\开源掌机教程\\_工具脚本\\taspipe\\游戏包\\知识库\\corpus_map.json": {
+        "present": true,
+        "bytes": 26962,
+        "mtime_ns": 1795541147914463200,
+        "sha256": "eb8b727a832dbf1aec7555e0bbe431193c6a1d46a0318102095c58e425c1b77d"
+      },
+      "F:\\开源掌机教程\\_工具脚本\\taspipe\\游戏包\\来源库\\sources.json": {
+        "present": true,
+        "bytes": 62632,
+        "mtime_ns": 1795542085993128300,
+        "sha256": "0407abdb9b10f4b1dcb77b7592b1858fc117007486fbe24669bde98dfdb60614"
+      },
+      "F:\\开源掌机教程\\_工具脚本\\taspipe\\游戏包\\来源库\\检索台账.json": {
+        "present": true,
+        "bytes": 3188,
+        "mtime_ns": 1795540789186842400,
+        "sha256": "95a6079f9927de0fb7b0fce9dd4c313e0cd55daeec33342364a4fc18d736f1b6"
+      },
+      "F:\\开源掌机教程\\_工具脚本\\taspipe\\游戏包\\知识库\\query_log.jsonl": {
+        "present": true,
+        "bytes": 1044,
+        "mtime_ns": 1795463914085772600,
+        "sha256": "f73c57ae2080d8f525bdd5cdfb52b0a50f1cc5cf0cca5b89c4003b803602a91d"
+      },
+      "F:\\开源掌机教程\\_工具脚本\\taspipe\\游戏包\\电竞事实库\\facts_v1.db": {
+        "present": true,
+        "bytes": 2056192,
+        "mtime_ns": 1795464415053952300,
+        "sha256": "32f029f41629cb3774e701a705d521aa49550c76deabbc0affc760bec264d5c1"
+      },
+      "F:\\开源掌机教程\\选题决策层\\kb快照\\index.json": {
+        "present": true,
+        "bytes": 3607419,
+        "mtime_ns": 1795533626202927000,
+        "sha256": "2a93e76d5876c1181e7784a20eca0f4d84888d0292d281fc6eea3564090b9260"
+      },
+      "F:\\开源掌机教程\\_工具脚本\\taspipe\\游戏包\\知识库\\index_hybrid.json": {
+        "present": true,
+        "bytes": 3719641,
+        "mtime_ns": 1795541157731106500,
+        "sha256": "fa3c4bfe7788db629a98d7529289baf2e325a98d6fea470b4ba32071c7e4cce8"
+      }
+    }
+  },
+  "remaining": [
+    "决定是否把候选域接入生产 kb_route.DOMAINS",
+    "决定是否把生产 corpus map/index 提升为正式内容域",
+    "专用生产问答消费方尚未接入知识对照.py",
+    "官方说明书级玩法语料未建立",
+    "整款游戏知识覆盖未建立",
+    "PAL-B 与 NTSC 美版跨版等价未验证",
+    "候选 dense/hybrid 富集件未生成",
+    "真实用户查询样本未建立"
+  ]
+}

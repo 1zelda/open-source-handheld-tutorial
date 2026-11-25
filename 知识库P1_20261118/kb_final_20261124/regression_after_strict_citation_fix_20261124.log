@@ -1,0 +1,13 @@
+{
+  "base_total": 26,
+  "base_pass": 13,
+  "strict_pass": 12,
+  "strict_intercepted_ids": [
+    "Q01"
+  ],
+  "strict_newly_passed_ids": [],
+  "isolation": {
+    "ok": true,
+    "changed_paths": []
+  }
+}

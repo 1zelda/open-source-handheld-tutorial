@@ -1,0 +1,87 @@
+Q01  base=True  scoped=True /unchanged_ok scoped_beyond=True /unchanged_ok replace=True /unchanged_ok strict_fragments=False/regressed
+Q02  base=True  scoped=True /unchanged_ok scoped_beyond=True /unchanged_ok replace=True /unchanged_ok strict_fragments=False/regressed
+Q03  base=True  scoped=True /unchanged_ok scoped_beyond=True /unchanged_ok replace=False/regressed strict_fragments=False/regressed
+Q04  base=True  scoped=True /unchanged_ok scoped_beyond=True /unchanged_ok replace=True /unchanged_ok strict_fragments=True /unchanged_ok
+Q05  base=True  scoped=True /unchanged_ok scoped_beyond=True /unchanged_ok replace=False/regressed strict_fragments=False/regressed
+Q06  base=True  scoped=True /unchanged_ok scoped_beyond=True /unchanged_ok replace=True /unchanged_ok strict_fragments=True /unchanged_ok
+Q07  base=True  scoped=True /unchanged_ok scoped_beyond=True /unchanged_ok replace=True /unchanged_ok strict_fragments=True /unchanged_ok
+Q08  base=True  scoped=True /unchanged_ok scoped_beyond=True /unchanged_ok replace=True /unchanged_ok strict_fragments=True /unchanged_ok
+Q09  base=True  scoped=True /unchanged_ok scoped_beyond=True /unchanged_ok replace=True /unchanged_ok strict_fragments=True /unchanged_ok
+Q10  base=True  scoped=True /unchanged_ok scoped_beyond=True /unchanged_ok replace=True /unchanged_ok strict_fragments=True /unchanged_ok
+Q11  base=True  scoped=True /unchanged_ok scoped_beyond=True /unchanged_ok replace=True /unchanged_ok strict_fragments=True /unchanged_ok
+Q12  base=True  scoped=True /unchanged_ok scoped_beyond=True /unchanged_ok replace=True /unchanged_ok strict_fragments=True /unchanged_ok
+Q13  base=True  scoped=True /unchanged_ok scoped_beyond=True /unchanged_ok replace=True /unchanged_ok strict_fragments=True /unchanged_ok
+Q14  base=True  scoped=True /unchanged_ok scoped_beyond=True /unchanged_ok replace=True /unchanged_ok strict_fragments=True /unchanged_ok
+Q15  base=True  scoped=True /unchanged_ok scoped_beyond=True /unchanged_ok replace=True /unchanged_ok strict_fragments=True /unchanged_ok
+Q16  base=True  scoped=True /unchanged_ok scoped_beyond=True /unchanged_ok replace=True /unchanged_ok strict_fragments=True /unchanged_ok
+Q17  base=True  scoped=True /unchanged_ok scoped_beyond=True /unchanged_ok replace=True /unchanged_ok strict_fragments=True /unchanged_ok
+Q18  base=True  scoped=True /unchanged_ok scoped_beyond=True /unchanged_ok replace=False/regressed strict_fragments=True /unchanged_ok
+P19  base=True  scoped=True /unchanged_ok scoped_beyond=True /unchanged_ok replace=True /unchanged_ok strict_fragments=True /unchanged_ok
+P20  base=True  scoped=True /unchanged_ok scoped_beyond=True /unchanged_ok replace=True /unchanged_ok strict_fragments=True /unchanged_ok
+P21  base=True  scoped=True /unchanged_ok scoped_beyond=True /unchanged_ok replace=True /unchanged_ok strict_fragments=True /unchanged_ok
+P22  base=True  scoped=True /unchanged_ok scoped_beyond=True /unchanged_ok replace=True /unchanged_ok strict_fragments=True /unchanged_ok
+P23  base=True  scoped=True /unchanged_ok scoped_beyond=True /unchanged_ok replace=True /unchanged_ok strict_fragments=True /unchanged_ok
+P24  base=True  scoped=True /unchanged_ok scoped_beyond=True /unchanged_ok replace=True /unchanged_ok strict_fragments=True /unchanged_ok
+P25  base=True  scoped=True /unchanged_ok scoped_beyond=True /unchanged_ok replace=True /unchanged_ok strict_fragments=True /unchanged_ok
+P26  base=True  scoped=True /unchanged_ok scoped_beyond=True /unchanged_ok replace=True /unchanged_ok strict_fragments=True /unchanged_ok
+XX01   insufficient_source scoped=still_refused scoped_beyond=still_refused replace=still_refused strict_fragments=still_refused
+XX02   insufficient_source scoped=still_refused scoped_beyond=still_refused replace=still_refused strict_fragments=still_refused
+XX03   positive_control    scoped=still_refused scoped_beyond=still_refused replace=still_refused strict_fragments=still_refused
+XX04   ambiguous           scoped=still_refused scoped_beyond=still_refused replace=still_refused strict_fragments=still_refused
+XX05   insufficient_source scoped=still_passed scoped_beyond=still_passed replace=intercepted strict_fragments=intercepted
+XX06   insufficient_source scoped=still_refused scoped_beyond=still_refused replace=still_refused strict_fragments=still_refused
+XX07   insufficient_source scoped=still_refused scoped_beyond=still_refused replace=still_refused strict_fragments=still_refused
+XX08   insufficient_source scoped=still_refused scoped_beyond=still_refused replace=still_refused strict_fragments=still_refused
+XX09   insufficient_source scoped=still_refused scoped_beyond=still_refused replace=still_refused strict_fragments=still_refused
+XX10   insufficient_source scoped=still_refused scoped_beyond=still_refused replace=still_refused strict_fragments=still_refused
+XX11   true_negative       scoped=still_refused scoped_beyond=newly_passed replace=still_refused strict_fragments=still_refused
+XX12   true_negative       scoped=still_refused scoped_beyond=still_refused replace=still_refused strict_fragments=still_refused
+XX13   true_negative       scoped=still_refused scoped_beyond=still_refused replace=still_refused strict_fragments=still_refused
+XX14   true_negative       scoped=still_refused scoped_beyond=still_refused replace=still_refused strict_fragments=still_refused
+XX15   positive_control    scoped=still_refused scoped_beyond=still_refused replace=still_refused strict_fragments=still_refused
+XX16   insufficient_source scoped=still_refused scoped_beyond=still_refused replace=still_refused strict_fragments=still_refused
+XX17   insufficient_source scoped=still_passed scoped_beyond=still_passed replace=intercepted strict_fragments=intercepted
+XX18   insufficient_source scoped=still_refused scoped_beyond=still_refused replace=still_refused strict_fragments=still_refused
+XX19   insufficient_source scoped=still_passed scoped_beyond=still_passed replace=intercepted strict_fragments=intercepted
+XX20   insufficient_source scoped=still_passed scoped_beyond=still_passed replace=intercepted strict_fragments=intercepted
+XX21   positive_control    scoped=still_passed scoped_beyond=still_passed replace=intercepted strict_fragments=still_passed
+XX22   true_negative       scoped=still_passed scoped_beyond=still_passed replace=intercepted strict_fragments=intercepted
+XX23   insufficient_source scoped=still_refused scoped_beyond=still_refused replace=still_refused strict_fragments=still_refused
+XX24   insufficient_source scoped=still_refused scoped_beyond=still_refused replace=still_refused strict_fragments=still_refused
+XX25   true_negative       scoped=still_refused scoped_beyond=still_refused replace=still_refused strict_fragments=still_refused
+XX26   insufficient_source scoped=still_refused scoped_beyond=still_refused replace=still_refused strict_fragments=still_refused
+XX27   insufficient_source scoped=still_refused scoped_beyond=still_refused replace=still_refused strict_fragments=still_refused
+XX28   true_negative       scoped=still_refused scoped_beyond=still_refused replace=still_refused strict_fragments=still_refused
+XX29   insufficient_source scoped=still_refused scoped_beyond=still_refused replace=still_refused strict_fragments=still_refused
+XX30   insufficient_source scoped=still_passed scoped_beyond=still_passed replace=intercepted strict_fragments=intercepted
+BW01   None                scoped=still_refused scoped_beyond=still_refused replace=still_refused strict_fragments=still_refused
+BW02   None                scoped=still_refused scoped_beyond=newly_passed replace=still_refused strict_fragments=still_refused
+BW03   None                scoped=still_refused scoped_beyond=newly_passed replace=still_refused strict_fragments=still_refused
+BW04   None                scoped=still_refused scoped_beyond=still_refused replace=still_refused strict_fragments=still_refused
+BW05   None                scoped=still_refused scoped_beyond=still_refused replace=still_refused strict_fragments=still_refused
+BW06   None                scoped=still_refused scoped_beyond=still_refused replace=still_refused strict_fragments=still_refused
+BW07   None                scoped=still_refused scoped_beyond=still_refused replace=still_refused strict_fragments=still_refused
+BW08   None                scoped=still_passed scoped_beyond=still_passed replace=intercepted strict_fragments=still_passed
+BW09   None                scoped=still_refused scoped_beyond=still_refused replace=still_refused strict_fragments=still_refused
+BW10   None                scoped=still_passed scoped_beyond=still_passed replace=intercepted strict_fragments=intercepted
+BW11   None                scoped=still_refused scoped_beyond=still_refused replace=still_refused strict_fragments=still_refused
+BW12   None                scoped=still_passed scoped_beyond=still_passed replace=intercepted strict_fragments=still_passed
+BW13   None                scoped=still_refused scoped_beyond=still_refused replace=still_refused strict_fragments=still_refused
+BW14   None                scoped=still_refused scoped_beyond=still_refused replace=still_refused strict_fragments=still_refused
+BW15   None                scoped=still_refused scoped_beyond=still_refused replace=still_refused strict_fragments=still_refused
+BW16   None                scoped=still_refused scoped_beyond=still_refused replace=still_refused strict_fragments=still_refused
+BW17   None                scoped=still_passed scoped_beyond=still_passed replace=intercepted strict_fragments=still_passed
+BW18   None                scoped=still_passed scoped_beyond=still_passed replace=intercepted strict_fragments=still_passed
+BW19   None                scoped=still_refused scoped_beyond=still_refused replace=still_refused strict_fragments=still_refused
+BW20   None                scoped=still_refused scoped_beyond=still_refused replace=still_refused strict_fragments=still_refused
+BW21   None                scoped=still_passed scoped_beyond=still_passed replace=intercepted strict_fragments=still_passed
+BW22   None                scoped=still_passed scoped_beyond=still_passed replace=intercepted strict_fragments=still_passed
+BW23   None                scoped=still_passed scoped_beyond=still_passed replace=intercepted strict_fragments=still_passed
+BW24   None                scoped=still_refused scoped_beyond=still_refused replace=still_refused strict_fragments=still_refused
+BW25   None                scoped=still_refused scoped_beyond=still_refused replace=still_refused strict_fragments=still_refused
+BW26   None                scoped=still_refused scoped_beyond=still_refused replace=still_refused strict_fragments=still_refused
+BW27   None                scoped=still_refused scoped_beyond=still_refused replace=still_refused strict_fragments=still_refused
+BW28   None                scoped=still_refused scoped_beyond=still_refused replace=still_refused strict_fragments=still_refused
+BW29   None                scoped=still_refused scoped_beyond=newly_passed replace=still_refused strict_fragments=still_refused
+BW30   None                scoped=still_passed scoped_beyond=still_passed replace=intercepted strict_fragments=intercepted
+DONE F:\开源掌机教程\知识库P1_20261118\kb_final_20261124\selector_sweep.md

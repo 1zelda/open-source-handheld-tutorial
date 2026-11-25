@@ -1,0 +1,358 @@
+{
+  "schema_version": "ram_calibration/1.0",
+  "mode": "verify",
+  "game_id": "contra_nes_us",
+  "case_id": "walk_right_vs_neutral",
+  "rom_sha1": "C9EA66BB7CB30AD5343F1721B1D4D3219859319B",
+  "core": "NesHawk",
+  "system": "NES",
+  "domain": "System Bus",
+  "recipe": {
+    "schema_version": "ram_calibration/1.0",
+    "game_id": "contra_nes_us",
+    "profile": {
+      "rom": "F:/开源掌机教程/04-游戏资源库/TAS输入录像库/roms_verify/NES/contra_u.nes",
+      "rom_sha1": "C9EA66BB7CB30AD5343F1721B1D4D3219859319B",
+      "bizhawk": "F:/开源掌机教程/02-模拟器库/BizHawk/BizHawk-2.8",
+      "core": "NesHawk",
+      "system": "NES",
+      "domain": "System Bus",
+      "state_package": {
+        "game_id": "contra_nes_us",
+        "profile_id": "contra_u_c9ea66bb",
+        "revision": "r20261125T020305"
+      },
+      "window": {
+        "start": 0,
+        "length": 2048
+      }
+    },
+    "base_state": "base",
+    "macros": {
+      "walk_right": "Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right"
+    },
+    "cases": [
+      {
+        "id": "walk_right_vs_neutral",
+        "kind": "scenario",
+        "arms": [
+          {
+            "name": "right",
+            "steps": [
+              {
+                "macro": "-",
+                "extra": 0,
+                "expect": [
+                  {
+                    "addr": 172,
+                    "value": 7
+                  }
+                ],
+                "screen": {
+                  "reference": "$base",
+                  "relation": "equal"
+                }
+              },
+              {
+                "state": "$previous",
+                "macro": "@walk_right",
+                "capture_frames": 30,
+                "expect": [
+                  {
+                    "addr": 172,
+                    "value": 7
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "neutral",
+            "steps": [
+              {
+                "macro": "-",
+                "extra": 0,
+                "expect": [
+                  {
+                    "addr": 172,
+                    "value": 7
+                  }
+                ],
+                "screen": {
+                  "reference": "$base",
+                  "relation": "equal"
+                }
+              },
+              {
+                "state": "$previous",
+                "macro": "-",
+                "extra": 30,
+                "capture_frames": 30,
+                "expect": [
+                  {
+                    "addr": 172,
+                    "value": 7
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "comparisons": [
+          {
+            "left": "right",
+            "right": "neutral",
+            "left_step": 1,
+            "right_step": 1,
+            "relation": "different",
+            "frames": [
+              10,
+              20,
+              "final"
+            ]
+          }
+        ],
+        "claims": []
+      }
+    ]
+  },
+  "base_state": {
+    "name": "base",
+    "path": "F:\\开源掌机教程\\04-游戏资源库\\TAS输入录像库\\状态资产\\contra_nes_us\\contra_u_c9ea66bb\\r20261125T020305\\states\\base.state"
+  },
+  "cache_key": "706b91c835b1ce6bb36bdc9e474543ee32053ae3bf41adc1c9c9f9a106667393",
+  "arms": {
+    "right": {
+      "steps": [
+        {
+          "index": 0,
+          "source_state": "F:\\开源掌机教程\\04-游戏资源库\\TAS输入录像库\\状态资产\\contra_nes_us\\contra_u_c9ea66bb\\r20261125T020305\\states\\base.state",
+          "attempt_state": "F:/taspipe_scratch/ram_calibration/fc35ab90ce4df3ec/walk_right_vs_neutral_right_0.state",
+          "patches": [],
+          "macro": "-",
+          "frames": 0,
+          "attempt": {
+            "id": 3,
+            "ok": true,
+            "data": "852"
+          },
+          "shot": "F:\\taspipe_scratch\\ram_calibration\\contra_movement_final_v2\\walk_right_vs_neutral_right_s00.png",
+          "state": "F:\\taspipe_scratch\\ram_calibration\\contra_movement_final_v2\\walk_right_vs_neutral_right_s00.state",
+          "ram": "F:\\taspipe_scratch\\ram_calibration\\contra_movement_final_v2\\walk_right_vs_neutral_right_s00.bin",
+          "expect": [
+            {
+              "addr": 172,
+              "width": 1,
+              "op": "==",
+              "want": 7,
+              "got": 7,
+              "pass": true
+            }
+          ],
+          "actual_core": null,
+          "screen": {
+            "reference": "F:\\taspipe_scratch\\ram_calibration\\contra_movement_final_v2\\walk_right_vs_neutral_base_anchor.png",
+            "relation": "equal",
+            "max_changed_fraction": null,
+            "pass": true,
+            "changed_pixels": 0,
+            "changed_fraction": 0.0,
+            "total_pixels": 57344,
+            "equal": true,
+            "bbox": null
+          }
+        },
+        {
+          "index": 1,
+          "source_state": "F:\\taspipe_scratch\\ram_calibration\\contra_movement_final_v2\\walk_right_vs_neutral_right_s00.state",
+          "attempt_state": "F:/taspipe_scratch/ram_calibration/fc35ab90ce4df3ec/walk_right_vs_neutral_right_1.state",
+          "patches": [],
+          "macro": "Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right",
+          "frames": 30,
+          "attempt": {
+            "id": 4,
+            "ok": true,
+            "data": "882"
+          },
+          "shot": "F:\\taspipe_scratch\\ram_calibration\\contra_movement_final_v2\\walk_right_vs_neutral_right_s01.png",
+          "state": "F:\\taspipe_scratch\\ram_calibration\\contra_movement_final_v2\\walk_right_vs_neutral_right_s01.state",
+          "ram": "F:\\taspipe_scratch\\ram_calibration\\contra_movement_final_v2\\walk_right_vs_neutral_right_s01.bin",
+          "expect": [
+            {
+              "addr": 172,
+              "width": 1,
+              "op": "==",
+              "want": 7,
+              "got": 7,
+              "pass": true
+            }
+          ],
+          "actual_core": null,
+          "frames_dir": "F:\\taspipe_scratch\\ram_calibration\\contra_movement_final_v2\\walk_right_vs_neutral_right_s01_frames",
+          "captured_frames": 30
+        }
+      ]
+    },
+    "neutral": {
+      "steps": [
+        {
+          "index": 0,
+          "source_state": "F:\\开源掌机教程\\04-游戏资源库\\TAS输入录像库\\状态资产\\contra_nes_us\\contra_u_c9ea66bb\\r20261125T020305\\states\\base.state",
+          "attempt_state": "F:/taspipe_scratch/ram_calibration/fc35ab90ce4df3ec/walk_right_vs_neutral_neutral_0.state",
+          "patches": [],
+          "macro": "-",
+          "frames": 0,
+          "attempt": {
+            "id": 6,
+            "ok": true,
+            "data": "852"
+          },
+          "shot": "F:\\taspipe_scratch\\ram_calibration\\contra_movement_final_v2\\walk_right_vs_neutral_neutral_s00.png",
+          "state": "F:\\taspipe_scratch\\ram_calibration\\contra_movement_final_v2\\walk_right_vs_neutral_neutral_s00.state",
+          "ram": "F:\\taspipe_scratch\\ram_calibration\\contra_movement_final_v2\\walk_right_vs_neutral_neutral_s00.bin",
+          "expect": [
+            {
+              "addr": 172,
+              "width": 1,
+              "op": "==",
+              "want": 7,
+              "got": 7,
+              "pass": true
+            }
+          ],
+          "actual_core": null,
+          "screen": {
+            "reference": "F:\\taspipe_scratch\\ram_calibration\\contra_movement_final_v2\\walk_right_vs_neutral_base_anchor.png",
+            "relation": "equal",
+            "max_changed_fraction": null,
+            "pass": true,
+            "changed_pixels": 0,
+            "changed_fraction": 0.0,
+            "total_pixels": 57344,
+            "equal": true,
+            "bbox": null
+          }
+        },
+        {
+          "index": 1,
+          "source_state": "F:\\taspipe_scratch\\ram_calibration\\contra_movement_final_v2\\walk_right_vs_neutral_neutral_s00.state",
+          "attempt_state": "F:/taspipe_scratch/ram_calibration/fc35ab90ce4df3ec/walk_right_vs_neutral_neutral_1.state",
+          "patches": [],
+          "macro": "-",
+          "frames": 30,
+          "attempt": {
+            "id": 7,
+            "ok": true,
+            "data": "882"
+          },
+          "shot": "F:\\taspipe_scratch\\ram_calibration\\contra_movement_final_v2\\walk_right_vs_neutral_neutral_s01.png",
+          "state": "F:\\taspipe_scratch\\ram_calibration\\contra_movement_final_v2\\walk_right_vs_neutral_neutral_s01.state",
+          "ram": "F:\\taspipe_scratch\\ram_calibration\\contra_movement_final_v2\\walk_right_vs_neutral_neutral_s01.bin",
+          "expect": [
+            {
+              "addr": 172,
+              "width": 1,
+              "op": "==",
+              "want": 7,
+              "got": 7,
+              "pass": true
+            }
+          ],
+          "actual_core": null,
+          "frames_dir": "F:\\taspipe_scratch\\ram_calibration\\contra_movement_final_v2\\walk_right_vs_neutral_neutral_s01_frames",
+          "captured_frames": 30
+        }
+      ]
+    }
+  },
+  "preparation": [],
+  "evidence": [
+    "F:\\taspipe_scratch\\ram_calibration\\contra_movement_final_v2\\walk_right_vs_neutral_base_anchor.png",
+    "F:\\taspipe_scratch\\ram_calibration\\contra_movement_final_v2\\walk_right_vs_neutral_neutral_s00.bin",
+    "F:\\taspipe_scratch\\ram_calibration\\contra_movement_final_v2\\walk_right_vs_neutral_neutral_s00.png",
+    "F:\\taspipe_scratch\\ram_calibration\\contra_movement_final_v2\\walk_right_vs_neutral_neutral_s00.state",
+    "F:\\taspipe_scratch\\ram_calibration\\contra_movement_final_v2\\walk_right_vs_neutral_neutral_s01.bin",
+    "F:\\taspipe_scratch\\ram_calibration\\contra_movement_final_v2\\walk_right_vs_neutral_neutral_s01.png",
+    "F:\\taspipe_scratch\\ram_calibration\\contra_movement_final_v2\\walk_right_vs_neutral_neutral_s01.state",
+    "F:\\taspipe_scratch\\ram_calibration\\contra_movement_final_v2\\walk_right_vs_neutral_neutral_s01_frames\\f0010.png",
+    "F:\\taspipe_scratch\\ram_calibration\\contra_movement_final_v2\\walk_right_vs_neutral_neutral_s01_frames\\f0020.png",
+    "F:\\taspipe_scratch\\ram_calibration\\contra_movement_final_v2\\walk_right_vs_neutral_right_s00.bin",
+    "F:\\taspipe_scratch\\ram_calibration\\contra_movement_final_v2\\walk_right_vs_neutral_right_s00.png",
+    "F:\\taspipe_scratch\\ram_calibration\\contra_movement_final_v2\\walk_right_vs_neutral_right_s00.state",
+    "F:\\taspipe_scratch\\ram_calibration\\contra_movement_final_v2\\walk_right_vs_neutral_right_s01.bin",
+    "F:\\taspipe_scratch\\ram_calibration\\contra_movement_final_v2\\walk_right_vs_neutral_right_s01.png",
+    "F:\\taspipe_scratch\\ram_calibration\\contra_movement_final_v2\\walk_right_vs_neutral_right_s01.state",
+    "F:\\taspipe_scratch\\ram_calibration\\contra_movement_final_v2\\walk_right_vs_neutral_right_s01_frames\\f0010.png",
+    "F:\\taspipe_scratch\\ram_calibration\\contra_movement_final_v2\\walk_right_vs_neutral_right_s01_frames\\f0020.png",
+    "F:\\开源掌机教程\\04-游戏资源库\\TAS输入录像库\\状态资产\\contra_nes_us\\contra_u_c9ea66bb\\r20261125T020305\\states\\base.state"
+  ],
+  "emulator_slot": null,
+  "comparisons": [
+    {
+      "left": "right",
+      "right": "neutral",
+      "relation": "different",
+      "frames": [
+        {
+          "frame": 10,
+          "left": "F:\\taspipe_scratch\\ram_calibration\\contra_movement_final_v2\\walk_right_vs_neutral_right_s01_frames\\f0010.png",
+          "right": "F:\\taspipe_scratch\\ram_calibration\\contra_movement_final_v2\\walk_right_vs_neutral_neutral_s01_frames\\f0010.png",
+          "pass": true,
+          "changed_pixels": 415,
+          "changed_fraction": 0.007237025669642857,
+          "total_pixels": 57344,
+          "equal": false,
+          "bbox": [
+            42,
+            76,
+            70,
+            110
+          ]
+        },
+        {
+          "frame": 20,
+          "left": "F:\\taspipe_scratch\\ram_calibration\\contra_movement_final_v2\\walk_right_vs_neutral_right_s01_frames\\f0020.png",
+          "right": "F:\\taspipe_scratch\\ram_calibration\\contra_movement_final_v2\\walk_right_vs_neutral_neutral_s01_frames\\f0020.png",
+          "pass": true,
+          "changed_pixels": 485,
+          "changed_fraction": 0.008457728794642858,
+          "total_pixels": 57344,
+          "equal": false,
+          "bbox": [
+            42,
+            76,
+            78,
+            110
+          ]
+        },
+        {
+          "frame": "final",
+          "left": "F:\\taspipe_scratch\\ram_calibration\\contra_movement_final_v2\\walk_right_vs_neutral_right_s01.png",
+          "right": "F:\\taspipe_scratch\\ram_calibration\\contra_movement_final_v2\\walk_right_vs_neutral_neutral_s01.png",
+          "pass": true,
+          "changed_pixels": 533,
+          "changed_fraction": 0.009294782366071428,
+          "total_pixels": 57344,
+          "equal": false,
+          "bbox": [
+            42,
+            76,
+            87,
+            110
+          ]
+        }
+      ],
+      "pass": true
+    }
+  ],
+  "checks": {
+    "preparation": true,
+    "expectations": true,
+    "comparisons": true,
+    "frame_counts": true,
+    "screen_anchors": true,
+    "gba_core": true
+  },
+  "status": "pass",
+  "verified_fields": []
+}

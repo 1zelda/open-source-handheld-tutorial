@@ -1,0 +1,18 @@
+# Rockman 2 object RAM table — verbatim extract
+> Origin: _工具脚本/taspipe/游戏包/来源库/取证/tasvideos_gameresources_rockman_data_2026-11-23.txt
+> Original line ranges: 424-432; 441-443
+> Qualification: Source-scoped technical evidence; no PAL/US regional equivalence is asserted.
+
+ Memory addresses
+
+ Read from the disassembly .
+
+ Game Screen# X (hi,lo) Xspd (hi,lo) Y (hi,lo) Yspd (hi,lo)
+ 
+ Rockman 1 $460 $480:$4A0 $4C0:$4E0 $600:$620 $660:$680
+ 
+ Rockman 2 $440 $460:$480 $600:$620 $4A0:$4C0 $640:$660
+
+ The variables for object # n can be found by adding n to each address.
+
+Boss has n =1 in RM1/2, Rockman always has n =0.

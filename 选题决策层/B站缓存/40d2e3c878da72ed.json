@@ -1,0 +1,43 @@
+{
+ "keyword": "皮克敏",
+ "status": "ok",
+ "ts": "2026-11-19T05:39:03Z",
+ "ts_epoch": 1795066743.5570583,
+ "supply_num_results": 1000,
+ "n_videos": 20,
+ "relevant_count": 20,
+ "core_hit_rate": 1.0,
+ "full_hit_rate": 1.0,
+ "play_median": 6124.5,
+ "relevant_play_median": 6124.5,
+ "play_mean": 48634.2,
+ "play_max": 370149,
+ "play_total": 972684,
+ "engagement_median": 0.0283,
+ "recent_count": 5,
+ "recent_play_median": 1485,
+ "top3": [
+  {
+   "bvid": "BV1Uh4y157ey",
+   "title": "全收集|全白金|全支线《皮克敏4》100%全收集实况攻略【完结】",
+   "author": "这里是BO叔叔",
+   "play": 370149,
+   "pubdate": "2023-07-19"
+  },
+  {
+   "bvid": "BV1W8411d72g",
+   "title": "《皮克敏4》评测9分：究极箱庭盛宴",
+   "author": "任评测",
+   "play": 262904,
+   "pubdate": "2023-08-04"
+  },
+  {
+   "bvid": "BV12z4y147CU",
+   "title": "大师宫本茂的“翻车”之作？皮克敏系列回顾【游戏老司机】",
+   "author": "UCG_Official",
+   "play": 80233,
+   "pubdate": "2023-07-21"
+  }
+ ],
+ "cache_hit": false
+}

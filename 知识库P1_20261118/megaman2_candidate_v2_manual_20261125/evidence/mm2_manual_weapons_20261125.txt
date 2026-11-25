@@ -1,0 +1,28 @@
+洛克人2 官方说明书：Atomic Fire Air Shooter Leaf Shield Bubble Lead Quick Boomerang Time Stopper Metal Blade Crash Bomber 武器（美国NES手册第15页）
+
+来源：Capcom《MEGA MAN 2》美国 NES 官方说明书，任天堂官方数字复刻。
+核验：已读扫描页；中文为说明，英文为短引文；未收全本。
+
+Heat Man的Atomic Fire可射出三种火球，按住B越久火球越大。
+> The longer you hold the fire button, the bigger the fireball.
+
+Air Man的Air Shooter发射小龙卷风。
+> Air Shooter throws small tornados.
+
+Wood Man的Leaf Shield形成护盾，叶片按控制pad方向投掷。
+> The leaves are then thrown in the direction the control pad is pushed.
+
+Bubble Man的Bubble Lead形成沿地面滚动的泡泡。
+> Bubble Lead is a bubble that rolls along the ground in front of you.
+
+Quick Man的Quick Boomerang最多连发三枚回旋镖。
+> Quick Boomerang can throw up to three boomerangs.
+
+Flash Man的Time Stopper暂时冻结所有敌人，但会持续消耗能量且不能提前关闭。
+> It cannot be turned off early.
+
+Metal Man的Metal Blade最多向任意方向投掷三枚，被说明书称为最佳通用武器且持续时间长。
+> This is probably the best general purpose weapon and the energy lasts a long time.
+
+Crash Man的Crash Bomber可掷向墙壁，短暂延迟后爆炸，可用于穿过某些墙壁。
+> Crash Bomber can be thrown at walls and will detonate after a short delay.

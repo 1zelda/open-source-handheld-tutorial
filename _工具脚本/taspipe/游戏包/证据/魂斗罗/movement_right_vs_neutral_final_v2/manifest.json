@@ -1,0 +1,122 @@
+{
+  "schema_version": "ram_calibration/1.0",
+  "report": "F:\\taspipe_scratch\\ram_calibration\\contra_movement_final_v2\\report.json",
+  "report_sha256": "cf1476d66c02acf093d70edfa6bd668fcb4c133e7edb3239d44b367fcf807649",
+  "status": "pass",
+  "mode": "verify",
+  "game_id": "contra_nes_us",
+  "case_id": "walk_right_vs_neutral",
+  "cache_key": "706b91c835b1ce6bb36bdc9e474543ee32053ae3bf41adc1c9c9f9a106667393",
+  "recipe_sha256": "ada3e8aa593e19bbf33287df8d05b64bfb7157fe24e835669735dde2b864ef4c",
+  "verified_fields": [],
+  "evidence": [
+    {
+      "source": "F:\\taspipe_scratch\\ram_calibration\\contra_movement_final_v2\\walk_right_vs_neutral_base_anchor.png",
+      "path": "evidence/000_walk_right_vs_neutral_base_anchor.png",
+      "sha256": "b25dac038941983b94f2e25e4e14b28ad102900545393bbb197f117b34c904b6",
+      "bytes": 8536
+    },
+    {
+      "source": "F:\\taspipe_scratch\\ram_calibration\\contra_movement_final_v2\\walk_right_vs_neutral_neutral_s00.bin",
+      "path": "evidence/001_walk_right_vs_neutral_neutral_s00.bin",
+      "sha256": "588ce5f7339bca6a24d64336897f0a39fd6a80e9012e0b579124a762da7afbee",
+      "bytes": 2048
+    },
+    {
+      "source": "F:\\taspipe_scratch\\ram_calibration\\contra_movement_final_v2\\walk_right_vs_neutral_neutral_s00.png",
+      "path": "evidence/002_walk_right_vs_neutral_neutral_s00.png",
+      "sha256": "b25dac038941983b94f2e25e4e14b28ad102900545393bbb197f117b34c904b6",
+      "bytes": 8536
+    },
+    {
+      "source": "F:\\taspipe_scratch\\ram_calibration\\contra_movement_final_v2\\walk_right_vs_neutral_neutral_s00.state",
+      "path": "evidence/003_walk_right_vs_neutral_neutral_s00.state",
+      "sha256": "04fcd05b930a15b7fefc372be0c06e38a43e93247e6ee257b136adac91b34655",
+      "bytes": 19069
+    },
+    {
+      "source": "F:\\taspipe_scratch\\ram_calibration\\contra_movement_final_v2\\walk_right_vs_neutral_neutral_s01.bin",
+      "path": "evidence/004_walk_right_vs_neutral_neutral_s01.bin",
+      "sha256": "3fa754f275dc596500715ce54278762d4ac23dbaff786155f65f2435e780bb98",
+      "bytes": 2048
+    },
+    {
+      "source": "F:\\taspipe_scratch\\ram_calibration\\contra_movement_final_v2\\walk_right_vs_neutral_neutral_s01.png",
+      "path": "evidence/005_walk_right_vs_neutral_neutral_s01.png",
+      "sha256": "b25dac038941983b94f2e25e4e14b28ad102900545393bbb197f117b34c904b6",
+      "bytes": 8536
+    },
+    {
+      "source": "F:\\taspipe_scratch\\ram_calibration\\contra_movement_final_v2\\walk_right_vs_neutral_neutral_s01.state",
+      "path": "evidence/006_walk_right_vs_neutral_neutral_s01.state",
+      "sha256": "35d6a7f642a5c5a87f3f9e1e2818f1a749e9efa892ed19c9c625a520685c1fed",
+      "bytes": 19072
+    },
+    {
+      "source": "F:\\taspipe_scratch\\ram_calibration\\contra_movement_final_v2\\walk_right_vs_neutral_neutral_s01_frames\\f0010.png",
+      "path": "evidence/007_f0010.png",
+      "sha256": "287b049ff132ae0e3fae1c57a881ba46a44894c48e544bdc1203ee3e98a5f116",
+      "bytes": 8529
+    },
+    {
+      "source": "F:\\taspipe_scratch\\ram_calibration\\contra_movement_final_v2\\walk_right_vs_neutral_neutral_s01_frames\\f0020.png",
+      "path": "evidence/008_f0020.png",
+      "sha256": "287b049ff132ae0e3fae1c57a881ba46a44894c48e544bdc1203ee3e98a5f116",
+      "bytes": 8529
+    },
+    {
+      "source": "F:\\taspipe_scratch\\ram_calibration\\contra_movement_final_v2\\walk_right_vs_neutral_right_s00.bin",
+      "path": "evidence/009_walk_right_vs_neutral_right_s00.bin",
+      "sha256": "588ce5f7339bca6a24d64336897f0a39fd6a80e9012e0b579124a762da7afbee",
+      "bytes": 2048
+    },
+    {
+      "source": "F:\\taspipe_scratch\\ram_calibration\\contra_movement_final_v2\\walk_right_vs_neutral_right_s00.png",
+      "path": "evidence/010_walk_right_vs_neutral_right_s00.png",
+      "sha256": "b25dac038941983b94f2e25e4e14b28ad102900545393bbb197f117b34c904b6",
+      "bytes": 8536
+    },
+    {
+      "source": "F:\\taspipe_scratch\\ram_calibration\\contra_movement_final_v2\\walk_right_vs_neutral_right_s00.state",
+      "path": "evidence/011_walk_right_vs_neutral_right_s00.state",
+      "sha256": "8c765ab6d678c90b87e9da145cf4cc3d42b39e2944b16da0735fee0cb2b994ce",
+      "bytes": 19069
+    },
+    {
+      "source": "F:\\taspipe_scratch\\ram_calibration\\contra_movement_final_v2\\walk_right_vs_neutral_right_s01.bin",
+      "path": "evidence/012_walk_right_vs_neutral_right_s01.bin",
+      "sha256": "b50d03650c3f11142e2b23631cf72585c00ded99ae0939240c629742beda87de",
+      "bytes": 2048
+    },
+    {
+      "source": "F:\\taspipe_scratch\\ram_calibration\\contra_movement_final_v2\\walk_right_vs_neutral_right_s01.png",
+      "path": "evidence/013_walk_right_vs_neutral_right_s01.png",
+      "sha256": "8b72fd49869fdbc6c9d14debc2305586172e06056968c43cc9f87fc64e4b5703",
+      "bytes": 8605
+    },
+    {
+      "source": "F:\\taspipe_scratch\\ram_calibration\\contra_movement_final_v2\\walk_right_vs_neutral_right_s01.state",
+      "path": "evidence/014_walk_right_vs_neutral_right_s01.state",
+      "sha256": "f5a64f59059cc550d29e522d85951222e902757263b1fc3be6cf8c0c929e0f76",
+      "bytes": 19238
+    },
+    {
+      "source": "F:\\taspipe_scratch\\ram_calibration\\contra_movement_final_v2\\walk_right_vs_neutral_right_s01_frames\\f0010.png",
+      "path": "evidence/015_f0010.png",
+      "sha256": "dbc8affc2cac99cc9f9c4b902d43c5f0d8589c94a2b9cfe98e991b607614947f",
+      "bytes": 8569
+    },
+    {
+      "source": "F:\\taspipe_scratch\\ram_calibration\\contra_movement_final_v2\\walk_right_vs_neutral_right_s01_frames\\f0020.png",
+      "path": "evidence/016_f0020.png",
+      "sha256": "eebd51720e2b23222aadb6ab08bb2e9c50321f72c65cbf611a9f24596daa9190",
+      "bytes": 8584
+    },
+    {
+      "source": "F:\\开源掌机教程\\04-游戏资源库\\TAS输入录像库\\状态资产\\contra_nes_us\\contra_u_c9ea66bb\\r20261125T020305\\states\\base.state",
+      "path": "evidence/017_base.state",
+      "sha256": "cdd693477fc2bce653a3c8419ce9153fa99a9f2c83ef3d6b72f33d21604fa9e8",
+      "bytes": 19069
+    }
+  ]
+}

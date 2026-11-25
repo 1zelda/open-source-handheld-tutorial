@@ -1,0 +1,131 @@
+{
+  "schema_version": 1,
+  "frozen_at": "2026-11-24",
+  "questions": [
+    {
+      "id": "F01",
+      "category": "esports_static",
+      "route": "static",
+      "q": "亚索的英雄身份是什么？",
+      "name": "亚索",
+      "kind": "champion",
+      "expect": {"status": "pass", "evidence_count": 1, "answer_contains": ["亚索", "疾风剑豪", "截至补丁 16.23.1"], "dataset_revision": "ddragon:16.23.1:zh_CN"}
+    },
+    {
+      "id": "F02",
+      "category": "esports_static",
+      "route": "static",
+      "q": "装备1001的静态售价是多少？",
+      "name": "1001",
+      "kind": "item",
+      "expect": {"status": "pass", "evidence_count": 1, "answer_contains": ["鞋子", "售价 300 金币", "截至补丁 16.23.1"]}
+    },
+    {
+      "id": "F03",
+      "category": "esports_static",
+      "route": "static",
+      "q": "召唤师技能SummonerFlash的冷却和范围？",
+      "name": "SummonerFlash",
+      "kind": "summoner",
+      "expect": {"status": "pass", "evidence_count": 1, "answer_contains": ["闪现", "冷却 300", "范围 425"]}
+    },
+    {
+      "id": "F04",
+      "category": "time_trap",
+      "route": "static",
+      "q": "亚索在未导入补丁0.0.0的资料？",
+      "name": "亚索",
+      "kind": "champion",
+      "patch": "0.0.0",
+      "expect": {"status": "miss", "reason_code": "version_not_collected", "evidence_count": 0}
+    },
+    {
+      "id": "F05",
+      "category": "esports_static",
+      "route": "static",
+      "q": "查询一个本地未收集的英雄XYZ123",
+      "name": "XYZ123",
+      "kind": "champion",
+      "expect": {"status": "miss", "reason_code": "not_collected", "evidence_count": 0}
+    },
+    {
+      "id": "F06",
+      "category": "esports_dynamic",
+      "route": "text",
+      "q": "英雄联盟 2026全球总决赛冠军是谁",
+      "expect": {"status": "miss", "refusal": "out_of_scope", "evidence_count": 0, "domains": ["esports_lol"]}
+    },
+    {
+      "id": "F07",
+      "category": "esports_dynamic",
+      "route": "text",
+      "q": "英雄联盟 T1 现在阵容有哪些人",
+      "expect": {"status": "miss", "refusal": "out_of_scope", "evidence_count": 0, "domains": ["esports_lol"]}
+    },
+    {
+      "id": "F08",
+      "category": "time_trap",
+      "route": "text",
+      "q": "Faker 最新转会去了哪队",
+      "expect": {"status": "miss", "refusal": "out_of_scope", "evidence_count": 0, "domains": ["esports_lol"]}
+    },
+    {
+      "id": "F09",
+      "category": "time_trap",
+      "route": "text",
+      "q": "英雄联盟 当前职业比赛用哪个补丁",
+      "expect": {"status": "miss", "refusal": "out_of_scope", "evidence_count": 0, "domains": ["esports_lol"]}
+    },
+    {
+      "id": "F10",
+      "category": "esports_other",
+      "route": "text",
+      "q": "DOTA2 TI14 赛程",
+      "expect": {"status": "miss", "refusal": "out_of_scope", "evidence_count": 0, "domains": ["esports_dota"]}
+    },
+    {
+      "id": "F11",
+      "category": "esports_other",
+      "route": "text",
+      "q": "CS2 Major 决赛结果",
+      "expect": {"status": "miss", "refusal": "out_of_scope", "evidence_count": 0, "domains": ["esports_cs2"]}
+    },
+    {
+      "id": "F12",
+      "category": "time_trap",
+      "route": "text",
+      "q": "无畏契约最新补丁改了什么",
+      "expect": {"status": "miss", "refusal": "out_of_scope", "evidence_count": 0, "domains": ["esports_valorant"]}
+    },
+    {
+      "id": "F13",
+      "category": "modern_games",
+      "route": "text",
+      "q": "原神 最新版本 更新了什么",
+      "expect": {"status": "miss", "refusal": "out_of_scope", "evidence_count": 0, "domains": ["modern_games"]}
+    },
+    {
+      "id": "F14",
+      "category": "cross_domain",
+      "route": "text",
+      "q": "英雄联盟和DOTA2 现在哪个赛事奖金更高",
+      "expect": {"status": "miss", "refusal": "out_of_scope", "evidence_count": 0, "mode": "multi", "domains": ["esports_lol", "esports_dota"]}
+    },
+    {
+      "id": "F15",
+      "category": "retro_regression",
+      "route": "text",
+      "q": "热血足球 PK战模式怎么玩",
+      "game": "nekketsu_soccer2",
+      "expect": {"status": "pass", "evidence_count": 1}
+    },
+    {
+      "id": "F16",
+      "category": "retro_regression",
+      "route": "text",
+      "q": "KOF98 ECK 能不能关掉队友改成1v1",
+      "revision": "kof98eck",
+      "expect": {"status": "pass", "evidence_count": 1}
+    }
+  ]
+}

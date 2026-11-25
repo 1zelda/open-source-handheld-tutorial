@@ -1,0 +1,42 @@
+{
+  "status": "pass",
+  "source": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_jump_route1\\work\\jump_route.state",
+  "cases": {
+    "yellow22": {
+      "yellow_before_attack": 22,
+      "yellow_after_attack": 22,
+      "frames": 165,
+      "damage_frame": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_yellow_gameplay5\\yellow22\\f0090.png",
+      "final_frame": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_yellow_gameplay5\\yellow22\\f0164.png"
+    },
+    "yellow0": {
+      "yellow_before_attack": 0,
+      "yellow_after_attack": 0,
+      "frames": 165,
+      "damage_frame": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_yellow_gameplay5\\yellow0\\f0090.png",
+      "final_frame": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_yellow_gameplay5\\yellow0\\f0164.png"
+    }
+  },
+  "observed_damage": {
+    "yellow22": 22,
+    "yellow0": 17
+  },
+  "actual_core": "BizHawk.Emulation.Cores.Nintendo.GBA.MGBAHawk",
+  "pixel_diffs": {
+    "80": 0.0,
+    "85": 0.0,
+    "86": 4988.666666666667,
+    "90": 32816.0,
+    "100": 41851.0,
+    "120": 87059.0,
+    "164": 47732.666666666664
+  },
+  "checks": {
+    "positive_slot_22": true,
+    "negative_slot_0": true,
+    "identical_before_attack": true,
+    "damage_numbers_differ": true,
+    "post_hit_diverges": true,
+    "manual_damage_22_vs_17": true
+  }
+}

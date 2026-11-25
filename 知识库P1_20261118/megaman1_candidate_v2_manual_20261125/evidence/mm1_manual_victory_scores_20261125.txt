@@ -1,0 +1,10 @@
+洛克人1 官方说明书：Robot Master 胜利得分 Dr. Wily 200000 分（美国NES手册第10及14页）
+
+来源：Capcom 美国 NES 官方说明书扫描件。
+核验：已读扫描页；中文为说明，英文为短引文；未收全本。
+
+每击败一名 Robot Master 可得 50,000 至 100,000 points。
+> Earn From 50,000 To 100,000 Points Per Victory.
+
+Dr. Wily 价值 200,000 Points，出现在最终关。
+> Dr. Wily. 200,000 Points. It appears on the final stage.

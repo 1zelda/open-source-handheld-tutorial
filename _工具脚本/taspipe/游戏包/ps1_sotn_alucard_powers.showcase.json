@@ -1,0 +1,359 @@
+{
+  "schema_version": 1,
+  "kind": "statejump_showcase",
+  "game_id": "castlevania_sotn_ps1_us",
+  "game_title": "Castlevania: Symphony of the Night / 恶魔城：月下夜想曲 必杀搓招与三大魔导器变身盘点 (PS1, 1997 Konami)",
+  "platform": "PS1",
+  "core": "Octoshock",
+  "system": "PSX",
+  "rom": "F:/taspipe_scratch/ps1_sotn/sotn.cue",
+  "bizhawk": "F:/开源掌机教程/02-模拟器库/BizHawk/BizHawk-2.8",
+  "base_state": "F:/taspipe_scratch/ps1_sotn/base_alchemy_hall.state",
+  "fps": 59.94,
+  "template": "ps1_tianma_cover",
+  "catalog": {
+    "status": "complete",
+    "expected_total": 6,
+    "sources": [
+      {
+        "source_id": "datacrystal",
+        "url": "https://datacrystal.tcrf.net/wiki/Castlevania:_Symphony_of_the_Night/RAM_map",
+        "status": "snippet_only",
+        "verified_date": "2026-11-18",
+        "element_ids": [
+          "alucard_sword_teleport_slash",
+          "hellfire_cape_teleport",
+          "soul_steal_fullscreen",
+          "soul_of_bat_transform",
+          "soul_of_wolf_dash",
+          "form_of_mist_cloud"
+        ],
+        "note": "只有搜索快照，未全文核对。"
+      },
+      {
+        "source_id": "strategywiki",
+        "url": "https://strategywiki.org/wiki/Castlevania:_Symphony_of_the_Night/Spells",
+        "status": "unreachable",
+        "verified_date": "2026-11-18",
+        "element_ids": [
+          "alucard_sword_teleport_slash",
+          "hellfire_cape_teleport",
+          "soul_steal_fullscreen",
+          "soul_of_bat_transform",
+          "soul_of_wolf_dash",
+          "form_of_mist_cloud"
+        ],
+        "note": "本机直连 403，只有搜索快照。"
+      }
+    ],
+    "coverage_note": "PS1 恶魔城月下夜想曲阿鲁卡多代表性武器剑技、出招表魔导必杀（地狱火/窃魂）与蝙蝠/狼/雾三大形态变身完整盘点"
+  },
+  "elements": [
+    {
+      "element_id": "alucard_sword_teleport_slash",
+      "label": "Alucard Sword Teleport Slash (↓↘→+Square 阿鲁卡多之剑·残影瞬身斩)",
+      "kind": "weapon",
+      "base_state": null,
+      "trigger": {
+        "macro": "Down,Down,Down+Right,Down+Right,Right,Right,Right+Square,Right+Square,,,,Square,Square,,,,,,,,,,,,,,,,,,,,",
+        "extra": 35,
+        "patches": []
+      },
+      "detection": {
+        "frame": 16,
+        "success_checks": [
+          {
+            "check_id": "sotn_teleport_afterimage_sig",
+            "plugin_id": "frame_region_color_fraction",
+            "params": {
+              "region": [
+                0.2,
+                0.3,
+                0.85,
+                0.82
+              ],
+              "rgb": [
+                136,
+                184,
+                248
+              ],
+              "tol": 28,
+              "min_fraction": 0.015
+            },
+            "required": true
+          }
+        ]
+      },
+      "negative_control": {
+        "macro": null,
+        "patches": []
+      },
+      "note": "阿鲁卡多之剑专属搓招 236+□，带蓝色残影瞬移至前方高速二连斩。"
+    },
+    {
+      "element_id": "hellfire_cape_teleport",
+      "label": "Hellfire Spell (↑↓↘→+Square 暗黑地狱火·黑斗篷瞬移三连炎弹)",
+      "kind": "skill",
+      "base_state": null,
+      "trigger": {
+        "macro": "Up,Up,Up,Down,Down,Down+Right,Down+Right,Right,Right,Right+Square,Right+Square,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,",
+        "extra": 55,
+        "patches": [
+          {
+            "addr": "0x097BB0",
+            "value": 255,
+            "domain": "MainRAM"
+          }
+        ]
+      },
+      "detection": {
+        "frame": 34,
+        "success_checks": [
+          {
+            "check_id": "sotn_hellfire_flame_orbs",
+            "plugin_id": "frame_region_color_fraction",
+            "params": {
+              "region": [
+                0.2,
+                0.25,
+                0.88,
+                0.82
+              ],
+              "rgb": [
+                248,
+                120,
+                48
+              ],
+              "tol": 28,
+              "min_fraction": 0.018
+            },
+            "required": true
+          }
+        ]
+      },
+      "negative_control": {
+        "macro": null,
+        "patches": [
+          {
+            "addr": "0x097BB0",
+            "value": 255,
+            "domain": "MainRAM"
+          }
+        ]
+      },
+      "note": "保持 MP 充沛，搓出德古拉招牌斗篷瞬移并释放散射火球。"
+    },
+    {
+      "element_id": "soul_steal_fullscreen",
+      "label": "Soul Steal Spell (←→↘↓↙←→+Square 终极奥义·全屏窃魂术)",
+      "kind": "skill",
+      "base_state": null,
+      "trigger": {
+        "macro": "Left,Left,Right,Right,Down+Right,Down+Right,Down,Down,Down+Left,Down+Left,Left,Left,Right,Right+Square,Right+Square,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,",
+        "extra": 60,
+        "patches": [
+          {
+            "addr": "0x097BB0",
+            "value": 255,
+            "domain": "MainRAM"
+          }
+        ]
+      },
+      "detection": {
+        "frame": 38,
+        "success_checks": [
+          {
+            "check_id": "sotn_soul_steal_flash_orbs",
+            "plugin_id": "frame_region_color_fraction",
+            "params": {
+              "region": [
+                0.15,
+                0.15,
+                0.9,
+                0.88
+              ],
+              "rgb": [
+                240,
+                168,
+                248
+              ],
+              "tol": 28,
+              "min_fraction": 0.025
+            },
+            "required": true
+          }
+        ]
+      },
+      "negative_control": {
+        "macro": null,
+        "patches": [
+          {
+            "addr": "0x097BB0",
+            "value": 255,
+            "domain": "MainRAM"
+          }
+        ]
+      },
+      "note": "月下最强全屏吸魂回血必杀技。"
+    },
+    {
+      "element_id": "soul_of_bat_transform",
+      "label": "Soul of Bat + Wing Smash (L1键·蝙蝠魔导器变身与翼光冲击)",
+      "kind": "transform",
+      "base_state": null,
+      "trigger": {
+        "macro": "L1,L1,L1,L1,,,,,,,,Square,Square,Square,,,,,,,,,,,,,,,,,,,,,,,,",
+        "extra": 35,
+        "patches": [
+          {
+            "addr": "0x097964",
+            "value": 3,
+            "domain": "MainRAM"
+          }
+        ]
+      },
+      "detection": {
+        "frame": 22,
+        "success_checks": [
+          {
+            "check_id": "sotn_bat_form_wings_sig",
+            "plugin_id": "frame_region_color_fraction",
+            "params": {
+              "region": [
+                0.25,
+                0.25,
+                0.8,
+                0.8
+              ],
+              "rgb": [
+                168,
+                96,
+                232
+              ],
+              "tol": 28,
+              "min_fraction": 0.012
+            },
+            "required": true
+          }
+        ]
+      },
+      "negative_control": {
+        "macro": null,
+        "patches": [
+          {
+            "addr": "0x097964",
+            "value": 3,
+            "domain": "MainRAM"
+          }
+        ]
+      },
+      "note": "按 L1 键化为吸血蝙蝠形态。"
+    },
+    {
+      "element_id": "soul_of_wolf_dash",
+      "label": "Soul of Wolf (R2键·魔狼魔导器变身与疾风冲刺)",
+      "kind": "transform",
+      "base_state": null,
+      "trigger": {
+        "macro": "R2,R2,R2,R2,,,,,,,,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,,,,,,,,",
+        "extra": 30,
+        "patches": [
+          {
+            "addr": "0x097966",
+            "value": 3,
+            "domain": "MainRAM"
+          }
+        ]
+      },
+      "detection": {
+        "frame": 26,
+        "success_checks": [
+          {
+            "check_id": "sotn_wolf_form_silver_fur",
+            "plugin_id": "frame_region_color_fraction",
+            "params": {
+              "region": [
+                0.22,
+                0.45,
+                0.82,
+                0.88
+              ],
+              "rgb": [
+                200,
+                216,
+                240
+              ],
+              "tol": 28,
+              "min_fraction": 0.015
+            },
+            "required": true
+          }
+        ]
+      },
+      "negative_control": {
+        "macro": null,
+        "patches": [
+          {
+            "addr": "0x097966",
+            "value": 3,
+            "domain": "MainRAM"
+          }
+        ]
+      },
+      "note": "按 R2 键化为银狼形态高速疾驰。"
+    },
+    {
+      "element_id": "form_of_mist_cloud",
+      "label": "Form of Mist (L1+R1·雾之魔导器虚化与毒雾扩散)",
+      "kind": "transform",
+      "base_state": null,
+      "trigger": {
+        "macro": "L1+R1,L1+R1,L1+R1,L1+R1,L1+R1,L1+R1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,",
+        "extra": 35,
+        "patches": [
+          {
+            "addr": "0x097965",
+            "value": 3,
+            "domain": "MainRAM"
+          }
+        ]
+      },
+      "detection": {
+        "frame": 18,
+        "success_checks": [
+          {
+            "check_id": "sotn_mist_cloud_green_haze",
+            "plugin_id": "frame_region_color_fraction",
+            "params": {
+              "region": [
+                0.28,
+                0.3,
+                0.76,
+                0.82
+              ],
+              "rgb": [
+                152,
+                232,
+                168
+              ],
+              "tol": 28,
+              "min_fraction": 0.016
+            },
+            "required": true
+          }
+        ]
+      },
+      "negative_control": {
+        "macro": null,
+        "patches": [
+          {
+            "addr": "0x097965",
+            "value": 3,
+            "domain": "MainRAM"
+          }
+        ]
+      },
+      "note": "同时按 L1+R1 化为气雾形态。"
+    }
+  ]
+}

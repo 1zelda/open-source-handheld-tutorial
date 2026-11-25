@@ -1,0 +1,246 @@
+[hybrid] 评测 grades 逐字段: 14 差异
+  Q03.gold_pos: 2->3
+  Q03.condition: 权威可答件在第2位，非最高分；出证须附此条件->权威可答件在第3位，非最高分；出证须附此条件
+  Q06.status: inconclusive->pass
+  Q06.gold_pos: 6->7
+  Q08.status: inconclusive->pass
+  Q08.condition: None->权威可答件在第2位，非最高分；出证须附此条件
+  Q10.ok: True->False
+  Q10.gold_pos: 8->None
+  Q16.status: inconclusive->pass
+  Q16.gold_pos: 1->2
+  P22.gold_pos: 2->3
+  P23.status: inconclusive->pass
+  P23.gold_pos: 6->7
+  P23.condition: None->权威可答件在第3位，非最高分；出证须附此条件
+  ok 回归(pass->fail): ['Q10']  ok 新增(fail->pass): []
+  summary 基线 24/26 -> 再索引 23/26 fail=['Q02', 'Q08', 'Q10']
+
+[hybrid] 探针状态翻转: 7 处
+  W03 w3: inconclusive->pass
+  W03 w5: inconclusive->pass
+  W09 w3: inconclusive->pass
+  W09 w5: inconclusive->pass
+  W10 w5: inconclusive->pass
+  X03 w3: inconclusive->pass
+  X24 w5: pass->inconclusive
+  其中回归(pass->非pass): ['X24 w5']
+  hits 排序变化: 60 处 ['W01 w3', 'W01 w5', 'W02 w3', 'W02 w5', 'W03 w3', 'W03 w5', 'W06 w3', 'W06 w5', 'W07 w3', 'W07 w5', 'W08 w3', 'W08 w5', 'W09 w3', 'W09 w5', 'W10 w3', 'W10 w5', 'W11 w3', 'W11 w5', 'W13 w3', 'W13 w5', 'W15 w3', 'W15 w5', 'W30 w3', 'W30 w5', 'X03 w3', 'X03 w5', 'X05 w3', 'X05 w5', 'X06 w3', 'X06 w5', 'X11 w3', 'X11 w5', 'X12 w3', 'X12 w5', 'X13 w3', 'X13 w5', 'X15 w3', 'X15 w5', 'X17 w3', 'X17 w5', 'X18 w3', 'X18 w5', 'X19 w3', 'X19 w5', 'X21 w3', 'X21 w5', 'X23 w3', 'X23 w5', 'X24 w3', 'X24 w5', 'X25 w3', 'X25 w5', 'X26 w3', 'X26 w5', 'X27 w3', 'X27 w5', 'X29 w3', 'X29 w5', 'X30 w3', 'X30 w5']
+
+[hybrid] 焦点格 w3 放行块原文（判真阳/假阳）:
+  --- W03 [regression] w3=pass refusal=None cond=None
+      q: 热血足球2 守门员能不能用必杀？
+      rank1 cca1975a46e1 auth=authoritative ans=True setsumei_热血足球说明书_编者中文对照_20261119.md#L54-L57
+         必杀射门最简单的方法：持球时跳跃，正好到最高点时按 B，即可打出帅气的必杀射门。更强力的**超级射门（ハイパー・シュート）**会从倒钩或跳头球在某个时机炸裂。诀窍是看准球的高度，越高的打点能打出越强的必杀射门。给队友及时发送指示，队友也能打
+      rank2 141a669374a9 auth=reference_only ans=True sohu_必杀最强小辫子_20261118.md#L1-L69
+         *   文章
+*   总阅读
+*   游戏领域优质创作者
+2023-02-17 00:41
+发布于：辽宁省
+这是老男孩游戏盒的第535篇原创，作者@怀旧淼哥
+最近有FC游戏水友给淼哥留言说，希望讲一期《热血足球》里的必杀射门盘点——《热血足
+      rank3 09e4a7db5b20 auth=reference_only ans=False 1ang_热血足球联盟图文攻略_20261118.md#L667-L670
+         拿球时喜欢使用必杀运球把人撞飞，并没有什么特别强大的地方。只是，热血队需要安排『げんえい(Gen'ei)』、『かるろす(Karurosu)』、『つねを(Tsunewo)』三人中的一人担当门将，其他人极有可能防不住英格兰的必杀踢射。阵型2-2
+      rank4 a6cfec36c24a auth=reference_only ans=False 1ang_热血足球联盟图文攻略_20261118.md#L647-L650
+         中坚级别球队。会使用必杀运球。然而，当比分一致或者比分落后于热血时，门将拿到球就离开球门自己带球向前突破，使热血队有机可乘。而且，必杀踢射虽然很强，却只是偶尔发动。阵型2-2-1。胜利姿势是把香蕉当成小沙包扔着耍。
+官方说明书上说，南美强豪
+      rank5 5e3d5b9ea915 auth=reference_only ans=False tencentcloud_热血足球联盟杂谈_20261118.md#L13-L46
+         学习
+活动
+专区
+圈层
+工具
+[MCP广场![](https://qccommunity.qcloudimg.com/image/new.png)](https://cloud.tencent.com/developer/mcp)
+文章/答
+  --- W09 [regression] w3=pass refusal=None cond=None
+      q: 热血足球2 双人合作怎么玩？
+      rank1 2e317b9f1bbf auth=authoritative ans=True setsumei_热血足球说明书_编者中文对照_20261119.md#L7-L10
+         热血足球联盟是 **6 人制**足球，规定时间内进球多的球队获胜。若同分结束比赛，则以 **PK 战**决定胜负。比赛中有犯规（ペナルティ）判定，也可以罚任意球（フリーキック）。
+**1P 单人游玩**时，操作 MF 队长角色一人，同时向队
+      rank2 9fd3ea997341 auth=reference_only ans=True 1ang_热血足球联盟图文攻略_20261118.md#L161-L164
+         首先，说明一下热血足球联盟的比赛规则。足球联盟乃是6人制足球，一定时间内得分较多的球队胜出！如果分数相同，比赛结束后立即进入PK战（点球大战）决胜败！比赛中有时候还会出现犯规、任意球的判罚。
+玩家使用1P手柄控制的人物是作为中场(MF)的队
+      rank3 ec3707ada6de auth=reference_only ans=True 1ang_热血足球联盟图文攻略_20261118.md#L167-L180
+         下文中的A键与B键指的是FC手柄按键，不是计算机键盘。
+本作的游戏模式有3个，按方向键选择，A键决定，B键取消。难度模式也有3个，操作同上。
+上面截图是游戏模式与难度模式画面，下面开始对截图中的日本语进行讲解。
+『ねっけつ　りーぐ(Nekk
+      rank4 bdcfdbafdc4d auth=authoritative ans=True setsumei_热血足球说明书_编者中文对照_20261119.md#L13-L18
+         游戏模式共 3 个，用十字键选择、A 决定、B 取消，选好难度后开始。
+- **热血联赛模式**：远征世界 4 个足球联赛，以世界第一足球球队为目标，有 1P 单人游玩与 2P 合作游玩。
+- **对战游玩模式**：选择喜欢的球队，最多可与
+      rank5 5e3d5b9ea915 auth=reference_only ans=False tencentcloud_热血足球联盟杂谈_20261118.md#L13-L46
+         学习
+活动
+专区
+圈层
+工具
+[MCP广场![](https://qccommunity.qcloudimg.com/image/new.png)](https://cloud.tencent.com/developer/mcp)
+文章/答
+  --- W14 [regression] w3=inconclusive refusal=None cond=None
+      q: 热血足球联盟 禁区高空球怎么顶？
+      rank1 e2045199c848 auth=reference_only ans=False csdn_wangsitan_热血足球Bug记录_20261118.md#L250-L274
+         【_FC_】_热血__足球__联盟_ 内存使用_记录_
+pid(player\_id): 玩家编号，00--03。 rid(role\_id): 角色编号，00--0B，有时0C对应球。 tid(team\_id): 队伍编号，00/01。
+      rank2 9bbb7d89c9f4 auth=reference_only ans=False sohu_必杀最强小辫子_20261118.md#L91-L106
+         小辫子更神的地方在于他的必杀技“忍者射门”，这招射门会在禁区会自动隐身。根据这个特性，如果你直接在禁区踢出必杀，足球则会在你踢出的一瞬间直接隐身停留在空中，利用好这个特性可以骗出CPU电脑的无限升龙拳，让他们一直对着空气跳跃，而我们则可以趁
+      rank3 ae478886e098 auth=reference_only ans=False csdn_wangsitan_热血足球Bug记录_20261118.md#L188-L203
+         热血队以外的球队，自定义的阵型、战术可能无效
+打平后的点球，轮到左方门将守门时，空中动作的朝向是向右的，包括直跳接球和升龙拳
+关注博主即可阅读全文
+·
+收录于
+当前文章被以下社区和专栏收录：
+版权声明：本文为博主原创文章，遵循 [CC 4.
+      rank4 807f0d3c6fa3 auth=authoritative ans=False 热血足球联盟_必杀全清单.md#L216-L225
+         - S7 CSDN wangsitan 系列（同作者连发四篇，数据级）：
+- Bug 记录 https://blog.csdn.net/wangsitan/article/details/7669725 （两条 Bug，见 8-4）
+- 数
+      rank5 8996c7a159ef auth=authoritative ans=False 热血足球联盟_必杀全清单.md#L137-L158
+         ⇒ 现状改成 **untested（未在任何有效条件下测过）**，不是"不可触发"。用户 11-14 亲口"其实打出过好多次必杀了"，
+有效条件下的真阳性一定存在，责任在我的测量方式，不在 ROM。
+真采 23 必杀仍需正对照：先在**当前
+  --- X16 [trap] w3=inconclusive refusal=None cond=None
+      q: 热血足球 打雷会不会把门将击倒？
+      rank1 ec8277f3ea2b auth=reference_only ans=True 1ang_热血足球联盟图文攻略_20261118.md#L289-L335
+         『ちゅういほう』，注意报。截图上的「かみなり」意思是“雷”，说明比赛中会打雷，闪电有时会把门将击倒。
+成绩表 选手数据
+当前联盟战成绩。截图上日本语的含义，前面“热血联盟模式”里已经讲解过了，这里不再赘述。
+上面截图是热血FC默认队长『くに
+      rank2 0a46489c58b9 auth=authoritative ans=False 热血足球联盟_必杀全清单.md#L242-L248
+         1. 热血队以外的球队，自定义阵型/战术可能无效（S7）。
+2. 点球大战轮到**左方门将**守门时，空中动作朝向恒为向右（含直跳接球、升龙拳）（S7）。
+3. 36 场全败/全胜/半半卡死；世界杯结局后卡死（S9，见 8-3）。
+4. "
+      rank3 8ce27f306a9a auth=reference_only ans=True 1ang_热血足球联盟图文攻略_20261118.md#L373-L374
+         发动方法：带球前进的过程中连续按两次向上，或者连续按两次向下。效果是旋风球撞人动作，可以撞倒对方球员，甚至撞倒对方门将（成功率不高）。
+      rank4 807f0d3c6fa3 auth=authoritative ans=False 热血足球联盟_必杀全清单.md#L216-L225
+         - S7 CSDN wangsitan 系列（同作者连发四篇，数据级）：
+- Bug 记录 https://blog.csdn.net/wangsitan/article/details/7669725 （两条 Bug，见 8-4）
+- 数
+      rank5 09e4a7db5b20 auth=reference_only ans=False 1ang_热血足球联盟图文攻略_20261118.md#L667-L670
+         拿球时喜欢使用必杀运球把人撞飞，并没有什么特别强大的地方。只是，热血队需要安排『げんえい(Gen'ei)』、『かるろす(Karurosu)』、『つねを(Tsunewo)』三人中的一人担当门将，其他人极有可能防不住英格兰的必杀踢射。阵型2-2
+  --- X17 [trap] w3=pass refusal=None cond=权威可答件在第2位，非最高分；出证须附此条件
+      q: 热血足球 全败结局画面显示的密码是什么？
+      rank1 79daaa4d521a auth=reference_only ans=True sohu_一直输球隐藏大结局_20261118.md#L65-L81
+         这种情况下就需要适当进行放水，比如把一些强力的同伴从场上换掉，把一些数值较低的替补放到重要位置。再比如让队长跑到自家门前，靠传乌龙球的方式射门给对方送分之类的。
+亚洲、非洲、南美、欧洲四个联盟一共12个队，总共36场比赛，说实话全踢败还真挺
+      rank2 8e97f000b03d auth=authoritative ans=True 热血足球联盟_必杀全清单.md#L234-L239
+         - 世界杯触发：CN 汉化版自述"踢 16 场、总积分 ≥70"晋级锦标赛式 Technos Japan Cup（S1 口径=16 连胜；S9=16 场 70 分，两口径并存待实测）；参赛队=喀/阿/巴/意/德中 3-4 支。
+- 联盟结构
+      rank3 ecc1c751f7a2 auth=reference_only ans=True sohu_一直输球隐藏大结局_20261118.md#L1-L63
+         *   文章
+*   总阅读
+*   游戏领域优质创作者
+2023-01-04 22:36
+发布于：辽宁省
+这是老男孩游戏盒的第501篇原创，作者@怀旧淼哥
+很多80后、90后老男孩都在怀念当年的红白机时光，其实当年大家打游戏很多时候都在傻
+      rank4 807f0d3c6fa3 auth=authoritative ans=False 热血足球联盟_必杀全清单.md#L216-L225
+         - S7 CSDN wangsitan 系列（同作者连发四篇，数据级）：
+- Bug 记录 https://blog.csdn.net/wangsitan/article/details/7669725 （两条 Bug，见 8-4）
+- 数
+      rank5 5e3d5b9ea915 auth=reference_only ans=False tencentcloud_热血足球联盟杂谈_20261118.md#L13-L46
+         学习
+活动
+专区
+圈层
+工具
+[MCP广场![](https://qccommunity.qcloudimg.com/image/new.png)](https://cloud.tencent.com/developer/mcp)
+文章/答
+  --- X18 [trap] w3=pass refusal=None cond=权威可答件在第2位，非最高分；出证须附此条件
+      q: 热血足球 每支球队最多能挑战几次？
+      rank1 b146ec96724d auth=reference_only ans=True 1ang_热血足球联盟图文攻略_20261118.md#L183-L192
+         世界各国共有4个联盟12支球队，选择好要挑战的球队，就可以进行远征比赛了，有时坐车，有时乘船，有时飞机。每支球队最多可以挑战3次，胜利1次获得1颗白星，失败1次获得1颗黑星。
+全世界12支球队，最可以比赛36次，过程中根据胜率取得一定数量的
+      rank2 c6142f67a99f auth=authoritative ans=True setsumei_热血足球说明书_编者中文对照_20261119.md#L21-L22
+         从世界各国 **4 个联赛、12 支球队**中选择对战球队进行远征比赛。与每支球队最多对战 **3 次**，胜记白星、负记黑星。在**全部 36 场比赛**中取得一定胜率与胜点（积分）后，即可获得争夺世界第一足球球队宝座的「テクノスジャパン
+      rank3 8e97f000b03d auth=authoritative ans=True 热血足球联盟_必杀全清单.md#L234-L239
+         - 世界杯触发：CN 汉化版自述"踢 16 场、总积分 ≥70"晋级锦标赛式 Technos Japan Cup（S1 口径=16 连胜；S9=16 场 70 分，两口径并存待实测）；参赛队=喀/阿/巴/意/德中 3-4 支。
+- 联盟结构
+      rank4 79daaa4d521a auth=reference_only ans=True sohu_一直输球隐藏大结局_20261118.md#L65-L81
+         这种情况下就需要适当进行放水，比如把一些强力的同伴从场上换掉，把一些数值较低的替补放到重要位置。再比如让队长跑到自家门前，靠传乌龙球的方式射门给对方送分之类的。
+亚洲、非洲、南美、欧洲四个联盟一共12个队，总共36场比赛，说实话全踢败还真挺
+      rank5 8996c7a159ef auth=authoritative ans=False 热血足球联盟_必杀全清单.md#L137-L158
+         ⇒ 现状改成 **untested（未在任何有效条件下测过）**，不是"不可触发"。用户 11-14 亲口"其实打出过好多次必杀了"，
+有效条件下的真阳性一定存在，责任在我的测量方式，不在 ROM。
+真采 23 必杀仍需正对照：先在**当前
+  --- X23 [mechanism] w3=pass refusal=None cond=权威可答件在第2位，非最高分；出证须附此条件
+      q: 热血足球 倒挂金钩怎么使出来？
+      rank1 0cbfe31bd687 auth=reference_only ans=True 1ang_热血足球联盟图文攻略_20261118.md#L337-L359
+         『ハイパー・ダッシュ(Hyper Dash)』，超常冲刺。冲刺中朝进行方向连按两次方向键。普通冲刺基础上发动更快速的冲刺。
+『ヒール・リフティング(Heel Lifting)』，脚跟挑球。拿球时，无论面朝哪个方向，{←AB}同时按或者{→A
+      rank2 42b773880ef0 auth=authoritative ans=True 热血足球联盟_必杀全清单.md#L24-L33
+         - 必杀踢射：持球跳（A+B）到**最高点按 B**；**发动时不能按方向键**，否则变成挑球不是人球同跳。
+- 难度：`やさしい` 容易 = 敌我**都不能**发动必杀射门；`ふつう` 普通 = 次次发动；`むずかしい` 困难 = 仅会燕
+      rank3 5e3d5b9ea915 auth=reference_only ans=False tencentcloud_热血足球联盟杂谈_20261118.md#L13-L46
+         学习
+活动
+专区
+圈层
+工具
+[MCP广场![](https://qccommunity.qcloudimg.com/image/new.png)](https://cloud.tencent.com/developer/mcp)
+文章/答
+      rank4 a28ea3485262 auth=authoritative ans=False setsumei_热血足球说明书_编者中文对照_20261119.md#L34-L51
+         基本操作按持球状态区分：
+- **自己持球时**：A＝传球，B＝射门。
+- **敌人持球且在附近时**：A＝铲球（スライディング），B＝抢截（タックル）。
+- **队友持球时**：A＝指示队友传球（可用十字键控制传球对象），B＝指示队友射门
+      rank5 cca1975a46e1 auth=authoritative ans=False setsumei_热血足球说明书_编者中文对照_20261119.md#L54-L57
+         必杀射门最简单的方法：持球时跳跃，正好到最高点时按 B，即可打出帅气的必杀射门。更强力的**超级射门（ハイパー・シュート）**会从倒钩或跳头球在某个时机炸裂。诀窍是看准球的高度，越高的打点能打出越强的必杀射门。给队友及时发送指示，队友也能打
+  --- X26 [mechanism] w3=inconclusive refusal=None cond=None
+      q: 热血足球 雨天场地对射门有什么影响？
+      rank1 5e3d5b9ea915 auth=reference_only ans=False tencentcloud_热血足球联盟杂谈_20261118.md#L13-L46
+         学习
+活动
+专区
+圈层
+工具
+[MCP广场![](https://qccommunity.qcloudimg.com/image/new.png)](https://cloud.tencent.com/developer/mcp)
+文章/答
+      rank2 31e7271be1b1 auth=authoritative ans=False setsumei_热血足球说明书_编者中文对照_20261119.md#L25-L31
+         控室里可以制定作战、与热血 FC 队员开会，你即球队队长。队员个性丰富，比赛中会有个性行动与感情变化。各国各有天气，比赛中天气会变化，记得看天气预报制定作战。
+- **作战会议**：阵型（フォーメーション）按对手与状况变更；位置（ポジション
+      rank3 141a669374a9 auth=reference_only ans=False sohu_必杀最强小辫子_20261118.md#L1-L69
+         *   文章
+*   总阅读
+*   游戏领域优质创作者
+2023-02-17 00:41
+发布于：辽宁省
+这是老男孩游戏盒的第535篇原创，作者@怀旧淼哥
+最近有FC游戏水友给淼哥留言说，希望讲一期《热血足球》里的必杀射门盘点——《热血足
+      rank4 33b9e90cdf3b auth=authoritative ans=True 热血足球联盟_honest_gap_manifest.md#L37-L41
+         - **必杀正例缺失**：bundle verify 要求 declared==delivered 且逐 event pass；必杀 0 交付 ⇒ 只能 draft，不能 ready。
+- **活场地破坏自动标定**：`calibrate_
+      rank5 8e34d9a96bc7 auth=reference_only ans=False 1ang_热血足球联盟图文攻略_20261118.md#L679-L691
+         强豪球队。命中很强，善用必杀运球技能，只是，因为不会燕返技能，降低了发动必杀踢射的概率。即便如此，球门前普通踢射的威力，仍然对门将造成很大威胁。阵型2-2-1。胜利姿势为中场球员『えっけると(Ekkeruto)』连续不断吃香肠。热血队如果选
+  --- X28 [mechanism] w3=pass refusal=None cond=None
+      q: 拳皇98 ECK 金手指怎么用？
+      rank1 8c20fcc4311e auth=authoritative ans=True 素材生产规范.md#L18-L31
+         **规矩**：招表里的每一行先归一化成 `cmd`（编译后的记法）+ `name` + `slug` + `char_id`，
+归一化只允许发生在这一层；模拟器那一侧永远只吃 `cmd`。看不懂、有歧义、指向别的地方的记法
+**必须炸**，
+      rank2 5c4e57e18025 auth=cross_version ans=False gamersky_kof98um全角色出招表_20261118.md#L3-L305
+         ﻿
+本站
+2014-12-17 15:57:01 来源：游侠论坛 作者：kuangjian 编辑：Shy夏夏　[我要投稿](http://bbs.gamersky.com/thread-348492-1-1.html)
+随着拳皇98:终极对
+      rank3 6dcfa1167d08 auth=authoritative ans=True kof98eck.ini#L1-L32
+         // FinalBurn Neo v1.0.0.03 --- Config File for kof98eck (The King of Fighters '98 - The Slugfest / King of Fighters '98 
+      rank4 9d91c6922d9d auth=authoritative ans=True 素材生产规范.md#L140-L155
+         **规矩**：被拦的条目必须带**原因码**进 manifest，不许静默跳过。当前的账：
+- `rom` 334 条 —— 角色不在这版 ROM 的 36 格里（16 个里/boss 版：`geese`、`orochi`、`rugal`…
+      rank5 7079444f69cb auth=cross_version ans=False gamersky_kof98um全角色出招表_20261118.md#L307-L456
+         俱乐部飞标 指天回旋脚击中后↓↘→+B或D
+追击踩踏 ↓↓+B
+真正反击 ↓↙←+A或C
+回身真落 真正反击中←↙↓↘→+A或C
+油锤冠顶 真正反击中←↙↓↘→+B或D
+垂直之箭 →↓↘+B或D
+玛丽掠夺 垂直之箭击中后→↓↘+B或D
+超必
+
+==== [hybrid] 跑前规则判定 ====
+R2 评测 ok 回归: 1  探针 pass 回归: 1
+R3 探针 inconclusive->pass 救回: ['W03 w3: inconclusive->pass', 'W03 w5: inconclusive->pass', 'W09 w3: inconclusive->pass', 'W09 w5: inconclusive->pass', 'W10 w5: inconclusive->pass', 'X03 w3: inconclusive->pass']

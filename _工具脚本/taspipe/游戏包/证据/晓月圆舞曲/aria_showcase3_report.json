@@ -1,0 +1,541 @@
+{
+ "status": "done",
+ "verdict": "pass",
+ "game_id": "castlevania_aria_gba",
+ "coverage": {
+  "authored": 4,
+  "selected": 4,
+  "expected_total": 4,
+  "required": 4,
+  "delivered": 4,
+  "full_collection": true,
+  "gaps": []
+ },
+ "passed": 4,
+ "total": 4,
+ "elements": [
+  {
+   "element_id": "primary_weapon_slash",
+   "label": "Primary Weapon Attack (主武器挥击)",
+   "kind": "weapon",
+   "state_origin": "normal_prefix",
+   "total_frames": 120,
+   "clip_ref": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_showcase3\\clips\\primary_weapon_slash.mp4",
+   "negative_clip_ref": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_showcase3\\controls\\primary_weapon_slash_negative.mp4",
+   "evidence_ref": {
+    "positive": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_showcase3\\evidence\\primary_weapon_slash_positive.png",
+    "negative": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_showcase3\\evidence\\primary_weapon_slash_negative.png"
+   },
+   "detection": {
+    "verdict": "pass",
+    "positive": {
+     "frame": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_showcase3\\evidence\\primary_weapon_slash_positive.png",
+     "verdict": "pass",
+     "checks": [
+      {
+       "check_id": "gba_weapon_arc_sig",
+       "verdict": "pass",
+       "evidence_refs": [
+        "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_showcase3\\evidence\\primary_weapon_slash_positive.png"
+       ],
+       "event_position": null,
+       "reason": "region=[0.520833, 0.6875, 0.616667, 0.7625] color(255, 255, 255)±4 fraction=0.045 (min=0.02)",
+       "schema_version": 1
+      },
+      {
+       "check_id": "aria_no_dialogue_portrait",
+       "verdict": "pass",
+       "evidence_refs": [
+        "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_showcase3\\evidence\\primary_weapon_slash_positive.png"
+       ],
+       "event_position": null,
+       "reason": "region=[0.58, 0.1, 1.0, 0.7] color(214, 132, 74)±4 fraction=0.0000 (max=0.005)",
+       "schema_version": 1
+      },
+      {
+       "check_id": "aria_no_dialogue_box",
+       "verdict": "pass",
+       "evidence_refs": [
+        "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_showcase3\\evidence\\primary_weapon_slash_positive.png"
+       ],
+       "event_position": null,
+       "reason": "region=[0.0, 0.6875, 0.75, 0.9875] color(25, 16, 16)±3 fraction=0.0000 (max=0.01)",
+       "schema_version": 1
+      }
+     ]
+    },
+    "negative": {
+     "frame": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_showcase3\\evidence\\primary_weapon_slash_negative.png",
+     "verdict": "fail",
+     "rejected": true,
+     "checks": [
+      {
+       "check_id": "gba_weapon_arc_sig",
+       "verdict": "fail",
+       "evidence_refs": [
+        "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_showcase3\\evidence\\primary_weapon_slash_negative.png"
+       ],
+       "event_position": null,
+       "reason": "region=[0.520833, 0.6875, 0.616667, 0.7625] color(255, 255, 255)±4 fraction=0.000 (min=0.02)",
+       "schema_version": 1
+      },
+      {
+       "check_id": "aria_no_dialogue_portrait",
+       "verdict": "pass",
+       "evidence_refs": [
+        "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_showcase3\\evidence\\primary_weapon_slash_negative.png"
+       ],
+       "event_position": null,
+       "reason": "region=[0.58, 0.1, 1.0, 0.7] color(214, 132, 74)±4 fraction=0.0000 (max=0.005)",
+       "schema_version": 1
+      },
+      {
+       "check_id": "aria_no_dialogue_box",
+       "verdict": "pass",
+       "evidence_refs": [
+        "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_showcase3\\evidence\\primary_weapon_slash_negative.png"
+       ],
+       "event_position": null,
+       "reason": "region=[0.0, 0.6875, 0.75, 0.9875] color(25, 16, 16)±3 fraction=0.0000 (max=0.01)",
+       "schema_version": 1
+      }
+     ]
+    }
+   },
+   "verdict": "pass",
+   "deliverable_ref": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_showcase3\\clips\\primary_weapon_slash.mp4",
+   "export_verdict": "pass",
+   "reel_window": {
+    "start_frame": 0,
+    "end_frame": 120,
+    "start_seconds": 0.0,
+    "end_seconds": 2.0091,
+    "event_frame": 9,
+    "event_seconds": 0.1507
+   }
+  },
+  {
+   "element_id": "bullet_soul_cast",
+   "label": "Merman Bullet Soul (半鱼人红魂·Up+B 水流)",
+   "kind": "skill",
+   "state_origin": "normal_prefix",
+   "total_frames": 120,
+   "clip_ref": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_showcase3\\clips\\bullet_soul_cast.mp4",
+   "negative_clip_ref": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_showcase3\\controls\\bullet_soul_cast_negative.mp4",
+   "evidence_ref": {
+    "positive": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_showcase3\\evidence\\bullet_soul_cast_positive.png",
+    "negative": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_showcase3\\evidence\\bullet_soul_cast_negative.png"
+   },
+   "detection": {
+    "verdict": "pass",
+    "positive": {
+     "frame": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_showcase3\\evidence\\bullet_soul_cast_positive.png",
+     "verdict": "pass",
+     "checks": [
+      {
+       "check_id": "bullet_soul_proj_sig",
+       "verdict": "pass",
+       "evidence_refs": [
+        "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_showcase3\\evidence\\bullet_soul_cast_positive.png"
+       ],
+       "event_position": null,
+       "reason": "region=[0.541667, 0.70625, 0.9375, 0.75] color(222, 230, 255)±10 fraction=0.053 (min=0.02)",
+       "schema_version": 1
+      },
+      {
+       "check_id": "aria_no_dialogue_portrait",
+       "verdict": "pass",
+       "evidence_refs": [
+        "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_showcase3\\evidence\\bullet_soul_cast_positive.png"
+       ],
+       "event_position": null,
+       "reason": "region=[0.58, 0.1, 1.0, 0.7] color(214, 132, 74)±4 fraction=0.0000 (max=0.005)",
+       "schema_version": 1
+      },
+      {
+       "check_id": "aria_no_dialogue_box",
+       "verdict": "pass",
+       "evidence_refs": [
+        "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_showcase3\\evidence\\bullet_soul_cast_positive.png"
+       ],
+       "event_position": null,
+       "reason": "region=[0.0, 0.6875, 0.75, 0.9875] color(25, 16, 16)±3 fraction=0.0000 (max=0.01)",
+       "schema_version": 1
+      }
+     ]
+    },
+    "negative": {
+     "frame": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_showcase3\\evidence\\bullet_soul_cast_negative.png",
+     "verdict": "fail",
+     "rejected": true,
+     "checks": [
+      {
+       "check_id": "bullet_soul_proj_sig",
+       "verdict": "fail",
+       "evidence_refs": [
+        "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_showcase3\\evidence\\bullet_soul_cast_negative.png"
+       ],
+       "event_position": null,
+       "reason": "region=[0.541667, 0.70625, 0.9375, 0.75] color(222, 230, 255)±10 fraction=0.000 (min=0.02)",
+       "schema_version": 1
+      },
+      {
+       "check_id": "aria_no_dialogue_portrait",
+       "verdict": "pass",
+       "evidence_refs": [
+        "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_showcase3\\evidence\\bullet_soul_cast_negative.png"
+       ],
+       "event_position": null,
+       "reason": "region=[0.58, 0.1, 1.0, 0.7] color(214, 132, 74)±4 fraction=0.0000 (max=0.005)",
+       "schema_version": 1
+      },
+      {
+       "check_id": "aria_no_dialogue_box",
+       "verdict": "pass",
+       "evidence_refs": [
+        "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_showcase3\\evidence\\bullet_soul_cast_negative.png"
+       ],
+       "event_position": null,
+       "reason": "region=[0.0, 0.6875, 0.75, 0.9875] color(25, 16, 16)±3 fraction=0.0000 (max=0.01)",
+       "schema_version": 1
+      }
+     ]
+    }
+   },
+   "verdict": "pass",
+   "deliverable_ref": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_showcase3\\clips\\bullet_soul_cast.mp4",
+   "export_verdict": "pass",
+   "reel_window": {
+    "start_frame": 120,
+    "end_frame": 240,
+    "start_seconds": 2.0091,
+    "end_seconds": 4.0182,
+    "event_frame": 138,
+    "event_seconds": 2.3105
+   }
+  },
+  {
+   "element_id": "wingcutter_soul_cast",
+   "label": "Wingcutter Red Soul (魔鸟红魂·Up+B 羽刃)",
+   "kind": "skill",
+   "state_origin": "display_patch",
+   "total_frames": 120,
+   "clip_ref": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_showcase3\\clips\\wingcutter_soul_cast.mp4",
+   "negative_clip_ref": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_showcase3\\controls\\wingcutter_soul_cast_negative.mp4",
+   "evidence_ref": {
+    "positive": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_showcase3\\evidence\\wingcutter_soul_cast_positive.png",
+    "negative": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_showcase3\\evidence\\wingcutter_soul_cast_negative.png"
+   },
+   "detection": {
+    "verdict": "pass",
+    "positive": {
+     "frame": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_showcase3\\evidence\\wingcutter_soul_cast_positive.png",
+     "verdict": "pass",
+     "checks": [
+      {
+       "check_id": "wingcutter_projectile_sig",
+       "verdict": "pass",
+       "evidence_refs": [
+        "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_showcase3\\evidence\\wingcutter_soul_cast_positive.png"
+       ],
+       "event_position": null,
+       "reason": "region=[0.75, 0.7, 0.875, 0.775] color(189, 123, 74)±10 fraction=0.078 (min=0.03)",
+       "schema_version": 1
+      },
+      {
+       "check_id": "aria_no_dialogue_portrait",
+       "verdict": "pass",
+       "evidence_refs": [
+        "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_showcase3\\evidence\\wingcutter_soul_cast_positive.png"
+       ],
+       "event_position": null,
+       "reason": "region=[0.58, 0.1, 1.0, 0.7] color(214, 132, 74)±4 fraction=0.0000 (max=0.005)",
+       "schema_version": 1
+      },
+      {
+       "check_id": "aria_no_dialogue_box",
+       "verdict": "pass",
+       "evidence_refs": [
+        "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_showcase3\\evidence\\wingcutter_soul_cast_positive.png"
+       ],
+       "event_position": null,
+       "reason": "region=[0.0, 0.6875, 0.75, 0.9875] color(25, 16, 16)±3 fraction=0.0000 (max=0.01)",
+       "schema_version": 1
+      }
+     ]
+    },
+    "negative": {
+     "frame": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_showcase3\\evidence\\wingcutter_soul_cast_negative.png",
+     "verdict": "fail",
+     "rejected": true,
+     "checks": [
+      {
+       "check_id": "wingcutter_projectile_sig",
+       "verdict": "fail",
+       "evidence_refs": [
+        "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_showcase3\\evidence\\wingcutter_soul_cast_negative.png"
+       ],
+       "event_position": null,
+       "reason": "region=[0.75, 0.7, 0.875, 0.775] color(189, 123, 74)±10 fraction=0.000 (min=0.03)",
+       "schema_version": 1
+      },
+      {
+       "check_id": "aria_no_dialogue_portrait",
+       "verdict": "pass",
+       "evidence_refs": [
+        "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_showcase3\\evidence\\wingcutter_soul_cast_negative.png"
+       ],
+       "event_position": null,
+       "reason": "region=[0.58, 0.1, 1.0, 0.7] color(214, 132, 74)±4 fraction=0.0000 (max=0.005)",
+       "schema_version": 1
+      },
+      {
+       "check_id": "aria_no_dialogue_box",
+       "verdict": "pass",
+       "evidence_refs": [
+        "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_showcase3\\evidence\\wingcutter_soul_cast_negative.png"
+       ],
+       "event_position": null,
+       "reason": "region=[0.0, 0.6875, 0.75, 0.9875] color(25, 16, 16)±3 fraction=0.0000 (max=0.01)",
+       "schema_version": 1
+      }
+     ]
+    }
+   },
+   "verdict": "pass",
+   "deliverable_ref": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_showcase3\\clips\\wingcutter_soul_cast.mp4",
+   "export_verdict": "pass",
+   "reel_window": {
+    "start_frame": 240,
+    "end_frame": 360,
+    "start_seconds": 4.0182,
+    "end_seconds": 6.0274,
+    "event_frame": 252,
+    "event_seconds": 4.2192
+   }
+  },
+  {
+   "element_id": "guardian_soul_activate",
+   "label": "Buer Guardian Soul (布艾尔蓝魂·R 双火焰)",
+   "kind": "transform",
+   "state_origin": "normal_prefix",
+   "total_frames": 120,
+   "clip_ref": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_showcase3\\clips\\guardian_soul_activate.mp4",
+   "negative_clip_ref": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_showcase3\\controls\\guardian_soul_activate_negative.mp4",
+   "evidence_ref": {
+    "positive": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_showcase3\\evidence\\guardian_soul_activate_positive.png",
+    "negative": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_showcase3\\evidence\\guardian_soul_activate_negative.png"
+   },
+   "detection": {
+    "verdict": "pass",
+    "positive": {
+     "frame": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_showcase3\\evidence\\guardian_soul_activate_positive.png",
+     "verdict": "pass",
+     "checks": [
+      {
+       "check_id": "guardian_soul_aura_sig",
+       "verdict": "pass",
+       "evidence_refs": [
+        "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_showcase3\\evidence\\guardian_soul_activate_positive.png"
+       ],
+       "event_position": null,
+       "reason": "region=[0.291667, 0.375, 0.708333, 0.90625] color(255, 49, 25)±10 fraction=0.020 (min=0.01)",
+       "schema_version": 1
+      },
+      {
+       "check_id": "aria_no_dialogue_portrait",
+       "verdict": "pass",
+       "evidence_refs": [
+        "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_showcase3\\evidence\\guardian_soul_activate_positive.png"
+       ],
+       "event_position": null,
+       "reason": "region=[0.58, 0.1, 1.0, 0.7] color(214, 132, 74)±4 fraction=0.0000 (max=0.005)",
+       "schema_version": 1
+      },
+      {
+       "check_id": "aria_no_dialogue_box",
+       "verdict": "pass",
+       "evidence_refs": [
+        "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_showcase3\\evidence\\guardian_soul_activate_positive.png"
+       ],
+       "event_position": null,
+       "reason": "region=[0.0, 0.6875, 0.75, 0.9875] color(25, 16, 16)±3 fraction=0.0000 (max=0.01)",
+       "schema_version": 1
+      }
+     ]
+    },
+    "negative": {
+     "frame": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_showcase3\\evidence\\guardian_soul_activate_negative.png",
+     "verdict": "fail",
+     "rejected": true,
+     "checks": [
+      {
+       "check_id": "guardian_soul_aura_sig",
+       "verdict": "fail",
+       "evidence_refs": [
+        "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_showcase3\\evidence\\guardian_soul_activate_negative.png"
+       ],
+       "event_position": null,
+       "reason": "region=[0.291667, 0.375, 0.708333, 0.90625] color(255, 49, 25)±10 fraction=0.000 (min=0.01)",
+       "schema_version": 1
+      },
+      {
+       "check_id": "aria_no_dialogue_portrait",
+       "verdict": "pass",
+       "evidence_refs": [
+        "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_showcase3\\evidence\\guardian_soul_activate_negative.png"
+       ],
+       "event_position": null,
+       "reason": "region=[0.58, 0.1, 1.0, 0.7] color(214, 132, 74)±4 fraction=0.0000 (max=0.005)",
+       "schema_version": 1
+      },
+      {
+       "check_id": "aria_no_dialogue_box",
+       "verdict": "pass",
+       "evidence_refs": [
+        "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_showcase3\\evidence\\guardian_soul_activate_negative.png"
+       ],
+       "event_position": null,
+       "reason": "region=[0.0, 0.6875, 0.75, 0.9875] color(25, 16, 16)±3 fraction=0.0000 (max=0.01)",
+       "schema_version": 1
+      }
+     ]
+    }
+   },
+   "verdict": "pass",
+   "deliverable_ref": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_showcase3\\clips\\guardian_soul_activate.mp4",
+   "export_verdict": "pass",
+   "reel_window": {
+    "start_frame": 360,
+    "end_frame": 480,
+    "start_seconds": 6.0274,
+    "end_seconds": 8.0365,
+    "event_frame": 420,
+    "event_seconds": 7.0319
+   }
+  }
+ ],
+ "deliverable_ref": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_showcase3\\reel.mp4",
+ "preview_ref": null,
+ "reel_verdict": "pass",
+ "ledger": {
+  "stages": 9,
+  "attempts": 9,
+  "pending": 0,
+  "running": 0,
+  "done": 9,
+  "failed": 0,
+  "blocked": 0
+ },
+ "state_profile_gates": [
+  {
+   "match": true,
+   "core_member": "Core.bin.zst",
+   "core_encoding": "zstd",
+   "comparison": "serialized_core_bytes",
+   "core_bytes_orig": 50581,
+   "core_bytes_roundtrip": 50581,
+   "first_diff_offset": null,
+   "bizversion_orig": "Version 2.11.1",
+   "bizversion_roundtrip": "Version 2.11.1",
+   "core_identity_match": true,
+   "framebuffer_match": true,
+   "sync_settings_match": true,
+   "memory_fingerprint_before": "9107|EWRAM:262144:B04F7F0298716DAA671E7F274A2D67B49F98D4367F408F120820F63D2DB17116|PALRAM:1024:0E08599FF549D46EAA7479CF47E085ABB06F55015DA588C31142D5AF36B35C30|VRAM:98304:1E729761222DDFC22F441DB88004938F22FCAB9EB0FB2F83B72A4661F93286D9|OAM:1024:6A02EECAA5E8B0496C83E8D1E4B25B53DF13377462ABE3B7FC21BBFBAEBDFE3C|SRAM:131072:D1D64313783F7D9994FFC6F6C7DC7F8D4C8F327FDF2DDCAE6A98CF71EFA90B98|Combined WRAM:294912:1AB04DDAFA1A8F26608B528EAA53A507AA9D8086B3196E3ECD555151E653810F",
+   "memory_fingerprint_after": "9107|EWRAM:262144:B04F7F0298716DAA671E7F274A2D67B49F98D4367F408F120820F63D2DB17116|PALRAM:1024:0E08599FF549D46EAA7479CF47E085ABB06F55015DA588C31142D5AF36B35C30|VRAM:98304:1E729761222DDFC22F441DB88004938F22FCAB9EB0FB2F83B72A4661F93286D9|OAM:1024:6A02EECAA5E8B0496C83E8D1E4B25B53DF13377462ABE3B7FC21BBFBAEBDFE3C|SRAM:131072:D1D64313783F7D9994FFC6F6C7DC7F8D4C8F327FDF2DDCAE6A98CF71EFA90B98|Combined WRAM:294912:1AB04DDAFA1A8F26608B528EAA53A507AA9D8086B3196E3ECD555151E653810F",
+   "memory_fingerprint_match": true,
+   "match_basis": "memory_domains+framebuffer+sync_settings+bizversion",
+   "content_fingerprint": {
+    "axis": "unprofiled_game",
+    "checked": false,
+    "match": null,
+    "probes": {
+     "px": 1152,
+     "scr": 27,
+     "cur": 95,
+     "owned": 93,
+     "hp": 107
+    },
+    "rom_sha1": "40AAB076A528F52E93260BB98D91A40039E0DA02"
+   },
+   "state_path": "F:\\taspipe_scratch\\gba_parallel_20261124\\showcase_work3\\tas_showcase_42w89l2j\\session\\base.state",
+   "roundtrip_path": "F:/taspipe_scratch/gba_parallel_20261124/showcase_work3/tas_showcase_42w89l2j/session/profile_check_roundtrip.state",
+   "state_sha256": "f1b4b4914a937f03b106104d1234d54b2dea54c89ba84c603ce61fc26afcc1ea",
+   "bizhawk": "F:\\taspipe_scratch\\gba_parallel_20261124\\production_gameplay1\\slots\\8506d01381be\\slot_0\\BizHawk-2.11.1",
+   "sync_controls": null
+  },
+  {
+   "match": true,
+   "core_member": "Core.bin.zst",
+   "core_encoding": "zstd",
+   "comparison": "serialized_core_bytes",
+   "core_bytes_orig": 50393,
+   "core_bytes_roundtrip": 50393,
+   "first_diff_offset": null,
+   "bizversion_orig": "Version 2.11.1",
+   "bizversion_roundtrip": "Version 2.11.1",
+   "core_identity_match": true,
+   "framebuffer_match": true,
+   "sync_settings_match": true,
+   "memory_fingerprint_before": "9292|EWRAM:262144:F58A0C88179605FE458EF8B454A1DB00481E7A8578DCDDD2175DB89423B9A9BF|PALRAM:1024:0E08599FF549D46EAA7479CF47E085ABB06F55015DA588C31142D5AF36B35C30|VRAM:98304:1E729761222DDFC22F441DB88004938F22FCAB9EB0FB2F83B72A4661F93286D9|OAM:1024:6A02EECAA5E8B0496C83E8D1E4B25B53DF13377462ABE3B7FC21BBFBAEBDFE3C|SRAM:131072:D1D64313783F7D9994FFC6F6C7DC7F8D4C8F327FDF2DDCAE6A98CF71EFA90B98|Combined WRAM:294912:EBCE028C86C959B0817C0FFBEE32C30338E2D459FC97A7868DD3F82A22C14458",
+   "memory_fingerprint_after": "9292|EWRAM:262144:F58A0C88179605FE458EF8B454A1DB00481E7A8578DCDDD2175DB89423B9A9BF|PALRAM:1024:0E08599FF549D46EAA7479CF47E085ABB06F55015DA588C31142D5AF36B35C30|VRAM:98304:1E729761222DDFC22F441DB88004938F22FCAB9EB0FB2F83B72A4661F93286D9|OAM:1024:6A02EECAA5E8B0496C83E8D1E4B25B53DF13377462ABE3B7FC21BBFBAEBDFE3C|SRAM:131072:D1D64313783F7D9994FFC6F6C7DC7F8D4C8F327FDF2DDCAE6A98CF71EFA90B98|Combined WRAM:294912:EBCE028C86C959B0817C0FFBEE32C30338E2D459FC97A7868DD3F82A22C14458",
+   "memory_fingerprint_match": true,
+   "match_basis": "memory_domains+framebuffer+sync_settings+bizversion",
+   "content_fingerprint": {
+    "axis": "unprofiled_game",
+    "checked": false,
+    "match": null,
+    "probes": {
+     "px": 1152,
+     "scr": 27,
+     "cur": 95,
+     "owned": 93,
+     "hp": 107
+    },
+    "rom_sha1": "40AAB076A528F52E93260BB98D91A40039E0DA02"
+   },
+   "state_path": "F:\\taspipe_scratch\\gba_parallel_20261124\\showcase_work3\\tas_showcase_42w89l2j\\session\\bullet_soul_cast.state",
+   "roundtrip_path": "F:/taspipe_scratch/gba_parallel_20261124/showcase_work3/tas_showcase_42w89l2j/session/profile_check_roundtrip.state",
+   "state_sha256": "5fb3350de61e55c987ad5d01efed888d7046109b92e62aac5836335718db0d95",
+   "bizhawk": "F:\\taspipe_scratch\\gba_parallel_20261124\\production_gameplay1\\slots\\8506d01381be\\slot_0\\BizHawk-2.11.1",
+   "sync_controls": null
+  },
+  {
+   "match": true,
+   "core_member": "Core.bin.zst",
+   "core_encoding": "zstd",
+   "comparison": "serialized_core_bytes",
+   "core_bytes_orig": 50409,
+   "core_bytes_roundtrip": 50409,
+   "first_diff_offset": null,
+   "bizversion_orig": "Version 2.11.1",
+   "bizversion_roundtrip": "Version 2.11.1",
+   "core_identity_match": true,
+   "framebuffer_match": true,
+   "sync_settings_match": true,
+   "memory_fingerprint_before": "9313|EWRAM:262144:F4422754CCB58024E10E21C553260691A93A6E6FEE6DD6B11ECAFAFE3D06A359|PALRAM:1024:0E08599FF549D46EAA7479CF47E085ABB06F55015DA588C31142D5AF36B35C30|VRAM:98304:1E729761222DDFC22F441DB88004938F22FCAB9EB0FB2F83B72A4661F93286D9|OAM:1024:6A02EECAA5E8B0496C83E8D1E4B25B53DF13377462ABE3B7FC21BBFBAEBDFE3C|SRAM:131072:D1D64313783F7D9994FFC6F6C7DC7F8D4C8F327FDF2DDCAE6A98CF71EFA90B98|Combined WRAM:294912:023CD2BA46D4281ED1E5B3F7D6492025D103F77BB215402A66DA93D26BCA1B80",
+   "memory_fingerprint_after": "9313|EWRAM:262144:F4422754CCB58024E10E21C553260691A93A6E6FEE6DD6B11ECAFAFE3D06A359|PALRAM:1024:0E08599FF549D46EAA7479CF47E085ABB06F55015DA588C31142D5AF36B35C30|VRAM:98304:1E729761222DDFC22F441DB88004938F22FCAB9EB0FB2F83B72A4661F93286D9|OAM:1024:6A02EECAA5E8B0496C83E8D1E4B25B53DF13377462ABE3B7FC21BBFBAEBDFE3C|SRAM:131072:D1D64313783F7D9994FFC6F6C7DC7F8D4C8F327FDF2DDCAE6A98CF71EFA90B98|Combined WRAM:294912:023CD2BA46D4281ED1E5B3F7D6492025D103F77BB215402A66DA93D26BCA1B80",
+   "memory_fingerprint_match": true,
+   "match_basis": "memory_domains+framebuffer+sync_settings+bizversion",
+   "content_fingerprint": {
+    "axis": "unprofiled_game",
+    "checked": false,
+    "match": null,
+    "probes": {
+     "px": 1152,
+     "scr": 27,
+     "cur": 95,
+     "owned": 93,
+     "hp": 107
+    },
+    "rom_sha1": "40AAB076A528F52E93260BB98D91A40039E0DA02"
+   },
+   "state_path": "F:\\taspipe_scratch\\gba_parallel_20261124\\showcase_work3\\tas_showcase_42w89l2j\\session\\guardian_soul_activate.state",
+   "roundtrip_path": "F:/taspipe_scratch/gba_parallel_20261124/showcase_work3/tas_showcase_42w89l2j/session/profile_check_roundtrip.state",
+   "state_sha256": "8a8b1a53ebfd2d61c7bfb1ed5ee429cff5e6c0d98d17d31fa83071349295166c",
+   "bizhawk": "F:\\taspipe_scratch\\gba_parallel_20261124\\production_gameplay1\\slots\\8506d01381be\\slot_0\\BizHawk-2.11.1",
+   "sync_controls": null
+  }
+ ],
+ "note": "合辑只在必交要素（expected_total 减去已声明缺口）正例过、反例拒、导出过后生成；coverage.full_collection=False 表示清单仍有未出片要素，此时产物是缺口版而非全量，缺口逐条点名在 coverage.gaps，不许靠改 expected_total 或删要素掩盖"
+}

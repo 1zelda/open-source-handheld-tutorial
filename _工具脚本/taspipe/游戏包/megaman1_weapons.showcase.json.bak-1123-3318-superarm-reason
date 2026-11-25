@@ -1,0 +1,534 @@
+{
+ "schema_version": 1,
+ "kind": "statejump_showcase",
+ "game_id": "megaman1_nes_us",
+ "game_title": "Mega Man (NES, USA, 1987 Capcom)",
+ "platform": "NES",
+ "core": "NesHawk",
+ "system": "NES",
+ "rom": "F:/taspipe_scratch/mm_showcase/megaman1_ntsc_hd.nes",
+ "rom_sha1": "2F88381557339A14C20428455F6991C1EB902C99",
+ "bizhawk": "F:/taspipe_scratch/mm_showcase/bizhawk",
+ "base_state": "F:/taspipe_scratch/mm_showcase/base.state",
+ "fps": 60.0988,
+ "template": "fc_tianma_mask",
+ "catalog": {
+  "status": "complete",
+  "expected_total": 8,
+  "sources": [
+   {
+    "source_id": "local_project_manual",
+    "url": null,
+    "status": "verified_read",
+    "verified_date": "2026-11-18",
+    "element_ids": [
+     "mega_buster",
+     "rolling_cutter",
+     "ice_slasher",
+     "hyper_bomb",
+     "fire_storm",
+     "thunder_beam",
+     "super_arm",
+     "magnet_beam"
+    ],
+    "note": "§22–23 逐帧采集实测；§23.1（2026-11-20）复测撤回旧资源门控判定，三 ROM 均正常入关。"
+   },
+   {
+    "source_id": "datacrystal",
+    "url": "https://datacrystal.tcrf.net/wiki/Mega_Man_(NES)/RAM_map",
+    "status": "snippet_only",
+    "verified_date": "2026-11-18",
+    "element_ids": [
+     "mega_buster",
+     "rolling_cutter",
+     "ice_slasher",
+     "hyper_bomb",
+     "fire_storm",
+     "thunder_beam",
+     "super_arm",
+     "magnet_beam"
+    ],
+    "note": "只有搜索快照，未全文核对。"
+   },
+   {
+    "source_id": "nesmaps",
+    "url": "https://nesmaps.com/maps/MegaMan/MegaMan.html",
+    "status": "snippet_only",
+    "verified_date": "2026-11-18",
+    "element_ids": [
+     "mega_buster",
+     "rolling_cutter",
+     "ice_slasher",
+     "hyper_bomb",
+     "fire_storm",
+     "thunder_beam",
+     "super_arm",
+     "magnet_beam"
+    ],
+    "note": "只有搜索快照。"
+   },
+   {
+    "source_id": "strategywiki",
+    "url": "https://strategywiki.org/wiki/Mega_Man/Weapons",
+    "status": "unreachable",
+    "verified_date": "2026-11-18",
+    "element_ids": [
+     "mega_buster",
+     "rolling_cutter",
+     "ice_slasher",
+     "hyper_bomb",
+     "fire_storm",
+     "thunder_beam",
+     "super_arm",
+     "magnet_beam"
+    ],
+    "note": "本机直连 403，只有搜索快照。"
+   }
+  ],
+  "coverage_note": "7/8 已出正式合辑（reel7b/reel.mp4，1228 帧 20.43s 1080p 无声）；第 8 项 Super Arm 由用户 2026-11-23 批 A 挂 delivery.status=blocked_routing，缺口在产物 coverage.gaps 点名，不是缺地址表而是缺带落点的分段跳路线"
+ },
+ "elements": [
+  {
+   "element_id": "mega_buster",
+   "label": "Mega Buster (P)",
+   "kind": "weapon",
+   "base_state": null,
+   "trigger": {
+    "macro": "B,,,,B,,,,B,,,,,,,,,,,,,,,,,,,,",
+    "extra": 25,
+    "patches": []
+   },
+   "detection": {
+    "frame": 9,
+    "success_checks": [
+     {
+      "check_id": "mega_buster_visual_sig",
+      "plugin_id": "frame_region_color_fraction",
+      "params": {
+       "region": [
+        0.488,
+        0.728,
+        0.73,
+        0.799
+       ],
+       "rgb": [
+        229,
+        230,
+        149
+       ],
+       "tol": 26,
+       "min_fraction": 0.04
+      },
+      "required": true
+     }
+    ]
+   },
+   "negative_control": {
+    "macro": null,
+    "patches": []
+   },
+   "note": "默认主武器 Mega Buster，连射三发黄色能量弹；运行 universal_authoring calibrate 将自动实测更新最佳帧与阈值。"
+  },
+  {
+   "element_id": "rolling_cutter",
+   "label": "Rolling Cutter (C)",
+   "kind": "weapon",
+   "base_state": null,
+   "trigger": {
+    "macro": "Start,Start,Start,Start,Start,Start,Start,Start,,,,,,,,,,,,,,,,,,,,,,,Down,Down,Down,Down,,,,,,,Down,Down,Down,Down,,,,,,,Down,Down,Down,Down,,,,,,,Down,Down,Down,Down,,,,,,,Down,Down,Down,Down,,,,,,,Start,Start,Start,Start,Start,Start,Start,Start,,,,,,,,,,,,,,,,,,,,,,,,,B,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,",
+    "extra": 30,
+    "patches": [
+     {
+      "addr": 93,
+      "value": 255
+     }
+    ]
+   },
+   "detection": {
+    "frame": 132,
+    "success_checks": [
+     {
+      "check_id": "rolling_cutter_visual_sig",
+      "plugin_id": "frame_region_color_fraction",
+      "params": {
+       "region": [
+        0.668,
+        0.625,
+        0.734,
+        0.714
+       ],
+       "rgb": [
+        254,
+        254,
+        254
+       ],
+       "tol": 26,
+       "min_fraction": 0.086
+      },
+      "required": true
+     }
+    ]
+   },
+   "negative_control": {
+    "macro": "Start,Start,Start,Start,Start,Start,Start,Start,,,,,,,,,,,,,,,,,,,,,,,Down,Down,Down,Down,,,,,,,Down,Down,Down,Down,,,,,,,Down,Down,Down,Down,,,,,,,Down,Down,Down,Down,,,,,,,Down,Down,Down,Down,,,,,,,Start,Start,Start,Start,Start,Start,Start,Start,,,,,,,,,,,,,,,,,,,,,,,,",
+    "patches": [
+     {
+      "addr": 93,
+      "value": 255
+     }
+    ]
+   },
+   "note": "Cut Man 武器回旋剪刀；0x006B(107) 为能量，正反例共享相同前置补丁，中立反例不按 B。 ｜2026-11-20 RAM 实证：owned=0x5D(位场,bit=菜单行)、current=0x5F；旧 addr95/能量补丁撤回(能量开局即28=no-op)；装备走菜单宏(调色板在装备事件加载)，反例=同装备不按 B。检测参数待 calibrate 实测回写。"
+  },
+  {
+   "element_id": "ice_slasher",
+   "label": "Ice Slasher (I)",
+   "kind": "weapon",
+   "base_state": null,
+   "trigger": {
+    "macro": "Start,Start,Start,Start,Start,Start,Start,Start,,,,,,,,,,,,,,,,,,,,,,,Down,Down,Down,Down,,,,,,,Down,Down,Down,Down,,,,,,,Down,Down,Down,Down,,,,,,,Down,Down,Down,Down,,,,,,,Start,Start,Start,Start,Start,Start,Start,Start,,,,,,,,,,,,,,,,,,,,,,,,,B,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,",
+    "extra": 25,
+    "patches": [
+     {
+      "addr": 93,
+      "value": 255
+     }
+    ]
+   },
+   "detection": {
+    "frame": 128,
+    "success_checks": [
+     {
+      "check_id": "ice_slasher_visual_sig",
+      "plugin_id": "frame_region_color_fraction",
+      "params": {
+       "region": [
+        0.926,
+        0.723,
+        0.99,
+        0.821
+       ],
+       "rgb": [
+        254,
+        254,
+        254
+       ],
+       "tol": 26,
+       "min_fraction": 0.074
+      },
+      "required": true
+     }
+    ]
+   },
+   "negative_control": {
+    "macro": "Start,Start,Start,Start,Start,Start,Start,Start,,,,,,,,,,,,,,,,,,,,,,,Down,Down,Down,Down,,,,,,,Down,Down,Down,Down,,,,,,,Down,Down,Down,Down,,,,,,,Down,Down,Down,Down,,,,,,,Start,Start,Start,Start,Start,Start,Start,Start,,,,,,,,,,,,,,,,,,,,,,,,",
+    "patches": [
+     {
+      "addr": 93,
+      "value": 255
+     }
+    ]
+   },
+   "note": "Ice Man 武器寒冰裂斩；0x006C(108) 为能量。 ｜2026-11-20 RAM 实证：owned=0x5D(位场,bit=菜单行)、current=0x5F；旧 addr95/能量补丁撤回(能量开局即28=no-op)；装备走菜单宏(调色板在装备事件加载)，反例=同装备不按 B。检测参数待 calibrate 实测回写。"
+  },
+  {
+   "element_id": "hyper_bomb",
+   "label": "Hyper Bomb (B)",
+   "kind": "weapon",
+   "base_state": null,
+   "trigger": {
+    "macro": "Start,Start,Start,Start,Start,Start,Start,Start,,,,,,,,,,,,,,,,,,,,,,,Down,Down,Down,Down,,,,,,,Start,Start,Start,Start,Start,Start,Start,Start,,,,,,,,,,,,,,,,,,,,,,,,,B,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,",
+    "extra": 200,
+    "patches": [
+     {
+      "addr": 93,
+      "value": 255
+     }
+    ]
+   },
+   "detection": {
+    "frame": 239,
+    "success_checks": [
+     {
+      "check_id": "hyper_bomb_visual_sig",
+      "plugin_id": "frame_region_color_fraction",
+      "params": {
+       "region": [
+        0.641,
+        0.732,
+        0.77,
+        0.879
+       ],
+       "rgb": [
+        254,
+        254,
+        254
+       ],
+       "tol": 26,
+       "min_fraction": 0.357
+      },
+      "required": true
+     }
+    ]
+   },
+   "negative_control": {
+    "macro": "Start,Start,Start,Start,Start,Start,Start,Start,,,,,,,,,,,,,,,,,,,,,,,Down,Down,Down,Down,,,,,,,Start,Start,Start,Start,Start,Start,Start,Start,,,,,,,,,,,,,,,,,,,,,,,,",
+    "patches": [
+     {
+      "addr": 93,
+      "value": 255
+     }
+    ]
+   },
+   "note": "Bomb Man 武器超级炸弹；抛物线投掷 + 爆炸帧窗。 ｜2026-11-20 RAM 实证：owned=0x5D(位场,bit=菜单行)、current=0x5F；旧 addr95/能量补丁撤回(能量开局即28=no-op)；装备走菜单宏(调色板在装备事件加载)，反例=同装备不按 B。检测参数待 calibrate 实测回写。 ｜爆炸引信实证：落地后约120帧才爆（fuse/f0220 白爆亲看），extra 45→200。"
+  },
+  {
+   "element_id": "fire_storm",
+   "label": "Fire Storm (F)",
+   "kind": "weapon",
+   "base_state": null,
+   "trigger": {
+    "macro": "Start,Start,Start,Start,Start,Start,Start,Start,,,,,,,,,,,,,,,,,,,,,,,Down,Down,Down,Down,,,,,,,Down,Down,Down,Down,,,,,,,Down,Down,Down,Down,,,,,,,Down,Down,Down,Down,,,,,,,Down,Down,Down,Down,,,,,,,Down,Down,Down,Down,,,,,,,Start,Start,Start,Start,Start,Start,Start,Start,,,,,,,,,,,,,,,,,,,,,,,,,B,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,",
+    "extra": 25,
+    "patches": [
+     {
+      "addr": 93,
+      "value": 255
+     }
+    ]
+   },
+   "detection": {
+    "frame": 143,
+    "success_checks": [
+     {
+      "check_id": "fire_storm_visual_sig",
+      "plugin_id": "frame_region_color_fraction",
+      "params": {
+       "region": [
+        0.844,
+        0.723,
+        0.918,
+        0.804
+       ],
+       "rgb": [
+        181,
+        50,
+        32
+       ],
+       "tol": 26,
+       "min_fraction": 0.14
+      },
+      "required": true
+     },
+     {
+      "check_id": "fire_storm_shield_sig",
+      "plugin_id": "frame_region_color_fraction",
+      "params": {
+       "region": [
+        0.47,
+        0.65,
+        0.55,
+        0.72
+       ],
+       "rgb": [
+        189,
+        191,
+        0
+       ],
+       "tol": 26,
+       "min_fraction": 0.04
+      },
+      "required": true
+     }
+    ]
+   },
+   "negative_control": {
+    "macro": "Start,Start,Start,Start,Start,Start,Start,Start,,,,,,,,,,,,,,,,,,,,,,,Down,Down,Down,Down,,,,,,,Down,Down,Down,Down,,,,,,,Down,Down,Down,Down,,,,,,,Down,Down,Down,Down,,,,,,,Down,Down,Down,Down,,,,,,,Down,Down,Down,Down,,,,,,,Start,Start,Start,Start,Start,Start,Start,Start,,,,,,,,,,,,,,,,,,,,,,,,",
+    "patches": [
+     {
+      "addr": 93,
+      "value": 255
+     }
+    ]
+   },
+   "note": "Fire Man 武器烈火风暴；同时出现前方火球与环绕身体火焰护盾。 ｜2026-11-20 RAM 实证：owned=0x5D(位场,bit=菜单行)、current=0x5F；旧 addr95/能量补丁撤回(能量开局即28=no-op)；装备走菜单宏(调色板在装备事件加载)，反例=同装备不按 B。检测参数待 calibrate 实测回写。 ｜第二check=环绕护盾火球（f143 pos0.081/neg0 实测，角色像素排除：反例同装备无火）。"
+  },
+  {
+   "element_id": "thunder_beam",
+   "label": "Thunder Beam (E)",
+   "kind": "weapon",
+   "base_state": null,
+   "trigger": {
+    "macro": "Start,Start,Start,Start,Start,Start,Start,Start,,,,,,,,,,,,,,,,,,,,,,,Down,Down,Down,Down,,,,,,,Down,Down,Down,Down,,,,,,,Start,Start,Start,Start,Start,Start,Start,Start,,,,,,,,,,,,,,,,,,,,,,,,,B,B,,,,,B,B,,,,,B,B,,,,",
+    "extra": 25,
+    "patches": [
+     {
+      "addr": 93,
+      "value": 255
+     }
+    ]
+   },
+   "detection": {
+    "frame": 84,
+    "success_checks": [
+     {
+      "check_id": "thunder_beam_visual_sig",
+      "plugin_id": "frame_region_color_fraction",
+      "params": {
+       "region": [
+        0.492,
+        0.692,
+        0.621,
+        0.839
+       ],
+       "rgb": [
+        229,
+        230,
+        149
+       ],
+       "tol": 26,
+       "min_fraction": 0.122
+      },
+      "required": true
+     }
+    ]
+   },
+   "negative_control": {
+    "macro": "Start,Start,Start,Start,Start,Start,Start,Start,,,,,,,,,,,,,,,,,,,,,,,Down,Down,Down,Down,,,,,,,Down,Down,Down,Down,,,,,,,Start,Start,Start,Start,Start,Start,Start,Start,,,,,,,,,,,,,,,,,,,,,,,,",
+    "patches": [
+     {
+      "addr": 93,
+      "value": 255
+     }
+    ]
+   },
+   "note": "Elec Man 武器闪电光束；上、下、前全屏三向闪电。 ｜2026-11-20 RAM 实证：owned=0x5D(位场,bit=菜单行)、current=0x5F；旧 addr95/能量补丁撤回(能量开局即28=no-op)；装备走菜单宏(调色板在装备事件加载)，反例=同装备不按 B。检测参数待 calibrate 实测回写。 ｜单发三向闪电太稀(pos_frac≈0.034<闸门0.05)：改三连发重叠弹体增密，闸门常数不动。"
+  },
+  {
+   "element_id": "super_arm",
+   "label": "Super Arm (G)",
+   "kind": "weapon",
+   "base_state": "F:/taspipe_scratch/mm_showcase/base.state",
+   "trigger": {
+    "macro": "Start,Start,Start,Start,Start,Start,Start,Start,,,,,,,,,,,,,,,,,,,,,,,Down,Down,Down,Down,,,,,,,Down,Down,Down,Down,,,,,,,Down,Down,Down,Down,,,,,,,Start,Start,Start,Start,Start,Start,Start,Start,,,,,,,,,,,,,,,,,,,,,,,,,B,,,,,,,,,,,,,,,,,,B,,,,,,,,,,,,,,,,,,",
+    "extra": 30,
+    "patches": [
+     {
+      "addr": 93,
+      "value": 255
+     }
+    ]
+   },
+   "detection": {
+    "frame": 12,
+    "success_checks": [
+     {
+      "check_id": "super_arm_lift_block_sig",
+      "plugin_id": "frame_region_color_fraction",
+      "params": {
+       "region": [
+        0.2,
+        0.2,
+        0.75,
+        0.75
+       ],
+       "rgb": [
+        216,
+        160,
+        96
+       ],
+       "tol": 28,
+       "min_fraction": 0.02
+      },
+      "required": true
+     }
+    ]
+   },
+   "negative_control": {
+    "macro": "Start,Start,Start,Start,Start,Start,Start,Start,,,,,,,,,,,,,,,,,,,,,,,Down,Down,Down,Down,,,,,,,Down,Down,Down,Down,,,,,,,Down,Down,Down,Down,,,,,,,Start,Start,Start,Start,Start,Start,Start,Start,,,,,,,,,,,,,,,,,,,,,,,,",
+    "patches": [
+     {
+      "addr": 93,
+      "value": 255
+     }
+    ]
+   },
+   "note": "Guts Man 武器超级手臂；第一下 B 举起、第二下 B 投掷。｜2026-11-20 深夜实证与缺口：base.state=Guts Man 出生段（生产 probe-rom 产物，传送带+砖洞）；但右高台上的'黄块'裁带放大实证=敌兵（有眼、帧间位移），出生段无可举 block ⇒ lift1–lift6 六次尝试失败根因=场景无块而非操作；旧 base_guts_block.state 实为 Cut 城口快照（绿砖=地形），已改名 base_cut_city.state，base_guts_conveyor.state 改名 base_guts_spawn_backup.state（身份零帧截图见 ramdiff/identity/）；文献 F2 L60 Cut Boss 房 2 块 / F4 Elec 关黄块 为下一步选景候选。owned=0x5D/current=0x5F 已实证；检测棕色 rgb 仍猜，待选景后 calibrate。｜§33.10/33.11 补：选关光标=外圈循环（Right 顺/Left 逆/UpDown 无效），Cut=默认/Elec=Left×1；举块须站块侧同层（站顶/远距离举空，lift7）；可举 block 在 Cut/Elec Boss 房（videochums L60/L69），须 checkpoint 逐段导航；盲宏摆位已停（park），导航子工程单列待做，8/8 后才出全量合辑。｜§33.12（2026-11-20 夜）：Guts 大坑=相机锁+无空中控制，同_run 逐帧像素 bbox 实测从顶 shelf 跳抓绿平台恒差≥5-22px 机制不可越 ⇒ 放弃 Guts 选景；Cut 城口右列绿砖=地形（授臂同层侧贴 B 举空 cut2）；Elec 首批橄榄黄块地图坐标已定（map_elec.png p1底/p2顶 world y≈1540-1770 邻梯、品红标记）为下一选景（Left×1）；段末 EmuHawk 启动回归（base.state/ROM-boot 均看门狗 dead，环境故障）待下一会话诊断，导航暂停。\n｜§33.13(2026-11-20深夜·重大更正)：base.state 实为 Guts 出生段(在关内)非干净boot；旧选关宏=在Guts里开暂停菜单，旧cut_spawn.state(23354B)作废。真·fresh boot 选关实测：PRESS START≈f600-680，f720按Start→f877见六格网(默认光标CUTMAN)，再Start→idle1300到Cut城市READY，已存新 cut_spawn.state(13013B,已dump复核)。Super Arm只对会闪烁的Break块生效(绿砖/棕岩/橄榄堆=地形举空,解释e8/e10/cut2全败)；Break块仅在Cut竖井ledge(map x≈830-880,y≈1420-1610,≈右3屏+上3屏)与Cut/Elec Boss房中央。剩余=逐段平台跳跃导航子工程,盲宏不收敛(无空中控制),需guided checkpoint搜索。",
+   "delivery": {
+    "status": "blocked_routing",
+    "reason": "选景与路由两条路都不通，但原因要分三层说清：(1) Cut 城口/Guts 出生/Elec 出生三段的“像块”经图例与等长双臂逐帧相减证明是地形或敌兵，Cut 城口这一屏对象表 n=1..7 全为未激活（yhi=248），确实没有可举块对象；(2) 跨房间瞬移在纯内存写下不可得——写派生量 $001B/$0022 画面 0 像素差，写 $0460=12 被引擎重算成 3（T2 判否）；(3) 同房间内定位可行：写权威对象表 $0480(X hi)/$0600(Y hi) 已像素级生效（相机右滚 40px、角色抬到 y=84）。所以缺的不是“搬角色的能力”，而是“已经在有块的那间房里”的初态。",
+    "note": "恢复路径只有一条且已量化：按社区常规做法（分段接续）从 TASVideos 取一个公开 Mega Man (U) 输入档（纯输入记录，不含 ROM），BizHawk 2.9 跑到 Boss 房存快照，再用已证的 $0480/$0600 写位把角色贴到方块旁按 B 举块。成本=1 次下载+1~2 个 EmuHawk 会话≈5 分钟，需用户批准联网取输入档。方法与证据见根目录 场景取得方法_调研与设计_2026-11-23.md 与说明书 §33.17。",
+    "decided_by": "用户批准推荐项 A(认 7/8 交付、第 8 项点名挂起)",
+    "decided_on": "2026-11-23",
+    "evidence": [
+     "TASVideos GameResources/NES/Rockman/Data 原文（对象坐标表 $460/$480:$4A0/$600:$620，Rockman n=0）：来源库/取证/tasvideos_gameresources_rockman_data_2026-11-23.txt",
+     "TASVideos BizHawk FAQ 原文（每帧只覆盖一次 + memory write callbacks）：来源库/取证/tasvideos_bizhawk_faq_refresh_2026-11-23.txt",
+     "T1 实测台账与图：F:/taspipe_scratch/mm_nav/t1/t1.json、t1_sheet.png、t1_zoom_right.png",
+     "T2 实测台账（三臂同 diff=305 ⇒ 换房判否）：F:/taspipe_scratch/mm_nav/t2/t2.json",
+     "旧台账复查（$0460/$0480/$0600 命中，上一轮误分类）：F:/taspipe_scratch/mm_nav/posscan/xsearch2.json"
+    ]
+   }
+  },
+  {
+   "element_id": "magnet_beam",
+   "label": "Magnet Beam (M)",
+   "kind": "weapon_utility",
+   "base_state": null,
+   "trigger": {
+    "macro": "Start,Start,Start,Start,Start,Start,Start,Start,,,,,,,,,,,,,,,,,,,,,,,Down,Down,Down,Down,,,,,,,Down,Down,Down,Down,,,,,,,Down,Down,Down,Down,,,,,,,Down,Down,Down,Down,,,,,,,Down,Down,Down,Down,,,,,,,Down,Down,Down,Down,,,,,,,Down,Down,Down,Down,,,,,,,Start,Start,Start,Start,Start,Start,Start,Start,,,,,,,,,,,,,,,,,,,,,,,,,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,,,,,,,,,,,,,,,,,,,,",
+    "extra": 25,
+    "patches": [
+     {
+      "addr": 93,
+      "value": 255
+     }
+    ]
+   },
+   "detection": {
+    "frame": 156,
+    "success_checks": [
+     {
+      "check_id": "magnet_beam_visual_sig",
+      "plugin_id": "frame_region_color_fraction",
+      "params": {
+       "region": [
+        0.609,
+        0.746,
+        0.703,
+        0.799
+       ],
+       "rgb": [
+        72,
+        206,
+        223
+       ],
+       "tol": 26,
+       "min_fraction": 0.054
+      },
+      "required": true
+     }
+    ]
+   },
+   "negative_control": {
+    "macro": "Start,Start,Start,Start,Start,Start,Start,Start,,,,,,,,,,,,,,,,,,,,,,,Down,Down,Down,Down,,,,,,,Down,Down,Down,Down,,,,,,,Down,Down,Down,Down,,,,,,,Down,Down,Down,Down,,,,,,,Down,Down,Down,Down,,,,,,,Down,Down,Down,Down,,,,,,,Down,Down,Down,Down,,,,,,,Start,Start,Start,Start,Start,Start,Start,Start,,,,,,,,,,,,,,,,,,,,,,,,",
+    "patches": [
+     {
+      "addr": 93,
+      "value": 255
+     }
+    ]
+   },
+   "note": "辅助装置磁力光束平台；按住 B 16 帧延伸平台光束。 ｜2026-11-20 RAM 实证：owned=0x5D(位场,bit=菜单行)、current=0x5F；旧 addr95/能量补丁撤回(能量开局即28=no-op)；装备走菜单宏(调色板在装备事件加载)，反例=同装备不按 B。检测参数待 calibrate 实测回写。"
+  }
+ ],
+ "identity_note": "rom = megamanhd.nes 的副本（NesCartDB NES-NTSC 正规 dump，sha1 2f883815…）；2026-11-20 复测确认可正常入关实玩。网盘洛克人1.nes 为 PAL-B、mega_man_usa.nes 身份未钉死，均不用于本包。",
+ "ram_map_verified": {
+  "date": "2026-11-20",
+  "owned_flags": "0x5D 位场：bit1=B bit2=E bit3=G bit4=I bit5=C bit6=F bit7=M，bit0=P(不画行)；0xFF=全拥有（菜单 7 行亲看）",
+  "current_weapon": "0x5F：0=P 1=C 2=I 3=B 4=F 5=E 6=G 7=M（菜单逐行装备冻结 RAM 差分+装色亲看）",
+  "menu_row_order": "B E G I C F M P；光标起点 P，Down×k：B1 E2 G3 I4 C5 F6 M7",
+  "retracted": "addr95=武器编号（猜）；0x6B..0x71 能量补丁（开局即 28，no-op）；0x5D=all_stages_complete 单一语义（实为拥有位场）",
+  "palette_rule": "角色与弹体调色板在菜单装备事件加载；只写 0x5F 几何对颜色错 ⇒ 生产宏必须菜单装备",
+  "evidence": "F:/taspipe_scratch/mm_showcase/ramdiff/{sweep.json,w/weapon_probe.json,e/equip_table.json,f/,bit_*,g/,cut/}"
+ }
+}

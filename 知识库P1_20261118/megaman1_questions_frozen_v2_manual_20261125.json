@@ -1,0 +1,588 @@
+{
+  "schema_version": 3,
+  "status": "frozen",
+  "frozen_at": "2026-11-25",
+  "design_note": "洛克人1隔离候选v2：RAM/工具方法 + 扫描核验官方说明书短摘录。金标按本候选真实chunk重锚；不是整款游戏知识库。",
+  "candidate_revision": "megaman1_nes_us",
+  "candidate_index": "知识库P1_20261118/megaman1_candidate_v2_manual_20261125/index.json",
+  "candidate_index_sha256": "d8de2bcf742e5a7df4df86a29b6162bcc815c1977719009b5cfe3542bc86c6be",
+  "source_draft": "知识库P1_20261118/megaman1_questions_draft_20261124.json",
+  "inherited_frozen": "知识库P1_20261118/megaman1_questions_frozen_20261125.json",
+  "rom_identity": {
+    "path": "04-游戏资源库/TAS输入录像库/roms_verify/NES/megamanhd.nes",
+    "sha1": "2F88381557339A14C20428455F6991C1EB902C99",
+    "bytes": 131088,
+    "identity_basis": "生产 catalog + NesCartDB NTSC 判定；文件名 hd 不是版本身份"
+  },
+  "manual_source": {
+    "source_id": "archive_mega_man_nes_us_manual",
+    "archive_item": "https://archive.org/details/mega-man-nes-manual",
+    "verification": "scan_visually_read_short_excerpts_only",
+    "full_manual_in_candidate": false
+  },
+  "expected_counts": {
+    "total": 23,
+    "strict_pass": 20,
+    "refuse": 3
+  },
+  "questions": [
+    {
+      "id": "MM01",
+      "q": "洛克人1 的坐标轴方向是什么？",
+      "filters": {
+        "revision": "megaman1_nes_us"
+      },
+      "expect": "strict_pass",
+      "gold": {
+        "path_contains": "mm1_coordinate_facts_20261125.txt",
+        "line_start": 1,
+        "line_end": 25,
+        "anchor_chunk": "e54e2ae95c0d"
+      },
+      "fact": "X 向右增大，Y 向下增大；位置有 8 位小数，屏上只显示整数部分",
+      "authority_basis": "TASVideos GameResources 已取回原文，verified_read + authoritative"
+    },
+    {
+      "id": "MM02",
+      "q": "洛克人1 的 X 坐标对象表地址范围是什么？",
+      "filters": {
+        "revision": "megaman1_nes_us"
+      },
+      "expect": "strict_pass",
+      "gold": {
+        "path_contains": "mm1_object_ram_table_20261125.txt",
+        "line_start": 1,
+        "line_end": 17,
+        "anchor_chunk": "80852a424f3f"
+      },
+      "fact": "Rockman 1 的 X(hi,lo) 为 $480:$4A0",
+      "authority_basis": "TASVideos GameResources 内存表",
+      "refinement_reason": "去掉“多少”，避免被意图分类器误判为计数题；事实与金标不变。"
+    },
+    {
+      "id": "MM03",
+      "q": "洛克人1 的对象编号 n 怎样换算各项内存地址？",
+      "filters": {
+        "revision": "megaman1_nes_us"
+      },
+      "expect": "strict_pass",
+      "gold": {
+        "path_contains": "mm1_object_ram_table_20261125.txt",
+        "line_start": 1,
+        "line_end": 17,
+        "anchor_chunk": "80852a424f3f"
+      },
+      "fact": "各属性表基地址加 n",
+      "authority_basis": "TASVideos GameResources 原文"
+    },
+    {
+      "id": "MM04",
+      "q": "洛克人1 中 Rockman 和 Boss 分别固定是哪个对象编号？",
+      "filters": {
+        "revision": "megaman1_nes_us"
+      },
+      "expect": "strict_pass",
+      "gold": {
+        "path_contains": "mm1_object_ram_table_20261125.txt",
+        "line_start": 1,
+        "line_end": 17,
+        "anchor_chunk": "80852a424f3f"
+      },
+      "fact": "Rockman 恒为 n=0；Boss 为 n=1",
+      "authority_basis": "TASVideos GameResources 原文"
+    },
+    {
+      "id": "MM05",
+      "q": "洛克人1 的 Screen# 和 Yspd 对象表地址范围分别是什么？",
+      "filters": {
+        "revision": "megaman1_nes_us"
+      },
+      "expect": "strict_pass",
+      "gold": {
+        "path_contains": "mm1_object_ram_table_20261125.txt",
+        "line_start": 1,
+        "line_end": 17,
+        "anchor_chunk": "80852a424f3f"
+      },
+      "fact": "Screen# $460；Yspd(hi,lo) $660:$680",
+      "authority_basis": "TASVideos GameResources 内存表"
+    },
+    {
+      "id": "MM06",
+      "q": "BizHawk 为什么不能只每帧覆盖一次内存值，需要什么机制？",
+      "filters": {
+        "revision": "megaman1_nes_us"
+      },
+      "expect": "strict_pass",
+      "gold": {
+        "path_contains": "mm1_bizhawk_memory_write_fact_20261125.txt",
+        "line_start": 1,
+        "line_end": 10,
+        "anchor_chunk": "fea411ef037d"
+      },
+      "fact": "游戏可能在一帧内多次改变该值；需要用 memory write callback，且核心的回调时序可能不同",
+      "authority_basis": "TASVideos BizHawk FAQ 已取回原文",
+      "refinement_reason": "把“内存地址”改为“内存值”，避免问句被误判为地址取值题；机制事实不变。"
+    },
+    {
+      "id": "MM07",
+      "q": "owned 和 current_weapon 两个内存字段分别对应什么？",
+      "filters": {
+        "revision": "megaman1_nes_us"
+      },
+      "expect": "strict_pass",
+      "gold": {
+        "path_contains": "mm1_local_weapon_ram_excerpt_20261125.txt",
+        "line_start": 4,
+        "line_end": 7,
+        "anchor_chunk": "a2eaf6d24f0a"
+      },
+      "fact": "owned=$5D 位场；current_weapon=$5F",
+      "authority_basis": "本机生产实测与截图/差分记录；项目文档域",
+      "refinement_reason": "游戏身份由 revision 过滤提供，问句聚焦字段名，避免标题词让无关地址表抢到可答性。"
+    },
+    {
+      "id": "MM08",
+      "q": "current_weapon 字段的值 0 到 7 分别代表什么武器？",
+      "filters": {
+        "revision": "megaman1_nes_us"
+      },
+      "expect": "strict_pass",
+      "gold": {
+        "path_contains": "mm1_local_weapon_ram_excerpt_20261125.txt",
+        "line_start": 4,
+        "line_end": 7,
+        "anchor_chunk": "a2eaf6d24f0a"
+      },
+      "fact": "0=P，1=C，2=I，3=B，4=F，5=E，6=G，7=M",
+      "authority_basis": "本机生产实测与菜单差分",
+      "refinement_reason": "游戏身份由 revision 过滤提供，问句聚焦 current_weapon，避免标题词让无关地址表抢到可答性。"
+    },
+    {
+      "id": "MM09",
+      "q": "洛克人1 写 $0480 和 $0600 为什么能移动角色？",
+      "filters": {
+        "revision": "megaman1_nes_us"
+      },
+      "expect": "strict_pass",
+      "gold": {
+        "path_contains": "mm1_local_position_probe_excerpt_20261125.txt",
+        "line_start": 5,
+        "line_end": 17,
+        "anchor_chunk": "65a638ace495"
+      },
+      "fact": "它们是 Rockman n=0 的权威对象表 X/Y 高位；游戏从对象表重算派生显示量",
+      "authority_basis": "本机 T1 五臂受控实测，含恒量反证"
+    },
+    {
+      "id": "MM10",
+      "q": "洛克人1 怎样从现有存档点继续制作某个时刻的画面？",
+      "filters": {
+        "revision": "megaman1_nes_us"
+      },
+      "expect": "refuse",
+      "gold": null,
+      "fact": "候选语料只有 segmented TAS 通用术语与 FM2 导入参考流程，没有洛克人1到目标时刻的存档点证据；不得冒充已证流程",
+      "authority_basis": "reference_only 且问题与证据不匹配，冻结为拒答反例"
+    },
+    {
+      "id": "MM11",
+      "q": "洛克人1官方说明书是否记载角色创建系统？",
+      "filters": {
+        "revision": "megaman1_nes_us"
+      },
+      "expect": "refuse",
+      "gold": null,
+      "fact": "没有官方说明书或角色创建系统证据；不得编造",
+      "authority_basis": "缺证拒答反例",
+      "refinement_reason": "改用“是否记载”聚焦官方说明书存在性，避免泛化公式模式把对象编号赋值误当角色创建公式。"
+    },
+    {
+      "id": "MM12",
+      "q": "洛克人1 PAL-B 版的坐标表是否可以直接当作 NTSC 美版结论？",
+      "filters": {
+        "revision": "megaman1_nes_us"
+      },
+      "expect": "refuse",
+      "gold": null,
+      "fact": "PAL-B 与 NTSC 美版身份不同，未验证跨版等价前不得代答",
+      "authority_basis": "版本身份反例",
+      "refinement_reason": "补“是否”触发是非意图，要求证据明确讨论跨版等价；仅有 NTSC 坐标正文不得放行。"
+    },
+    {
+      "id": "MM13",
+      "q": "洛克人1官方说明书里 A 键和 B 键分别控制什么动作？",
+      "filters": {
+        "revision": "megaman1_nes_us"
+      },
+      "expect": "strict_pass",
+      "gold": {
+        "path_contains": "mm1_manual_controls_20261125.txt",
+        "line_start": 1,
+        "line_end": 13,
+        "anchor_chunk": "03e122ec5180"
+      },
+      "fact": "A 键跳跃；B 键射击",
+      "manual_pages": [
+        8
+      ],
+      "authority_basis": "Capcom 美国 NES 官方说明书 Internet Archive 扫描页；本轮直接读图核验的短摘录"
+    },
+    {
+      "id": "MM14",
+      "q": "洛克人1官方说明书里控制 pad 的上、下、左、右分别怎么操作？",
+      "filters": {
+        "revision": "megaman1_nes_us"
+      },
+      "expect": "strict_pass",
+      "gold": {
+        "path_contains": "mm1_manual_controls_20261125.txt",
+        "line_start": 1,
+        "line_end": 13,
+        "anchor_chunk": "03e122ec5180"
+      },
+      "fact": "上跳、下蹲、左移、右移",
+      "manual_pages": [
+        8
+      ],
+      "authority_basis": "Capcom 美国 NES 官方说明书 Internet Archive 扫描页；本轮直接读图核验的短摘录"
+    },
+    {
+      "id": "MM15",
+      "q": "洛克人1官方说明书里怎样选择 Robot Master 关卡并开始战斗？",
+      "filters": {
+        "revision": "megaman1_nes_us"
+      },
+      "expect": "strict_pass",
+      "gold": {
+        "path_contains": "mm1_manual_stage_select_20261125.txt",
+        "line_start": 1,
+        "line_end": 13,
+        "anchor_chunk": "5d40dd4e0f83"
+      },
+      "fact": "按 START 显示六名敌人，用控制 pad 右端选择，再按 START 开始遭遇战",
+      "manual_pages": [
+        9
+      ],
+      "authority_basis": "Capcom 美国 NES 官方说明书 Internet Archive 扫描页；本轮直接读图核验的短摘录"
+    },
+    {
+      "id": "MM16",
+      "q": "洛克人1 Energy Meter 监测的能量水平，受击与能量胶囊分别有什么影响？",
+      "filters": {
+        "revision": "megaman1_nes_us"
+      },
+      "expect": "strict_pass",
+      "gold": {
+        "path_contains": "mm1_manual_energy_20261125.txt",
+        "line_start": 1,
+        "line_end": 10,
+        "anchor_chunk": "18a00ca4cb83"
+      },
+      "fact": "Energy Meter 监测能量；受击损失能量；能量胶囊恢复并提升能量",
+      "manual_pages": [
+        4
+      ],
+      "authority_basis": "Capcom 美国 NES 官方说明书 Internet Archive 扫描页；本轮直接读图核验的短摘录"
+    },
+    {
+      "id": "MM17",
+      "q": "洛克人1官方说明书里 1 UP 和 Yashichi 的效果分别是什么？",
+      "filters": {
+        "revision": "megaman1_nes_us"
+      },
+      "expect": "strict_pass",
+      "gold": {
+        "path_contains": "mm1_manual_bonus_items_20261125.txt",
+        "line_start": 1,
+        "line_end": 13,
+        "anchor_chunk": "8adaa41c71e9"
+      },
+      "fact": "1 UP 增加一名玩家；Yashichi 为 100,000 分奖励",
+      "manual_pages": [
+        15
+      ],
+      "authority_basis": "Capcom 美国 NES 官方说明书 Internet Archive 扫描页；本轮直接读图核验的短摘录"
+    },
+    {
+      "id": "MM18",
+      "q": "洛克人1官方说明书里生命能量和武器能量道具分别增加什么？",
+      "filters": {
+        "revision": "megaman1_nes_us"
+      },
+      "expect": "strict_pass",
+      "gold": {
+        "path_contains": "mm1_manual_bonus_items_20261125.txt",
+        "line_start": 1,
+        "line_end": 13,
+        "anchor_chunk": "8adaa41c71e9"
+      },
+      "fact": "生命能量道具增加生命能量；武器能量道具增加武器能量",
+      "manual_pages": [
+        15
+      ],
+      "authority_basis": "Capcom 美国 NES 官方说明书 Internet Archive 扫描页；本轮直接读图核验的短摘录"
+    },
+    {
+      "id": "MM19",
+      "q": "洛克人1官方说明书里 Magnet Beam 在哪个关卡出现，取得后能做什么？",
+      "filters": {
+        "revision": "megaman1_nes_us"
+      },
+      "expect": "strict_pass",
+      "gold": {
+        "path_contains": "mm1_manual_magnet_beam_20261125.txt",
+        "line_start": 1,
+        "line_end": 10,
+        "anchor_chunk": "7eb5f0df8259"
+      },
+      "fact": "在 Elecman 关卡中途出现；可制造台阶向上攀爬",
+      "manual_pages": [
+        5,
+        15
+      ],
+      "authority_basis": "Capcom 美国 NES 官方说明书 Internet Archive 扫描页；本轮直接读图核验的短摘录"
+    },
+    {
+      "id": "MM20",
+      "q": "洛克人1官方说明书里六名 Robot Master 各自的设计用途或专长是什么？",
+      "filters": {
+        "revision": "megaman1_nes_us"
+      },
+      "expect": "strict_pass",
+      "gold": {
+        "path_contains": "mm1_manual_robot_masters_20261125.txt",
+        "line_start": 1,
+        "line_end": 22,
+        "anchor_chunk": "9e1b150976d6"
+      },
+      "fact": "Cutman 伐木、Iceman 极寒、Gutsman 搬巨石、Bombman 爆破开路、Fireman 熔铸金属、Elecman 电气与核电",
+      "manual_pages": [
+        6,
+        7
+      ],
+      "authority_basis": "Capcom 美国 NES 官方说明书 Internet Archive 扫描页；本轮直接读图核验的短摘录"
+    },
+    {
+      "id": "MM21",
+      "q": "洛克人1击败六名 Robot Master 后获得的新武器在 Wily 战有什么使用限制？",
+      "filters": {
+        "revision": "megaman1_nes_us"
+      },
+      "expect": "strict_pass",
+      "gold": {
+        "path_contains": "mm1_manual_progression_rewards_20261125.txt",
+        "line_start": 1,
+        "line_end": 13,
+        "anchor_chunk": "c911e2956cca"
+      },
+      "fact": "击败对手获得新火力；与 Dr. Wily 战斗时每样只能使用一次",
+      "manual_pages": [
+        5
+      ],
+      "authority_basis": "Capcom 美国 NES 官方说明书 Internet Archive 扫描页；本轮直接读图核验的短摘录"
+    },
+    {
+      "id": "MM22",
+      "q": "洛克人1官方说明书里 Robot Master 胜利和 Dr. Wily 的得分分别是多少？",
+      "filters": {
+        "revision": "megaman1_nes_us"
+      },
+      "expect": "strict_pass",
+      "gold": {
+        "path_contains": "mm1_manual_victory_scores_20261125.txt",
+        "line_start": 1,
+        "line_end": 10,
+        "anchor_chunk": "501f930d1588"
+      },
+      "fact": "Robot Master 每次胜利 50,000–100,000 分；Dr. Wily 200,000 分",
+      "manual_pages": [
+        10,
+        14
+      ],
+      "authority_basis": "Capcom 美国 NES 官方说明书 Internet Archive 扫描页；本轮直接读图核验的短摘录"
+    },
+    {
+      "id": "MM23",
+      "q": "洛克人1击败六名 Robot Master 后 Dr. Wily 何时出现，他会出现在第几关？",
+      "filters": {
+        "revision": "megaman1_nes_us"
+      },
+      "expect": "strict_pass",
+      "gold": {
+        "path_contains": "mm1_manual_progression_rewards_20261125.txt",
+        "line_start": 1,
+        "line_end": 13,
+        "anchor_chunk": "c911e2956cca"
+      },
+      "fact": "Wily 的机器人手下全部消灭且背景全部出现后自动出现；第七最终关",
+      "manual_pages": [
+        9
+      ],
+      "authority_basis": "Capcom 美国 NES 官方说明书 Internet Archive 扫描页；本轮直接读图核验的短摘录"
+    }
+  ],
+  "freeze_validation": [
+    {
+      "id": "MM01",
+      "status": "pass",
+      "grade_ok": true,
+      "gold_ok": true,
+      "selected_locator": "知识库P1_20261118/megaman1_candidate_v2_manual_20261125/evidence/mm1_coordinate_facts_20261125.txt#L1-L25"
+    },
+    {
+      "id": "MM02",
+      "status": "pass",
+      "grade_ok": true,
+      "gold_ok": true,
+      "selected_locator": "知识库P1_20261118/megaman1_candidate_v2_manual_20261125/evidence/mm1_object_ram_table_20261125.txt#L1-L17"
+    },
+    {
+      "id": "MM03",
+      "status": "pass",
+      "grade_ok": true,
+      "gold_ok": true,
+      "selected_locator": "知识库P1_20261118/megaman1_candidate_v2_manual_20261125/evidence/mm1_object_ram_table_20261125.txt#L1-L17"
+    },
+    {
+      "id": "MM04",
+      "status": "pass",
+      "grade_ok": true,
+      "gold_ok": true,
+      "selected_locator": "知识库P1_20261118/megaman1_candidate_v2_manual_20261125/evidence/mm1_object_ram_table_20261125.txt#L1-L17"
+    },
+    {
+      "id": "MM05",
+      "status": "pass",
+      "grade_ok": true,
+      "gold_ok": true,
+      "selected_locator": "知识库P1_20261118/megaman1_candidate_v2_manual_20261125/evidence/mm1_object_ram_table_20261125.txt#L1-L17"
+    },
+    {
+      "id": "MM06",
+      "status": "pass",
+      "grade_ok": true,
+      "gold_ok": true,
+      "selected_locator": "知识库P1_20261118/megaman1_candidate_v2_manual_20261125/evidence/mm1_bizhawk_memory_write_fact_20261125.txt#L1-L10"
+    },
+    {
+      "id": "MM07",
+      "status": "pass",
+      "grade_ok": true,
+      "gold_ok": true,
+      "selected_locator": "知识库P1_20261118/megaman1_candidate_v2_manual_20261125/evidence/mm1_local_weapon_ram_excerpt_20261125.txt#L4-L7"
+    },
+    {
+      "id": "MM08",
+      "status": "pass",
+      "grade_ok": true,
+      "gold_ok": true,
+      "selected_locator": "知识库P1_20261118/megaman1_candidate_v2_manual_20261125/evidence/mm1_local_weapon_ram_excerpt_20261125.txt#L4-L7"
+    },
+    {
+      "id": "MM09",
+      "status": "pass",
+      "grade_ok": true,
+      "gold_ok": true,
+      "selected_locator": "知识库P1_20261118/megaman1_candidate_v2_manual_20261125/evidence/mm1_local_position_probe_excerpt_20261125.txt#L5-L17"
+    },
+    {
+      "id": "MM10",
+      "status": "inconclusive",
+      "grade_ok": true,
+      "gold_ok": true,
+      "selected_locator": null
+    },
+    {
+      "id": "MM11",
+      "status": "inconclusive",
+      "grade_ok": true,
+      "gold_ok": true,
+      "selected_locator": null
+    },
+    {
+      "id": "MM12",
+      "status": "inconclusive",
+      "grade_ok": true,
+      "gold_ok": true,
+      "selected_locator": null
+    },
+    {
+      "id": "MM13",
+      "status": "pass",
+      "grade_ok": true,
+      "gold_ok": true,
+      "selected_locator": "知识库P1_20261118/megaman1_candidate_v2_manual_20261125/evidence/mm1_manual_controls_20261125.txt#L1-L13"
+    },
+    {
+      "id": "MM14",
+      "status": "pass",
+      "grade_ok": true,
+      "gold_ok": true,
+      "selected_locator": "知识库P1_20261118/megaman1_candidate_v2_manual_20261125/evidence/mm1_manual_controls_20261125.txt#L1-L13"
+    },
+    {
+      "id": "MM15",
+      "status": "pass",
+      "grade_ok": true,
+      "gold_ok": true,
+      "selected_locator": "知识库P1_20261118/megaman1_candidate_v2_manual_20261125/evidence/mm1_manual_stage_select_20261125.txt#L1-L13"
+    },
+    {
+      "id": "MM16",
+      "status": "pass",
+      "grade_ok": true,
+      "gold_ok": true,
+      "selected_locator": "知识库P1_20261118/megaman1_candidate_v2_manual_20261125/evidence/mm1_manual_energy_20261125.txt#L1-L10"
+    },
+    {
+      "id": "MM17",
+      "status": "pass",
+      "grade_ok": true,
+      "gold_ok": true,
+      "selected_locator": "知识库P1_20261118/megaman1_candidate_v2_manual_20261125/evidence/mm1_manual_bonus_items_20261125.txt#L1-L13"
+    },
+    {
+      "id": "MM18",
+      "status": "pass",
+      "grade_ok": true,
+      "gold_ok": true,
+      "selected_locator": "知识库P1_20261118/megaman1_candidate_v2_manual_20261125/evidence/mm1_manual_bonus_items_20261125.txt#L1-L13"
+    },
+    {
+      "id": "MM19",
+      "status": "pass",
+      "grade_ok": true,
+      "gold_ok": true,
+      "selected_locator": "知识库P1_20261118/megaman1_candidate_v2_manual_20261125/evidence/mm1_manual_magnet_beam_20261125.txt#L1-L10"
+    },
+    {
+      "id": "MM20",
+      "status": "pass",
+      "grade_ok": true,
+      "gold_ok": true,
+      "selected_locator": "知识库P1_20261118/megaman1_candidate_v2_manual_20261125/evidence/mm1_manual_robot_masters_20261125.txt#L1-L22"
+    },
+    {
+      "id": "MM21",
+      "status": "pass",
+      "grade_ok": true,
+      "gold_ok": true,
+      "selected_locator": "知识库P1_20261118/megaman1_candidate_v2_manual_20261125/evidence/mm1_manual_progression_rewards_20261125.txt#L1-L13"
+    },
+    {
+      "id": "MM22",
+      "status": "pass",
+      "grade_ok": true,
+      "gold_ok": true,
+      "selected_locator": "知识库P1_20261118/megaman1_candidate_v2_manual_20261125/evidence/mm1_manual_victory_scores_20261125.txt#L1-L10"
+    },
+    {
+      "id": "MM23",
+      "status": "pass",
+      "grade_ok": true,
+      "gold_ok": true,
+      "selected_locator": "知识库P1_20261118/megaman1_candidate_v2_manual_20261125/evidence/mm1_manual_progression_rewards_20261125.txt#L1-L13"
+    }
+  ]
+}

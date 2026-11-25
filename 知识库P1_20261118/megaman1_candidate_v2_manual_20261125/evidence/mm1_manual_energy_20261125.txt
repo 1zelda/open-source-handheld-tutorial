@@ -1,0 +1,10 @@
+洛克人1 官方说明书：Energy Meter 生命能量 受伤 能量胶囊（美国NES手册第4页）
+
+来源：Capcom 美国 NES 官方说明书扫描件。
+核验：已读扫描页；中文为说明，英文为短引文；未收全本。
+
+游戏画面左上方的 Energy Meter 用于监测 MEGA MAN 的能量水平。
+> A thermometer-shaped MEGA MAN "Energy Meter" appearing upper left in game-playing scenes serves to monitor MEGA MAN's power levels.
+
+MEGA MAN 被敌人击中时能量会减少；赢得 energy capsule 可恢复并提升能量。
+> If and when MEGA MAN is bodily struck or hit with enemy projectiles, degrees of energy are lost.

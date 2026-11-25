@@ -1,0 +1,74 @@
+
+==== W03: 热血足球2 守门员能不能用必杀？ ====
+status=pass refusal=None cond=None
+reason=2 条 verified_read + authoritative 可答命中，权威件在第 1 位
+  rank1 2e317b9f1bbf auth=authoritative ans=True setsumei_热血足球说明书_编者中文对照_20261119.md#L7-10 lang=zh
+     intent=yesno focus_ok=True intent_ok=True pattern_ok=True focus_hit=['守门', '门员'] url_list=False anchor_ok=True
+  rank2 141a669374a9 auth=reference_only ans=True sohu_必杀最强小辫子_20261118.md#L1-69 lang=zh
+     intent=yesno focus_ok=True intent_ok=True pattern_ok=True focus_hit=['守门', '必杀', '用必', '能用', '门员'] url_list=False anchor_ok=True
+  rank3 9f60ab7cc1b6 auth=reference_only ans=False urawaza_FC热血足球_编者中文对照_20261119.md#L11-17 lang=zh
+     intent=yesno focus_ok=True intent_ok=False pattern_ok=True focus_hit=['守门', '必杀', '门员'] url_list=False anchor_ok=True
+  rank4 9265c746273b auth=reference_only ans=True 1ang_热血足球联盟图文攻略_20261118.md#L1-129 lang=zh
+     intent=yesno focus_ok=True intent_ok=True pattern_ok=True focus_hit=['不能', '守门', '必杀', '门员'] url_list=False anchor_ok=True
+  rank5 2e4c8ac797cf auth=reference_only ans=True sohu_必杀最强小辫子_20261118.md#L71-89 lang=zh
+     intent=yesno focus_ok=True intent_ok=True pattern_ok=True focus_hit=['守门', '必杀', '门员'] url_list=False anchor_ok=True
+  rank6 9bbb7d89c9f4 auth=reference_only ans=True sohu_必杀最强小辫子_20261118.md#L91-106 lang=zh
+     intent=yesno focus_ok=True intent_ok=True pattern_ok=True focus_hit=['守门', '必杀', '门员'] url_list=False anchor_ok=True
+  rank7 79daaa4d521a auth=reference_only ans=True sohu_一直输球隐藏大结局_20261118.md#L65-81 lang=zh
+     intent=yesno focus_ok=True intent_ok=True pattern_ok=True focus_hit=['不能', '能用'] url_list=False anchor_ok=True
+  rank8 cca1975a46e1 auth=authoritative ans=True setsumei_热血足球说明书_编者中文对照_20261119.md#L54-57 lang=zh
+     intent=yesno focus_ok=True intent_ok=True pattern_ok=True focus_hit=['守门', '必杀', '用必', '门员'] url_list=False anchor_ok=True
+  [真答案块] cca1975a46e1 setsumei_热血足球说明书_编者中文对照_20261119.md#L54-57 auth=authoritative 在W03排名=8
+     全文: 必杀射门最简单的方法：持球时跳跃，正好到最高点时按 B，即可打出帅气的必杀射门。更强力的**超级射门（ハイパー・シュート）**会从倒钩或跳头球在某个时机炸裂。诀窍是看准球的高度，越高的打点能打出越强的必杀射门。给队友及时发送指示，队友也能打必杀射门。
+各选手除必杀射门外还持有必杀技：攻击技如「必杀运球（必殺ドリブル）」「必杀燕返（必殺燕返し）」，守备技如「运球攻击（ドリブル・アタック）」「龙卷风踢（トルネード・キック）」。守门员专用必杀技为「龙卷风拳（トルネード・パンチ）」。各必杀技必须选手持有该技才能发出，请到控室「选手数据」查看谁持有哪种技。必杀技的具体出法是秘密。
+     生产annotate: {'answerable': True, 'intent': 'yesno', 'focus_ok': True, 'pattern_ok': True, 'intent_ok': True, 'focus_hit': ['守门', '必杀', '用必', '门员'], 'url_list': False, 'topic_anchor_ok': True}
+  [真答案块] 9f60ab7cc1b6 urawaza_FC热血足球_编者中文对照_20261119.md#L11-17 auth=reference_only 在W03排名=3
+     全文: - **爆裂攻击（ばくれつあたっく）**：敌球时，跳跃落地后按 B。
+- **燕返（つばめがえし）**：运球（ドリブル）中跳跃。
+- **龙卷风踢（とるねーどきっく）**：敌球时，超级冲刺（ハイパー・ダッシュ）中按十字键＋A。
+- **钻头攻击（どりるあたっく）**：敌球时，超级冲刺中按十字键＋B。
+- **必杀运球（ひっさつどりぶる）**：运球中十字键上或下连按 2 次。
+- **龙卷风拳（とるねーどぱんち）**：十字键右或左＋B，**仅守门员（キーパー）可用**。
+- **三重加速（とりぷるあくせる）**：敌球时，A、B 同时按。
+     生产annotate: {'answerable': False, 'intent': 'yesno', 'focus_ok': True, 'pattern_ok': True, 'intent_ok': False, 'focus_hit': ['守门', '必杀', '门员'], 'url_list': False, 'topic_anchor_ok': True}
+
+  [W03 rank1 放行块全文] setsumei_热血足球说明书_编者中文对照_20261119.md#L7-10
+     热血足球联盟是 **6 人制**足球，规定时间内进球多的球队获胜。若同分结束比赛，则以 **PK 战**决定胜负。比赛中有犯规（ペナルティ）判定，也可以罚任意球（フリーキック）。
+**1P 单人游玩**时，操作 MF 队长角色一人，同时向队友发送指示。**2P 双人合作游玩**时，**1P 操作 MF（中场）角色，2P 操作 GK（守门员）角色**。守门员是左右胜负的重要位置，请找可靠的朋友一起玩。MF 即ミッドフィルダー（中场球员），GK 即ゴールキーパー（守门员）。
+
+==== X12 trap 基线 w5 vs 再索引 w5 ====
+  X12 q: 热血足球联盟 怎么给球员升级加点？ kind=trap
+  [基线 w5] status=pass refusal=None
+     rank1 9265c746273b auth=reference_only ans=True 1ang_热血足球联盟图文攻略_20261118.md#L1-L129
+        热血足球3攻略-FC热血足球3(热血足球联盟)游戏图文攻略 - 乐米网一昂
+function doFav(u, t) { }
+日版名：くにおくんの熱血サッカーリーグ
+罗马音：Kunio Kun No 
+     rank2 de8504fe7e4d auth=authoritative ans=False 热血足球联盟_必杀全清单.md#L10-L21
+        - S1 天幻网《FC热血足球联盟困难模式全胜夺冠》转载（乐米网一昂，2022-04-05）：
+（原站 http://1lifeclear.ffsky.cn/56.htm 本机直连失败，用转载副本；逐
+     rank3 3548208d0a2d auth=reference_only ans=False 1ang_热血足球联盟图文攻略_20261118.md#L823-L839
+        比赛中按START键暂停，{A键按３次＋B键按１次＋A键按３次＋B键按１次＋A键按７次}，再按START键解除暂停，听到必杀踢射的发动音效，就成功了。这样就能使全部球员拥有全部必杀技，比如平时不会燕返
+     rank4 d394a4c3412d auth=reference_only ans=False 1ang_热血足球联盟图文攻略_20261118.md#L131-L158
+        热血联盟模式里，选手们的状态是可变的，选手们存在情绪设定。在『みーてぃんぐ(Meeting)』会面选项里，与选手对话或者使用物品，就会引起情绪变化。而且，可以看到选手数据资料，得知选手的性格与嗜好。
+
+     rank5 2c9b59c2df7a auth=authoritative ans=True 热血足球联盟_honest_gap_manifest.md#L8-L20
+        - declared（《热血足球联盟_必杀全清单.md》）：23 必杀射门（12 角色 + 11 对手）+ 13 一般技 = **36**。
+- delivered（CN/hack 四变体 jf/wl
+  [再索引 w5] status=inconclusive refusal=None
+     rank1 9265c746273b auth=reference_only ans=True 1ang_热血足球联盟图文攻略_20261118.md#L1-L129
+        热血足球3攻略-FC热血足球3(热血足球联盟)游戏图文攻略 - 乐米网一昂
+function doFav(u, t) { }
+日版名：くにおくんの熱血サッカーリーグ
+罗马音：Kunio Kun No 
+     rank2 de8504fe7e4d auth=authoritative ans=False 热血足球联盟_必杀全清单.md#L10-L21
+        - S1 天幻网《FC热血足球联盟困难模式全胜夺冠》转载（乐米网一昂，2022-04-05）：
+（原站 http://1lifeclear.ffsky.cn/56.htm 本机直连失败，用转载副本；逐
+     rank3 3548208d0a2d auth=reference_only ans=False 1ang_热血足球联盟图文攻略_20261118.md#L823-L839
+        比赛中按START键暂停，{A键按３次＋B键按１次＋A键按３次＋B键按１次＋A键按７次}，再按START键解除暂停，听到必杀踢射的发动音效，就成功了。这样就能使全部球员拥有全部必杀技，比如平时不会燕返
+     rank4 2e317b9f1bbf auth=authoritative ans=False setsumei_热血足球说明书_编者中文对照_20261119.md#L7-L10
+        热血足球联盟是 **6 人制**足球，规定时间内进球多的球队获胜。若同分结束比赛，则以 **PK 战**决定胜负。比赛中有犯规（ペナルティ）判定，也可以罚任意球（フリーキック）。
+**1P 单人游玩*
+     rank5 d394a4c3412d auth=reference_only ans=False 1ang_热血足球联盟图文攻略_20261118.md#L131-L158
+        热血联盟模式里，选手们的状态是可变的，选手们存在情绪设定。在『みーてぃんぐ(Meeting)』会面选项里，与选手对话或者使用物品，就会引起情绪变化。而且，可以看到选手数据资料，得知选手的性格与嗜好。
+

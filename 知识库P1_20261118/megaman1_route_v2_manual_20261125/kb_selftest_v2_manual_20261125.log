@@ -1,0 +1,1199 @@
+  [1] 知识库 [1] 清洗丢导航/JS/空表格行且保留正文（丢弃计数可见）
+  [2] 知识库 [2] 反证格：纯链接行与 JS 行不得进正文
+  [3] 知识库 [3] 反证格：空表格行（| | |）不得当正文切进索引
+  [4] 知识库 [4] 反证格：短正文词（燕返）保留、导航词（登录）丢弃——不许过度清洗
+  [5] 知识库 [5] prose 切块带原文行号（可回指 path#L）
+  [6] 知识库 [6] 标题进 heading 字段（检索结果能报小节）
+  [7] 知识库 [7] table 按 25 行切（30 行 => 2 块）
+  [8] 知识库 [8] 反证格：超长段按 HARD_MAX 强制断块（不产出巨块）
+  [9] 知识库 [9] 中文长串整词 + 全部 bigram 成词（燕返/触发 都能命中）
+  [10] 知识库 [10] ASCII 标识符小写成词（set 名可命中）
+  [11] 知识库 [11] 十六进制/RAM 地址成词（$3F6 / 00AA / BD18）
+  [12] 知识库 [12] 反证格：箭头指令序列成词，无箭头文本不产生箭头 token
+  [13] 知识库 [13] corpus_map 通过 schema
+  [14] 知识库 [14] 反证格：corpus_map 未知字段 => SchemaError
+  [15] 知识库 [15] 反证格：revision 未定义 => SchemaError
+  [16] 知识库 [16] 反证格：authority 非法 => SchemaError
+  [17] 知识库 [17] 反证格：kind 非法 => SchemaError
+  [18] 知识库 [18] 反证格：排除索引不给 reason => SchemaError（不许静默跳过）
+  [19] 知识库 [19] 反证格：同一份正文登记两次 => SchemaError
+  [20] 知识库 [20] 反证格：平台不在 PLATFORMS => SchemaError
+  [21] 知识库 [20a] 引用别名指向已登记正文时通过 schema
+  [22] 知识库 [20b] 引用别名指向未登记正文 => SchemaError，禁止静默洗白
+  [23] 知识库 [20c] 引用别名不得指向自身来源
+  [24] 知识库 [21] build 产出块且区分入索引/显式排除（7 入 1 排除）
+  [25] 知识库 [22] 反证格：声明排除的正文不得偷偷进索引，且理由留档
+  [26] 知识库 [23] 增量：源文件未变 => 全部复用（不重复切块）
+  [27] 知识库 [24] 反证格：源文件 sha256 变了 => 不复用旧块
+  [28] 知识库 [25] 反证格：清洗/分词流水线版本变了 => 强制重建（旧块不许冒充新口径）
+  [29] 知识库 [26] 每块都带 source_id/revision/status/authority/text_sha（可溯源可验篡改）
+  [30] 知识库 [27] 索引原子写：不留 .tmp 残件
+  [31] 知识库 [27b] 产物级：全库无巨块（最长块 ≤ HARD_MAX 1200）
+  [32] 知识库 [28] 反证格：语料绑定野 source_id => build 拒（先 ingest 再入库）
+  [33] 知识库 [29] verified_read + authoritative 命中 => pass
+  [34] 知识库 [30] 我方跨版本实测件（*_multi）对同游戏任一版本算本版本证据
+  [35] 知识库 [31] 三态门：只有二手件命中 => inconclusive（不是 pass 也不是 miss）
+  [36] 知识库 [32] 反证格：跨版本出招表不得当本地卡权威（ECK 问 UM 表 => inconclusive + 警告）
+  [37] 知识库 [33] 同一份表问它自己的版本（UM）=> pass（版本对了才是权威）
+  [38] 知识库 [33b] 反证格：权威件确有命中但只匹配单字（或）=> 不算证据，不得升 pass
+  [39] 知识库 [33c] top3 附条件（P1 批准口径）：本版本权威可答件在第2位 => pass 必带 condition，最高分仍是跨版本表且警告保留
+  [40] 知识库 [33d] 正对照：同一查询问 UM，最高分即本版本权威 => pass 且不带条件
+  [41] 知识库 [34] 反证格：手游正文不得混进 NES 查询（平台分区生效）
+  [42] 知识库 [35] 无候选 => miss（本地没收集，不等于『不存在』）
+  [43] 知识库 [36] 有候选但无词命中 => miss（并提示换术语/走延伸段）
+  [44] 知识库 [37] 反证格：require_verified 下无权威命中不得放行
+  [45] 知识库 [38] 空查询 => SchemaError（别空检索）
+  [46] 知识库 [39] 反证格：未定义 revision => SchemaError（不许静默当全库检索）
+  [47] 知识库 [53] kana 占比函数：纯中文=0、5假名2汉字=5/7（阈值判据可复算）
+  [48] 知识库 [54] v3 切块：kana 主导件按章节切成小段且标 lang=ja（不是 700 字大块）
+  [49] 知识库 [55] v3 切块：章节标题前置进块文本，正文 ≤300 字
+  [50] 知识库 [56] 反证格：中文主导件（夹少量日文词）不重切，仍走原切块标 zh
+  [51] 知识库 [57] 域外零语料 => miss+out_of_scope（不许拿本地足球语料冒充电竞答案）
+  [52] 知识库 [58] 第二个域外语料同样拒答（路由不是只认一个域）
+  [53] 知识库 [59] 反证格：显式 revision 过滤优先于域限制（用户点名查本地不误拒）
+  [54] 知识库 [60] 可答性：词命中但库内无 40 位 hex => 证据不足拒答（词命中≠回答问题）
+  [55] 知识库 [61] 正对照：同一问法、库里真有 SHA1 事实 => pass（拒答不是摆烂）
+  [56] 知识库 [62] 反证格：问场数不许拿『6人制』串答（量词映射）
+  [57] 知识库 [63] 跨语量词映射：日文『試合』与中文『场』都能答场数
+  [58] 知识库 [64] 反证格：权威可答件被压到第4位（top3 外）=> 仍 inconclusive（附条件不是无底线）
+  [59] 知识库 [65] 无稠密指纹件 => 明示退回 BM25 主干（不静默顶包）
+  [60] 知识库 [66] 反证格：稠密指纹与索引漂移 => 不用稠密且明示原因（不加载模型）
+  [61] 知识库 [67] 假名串成词：短串整词+bigram、长串只 bigram（与汉字同待遇，纯假名块不再 dl=0）
+  [62] 知识库 [68] 全角字母数字归一：２Ｐ/2p 都产出完整2p词元，且1p可区分
+  [63] 知识库 [68b] 词元反证：纯数字、分隔书写和其他编号不得伪造2p/1p词元
+  [64] 知识库 [69] 真贪心打包：短参数段合并进同一块（首尾参数同块，不再散落零分小块）
+  [65] 知识库 [70] 反证格：两段合计超 300 不得合并，块正文仍 ≤300（贪心不是无上限塞块）
+  [66] 知识库 [71] 跨语扩展：中文触发词追加日文表层形式，并保留完整2p玩家编号
+  [67] 知识库 [71b] 玩家编号反证：一号只扩1p，数量两名不得冒充玩家编号
+  [68] 知识库 [71c] 窄打分反证：人数/玩家分工去掉标题与框架词并保留跨语核心，普通问句不改打分
+  [69] 知识库 [71d] 标题词反证：1v1队战问句保留队友语义、去掉身份词；球队人数扩展不污染其他足球问句
+  [70] 知识库 [72] 反证格：无触发词的问句不扩展（不往查询里掺无关日文词）
+  [71] 知识库 [73] 日文 howto 形态关：セレクト/プレイ/開始 是操作证据（P22/P23 类不再误杀）
+  [72] 知识库 [74] 反证格：日文块没有任何操作形态词 => 仍不可答（形态关不是见日文就放）
+  [73] 知识库 [75] top_window 旋钮：显式 5 让第4位权威件附条件出证（默认仍是 [64] 的 top3）
+  [74] 知识库 [76] 扩展透明：query 结果带 query_expansion 字段（走了哪些日文词可查）
+  [75] 知识库 [77] 反证格：window5 会放行只沾话题词的长背景权威块（假阳性机制）⇒ 默认必须守 top3（2026-11-19 探针 3/4 翻转假阳性，用户授权实测后否决转默认）
+  [76] 知识库 [78] 结构关：≥2 网址的块是来源清单不是答案正文 => 不可答（W14/W27 假阳性根因，形态词再像答案也拦）
+  [77] 知识库 [79] 正对照：单网址不触发结构关（正文带一条出处链接不算来源清单）
+  [78] 知识库 [80] 话题锚：中文 howto 块只沾泛话题词（必杀/触发）无焦点重叠 => 不可答（W11 假阳性根因）
+  [79] 知识库 [81] 正对照：同一问句、块真讲输球后果 => 可答（话题锚不是见 howto 就杀）
+  [80] 知识库 [82] 日文块豁免话题锚：中文焦点词天然不重叠，跨语块仍由形态关把关（P22 类不误杀；lang=ja 显式传入）
+  [81] 知识库 [83] 词法锚：重排把 BM25 top1 挤出 top8 => 锚回第8席，top1 仍是重排选择、不重复占位（Q10 机制：gold BM25第1/重排第11）
+  [82] 知识库 [84] 反证格：BM25 top1 已在榜内/无 BM25 候选 => 原样返回（锚不是无条件加塞，空榜不造块）
+  [83] 知识库 [85] 量词串答：问『几首』块答『11 条』(胜利姿势) => 不可答（X06 假阳性根因，count 量词须匹配『首』）
+  [84] 知识库 [86] 正对照：块真含『8 首』=> 可答（量词关不是见 count 就杀）
+  [85] 知识库 [87] 属性焦点：问『X是什么射门』块只命中主语海月、缺『射门』=> 不可答（X07 假阳性根因）
+  [86] 知识库 [88] 正对照：块真讲射门种类 => 可答（属性焦点不是见射门问句就杀）
+  [87] 知识库 [89] 域泛词停用：howto 块只命中域泛词『球员』(已停用)、缺主语『治疗/受伤』 => 不可答（X25 w3 假阳性根因）
+  [88] 知识库 [90] 正对照+反证 R3：块只 1 个焦点命中『治疗』仍可答 => 可答（证明未实施『≥2 焦点命中』一刀切——那会误杀同义换述真答案，模拟已否）
+  [89] 知识库 [91] 反证格：域泛词球员/射门已停用，但 KOF 域标识词 eck/kof98 不停用（全量停用版误杀 W18 八神庵连招被数据否决，p5_fix_sim_c3_out.txt）
+  [90] 知识库 [92] yesno 焦点闸门：块含『可以』(YESNO_RE 命中)但不讲打雷/击倒/门将 => 不可答（X16 假阳性根因：对照控室段冒充答案）
+  [91] 知识库 [93] 正对照：块真讲打雷击倒门将+含『不能』=> 可答（yesno 焦点闸门不是见 yesno 就杀，有焦点重叠即放行）
+  [92] 知识库 [94] 射门影响形态关：块含雨天/场地/影响但无『射门』=> 不可答（X26 假阳性根因：对照控室段沾天气词但不答射门影响）
+  [93] 知识库 [95] 正对照：块真讲射门+雨天影响 => 可答（射门影响形态关不是见影响问句就杀）
+  [94] 知识库 [96] yesno 隐性肯定：真答案『守门员专用必杀技为龙卷风拳』不含显性是非词 => 专用必杀技 命中 YESNO_RE 判可答（W03 真答案根因：旧校验器把隐性肯定挡在门外）
+  [95] 知识库 [97] 反证格：规则块讲守门员(焦点重叠)但不讲必杀、无是非词 => 不可答（W03 证据错机制：沾守门员冒充答案，intent_ok=False 挡住）
+  [96] 知识库 [98] 反证格：才能/持有 泛词未收进 YESNO_RE（即使焦点重叠仍 intent_ok=False）（模拟证 才能 会让 X16 球员数据块冒充答案引 2 假阳，E4 被否，p7_yesno_sim_out.txt）
+  [97] 知识库 [99] 正对照：既有显性是非词『可以』仍生效 => 可答（P7 只补隐性肯定形态，不废原有 YESNO_RE 词）
+  [98] 知识库 [40] 基线：覆盖/归属/身份/索引同步/溯源六门全绿
+  [99] 知识库 [41] 三态门：只有二手/跨版本正文的版本 => authoritative_ready inconclusive
+  [100] 知识库 [42] 反证格：verified_read 的取证正文未进 corpus_map => 覆盖门红（收而不入库＝白收）
+  [101] 知识库 [43] 反证格：正文挂到别的来源名下（不在其 evidence 列表）=> 归属门红
+  [102] 知识库 [44] 反证格：野 source_id => 归属门红
+  [103] 知识库 [45] 反证格：手游正文被判成 FC 版本（与 games_hit 冲突）=> 身份门红
+  [104] 知识库 [46] 反证格：手改索引块正文 => text_sha 不符判红
+  [105] 知识库 [47] 反证格：来源已降级但索引块仍写 verified_read => 溯源门红
+  [106] 知识库 [48] 反证格：源文件变了索引没重建 => 同步门红
+  [107] 知识库 [49] 三态门：索引未建 => inconclusive（不假装核对过）
+  [108] 知识库 [49a] 引用别名主数据变而索引未重建 => 同步门与溯源门双红
+  [109] 知识库 [49b] 查询时按当前 corpus_map 重绑别名，旧索引不绕过新来源资格
+  [110] 知识库 [49c] 仅引用绑定变化时复用正文切块并刷新引用指纹
+  [111] 知识库 [50] route 第②步先查本地正文，并回报库内块数与 query 命令
+  [112] 知识库 [51] 反证格：索引不存在 => route 如实报 not_built（不假装有正文）
+  [113] 知识库 [52] 反证格：身份未定仍 blocked（知识库接线不得放宽身份门）
+  [114] 知识库 [108] hybrid_only 件通过 schema（index:false + hybrid_only:true 合法）
+  [115] 知识库 [109] 反证格：hybrid_only 非布尔 => SchemaError
+  [116] 知识库 [110] 反证格：hybrid_only 挂 index:true 件 => SchemaError（只能挂 index:false）
+  [117] 知识库 [111] base build 排除 hybrid_only 件（bm25 兜底零回归的构造保证）
+  [118] 知识库 [112] hybrid build 收录 hybrid_only 对照件（富集索引独有）
+  [119] 知识库 [113] base ⊂ enriched：base 块全在富集索引且富集严格更多（再索引只增不改 base）
+  [120] 知识库 [114] 域内 IDF 隔离：同子池 True≠False（池内 N/df/avgdl）但召回块集不变
+  [121] 知识库 [115] 反证：domain_local=False 逐块等于全局 BM25 原公式（兜底臂构造零改动）
+  [122] 知识库 [116] 自动选臂：hybrid 富集件无稠密指纹 => 退回 base+全局（不静默顶包）
+  [123] 知识库 [117] 显式 index_hybrid.json => 域内 IDF（尊重调用方文件名）
+  [124] 知识库 [118] 反证：显式 base 索引名 => 全局 IDF（不因富集件存在误切域内）
+  [125] 知识库 [119] 正对照：hybrid 富集件就绪 => 自动切富集索引+域内 IDF（默认检索随环境升级）
+  [126] 知识库 [120] 缺 numpy：ready 返回 (False,原因) 不抛（可选依赖隔离）
+  [127] 知识库 [121] 缺 numpy：enhance 返回 (None,None,原因) 不抛
+  [128] 知识库 [122] 缺 numpy 环境全链路 query 仍走 bm25 兜底并 pass
+  [129] 知识库 [123] 故障注入降级与冷启动 bm25 逐格一致（status/hits/score/counts）
+  [130] 知识库 [124] 降级身份一致：bm25_only+base 索引名+无域内注记+原因明示（不静默顶包）
+  [131] 知识库 [125] topk 契约 bm25 臂：topk=3 返回 ≤3
+  [132] 知识库 [126] topk 契约 hybrid 臂：mock 增强全序也只返回 topk=3（两臂同契约）
+  [133] 知识库 [127] selected_evidence：pass 恰带 1 块放行依据且位于 top_window 内
+  [134] 知识库 [128] 反证格：miss 不出 selected_evidence（无放行不得伪造出证）
+  [135] 知识库 [129] 富集索引审计：hybrid_only 合法收录不再误报漂移
+  [136] 知识库 [130] base 审计：hybrid_only 排除在外仍判同步
+  [137] 知识库 [131] 反证格：富集索引丢了 hybrid_only 块 => 同步门红（不是无脑放行）
+  [138] 知识库 [132] 反证格：base 误收 hybrid_only 块 => 同步门红
+  [139] 知识库 [133] 版本钉解析：ECK/98UM 各自命中，无版本词不报
+  [140] 知识库 [134] 反证格：拉丁词边界（checkeck/98umx 子串不误报）
+  [141] 知识库 [135] 版本钉只暴露信息：显式 revision 问句加 ECK 后 hits/score/status 逐格不变
+  [142] 知识库 [136] v2 反例：金标在 hits 但放行依据是无关块 => v1 过/v2 不过（Q10 型假 pass）
+  [143] 知识库 [137] v2 正格：放行依据就是金标块 => 正确出证
+  [144] 知识库 [138] v2 反例：pass 无 selected_evidence => 不过（契约缺失不放行）
+  [145] 知识库 [139] v2 拒答档与 v1 同口径：miss 过/pass 不过且记错误出证
+  [146] 知识库 [140] v2 版本守卫收紧：top1 非 UM 但放行依据是 UM 块 => v2 不过
+  [147] 知识库 [141] v2 分表逐格计数==逐题求和；gold_in_topk 档 v1/v2 同口径
+  [148] 知识库 [142] v2 引用有效性反证：放行块 locator 无行号锚 => citation_valid=False
+  [149] 知识库 [199] 自动路由：LOL+DOTA2 同时命中两域，不挑单一域
+  [150] 知识库 [200] 反证格：拉丁子串不误报；强词命中时不被共享弱词拖进第二域
+  [151] 知识库 [201] 生产路径：LOL+DOTA2 自动查两域且都诚实报本地无料，不落全库泛搜
+  [152] 知识库 [202] 多域正例：一域有权威证据也不合并成总pass；逐域证据保留且总体要求拆分
+  [153] 知识库 [203] 查询留痕：动态落到探针KB目录，记出证定位不记全文（真实目录零污染）
+  [154] 知识库 [203b] 多域诊断只记外层一次：逐域状态/证据不丢，未传log_sink不写真实日志
+  [155] 知识库 [204] 真实标题反证：拳皇15+冠军不被泛词拖成KOF98或LOL（版本未登记须诚实留空）
+  [156] 知识库 [205] 热血格斗传说：官方四输入可答；KT公式二手不升pass；Rev.B原版不借补丁能力且补丁自身仍非权威
+  [157] 知识库 [206] KT候选计算：生日公式可算且始终reference_only，不产生硬证据
+  [158] 知识库 [207] KT候选边界：12/31与闰日2/29有效，公式按20项周期循环
+  [159] 知识库 [208] 反证格：非法月份/日期、布尔与字符串不得混入KT候选
+  [160] 知识库 [143] 审计撤回段识别：必杀全清单 L65/L230/L257 三处撤回/作废均在册
+  [161] 知识库 [144] 反证格：继承检查只扫 authoritative 件（reference_only 文件不进清单）
+  [162] 知识库 [145] 四游戏明确路由：LOL/DOTA/CS2/VAL 各归其域（强词命中），空语料 corpus_available=False
+  [163] 知识库 [146] 生产路径：CS2/VAL 问句拒答 out_of_scope，candidates=0（不落全库泛搜）
+  [164] 知识库 [147] 恒量反证：既有 86 题（26评测+60探针）路由逐格不变（新域不抢旧问句）
+  [165] 知识库 [148] 选题层 content_domains 推导不受空语料新域影响（域锚点/入口B口径不变）
+  [166] 知识库 [149] schema_v2 冻结件：18表+双时间列齐+权限非法值被拒+同业务ID多行版本可存（v1主键缺陷反证）；v1原件字节未动
+  [167] 知识库 [150] source_policy_v1：E01–E19 齐全+五维枚举合法+GRID/Steam商用denied+VLR自动denied
+  [168] 知识库 [151] 反证格：403未核=unknown非denied非allowed（E06）；免key官方渠道=allowed（E02）；代码MIT≠数据商用（E09）
+  [169] 知识库 [152] init_db 幂等：连建两次仍 18 表+权限种子 19 行
+  [170] 知识库 [153] 夹具导入：2实体2证据1快照，缺name者跳过不造空实体（反证）
+  [171] 知识库 [154] 证据可回溯：JSON Pointer 定位+原文往返一致+字段级绑定2条
+  [172] 知识库 [155] 幂等反证：同字节重复导入四计数全0（不增殖）
+  [173] 知识库 [156] 唯一证据契约：pass恰1块+快照sha对得上+答案带截至补丁条件+zh_CN名/称号映射正确（实测语言包name/title语义相反）
+  [174] 知识库 [157] 版本钉硬过滤：未导入补丁miss；英文别名可查；同名歧义要澄清不猜
+  [175] 知识库 [215] 静态实体扩展：item/summoner 各1实体1证据1快照，英文ID别名可查
+  [176] 知识库 [216] 静态查询：装备按external_id、技能按英文别名定位，各绑定唯一快照证据且售价/冷却/范围原样输出
+  [177] 知识库 [217] 类型白名单：未登记的静态实体类型拒绝，不把装备伪装成英雄
+  [178] 知识库 [264] Targeted 静态正例：canonical/external_id 均结构化pass，补丁+答案+唯一JSON Pointer+revision齐全
+  [179] 知识库 [265] Targeted 歧义关闭：同名多实体、多实体连接、连接未知实体均澄清且零出证
+  [180] 知识库 [266] Targeted 缺版本：问句补丁与显式revision均version_not_collected，绝不拿最新版顶包
+  [181] 知识库 [267] Targeted Faker拒答：动态队伍归属继续缺数据，静态英雄库不凭常识作答
+  [182] 知识库 [268] Targeted 多域不合并：LOL静态域可逐域pass，DOTA2缺料，外层仍inconclusive且selected_evidence为空
+  [183] 知识库 [269] Targeted 窄接管：非静态问句/英雄售价不接管，装备售价与召唤师技能冷却按正确静态类型出证
+  [184] 知识库 [270] Targeted 文本恒量反证：显式game过滤保持旧文本pass的status/hits/counts/selected_evidence逐格一致
+  [185] 知识库 [272] Targeted 裸属性句：英雄/装备/技能无疑问词无LOL上下文仍按唯一实体出结构化证据
+  [186] 知识库 [273] Targeted 未知实体：未唯一识别时不接管，继续原路由；LOL域仍诚实out_of_scope且不静态出证
+  [187] 知识库 [274] Targeted 裸问句缺版本：点名未导入补丁即version_not_collected，不拿最新版顶包
+  [188] 知识库 [275] Targeted 短别名上下文：裸英文技能不接管、LOL上下文接管；唯一装备外部ID可直接定位
+  [189] 知识库 [271] Targeted 消费方闭环：知识对照不降级unanchored且透传结构化字段，现有选题卡按hits显示出证
+  [190] 知识库 [276] Targeted 只读反证：全部自动问答静态查询后临时SQLite字节与mtime不变
+  [191] 知识库 [277] Targeted 候选生产正例：中英文/strict/显式revision均候选索引唯一出证，标记非整款且不借生产索引
+  [192] 知识库 [278] Targeted 候选拒答与多域：缺出招表/PAL/近名作失败关闭，多域保留本域证据但外层绝不合并pass
+  [193] 知识库 [279] Targeted 候选哈希反证：冻结哈希不符即失败关闭，零hit零出证且不回退生产文本
+  [194] 知识库 [280] Targeted 候选消费闭环：内容域锚点不降级，候选SHA/唯一证据透传选题卡，查询日志只落临时目录
+  [195] 知识库 [281] Targeted 候选恒量反证：数量问句不假pass，全角/多空格别名可查而洛克人20不误路由，候选输入字节与mtime全未变 {"count_not_pass": true, "count_no_evidence": true, "fullwidth_alias_pass": true, "other_installment_not_candidate": true, "other_installment_unrouted": true, "inputs_unchanged": true}
+  [196] 知识库 [283] Targeted 洛克人1候选生产正例：中文全角/strict/显式revision均候选唯一出证且保持非整款标记
+  [197] 知识库 [284] Targeted 洛克人1拒答与多域：角色创建缺证/PAL/系列歧义关闭，多域只保留域内证据
+  [198] 知识库 [285] Targeted 洛克人1失败关闭：冻结哈希不符与候选索引缺失均零hit零出证且不回退生产文本
+  [199] 知识库 [286b] 洛克人1候选日志拒绝写到候选目录外
+  [200] 知识库 [286] Targeted 洛克人1消费闭环：内容域不降级、SHA与唯一证据透传，洛克人10不误路由且候选输入零写动
+  [201] 知识库 [287] Targeted 洛克人1官方说明书：操作/能量/Magnet Beam/Robot Master均strict唯一出证且来源为扫描核验手册
+  [202] 知识库 [288] Targeted 洛克人1说明书扩展不回归：原坐标/BizHawk/定位题仍命中旧来源，角色创建仍拒答且旧候选零写动
+  [203] 知识库 [289] Targeted 洛克人1说明书冻结契约：题数逐格守恒、手册金标可回溯、8个短摘录且完整PDF不入候选
+  [204] 知识库 [218] v2→v3 在线迁移：原实体保留、外键零异常、新类型可写且重复初始化幂等
+  [205] 知识库 [219] 覆盖看板：只读生产聚合文本+三类电竞证据；动态表0不冒充真实覆盖；域级评测不重复摊到知识类型；输入mtime+sha不变
+  [206] 知识库 [158] 权限闸门反证：automated_access=denied 时导入被拦
+  [207] 知识库 [159] 修订链：当前查询用修正版；knowledge_as_of回放旧版；superseded_at当刻边界归新版
+  [208] 知识库 [160] 赛果状态反证：cancelled/pending不pass，winner字段有值也不从比分推断
+  [209] 知识库 [161] 证据资格反证：撤稿证据/未绑定字段都不pass
+  [210] 知识库 [162] 选择器白名单反证：非白名单过滤列被拒（注入面），表名同样走白名单
+  [211] 知识库 [163] 阵容时效陷阱对：只有旧闭区间名单→现状拒冒充；同库历史as_of查询pass（正对照）
+  [212] 知识库 [164] 结束未知≠开放反证+区间左闭右开：as_of=valid_to已无效、前一日有效
+  [213] 知识库 [165] 官宣≠生效：未来生效的官宣转会不会切换当前归属，只进附注
+  [214] 知识库 [166] 赛事补丁硬过滤：只认当局记录补丁，公网更新补丁不顶替；未记录返回None诚实
+  [215] 知识库 [167] 刷新失败只留痕：last_verified_at与既有ok快照逐字节一致，失败不刷核验时间
+  [216] 知识库 [282] 自动路由恒量反证：unrouted全库假pass清空出证并拒答，手动全库与已锚定候选正例不受影响
+  [217] 知识库 [反查] 电竞真实件未被探针写动 facts_v1.db（状态一致）
+  [218] 知识库 [反查] 电竞真实件未被探针写动 snapshots（状态一致）
+  [219] 知识库 [168] 选择器正对照：金表行过七项核查被选中（排他/队内/原生条件正确解析）
+  [220] 知识库 [169] 方法学段不得承担归属出证：来源资格够但无归属行被拒（Q02 病假）
+  [221] 知识库 [169b] 生产初筛同步排他归属：方法学段有原生词但无同行排他归属被拒；金表同项恒量正对照放行
+  [222] 知识库 [170] 『会使』≠『只有他会』：排他问无仅/只有标志被肯否关拒
+  [223] 知识库 [170b] 恒量正对照：同块补『仅』即过肯否关（证明拒的是排他形态不是块本身）
+  [224] 知识库 [170c] 已有合格证据优先：两个块都过核查时保留 incumbent，不无理由换证
+  [225] 知识库 [170d] 初筛反证：生产可答性已拒的块不得被选择器单独救活
+  [226] 知识库 [171] 同技能错角色：选择器 mechanics 放行但金标角色核对判失败（评估层必须抓住）
+  [227] 知识库 [172] 同角色错技能：问燕返而块只归属龙卷拳，主体一致关拒
+  [228] 知识库 [173] 同单位错对象：问热血队而块答巴西队，队内范围关拒
+  [229] 知识库 [173b] 恒量正对照：同数量改热血队即过（证明拒的是范围不是数字）
+  [230] 知识库 [174] 同哈希错文件：40位哈希在但对象词是乙号不是甲号，数值归属关拒
+  [231] 知识库 [174b] 恒量正对照：同哈希改甲号文件即过（证明拒的是对象不是哈希形态）
+  [232] 知识库 [175] 同游戏错版本：revision_match=False 来源资格关拒
+  [233] 知识库 [176] 同玩家错模式：问合作而块答对战，条件覆盖关拒
+  [234] 知识库 [176b] 同模式错玩家：问二号而块答1P，玩家编号关拒
+  [235] 知识库 [176c] 恒量正对照：合作+2P+GK 同行即过
+  [236] 知识库 [177] 肯否互换：否定问而块给肯定证据，肯否关拒
+  [237] 知识库 [177b] 恒量正对照：同块改否定即过
+  [238] 知识库 [178] 撤回旧结论：status=retracted 来源资格关拒（不冒充已验证）
+  [239] 知识库 [179] 正确块在列表但低分位：方法学第1被拒、金表第2被选中，beyond_window 标记策略调整（不偷翻默认）
+  [240] 知识库 [180] 复杂问题（因果）：不强行归类，返回材料+缺口不下结论
+  [241] 知识库 [181] 全游戏排他反证：巴西 Bûnyo 使用块推翻『全游戏唯一』主张，整问拒答
+  [242] 知识库 [182] 队内范围恒量正对照：同巴西块在队内问下不构成反证，金表仍被选中
+  [243] 知识库 [183] 真实Q02修复：问框架退评分后金表第1位过七项核查，生产默认pass且方法学段仍被拒
+  [244] 知识库 [189] 生产默认修复：未启用选择器时 Q02 已由生产可答性直接判 pass，证据恰为金表
+  [245] 知识库 [190] audit 只报告不改判：看见窗口内金表后保留生产 pass/同一证据
+  [246] 知识库 [191] scoped 窗口内正对照：金表已在 top3，无需扩窗即可放行
+  [247] 知识库 [192] 显式扩窗边界：候选本就在窗口内时不伪报跨窗，仍保持 pass/金表
+  [248] 知识库 [197] 真实Q03修复：标题词退评分后按键序列金表第2位，生产默认pass
+  [249] 知识库 [198] 按键输入证据形态恒量反证：完整A/B计数序列通过，单A计数与纯方法描述被拒
+  [250] 知识库 [199] 真实Q06召回修复：上场→プレイ跨语扩展后日文金表第1位，生产pass且唯一证据为金表
+  [251] 知识库 [200] 评分词边界：仅显式过滤的排他/按键问退框架词，普通问与全库检索原样保留
+  [252] 知识库 [201] 非目标回归：W22要素盘点输入问仍由生产路径pass且未触发按键序列专用评分
+  [253] 知识库 [193] scoped/replace 边界：复杂问句 scoped 保留原判，replace 不强行下结论
+  [254] 知识库 [194] 真实Q10不换证：主体词修正后原3v3限制块过核查并保留为唯一证据
+  [255] 知识库 [195] 选择器模式反证：未知模式拒绝，不允许静默按 replace 执行
+  [256] 知识库 [196] 扩窗反证：未显式选择模式时单独打开扩窗开关拒绝
+  [257] 知识库 [196b] 选择器正文失败关闭：索引读不到时拒绝降级到截断 snippet
+  [258] 知识库 [196c] 选择器缺块失败关闭：命中块正文不在索引时拒绝用 snippet 补证据
+  [259] 知识库 [184] 阶段4日文全角归一正对照：中文问句穿透２Ｐ協力/ＧＫ全角块，属性+条件双过
+  [260] 知识库 [184b] 日文块答2P=FW（位置值不同）：属性+条件仍过全角归一，答案对错属金标评估层非选择器
+  [261] 知识库 [185] 词面命中假pass反例：名单表只有ＧＫ/ポジション无玩家编号同行，属性关拒
+  [262] 知识库 [186] 真实Q08候选：玩家分工金标过七项并被选中，名单表词面假pass被拒；生产只按实际窗口判定
+  [263] 知识库 [187] 精准引用覆盖：Q08决定性句在源文L48，块定位覆盖L47-L48；末行按300字上限截断且正文确为原文前缀
+  [264] 知识库 [187b] 日文换行定位反证：跨空行合并的末块必须覆盖真实末行，不得少算也不得越界
+  [265] 知识库 [187c] 题集金标同步：三套题集Q06/Q08均覆盖源文L48且锚点等于当前生产金标块
+  [266] 知识库 [188] 人物档案擅长守门反例：全角ＧＫ/キーパー在但无玩家编号同行，属性关拒（答不了谁操作）
+  [267] 知识库 [188b] 恒量正对照：同块补一行玩家编号+位置，属性+条件即过（拒的是缺编号非ＧＫ词面）
+  [268] 知识库 [220] 签名题恒量反证：任意引号不算签名，签名判据/ひっさつOK才算
+  [269] 知识库 [221] 位置题主体恒量反证：被问人物不出现在证据行即拒，元永门将正对照过
+  [270] 知识库 [222] 片段资格：S1 小节下的无标记子句继承二手资格，不随整件权威放行
+  [271] 知识库 [223] 片段资格正对照：同小节显式我方实测可覆盖继承来源
+  [272] 知识库 [224] 片段资格：作废句单独判 retracted，不得借同块其他句放行
+  [273] 知识库 [225] 混合块不连坐：撤回单元格排除，签名单元格仍可出证且摘录落到签名
+  [274] 知识库 [252] 显式转述资格：『据攻略称』不得继承整件权威
+  [275] 知识库 [253] 继承转述正对照：同块显式我方才实测可覆盖，摘录不落转述句
+  [276] 知识库 [254] 同主张撤回冲突：旧主张与撤回句同块时不得借前句放行
+  [277] 知识库 [255] 来源编号不等于二手：裸S1标题下事实可出证，摘录不落同块转述句
+  [278] 知识库 [256] 显式带来源编号的转述仍降级：『转述自S7』不得因裸引用修正而放行
+  [279] 知识库 [259] 普通条目的待实测不跨行继承：后一条独立事实仍可出证
+  [280] 知识库 [260] 已知二手别名沿标题继承：汇总件不得把S1转述升成权威
+  [281] 知识库 [261] 本机实测标题解除二手继承，同文档实测事实仍可出证
+  [282] 知识库 [262] 未登记裸编号不连坐：S99没有来源映射时仍按原片段规则判断
+  [283] 知识库 [263] 别名资格从主数据解析：同游戏权威来源可支撑汇总件片段
+  [284] 知识库 [229] 严格片段摘录绑定人物：元永须配げんえい的GK，不得误摘前一位球员FW
+  [285] 知识库 [226] fragment_policy 非法值拒绝，禁止静默回落 legacy
+  [286] 知识库 [227] 真实Q18：默认保留金标定位，strict按S8二手资格拒答且不出证
+  [287] 知识库 [228] 真实P24：窄同义扩展把同口径/回放无法对齐金标提进生产窗口
+  [288] 知识库 [257] 真实Q02-Q05/X03/X04/X23：已知S1二手别名在strict拦截，默认臂行为不变
+  [289] 知识库 [258] 真实Q01：搜狐二手总量口径仍不得因裸引用修正而升格放行
+  [290] 知识库 [230] 真实X21：官方人物表出证且strict摘录绑定げんえい的GK，不误摘相邻球员
+  [291] 知识库 [231] 查询日志聚合：总数/去重/状态/证据率/坏行/空问/缺指纹/契约异常逐格可复算
+  [292] 知识库 [231b] schema_v2多域聚合：采用日志逐域状态/证据，不把总体inconclusive摊给每域
+  [293] 知识库 [232] 射门方法题：日文守门员操作段不得冒充射门答案，真实Q16错误pass撤回
+  [294] 知识库 [233] 玩家分工题：位置名单无玩家编号仍不得出证；真实Q08由L47-L48金标正确修复
+  [295] 知识库 [232c] 隐藏结局题：只谈秘技触发不得出证，扩窗选择器撤回Q17错证
+  [296] 知识库 [229-X05] 真实继承源探针：legacy假pass被strict片段资格拦截
+  [297] 知识库 [229-X17] 真实继承源探针：legacy假pass被strict片段资格拦截
+  [298] 知识库 [229-X19] 真实继承源探针：legacy假pass被strict片段资格拦截
+  [299] 知识库 [229-X20] 真实继承源探针：legacy假pass被strict片段资格拦截
+  [300] 知识库 [229-X30] 真实继承源探针：legacy假pass被strict片段资格拦截
+  [301] 知识库 [232b] NLI 校准失败必须留档：24 样本不倒推绿灯，macro-F1 不越界
+  [302] 知识库 [233b] NLI 缺完整 claim 不运行，禁止拿问题冒充主张
+  [303] 知识库 [234] 指纹/输入序列等结构化事实不交给 NLI 替代硬判据
+  [304] 知识库 [235] NLI 只能接在身份/版本/权限硬关之后
+  [305] 知识库 [236] NLI 支持只附影子提示，不新增 pass、不改出证块
+  [306] 知识库 [237] NLI 矛盾只标 veto_candidate，绝不擅自推翻生产 pass
+  [307] 知识库 [238] 生产 query 缺 claim 返回 not_run，且不拖垮检索
+  [308] 知识库 [239] 真实失败校准件让生产 NLI 保持关闭，不加载模型硬跑
+  [309] 知识库 [240] query_auto 把 NLI 参数透传全部命中域，不漏域
+  [310] 知识库 [241] NLI 日志只落标签/概率/阈值，不落 claim 或 premise 正文
+  [311] 知识库 [242] 诊断不吞错：非法选择器仍抛 SchemaError
+  [312] 知识库 [242b] 异常诊断留痕：错误状态/调用ID/零计数入同一有界契约
+  [313] 知识库 [243] 日志边界恒量反证：超长问/原因/证据/域/事件全部截断，正文与凭证字段不落盘
+{
+ "q": "热血队内，燕返原生只有哪个角色会使？",
+ "game": "nekketsu_soccer2",
+ "revision": null,
+ "platform": null,
+ "want": [],
+ "route": {
+  "domain": "retro_soccer",
+  "game_ids": [
+   "nekketsu_soccer2"
+  ],
+  "revisions": [],
+  "corpus_available": true,
+  "matched": [
+   "燕返",
+   "热血队"
+  ],
+  "tier": "strong"
+ },
+ "index_used": "index.json",
+ "index_sha256": "d46b59da3ada9eeebf63940e0a4468bb395058c2881da06273480ce5e0b0b8da",
+ "counts": {
+  "candidates": 178,
+  "hits": 19,
+  "answerable": 3,
+  "strong": 2
+ },
+ "query_term_filter": {
+  "mode": "attribution",
+  "removed": [
+   "个角",
+   "会使",
+   "只有",
+   "哪个",
+   "有哪",
+   "热血",
+   "热血队内",
+   "生只",
+   "色会",
+   "血队",
+   "角色",
+   "返原",
+   "队内"
+  ]
+ },
+ "retrieval_note": "稠密指纹件未建（py -3 -m taspipe.kb dense）",
+ "retrieval": "bm25_only",
+ "authority_warnings": [
+  "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+  "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+  "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+  "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+  "sohu_game 是二手件（reference_only），须与官方件或我方实测交叉核对",
+  "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+  "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+  "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+  "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+  "sohu_game 是二手件（reference_only），须与官方件或我方实测交叉核对",
+  "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对"
+ ],
+ "status": "pass",
+ "hits": [
+  {
+   "chunk_id": "f7f8e8316295",
+   "score": 11.448,
+   "source_id": "local_soccer2_super_list",
+   "status": "verified_read",
+   "authority": "authoritative",
+   "revision": "nekketsu_soccer2_multi",
+   "game_id": "nekketsu_soccer2",
+   "platform": "NES",
+   "revision_match": true,
+   "locator": "_工具脚本/taspipe/游戏包/热血足球联盟_必杀全清单.md#L70-L85",
+   "heading": "3. 一般个人技/必杀技（S1 发动法原文）",
+   "matched_terms": [
+    "原生",
+    "燕返"
+   ],
+   "snippet": "| 技 | 日文 | 发动 | 备注 |\n|---|---|---|---|\n| 爆裂攻击(铁膝盖) | ばくれつあたっく | 跳跃**落地时按 B**，可连按连发 | 着地技；≥4 人会 |\n| 燕返 | つばめがえし | 带球跳跃立即出现(空中翻跟头) | 仅 Yoritsune 原生；秘技后全员 |\n| 必杀运球(旋风撞人) | ひっさつどりぶる | 带球中连按两次上 或 两次下 | 撞倒对方含门将(概率) |\n| 龙卷拳(升龙拳) | とるねーどぱんち | 方向左/右",
+   "answerability": {
+    "answerable": true,
+    "intent": "identity",
+    "focus_ok": true,
+    "pattern_ok": true,
+    "intent_ok": true,
+    "focus_hit": [
+     "原生",
+     "燕返"
+    ],
+    "url_list": false,
+    "topic_anchor_ok": true,
+    "exclusive_attribution_ok": true,
+    "position_subject_ok": true,
+    "position_subjects": [],
+    "shot_method_ok": true,
+    "player_role_ok": true,
+    "ending_capability_ok": true,
+    "input_sequence_ok": true,
+    "team_shot_ok": true,
+    "technique_ok": true,
+    "multiplayer_mode_ok": true
+   }
+  },
+  {
+   "chunk_id": "8996c7a159ef",
+   "score": 10.311,
+   "source_id": "local_soccer2_super_list",
+   "status": "verified_read",
+   "authority": "authoritative",
+   "revision": "nekketsu_soccer2_multi",
+   "game_id": "nekketsu_soccer2",
+   "platform": "NES",
+   "revision_match": true,
+   "locator": "_工具脚本/taspipe/游戏包/热血足球联盟_必杀全清单.md#L137-L158",
+   "heading": "5. 生产接线（11-14 实测更新）",
+   "matched_terms": [
+    "原生",
+    "燕返"
+   ],
+   "snippet": "⇒ 现状改成 **untested（未在任何有效条件下测过）**，不是\"不可触发\"。用户 11-14 亲口\"其实打出过好多次必杀了\"，\n有效条件下的真阳性一定存在，责任在我的测量方式，不在 ROM。\n真采 23 必杀仍需正对照：先在**当前 jf ROM** 上按 §6 的三条铁律重跑触发链，仍全负再谈日版原版 ROM（网盘仅两 hack 无日版；外部=门控待批）。\n本清单 23+13 项在 CN/hack 上全部标 **honest gap（不可复现，证据见下）**，不冒充",
+   "answerability": {
+    "answerable": false,
+    "intent": "identity",
+    "focus_ok": true,
+    "pattern_ok": false,
+    "intent_ok": true,
+    "focus_hit": [
+     "原生",
+     "燕返"
+    ],
+    "url_list": false,
+    "topic_anchor_ok": true,
+    "exclusive_attribution_ok": false,
+    "position_subject_ok": true,
+    "position_subjects": [],
+    "shot_method_ok": true,
+    "player_role_ok": true,
+    "ending_capability_ok": true,
+    "input_sequence_ok": true,
+    "team_shot_ok": true,
+    "technique_ok": true,
+    "multiplayer_mode_ok": true
+   }
+  },
+  {
+   "chunk_id": "3f1cfd48b780",
+   "score": 7.528,
+   "source_id": "1ang_com",
+   "status": "verified_read",
+   "authority": "reference_only",
+   "revision": "nekketsu_soccer2_fc_jp",
+   "game_id": "nekketsu_soccer2",
+   "platform": "NES",
+   "revision_match": true,
+   "locator": "_工具脚本/taspipe/游戏包/来源库/取证/1ang_热血足球联盟图文攻略_20261118.md#L525-L536",
+   "heading": "よりつね(Yoritsune)",
+   "matched_terms": [
+    "燕返"
+   ],
+   "snippet": "体力50，踢射力24，防御力20，走力类型A\n必杀技：『にんじゃしゅーと(Ninja Shoot)』（忍者踢射）、『つばめがえし(Tsubamegaeshi)』（燕返）\n性格：难以捉摸\n喜好：梅干\n厌恶：偶像歌手\n简介：『服部学園』所属（与服部有关的，十之八九与忍者、功夫高手有关，「服部半蔵」扬名后世）。他的移动能力很高，贵重的万能型球员，会用燕返（这里的「燕返し」，与「佐々木小次郎」得意技能同名），也就是空中翻跟头。担当前锋时，连续使用必杀踢射。缺点是命中率低，要想提升命中",
+   "answerability": {
+    "answerable": false,
+    "intent": "identity",
+    "focus_ok": true,
+    "pattern_ok": false,
+    "intent_ok": true,
+    "focus_hit": [
+     "燕返"
+    ],
+    "url_list": false,
+    "topic_anchor_ok": true,
+    "exclusive_attribution_ok": false,
+    "position_subject_ok": true,
+    "position_subjects": [],
+    "shot_method_ok": true,
+    "player_role_ok": true,
+    "ending_capability_ok": true,
+    "input_sequence_ok": true,
+    "team_shot_ok": true,
+    "technique_ok": true,
+    "multiplayer_mode_ok": true
+   }
+  },
+  {
+   "chunk_id": "b5a2c9ad96c4",
+   "score": 6.702,
+   "source_id": "local_soccer2_super_list",
+   "status": "verified_read",
+   "authority": "authoritative",
+   "revision": "nekketsu_soccer2_multi",
+   "game_id": "nekketsu_soccer2",
+   "platform": "NES",
+   "revision_match": true,
+   "locator": "_工具脚本/taspipe/游戏包/热血足球联盟_必杀全清单.md#L262-L264",
+   "heading": "8-6 对手 11 队补强（S10 逐队 + S3 名称）",
+   "matched_terms": [
+    "燕返"
+   ],
+   "snippet": "名称已知仍仅 3：巴西食人鱼（S3）/阿根廷香蕉（S3）/塞内加尔白鸟（S1/S10）。S10 给了其余各队的**行为侧写**（喀麦隆 Dakosuta 必杀可吹飞强豪门将；巴西 Bûnyo 速度快+燕返、Santosu 命中强、门将 Rodorigesu 与德国 Burême 同级最强；意大利连续必杀+门将弱点在禁区上方、巴西门将弱点在禁区下方；德国不会燕返故必杀概率低；墨西哥全员面具）。**结论维持：8 队必杀名称文献确无，只能实测看球变形再命名。**\n胜利姿势全 11 ",
+   "answerability": {
+    "answerable": false,
+    "intent": "identity",
+    "focus_ok": true,
+    "pattern_ok": false,
+    "intent_ok": true,
+    "focus_hit": [
+     "燕返"
+    ],
+    "url_list": false,
+    "topic_anchor_ok": true,
+    "exclusive_attribution_ok": true,
+    "position_subject_ok": true,
+    "position_subjects": [],
+    "shot_method_ok": true,
+    "player_role_ok": true,
+    "ending_capability_ok": true,
+    "input_sequence_ok": true,
+    "team_shot_ok": true,
+    "technique_ok": true,
+    "multiplayer_mode_ok": true
+   }
+  },
+  {
+   "chunk_id": "42b773880ef0",
+   "score": 6.331,
+   "source_id": "local_soccer2_super_list",
+   "status": "verified_read",
+   "authority": "authoritative",
+   "revision": "nekketsu_soccer2_multi",
+   "game_id": "nekketsu_soccer2",
+   "platform": "NES",
+   "revision_match": true,
+   "locator": "_工具脚本/taspipe/游戏包/热血足球联盟_必杀全清单.md#L24-L33",
+   "heading": "1. 发动与状态规则（S1 原文，生产闸门依据）",
+   "matched_terms": [
+    "燕返"
+   ],
+   "snippet": "- 必杀踢射：持球跳（A+B）到**最高点按 B**；**发动时不能按方向键**，否则变成挑球不是人球同跳。\n- 难度：`やさしい` 容易 = 敌我**都不能**发动必杀射门；`ふつう` 普通 = 次次发动；`むずかしい` 困难 = 仅会燕返者 100%。\n⇒ 采集必须在普通难度（导航默认值待实测确认；若必杀不触发先查难度）。\n- 秘技：比赛中 Start 暂停 → A×3 B×1 A×3 B×1 A×7 → Start 解除，听到必杀音效=成功；全员获得全部**技能**（燕",
+   "answerability": {
+    "answerable": true,
+    "intent": "identity",
+    "focus_ok": true,
+    "pattern_ok": true,
+    "intent_ok": true,
+    "focus_hit": [
+     "燕返"
+    ],
+    "url_list": false,
+    "topic_anchor_ok": true,
+    "exclusive_attribution_ok": true,
+    "position_subject_ok": true,
+    "position_subjects": [],
+    "shot_method_ok": true,
+    "player_role_ok": true,
+    "ending_capability_ok": true,
+    "input_sequence_ok": true,
+    "team_shot_ok": true,
+    "technique_ok": true,
+    "multiplayer_mode_ok": true
+   }
+  },
+  {
+   "chunk_id": "a1281da97fd0",
+   "score": 5.941,
+   "source_id": "1ang_com",
+   "status": "verified_read",
+   "authority": "reference_only",
+   "revision": "nekketsu_soccer2_fc_jp",
+   "game_id": "nekketsu_soccer2",
+   "platform": "NES",
+   "revision_match": true,
+   "locator": "_工具脚本/taspipe/游戏包/来源库/取证/1ang_热血足球联盟图文攻略_20261118.md#L653-L656",
+   "heading": "ぶらじる | Brazil | 巴西",
+   "matched_terms": [
+    "燕返"
+   ],
+   "snippet": "实力仅次于意大利的强豪。使用燕返，连续发动强力必杀踢射。最好不要让他们带球突破到热血一侧的阵地。阵型2-2-1。胜利姿势如同里约热内卢狂欢节上的舞蹈。值得注意的是，中场球员『ぶーにょ(Bûnyo)』速度很快，频繁使用燕返，如同热血队里的『よりつね(Yoritsune)』，一定要盯住他，不要让他拿球。后卫『さんとす(Santosu)』命中很强，而且体格很好，即使对手的必杀踢射打在他身上，也很难贯通过去。门将『ろどりげす(Rodorigesu)』命中很强，对手的必杀踢射想把他吹飞",
+   "answerability": {
+    "answerable": false,
+    "intent": "identity",
+    "focus_ok": true,
+    "pattern_ok": false,
+    "intent_ok": true,
+    "focus_hit": [
+     "燕返",
+     "血队"
+    ],
+    "url_list": false,
+    "topic_anchor_ok": true,
+    "exclusive_attribution_ok": true,
+    "position_subject_ok": true,
+    "position_subjects": [],
+    "shot_method_ok": true,
+    "player_role_ok": true,
+    "ending_capability_ok": true,
+    "input_sequence_ok": true,
+    "team_shot_ok": true,
+    "technique_ok": true,
+    "multiplayer_mode_ok": true
+   }
+  },
+  {
+   "chunk_id": "8e34d9a96bc7",
+   "score": 5.436,
+   "source_id": "1ang_com",
+   "status": "verified_read",
+   "authority": "reference_only",
+   "revision": "nekketsu_soccer2_fc_jp",
+   "game_id": "nekketsu_soccer2",
+   "platform": "NES",
+   "revision_match": true,
+   "locator": "_工具脚本/taspipe/游戏包/来源库/取证/1ang_热血足球联盟图文攻略_20261118.md#L679-L691",
+   "heading": "どいつ | Duits | 德国",
+   "matched_terms": [
+    "燕返"
+   ],
+   "snippet": "强豪球队。命中很强，善用必杀运球技能，只是，因为不会燕返技能，降低了发动必杀踢射的概率。即便如此，球门前普通踢射的威力，仍然对门将造成很大威胁。阵型2-2-1。胜利姿势为中场球员『えっけると(Ekkeruto)』连续不断吃香肠。热血队如果选择球员错误，上场球员命中不行，则败北的可能性极大。门将『ぶれーめ(Burême)』腿脚快，与巴西队门将一样，是最强级别的。\n官方说明书上说，全都是如同Cyborg一样的选手，球队非常坚固。队伍力量为5。\n全胜夺冠心得\n首先，说明一下如何选择",
+   "answerability": {
+    "answerable": false,
+    "intent": "identity",
+    "focus_ok": true,
+    "pattern_ok": false,
+    "intent_ok": true,
+    "focus_hit": [
+     "只有",
+     "燕返",
+     "血队"
+    ],
+    "url_list": false,
+    "topic_anchor_ok": true,
+    "exclusive_attribution_ok": true,
+    "position_subject_ok": true,
+    "position_subjects": [],
+    "shot_method_ok": true,
+    "player_role_ok": true,
+    "ending_capability_ok": true,
+    "input_sequence_ok": true,
+    "team_shot_ok": true,
+    "technique_ok": true,
+    "multiplayer_mode_ok": true
+   }
+  },
+  {
+   "chunk_id": "0c728e701059",
+   "score": 5.317,
+   "source_id": "local_soccer2_super_list",
+   "status": "verified_read",
+   "authority": "authoritative",
+   "revision": "nekketsu_soccer2_multi",
+   "game_id": "nekketsu_soccer2",
+   "platform": "NES",
+   "revision_match": true,
+   "locator": "_工具脚本/taspipe/游戏包/热血足球联盟_必杀全清单.md#L251-L259",
+   "heading": "8-5 跨来源冲突表（不许悄悄选边）",
+   "matched_terms": [
+    "燕返"
+   ],
+   "snippet": "| 争议点 | 来源甲 | 来源乙 | 我方实测 | 现状 |\n|---|---|---|---|---|\n| 难度档位效果 | S1：困难=敌强我弱，仅燕返者 100% 必杀 | S9：困难=敌我 AI 同涨（废选项） | 无 | 文献冲突，待实测 |\n| 龙卷踢触发 | S1：无球接近球时 跳跃+B | S8：敌球权时 超常冲刺中 十字+A | 无 | 冲突，采集时两法都试 |\n| 钻子攻击触发 | S1：无球接近球时 冲刺+B 或 跳跃+B | S8：敌球权时 超常冲刺",
+   "answerability": {
+    "answerable": false,
+    "intent": "identity",
+    "focus_ok": true,
+    "pattern_ok": false,
+    "intent_ok": true,
+    "focus_hit": [
+     "燕返"
+    ],
+    "url_list": false,
+    "topic_anchor_ok": true,
+    "exclusive_attribution_ok": true,
+    "position_subject_ok": true,
+    "position_subjects": [],
+    "shot_method_ok": true,
+    "player_role_ok": true,
+    "ending_capability_ok": true,
+    "input_sequence_ok": true,
+    "team_shot_ok": true,
+    "technique_ok": true,
+    "multiplayer_mode_ok": true
+   }
+  },
+  {
+   "chunk_id": "7b54dd5683d3",
+   "score": 5.256,
+   "source_id": "1ang_com",
+   "status": "verified_read",
+   "authority": "reference_only",
+   "revision": "nekketsu_soccer2_fc_jp",
+   "game_id": "nekketsu_soccer2",
+   "platform": "NES",
+   "revision_match": true,
+   "locator": "_工具脚本/taspipe/游戏包/来源库/取证/1ang_热血足球联盟图文攻略_20261118.md#L673-L676",
+   "heading": "いたりあ | Italia | 意大利",
+   "matched_terms": [
+    "燕返"
+   ],
+   "snippet": "最强球队。体力优秀，奔跑迅速，使用燕返，连续发动必杀踢射。阵型2-2-1。胜利姿势为中场球员『らふぁえれ(Rafaere)』一只手拿着烟花爆竹来回追赶同伴，同伴在哭泣。我方要想取胜，一定要力争，不让意大利球员拿到球。\n官方说明书上说，足球意识超强，运斤成风的优胜候补No.1球队！队伍力量为5。",
+   "answerability": {
+    "answerable": false,
+    "intent": "identity",
+    "focus_ok": true,
+    "pattern_ok": false,
+    "intent_ok": true,
+    "focus_hit": [
+     "燕返"
+    ],
+    "url_list": false,
+    "topic_anchor_ok": true,
+    "exclusive_attribution_ok": false,
+    "position_subject_ok": true,
+    "position_subjects": [],
+    "shot_method_ok": true,
+    "player_role_ok": true,
+    "ending_capability_ok": true,
+    "input_sequence_ok": true,
+    "team_shot_ok": true,
+    "technique_ok": true,
+    "multiplayer_mode_ok": true
+   }
+  },
+  {
+   "chunk_id": "2e4c8ac797cf",
+   "score": 5.25,
+   "source_id": "sohu_game",
+   "status": "verified_read",
+   "authority": "reference_only",
+   "revision": "nekketsu_soccer2_fc_unspecified",
+   "game_id": "nekketsu_soccer2",
+   "platform": "NES",
+   "revision_match": true,
+   "locator": "_工具脚本/taspipe/游戏包/来源库/取证/sohu_必杀最强小辫子_20261118.md#L71-L89",
+   "heading": "No.0 忍者射门——赖常",
+   "matched_terms": [
+    "燕返"
+   ],
+   "snippet": "他的射门必杀“香蕉环射门”堪称简单粗暴，似乎有隐藏属性加持，连德国队的门将都有一定几率能踢飞。而且津根的香蕉射门跟阿根廷队的不同，他的射门会在飞行一段距离后变成香蕉原地停留一会儿，这就让他的射门同样具备骗出对方CPU守门员假动作的功能，计算好球的飞行距离后还是蛮实用的。\n《热血足球》传说中的卡密萨马，日本队唯一隐藏基佬——海月，无论数值还是技能都十分一般的选手，但在一些大神玩家的手中出神入化如同神一般的存在。\n海月的必杀射门与巴西队的十分相似，都是踢出一只自带抛物线的鱼，虽说",
+   "answerability": {
+    "answerable": false,
+    "intent": "identity",
+    "focus_ok": true,
+    "pattern_ok": false,
+    "intent_ok": true,
+    "focus_hit": [
+     "只有",
+     "燕返"
+    ],
+    "url_list": false,
+    "topic_anchor_ok": true,
+    "exclusive_attribution_ok": true,
+    "position_subject_ok": true,
+    "position_subjects": [],
+    "shot_method_ok": true,
+    "player_role_ok": true,
+    "ending_capability_ok": true,
+    "input_sequence_ok": true,
+    "team_shot_ok": true,
+    "technique_ok": true,
+    "multiplayer_mode_ok": true
+   }
+  },
+  {
+   "chunk_id": "ae59bde1790f",
+   "score": 5.153,
+   "source_id": "1ang_com",
+   "status": "verified_read",
+   "authority": "reference_only",
+   "revision": "nekketsu_soccer2_fc_jp",
+   "game_id": "nekketsu_soccer2",
+   "platform": "NES",
+   "revision_match": true,
+   "locator": "_工具脚本/taspipe/游戏包/来源库/取证/1ang_热血足球联盟图文攻略_20261118.md#L739-L756",
+   "heading": "火光目前喜欢的最佳阵容",
+   "matched_terms": [
+    "燕返"
+   ],
+   "snippet": "うがじん(DF) かいずき(FW)   つねを(GK)     かるろす(FW)   ほりばた(DF) よりつね(MF)\n阵型2-2-1，主要依靠电脑控制的球员们防守，进攻方面由我一个人连续带球突破就足够了。\n除了门将『つねを(Tsunewo)』与主力『よりつね(Yoritsune)』外，所有队员的走力类型全都是恶路越野四驱车D，这样就可以无视水地、泥地、沙地等粘脚地形，以正常移动速度应对敌手。\n『よりつね(Yoritsune)』是热血队唯一拥有燕返技能的球员，也是唯一的A型",
+   "answerability": {
+    "answerable": false,
+    "intent": "identity",
+    "focus_ok": true,
+    "pattern_ok": false,
+    "intent_ok": true,
+    "focus_hit": [
+     "只有",
+     "燕返",
+     "血队"
+    ],
+    "url_list": false,
+    "topic_anchor_ok": true,
+    "exclusive_attribution_ok": true,
+    "position_subject_ok": true,
+    "position_subjects": [],
+    "shot_method_ok": true,
+    "player_role_ok": true,
+    "ending_capability_ok": true,
+    "input_sequence_ok": true,
+    "team_shot_ok": true,
+    "technique_ok": true,
+    "multiplayer_mode_ok": true
+   }
+  },
+  {
+   "chunk_id": "0a8c31260aa7",
+   "score": 5.145,
+   "source_id": "local_soccer2_super_list",
+   "status": "verified_read",
+   "authority": "authoritative",
+   "revision": "nekketsu_soccer2_multi",
+   "game_id": "nekketsu_soccer2",
+   "platform": "NES",
+   "revision_match": true,
+   "locator": "_工具脚本/taspipe/游戏包/热血足球联盟_honest_gap_manifest.md#L23-L27",
+   "heading": "2. 为什么必杀全灭（三杠杆实证堵死，详见说明书 §26）",
+   "matched_terms": [
+    "燕返"
+   ],
+   "snippet": "1. **难度锁定**：mode 屏难度行有字无光标；Down×6 模式行回绕、←→ 只动人数列 ⇒ 难度不可设，默认疑容易（S1：容易敌我都不能必杀）。\n2. **无人球同跳**：hack 方向+AB=纯挑球、静止 AB=人跳球不动 ⇒ 文献\"持球跳最高点 B\"无法执行。\n3. **秘技无效**：AAABAAABAAAAAAA 三段对照无燕返翻转（probe18），疑前作《世界杯》码。\n约 60 触发链跨四变体全负（无全屏闪/球变形/电光）。",
+   "answerability": {
+    "answerable": false,
+    "intent": "identity",
+    "focus_ok": true,
+    "pattern_ok": false,
+    "intent_ok": true,
+    "focus_hit": [
+     "燕返"
+    ],
+    "url_list": false,
+    "topic_anchor_ok": true,
+    "exclusive_attribution_ok": false,
+    "position_subject_ok": true,
+    "position_subjects": [],
+    "shot_method_ok": true,
+    "player_role_ok": true,
+    "ending_capability_ok": true,
+    "input_sequence_ok": true,
+    "team_shot_ok": true,
+    "technique_ok": true,
+    "multiplayer_mode_ok": true
+   }
+  },
+  {
+   "chunk_id": "df1e88148541",
+   "score": 5.128,
+   "source_id": "1ang_com",
+   "status": "verified_read",
+   "authority": "reference_only",
+   "revision": "nekketsu_soccer2_fc_jp",
+   "game_id": "nekketsu_soccer2",
+   "platform": "NES",
+   "revision_match": true,
+   "locator": "_工具脚本/taspipe/游戏包/来源库/取证/1ang_热血足球联盟图文攻略_20261118.md#L627-L630",
+   "heading": "かめるーん | Cameroon |喀麦隆",
+   "matched_terms": [
+    "燕返"
+   ],
+   "snippet": "中坚级别球队，接近强豪。使用燕返，必杀踢射也是相当强大，命中强。阵型2-1-2。胜利姿势为中场球员『わりおば(Warioba)』骑着鸵鸟来回跑。值得注意的是，前锋『だこすた(Dakosuta)』的命中达到了强豪级别，必杀踢射能吹飞强豪球队门将，看到他拿球，就要小心了。\n官方说明书上说，拥有动物一样敏锐的个人技术，非洲球队中的No.1。队伍力量为4。",
+   "answerability": {
+    "answerable": false,
+    "intent": "identity",
+    "focus_ok": true,
+    "pattern_ok": false,
+    "intent_ok": true,
+    "focus_hit": [
+     "燕返"
+    ],
+    "url_list": false,
+    "topic_anchor_ok": true,
+    "exclusive_attribution_ok": false,
+    "position_subject_ok": true,
+    "position_subjects": [],
+    "shot_method_ok": true,
+    "player_role_ok": true,
+    "ending_capability_ok": true,
+    "input_sequence_ok": true,
+    "team_shot_ok": true,
+    "technique_ok": true,
+    "multiplayer_mode_ok": true
+   }
+  },
+  {
+   "chunk_id": "3548208d0a2d",
+   "score": 4.948,
+   "source_id": "1ang_com",
+   "status": "verified_read",
+   "authority": "reference_only",
+   "revision": "nekketsu_soccer2_fc_jp",
+   "game_id": "nekketsu_soccer2",
+   "platform": "NES",
+   "revision_match": true,
+   "locator": "_工具脚本/taspipe/游戏包/来源库/取证/1ang_热血足球联盟图文攻略_20261118.md#L823-L839",
+   "heading": "秘技",
+   "matched_terms": [
+    "燕返"
+   ],
+   "snippet": "比赛中按START键暂停，{A键按３次＋B键按１次＋A键按３次＋B键按１次＋A键按７次}，再按START键解除暂停，听到必杀踢射的发动音效，就成功了。这样就能使全部球员拥有全部必杀技，比如平时不会燕返的球员也会用燕返了，平时不会用爆裂攻击的球员也会用铁膝盖顶人了。\n缺点是效果只能持续半场比赛，另外半场比赛需要重新使用秘技。这就意味着，每次进行比赛都要使用一次秘技。\n更多热血足球3攻略-FC热血足球3(热血足球联盟)游戏图文攻略相关问题\n问题：《都市天际线》独特建筑和地标建筑有",
+   "answerability": {
+    "answerable": false,
+    "intent": "identity",
+    "focus_ok": true,
+    "pattern_ok": false,
+    "intent_ok": true,
+    "focus_hit": [
+     "燕返"
+    ],
+    "url_list": true,
+    "topic_anchor_ok": true,
+    "exclusive_attribution_ok": false,
+    "position_subject_ok": true,
+    "position_subjects": [],
+    "shot_method_ok": true,
+    "player_role_ok": true,
+    "ending_capability_ok": true,
+    "input_sequence_ok": true,
+    "team_shot_ok": true,
+    "technique_ok": true,
+    "multiplayer_mode_ok": true
+   }
+  },
+  {
+   "chunk_id": "84195609bde8",
+   "score": 4.948,
+   "source_id": "local_soccer2_super_list",
+   "status": "verified_read",
+   "authority": "authoritative",
+   "revision": "nekketsu_soccer2_multi",
+   "game_id": "nekketsu_soccer2",
+   "platform": "NES",
+   "revision_match": true,
+   "locator": "_工具脚本/taspipe/游戏包/热血足球联盟_必杀全清单.md#L36-L49",
+   "heading": "2. 热血队 12 人必杀射门（S1 日文原名 + S2 中文译名与效果）",
+   "matched_terms": [
+    "燕返"
+   ],
+   "snippet": "| # | 角色(罗马音) | 日文原名 | 中文译名(S2) | 球变形/效果（S2/S3，检测器正例依据） | 其他技能(S1) |\n|---|---|---|---|---|---|\n| 1 | Kunio くにお | なっつしゅーと Nuts Shoot | 坚果射门 | 球变坚果椭圆直线飞 | 爆裂攻击 |\n| 2 | Yoritsune よりつね | にんじゃしゅーと Ninja Shoot | 忍者射门 | 球变飞镖飞一段消失→再现弹地飞奔；禁区内自动隐身 | ",
+   "answerability": {
+    "answerable": false,
+    "intent": "identity",
+    "focus_ok": true,
+    "pattern_ok": false,
+    "intent_ok": true,
+    "focus_hit": [
+     "燕返"
+    ],
+    "url_list": false,
+    "topic_anchor_ok": true,
+    "exclusive_attribution_ok": false,
+    "position_subject_ok": true,
+    "position_subjects": [],
+    "shot_method_ok": true,
+    "player_role_ok": true,
+    "ending_capability_ok": true,
+    "input_sequence_ok": true,
+    "team_shot_ok": true,
+    "technique_ok": true,
+    "multiplayer_mode_ok": true
+   }
+  },
+  {
+   "chunk_id": "4b654d6fd8fd",
+   "score": 4.546,
+   "source_id": "setsumei_cloudfree",
+   "status": "verified_read",
+   "authority": "authoritative",
+   "revision": "nekketsu_soccer2_fc_jp",
+   "game_id": "nekketsu_soccer2",
+   "platform": "NES",
+   "revision_match": true,
+   "locator": "_工具脚本/taspipe/游戏包/来源库/取证/setsumei_热血足球说明书扫描_20261118.md#L261-L263",
+   "heading": "＜必殺技について＞",
+   "matched_terms": [
+    "燕返"
+   ],
+   "snippet": "＜必殺技について＞\nさすが～♥  \n　各選手は必殺シュート以外に必殺技も持っているの！！　「必殺ドリブル」や「必殺燕返し」なんていう攻撃の技や、「ドリブル・アタック」や「トルネード・キック」っていう守備の技を持っていたりするの。もう、ドキドキものよ。  \n　あと、キーパーだけの必殺技「トルネード・パンチ」っていうのもあるのよ。すごいでしょ♥　各必殺技はその技を持っていないと出すことはできないので、控え室の選手データーを見て誰がどの技を持っているのか調べてみてね。  \n　だけど",
+   "answerability": {
+    "answerable": false,
+    "intent": "identity",
+    "focus_ok": true,
+    "pattern_ok": false,
+    "intent_ok": true,
+    "focus_hit": [
+     "燕返"
+    ],
+    "url_list": false,
+    "topic_anchor_ok": true,
+    "exclusive_attribution_ok": false,
+    "position_subject_ok": true,
+    "position_subjects": [],
+    "shot_method_ok": true,
+    "player_role_ok": true,
+    "ending_capability_ok": true,
+    "input_sequence_ok": true,
+    "team_shot_ok": true,
+    "technique_ok": true,
+    "multiplayer_mode_ok": true
+   }
+  },
+  {
+   "chunk_id": "0cbfe31bd687",
+   "score": 4.517,
+   "source_id": "1ang_com",
+   "status": "verified_read",
+   "authority": "reference_only",
+   "revision": "nekketsu_soccer2_fc_jp",
+   "game_id": "nekketsu_soccer2",
+   "platform": "NES",
+   "revision_match": true,
+   "locator": "_工具脚本/taspipe/游戏包/来源库/取证/1ang_热血足球联盟图文攻略_20261118.md#L337-L359",
+   "heading": "热血FC等候室",
+   "matched_terms": [
+    "燕返"
+   ],
+   "snippet": "『ハイパー・ダッシュ(Hyper Dash)』，超常冲刺。冲刺中朝进行方向连按两次方向键。普通冲刺基础上发动更快速的冲刺。\n『ヒール・リフティング(Heel Lifting)』，脚跟挑球。拿球时，无论面朝哪个方向，{←AB}同时按或者{→AB}同时按全都可以发动。\n『フェイント・アタック(Feint Attack)』，虚攻，做假动作。冲刺运球过程中，方向键上或下连续按2次。\n『ダイビング・ヘッド(Diving Head)』，鱼跃头球。在足球附近时，{←B}或者{→B}同时按。",
+   "answerability": {
+    "answerable": true,
+    "intent": "identity",
+    "focus_ok": true,
+    "pattern_ok": true,
+    "intent_ok": true,
+    "focus_hit": [
+     "只有",
+     "有哪",
+     "燕返"
+    ],
+    "url_list": false,
+    "topic_anchor_ok": true,
+    "exclusive_attribution_ok": true,
+    "position_subject_ok": true,
+    "position_subjects": [],
+    "shot_method_ok": true,
+    "player_role_ok": true,
+    "ending_capability_ok": true,
+    "input_sequence_ok": true,
+    "team_shot_ok": true,
+    "technique_ok": true,
+    "multiplayer_mode_ok": true
+   }
+  },
+  {
+   "chunk_id": "9bbb7d89c9f4",
+   "score": 3.96,
+   "source_id": "sohu_game",
+   "status": "verified_read",
+   "authority": "reference_only",
+   "revision": "nekketsu_soccer2_fc_unspecified",
+   "game_id": "nekketsu_soccer2",
+   "platform": "NES",
+   "revision_match": true,
+   "locator": "_工具脚本/taspipe/游戏包/来源库/取证/sohu_必杀最强小辫子_20261118.md#L91-L106",
+   "heading": "No.0 忍者射门——赖常",
+   "matched_terms": [
+    "燕返"
+   ],
+   "snippet": "小辫子更神的地方在于他的必杀技“忍者射门”，这招射门会在禁区会自动隐身。根据这个特性，如果你直接在禁区踢出必杀，足球则会在你踢出的一瞬间直接隐身停留在空中，利用好这个特性可以骗出CPU电脑的无限升龙拳，让他们一直对着空气跳跃，而我们则可以趁他们跳跃的间隙闯空门了！\n要说这一招的练习成本几乎等于0，因为小辫子的燕返本身是高空球，高空球在禁区必然能射出必杀射门的，这一招几乎可针对所有队伍的守门员，而且跟海月那种需要计算距离和角度的金鱼射门比起来不知平民了太多。\n以上就是淼哥心目中",
+   "answerability": {
+    "answerable": false,
+    "intent": "identity",
+    "focus_ok": true,
+    "pattern_ok": false,
+    "intent_ok": true,
+    "focus_hit": [
+     "燕返"
+    ],
+    "url_list": false,
+    "topic_anchor_ok": true,
+    "exclusive_attribution_ok": false,
+    "position_subject_ok": true,
+    "position_subjects": [],
+    "shot_method_ok": true,
+    "player_role_ok": true,
+    "ending_capability_ok": true,
+    "input_sequence_ok": true,
+    "team_shot_ok": true,
+    "technique_ok": true,
+    "multiplayer_mode_ok": true
+   }
+  },
+  {
+   "chunk_id": "0793dce04d1b",
+   "score": 3.3,
+   "source_id": "1ang_com",
+   "status": "verified_read",
+   "authority": "reference_only",
+   "revision": "nekketsu_soccer2_fc_jp",
+   "game_id": "nekketsu_soccer2",
+   "platform": "NES",
+   "revision_match": true,
+   "locator": "_工具脚本/taspipe/游戏包/来源库/取证/1ang_热血足球联盟图文攻略_20261118.md#L709-L718",
+   "heading": "どいつ | Duits | 德国",
+   "matched_terms": [
+    "燕返"
+   ],
+   "snippet": "临近锦标赛前，也就是接近16连胜的时候，『めきしこ』（墨西哥）、『もんごる』（外蒙古）、『いんぐらんど』（英格兰)，这三支球队最适合在决赛前热身，太弱的球队不必理睬，没必要与他们浪费时间，太强的球队也不要去挑衅，万一输了，会导致全胜夺冠前功尽弃，太划不来。\n决赛里的意大利队，要比平时的意大利队厉害的多，不可等闲视之。\n面对意大利这样的强大对手，如何取胜？意大利可以说是天矛地盾，射门如同天矛无坚不摧，门将如同地盾无物不克。我方必须选择最好的门将，最好的后卫来防守，火光操纵的中场",
+   "answerability": {
+    "answerable": false,
+    "intent": "identity",
+    "focus_ok": true,
+    "pattern_ok": false,
+    "intent_ok": true,
+    "focus_hit": [
+     "只有",
+     "燕返"
+    ],
+    "url_list": false,
+    "topic_anchor_ok": true,
+    "exclusive_attribution_ok": true,
+    "position_subject_ok": true,
+    "position_subjects": [],
+    "shot_method_ok": true,
+    "player_role_ok": true,
+    "ending_capability_ok": true,
+    "input_sequence_ok": true,
+    "team_shot_ok": true,
+    "technique_ok": true,
+    "multiplayer_mode_ok": true
+   }
+  }
+ ],
+ "reason": "2 条 verified_read + authoritative 可答命中，权威件在第 1 位",
+ "selected_evidence": [
+  {
+   "chunk_id": "f7f8e8316295",
+   "score": 11.448,
+   "source_id": "local_soccer2_super_list",
+   "status": "verified_read",
+   "authority": "authoritative",
+   "revision": "nekketsu_soccer2_multi",
+   "game_id": "nekketsu_soccer2",
+   "platform": "NES",
+   "revision_match": true,
+   "locator": "_工具脚本/taspipe/游戏包/热血足球联盟_必杀全清单.md#L70-L85",
+   "heading": "3. 一般个人技/必杀技（S1 发动法原文）",
+   "matched_terms": [
+    "原生",
+    "燕返"
+   ],
+   "snippet": "| 技 | 日文 | 发动 | 备注 |\n|---|---|---|---|\n| 爆裂攻击(铁膝盖) | ばくれつあたっく | 跳跃**落地时按 B**，可连按连发 | 着地技；≥4 人会 |\n| 燕返 | つばめがえし | 带球跳跃立即出现(空中翻跟头) | 仅 Yoritsune 原生；秘技后全员 |\n| 必杀运球(旋风撞人) | ひっさつどりぶる | 带球中连按两次上 或 两次下 | 撞倒对方含门将(概率) |\n| 龙卷拳(升龙拳) | とるねーどぱんち | 方向左/右",
+   "answerability": {
+    "answerable": true,
+    "intent": "identity",
+    "focus_ok": true,
+    "pattern_ok": true,
+    "intent_ok": true,
+    "focus_hit": [
+     "原生",
+     "燕返"
+    ],
+    "url_list": false,
+    "topic_anchor_ok": true,
+    "exclusive_attribution_ok": true,
+    "position_subject_ok": true,
+    "position_subjects": [],
+    "shot_method_ok": true,
+    "player_role_ok": true,
+    "ending_capability_ok": true,
+    "input_sequence_ok": true,
+    "team_shot_ok": true,
+    "technique_ok": true,
+    "multiplayer_mode_ok": true
+   }
+  }
+ ]
+}
+  [314] 知识库 [243b] CLI生产入口真跑：单条诊断落隔离目录，调用方/过滤参数/出证状态与耗时齐全
+Q02 True pass/-
+DONE 1/1 isolation=True C:\Users\Administrator\AppData\Local\Temp\kb_blind_gate_rdbwrivd\blind.md
+  [315] 知识库 [244] 隔离盲测生产入口：真实Q02按grade_v2正确出证，no-log不造日志，真实状态零写动
+DONE 1/1 isolation=False C:\Users\Administrator\AppData\Local\Temp\kb_blind_iso_eybni5d3\out.md
+  [316] 知识库 [244b] 隔离失败恒量反证：受保护文件mtime/hash变化即退出1并点名，不冒充盲测成功
+INPUT ERROR B expect 必须是 ['gold_in_topk', 'refuse', 'strict_pass', 'version_guard'] 之一
+INPUT ERROR 输出路径不得覆盖真实知识库状态或题集原件
+  [317] 知识库 [244c] 盲测输入边界：未知档位与覆盖真实索引均退出2，且不写半截产物
+F False inconclusive/unanchored
+DONE 0/1 isolation=True C:\Users\Administrator\AppData\Local\Temp\kb_blind_fail_8fwsrfih\out.md
+  [318] 知识库 [244d] 评测退出码反证：隔离正常但题失败仍退出1，产物保留逐题结果不冒充成功
+  [319] 知识库 [245] CRC32字段反证：8位十六进制才可答，40位SHA1不得冒充CRC32
+  [320] 知识库 [246] 多人模式反证：玩家编号与PK模式必须同时对上，球员位置名单不得串答
+  [321] 知识库 [247] 位置主语反证：元永↔げんえい别名可证，换别的球员即拒
+  [322] 知识库 [248] 队伍射门归属反证：必须同句直接归属，别队射门与巴西队比较不得冒答
+  [323] 知识库 [249] 能力清单/公式反证：清单必须列参数，公式缺失只能由明确无公式件出证
+  [324] 知识库 [250] 窄问法评分反证：多人/队伍射门/招式/能力清单各自进入对应聚焦模式
+  [325] 知识库 [251] 早退版本守卫：不可答时仍保留跨版本警告，不得静默丢边界提示
+  [326] 知识库 [反查] 真实文件未被探针写动 index.json（mtime+sha256 一致）
+  [327] 知识库 [反查] 真实文件未被探针写动 corpus_map.json（mtime+sha256 一致）
+  [328] 知识库 [反查] 真实文件未被探针写动 sources.json（mtime+sha256 一致）
+  [329] 知识库 [反查] 真实文件未被探针写动 检索台账.json（mtime+sha256 一致）
+KB_SELFTEST OK 329/329

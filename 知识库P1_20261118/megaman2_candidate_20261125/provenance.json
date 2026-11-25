@@ -1,0 +1,264 @@
+{
+  "schema_version": 1,
+  "candidate_domain": "megaman2_candidate",
+  "extraction_method": "line-range verbatim extraction from real local files",
+  "records": [
+    {
+      "key": "coordinates",
+      "source_id": "tasvideos_rockman_data_mm2_extract",
+      "source": "_工具脚本/taspipe/游戏包/来源库/取证/tasvideos_gameresources_rockman_data_2026-11-23.txt",
+      "source_sha256": "1869f8c514a534592be6f5c588f94aaca82ea42b0317324ec6a6fd8c5bb06c91",
+      "target": "知识库P1_20261118/megaman2_candidate_20261125/evidence/mm2_tasvideos_coordinates_20261125.txt",
+      "target_sha256": "932fd37ed4b9d9e3ac5161317d3e069ec8d53cbcabb89b0baee15b03f5010fc9",
+      "target_bytes": 1446,
+      "ranges": [
+        {
+          "source_line_start": 122,
+          "source_line_end": 132,
+          "target_line_start": 6,
+          "target_line_end": 16,
+          "source_sha256": "1869f8c514a534592be6f5c588f94aaca82ea42b0317324ec6a6fd8c5bb06c91",
+          "verbatim": true,
+          "nonempty": true
+        },
+        {
+          "source_line_start": 167,
+          "source_line_end": 190,
+          "target_line_start": 18,
+          "target_line_end": 41,
+          "source_sha256": "1869f8c514a534592be6f5c588f94aaca82ea42b0317324ec6a6fd8c5bb06c91",
+          "verbatim": true,
+          "nonempty": true
+        }
+      ],
+      "kind": "prose",
+      "revision": "megaman2_nes_tasvideos_rockman2",
+      "authority": "authoritative"
+    },
+    {
+      "key": "jump",
+      "source_id": "tasvideos_rockman_data_mm2_extract",
+      "source": "_工具脚本/taspipe/游戏包/来源库/取证/tasvideos_gameresources_rockman_data_2026-11-23.txt",
+      "source_sha256": "1869f8c514a534592be6f5c588f94aaca82ea42b0317324ec6a6fd8c5bb06c91",
+      "target": "知识库P1_20261118/megaman2_candidate_20261125/evidence/mm2_tasvideos_jump_20261125.txt",
+      "target_sha256": "2f8b6d41ce8f6cc0833ff92ef97a02ff70c06d71e3396843d9ed57851aab988c",
+      "target_bytes": 910,
+      "ranges": [
+        {
+          "source_line_start": 196,
+          "source_line_end": 208,
+          "target_line_start": 6,
+          "target_line_end": 18,
+          "source_sha256": "1869f8c514a534592be6f5c588f94aaca82ea42b0317324ec6a6fd8c5bb06c91",
+          "verbatim": true,
+          "nonempty": true
+        }
+      ],
+      "kind": "prose",
+      "revision": "megaman2_nes_tasvideos_rockman2",
+      "authority": "authoritative"
+    },
+    {
+      "key": "climb_transform",
+      "source_id": "tasvideos_rockman_data_mm2_extract",
+      "source": "_工具脚本/taspipe/游戏包/来源库/取证/tasvideos_gameresources_rockman_data_2026-11-23.txt",
+      "source_sha256": "1869f8c514a534592be6f5c588f94aaca82ea42b0317324ec6a6fd8c5bb06c91",
+      "target": "知识库P1_20261118/megaman2_candidate_20261125/evidence/mm2_tasvideos_climb_transform_20261125.txt",
+      "target_sha256": "3acb7987e6d9f373c90433a93fe320f79b5ca0da04cfb57bd7306119db414f9a",
+      "target_bytes": 738,
+      "ranges": [
+        {
+          "source_line_start": 253,
+          "source_line_end": 261,
+          "target_line_start": 6,
+          "target_line_end": 14,
+          "source_sha256": "1869f8c514a534592be6f5c588f94aaca82ea42b0317324ec6a6fd8c5bb06c91",
+          "verbatim": true,
+          "nonempty": true
+        }
+      ],
+      "kind": "prose",
+      "revision": "megaman2_nes_tasvideos_rockman2",
+      "authority": "authoritative"
+    },
+    {
+      "key": "jump_horizontal",
+      "source_id": "tasvideos_rockman_data_mm2_extract",
+      "source": "_工具脚本/taspipe/游戏包/来源库/取证/tasvideos_gameresources_rockman_data_2026-11-23.txt",
+      "source_sha256": "1869f8c514a534592be6f5c588f94aaca82ea42b0317324ec6a6fd8c5bb06c91",
+      "target": "知识库P1_20261118/megaman2_candidate_20261125/evidence/mm2_tasvideos_jump_horizontal_20261125.txt",
+      "target_sha256": "8f2f36609458b26044441323d2306c687d435c2cfa9f03526191ef667318127a",
+      "target_bytes": 818,
+      "ranges": [
+        {
+          "source_line_start": 271,
+          "source_line_end": 279,
+          "target_line_start": 6,
+          "target_line_end": 14,
+          "source_sha256": "1869f8c514a534592be6f5c588f94aaca82ea42b0317324ec6a6fd8c5bb06c91",
+          "verbatim": true,
+          "nonempty": true
+        }
+      ],
+      "kind": "prose",
+      "revision": "megaman2_nes_tasvideos_rockman2",
+      "authority": "authoritative"
+    },
+    {
+      "key": "walking",
+      "source_id": "tasvideos_rockman_data_mm2_extract",
+      "source": "_工具脚本/taspipe/游戏包/来源库/取证/tasvideos_gameresources_rockman_data_2026-11-23.txt",
+      "source_sha256": "1869f8c514a534592be6f5c588f94aaca82ea42b0317324ec6a6fd8c5bb06c91",
+      "target": "知识库P1_20261118/megaman2_candidate_20261125/evidence/mm2_tasvideos_walking_20261125.txt",
+      "target_sha256": "5e58f52be5cdeaf0430aabc5c84ced0f87ba23ea4377eca56e4670bf95743220",
+      "target_bytes": 460,
+      "ranges": [
+        {
+          "source_line_start": 281,
+          "source_line_end": 287,
+          "target_line_start": 6,
+          "target_line_end": 12,
+          "source_sha256": "1869f8c514a534592be6f5c588f94aaca82ea42b0317324ec6a6fd8c5bb06c91",
+          "verbatim": true,
+          "nonempty": true
+        }
+      ],
+      "kind": "prose",
+      "revision": "megaman2_nes_tasvideos_rockman2",
+      "authority": "authoritative"
+    },
+    {
+      "key": "acceleration",
+      "source_id": "tasvideos_rockman_data_mm2_extract",
+      "source": "_工具脚本/taspipe/游戏包/来源库/取证/tasvideos_gameresources_rockman_data_2026-11-23.txt",
+      "source_sha256": "1869f8c514a534592be6f5c588f94aaca82ea42b0317324ec6a6fd8c5bb06c91",
+      "target": "知识库P1_20261118/megaman2_candidate_20261125/evidence/mm2_tasvideos_acceleration_20261125.txt",
+      "target_sha256": "2eeb193eafbce3fdaeddca59a32459098ae4d152191680ae4fe91c3687362831",
+      "target_bytes": 1293,
+      "ranges": [
+        {
+          "source_line_start": 289,
+          "source_line_end": 305,
+          "target_line_start": 6,
+          "target_line_end": 22,
+          "source_sha256": "1869f8c514a534592be6f5c588f94aaca82ea42b0317324ec6a6fd8c5bb06c91",
+          "verbatim": true,
+          "nonempty": true
+        }
+      ],
+      "kind": "prose",
+      "revision": "megaman2_nes_tasvideos_rockman2",
+      "authority": "authoritative"
+    },
+    {
+      "key": "object_table",
+      "source_id": "tasvideos_rockman_data_mm2_extract",
+      "source": "_工具脚本/taspipe/游戏包/来源库/取证/tasvideos_gameresources_rockman_data_2026-11-23.txt",
+      "source_sha256": "1869f8c514a534592be6f5c588f94aaca82ea42b0317324ec6a6fd8c5bb06c91",
+      "target": "知识库P1_20261118/megaman2_candidate_20261125/evidence/mm2_tasvideos_object_table_20261125.txt",
+      "target_sha256": "792c65e4d14ef07711429b09c0a6fd881caab39dbacce72c8f3fa97c2a4d882e",
+      "target_bytes": 664,
+      "ranges": [
+        {
+          "source_line_start": 424,
+          "source_line_end": 432,
+          "target_line_start": 6,
+          "target_line_end": 14,
+          "source_sha256": "1869f8c514a534592be6f5c588f94aaca82ea42b0317324ec6a6fd8c5bb06c91",
+          "verbatim": true,
+          "nonempty": true
+        },
+        {
+          "source_line_start": 441,
+          "source_line_end": 443,
+          "target_line_start": 16,
+          "target_line_end": 18,
+          "source_sha256": "1869f8c514a534592be6f5c588f94aaca82ea42b0317324ec6a6fd8c5bb06c91",
+          "verbatim": true,
+          "nonempty": true
+        }
+      ],
+      "kind": "table",
+      "revision": "megaman2_nes_tasvideos_rockman2",
+      "authority": "authoritative"
+    },
+    {
+      "key": "memory_dictionary",
+      "source_id": "local_megaman2_memory_dictionary",
+      "source": "_工具脚本/taspipe/游戏数据字典/expanded_50_games_memory_maps.json",
+      "source_sha256": "0495de276641aa75112f89fd32ece994a2097162812dfb037aa132ff54628a43",
+      "target": "知识库P1_20261118/megaman2_candidate_20261125/evidence/mm2_local_memory_dictionary_20261125.txt",
+      "target_sha256": "2b3397d00e1cafa421d99bc66d116b2d10159beccd0123e7084e208a46bbd539",
+      "target_bytes": 1035,
+      "ranges": [
+        {
+          "source_line_start": 15,
+          "source_line_end": 23,
+          "target_line_start": 6,
+          "target_line_end": 14,
+          "source_sha256": "0495de276641aa75112f89fd32ece994a2097162812dfb037aa132ff54628a43",
+          "verbatim": true,
+          "nonempty": true
+        }
+      ],
+      "kind": "table",
+      "revision": "megaman2_nes_memory_dictionary_unverified",
+      "authority": "reference_only"
+    },
+    {
+      "key": "title_catalog",
+      "source_id": "local_megaman2_title_catalog",
+      "source": "_工具脚本/taspipe/popular_titles.json",
+      "source_sha256": "b7883d9bd024ebb12c5223b2ecbe75e8c5120152043b67c04cbc5e5c78a1ada1",
+      "target": "知识库P1_20261118/megaman2_candidate_20261125/evidence/mm2_local_title_catalog_20261125.txt",
+      "target_sha256": "9365bd8c757e5907895d5ecd1aa11df6de46d929da4f6ae605448df32cc583d3",
+      "target_bytes": 498,
+      "ranges": [
+        {
+          "source_line_start": 480,
+          "source_line_end": 490,
+          "target_line_start": 6,
+          "target_line_end": 16,
+          "source_sha256": "b7883d9bd024ebb12c5223b2ecbe75e8c5120152043b67c04cbc5e5c78a1ada1",
+          "verbatim": true,
+          "nonempty": true
+        }
+      ],
+      "kind": "table",
+      "revision": "megaman2_nes_title_catalog",
+      "authority": "reference_only"
+    },
+    {
+      "key": "tas_publications",
+      "source_id": "local_megaman2_tas_publications",
+      "source": "04-游戏资源库/TAS输入录像库/publications.json",
+      "source_sha256": "43262424d2b4a1d0da4fa95fda176a1afefc1d789d2d922ddfe4e8ecb2e93edd",
+      "target": "知识库P1_20261118/megaman2_candidate_20261125/evidence/mm2_local_tas_publications_20261125.txt",
+      "target_sha256": "d5cfd8f5152d1bda1135e3d265c0b7e27c936f1016eddbdea9927c56298e9cbf",
+      "target_bytes": 2981,
+      "ranges": [
+        {
+          "source_line_start": 96935,
+          "source_line_end": 96973,
+          "target_line_start": 6,
+          "target_line_end": 44,
+          "source_sha256": "43262424d2b4a1d0da4fa95fda176a1afefc1d789d2d922ddfe4e8ecb2e93edd",
+          "verbatim": true,
+          "nonempty": true
+        },
+        {
+          "source_line_start": 96975,
+          "source_line_end": 97012,
+          "target_line_start": 46,
+          "target_line_end": 83,
+          "source_sha256": "43262424d2b4a1d0da4fa95fda176a1afefc1d789d2d922ddfe4e8ecb2e93edd",
+          "verbatim": true,
+          "nonempty": true
+        }
+      ],
+      "kind": "table",
+      "revision": "megaman2_nes_tas_publications",
+      "authority": "reference_only"
+    }
+  ]
+}

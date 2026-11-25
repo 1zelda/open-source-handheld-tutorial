@@ -1,0 +1,64 @@
+W01 [regression] SAME                     w3=inconclusive w5=inconclusive | 热血足球2 燕返怎么触发？
+W02 [regression] SAME                     w3=inconclusive w5=inconclusive | 热血足球联盟 必杀射门有几种？
+W03 [regression] SAME                     w3=inconclusive w5=inconclusive | 热血足球2 守门员能不能用必杀？
+W04 [regression] SAME                     w3=inconclusive w5=inconclusive | 热血足球 小辫子是谁？
+W05 [regression] SAME                     w3=inconclusive w5=inconclusive | 热血足球2 点球大战怎么进？
+W06 [regression] SAME                     w3=inconclusive w5=inconclusive | 热血足球联盟 一共多少场比赛？
+W07 [regression] SAME                     w3=inconclusive w5=inconclusive | 热血足球2 暂停秘技的签名是什么？
+W08 [regression] SAME                     w3=pass         w5=pass         | 热血足球 美纱子是什么位置？
+W09 [regression] SAME                     w3=inconclusive w5=inconclusive | 热血足球2 双人合作怎么玩？
+W10 [regression] SAME                     w3=pass         w5=pass         | 热血足球联盟 难度怎么选？
+W11 [regression] SAME                     w3=inconclusive w5=inconclusive | 热血足球2 一直输球会怎么样？
+W12 [regression] SAME                     w3=pass         w5=pass         | 热血足球联盟 S级必杀有哪些？
+W13 [regression] SAME                     w3=inconclusive w5=inconclusive | 热血足球2 前B和后B分别是什么动作？
+W14 [regression] inconclusive->pass       w3=inconclusive w5=pass         | 热血足球联盟 禁区高空球怎么顶？
+W15 [regression] SAME                     w3=inconclusive w5=inconclusive | 热血足球2 换人有什么限制？
+W16 [regression] SAME                     w3=inconclusive w5=inconclusive | 拳皇98 ECK 草薙京出招表是什么？
+W17 [regression] SAME                     w3=pass         w5=pass         | 拳皇98 简化连招版和普通版有什么区别？
+W18 [regression] SAME                     w3=pass         w5=pass         | KOF98 ECK 八神庵的连招怎么按？
+W19 [regression] SAME                     w3=inconclusive w5=inconclusive | 拳皇98UM 官方指令表能不能当 ECK 的权威？
+W20 [regression] SAME                     w3=inconclusive w5=inconclusive | 素材生产规范里整局素材的时长要求是多少？
+W21 [regression] SAME                     w3=pass         w5=pass         | TAS 流水线的泛化矩阵是干什么的？
+W22 [regression] SAME                     w3=pass         w5=pass         | 要素盘点的输入是什么？
+W23 [regression] SAME                     w3=pass         w5=pass         | ECK 实测结论记录在哪份文档？
+W24 [regression] SAME                     w3=miss         w5=miss         | 原神新角色什么时候上线？
+W25 [regression] SAME                     w3=miss         w5=miss         | LOL S15 全球总决赛冠军是谁？
+W26 [regression] SAME                     w3=miss         w5=miss         | DOTA TI14 奖金池多少？
+W27 [regression] SAME                     w3=inconclusive w5=inconclusive | 热血足球2 有没有隐藏结局？
+W28 [regression] SAME                     w3=inconclusive w5=inconclusive | 热血足球联盟 ROM 的 SHA1 是多少？
+W29 [regression] SAME                     w3=pass         w5=pass         | 拳皇98 ECK 能不能关掉队战？
+W30 [regression] SAME                     w3=pass         w5=pass         | 燕返 最高点 必杀
+X01 [rescue    ] SAME                     w3=inconclusive w5=inconclusive | 热血足球 1P 得分的内存地址是多少？
+X02 [rescue    ] SAME                     w3=inconclusive w5=inconclusive | 热血足球 韩国队赢球后是什么庆祝动作？
+X03 [rescue    ] SAME                     w3=inconclusive w5=inconclusive | 热血足球 龙卷拳谁能用？
+X04 [rescue    ] SAME                     w3=inconclusive w5=inconclusive | 热血足球 三倍加速怎么发动？
+X05 [rescue    ] SAME                     w3=pass         w5=pass         | 热血足球 选手一闪一闪是故障吗？
+X06 [rescue    ] SAME                     w3=inconclusive w5=inconclusive | 热血足球 应援曲一共有几首？
+X07 [rescue    ] SAME                     w3=inconclusive w5=inconclusive | 热血足球 海月是什么射门？
+X08 [rescue    ] SAME                     w3=inconclusive w5=inconclusive | 热血足球 哪个队员体力最高？
+X09 [rescue    ] SAME                     w3=inconclusive w5=inconclusive | 热血足球 香蕉环射门有什么特点？
+X10 [rescue    ] SAME                     w3=inconclusive w5=inconclusive | 热血足球联盟 阵型一共有几种？
+X11 [trap      ] SAME                     w3=inconclusive w5=inconclusive | 热血足球联盟 能不能联网对战？
+X12 [trap      ] inconclusive->pass       w3=inconclusive w5=pass         | 热血足球联盟 怎么给球员升级加点？
+X13 [trap      ] SAME                     w3=inconclusive w5=inconclusive | 热血足球 有没有办法跳过中场休息？
+X14 [trap      ] SAME                     w3=inconclusive w5=inconclusive | 热血足球 怎么解锁隐藏球队？
+X15 [trap      ] SAME                     w3=inconclusive w5=inconclusive | 热血足球联盟 支持几个手柄同时玩？
+X16 [trap      ] SAME                     w3=inconclusive w5=inconclusive | 热血足球 打雷会不会把门将击倒？
+X17 [trap      ] SAME                     w3=pass         w5=pass         | 热血足球 全败结局画面显示的密码是什么？
+X18 [trap      ] SAME                     w3=inconclusive w5=inconclusive | 热血足球 每支球队最多能挑战几次？
+X19 [mechanism ] SAME                     w3=pass         w5=pass         | 热血足球 美纱子的电话有什么用？
+X20 [mechanism ] SAME                     w3=pass         w5=pass         | 热血足球 德国队为什么必杀概率低？
+X21 [mechanism ] SAME                     w3=pass         w5=pass         | 热血足球 元永在队里打什么位置？
+X22 [mechanism ] SAME                     w3=pass         w5=pass         | 热血足球 意大利门将的弱点在哪里？
+X23 [mechanism ] inconclusive->pass       w3=inconclusive w5=pass         | 热血足球 倒挂金钩怎么使出来？
+X24 [mechanism ] SAME                     w3=inconclusive w5=inconclusive | 热血足球 怎么存档进度？
+X25 [mechanism ] SAME                     w3=inconclusive w5=inconclusive | 热血足球 球员受伤了怎么治疗？
+X26 [mechanism ] SAME                     w3=inconclusive w5=inconclusive | 热血足球 雨天场地对射门有什么影响？
+X27 [mechanism ] SAME                     w3=inconclusive w5=inconclusive | 热血足球 走力 A 型是什么意思？
+X28 [mechanism ] inconclusive->pass       w3=inconclusive w5=pass         | 拳皇98 ECK 金手指怎么用？
+X29 [mechanism ] SAME                     w3=inconclusive w5=inconclusive | 热血足球 秘技效果能持续多久？
+X30 [mechanism ] SAME                     w3=pass         w5=pass         | 热血足球 合体技有哪些发动方法？
+
+共 60 题；翻转 4 条：['W14:inconclusive->pass', 'X12:inconclusive->pass', 'X23:inconclusive->pass', 'X28:inconclusive->pass']
+变差 0 条；trap格放行 ['X12', 'X17']
+written F:\开源掌机教程\知识库P1_20261118\p6_probe_bm25

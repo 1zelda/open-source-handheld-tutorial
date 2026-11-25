@@ -1,0 +1,25 @@
+W1119 01:17:48.408000 23484 E:\SHARE\py313-cuda\torch\distributed\elastic\multiprocessing\redirects.py:29] NOTE: Redirects are currently not supported in Windows or MacOs.
+Loading weights:   0%|          | 0/391 [00:00<?, ?it/s]Loading weights: 100%|██████████| 391/391 [00:00<00:00, 48607.63it/s]
+问句向量已缓存 qvecs_ext.npz
+== Q02 候选377 金标f7f8e8316295 BM25排名=16 稠密排名=12
+   稠密top3: ['1ang_热血足球联盟图文攻略_20261118.m#L525', '热血足球联盟_必杀全清单.md#L24', '热血足球联盟_必杀全清单.md#L251']
+   金标块: 热血足球联盟_必杀全清单.md L70-85 | 技 | 日文 | 发动 | 备注 | |---|---|---|---| | 爆裂攻击(铁膝盖) | ばくれつあたっ
+== Q08 候选377 金标6379cc0c04c3 BM25排名=47 稠密排名=46
+   稠密top3: ['setsumei_热血足球说明书扫描_2026111#L191', '1ang_热血足球联盟图文攻略_20261118.m#L759', 'setsumei_热血足球说明书扫描_2026111#L195']
+   金标块: setsumei_热血足球说明书扫描_20261118.md L47-47 ＜ゲームのルール＞ 　まず、「熱血サッカーリーグ」の試合ルールから説明するわよ。この「サッカーリーグ」は６人制のサッカー
+== P19 候选377 金标41fd0c4a907e BM25排名=None 稠密排名=None
+   稠密top3: ['sohu_一直输球隐藏大结局_20261118.md#L1', 'sohu_一直输球隐藏大结局_20261118.md#L65', '热血足球联盟_必杀全清单.md#L234']
+   金标块: 9game_热血足球技能攻略_20261118.md L105-140 同时，在防守时的“铲球”，进攻时的“冲刺”还能自由配置玩家喜好的技能。如铲球可以选择普通铲球、旋风腿、喷雾、飞踹、爆裂攻
+== P22 候选377 金标c7e55bfd51e3 BM25排名=139 稠密排名=9
+   稠密top3: ['setsumei_热血足球说明书扫描_2026111#L69', 'setsumei_热血足球说明书扫描_2026111#L71', 'setsumei_热血足球说明书扫描_2026111#L338']
+   金标块: setsumei_热血足球说明书扫描_20261118.md L329-329 ＜「ＰＫ戦プレイ・モード」の説明＞ 　ＰＫ戦プレイ出場６チームの中から、チームをセレクトしたら、ＰＫ戦だけの対戦開始！ 
+== P23 候选377 金标9e0df7e8e93e BM25排名=None 稠密排名=12
+   稠密top3: ['setsumei_热血足球说明书扫描_2026111#L28', '1ang_热血足球联盟图文攻略_20261118.m#L195', 'setsumei_热血足球说明书扫描_2026111#L283']
+   金标块: setsumei_热血足球说明书扫描_20261118.md L269-269 ＜ステータスについて＞ たいりょく
+Exception ignored in: <function QdrantClient.__del__ at 0x0000016996E0C900>
+Traceback (most recent call last):
+  File "F:\kb_pilot_venv\Lib\site-packages\qdrant_client\qdrant_client.py", line 172, in __del__
+  File "F:\kb_pilot_venv\Lib\site-packages\qdrant_client\qdrant_client.py", line 181, in close
+  File "F:\kb_pilot_venv\Lib\site-packages\qdrant_client\local\qdrant_local.py", line 113, in close
+ImportError: sys.meta_path is None, Python is likely shutting down
+EXIT=0

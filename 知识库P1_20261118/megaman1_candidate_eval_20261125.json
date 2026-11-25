@@ -1,0 +1,2643 @@
+{
+  "status": "evaluated_isolated",
+  "frozen_at": "2026-11-25",
+  "candidate_revision": "megaman1_nes_us",
+  "candidate_scope": "RAM/tooling subdomain only; not a whole-game knowledge base",
+  "index_chunks": 9,
+  "index_sha256": "5e126eddf0eae98e6b8a446cd54f37400b861d5e93ecf89d3004f16d3a252581",
+  "query_count": 24,
+  "summary": {
+    "default": {
+      "total": 12,
+      "ok": 12,
+      "by_tier": {
+        "strict_pass": {
+          "total": 9,
+          "ok": 9
+        },
+        "refuse": {
+          "total": 3,
+          "ok": 3
+        }
+      },
+      "failed_ids": [],
+      "split_table": {
+        "direct_recall": 9,
+        "correct_evidence": 12,
+        "wrong_evidence": 0,
+        "missed_answer": 0,
+        "citation_valid": 12,
+        "version_condition_error": 0,
+        "equivalent_recall": "reserved_phase4"
+      },
+      "wrong_evidence_ids": [],
+      "missed_answer_ids": []
+    },
+    "strict": {
+      "total": 12,
+      "ok": 12,
+      "by_tier": {
+        "strict_pass": {
+          "total": 9,
+          "ok": 9
+        },
+        "refuse": {
+          "total": 3,
+          "ok": 3
+        }
+      },
+      "failed_ids": [],
+      "split_table": {
+        "direct_recall": 9,
+        "correct_evidence": 12,
+        "wrong_evidence": 0,
+        "missed_answer": 0,
+        "citation_valid": 12,
+        "version_condition_error": 0,
+        "equivalent_recall": "reserved_phase4"
+      },
+      "wrong_evidence_ids": [],
+      "missed_answer_ids": []
+    }
+  },
+  "all_ok": true,
+  "isolation": {
+    "real_state_unchanged": true,
+    "candidate_inputs_unchanged": true,
+    "real_state_before": {
+      "F:\\开源掌机教程\\_工具脚本\\taspipe\\游戏包\\知识库\\index.json": {
+        "present": true,
+        "bytes": 3608260,
+        "mtime_ns": 1795536695274513300,
+        "sha256": "5c6fdb832cac502845d2e9dce269f25023dd435af42a5f59c772efbe9169596b"
+      },
+      "F:\\开源掌机教程\\_工具脚本\\taspipe\\游戏包\\知识库\\corpus_map.json": {
+        "present": true,
+        "bytes": 23464,
+        "mtime_ns": 1795529628746809500,
+        "sha256": "907d4c719a9e93e2ad62c9c21d5e1aac916c5d7a0fea759818cd5c6414d8f19e"
+      },
+      "F:\\开源掌机教程\\_工具脚本\\taspipe\\游戏包\\来源库\\sources.json": {
+        "present": true,
+        "bytes": 57733,
+        "mtime_ns": 1795464127056654400,
+        "sha256": "177d14bc9a7a95cade7790c06b6c061834b16167454e28dd30679682a3117667"
+      },
+      "F:\\开源掌机教程\\_工具脚本\\taspipe\\游戏包\\知识库\\query_log.jsonl": {
+        "present": true,
+        "bytes": 1044,
+        "mtime_ns": 1795463914085772600,
+        "sha256": "f73c57ae2080d8f525bdd5cdfb52b0a50f1cc5cf0cca5b89c4003b803602a91d"
+      },
+      "F:\\开源掌机教程\\_工具脚本\\taspipe\\游戏包\\电竞事实库\\facts_v1.db": {
+        "present": true,
+        "bytes": 2056192,
+        "mtime_ns": 1795464415053952300,
+        "sha256": "32f029f41629cb3774e701a705d521aa49550c76deabbc0affc760bec264d5c1"
+      },
+      "F:\\开源掌机教程\\选题决策层\\kb快照\\index.json": {
+        "present": true,
+        "bytes": 3607419,
+        "mtime_ns": 1795533626202927000,
+        "sha256": "2a93e76d5876c1181e7784a20eca0f4d84888d0292d281fc6eea3564090b9260"
+      }
+    },
+    "real_state_after": {
+      "F:\\开源掌机教程\\_工具脚本\\taspipe\\游戏包\\知识库\\index.json": {
+        "present": true,
+        "bytes": 3608260,
+        "mtime_ns": 1795536695274513300,
+        "sha256": "5c6fdb832cac502845d2e9dce269f25023dd435af42a5f59c772efbe9169596b"
+      },
+      "F:\\开源掌机教程\\_工具脚本\\taspipe\\游戏包\\知识库\\corpus_map.json": {
+        "present": true,
+        "bytes": 23464,
+        "mtime_ns": 1795529628746809500,
+        "sha256": "907d4c719a9e93e2ad62c9c21d5e1aac916c5d7a0fea759818cd5c6414d8f19e"
+      },
+      "F:\\开源掌机教程\\_工具脚本\\taspipe\\游戏包\\来源库\\sources.json": {
+        "present": true,
+        "bytes": 57733,
+        "mtime_ns": 1795464127056654400,
+        "sha256": "177d14bc9a7a95cade7790c06b6c061834b16167454e28dd30679682a3117667"
+      },
+      "F:\\开源掌机教程\\_工具脚本\\taspipe\\游戏包\\知识库\\query_log.jsonl": {
+        "present": true,
+        "bytes": 1044,
+        "mtime_ns": 1795463914085772600,
+        "sha256": "f73c57ae2080d8f525bdd5cdfb52b0a50f1cc5cf0cca5b89c4003b803602a91d"
+      },
+      "F:\\开源掌机教程\\_工具脚本\\taspipe\\游戏包\\电竞事实库\\facts_v1.db": {
+        "present": true,
+        "bytes": 2056192,
+        "mtime_ns": 1795464415053952300,
+        "sha256": "32f029f41629cb3774e701a705d521aa49550c76deabbc0affc760bec264d5c1"
+      },
+      "F:\\开源掌机教程\\选题决策层\\kb快照\\index.json": {
+        "present": true,
+        "bytes": 3607419,
+        "mtime_ns": 1795533626202927000,
+        "sha256": "2a93e76d5876c1181e7784a20eca0f4d84888d0292d281fc6eea3564090b9260"
+      }
+    },
+    "isolated_query_log": "F:\\开源掌机教程\\知识库P1_20261118\\megaman1_candidate_20261125\\eval_query_log.jsonl",
+    "production_defaults_unchanged": true
+  },
+  "questions": [
+    {
+      "id": "MM01",
+      "q": "洛克人1 的坐标轴方向是什么？",
+      "expect": "strict_pass",
+      "gold": {
+        "path_contains": "mm1_coordinate_facts_20261125.txt",
+        "line_start": 1,
+        "line_end": 25,
+        "anchor_chunk": "b1ea3cbd31fb"
+      },
+      "default": {
+        "status": "pass",
+        "reason": "2 条 verified_read + authoritative 可答命中，权威件在第 1 位",
+        "refusal": null,
+        "counts": {
+          "candidates": 9,
+          "hits": 2,
+          "answerable": 2,
+          "strong": 2
+        },
+        "index_used": "index.json",
+        "index_sha256": "5e126eddf0eae98e6b8a446cd54f37400b861d5e93ecf89d3004f16d3a252581",
+        "selected_evidence": [
+          {
+            "chunk_id": "b1ea3cbd31fb",
+            "score": 6.167,
+            "source_id": "tasvideos_mm1_object_ram_table",
+            "status": "verified_read",
+            "authority": "authoritative",
+            "revision": "megaman1_nes_us",
+            "game_id": "megaman1",
+            "platform": "NES",
+            "revision_match": true,
+            "locator": "知识库P1_20261118/megaman1_candidate_20261125/evidence/mm1_coordinate_facts_20261125.txt#L1-L25",
+            "heading": "",
+            "matched_terms": [
+              "1",
+              "克人",
+              "坐标",
+              "洛克",
+              "洛克人"
+            ],
+            "snippet": "TASVideos GameResources：洛克人1坐标系统（逐字摘录）\nCoordinate system\nIn Rockman and Rockman 2, every object of the game has the following properties:\nScreen number (00―FF), it tells which screen the object resides in.\nX position (00.00―FF.FF), it tells",
+            "answerability": {
+              "answerable": true,
+              "intent": "topic",
+              "focus_ok": true,
+              "pattern_ok": true,
+              "intent_ok": true,
+              "focus_hit": [
+                "克人",
+                "坐标",
+                "洛克",
+                "洛克人"
+              ],
+              "url_list": false,
+              "topic_anchor_ok": true,
+              "exclusive_attribution_ok": true,
+              "position_subject_ok": true,
+              "position_subjects": [],
+              "shot_method_ok": true,
+              "player_role_ok": true,
+              "ending_capability_ok": true,
+              "input_sequence_ok": true,
+              "team_shot_ok": true,
+              "technique_ok": true,
+              "multiplayer_mode_ok": true
+            }
+          }
+        ],
+        "authority_warnings": [],
+        "hits": [
+          {
+            "chunk_id": "b1ea3cbd31fb",
+            "locator": "知识库P1_20261118/megaman1_candidate_20261125/evidence/mm1_coordinate_facts_20261125.txt#L1-L25",
+            "score": 6.167,
+            "authority": "authoritative",
+            "status": "verified_read",
+            "answerable": true,
+            "fragment_eligible": null,
+            "snippet": "TASVideos GameResources：洛克人1坐标系统（逐字摘录）\nCoordinate system\nIn Rockman and Rockman 2, every object of the game has the following properties:\nScreen number (00―FF), it tells which screen the object resides in.\nX position (00.00―FF.FF), it tells"
+          },
+          {
+            "chunk_id": "91b55bcd7e14",
+            "locator": "知识库P1_20261118/megaman1_candidate_20261125/evidence/mm1_object_ram_table_20261125.txt#L1-L17",
+            "score": 5.671,
+            "authority": "authoritative",
+            "status": "verified_read",
+            "answerable": true,
+            "fragment_eligible": null,
+            "snippet": "TASVideos GameResources：洛克人1对象 RAM 表（逐字摘录）\nGame Screen# X (hi,lo) Xspd (hi,lo) Y (hi,lo) Yspd (hi,lo)\nRockman 1 $460 $480:$4A0 $4C0:$4E0 $600:$620 $660:$680\nRockman 2 $440 $460:$480 $600:$620 $4A0:$4C0 $640:$660\nRockman 3 $380 $360:$340 no "
+          }
+        ],
+        "grade_v2": {
+          "id": "MM01",
+          "tier": "strict_pass",
+          "ok": true,
+          "why": "status=pass, selected_gold=True, direct_recall=True",
+          "status": "pass",
+          "n_hits": 2,
+          "top1": "知识库P1_20261118/megaman1_candidate_20261125/evidence/mm1_coordinate_facts_20261125.txt#L1-L25",
+          "direct_recall": true,
+          "equivalent_recall": null,
+          "correct_evidence": true,
+          "wrong_evidence": false,
+          "missed_answer": false,
+          "citation_valid": true,
+          "version_condition_error": false,
+          "selected_locator": "知识库P1_20261118/megaman1_candidate_20261125/evidence/mm1_coordinate_facts_20261125.txt#L1-L25"
+        }
+      },
+      "strict": {
+        "status": "pass",
+        "reason": "2 条 verified_read + authoritative 可答命中，权威件在第 1 位",
+        "refusal": null,
+        "counts": {
+          "candidates": 9,
+          "hits": 2,
+          "answerable": 2,
+          "strong": 2
+        },
+        "index_used": "index.json",
+        "index_sha256": "5e126eddf0eae98e6b8a446cd54f37400b861d5e93ecf89d3004f16d3a252581",
+        "selected_evidence": [
+          {
+            "chunk_id": "b1ea3cbd31fb",
+            "score": 6.167,
+            "source_id": "tasvideos_mm1_object_ram_table",
+            "status": "verified_read",
+            "authority": "authoritative",
+            "revision": "megaman1_nes_us",
+            "game_id": "megaman1",
+            "platform": "NES",
+            "revision_match": true,
+            "locator": "知识库P1_20261118/megaman1_candidate_20261125/evidence/mm1_coordinate_facts_20261125.txt#L1-L25",
+            "heading": "",
+            "matched_terms": [
+              "1",
+              "克人",
+              "坐标",
+              "洛克",
+              "洛克人"
+            ],
+            "snippet": "TASVideos GameResources：洛克人1坐标系统（逐字摘录）\nCoordinate system\nIn Rockman and Rockman 2, every object of the game has the following properties:\nScreen number (00―FF), it tells which screen the object resides in.\nX position (00.00―FF.FF), it tells",
+            "answerability": {
+              "answerable": true,
+              "intent": "topic",
+              "focus_ok": true,
+              "pattern_ok": true,
+              "intent_ok": true,
+              "focus_hit": [
+                "克人",
+                "坐标",
+                "洛克",
+                "洛克人"
+              ],
+              "url_list": false,
+              "topic_anchor_ok": true,
+              "exclusive_attribution_ok": true,
+              "position_subject_ok": true,
+              "position_subjects": [],
+              "shot_method_ok": true,
+              "player_role_ok": true,
+              "ending_capability_ok": true,
+              "input_sequence_ok": true,
+              "team_shot_ok": true,
+              "technique_ok": true,
+              "multiplayer_mode_ok": true
+            },
+            "fragment_provenance": {
+              "policy": "strict",
+              "eligible": true,
+              "reason": "eligible_fragment",
+              "relevant_segments": 1,
+              "eligible_segments": 1,
+              "reference_segments": 0,
+              "retracted_segments": 0,
+              "evidence_excerpt": "TASVideos GameResources：洛克人1坐标系统（逐字摘录）"
+            }
+          }
+        ],
+        "authority_warnings": [],
+        "hits": [
+          {
+            "chunk_id": "b1ea3cbd31fb",
+            "locator": "知识库P1_20261118/megaman1_candidate_20261125/evidence/mm1_coordinate_facts_20261125.txt#L1-L25",
+            "score": 6.167,
+            "authority": "authoritative",
+            "status": "verified_read",
+            "answerable": true,
+            "fragment_eligible": true,
+            "snippet": "TASVideos GameResources：洛克人1坐标系统（逐字摘录）\nCoordinate system\nIn Rockman and Rockman 2, every object of the game has the following properties:\nScreen number (00―FF), it tells which screen the object resides in.\nX position (00.00―FF.FF), it tells"
+          },
+          {
+            "chunk_id": "91b55bcd7e14",
+            "locator": "知识库P1_20261118/megaman1_candidate_20261125/evidence/mm1_object_ram_table_20261125.txt#L1-L17",
+            "score": 5.671,
+            "authority": "authoritative",
+            "status": "verified_read",
+            "answerable": true,
+            "fragment_eligible": true,
+            "snippet": "TASVideos GameResources：洛克人1对象 RAM 表（逐字摘录）\nGame Screen# X (hi,lo) Xspd (hi,lo) Y (hi,lo) Yspd (hi,lo)\nRockman 1 $460 $480:$4A0 $4C0:$4E0 $600:$620 $660:$680\nRockman 2 $440 $460:$480 $600:$620 $4A0:$4C0 $640:$660\nRockman 3 $380 $360:$340 no "
+          }
+        ],
+        "grade_v2": {
+          "id": "MM01",
+          "tier": "strict_pass",
+          "ok": true,
+          "why": "status=pass, selected_gold=True, direct_recall=True",
+          "status": "pass",
+          "n_hits": 2,
+          "top1": "知识库P1_20261118/megaman1_candidate_20261125/evidence/mm1_coordinate_facts_20261125.txt#L1-L25",
+          "direct_recall": true,
+          "equivalent_recall": null,
+          "correct_evidence": true,
+          "wrong_evidence": false,
+          "missed_answer": false,
+          "citation_valid": true,
+          "version_condition_error": false,
+          "selected_locator": "知识库P1_20261118/megaman1_candidate_20261125/evidence/mm1_coordinate_facts_20261125.txt#L1-L25"
+        }
+      }
+    },
+    {
+      "id": "MM02",
+      "q": "洛克人1 的 X 坐标对象表地址范围是什么？",
+      "expect": "strict_pass",
+      "gold": {
+        "path_contains": "mm1_object_ram_table_20261125.txt",
+        "line_start": 1,
+        "line_end": 17,
+        "anchor_chunk": "91b55bcd7e14"
+      },
+      "default": {
+        "status": "pass",
+        "reason": "2 条 verified_read + authoritative 可答命中，权威件在第 1 位",
+        "refusal": null,
+        "counts": {
+          "candidates": 9,
+          "hits": 2,
+          "answerable": 2,
+          "strong": 2
+        },
+        "index_used": "index.json",
+        "index_sha256": "5e126eddf0eae98e6b8a446cd54f37400b861d5e93ecf89d3004f16d3a252581",
+        "selected_evidence": [
+          {
+            "chunk_id": "91b55bcd7e14",
+            "score": 8.09,
+            "source_id": "tasvideos_mm1_object_ram_table",
+            "status": "verified_read",
+            "authority": "authoritative",
+            "revision": "megaman1_nes_us",
+            "game_id": "megaman1",
+            "platform": "NES",
+            "revision_match": true,
+            "locator": "知识库P1_20261118/megaman1_candidate_20261125/evidence/mm1_object_ram_table_20261125.txt#L1-L17",
+            "heading": "",
+            "matched_terms": [
+              "1",
+              "克人",
+              "对象",
+              "洛克",
+              "洛克人"
+            ],
+            "snippet": "TASVideos GameResources：洛克人1对象 RAM 表（逐字摘录）\nGame Screen# X (hi,lo) Xspd (hi,lo) Y (hi,lo) Yspd (hi,lo)\nRockman 1 $460 $480:$4A0 $4C0:$4E0 $600:$620 $660:$680\nRockman 2 $440 $460:$480 $600:$620 $4A0:$4C0 $640:$660\nRockman 3 $380 $360:$340 no ",
+            "answerability": {
+              "answerable": true,
+              "intent": "topic",
+              "focus_ok": true,
+              "pattern_ok": true,
+              "intent_ok": true,
+              "focus_hit": [
+                "克人",
+                "对象",
+                "洛克",
+                "洛克人"
+              ],
+              "url_list": false,
+              "topic_anchor_ok": true,
+              "exclusive_attribution_ok": true,
+              "position_subject_ok": true,
+              "position_subjects": [],
+              "shot_method_ok": true,
+              "player_role_ok": true,
+              "ending_capability_ok": true,
+              "input_sequence_ok": true,
+              "team_shot_ok": true,
+              "technique_ok": true,
+              "multiplayer_mode_ok": true
+            }
+          }
+        ],
+        "authority_warnings": [],
+        "hits": [
+          {
+            "chunk_id": "91b55bcd7e14",
+            "locator": "知识库P1_20261118/megaman1_candidate_20261125/evidence/mm1_object_ram_table_20261125.txt#L1-L17",
+            "score": 8.09,
+            "authority": "authoritative",
+            "status": "verified_read",
+            "answerable": true,
+            "fragment_eligible": null,
+            "snippet": "TASVideos GameResources：洛克人1对象 RAM 表（逐字摘录）\nGame Screen# X (hi,lo) Xspd (hi,lo) Y (hi,lo) Yspd (hi,lo)\nRockman 1 $460 $480:$4A0 $4C0:$4E0 $600:$620 $660:$680\nRockman 2 $440 $460:$480 $600:$620 $4A0:$4C0 $640:$660\nRockman 3 $380 $360:$340 no "
+          },
+          {
+            "chunk_id": "b1ea3cbd31fb",
+            "locator": "知识库P1_20261118/megaman1_candidate_20261125/evidence/mm1_coordinate_facts_20261125.txt#L1-L25",
+            "score": 6.167,
+            "authority": "authoritative",
+            "status": "verified_read",
+            "answerable": true,
+            "fragment_eligible": null,
+            "snippet": "TASVideos GameResources：洛克人1坐标系统（逐字摘录）\nCoordinate system\nIn Rockman and Rockman 2, every object of the game has the following properties:\nScreen number (00―FF), it tells which screen the object resides in.\nX position (00.00―FF.FF), it tells"
+          }
+        ],
+        "grade_v2": {
+          "id": "MM02",
+          "tier": "strict_pass",
+          "ok": true,
+          "why": "status=pass, selected_gold=True, direct_recall=True",
+          "status": "pass",
+          "n_hits": 2,
+          "top1": "知识库P1_20261118/megaman1_candidate_20261125/evidence/mm1_object_ram_table_20261125.txt#L1-L17",
+          "direct_recall": true,
+          "equivalent_recall": null,
+          "correct_evidence": true,
+          "wrong_evidence": false,
+          "missed_answer": false,
+          "citation_valid": true,
+          "version_condition_error": false,
+          "selected_locator": "知识库P1_20261118/megaman1_candidate_20261125/evidence/mm1_object_ram_table_20261125.txt#L1-L17"
+        }
+      },
+      "strict": {
+        "status": "pass",
+        "reason": "2 条 verified_read + authoritative 可答命中，权威件在第 1 位",
+        "refusal": null,
+        "counts": {
+          "candidates": 9,
+          "hits": 2,
+          "answerable": 2,
+          "strong": 2
+        },
+        "index_used": "index.json",
+        "index_sha256": "5e126eddf0eae98e6b8a446cd54f37400b861d5e93ecf89d3004f16d3a252581",
+        "selected_evidence": [
+          {
+            "chunk_id": "91b55bcd7e14",
+            "score": 8.09,
+            "source_id": "tasvideos_mm1_object_ram_table",
+            "status": "verified_read",
+            "authority": "authoritative",
+            "revision": "megaman1_nes_us",
+            "game_id": "megaman1",
+            "platform": "NES",
+            "revision_match": true,
+            "locator": "知识库P1_20261118/megaman1_candidate_20261125/evidence/mm1_object_ram_table_20261125.txt#L1-L17",
+            "heading": "",
+            "matched_terms": [
+              "1",
+              "克人",
+              "对象",
+              "洛克",
+              "洛克人"
+            ],
+            "snippet": "TASVideos GameResources：洛克人1对象 RAM 表（逐字摘录）\nGame Screen# X (hi,lo) Xspd (hi,lo) Y (hi,lo) Yspd (hi,lo)\nRockman 1 $460 $480:$4A0 $4C0:$4E0 $600:$620 $660:$680\nRockman 2 $440 $460:$480 $600:$620 $4A0:$4C0 $640:$660\nRockman 3 $380 $360:$340 no ",
+            "answerability": {
+              "answerable": true,
+              "intent": "topic",
+              "focus_ok": true,
+              "pattern_ok": true,
+              "intent_ok": true,
+              "focus_hit": [
+                "克人",
+                "对象",
+                "洛克",
+                "洛克人"
+              ],
+              "url_list": false,
+              "topic_anchor_ok": true,
+              "exclusive_attribution_ok": true,
+              "position_subject_ok": true,
+              "position_subjects": [],
+              "shot_method_ok": true,
+              "player_role_ok": true,
+              "ending_capability_ok": true,
+              "input_sequence_ok": true,
+              "team_shot_ok": true,
+              "technique_ok": true,
+              "multiplayer_mode_ok": true
+            },
+            "fragment_provenance": {
+              "policy": "strict",
+              "eligible": true,
+              "reason": "eligible_fragment",
+              "relevant_segments": 1,
+              "eligible_segments": 1,
+              "reference_segments": 0,
+              "retracted_segments": 0,
+              "evidence_excerpt": "TASVideos GameResources：洛克人1对象 RAM 表（逐字摘录）"
+            }
+          }
+        ],
+        "authority_warnings": [],
+        "hits": [
+          {
+            "chunk_id": "91b55bcd7e14",
+            "locator": "知识库P1_20261118/megaman1_candidate_20261125/evidence/mm1_object_ram_table_20261125.txt#L1-L17",
+            "score": 8.09,
+            "authority": "authoritative",
+            "status": "verified_read",
+            "answerable": true,
+            "fragment_eligible": true,
+            "snippet": "TASVideos GameResources：洛克人1对象 RAM 表（逐字摘录）\nGame Screen# X (hi,lo) Xspd (hi,lo) Y (hi,lo) Yspd (hi,lo)\nRockman 1 $460 $480:$4A0 $4C0:$4E0 $600:$620 $660:$680\nRockman 2 $440 $460:$480 $600:$620 $4A0:$4C0 $640:$660\nRockman 3 $380 $360:$340 no "
+          },
+          {
+            "chunk_id": "b1ea3cbd31fb",
+            "locator": "知识库P1_20261118/megaman1_candidate_20261125/evidence/mm1_coordinate_facts_20261125.txt#L1-L25",
+            "score": 6.167,
+            "authority": "authoritative",
+            "status": "verified_read",
+            "answerable": true,
+            "fragment_eligible": true,
+            "snippet": "TASVideos GameResources：洛克人1坐标系统（逐字摘录）\nCoordinate system\nIn Rockman and Rockman 2, every object of the game has the following properties:\nScreen number (00―FF), it tells which screen the object resides in.\nX position (00.00―FF.FF), it tells"
+          }
+        ],
+        "grade_v2": {
+          "id": "MM02",
+          "tier": "strict_pass",
+          "ok": true,
+          "why": "status=pass, selected_gold=True, direct_recall=True",
+          "status": "pass",
+          "n_hits": 2,
+          "top1": "知识库P1_20261118/megaman1_candidate_20261125/evidence/mm1_object_ram_table_20261125.txt#L1-L17",
+          "direct_recall": true,
+          "equivalent_recall": null,
+          "correct_evidence": true,
+          "wrong_evidence": false,
+          "missed_answer": false,
+          "citation_valid": true,
+          "version_condition_error": false,
+          "selected_locator": "知识库P1_20261118/megaman1_candidate_20261125/evidence/mm1_object_ram_table_20261125.txt#L1-L17"
+        }
+      }
+    },
+    {
+      "id": "MM03",
+      "q": "洛克人1 的对象编号 n 怎样换算各项内存地址？",
+      "expect": "strict_pass",
+      "gold": {
+        "path_contains": "mm1_object_ram_table_20261125.txt",
+        "line_start": 1,
+        "line_end": 17,
+        "anchor_chunk": "91b55bcd7e14"
+      },
+      "default": {
+        "status": "pass",
+        "reason": "1 条 verified_read + authoritative 可答命中，权威件在第 1 位",
+        "refusal": null,
+        "counts": {
+          "candidates": 9,
+          "hits": 3,
+          "answerable": 1,
+          "strong": 1
+        },
+        "index_used": "index.json",
+        "index_sha256": "5e126eddf0eae98e6b8a446cd54f37400b861d5e93ecf89d3004f16d3a252581",
+        "selected_evidence": [
+          {
+            "chunk_id": "91b55bcd7e14",
+            "score": 8.09,
+            "source_id": "tasvideos_mm1_object_ram_table",
+            "status": "verified_read",
+            "authority": "authoritative",
+            "revision": "megaman1_nes_us",
+            "game_id": "megaman1",
+            "platform": "NES",
+            "revision_match": true,
+            "locator": "知识库P1_20261118/megaman1_candidate_20261125/evidence/mm1_object_ram_table_20261125.txt#L1-L17",
+            "heading": "",
+            "matched_terms": [
+              "1",
+              "克人",
+              "对象",
+              "洛克",
+              "洛克人"
+            ],
+            "snippet": "TASVideos GameResources：洛克人1对象 RAM 表（逐字摘录）\nGame Screen# X (hi,lo) Xspd (hi,lo) Y (hi,lo) Yspd (hi,lo)\nRockman 1 $460 $480:$4A0 $4C0:$4E0 $600:$620 $660:$680\nRockman 2 $440 $460:$480 $600:$620 $4A0:$4C0 $640:$660\nRockman 3 $380 $360:$340 no ",
+            "answerability": {
+              "answerable": true,
+              "intent": "value_lookup",
+              "focus_ok": true,
+              "pattern_ok": true,
+              "intent_ok": true,
+              "focus_hit": [
+                "克人",
+                "对象",
+                "洛克",
+                "洛克人"
+              ],
+              "url_list": false,
+              "topic_anchor_ok": true,
+              "exclusive_attribution_ok": true,
+              "position_subject_ok": true,
+              "position_subjects": [],
+              "shot_method_ok": true,
+              "player_role_ok": true,
+              "ending_capability_ok": true,
+              "input_sequence_ok": true,
+              "team_shot_ok": true,
+              "technique_ok": true,
+              "multiplayer_mode_ok": true
+            }
+          }
+        ],
+        "authority_warnings": [],
+        "hits": [
+          {
+            "chunk_id": "91b55bcd7e14",
+            "locator": "知识库P1_20261118/megaman1_candidate_20261125/evidence/mm1_object_ram_table_20261125.txt#L1-L17",
+            "score": 8.09,
+            "authority": "authoritative",
+            "status": "verified_read",
+            "answerable": true,
+            "fragment_eligible": null,
+            "snippet": "TASVideos GameResources：洛克人1对象 RAM 表（逐字摘录）\nGame Screen# X (hi,lo) Xspd (hi,lo) Y (hi,lo) Yspd (hi,lo)\nRockman 1 $460 $480:$4A0 $4C0:$4E0 $600:$620 $660:$680\nRockman 2 $440 $460:$480 $600:$620 $4A0:$4C0 $640:$660\nRockman 3 $380 $360:$340 no "
+          },
+          {
+            "chunk_id": "b1ea3cbd31fb",
+            "locator": "知识库P1_20261118/megaman1_candidate_20261125/evidence/mm1_coordinate_facts_20261125.txt#L1-L25",
+            "score": 4.595,
+            "authority": "authoritative",
+            "status": "verified_read",
+            "answerable": false,
+            "fragment_eligible": null,
+            "snippet": "TASVideos GameResources：洛克人1坐标系统（逐字摘录）\nCoordinate system\nIn Rockman and Rockman 2, every object of the game has the following properties:\nScreen number (00―FF), it tells which screen the object resides in.\nX position (00.00―FF.FF), it tells"
+          },
+          {
+            "chunk_id": "b8e620db8b4c",
+            "locator": "知识库P1_20261118/megaman1_candidate_20261125/evidence/mm1_bizhawk_memory_write_fact_20261125.txt#L1-L10",
+            "score": 1.744,
+            "authority": "authoritative",
+            "status": "verified_read",
+            "answerable": false,
+            "fragment_eligible": null,
+            "snippet": "TASVideos BizHawk FAQ：内存覆盖与 memory write callback（逐字摘录）\nMemory Manipulation\nI'm trying to cheat/poke/freeze a memory address, but it keeps changing\nBizhawk can only overwrite your address once per frame, so if the game changes it more frequ"
+          }
+        ],
+        "grade_v2": {
+          "id": "MM03",
+          "tier": "strict_pass",
+          "ok": true,
+          "why": "status=pass, selected_gold=True, direct_recall=True",
+          "status": "pass",
+          "n_hits": 3,
+          "top1": "知识库P1_20261118/megaman1_candidate_20261125/evidence/mm1_object_ram_table_20261125.txt#L1-L17",
+          "direct_recall": true,
+          "equivalent_recall": null,
+          "correct_evidence": true,
+          "wrong_evidence": false,
+          "missed_answer": false,
+          "citation_valid": true,
+          "version_condition_error": false,
+          "selected_locator": "知识库P1_20261118/megaman1_candidate_20261125/evidence/mm1_object_ram_table_20261125.txt#L1-L17"
+        }
+      },
+      "strict": {
+        "status": "pass",
+        "reason": "1 条 verified_read + authoritative 可答命中，权威件在第 1 位",
+        "refusal": null,
+        "counts": {
+          "candidates": 9,
+          "hits": 3,
+          "answerable": 1,
+          "strong": 1
+        },
+        "index_used": "index.json",
+        "index_sha256": "5e126eddf0eae98e6b8a446cd54f37400b861d5e93ecf89d3004f16d3a252581",
+        "selected_evidence": [
+          {
+            "chunk_id": "91b55bcd7e14",
+            "score": 8.09,
+            "source_id": "tasvideos_mm1_object_ram_table",
+            "status": "verified_read",
+            "authority": "authoritative",
+            "revision": "megaman1_nes_us",
+            "game_id": "megaman1",
+            "platform": "NES",
+            "revision_match": true,
+            "locator": "知识库P1_20261118/megaman1_candidate_20261125/evidence/mm1_object_ram_table_20261125.txt#L1-L17",
+            "heading": "",
+            "matched_terms": [
+              "1",
+              "克人",
+              "对象",
+              "洛克",
+              "洛克人"
+            ],
+            "snippet": "TASVideos GameResources：洛克人1对象 RAM 表（逐字摘录）\nGame Screen# X (hi,lo) Xspd (hi,lo) Y (hi,lo) Yspd (hi,lo)\nRockman 1 $460 $480:$4A0 $4C0:$4E0 $600:$620 $660:$680\nRockman 2 $440 $460:$480 $600:$620 $4A0:$4C0 $640:$660\nRockman 3 $380 $360:$340 no ",
+            "answerability": {
+              "answerable": true,
+              "intent": "value_lookup",
+              "focus_ok": true,
+              "pattern_ok": true,
+              "intent_ok": true,
+              "focus_hit": [
+                "克人",
+                "对象",
+                "洛克",
+                "洛克人"
+              ],
+              "url_list": false,
+              "topic_anchor_ok": true,
+              "exclusive_attribution_ok": true,
+              "position_subject_ok": true,
+              "position_subjects": [],
+              "shot_method_ok": true,
+              "player_role_ok": true,
+              "ending_capability_ok": true,
+              "input_sequence_ok": true,
+              "team_shot_ok": true,
+              "technique_ok": true,
+              "multiplayer_mode_ok": true
+            },
+            "fragment_provenance": {
+              "policy": "strict",
+              "eligible": true,
+              "reason": "eligible_fragment",
+              "relevant_segments": 1,
+              "eligible_segments": 1,
+              "reference_segments": 0,
+              "retracted_segments": 0,
+              "evidence_excerpt": "TASVideos GameResources：洛克人1对象 RAM 表（逐字摘录）"
+            }
+          }
+        ],
+        "authority_warnings": [],
+        "hits": [
+          {
+            "chunk_id": "91b55bcd7e14",
+            "locator": "知识库P1_20261118/megaman1_candidate_20261125/evidence/mm1_object_ram_table_20261125.txt#L1-L17",
+            "score": 8.09,
+            "authority": "authoritative",
+            "status": "verified_read",
+            "answerable": true,
+            "fragment_eligible": true,
+            "snippet": "TASVideos GameResources：洛克人1对象 RAM 表（逐字摘录）\nGame Screen# X (hi,lo) Xspd (hi,lo) Y (hi,lo) Yspd (hi,lo)\nRockman 1 $460 $480:$4A0 $4C0:$4E0 $600:$620 $660:$680\nRockman 2 $440 $460:$480 $600:$620 $4A0:$4C0 $640:$660\nRockman 3 $380 $360:$340 no "
+          },
+          {
+            "chunk_id": "b1ea3cbd31fb",
+            "locator": "知识库P1_20261118/megaman1_candidate_20261125/evidence/mm1_coordinate_facts_20261125.txt#L1-L25",
+            "score": 4.595,
+            "authority": "authoritative",
+            "status": "verified_read",
+            "answerable": false,
+            "fragment_eligible": true,
+            "snippet": "TASVideos GameResources：洛克人1坐标系统（逐字摘录）\nCoordinate system\nIn Rockman and Rockman 2, every object of the game has the following properties:\nScreen number (00―FF), it tells which screen the object resides in.\nX position (00.00―FF.FF), it tells"
+          },
+          {
+            "chunk_id": "b8e620db8b4c",
+            "locator": "知识库P1_20261118/megaman1_candidate_20261125/evidence/mm1_bizhawk_memory_write_fact_20261125.txt#L1-L10",
+            "score": 1.744,
+            "authority": "authoritative",
+            "status": "verified_read",
+            "answerable": false,
+            "fragment_eligible": true,
+            "snippet": "TASVideos BizHawk FAQ：内存覆盖与 memory write callback（逐字摘录）\nMemory Manipulation\nI'm trying to cheat/poke/freeze a memory address, but it keeps changing\nBizhawk can only overwrite your address once per frame, so if the game changes it more frequ"
+          }
+        ],
+        "grade_v2": {
+          "id": "MM03",
+          "tier": "strict_pass",
+          "ok": true,
+          "why": "status=pass, selected_gold=True, direct_recall=True",
+          "status": "pass",
+          "n_hits": 3,
+          "top1": "知识库P1_20261118/megaman1_candidate_20261125/evidence/mm1_object_ram_table_20261125.txt#L1-L17",
+          "direct_recall": true,
+          "equivalent_recall": null,
+          "correct_evidence": true,
+          "wrong_evidence": false,
+          "missed_answer": false,
+          "citation_valid": true,
+          "version_condition_error": false,
+          "selected_locator": "知识库P1_20261118/megaman1_candidate_20261125/evidence/mm1_object_ram_table_20261125.txt#L1-L17"
+        }
+      }
+    },
+    {
+      "id": "MM04",
+      "q": "洛克人1 中 Rockman 和 Boss 分别固定是哪个对象编号？",
+      "expect": "strict_pass",
+      "gold": {
+        "path_contains": "mm1_object_ram_table_20261125.txt",
+        "line_start": 1,
+        "line_end": 17,
+        "anchor_chunk": "91b55bcd7e14"
+      },
+      "default": {
+        "status": "pass",
+        "reason": "2 条 verified_read + authoritative 可答命中，权威件在第 1 位",
+        "refusal": null,
+        "counts": {
+          "candidates": 9,
+          "hits": 2,
+          "answerable": 2,
+          "strong": 2
+        },
+        "index_used": "index.json",
+        "index_sha256": "5e126eddf0eae98e6b8a446cd54f37400b861d5e93ecf89d3004f16d3a252581",
+        "selected_evidence": [
+          {
+            "chunk_id": "91b55bcd7e14",
+            "score": 12.432,
+            "source_id": "tasvideos_mm1_object_ram_table",
+            "status": "verified_read",
+            "authority": "authoritative",
+            "revision": "megaman1_nes_us",
+            "game_id": "megaman1",
+            "platform": "NES",
+            "revision_match": true,
+            "locator": "知识库P1_20261118/megaman1_candidate_20261125/evidence/mm1_object_ram_table_20261125.txt#L1-L17",
+            "heading": "",
+            "matched_terms": [
+              "1",
+              "boss",
+              "rockman",
+              "克人",
+              "对象",
+              "洛克",
+              "洛克人"
+            ],
+            "snippet": "TASVideos GameResources：洛克人1对象 RAM 表（逐字摘录）\nGame Screen# X (hi,lo) Xspd (hi,lo) Y (hi,lo) Yspd (hi,lo)\nRockman 1 $460 $480:$4A0 $4C0:$4E0 $600:$620 $660:$680\nRockman 2 $440 $460:$480 $600:$620 $4A0:$4C0 $640:$660\nRockman 3 $380 $360:$340 no ",
+            "answerability": {
+              "answerable": true,
+              "intent": "identity",
+              "focus_ok": true,
+              "pattern_ok": true,
+              "intent_ok": true,
+              "focus_hit": [
+                "boss",
+                "rockman",
+                "克人",
+                "对象",
+                "洛克",
+                "洛克人"
+              ],
+              "url_list": false,
+              "topic_anchor_ok": true,
+              "exclusive_attribution_ok": true,
+              "position_subject_ok": true,
+              "position_subjects": [],
+              "shot_method_ok": true,
+              "player_role_ok": true,
+              "ending_capability_ok": true,
+              "input_sequence_ok": true,
+              "team_shot_ok": true,
+              "technique_ok": true,
+              "multiplayer_mode_ok": true
+            }
+          }
+        ],
+        "authority_warnings": [],
+        "hits": [
+          {
+            "chunk_id": "91b55bcd7e14",
+            "locator": "知识库P1_20261118/megaman1_candidate_20261125/evidence/mm1_object_ram_table_20261125.txt#L1-L17",
+            "score": 12.432,
+            "authority": "authoritative",
+            "status": "verified_read",
+            "answerable": true,
+            "fragment_eligible": null,
+            "snippet": "TASVideos GameResources：洛克人1对象 RAM 表（逐字摘录）\nGame Screen# X (hi,lo) Xspd (hi,lo) Y (hi,lo) Yspd (hi,lo)\nRockman 1 $460 $480:$4A0 $4C0:$4E0 $600:$620 $660:$680\nRockman 2 $440 $460:$480 $600:$620 $4A0:$4C0 $640:$660\nRockman 3 $380 $360:$340 no "
+          },
+          {
+            "chunk_id": "b1ea3cbd31fb",
+            "locator": "知识库P1_20261118/megaman1_candidate_20261125/evidence/mm1_coordinate_facts_20261125.txt#L1-L25",
+            "score": 6.668,
+            "authority": "authoritative",
+            "status": "verified_read",
+            "answerable": true,
+            "fragment_eligible": null,
+            "snippet": "TASVideos GameResources：洛克人1坐标系统（逐字摘录）\nCoordinate system\nIn Rockman and Rockman 2, every object of the game has the following properties:\nScreen number (00―FF), it tells which screen the object resides in.\nX position (00.00―FF.FF), it tells"
+          }
+        ],
+        "grade_v2": {
+          "id": "MM04",
+          "tier": "strict_pass",
+          "ok": true,
+          "why": "status=pass, selected_gold=True, direct_recall=True",
+          "status": "pass",
+          "n_hits": 2,
+          "top1": "知识库P1_20261118/megaman1_candidate_20261125/evidence/mm1_object_ram_table_20261125.txt#L1-L17",
+          "direct_recall": true,
+          "equivalent_recall": null,
+          "correct_evidence": true,
+          "wrong_evidence": false,
+          "missed_answer": false,
+          "citation_valid": true,
+          "version_condition_error": false,
+          "selected_locator": "知识库P1_20261118/megaman1_candidate_20261125/evidence/mm1_object_ram_table_20261125.txt#L1-L17"
+        }
+      },
+      "strict": {
+        "status": "pass",
+        "reason": "2 条 verified_read + authoritative 可答命中，权威件在第 1 位",
+        "refusal": null,
+        "counts": {
+          "candidates": 9,
+          "hits": 2,
+          "answerable": 2,
+          "strong": 2
+        },
+        "index_used": "index.json",
+        "index_sha256": "5e126eddf0eae98e6b8a446cd54f37400b861d5e93ecf89d3004f16d3a252581",
+        "selected_evidence": [
+          {
+            "chunk_id": "91b55bcd7e14",
+            "score": 12.432,
+            "source_id": "tasvideos_mm1_object_ram_table",
+            "status": "verified_read",
+            "authority": "authoritative",
+            "revision": "megaman1_nes_us",
+            "game_id": "megaman1",
+            "platform": "NES",
+            "revision_match": true,
+            "locator": "知识库P1_20261118/megaman1_candidate_20261125/evidence/mm1_object_ram_table_20261125.txt#L1-L17",
+            "heading": "",
+            "matched_terms": [
+              "1",
+              "boss",
+              "rockman",
+              "克人",
+              "对象",
+              "洛克",
+              "洛克人"
+            ],
+            "snippet": "TASVideos GameResources：洛克人1对象 RAM 表（逐字摘录）\nGame Screen# X (hi,lo) Xspd (hi,lo) Y (hi,lo) Yspd (hi,lo)\nRockman 1 $460 $480:$4A0 $4C0:$4E0 $600:$620 $660:$680\nRockman 2 $440 $460:$480 $600:$620 $4A0:$4C0 $640:$660\nRockman 3 $380 $360:$340 no ",
+            "answerability": {
+              "answerable": true,
+              "intent": "identity",
+              "focus_ok": true,
+              "pattern_ok": true,
+              "intent_ok": true,
+              "focus_hit": [
+                "boss",
+                "rockman",
+                "克人",
+                "对象",
+                "洛克",
+                "洛克人"
+              ],
+              "url_list": false,
+              "topic_anchor_ok": true,
+              "exclusive_attribution_ok": true,
+              "position_subject_ok": true,
+              "position_subjects": [],
+              "shot_method_ok": true,
+              "player_role_ok": true,
+              "ending_capability_ok": true,
+              "input_sequence_ok": true,
+              "team_shot_ok": true,
+              "technique_ok": true,
+              "multiplayer_mode_ok": true
+            },
+            "fragment_provenance": {
+              "policy": "strict",
+              "eligible": true,
+              "reason": "eligible_fragment",
+              "relevant_segments": 8,
+              "eligible_segments": 8,
+              "reference_segments": 0,
+              "retracted_segments": 0,
+              "evidence_excerpt": "TASVideos GameResources：洛克人1对象 RAM 表（逐字摘录）"
+            }
+          }
+        ],
+        "authority_warnings": [],
+        "hits": [
+          {
+            "chunk_id": "91b55bcd7e14",
+            "locator": "知识库P1_20261118/megaman1_candidate_20261125/evidence/mm1_object_ram_table_20261125.txt#L1-L17",
+            "score": 12.432,
+            "authority": "authoritative",
+            "status": "verified_read",
+            "answerable": true,
+            "fragment_eligible": true,
+            "snippet": "TASVideos GameResources：洛克人1对象 RAM 表（逐字摘录）\nGame Screen# X (hi,lo) Xspd (hi,lo) Y (hi,lo) Yspd (hi,lo)\nRockman 1 $460 $480:$4A0 $4C0:$4E0 $600:$620 $660:$680\nRockman 2 $440 $460:$480 $600:$620 $4A0:$4C0 $640:$660\nRockman 3 $380 $360:$340 no "
+          },
+          {
+            "chunk_id": "b1ea3cbd31fb",
+            "locator": "知识库P1_20261118/megaman1_candidate_20261125/evidence/mm1_coordinate_facts_20261125.txt#L1-L25",
+            "score": 6.668,
+            "authority": "authoritative",
+            "status": "verified_read",
+            "answerable": true,
+            "fragment_eligible": true,
+            "snippet": "TASVideos GameResources：洛克人1坐标系统（逐字摘录）\nCoordinate system\nIn Rockman and Rockman 2, every object of the game has the following properties:\nScreen number (00―FF), it tells which screen the object resides in.\nX position (00.00―FF.FF), it tells"
+          }
+        ],
+        "grade_v2": {
+          "id": "MM04",
+          "tier": "strict_pass",
+          "ok": true,
+          "why": "status=pass, selected_gold=True, direct_recall=True",
+          "status": "pass",
+          "n_hits": 2,
+          "top1": "知识库P1_20261118/megaman1_candidate_20261125/evidence/mm1_object_ram_table_20261125.txt#L1-L17",
+          "direct_recall": true,
+          "equivalent_recall": null,
+          "correct_evidence": true,
+          "wrong_evidence": false,
+          "missed_answer": false,
+          "citation_valid": true,
+          "version_condition_error": false,
+          "selected_locator": "知识库P1_20261118/megaman1_candidate_20261125/evidence/mm1_object_ram_table_20261125.txt#L1-L17"
+        }
+      }
+    },
+    {
+      "id": "MM05",
+      "q": "洛克人1 的 Screen# 和 Yspd 对象表地址范围分别是什么？",
+      "expect": "strict_pass",
+      "gold": {
+        "path_contains": "mm1_object_ram_table_20261125.txt",
+        "line_start": 1,
+        "line_end": 17,
+        "anchor_chunk": "91b55bcd7e14"
+      },
+      "default": {
+        "status": "pass",
+        "reason": "2 条 verified_read + authoritative 可答命中，权威件在第 1 位",
+        "refusal": null,
+        "counts": {
+          "candidates": 9,
+          "hits": 2,
+          "answerable": 2,
+          "strong": 2
+        },
+        "index_used": "index.json",
+        "index_sha256": "5e126eddf0eae98e6b8a446cd54f37400b861d5e93ecf89d3004f16d3a252581",
+        "selected_evidence": [
+          {
+            "chunk_id": "91b55bcd7e14",
+            "score": 10.899,
+            "source_id": "tasvideos_mm1_object_ram_table",
+            "status": "verified_read",
+            "authority": "authoritative",
+            "revision": "megaman1_nes_us",
+            "game_id": "megaman1",
+            "platform": "NES",
+            "revision_match": true,
+            "locator": "知识库P1_20261118/megaman1_candidate_20261125/evidence/mm1_object_ram_table_20261125.txt#L1-L17",
+            "heading": "",
+            "matched_terms": [
+              "1",
+              "screen",
+              "yspd",
+              "克人",
+              "对象",
+              "洛克",
+              "洛克人"
+            ],
+            "snippet": "TASVideos GameResources：洛克人1对象 RAM 表（逐字摘录）\nGame Screen# X (hi,lo) Xspd (hi,lo) Y (hi,lo) Yspd (hi,lo)\nRockman 1 $460 $480:$4A0 $4C0:$4E0 $600:$620 $660:$680\nRockman 2 $440 $460:$480 $600:$620 $4A0:$4C0 $640:$660\nRockman 3 $380 $360:$340 no ",
+            "answerability": {
+              "answerable": true,
+              "intent": "topic",
+              "focus_ok": true,
+              "pattern_ok": true,
+              "intent_ok": true,
+              "focus_hit": [
+                "screen",
+                "yspd",
+                "克人",
+                "对象",
+                "洛克",
+                "洛克人"
+              ],
+              "url_list": false,
+              "topic_anchor_ok": true,
+              "exclusive_attribution_ok": true,
+              "position_subject_ok": true,
+              "position_subjects": [],
+              "shot_method_ok": true,
+              "player_role_ok": true,
+              "ending_capability_ok": true,
+              "input_sequence_ok": true,
+              "team_shot_ok": true,
+              "technique_ok": true,
+              "multiplayer_mode_ok": true
+            }
+          }
+        ],
+        "authority_warnings": [],
+        "hits": [
+          {
+            "chunk_id": "91b55bcd7e14",
+            "locator": "知识库P1_20261118/megaman1_candidate_20261125/evidence/mm1_object_ram_table_20261125.txt#L1-L17",
+            "score": 10.899,
+            "authority": "authoritative",
+            "status": "verified_read",
+            "answerable": true,
+            "fragment_eligible": null,
+            "snippet": "TASVideos GameResources：洛克人1对象 RAM 表（逐字摘录）\nGame Screen# X (hi,lo) Xspd (hi,lo) Y (hi,lo) Yspd (hi,lo)\nRockman 1 $460 $480:$4A0 $4C0:$4E0 $600:$620 $660:$680\nRockman 2 $440 $460:$480 $600:$620 $4A0:$4C0 $640:$660\nRockman 3 $380 $360:$340 no "
+          },
+          {
+            "chunk_id": "b1ea3cbd31fb",
+            "locator": "知识库P1_20261118/megaman1_candidate_20261125/evidence/mm1_coordinate_facts_20261125.txt#L1-L25",
+            "score": 7.189,
+            "authority": "authoritative",
+            "status": "verified_read",
+            "answerable": true,
+            "fragment_eligible": null,
+            "snippet": "TASVideos GameResources：洛克人1坐标系统（逐字摘录）\nCoordinate system\nIn Rockman and Rockman 2, every object of the game has the following properties:\nScreen number (00―FF), it tells which screen the object resides in.\nX position (00.00―FF.FF), it tells"
+          }
+        ],
+        "grade_v2": {
+          "id": "MM05",
+          "tier": "strict_pass",
+          "ok": true,
+          "why": "status=pass, selected_gold=True, direct_recall=True",
+          "status": "pass",
+          "n_hits": 2,
+          "top1": "知识库P1_20261118/megaman1_candidate_20261125/evidence/mm1_object_ram_table_20261125.txt#L1-L17",
+          "direct_recall": true,
+          "equivalent_recall": null,
+          "correct_evidence": true,
+          "wrong_evidence": false,
+          "missed_answer": false,
+          "citation_valid": true,
+          "version_condition_error": false,
+          "selected_locator": "知识库P1_20261118/megaman1_candidate_20261125/evidence/mm1_object_ram_table_20261125.txt#L1-L17"
+        }
+      },
+      "strict": {
+        "status": "pass",
+        "reason": "2 条 verified_read + authoritative 可答命中，权威件在第 1 位",
+        "refusal": null,
+        "counts": {
+          "candidates": 9,
+          "hits": 2,
+          "answerable": 2,
+          "strong": 2
+        },
+        "index_used": "index.json",
+        "index_sha256": "5e126eddf0eae98e6b8a446cd54f37400b861d5e93ecf89d3004f16d3a252581",
+        "selected_evidence": [
+          {
+            "chunk_id": "91b55bcd7e14",
+            "score": 10.899,
+            "source_id": "tasvideos_mm1_object_ram_table",
+            "status": "verified_read",
+            "authority": "authoritative",
+            "revision": "megaman1_nes_us",
+            "game_id": "megaman1",
+            "platform": "NES",
+            "revision_match": true,
+            "locator": "知识库P1_20261118/megaman1_candidate_20261125/evidence/mm1_object_ram_table_20261125.txt#L1-L17",
+            "heading": "",
+            "matched_terms": [
+              "1",
+              "screen",
+              "yspd",
+              "克人",
+              "对象",
+              "洛克",
+              "洛克人"
+            ],
+            "snippet": "TASVideos GameResources：洛克人1对象 RAM 表（逐字摘录）\nGame Screen# X (hi,lo) Xspd (hi,lo) Y (hi,lo) Yspd (hi,lo)\nRockman 1 $460 $480:$4A0 $4C0:$4E0 $600:$620 $660:$680\nRockman 2 $440 $460:$480 $600:$620 $4A0:$4C0 $640:$660\nRockman 3 $380 $360:$340 no ",
+            "answerability": {
+              "answerable": true,
+              "intent": "topic",
+              "focus_ok": true,
+              "pattern_ok": true,
+              "intent_ok": true,
+              "focus_hit": [
+                "screen",
+                "yspd",
+                "克人",
+                "对象",
+                "洛克",
+                "洛克人"
+              ],
+              "url_list": false,
+              "topic_anchor_ok": true,
+              "exclusive_attribution_ok": true,
+              "position_subject_ok": true,
+              "position_subjects": [],
+              "shot_method_ok": true,
+              "player_role_ok": true,
+              "ending_capability_ok": true,
+              "input_sequence_ok": true,
+              "team_shot_ok": true,
+              "technique_ok": true,
+              "multiplayer_mode_ok": true
+            },
+            "fragment_provenance": {
+              "policy": "strict",
+              "eligible": true,
+              "reason": "eligible_fragment",
+              "relevant_segments": 2,
+              "eligible_segments": 2,
+              "reference_segments": 0,
+              "retracted_segments": 0,
+              "evidence_excerpt": "TASVideos GameResources：洛克人1对象 RAM 表（逐字摘录）"
+            }
+          }
+        ],
+        "authority_warnings": [],
+        "hits": [
+          {
+            "chunk_id": "91b55bcd7e14",
+            "locator": "知识库P1_20261118/megaman1_candidate_20261125/evidence/mm1_object_ram_table_20261125.txt#L1-L17",
+            "score": 10.899,
+            "authority": "authoritative",
+            "status": "verified_read",
+            "answerable": true,
+            "fragment_eligible": true,
+            "snippet": "TASVideos GameResources：洛克人1对象 RAM 表（逐字摘录）\nGame Screen# X (hi,lo) Xspd (hi,lo) Y (hi,lo) Yspd (hi,lo)\nRockman 1 $460 $480:$4A0 $4C0:$4E0 $600:$620 $660:$680\nRockman 2 $440 $460:$480 $600:$620 $4A0:$4C0 $640:$660\nRockman 3 $380 $360:$340 no "
+          },
+          {
+            "chunk_id": "b1ea3cbd31fb",
+            "locator": "知识库P1_20261118/megaman1_candidate_20261125/evidence/mm1_coordinate_facts_20261125.txt#L1-L25",
+            "score": 7.189,
+            "authority": "authoritative",
+            "status": "verified_read",
+            "answerable": true,
+            "fragment_eligible": true,
+            "snippet": "TASVideos GameResources：洛克人1坐标系统（逐字摘录）\nCoordinate system\nIn Rockman and Rockman 2, every object of the game has the following properties:\nScreen number (00―FF), it tells which screen the object resides in.\nX position (00.00―FF.FF), it tells"
+          }
+        ],
+        "grade_v2": {
+          "id": "MM05",
+          "tier": "strict_pass",
+          "ok": true,
+          "why": "status=pass, selected_gold=True, direct_recall=True",
+          "status": "pass",
+          "n_hits": 2,
+          "top1": "知识库P1_20261118/megaman1_candidate_20261125/evidence/mm1_object_ram_table_20261125.txt#L1-L17",
+          "direct_recall": true,
+          "equivalent_recall": null,
+          "correct_evidence": true,
+          "wrong_evidence": false,
+          "missed_answer": false,
+          "citation_valid": true,
+          "version_condition_error": false,
+          "selected_locator": "知识库P1_20261118/megaman1_candidate_20261125/evidence/mm1_object_ram_table_20261125.txt#L1-L17"
+        }
+      }
+    },
+    {
+      "id": "MM06",
+      "q": "BizHawk 为什么不能只每帧覆盖一次内存值，需要什么机制？",
+      "expect": "strict_pass",
+      "gold": {
+        "path_contains": "mm1_bizhawk_memory_write_fact_20261125.txt",
+        "line_start": 1,
+        "line_end": 10,
+        "anchor_chunk": "b8e620db8b4c"
+      },
+      "default": {
+        "status": "pass",
+        "reason": "2 条 verified_read + authoritative 可答命中，权威件在第 1 位",
+        "refusal": null,
+        "counts": {
+          "candidates": 9,
+          "hits": 3,
+          "answerable": 3,
+          "strong": 2
+        },
+        "index_used": "index.json",
+        "index_sha256": "5e126eddf0eae98e6b8a446cd54f37400b861d5e93ecf89d3004f16d3a252581",
+        "selected_evidence": [
+          {
+            "chunk_id": "b8e620db8b4c",
+            "score": 5.691,
+            "source_id": "tasvideos_bizhawk_faq_write_refresh",
+            "status": "verified_read",
+            "authority": "authoritative",
+            "revision": "megaman1_nes_us",
+            "game_id": "megaman1",
+            "platform": "NES",
+            "revision_match": true,
+            "locator": "知识库P1_20261118/megaman1_candidate_20261125/evidence/mm1_bizhawk_memory_write_fact_20261125.txt#L1-L10",
+            "heading": "",
+            "matched_terms": [
+              "bizhawk",
+              "内存",
+              "覆盖"
+            ],
+            "snippet": "TASVideos BizHawk FAQ：内存覆盖与 memory write callback（逐字摘录）\nMemory Manipulation\nI'm trying to cheat/poke/freeze a memory address, but it keeps changing\nBizhawk can only overwrite your address once per frame, so if the game changes it more frequ",
+            "answerability": {
+              "answerable": true,
+              "intent": "topic",
+              "focus_ok": true,
+              "pattern_ok": true,
+              "intent_ok": true,
+              "focus_hit": [
+                "bizhawk",
+                "覆盖"
+              ],
+              "url_list": false,
+              "topic_anchor_ok": true,
+              "exclusive_attribution_ok": true,
+              "position_subject_ok": true,
+              "position_subjects": [],
+              "shot_method_ok": true,
+              "player_role_ok": true,
+              "ending_capability_ok": true,
+              "input_sequence_ok": true,
+              "team_shot_ok": true,
+              "technique_ok": true,
+              "multiplayer_mode_ok": true
+            }
+          }
+        ],
+        "authority_warnings": [
+          "tasvideos_forum_19912_fm2_import 是二手件（reference_only），须与官方件或我方实测交叉核对"
+        ],
+        "hits": [
+          {
+            "chunk_id": "b8e620db8b4c",
+            "locator": "知识库P1_20261118/megaman1_candidate_20261125/evidence/mm1_bizhawk_memory_write_fact_20261125.txt#L1-L10",
+            "score": 5.691,
+            "authority": "authoritative",
+            "status": "verified_read",
+            "answerable": true,
+            "fragment_eligible": null,
+            "snippet": "TASVideos BizHawk FAQ：内存覆盖与 memory write callback（逐字摘录）\nMemory Manipulation\nI'm trying to cheat/poke/freeze a memory address, but it keeps changing\nBizhawk can only overwrite your address once per frame, so if the game changes it more frequ"
+          },
+          {
+            "chunk_id": "c61b630a747d",
+            "locator": "知识库P1_20261118/megaman1_candidate_20261125/evidence/mm1_fm2_import_reference_fact_20261125.txt#L1-L18",
+            "score": 2.227,
+            "authority": "reference_only",
+            "status": "verified_read",
+            "answerable": true,
+            "fragment_eligible": null,
+            "snippet": "TASVideos Forum 19912：FM2 导入 BizHawk（参考性社区流程，逐字摘录）\nLocation: The land down under.\nUseless topic is useless.\nIf your file is in the fm3 format (TAS Editor)\nFile > Export to FM2\n(You know the thing you should do before submitting, instead of "
+          },
+          {
+            "chunk_id": "3885c96f461e",
+            "locator": "知识库P1_20261118/megaman1_candidate_20261125/evidence/mm1_local_position_probe_excerpt_20261125.txt#L5-L17",
+            "score": 1.279,
+            "authority": "authoritative",
+            "status": "verified_read",
+            "answerable": true,
+            "fragment_eligible": null,
+            "snippet": "| 臂 | 补丁 | 读回 `$0022` / `$0025` | 相机 `$001A/$001B` | 与基线像素差 |\n|---|---|---|---|---|\n| `ctl_none` | 无 | 128 / 148 | 0 / 0 | 0（恒量基线） |\n| `derived_ctl` | `$0022=200` | **128** / 148 | 0 / 0 | **0** |\n| `x_only` | `$0480=176` | **168** / 148 | "
+          }
+        ],
+        "grade_v2": {
+          "id": "MM06",
+          "tier": "strict_pass",
+          "ok": true,
+          "why": "status=pass, selected_gold=True, direct_recall=True",
+          "status": "pass",
+          "n_hits": 3,
+          "top1": "知识库P1_20261118/megaman1_candidate_20261125/evidence/mm1_bizhawk_memory_write_fact_20261125.txt#L1-L10",
+          "direct_recall": true,
+          "equivalent_recall": null,
+          "correct_evidence": true,
+          "wrong_evidence": false,
+          "missed_answer": false,
+          "citation_valid": true,
+          "version_condition_error": false,
+          "selected_locator": "知识库P1_20261118/megaman1_candidate_20261125/evidence/mm1_bizhawk_memory_write_fact_20261125.txt#L1-L10"
+        }
+      },
+      "strict": {
+        "status": "pass",
+        "reason": "2 条 verified_read + authoritative 可答命中，权威件在第 1 位",
+        "refusal": null,
+        "counts": {
+          "candidates": 9,
+          "hits": 3,
+          "answerable": 3,
+          "strong": 2
+        },
+        "index_used": "index.json",
+        "index_sha256": "5e126eddf0eae98e6b8a446cd54f37400b861d5e93ecf89d3004f16d3a252581",
+        "selected_evidence": [
+          {
+            "chunk_id": "b8e620db8b4c",
+            "score": 5.691,
+            "source_id": "tasvideos_bizhawk_faq_write_refresh",
+            "status": "verified_read",
+            "authority": "authoritative",
+            "revision": "megaman1_nes_us",
+            "game_id": "megaman1",
+            "platform": "NES",
+            "revision_match": true,
+            "locator": "知识库P1_20261118/megaman1_candidate_20261125/evidence/mm1_bizhawk_memory_write_fact_20261125.txt#L1-L10",
+            "heading": "",
+            "matched_terms": [
+              "bizhawk",
+              "内存",
+              "覆盖"
+            ],
+            "snippet": "TASVideos BizHawk FAQ：内存覆盖与 memory write callback（逐字摘录）\nMemory Manipulation\nI'm trying to cheat/poke/freeze a memory address, but it keeps changing\nBizhawk can only overwrite your address once per frame, so if the game changes it more frequ",
+            "answerability": {
+              "answerable": true,
+              "intent": "topic",
+              "focus_ok": true,
+              "pattern_ok": true,
+              "intent_ok": true,
+              "focus_hit": [
+                "bizhawk",
+                "覆盖"
+              ],
+              "url_list": false,
+              "topic_anchor_ok": true,
+              "exclusive_attribution_ok": true,
+              "position_subject_ok": true,
+              "position_subjects": [],
+              "shot_method_ok": true,
+              "player_role_ok": true,
+              "ending_capability_ok": true,
+              "input_sequence_ok": true,
+              "team_shot_ok": true,
+              "technique_ok": true,
+              "multiplayer_mode_ok": true
+            },
+            "fragment_provenance": {
+              "policy": "strict",
+              "eligible": true,
+              "reason": "eligible_fragment",
+              "relevant_segments": 3,
+              "eligible_segments": 3,
+              "reference_segments": 0,
+              "retracted_segments": 0,
+              "evidence_excerpt": "TASVideos BizHawk FAQ：内存覆盖与 memory write callback（逐字摘录）"
+            }
+          }
+        ],
+        "authority_warnings": [
+          "tasvideos_forum_19912_fm2_import 是二手件（reference_only），须与官方件或我方实测交叉核对"
+        ],
+        "hits": [
+          {
+            "chunk_id": "b8e620db8b4c",
+            "locator": "知识库P1_20261118/megaman1_candidate_20261125/evidence/mm1_bizhawk_memory_write_fact_20261125.txt#L1-L10",
+            "score": 5.691,
+            "authority": "authoritative",
+            "status": "verified_read",
+            "answerable": true,
+            "fragment_eligible": true,
+            "snippet": "TASVideos BizHawk FAQ：内存覆盖与 memory write callback（逐字摘录）\nMemory Manipulation\nI'm trying to cheat/poke/freeze a memory address, but it keeps changing\nBizhawk can only overwrite your address once per frame, so if the game changes it more frequ"
+          },
+          {
+            "chunk_id": "c61b630a747d",
+            "locator": "知识库P1_20261118/megaman1_candidate_20261125/evidence/mm1_fm2_import_reference_fact_20261125.txt#L1-L18",
+            "score": 2.227,
+            "authority": "reference_only",
+            "status": "verified_read",
+            "answerable": true,
+            "fragment_eligible": true,
+            "snippet": "TASVideos Forum 19912：FM2 导入 BizHawk（参考性社区流程，逐字摘录）\nLocation: The land down under.\nUseless topic is useless.\nIf your file is in the fm3 format (TAS Editor)\nFile > Export to FM2\n(You know the thing you should do before submitting, instead of "
+          },
+          {
+            "chunk_id": "3885c96f461e",
+            "locator": "知识库P1_20261118/megaman1_candidate_20261125/evidence/mm1_local_position_probe_excerpt_20261125.txt#L5-L17",
+            "score": 1.279,
+            "authority": "authoritative",
+            "status": "verified_read",
+            "answerable": true,
+            "fragment_eligible": true,
+            "snippet": "| 臂 | 补丁 | 读回 `$0022` / `$0025` | 相机 `$001A/$001B` | 与基线像素差 |\n|---|---|---|---|---|\n| `ctl_none` | 无 | 128 / 148 | 0 / 0 | 0（恒量基线） |\n| `derived_ctl` | `$0022=200` | **128** / 148 | 0 / 0 | **0** |\n| `x_only` | `$0480=176` | **168** / 148 | "
+          }
+        ],
+        "grade_v2": {
+          "id": "MM06",
+          "tier": "strict_pass",
+          "ok": true,
+          "why": "status=pass, selected_gold=True, direct_recall=True",
+          "status": "pass",
+          "n_hits": 3,
+          "top1": "知识库P1_20261118/megaman1_candidate_20261125/evidence/mm1_bizhawk_memory_write_fact_20261125.txt#L1-L10",
+          "direct_recall": true,
+          "equivalent_recall": null,
+          "correct_evidence": true,
+          "wrong_evidence": false,
+          "missed_answer": false,
+          "citation_valid": true,
+          "version_condition_error": false,
+          "selected_locator": "知识库P1_20261118/megaman1_candidate_20261125/evidence/mm1_bizhawk_memory_write_fact_20261125.txt#L1-L10"
+        }
+      }
+    },
+    {
+      "id": "MM07",
+      "q": "owned 和 current_weapon 两个内存字段分别对应什么？",
+      "expect": "strict_pass",
+      "gold": {
+        "path_contains": "mm1_local_weapon_ram_excerpt_20261125.txt",
+        "line_start": 4,
+        "line_end": 7,
+        "anchor_chunk": "0d852bfc5b79"
+      },
+      "default": {
+        "status": "pass",
+        "reason": "1 条 verified_read + authoritative 可答命中，权威件在第 1 位",
+        "refusal": null,
+        "counts": {
+          "candidates": 9,
+          "hits": 2,
+          "answerable": 1,
+          "strong": 1
+        },
+        "index_used": "index.json",
+        "index_sha256": "5e126eddf0eae98e6b8a446cd54f37400b861d5e93ecf89d3004f16d3a252581",
+        "selected_evidence": [
+          {
+            "chunk_id": "0d852bfc5b79",
+            "score": 3.768,
+            "source_id": "local_mm1_taspipe_measurements",
+            "status": "verified_read",
+            "authority": "authoritative",
+            "revision": "megaman1_nes_us",
+            "game_id": "megaman1",
+            "platform": "NES",
+            "revision_match": true,
+            "locator": "知识库P1_20261118/megaman1_candidate_20261125/evidence/mm1_local_weapon_ram_excerpt_20261125.txt#L4-L7",
+            "heading": "33.1 owned/current 地址实证与三条撤回",
+            "matched_terms": [
+              "current_weapon",
+              "owned"
+            ],
+            "snippet": "- **owned=0x5D 位场**（bit=菜单行：1B 2E 3G 4I 5C 6F 7M，bit0=P 不画行）；写 0xFF 菜单出全 7 行、\n写 0x40 只出 F 行（`ramdiff/w/bit_40/f0029.png` 亲看）。文献\"0x5D=all_stages_complete\"单一语义撤回。\n- **current_weapon=0x5F**，值表 0P 1C 2I 3B 4F 5E 6G 7M：菜单逐行装备 + `attempt(ram=)` 冻",
+            "answerability": {
+              "answerable": true,
+              "intent": "topic",
+              "focus_ok": true,
+              "pattern_ok": true,
+              "intent_ok": true,
+              "focus_hit": [
+                "current_weapon",
+                "owned"
+              ],
+              "url_list": false,
+              "topic_anchor_ok": true,
+              "exclusive_attribution_ok": true,
+              "position_subject_ok": true,
+              "position_subjects": [],
+              "shot_method_ok": true,
+              "player_role_ok": true,
+              "ending_capability_ok": true,
+              "input_sequence_ok": true,
+              "team_shot_ok": true,
+              "technique_ok": true,
+              "multiplayer_mode_ok": true
+            }
+          }
+        ],
+        "authority_warnings": [],
+        "hits": [
+          {
+            "chunk_id": "0d852bfc5b79",
+            "locator": "知识库P1_20261118/megaman1_candidate_20261125/evidence/mm1_local_weapon_ram_excerpt_20261125.txt#L4-L7",
+            "score": 3.768,
+            "authority": "authoritative",
+            "status": "verified_read",
+            "answerable": true,
+            "fragment_eligible": null,
+            "snippet": "- **owned=0x5D 位场**（bit=菜单行：1B 2E 3G 4I 5C 6F 7M，bit0=P 不画行）；写 0xFF 菜单出全 7 行、\n写 0x40 只出 F 行（`ramdiff/w/bit_40/f0029.png` 亲看）。文献\"0x5D=all_stages_complete\"单一语义撤回。\n- **current_weapon=0x5F**，值表 0P 1C 2I 3B 4F 5E 6G 7M：菜单逐行装备 + `attempt(ram=)` 冻"
+          },
+          {
+            "chunk_id": "b8e620db8b4c",
+            "locator": "知识库P1_20261118/megaman1_candidate_20261125/evidence/mm1_bizhawk_memory_write_fact_20261125.txt#L1-L10",
+            "score": 1.744,
+            "authority": "authoritative",
+            "status": "verified_read",
+            "answerable": false,
+            "fragment_eligible": null,
+            "snippet": "TASVideos BizHawk FAQ：内存覆盖与 memory write callback（逐字摘录）\nMemory Manipulation\nI'm trying to cheat/poke/freeze a memory address, but it keeps changing\nBizhawk can only overwrite your address once per frame, so if the game changes it more frequ"
+          }
+        ],
+        "grade_v2": {
+          "id": "MM07",
+          "tier": "strict_pass",
+          "ok": true,
+          "why": "status=pass, selected_gold=True, direct_recall=True",
+          "status": "pass",
+          "n_hits": 2,
+          "top1": "知识库P1_20261118/megaman1_candidate_20261125/evidence/mm1_local_weapon_ram_excerpt_20261125.txt#L4-L7",
+          "direct_recall": true,
+          "equivalent_recall": null,
+          "correct_evidence": true,
+          "wrong_evidence": false,
+          "missed_answer": false,
+          "citation_valid": true,
+          "version_condition_error": false,
+          "selected_locator": "知识库P1_20261118/megaman1_candidate_20261125/evidence/mm1_local_weapon_ram_excerpt_20261125.txt#L4-L7"
+        }
+      },
+      "strict": {
+        "status": "pass",
+        "reason": "1 条 verified_read + authoritative 可答命中，权威件在第 1 位",
+        "refusal": null,
+        "counts": {
+          "candidates": 9,
+          "hits": 2,
+          "answerable": 1,
+          "strong": 1
+        },
+        "index_used": "index.json",
+        "index_sha256": "5e126eddf0eae98e6b8a446cd54f37400b861d5e93ecf89d3004f16d3a252581",
+        "selected_evidence": [
+          {
+            "chunk_id": "0d852bfc5b79",
+            "score": 3.768,
+            "source_id": "local_mm1_taspipe_measurements",
+            "status": "verified_read",
+            "authority": "authoritative",
+            "revision": "megaman1_nes_us",
+            "game_id": "megaman1",
+            "platform": "NES",
+            "revision_match": true,
+            "locator": "知识库P1_20261118/megaman1_candidate_20261125/evidence/mm1_local_weapon_ram_excerpt_20261125.txt#L4-L7",
+            "heading": "33.1 owned/current 地址实证与三条撤回",
+            "matched_terms": [
+              "current_weapon",
+              "owned"
+            ],
+            "snippet": "- **owned=0x5D 位场**（bit=菜单行：1B 2E 3G 4I 5C 6F 7M，bit0=P 不画行）；写 0xFF 菜单出全 7 行、\n写 0x40 只出 F 行（`ramdiff/w/bit_40/f0029.png` 亲看）。文献\"0x5D=all_stages_complete\"单一语义撤回。\n- **current_weapon=0x5F**，值表 0P 1C 2I 3B 4F 5E 6G 7M：菜单逐行装备 + `attempt(ram=)` 冻",
+            "answerability": {
+              "answerable": true,
+              "intent": "topic",
+              "focus_ok": true,
+              "pattern_ok": true,
+              "intent_ok": true,
+              "focus_hit": [
+                "current_weapon",
+                "owned"
+              ],
+              "url_list": false,
+              "topic_anchor_ok": true,
+              "exclusive_attribution_ok": true,
+              "position_subject_ok": true,
+              "position_subjects": [],
+              "shot_method_ok": true,
+              "player_role_ok": true,
+              "ending_capability_ok": true,
+              "input_sequence_ok": true,
+              "team_shot_ok": true,
+              "technique_ok": true,
+              "multiplayer_mode_ok": true
+            },
+            "fragment_provenance": {
+              "policy": "strict",
+              "eligible": true,
+              "reason": "eligible_fragment",
+              "relevant_segments": 2,
+              "eligible_segments": 2,
+              "reference_segments": 0,
+              "retracted_segments": 0,
+              "evidence_excerpt": "current_weapon=0x5F**，值表 0P 1C 2I 3B 4F 5E 6G 7M：菜单逐行装备 + `attempt(ram=)` 冻结差分"
+            }
+          }
+        ],
+        "authority_warnings": [],
+        "hits": [
+          {
+            "chunk_id": "0d852bfc5b79",
+            "locator": "知识库P1_20261118/megaman1_candidate_20261125/evidence/mm1_local_weapon_ram_excerpt_20261125.txt#L4-L7",
+            "score": 3.768,
+            "authority": "authoritative",
+            "status": "verified_read",
+            "answerable": true,
+            "fragment_eligible": true,
+            "snippet": "- **owned=0x5D 位场**（bit=菜单行：1B 2E 3G 4I 5C 6F 7M，bit0=P 不画行）；写 0xFF 菜单出全 7 行、\n写 0x40 只出 F 行（`ramdiff/w/bit_40/f0029.png` 亲看）。文献\"0x5D=all_stages_complete\"单一语义撤回。\n- **current_weapon=0x5F**，值表 0P 1C 2I 3B 4F 5E 6G 7M：菜单逐行装备 + `attempt(ram=)` 冻"
+          },
+          {
+            "chunk_id": "b8e620db8b4c",
+            "locator": "知识库P1_20261118/megaman1_candidate_20261125/evidence/mm1_bizhawk_memory_write_fact_20261125.txt#L1-L10",
+            "score": 1.744,
+            "authority": "authoritative",
+            "status": "verified_read",
+            "answerable": false,
+            "fragment_eligible": true,
+            "snippet": "TASVideos BizHawk FAQ：内存覆盖与 memory write callback（逐字摘录）\nMemory Manipulation\nI'm trying to cheat/poke/freeze a memory address, but it keeps changing\nBizhawk can only overwrite your address once per frame, so if the game changes it more frequ"
+          }
+        ],
+        "grade_v2": {
+          "id": "MM07",
+          "tier": "strict_pass",
+          "ok": true,
+          "why": "status=pass, selected_gold=True, direct_recall=True",
+          "status": "pass",
+          "n_hits": 2,
+          "top1": "知识库P1_20261118/megaman1_candidate_20261125/evidence/mm1_local_weapon_ram_excerpt_20261125.txt#L4-L7",
+          "direct_recall": true,
+          "equivalent_recall": null,
+          "correct_evidence": true,
+          "wrong_evidence": false,
+          "missed_answer": false,
+          "citation_valid": true,
+          "version_condition_error": false,
+          "selected_locator": "知识库P1_20261118/megaman1_candidate_20261125/evidence/mm1_local_weapon_ram_excerpt_20261125.txt#L4-L7"
+        }
+      }
+    },
+    {
+      "id": "MM08",
+      "q": "current_weapon 字段的值 0 到 7 分别代表什么武器？",
+      "expect": "strict_pass",
+      "gold": {
+        "path_contains": "mm1_local_weapon_ram_excerpt_20261125.txt",
+        "line_start": 4,
+        "line_end": 7,
+        "anchor_chunk": "0d852bfc5b79"
+      },
+      "default": {
+        "status": "pass",
+        "reason": "1 条 verified_read + authoritative 可答命中，权威件在第 1 位",
+        "refusal": null,
+        "counts": {
+          "candidates": 9,
+          "hits": 3,
+          "answerable": 1,
+          "strong": 1
+        },
+        "index_used": "index.json",
+        "index_sha256": "5e126eddf0eae98e6b8a446cd54f37400b861d5e93ecf89d3004f16d3a252581",
+        "selected_evidence": [
+          {
+            "chunk_id": "0d852bfc5b79",
+            "score": 3.768,
+            "source_id": "local_mm1_taspipe_measurements",
+            "status": "verified_read",
+            "authority": "authoritative",
+            "revision": "megaman1_nes_us",
+            "game_id": "megaman1",
+            "platform": "NES",
+            "revision_match": true,
+            "locator": "知识库P1_20261118/megaman1_candidate_20261125/evidence/mm1_local_weapon_ram_excerpt_20261125.txt#L4-L7",
+            "heading": "33.1 owned/current 地址实证与三条撤回",
+            "matched_terms": [
+              "7",
+              "current_weapon"
+            ],
+            "snippet": "- **owned=0x5D 位场**（bit=菜单行：1B 2E 3G 4I 5C 6F 7M，bit0=P 不画行）；写 0xFF 菜单出全 7 行、\n写 0x40 只出 F 行（`ramdiff/w/bit_40/f0029.png` 亲看）。文献\"0x5D=all_stages_complete\"单一语义撤回。\n- **current_weapon=0x5F**，值表 0P 1C 2I 3B 4F 5E 6G 7M：菜单逐行装备 + `attempt(ram=)` 冻",
+            "answerability": {
+              "answerable": true,
+              "intent": "topic",
+              "focus_ok": true,
+              "pattern_ok": true,
+              "intent_ok": true,
+              "focus_hit": [
+                "current_weapon"
+              ],
+              "url_list": false,
+              "topic_anchor_ok": true,
+              "exclusive_attribution_ok": true,
+              "position_subject_ok": true,
+              "position_subjects": [],
+              "shot_method_ok": true,
+              "player_role_ok": true,
+              "ending_capability_ok": true,
+              "input_sequence_ok": true,
+              "team_shot_ok": true,
+              "technique_ok": true,
+              "multiplayer_mode_ok": true
+            }
+          }
+        ],
+        "authority_warnings": [],
+        "hits": [
+          {
+            "chunk_id": "0d852bfc5b79",
+            "locator": "知识库P1_20261118/megaman1_candidate_20261125/evidence/mm1_local_weapon_ram_excerpt_20261125.txt#L4-L7",
+            "score": 3.768,
+            "authority": "authoritative",
+            "status": "verified_read",
+            "answerable": true,
+            "fragment_eligible": null,
+            "snippet": "- **owned=0x5D 位场**（bit=菜单行：1B 2E 3G 4I 5C 6F 7M，bit0=P 不画行）；写 0xFF 菜单出全 7 行、\n写 0x40 只出 F 行（`ramdiff/w/bit_40/f0029.png` 亲看）。文献\"0x5D=all_stages_complete\"单一语义撤回。\n- **current_weapon=0x5F**，值表 0P 1C 2I 3B 4F 5E 6G 7M：菜单逐行装备 + `attempt(ram=)` 冻"
+          },
+          {
+            "chunk_id": "3885c96f461e",
+            "locator": "知识库P1_20261118/megaman1_candidate_20261125/evidence/mm1_local_position_probe_excerpt_20261125.txt#L5-L17",
+            "score": 2.664,
+            "authority": "authoritative",
+            "status": "verified_read",
+            "answerable": false,
+            "fragment_eligible": null,
+            "snippet": "| 臂 | 补丁 | 读回 `$0022` / `$0025` | 相机 `$001A/$001B` | 与基线像素差 |\n|---|---|---|---|---|\n| `ctl_none` | 无 | 128 / 148 | 0 / 0 | 0（恒量基线） |\n| `derived_ctl` | `$0022=200` | **128** / 148 | 0 / 0 | **0** |\n| `x_only` | `$0480=176` | **168** / 148 | "
+          },
+          {
+            "chunk_id": "91b55bcd7e14",
+            "locator": "知识库P1_20261118/megaman1_candidate_20261125/evidence/mm1_object_ram_table_20261125.txt#L1-L17",
+            "score": 1.186,
+            "authority": "authoritative",
+            "status": "verified_read",
+            "answerable": false,
+            "fragment_eligible": null,
+            "snippet": "TASVideos GameResources：洛克人1对象 RAM 表（逐字摘录）\nGame Screen# X (hi,lo) Xspd (hi,lo) Y (hi,lo) Yspd (hi,lo)\nRockman 1 $460 $480:$4A0 $4C0:$4E0 $600:$620 $660:$680\nRockman 2 $440 $460:$480 $600:$620 $4A0:$4C0 $640:$660\nRockman 3 $380 $360:$340 no "
+          }
+        ],
+        "grade_v2": {
+          "id": "MM08",
+          "tier": "strict_pass",
+          "ok": true,
+          "why": "status=pass, selected_gold=True, direct_recall=True",
+          "status": "pass",
+          "n_hits": 3,
+          "top1": "知识库P1_20261118/megaman1_candidate_20261125/evidence/mm1_local_weapon_ram_excerpt_20261125.txt#L4-L7",
+          "direct_recall": true,
+          "equivalent_recall": null,
+          "correct_evidence": true,
+          "wrong_evidence": false,
+          "missed_answer": false,
+          "citation_valid": true,
+          "version_condition_error": false,
+          "selected_locator": "知识库P1_20261118/megaman1_candidate_20261125/evidence/mm1_local_weapon_ram_excerpt_20261125.txt#L4-L7"
+        }
+      },
+      "strict": {
+        "status": "pass",
+        "reason": "1 条 verified_read + authoritative 可答命中，权威件在第 1 位",
+        "refusal": null,
+        "counts": {
+          "candidates": 9,
+          "hits": 3,
+          "answerable": 1,
+          "strong": 1
+        },
+        "index_used": "index.json",
+        "index_sha256": "5e126eddf0eae98e6b8a446cd54f37400b861d5e93ecf89d3004f16d3a252581",
+        "selected_evidence": [
+          {
+            "chunk_id": "0d852bfc5b79",
+            "score": 3.768,
+            "source_id": "local_mm1_taspipe_measurements",
+            "status": "verified_read",
+            "authority": "authoritative",
+            "revision": "megaman1_nes_us",
+            "game_id": "megaman1",
+            "platform": "NES",
+            "revision_match": true,
+            "locator": "知识库P1_20261118/megaman1_candidate_20261125/evidence/mm1_local_weapon_ram_excerpt_20261125.txt#L4-L7",
+            "heading": "33.1 owned/current 地址实证与三条撤回",
+            "matched_terms": [
+              "7",
+              "current_weapon"
+            ],
+            "snippet": "- **owned=0x5D 位场**（bit=菜单行：1B 2E 3G 4I 5C 6F 7M，bit0=P 不画行）；写 0xFF 菜单出全 7 行、\n写 0x40 只出 F 行（`ramdiff/w/bit_40/f0029.png` 亲看）。文献\"0x5D=all_stages_complete\"单一语义撤回。\n- **current_weapon=0x5F**，值表 0P 1C 2I 3B 4F 5E 6G 7M：菜单逐行装备 + `attempt(ram=)` 冻",
+            "answerability": {
+              "answerable": true,
+              "intent": "topic",
+              "focus_ok": true,
+              "pattern_ok": true,
+              "intent_ok": true,
+              "focus_hit": [
+                "current_weapon"
+              ],
+              "url_list": false,
+              "topic_anchor_ok": true,
+              "exclusive_attribution_ok": true,
+              "position_subject_ok": true,
+              "position_subjects": [],
+              "shot_method_ok": true,
+              "player_role_ok": true,
+              "ending_capability_ok": true,
+              "input_sequence_ok": true,
+              "team_shot_ok": true,
+              "technique_ok": true,
+              "multiplayer_mode_ok": true
+            },
+            "fragment_provenance": {
+              "policy": "strict",
+              "eligible": true,
+              "reason": "eligible_fragment",
+              "relevant_segments": 1,
+              "eligible_segments": 1,
+              "reference_segments": 0,
+              "retracted_segments": 0,
+              "evidence_excerpt": "current_weapon=0x5F**，值表 0P 1C 2I 3B 4F 5E 6G 7M：菜单逐行装备 + `attempt(ram=)` 冻结差分"
+            }
+          }
+        ],
+        "authority_warnings": [],
+        "hits": [
+          {
+            "chunk_id": "0d852bfc5b79",
+            "locator": "知识库P1_20261118/megaman1_candidate_20261125/evidence/mm1_local_weapon_ram_excerpt_20261125.txt#L4-L7",
+            "score": 3.768,
+            "authority": "authoritative",
+            "status": "verified_read",
+            "answerable": true,
+            "fragment_eligible": true,
+            "snippet": "- **owned=0x5D 位场**（bit=菜单行：1B 2E 3G 4I 5C 6F 7M，bit0=P 不画行）；写 0xFF 菜单出全 7 行、\n写 0x40 只出 F 行（`ramdiff/w/bit_40/f0029.png` 亲看）。文献\"0x5D=all_stages_complete\"单一语义撤回。\n- **current_weapon=0x5F**，值表 0P 1C 2I 3B 4F 5E 6G 7M：菜单逐行装备 + `attempt(ram=)` 冻"
+          },
+          {
+            "chunk_id": "3885c96f461e",
+            "locator": "知识库P1_20261118/megaman1_candidate_20261125/evidence/mm1_local_position_probe_excerpt_20261125.txt#L5-L17",
+            "score": 2.664,
+            "authority": "authoritative",
+            "status": "verified_read",
+            "answerable": false,
+            "fragment_eligible": true,
+            "snippet": "| 臂 | 补丁 | 读回 `$0022` / `$0025` | 相机 `$001A/$001B` | 与基线像素差 |\n|---|---|---|---|---|\n| `ctl_none` | 无 | 128 / 148 | 0 / 0 | 0（恒量基线） |\n| `derived_ctl` | `$0022=200` | **128** / 148 | 0 / 0 | **0** |\n| `x_only` | `$0480=176` | **168** / 148 | "
+          },
+          {
+            "chunk_id": "91b55bcd7e14",
+            "locator": "知识库P1_20261118/megaman1_candidate_20261125/evidence/mm1_object_ram_table_20261125.txt#L1-L17",
+            "score": 1.186,
+            "authority": "authoritative",
+            "status": "verified_read",
+            "answerable": false,
+            "fragment_eligible": true,
+            "snippet": "TASVideos GameResources：洛克人1对象 RAM 表（逐字摘录）\nGame Screen# X (hi,lo) Xspd (hi,lo) Y (hi,lo) Yspd (hi,lo)\nRockman 1 $460 $480:$4A0 $4C0:$4E0 $600:$620 $660:$680\nRockman 2 $440 $460:$480 $600:$620 $4A0:$4C0 $640:$660\nRockman 3 $380 $360:$340 no "
+          }
+        ],
+        "grade_v2": {
+          "id": "MM08",
+          "tier": "strict_pass",
+          "ok": true,
+          "why": "status=pass, selected_gold=True, direct_recall=True",
+          "status": "pass",
+          "n_hits": 3,
+          "top1": "知识库P1_20261118/megaman1_candidate_20261125/evidence/mm1_local_weapon_ram_excerpt_20261125.txt#L4-L7",
+          "direct_recall": true,
+          "equivalent_recall": null,
+          "correct_evidence": true,
+          "wrong_evidence": false,
+          "missed_answer": false,
+          "citation_valid": true,
+          "version_condition_error": false,
+          "selected_locator": "知识库P1_20261118/megaman1_candidate_20261125/evidence/mm1_local_weapon_ram_excerpt_20261125.txt#L4-L7"
+        }
+      }
+    },
+    {
+      "id": "MM09",
+      "q": "洛克人1 写 $0480 和 $0600 为什么能移动角色？",
+      "expect": "strict_pass",
+      "gold": {
+        "path_contains": "mm1_local_position_probe_excerpt_20261125.txt",
+        "line_start": 5,
+        "line_end": 17,
+        "anchor_chunk": "3885c96f461e"
+      },
+      "default": {
+        "status": "pass",
+        "reason": "3 条 verified_read + authoritative 可答命中，权威件在第 1 位",
+        "refusal": null,
+        "counts": {
+          "candidates": 9,
+          "hits": 4,
+          "answerable": 3,
+          "strong": 3
+        },
+        "index_used": "index.json",
+        "index_sha256": "5e126eddf0eae98e6b8a446cd54f37400b861d5e93ecf89d3004f16d3a252581",
+        "selected_evidence": [
+          {
+            "chunk_id": "3885c96f461e",
+            "score": 12.854,
+            "source_id": "local_mm1_taspipe_measurements",
+            "status": "verified_read",
+            "authority": "authoritative",
+            "revision": "megaman1_nes_us",
+            "game_id": "megaman1",
+            "platform": "NES",
+            "revision_match": true,
+            "locator": "知识库P1_20261118/megaman1_candidate_20261125/evidence/mm1_local_position_probe_excerpt_20261125.txt#L5-L17",
+            "heading": "3. T1 实测：权威表 vs 派生副本（全部臂等长 = 4 空帧，同一个 root `cut_spawn.state`）",
+            "matched_terms": [
+              "$0480",
+              "$0600",
+              "0480",
+              "0600",
+              "写",
+              "角色"
+            ],
+            "snippet": "| 臂 | 补丁 | 读回 `$0022` / `$0025` | 相机 `$001A/$001B` | 与基线像素差 |\n|---|---|---|---|---|\n| `ctl_none` | 无 | 128 / 148 | 0 / 0 | 0（恒量基线） |\n| `derived_ctl` | `$0022=200` | **128** / 148 | 0 / 0 | **0** |\n| `x_only` | `$0480=176` | **168** / 148 | ",
+            "answerability": {
+              "answerable": true,
+              "intent": "topic",
+              "focus_ok": true,
+              "pattern_ok": true,
+              "intent_ok": true,
+              "focus_hit": [
+                "$0480",
+                "$0600",
+                "0480",
+                "0600"
+              ],
+              "url_list": false,
+              "topic_anchor_ok": true,
+              "exclusive_attribution_ok": true,
+              "position_subject_ok": true,
+              "position_subjects": [],
+              "shot_method_ok": true,
+              "player_role_ok": true,
+              "ending_capability_ok": true,
+              "input_sequence_ok": true,
+              "team_shot_ok": true,
+              "technique_ok": true,
+              "multiplayer_mode_ok": true
+            }
+          }
+        ],
+        "authority_warnings": [],
+        "hits": [
+          {
+            "chunk_id": "3885c96f461e",
+            "locator": "知识库P1_20261118/megaman1_candidate_20261125/evidence/mm1_local_position_probe_excerpt_20261125.txt#L5-L17",
+            "score": 12.854,
+            "authority": "authoritative",
+            "status": "verified_read",
+            "answerable": true,
+            "fragment_eligible": null,
+            "snippet": "| 臂 | 补丁 | 读回 `$0022` / `$0025` | 相机 `$001A/$001B` | 与基线像素差 |\n|---|---|---|---|---|\n| `ctl_none` | 无 | 128 / 148 | 0 / 0 | 0（恒量基线） |\n| `derived_ctl` | `$0022=200` | **128** / 148 | 0 / 0 | **0** |\n| `x_only` | `$0480=176` | **168** / 148 | "
+          },
+          {
+            "chunk_id": "91b55bcd7e14",
+            "locator": "知识库P1_20261118/megaman1_candidate_20261125/evidence/mm1_object_ram_table_20261125.txt#L1-L17",
+            "score": 5.671,
+            "authority": "authoritative",
+            "status": "verified_read",
+            "answerable": true,
+            "fragment_eligible": null,
+            "snippet": "TASVideos GameResources：洛克人1对象 RAM 表（逐字摘录）\nGame Screen# X (hi,lo) Xspd (hi,lo) Y (hi,lo) Yspd (hi,lo)\nRockman 1 $460 $480:$4A0 $4C0:$4E0 $600:$620 $660:$680\nRockman 2 $440 $460:$480 $600:$620 $4A0:$4C0 $640:$660\nRockman 3 $380 $360:$340 no "
+          },
+          {
+            "chunk_id": "b1ea3cbd31fb",
+            "locator": "知识库P1_20261118/megaman1_candidate_20261125/evidence/mm1_coordinate_facts_20261125.txt#L1-L25",
+            "score": 4.595,
+            "authority": "authoritative",
+            "status": "verified_read",
+            "answerable": true,
+            "fragment_eligible": null,
+            "snippet": "TASVideos GameResources：洛克人1坐标系统（逐字摘录）\nCoordinate system\nIn Rockman and Rockman 2, every object of the game has the following properties:\nScreen number (00―FF), it tells which screen the object resides in.\nX position (00.00―FF.FF), it tells"
+          },
+          {
+            "chunk_id": "0d852bfc5b79",
+            "locator": "知识库P1_20261118/megaman1_candidate_20261125/evidence/mm1_local_weapon_ram_excerpt_20261125.txt#L4-L7",
+            "score": 1.971,
+            "authority": "authoritative",
+            "status": "verified_read",
+            "answerable": false,
+            "fragment_eligible": null,
+            "snippet": "- **owned=0x5D 位场**（bit=菜单行：1B 2E 3G 4I 5C 6F 7M，bit0=P 不画行）；写 0xFF 菜单出全 7 行、\n写 0x40 只出 F 行（`ramdiff/w/bit_40/f0029.png` 亲看）。文献\"0x5D=all_stages_complete\"单一语义撤回。\n- **current_weapon=0x5F**，值表 0P 1C 2I 3B 4F 5E 6G 7M：菜单逐行装备 + `attempt(ram=)` 冻"
+          }
+        ],
+        "grade_v2": {
+          "id": "MM09",
+          "tier": "strict_pass",
+          "ok": true,
+          "why": "status=pass, selected_gold=True, direct_recall=True",
+          "status": "pass",
+          "n_hits": 4,
+          "top1": "知识库P1_20261118/megaman1_candidate_20261125/evidence/mm1_local_position_probe_excerpt_20261125.txt#L5-L17",
+          "direct_recall": true,
+          "equivalent_recall": null,
+          "correct_evidence": true,
+          "wrong_evidence": false,
+          "missed_answer": false,
+          "citation_valid": true,
+          "version_condition_error": false,
+          "selected_locator": "知识库P1_20261118/megaman1_candidate_20261125/evidence/mm1_local_position_probe_excerpt_20261125.txt#L5-L17"
+        }
+      },
+      "strict": {
+        "status": "pass",
+        "reason": "3 条 verified_read + authoritative 可答命中，权威件在第 1 位",
+        "refusal": null,
+        "counts": {
+          "candidates": 9,
+          "hits": 4,
+          "answerable": 3,
+          "strong": 3
+        },
+        "index_used": "index.json",
+        "index_sha256": "5e126eddf0eae98e6b8a446cd54f37400b861d5e93ecf89d3004f16d3a252581",
+        "selected_evidence": [
+          {
+            "chunk_id": "3885c96f461e",
+            "score": 12.854,
+            "source_id": "local_mm1_taspipe_measurements",
+            "status": "verified_read",
+            "authority": "authoritative",
+            "revision": "megaman1_nes_us",
+            "game_id": "megaman1",
+            "platform": "NES",
+            "revision_match": true,
+            "locator": "知识库P1_20261118/megaman1_candidate_20261125/evidence/mm1_local_position_probe_excerpt_20261125.txt#L5-L17",
+            "heading": "3. T1 实测：权威表 vs 派生副本（全部臂等长 = 4 空帧，同一个 root `cut_spawn.state`）",
+            "matched_terms": [
+              "$0480",
+              "$0600",
+              "0480",
+              "0600",
+              "写",
+              "角色"
+            ],
+            "snippet": "| 臂 | 补丁 | 读回 `$0022` / `$0025` | 相机 `$001A/$001B` | 与基线像素差 |\n|---|---|---|---|---|\n| `ctl_none` | 无 | 128 / 148 | 0 / 0 | 0（恒量基线） |\n| `derived_ctl` | `$0022=200` | **128** / 148 | 0 / 0 | **0** |\n| `x_only` | `$0480=176` | **168** / 148 | ",
+            "answerability": {
+              "answerable": true,
+              "intent": "topic",
+              "focus_ok": true,
+              "pattern_ok": true,
+              "intent_ok": true,
+              "focus_hit": [
+                "$0480",
+                "$0600",
+                "0480",
+                "0600"
+              ],
+              "url_list": false,
+              "topic_anchor_ok": true,
+              "exclusive_attribution_ok": true,
+              "position_subject_ok": true,
+              "position_subjects": [],
+              "shot_method_ok": true,
+              "player_role_ok": true,
+              "ending_capability_ok": true,
+              "input_sequence_ok": true,
+              "team_shot_ok": true,
+              "technique_ok": true,
+              "multiplayer_mode_ok": true
+            },
+            "fragment_provenance": {
+              "policy": "strict",
+              "eligible": true,
+              "reason": "eligible_fragment",
+              "relevant_segments": 4,
+              "eligible_segments": 4,
+              "reference_segments": 0,
+              "retracted_segments": 0,
+              "evidence_excerpt": "`$0460=12,$0480=32,$0600=84`"
+            }
+          }
+        ],
+        "authority_warnings": [],
+        "hits": [
+          {
+            "chunk_id": "3885c96f461e",
+            "locator": "知识库P1_20261118/megaman1_candidate_20261125/evidence/mm1_local_position_probe_excerpt_20261125.txt#L5-L17",
+            "score": 12.854,
+            "authority": "authoritative",
+            "status": "verified_read",
+            "answerable": true,
+            "fragment_eligible": true,
+            "snippet": "| 臂 | 补丁 | 读回 `$0022` / `$0025` | 相机 `$001A/$001B` | 与基线像素差 |\n|---|---|---|---|---|\n| `ctl_none` | 无 | 128 / 148 | 0 / 0 | 0（恒量基线） |\n| `derived_ctl` | `$0022=200` | **128** / 148 | 0 / 0 | **0** |\n| `x_only` | `$0480=176` | **168** / 148 | "
+          },
+          {
+            "chunk_id": "91b55bcd7e14",
+            "locator": "知识库P1_20261118/megaman1_candidate_20261125/evidence/mm1_object_ram_table_20261125.txt#L1-L17",
+            "score": 5.671,
+            "authority": "authoritative",
+            "status": "verified_read",
+            "answerable": true,
+            "fragment_eligible": true,
+            "snippet": "TASVideos GameResources：洛克人1对象 RAM 表（逐字摘录）\nGame Screen# X (hi,lo) Xspd (hi,lo) Y (hi,lo) Yspd (hi,lo)\nRockman 1 $460 $480:$4A0 $4C0:$4E0 $600:$620 $660:$680\nRockman 2 $440 $460:$480 $600:$620 $4A0:$4C0 $640:$660\nRockman 3 $380 $360:$340 no "
+          },
+          {
+            "chunk_id": "b1ea3cbd31fb",
+            "locator": "知识库P1_20261118/megaman1_candidate_20261125/evidence/mm1_coordinate_facts_20261125.txt#L1-L25",
+            "score": 4.595,
+            "authority": "authoritative",
+            "status": "verified_read",
+            "answerable": true,
+            "fragment_eligible": true,
+            "snippet": "TASVideos GameResources：洛克人1坐标系统（逐字摘录）\nCoordinate system\nIn Rockman and Rockman 2, every object of the game has the following properties:\nScreen number (00―FF), it tells which screen the object resides in.\nX position (00.00―FF.FF), it tells"
+          },
+          {
+            "chunk_id": "0d852bfc5b79",
+            "locator": "知识库P1_20261118/megaman1_candidate_20261125/evidence/mm1_local_weapon_ram_excerpt_20261125.txt#L4-L7",
+            "score": 1.971,
+            "authority": "authoritative",
+            "status": "verified_read",
+            "answerable": false,
+            "fragment_eligible": true,
+            "snippet": "- **owned=0x5D 位场**（bit=菜单行：1B 2E 3G 4I 5C 6F 7M，bit0=P 不画行）；写 0xFF 菜单出全 7 行、\n写 0x40 只出 F 行（`ramdiff/w/bit_40/f0029.png` 亲看）。文献\"0x5D=all_stages_complete\"单一语义撤回。\n- **current_weapon=0x5F**，值表 0P 1C 2I 3B 4F 5E 6G 7M：菜单逐行装备 + `attempt(ram=)` 冻"
+          }
+        ],
+        "grade_v2": {
+          "id": "MM09",
+          "tier": "strict_pass",
+          "ok": true,
+          "why": "status=pass, selected_gold=True, direct_recall=True",
+          "status": "pass",
+          "n_hits": 4,
+          "top1": "知识库P1_20261118/megaman1_candidate_20261125/evidence/mm1_local_position_probe_excerpt_20261125.txt#L5-L17",
+          "direct_recall": true,
+          "equivalent_recall": null,
+          "correct_evidence": true,
+          "wrong_evidence": false,
+          "missed_answer": false,
+          "citation_valid": true,
+          "version_condition_error": false,
+          "selected_locator": "知识库P1_20261118/megaman1_candidate_20261125/evidence/mm1_local_position_probe_excerpt_20261125.txt#L5-L17"
+        }
+      }
+    },
+    {
+      "id": "MM10",
+      "q": "洛克人1 怎样从现有存档点继续制作某个时刻的画面？",
+      "expect": "refuse",
+      "gold": null,
+      "default": {
+        "status": "inconclusive",
+        "reason": "命中全部未过逐事实可答性核查（词命中≠回答问题），缺证据不冒充事实",
+        "refusal": "unanswerable",
+        "counts": {
+          "candidates": 9,
+          "hits": 3,
+          "answerable": 0
+        },
+        "index_used": "index.json",
+        "index_sha256": "5e126eddf0eae98e6b8a446cd54f37400b861d5e93ecf89d3004f16d3a252581",
+        "selected_evidence": [],
+        "authority_warnings": [],
+        "hits": [
+          {
+            "chunk_id": "91b55bcd7e14",
+            "locator": "知识库P1_20261118/megaman1_candidate_20261125/evidence/mm1_object_ram_table_20261125.txt#L1-L17",
+            "score": 5.671,
+            "authority": "authoritative",
+            "status": "verified_read",
+            "answerable": false,
+            "fragment_eligible": null,
+            "snippet": "TASVideos GameResources：洛克人1对象 RAM 表（逐字摘录）\nGame Screen# X (hi,lo) Xspd (hi,lo) Y (hi,lo) Yspd (hi,lo)\nRockman 1 $460 $480:$4A0 $4C0:$4E0 $600:$620 $660:$680\nRockman 2 $440 $460:$480 $600:$620 $4A0:$4C0 $640:$660\nRockman 3 $380 $360:$340 no "
+          },
+          {
+            "chunk_id": "b1ea3cbd31fb",
+            "locator": "知识库P1_20261118/megaman1_candidate_20261125/evidence/mm1_coordinate_facts_20261125.txt#L1-L25",
+            "score": 4.595,
+            "authority": "authoritative",
+            "status": "verified_read",
+            "answerable": false,
+            "fragment_eligible": null,
+            "snippet": "TASVideos GameResources：洛克人1坐标系统（逐字摘录）\nCoordinate system\nIn Rockman and Rockman 2, every object of the game has the following properties:\nScreen number (00―FF), it tells which screen the object resides in.\nX position (00.00―FF.FF), it tells"
+          },
+          {
+            "chunk_id": "3885c96f461e",
+            "locator": "知识库P1_20261118/megaman1_candidate_20261125/evidence/mm1_local_position_probe_excerpt_20261125.txt#L5-L17",
+            "score": 1.279,
+            "authority": "authoritative",
+            "status": "verified_read",
+            "answerable": false,
+            "fragment_eligible": null,
+            "snippet": "| 臂 | 补丁 | 读回 `$0022` / `$0025` | 相机 `$001A/$001B` | 与基线像素差 |\n|---|---|---|---|---|\n| `ctl_none` | 无 | 128 / 148 | 0 / 0 | 0（恒量基线） |\n| `derived_ctl` | `$0022=200` | **128** / 148 | 0 / 0 | **0** |\n| `x_only` | `$0480=176` | **168** / 148 | "
+          }
+        ],
+        "grade_v2": {
+          "id": "MM10",
+          "tier": "refuse",
+          "ok": true,
+          "why": "status=inconclusive（pass 即失败：缺证据不许冒充事实）",
+          "status": "inconclusive",
+          "n_hits": 3,
+          "top1": "知识库P1_20261118/megaman1_candidate_20261125/evidence/mm1_object_ram_table_20261125.txt#L1-L17",
+          "direct_recall": false,
+          "equivalent_recall": null,
+          "correct_evidence": true,
+          "wrong_evidence": false,
+          "missed_answer": false,
+          "citation_valid": true,
+          "version_condition_error": false,
+          "selected_locator": null
+        }
+      },
+      "strict": {
+        "status": "inconclusive",
+        "reason": "命中全部未过逐事实可答性核查（词命中≠回答问题），缺证据不冒充事实",
+        "refusal": "unanswerable",
+        "counts": {
+          "candidates": 9,
+          "hits": 3,
+          "answerable": 0
+        },
+        "index_used": "index.json",
+        "index_sha256": "5e126eddf0eae98e6b8a446cd54f37400b861d5e93ecf89d3004f16d3a252581",
+        "selected_evidence": [],
+        "authority_warnings": [],
+        "hits": [
+          {
+            "chunk_id": "91b55bcd7e14",
+            "locator": "知识库P1_20261118/megaman1_candidate_20261125/evidence/mm1_object_ram_table_20261125.txt#L1-L17",
+            "score": 5.671,
+            "authority": "authoritative",
+            "status": "verified_read",
+            "answerable": false,
+            "fragment_eligible": true,
+            "snippet": "TASVideos GameResources：洛克人1对象 RAM 表（逐字摘录）\nGame Screen# X (hi,lo) Xspd (hi,lo) Y (hi,lo) Yspd (hi,lo)\nRockman 1 $460 $480:$4A0 $4C0:$4E0 $600:$620 $660:$680\nRockman 2 $440 $460:$480 $600:$620 $4A0:$4C0 $640:$660\nRockman 3 $380 $360:$340 no "
+          },
+          {
+            "chunk_id": "b1ea3cbd31fb",
+            "locator": "知识库P1_20261118/megaman1_candidate_20261125/evidence/mm1_coordinate_facts_20261125.txt#L1-L25",
+            "score": 4.595,
+            "authority": "authoritative",
+            "status": "verified_read",
+            "answerable": false,
+            "fragment_eligible": true,
+            "snippet": "TASVideos GameResources：洛克人1坐标系统（逐字摘录）\nCoordinate system\nIn Rockman and Rockman 2, every object of the game has the following properties:\nScreen number (00―FF), it tells which screen the object resides in.\nX position (00.00―FF.FF), it tells"
+          },
+          {
+            "chunk_id": "3885c96f461e",
+            "locator": "知识库P1_20261118/megaman1_candidate_20261125/evidence/mm1_local_position_probe_excerpt_20261125.txt#L5-L17",
+            "score": 1.279,
+            "authority": "authoritative",
+            "status": "verified_read",
+            "answerable": false,
+            "fragment_eligible": true,
+            "snippet": "| 臂 | 补丁 | 读回 `$0022` / `$0025` | 相机 `$001A/$001B` | 与基线像素差 |\n|---|---|---|---|---|\n| `ctl_none` | 无 | 128 / 148 | 0 / 0 | 0（恒量基线） |\n| `derived_ctl` | `$0022=200` | **128** / 148 | 0 / 0 | **0** |\n| `x_only` | `$0480=176` | **168** / 148 | "
+          }
+        ],
+        "grade_v2": {
+          "id": "MM10",
+          "tier": "refuse",
+          "ok": true,
+          "why": "status=inconclusive（pass 即失败：缺证据不许冒充事实）",
+          "status": "inconclusive",
+          "n_hits": 3,
+          "top1": "知识库P1_20261118/megaman1_candidate_20261125/evidence/mm1_object_ram_table_20261125.txt#L1-L17",
+          "direct_recall": false,
+          "equivalent_recall": null,
+          "correct_evidence": true,
+          "wrong_evidence": false,
+          "missed_answer": false,
+          "citation_valid": true,
+          "version_condition_error": false,
+          "selected_locator": null
+        }
+      }
+    },
+    {
+      "id": "MM11",
+      "q": "洛克人1官方说明书是否记载角色创建系统？",
+      "expect": "refuse",
+      "gold": null,
+      "default": {
+        "status": "inconclusive",
+        "reason": "命中全部未过逐事实可答性核查（词命中≠回答问题），缺证据不冒充事实",
+        "refusal": "unanswerable",
+        "counts": {
+          "candidates": 9,
+          "hits": 4,
+          "answerable": 0
+        },
+        "index_used": "index.json",
+        "index_sha256": "5e126eddf0eae98e6b8a446cd54f37400b861d5e93ecf89d3004f16d3a252581",
+        "selected_evidence": [],
+        "authority_warnings": [],
+        "hits": [
+          {
+            "chunk_id": "b1ea3cbd31fb",
+            "locator": "知识库P1_20261118/megaman1_candidate_20261125/evidence/mm1_coordinate_facts_20261125.txt#L1-L25",
+            "score": 6.167,
+            "authority": "authoritative",
+            "status": "verified_read",
+            "answerable": false,
+            "fragment_eligible": null,
+            "snippet": "TASVideos GameResources：洛克人1坐标系统（逐字摘录）\nCoordinate system\nIn Rockman and Rockman 2, every object of the game has the following properties:\nScreen number (00―FF), it tells which screen the object resides in.\nX position (00.00―FF.FF), it tells"
+          },
+          {
+            "chunk_id": "7f5c0a4bd262",
+            "locator": "知识库P1_20261118/megaman1_candidate_20261125/evidence/mm1_local_weapon_ram_excerpt_20261125.txt#L2-L2",
+            "score": 5.672,
+            "authority": "authoritative",
+            "status": "verified_read",
+            "answerable": false,
+            "fragment_eligible": null,
+            "snippet": "来源：测试问题与闸门说明书.md 第712-716行；逐字摘录，不含撤回段。"
+          },
+          {
+            "chunk_id": "91b55bcd7e14",
+            "locator": "知识库P1_20261118/megaman1_candidate_20261125/evidence/mm1_object_ram_table_20261125.txt#L1-L17",
+            "score": 5.671,
+            "authority": "authoritative",
+            "status": "verified_read",
+            "answerable": false,
+            "fragment_eligible": null,
+            "snippet": "TASVideos GameResources：洛克人1对象 RAM 表（逐字摘录）\nGame Screen# X (hi,lo) Xspd (hi,lo) Y (hi,lo) Yspd (hi,lo)\nRockman 1 $460 $480:$4A0 $4C0:$4E0 $600:$620 $660:$680\nRockman 2 $440 $460:$480 $600:$620 $4A0:$4C0 $640:$660\nRockman 3 $380 $360:$340 no "
+          },
+          {
+            "chunk_id": "3885c96f461e",
+            "locator": "知识库P1_20261118/megaman1_candidate_20261125/evidence/mm1_local_position_probe_excerpt_20261125.txt#L5-L17",
+            "score": 2.015,
+            "authority": "authoritative",
+            "status": "verified_read",
+            "answerable": false,
+            "fragment_eligible": null,
+            "snippet": "| 臂 | 补丁 | 读回 `$0022` / `$0025` | 相机 `$001A/$001B` | 与基线像素差 |\n|---|---|---|---|---|\n| `ctl_none` | 无 | 128 / 148 | 0 / 0 | 0（恒量基线） |\n| `derived_ctl` | `$0022=200` | **128** / 148 | 0 / 0 | **0** |\n| `x_only` | `$0480=176` | **168** / 148 | "
+          }
+        ],
+        "grade_v2": {
+          "id": "MM11",
+          "tier": "refuse",
+          "ok": true,
+          "why": "status=inconclusive（pass 即失败：缺证据不许冒充事实）",
+          "status": "inconclusive",
+          "n_hits": 4,
+          "top1": "知识库P1_20261118/megaman1_candidate_20261125/evidence/mm1_coordinate_facts_20261125.txt#L1-L25",
+          "direct_recall": false,
+          "equivalent_recall": null,
+          "correct_evidence": true,
+          "wrong_evidence": false,
+          "missed_answer": false,
+          "citation_valid": true,
+          "version_condition_error": false,
+          "selected_locator": null
+        }
+      },
+      "strict": {
+        "status": "inconclusive",
+        "reason": "命中全部未过逐事实可答性核查（词命中≠回答问题），缺证据不冒充事实",
+        "refusal": "unanswerable",
+        "counts": {
+          "candidates": 9,
+          "hits": 4,
+          "answerable": 0
+        },
+        "index_used": "index.json",
+        "index_sha256": "5e126eddf0eae98e6b8a446cd54f37400b861d5e93ecf89d3004f16d3a252581",
+        "selected_evidence": [],
+        "authority_warnings": [],
+        "hits": [
+          {
+            "chunk_id": "b1ea3cbd31fb",
+            "locator": "知识库P1_20261118/megaman1_candidate_20261125/evidence/mm1_coordinate_facts_20261125.txt#L1-L25",
+            "score": 6.167,
+            "authority": "authoritative",
+            "status": "verified_read",
+            "answerable": false,
+            "fragment_eligible": true,
+            "snippet": "TASVideos GameResources：洛克人1坐标系统（逐字摘录）\nCoordinate system\nIn Rockman and Rockman 2, every object of the game has the following properties:\nScreen number (00―FF), it tells which screen the object resides in.\nX position (00.00―FF.FF), it tells"
+          },
+          {
+            "chunk_id": "7f5c0a4bd262",
+            "locator": "知识库P1_20261118/megaman1_candidate_20261125/evidence/mm1_local_weapon_ram_excerpt_20261125.txt#L2-L2",
+            "score": 5.672,
+            "authority": "authoritative",
+            "status": "verified_read",
+            "answerable": false,
+            "fragment_eligible": false,
+            "snippet": "来源：测试问题与闸门说明书.md 第712-716行；逐字摘录，不含撤回段。"
+          },
+          {
+            "chunk_id": "91b55bcd7e14",
+            "locator": "知识库P1_20261118/megaman1_candidate_20261125/evidence/mm1_object_ram_table_20261125.txt#L1-L17",
+            "score": 5.671,
+            "authority": "authoritative",
+            "status": "verified_read",
+            "answerable": false,
+            "fragment_eligible": true,
+            "snippet": "TASVideos GameResources：洛克人1对象 RAM 表（逐字摘录）\nGame Screen# X (hi,lo) Xspd (hi,lo) Y (hi,lo) Yspd (hi,lo)\nRockman 1 $460 $480:$4A0 $4C0:$4E0 $600:$620 $660:$680\nRockman 2 $440 $460:$480 $600:$620 $4A0:$4C0 $640:$660\nRockman 3 $380 $360:$340 no "
+          },
+          {
+            "chunk_id": "3885c96f461e",
+            "locator": "知识库P1_20261118/megaman1_candidate_20261125/evidence/mm1_local_position_probe_excerpt_20261125.txt#L5-L17",
+            "score": 2.015,
+            "authority": "authoritative",
+            "status": "verified_read",
+            "answerable": false,
+            "fragment_eligible": true,
+            "snippet": "| 臂 | 补丁 | 读回 `$0022` / `$0025` | 相机 `$001A/$001B` | 与基线像素差 |\n|---|---|---|---|---|\n| `ctl_none` | 无 | 128 / 148 | 0 / 0 | 0（恒量基线） |\n| `derived_ctl` | `$0022=200` | **128** / 148 | 0 / 0 | **0** |\n| `x_only` | `$0480=176` | **168** / 148 | "
+          }
+        ],
+        "grade_v2": {
+          "id": "MM11",
+          "tier": "refuse",
+          "ok": true,
+          "why": "status=inconclusive（pass 即失败：缺证据不许冒充事实）",
+          "status": "inconclusive",
+          "n_hits": 4,
+          "top1": "知识库P1_20261118/megaman1_candidate_20261125/evidence/mm1_coordinate_facts_20261125.txt#L1-L25",
+          "direct_recall": false,
+          "equivalent_recall": null,
+          "correct_evidence": true,
+          "wrong_evidence": false,
+          "missed_answer": false,
+          "citation_valid": true,
+          "version_condition_error": false,
+          "selected_locator": null
+        }
+      }
+    },
+    {
+      "id": "MM12",
+      "q": "洛克人1 PAL-B 版的坐标表是否可以直接当作 NTSC 美版结论？",
+      "expect": "refuse",
+      "gold": null,
+      "default": {
+        "status": "inconclusive",
+        "reason": "命中全部未过逐事实可答性核查（词命中≠回答问题），缺证据不冒充事实",
+        "refusal": "unanswerable",
+        "counts": {
+          "candidates": 9,
+          "hits": 2,
+          "answerable": 0
+        },
+        "index_used": "index.json",
+        "index_sha256": "5e126eddf0eae98e6b8a446cd54f37400b861d5e93ecf89d3004f16d3a252581",
+        "selected_evidence": [],
+        "authority_warnings": [],
+        "hits": [
+          {
+            "chunk_id": "b1ea3cbd31fb",
+            "locator": "知识库P1_20261118/megaman1_candidate_20261125/evidence/mm1_coordinate_facts_20261125.txt#L1-L25",
+            "score": 6.167,
+            "authority": "authoritative",
+            "status": "verified_read",
+            "answerable": false,
+            "fragment_eligible": null,
+            "snippet": "TASVideos GameResources：洛克人1坐标系统（逐字摘录）\nCoordinate system\nIn Rockman and Rockman 2, every object of the game has the following properties:\nScreen number (00―FF), it tells which screen the object resides in.\nX position (00.00―FF.FF), it tells"
+          },
+          {
+            "chunk_id": "91b55bcd7e14",
+            "locator": "知识库P1_20261118/megaman1_candidate_20261125/evidence/mm1_object_ram_table_20261125.txt#L1-L17",
+            "score": 5.671,
+            "authority": "authoritative",
+            "status": "verified_read",
+            "answerable": false,
+            "fragment_eligible": null,
+            "snippet": "TASVideos GameResources：洛克人1对象 RAM 表（逐字摘录）\nGame Screen# X (hi,lo) Xspd (hi,lo) Y (hi,lo) Yspd (hi,lo)\nRockman 1 $460 $480:$4A0 $4C0:$4E0 $600:$620 $660:$680\nRockman 2 $440 $460:$480 $600:$620 $4A0:$4C0 $640:$660\nRockman 3 $380 $360:$340 no "
+          }
+        ],
+        "grade_v2": {
+          "id": "MM12",
+          "tier": "refuse",
+          "ok": true,
+          "why": "status=inconclusive（pass 即失败：缺证据不许冒充事实）",
+          "status": "inconclusive",
+          "n_hits": 2,
+          "top1": "知识库P1_20261118/megaman1_candidate_20261125/evidence/mm1_coordinate_facts_20261125.txt#L1-L25",
+          "direct_recall": false,
+          "equivalent_recall": null,
+          "correct_evidence": true,
+          "wrong_evidence": false,
+          "missed_answer": false,
+          "citation_valid": true,
+          "version_condition_error": false,
+          "selected_locator": null
+        }
+      },
+      "strict": {
+        "status": "inconclusive",
+        "reason": "命中全部未过逐事实可答性核查（词命中≠回答问题），缺证据不冒充事实",
+        "refusal": "unanswerable",
+        "counts": {
+          "candidates": 9,
+          "hits": 2,
+          "answerable": 0
+        },
+        "index_used": "index.json",
+        "index_sha256": "5e126eddf0eae98e6b8a446cd54f37400b861d5e93ecf89d3004f16d3a252581",
+        "selected_evidence": [],
+        "authority_warnings": [],
+        "hits": [
+          {
+            "chunk_id": "b1ea3cbd31fb",
+            "locator": "知识库P1_20261118/megaman1_candidate_20261125/evidence/mm1_coordinate_facts_20261125.txt#L1-L25",
+            "score": 6.167,
+            "authority": "authoritative",
+            "status": "verified_read",
+            "answerable": false,
+            "fragment_eligible": true,
+            "snippet": "TASVideos GameResources：洛克人1坐标系统（逐字摘录）\nCoordinate system\nIn Rockman and Rockman 2, every object of the game has the following properties:\nScreen number (00―FF), it tells which screen the object resides in.\nX position (00.00―FF.FF), it tells"
+          },
+          {
+            "chunk_id": "91b55bcd7e14",
+            "locator": "知识库P1_20261118/megaman1_candidate_20261125/evidence/mm1_object_ram_table_20261125.txt#L1-L17",
+            "score": 5.671,
+            "authority": "authoritative",
+            "status": "verified_read",
+            "answerable": false,
+            "fragment_eligible": true,
+            "snippet": "TASVideos GameResources：洛克人1对象 RAM 表（逐字摘录）\nGame Screen# X (hi,lo) Xspd (hi,lo) Y (hi,lo) Yspd (hi,lo)\nRockman 1 $460 $480:$4A0 $4C0:$4E0 $600:$620 $660:$680\nRockman 2 $440 $460:$480 $600:$620 $4A0:$4C0 $640:$660\nRockman 3 $380 $360:$340 no "
+          }
+        ],
+        "grade_v2": {
+          "id": "MM12",
+          "tier": "refuse",
+          "ok": true,
+          "why": "status=inconclusive（pass 即失败：缺证据不许冒充事实）",
+          "status": "inconclusive",
+          "n_hits": 2,
+          "top1": "知识库P1_20261118/megaman1_candidate_20261125/evidence/mm1_coordinate_facts_20261125.txt#L1-L25",
+          "direct_recall": false,
+          "equivalent_recall": null,
+          "correct_evidence": true,
+          "wrong_evidence": false,
+          "missed_answer": false,
+          "citation_valid": true,
+          "version_condition_error": false,
+          "selected_locator": null
+        }
+      }
+    }
+  ]
+}

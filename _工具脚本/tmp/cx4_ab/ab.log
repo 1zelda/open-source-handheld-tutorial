@@ -1,0 +1,13 @@
+ident: {"movie": "F:\\开源掌机教程\\04-游戏资源库\\TAS输入录像库\\movies\\SNES\\5628.bk2", "rom": "F:\\BaiduNetdiskDownload\\rom\\snes\\洛克人 X2.zip!洛克人 X2.sfc", "core": "BSNES", "system": "SNES", "required_rom_sha1": "637079014421563283CDED6AEAA0604597B2E33C", "blockers": []}
+bk2 Header SNES_Firmware_CX4 = A002F4EFBA42775A31185D443F3ED1790B0E949A
+
+=== A_真安装  bizhawk=F:\开源掌机教程\02-模拟器库\BizHawk\BizHawk-2.9.1  Firmware=[]
+Traceback (most recent call last):
+  File "F:\开源掌机教程\_工具脚本\tmp\cx4_ab\run_ab.py", line 143, in <module>
+    main()
+    ~~~~^^
+  File "F:\开源掌机教程\_工具脚本\tmp\cx4_ab\run_ab.py", line 104, in main
+    "n_frames": rows["frames_captured"]["reason"],
+                ~~~~^^^^^^^^^^^^^^^^^^^
+KeyError: 'frames_captured'
+ab rc=1

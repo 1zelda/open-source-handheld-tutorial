@@ -1,0 +1,24 @@
+{
+  "status": "candidate_v2_manual_production_route_wired",
+  "revision": "megaman2_nes_us_manual",
+  "authoritative_scope": [
+    "TASVideos明确技术条目",
+    "美国NES官方说明书操作/选关/能量/道具/密码/Airman/Robot Master/武器短摘录"
+  ],
+  "reference_only_scope": [
+    "本地二手内存字典",
+    "本地标题目录",
+    "本地TAS出版物元数据"
+  ],
+  "not_covered": [
+    "整款游戏内容知识库",
+    "全部敌人与关卡数据",
+    "出招表",
+    "PAL/日版等价",
+    "目标时刻续作"
+  ],
+  "production_defaults_unchanged": true,
+  "production_route_wired": true,
+  "external_generative_model_calls": 0,
+  "paid_api_calls": 0
+}

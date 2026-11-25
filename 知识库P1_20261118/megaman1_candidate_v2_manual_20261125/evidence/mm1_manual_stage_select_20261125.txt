@@ -1,0 +1,13 @@
+洛克人1 官方说明书：START 选关 开始遭遇战（美国NES手册第9页）
+
+来源：Capcom 美国 NES 官方说明书扫描件。
+核验：已读扫描页；中文为说明，英文为短引文；未收全本。
+
+按 START 后显示六名 Robot Master 敌人；用控制 pad 的右端选择要挑战的敌人。
+> Press START Button. Six of MEGA MAN's seven empire enemies will be displayed on the TV/monitor screen.
+
+再次按 START 开始与玩家选定的敌人角色遭遇。
+> Re-press START Button. To begin encounter with the enemy character selected by the player.
+
+每击败一个关键角色，其背景变黑；Dr. Wily 的六个机器人手下全部消灭且所有背景出现后，Dr. Wily 自动出现，进入第七最终关。
+> Every time a key character is defeated by MEGA MAN, the background of enemy's regime becomes black.

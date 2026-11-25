@@ -1,0 +1,149 @@
+{
+ "schema_version": 1,
+ "run_id": "run_95db39d79596",
+ "profile_id": "tasvideos_5628",
+ "system": "SNES",
+ "core": "BSNES",
+ "input_ref": "F:\\开源掌机教程\\04-游戏资源库\\TAS输入录像库\\movies\\SNES\\5628.bk2",
+ "state_ref": null,
+ "purpose": "full_replay",
+ "events_ref": null,
+ "checkpoints_ref": "C:\\Users\\Administrator\\AppData\\Local\\Temp\\tas_replay_aa9yziah/cap.txt",
+ "frame_map_ref": "F:\\开源掌机教程\\_工具脚本\\tmp\\cx4_ab\\out_A_真安装\\run_95db39d79596.framemap.json",
+ "recording_refs": [
+  {
+   "uri": "F:/开源掌机教程/_工具脚本/tmp/cx4_ab/out_A_真安装/run_95db39d79596.mp4",
+   "sha256": "94a5281cb77207485f0ee7bbe15e4ea39a6963aec86ade613168488c7dea3669",
+   "byte_size": 75975
+  }
+ ],
+ "deliverable_ref": "F:\\开源掌机教程\\_工具脚本\\tmp\\cx4_ab\\out_A_真安装\\run_95db39d79596.mp4",
+ "desync": false,
+ "n_frames": 1200,
+ "expected": 1200,
+ "termination": "complete",
+ "watchdog": {
+  "termination": "exited",
+  "dismissed": 3,
+  "dismissed_dialogs": [
+   {
+    "title": "This EmuHawk is privileged",
+    "texts": [
+     "OK",
+     "EmuHawk detected it has Administrator privileges.\nThis is a bad idea."
+    ]
+   },
+   {
+    "title": "Warning",
+    "texts": [
+     "确定",
+     "Couldn't find firmware SNES+CX4.  Will attempt to continue: Game may function incorrectly without the requested firmware."
+    ]
+   }
+  ],
+  "stall_windows": [
+   {
+    "title": "This EmuHawk is privileged",
+    "class": "WindowsForms10.Window.8.app.0.2e85fd_r8_ad1",
+    "texts": [
+     "OK",
+     "EmuHawk detected it has Administrator privileges.\nThis is a bad idea."
+    ]
+   },
+   {
+    "title": "Warning",
+    "class": "#32770",
+    "texts": [
+     "确定",
+     "Couldn't find firmware SNES+CX4.  Will attempt to continue: Game may function incorrectly without the requested firmware."
+    ]
+   }
+  ],
+  "windows_at_kill": [],
+  "stalls": 3,
+  "last_frame": 1200,
+  "elapsed": 96.6,
+  "returncode": 0,
+  "console_texts": []
+ },
+ "verification": {
+  "verification_id": "ver_run_95db39d79596",
+  "subject_ref": "run_95db39d79596",
+  "stage": "capture",
+  "checks": [
+   {
+    "check_id": "replay_no_desync",
+    "verdict": "pass",
+    "evidence_refs": [
+     "C:\\Users\\Administrator\\AppData\\Local\\Temp\\tas_replay_aa9yziah/cap.txt"
+    ],
+    "event_position": null,
+    "reason": "status=complete n=1200 mode=PLAY | termination=complete"
+   },
+   {
+    "check_id": "watchdog_clean_exit",
+    "verdict": "pass",
+    "evidence_refs": [],
+    "event_position": null,
+    "reason": "termination=complete; dismissed=3; stalls=3; elapsed=96.6s"
+   },
+   {
+    "check_id": "endpoint_reached",
+    "verdict": "pass",
+    "evidence_refs": [],
+    "event_position": null,
+    "reason": "1200/1200 帧（须整片到终点）"
+   },
+   {
+    "check_id": "picture_content",
+    "verdict": "pass",
+    "evidence_refs": [
+     "C:\\Users\\Administrator\\AppData\\Local\\Temp\\tas_replay_aa9yziah\\frames"
+    ],
+    "event_position": null,
+    "reason": "第 1199 帧有画面（mean_luma=11.7，min=8.0），共采样 13 帧"
+   },
+   {
+    "check_id": "chip_firmware_missing",
+    "verdict": "inconclusive",
+    "evidence_refs": [],
+    "event_position": null,
+    "reason": "缺固件仍继续，走 HLE 兜底: SNES+CX4 —— desync=false 只代表电影自身校验过，不代表复刻了该芯片行为 | specs=SNES+CX4"
+   },
+   {
+    "check_id": "video_encoded",
+    "verdict": "pass",
+    "evidence_refs": [
+     "F:\\开源掌机教程\\_工具脚本\\tmp\\cx4_ab\\out_A_真安装\\run_95db39d79596.mp4"
+    ],
+    "event_position": null,
+    "reason": ""
+   },
+   {
+    "check_id": "final_video_frames",
+    "verdict": "pass",
+    "evidence_refs": [
+     "F:\\开源掌机教程\\_工具脚本\\tmp\\cx4_ab\\out_A_真安装\\run_95db39d79596.mp4"
+    ],
+    "event_position": null,
+    "reason": "mp4 1200 帧 vs 采集 1200"
+   },
+   {
+    "check_id": "final_video_duration",
+    "verdict": "pass",
+    "evidence_refs": [],
+    "event_position": null,
+    "reason": "mp4 20.00s vs 20.00s"
+   },
+   {
+    "check_id": "audio_present",
+    "verdict": "inconclusive",
+    "evidence_refs": [],
+    "event_position": null,
+    "reason": "BizHawk 2.8 发行版无头 A/V dump 在 NES 上实测不可用(avi 无产物/ffmpeg 挂起)；需 dev build 或 WASAPI loopback 同步采集后再验。截图链路目前无声。（SNES 未单独实测，只作已知缺口参考）"
+   }
+  ],
+  "schema_version": 1,
+  "verdict": "inconclusive"
+ }
+}

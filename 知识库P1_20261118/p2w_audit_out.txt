@@ -1,0 +1,60 @@
+{
+ "status": "inconclusive",
+ "counts": {
+  "pass": 6,
+  "fail": 0,
+  "inconclusive": 1,
+  "entries": 25,
+  "revisions": 10,
+  "chunks": 623
+ },
+ "checks": [
+  {
+   "check_id": "map_schema",
+   "verdict": "pass",
+   "reason": "25 份语料 / 10 个版本分区全部通过 schema",
+   "detail": []
+  },
+  {
+   "check_id": "evidence_coverage",
+   "verdict": "pass",
+   "reason": "verified_read 的每份取证正文都在册（或显式排除并给理由）",
+   "detail": []
+  },
+  {
+   "check_id": "source_binding",
+   "verdict": "pass",
+   "reason": "每份语料都绑定库内来源且在该来源 evidence 列表内",
+   "detail": []
+  },
+  {
+   "check_id": "identity_conflict",
+   "verdict": "pass",
+   "reason": "语料版本分区与来源 games_hit 一致",
+   "detail": []
+  },
+  {
+   "check_id": "index_sync",
+   "verdict": "pass",
+   "reason": "索引与源文件 sha256、块正文 sha1 一致",
+   "detail": []
+  },
+  {
+   "check_id": "chunk_provenance",
+   "verdict": "pass",
+   "reason": "每块都带库内 source_id + 已定义 revision + 当期 status",
+   "detail": []
+  },
+  {
+   "check_id": "authoritative_ready",
+   "verdict": "inconclusive",
+   "reason": "以下版本没有 verified_read+authoritative 正文，只能给线索不能给定论",
+   "detail": [
+    "kof98um: 0 块 verified_read+authoritative",
+    "nekketsu_soccer2_fc_cn_hack: 0 块 verified_read+authoritative",
+    "nekketsu_soccer2_fc_unspecified: 0 块 verified_read+authoritative",
+    "nekketsu_soccer_mobile: 0 块 verified_read+authoritative"
+   ]
+  }
+ ]
+}

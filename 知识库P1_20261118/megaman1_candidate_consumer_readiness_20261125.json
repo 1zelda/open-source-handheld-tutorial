@@ -1,0 +1,120 @@
+{
+  "status": "isolated_candidate_consumer_ready_for_ram_tooling_only",
+  "date": "2026-11-25",
+  "candidate_revision": "megaman1_nes_us",
+  "candidate_index": "知识库P1_20261118/megaman1_candidate_20261125/index.json",
+  "candidate_index_sha256": "5e126eddf0eae98e6b8a446cd54f37400b861d5e93ecf89d3004f16d3a252581",
+  "index_chunks": 9,
+  "index_files": 7,
+  "terms": 504,
+  "candidate_route_wired": true,
+  "isolated_consumer_wired": true,
+  "production_route_wired": false,
+  "production_consumer_wired": false,
+  "production_ready": false,
+  "whole_game_knowledge_base": false,
+  "production_defaults_unchanged": true,
+  "external_generative_model_calls": 0,
+  "paid_api_calls": 0,
+  "consumer": {
+    "module": "_工具脚本/taspipe/kb_megaman1.py",
+    "entry_point": "taspipe.kb_megaman1.ask",
+    "query_backend": "taspipe.kb.query",
+    "candidate_domain": "megaman1_candidate",
+    "explicit_revision_context": "megaman1_nes_us",
+    "index_hash_pinned": true,
+    "missing_or_mismatched_index": "fail_closed_no_production_fallback",
+    "route_cases": "13/13",
+    "failure_close_cases": "4/4",
+    "query_log": "知识库P1_20261118/megaman1_candidate_20261125/qc/consumer_query_log_20261125.jsonl",
+    "query_log_lines": 24,
+    "retrieval_rows": 22,
+    "pre_retrieval_refusal_rows": 2
+  },
+  "evaluation": {
+    "frozen_questions": 12,
+    "strict_pass_questions": 9,
+    "refuse_questions": 3,
+    "default_grade_v2": "12/12",
+    "strict_grade_v2": "12/12",
+    "wrong_evidence_default": 0,
+    "wrong_evidence_strict": 0,
+    "missed_answer_default": 0,
+    "missed_answer_strict": 0,
+    "real_state_unchanged": true
+  },
+  "covered": [
+    "对象RAM表",
+    "坐标轴与对象编号",
+    "BizHawk内存写机制",
+    "本机武器RAM实测",
+    "本机对象表定位实测",
+    "segmented TAS与FM2导入通用参考",
+    "显式别名候选路由",
+    "隔离候选问答与失败关闭"
+  ],
+  "remaining_gates": [
+    "决定是否把候选域接入生产 kb_route.DOMAINS",
+    "决定是否把生产 corpus map/index 提升为正式内容域",
+    "专用生产问答消费方尚未接入知识对照.py",
+    "官方说明书级玩法语料未建立",
+    "整款游戏知识覆盖未建立",
+    "PAL-B 与 NTSC 美版跨版等价未验证",
+    "候选 dense/hybrid 富集件未生成",
+    "真实用户查询样本未建立"
+  ],
+  "observed_shared_state": {
+    "F:\\开源掌机教程\\_工具脚本\\taspipe\\游戏包\\知识库\\index.json": {
+      "present": true,
+      "bytes": 3682167,
+      "mtime_ns": 1795541157149583400,
+      "sha256": "fe56dc5427418a6c5a4d60cc16610e1920ea0fafa4ba42ce479c294e80f95f8b"
+    },
+    "F:\\开源掌机教程\\_工具脚本\\taspipe\\游戏包\\知识库\\corpus_map.json": {
+      "present": true,
+      "bytes": 26962,
+      "mtime_ns": 1795541147914463200,
+      "sha256": "eb8b727a832dbf1aec7555e0bbe431193c6a1d46a0318102095c58e425c1b77d"
+    },
+    "F:\\开源掌机教程\\_工具脚本\\taspipe\\游戏包\\来源库\\sources.json": {
+      "present": true,
+      "bytes": 62632,
+      "mtime_ns": 1795542085993128300,
+      "sha256": "0407abdb9b10f4b1dcb77b7592b1858fc117007486fbe24669bde98dfdb60614"
+    },
+    "F:\\开源掌机教程\\_工具脚本\\taspipe\\游戏包\\来源库\\检索台账.json": {
+      "present": true,
+      "bytes": 3188,
+      "mtime_ns": 1795540789186842400,
+      "sha256": "95a6079f9927de0fb7b0fce9dd4c313e0cd55daeec33342364a4fc18d736f1b6"
+    },
+    "F:\\开源掌机教程\\_工具脚本\\taspipe\\游戏包\\知识库\\query_log.jsonl": {
+      "present": true,
+      "bytes": 1044,
+      "mtime_ns": 1795463914085772600,
+      "sha256": "f73c57ae2080d8f525bdd5cdfb52b0a50f1cc5cf0cca5b89c4003b803602a91d"
+    },
+    "F:\\开源掌机教程\\_工具脚本\\taspipe\\游戏包\\电竞事实库\\facts_v1.db": {
+      "present": true,
+      "bytes": 2056192,
+      "mtime_ns": 1795464415053952300,
+      "sha256": "32f029f41629cb3774e701a705d521aa49550c76deabbc0affc760bec264d5c1"
+    },
+    "F:\\开源掌机教程\\选题决策层\\kb快照\\index.json": {
+      "present": true,
+      "bytes": 3607419,
+      "mtime_ns": 1795533626202927000,
+      "sha256": "2a93e76d5876c1181e7784a20eca0f4d84888d0292d281fc6eea3564090b9260"
+    },
+    "F:\\开源掌机教程\\_工具脚本\\taspipe\\游戏包\\知识库\\index_hybrid.json": {
+      "present": true,
+      "bytes": 3719641,
+      "mtime_ns": 1795541157731106500,
+      "sha256": "fa3c4bfe7788db629a98d7529289baf2e325a98d6fea470b4ba32071c7e4cce8"
+    },
+    "F:\\开源掌机教程\\_工具脚本\\taspipe\\游戏包\\知识库\\terms_hybrid.json": {
+      "present": false
+    }
+  },
+  "scope_note": "本就绪度只证明隔离候选路由与问答消费方可用；不证明整款游戏知识库完成，也不代表已接生产。"
+}

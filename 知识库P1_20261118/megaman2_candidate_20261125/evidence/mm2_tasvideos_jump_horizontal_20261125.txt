@@ -1,0 +1,14 @@
+# Rockman 2 horizontal motion while jumping — verbatim extract
+> Origin: _工具脚本/taspipe/游戏包/来源库/取证/tasvideos_gameresources_rockman_data_2026-11-23.txt
+> Original line ranges: 271-279
+> Qualification: Source-scoped technical evidence; no PAL/US regional equivalence is asserted.
+
+ In Rockman 1 and 2, during jumping/falling into some direction, Rockman’s X speed is 01.50.
+
+ In Rockman 3 and 4, during jumping/falling, Rockman’s X speed is the same as when walking.
+
+ If the player stops pressing the directional button, the speed falls immediately into 00.00.
+
+ In Rockman 1, if Rockman starts moving after not moving, his X speed first goes to 00.20, then back to 01.50.
+
+ In Rockman 2, if Rockman starts moving after not moving, his X speed goes immediately back to 01.50.

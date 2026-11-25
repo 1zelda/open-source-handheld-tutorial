@@ -1,0 +1,43 @@
+{
+ "keyword": "异度之刃",
+ "status": "ok",
+ "ts": "2026-11-19T05:39:07Z",
+ "ts_epoch": 1795066747.460853,
+ "supply_num_results": 1000,
+ "n_videos": 20,
+ "relevant_count": 18,
+ "core_hit_rate": 0.9,
+ "full_hit_rate": 0.8,
+ "play_median": 92678.0,
+ "relevant_play_median": 98627.5,
+ "play_mean": 285527.8,
+ "play_max": 1893920,
+ "play_total": 5139500,
+ "engagement_median": 0.0264,
+ "recent_count": 3,
+ "recent_play_median": 9634,
+ "top3": [
+  {
+   "bvid": "BV1qW411a7Z8",
+   "title": "【游番剧】异度之刃2 异度神剑2 番剧向纯剧情剪辑 中文高清合集",
+   "author": "品游君",
+   "play": 1893920,
+   "pubdate": "2017-11-30"
+  },
+  {
+   "bvid": "BV1mt4y1C7JL",
+   "title": "【完结】【异度之刃1/异度神剑1】决定版全流程",
+   "author": "Dell小明",
+   "play": 1134530,
+   "pubdate": "2020-05-29"
+  },
+  {
+   "bvid": "BV1P5411x7mS",
+   "title": "【游番剧】异度之刃/异度神剑 终极版 番剧向纯剧情剪辑（完结）",
+   "author": "品游君",
+   "play": 412686,
+   "pubdate": "2020-05-29"
+  }
+ ],
+ "cache_hit": false
+}

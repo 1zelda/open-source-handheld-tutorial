@@ -55,58 +55,107 @@ def index_cheats(cheat_lib=CHEAT_LIB):
     return d.get("entries", []) if isinstance(d, dict) else []
 
 
-def required_rom_sha1(pub, lib):
-    """所需 ROM SHA-1：出版物 rom_sha1 → bk2 Header → version 页。都没有 => ''（诚实）。"""
+def rom_sha1_candidates(pub, lib, versions=None):
+    """所需 ROM 哈希的**全部**候选，按 出版物 rom_sha1 → bk2 Header → version 页 排序并去重。
+
+    站点登记会过期，电影 Header 里的 SHA1 是录制时算的、跟本地文件同源。11-22 实测台账
+    4694 条里 3 条（5231 吃豆人、4776/4831 Alwa）出版物 rom_sha1 与 bk2 Header / 台账
+    required_rom_sha1 不一致，而那两个一致且等于本地文件的真实哈希。只取第一个「有值」的
+    来源当唯一需求哈希，过期的那格就会把能对上本地 ROM 的来源盖掉，报成
+    「本地无匹配 ROM」——看着像缺资源，其实是调用方只认了一份错的账。
+
+    versions: 批量扫描时注入 `registry.index_versions(lib)` 的结果。那一格每次调用都要
+    glob 一遍 versions/，逐条扫全库时会变成平方级开销（11-22 实测扫 4694 条超时）。
+    """
     lib = Path(lib)
-    req = R.norm_sha1(pub.get("rom_sha1"))
-    if req:
-        return req, "出版物 rom_sha1"
+    out, seen = [], set()
+
+    def add(val, src):
+        h = R.norm_sha1(val)
+        if h and h not in seen:
+            seen.add(h)
+            out.append((h, src))
+
+    add(pub.get("rom_sha1"), "出版物 rom_sha1")
     movie, _ = R.resolve_movie(pub, lib)
-    hdr = R.read_bk2_header(movie) if movie else None
-    req = R.norm_sha1((hdr or {}).get("SHA1"))
-    if req:
-        return req, "bk2 Header"
-    v = R.index_versions(lib).get(pub.get("version_id", ""))
-    if v and v.get("sha1"):
-        return v["sha1"], "version 页"
-    return "", "未知"
+    if movie:
+        add((R.read_bk2_header(movie) or {}).get("SHA1"), "bk2 Header")
+    v = (R.index_versions(lib) if versions is None else versions).get(pub.get("version_id", ""))
+    if v:
+        add(v.get("sha1"), "version 页")
+    return out
 
 
-def resolve_rom(pub, lib=None, rom_idx=None, netdisk_resolver=None):
-    """本地 SHA-1 索引优先；未命中走门控钩子。返回 dict（不抛业务异常）。
+def required_rom_sha1(pub, lib, versions=None):
+    """首选所需 ROM 哈希（出版物 rom_sha1 → bk2 Header → version 页，取第一个有值的）。
 
+    返回 (sha1, 来源)；三者都没有 => ('', '未知')。判断本地能不能满足要走
+    rom_sha1_candidates + resolve_rom 的逐候选比对，别把这一格的第一个值当唯一答案。
+    """
+    cands = rom_sha1_candidates(pub, lib, versions)
+    return cands[0] if cands else ("", "未知")
+
+
+def resolve_rom(pub, lib=None, rom_idx=None, netdisk_resolver=None, versions=None):
+    """逐候选哈希比对本地索引，第一个能在本地对上文件的哈希算需求哈希；都不中才走门控钩子。
+
+    返回 dict（不抛业务异常）。
     netdisk_resolver: 可选 callable(required_sha1, pub) -> 本地路径|None。
       仅在用户已登录自有网盘并逐款门控后由上层注入；本模块默认 None => 诚实 blocked，
-      绝不自行下载（红线：不自动抓商业全集）。注入后仍校验 SHA-1 一致才认 ready。
+      绝不自行下载（红线：不自动抓商业全集）。注入后仍校验 SHA-1 与**某个候选**一致才认 ready。
     """
     lib = Path(lib or R.DEFAULT_LIB)
     if rom_idx is None:
         rom_idx = R.index_roms(lib)
-    req, src = required_rom_sha1(pub, lib)
-    matches = rom_idx.get(req, []) if req else []
-    if matches:
-        return {"status": "ready", "rom": matches[0], "required_sha1": req,
-                "hash_source": src, "source": "local", "blockers": []}
+    cands = rom_sha1_candidates(pub, lib, versions)
+    wanted = {h for h, _ in cands}
+    for sha, src in cands:
+        matches = rom_idx.get(sha, [])
+        if matches:
+            note = None
+            if cands[0][0] != sha:
+                note = (f"首选来源 {cands[0][1]} 记的是 {cands[0][0]}，本地没有对应文件；"
+                        f"实际命中本地的是 {src} 记的 {sha}。这两份账对不上是出版物 rom_sha1 "
+                        "过期（不是缺资源），已在 hash_source 里点名采信的那一份")
+            return {"status": "ready", "rom": matches[0], "required_sha1": sha,
+                    "hash_source": src, "source": "local", "blockers": [],
+                    "candidates": [{"sha1": h, "source": s} for h, s in cands],
+                    "hash_note": note}
 
     blockers = []
-    if not req:
+    if not cands:
         blockers.append({"code": FailureCode.MISSING_RESOURCE.value,
                          "reason": "未知所需 ROM 哈希（出版物/Header/version 页都没有）"})
     else:
         blockers.append({"code": FailureCode.MISSING_RESOURCE.value,
-                         "reason": f"本地无匹配 ROM（需 SHA1={req}，来源 {src}）"})
+                         "reason": "本地无匹配 ROM（逐候选都试过："
+                                   + "；".join(f"{src} SHA1={sha}" for sha, src in cands)
+                                   + "）"})
     if netdisk_resolver is not None:
-        got = netdisk_resolver(req, pub)
-        if got and Path(got).is_file() and (not req or _sha1(got) == req):
-            return {"status": "ready", "rom": str(got), "required_sha1": req,
-                    "hash_source": src, "source": "own_netdisk", "blockers": []}
-        blockers.append({"code": FailureCode.MISSING_RESOURCE.value,
-                         "reason": "自有网盘未命中或哈希不符（用户门控；不自动抓商业全集）"})
+        got = netdisk_resolver(cands[0][0] if cands else "", pub)
+        if got and Path(got).is_file():
+            got_sha = _sha1(got)
+            if not wanted or got_sha in wanted:
+                src = dict(cands).get(got_sha, "未知") if cands else "未知"
+                return {"status": "ready", "rom": str(got), "required_sha1": got_sha,
+                        "hash_source": src, "source": "own_netdisk", "blockers": [],
+                        "candidates": [{"sha1": h, "source": s} for h, s in cands],
+                        "hash_note": None}
+            blockers.append({"code": FailureCode.MISSING_RESOURCE.value,
+                             "reason": f"自有网盘给的文件哈希 {got_sha} 与候选哈希不符（候选："
+                                       + "、".join(f"{src}={sha}" for sha, src in cands)
+                                       + "；用户门控；不自动抓商业全集）"})
+        else:
+            blockers.append({"code": FailureCode.MISSING_RESOURCE.value,
+                             "reason": "自有网盘未命中（用户门控；不自动抓商业全集）"})
     else:
         blockers.append({"code": FailureCode.MISSING_RESOURCE.value,
                          "reason": "自有网盘获取未配置（需用户登录 + 逐款门控后注入 resolver）"})
-    return {"status": "blocked", "rom": None, "required_sha1": req,
-            "hash_source": src, "source": None, "blockers": blockers}
+    return {"status": "blocked", "rom": None,
+            "required_sha1": cands[0][0] if cands else "",
+            "hash_source": cands[0][1] if cands else "未知", "source": None,
+            "candidates": [{"sha1": h, "source": s} for h, s in cands],
+            "hash_note": None, "blockers": blockers}
 
 
 def _plat_match(cheat_plat, want_plat):
@@ -150,7 +199,14 @@ def resolve_cheat(game, platform, cheat_lib=CHEAT_LIB, query=None, kind=None):
 def acquire(pub, lib=None, rom_idx=None, netdisk_resolver=None,
             cheat_lib=CHEAT_LIB, cheat_query=None, need_cheat=False):
     """auto 的 acquire 阶段：ROM 必需，金手指/存档可选（need_cheat 时缺则 blocked）。
-    返回 {status: ready|blocked, rom, required_sha1, cheat, blockers}。"""
+    返回 {status: ready|blocked, rom, required_sha1, cheat, blockers, fidelity, acquire_advice}。
+
+    `fidelity` 走台账同一支函数（registry.recorder_fidelity）：补 ROM 值不值得，
+    跟这台录制器能不能判通关是两件事。FCEUX 内层那批即便 ROM 到手也仍是
+    not_judgeable_locally，这里当场说清，别让获取清单把希望挂在拿不到结局的片子上。
+    但这一格只是先验：7429 同出自 FCEUX .fm2 却实测拿到过 pass，所以话只能说"风险"，
+    不能说"必然"，否则就是把先验冒名成判决。
+    """
     lib = Path(lib or R.DEFAULT_LIB)
     rom = resolve_rom(pub, lib, rom_idx, netdisk_resolver)
     blockers = list(rom["blockers"])
@@ -159,12 +215,24 @@ def acquire(pub, lib=None, rom_idx=None, netdisk_resolver=None,
     if need_cheat and cheat["status"] != "found":
         blockers.extend(cheat["blockers"])
     status = "ready" if rom["status"] == "ready" and not blockers else "blocked"
+    movie, movie_note = R.resolve_movie(pub, lib)
+    fidelity = R.recorder_fidelity(movie, movie_note)
+    advice = None
+    if rom["status"] != "ready" and fidelity["completion_verdict"] == "not_judgeable_locally":
+        advice = ("这台录制器是 FCEUX 内层，补到 ROM 也只能算「能跑」，通关风险高：" + fidelity["why"]
+                  + "；要出片仍可用（回放照跑），要 pass 就按 §35 证词＋§36 静止窗逐片实测，"
+                  + "别拿这一格当判决（已知反例 7429）")
     return {"status": status, "rom": rom["rom"],
             "required_sha1": rom["required_sha1"], "rom_source": rom["source"],
-            "cheat": cheat, "blockers": blockers}
+            "hash_source": rom["hash_source"], "candidates": rom["candidates"],
+            "hash_note": rom["hash_note"],
+            "cheat": cheat, "blockers": blockers,
+            "fidelity": fidelity, "acquire_advice": advice}
 
 
 def _resolve_pub_by_name(game, lib):
+    """按名选出版物：本地就能回放的优先，其次身份解析得清的（ROM 只在网盘时也该被选中，
+    再由 resolve_rom 走网盘钩子）；都不行才退回第一条同名。"""
     pubs = R.load_publications(lib)
     g = (game or "").strip().lower()
     cands = [p for p in pubs if g and g in (p.get("game", "").lower())]
@@ -172,8 +240,11 @@ def _resolve_pub_by_name(game, lib):
         return None
     ri, vi, bh = R.index_roms(lib), R.index_versions(lib), R.discover_bizhawk(R.DEFAULT_EMU)
     assessed = [(p, R.assess(p, lib, ri, vi, bh)) for p in cands]
-    ready = [(p, r) for p, r in assessed if r["status"] == "replayable"]
-    return (ready or assessed)[0][0]
+    for key, want in (("status", "replayable"), ("identity_status", "resolved")):
+        hit = [p for p, r in assessed if r.get(key) == want]
+        if hit:
+            return hit[0]
+    return assessed[0][0]
 
 
 def main():

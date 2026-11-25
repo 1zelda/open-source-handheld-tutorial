@@ -1,0 +1,22 @@
+{
+  "json": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261124\\news_snapshot_crosscheck_after_citation_authority_fix_20261124.json",
+  "logged_queries": 7,
+  "golden_path_passes": [
+    "smoke-soccer-role",
+    "smoke-soccer-count",
+    "smoke-fighting",
+    "smoke-kof98"
+  ],
+  "statuses": {
+    "smoke-soccer-broad": "inconclusive",
+    "smoke-soccer-role": "pass",
+    "smoke-soccer-count": "pass",
+    "smoke-fighting": "pass",
+    "smoke-kof98": "pass",
+    "smoke-unrouted": "inconclusive",
+    "smoke-multi": "miss"
+  },
+  "snapshot_synced": true,
+  "real_state_unchanged": true,
+  "ok": true
+}

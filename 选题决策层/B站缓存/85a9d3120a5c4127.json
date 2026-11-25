@@ -1,0 +1,43 @@
+{
+ "keyword": "开源掌机",
+ "status": "ok",
+ "ts": "2026-11-19T05:39:23Z",
+ "ts_epoch": 1795066763.8705404,
+ "supply_num_results": 1000,
+ "n_videos": 20,
+ "relevant_count": 17,
+ "core_hit_rate": 0.85,
+ "full_hit_rate": 0.5,
+ "play_median": 12703.0,
+ "relevant_play_median": 12595,
+ "play_mean": 24620.2,
+ "play_max": 126019,
+ "play_total": 418544,
+ "engagement_median": 0.053,
+ "recent_count": 15,
+ "recent_play_median": 12811,
+ "top3": [
+  {
+   "bvid": "BV1KVWo6PEhK",
+   "title": "怒烧100亿Token！我为H700打造了安卓系统，我吃定史上唯一便携翻盖安卓小掌机诞生！",
+   "author": "Blood_roc",
+   "play": 126019,
+   "pubdate": "2026-11-12"
+  },
+  {
+   "bvid": "BV1bLpu6YEdc",
+   "title": "盘点2026年适合新手入坑的掌机（个人向）",
+   "author": "无言赤红",
+   "play": 74303,
+   "pubdate": "2026-10-07"
+  },
+  {
+   "bvid": "BV1aY4y1y7kd",
+   "title": "RG353V试玩《星露谷物语》",
+   "author": "麦甜烘焙-",
+   "play": 64016,
+   "pubdate": "2023-03-07"
+  }
+ ],
+ "cache_hit": false
+}

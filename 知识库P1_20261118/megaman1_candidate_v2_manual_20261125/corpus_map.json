@@ -1,0 +1,207 @@
+{
+  "schema_version": 1,
+  "revisions": {
+    "megaman1_nes_us": {
+      "game_id": "megaman1",
+      "platform": "NES",
+      "name": "洛克人1 / Mega Man (NES, US)——生产钉 NTSC rom_sha1 2F883815…，BizHawk 2.9 回放",
+      "note": "隔离候选v2：NTSC美版洛克人1的RAM/工具方法，以及经扫描核验的官方说明书级操作与流程短摘录；仍不是整款游戏知识库，不证明PAL-B或其他版本等价。"
+    }
+  },
+  "entries": [
+    {
+      "path": "知识库P1_20261118/megaman1_candidate_v2_manual_20261125/evidence/mm1_coordinate_facts_20261125.txt",
+      "source_id": "tasvideos_mm1_object_ram_table",
+      "revision": "megaman1_nes_us",
+      "kind": "prose",
+      "authority": "authoritative",
+      "index": true,
+      "element_types": [
+        "帧数据",
+        "基础档案"
+      ],
+      "note": "隔离候选逐字摘录；Rockman 1 对象表权威原文（$460/$480/$4A0/$4C0/$600/$620/$660/$680，Rockman 恒 n=0）；结论已写进说明书 §33.17 与根目录《场景取得方法_调研与设计_2026-11-23.md》。"
+    },
+    {
+      "path": "知识库P1_20261118/megaman1_candidate_v2_manual_20261125/evidence/mm1_object_ram_table_20261125.txt",
+      "source_id": "tasvideos_mm1_object_ram_table",
+      "revision": "megaman1_nes_us",
+      "kind": "table",
+      "authority": "authoritative",
+      "index": true,
+      "element_types": [
+        "帧数据",
+        "基础档案"
+      ],
+      "note": "隔离候选逐字摘录；Rockman 1 对象表权威原文（$460/$480/$4A0/$4C0/$600/$620/$660/$680，Rockman 恒 n=0）；结论已写进说明书 §33.17 与根目录《场景取得方法_调研与设计_2026-11-23.md》。"
+    },
+    {
+      "path": "知识库P1_20261118/megaman1_candidate_v2_manual_20261125/evidence/mm1_bizhawk_memory_write_fact_20261125.txt",
+      "source_id": "tasvideos_bizhawk_faq_write_refresh",
+      "revision": "megaman1_nes_us",
+      "kind": "prose",
+      "authority": "authoritative",
+      "index": true,
+      "element_types": [
+        "基础档案",
+        "帧数据"
+      ],
+      "note": "隔离候选逐字摘录；BizHawk 官方 FAQ：内存写每帧只生效一次 + memory write callbacks；解释写派生量被打回、必须写权威对象表。"
+    },
+    {
+      "path": "知识库P1_20261118/megaman1_candidate_v2_manual_20261125/evidence/mm1_fm2_import_reference_fact_20261125.txt",
+      "source_id": "tasvideos_forum_19912_fm2_import",
+      "revision": "megaman1_nes_us",
+      "kind": "prose",
+      "authority": "reference_only",
+      "index": true,
+      "element_types": [
+        "基础档案"
+      ],
+      "note": "隔离候选逐字摘录；论坛 Topic 19912：.fm2/.fm3 → BizHawk .tasproj 输入转换流程（社区拿别人到过的时刻的标准做法）。"
+    },
+    {
+      "path": "知识库P1_20261118/megaman1_candidate_v2_manual_20261125/evidence/mm1_segmented_tas_reference_fact_20261125.txt",
+      "source_id": "tasvideos_glossary_segmented",
+      "revision": "megaman1_nes_us",
+      "kind": "prose",
+      "authority": "reference_only",
+      "index": true,
+      "element_types": [
+        "基础档案",
+        "说明书"
+      ],
+      "note": "隔离候选逐字摘录；术语表分段式 TAS 定义：分段从存档点接续，不从头重放整局。"
+    },
+    {
+      "path": "知识库P1_20261118/megaman1_candidate_v2_manual_20261125/evidence/mm1_local_weapon_ram_excerpt_20261125.txt",
+      "source_id": "local_mm1_taspipe_measurements",
+      "revision": "megaman1_nes_us",
+      "kind": "prose",
+      "authority": "authoritative",
+      "index": true,
+      "element_types": [
+        "帧数据",
+        "基础档案"
+      ],
+      "note": "本机生产实测逐字摘录：owned/current_weapon 地址与 0-7 值表。"
+    },
+    {
+      "path": "知识库P1_20261118/megaman1_candidate_v2_manual_20261125/evidence/mm1_local_position_probe_excerpt_20261125.txt",
+      "source_id": "local_mm1_taspipe_measurements",
+      "revision": "megaman1_nes_us",
+      "kind": "prose",
+      "authority": "authoritative",
+      "index": true,
+      "element_types": [
+        "帧数据",
+        "基础档案"
+      ],
+      "note": "本机 T1 五臂受控实测逐字摘录：权威对象表与派生显示量。"
+    },
+    {
+      "path": "知识库P1_20261118/megaman1_candidate_v2_manual_20261125/evidence/mm1_manual_controls_20261125.txt",
+      "source_id": "archive_mega_man_nes_us_manual",
+      "revision": "megaman1_nes_us",
+      "kind": "prose",
+      "authority": "authoritative",
+      "index": true,
+      "element_types": [
+        "说明书",
+        "基础档案"
+      ],
+      "note": "美国NES官方说明书扫描页短摘录；已逐页读图核对，不是转录件或整本手册再分发。"
+    },
+    {
+      "path": "知识库P1_20261118/megaman1_candidate_v2_manual_20261125/evidence/mm1_manual_stage_select_20261125.txt",
+      "source_id": "archive_mega_man_nes_us_manual",
+      "revision": "megaman1_nes_us",
+      "kind": "prose",
+      "authority": "authoritative",
+      "index": true,
+      "element_types": [
+        "说明书",
+        "基础档案"
+      ],
+      "note": "美国NES官方说明书扫描页短摘录；已逐页读图核对，不是转录件或整本手册再分发。"
+    },
+    {
+      "path": "知识库P1_20261118/megaman1_candidate_v2_manual_20261125/evidence/mm1_manual_energy_20261125.txt",
+      "source_id": "archive_mega_man_nes_us_manual",
+      "revision": "megaman1_nes_us",
+      "kind": "prose",
+      "authority": "authoritative",
+      "index": true,
+      "element_types": [
+        "说明书",
+        "基础档案"
+      ],
+      "note": "美国NES官方说明书扫描页短摘录；已逐页读图核对，不是转录件或整本手册再分发。"
+    },
+    {
+      "path": "知识库P1_20261118/megaman1_candidate_v2_manual_20261125/evidence/mm1_manual_bonus_items_20261125.txt",
+      "source_id": "archive_mega_man_nes_us_manual",
+      "revision": "megaman1_nes_us",
+      "kind": "prose",
+      "authority": "authoritative",
+      "index": true,
+      "element_types": [
+        "说明书",
+        "基础档案"
+      ],
+      "note": "美国NES官方说明书扫描页短摘录；已逐页读图核对，不是转录件或整本手册再分发。"
+    },
+    {
+      "path": "知识库P1_20261118/megaman1_candidate_v2_manual_20261125/evidence/mm1_manual_magnet_beam_20261125.txt",
+      "source_id": "archive_mega_man_nes_us_manual",
+      "revision": "megaman1_nes_us",
+      "kind": "prose",
+      "authority": "authoritative",
+      "index": true,
+      "element_types": [
+        "说明书",
+        "基础档案"
+      ],
+      "note": "美国NES官方说明书扫描页短摘录；已逐页读图核对，不是转录件或整本手册再分发。"
+    },
+    {
+      "path": "知识库P1_20261118/megaman1_candidate_v2_manual_20261125/evidence/mm1_manual_robot_masters_20261125.txt",
+      "source_id": "archive_mega_man_nes_us_manual",
+      "revision": "megaman1_nes_us",
+      "kind": "prose",
+      "authority": "authoritative",
+      "index": true,
+      "element_types": [
+        "说明书",
+        "基础档案"
+      ],
+      "note": "美国NES官方说明书扫描页短摘录；已逐页读图核对，不是转录件或整本手册再分发。"
+    },
+    {
+      "path": "知识库P1_20261118/megaman1_candidate_v2_manual_20261125/evidence/mm1_manual_progression_rewards_20261125.txt",
+      "source_id": "archive_mega_man_nes_us_manual",
+      "revision": "megaman1_nes_us",
+      "kind": "prose",
+      "authority": "authoritative",
+      "index": true,
+      "element_types": [
+        "说明书",
+        "基础档案"
+      ],
+      "note": "美国NES官方说明书扫描页短摘录；已逐页读图核对，不是转录件或整本手册再分发。"
+    },
+    {
+      "path": "知识库P1_20261118/megaman1_candidate_v2_manual_20261125/evidence/mm1_manual_victory_scores_20261125.txt",
+      "source_id": "archive_mega_man_nes_us_manual",
+      "revision": "megaman1_nes_us",
+      "kind": "prose",
+      "authority": "authoritative",
+      "index": true,
+      "element_types": [
+        "说明书",
+        "基础档案"
+      ],
+      "note": "美国NES官方说明书扫描页短摘录；已逐页读图核对，不是转录件或整本手册再分发。"
+    }
+  ]
+}

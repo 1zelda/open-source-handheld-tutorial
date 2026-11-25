@@ -1,0 +1,764 @@
+{
+  "schema": "strict_alias_evolution_audit_after_citation_authority_fix_v1",
+  "generations": {
+    "旧strict_裸编号连坐": {
+      "source": "selector_sweep_after_provenance.json",
+      "source_sha256": "2dcc445db994f31cd00644c9910df62c6748150e8fce94642be4450ca35f57e3",
+      "index": {
+        "name": "index.json",
+        "sha16": "01ba5d9cd9e0e5c1",
+        "chunks": 770
+      },
+      "taken_at": "2026-11-24 19:28:36",
+      "v2_ok": 22,
+      "classes": {
+        "regressed": 4,
+        "unchanged_ok": 22
+      },
+      "wrong_evidence": [],
+      "newly_passed": [],
+      "intercepted": [
+        "X03",
+        "X04",
+        "X05",
+        "X17",
+        "X19",
+        "X20",
+        "X22",
+        "X23",
+        "X30"
+      ]
+    },
+    "临时strict_未知与已知编号全部不降级": {
+      "source": "selector_sweep_after_strict_citation_fix_20261124.json",
+      "source_sha256": "80da0a3bdda2b91607cbfbc156634aa1d05874ba008ec15dbf9828cd3e892903",
+      "index": {
+        "name": "index.json",
+        "sha16": "01ba5d9cd9e0e5c1",
+        "chunks": 770
+      },
+      "taken_at": "2026-11-24 20:50:17",
+      "v2_ok": 25,
+      "classes": {
+        "regressed": 1,
+        "unchanged_ok": 25
+      },
+      "wrong_evidence": [],
+      "newly_passed": [],
+      "intercepted": [
+        "X05",
+        "X17",
+        "X19",
+        "X20",
+        "X22",
+        "X30"
+      ]
+    },
+    "当前strict_来源别名资格": {
+      "source": "selector_sweep_after_citation_authority_fix_20261124.json",
+      "source_sha256": "f7a046af5a4c86b7b2b615c315192e5f7f9cf096914a9dda1393692d4ed2f599",
+      "index": {
+        "name": "index.json",
+        "sha16": "2a93e76d5876c118",
+        "chunks": 773
+      },
+      "taken_at": "2026-11-24 23:15:03",
+      "v2_ok": 21,
+      "classes": {
+        "regressed": 5,
+        "unchanged_ok": 21
+      },
+      "wrong_evidence": [],
+      "newly_passed": [],
+      "intercepted": [
+        "X03",
+        "X04",
+        "X05",
+        "X17",
+        "X19",
+        "X20",
+        "X22",
+        "X23",
+        "X30"
+      ]
+    }
+  },
+  "frozen_annotations": {
+    "p2_questions_sha256": "b24712dc023ead293c7631f104d7e96fcefdcf5d8d2678e69ff6c47e29f48368",
+    "probe_questions_sha256": "6ebdd464a7b0345df3113622622698bf4628387037db3caa5002b4ce2d900683",
+    "probe_questions_base_sha256": "ac2102858503b9021dc6dd665f2eae58de1362957c52ff6cf453f21073562fde",
+    "x23_kind": "insufficient_source",
+    "x23_note": "倒挂金钩=球附近跳起方向后+B：必杀全清单L32在§1(S1操作表原文)节；S1二手reference_only",
+    "x23_current_class": "intercepted"
+  },
+  "probe_transitions": {
+    "旧strict→临时": [
+      {
+        "id": "W10",
+        "from": "intercepted",
+        "to": "still_passed",
+        "kind": null
+      },
+      {
+        "id": "W30",
+        "from": "intercepted",
+        "to": "still_passed",
+        "kind": null
+      },
+      {
+        "id": "X03",
+        "from": "intercepted",
+        "to": "still_passed",
+        "kind": "positive_control"
+      },
+      {
+        "id": "X04",
+        "from": "intercepted",
+        "to": "still_passed",
+        "kind": "ambiguous"
+      },
+      {
+        "id": "X23",
+        "from": "intercepted",
+        "to": "still_passed",
+        "kind": "insufficient_source"
+      }
+    ],
+    "临时→当前": [
+      {
+        "id": "W10",
+        "from": "still_passed",
+        "to": "intercepted",
+        "kind": null
+      },
+      {
+        "id": "X03",
+        "from": "still_passed",
+        "to": "intercepted",
+        "kind": "positive_control"
+      },
+      {
+        "id": "X04",
+        "from": "still_passed",
+        "to": "intercepted",
+        "kind": "ambiguous"
+      },
+      {
+        "id": "X23",
+        "from": "still_passed",
+        "to": "intercepted",
+        "kind": "insufficient_source"
+      }
+    ],
+    "旧strict→当前": [
+      {
+        "id": "W30",
+        "from": "intercepted",
+        "to": "still_passed",
+        "kind": null
+      }
+    ]
+  },
+  "probe_rows": [
+    {
+      "id": "W01",
+      "旧strict_裸编号连坐_kind": null,
+      "旧strict_裸编号连坐_class": "still_refused",
+      "临时strict_未知与已知编号全部不降级_kind": null,
+      "临时strict_未知与已知编号全部不降级_class": "still_refused",
+      "当前strict_来源别名资格_kind": null,
+      "当前strict_来源别名资格_class": "still_refused"
+    },
+    {
+      "id": "W02",
+      "旧strict_裸编号连坐_kind": null,
+      "旧strict_裸编号连坐_class": "still_refused",
+      "临时strict_未知与已知编号全部不降级_kind": null,
+      "临时strict_未知与已知编号全部不降级_class": "still_refused",
+      "当前strict_来源别名资格_kind": null,
+      "当前strict_来源别名资格_class": "still_refused"
+    },
+    {
+      "id": "W03",
+      "旧strict_裸编号连坐_kind": null,
+      "旧strict_裸编号连坐_class": "still_refused",
+      "临时strict_未知与已知编号全部不降级_kind": null,
+      "临时strict_未知与已知编号全部不降级_class": "still_refused",
+      "当前strict_来源别名资格_kind": null,
+      "当前strict_来源别名资格_class": "still_refused"
+    },
+    {
+      "id": "W04",
+      "旧strict_裸编号连坐_kind": null,
+      "旧strict_裸编号连坐_class": "still_refused",
+      "临时strict_未知与已知编号全部不降级_kind": null,
+      "临时strict_未知与已知编号全部不降级_class": "still_refused",
+      "当前strict_来源别名资格_kind": null,
+      "当前strict_来源别名资格_class": "still_refused"
+    },
+    {
+      "id": "W05",
+      "旧strict_裸编号连坐_kind": null,
+      "旧strict_裸编号连坐_class": "still_refused",
+      "临时strict_未知与已知编号全部不降级_kind": null,
+      "临时strict_未知与已知编号全部不降级_class": "still_refused",
+      "当前strict_来源别名资格_kind": null,
+      "当前strict_来源别名资格_class": "still_refused"
+    },
+    {
+      "id": "W06",
+      "旧strict_裸编号连坐_kind": null,
+      "旧strict_裸编号连坐_class": "still_refused",
+      "临时strict_未知与已知编号全部不降级_kind": null,
+      "临时strict_未知与已知编号全部不降级_class": "still_refused",
+      "当前strict_来源别名资格_kind": null,
+      "当前strict_来源别名资格_class": "still_refused"
+    },
+    {
+      "id": "W07",
+      "旧strict_裸编号连坐_kind": null,
+      "旧strict_裸编号连坐_class": "still_refused",
+      "临时strict_未知与已知编号全部不降级_kind": null,
+      "临时strict_未知与已知编号全部不降级_class": "still_refused",
+      "当前strict_来源别名资格_kind": null,
+      "当前strict_来源别名资格_class": "still_refused"
+    },
+    {
+      "id": "W08",
+      "旧strict_裸编号连坐_kind": null,
+      "旧strict_裸编号连坐_class": "still_passed",
+      "临时strict_未知与已知编号全部不降级_kind": null,
+      "临时strict_未知与已知编号全部不降级_class": "still_passed",
+      "当前strict_来源别名资格_kind": null,
+      "当前strict_来源别名资格_class": "still_passed"
+    },
+    {
+      "id": "W09",
+      "旧strict_裸编号连坐_kind": null,
+      "旧strict_裸编号连坐_class": "still_refused",
+      "临时strict_未知与已知编号全部不降级_kind": null,
+      "临时strict_未知与已知编号全部不降级_class": "still_refused",
+      "当前strict_来源别名资格_kind": null,
+      "当前strict_来源别名资格_class": "still_refused"
+    },
+    {
+      "id": "W10",
+      "旧strict_裸编号连坐_kind": null,
+      "旧strict_裸编号连坐_class": "intercepted",
+      "临时strict_未知与已知编号全部不降级_kind": null,
+      "临时strict_未知与已知编号全部不降级_class": "still_passed",
+      "当前strict_来源别名资格_kind": null,
+      "当前strict_来源别名资格_class": "intercepted"
+    },
+    {
+      "id": "W11",
+      "旧strict_裸编号连坐_kind": null,
+      "旧strict_裸编号连坐_class": "still_refused",
+      "临时strict_未知与已知编号全部不降级_kind": null,
+      "临时strict_未知与已知编号全部不降级_class": "still_refused",
+      "当前strict_来源别名资格_kind": null,
+      "当前strict_来源别名资格_class": "still_refused"
+    },
+    {
+      "id": "W12",
+      "旧strict_裸编号连坐_kind": null,
+      "旧strict_裸编号连坐_class": "still_passed",
+      "临时strict_未知与已知编号全部不降级_kind": null,
+      "临时strict_未知与已知编号全部不降级_class": "still_passed",
+      "当前strict_来源别名资格_kind": null,
+      "当前strict_来源别名资格_class": "still_passed"
+    },
+    {
+      "id": "W13",
+      "旧strict_裸编号连坐_kind": null,
+      "旧strict_裸编号连坐_class": "still_refused",
+      "临时strict_未知与已知编号全部不降级_kind": null,
+      "临时strict_未知与已知编号全部不降级_class": "still_refused",
+      "当前strict_来源别名资格_kind": null,
+      "当前strict_来源别名资格_class": "still_refused"
+    },
+    {
+      "id": "W14",
+      "旧strict_裸编号连坐_kind": null,
+      "旧strict_裸编号连坐_class": "still_refused",
+      "临时strict_未知与已知编号全部不降级_kind": null,
+      "临时strict_未知与已知编号全部不降级_class": "still_refused",
+      "当前strict_来源别名资格_kind": null,
+      "当前strict_来源别名资格_class": "still_refused"
+    },
+    {
+      "id": "W15",
+      "旧strict_裸编号连坐_kind": null,
+      "旧strict_裸编号连坐_class": "still_refused",
+      "临时strict_未知与已知编号全部不降级_kind": null,
+      "临时strict_未知与已知编号全部不降级_class": "still_refused",
+      "当前strict_来源别名资格_kind": null,
+      "当前strict_来源别名资格_class": "still_refused"
+    },
+    {
+      "id": "W16",
+      "旧strict_裸编号连坐_kind": null,
+      "旧strict_裸编号连坐_class": "still_refused",
+      "临时strict_未知与已知编号全部不降级_kind": null,
+      "临时strict_未知与已知编号全部不降级_class": "still_refused",
+      "当前strict_来源别名资格_kind": null,
+      "当前strict_来源别名资格_class": "still_refused"
+    },
+    {
+      "id": "W17",
+      "旧strict_裸编号连坐_kind": null,
+      "旧strict_裸编号连坐_class": "still_passed",
+      "临时strict_未知与已知编号全部不降级_kind": null,
+      "临时strict_未知与已知编号全部不降级_class": "still_passed",
+      "当前strict_来源别名资格_kind": null,
+      "当前strict_来源别名资格_class": "still_passed"
+    },
+    {
+      "id": "W18",
+      "旧strict_裸编号连坐_kind": null,
+      "旧strict_裸编号连坐_class": "still_passed",
+      "临时strict_未知与已知编号全部不降级_kind": null,
+      "临时strict_未知与已知编号全部不降级_class": "still_passed",
+      "当前strict_来源别名资格_kind": null,
+      "当前strict_来源别名资格_class": "still_passed"
+    },
+    {
+      "id": "W19",
+      "旧strict_裸编号连坐_kind": null,
+      "旧strict_裸编号连坐_class": "still_refused",
+      "临时strict_未知与已知编号全部不降级_kind": null,
+      "临时strict_未知与已知编号全部不降级_class": "still_refused",
+      "当前strict_来源别名资格_kind": null,
+      "当前strict_来源别名资格_class": "still_refused"
+    },
+    {
+      "id": "W20",
+      "旧strict_裸编号连坐_kind": null,
+      "旧strict_裸编号连坐_class": "still_passed",
+      "临时strict_未知与已知编号全部不降级_kind": null,
+      "临时strict_未知与已知编号全部不降级_class": "still_passed",
+      "当前strict_来源别名资格_kind": null,
+      "当前strict_来源别名资格_class": "still_passed"
+    },
+    {
+      "id": "W21",
+      "旧strict_裸编号连坐_kind": null,
+      "旧strict_裸编号连坐_class": "still_passed",
+      "临时strict_未知与已知编号全部不降级_kind": null,
+      "临时strict_未知与已知编号全部不降级_class": "still_passed",
+      "当前strict_来源别名资格_kind": null,
+      "当前strict_来源别名资格_class": "still_passed"
+    },
+    {
+      "id": "W22",
+      "旧strict_裸编号连坐_kind": null,
+      "旧strict_裸编号连坐_class": "still_passed",
+      "临时strict_未知与已知编号全部不降级_kind": null,
+      "临时strict_未知与已知编号全部不降级_class": "still_passed",
+      "当前strict_来源别名资格_kind": null,
+      "当前strict_来源别名资格_class": "still_passed"
+    },
+    {
+      "id": "W23",
+      "旧strict_裸编号连坐_kind": null,
+      "旧strict_裸编号连坐_class": "still_passed",
+      "临时strict_未知与已知编号全部不降级_kind": null,
+      "临时strict_未知与已知编号全部不降级_class": "still_passed",
+      "当前strict_来源别名资格_kind": null,
+      "当前strict_来源别名资格_class": "still_passed"
+    },
+    {
+      "id": "W24",
+      "旧strict_裸编号连坐_kind": null,
+      "旧strict_裸编号连坐_class": "still_refused",
+      "临时strict_未知与已知编号全部不降级_kind": null,
+      "临时strict_未知与已知编号全部不降级_class": "still_refused",
+      "当前strict_来源别名资格_kind": null,
+      "当前strict_来源别名资格_class": "still_refused"
+    },
+    {
+      "id": "W25",
+      "旧strict_裸编号连坐_kind": null,
+      "旧strict_裸编号连坐_class": "still_refused",
+      "临时strict_未知与已知编号全部不降级_kind": null,
+      "临时strict_未知与已知编号全部不降级_class": "still_refused",
+      "当前strict_来源别名资格_kind": null,
+      "当前strict_来源别名资格_class": "still_refused"
+    },
+    {
+      "id": "W26",
+      "旧strict_裸编号连坐_kind": null,
+      "旧strict_裸编号连坐_class": "still_refused",
+      "临时strict_未知与已知编号全部不降级_kind": null,
+      "临时strict_未知与已知编号全部不降级_class": "still_refused",
+      "当前strict_来源别名资格_kind": null,
+      "当前strict_来源别名资格_class": "still_refused"
+    },
+    {
+      "id": "W27",
+      "旧strict_裸编号连坐_kind": null,
+      "旧strict_裸编号连坐_class": "still_refused",
+      "临时strict_未知与已知编号全部不降级_kind": null,
+      "临时strict_未知与已知编号全部不降级_class": "still_refused",
+      "当前strict_来源别名资格_kind": null,
+      "当前strict_来源别名资格_class": "still_refused"
+    },
+    {
+      "id": "W28",
+      "旧strict_裸编号连坐_kind": null,
+      "旧strict_裸编号连坐_class": "still_refused",
+      "临时strict_未知与已知编号全部不降级_kind": null,
+      "临时strict_未知与已知编号全部不降级_class": "still_refused",
+      "当前strict_来源别名资格_kind": null,
+      "当前strict_来源别名资格_class": "still_refused"
+    },
+    {
+      "id": "W29",
+      "旧strict_裸编号连坐_kind": null,
+      "旧strict_裸编号连坐_class": "still_refused",
+      "临时strict_未知与已知编号全部不降级_kind": null,
+      "临时strict_未知与已知编号全部不降级_class": "still_refused",
+      "当前strict_来源别名资格_kind": null,
+      "当前strict_来源别名资格_class": "still_refused"
+    },
+    {
+      "id": "W30",
+      "旧strict_裸编号连坐_kind": null,
+      "旧strict_裸编号连坐_class": "intercepted",
+      "临时strict_未知与已知编号全部不降级_kind": null,
+      "临时strict_未知与已知编号全部不降级_class": "still_passed",
+      "当前strict_来源别名资格_kind": null,
+      "当前strict_来源别名资格_class": "still_passed"
+    },
+    {
+      "id": "X01",
+      "旧strict_裸编号连坐_kind": "insufficient_source",
+      "旧strict_裸编号连坐_class": "still_refused",
+      "临时strict_未知与已知编号全部不降级_kind": "insufficient_source",
+      "临时strict_未知与已知编号全部不降级_class": "still_refused",
+      "当前strict_来源别名资格_kind": "insufficient_source",
+      "当前strict_来源别名资格_class": "still_refused"
+    },
+    {
+      "id": "X02",
+      "旧strict_裸编号连坐_kind": "insufficient_source",
+      "旧strict_裸编号连坐_class": "still_refused",
+      "临时strict_未知与已知编号全部不降级_kind": "insufficient_source",
+      "临时strict_未知与已知编号全部不降级_class": "still_refused",
+      "当前strict_来源别名资格_kind": "insufficient_source",
+      "当前strict_来源别名资格_class": "still_refused"
+    },
+    {
+      "id": "X03",
+      "旧strict_裸编号连坐_kind": "positive_control",
+      "旧strict_裸编号连坐_class": "intercepted",
+      "临时strict_未知与已知编号全部不降级_kind": "positive_control",
+      "临时strict_未知与已知编号全部不降级_class": "still_passed",
+      "当前strict_来源别名资格_kind": "positive_control",
+      "当前strict_来源别名资格_class": "intercepted"
+    },
+    {
+      "id": "X04",
+      "旧strict_裸编号连坐_kind": "ambiguous",
+      "旧strict_裸编号连坐_class": "intercepted",
+      "临时strict_未知与已知编号全部不降级_kind": "ambiguous",
+      "临时strict_未知与已知编号全部不降级_class": "still_passed",
+      "当前strict_来源别名资格_kind": "ambiguous",
+      "当前strict_来源别名资格_class": "intercepted"
+    },
+    {
+      "id": "X05",
+      "旧strict_裸编号连坐_kind": "insufficient_source",
+      "旧strict_裸编号连坐_class": "intercepted",
+      "临时strict_未知与已知编号全部不降级_kind": "insufficient_source",
+      "临时strict_未知与已知编号全部不降级_class": "intercepted",
+      "当前strict_来源别名资格_kind": "insufficient_source",
+      "当前strict_来源别名资格_class": "intercepted"
+    },
+    {
+      "id": "X06",
+      "旧strict_裸编号连坐_kind": "insufficient_source",
+      "旧strict_裸编号连坐_class": "still_refused",
+      "临时strict_未知与已知编号全部不降级_kind": "insufficient_source",
+      "临时strict_未知与已知编号全部不降级_class": "still_refused",
+      "当前strict_来源别名资格_kind": "insufficient_source",
+      "当前strict_来源别名资格_class": "still_refused"
+    },
+    {
+      "id": "X07",
+      "旧strict_裸编号连坐_kind": "insufficient_source",
+      "旧strict_裸编号连坐_class": "still_refused",
+      "临时strict_未知与已知编号全部不降级_kind": "insufficient_source",
+      "临时strict_未知与已知编号全部不降级_class": "still_refused",
+      "当前strict_来源别名资格_kind": "insufficient_source",
+      "当前strict_来源别名资格_class": "still_refused"
+    },
+    {
+      "id": "X08",
+      "旧strict_裸编号连坐_kind": "insufficient_source",
+      "旧strict_裸编号连坐_class": "still_refused",
+      "临时strict_未知与已知编号全部不降级_kind": "insufficient_source",
+      "临时strict_未知与已知编号全部不降级_class": "still_refused",
+      "当前strict_来源别名资格_kind": "insufficient_source",
+      "当前strict_来源别名资格_class": "still_refused"
+    },
+    {
+      "id": "X09",
+      "旧strict_裸编号连坐_kind": "insufficient_source",
+      "旧strict_裸编号连坐_class": "still_refused",
+      "临时strict_未知与已知编号全部不降级_kind": "insufficient_source",
+      "临时strict_未知与已知编号全部不降级_class": "still_refused",
+      "当前strict_来源别名资格_kind": "insufficient_source",
+      "当前strict_来源别名资格_class": "still_refused"
+    },
+    {
+      "id": "X10",
+      "旧strict_裸编号连坐_kind": "insufficient_source",
+      "旧strict_裸编号连坐_class": "still_refused",
+      "临时strict_未知与已知编号全部不降级_kind": "insufficient_source",
+      "临时strict_未知与已知编号全部不降级_class": "still_refused",
+      "当前strict_来源别名资格_kind": "insufficient_source",
+      "当前strict_来源别名资格_class": "still_refused"
+    },
+    {
+      "id": "X11",
+      "旧strict_裸编号连坐_kind": "true_negative",
+      "旧strict_裸编号连坐_class": "still_refused",
+      "临时strict_未知与已知编号全部不降级_kind": "true_negative",
+      "临时strict_未知与已知编号全部不降级_class": "still_refused",
+      "当前strict_来源别名资格_kind": "true_negative",
+      "当前strict_来源别名资格_class": "still_refused"
+    },
+    {
+      "id": "X12",
+      "旧strict_裸编号连坐_kind": "true_negative",
+      "旧strict_裸编号连坐_class": "still_refused",
+      "临时strict_未知与已知编号全部不降级_kind": "true_negative",
+      "临时strict_未知与已知编号全部不降级_class": "still_refused",
+      "当前strict_来源别名资格_kind": "true_negative",
+      "当前strict_来源别名资格_class": "still_refused"
+    },
+    {
+      "id": "X13",
+      "旧strict_裸编号连坐_kind": "true_negative",
+      "旧strict_裸编号连坐_class": "still_refused",
+      "临时strict_未知与已知编号全部不降级_kind": "true_negative",
+      "临时strict_未知与已知编号全部不降级_class": "still_refused",
+      "当前strict_来源别名资格_kind": "true_negative",
+      "当前strict_来源别名资格_class": "still_refused"
+    },
+    {
+      "id": "X14",
+      "旧strict_裸编号连坐_kind": "true_negative",
+      "旧strict_裸编号连坐_class": "still_refused",
+      "临时strict_未知与已知编号全部不降级_kind": "true_negative",
+      "临时strict_未知与已知编号全部不降级_class": "still_refused",
+      "当前strict_来源别名资格_kind": "true_negative",
+      "当前strict_来源别名资格_class": "still_refused"
+    },
+    {
+      "id": "X15",
+      "旧strict_裸编号连坐_kind": "positive_control",
+      "旧strict_裸编号连坐_class": "still_refused",
+      "临时strict_未知与已知编号全部不降级_kind": "positive_control",
+      "临时strict_未知与已知编号全部不降级_class": "still_refused",
+      "当前strict_来源别名资格_kind": "positive_control",
+      "当前strict_来源别名资格_class": "still_refused"
+    },
+    {
+      "id": "X16",
+      "旧strict_裸编号连坐_kind": "insufficient_source",
+      "旧strict_裸编号连坐_class": "still_refused",
+      "临时strict_未知与已知编号全部不降级_kind": "insufficient_source",
+      "临时strict_未知与已知编号全部不降级_class": "still_refused",
+      "当前strict_来源别名资格_kind": "insufficient_source",
+      "当前strict_来源别名资格_class": "still_refused"
+    },
+    {
+      "id": "X17",
+      "旧strict_裸编号连坐_kind": "insufficient_source",
+      "旧strict_裸编号连坐_class": "intercepted",
+      "临时strict_未知与已知编号全部不降级_kind": "insufficient_source",
+      "临时strict_未知与已知编号全部不降级_class": "intercepted",
+      "当前strict_来源别名资格_kind": "insufficient_source",
+      "当前strict_来源别名资格_class": "intercepted"
+    },
+    {
+      "id": "X18",
+      "旧strict_裸编号连坐_kind": "insufficient_source",
+      "旧strict_裸编号连坐_class": "still_refused",
+      "临时strict_未知与已知编号全部不降级_kind": "insufficient_source",
+      "临时strict_未知与已知编号全部不降级_class": "still_refused",
+      "当前strict_来源别名资格_kind": "insufficient_source",
+      "当前strict_来源别名资格_class": "still_refused"
+    },
+    {
+      "id": "X19",
+      "旧strict_裸编号连坐_kind": "insufficient_source",
+      "旧strict_裸编号连坐_class": "intercepted",
+      "临时strict_未知与已知编号全部不降级_kind": "insufficient_source",
+      "临时strict_未知与已知编号全部不降级_class": "intercepted",
+      "当前strict_来源别名资格_kind": "insufficient_source",
+      "当前strict_来源别名资格_class": "intercepted"
+    },
+    {
+      "id": "X20",
+      "旧strict_裸编号连坐_kind": "insufficient_source",
+      "旧strict_裸编号连坐_class": "intercepted",
+      "临时strict_未知与已知编号全部不降级_kind": "insufficient_source",
+      "临时strict_未知与已知编号全部不降级_class": "intercepted",
+      "当前strict_来源别名资格_kind": "insufficient_source",
+      "当前strict_来源别名资格_class": "intercepted"
+    },
+    {
+      "id": "X21",
+      "旧strict_裸编号连坐_kind": "positive_control",
+      "旧strict_裸编号连坐_class": "still_passed",
+      "临时strict_未知与已知编号全部不降级_kind": "positive_control",
+      "临时strict_未知与已知编号全部不降级_class": "still_passed",
+      "当前strict_来源别名资格_kind": "positive_control",
+      "当前strict_来源别名资格_class": "still_passed"
+    },
+    {
+      "id": "X22",
+      "旧strict_裸编号连坐_kind": "true_negative",
+      "旧strict_裸编号连坐_class": "intercepted",
+      "临时strict_未知与已知编号全部不降级_kind": "true_negative",
+      "临时strict_未知与已知编号全部不降级_class": "intercepted",
+      "当前strict_来源别名资格_kind": "true_negative",
+      "当前strict_来源别名资格_class": "intercepted"
+    },
+    {
+      "id": "X23",
+      "旧strict_裸编号连坐_kind": "insufficient_source",
+      "旧strict_裸编号连坐_class": "intercepted",
+      "临时strict_未知与已知编号全部不降级_kind": "insufficient_source",
+      "临时strict_未知与已知编号全部不降级_class": "still_passed",
+      "当前strict_来源别名资格_kind": "insufficient_source",
+      "当前strict_来源别名资格_class": "intercepted"
+    },
+    {
+      "id": "X24",
+      "旧strict_裸编号连坐_kind": "insufficient_source",
+      "旧strict_裸编号连坐_class": "still_refused",
+      "临时strict_未知与已知编号全部不降级_kind": "insufficient_source",
+      "临时strict_未知与已知编号全部不降级_class": "still_refused",
+      "当前strict_来源别名资格_kind": "insufficient_source",
+      "当前strict_来源别名资格_class": "still_refused"
+    },
+    {
+      "id": "X25",
+      "旧strict_裸编号连坐_kind": "true_negative",
+      "旧strict_裸编号连坐_class": "still_refused",
+      "临时strict_未知与已知编号全部不降级_kind": "true_negative",
+      "临时strict_未知与已知编号全部不降级_class": "still_refused",
+      "当前strict_来源别名资格_kind": "true_negative",
+      "当前strict_来源别名资格_class": "still_refused"
+    },
+    {
+      "id": "X26",
+      "旧strict_裸编号连坐_kind": "insufficient_source",
+      "旧strict_裸编号连坐_class": "still_refused",
+      "临时strict_未知与已知编号全部不降级_kind": "insufficient_source",
+      "临时strict_未知与已知编号全部不降级_class": "still_refused",
+      "当前strict_来源别名资格_kind": "insufficient_source",
+      "当前strict_来源别名资格_class": "still_refused"
+    },
+    {
+      "id": "X27",
+      "旧strict_裸编号连坐_kind": "insufficient_source",
+      "旧strict_裸编号连坐_class": "still_refused",
+      "临时strict_未知与已知编号全部不降级_kind": "insufficient_source",
+      "临时strict_未知与已知编号全部不降级_class": "still_refused",
+      "当前strict_来源别名资格_kind": "insufficient_source",
+      "当前strict_来源别名资格_class": "still_refused"
+    },
+    {
+      "id": "X28",
+      "旧strict_裸编号连坐_kind": "true_negative",
+      "旧strict_裸编号连坐_class": "still_refused",
+      "临时strict_未知与已知编号全部不降级_kind": "true_negative",
+      "临时strict_未知与已知编号全部不降级_class": "still_refused",
+      "当前strict_来源别名资格_kind": "true_negative",
+      "当前strict_来源别名资格_class": "still_refused"
+    },
+    {
+      "id": "X29",
+      "旧strict_裸编号连坐_kind": "insufficient_source",
+      "旧strict_裸编号连坐_class": "still_refused",
+      "临时strict_未知与已知编号全部不降级_kind": "insufficient_source",
+      "临时strict_未知与已知编号全部不降级_class": "still_refused",
+      "当前strict_来源别名资格_kind": "insufficient_source",
+      "当前strict_来源别名资格_class": "still_refused"
+    },
+    {
+      "id": "X30",
+      "旧strict_裸编号连坐_kind": "insufficient_source",
+      "旧strict_裸编号连坐_class": "intercepted",
+      "临时strict_未知与已知编号全部不降级_kind": "insufficient_source",
+      "临时strict_未知与已知编号全部不降级_class": "intercepted",
+      "当前strict_来源别名资格_kind": "insufficient_source",
+      "当前strict_来源别名资格_class": "intercepted"
+    }
+  ],
+  "current_strict_question_regressions": [
+    {
+      "id": "Q01",
+      "q": "热血足球联盟一共有多少种必杀射门？",
+      "tier": "strict_pass",
+      "base_status": "pass",
+      "strict_status": "inconclusive",
+      "class": "regressed",
+      "base_selected": "_工具脚本/taspipe/游戏包/热血足球联盟_必杀全清单.md#L3-L7",
+      "strict_selected": null
+    },
+    {
+      "id": "Q02",
+      "q": "热血队内，燕返原生只有哪个角色会使？",
+      "tier": "strict_pass",
+      "base_status": "pass",
+      "strict_status": "inconclusive",
+      "class": "regressed",
+      "base_selected": "_工具脚本/taspipe/游戏包/热血足球联盟_必杀全清单.md#L70-L85",
+      "strict_selected": null
+    },
+    {
+      "id": "Q03",
+      "q": "热血足球2 暂停秘技的按键输入是什么？",
+      "tier": "strict_pass",
+      "base_status": "pass",
+      "strict_status": "inconclusive",
+      "class": "regressed",
+      "base_selected": "_工具脚本/taspipe/游戏包/热血足球联盟_必杀全清单.md#L24-L33",
+      "strict_selected": null
+    },
+    {
+      "id": "Q05",
+      "q": "我想控制队长以外的队员，该怎么换人？",
+      "tier": "strict_pass",
+      "base_status": "pass",
+      "strict_status": "inconclusive",
+      "class": "regressed",
+      "base_selected": "_工具脚本/taspipe/游戏包/热血足球联盟_必杀全清单.md#L24-L33",
+      "strict_selected": null
+    },
+    {
+      "id": "Q18",
+      "q": "暂停秘技成功的判定签名是什么？",
+      "tier": "strict_pass",
+      "base_status": "pass",
+      "strict_status": "inconclusive",
+      "class": "regressed",
+      "base_selected": "_工具脚本/taspipe/游戏包/热血足球联盟_必杀全清单.md#L251-L259",
+      "strict_selected": null
+    }
+  ],
+  "interpretation": [
+    "旧strict把所有裸S编号连坐降级，误拦正常汇总件；X03/X04/X23是其中可定位的误拦样例。",
+    "临时方案取消裸编号连坐后恢复25/26，但也把已知二手S1升成权威，X23重新放行。",
+    "当前方案按chunk.citation_authority解析来源别名：未知S99不连坐，已知二手/未核验/版本不符别名继承reference_only，本机实测标题可解除继承。",
+    "因此当前strict回到21/26；5题回归是已知二手别名被正确拦截的代价，不是通过改金标得到的假通过。",
+    "X23冻结标签为insufficient_source，当前strict=intercepted，与冻结语义一致；临时strict=still_passed属于假放行。"
+  ],
+  "ok": true
+}

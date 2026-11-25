@@ -1,0 +1,376 @@
+{
+  "schema_version": 1,
+  "kind": "statejump_showcase",
+  "game_id": "nekketsu_soccer2_fc_jp",
+  "game_title": "Kunio-kun no Nekketsu Soccer League / 热血足球2：热血足球联盟 (FC, 1993 Technos)",
+  "platform": "NES",
+  "core": "NesHawk",
+  "system": "NES",
+  "rom": "F:/开源掌机教程/04-游戏资源库/TAS输入录像库/roms_verify/NES/nekketsu_soccer_league_cn_jf.nes",
+  "bizhawk": "F:/开源掌机教程/02-模拟器库/BizHawk/BizHawk-2.8",
+  "base_state": "F:/开源掌机教程/04-游戏资源库/TAS输入录像库/状态资产/nekketsu_soccer2_fc_jp/live_possess.state",
+  "fps": 60.0988,
+  "template": "fc_tianma_mask",
+  "catalog": {
+    "status": "complete",
+    "expected_total": 6,
+    "sources": [
+      {
+        "source_id": "local_route_template",
+        "url": null,
+        "status": "verified_read",
+        "verified_date": "2026-11-18",
+        "element_ids": [
+          "ground_power_shot",
+          "apex_super_shot",
+          "overhead_bicycle_shot",
+          "diving_header_shot",
+          "tornado_spin_dribble",
+          "lob_pass_combo"
+        ],
+        "note": "§4 逐游戏卡：导航输入链 + 暂停金手指 AAABAAABAAAAAAA（签名=得分框 OK）。"
+      },
+      {
+        "source_id": "local_project_manual",
+        "url": null,
+        "status": "verified_read",
+        "verified_date": "2026-11-18",
+        "element_ids": [
+          "ground_power_shot",
+          "apex_super_shot",
+          "overhead_bicycle_shot",
+          "diving_header_shot",
+          "tornado_spin_dribble",
+          "lob_pass_combo"
+        ],
+        "note": "§19–21 状态跳跃前置件/看门狗/帧 parity；§25 球权与必杀判据改 OAM 字节。"
+      },
+      {
+        "source_id": "local_soccer2_super_list",
+        "url": null,
+        "status": "verified_read",
+        "verified_date": "2026-11-18",
+        "element_ids": [
+          "ground_power_shot",
+          "apex_super_shot",
+          "overhead_bicycle_shot",
+          "diving_header_shot",
+          "tornado_spin_dribble",
+          "lob_pass_combo"
+        ],
+        "note": "23 必杀全清单（日12+opp11，一角色一必杀须换人）。"
+      },
+      {
+        "source_id": "local_live_capture",
+        "url": null,
+        "status": "verified_read",
+        "verified_date": "2026-11-18",
+        "element_ids": [
+          "ground_power_shot",
+          "apex_super_shot",
+          "overhead_bicycle_shot",
+          "diving_header_shot",
+          "tornado_spin_dribble",
+          "lob_pass_combo"
+        ],
+        "note": "真人捕获通路=必杀真值宏来源。"
+      },
+      {
+        "source_id": "setsumei_cloudfree",
+        "url": "https://setsumei.cloudfree.jp/famicom/",
+        "status": "verified_read",
+        "verified_date": "2026-11-18",
+        "element_ids": [
+          "ground_power_shot",
+          "apex_super_shot",
+          "overhead_bicycle_shot",
+          "diving_header_shot",
+          "tornado_spin_dribble",
+          "lob_pass_combo"
+        ],
+        "note": "官方说明书扫描，已取正文（22,061B）。"
+      },
+      {
+        "source_id": "1ang_com",
+        "url": "https://www.1ang.com/",
+        "status": "verified_read",
+        "verified_date": "2026-11-18",
+        "element_ids": [
+          "ground_power_shot",
+          "apex_super_shot",
+          "overhead_bicycle_shot",
+          "diving_header_shot",
+          "tornado_spin_dribble",
+          "lob_pass_combo"
+        ],
+        "note": "火光镜像图文攻略，已取正文。"
+      },
+      {
+        "source_id": "strategywiki",
+        "url": "https://strategywiki.org/wiki/Kunio-kun_no_Nekketsu_Soccer_League",
+        "status": "unreachable",
+        "verified_date": "2026-11-18",
+        "element_ids": [
+          "ground_power_shot",
+          "apex_super_shot",
+          "overhead_bicycle_shot",
+          "diving_header_shot",
+          "tornado_spin_dribble",
+          "lob_pass_combo"
+        ],
+        "note": "本机直连 403，只有搜索快照。"
+      }
+    ],
+    "coverage_note": "热血足球2代核心射门、必杀技与攻防动作完整盘点；共享已通过 universal_authoring solve-soccer2-base 求解的『活 play 我方持球 + 已输入全必杀金手指』快照 possess_base.state"
+  },
+  "elements": [
+    {
+      "element_id": "ground_power_shot",
+      "label": "Ground Power Shot (地面劲射)",
+      "kind": "move",
+      "base_state": null,
+      "trigger": {
+        "macro": "Right+B,Right+B,Right+B,Right+B,Right+B,Right+B,,,,,,,,,,,,,,,,,,,,,,,,",
+        "extra": 30,
+        "patches": []
+      },
+      "detection": {
+        "frame": 16,
+        "success_checks": [
+          {
+            "check_id": "ground_shot_ball_flight",
+            "plugin_id": "frame_region_color_fraction",
+            "params": {
+              "region": [
+                0.3,
+                0.3,
+                0.88,
+                0.75
+              ],
+              "rgb": [
+                248,
+                248,
+                248
+              ],
+              "tol": 26,
+              "min_fraction": 0.01
+            },
+            "required": true
+          }
+        ]
+      },
+      "negative_control": {
+        "macro": null,
+        "patches": []
+      },
+      "note": "活 play 持球态下按住 Right+B 6 帧完成地面大力抽射；运行 universal_authoring calibrate 自动实测更新帧与区域。"
+    },
+    {
+      "element_id": "apex_super_shot",
+      "label": "Apex Super Shot (跳跃顶点必杀射门)",
+      "kind": "move",
+      "base_state": null,
+      "trigger": {
+        "macro": "A+B,A+B,A+B,A+B,A+B,A+B,,,,,,,,,,,,,,B,B,B,B,B,B,,,,,,,,,,,,,,,,,,,,",
+        "extra": 40,
+        "patches": []
+      },
+      "detection": {
+        "frame": 28,
+        "success_checks": [
+          {
+            "check_id": "apex_super_shot_effect",
+            "plugin_id": "frame_region_color_fraction",
+            "params": {
+              "region": [
+                0.2,
+                0.15,
+                0.88,
+                0.75
+              ],
+              "rgb": [
+                248,
+                216,
+                120
+              ],
+              "tol": 28,
+              "min_fraction": 0.012
+            },
+            "required": true
+          }
+        ]
+      },
+      "negative_control": {
+        "macro": null,
+        "patches": []
+      },
+      "note": "持球按 A+B 起跳，腾空 14 帧到达最高点时按 B 触发角色专属必杀射门（香蕉球/鬼火球等）。"
+    },
+    {
+      "element_id": "overhead_bicycle_shot",
+      "label": "Overhead Bicycle Kick Super (倒挂金钩必杀)",
+      "kind": "move",
+      "base_state": null,
+      "trigger": {
+        "macro": "A+B,A+B,A+B,A+B,A+B,A+B,,,,,,,,,,,,,,,,,,Left+B,Left+B,Left+B,Left+B,Left+B,Left+B,,,,,,,,,,,,,,,,,,,,",
+        "extra": 40,
+        "patches": []
+      },
+      "detection": {
+        "frame": 32,
+        "success_checks": [
+          {
+            "check_id": "bicycle_kick_pose_sig",
+            "plugin_id": "frame_region_color_fraction",
+            "params": {
+              "region": [
+                0.2,
+                0.18,
+                0.85,
+                0.78
+              ],
+              "rgb": [
+                248,
+                248,
+                248
+              ],
+              "tol": 28,
+              "min_fraction": 0.012
+            },
+            "required": true
+          }
+        ]
+      },
+      "negative_control": {
+        "macro": null,
+        "patches": []
+      },
+      "note": "持球起跳越过最高点瞬间按反方向+B 触发倒挂金钩必杀射门。"
+    },
+    {
+      "element_id": "diving_header_shot",
+      "label": "Diving Header Shot (鱼跃冲顶必杀)",
+      "kind": "move",
+      "base_state": null,
+      "trigger": {
+        "macro": "A+B,A+B,A+B,A+B,A+B,,,,,,,,Right+B,Right+B,Right+B,Right+B,Right+B,Right+B,,,,,,,,,,,,,,,,,,,,",
+        "extra": 35,
+        "patches": []
+      },
+      "detection": {
+        "frame": 22,
+        "success_checks": [
+          {
+            "check_id": "diving_header_pose_sig",
+            "plugin_id": "frame_region_color_fraction",
+            "params": {
+              "region": [
+                0.25,
+                0.25,
+                0.85,
+                0.78
+              ],
+              "rgb": [
+                248,
+                200,
+                120
+              ],
+              "tol": 28,
+              "min_fraction": 0.01
+            },
+            "required": true
+          }
+        ]
+      },
+      "negative_control": {
+        "macro": null,
+        "patches": []
+      },
+      "note": "持球起跳上升段（最高点前）按前方向+B 触发鱼跃冲顶射门。"
+    },
+    {
+      "element_id": "tornado_spin_dribble",
+      "label": "Tornado Spin Attack (旋风带球突破)",
+      "kind": "move",
+      "base_state": null,
+      "trigger": {
+        "macro": "A+B,A+B,A+B,A+B,A+B,A+B,A+B,A+B,A+B,A+B,,,,,,,,,,,,,,,,,,,,",
+        "extra": 25,
+        "patches": []
+      },
+      "detection": {
+        "frame": 12,
+        "success_checks": [
+          {
+            "check_id": "tornado_spin_sig",
+            "plugin_id": "frame_region_color_fraction",
+            "params": {
+              "region": [
+                0.22,
+                0.2,
+                0.78,
+                0.76
+              ],
+              "rgb": [
+                248,
+                248,
+                248
+              ],
+              "tol": 26,
+              "min_fraction": 0.01
+            },
+            "required": true
+          }
+        ]
+      },
+      "negative_control": {
+        "macro": null,
+        "patches": []
+      },
+      "note": "旋风跳跃动作展示。"
+    },
+    {
+      "element_id": "lob_pass_combo",
+      "label": "High Lob Pass (高吊传球配合)",
+      "kind": "move",
+      "base_state": null,
+      "trigger": {
+        "macro": "Up+A,Up+A,Up+A,Up+A,Up+A,Up+A,,,,,,,,,,,,,,,,,,,,,,,,",
+        "extra": 30,
+        "patches": []
+      },
+      "detection": {
+        "frame": 16,
+        "success_checks": [
+          {
+            "check_id": "lob_pass_arc_sig",
+            "plugin_id": "frame_region_color_fraction",
+            "params": {
+              "region": [
+                0.2,
+                0.15,
+                0.85,
+                0.75
+              ],
+              "rgb": [
+                248,
+                248,
+                248
+              ],
+              "tol": 26,
+              "min_fraction": 0.01
+            },
+            "required": true
+          }
+        ]
+      },
+      "negative_control": {
+        "macro": null,
+        "patches": []
+      },
+      "note": "持球态下按 Up+A 向队友发出高吊传中球。"
+    }
+  ],
+  "rom_sha1": "05D9FBAA15EB1DD793563CA7BE74D0279A2AB94F",
+  "base_state_note": "11-15 重指：原 base_state 指向已消失的 F:/taspipe_scratch/soccer2_showcase/possess_base.state（该状态实为经理画面/空白场，soccer2_statecheck.py 实测四份旧状态全不可用）。现指向 soccer2_practice/live.state 副本：KICK OFF 冻结(field.state) → A 解除 → 向右带球 66 帧 → 存于 74 帧处，实测球贴脚 8px、6 个人物团在场上、镜头 $0F0 正常滚动。"
+}

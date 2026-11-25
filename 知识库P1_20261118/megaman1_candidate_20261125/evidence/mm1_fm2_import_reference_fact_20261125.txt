@@ -1,0 +1,18 @@
+TASVideos Forum 19912：FM2 导入 BizHawk（参考性社区流程，逐字摘录）
+Location: The land down under.
+
+ Useless topic is useless.
+
+
+
+If your file is in the fm3 format (TAS Editor)
+
+File > Export to FM2
+
+(You know the thing you should do before submitting, instead of submitting an evil fm3 file, which is possible.)
+
+
+
+Now within BizHawk.
+
+

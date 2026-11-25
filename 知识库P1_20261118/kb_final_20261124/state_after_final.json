@@ -1,0 +1,53 @@
+{
+  "taken_at": "2026-11-24T10:48:51.721790+00:00",
+  "artifacts": {
+    "_工具脚本/taspipe/游戏包/知识库/index.json": {
+      "exists": true,
+      "bytes": 3532204,
+      "mtime_ns": 1795516643959280800,
+      "sha256": "01ba5d9cd9e0e5c18d47531d81bdee09d3fa027da021c67173e9465222de9d47"
+    },
+    "_工具脚本/taspipe/游戏包/知识库/index_hybrid.json": {
+      "exists": true,
+      "bytes": 3504932,
+      "mtime_ns": 1795464149499407600,
+      "sha256": "7a9162a33ead77de19308e64ee9685f4f23d1e5a5acadc8a841582b255f58ca3"
+    },
+    "_工具脚本/taspipe/游戏包/知识库/corpus_map.json": {
+      "exists": true,
+      "bytes": 22537,
+      "mtime_ns": 1795464127174672900,
+      "sha256": "0a1590e5fada5e4d7afd26dd9928b873e45de1bebb9c94f74e3bfb97b4a0c49b"
+    },
+    "_工具脚本/taspipe/游戏包/知识库/query_log.jsonl": {
+      "exists": true,
+      "bytes": 1044,
+      "mtime_ns": 1795463914085772600,
+      "sha256": "f73c57ae2080d8f525bdd5cdfb52b0a50f1cc5cf0cca5b89c4003b803602a91d"
+    },
+    "_工具脚本/taspipe/游戏包/来源库/sources.json": {
+      "exists": true,
+      "bytes": 57733,
+      "mtime_ns": 1795464127056654400,
+      "sha256": "177d14bc9a7a95cade7790c06b6c061834b16167454e28dd30679682a3117667"
+    },
+    "选题决策层/kb快照/index.json": {
+      "exists": true,
+      "bytes": 3467884,
+      "mtime_ns": 1795464507258870300,
+      "sha256": "1088f32d928d633e47edccefdf220e4a654e89fd3350de86ab5a97f5cc655e50"
+    },
+    "选题决策层/查询日志.jsonl": {
+      "exists": true,
+      "bytes": 9641,
+      "mtime_ns": 1795464843807700500,
+      "sha256": "87b4e228b58bc3402a0baa5b0db3103cc51c672e10e0b3f8f7c8c1fabd070cac"
+    },
+    "_工具脚本/taspipe/游戏包/电竞事实库/facts_v1.db": {
+      "exists": true,
+      "bytes": 2056192,
+      "mtime_ns": 1795464415053952300,
+      "sha256": "32f029f41629cb3774e701a705d521aa49550c76deabbc0affc760bec264d5c1"
+    }
+  }
+}

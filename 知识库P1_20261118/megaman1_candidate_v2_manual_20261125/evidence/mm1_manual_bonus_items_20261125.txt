@@ -1,0 +1,13 @@
+洛克人1 官方说明书：1UP 生命能量 武器能量 Yashichi 奖励符号（美国NES手册第15页）
+
+来源：Capcom 美国 NES 官方说明书扫描件。
+核验：已读扫描页；中文为说明，英文为短引文；未收全本。
+
+1 UP 增加一名玩家。
+> 1 UP. It adds one player.
+
+life energy 图标增加玩家生命能量；weapon energy 图标增加玩家武器能量。
+> The player's life energy increases. The player's weapon energy increases.
+
+Yashichi 是 100,000 points bonus。
+> Yashichi. 100,000 points bonus.

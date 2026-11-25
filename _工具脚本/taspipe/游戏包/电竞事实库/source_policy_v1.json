@@ -1,0 +1,224 @@
+{
+  "schema": "source_policy_v1",
+  "frozen_at": "2026-11-20",
+  "spec_doc": "全域游戏知识库与电竞落地_实施计划_2026-11-20.md §2.1",
+  "registry_doc": "全域游戏与电竞知识库_来源与项目调研清单_2026-11-18.md",
+  "rules": {
+    "permission_values": "allowed / denied / unknown；不许用『有key』一个布尔概括",
+    "unknown_semantics": "403/未读通/条款未核 = unknown，不是 denied 也不是 allowed（错误码不是结论）",
+    "depth_vs_license": "调研清单 A/B/C 是核实深度，不等于授权或权威等级",
+    "credentials": "本表永不存凭证值；authorization_ref 只存授权凭据的引用名",
+    "manual_not_bypass": "人工阅读不自动豁免建库权利；拿不到合规证据的条目保持待核"
+  },
+  "sources": [
+    {
+      "source_id": "E01", "name": "Riot Developer Portal",
+      "batch": "后置（个人对局/账号关联确有需求时）",
+      "terms_url": "https://developer.riotgames.com/docs/lol",
+      "checked_at": "2026-11-20",
+      "automated_access": "unknown", "local_retention": "unknown",
+      "commercial_use": "unknown", "quotation": "unknown", "redistribution": "unknown",
+      "authorization_ref": null,
+      "application_path": "Developer Portal→登记用途、原型→对应key审核；VAL另有RSO要求",
+      "note": "不是职业赛事feed；无CN shard不推定国服覆盖；开发key不长期顶生产；商用须Riot政策Approved/Acknowledged"
+    },
+    {
+      "source_id": "E02", "name": "Data Dragon",
+      "batch": "第一批（LOL实体/技能/物品/版本对照）",
+      "terms_url": "https://developer.riotgames.com/docs/lol",
+      "checked_at": "2026-11-20",
+      "automated_access": "allowed", "local_retention": "unknown",
+      "commercial_use": "unknown", "quotation": "unknown", "redistribution": "unknown",
+      "authorization_ref": null,
+      "application_path": "免key：官方文档→版本列表→固定版本、语言的JSON；优先小JSON不取整包图片",
+      "note": "免key不等于开放版权，按Riot政策核用途；资源包版本≠国服或赛事补丁（patch_deployment分开记）；zh_CN locale有；手动更新滞后于补丁"
+    },
+    {
+      "source_id": "E03", "name": "CommunityDragon",
+      "batch": "Data Dragon缺项后补",
+      "terms_url": null,
+      "checked_at": "2026-11-20",
+      "automated_access": "allowed", "local_retention": "unknown",
+      "commercial_use": "unknown", "quotation": "unknown", "redistribution": "unknown",
+      "authorization_ref": null,
+      "application_path": "固定patch资源/JSON；不用latest归档历史",
+      "note": "社区导出不是官方事实背书；客户端资产权利另核"
+    },
+    {
+      "source_id": "E04", "name": "官方赛事门户（LoL Esports / VAL赛事门户）",
+      "batch": "第一批（指定赛事历史赛果/规则）",
+      "terms_url": "https://lolesports.com/news/build-with-official-league-of-legends-esports-data",
+      "checked_at": "2026-11-20",
+      "automated_access": "unknown", "local_retention": "unknown",
+      "commercial_use": "unknown", "quotation": "unknown", "redistribution": "unknown",
+      "authorization_ref": null,
+      "application_path": "获准页面导入、官方资料或授权feed",
+      "note": "官方开放赛事入口以Worlds 2026为首个赛事、实时系列赛数据延迟5分钟（本轮公告核实）；不能据此声称历史LPL已覆盖；不复用网页内嵌key；公开页面不自动授权批量建库"
+    },
+    {
+      "source_id": "E05", "name": "GRID（Riot官方赛事数据）",
+      "batch": "LOL/VAL官方赛事主干优先申请",
+      "terms_url": "https://grid.gg/riot-open-access/",
+      "checked_at": "2026-11-20",
+      "automated_access": "unknown", "local_retention": "unknown",
+      "commercial_use": "denied", "quotation": "unknown", "redistribution": "unknown",
+      "authorization_ref": null,
+      "application_path": "riot.grid.gg/register 生成key；商业用途联系 sales@grid.gg",
+      "note": "commercial_use=denied 仅指当前免费层：官网原文 Non-commercial use: learning and experimentation；商业频道用途须商业许可（未获得）；本地存储不改变用途性质；申请发起须用户批准"
+    },
+    {
+      "source_id": "E06", "name": "Liquipedia",
+      "batch": "跨四项目赛事/阵容/人物补全优先申请",
+      "terms_url": null,
+      "checked_at": "2026-11-20",
+      "automated_access": "unknown", "local_retention": "unknown",
+      "commercial_use": "unknown", "quotation": "unknown", "redistribution": "unknown",
+      "authorization_ref": null,
+      "application_path": "从API入口申请/核实LPDB访问",
+      "note": "条款页403=未核（非禁非准）；不改用旧MediaWiki爬法绕过"
+    },
+    {
+      "source_id": "E07", "name": "Leaguepedia",
+      "batch": "LOL历史赛事与人物补充",
+      "terms_url": null,
+      "checked_at": "2026-11-20",
+      "automated_access": "unknown", "local_retention": "unknown",
+      "commercial_use": "unknown", "quotation": "unknown", "redistribution": "unknown",
+      "authorization_ref": null,
+      "application_path": "官方API文档所述Cargo/MediaWiki路线，先核当前访问政策",
+      "note": "条款正文未复核；既有CC许可线索不代替接口准入；图片另算"
+    },
+    {
+      "source_id": "E08", "name": "Oracle's Elixir",
+      "batch": "LOL历史复盘统计补充",
+      "terms_url": null,
+      "checked_at": "2026-11-20",
+      "automated_access": "unknown", "local_retention": "unknown",
+      "commercial_use": "unknown", "quotation": "unknown", "redistribution": "unknown",
+      "authorization_ref": null,
+      "application_path": "下载页CSV，导入前读取实际表头与赛季覆盖",
+      "note": "下载页未读通=未核；不承诺完整LPL历史"
+    },
+    {
+      "source_id": "E09", "name": "OpenDota",
+      "batch": "首个DOTA2结构化适配器候选",
+      "terms_url": "https://docs.opendota.com/",
+      "checked_at": "2026-11-20",
+      "automated_access": "allowed", "local_retention": "unknown",
+      "commercial_use": "unknown", "quotation": "unknown", "redistribution": "unknown",
+      "authorization_ref": null,
+      "application_path": "REST可无key访问（官方文档核实）；高级访问经API Keys页申请",
+      "note": "MIT是代码许可不是数据许可；数据商用、缓存及衍生内容权限未确认，生产采集前须用途确认（须用户批准）"
+    },
+    {
+      "source_id": "E10", "name": "STRATZ",
+      "batch": "OpenDota确有字段缺口后补",
+      "terms_url": null,
+      "checked_at": "2026-11-20",
+      "automated_access": "unknown", "local_retention": "unknown",
+      "commercial_use": "unknown", "quotation": "unknown", "redistribution": "unknown",
+      "authorization_ref": null,
+      "application_path": "官方API入口申请token，GraphQL",
+      "note": "token流程、商用与缓存条件未复核"
+    },
+    {
+      "source_id": "E11", "name": "Valve/Steam ISteamNews",
+      "batch": "第一批（DOTA2/CS2及现代游戏更新发现）",
+      "terms_url": "https://steamcommunity.com/dev/apiterms",
+      "checked_at": "2026-11-20",
+      "automated_access": "allowed", "local_retention": "unknown",
+      "commercial_use": "denied", "quotation": "unknown", "redistribution": "unknown",
+      "authorization_ref": null,
+      "application_path": "GetNewsForApp公开方法按AppID获取（免key）；不走发行商专用Authed方法",
+      "note": "commercial_use=denied 指条款限终端用户个人用途（本轮核实）；只用标题/摘要/链接做发现，全文权利看feed原发布者；API访问≠新闻全文商用权"
+    },
+    {
+      "source_id": "E12", "name": "HLTV",
+      "batch": "CS2高价值候选（未获准前保留研究入口）",
+      "terms_url": null,
+      "checked_at": "2026-11-18",
+      "automated_access": "denied", "local_retention": "unknown",
+      "commercial_use": "unknown", "quotation": "unknown", "redistribution": "unknown",
+      "authorization_ref": null,
+      "application_path": "申请数据/商业使用授权",
+      "note": "automated_access=denied 依据本地调研清单记录的data-mining限制；完整条款本轮未复核；第三方爬虫SDK不当许可"
+    },
+    {
+      "source_id": "E13", "name": "VLR",
+      "batch": "VAL高价值候选（未获准前保留研究入口）",
+      "terms_url": null,
+      "checked_at": "2026-11-18",
+      "automated_access": "denied", "local_retention": "unknown",
+      "commercial_use": "unknown", "quotation": "unknown", "redistribution": "unknown",
+      "authorization_ref": null,
+      "application_path": "申请书面授权",
+      "note": "既有条款记录限制自动访问及系统性建库；『内部使用』不等于获准"
+    },
+    {
+      "source_id": "E14", "name": "腾讯LOL/LPL官方",
+      "batch": "第一批（国内赛事/中文公告/国服补丁）",
+      "terms_url": null,
+      "checked_at": "2026-11-20",
+      "automated_access": "unknown", "local_retention": "unknown",
+      "commercial_use": "unknown", "quotation": "unknown", "redistribution": "unknown",
+      "authorization_ref": null,
+      "application_path": "官方新闻、赛季页；先定向录入合规取得的事实证据，批量方式另核",
+      "note": "站内JSON不是默认开放API；国服与全球发布时间分开记（patch_deployment）"
+    },
+    {
+      "source_id": "E15", "name": "完美世界（DOTA2/CS官方）",
+      "batch": "第一批（国内赛事公告/中文补丁）",
+      "terms_url": null,
+      "checked_at": "2026-11-20",
+      "automated_access": "unknown", "local_retention": "unknown",
+      "commercial_use": "unknown", "quotation": "unknown", "redistribution": "unknown",
+      "authorization_ref": null,
+      "application_path": "官方新闻和公告；定向录入合规取得的事实证据，批量方式另核",
+      "note": "旧制度页面仍在线不等于仍有效；自动采集和全文利用另核"
+    },
+    {
+      "source_id": "E16", "name": "虎扑",
+      "batch": "中文语境与选题线索（回到原发布者）",
+      "terms_url": null,
+      "checked_at": "2026-11-18",
+      "automated_access": "denied", "local_retention": "unknown",
+      "commercial_use": "denied", "quotation": "unknown", "redistribution": "unknown",
+      "authorization_ref": null,
+      "application_path": "线索发现→回到俱乐部、选手、赛事原发布者；自动获取需核授权",
+      "note": "依据本地调研清单记录的协议4.2.4/5.1限制未经许可自动获取与商业使用；转载译文不升级为独立权威来源"
+    },
+    {
+      "source_id": "E17", "name": "NGA",
+      "batch": "机制问题/线索补充",
+      "terms_url": null,
+      "checked_at": "2026-11-20",
+      "automated_access": "unknown", "local_retention": "unknown",
+      "commercial_use": "unknown", "quotation": "unknown", "redistribution": "unknown",
+      "authorization_ref": null,
+      "application_path": "作者授权资料或合规取得的帖子，保留楼层与编辑时间",
+      "note": "403不绕过（403是访问状态不是许可判定）；论坛声望不等于事实权威"
+    },
+    {
+      "source_id": "E18", "name": "B站",
+      "batch": "第一批证据入口（采访/官方公告/实测）",
+      "terms_url": null,
+      "checked_at": "2026-11-20",
+      "automated_access": "unknown", "local_retention": "allowed",
+      "commercial_use": "unknown", "quotation": "unknown", "redistribution": "unknown",
+      "authorization_ref": null,
+      "application_path": "自有/获授权本地资料导入；开放平台走开发者认证、应用与相应授权",
+      "note": "local_retention=allowed 仅限自有/获授权本地资料；官方账号身份、视频内容权利、字幕权利分别核；ASR不直接成为引语金标"
+    },
+    {
+      "source_id": "E19", "name": "小黑盒",
+      "batch": "后置",
+      "terms_url": null,
+      "checked_at": "2026-11-20",
+      "automated_access": "unknown", "local_retention": "unknown",
+      "commercial_use": "unknown", "quotation": "unknown", "redistribution": "unknown",
+      "authorization_ref": null,
+      "application_path": "官方开放平台核具体接口范围",
+      "note": "模组/商店开放能力不代表新闻和战绩接口开放；不逆向私有接口"
+    }
+  ]
+}

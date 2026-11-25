@@ -1,0 +1,11 @@
+{
+ "clock_unit": "emu_frame",
+ "fps": 60,
+ "count": 1200,
+ "expected": 1200,
+ "pts_formula": "frame/fps",
+ "lag_adjusted": false,
+ "tail_policy": "replay_to_movie_end：只复播到输入日志末帧（通关判定/最终出口帧）；输入结束后的结局/credits 不补录；首帧为加载空白、末帧为通关现场，首尾各抽帧留证目视确认",
+ "audio_wall_span": null,
+ "audio_drift_atempo": null
+}

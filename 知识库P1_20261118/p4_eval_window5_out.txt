@@ -1,0 +1,30 @@
+W1119 12:47:38.112000 36636 E:\SHARE\py313-cuda\torch\distributed\elastic\multiprocessing\redirects.py:29] NOTE: Redirects are currently not supported in Windows or MacOs.
+Loading weights:   0%|          | 0/391 [00:00<?, ?it/s]Loading weights: 100%|██████████| 391/391 [00:00<00:00, 65036.99it/s]
+Loading weights:   0%|          | 0/393 [00:00<?, ?it/s]Loading weights:   0%|          | 1/393 [00:01<06:47,  1.04s/it]Loading weights:   1%|          | 2/393 [00:01<04:15,  1.53it/s]Loading weights:   1%|          | 3/393 [00:02<04:30,  1.44it/s]Loading weights:   1%|          | 4/393 [00:02<04:40,  1.39it/s]Loading weights:   1%|▏         | 5/393 [00:03<05:02,  1.28it/s]Loading weights:   2%|▏         | 6/393 [00:04<04:52,  1.32it/s]Loading weights:   2%|▏         | 7/393 [00:05<04:17,  1.50it/s]Loading weights:   2%|▏         | 8/393 [00:05<03:31,  1.82it/s]Loading weights:   2%|▏         | 9/393 [00:06<04:08,  1.55it/s]Loading weights:   3%|▎         | 10/393 [00:06<03:14,  1.97it/s]Loading weights:   3%|▎         | 11/393 [00:07<04:15,  1.50it/s]Loading weights:   3%|▎         | 12/393 [00:09<06:42,  1.06s/it]Loading weights:   3%|▎         | 13/393 [00:09<05:17,  1.20it/s]Loading weights:   4%|▎         | 14/393 [00:10<05:35,  1.13it/s]Loading weights:   4%|▍         | 15/393 [00:11<04:53,  1.29it/s]Loading weights:   4%|▍         | 16/393 [00:11<03:41,  1.70it/s]Loading weights:   4%|▍         | 17/393 [00:11<03:43,  1.68it/s]Loading weights:   5%|▍         | 18/393 [00:12<04:10,  1.50it/s]Loading weights:   5%|▍         | 19/393 [00:13<05:06,  1.22it/s]Loading weights:   5%|▌         | 20/393 [00:14<05:05,  1.22it/s]Loading weights:   5%|▌         | 21/393 [00:15<04:33,  1.36it/s]Loading weights:   6%|▌         | 22/393 [00:16<04:46,  1.29it/s]Loading weights:   6%|▋         | 25/393 [00:16<02:18,  2.66it/s]Loading weights:   7%|▋         | 26/393 [00:17<02:40,  2.29it/s]Loading weights:   7%|▋         | 27/393 [00:17<02:14,  2.71it/s]Loading weights:   8%|▊         | 33/393 [00:17<00:48,  7.42it/s]Loading weights:   9%|▉         | 36/393 [00:17<00:55,  6.38it/s]Loading weights:  10%|▉         | 38/393 [00:18<01:06,  5.31it/s]Loading weights:  10%|█         | 40/393 [00:20<02:01,  2.91it/s]Loading weights:  10%|█         | 41/393 [00:20<02:08,  2.74it/s]Loading weights:  11%|█         | 42/393 [00:21<02:24,  2.43it/s]Loading weights:  11%|█         | 43/393 [00:21<02:47,  2.08it/s]Loading weights:  11%|█         | 44/393 [00:23<03:57,  1.47it/s]Loading weights:  11%|█▏        | 45/393 [00:24<04:09,  1.39it/s]Loading weights: 100%|██████████| 393/393 [00:24<00:00, 16.26it/s]
+Q01  OK  strict_pass    status=pass         retrieval=hybrid_union12 gold_pos=3 cond=Y refusal=-
+Q02  OK  strict_pass    status=pass         retrieval=hybrid_union12 gold_pos=4 cond=Y refusal=-
+Q03  OK  strict_pass    status=pass         retrieval=hybrid_union12 gold_pos=2 cond=Y refusal=-
+Q04  OK  gold_in_topk   status=pass         retrieval=hybrid_union12 gold_pos=1 cond=- refusal=-
+Q05  OK  strict_pass    status=pass         retrieval=hybrid_union12 gold_pos=1 cond=- refusal=-
+Q06  OK  gold_in_topk   status=inconclusive retrieval=hybrid_union12 gold_pos=6 cond=- refusal=-
+Q07  OK  gold_in_topk   status=pass         retrieval=hybrid_union12 gold_pos=1 cond=- refusal=-
+Q08  FAIL gold_in_topk   status=inconclusive retrieval=hybrid_union12 gold_pos=None cond=- refusal=-
+Q09  OK  refuse         status=inconclusive retrieval=hybrid_union12 gold_pos=None cond=- refusal=unanswerable
+Q10  OK  strict_pass    status=pass         retrieval=hybrid_union12 gold_pos=8 cond=- refusal=-
+Q11  OK  version_guard  status=pass         retrieval=hybrid_union12 gold_pos=None cond=- refusal=-
+Q12  OK  refuse         status=miss         retrieval=?              gold_pos=None cond=- refusal=out_of_scope
+Q13  OK  refuse         status=miss         retrieval=?              gold_pos=None cond=- refusal=out_of_scope
+Q14  OK  refuse         status=miss         retrieval=?              gold_pos=None cond=- refusal=out_of_scope
+Q15  OK  refuse         status=inconclusive retrieval=hybrid_union12 gold_pos=None cond=- refusal=unanswerable
+Q16  OK  gold_in_topk   status=inconclusive retrieval=hybrid_union12 gold_pos=1 cond=- refusal=-
+Q17  OK  gold_in_topk   status=pass         retrieval=hybrid_union12 gold_pos=1 cond=Y refusal=-
+Q18  OK  strict_pass    status=pass         retrieval=hybrid_union12 gold_pos=3 cond=Y refusal=-
+P19  OK  gold_in_topk   status=pass         retrieval=hybrid_union12 gold_pos=1 cond=Y refusal=-
+P20  OK  refuse         status=miss         retrieval=?              gold_pos=None cond=- refusal=out_of_scope
+P21  OK  refuse         status=inconclusive retrieval=hybrid_union12 gold_pos=None cond=- refusal=unanswerable
+P22  OK  gold_in_topk   status=pass         retrieval=hybrid_union12 gold_pos=2 cond=Y refusal=-
+P23  OK  gold_in_topk   status=inconclusive retrieval=hybrid_union12 gold_pos=6 cond=- refusal=-
+P24  OK  gold_in_topk   status=pass         retrieval=hybrid_union12 gold_pos=1 cond=- refusal=-
+P25  OK  refuse         status=inconclusive retrieval=hybrid_union12 gold_pos=None cond=- refusal=unanswerable
+P26  OK  refuse         status=miss         retrieval=?              gold_pos=None cond=- refusal=out_of_scope
+{"total": 26, "ok": 25, "by_tier": {"strict_pass": {"total": 6, "ok": 6}, "gold_in_topk": {"total": 10, "ok": 9}, "refuse": {"total": 9, "ok": 9}, "version_guard": {"total": 1, "ok": 1}}, "failed_ids": ["Q08"]}

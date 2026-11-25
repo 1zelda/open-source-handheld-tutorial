@@ -1,0 +1,16 @@
+# Mega Man 2 local title catalog — verbatim extract
+> Origin: _工具脚本/taspipe/popular_titles.json
+> Original line ranges: 480-490
+> Qualification: Secondary local catalog; basis is retained, but no primary page snapshot is bundled.
+
+   "title": "Mega Man 2",
+   "platform": "NES",
+   "tier": "T1",
+   "sales": 1510000,
+   "cn": "洛克人2",
+   "aliases": [
+    "洛克人2",
+    "Rockman 2"
+   ],
+   "basis": "EN 维基「NES 畅销游戏列表」销量行 1,510,000"
+  },

@@ -1,0 +1,34 @@
+  [1] 跨平台宏 [1/33]: SNES X/Y/L/R 与 LT/RT 别名正常展开
+  [2] 跨平台宏 [2/33]: MD 6 键手柄 A/B/C/X/Y/Z 与 Mode 别名正常展开
+  [3] 跨平台宏 [3/33]: PS1 Triangle/Circle/Cross/Square 及肩键正常展开
+  [4] 跨平台宏 [4/33]: 街机 FBNeo Coin/Start/A/B/C/D 正常展开
+  [5] 跨平台宏 [5/33]: GBA L/R 肩键与 Up+B 组合正常展开
+  [6] 跨平台宏 [6/33]: NES 平台混入 X 键必抛 SchemaError
+  [7] 跨平台宏 [7/33]: GBA 平台混入 C 键必抛 SchemaError
+  [8] 跨平台宏 [8/33]: 未知怀旧平台名必抛 SchemaError
+  [9] 扩展内存 [9/33]: SNES 0x1FFFF WRAM 顶界地址放行
+  [10] 扩展内存 [10/33]: GBA 0x3FFFF 十六进制地址解析放行
+  [11] 扩展内存 [11/33]: PS1 2MB MainRAM 0x1FFFFF 顶界地址放行
+  [12] 扩展内存 [12/33]: 含空格内存域 '68K RAM' 按线格式编码为 '68K%20RAM'
+  [13] 扩展内存 [13/33]: NES 地址超出 0xFFFF 必抛 SchemaError
+  [14] 扩展内存 [14/33]: SNES 地址超出 0x1FFFF 必抛 SchemaError
+  [15] 模板与转换 [15/33]: STATE_LUA_TMPL 无字面 CR 且保持 flushing 异步落盘状态机
+  [16] 模板与转换 [16/33]: Snes9x .smv 帧数与 16-bit 掩码按键精确解析
+  [17] 模板与转换 [17/33]: VBA .vbm 按 0x3C 偏移精确解析 GBA 帧与肩键
+  [18] 模板与转换 [18/33]: 非法 .smv 文件头被 MovieConvertError 拦截
+  [19] 多平台包校验 [19/33]: SNES showcase.json 通过校验
+  [20] 多平台包校验 [20/33]: GBA showcase.json 通过校验
+  [21] 多平台包校验 [21/33]: MD showcase.json 通过校验
+  [22] 多平台包校验 [22/33]: 街机 ARCADE_FBNEO showcase.json 通过校验
+  [23] 多平台包校验 [23/33]: catalog.status != complete 被拒（防半成品冒充全量）
+  [24] 多平台包校验 [24/33]: detection.frame 越界必抛 SchemaError
+  [25] 自动标定 [25/33]: 正反例逐帧差分准确锁定峰值帧 f0005
+  [26] 自动标定 [26/33]: 归一化 region 落在 [0.01, 0.99] 安全界内
+  [27] 自动标定 [27/33]: 特效主色簇聚类 RGB 准确还原 (248, 136, 48)
+  [28] 自动标定 [28/33]: min_fraction 在正例与反例之间留有充足安全余量
+  [29] 自动标定 [29/33]: 标定参数经 detect.run_check 复核满足正例 PASS 且反例 FAIL
+  [30] 自动标定 [30/33]: 正反例无视觉差异时强制抛 RuntimeError 拦截假宏
+  [31] VBM 起始数据 [31/33]: 解出 128KB SRAM 且缺 CoreState 时拒绝降级开机直放
+  [32] VBM 起始数据 [32/33]: 声明帧数超过实际输入体时强制拦截
+  [33] VBM 起始数据 [33/33]: 传感器位可盘点但转换不得静默丢弃
+CROSS_PLATFORM_SELFTEST OK 33/33

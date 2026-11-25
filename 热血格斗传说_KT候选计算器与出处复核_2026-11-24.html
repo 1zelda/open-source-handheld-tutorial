@@ -1,0 +1,94 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><title>热血格斗传说：KT 候选计算器与出处复核（2026-11-24）</title><style>
+@page { size: A4; margin: 13mm 12mm; }
+body { font-family: "Microsoft YaHei","PingFang SC",sans-serif; font-size: 9.6pt;
+       line-height: 1.42; color: #1c2430; max-width: none; margin: 0; }
+h1 { font-size: 17pt; border-bottom: 3px solid #2f6fed; padding-bottom: 5px; margin: 0 0 10px; }
+h2 { font-size: 13.5pt; color: #14418c; margin: 12px 0 6px; padding-left: 8px;
+     border-left: 5px solid #2f6fed; page-break-after: avoid; }
+h3 { font-size: 11.5pt; color: #1b1b1b; margin: 8px 0 4px; page-break-after: avoid; }
+p { margin: 4px 0; }
+h2 + p { page-break-inside: avoid; }
+hr { border: 0; border-top: 1px solid #d3dae6; margin: 10px 0; }
+table { border-collapse: collapse; width: 100%; margin: 6px 0 8px; font-size: 9pt; }
+th, td { border: 1px solid #c6cfdd; padding: 4px 6px; vertical-align: top; text-align: left; }
+th { background: #eef3fb; font-weight: 600; }
+thead { display: table-header-group; }
+tr { page-break-inside: avoid; }
+tbody tr:nth-child(even) { background: #fafbfe; }
+code { font-family: Consolas,"Courier New",monospace; background: #f1f3f7;
+       padding: 1px 4px; border-radius: 3px; font-size: 8.8pt; color: #9d2233; }
+pre { background: #f6f8fa; border: 1px solid #dfe4ec; border-left: 4px solid #2f6fed;
+      padding: 6px 9px; border-radius: 4px; overflow-x: hidden; page-break-inside: avoid; }
+pre code { background: none; color: #24292f; padding: 0; font-size: 8.6pt; }
+blockquote { margin: 7px 0; padding: 5px 10px; background: #fff8e6;
+             border-left: 4px solid #e0a800; border-radius: 3px; }
+ul, ol { margin: 4px 0 6px; padding-left: 21px; }
+li { margin: 1px 0; }
+img { display: block; max-width: 100%; max-height: 200mm; margin: 12px auto;
+      border: 1px solid #ccd5e2; border-radius: 4px; page-break-inside: avoid; }
+a { color: #2f6fed; word-break: break-all; }
+strong { color: #10233f; }
+</style></head><body><h1>热血格斗传说：KT 候选计算器与出处复核（2026-11-24）</h1>
+<blockquote><p>本件是《知识库改进优化指导（2026-11-24）实施回填》的增补，不覆盖原指导件。 目的：把“生日 → KT 候选”做成可运行、可复算、但不会冒充硬证据的生产工具。</p></blockquote>
+<h2>1. 做成了什么</h2>
+<p>生产 CLI 新增 <code>kt-candidates</code> 子命令：</p>
+<pre><code>
+cd F:\开源掌机教程\_工具脚本
+PYTHONUTF8=1 py -3 -m taspipe.kb kt-candidates --month 1 --day 1
+PYTHONUTF8=1 py -3 -m taspipe.kb kt-candidates --month 1 --day 1 --json
+</code></pre>
+<p>计算规则：</p>
+<pre><code>
+KT# = (出生月 + 出生日 - 1) mod 20
+</code></pre>
+<p>示例：<code>1 月 1 日 → KT#1 → Stone Guard / Spin Attack / Bomb Kick</code>。</p>
+<p>实现文件：<a href="_工具脚本/taspipe/nkd_kt.py">nkd_kt.py</a>。生产入口：<a href="_工具脚本/taspipe/kb.py">kb.py</a> 的 <code>kt-candidates</code> 子命令。</p>
+<p>工具固定输出以下边界：</p>
+<ul><li><code>status=reference_only</code></li><li><code>authority=reference_only</code></li><li><code>rom_recomputed=false</code></li><li><code>hard_evidence_eligible=false</code></li><li>不输出 <code>selected_evidence</code></li><li>不修改检索索引、corpus map 或来源主数据</li></ul>
+<p>输入会拒绝非法月份/日期、布尔值和字符串；<code>2 月 29 日</code> 按“无年份时允许闰日生日”处理。</p>
+<h2>2. 出处复核结果</h2>
+<h3>2.1 dammit9x FAQ</h3>
+<ul><li>文件：<code>Nekketsu Kakutou Densetsu FAQ/Guide</code>，2006-07-09 v1.0。</li><li>本地只保存事实摘录与出处，不公开再分发指南全文。</li><li>FAQ 明写 KT 表与星座表 <code>adapted from http://www.rahga.com/nkd/</code>，因此属于二手转述。</li></ul>
+<h3>2.2 Rahga 原页快照</h3>
+<ul><li>原 URL：<code>http://www.rahga.com/nkd/</code></li><li>可读快照：<code>https://web.archive.org/web/20010819104652id_/http://www.rahga.com/nkd/</code></li><li>快照正文明确写出：生日决定特殊技，共 20 种模式；1 月 1–20 日对应模式 1–20，之后回绕，每过一月加 1。</li><li>快照中的 20 行表与本地候选表一致，只是原页编号 1–20，本地按公式输出 0–19；整体等价。</li></ul>
+<h3>2.3 更早的日文玩家页</h3>
+<ul><li>原 URL：<code>http://yokohama.cool.ne.jp/tyaf/Games/kak.html</code></li><li>可读快照：<code>https://web.archive.org/web/20010215090626id_/http://yokohama.cool.ne.jp/tyaf/Games/kak.html</code></li><li>已直接下载并按 Shift-JIS 解码核对：页面写明“必杀技由生日从以下 20 种模式中选择”，并列出 1–20 行表与逐月回绕规则。</li><li>这说明同表在 2001-02-15 快照中已经存在；但仅凭页面不能证明首创者，也不能证明直接传承关系。</li></ul>
+<h3>2.4 证据等级</h3>
+<p>以上都是玩家攻略/FAQ，不是厂商规则书，也不是本机 ROM 实测。因此：</p>
+<ul><li>可以用于本地候选计算与实验设计；</li><li>不能升级为 <code>authoritative</code>；</li><li>不能用于自动文稿里不带条件地断言“某生日必然获得某必杀”。</li></ul>
+<h2>3. 本轮实测</h2>
+<table>
+<thead><tr>
+<th>检查</th>
+<th>结果</th>
+</tr></thead><tbody>
+<tr><td>生产 CLI：<code>1/1 --json</code></td><td>当前代码退出 0，返回 KT#1 与三条候选必杀</td></tr>
+<tr><td>生产 CLI：<code>2/30</code></td><td>当前代码退出 2，明确拒绝无效生日</td></tr>
+<tr><td>当前 KT 独立验收</td><td>生产函数 <strong>3/3</strong>；CLI 有效输入退出 0、无效输入退出 2</td></tr>
+<tr><td>全量日志中的 KT 闸门</td><td><strong>[206]–[208] 全部通过</strong></td></tr>
+<tr><td>历史全量生产自检</td><td><strong>1359/1359</strong>（对应下方历史源码指纹）</td></tr>
+<tr><td>最新共享源码全量复跑</td><td>在 <code>[199] Q06 召回修复</code> 旧断言处停止，未得到全量通过数</td></tr>
+</tbody></table>
+<p>当前 KT 独立验收日志：<code>知识库P1_20261118/kt_targeted_current_20261124.log</code>。</p>
+<p>最新共享源码复跑日志：<code>知识库P1_20261118/kt_calculator_selftest_20261124_current2.log</code>。该次运行前后源码哈希一致。失败断言仍要求 Q06 保持 <code>inconclusive</code>，但生产现已把日文说明书金表 <code>2c71bd81ff2d</code> 提到第 1 位并正确 <code>pass</code>；这是并行集成中的测试预期滞后，不是 KT 计算器。此前 <code>[194] Q10 不换证</code> 已由并行会话修正默认证据，当前 Q10 基线与 <code>scoped</code> 都选真正的 3v3 限制块。</p>
+<p>历史全量自检日志：<code>知识库P1_20261118/kt_calculator_selftest_20261124.log</code>。</p>
+<p>历史全量通过时的核心源码 SHA-256：</p>
+<pre><code>
+kb.py                 ca8a88d71bd14412e047f5fdfb8c2a52d77bb271dcfdfceac27492734efa5cb9
+kb_selftest_gates.py  3247062191d5ba256247979387fcd907d532745b24e88e6f7a7e44dc3af78b3a
+kb_blind_eval.py      2f061b9a6957137599c68b98cd511f846532c0b79d04ab696fdb88f842a52c6d
+selftest.py           126fcfc111d4b913cc59b4510a525e4ee3eba397c27bacaca2c55e66ee38a479
+nkd_kt.py             aadb1d76045826e26a9d8f6b0b9702c84dfa9975a772b4974742e70edbe45d06
+</code></pre>
+<p>本轮 KT 独立验收时锁定的共享源码 SHA-256：</p>
+<pre><code>
+kb.py                 104c29c06a985254f7d21cf61361dfd3cee8f12af2a99ad7c1198f36ceba2a41
+kb_selftest_gates.py  dfed2190e39cc0007fe754a665fe847d852833d0e4f337b0766cbd4953f54d2e
+kb_blind_eval.py      2f061b9a6957137599c68b98cd511f846532c0b79d04ab696fdb88f842a52c6d
+selftest.py           786774e931ee118413164b996226bb41b2725c78f9148ce052cd0932e9b9571c
+nkd_kt.py             aadb1d76045826e26a9d8f6b0b9702c84dfa9975a772b4974742e70edbe45d06
+</code></pre>
+<h2>4. 仍未完成与升级条件</h2>
+<ol><li><strong>名字 → 六项能力/格斗类型的公式</strong>：目前没有可靠公式。</li><li><strong>血型 → 具体能力值的公式</strong>：FAQ 只证明血型可输入，不能证明它决定某项能力。</li><li><strong>KT/星座表的 ROM 逐例复算</strong>：当前按文件名在项目游戏资源库与 <code>游戏包</code> 下未找到原版 TJC-NA ROM，因此没有启动模拟器，也没有把候选表升成硬证据。</li><li>若以后取得合法原版 ROM，应先锁定 ROM 哈希与 Header，再在受控模拟器中覆盖 20 种模式，记录输入、角色状态、画面与内存证据；逐例一致后才讨论升级 <code>authority</code>。</li><li>A1 授权邮件仍待真实发件账号；A2 生产语义层与 A3 付费 API 仍待单独批准。“继续”不等于批准这些门控动作。</li></ol>
+<h2>5. 最终口径</h2>
+<p><strong>工具已经能算，出处也已经补到可读快照；但“玩家攻略互相印证”仍不等于“官方或 ROM 已证明”。</strong> 当前交付是明确标注的候选计算器，不是硬证据通关。</p></body></html>

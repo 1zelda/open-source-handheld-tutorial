@@ -1,0 +1,60 @@
+=== preP5 hybrid 基线 surfaced 块：P5 前后可答性翻转（同块重判）===
+  X06   w3 rank5 _工具脚本/taspipe/游戏包/热血足球联盟_必杀全清单.md#L262-L264  True -> False
+  X06   w3 rank6 _工具脚本/taspipe/游戏包/来源库/取证/sohu_一直输球隐藏大结局_20261118.md#L1-L63  True -> False
+  X06   w3 rank8 _工具脚本/taspipe/游戏包/来源库/取证/sohu_一直输球隐藏大结局_20261118.md#L65-L81  True -> False
+  X06   w5 rank5 _工具脚本/taspipe/游戏包/热血足球联盟_必杀全清单.md#L262-L264  True -> False
+  X06   w5 rank6 _工具脚本/taspipe/游戏包/来源库/取证/sohu_一直输球隐藏大结局_20261118.md#L1-L63  True -> False
+  X06   w5 rank8 _工具脚本/taspipe/游戏包/来源库/取证/sohu_一直输球隐藏大结局_20261118.md#L65-L81  True -> False
+  X07   w3 rank4 _工具脚本/taspipe/游戏包/热血足球联盟_必杀全清单.md#L229-L231  True -> False
+  X07   w3 rank6 _工具脚本/taspipe/游戏包/来源库/取证/sohu_必杀最强小辫子_20261118.md#L1-L69  True -> False
+  X07   w3 rank7 _工具脚本/taspipe/游戏包/来源库/取证/sohu_热血队队员必杀集锦_20261118.md#L1-L75  True -> False
+  X07   w5 rank4 _工具脚本/taspipe/游戏包/热血足球联盟_必杀全清单.md#L229-L231  True -> False
+  X07   w5 rank6 _工具脚本/taspipe/游戏包/来源库/取证/sohu_必杀最强小辫子_20261118.md#L1-L69  True -> False
+  X07   w5 rank7 _工具脚本/taspipe/游戏包/来源库/取证/sohu_热血队队员必杀集锦_20261118.md#L1-L75  True -> False
+  X12   w3 rank2 _工具脚本/taspipe/游戏包/来源库/取证/1ang_热血足球联盟图文攻略_20261118.md#L389-L396  True -> False
+  X12   w3 rank7 _工具脚本/taspipe/游戏包/热血足球联盟_必杀全清单.md#L137-L158  True -> False
+  X12   w5 rank2 _工具脚本/taspipe/游戏包/来源库/取证/1ang_热血足球联盟图文攻略_20261118.md#L389-L396  True -> False
+  X12   w5 rank7 _工具脚本/taspipe/游戏包/热血足球联盟_必杀全清单.md#L137-L158  True -> False
+  X25   w3 rank1 _工具脚本/taspipe/游戏包/热血足球联盟_必杀全清单.md#L137-L158  True -> False
+  X25   w3 rank3 _工具脚本/taspipe/游戏包/来源库/取证/1ang_热血足球联盟图文攻略_20261118.md#L389-L396  True -> False
+  X25   w3 rank6 _工具脚本/taspipe/游戏包/来源库/取证/1ang_热血足球联盟图文攻略_20261118.md#L679-L691  True -> False
+  X25   w5 rank1 _工具脚本/taspipe/游戏包/热血足球联盟_必杀全清单.md#L137-L158  True -> False
+  X25   w5 rank3 _工具脚本/taspipe/游戏包/来源库/取证/1ang_热血足球联盟图文攻略_20261118.md#L389-L396  True -> False
+  X25   w5 rank6 _工具脚本/taspipe/游戏包/来源库/取证/1ang_热血足球联盟图文攻略_20261118.md#L679-L691  True -> False
+  X26   w3 rank2 _工具脚本/taspipe/游戏包/来源库/取证/sohu_必杀最强小辫子_20261118.md#L1-L69  True -> False
+  X26   w3 rank3 _工具脚本/taspipe/游戏包/热血足球联盟_必杀全清单.md#L137-L158  True -> False
+  X26   w3 rank5 _工具脚本/taspipe/游戏包/来源库/取证/1ang_热血足球联盟图文攻略_20261118.md#L679-L691  True -> False
+  X26   w5 rank2 _工具脚本/taspipe/游戏包/来源库/取证/sohu_必杀最强小辫子_20261118.md#L1-L69  True -> False
+  X26   w5 rank3 _工具脚本/taspipe/游戏包/热血足球联盟_必杀全清单.md#L137-L158  True -> False
+  X26   w5 rank5 _工具脚本/taspipe/游戏包/来源库/取证/1ang_热血足球联盟图文攻略_20261118.md#L679-L691  True -> False
+  翻转块数：28（True->False=P5 堵假阳性；False->True 须为 0）
+  反向翻转（False->True，不应有）：0
+
+=== 靶标假块须 True->False（X25/X26/X28 w3；X01/X06/X07/X24 w5）===
+  X06 w3 rank5 True->False
+  X06 w3 rank6 True->False
+  X06 w3 rank8 True->False
+  X06 w5 rank5 True->False
+  X06 w5 rank6 True->False
+  X06 w5 rank8 True->False
+  X07 w3 rank4 True->False
+  X07 w3 rank6 True->False
+  X07 w3 rank7 True->False
+  X07 w5 rank4 True->False
+  X07 w5 rank6 True->False
+  X07 w5 rank7 True->False
+  X25 w3 rank1 True->False
+  X25 w3 rank3 True->False
+  X25 w3 rank6 True->False
+  X25 w5 rank1 True->False
+  X25 w5 rank3 True->False
+  X25 w5 rank6 True->False
+  X26 w3 rank2 True->False
+  X26 w3 rank3 True->False
+  X26 w3 rank5 True->False
+  X26 w5 rank2 True->False
+  X26 w5 rank3 True->False
+  X26 w5 rank5 True->False
+
+=== 26 冻结金标块当前生产仍可答（重叠语义同 eval_common._gold_hit；零误杀）===
+  金标误杀数：0（权威回归判据仍以生产 eval_common.grade 为准）

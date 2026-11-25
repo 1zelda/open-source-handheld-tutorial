@@ -1,0 +1,85 @@
+{
+ "schema_version": 1,
+ "entries": [
+  {
+   "job_id": "generate:src:local_aria_ram_calibration:CastlevaniaAriaOfSorrow_GBA:金手指,帧数据:a1",
+   "stage": "generate",
+   "idempotency_key": "src:local_aria_ram_calibration:CastlevaniaAriaOfSorrow_GBA:金手指,帧数据",
+   "fingerprint": "29ece79de9a93d2769f02b12743f97c831a44e80ba9c7fbc3d2c832957dd6449",
+   "attempt": 1,
+   "status": "done",
+   "dependency_ids": [],
+   "artifact_refs": [
+    {
+     "uri": "F:/开源掌机教程/_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/yellow_gameplay_report.json",
+     "sha256": "1760d3adaf3b3f78acea5a42c33ffb2dbe8574e12cd31685b6a05d915f83f9bf",
+     "byte_size": 1365
+    }
+   ],
+   "verification_verdict": "pass",
+   "failure_code": null,
+   "ts": 1795540205.8075664,
+   "done_ts": 1795540205.8091414
+  },
+  {
+   "job_id": "generate:src:github_cvaos:CastlevaniaAriaOfSorrow_GBA:金手指,帧数据:a1",
+   "stage": "generate",
+   "idempotency_key": "src:github_cvaos:CastlevaniaAriaOfSorrow_GBA:金手指,帧数据",
+   "fingerprint": "d99001ccf9d5fdef57386e3cc428d024b769989b79a95c7fb824b6380c8d3e76",
+   "attempt": 1,
+   "status": "done",
+   "dependency_ids": [],
+   "artifact_refs": [
+    {
+     "uri": "F:/开源掌机教程/_工具脚本/taspipe/游戏包/来源库/取证/castlevania_aria_gba_cvaos_20261125.md",
+     "sha256": "ae2c626f936b0e54015a8fc7ee1f101ffc59896cb7a7762c2249e16fa48f51ec",
+     "byte_size": 3243
+    }
+   ],
+   "verification_verdict": "pass",
+   "failure_code": null,
+   "ts": 1795540213.3073301,
+   "done_ts": 1795540213.33108
+  },
+  {
+   "job_id": "generate:src:zhidao_baidu_com:CastlevaniaAriaOfSorrow_GBA:金手指:a1",
+   "stage": "generate",
+   "idempotency_key": "src:zhidao_baidu_com:CastlevaniaAriaOfSorrow_GBA:金手指",
+   "fingerprint": "dc9fbd1ccf0d59fda2cc4d6a5d02c8ce8c5ba145d47ced0de0e12f7c57a8c2c0",
+   "attempt": 1,
+   "status": "done",
+   "dependency_ids": [],
+   "artifact_refs": [
+    {
+     "uri": "F:/开源掌机教程/_工具脚本/taspipe/游戏包/来源库/取证/castlevania_aria_gba_baidu_cheats_20261125.md",
+     "sha256": "0b3a87877a93cd90d44d31dd1cd333f6a368f90c17f8a35376c42f46f6e2aaeb",
+     "byte_size": 1946
+    }
+   ],
+   "verification_verdict": "pass",
+   "failure_code": null,
+   "ts": 1795540220.0523238,
+   "done_ts": 1795540220.1083694
+  },
+  {
+   "job_id": "generate:src:local_aria_ram_calibration:CastlevaniaAriaOfSorrow_GBA:金手指,帧数据:a2",
+   "stage": "generate",
+   "idempotency_key": "src:local_aria_ram_calibration:CastlevaniaAriaOfSorrow_GBA:金手指,帧数据",
+   "fingerprint": "b0377aaec24ae0cf70afaddc189193ceae59a5eacffa1f7fba7d642c4e4e3bc3",
+   "attempt": 2,
+   "status": "done",
+   "dependency_ids": [],
+   "artifact_refs": [
+    {
+     "uri": "F:/开源掌机教程/_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/item_use_report.json",
+     "sha256": "f543479219feb88619bb70ad431d027ec503d9d10d1746c05b83c58bcca823cc",
+     "byte_size": 932
+    }
+   ],
+   "verification_verdict": "pass",
+   "failure_code": null,
+   "ts": 1795540789.1633897,
+   "done_ts": 1795540789.1872635
+  }
+ ]
+}

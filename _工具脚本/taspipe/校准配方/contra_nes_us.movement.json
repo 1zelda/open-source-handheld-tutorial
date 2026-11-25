@@ -1,0 +1,53 @@
+{
+  "schema_version": "ram_calibration/1.0",
+  "game_id": "contra_nes_us",
+  "profile": {
+    "rom": "F:/开源掌机教程/04-游戏资源库/TAS输入录像库/roms_verify/NES/contra_u.nes",
+    "rom_sha1": "C9EA66BB7CB30AD5343F1721B1D4D3219859319B",
+    "bizhawk": "F:/开源掌机教程/02-模拟器库/BizHawk/BizHawk-2.8",
+    "core": "NesHawk",
+    "system": "NES",
+    "domain": "System Bus",
+    "state_package": {
+      "game_id": "contra_nes_us",
+      "profile_id": "contra_u_c9ea66bb",
+      "revision": "r20261125T020305"
+    },
+    "window": {"start": 0, "length": 2048}
+  },
+  "base_state": "base",
+  "macros": {
+    "walk_right": "Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right"
+  },
+  "cases": [
+    {
+      "id": "walk_right_vs_neutral",
+      "kind": "scenario",
+      "arms": [
+        {
+          "name": "right",
+          "steps": [
+            {"macro": "-", "extra": 0, "expect": [{"addr": 172, "value": 7}],
+             "screen": {"reference": "$base", "relation": "equal"}},
+            {"state": "$previous", "macro": "@walk_right", "capture_frames": 30,
+             "expect": [{"addr": 172, "value": 7}]}
+          ]
+        },
+        {
+          "name": "neutral",
+          "steps": [
+            {"macro": "-", "extra": 0, "expect": [{"addr": 172, "value": 7}],
+             "screen": {"reference": "$base", "relation": "equal"}},
+            {"state": "$previous", "macro": "-", "extra": 30, "capture_frames": 30,
+             "expect": [{"addr": 172, "value": 7}]}
+          ]
+        }
+      ],
+      "comparisons": [
+        {"left": "right", "right": "neutral", "left_step": 1, "right_step": 1,
+         "relation": "different", "frames": [10, 20, "final"]}
+      ],
+      "claims": []
+    }
+  ]
+}

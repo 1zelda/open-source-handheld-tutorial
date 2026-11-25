@@ -1,0 +1,27 @@
+preP5 w3 retrieval 分布: {'hybrid_union12': 57, None: 3}
+postP5 w3 retrieval 分布: {'hybrid_union12': 57, None: 3}
+
+=== w3 同臂对比 (preP5 -> postP5 hybrid) ===
+  X25: pass -> inconclusive  | 热血足球 球员受伤了怎么治疗？
+  X26: pass -> inconclusive  | 热血足球 雨天场地对射门有什么影响？
+  堵假阳(pass->非pass): ['X25', 'X26']
+  新增放行(非pass->pass): []
+  其他状态变化: []
+
+=== w5 同臂对比 (preP5 -> postP5 hybrid) ===
+  X06: pass -> inconclusive  | 热血足球 应援曲一共有几首？
+  X25: pass -> inconclusive  | 热血足球 球员受伤了怎么治疗？
+  堵假阳(pass->非pass): ['X06', 'X25']
+  新增放行(非pass->pass): []
+  其他状态变化: []
+
+=== 已知残留缺口（w3 默认仍 pass，P5 未触及，如实保留）===
+  X28: w3 pass->pass | w5(post)=pass
+  X30: w3 pass->pass | w5(post)=pass
+  X01: w3 inconclusive->inconclusive | w5(post)=pass
+  X24: w3 inconclusive->inconclusive | w5(post)=pass
+  X26: w3 pass->inconclusive | w5(post)=pass
+
+=== 结论 ===
+  默认 w3：堵假阳 ['X25', 'X26']，新增放行 []（须空），真阳误杀 0
+  与生产评测 hybrid 24/26 零回归、块级重判 28 翻 0 反 0 金标误杀互证。

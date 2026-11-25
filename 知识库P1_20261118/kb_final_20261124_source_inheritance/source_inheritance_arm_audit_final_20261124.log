@@ -1,0 +1,84 @@
+{
+  "json": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261124_source_inheritance\\source_inheritance_arm_audit_20261124.json",
+  "md": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261124_source_inheritance\\source_inheritance_arm_audit_20261124.md",
+  "summaries": {
+    "base_default": {
+      "status_pass": 13,
+      "status_inconclusive": 8,
+      "status_miss": 5,
+      "v2_ok": 26,
+      "v2_failed_ids": [],
+      "wrong_evidence_ids": [],
+      "missed_answer_ids": [
+        "Q16",
+        "Q17",
+        "P19"
+      ]
+    },
+    "base_strict": {
+      "status_pass": 7,
+      "status_inconclusive": 14,
+      "status_miss": 5,
+      "v2_ok": 21,
+      "v2_failed_ids": [
+        "Q01",
+        "Q02",
+        "Q03",
+        "Q05",
+        "Q18"
+      ],
+      "wrong_evidence_ids": [],
+      "missed_answer_ids": [
+        "Q01",
+        "Q02",
+        "Q03",
+        "Q04",
+        "Q05",
+        "Q16",
+        "Q17",
+        "Q18",
+        "P19"
+      ]
+    },
+    "hybrid_default": {
+      "status_pass": 13,
+      "status_inconclusive": 8,
+      "status_miss": 5,
+      "v2_ok": 26,
+      "v2_failed_ids": [],
+      "wrong_evidence_ids": [],
+      "missed_answer_ids": [
+        "Q16",
+        "Q17",
+        "P19"
+      ]
+    },
+    "hybrid_strict": {
+      "status_pass": 7,
+      "status_inconclusive": 14,
+      "status_miss": 5,
+      "v2_ok": 21,
+      "v2_failed_ids": [
+        "Q01",
+        "Q02",
+        "Q03",
+        "Q05",
+        "Q18"
+      ],
+      "wrong_evidence_ids": [],
+      "missed_answer_ids": [
+        "Q01",
+        "Q02",
+        "Q03",
+        "Q04",
+        "Q05",
+        "Q16",
+        "Q17",
+        "Q18",
+        "P19"
+      ]
+    }
+  },
+  "detail_count": 24,
+  "probe_count": 4
+}

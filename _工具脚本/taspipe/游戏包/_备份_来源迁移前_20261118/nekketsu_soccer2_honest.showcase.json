@@ -1,0 +1,189 @@
+{
+ "schema_version": 1,
+ "kind": "statejump_showcase",
+ "game_id": "nekketsu_soccer2_fc_cn_hack",
+ "game_title": "热血足球联盟 CN/hack（无限跳跃版）可复现要素子集",
+ "platform": "NES",
+ "core": "NesHawk",
+ "system": "NES",
+ "rom": "F:\\taspipe_scratch\\soccer2_honest\\soccer2.nes",
+ "bizhawk": "F:\\开源掌机教程\\02-模拟器库\\BizHawk\\BizHawk-2.8",
+ "base_state": "F:\\taspipe_scratch\\soccer2_honest\\possess_base.state",
+ "fps": 60.0988,
+ "template": "fc_tianma_mask",
+ "catalog": {
+  "status": "complete",
+  "expected_total": 4,
+  "sources": [
+   "热血足球联盟_必杀全清单.md",
+   "测试问题与闸门说明书.md §26"
+  ],
+  "coverage_note": "仅收录 CN/hack 可复现要素；23 必杀+13 通用技因难度锁定+无人球同跳标 honest gap，见 gap manifest。"
+ },
+ "elements": [
+  {
+   "element_id": "ground_power_shot",
+   "label": "Ground Power Shot (地面劲射)",
+   "kind": "move",
+   "base_state": null,
+   "trigger": {
+    "macro": "B,B,B,B,B,B,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,",
+    "extra": 0,
+    "patches": []
+   },
+   "detection": {
+    "frame": 8,
+    "success_checks": [
+     {
+      "check_id": "placeholder",
+      "plugin_id": "frame_region_color_fraction",
+      "params": {
+       "region": [
+        0.2,
+        0.2,
+        0.8,
+        0.8
+       ],
+       "rgb": [
+        248,
+        248,
+        248
+       ],
+       "tol": 26,
+       "min_fraction": 0.001
+      },
+      "required": true
+     }
+    ]
+   },
+   "negative_control": {
+    "macro": null,
+    "patches": []
+   },
+   "note": "CN/hack 可复现要素；正/反例走生产 calibrate_showcase_pack 自动标定。"
+  },
+  {
+   "element_id": "heel_lift_toss",
+   "label": "Heel Lift Toss (脚跟挑球)",
+   "kind": "move",
+   "base_state": null,
+   "trigger": {
+    "macro": "Right+A+B,Right+A+B,Right+A+B,Right+A+B,Right+A+B,Right+A+B,,,,,,,,,,,,,,,,,,,,",
+    "extra": 0,
+    "patches": []
+   },
+   "detection": {
+    "frame": 8,
+    "success_checks": [
+     {
+      "check_id": "placeholder",
+      "plugin_id": "frame_region_color_fraction",
+      "params": {
+       "region": [
+        0.2,
+        0.2,
+        0.8,
+        0.8
+       ],
+       "rgb": [
+        248,
+        248,
+        248
+       ],
+       "tol": 26,
+       "min_fraction": 0.001
+      },
+      "required": true
+     }
+    ]
+   },
+   "negative_control": {
+    "macro": null,
+    "patches": []
+   },
+   "note": "CN/hack 可复现要素；正/反例走生产 calibrate_showcase_pack 自动标定。"
+  },
+  {
+   "element_id": "player_jump",
+   "label": "Player Jump (原地跳跃)",
+   "kind": "move",
+   "base_state": null,
+   "trigger": {
+    "macro": "A+B,A+B,A+B,A+B,A+B,A+B,,,,,,,,,,,,,,,,,,,,",
+    "extra": 0,
+    "patches": []
+   },
+   "detection": {
+    "frame": 8,
+    "success_checks": [
+     {
+      "check_id": "placeholder",
+      "plugin_id": "frame_region_color_fraction",
+      "params": {
+       "region": [
+        0.2,
+        0.2,
+        0.8,
+        0.8
+       ],
+       "rgb": [
+        248,
+        248,
+        248
+       ],
+       "tol": 26,
+       "min_fraction": 0.001
+      },
+      "required": true
+     }
+    ]
+   },
+   "negative_control": {
+    "macro": null,
+    "patches": []
+   },
+   "note": "CN/hack 可复现要素；正/反例走生产 calibrate_showcase_pack 自动标定。"
+  },
+  {
+   "element_id": "lob_pass",
+   "label": "High Lob Pass (高吊传球)",
+   "kind": "move",
+   "base_state": null,
+   "trigger": {
+    "macro": "Up+A,Up+A,Up+A,Up+A,Up+A,Up+A,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,",
+    "extra": 0,
+    "patches": []
+   },
+   "detection": {
+    "frame": 8,
+    "success_checks": [
+     {
+      "check_id": "placeholder",
+      "plugin_id": "frame_region_color_fraction",
+      "params": {
+       "region": [
+        0.2,
+        0.2,
+        0.8,
+        0.8
+       ],
+       "rgb": [
+        248,
+        248,
+        248
+       ],
+       "tol": 26,
+       "min_fraction": 0.001
+      },
+      "required": true
+     }
+    ]
+   },
+   "negative_control": {
+    "macro": null,
+    "patches": []
+   },
+   "note": "CN/hack 可复现要素；正/反例走生产 calibrate_showcase_pack 自动标定。"
+  }
+ ]
+}

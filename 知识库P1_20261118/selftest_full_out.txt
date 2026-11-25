@@ -1,0 +1,665 @@
+taspipe selftest (M0-M6 + audio + M8 ledger + M7 search + sync + warp + M10 probes + T1 unwrap/mux + T2 fceux + auto/acquire/state_registry/statebuild/statejump/showcase/matrix + exporter mask + bundle + calibrate gates + base provenance)
+  [1] Profile 合法枚举通过
+  [2] 未知平台枚举被拒
+  [3] Profile 缺 profile_id 被拒
+  [4] Element 带 CheckSpec 通过
+  [5] CheckSpec 非法 plugin_id 被拒
+  [6] Element 负例缺 case_id 被拒
+  [7] State origin 枚举通过
+  [8] 未知 StateOrigin 被拒
+  [9] InputPlan clock_unit 通过
+  [10] 全 pass => pass
+  [11] 有 fail => fail
+  [12] 证据不足 => inconclusive 不是通过
+  [13] 空检查 => inconclusive
+  [14] 错误码枚举通过
+  [15] 未知错误码被拒
+  [16] norm_sha1 规范化大写去空白
+  [17] map_platform NES
+  [18] map_platform PSX->PS1
+  [19] map_platform Arcade+MAME
+  [20] map_platform Arcade+FBNeo
+  [21] map_platform 未建模平台返回 None+说明
+  [22] emulator_match 命中本地 BizHawk
+  [23] emulator_match 缺版本=>None+说明
+  [24] emulator_match 非 BizHawk 管线
+  [25] read_bk2_header 解析 .bk2
+  [26] read_bk2_header 解开 .zip 外壳
+  [27] read_bk2_header 非容器=>None
+  [28] resolve_movie 优先已解压 .bk2
+  [29] resolve_movie 缺失=>None+说明
+  [30] NES 探针：缺目录=>available False
+  [31] NES 探针：截图链路 audio_capture=False（如实报缺口）
+  [32] NES 探针：缺目录 interactive_step=False（转真需可用+实跑证据，见 test_statejump）
+  [33] NES 探针：时钟单位 emu_frame
+  [34] _cap 结构
+  [35] 后端验收：证据不足=>inconclusive
+  [36] 后端验收：有 fail=>fail
+  [37] 招式闸门：谱面符号·/或 采集前拦下（编译器不吃：看不懂字符 '·'（记法 '→↓↘·A或C'））
+  [38] 招式闸门：编译器记法 →↓↘+A 放行
+  [39] 检测：天空帧=>pass
+  [40] 检测：黑帧=>fail
+  [41] 检测：未注册插件=>inconclusive 不静默通过
+  [42] 游戏包：正例过+负例拒=>pass
+  [43] 游戏包：负例被误放=>fail（闸门有效）
+  [44] 切片：帧数对+目标在=>pass
+  [45] 切片：帧数不符=>fail
+  [46] 切片：错段检测不到目标=>fail
+  [47] 音频：有原声 max_db=-6.0 > -20
+  [48] 音频：onset=0.2≈0.2s
+  [49] 音频：立体声 onset=0.2≈0.2s（不翻倍）
+  [50] 音频：全静音 max_db<=-90
+  [51] 音频：全静音 onset=None
+  [52] 音频：trim_span 界尾后时长≈span（0.500s≈0.5s）
+  [53] 音频：反证 span=None 保留尾巴（1.300s>1s），界尾非默认
+  [54] 同步：LogKey 列位解析+按下沿（按住不算沿）
+  [55] 同步：单键过滤
+  [56] 同步：合成点击对准 => pass（n=118 中位偏移=0.0ms 三段中位=[0.0, 0.0, 0.0]ms 漂移=0.0ms）
+  [57] 同步：音轨整体迟 120ms => fail（恒量反证）
+  [58] 同步：累积漂移 => fail（三段检查抓住）
+  [59] 同步：无瞬态 => inconclusive 不冒充
+  [60] 同步：有效样本<30 => inconclusive
+  [61] warp：非线性时钟残差>50ms（单 atempo 校不准）
+  [62] warp：校正后时长==帧时间轴长
+  [63] warp：正例对齐 => pass（逐帧锚点 n=600 速率[0.705,1.295] 时长10.00s==10.00s 声锚6个 最大偏移=13ms）
+  [64] warp：锚点与现场帧不符 => fail（防用错曲线）
+  [65] warp：起点偏 200ms => fail（多锚点抓住位移）
+  [66] warp：帧目录缺失 => inconclusive
+  [67] warp：声锚<3 => inconclusive
+  [68] 台账：register 只记元数据(pending/无产物)
+  [69] 台账：pending 不可复用
+  [70] 台账：complete 校验产物后 done
+  [71] 台账：done+指纹+产物校验 => 可复用(inconclusive 不强制重跑)
+  [72] 台账：指纹变 => 不复用
+  [73] 台账：产物 sha256 不符 => 不复用(旧文件不冒充新产物)
+  [74] 台账：产物缺失 => 不复用
+  [75] 台账：complete 产物缺失 => fail 不假 done
+  [76] 台账：fail 后重跑 attempt+1
+  [77] 台账：旧失败现场保留不覆盖
+  [78] 台账：summary attempts=历史条数
+  [79] 台账：summary 逐条直接计数 done/failed
+  [80] 区域插件：顶部绿血条 => pass
+  [81] 区域插件：无血条片头 => fail
+  [82] 区域插件：省略 region 走整帧，绿占比被稀释 => fail
+  [83] 区域插件：region 越界 => inconclusive 不静默通过
+  [84] 区域插件：region 长度非法 => inconclusive
+  [85] M9：第二款游戏包走同一 gamepack => 正例过+负例拒
+  [86] 搜索判分：damage>=min => pass
+  [87] 搜索判分：damage<min => fail
+  [88] 搜索判分：缺观察量 => inconclusive 不是通过
+  [89] 搜索判分：未注册插件 => inconclusive
+  [90] 搜索：能力不合格 => UNSUPPORTED_CAPABILITY，不评估
+  [91] 搜索：修复扰动 => pass 有解
+  [92] 搜索：命中窗口内 approach=60
+  [93] 搜索：解可复播（复播复现）
+  [94] 搜索：先尝试原动作 seed
+  [95] 搜索：seed+30+60 共 3 个候选命中
+  [96] 搜索：吞吐被测量
+  [97] 搜索：超预算 => SEARCH_BUDGET_EXHAUSTED 无解
+  [98] 搜索：超预算 verdict=inconclusive，按预算停下
+  [99] 搜索：超预算明确不是证明无解
+  [100] 搜索：复播不复现 => NONDETERMINISM，不冒充解
+  [101] 搜索：未注册插件命中也不放行（受控）
+  [102] 搜索台账：修复 pass
+  [103] 搜索台账：GENERATE done 带可校验产物
+  [104] 搜索台账：解写成 solution.json 产物
+  [105] 搜索台账：超预算记 SEARCH_BUDGET_EXHAUSTED
+  [106] 搜索台账：done/failed 逐条直接计数
+  [107] M10 PS1：前端+核心+BIOS+游戏齐 => available True
+  [108] M10 PS1：BIOS/游戏检出
+  [109] M10 PS1：资源齐但管线未接线 => 能力全 False（不冒充已验证）
+  [110] M10 PS1：缺资源 => available False
+  [111] M10 PS1：如实列 4 项缺失（前端/核心/BIOS/游戏）
+  [112] M10 PS1：缺失含 BIOS（Octoshock 无 HLE，必须）
+  [113] M10 PS1：仅缺 BIOS 也 => blocked（必须真实 BIOS）
+  [114] M10 PSP：exe+游戏齐 => available True
+  [115] M10 PSP：无 flash0 => 固件 False
+  [116] M10 PSP：固件可选，缺固件不列入阻塞缺失（HLE 替代）
+  [117] M10 PSP：管线未接线 => 能力全 False
+  [118] M10 PSP：无构建 exe => available False
+  [119] M10 PSP：缺失含已构建 PPSSPP（当前仅克隆源码）
+  [120] M10 运行：缺资源 => fail（不伪装成功）
+  [121] M10 运行：错误码 MISSING_RESOURCE
+  [122] M10 运行：缺资源不产出成片
+  [123] M10 运行：资源齐但管线未接线 => UNSUPPORTED_CAPABILITY
+  [124] M10 运行：未接线 => fail 不冒充通过
+  [125] M10 真机 ps1_bizhawk：采集能力恒未接线 supported=False
+  [126] M10 真机 ps1_bizhawk：available 与 missing 一致
+  [127] M10 真机 psp_ppsspp：采集能力恒未接线 supported=False
+  [128] M10 真机 psp_ppsspp：available 与 missing 一致
+  [129] T1 外壳zip=>解出内部bk2
+  [130] T1 解包后顶层含Header.txt(BizHawk可加载)
+  [131] T1 真bk2原样拷贝不解包
+  [132] T1 非zip(fm2)原样拷贝
+  [133] T1 apad mux 保留全部视频帧(音轨短不截视频)
+  [134] T1 反证:无apad的-shortest确实截帧(夹具有效)
+  [135] 2.9 force_core 写 LastWrittenFrom=2.9
+  [136] 2.9 写 Detailed=Version 2.9
+  [137] 2.9 仍强制 PreferredCores
+  [138] 2.9 FirstBoot=False
+  [139] force_core 保留已有配置键
+  [140] force_core 合并而非覆盖 PreferredCores
+  [141] 2.8 目录写 2.8 标记(旧版同样安全)
+  [142] 非BizHawk命名不臆造版本标记
+  [143] DIALOG_TITLES 认得 privileged 框
+  [144] DIALOG_TITLES 认得 Mismatched version 框
+  [145] 回归锁:两个新标题在册
+  [146] 反证:旧标题表确实漏认 privileged(夹具能复现卡死)
+  [147] 主窗口签名认得(点框须跳过): 'Kunio-kun no Nekketsu Soccer League [NES] - BizHawk'
+  [148] 修复后框表不再误匹配主窗口: 'Kunio-kun no Nekketsu Soccer League [NES] - BizHawk'
+  [149] 主窗口签名认得(点框须跳过): 'Ninja Gaiden [NES] - BizHawk'
+  [150] 修复后框表不再误匹配主窗口: 'Ninja Gaiden [NES] - BizHawk'
+  [151] 主窗口签名认得(点框须跳过): 'BizHawk'
+  [152] 修复后框表不再误匹配主窗口: 'BizHawk'
+  [153] 真框不被主窗口签名误吞: 'Mismatched version in config file'
+  [154] 真框仍命中框表(须点掉): 'Mismatched version in config file'
+  [155] 真框不被主窗口签名误吞: 'This EmuHawk is privileged'
+  [156] 真框仍命中框表(须点掉): 'This EmuHawk is privileged'
+  [157] 真框不被主窗口签名误吞: 'Warning'
+  [158] 真框仍命中框表(须点掉): 'Warning'
+  [159] 真框不被主窗口签名误吞: 'Error'
+  [160] 真框仍命中框表(须点掉): 'Error'
+  [161] 回归锁:裸 BizHawk 已从 DIALOG_TITLES 移除
+  [162] 反证:旧框表(含裸BizHawk)确实误匹配主窗口(夹具能复现误伤)
+  [163] 空标题不认作主窗口(chromeless 不可见,dismiss 本就不命中)
+  [164] None 标题不崩
+  [165] 生产判定:可见主窗口不点(误伤根因已堵)
+  [166] 生产判定:启动期裸 BizHawk 主窗口不点
+  [167] 生产判定:可见 Mismatched 框点掉
+  [168] 生产判定:可见 privileged 框点掉
+  [169] 生产判定:不可见框不点(visibility 闸)
+  [170] 生产判定:无关可见窗口(Lua Console)不点
+  [171] 生产判定:chromeless 空标题不点
+  [172] 反证:旧口径(裸BizHawk+无主窗口跳过)确实判主窗口可点(夹具复现误伤)
+  [173] fceux：fm2 帧数==输入行数(含 lag 帧直转)
+  [174] fceux：romChecksum base64→16字节 hex
+  [175] fceux：romChecksum 0x hex 口径也解析
+  [176] fceux：作者/port0/port1 解析
+  [177] fceux：命令 1→reset / 2→power
+  [178] fceux：按钮位置映射 Right/A
+  [179] fceux：多键 Down+Up / Start
+  [180] fceux：bk2 渲染序 UDLRTSBA(R 在第4位/UD 在前两位)
+  [181] fceux：fm3(zip 外壳)解出内部 fm2
+  [182] fceux：.nes 去 16 字节 iNES 头算 MD5(==fm2 romChecksum 口径)
+  [183] fceux：反证—去头 MD5 确实不同于整文件 MD5(夹具有效)
+  [184] fceux：非 iNES 文件对整文件算 MD5
+  [185] fceux：bk2 四件套齐
+  [186] fceux：Header 含 Platform/Core/SHA1/MD5
+  [187] fceux：LogKey 与真 BizHawk NesHawk 逐字一致
+  [188] fceux：power+Right 帧渲染 |p.|...R....|
+  [189] fceux：reset 帧渲染 |.r|
+  [190] fceux：SyncSettings 端口映射(port0=1/port1=0)
+  [191] fceux：StartsFromSavestate=1 记 error
+  [192] fceux：to_bk2 拒绝从存档起始的电影
+  [193] fceux：to_bk2 拒绝 fourscore(四手柄)
+  [194] fceux：FCM v2 帧数/格式
+  [195] fceux：FCM 切换循环 A→空→B
+  [196] fceux：FCM MD5/游戏名/作者/rerecord
+  [197] fceux：convert_pub MD5 一致=>pass 并写出 _converted bk2
+  [198] fceux：convert_pub MD5 错配=>拒绝(防 desync)
+  [199] fceux接线：resolve_movie 命中 _converted 缓存
+  [200] fceux接线：emulator_match FCEUX 提示转换且保留'非 BizHawk'
+  [201] fceux接线：assess 转换后 blocked→replayable 路由 BizHawk 2.8
+  [202] fceux接线：profile backend=nes_bizhawk
+  [203] fceux接线：未转换=>resolve_movie None+转换提示
+  [204] fceux接线：未转换=>assess blocked
+  [205] acquire：ROM 本地命中 => ready/local
+  [206] acquire：ROM 未命中+无 resolver => blocked（不自动抓）
+  [207] acquire：阻塞码 MISSING_RESOURCE
+  [208] acquire：门控 resolver 命中+哈希符 => ready/own_netdisk
+  [209] acquire：resolver 哈希不符 => blocked（哈希闸门）
+  [210] acquire：resolver 未命中 => blocked
+  [211] acquire：required_rom_sha1 出版物优先
+  [212] acquire：index_cheats 读本地索引
+  [213] acquire：index_cheats 缺索引 => []
+  [214] acquire：resolve_cheat query 命中中文索引 => found
+  [215] acquire：命中项文件真在
+  [216] acquire：索引有但文件缺 => missing（present 过滤）
+  [217] acquire：无匹配 => missing（可选资源，非 blocked）
+  [218] acquire：平台不符 => missing
+  [219] acquire：ROM ready+cheat found => ready
+  [220] acquire：cheat 缺但 need_cheat=False => ready（金手指可选）
+  [221] acquire：cheat 缺且 need_cheat=True => blocked
+  [222] acquire：ROM 缺 => blocked
+  [223] 状态资产：profile 缺 rom_sha1/emulator 不许建包（复用范围无法界定）
+  [224] 状态资产：profile_id 带路径分隔符被拒
+  [225] 状态资产：建包落在 <game>/<profile>/<revision>，初始档位 candidate
+  [226] 状态资产：同 revision 重复建包被拒（不覆盖已冻结资产）
+  [227] 状态资产：源文件不存在不许登记
+  [228] 状态资产：存档名不合 [a-z0-9_] 被拒
+  [229] 状态资产：登记是拷贝不是引用 scratch，并记 sha256 封条
+  [230] 状态资产：candidate 不许被生产消费（未验证不当已验证用）
+  [231] 状态资产：无该场景名被拒
+  [232] 状态资产：state_verified 后生产可取件
+  [233] 状态资产：实物被改动 => sha256 不符，不返回坏路径
+  [234] 状态资产：旁路档位无 blockers 被拒（没出处的降级不算测过）
+  [235] 状态资产：未知档位被拒
+  [236] 状态资产：旁路档位与 blockers 落进 package
+  [237] 状态资产：旁路档位立刻不可消费（不是「测过没通过还能用」）
+  [238] 状态资产：attach_nav 把配方写进包（自带重建方法，不靠人记忆）
+  [239] 状态资产：引导态随包走（NesHawk 上电 RAM 随机，冷启动重跑不可字节复现）
+  [240] 状态资产：逐步验收带画面+RAM 证据入包（中文标签退化成 navNN 槽名）
+  [241] 状态资产：全中文标签用 fallback 槽名，真实标签仍在 note 里
+  [242] 状态资产：可控性/跨进程重载/引导件三条一起记
+  [243] 状态资产复用：同一条已验证导航链直接命中，不重跑模拟器
+  [244] 状态资产复用：配方不同 => 不命中（不许拿别的链的存档顶）
+  [245] 状态资产复用：要的槽位不在包里 => 不命中
+  [246] 状态资产失效传播：stale 的包不再计入复用（已验证数不重复计数）
+  [247] 状态资产：latest 按可消费档位过滤，stale 不会被当最新可用
+  [248] 状态资产：list_packages 逐包现查状态与槽位，不写死名单
+  [249] 状态资产：台账能反查每条验收结论
+  [250] 状态资产：只差 ZIP 时间戳的两份存档内容指纹相同 => 复现判据用指纹
+  [251] 状态资产：文件 sha256 会随时间戳变，只当实物封条，不当复现判据
+  [252] 状态资产：非 ZIP 容器取指纹被拒（不静默给空指纹）
+  [253] 状态资产：夹具反查真实资产仓，没有多出 test_game（探针不写真实状态）
+  [254] statebuild：movie => normal_prefix ready
+  [255] statebuild：movie 机制 replay_movie
+  [256] statebuild：checkpoint => tas_checkpoint
+  [257] statebuild：arcade_move => display_patch ready
+  [258] statebuild：savestate 缺文件 => blocked MISSING_RESOURCE
+  [259] statebuild：savestate 有文件 => ready
+  [260] statebuild：cheat 有代码 => ready
+  [261] statebuild：cheat 缺代码 => blocked
+  [262] statebuild：NES savestate 无证据 => blocked supported=False
+  [263] statebuild：NES display_patch => UNSUPPORTED_CAPABILITY
+  [264] statebuild：NES cheat 无证据 => UNSUPPORTED_CAPABILITY
+  [265] statebuild：NES movie 仍 ready（无证据态下电影路径仍可用）
+  [266] statebuild：未知 source => blocked state=None
+  [267] statebuild：未知 source => SCHEMA_INVALID
+  [268] statebuild：_cap_supported dict 形式
+  [269] statebuild：_cap_supported bool 形式
+  [270] statebuild：_cap_supported 缺键 => False
+  [271] statebuild 反证：缺目录 NES 探针 savestate/ram_read 恒 False（avail 闸如实）
+  [272] 宏谱：规范透传
+  [273] 宏谱：U/D/L/R 别名展开
+  [274] 宏谱：空帧=中立保留
+  [275] 宏谱：未知键被拒
+  [276] 宏谱：含空白被拒
+  [277] 宏谱：空谱被拒
+  [278] StateSession：相对 work 归一绝对（Lua io.open 按 EmuHawk cwd 解析，相对路径启动即崩）
+  [279] 指令：ping 线格式
+  [280] 指令：read 地址十进制
+  [281] 指令：write 线格式
+  [282] 指令：attempt 线格式（spec=- 表无宏）
+  [283] 指令：未知 op 被拒
+  [284] 指令：id<1 被拒
+  [285] 指令：地址越界被拒
+  [286] 指令：字节越界被拒
+  [287] 指令：run 帧数<1 被拒
+  [288] 指令：attempt extra<0 被拒
+  [289] 指令：中文路径被拒（Lua io 转码坑）
+  [290] 指令：含空白路径被拒
+  [291] 指令：ramdump 线格式
+  [292] 指令：dump 线格式（宏+空档）
+  [293] 指令：dump 缺省 spec=- extra=0
+  [294] 指令：dump extra<0 被拒
+  [295] 指令：ramdump 长度<1 被拒
+  [296] 指令：dump 中文目录被拒
+  [297] 响应：ok 解析
+  [298] 响应：err 解析
+  [299] 响应：非法状态被拒
+  [300] 响应：id 非整数被拒
+  [301] CRLF 闸门：_send 落盘恰为 LF 结尾，无 \r
+  [302] CRLF 闸门：cmd.txt 不含任何 CR 字节
+  [303] 模板闸门：无字面 CR（Python 三引号 \r 转义坑会编译失败）
+  [304] 模板闸门：Lua 侧剥行尾 CR 在册
+  [305] 模板闸门：截图 flushing 态在册（坑：截完即 respond 会拷到旧图/半截图→假阳性）
+  [306] 模板闸门：旧 flush_shot 已除（坑：其 frameadvance 在 pcall 内会跨 C-call yield 崩溃）
+  [307] 模板闸门：resp 直写不用 rename（坑：rename 落盘 Python 侧不可见）
+  [308] 模板闸门：dump/ramdump op 在册（全量盘点逐帧采集 / 经验 RAM 标定）
+  [309] 模板闸门：dump 末帧交 flushing 过 IEND 完整性查（防半截图进 encode_video）
+  [310] 宏有效回归：相同画面必判无效（锁死反转 bug）
+  [311] 像素比对：相同字节=>相等
+  [312] 宏有效回归：不同画面判有效（ffmpeg 像素复核）
+  [313] 证据门：报告缺失=>False
+  [314] 证据门：报告损坏=>False
+  [315] 证据门：未全 pass=>False
+  [316] 证据门：全 pass=>True
+  [317] probe 双闸：可用+证据全 pass => savestate/ram_read/interactive_step 转真
+  [318] probe 双闸：可用但无证据 => 仍 False（不凭接线臆造）
+  [319] probe 双闸：缺 BizHawk 目录 => 能力 False（反证格仍立）
+  [320] OAM：队长脚底/球心坐标解码
+  [321] OAM：球在脚边=我方持球
+  [322] OAM：场上无对手组时 opp_dist=None
+  [323] OAM 反证：球离脚 40px 不得判持球
+  [324] OAM 反证：球组 palette 非 0 不算球
+  [325] OAM 反证：缺 0xC0 号码标记=None
+  [326] OAM 反证：球组不足 4 sprite=None
+  [327] OAM：对手贴球时 holder_team=3（白帽客队实测）
+  [328] OAM：opp_dist 量到贴脸对手
+  [329] 追球方向：右
+  [330] 追球方向：上
+  [331] 追球方向：对角
+  [332] 追球方向：死区不按键
+  [333] 必杀球 tile 出正常集但在扩展集（变形球可被时间线捕获）
+  [334] 净持球正例：队长本人持球且无贴脸对手
+  [335] 净持球：远敌(>40)不拒
+  [336] 净持球反证：球在队友脚下(holder_dist≠dist)不得判持球
+  [337] 净持球反证：邻敌贴脸(<=40)拒
+  [338] 净持球反证：客队持球拒
+  [339] 净持球反证：球离脚拒
+  [340] 净持球反证：OAM 解析 None 拒
+  [341] 单帧按键不生效：宏生成器帧数下限必须是 2
+  [342] hold() 把 0/1 帧抬到 2 帧（旧 max(1,..) 会静默产出吞键宏）
+  [343] 宏谱审计：两处单帧都要点名（键名+起始帧+帧数）
+  [344] 宏谱审计反证：合规宏不得报违规
+  [345] 画面团块球判据：12×12 近白命中并给球心
+  [346] 球判据反证：球员白衫 10×16 不得当球（只按面积筛就会误判）
+  [347] 球判据反证：y>=190 HUD 带整条裁掉，带内白块不得当球
+  [348] 球判据反证：180 灰不达标（判据用 min(R,G,B)>190）
+  [349] 球判据反证：中圈标记 13×5 扁条不得当球
+  [350] tile 集包含关系仍成立（扩展集只作诊断）
+  [351] showcase 指令：dump 原子携带 base+RAM patches
+  [352] showcase 指令：非法 RAM patch 地址被拒
+  [353] showcase 模板：读档+patches 在逐帧采集前原子执行，无空闲帧漂移
+  [354] showcase 契约：dump 返回实际采集帧数而非模拟器绝对 framecount
+  [355] showcase schema：完整单要素包通过校验
+  [356] showcase schema：清单调研 draft 不得生产
+  [357] showcase schema：检测帧越出采集窗被拒
+  [358] showcase schema：未知检测插件在采集前拒
+  [359] showcase plan：ROM/base/EmuHawk/完整清单齐全才 ready
+  [360] auto/showcase：指纹输入含 pack+ROM+base
+  [361] auto/showcase：plan 走 showcase 分支，不要求 TAS 出版物
+  [362] showcase 获取：包内路径挪盘 => 按哈希命中本地索引，不判死
+  [363] showcase 获取：本地也没有且没注入钩子 => 诚实 blocked（不自动抓商业全集）
+  [364] showcase 获取：注入网盘 resolver 后走通（网盘优先）
+  [365] showcase 获取：resolver 交回哈希不符件 => blocked，不拿错版本出片
+  [366] showcase 获取：包内件哈希不符仍 blocked（RAM 地址按版本标的）
+  [367] showcase plan：resources 报解析后的 ROM，run 不再各判一套
+  [368] showcase plan：ROM 取不到 => blocked（不带着 None 路径往下跑）
+  [369] showcase 音频：audio=True 显式 blocked（不静默出哑片给解说工厂）
+  [370] auto/showcase：spec.audio 透传到 showcase 并被诚实拦下
+  [371] showcase 检测：正例过+中立反例拒 => pass
+  [372] showcase 反证：反例也过同检测器 => fail
+  [373] showcase 检测：证据不足不得算 pass
+  [374] showcase 帧闸：半 PNG/假 PNG 不得进入编码
+  [375] showcase 生产：单要素正/反例+编码+合辑全链 done
+  [376] showcase 产物：正式合辑与反例片段均真实落盘
+  [377] showcase 对照：正/反例同 base 同总帧数，反例默认中立
+  [378] showcase 对照：反例继承相同 RAM 前置补丁，隔离宏效果
+  [379] showcase 逐要素 base：特殊场景覆盖公共 base，正反例仍共享同一快照
+  [380] showcase 会话：生产结束关闭 EmuHawk
+  [381] showcase 续跑：同指纹复用要素与合辑，不重启采集会话
+  [382] showcase 全量闸：清单 1/2 未 authoring 齐全，不许直接全量跑
+  [383] showcase --only：单要素可试跑但不生成正式全量合辑
+  [384] auto/showcase：run 生产入口已接线
+  [385] auto：JobSpec 缺 game 被拒
+  [386] auto：JobSpec 非法 job_type 被拒
+  [387] auto：JobSpec 非法 source 被拒
+  [388] auto：要素任务缺 pack/elements 被拒
+  [389] auto：JobSpec frames<=0 被拒
+  [390] auto：JobSpec 合法通关通过
+  [391] auto：from_dict 未知字段被拒（不静默丢弃）
+  [392] auto：from_dict 报错里给出最接近的合法键
+  [393] auto：from_dict 合法键正常入库
+  [394] auto：slug 与 out 无关
+  [395] auto：指纹参数排除 out（位置无关）
+  [396] auto：_spec_fp_params 不含 out
+  [397] auto：load_elements 内联优先
+  [398] auto：orchestrate run 缺 out 被拒
+  [399] auto：load_elements 读 pack
+  [400] auto：load_elements 缺 pack 被拒
+  [401] auto：resolve_job 合成 lib => replayable
+  [402] auto：plan 合成 ready（resolve+acquire+state 全过）
+  [403] auto：plan acquire ready
+  [404] auto：plan movie => normal_prefix
+  [405] auto：expected_fingerprint 不采集即算出指纹
+  [406] auto：指纹与 out 无关（矩阵可跳过）
+  [407] auto：plan NES savestate 无金手指 => acquire blocked（诚实）
+  [408] auto：orchestrate 未知游戏 => resolve blocked
+  [409] registry：ROM 缺位只挡就绪，不挡身份（profile 仍解析出）
+  [410] auto：网盘独占 ROM => resolve ready、拦在 acquire（没注入钩子时仍诚实 blocked）
+  [411] auto：注入 resolver 后同一格走通（acquire 死锁解除）
+  [412] auto：网盘独占时指纹也算得出（矩阵不把它当没做过反复重跑）
+  [413] auto：resolver 返回哈希不符件 => acquire blocked（不伪装 ready）
+  [414] matrix：产物在 => present
+  [415] matrix：产物缺 => not present
+  [416] matrix：无产物字段 => not present
+  [417] matrix：要素产物全在 => present
+  [418] matrix：要素产物缺一 => not present
+  [419] matrix：coverage pass 逐格直接计数=2
+  [420] matrix：coverage skipped/done 分开计
+  [421] matrix：coverage blocked/failed 分开计
+  [422] matrix：coverage total=6
+  [423] matrix：cell_done 无 job.json => 未完成
+  [424] matrix：cell_done status!=done => 未完成
+  [425] matrix：cell_done verdict!=pass => 未完成
+  [426] matrix：cell_done 产物缺 => 未完成
+  [427] matrix：cell_done 指纹不符 => 未完成
+  [428] matrix：cell_done 全符 => 已完成
+  [429] matrix：cell_done 指纹算不出(None) => 未完成
+  [430] matrix：run_matrix 已完成格跳过（不重采集）
+  [431] matrix：run_matrix no-skip => 重跑
+  [432] matrix：run_matrix 非法格 => invalid
+  [433] matrix：famous 预筛掉无ROM+排除名+同名去重 => 只剩 1 格
+  [434] matrix：famous 格带 frames/job_type
+  [435] mask：屏洞由 alpha==0 自动量出
+  [436] mask：画面整数倍贴合屏洞(x2)
+  [437] mask：画面在屏洞内居中
+  [438] mask：无透明屏洞的遮罩被拒（不静默满铺）
+  [439] mask：compose 端到端非 fail
+  [440] mask：帧数保留
+  [441] mask/showcase：无音轨采集不伪报缺证据，audio_preserved=pass
+  [442] mask：成片画幅=遮罩画幅
+  [443] mask：四周环绕美术压在画面之上(角落=遮罩红,容编码损失)
+  [444] mask：屏洞中心露出游戏画面(绿)
+  [445] bundle：生成即 draft，不是默认已放行
+  [446] bundle：合辑/要素段/负对照三类素材都入账
+  [447] bundle：showcase 逐帧采集如实标 has_audio=false（不假装带原声）
+  [448] bundle：素材路径全相对、无盘符无 ..（可整目录搬走）
+  [449] bundle：files[] 与盘上实物一一对上（不含 manifest 自己）
+  [450] bundle：帧→时刻映射按真实时间基逐帧给出（解说对句不用自己推算 fps 小数）
+  [451] bundle：事件带锚点帧/合辑窗口/触发输入（含 RAM 写入原值）
+  [452] bundle：事实句只复述知识包字段并标出处，没编招式效果
+  [453] bundle：发布政策未审查 + 要素线时间轴模式如实声明
+  [454] bundle：干净小样 verify(draft) 全通过
+  [455] bundle：未审查的包不许当 ready 交付（self_produced 不算放行）
+  [456] bundle：没有审查人署名不许升 ready
+  [457] bundle：署名审查后 ready 包能通过交付校验
+  [458] bundle 反例：实物被截断 => 拦下（哈希/大小现算，不信手填）
+  [459] bundle 反例：丢文件 => 拦下
+  [460] bundle 反例：包里有没登记的东西 => 视为未完成交接
+  [461] bundle 反例：声明帧数与实物差 1（错帧/被重采样）=> 拦下
+  [462] bundle 反例：合辑窗口长度 != 段长（时间映射不可信）=> 拦下
+  [463] bundle 反例：清单写 .. 逃逸路径 => 拒收
+  [464] bundle 反例：clip 写绝对路径 => 拒收
+  [465] bundle 反例：帧映射少一行 => 拦下（末帧会被解说错位）
+  [466] bundle 反例：映射帧号跳号 => 拦下
+  [467] bundle 反例：声明 50Hz 而实物 60.0988（错区域/错时钟档）=> 拦下
+  [468] bundle 反例：gameplay 层没过 => 整包不算 pass
+  [469] bundle 反例：把没测出的要素写成通过 => 拦下（假 pass）
+  [470] bundle 反例：未知字段不静默忽略 => 契约漂移当场暴露
+  [471] bundle 反例：整组字段缺失 => 拦下
+  [472] bundle 反例：状态包版本/任务指纹留空 => 两条各点名一次（复用范围无法界定）
+  [473] bundle 反例：清单声明 9 只交付 5 => 不许当完整包
+  [474] bundle 反例：缺全要素合辑 => 不算完整包
+  [475] bundle 反例：无出处/无证据/空原句的事实 => 三条各拦一次
+  [476] bundle 反例：包内出现 ROM 路径线索 => 拦下（交接包不带游戏文件）
+  [477] bundle 反例：素材其实有声却声明无原声 => 拦下（解说排 ducking 会对不上）
+  [478] bundle：所有篡改反例都只在临时副本上动，干净小样本身没被改
+  [479] 标定：局部色块正例 vs 空反例 => 接受
+  [480] 标定：正例占比按 729px 区域实测 = 0.549
+  [481] 标定：min_fraction 夹在反例之上、正例 0.9 之下（正过反拒有余量）
+  [482] 标定：min_fraction 不越界 1（曾算出 1.334 的永不满足判据）
+  [483] 标定：region 面积受限于局部，不吞整屏
+  [484] 标定：正负例余量 < 0.05 => 拒（草坪级噪声不算要素签名）
+  [485] 标定：不存在能分开正负例的阈值 => 拒，不写回不可用判据
+  [486] 标定：镜头滚动造成的整屏背景差异 => RuntimeError，不静默出参
+  [487] 标定：正反例逐帧相同（触发宏未生效）=> RuntimeError
+  [488] base 出处闸门：状态资产仓内未登记的存档 => plan 拦下
+  [489] base 出处闸门：未登记 base 时整包 blocked，不进采集
+  [490] base 出处闸门：登记过且 state_verified 的存档 => 放行
+  [491] base 出处闸门：candidate 档位的资产被拒（未达可消费档位）
+  [492] base 出处闸门：仓外 base_state 不受管（反证格，防误杀历史包）
+  [493] base 出处闸门：plan 确实把 base_state 送进出处核对（不是死代码）
+  [494] 跨平台宏 [1/30]: SNES X/Y/L/R 与 LT/RT 别名正常展开
+  [495] 跨平台宏 [2/30]: MD 6 键手柄 A/B/C/X/Y/Z 与 Mode 别名正常展开
+  [496] 跨平台宏 [3/30]: PS1 Triangle/Circle/Cross/Square 及肩键正常展开
+  [497] 跨平台宏 [4/30]: 街机 FBNeo Coin/Start/A/B/C/D 正常展开
+  [498] 跨平台宏 [5/30]: GBA L/R 肩键与 Up+B 组合正常展开
+  [499] 跨平台宏 [6/30]: NES 平台混入 X 键必抛 SchemaError
+  [500] 跨平台宏 [7/30]: GBA 平台混入 C 键必抛 SchemaError
+  [501] 跨平台宏 [8/30]: 未知怀旧平台名必抛 SchemaError
+  [502] 扩展内存 [9/30]: SNES 0x1FFFF WRAM 顶界地址放行
+  [503] 扩展内存 [10/30]: GBA 0x3FFFF 十六进制地址解析放行
+  [504] 扩展内存 [11/30]: PS1 2MB MainRAM 0x1FFFFF 顶界地址放行
+  [505] 扩展内存 [12/30]: 含空格内存域 '68K RAM' 自动转义为无空格 '68K__RAM'
+  [506] 扩展内存 [13/30]: NES 地址超出 0xFFFF 必抛 SchemaError
+  [507] 扩展内存 [14/30]: SNES 地址超出 0x1FFFF 必抛 SchemaError
+  [508] 模板与转换 [15/30]: STATE_LUA_TMPL 无字面 CR 且保持 flushing 异步落盘状态机
+  [509] 模板与转换 [16/30]: Snes9x .smv 帧数与 16-bit 掩码按键精确解析
+  [510] 模板与转换 [17/30]: VBA .vbm GBA 帧与肩键掩码精确解析
+  [511] 模板与转换 [18/30]: 非法 .smv 文件头被 MovieConvertError 拦截
+  [512] 多平台包校验 [19/30]: SNES showcase.json 通过校验
+  [513] 多平台包校验 [20/30]: GBA showcase.json 通过校验
+  [514] 多平台包校验 [21/30]: MD showcase.json 通过校验
+  [515] 多平台包校验 [22/30]: 街机 ARCADE_FBNEO showcase.json 通过校验
+  [516] 多平台包校验 [23/30]: catalog.status != complete 被拒（防半成品冒充全量）
+  [517] 多平台包校验 [24/30]: detection.frame 越界必抛 SchemaError
+  [518] 自动标定 [25/30]: 正反例逐帧差分准确锁定峰值帧 f0005
+  [519] 自动标定 [26/30]: 归一化 region 落在 [0.01, 0.99] 安全界内
+  [520] 自动标定 [27/30]: 特效主色簇聚类 RGB 准确还原 (248, 136, 48)
+  [521] 自动标定 [28/30]: min_fraction 在正例与反例之间留有充足安全余量
+  [522] 自动标定 [29/30]: 标定参数经 detect.run_check 复核满足正例 PASS 且反例 FAIL
+  [523] 自动标定 [30/30]: 正反例无视觉差异时强制抛 RuntimeError 拦截假宏
+  [524] 来源库 [1] 身份门：本地 ini+setlist 命中 => resolved 并出检索计划
+  [525] 来源库 [2] 身份门读出卡全名（不拿中文叫法当身份）
+  [526] 来源库 [3] 身份门给出 rom 级 sha1（可复算）
+  [527] 来源库 [4] 反证格：setlist 查无此 set => blocked，不出检索计划
+  [528] 来源库 [5] 反证格：缺 set/rom => blocked（身份未定不得开搜）
+  [529] 来源库 [6] 主机路径：本地 sha1 + 扩展名定身份
+  [530] 来源库 [7] 未知要素类型 => SchemaError（不进执行）
+  [531] 来源库 [8] 未知平台枚举 => SchemaError
+  [532] 来源库 [9] 库内优先门：verified_read 进 primary，candidate/dead 不进
+  [533] 来源库 [10] candidate 只进延伸段（未命中才扩大搜索）
+  [534] 来源库 [11] dead 站进禁用段并附关停当期证据
+  [535] 来源库 [12] 排序：已读+命中过该游戏+首选层 => 排第一
+  [536] 来源库 [13] 逐站检索词由 recipes 渲染（不是每次现编）
+  [537] 来源库 [14] absence 必扫层从库里现查（不写死站名）
+  [538] 来源库 [15] unreachable 只给快照通道，不冒充直连已读
+  [539] 来源库 [16] 反证格：ARCADE 专属站不得进 NES 计划（平台过滤真在跑）
+  [540] 来源库 [17] 反证格：把已读来源降为 candidate => 必须落延伸段（优先门不是死代码）
+  [541] 来源库 [18] hit 带正文取证 => pass，candidate 自动升 verified_read
+  [542] 来源库 [19] 台账产物门：done 必须对应真实产物且 sha256 一致
+  [543] 来源库 [20] 反证格：hit 不带取证 => inconclusive，不算命中
+  [544] 来源库 [21] 反证格：取证文件不存在 => inconclusive
+  [545] 来源库 [22] 反证格：取证文件为空 => inconclusive
+  [546] 来源库 [23] 失败尝试不得把已验证来源降级
+  [547] 来源库 [24] 台账追加式：4 次尝试都留痕，不覆盖失败历史
+  [548] 来源库 [25] 复用门：最新 attempt 为 done + 指纹一致 + 产物校验通过 => 可复用
+  [549] 来源库 [26] 反证格：产物字节被改 => 不可复用，还原后又可复用（sha256 校验真在跑）
+  [550] 来源库 [27] 台账摘要按最新 attempt 逐条计数（s_cand 历史 done 不冒充当前可用，不用总数减失败倒推）
+  [551] 来源库 [28] snippet => inconclusive + 只升 snippet_only
+  [552] 来源库 [29] 反证格：快照永不升 verified_read
+  [553] 来源库 [30] absence 门：两层都无 miss => blocked 并点名缺哪层
+  [554] 来源库 [31] 反证格：只扫网盘缺 B站 => 仍 blocked（搜不到别说成不存在）
+  [555] 来源库 [32] 两层都有 miss => 允许下「不存在」结论并留支撑 job
+  [556] 来源库 [33] 「不存在」声称落库可追溯
+  [557] 来源库 [34] ingest 去重：同域名同路径 => SchemaError
+  [558] 来源库 [35] 新站默认 candidate 入库分类（不冒充已验证）
+  [559] 来源库 [36] 反证格：verified_read 无取证 => SchemaError
+  [560] 来源库 [37] 未知 layer => SchemaError
+  [561] 来源库 [38] render 产物与主数据一致 => render_sync 绿
+  [562] 来源库 [39] 反证格：手改生成块一个词 => render_sync 红（两份真相会被抓）
+  [563] 来源库 [40] 无生成块标记 => SchemaError（不猜插入点）
+  [564] 来源库 [41] 结构化来源 + 逐要素归属 => 覆盖门/野来源门/迁移门全绿
+  [565] 来源库 [42] 反证格：自由文本来源 => 迁移门红
+  [566] 来源库 [43] 反证格：野 source_id（库里没有）=> 野来源门红
+  [567] 来源库 [44] 反证格：引用已关停站 => dead 引用门红
+  [568] 来源库 [45] 反证格：要素 e2 无来源支撑 => 覆盖门红
+  [569] 来源库 [46] 三态门：只有快照支撑 => inconclusive（不是 pass 也不是 fail）
+  [570] 来源库 [47] 反证格：零要素取得支撑时不得报 pass（空支撑不算已验证）
+  [571] 来源库 [48] 反证格：来源条目含未知字段 => 红（不放任自由格式）
+  [572] 来源库 [49] schema 门拒：未知字段
+  [573] 来源库 [50] schema 门拒：source_id 非法
+  [574] 来源库 [51] schema 门拒：layer 未知
+  [575] 来源库 [52] schema 门拒：status 未知
+  [576] 来源库 [53] schema 门拒：platforms 为空
+  [577] 来源库 [54] schema 门拒：要素类型未知
+  [578] 来源库 [55] schema 门拒：verified_read 缺取证
+  [579] 来源库 [56] schema 门拒：取证文件不存在
+  [580] 来源库 [57] schema 门拒：非 candidate 缺验证日期
+  [581] 来源库 [58] schema 门拒：dead 缺 closure
+  [582] 来源库 [59] 反证格：探活失败不得自动判 dead（失败≠站没了）
+  [583] 来源库 [60] 升 dead 必须给 reason
+  [584] 来源库 [61] 人给当期证据才升 dead，并落 closure
+  [585] 来源库 [62] 直连恢复只升 snippet_only，内容仍需真读才升 verified_read
+  [586] 来源库 [63] 反证格：「不存在」声称的支撑 job 不在台账 => 红
+  [587] 来源库 [反查] 真实文件未被探针写动 sources.json（mtime+sha256 一致）
+  [588] 来源库 [反查] 探针未创建真实文件 检索台账.json
+  [589] 来源库 [反查] 真实文件未被探针写动 复古游戏文献来源库.md（mtime+sha256 一致）
+  [590] 知识库 [1] 清洗丢导航/JS/空表格行且保留正文（丢弃计数可见）
+  [591] 知识库 [2] 反证格：纯链接行与 JS 行不得进正文
+  [592] 知识库 [3] 反证格：空表格行（| | |）不得当正文切进索引
+  [593] 知识库 [4] 反证格：短正文词（燕返）保留、导航词（登录）丢弃——不许过度清洗
+  [594] 知识库 [5] prose 切块带原文行号（可回指 path#L）
+  [595] 知识库 [6] 标题进 heading 字段（检索结果能报小节）
+  [596] 知识库 [7] table 按 25 行切（30 行 => 2 块）
+  [597] 知识库 [8] 反证格：超长段按 HARD_MAX 强制断块（不产出巨块）
+  [598] 知识库 [9] 中文长串整词 + 全部 bigram 成词（燕返/触发 都能命中）
+  [599] 知识库 [10] ASCII 标识符小写成词（set 名可命中）
+  [600] 知识库 [11] 十六进制/RAM 地址成词（$3F6 / 00AA / BD18）
+  [601] 知识库 [12] 反证格：箭头指令序列成词，无箭头文本不产生箭头 token
+  [602] 知识库 [13] corpus_map 通过 schema
+  [603] 知识库 [14] 反证格：corpus_map 未知字段 => SchemaError
+  [604] 知识库 [15] 反证格：revision 未定义 => SchemaError
+  [605] 知识库 [16] 反证格：authority 非法 => SchemaError
+  [606] 知识库 [17] 反证格：kind 非法 => SchemaError
+  [607] 知识库 [18] 反证格：排除索引不给 reason => SchemaError（不许静默跳过）
+  [608] 知识库 [19] 反证格：同一份正文登记两次 => SchemaError
+  [609] 知识库 [20] 反证格：平台不在 PLATFORMS => SchemaError
+  [610] 知识库 [21] build 产出块且区分入索引/显式排除（7 入 1 排除）
+  [611] 知识库 [22] 反证格：声明排除的正文不得偷偷进索引，且理由留档
+  [612] 知识库 [23] 增量：源文件未变 => 全部复用（不重复切块）
+  [613] 知识库 [24] 反证格：源文件 sha256 变了 => 不复用旧块
+  [614] 知识库 [25] 反证格：清洗/分词流水线版本变了 => 强制重建（旧块不许冒充新口径）
+  [615] 知识库 [26] 每块都带 source_id/revision/status/authority/text_sha（可溯源可验篡改）
+  [616] 知识库 [27] 索引原子写：不留 .tmp 残件
+  [617] 知识库 [27b] 产物级：全库无巨块（最长块 ≤ HARD_MAX 1200）
+  [618] 知识库 [28] 反证格：语料绑定野 source_id => build 拒（先 ingest 再入库）
+  [619] 知识库 [29] verified_read + authoritative 命中 => pass
+  [620] 知识库 [30] 我方跨版本实测件（*_multi）对同游戏任一版本算本版本证据
+  [621] 知识库 [31] 三态门：只有二手件命中 => inconclusive（不是 pass 也不是 miss）
+  [622] 知识库 [32] 反证格：跨版本出招表不得当本地卡权威（ECK 问 UM 表 => inconclusive + 警告）
+  [623] 知识库 [33] 同一份表问它自己的版本（UM）=> pass（版本对了才是权威）
+  [624] 知识库 [33b] 反证格：权威件确有命中但只匹配单字（或）=> 不算证据，不得升 pass
+  [625] 知识库 [33c] top3 附条件（P1 批准口径）：本版本权威可答件在第2位 => pass 必带 condition，最高分仍是跨版本表且警告保留
+  [626] 知识库 [33d] 正对照：同一查询问 UM，最高分即本版本权威 => pass 且不带条件
+  [627] 知识库 [34] 反证格：手游正文不得混进 NES 查询（平台分区生效）
+  [628] 知识库 [35] 无候选 => miss（本地没收集，不等于『不存在』）
+  [629] 知识库 [36] 有候选但无词命中 => miss（并提示换术语/走延伸段）
+  [630] 知识库 [37] 反证格：require_verified 下无权威命中不得放行
+  [631] 知识库 [38] 空查询 => SchemaError（别空检索）
+  [632] 知识库 [39] 反证格：未定义 revision => SchemaError（不许静默当全库检索）
+  [633] 知识库 [53] kana 占比函数：纯中文=0、5假名2汉字=5/7（阈值判据可复算）
+  [634] 知识库 [54] v3 切块：kana 主导件按章节切成小段且标 lang=ja（不是 700 字大块）
+  [635] 知识库 [55] v3 切块：章节标题前置进块文本，正文 ≤300 字
+  [636] 知识库 [56] 反证格：中文主导件（夹少量日文词）不重切，仍走原切块标 zh
+  [637] 知识库 [57] 域外零语料 => miss+out_of_scope（不许拿本地足球语料冒充电竞答案）
+  [638] 知识库 [58] 第二个域外语料同样拒答（路由不是只认一个域）
+  [639] 知识库 [59] 反证格：显式 revision 过滤优先于域限制（用户点名查本地不误拒）
+  [640] 知识库 [60] 可答性：词命中但库内无 40 位 hex => 证据不足拒答（词命中≠回答问题）
+  [641] 知识库 [61] 正对照：同一问法、库里真有 SHA1 事实 => pass（拒答不是摆烂）
+  [642] 知识库 [62] 反证格：问场数不许拿『6人制』串答（量词映射）
+  [643] 知识库 [63] 跨语量词映射：日文『試合』与中文『场』都能答场数
+  [644] 知识库 [64] 反证格：权威可答件被压到第4位（top3 外）=> 仍 inconclusive（附条件不是无底线）
+  [645] 知识库 [65] 无稠密指纹件 => 明示退回 BM25 主干（不静默顶包）
+  [646] 知识库 [66] 反证格：稠密指纹与索引漂移 => 不用稠密且明示原因（不加载模型）
+  [647] 知识库 [40] 基线：覆盖/归属/身份/索引同步/溯源六门全绿
+  [648] 知识库 [41] 三态门：只有二手/跨版本正文的版本 => authoritative_ready inconclusive
+  [649] 知识库 [42] 反证格：verified_read 的取证正文未进 corpus_map => 覆盖门红（收而不入库＝白收）
+  [650] 知识库 [43] 反证格：正文挂到别的来源名下（不在其 evidence 列表）=> 归属门红
+  [651] 知识库 [44] 反证格：野 source_id => 归属门红
+  [652] 知识库 [45] 反证格：手游正文被判成 FC 版本（与 games_hit 冲突）=> 身份门红
+  [653] 知识库 [46] 反证格：手改索引块正文 => text_sha 不符判红
+  [654] 知识库 [47] 反证格：来源已降级但索引块仍写 verified_read => 溯源门红
+  [655] 知识库 [48] 反证格：源文件变了索引没重建 => 同步门红
+  [656] 知识库 [49] 三态门：索引未建 => inconclusive（不假装核对过）
+  [657] 知识库 [50] route 第②步先查本地正文，并回报库内块数与 query 命令
+  [658] 知识库 [51] 反证格：索引不存在 => route 如实报 not_built（不假装有正文）
+  [659] 知识库 [52] 反证格：身份未定仍 blocked（知识库接线不得放宽身份门）
+  [660] 知识库 [反查] 真实文件未被探针写动 index.json（mtime+sha256 一致）
+  [661] 知识库 [反查] 真实文件未被探针写动 corpus_map.json（mtime+sha256 一致）
+  [662] 知识库 [反查] 真实文件未被探针写动 sources.json（mtime+sha256 一致）
+  [663] 知识库 [反查] 真实文件未被探针写动 检索台账.json（mtime+sha256 一致）
+SELFTEST OK 663/663

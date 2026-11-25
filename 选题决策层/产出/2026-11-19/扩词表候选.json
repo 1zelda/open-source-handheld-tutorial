@@ -1,0 +1,5378 @@
+[
+ {
+  "ip_name": "portmaster",
+  "candidate_word": "portmaster",
+  "word_kind": "项目/平台",
+  "gap_kind": "不在编辑映射表",
+  "note": "项目名原样；中文品类词(开源掌机/PS4模拟器等)须人工补",
+  "cards": 237,
+  "attention_max": "高",
+  "major_event_cards": 6,
+  "queues": [
+   "低优先归档",
+   "潜力待验证",
+   "系列跟踪"
+  ],
+  "entries": [
+   "A"
+  ],
+  "samples": [
+   {
+    "event_id": "cb61aa423aebd97e",
+    "attention": "高",
+    "core_hook": "[Release] RAP-Vita v1.2 – Raptor: Call of the Shadows native"
+   },
+   {
+    "event_id": "f717517735d6f38a",
+    "attention": "高",
+    "core_hook": "[Release] OpenRCT2Vita v1.0 – a new native OpenRCT2 (v0.5.7)"
+   },
+   {
+    "event_id": "f3197e7821ed8baa",
+    "attention": "高",
+    "core_hook": "Recompa Is A Free Android App To Find & Install Native Ports"
+   }
+  ],
+  "preflight": {
+   "script_class": "纯拉丁",
+   "cores_lat": [
+    "portmaster"
+   ],
+   "cores_cjk": [],
+   "cjk_sub2": [],
+   "match_note": "纯拉丁词:B站易词元级模糊兜底(model2-nx→NX CAD先例),须核top3/考虑补中文品类词;纯拉丁≠必兜底(Batocera/shadPS4纯拉丁但实测可靠);命中率须联网实测,不预测,不自动改词"
+  }
+ },
+ {
+  "ip_name": "vita",
+  "candidate_word": "vita",
+  "word_kind": "项目/平台",
+  "gap_kind": "不在编辑映射表",
+  "note": "项目名原样；中文品类词(开源掌机/PS4模拟器等)须人工补",
+  "cards": 225,
+  "attention_max": "高",
+  "major_event_cards": 1,
+  "queues": [
+   "低优先归档",
+   "潜力待验证",
+   "系列跟踪"
+  ],
+  "entries": [
+   "A"
+  ],
+  "samples": [
+   {
+    "event_id": "04e314263d95439b",
+    "attention": "高",
+    "core_hook": "psp5-authentic 1.3.0 – a Media tab with music, videos and pi"
+   },
+   {
+    "event_id": "c37c3a849c28758e",
+    "attention": "高",
+    "core_hook": "[Release] RAP-Vita v1.1 – Raptor: Call of the Shadows now wi"
+   },
+   {
+    "event_id": "7bdc1c0e8ddf06d3",
+    "attention": "高",
+    "core_hook": "[Release] Wi-Fi for Linux (uClinux) on PSP-3000: open-source"
+   }
+  ],
+  "preflight": {
+   "script_class": "纯拉丁",
+   "cores_lat": [
+    "vita"
+   ],
+   "cores_cjk": [],
+   "cjk_sub2": [],
+   "match_note": "纯拉丁词:B站易词元级模糊兜底(model2-nx→NX CAD先例),须核top3/考虑补中文品类词;纯拉丁≠必兜底(Batocera/shadPS4纯拉丁但实测可靠);命中率须联网实测,不预测,不自动改词"
+  }
+ },
+ {
+  "ip_name": "retroid",
+  "candidate_word": "retroid",
+  "word_kind": "项目/平台",
+  "gap_kind": "不在编辑映射表",
+  "note": "项目名原样；中文品类词(开源掌机/PS4模拟器等)须人工补",
+  "cards": 61,
+  "attention_max": "高",
+  "major_event_cards": 0,
+  "queues": [
+   "低优先归档",
+   "潜力待验证"
+  ],
+  "entries": [
+   "A"
+  ],
+  "samples": [
+   {
+    "event_id": "484e4537d24fd35d",
+    "attention": "高",
+    "core_hook": "Retroid P5 -RecompLauncher- Downhill Domination PS2 Demo Gam"
+   },
+   {
+    "event_id": "d93fd34ee197a107",
+    "attention": "高",
+    "core_hook": "Retroid pocket 1 (rp1)"
+   },
+   {
+    "event_id": "6d49481375b86492",
+    "attention": "高",
+    "core_hook": "My experience with the Retroid Pocket Duo so far (lots of ga"
+   }
+  ],
+  "preflight": {
+   "script_class": "纯拉丁",
+   "cores_lat": [
+    "retroid"
+   ],
+   "cores_cjk": [],
+   "cjk_sub2": [],
+   "match_note": "纯拉丁词:B站易词元级模糊兜底(model2-nx→NX CAD先例),须核top3/考虑补中文品类词;纯拉丁≠必兜底(Batocera/shadPS4纯拉丁但实测可靠);命中率须联网实测,不预测,不自动改词"
+  }
+ },
+ {
+  "ip_name": "gta",
+  "candidate_word": "侠盗猎车",
+  "word_kind": "IP大盘",
+  "gap_kind": "不在编辑映射表",
+  "note": "首个中文别名(§11.2)；粒度/角度/消歧须人工核",
+  "cards": 37,
+  "attention_max": "高",
+  "major_event_cards": 4,
+  "queues": [
+   "潜力待验证"
+  ],
+  "entries": [
+   "A"
+  ],
+  "samples": [
+   {
+    "event_id": "1a54c320cd60bdc0",
+    "attention": "高",
+    "core_hook": "GTA 6 Launch Causes Massive Spike in Traffic for Internet Pr"
+   },
+   {
+    "event_id": "a23031f678dc8198",
+    "attention": "高",
+    "core_hook": "KFC Announces GTA 6 Promo Where You Get A Disc-Shaped Piece "
+   },
+   {
+    "event_id": "a8f1c6686a087d04",
+    "attention": "高",
+    "core_hook": "Rockstar Founder Issues Rare Statement As GTA 6 Launches To "
+   }
+  ],
+  "preflight": {
+   "script_class": "含CJK",
+   "cores_lat": [],
+   "cores_cjk": [
+    "侠盗",
+    "侠盗猎车",
+    "猎车",
+    "盗猎"
+   ],
+   "cjk_sub2": [
+    "侠盗",
+    "猎车",
+    "盗猎"
+   ],
+   "match_note": "含2字CJK词元[侠盗/猎车/盗猎]:放宽匹配(街机改版先例),若词元泛易假阳须人工核top3;2字子词≠必假阳(街机改版真相关);语义歧义零LLM治不了须人工,不预测命中率,不自动改词"
+  }
+ },
+ {
+  "ip_name": "3ds",
+  "candidate_word": "3ds",
+  "word_kind": "项目/平台",
+  "gap_kind": "不在编辑映射表",
+  "note": "项目名原样；中文品类词(开源掌机/PS4模拟器等)须人工补",
+  "cards": 34,
+  "attention_max": "高",
+  "major_event_cards": 1,
+  "queues": [
+   "潜力待验证"
+  ],
+  "entries": [
+   "A"
+  ],
+  "samples": [
+   {
+    "event_id": "2df734a0e25063f4",
+    "attention": "高",
+    "core_hook": "[Release] MobiPEG – An optimized MobiClip/MOFLEX encoder for"
+   },
+   {
+    "event_id": "6b263945f38ca57a",
+    "attention": "高",
+    "core_hook": "[Release] CTR 3D — Crash Team Racing for the New Nintendo 3D"
+   },
+   {
+    "event_id": "7448dcb654666eea",
+    "attention": "高",
+    "core_hook": "3DS Camera Possible Memory Overflow Exploit (11.4 - 11.17)"
+   }
+  ],
+  "preflight": {
+   "script_class": "纯拉丁",
+   "cores_lat": [
+    "3ds"
+   ],
+   "cores_cjk": [],
+   "cjk_sub2": [],
+   "match_note": "纯拉丁词:B站易词元级模糊兜底(model2-nx→NX CAD先例),须核top3/考虑补中文品类词;纯拉丁≠必兜底(Batocera/shadPS4纯拉丁但实测可靠);命中率须联网实测,不预测,不自动改词"
+  }
+ },
+ {
+  "ip_name": "anbernic",
+  "candidate_word": "anbernic",
+  "word_kind": "项目/平台",
+  "gap_kind": "不在编辑映射表",
+  "note": "项目名原样；中文品类词(开源掌机/PS4模拟器等)须人工补",
+  "cards": 27,
+  "attention_max": "高",
+  "major_event_cards": 0,
+  "queues": [
+   "潜力待验证"
+  ],
+  "entries": [
+   "A"
+  ],
+  "samples": [
+   {
+    "event_id": "207b1dd5c2d03d9a",
+    "attention": "高",
+    "core_hook": "My Anbernic RG Cube battery drains so fast"
+   },
+   {
+    "event_id": "63359f266c323173",
+    "attention": "高",
+    "core_hook": "Anbernic Rg Ds Plus Se reinicia"
+   },
+   {
+    "event_id": "53bb0bfaee135b8a",
+    "attention": "高",
+    "core_hook": "Anbernic RG Vita questions"
+   }
+  ],
+  "preflight": {
+   "script_class": "纯拉丁",
+   "cores_lat": [
+    "anbernic"
+   ],
+   "cores_cjk": [],
+   "cjk_sub2": [],
+   "match_note": "纯拉丁词:B站易词元级模糊兜底(model2-nx→NX CAD先例),须核top3/考虑补中文品类词;纯拉丁≠必兜底(Batocera/shadPS4纯拉丁但实测可靠);命中率须联网实测,不预测,不自动改词"
+  }
+ },
+ {
+  "ip_name": "xbox",
+  "candidate_word": "xbox",
+  "word_kind": "项目/平台",
+  "gap_kind": "不在编辑映射表",
+  "note": "项目名原样；中文品类词(开源掌机/PS4模拟器等)须人工补",
+  "cards": 18,
+  "attention_max": "高",
+  "major_event_cards": 1,
+  "queues": [
+   "潜力待验证"
+  ],
+  "entries": [
+   "A"
+  ],
+  "samples": [
+   {
+    "event_id": "5e507699924a93b0",
+    "attention": "高",
+    "core_hook": "Xbox Announces Official Black Friday Sale on Digital Games a"
+   },
+   {
+    "event_id": "bbca8289f8ac642c",
+    "attention": "高",
+    "core_hook": "The Sims 3 (XBOX 360) on Nintendo Switch"
+   },
+   {
+    "event_id": "79dca3400d934e6b",
+    "attention": "高",
+    "core_hook": "Xbox shuts down confusion over whether Project Helix is actu"
+   }
+  ],
+  "preflight": {
+   "script_class": "纯拉丁",
+   "cores_lat": [
+    "xbox"
+   ],
+   "cores_cjk": [],
+   "cjk_sub2": [],
+   "match_note": "纯拉丁词:B站易词元级模糊兜底(model2-nx→NX CAD先例),须核top3/考虑补中文品类词;纯拉丁≠必兜底(Batocera/shadPS4纯拉丁但实测可靠);命中率须联网实测,不预测,不自动改词"
+  }
+ },
+ {
+  "ip_name": "mario",
+  "candidate_word": "马力欧",
+  "word_kind": "IP大盘",
+  "gap_kind": "不在编辑映射表",
+  "note": "首个中文别名(§11.2)；粒度/角度/消歧须人工核",
+  "cards": 18,
+  "attention_max": "高",
+  "major_event_cards": 0,
+  "queues": [
+   "潜力待验证",
+   "系列跟踪"
+  ],
+  "entries": [
+   "A"
+  ],
+  "samples": [
+   {
+    "event_id": "db653382d38150f1",
+    "attention": "高",
+    "core_hook": "[RELEASE] Mario Galaxy native WiiU port, 720p 60fps (Alpha)"
+   },
+   {
+    "event_id": "33eab45a080d4168",
+    "attention": "高",
+    "core_hook": "[Release] Mario Sunshine native WiiU port, 1080p with hd tex"
+   },
+   {
+    "event_id": "4a12ce7ddcc1706a",
+    "attention": "高",
+    "core_hook": "Mario Kart World Switch 2 Bundle Black Friday Deal Brings Th"
+   }
+  ],
+  "preflight": {
+   "script_class": "含CJK",
+   "cores_lat": [],
+   "cores_cjk": [
+    "力欧",
+    "马力",
+    "马力欧"
+   ],
+   "cjk_sub2": [
+    "力欧",
+    "马力"
+   ],
+   "match_note": "含2字CJK词元[力欧/马力]:放宽匹配(街机改版先例),若词元泛易假阳须人工核top3;2字子词≠必假阳(街机改版真相关);语义歧义零LLM治不了须人工,不预测命中率,不自动改词"
+  }
+ },
+ {
+  "ip_name": "ps5",
+  "candidate_word": "ps5",
+  "word_kind": "项目/平台",
+  "gap_kind": "不在编辑映射表",
+  "note": "项目名原样；中文品类词(开源掌机/PS4模拟器等)须人工补",
+  "cards": 17,
+  "attention_max": "高",
+  "major_event_cards": 4,
+  "queues": [
+   "潜力待验证"
+  ],
+  "entries": [
+   "A"
+  ],
+  "samples": [
+   {
+    "event_id": "f1ddeae6e773c58b",
+    "attention": "高",
+    "core_hook": "LG 2017-2026+ OLEDs - Optimized Settings for Xbox One/Series"
+   },
+   {
+    "event_id": "9de9e14b7c01d658",
+    "attention": "高",
+    "core_hook": "PS5 Does Not Have a 'Monopoly' on Digital Games as £2 Billio"
+   },
+   {
+    "event_id": "826500aef794af62",
+    "attention": "高",
+    "core_hook": "Mercenaries Grace launches November 25 for PS5 in Japan, in "
+   }
+  ],
+  "preflight": {
+   "script_class": "纯拉丁",
+   "cores_lat": [
+    "ps5"
+   ],
+   "cores_cjk": [],
+   "cjk_sub2": [],
+   "match_note": "纯拉丁词:B站易词元级模糊兜底(model2-nx→NX CAD先例),须核top3/考虑补中文品类词;纯拉丁≠必兜底(Batocera/shadPS4纯拉丁但实测可靠);命中率须联网实测,不预测,不自动改词"
+  }
+ },
+ {
+  "ip_name": "ps2",
+  "candidate_word": "ps2",
+  "word_kind": "项目/平台",
+  "gap_kind": "不在编辑映射表",
+  "note": "项目名原样；中文品类词(开源掌机/PS4模拟器等)须人工补",
+  "cards": 16,
+  "attention_max": "高",
+  "major_event_cards": 0,
+  "queues": [
+   "潜力待验证"
+  ],
+  "entries": [
+   "A"
+  ],
+  "samples": [
+   {
+    "event_id": "1329ee61500ee6ac",
+    "attention": "高",
+    "core_hook": "Best gaming device that can play PS2 and be charged by USB?"
+   },
+   {
+    "event_id": "e482802d222efb54",
+    "attention": "高",
+    "core_hook": "Building a ps2 library what should I add?"
+   },
+   {
+    "event_id": "c7c1b37934a9eb03",
+    "attention": "高",
+    "core_hook": "PS2 Classic ICO Is Being Ported To The Dreamcast"
+   }
+  ],
+  "preflight": {
+   "script_class": "纯拉丁",
+   "cores_lat": [
+    "ps2"
+   ],
+   "cores_cjk": [],
+   "cjk_sub2": [],
+   "match_note": "纯拉丁词:B站易词元级模糊兜底(model2-nx→NX CAD先例),须核top3/考虑补中文品类词;纯拉丁≠必兜底(Batocera/shadPS4纯拉丁但实测可靠);命中率须联网实测,不预测,不自动改词"
+  }
+ },
+ {
+  "ip_name": "final fantasy",
+  "candidate_word": "最终幻想",
+  "word_kind": "IP大盘",
+  "gap_kind": "不在编辑映射表",
+  "note": "首个中文别名(§11.2)；粒度/角度/消歧须人工核",
+  "cards": 13,
+  "attention_max": "高",
+  "major_event_cards": 0,
+  "queues": [
+   "潜力待验证"
+  ],
+  "entries": [
+   "A"
+  ],
+  "samples": [
+   {
+    "event_id": "2023e3e2d1fdccd5",
+    "attention": "高",
+    "core_hook": "Final Fantasy VIII Remastered & Final Fantasy IX - 16:9 Full"
+   },
+   {
+    "event_id": "3d9499047357d74c",
+    "attention": "高",
+    "core_hook": "Square Enix sees steady profit growth in its game business t"
+   },
+   {
+    "event_id": "cb5421b1b8ae4831",
+    "attention": "高",
+    "core_hook": "My Final Fantasy 7 Remake trilogy's entire story so far will"
+   }
+  ],
+  "preflight": {
+   "script_class": "含CJK",
+   "cores_lat": [],
+   "cores_cjk": [
+    "幻想",
+    "最终",
+    "最终幻想",
+    "终幻"
+   ],
+   "cjk_sub2": [
+    "幻想",
+    "最终",
+    "终幻"
+   ],
+   "match_note": "含2字CJK词元[幻想/最终/终幻]:放宽匹配(街机改版先例),若词元泛易假阳须人工核top3;2字子词≠必假阳(街机改版真相关);语义歧义零LLM治不了须人工,不预测命中率,不自动改词"
+  }
+ },
+ {
+  "ip_name": "rog ally",
+  "candidate_word": "rog ally",
+  "word_kind": "项目/平台",
+  "gap_kind": "不在编辑映射表",
+  "note": "项目名原样；中文品类词(开源掌机/PS4模拟器等)须人工补",
+  "cards": 11,
+  "attention_max": "高",
+  "major_event_cards": 0,
+  "queues": [
+   "潜力待验证"
+  ],
+  "entries": [
+   "A"
+  ],
+  "samples": [
+   {
+    "event_id": "52282c1b1b4877b8",
+    "attention": "高",
+    "core_hook": "Lenovo Legion Go Vs ROG Ally"
+   },
+   {
+    "event_id": "544a3b8d020ccae2",
+    "attention": "高",
+    "core_hook": "Xbox ROG Ally X, Windows OS or SteamOS"
+   },
+   {
+    "event_id": "53bef1d509a20aef",
+    "attention": "高",
+    "core_hook": "Asus rog ally Mod"
+   }
+  ],
+  "preflight": {
+   "script_class": "纯拉丁",
+   "cores_lat": [
+    "rog",
+    "ally"
+   ],
+   "cores_cjk": [],
+   "cjk_sub2": [],
+   "match_note": "纯拉丁词:B站易词元级模糊兜底(model2-nx→NX CAD先例),须核top3/考虑补中文品类词;纯拉丁≠必兜底(Batocera/shadPS4纯拉丁但实测可靠);命中率须联网实测,不预测,不自动改词"
+  }
+ },
+ {
+  "ip_name": "god of war",
+  "candidate_word": "战神",
+  "word_kind": "IP大盘",
+  "gap_kind": "不在编辑映射表",
+  "note": "首个中文别名(§11.2)；粒度/角度/消歧须人工核",
+  "cards": 10,
+  "attention_max": "高",
+  "major_event_cards": 0,
+  "queues": [
+   "潜力待验证"
+  ],
+  "entries": [
+   "A"
+  ],
+  "samples": [
+   {
+    "event_id": "1424f5d30ad4e36f",
+    "attention": "高",
+    "core_hook": "[Release] God of War Collection NX v1.2 – native Switch port"
+   },
+   {
+    "event_id": "9493fa29126cbf6b",
+    "attention": "高",
+    "core_hook": "God of War Collection (GOW 1 & 2 Vita) have been ported to R"
+   },
+   {
+    "event_id": "512a5e61d9c4687a",
+    "attention": "高",
+    "core_hook": "God of war sons of Sparta is coming to ps4"
+   }
+  ],
+  "preflight": {
+   "script_class": "含CJK",
+   "cores_lat": [],
+   "cores_cjk": [
+    "战神"
+   ],
+   "cjk_sub2": [
+    "战神"
+   ],
+   "match_note": "含2字CJK词元[战神]:放宽匹配(街机改版先例),若词元泛易假阳须人工核top3;2字子词≠必假阳(街机改版真相关);语义歧义零LLM治不了须人工,不预测命中率,不自动改词"
+  }
+ },
+ {
+  "ip_name": "steam deck",
+  "candidate_word": "steam deck",
+  "word_kind": "项目/平台",
+  "gap_kind": "不在编辑映射表",
+  "note": "项目名原样；中文品类词(开源掌机/PS4模拟器等)须人工补",
+  "cards": 9,
+  "attention_max": "高",
+  "major_event_cards": 0,
+  "queues": [
+   "潜力待验证"
+  ],
+  "entries": [
+   "A"
+  ],
+  "samples": [
+   {
+    "event_id": "442a5d0575b1da8e",
+    "attention": "高",
+    "core_hook": "Switch 2 or steam deck oled 1tb 2026"
+   },
+   {
+    "event_id": "d96552cfd4ce3d0f",
+    "attention": "高",
+    "core_hook": "Is this 256GB steam deck LCD worth 400 dollars?"
+   },
+   {
+    "event_id": "d655e76cb02be99c",
+    "attention": "高",
+    "core_hook": "I didn’t realize the Nova is literally a steam deck now!"
+   }
+  ],
+  "preflight": {
+   "script_class": "纯拉丁",
+   "cores_lat": [
+    "steam",
+    "deck"
+   ],
+   "cores_cjk": [],
+   "cjk_sub2": [],
+   "match_note": "纯拉丁词:B站易词元级模糊兜底(model2-nx→NX CAD先例),须核top3/考虑补中文品类词;纯拉丁≠必兜底(Batocera/shadPS4纯拉丁但实测可靠);命中率须联网实测,不预测,不自动改词"
+  }
+ },
+ {
+  "ip_name": "pokemon",
+  "candidate_word": "宝可梦",
+  "word_kind": "IP大盘",
+  "gap_kind": "不在编辑映射表",
+  "note": "首个中文别名(§11.2)；粒度/角度/消歧须人工核",
+  "cards": 8,
+  "attention_max": "高",
+  "major_event_cards": 0,
+  "queues": [
+   "潜力待验证"
+  ],
+  "entries": [
+   "A"
+  ],
+  "samples": [
+   {
+    "event_id": "c45d6fb815489028",
+    "attention": "高",
+    "core_hook": "RP Classic running Pokemon White full screen with PokeDaisy"
+   },
+   {
+    "event_id": "3d7cc2425d8bd98b",
+    "attention": "高",
+    "core_hook": "Pokemon Manager lets you complete vanilla games"
+   },
+   {
+    "event_id": "09eb3864c3d4af18",
+    "attention": "高",
+    "core_hook": "Christmas gift for my two kids - Recommendation for cost eff"
+   }
+  ],
+  "preflight": {
+   "script_class": "含CJK",
+   "cores_lat": [],
+   "cores_cjk": [
+    "可梦",
+    "宝可",
+    "宝可梦"
+   ],
+   "cjk_sub2": [
+    "可梦",
+    "宝可"
+   ],
+   "match_note": "含2字CJK词元[可梦/宝可]:放宽匹配(街机改版先例),若词元泛易假阳须人工核top3;2字子词≠必假阳(街机改版真相关);语义歧义零LLM治不了须人工,不预测命中率,不自动改词"
+  }
+ },
+ {
+  "ip_name": "legion go",
+  "candidate_word": "legion go",
+  "word_kind": "项目/平台",
+  "gap_kind": "不在编辑映射表",
+  "note": "项目名原样；中文品类词(开源掌机/PS4模拟器等)须人工补",
+  "cards": 7,
+  "attention_max": "高",
+  "major_event_cards": 1,
+  "queues": [
+   "潜力待验证"
+  ],
+  "entries": [
+   "A"
+  ],
+  "samples": [
+   {
+    "event_id": "c1b16a4c86df39ec",
+    "attention": "高",
+    "core_hook": "The leaked Lenovo Legion Go Beam could be the affordable han"
+   },
+   {
+    "event_id": "27ba4a0a25594e30",
+    "attention": "高",
+    "core_hook": "联想 Legion Go Beam 掌机曝光：无触控板，握把应不可拆卸"
+   },
+   {
+    "event_id": "49e8f01ee5959ebc",
+    "attention": "高",
+    "core_hook": "Love my legion go"
+   }
+  ],
+  "preflight": {
+   "script_class": "纯拉丁",
+   "cores_lat": [
+    "legion"
+   ],
+   "cores_cjk": [],
+   "cjk_sub2": [],
+   "match_note": "纯拉丁词:B站易词元级模糊兜底(model2-nx→NX CAD先例),须核top3/考虑补中文品类词;纯拉丁≠必兜底(Batocera/shadPS4纯拉丁但实测可靠);命中率须联网实测,不预测,不自动改词"
+  }
+ },
+ {
+  "ip_name": "n64",
+  "candidate_word": "n64",
+  "word_kind": "项目/平台",
+  "gap_kind": "不在编辑映射表",
+  "note": "项目名原样；中文品类词(开源掌机/PS4模拟器等)须人工补",
+  "cards": 7,
+  "attention_max": "高",
+  "major_event_cards": 0,
+  "queues": [
+   "潜力待验证"
+  ],
+  "entries": [
+   "A"
+  ],
+  "samples": [
+   {
+    "event_id": "0f8810bb60a50038",
+    "attention": "高",
+    "core_hook": "[RELEASE] ctr64 (N64 Emulator)"
+   },
+   {
+    "event_id": "a8f06629636b5e81",
+    "attention": "高",
+    "core_hook": "Making Xibalba 64, a New N64 Release in 2026"
+   },
+   {
+    "event_id": "7dff9dc1a4387233",
+    "attention": "高",
+    "core_hook": "N64 core updated with Analogizer support"
+   }
+  ],
+  "preflight": {
+   "script_class": "纯拉丁",
+   "cores_lat": [
+    "n64"
+   ],
+   "cores_cjk": [],
+   "cjk_sub2": [],
+   "match_note": "纯拉丁词:B站易词元级模糊兜底(model2-nx→NX CAD先例),须核top3/考虑补中文品类词;纯拉丁≠必兜底(Batocera/shadPS4纯拉丁但实测可靠);命中率须联网实测,不预测,不自动改词"
+  }
+ },
+ {
+  "ip_name": "minecraft",
+  "candidate_word": "我的世界",
+  "word_kind": "IP大盘",
+  "gap_kind": "不在编辑映射表",
+  "note": "首个中文别名(§11.2)；粒度/角度/消歧须人工核",
+  "cards": 7,
+  "attention_max": "高",
+  "major_event_cards": 1,
+  "queues": [
+   "潜力待验证"
+  ],
+  "entries": [
+   "A"
+  ],
+  "samples": [
+   {
+    "event_id": "99071695b56d3284",
+    "attention": "高",
+    "core_hook": "NEW SWITCH 2 JAILBREAK USES MINECRAFT MOD?!"
+   },
+   {
+    "event_id": "63b79cb95054b768",
+    "attention": "高",
+    "core_hook": "Minecraft Is Getting Joy-Con Mouse Controls On Switch 2 In A"
+   },
+   {
+    "event_id": "56c343d40b837d79",
+    "attention": "高",
+    "core_hook": "Ported Minecraft 1.7.3 beta to PSP (works on PSP 1000 as wel"
+   }
+  ],
+  "preflight": {
+   "script_class": "含CJK",
+   "cores_lat": [],
+   "cores_cjk": [
+    "世界",
+    "我的",
+    "我的世界",
+    "的世"
+   ],
+   "cjk_sub2": [
+    "世界",
+    "我的",
+    "的世"
+   ],
+   "match_note": "含2字CJK词元[世界/我的/的世]:放宽匹配(街机改版先例),若词元泛易假阳须人工核top3;2字子词≠必假阳(街机改版真相关);语义歧义零LLM治不了须人工,不预测命中率,不自动改词"
+  }
+ },
+ {
+  "ip_name": "game boy",
+  "candidate_word": "game boy",
+  "word_kind": "项目/平台",
+  "gap_kind": "不在编辑映射表",
+  "note": "项目名原样；中文品类词(开源掌机/PS4模拟器等)须人工补",
+  "cards": 6,
+  "attention_max": "高",
+  "major_event_cards": 0,
+  "queues": [
+   "潜力待验证"
+  ],
+  "entries": [
+   "A"
+  ],
+  "samples": [
+   {
+    "event_id": "a80f6f60e7fdc49d",
+    "attention": "高",
+    "core_hook": "Blackberry Curve 8330 for Game Boy and Atari Games"
+   },
+   {
+    "event_id": "eec6fa252c5f9e25",
+    "attention": "高",
+    "core_hook": "Anyone else miss the Game Boy Camera? I turned my RG477V int"
+   },
+   {
+    "event_id": "8170a366b1f6b477",
+    "attention": "高",
+    "core_hook": "'We Haven't Had Any Reports of Damaged Consoles' - Incube8 G"
+   }
+  ],
+  "preflight": {
+   "script_class": "纯拉丁",
+   "cores_lat": [
+    "game",
+    "boy"
+   ],
+   "cores_cjk": [],
+   "cjk_sub2": [],
+   "match_note": "纯拉丁词:B站易词元级模糊兜底(model2-nx→NX CAD先例),须核top3/考虑补中文品类词;纯拉丁≠必兜底(Batocera/shadPS4纯拉丁但实测可靠);命中率须联网实测,不预测,不自动改词"
+  }
+ },
+ {
+  "ip_name": "gba",
+  "candidate_word": "gba",
+  "word_kind": "项目/平台",
+  "gap_kind": "不在编辑映射表",
+  "note": "项目名原样；中文品类词(开源掌机/PS4模拟器等)须人工补",
+  "cards": 6,
+  "attention_max": "高",
+  "major_event_cards": 0,
+  "queues": [
+   "潜力待验证"
+  ],
+  "entries": [
+   "A"
+  ],
+  "samples": [
+   {
+    "event_id": "532cb088d1a046a9",
+    "attention": "高",
+    "core_hook": "The Block is my GBA endgame!"
+   },
+   {
+    "event_id": "a76d4d42ec06789a",
+    "attention": "高",
+    "core_hook": "GBA DS 1.5: 50-plus GBA games extended to the second screen"
+   },
+   {
+    "event_id": "623c690d7991180f",
+    "attention": "中",
+    "core_hook": "GBA DS Emulator Turns Game Boy Advance Titles Into Dual-Scre"
+   }
+  ],
+  "preflight": {
+   "script_class": "纯拉丁",
+   "cores_lat": [
+    "gba"
+   ],
+   "cores_cjk": [],
+   "cjk_sub2": [],
+   "match_note": "纯拉丁词:B站易词元级模糊兜底(model2-nx→NX CAD先例),须核top3/考虑补中文品类词;纯拉丁≠必兜底(Batocera/shadPS4纯拉丁但实测可靠);命中率须联网实测,不预测,不自动改词"
+  }
+ },
+ {
+  "ip_name": "portal",
+  "candidate_word": "传送门",
+  "word_kind": "IP大盘",
+  "gap_kind": "不在编辑映射表",
+  "note": "首个中文别名(§11.2)；粒度/角度/消歧须人工核",
+  "cards": 6,
+  "attention_max": "高",
+  "major_event_cards": 0,
+  "queues": [
+   "潜力待验证"
+  ],
+  "entries": [
+   "A"
+  ],
+  "samples": [
+   {
+    "event_id": "b52bb60300421493",
+    "attention": "高",
+    "core_hook": "Retro Handhelds Weekly: AYN Ships the Odin 3 Portal, RESET G"
+   },
+   {
+    "event_id": "74deea0db49d81d7",
+    "attention": "高",
+    "core_hook": "Sony’s new PlayStation Portal handheld includes ‘additional’"
+   },
+   {
+    "event_id": "3a5e5e32a41de404",
+    "attention": "高",
+    "core_hook": "Odin 2 Portal Came"
+   }
+  ],
+  "preflight": {
+   "script_class": "含CJK",
+   "cores_lat": [],
+   "cores_cjk": [
+    "传送",
+    "传送门",
+    "送门"
+   ],
+   "cjk_sub2": [
+    "传送",
+    "送门"
+   ],
+   "match_note": "含2字CJK词元[传送/送门]:放宽匹配(街机改版先例),若词元泛易假阳须人工核top3;2字子词≠必假阳(街机改版真相关);语义歧义零LLM治不了须人工,不预测命中率,不自动改词"
+  }
+ },
+ {
+  "ip_name": "halo",
+  "candidate_word": "光环",
+  "word_kind": "IP大盘",
+  "gap_kind": "不在编辑映射表",
+  "note": "首个中文别名(§11.2)；粒度/角度/消歧须人工核",
+  "cards": 6,
+  "attention_max": "高",
+  "major_event_cards": 0,
+  "queues": [
+   "潜力待验证"
+  ],
+  "entries": [
+   "A"
+  ],
+  "samples": [
+   {
+    "event_id": "85061202ece6dbcc",
+    "attention": "高",
+    "core_hook": "Strix Halo devices: how do you feel about them overall?"
+   },
+   {
+    "event_id": "fb6738e87560f6f4",
+    "attention": "高",
+    "core_hook": "How do the strix halo 388/395 handhelds match up against sim"
+   },
+   {
+    "event_id": "a3f02d8ac62d91f1",
+    "attention": "高",
+    "core_hook": "Here's Halo 2 static recomp running natively on my RG35XXH."
+   }
+  ],
+  "preflight": {
+   "script_class": "含CJK",
+   "cores_lat": [],
+   "cores_cjk": [
+    "光环"
+   ],
+   "cjk_sub2": [
+    "光环"
+   ],
+   "match_note": "含2字CJK词元[光环]:放宽匹配(街机改版先例),若词元泛易假阳须人工核top3;2字子词≠必假阳(街机改版真相关);语义歧义零LLM治不了须人工,不预测命中率,不自动改词"
+  }
+ },
+ {
+  "ip_name": "8bitdo",
+  "candidate_word": "8bitdo",
+  "word_kind": "项目/平台",
+  "gap_kind": "不在编辑映射表",
+  "note": "项目名原样；中文品类词(开源掌机/PS4模拟器等)须人工补",
+  "cards": 5,
+  "attention_max": "高",
+  "major_event_cards": 0,
+  "queues": [
+   "潜力待验证"
+  ],
+  "entries": [
+   "A"
+  ],
+  "samples": [
+   {
+    "event_id": "89219978aa439489",
+    "attention": "高",
+    "core_hook": "8BitDo Reveals Its Own GameCube Controller For Switch 2"
+   },
+   {
+    "event_id": "5f10734c5a1eb816",
+    "attention": "高",
+    "core_hook": "8BitDo announces GameCube-inspired controller for Nintendo S"
+   },
+   {
+    "event_id": "1d7be15972adcaba",
+    "attention": "高",
+    "core_hook": "Does the 8BitDo Adapter 2 work with a PS4 DualShock 4 on Nin"
+   }
+  ],
+  "preflight": {
+   "script_class": "纯拉丁",
+   "cores_lat": [
+    "8bitdo"
+   ],
+   "cores_cjk": [],
+   "cjk_sub2": [],
+   "match_note": "纯拉丁词:B站易词元级模糊兜底(model2-nx→NX CAD先例),须核top3/考虑补中文品类词;纯拉丁≠必兜底(Batocera/shadPS4纯拉丁但实测可靠);命中率须联网实测,不预测,不自动改词"
+  }
+ },
+ {
+  "ip_name": "msi claw",
+  "candidate_word": "msi claw",
+  "word_kind": "项目/平台",
+  "gap_kind": "不在编辑映射表",
+  "note": "项目名原样；中文品类词(开源掌机/PS4模拟器等)须人工补",
+  "cards": 5,
+  "attention_max": "高",
+  "major_event_cards": 0,
+  "queues": [
+   "潜力待验证"
+  ],
+  "entries": [
+   "A"
+  ],
+  "samples": [
+   {
+    "event_id": "6a8bd1bd2fd4810d",
+    "attention": "高",
+    "core_hook": "MSI Claw EX 32GB/512GB is $1500 from B&H. Time to return the"
+   },
+   {
+    "event_id": "1de556b6e1c85ebb",
+    "attention": "高",
+    "core_hook": "Is this a fair price on an MSI Claw?"
+   },
+   {
+    "event_id": "1e82ad190258e46a",
+    "attention": "高",
+    "core_hook": "Onexplayer 3 vs Msi Claw 8 Ex ai + : Help me decide which on"
+   }
+  ],
+  "preflight": {
+   "script_class": "纯拉丁",
+   "cores_lat": [
+    "msi",
+    "claw"
+   ],
+   "cores_cjk": [],
+   "cjk_sub2": [],
+   "match_note": "纯拉丁词:B站易词元级模糊兜底(model2-nx→NX CAD先例),须核top3/考虑补中文品类词;纯拉丁≠必兜底(Batocera/shadPS4纯拉丁但实测可靠);命中率须联网实测,不预测,不自动改词"
+  }
+ },
+ {
+  "ip_name": "nds",
+  "candidate_word": "nds",
+  "word_kind": "项目/平台",
+  "gap_kind": "不在编辑映射表",
+  "note": "项目名原样；中文品类词(开源掌机/PS4模拟器等)须人工补",
+  "cards": 5,
+  "attention_max": "高",
+  "major_event_cards": 0,
+  "queues": [
+   "潜力待验证"
+  ],
+  "entries": [
+   "A"
+  ],
+  "samples": [
+   {
+    "event_id": "c034d0df7307ad94",
+    "attention": "高",
+    "core_hook": "Is there any Slot Cfw fork with nds support?"
+   },
+   {
+    "event_id": "53f8cc3eb5f292e9",
+    "attention": "高",
+    "core_hook": "¿Que formatos de roms de NDS admite la RG DS Plus?"
+   },
+   {
+    "event_id": "a784175a6e387e8b",
+    "attention": "高",
+    "core_hook": "[RELEASE] NooDS U - A NDS(i) emulator for the Wii U"
+   }
+  ],
+  "preflight": {
+   "script_class": "纯拉丁",
+   "cores_lat": [
+    "nds"
+   ],
+   "cores_cjk": [],
+   "cjk_sub2": [],
+   "match_note": "纯拉丁词:B站易词元级模糊兜底(model2-nx→NX CAD先例),须核top3/考虑补中文品类词;纯拉丁≠必兜底(Batocera/shadPS4纯拉丁但实测可靠);命中率须联网实测,不预测,不自动改词"
+  }
+ },
+ {
+  "ip_name": "skyrim",
+  "candidate_word": "上古卷轴",
+  "word_kind": "IP大盘",
+  "gap_kind": "不在编辑映射表",
+  "note": "首个中文别名(§11.2)；粒度/角度/消歧须人工核",
+  "cards": 5,
+  "attention_max": "高",
+  "major_event_cards": 0,
+  "queues": [
+   "潜力待验证"
+  ],
+  "entries": [
+   "A"
+  ],
+  "samples": [
+   {
+    "event_id": "dc87946eedb58e2b",
+    "attention": "高",
+    "core_hook": "Skyrim Androidborn — native Skyrim on Android"
+   },
+   {
+    "event_id": "c1a0227d446f3bda",
+    "attention": "高",
+    "core_hook": "[Skyrim PS4] Interesting discovery: 74 Creation Club package"
+   },
+   {
+    "event_id": "24eb5351d988c3b5",
+    "attention": "高",
+    "core_hook": "Skyrim Celebrates 15 Years Of Adventure With Switch eShop Sa"
+   }
+  ],
+  "preflight": {
+   "script_class": "含CJK",
+   "cores_lat": [],
+   "cores_cjk": [
+    "上古",
+    "上古卷轴",
+    "卷轴",
+    "古卷"
+   ],
+   "cjk_sub2": [
+    "上古",
+    "卷轴",
+    "古卷"
+   ],
+   "match_note": "含2字CJK词元[上古/卷轴/古卷]:放宽匹配(街机改版先例),若词元泛易假阳须人工核top3;2字子词≠必假阳(街机改版真相关);语义歧义零LLM治不了须人工,不预测命中率,不自动改词"
+  }
+ },
+ {
+  "ip_name": "lineage",
+  "candidate_word": "天堂",
+  "word_kind": "IP大盘",
+  "gap_kind": "不在编辑映射表",
+  "note": "首个中文别名(§11.2)；粒度/角度/消歧须人工核",
+  "cards": 5,
+  "attention_max": "高",
+  "major_event_cards": 0,
+  "queues": [
+   "潜力待验证"
+  ],
+  "entries": [
+   "A"
+  ],
+  "samples": [
+   {
+    "event_id": "d071d2daf6507106",
+    "attention": "高",
+    "core_hook": "任天堂古川俊太郎：Switch 2 售价暂不调整，若成本实在扛不住就得涨价"
+   },
+   {
+    "event_id": "a960c86a3a33fdc8",
+    "attention": "高",
+    "core_hook": "育碧《舞力全开：传世金曲》登陆任天堂 Switch 2 平台：收录跨六十年金曲，5610 日元"
+   },
+   {
+    "event_id": "ebab2a6ac22f3c83",
+    "attention": "高",
+    "core_hook": "任天堂がSwitch 2 / Switch向けに本体機能の更新データを配信。新機能「プレゼント」が追加され，2026年1"
+   }
+  ],
+  "preflight": {
+   "script_class": "含CJK",
+   "cores_lat": [],
+   "cores_cjk": [
+    "天堂"
+   ],
+   "cjk_sub2": [
+    "天堂"
+   ],
+   "match_note": "含2字CJK词元[天堂]:放宽匹配(街机改版先例),若词元泛易假阳须人工核top3;2字子词≠必假阳(街机改版真相关);语义歧义零LLM治不了须人工,不预测命中率,不自动改词"
+  }
+ },
+ {
+  "ip_name": "silent hill",
+  "candidate_word": "寂静岭",
+  "word_kind": "IP大盘",
+  "gap_kind": "不在编辑映射表",
+  "note": "首个中文别名(§11.2)；粒度/角度/消歧须人工核",
+  "cards": 5,
+  "attention_max": "高",
+  "major_event_cards": 0,
+  "queues": [
+   "潜力待验证"
+  ],
+  "entries": [
+   "A"
+  ],
+  "samples": [
+   {
+    "event_id": "360f9b5843732266",
+    "attention": "高",
+    "core_hook": "[WIP] Silent Hill 3 PS Vita recompilation port"
+   },
+   {
+    "event_id": "97f8f951850c8388",
+    "attention": "高",
+    "core_hook": "Silent Hill: Origins port from PSP to PS Vita, running at na"
+   },
+   {
+    "event_id": "e67eb26645a0ca32",
+    "attention": "高",
+    "core_hook": "[WIP] Silent Hill 2 PS Vita port"
+   }
+  ],
+  "preflight": {
+   "script_class": "含CJK",
+   "cores_lat": [],
+   "cores_cjk": [
+    "寂静",
+    "寂静岭",
+    "静岭"
+   ],
+   "cjk_sub2": [
+    "寂静",
+    "静岭"
+   ],
+   "match_note": "含2字CJK词元[寂静/静岭]:放宽匹配(街机改版先例),若词元泛易假阳须人工核top3;2字子词≠必假阳(街机改版真相关);语义歧义零LLM治不了须人工,不预测命中率,不自动改词"
+  }
+ },
+ {
+  "ip_name": "genesis",
+  "candidate_word": "genesis",
+  "word_kind": "项目/平台",
+  "gap_kind": "不在编辑映射表",
+  "note": "项目名原样；中文品类词(开源掌机/PS4模拟器等)须人工补",
+  "cards": 4,
+  "attention_max": "高",
+  "major_event_cards": 0,
+  "queues": [
+   "潜力待验证"
+  ],
+  "entries": [
+   "A"
+  ],
+  "samples": [
+   {
+    "event_id": "0475ecc4a6dc69a2",
+    "attention": "高",
+    "core_hook": "Does anyone know if this Genesis snac adapter work with Mist"
+   },
+   {
+    "event_id": "859b2e81ca41e766",
+    "attention": "高",
+    "core_hook": "Rare Japanese Sega Genesis Game Gets Physical Release Worldw"
+   },
+   {
+    "event_id": "65484e10aeec9760",
+    "attention": "高",
+    "core_hook": "SEGA Genesis on Analogue Pocket – with Save States"
+   }
+  ],
+  "preflight": {
+   "script_class": "纯拉丁",
+   "cores_lat": [
+    "genesis"
+   ],
+   "cores_cjk": [],
+   "cjk_sub2": [],
+   "match_note": "纯拉丁词:B站易词元级模糊兜底(model2-nx→NX CAD先例),须核top3/考虑补中文品类词;纯拉丁≠必兜底(Batocera/shadPS4纯拉丁但实测可靠);命中率须联网实测,不预测,不自动改词"
+  }
+ },
+ {
+  "ip_name": "starcraft",
+  "candidate_word": "星际争霸",
+  "word_kind": "IP大盘",
+  "gap_kind": "不在编辑映射表",
+  "note": "首个中文别名(§11.2)；粒度/角度/消歧须人工核",
+  "cards": 4,
+  "attention_max": "高",
+  "major_event_cards": 0,
+  "queues": [
+   "潜力待验证"
+  ],
+  "entries": [
+   "A"
+  ],
+  "samples": [
+   {
+    "event_id": "933217ce76414870",
+    "attention": "高",
+    "core_hook": "[Release] StarCraft 64 on PlayStation 3 - 'SC64PS3 v1.0'"
+   },
+   {
+    "event_id": "af73b21cded72782",
+    "attention": "高",
+    "core_hook": "[Release] StarCraft 64 running on the PS Vita! - SC64VITA v1"
+   },
+   {
+    "event_id": "f068c299e4e70962",
+    "attention": "高",
+    "core_hook": "Starcraft Brood Wars + Remastered Android Native port"
+   }
+  ],
+  "preflight": {
+   "script_class": "含CJK",
+   "cores_lat": [],
+   "cores_cjk": [
+    "争霸",
+    "星际",
+    "星际争霸",
+    "际争"
+   ],
+   "cjk_sub2": [
+    "争霸",
+    "星际",
+    "际争"
+   ],
+   "match_note": "含2字CJK词元[争霸/星际/际争]:放宽匹配(街机改版先例),若词元泛易假阳须人工核top3;2字子词≠必假阳(街机改版真相关);语义歧义零LLM治不了须人工,不预测命中率,不自动改词"
+  }
+ },
+ {
+  "ip_name": "sonic",
+  "candidate_word": "索尼克",
+  "word_kind": "IP大盘",
+  "gap_kind": "不在编辑映射表",
+  "note": "首个中文别名(§11.2)；粒度/角度/消歧须人工核",
+  "cards": 4,
+  "attention_max": "高",
+  "major_event_cards": 0,
+  "queues": [
+   "潜力待验证"
+  ],
+  "entries": [
+   "A"
+  ],
+  "samples": [
+   {
+    "event_id": "97c672bb1a027d39",
+    "attention": "高",
+    "core_hook": "《索尼克赛车 交叉世界》免费更新“索尼克（迈凯伦车队）”正式上线"
+   },
+   {
+    "event_id": "68c07ae85e5bd2d0",
+    "attention": "高",
+    "core_hook": "Mini Review: Sonic Pico Park (Switch) - Charming Puzzle-Plat"
+   },
+   {
+    "event_id": "ce259d2e2fbab6ba",
+    "attention": "高",
+    "core_hook": "Sonic Racing: CrossWorlds Nintendo Switch 2 upgrade pack get"
+   }
+  ],
+  "preflight": {
+   "script_class": "含CJK",
+   "cores_lat": [],
+   "cores_cjk": [
+    "尼克",
+    "索尼",
+    "索尼克"
+   ],
+   "cjk_sub2": [
+    "尼克",
+    "索尼"
+   ],
+   "match_note": "含2字CJK词元[尼克/索尼]:放宽匹配(街机改版先例),若词元泛易假阳须人工核top3;2字子词≠必假阳(街机改版真相关);语义歧义零LLM治不了须人工,不预测命中率,不自动改词"
+  }
+ },
+ {
+  "ip_name": "mass effect",
+  "candidate_word": "质量效应",
+  "word_kind": "IP大盘",
+  "gap_kind": "不在编辑映射表",
+  "note": "首个中文别名(§11.2)；粒度/角度/消歧须人工核",
+  "cards": 4,
+  "attention_max": "高",
+  "major_event_cards": 1,
+  "queues": [
+   "潜力待验证"
+  ],
+  "entries": [
+   "A"
+  ],
+  "samples": [
+   {
+    "event_id": "746e0dd5f3a5865e",
+    "attention": "高",
+    "core_hook": "Ex-Mass Effect boss admits BioWare devs worried it'd 'shut d"
+   },
+   {
+    "event_id": "cf642e0dc41dfb3d",
+    "attention": "高",
+    "core_hook": "Mass Effect 5 was 'meant to compliment' the upcoming show fr"
+   },
+   {
+    "event_id": "132ffdc84a338b97",
+    "attention": "中",
+    "core_hook": "BioWare could make Mass Effect 2 in 18 months because 'the c"
+   }
+  ],
+  "preflight": {
+   "script_class": "含CJK",
+   "cores_lat": [],
+   "cores_cjk": [
+    "效应",
+    "质量",
+    "质量效应",
+    "量效"
+   ],
+   "cjk_sub2": [
+    "效应",
+    "质量",
+    "量效"
+   ],
+   "match_note": "含2字CJK词元[效应/质量/量效]:放宽匹配(街机改版先例),若词元泛易假阳须人工核top3;2字子词≠必假阳(街机改版真相关);语义歧义零LLM治不了须人工,不预测命中率,不自动改词"
+  }
+ },
+ {
+  "ip_name": "rayman",
+  "candidate_word": "雷曼",
+  "word_kind": "IP大盘",
+  "gap_kind": "不在编辑映射表",
+  "note": "首个中文别名(§11.2)；粒度/角度/消歧须人工核",
+  "cards": 4,
+  "attention_max": "高",
+  "major_event_cards": 0,
+  "queues": [
+   "潜力待验证"
+  ],
+  "entries": [
+   "A"
+  ],
+  "samples": [
+   {
+    "event_id": "74323c96072ea6e8",
+    "attention": "高",
+    "core_hook": "Rayman Legends Retold Reveals Another Musical Level, And Uhh"
+   },
+   {
+    "event_id": "35edc87f1d8b7393",
+    "attention": "高",
+    "core_hook": "Rayman Legends Retold Reveals Rabbids Outfit Exclusive To Sw"
+   },
+   {
+    "event_id": "7e882c0ff32675fe",
+    "attention": "高",
+    "core_hook": "Rayman Legends Retold has exclusive Rayman Rabbids outfit on"
+   }
+  ],
+  "preflight": {
+   "script_class": "含CJK",
+   "cores_lat": [],
+   "cores_cjk": [
+    "雷曼"
+   ],
+   "cjk_sub2": [
+    "雷曼"
+   ],
+   "match_note": "含2字CJK词元[雷曼]:放宽匹配(街机改版先例),若词元泛易假阳须人工核top3;2字子词≠必假阳(街机改版真相关);语义歧义零LLM治不了须人工,不预测命中率,不自动改词"
+  }
+ },
+ {
+  "ip_name": "warcraft",
+  "candidate_word": "魔兽争霸",
+  "word_kind": "IP大盘",
+  "gap_kind": "不在编辑映射表",
+  "note": "首个中文别名(§11.2)；粒度/角度/消歧须人工核",
+  "cards": 4,
+  "attention_max": "高",
+  "major_event_cards": 2,
+  "queues": [
+   "潜力待验证"
+  ],
+  "entries": [
+   "A"
+  ],
+  "samples": [
+   {
+    "event_id": "1905121b7d3114bd",
+    "attention": "高",
+    "core_hook": "Blizzard suspends World of Warcraft: Forever gold exploit ab"
+   },
+   {
+    "event_id": "66c84eb9fdd604d9",
+    "attention": "高",
+    "core_hook": "World of Warcraft: Forever's in-game economy has been ravage"
+   },
+   {
+    "event_id": "9cbb5d3d4117425e",
+    "attention": "高",
+    "core_hook": "World of Warcraft: Forever might live officially on PC, but "
+   }
+  ],
+  "preflight": {
+   "script_class": "含CJK",
+   "cores_lat": [],
+   "cores_cjk": [
+    "争霸",
+    "兽争",
+    "魔兽",
+    "魔兽争霸"
+   ],
+   "cjk_sub2": [
+    "争霸",
+    "兽争",
+    "魔兽"
+   ],
+   "match_note": "含2字CJK词元[争霸/兽争/魔兽]:放宽匹配(街机改版先例),若词元泛易假阳须人工核top3;2字子词≠必假阳(街机改版真相关);语义歧义零LLM治不了须人工,不预测命中率,不自动改词"
+  }
+ },
+ {
+  "ip_name": "saturn",
+  "candidate_word": "saturn",
+  "word_kind": "项目/平台",
+  "gap_kind": "不在编辑映射表",
+  "note": "项目名原样；中文品类词(开源掌机/PS4模拟器等)须人工补",
+  "cards": 3,
+  "attention_max": "高",
+  "major_event_cards": 0,
+  "queues": [
+   "潜力待验证"
+  ],
+  "entries": [
+   "A"
+  ],
+  "samples": [
+   {
+    "event_id": "5891227d065b8909",
+    "attention": "高",
+    "core_hook": "What are my Rotate friends using for Saturn emulation?"
+   },
+   {
+    "event_id": "78160af63f7a7266",
+    "attention": "高",
+    "core_hook": "YabaSanshiro NX - Sega Saturn emulator"
+   },
+   {
+    "event_id": "59b7d87cdcab497e",
+    "attention": "中",
+    "core_hook": "Saturn Recompile Projects"
+   }
+  ],
+  "preflight": {
+   "script_class": "纯拉丁",
+   "cores_lat": [
+    "saturn"
+   ],
+   "cores_cjk": [],
+   "cjk_sub2": [],
+   "match_note": "纯拉丁词:B站易词元级模糊兜底(model2-nx→NX CAD先例),须核top3/考虑补中文品类词;纯拉丁≠必兜底(Batocera/shadPS4纯拉丁但实测可靠);命中率须联网实测,不预测,不自动改词"
+  }
+ },
+ {
+  "ip_name": "lego",
+  "candidate_word": "乐高",
+  "word_kind": "IP大盘",
+  "gap_kind": "不在编辑映射表",
+  "note": "首个中文别名(§11.2)；粒度/角度/消歧须人工核",
+  "cards": 3,
+  "attention_max": "高",
+  "major_event_cards": 0,
+  "queues": [
+   "潜力待验证"
+  ],
+  "entries": [
+   "A"
+  ],
+  "samples": [
+   {
+    "event_id": "44d14ed1348b5ab8",
+    "attention": "高",
+    "core_hook": "Reckless Ben releases Steam game where you steal Lego from o"
+   },
+   {
+    "event_id": "40557ca357643eff",
+    "attention": "高",
+    "core_hook": "I downgraded from the Lego 2 z2 extreme to Lego S SteamOS Z1"
+   },
+   {
+    "event_id": "0b8776eb56c27fe4",
+    "attention": "中",
+    "core_hook": "LEGO Shrek, Donkey, and Puss in Boots Gets Its First Discoun"
+   }
+  ],
+  "preflight": {
+   "script_class": "含CJK",
+   "cores_lat": [],
+   "cores_cjk": [
+    "乐高"
+   ],
+   "cjk_sub2": [
+    "乐高"
+   ],
+   "match_note": "含2字CJK词元[乐高]:放宽匹配(街机改版先例),若词元泛易假阳须人工核top3;2字子词≠必假阳(街机改版真相关);语义歧义零LLM治不了须人工,不预测命中率,不自动改词"
+  }
+ },
+ {
+  "ip_name": "dragon quest",
+  "candidate_word": "勇者斗恶龙",
+  "word_kind": "IP大盘",
+  "gap_kind": "不在编辑映射表",
+  "note": "首个中文别名(§11.2)；粒度/角度/消歧须人工核",
+  "cards": 3,
+  "attention_max": "高",
+  "major_event_cards": 0,
+  "queues": [
+   "潜力待验证",
+   "系列跟踪"
+  ],
+  "entries": [
+   "A"
+  ],
+  "samples": [
+   {
+    "event_id": "4cad0dafd2a338da",
+    "attention": "高",
+    "core_hook": "Dragon Quest XI 3DS Orchestral Overhaul Release"
+   },
+   {
+    "event_id": "c350076786cbcf70",
+    "attention": "高",
+    "core_hook": "Wife and her GF are out and about while I chauffeur... Drago"
+   },
+   {
+    "event_id": "series:91873126b84c",
+    "attention": "高",
+    "core_hook": "azahar 持续更新跟踪（5个事件）"
+   }
+  ],
+  "preflight": {
+   "script_class": "含CJK",
+   "cores_lat": [],
+   "cores_cjk": [
+    "勇者",
+    "勇者斗恶龙",
+    "恶龙",
+    "斗恶",
+    "者斗"
+   ],
+   "cjk_sub2": [
+    "勇者",
+    "恶龙",
+    "斗恶",
+    "者斗"
+   ],
+   "match_note": "含2字CJK词元[勇者/恶龙/斗恶/者斗]:放宽匹配(街机改版先例),若词元泛易假阳须人工核top3;2字子词≠必假阳(街机改版真相关);语义歧义零LLM治不了须人工,不预测命中率,不自动改词"
+  }
+ },
+ {
+  "ip_name": "monster hunter",
+  "candidate_word": "怪物猎人",
+  "word_kind": "IP大盘",
+  "gap_kind": "不在编辑映射表",
+  "note": "首个中文别名(§11.2)；粒度/角度/消歧须人工核",
+  "cards": 3,
+  "attention_max": "高",
+  "major_event_cards": 0,
+  "queues": [
+   "潜力待验证"
+  ],
+  "entries": [
+   "A"
+  ],
+  "samples": [
+   {
+    "event_id": "fb6f590d8c695fe2",
+    "attention": "高",
+    "core_hook": "Help Needed: PSP-2000 CFW Update and Monster Hunter Portable"
+   },
+   {
+    "event_id": "e3580453ab194ec0",
+    "attention": "高",
+    "core_hook": "Foliafe flickering in Monster hunter Rise PC (armadaos - rp6"
+   },
+   {
+    "event_id": "b7a27abbc0f5ac4e",
+    "attention": "中",
+    "core_hook": "Found my dream Monster Hunter PSP 3000 on my first trip to J"
+   }
+  ],
+  "preflight": {
+   "script_class": "含CJK",
+   "cores_lat": [],
+   "cores_cjk": [
+    "怪物",
+    "怪物猎人",
+    "物猎",
+    "猎人"
+   ],
+   "cjk_sub2": [
+    "怪物",
+    "物猎",
+    "猎人"
+   ],
+   "match_note": "含2字CJK词元[怪物/物猎/猎人]:放宽匹配(街机改版先例),若词元泛易假阳须人工核top3;2字子词≠必假阳(街机改版真相关);语义歧义零LLM治不了须人工,不预测命中率,不自动改词"
+  }
+ },
+ {
+  "ip_name": "warhammer",
+  "candidate_word": "战锤",
+  "word_kind": "IP大盘",
+  "gap_kind": "不在编辑映射表",
+  "note": "首个中文别名(§11.2)；粒度/角度/消歧须人工核",
+  "cards": 3,
+  "attention_max": "高",
+  "major_event_cards": 0,
+  "queues": [
+   "潜力待验证"
+  ],
+  "entries": [
+   "A"
+  ],
+  "samples": [
+   {
+    "event_id": "c09b841330f7cdb4",
+    "attention": "高",
+    "core_hook": "Nintendo Switch 2 and Switch file sizes – Warhammer 40,000: "
+   },
+   {
+    "event_id": "e7c428a33911370c",
+    "attention": "高",
+    "core_hook": "Warhammer 40,000: Dark Heresy coming to Nintendo Switch 2"
+   },
+   {
+    "event_id": "7618067a2a5b8346",
+    "attention": "高",
+    "core_hook": "Warhammer 40,000: Dark Heresy launches January 28, 2027 for "
+   }
+  ],
+  "preflight": {
+   "script_class": "含CJK",
+   "cores_lat": [],
+   "cores_cjk": [
+    "战锤"
+   ],
+   "cjk_sub2": [
+    "战锤"
+   ],
+   "match_note": "含2字CJK词元[战锤]:放宽匹配(街机改版先例),若词元泛易假阳须人工核top3;2字子词≠必假阳(街机改版真相关);语义歧义零LLM治不了须人工,不预测命中率,不自动改词"
+  }
+ },
+ {
+  "ip_name": "star wars",
+  "candidate_word": "星球大战",
+  "word_kind": "IP大盘",
+  "gap_kind": "不在编辑映射表",
+  "note": "首个中文别名(§11.2)；粒度/角度/消歧须人工核",
+  "cards": 3,
+  "attention_max": "高",
+  "major_event_cards": 0,
+  "queues": [
+   "潜力待验证"
+  ],
+  "entries": [
+   "A"
+  ],
+  "samples": [
+   {
+    "event_id": "4cc3a3d90c7903d0",
+    "attention": "高",
+    "core_hook": "(Port Idea) Star Wars Episode I: The Phantom Menace (1999) –"
+   },
+   {
+    "event_id": "5b97bfb337c23678",
+    "attention": "高",
+    "core_hook": "Dreamcast now has a port of the Star Wars Trilogy Arcade gam"
+   },
+   {
+    "event_id": "2dfc2973d46e405a",
+    "attention": "中",
+    "core_hook": "Target leaks our first look at new Lego Star Wars sets, with"
+   }
+  ],
+  "preflight": {
+   "script_class": "含CJK",
+   "cores_lat": [],
+   "cores_cjk": [
+    "大战",
+    "星球",
+    "星球大战",
+    "球大"
+   ],
+   "cjk_sub2": [
+    "大战",
+    "星球",
+    "球大"
+   ],
+   "match_note": "含2字CJK词元[大战/星球/球大]:放宽匹配(街机改版先例),若词元泛易假阳须人工核top3;2字子词≠必假阳(街机改版真相关);语义歧义零LLM治不了须人工,不预测命中率,不自动改词"
+  }
+ },
+ {
+  "ip_name": "doom",
+  "candidate_word": "毁灭战士",
+  "word_kind": "IP大盘",
+  "gap_kind": "不在编辑映射表",
+  "note": "首个中文别名(§11.2)；粒度/角度/消歧须人工核",
+  "cards": 3,
+  "attention_max": "高",
+  "major_event_cards": 0,
+  "queues": [
+   "潜力待验证"
+  ],
+  "entries": [
+   "A"
+  ],
+  "samples": [
+   {
+    "event_id": "26dc8a681e934a12",
+    "attention": "高",
+    "core_hook": "KFC reveals massive Doom Triple Down sandwich in another gre"
+   },
+   {
+    "event_id": "80f7659bc4fb5f8e",
+    "attention": "高",
+    "core_hook": "Question about The Siege of Castle Doom (Marvel Cosmic Invas"
+   },
+   {
+    "event_id": "5211aa2f4a6415d6",
+    "attention": "高",
+    "core_hook": "Doom 3 native PS4 port — Playable Alpha 0.18"
+   }
+  ],
+  "preflight": {
+   "script_class": "含CJK",
+   "cores_lat": [],
+   "cores_cjk": [
+    "战士",
+    "毁灭",
+    "毁灭战士",
+    "灭战"
+   ],
+   "cjk_sub2": [
+    "战士",
+    "毁灭",
+    "灭战"
+   ],
+   "match_note": "含2字CJK词元[战士/毁灭/灭战]:放宽匹配(街机改版先例),若词元泛易假阳须人工核top3;2字子词≠必假阳(街机改版真相关);语义歧义零LLM治不了须人工,不预测命中率,不自动改词"
+  }
+ },
+ {
+  "ip_name": "mega man",
+  "candidate_word": "洛克人",
+  "word_kind": "IP大盘",
+  "gap_kind": "不在编辑映射表",
+  "note": "首个中文别名(§11.2)；粒度/角度/消歧须人工核",
+  "cards": 3,
+  "attention_max": "高",
+  "major_event_cards": 0,
+  "queues": [
+   "潜力待验证"
+  ],
+  "entries": [
+   "A"
+  ],
+  "samples": [
+   {
+    "event_id": "d2dfa5ef22c3dd57",
+    "attention": "高",
+    "core_hook": "Mega Man X Legacy Collection 2 Getting a Nintendo Switch Phy"
+   },
+   {
+    "event_id": "fc49cdb4b17254dd",
+    "attention": "中",
+    "core_hook": "Mega Man 9 on PSVita - 8x the ALU, 8x the shader budget"
+   },
+   {
+    "event_id": "4f9bcd951e8ca120",
+    "attention": "中",
+    "core_hook": "New Mega Man Legends Game, Movie, or TV Series Possibly In t"
+   }
+  ],
+  "preflight": {
+   "script_class": "含CJK",
+   "cores_lat": [],
+   "cores_cjk": [
+    "克人",
+    "洛克",
+    "洛克人"
+   ],
+   "cjk_sub2": [
+    "克人",
+    "洛克"
+   ],
+   "match_note": "含2字CJK词元[克人/洛克]:放宽匹配(街机改版先例),若词元泛易假阳须人工核top3;2字子词≠必假阳(街机改版真相关);语义歧义零LLM治不了须人工,不预测命中率,不自动改词"
+  }
+ },
+ {
+  "ip_name": "nikke",
+  "candidate_word": "胜利女神",
+  "word_kind": "IP大盘",
+  "gap_kind": "不在编辑映射表",
+  "note": "首个中文别名(§11.2)；粒度/角度/消歧须人工核",
+  "cards": 3,
+  "attention_max": "高",
+  "major_event_cards": 1,
+  "queues": [
+   "潜力待验证"
+  ],
+  "entries": [
+   "A"
+  ],
+  "samples": [
+   {
+    "event_id": "bc3bba5048b2d2c3",
+    "attention": "高",
+    "core_hook": "Goddess of Victory: NIKKE PC launcher to get additional secu"
+   },
+   {
+    "event_id": "618cabaf1be92523",
+    "attention": "高",
+    "core_hook": "NIKKE players told to scan their PCs after hackers used the "
+   },
+   {
+    "event_id": "b185619c89d908c7",
+    "attention": "高",
+    "core_hook": "Goddess of Victory: NIKKE publisher confirms PC launcher bre"
+   }
+  ],
+  "preflight": {
+   "script_class": "含CJK",
+   "cores_lat": [],
+   "cores_cjk": [
+    "利女",
+    "女神",
+    "胜利",
+    "胜利女神"
+   ],
+   "cjk_sub2": [
+    "利女",
+    "女神",
+    "胜利"
+   ],
+   "match_note": "含2字CJK词元[利女/女神/胜利]:放宽匹配(街机改版先例),若词元泛易假阳须人工核top3;2字子词≠必假阳(街机改版真相关);语义歧义零LLM治不了须人工,不预测命中率,不自动改词"
+  }
+ },
+ {
+  "ip_name": "celeste",
+  "candidate_word": "蔚蓝",
+  "word_kind": "IP大盘",
+  "gap_kind": "不在编辑映射表",
+  "note": "首个中文别名(§11.2)；粒度/角度/消歧须人工核",
+  "cards": 3,
+  "attention_max": "高",
+  "major_event_cards": 0,
+  "queues": [
+   "潜力待验证"
+  ],
+  "entries": [
+   "A"
+  ],
+  "samples": [
+   {
+    "event_id": "9f80e7f04f317beb",
+    "attention": "高",
+    "core_hook": "The Celeste port runs like a dream"
+   },
+   {
+    "event_id": "1d2d3b1327504ad1",
+    "attention": "高",
+    "core_hook": "I've been working on a native Celeste port for the Wii. Here"
+   },
+   {
+    "event_id": "02cc52716f245989",
+    "attention": "中",
+    "core_hook": "(Wip) Celeste - PS Vita (First minutes)"
+   }
+  ],
+  "preflight": {
+   "script_class": "含CJK",
+   "cores_lat": [],
+   "cores_cjk": [
+    "蔚蓝"
+   ],
+   "cjk_sub2": [
+    "蔚蓝"
+   ],
+   "match_note": "含2字CJK词元[蔚蓝]:放宽匹配(街机改版先例),若词元泛易假阳须人工核top3;2字子词≠必假阳(街机改版真相关);语义歧义零LLM治不了须人工,不预测命中率,不自动改词"
+  }
+ },
+ {
+  "ip_name": "journey",
+  "candidate_word": "风之旅人",
+  "word_kind": "IP大盘",
+  "gap_kind": "不在编辑映射表",
+  "note": "首个中文别名(§11.2)；粒度/角度/消歧须人工核",
+  "cards": 3,
+  "attention_max": "高",
+  "major_event_cards": 0,
+  "queues": [
+   "低优先归档",
+   "潜力待验证"
+  ],
+  "entries": [
+   "A"
+  ],
+  "samples": [
+   {
+    "event_id": "1a22ed95e9ce0a5a",
+    "attention": "高",
+    "core_hook": "Video: Long Journey Coming Up? Here Are Our Favourite Switch"
+   },
+   {
+    "event_id": "c00279bdf2004e5c",
+    "attention": "高",
+    "core_hook": "Isekizima: Ruins and Tails Journey announced for Nintendo Sw"
+   },
+   {
+    "event_id": "7fcba62849c2778b",
+    "attention": "高",
+    "core_hook": "2D action platformer isekizima: Ruins and Tails Journey laun"
+   }
+  ],
+  "preflight": {
+   "script_class": "含CJK",
+   "cores_lat": [],
+   "cores_cjk": [
+    "之旅",
+    "旅人",
+    "风之",
+    "风之旅人"
+   ],
+   "cjk_sub2": [
+    "之旅",
+    "旅人",
+    "风之"
+   ],
+   "match_note": "含2字CJK词元[之旅/旅人/风之]:放宽匹配(街机改版先例),若词元泛易假阳须人工核top3;2字子词≠必假阳(街机改版真相关);语义歧义零LLM治不了须人工,不预测命中率,不自动改词"
+  }
+ },
+ {
+  "ip_name": "atari",
+  "candidate_word": "atari",
+  "word_kind": "项目/平台",
+  "gap_kind": "不在编辑映射表",
+  "note": "项目名原样；中文品类词(开源掌机/PS4模拟器等)须人工补",
+  "cards": 2,
+  "attention_max": "高",
+  "major_event_cards": 0,
+  "queues": [
+   "潜力待验证",
+   "系列跟踪"
+  ],
+  "entries": [
+   "A"
+  ],
+  "samples": [
+   {
+    "event_id": "614d3157ba83aad7",
+    "attention": "高",
+    "core_hook": "Saw this Atari console at Costco for $199"
+   },
+   {
+    "event_id": "series:4bff8b9450b1",
+    "attention": "高",
+    "core_hook": "main_mister 持续更新跟踪（20个事件）"
+   }
+  ],
+  "preflight": {
+   "script_class": "纯拉丁",
+   "cores_lat": [
+    "atari"
+   ],
+   "cores_cjk": [],
+   "cjk_sub2": [],
+   "match_note": "纯拉丁词:B站易词元级模糊兜底(model2-nx→NX CAD先例),须核top3/考虑补中文品类词;纯拉丁≠必兜底(Batocera/shadPS4纯拉丁但实测可靠);命中率须联网实测,不预测,不自动改词"
+  }
+ },
+ {
+  "ip_name": "cemu",
+  "candidate_word": "cemu",
+  "word_kind": "项目/平台",
+  "gap_kind": "不在编辑映射表",
+  "note": "项目名原样；中文品类词(开源掌机/PS4模拟器等)须人工补",
+  "cards": 2,
+  "attention_max": "高",
+  "major_event_cards": 0,
+  "queues": [
+   "低优先归档",
+   "系列跟踪"
+  ],
+  "entries": [
+   "A"
+  ],
+  "samples": [
+   {
+    "event_id": "09377315e5720445",
+    "attention": "高",
+    "core_hook": "NaGaa95 released 1.3.2 at NaGaa95/Cemu-nx"
+   },
+   {
+    "event_id": "series:65a9a6e7c524",
+    "attention": "高",
+    "core_hook": "cemu 持续更新跟踪（2个事件）"
+   }
+  ],
+  "preflight": {
+   "script_class": "纯拉丁",
+   "cores_lat": [
+    "cemu"
+   ],
+   "cores_cjk": [],
+   "cjk_sub2": [],
+   "match_note": "纯拉丁词:B站易词元级模糊兜底(model2-nx→NX CAD先例),须核top3/考虑补中文品类词;纯拉丁≠必兜底(Batocera/shadPS4纯拉丁但实测可靠);命中率须联网实测,不预测,不自动改词"
+  }
+ },
+ {
+  "ip_name": "darkos",
+  "candidate_word": "darkos",
+  "word_kind": "项目/平台",
+  "gap_kind": "不在编辑映射表",
+  "note": "项目名原样；中文品类词(开源掌机/PS4模拟器等)须人工补",
+  "cards": 2,
+  "attention_max": "高",
+  "major_event_cards": 0,
+  "queues": [
+   "低优先归档",
+   "潜力待验证"
+  ],
+  "entries": [
+   "A"
+  ],
+  "samples": [
+   {
+    "event_id": "59cc6c4677ea7609",
+    "attention": "高",
+    "core_hook": "dArkOS v11072026"
+   },
+   {
+    "event_id": "a11d1743200aee2f",
+    "attention": "高",
+    "core_hook": "RG52 Mini Review – The Good, The Bad & The dArkOS"
+   }
+  ],
+  "preflight": {
+   "script_class": "纯拉丁",
+   "cores_lat": [
+    "darkos"
+   ],
+   "cores_cjk": [],
+   "cjk_sub2": [],
+   "match_note": "纯拉丁词:B站易词元级模糊兜底(model2-nx→NX CAD先例),须核top3/考虑补中文品类词;纯拉丁≠必兜底(Batocera/shadPS4纯拉丁但实测可靠);命中率须联网实测,不预测,不自动改词"
+  }
+ },
+ {
+  "ip_name": "flycast",
+  "candidate_word": "flycast",
+  "word_kind": "项目/平台",
+  "gap_kind": "不在编辑映射表",
+  "note": "项目名原样；中文品类词(开源掌机/PS4模拟器等)须人工补",
+  "cards": 2,
+  "attention_max": "高",
+  "major_event_cards": 0,
+  "queues": [
+   "系列跟踪"
+  ],
+  "entries": [
+   "A"
+  ],
+  "samples": [
+   {
+    "event_id": "series:a988763a482d",
+    "attention": "高",
+    "core_hook": "retropie-setup 持续更新跟踪（13个事件）"
+   },
+   {
+    "event_id": "series:2c8d76d2915d",
+    "attention": "中",
+    "core_hook": "flycast 持续更新跟踪（3个事件）"
+   }
+  ],
+  "preflight": {
+   "script_class": "纯拉丁",
+   "cores_lat": [
+    "flycast"
+   ],
+   "cores_cjk": [],
+   "cjk_sub2": [],
+   "match_note": "纯拉丁词:B站易词元级模糊兜底(model2-nx→NX CAD先例),须核top3/考虑补中文品类词;纯拉丁≠必兜底(Batocera/shadPS4纯拉丁但实测可靠);命中率须联网实测,不预测,不自动改词"
+  }
+ },
+ {
+  "ip_name": "ppsspp",
+  "candidate_word": "ppsspp",
+  "word_kind": "项目/平台",
+  "gap_kind": "不在编辑映射表",
+  "note": "项目名原样；中文品类词(开源掌机/PS4模拟器等)须人工补",
+  "cards": 2,
+  "attention_max": "高",
+  "major_event_cards": 0,
+  "queues": [
+   "系列跟踪"
+  ],
+  "entries": [
+   "A"
+  ],
+  "samples": [
+   {
+    "event_id": "series:5698a06171f9",
+    "attention": "高",
+    "core_hook": "ppsspp-nx 持续更新跟踪（2个事件）"
+   },
+   {
+    "event_id": "series:6b2ea371fd8e",
+    "attention": "中",
+    "core_hook": "ppsspp 持续更新跟踪（4个事件）"
+   }
+  ],
+  "preflight": {
+   "script_class": "纯拉丁",
+   "cores_lat": [
+    "ppsspp"
+   ],
+   "cores_cjk": [],
+   "cjk_sub2": [],
+   "match_note": "纯拉丁词:B站易词元级模糊兜底(model2-nx→NX CAD先例),须核top3/考虑补中文品类词;纯拉丁≠必兜底(Batocera/shadPS4纯拉丁但实测可靠);命中率须联网实测,不预测,不自动改词"
+  }
+ },
+ {
+  "ip_name": "r36s",
+  "candidate_word": "r36s",
+  "word_kind": "项目/平台",
+  "gap_kind": "不在编辑映射表",
+  "note": "项目名原样；中文品类词(开源掌机/PS4模拟器等)须人工补",
+  "cards": 2,
+  "attention_max": "高",
+  "major_event_cards": 0,
+  "queues": [
+   "潜力待验证"
+  ],
+  "entries": [
+   "A"
+  ],
+  "samples": [
+   {
+    "event_id": "7634d9444a24c6ba",
+    "attention": "高",
+    "core_hook": "È buono questo r36s?"
+   },
+   {
+    "event_id": "0ab2410ddb35c40a",
+    "attention": "高",
+    "core_hook": "Looking for a solid emulation handheld console. New to this "
+   }
+  ],
+  "preflight": {
+   "script_class": "纯拉丁",
+   "cores_lat": [
+    "r36s"
+   ],
+   "cores_cjk": [],
+   "cjk_sub2": [],
+   "match_note": "纯拉丁词:B站易词元级模糊兜底(model2-nx→NX CAD先例),须核top3/考虑补中文品类词;纯拉丁≠必兜底(Batocera/shadPS4纯拉丁但实测可靠);命中率须联网实测,不预测,不自动改词"
+  }
+ },
+ {
+  "ip_name": "retroarch",
+  "candidate_word": "retroarch",
+  "word_kind": "项目/平台",
+  "gap_kind": "不在编辑映射表",
+  "note": "项目名原样；中文品类词(开源掌机/PS4模拟器等)须人工补",
+  "cards": 2,
+  "attention_max": "高",
+  "major_event_cards": 0,
+  "queues": [
+   "系列跟踪"
+  ],
+  "entries": [
+   "A"
+  ],
+  "samples": [
+   {
+    "event_id": "series:8580509d9388",
+    "attention": "高",
+    "core_hook": "retroarch 持续更新跟踪（24个事件）"
+   },
+   {
+    "event_id": "series:0134dd8d5324",
+    "attention": "中",
+    "core_hook": "internal 持续更新跟踪（26个事件）"
+   }
+  ],
+  "preflight": {
+   "script_class": "纯拉丁",
+   "cores_lat": [
+    "retroarch"
+   ],
+   "cores_cjk": [],
+   "cjk_sub2": [],
+   "match_note": "纯拉丁词:B站易词元级模糊兜底(model2-nx→NX CAD先例),须核top3/考虑补中文品类词;纯拉丁≠必兜底(Batocera/shadPS4纯拉丁但实测可靠);命中率须联网实测,不预测,不自动改词"
+  }
+ },
+ {
+  "ip_name": "x68000",
+  "candidate_word": "x68000",
+  "word_kind": "项目/平台",
+  "gap_kind": "不在编辑映射表",
+  "note": "项目名原样；中文品类词(开源掌机/PS4模拟器等)须人工补",
+  "cards": 2,
+  "attention_max": "高",
+  "major_event_cards": 0,
+  "queues": [
+   "潜力待验证"
+  ],
+  "entries": [
+   "A"
+  ],
+  "samples": [
+   {
+    "event_id": "6f31cf0358f1c7be",
+    "attention": "高",
+    "core_hook": "「ザナドゥ68K」「ソーサリアン」「ダイナソア」をラインナップ。日本ファルコムの名作群をX68000に移植する，復刻プロ"
+   },
+   {
+    "event_id": "62e952cdfc2fda21",
+    "attention": "高",
+    "core_hook": "Sharp X68000 & PC-88/98 Cores on Analogue Pocket?"
+   }
+  ],
+  "preflight": {
+   "script_class": "纯拉丁",
+   "cores_lat": [
+    "x68000"
+   ],
+   "cores_cjk": [],
+   "cjk_sub2": [],
+   "match_note": "纯拉丁词:B站易词元级模糊兜底(model2-nx→NX CAD先例),须核top3/考虑补中文品类词;纯拉丁≠必兜底(Batocera/shadPS4纯拉丁但实测可靠);命中率须联网实测,不预测,不自动改词"
+  }
+ },
+ {
+  "ip_name": "call of duty",
+  "candidate_word": "使命召唤",
+  "word_kind": "IP大盘",
+  "gap_kind": "不在编辑映射表",
+  "note": "首个中文别名(§11.2)；粒度/角度/消歧须人工核",
+  "cards": 2,
+  "attention_max": "高",
+  "major_event_cards": 0,
+  "queues": [
+   "潜力待验证"
+  ],
+  "entries": [
+   "A"
+  ],
+  "samples": [
+   {
+    "event_id": "abdf8ca1a4cfe2df",
+    "attention": "高",
+    "core_hook": "Call of Duty: Modern Warfare 4 Switch 2 Review – Portable Op"
+   },
+   {
+    "event_id": "0097e3272be8393d",
+    "attention": "高",
+    "core_hook": "ICYMI: Call Of Duty: Warzone Is Now Available For Switch 2"
+   }
+  ],
+  "preflight": {
+   "script_class": "含CJK",
+   "cores_lat": [],
+   "cores_cjk": [
+    "使命",
+    "使命召唤",
+    "召唤",
+    "命召"
+   ],
+   "cjk_sub2": [
+    "使命",
+    "召唤",
+    "命召"
+   ],
+   "match_note": "含2字CJK词元[使命/召唤/命召]:放宽匹配(街机改版先例),若词元泛易假阳须人工核top3;2字子词≠必假阳(街机改版真相关);语义歧义零LLM治不了须人工,不预测命中率,不自动改词"
+  }
+ },
+ {
+  "ip_name": "half-life",
+  "candidate_word": "半条命",
+  "word_kind": "IP大盘",
+  "gap_kind": "不在编辑映射表",
+  "note": "首个中文别名(§11.2)；粒度/角度/消歧须人工核",
+  "cards": 2,
+  "attention_max": "高",
+  "major_event_cards": 1,
+  "queues": [
+   "潜力待验证"
+  ],
+  "entries": [
+   "A"
+  ],
+  "samples": [
+   {
+    "event_id": "e50e1387d0b7c7ad",
+    "attention": "高",
+    "core_hook": "Half-Life remake Black Mesa gets a huge update, and now Stea"
+   },
+   {
+    "event_id": "ee4b9aef0ec8f94a",
+    "attention": "高",
+    "core_hook": "Half-Life 2 Episode 3 source code leak reveals more of Valve"
+   }
+  ],
+  "preflight": {
+   "script_class": "含CJK",
+   "cores_lat": [],
+   "cores_cjk": [
+    "半条",
+    "半条命",
+    "条命"
+   ],
+   "cjk_sub2": [
+    "半条",
+    "条命"
+   ],
+   "match_note": "含2字CJK词元[半条/条命]:放宽匹配(街机改版先例),若词元泛易假阳须人工核top3;2字子词≠必假阳(街机改版真相关);语义歧义零LLM治不了须人工,不预测命中率,不自动改词"
+  }
+ },
+ {
+  "ip_name": "harry potter",
+  "candidate_word": "哈利波特",
+  "word_kind": "IP大盘",
+  "gap_kind": "不在编辑映射表",
+  "note": "首个中文别名(§11.2)；粒度/角度/消歧须人工核",
+  "cards": 2,
+  "attention_max": "高",
+  "major_event_cards": 0,
+  "queues": [
+   "潜力待验证"
+  ],
+  "entries": [
+   "A"
+  ],
+  "samples": [
+   {
+    "event_id": "e11f29274492a149",
+    "attention": "高",
+    "core_hook": "庆祝《霍格沃茨之遗》上线 DLSS 5，英伟达推出定制版 RTX 5090 显卡抽奖活动"
+   },
+   {
+    "event_id": "a89768f7eb419b84",
+    "attention": "高",
+    "core_hook": "PSVita Port Harry Potter 1/2 pc version"
+   }
+  ],
+  "preflight": {
+   "script_class": "含CJK",
+   "cores_lat": [],
+   "cores_cjk": [
+    "利波",
+    "哈利",
+    "哈利波特",
+    "波特"
+   ],
+   "cjk_sub2": [
+    "利波",
+    "哈利",
+    "波特"
+   ],
+   "match_note": "含2字CJK词元[利波/哈利/波特]:放宽匹配(街机改版先例),若词元泛易假阳须人工核top3;2字子词≠必假阳(街机改版真相关);语义歧义零LLM治不了须人工,不预测命中率,不自动改词"
+  }
+ },
+ {
+  "ip_name": "fortnite",
+  "candidate_word": "堡垒之夜",
+  "word_kind": "IP大盘",
+  "gap_kind": "不在编辑映射表",
+  "note": "首个中文别名(§11.2)；粒度/角度/消歧须人工核",
+  "cards": 2,
+  "attention_max": "高",
+  "major_event_cards": 0,
+  "queues": [
+   "潜力待验证"
+  ],
+  "entries": [
+   "A"
+  ],
+  "samples": [
+   {
+    "event_id": "819904f0e38ca579",
+    "attention": "高",
+    "core_hook": "FortPatcherNX - Play Fortnite on banned switches"
+   },
+   {
+    "event_id": "f5f4e8c45bfe6410",
+    "attention": "高",
+    "core_hook": "Epic Reveals Drop Rate for Fortnite's Pirate Token Following"
+   }
+  ],
+  "preflight": {
+   "script_class": "含CJK",
+   "cores_lat": [],
+   "cores_cjk": [
+    "之夜",
+    "垒之",
+    "堡垒",
+    "堡垒之夜"
+   ],
+   "cjk_sub2": [
+    "之夜",
+    "垒之",
+    "堡垒"
+   ],
+   "match_note": "含2字CJK词元[之夜/垒之/堡垒]:放宽匹配(街机改版先例),若词元泛易假阳须人工核top3;2字子词≠必假阳(街机改版真相关);语义歧义零LLM治不了须人工,不预测命中率,不自动改词"
+  }
+ },
+ {
+  "ip_name": "tmnt",
+  "candidate_word": "忍者神龟",
+  "word_kind": "IP大盘",
+  "gap_kind": "不在编辑映射表",
+  "note": "首个中文别名(§11.2)；粒度/角度/消歧须人工核",
+  "cards": 2,
+  "attention_max": "高",
+  "major_event_cards": 0,
+  "queues": [
+   "潜力待验证"
+  ],
+  "entries": [
+   "A"
+  ],
+  "samples": [
+   {
+    "event_id": "993f9daeef93c692",
+    "attention": "高",
+    "core_hook": "Teenage Mutant Ninja Turtles 2003 cartoon game port"
+   },
+   {
+    "event_id": "a2d17c86211936a2",
+    "attention": "中",
+    "core_hook": "First look at TMNT: Shredder's Revenge running on the Ninten"
+   }
+  ],
+  "preflight": {
+   "script_class": "含CJK",
+   "cores_lat": [],
+   "cores_cjk": [
+    "忍者",
+    "忍者神龟",
+    "神龟",
+    "者神"
+   ],
+   "cjk_sub2": [
+    "忍者",
+    "神龟",
+    "者神"
+   ],
+   "match_note": "含2字CJK词元[忍者/神龟/者神]:放宽匹配(街机改版先例),若词元泛易假阳须人工核top3;2字子词≠必假阳(街机改版真相关);语义歧义零LLM治不了须人工,不预测命中率,不自动改词"
+  }
+ },
+ {
+  "ip_name": "castlevania",
+  "candidate_word": "恶魔城",
+  "word_kind": "IP大盘",
+  "gap_kind": "不在编辑映射表",
+  "note": "首个中文别名(§11.2)；粒度/角度/消歧须人工核",
+  "cards": 2,
+  "attention_max": "高",
+  "major_event_cards": 0,
+  "queues": [
+   "潜力待验证"
+  ],
+  "entries": [
+   "A"
+  ],
+  "samples": [
+   {
+    "event_id": "b36786f9235f0fae",
+    "attention": "高",
+    "core_hook": "Castlevania-Style NES Platformer '8 Eyes' Could Be Getting A"
+   },
+   {
+    "event_id": "53dbc8ef40675792",
+    "attention": "中",
+    "core_hook": "Cutscenes skipping for castlevania curse of darkness?"
+   }
+  ],
+  "preflight": {
+   "script_class": "含CJK",
+   "cores_lat": [],
+   "cores_cjk": [
+    "恶魔",
+    "恶魔城",
+    "魔城"
+   ],
+   "cjk_sub2": [
+    "恶魔",
+    "魔城"
+   ],
+   "match_note": "含2字CJK词元[恶魔/魔城]:放宽匹配(街机改版先例),若词元泛易假阳须人工核top3;2字子词≠必假阳(街机改版真相关);语义歧义零LLM治不了须人工,不预测命中率,不自动改词"
+  }
+ },
+ {
+  "ip_name": "splatoon",
+  "candidate_word": "斯普拉遁",
+  "word_kind": "IP大盘",
+  "gap_kind": "不在编辑映射表",
+  "note": "首个中文别名(§11.2)；粒度/角度/消歧须人工核",
+  "cards": 2,
+  "attention_max": "高",
+  "major_event_cards": 0,
+  "queues": [
+   "潜力待验证"
+  ],
+  "entries": [
+   "A"
+  ],
+  "samples": [
+   {
+    "event_id": "aadec422b761adca",
+    "attention": "高",
+    "core_hook": "A Splatoon Raiders demo is now out on Switch 2"
+   },
+   {
+    "event_id": "bb40ef8b6ca2c2ea",
+    "attention": "高",
+    "core_hook": "PSA: Splatoon Raiders Demo Splashes Onto The Switch 2 eShop "
+   }
+  ],
+  "preflight": {
+   "script_class": "含CJK",
+   "cores_lat": [],
+   "cores_cjk": [
+    "拉遁",
+    "斯普",
+    "斯普拉遁",
+    "普拉"
+   ],
+   "cjk_sub2": [
+    "拉遁",
+    "斯普",
+    "普拉"
+   ],
+   "match_note": "含2字CJK词元[拉遁/斯普/普拉]:放宽匹配(街机改版先例),若词元泛易假阳须人工核top3;2字子词≠必假阳(街机改版真相关);语义歧义零LLM治不了须人工,不预测命中率,不自动改词"
+  }
+ },
+ {
+  "ip_name": "coral island",
+  "candidate_word": "珊瑚岛",
+  "word_kind": "IP大盘",
+  "gap_kind": "不在编辑映射表",
+  "note": "首个中文别名(§11.2)；粒度/角度/消歧须人工核",
+  "cards": 2,
+  "attention_max": "高",
+  "major_event_cards": 0,
+  "queues": [
+   "潜力待验证"
+  ],
+  "entries": [
+   "A"
+  ],
+  "samples": [
+   {
+    "event_id": "12e7966aba99a49c",
+    "attention": "高",
+    "core_hook": "Coral Island gets Nintendo Switch 2 release date, 1.4 “Kids "
+   },
+   {
+    "event_id": "d4247a04dad1580e",
+    "attention": "高",
+    "core_hook": "Coral Island for Switch 2 launches December 7 alongside vers"
+   }
+  ],
+  "preflight": {
+   "script_class": "含CJK",
+   "cores_lat": [],
+   "cores_cjk": [
+    "珊瑚",
+    "珊瑚岛",
+    "瑚岛"
+   ],
+   "cjk_sub2": [
+    "珊瑚",
+    "瑚岛"
+   ],
+   "match_note": "含2字CJK词元[珊瑚/瑚岛]:放宽匹配(街机改版先例),若词元泛易假阳须人工核top3;2字子词≠必假阳(街机改版真相关);语义歧义零LLM治不了须人工,不预测命中率,不自动改词"
+  }
+ },
+ {
+  "ip_name": "resident evil",
+  "candidate_word": "生化危机",
+  "word_kind": "IP大盘",
+  "gap_kind": "不在编辑映射表",
+  "note": "首个中文别名(§11.2)；粒度/角度/消歧须人工核",
+  "cards": 2,
+  "attention_max": "高",
+  "major_event_cards": 0,
+  "queues": [
+   "潜力待验证"
+  ],
+  "entries": [
+   "A"
+  ],
+  "samples": [
+   {
+    "event_id": "34793ba682ffba22",
+    "attention": "高",
+    "core_hook": "Resident Evil Code: Veronica X NX Port (PS2)"
+   },
+   {
+    "event_id": "c332732fbba09ede",
+    "attention": "中",
+    "core_hook": "RESIDENT EVIL 4 PSP"
+   }
+  ],
+  "preflight": {
+   "script_class": "含CJK",
+   "cores_lat": [],
+   "cores_cjk": [
+    "化危",
+    "危机",
+    "生化",
+    "生化危机"
+   ],
+   "cjk_sub2": [
+    "化危",
+    "危机",
+    "生化"
+   ],
+   "match_note": "含2字CJK词元[化危/危机/生化]:放宽匹配(街机改版先例),若词元泛易假阳须人工核top3;2字子词≠必假阳(街机改版真相关);语义歧义零LLM治不了须人工,不预测命中率,不自动改词"
+  }
+ },
+ {
+  "ip_name": "elden ring",
+  "candidate_word": "艾尔登法环",
+  "word_kind": "IP大盘",
+  "gap_kind": "不在编辑映射表",
+  "note": "首个中文别名(§11.2)；粒度/角度/消歧须人工核",
+  "cards": 2,
+  "attention_max": "高",
+  "major_event_cards": 0,
+  "queues": [
+   "潜力待验证"
+  ],
+  "entries": [
+   "A"
+  ],
+  "samples": [
+   {
+    "event_id": "0ae5a3f90af245fa",
+    "attention": "高",
+    "core_hook": "Anything like elden ring but multiplayer?"
+   },
+   {
+    "event_id": "04cc0aec852ab022",
+    "attention": "高",
+    "core_hook": "Apollo save tool elden ring"
+   }
+  ],
+  "preflight": {
+   "script_class": "含CJK",
+   "cores_lat": [],
+   "cores_cjk": [
+    "尔登",
+    "法环",
+    "登法",
+    "艾尔",
+    "艾尔登法环"
+   ],
+   "cjk_sub2": [
+    "尔登",
+    "法环",
+    "登法",
+    "艾尔"
+   ],
+   "match_note": "含2字CJK词元[尔登/法环/登法/艾尔]:放宽匹配(街机改版先例),若词元泛易假阳须人工核top3;2字子词≠必假阳(街机改版真相关);语义歧义零LLM治不了须人工,不预测命中率,不自动改词"
+  }
+ },
+ {
+  "ip_name": "batman",
+  "candidate_word": "蝙蝠侠",
+  "word_kind": "IP大盘",
+  "gap_kind": "不在编辑映射表",
+  "note": "首个中文别名(§11.2)；粒度/角度/消歧须人工核",
+  "cards": 2,
+  "attention_max": "高",
+  "major_event_cards": 0,
+  "queues": [
+   "潜力待验证"
+  ],
+  "entries": [
+   "A"
+  ],
+  "samples": [
+   {
+    "event_id": "93524a6488367007",
+    "attention": "高",
+    "core_hook": "DC's New Leader Will Reportedly Prioritize More Well-Known C"
+   },
+   {
+    "event_id": "02ab8f5399d56996",
+    "attention": "高",
+    "core_hook": "Rg477v really works with wiimote...( wii's) BATMAN THE BRAVE"
+   }
+  ],
+  "preflight": {
+   "script_class": "含CJK",
+   "cores_lat": [],
+   "cores_cjk": [
+    "蝙蝠",
+    "蝙蝠侠",
+    "蝠侠"
+   ],
+   "cjk_sub2": [
+    "蝙蝠",
+    "蝠侠"
+   ],
+   "match_note": "含2字CJK词元[蝙蝠/蝠侠]:放宽匹配(街机改版先例),若词元泛易假阳须人工核top3;2字子词≠必假阳(街机改版真相关);语义歧义零LLM治不了须人工,不预测命中率,不自动改词"
+  }
+ },
+ {
+  "ip_name": "fallout",
+  "candidate_word": "辐射",
+  "word_kind": "IP大盘",
+  "gap_kind": "不在编辑映射表",
+  "note": "首个中文别名(§11.2)；粒度/角度/消歧须人工核",
+  "cards": 2,
+  "attention_max": "高",
+  "major_event_cards": 0,
+  "queues": [
+   "潜力待验证"
+  ],
+  "entries": [
+   "A"
+  ],
+  "samples": [
+   {
+    "event_id": "7568883315a85604",
+    "attention": "高",
+    "core_hook": "How well does Fallout 3/NV play on the Retroid 5?"
+   },
+   {
+    "event_id": "ed4c1ad8bc5a5f77",
+    "attention": "高",
+    "core_hook": "Anbernic RG557 running Fallout 3 at a locked 60 FPS (Winlato"
+   }
+  ],
+  "preflight": {
+   "script_class": "含CJK",
+   "cores_lat": [],
+   "cores_cjk": [
+    "辐射"
+   ],
+   "cjk_sub2": [
+    "辐射"
+   ],
+   "match_note": "含2字CJK词元[辐射]:放宽匹配(街机改版先例),若词元泛易假阳须人工核top3;2字子词≠必假阳(街机改版真相关);语义歧义零LLM治不了须人工,不预测命中率,不自动改词"
+  }
+ },
+ {
+  "ip_name": "avatar",
+  "candidate_word": "阿凡达",
+  "word_kind": "IP大盘",
+  "gap_kind": "不在编辑映射表",
+  "note": "首个中文别名(§11.2)；粒度/角度/消歧须人工核",
+  "cards": 2,
+  "attention_max": "高",
+  "major_event_cards": 0,
+  "queues": [
+   "潜力待验证"
+  ],
+  "entries": [
+   "A"
+  ],
+  "samples": [
+   {
+    "event_id": "d80bdf061227f581",
+    "attention": "高",
+    "core_hook": "Avatar Fighting Game's New Update Improves Performance On Sw"
+   },
+   {
+    "event_id": "5521bbe57df11d47",
+    "attention": "高",
+    "core_hook": "James Cameron’s Avatar Franchise Gets a Massive New December"
+   }
+  ],
+  "preflight": {
+   "script_class": "含CJK",
+   "cores_lat": [],
+   "cores_cjk": [
+    "凡达",
+    "阿凡",
+    "阿凡达"
+   ],
+   "cjk_sub2": [
+    "凡达",
+    "阿凡"
+   ],
+   "match_note": "含2字CJK词元[凡达/阿凡]:放宽匹配(街机改版先例),若词元泛易假阳须人工核top3;2字子词≠必假阳(街机改版真相关);语义歧义零LLM治不了须人工,不预测命中率,不自动改词"
+  }
+ },
+ {
+  "ip_name": "apex legends",
+  "candidate_word": "apex英雄",
+  "word_kind": "IP大盘",
+  "gap_kind": "不在编辑映射表",
+  "note": "首个中文别名(§11.2)；粒度/角度/消歧须人工核",
+  "cards": 1,
+  "attention_max": "高",
+  "major_event_cards": 0,
+  "queues": [
+   "潜力待验证"
+  ],
+  "entries": [
+   "A"
+  ],
+  "samples": [
+   {
+    "event_id": "9ea487d63c1fd365",
+    "attention": "高",
+    "core_hook": "“Apex Legends” × ‘Godzilla’ Collaboration Announced!! Chara "
+   }
+  ],
+  "preflight": {
+   "script_class": "混合",
+   "cores_lat": [
+    "apex"
+   ],
+   "cores_cjk": [
+    "英雄"
+   ],
+   "cjk_sub2": [
+    "英雄"
+   ],
+   "match_note": "混合词:拉丁词元易兜底(model2-nx先例)+2字CJK词元易假阳(街机改版先例),须人工核top3;不预测命中率/不判语义/不自动改词"
+  }
+ },
+ {
+  "ip_name": "atmosphere",
+  "candidate_word": "atmosphere",
+  "word_kind": "项目/平台",
+  "gap_kind": "不在编辑映射表",
+  "note": "项目名原样；中文品类词(开源掌机/PS4模拟器等)须人工补",
+  "cards": 1,
+  "attention_max": "高",
+  "major_event_cards": 0,
+  "queues": [
+   "系列跟踪"
+  ],
+  "entries": [
+   "A"
+  ],
+  "samples": [
+   {
+    "event_id": "series:c3eb5f81cfed",
+    "attention": "高",
+    "core_hook": "atmosphere 持续更新跟踪（3个事件）"
+   }
+  ],
+  "preflight": {
+   "script_class": "纯拉丁",
+   "cores_lat": [
+    "atmosphere"
+   ],
+   "cores_cjk": [],
+   "cjk_sub2": [],
+   "match_note": "纯拉丁词:B站易词元级模糊兜底(model2-nx→NX CAD先例),须核top3/考虑补中文品类词;纯拉丁≠必兜底(Batocera/shadPS4纯拉丁但实测可靠);命中率须联网实测,不预测,不自动改词"
+  }
+ },
+ {
+  "ip_name": "atmosphère",
+  "candidate_word": "atmosphère",
+  "word_kind": "项目/平台",
+  "gap_kind": "不在编辑映射表",
+  "note": "项目名原样；中文品类词(开源掌机/PS4模拟器等)须人工补",
+  "cards": 1,
+  "attention_max": "高",
+  "major_event_cards": 0,
+  "queues": [
+   "低优先归档"
+  ],
+  "entries": [
+   "A"
+  ],
+  "samples": [
+   {
+    "event_id": "dedde3244895c74d",
+    "attention": "高",
+    "core_hook": "Atmosphère 1.12.2"
+   }
+  ],
+  "preflight": {
+   "script_class": "纯拉丁",
+   "cores_lat": [
+    "atmosph"
+   ],
+   "cores_cjk": [],
+   "cjk_sub2": [],
+   "match_note": "纯拉丁词:B站易词元级模糊兜底(model2-nx→NX CAD先例),须核top3/考虑补中文品类词;纯拉丁≠必兜底(Batocera/shadPS4纯拉丁但实测可靠);命中率须联网实测,不预测,不自动改词"
+  }
+ },
+ {
+  "ip_name": "azahar",
+  "candidate_word": "azahar",
+  "word_kind": "项目/平台",
+  "gap_kind": "不在编辑映射表",
+  "note": "项目名原样；中文品类词(开源掌机/PS4模拟器等)须人工补",
+  "cards": 1,
+  "attention_max": "高",
+  "major_event_cards": 0,
+  "queues": [
+   "系列跟踪"
+  ],
+  "entries": [
+   "A"
+  ],
+  "samples": [
+   {
+    "event_id": "series:de36a88b5e36",
+    "attention": "高",
+    "core_hook": "azahar 持续更新跟踪（4个事件）"
+   }
+  ],
+  "preflight": {
+   "script_class": "纯拉丁",
+   "cores_lat": [
+    "azahar"
+   ],
+   "cores_cjk": [],
+   "cjk_sub2": [],
+   "match_note": "纯拉丁词:B站易词元级模糊兜底(model2-nx→NX CAD先例),须核top3/考虑补中文品类词;纯拉丁≠必兜底(Batocera/shadPS4纯拉丁但实测可靠);命中率须联网实测,不预测,不自动改词"
+  }
+ },
+ {
+  "ip_name": "commodore",
+  "candidate_word": "commodore",
+  "word_kind": "项目/平台",
+  "gap_kind": "不在编辑映射表",
+  "note": "项目名原样；中文品类词(开源掌机/PS4模拟器等)须人工补",
+  "cards": 1,
+  "attention_max": "高",
+  "major_event_cards": 0,
+  "queues": [
+   "潜力待验证"
+  ],
+  "entries": [
+   "A"
+  ],
+  "samples": [
+   {
+    "event_id": "8681b98308b02837",
+    "attention": "高",
+    "core_hook": "Hands On: Commodore C64C Ultimate - a Slimmer Version of an "
+   }
+  ],
+  "preflight": {
+   "script_class": "纯拉丁",
+   "cores_lat": [
+    "commodore"
+   ],
+   "cores_cjk": [],
+   "cjk_sub2": [],
+   "match_note": "纯拉丁词:B站易词元级模糊兜底(model2-nx→NX CAD先例),须核top3/考虑补中文品类词;纯拉丁≠必兜底(Batocera/shadPS4纯拉丁但实测可靠);命中率须联网实测,不预测,不自动改词"
+  }
+ },
+ {
+  "ip_name": "gameboy",
+  "candidate_word": "gameboy",
+  "word_kind": "项目/平台",
+  "gap_kind": "不在编辑映射表",
+  "note": "项目名原样；中文品类词(开源掌机/PS4模拟器等)须人工补",
+  "cards": 1,
+  "attention_max": "高",
+  "major_event_cards": 0,
+  "queues": [
+   "潜力待验证"
+  ],
+  "entries": [
+   "A"
+  ],
+  "samples": [
+   {
+    "event_id": "c03b76fa32f9fd9e",
+    "attention": "高",
+    "core_hook": "Judgment Silversword - Now available on the ModRetro Chromat"
+   }
+  ],
+  "preflight": {
+   "script_class": "纯拉丁",
+   "cores_lat": [
+    "gameboy"
+   ],
+   "cores_cjk": [],
+   "cjk_sub2": [],
+   "match_note": "纯拉丁词:B站易词元级模糊兜底(model2-nx→NX CAD先例),须核top3/考虑补中文品类词;纯拉丁≠必兜底(Batocera/shadPS4纯拉丁但实测可靠);命中率须联网实测,不预测,不自动改词"
+  }
+ },
+ {
+  "ip_name": "gamehub",
+  "candidate_word": "gamehub",
+  "word_kind": "项目/平台",
+  "gap_kind": "不在编辑映射表",
+  "note": "项目名原样；中文品类词(开源掌机/PS4模拟器等)须人工补",
+  "cards": 1,
+  "attention_max": "高",
+  "major_event_cards": 0,
+  "queues": [
+   "潜力待验证"
+  ],
+  "entries": [
+   "A"
+  ],
+  "samples": [
+   {
+    "event_id": "3f2fdf70c052969f",
+    "attention": "高",
+    "core_hook": "Is it just me, or does the latest version of GameHub actuall"
+   }
+  ],
+  "preflight": {
+   "script_class": "纯拉丁",
+   "cores_lat": [
+    "gamehub"
+   ],
+   "cores_cjk": [],
+   "cjk_sub2": [],
+   "match_note": "纯拉丁词:B站易词元级模糊兜底(model2-nx→NX CAD先例),须核top3/考虑补中文品类词;纯拉丁≠必兜底(Batocera/shadPS4纯拉丁但实测可靠);命中率须联网实测,不预测,不自动改词"
+  }
+ },
+ {
+  "ip_name": "hekate",
+  "candidate_word": "hekate",
+  "word_kind": "项目/平台",
+  "gap_kind": "不在编辑映射表",
+  "note": "项目名原样；中文品类词(开源掌机/PS4模拟器等)须人工补",
+  "cards": 1,
+  "attention_max": "高",
+  "major_event_cards": 0,
+  "queues": [
+   "低优先归档"
+  ],
+  "entries": [
+   "A"
+  ],
+  "samples": [
+   {
+    "event_id": "a1010693491cb717",
+    "attention": "高",
+    "core_hook": "hekate v6.5.5 & Nyx v1.9.5"
+   }
+  ],
+  "preflight": {
+   "script_class": "纯拉丁",
+   "cores_lat": [
+    "hekate"
+   ],
+   "cores_cjk": [],
+   "cjk_sub2": [],
+   "match_note": "纯拉丁词:B站易词元级模糊兜底(model2-nx→NX CAD先例),须核top3/考虑补中文品类词;纯拉丁≠必兜底(Batocera/shadPS4纯拉丁但实测可靠);命中率须联网实测,不预测,不自动改词"
+  }
+ },
+ {
+  "ip_name": "knulli",
+  "candidate_word": "knulli",
+  "word_kind": "项目/平台",
+  "gap_kind": "不在编辑映射表",
+  "note": "项目名原样；中文品类词(开源掌机/PS4模拟器等)须人工补",
+  "cards": 1,
+  "attention_max": "高",
+  "major_event_cards": 0,
+  "queues": [
+   "系列跟踪"
+  ],
+  "entries": [
+   "A"
+  ],
+  "samples": [
+   {
+    "event_id": "series:efd3bc81e974",
+    "attention": "高",
+    "core_hook": "knulli 持续更新跟踪（2个事件）"
+   }
+  ],
+  "preflight": {
+   "script_class": "纯拉丁",
+   "cores_lat": [
+    "knulli"
+   ],
+   "cores_cjk": [],
+   "cjk_sub2": [],
+   "match_note": "纯拉丁词:B站易词元级模糊兜底(model2-nx→NX CAD先例),须核top3/考虑补中文品类词;纯拉丁≠必兜底(Batocera/shadPS4纯拉丁但实测可靠);命中率须联网实测,不预测,不自动改词"
+  }
+ },
+ {
+  "ip_name": "mame",
+  "candidate_word": "mame",
+  "word_kind": "项目/平台",
+  "gap_kind": "不在编辑映射表",
+  "note": "项目名原样；中文品类词(开源掌机/PS4模拟器等)须人工补",
+  "cards": 1,
+  "attention_max": "高",
+  "major_event_cards": 0,
+  "queues": [
+   "系列跟踪"
+  ],
+  "entries": [
+   "A"
+  ],
+  "samples": [
+   {
+    "event_id": "series:1be4e54638c7",
+    "attention": "高",
+    "core_hook": "mame 持续更新跟踪（2个事件）"
+   }
+  ],
+  "preflight": {
+   "script_class": "纯拉丁",
+   "cores_lat": [
+    "mame"
+   ],
+   "cores_cjk": [],
+   "cjk_sub2": [],
+   "match_note": "纯拉丁词:B站易词元级模糊兜底(model2-nx→NX CAD先例),须核top3/考虑补中文品类词;纯拉丁≠必兜底(Batocera/shadPS4纯拉丁但实测可靠);命中率须联网实测,不预测,不自动改词"
+  }
+ },
+ {
+  "ip_name": "megadrive",
+  "candidate_word": "megadrive",
+  "word_kind": "项目/平台",
+  "gap_kind": "不在编辑映射表",
+  "note": "项目名原样；中文品类词(开源掌机/PS4模拟器等)须人工补",
+  "cards": 1,
+  "attention_max": "高",
+  "major_event_cards": 0,
+  "queues": [
+   "潜力待验证"
+  ],
+  "entries": [
+   "A"
+  ],
+  "samples": [
+   {
+    "event_id": "f72546bce0714f81",
+    "attention": "高",
+    "core_hook": "HUGE issues with megadrive games (cannot launch)"
+   }
+  ],
+  "preflight": {
+   "script_class": "纯拉丁",
+   "cores_lat": [
+    "megadrive"
+   ],
+   "cores_cjk": [],
+   "cjk_sub2": [],
+   "match_note": "纯拉丁词:B站易词元级模糊兜底(model2-nx→NX CAD先例),须核top3/考虑补中文品类词;纯拉丁≠必兜底(Batocera/shadPS4纯拉丁但实测可靠);命中率须联网实测,不预测,不自动改词"
+  }
+ },
+ {
+  "ip_name": "mgba",
+  "candidate_word": "mgba",
+  "word_kind": "项目/平台",
+  "gap_kind": "不在编辑映射表",
+  "note": "项目名原样；中文品类词(开源掌机/PS4模拟器等)须人工补",
+  "cards": 1,
+  "attention_max": "高",
+  "major_event_cards": 0,
+  "queues": [
+   "系列跟踪"
+  ],
+  "entries": [
+   "A"
+  ],
+  "samples": [
+   {
+    "event_id": "series:ad0334daed6b",
+    "attention": "高",
+    "core_hook": "mgba 持续更新跟踪（4个事件）"
+   }
+  ],
+  "preflight": {
+   "script_class": "纯拉丁",
+   "cores_lat": [
+    "mgba"
+   ],
+   "cores_cjk": [],
+   "cjk_sub2": [],
+   "match_note": "纯拉丁词:B站易词元级模糊兜底(model2-nx→NX CAD先例),须核top3/考虑补中文品类词;纯拉丁≠必兜底(Batocera/shadPS4纯拉丁但实测可靠);命中率须联网实测,不预测,不自动改词"
+  }
+ },
+ {
+  "ip_name": "missioncontrol",
+  "candidate_word": "missioncontrol",
+  "word_kind": "项目/平台",
+  "gap_kind": "不在编辑映射表",
+  "note": "项目名原样；中文品类词(开源掌机/PS4模拟器等)须人工补",
+  "cards": 1,
+  "attention_max": "高",
+  "major_event_cards": 0,
+  "queues": [
+   "低优先归档"
+  ],
+  "entries": [
+   "A"
+  ],
+  "samples": [
+   {
+    "event_id": "de020bc592de3e8a",
+    "attention": "高",
+    "core_hook": "MissionControl 0.16.1"
+   }
+  ],
+  "preflight": {
+   "script_class": "纯拉丁",
+   "cores_lat": [
+    "missioncontrol"
+   ],
+   "cores_cjk": [],
+   "cjk_sub2": [],
+   "match_note": "纯拉丁词:B站易词元级模糊兜底(model2-nx→NX CAD先例),须核top3/考虑补中文品类词;纯拉丁≠必兜底(Batocera/shadPS4纯拉丁但实测可靠);命中率须联网实测,不预测,不自动改词"
+  }
+ },
+ {
+  "ip_name": "miyoo",
+  "candidate_word": "miyoo",
+  "word_kind": "项目/平台",
+  "gap_kind": "不在编辑映射表",
+  "note": "项目名原样；中文品类词(开源掌机/PS4模拟器等)须人工补",
+  "cards": 1,
+  "attention_max": "高",
+  "major_event_cards": 0,
+  "queues": [
+   "潜力待验证"
+  ],
+  "entries": [
+   "A"
+  ],
+  "samples": [
+   {
+    "event_id": "43be29355ce61fee",
+    "attention": "高",
+    "core_hook": "World Radio on Miyoo mini flip"
+   }
+  ],
+  "preflight": {
+   "script_class": "纯拉丁",
+   "cores_lat": [
+    "miyoo"
+   ],
+   "cores_cjk": [],
+   "cjk_sub2": [],
+   "match_note": "纯拉丁词:B站易词元级模糊兜底(model2-nx→NX CAD先例),须核top3/考虑补中文品类词;纯拉丁≠必兜底(Batocera/shadPS4纯拉丁但实测可靠);命中率须联网实测,不预测,不自动改词"
+  }
+ },
+ {
+  "ip_name": "model2",
+  "candidate_word": "model2",
+  "word_kind": "项目/平台",
+  "gap_kind": "不在编辑映射表",
+  "note": "项目名原样；中文品类词(开源掌机/PS4模拟器等)须人工补",
+  "cards": 1,
+  "attention_max": "高",
+  "major_event_cards": 0,
+  "queues": [
+   "低优先归档"
+  ],
+  "entries": [
+   "A"
+  ],
+  "samples": [
+   {
+    "event_id": "991af7142a491d46",
+    "attention": "高",
+    "core_hook": "toniisound released 1.0 at toniisound/model2-nx"
+   }
+  ],
+  "preflight": {
+   "script_class": "纯拉丁",
+   "cores_lat": [
+    "model2"
+   ],
+   "cores_cjk": [],
+   "cjk_sub2": [],
+   "match_note": "纯拉丁词:B站易词元级模糊兜底(model2-nx→NX CAD先例),须核top3/考虑补中文品类词;纯拉丁≠必兜底(Batocera/shadPS4纯拉丁但实测可靠);命中率须联网实测,不预测,不自动改词"
+  }
+ },
+ {
+  "ip_name": "muos",
+  "candidate_word": "muos",
+  "word_kind": "项目/平台",
+  "gap_kind": "不在编辑映射表",
+  "note": "项目名原样；中文品类词(开源掌机/PS4模拟器等)须人工补",
+  "cards": 1,
+  "attention_max": "高",
+  "major_event_cards": 0,
+  "queues": [
+   "系列跟踪"
+  ],
+  "entries": [
+   "A"
+  ],
+  "samples": [
+   {
+    "event_id": "series:02054b9505b2",
+    "attention": "高",
+    "core_hook": "muos 持续更新跟踪（3个事件）"
+   }
+  ],
+  "preflight": {
+   "script_class": "纯拉丁",
+   "cores_lat": [
+    "muos"
+   ],
+   "cores_cjk": [],
+   "cjk_sub2": [],
+   "match_note": "纯拉丁词:B站易词元级模糊兜底(model2-nx→NX CAD先例),须核top3/考虑补中文品类词;纯拉丁≠必兜底(Batocera/shadPS4纯拉丁但实测可靠);命中率须联网实测,不预测,不自动改词"
+  }
+ },
+ {
+  "ip_name": "neo geo",
+  "candidate_word": "neo geo",
+  "word_kind": "项目/平台",
+  "gap_kind": "不在编辑映射表",
+  "note": "项目名原样；中文品类词(开源掌机/PS4模拟器等)须人工补",
+  "cards": 1,
+  "attention_max": "高",
+  "major_event_cards": 0,
+  "queues": [
+   "潜力待验证"
+  ],
+  "entries": [
+   "A"
+  ],
+  "samples": [
+   {
+    "event_id": "175eeb67e3ead625",
+    "attention": "高",
+    "core_hook": "NeoMillieCD 0.5.1 is out, an openFPGA Neo Geo CD core for th"
+   }
+  ],
+  "preflight": {
+   "script_class": "纯拉丁",
+   "cores_lat": [
+    "neo",
+    "geo"
+   ],
+   "cores_cjk": [],
+   "cjk_sub2": [],
+   "match_note": "纯拉丁词:B站易词元级模糊兜底(model2-nx→NX CAD先例),须核top3/考虑补中文品类词;纯拉丁≠必兜底(Batocera/shadPS4纯拉丁但实测可靠);命中率须联网实测,不预测,不自动改词"
+  }
+ },
+ {
+  "ip_name": "neogeo",
+  "candidate_word": "neogeo",
+  "word_kind": "项目/平台",
+  "gap_kind": "不在编辑映射表",
+  "note": "项目名原样；中文品类词(开源掌机/PS4模拟器等)须人工补",
+  "cards": 1,
+  "attention_max": "高",
+  "major_event_cards": 0,
+  "queues": [
+   "潜力待验证"
+  ],
+  "entries": [
+   "A"
+  ],
+  "samples": [
+   {
+    "event_id": "4e3308fc32b2f706",
+    "attention": "高",
+    "core_hook": "Super Pocket NeoGeo: difetto di luminosità"
+   }
+  ],
+  "preflight": {
+   "script_class": "纯拉丁",
+   "cores_lat": [
+    "neogeo"
+   ],
+   "cores_cjk": [],
+   "cjk_sub2": [],
+   "match_note": "纯拉丁词:B站易词元级模糊兜底(model2-nx→NX CAD先例),须核top3/考虑补中文品类词;纯拉丁≠必兜底(Batocera/shadPS4纯拉丁但实测可靠);命中率须联网实测,不预测,不自动改词"
+  }
+ },
+ {
+  "ip_name": "nethersx2",
+  "candidate_word": "nethersx2",
+  "word_kind": "项目/平台",
+  "gap_kind": "不在编辑映射表",
+  "note": "项目名原样；中文品类词(开源掌机/PS4模拟器等)须人工补",
+  "cards": 1,
+  "attention_max": "高",
+  "major_event_cards": 0,
+  "queues": [
+   "潜力待验证"
+  ],
+  "entries": [
+   "A"
+  ],
+  "samples": [
+   {
+    "event_id": "39b88c0ece5a6c02",
+    "attention": "高",
+    "core_hook": "Help solving a region selecting problem (NetherSX2/ARMSX2)."
+   }
+  ],
+  "preflight": {
+   "script_class": "纯拉丁",
+   "cores_lat": [
+    "nethersx2"
+   ],
+   "cores_cjk": [],
+   "cjk_sub2": [],
+   "match_note": "纯拉丁词:B站易词元级模糊兜底(model2-nx→NX CAD先例),须核top3/考虑补中文品类词;纯拉丁≠必兜底(Batocera/shadPS4纯拉丁但实测可靠);命中率须联网实测,不预测,不自动改词"
+  }
+ },
+ {
+  "ip_name": "onionos",
+  "candidate_word": "onionos",
+  "word_kind": "项目/平台",
+  "gap_kind": "不在编辑映射表",
+  "note": "项目名原样；中文品类词(开源掌机/PS4模拟器等)须人工补",
+  "cards": 1,
+  "attention_max": "高",
+  "major_event_cards": 0,
+  "queues": [
+   "潜力待验证"
+  ],
+  "entries": [
+   "A"
+  ],
+  "samples": [
+   {
+    "event_id": "3fed18172849fe0e",
+    "attention": "高",
+    "core_hook": "CloveOS — An OnionOS / MinUI-inspired custom firmware port f"
+   }
+  ],
+  "preflight": {
+   "script_class": "纯拉丁",
+   "cores_lat": [
+    "onionos"
+   ],
+   "cores_cjk": [],
+   "cjk_sub2": [],
+   "match_note": "纯拉丁词:B站易词元级模糊兜底(model2-nx→NX CAD先例),须核top3/考虑补中文品类词;纯拉丁≠必兜底(Batocera/shadPS4纯拉丁但实测可靠);命中率须联网实测,不预测,不自动改词"
+  }
+ },
+ {
+  "ip_name": "outrun",
+  "candidate_word": "outrun",
+  "word_kind": "IP大盘",
+  "gap_kind": "不在编辑映射表",
+  "note": "组内无中文别名，用首别名；中文探针词须人工核",
+  "cards": 1,
+  "attention_max": "高",
+  "major_event_cards": 0,
+  "queues": [
+   "潜力待验证"
+  ],
+  "entries": [
+   "A"
+  ],
+  "samples": [
+   {
+    "event_id": "5ace28ba190f526e",
+    "attention": "高",
+    "core_hook": "My Arcade's OutRun Racing Player Ships With The Lacklustre C"
+   }
+  ],
+  "preflight": {
+   "script_class": "纯拉丁",
+   "cores_lat": [
+    "outrun"
+   ],
+   "cores_cjk": [],
+   "cjk_sub2": [],
+   "match_note": "纯拉丁词:B站易词元级模糊兜底(model2-nx→NX CAD先例),须核top3/考虑补中文品类词;纯拉丁≠必兜底(Batocera/shadPS4纯拉丁但实测可靠);命中率须联网实测,不预测,不自动改词"
+  }
+ },
+ {
+  "ip_name": "port0r",
+  "candidate_word": "port0r",
+  "word_kind": "项目/平台",
+  "gap_kind": "不在编辑映射表",
+  "note": "项目名原样；中文品类词(开源掌机/PS4模拟器等)须人工补",
+  "cards": 1,
+  "attention_max": "高",
+  "major_event_cards": 0,
+  "queues": [
+   "系列跟踪"
+  ],
+  "entries": [
+   "A"
+  ],
+  "samples": [
+   {
+    "event_id": "series:d12c074778a2",
+    "attention": "高",
+    "core_hook": "port0r 持续更新跟踪（19个事件）"
+   }
+  ],
+  "preflight": {
+   "script_class": "纯拉丁",
+   "cores_lat": [
+    "port0r"
+   ],
+   "cores_cjk": [],
+   "cjk_sub2": [],
+   "match_note": "纯拉丁词:B站易词元级模糊兜底(model2-nx→NX CAD先例),须核top3/考虑补中文品类词;纯拉丁≠必兜底(Batocera/shadPS4纯拉丁但实测可靠);命中率须联网实测,不预测,不自动改词"
+  }
+ },
+ {
+  "ip_name": "ps1",
+  "candidate_word": "ps1",
+  "word_kind": "项目/平台",
+  "gap_kind": "不在编辑映射表",
+  "note": "项目名原样；中文品类词(开源掌机/PS4模拟器等)须人工补",
+  "cards": 1,
+  "attention_max": "高",
+  "major_event_cards": 0,
+  "queues": [
+   "潜力待验证"
+  ],
+  "entries": [
+   "A"
+  ],
+  "samples": [
+   {
+    "event_id": "30842990127e6e16",
+    "attention": "高",
+    "core_hook": "Just got my Nova. So excited to start playing some PS1, PS2,"
+   }
+  ],
+  "preflight": {
+   "script_class": "纯拉丁",
+   "cores_lat": [
+    "ps1"
+   ],
+   "cores_cjk": [],
+   "cjk_sub2": [],
+   "match_note": "纯拉丁词:B站易词元级模糊兜底(model2-nx→NX CAD先例),须核top3/考虑补中文品类词;纯拉丁≠必兜底(Batocera/shadPS4纯拉丁但实测可靠);命中率须联网实测,不预测,不自动改词"
+  }
+ },
+ {
+  "ip_name": "rg35",
+  "candidate_word": "rg35",
+  "word_kind": "项目/平台",
+  "gap_kind": "不在编辑映射表",
+  "note": "项目名原样；中文品类词(开源掌机/PS4模拟器等)须人工补",
+  "cards": 1,
+  "attention_max": "高",
+  "major_event_cards": 0,
+  "queues": [
+   "潜力待验证"
+  ],
+  "entries": [
+   "A"
+  ],
+  "samples": [
+   {
+    "event_id": "5c4e12e87be09ab8",
+    "attention": "高",
+    "core_hook": "Help setting up new RG35?"
+   }
+  ],
+  "preflight": {
+   "script_class": "纯拉丁",
+   "cores_lat": [
+    "rg35"
+   ],
+   "cores_cjk": [],
+   "cjk_sub2": [],
+   "match_note": "纯拉丁词:B站易词元级模糊兜底(model2-nx→NX CAD先例),须核top3/考虑补中文品类词;纯拉丁≠必兜底(Batocera/shadPS4纯拉丁但实测可靠);命中率须联网实测,不预测,不自动改词"
+  }
+ },
+ {
+  "ip_name": "rocknix",
+  "candidate_word": "rocknix",
+  "word_kind": "项目/平台",
+  "gap_kind": "不在编辑映射表",
+  "note": "项目名原样；中文品类词(开源掌机/PS4模拟器等)须人工补",
+  "cards": 1,
+  "attention_max": "高",
+  "major_event_cards": 0,
+  "queues": [
+   "系列跟踪"
+  ],
+  "entries": [
+   "A"
+  ],
+  "samples": [
+   {
+    "event_id": "series:2d72a74faec3",
+    "attention": "高",
+    "core_hook": "rocknix 持续更新跟踪（2个事件）"
+   }
+  ],
+  "preflight": {
+   "script_class": "纯拉丁",
+   "cores_lat": [
+    "rocknix"
+   ],
+   "cores_cjk": [],
+   "cjk_sub2": [],
+   "match_note": "纯拉丁词:B站易词元级模糊兜底(model2-nx→NX CAD先例),须核top3/考虑补中文品类词;纯拉丁≠必兜底(Batocera/shadPS4纯拉丁但实测可靠);命中率须联网实测,不预测,不自动改词"
+  }
+ },
+ {
+  "ip_name": "rpcs3",
+  "candidate_word": "rpcs3",
+  "word_kind": "项目/平台",
+  "gap_kind": "不在编辑映射表",
+  "note": "项目名原样；中文品类词(开源掌机/PS4模拟器等)须人工补",
+  "cards": 1,
+  "attention_max": "高",
+  "major_event_cards": 0,
+  "queues": [
+   "系列跟踪"
+  ],
+  "entries": [
+   "A"
+  ],
+  "samples": [
+   {
+    "event_id": "series:642d07b3ee33",
+    "attention": "高",
+    "core_hook": "rpcs3 持续更新跟踪（12个事件）"
+   }
+  ],
+  "preflight": {
+   "script_class": "纯拉丁",
+   "cores_lat": [
+    "rpcs3"
+   ],
+   "cores_cjk": [],
+   "cjk_sub2": [],
+   "match_note": "纯拉丁词:B站易词元级模糊兜底(model2-nx→NX CAD先例),须核top3/考虑补中文品类词;纯拉丁≠必兜底(Batocera/shadPS4纯拉丁但实测可靠);命中率须联网实测,不预测,不自动改词"
+  }
+ },
+ {
+  "ip_name": "supermodel",
+  "candidate_word": "supermodel",
+  "word_kind": "项目/平台",
+  "gap_kind": "不在编辑映射表",
+  "note": "项目名原样；中文品类词(开源掌机/PS4模拟器等)须人工补",
+  "cards": 1,
+  "attention_max": "高",
+  "major_event_cards": 0,
+  "queues": [
+   "低优先归档"
+  ],
+  "entries": [
+   "A"
+  ],
+  "samples": [
+   {
+    "event_id": "47c6715dc40175c3",
+    "attention": "高",
+    "core_hook": "toniisound released 1.5.2 at toniisound/supermodel-nx"
+   }
+  ],
+  "preflight": {
+   "script_class": "纯拉丁",
+   "cores_lat": [
+    "supermodel"
+   ],
+   "cores_cjk": [],
+   "cjk_sub2": [],
+   "match_note": "纯拉丁词:B站易词元级模糊兜底(model2-nx→NX CAD先例),须核top3/考虑补中文品类词;纯拉丁≠必兜底(Batocera/shadPS4纯拉丁但实测可靠);命中率须联网实测,不预测,不自动改词"
+  }
+ },
+ {
+  "ip_name": "wine",
+  "candidate_word": "wine",
+  "word_kind": "项目/平台",
+  "gap_kind": "不在编辑映射表",
+  "note": "项目名原样；中文品类词(开源掌机/PS4模拟器等)须人工补",
+  "cards": 1,
+  "attention_max": "高",
+  "major_event_cards": 0,
+  "queues": [
+   "系列跟踪"
+  ],
+  "entries": [
+   "A"
+  ],
+  "samples": [
+   {
+    "event_id": "series:1e5cc87f852d",
+    "attention": "高",
+    "core_hook": "wine 持续更新跟踪（6个事件）"
+   }
+  ],
+  "preflight": {
+   "script_class": "纯拉丁",
+   "cores_lat": [
+    "wine"
+   ],
+   "cores_cjk": [],
+   "cjk_sub2": [],
+   "match_note": "纯拉丁词:B站易词元级模糊兜底(model2-nx→NX CAD先例),须核top3/考虑补中文品类词;纯拉丁≠必兜底(Batocera/shadPS4纯拉丁但实测可靠);命中率须联网实测,不预测,不自动改词"
+  }
+ },
+ {
+  "ip_name": "touhou",
+  "candidate_word": "东方project",
+  "word_kind": "IP大盘",
+  "gap_kind": "不在编辑映射表",
+  "note": "首个中文别名(§11.2)；粒度/角度/消歧须人工核",
+  "cards": 1,
+  "attention_max": "高",
+  "major_event_cards": 0,
+  "queues": [
+   "潜力待验证"
+  ],
+  "entries": [
+   "A"
+  ],
+  "samples": [
+   {
+    "event_id": "183de19557749d90",
+    "attention": "高",
+    "core_hook": "[Release] Touhou 6 3ds Port"
+   }
+  ],
+  "preflight": {
+   "script_class": "混合",
+   "cores_lat": [
+    "project"
+   ],
+   "cores_cjk": [
+    "东方"
+   ],
+   "cjk_sub2": [
+    "东方"
+   ],
+   "match_note": "混合词:拉丁词元易兜底(model2-nx先例)+2字CJK词元易假阳(街机改版先例),须人工核top3;不预测命中率/不判语义/不自动改词"
+  }
+ },
+ {
+  "ip_name": "tales of",
+  "candidate_word": "传说系列",
+  "word_kind": "IP大盘",
+  "gap_kind": "不在编辑映射表",
+  "note": "首个中文别名(§11.2)；粒度/角度/消歧须人工核",
+  "cards": 1,
+  "attention_max": "高",
+  "major_event_cards": 0,
+  "queues": [
+   "潜力待验证"
+  ],
+  "entries": [
+   "A"
+  ],
+  "samples": [
+   {
+    "event_id": "fa78876859855f81",
+    "attention": "高",
+    "core_hook": "Can recommend Tales of Phantasia (SNES/SFC), although with s"
+   }
+  ],
+  "preflight": {
+   "script_class": "含CJK",
+   "cores_lat": [],
+   "cores_cjk": [
+    "传说",
+    "传说系列",
+    "系列",
+    "说系"
+   ],
+   "cjk_sub2": [
+    "传说",
+    "系列",
+    "说系"
+   ],
+   "match_note": "含2字CJK词元[传说/系列/说系]:放宽匹配(街机改版先例),若词元泛易假阳须人工核top3;2字子词≠必假阳(街机改版真相关);语义歧义零LLM治不了须人工,不预测命中率,不自动改词"
+  }
+ },
+ {
+  "ip_name": "samurai shodown",
+  "candidate_word": "侍魂",
+  "word_kind": "IP大盘",
+  "gap_kind": "不在编辑映射表",
+  "note": "首个中文别名(§11.2)；粒度/角度/消歧须人工核",
+  "cards": 1,
+  "attention_max": "高",
+  "major_event_cards": 0,
+  "queues": [
+   "潜力待验证"
+  ],
+  "entries": [
+   "A"
+  ],
+  "samples": [
+   {
+    "event_id": "b21cc219f86ceb6b",
+    "attention": "高",
+    "core_hook": "Issue with Samurai Shodown (Steam)"
+   }
+  ],
+  "preflight": {
+   "script_class": "含CJK",
+   "cores_lat": [],
+   "cores_cjk": [
+    "侍魂"
+   ],
+   "cjk_sub2": [
+    "侍魂"
+   ],
+   "match_note": "含2字CJK词元[侍魂]:放宽匹配(街机改版先例),若词元泛易假阳须人工核top3;2字子词≠必假阳(街机改版真相关);语义歧义零LLM治不了须人工,不预测命中率,不自动改词"
+  }
+ },
+ {
+  "ip_name": "animal crossing",
+  "candidate_word": "动物森友会",
+  "word_kind": "IP大盘",
+  "gap_kind": "不在编辑映射表",
+  "note": "首个中文别名(§11.2)；粒度/角度/消歧须人工核",
+  "cards": 1,
+  "attention_max": "高",
+  "major_event_cards": 0,
+  "queues": [
+   "潜力待验证"
+  ],
+  "entries": [
+   "A"
+  ],
+  "samples": [
+   {
+    "event_id": "ee0e95598fbd57b5",
+    "attention": "高",
+    "core_hook": "I ported Animal Crossing: Wild World to the 3DS: native, wid"
+   }
+  ],
+  "preflight": {
+   "script_class": "含CJK",
+   "cores_lat": [],
+   "cores_cjk": [
+    "动物",
+    "动物森友会",
+    "友会",
+    "森友",
+    "物森"
+   ],
+   "cjk_sub2": [
+    "动物",
+    "友会",
+    "森友",
+    "物森"
+   ],
+   "match_note": "含2字CJK词元[动物/友会/森友/物森]:放宽匹配(街机改版先例),若词元泛易假阳须人工核top3;2字子词≠必假阳(街机改版真相关);语义歧义零LLM治不了须人工,不预测命中率,不自动改词"
+  }
+ },
+ {
+  "ip_name": "sekiro",
+  "candidate_word": "只狼",
+  "word_kind": "IP大盘",
+  "gap_kind": "不在编辑映射表",
+  "note": "首个中文别名(§11.2)；粒度/角度/消歧须人工核",
+  "cards": 1,
+  "attention_max": "高",
+  "major_event_cards": 0,
+  "queues": [
+   "潜力待验证"
+  ],
+  "entries": [
+   "A"
+  ],
+  "samples": [
+   {
+    "event_id": "f1430b1373b4fef5",
+    "attention": "高",
+    "core_hook": "GNM Scale - frame gen isn't that bad on ps4 [Sekiro]"
+   }
+  ],
+  "preflight": {
+   "script_class": "含CJK",
+   "cores_lat": [],
+   "cores_cjk": [
+    "只狼"
+   ],
+   "cjk_sub2": [
+    "只狼"
+   ],
+   "match_note": "含2字CJK词元[只狼]:放宽匹配(街机改版先例),若词元泛易假阳须人工核top3;2字子词≠必假阳(街机改版真相关);语义歧义零LLM治不了须人工,不预测命中率,不自动改词"
+  }
+ },
+ {
+  "ip_name": "metal gear",
+  "candidate_word": "合金装备",
+  "word_kind": "IP大盘",
+  "gap_kind": "不在编辑映射表",
+  "note": "首个中文别名(§11.2)；粒度/角度/消歧须人工核",
+  "cards": 1,
+  "attention_max": "高",
+  "major_event_cards": 0,
+  "queues": [
+   "潜力待验证"
+  ],
+  "entries": [
+   "A"
+  ],
+  "samples": [
+   {
+    "event_id": "e72fab42de3acab3",
+    "attention": "高",
+    "core_hook": "[WIP] Metal Gear Solid V: The Phantom Pain – native Switch p"
+   }
+  ],
+  "preflight": {
+   "script_class": "含CJK",
+   "cores_lat": [],
+   "cores_cjk": [
+    "合金",
+    "合金装备",
+    "装备",
+    "金装"
+   ],
+   "cjk_sub2": [
+    "合金",
+    "装备",
+    "金装"
+   ],
+   "match_note": "含2字CJK词元[合金/装备/金装]:放宽匹配(街机改版先例),若词元泛易假阳须人工核top3;2字子词≠必假阳(街机改版真相关);语义歧义零LLM治不了须人工,不预测命中率,不自动改词"
+  }
+ },
+ {
+  "ip_name": "smash bros",
+  "candidate_word": "大乱斗",
+  "word_kind": "IP大盘",
+  "gap_kind": "不在编辑映射表",
+  "note": "首个中文别名(§11.2)；粒度/角度/消歧须人工核",
+  "cards": 1,
+  "attention_max": "高",
+  "major_event_cards": 0,
+  "queues": [
+   "潜力待验证"
+  ],
+  "entries": [
+   "A"
+  ],
+  "samples": [
+   {
+    "event_id": "7d52894fa10698a6",
+    "attention": "高",
+    "core_hook": "Nintendo Switch eShop charts – November 7, 2026 – Smash Bros"
+   }
+  ],
+  "preflight": {
+   "script_class": "含CJK",
+   "cores_lat": [],
+   "cores_cjk": [
+    "乱斗",
+    "大乱",
+    "大乱斗"
+   ],
+   "cjk_sub2": [
+    "乱斗",
+    "大乱"
+   ],
+   "match_note": "含2字CJK词元[乱斗/大乱]:放宽匹配(街机改版先例),若词元泛易假阳须人工核top3;2字子词≠必假阳(街机改版真相关);语义歧义零LLM治不了须人工,不预测命中率,不自动改词"
+  }
+ },
+ {
+  "ip_name": "donkey kong",
+  "candidate_word": "大金刚",
+  "word_kind": "IP大盘",
+  "gap_kind": "不在编辑映射表",
+  "note": "首个中文别名(§11.2)；粒度/角度/消歧须人工核",
+  "cards": 1,
+  "attention_max": "高",
+  "major_event_cards": 0,
+  "queues": [
+   "潜力待验证"
+  ],
+  "entries": [
+   "A"
+  ],
+  "samples": [
+   {
+    "event_id": "9d479a8d69aecdc7",
+    "attention": "高",
+    "core_hook": "Retroid Pocket 6 Donkey Kong Bananza Banananative emulator g"
+   }
+  ],
+  "preflight": {
+   "script_class": "含CJK",
+   "cores_lat": [],
+   "cores_cjk": [
+    "大金",
+    "大金刚",
+    "金刚"
+   ],
+   "cjk_sub2": [
+    "大金",
+    "金刚"
+   ],
+   "match_note": "含2字CJK词元[大金/金刚]:放宽匹配(街机改版先例),若词元泛易假阳须人工核top3;2字子词≠必假阳(街机改版真相关);语义歧义零LLM治不了须人工,不预测命中率,不自动改词"
+  }
+ },
+ {
+  "ip_name": "sengoku",
+  "candidate_word": "战国传承",
+  "word_kind": "IP大盘",
+  "gap_kind": "不在编辑映射表",
+  "note": "首个中文别名(§11.2)；粒度/角度/消歧须人工核",
+  "cards": 1,
+  "attention_max": "高",
+  "major_event_cards": 0,
+  "queues": [
+   "潜力待验证"
+  ],
+  "entries": [
+   "A"
+  ],
+  "samples": [
+   {
+    "event_id": "8e6a30c82fd65f48",
+    "attention": "高",
+    "core_hook": "Sengoku-period otome game Samurai Love Ballad: Song of Radia"
+   }
+  ],
+  "preflight": {
+   "script_class": "含CJK",
+   "cores_lat": [],
+   "cores_cjk": [
+    "传承",
+    "国传",
+    "战国",
+    "战国传承"
+   ],
+   "cjk_sub2": [
+    "传承",
+    "国传",
+    "战国"
+   ],
+   "match_note": "含2字CJK词元[传承/国传/战国]:放宽匹配(街机改版先例),若词元泛易假阳须人工核top3;2字子词≠必假阳(街机改版真相关);语义歧义零LLM治不了须人工,不预测命中率,不自动改词"
+  }
+ },
+ {
+  "ip_name": "civilization",
+  "candidate_word": "文明帝国",
+  "word_kind": "IP大盘",
+  "gap_kind": "不在编辑映射表",
+  "note": "首个中文别名(§11.2)；粒度/角度/消歧须人工核",
+  "cards": 1,
+  "attention_max": "高",
+  "major_event_cards": 0,
+  "queues": [
+   "潜力待验证"
+  ],
+  "entries": [
+   "A"
+  ],
+  "samples": [
+   {
+    "event_id": "06977160ace50a6b",
+    "attention": "高",
+    "core_hook": "Civilization 7 being used to hack Nintendo Switch 2, and 2K "
+   }
+  ],
+  "preflight": {
+   "script_class": "含CJK",
+   "cores_lat": [],
+   "cores_cjk": [
+    "帝国",
+    "文明",
+    "文明帝国",
+    "明帝"
+   ],
+   "cjk_sub2": [
+    "帝国",
+    "文明",
+    "明帝"
+   ],
+   "match_note": "含2字CJK词元[帝国/文明/明帝]:放宽匹配(街机改版先例),若词元泛易假阳须人工核top3;2字子词≠必假阳(街机改版真相关);语义歧义零LLM治不了须人工,不预测命中率,不自动改词"
+  }
+ },
+ {
+  "ip_name": "star ocean",
+  "candidate_word": "星之海洋",
+  "word_kind": "IP大盘",
+  "gap_kind": "不在编辑映射表",
+  "note": "首个中文别名(§11.2)；粒度/角度/消歧须人工核",
+  "cards": 1,
+  "attention_max": "高",
+  "major_event_cards": 0,
+  "queues": [
+   "潜力待验证"
+  ],
+  "entries": [
+   "A"
+  ],
+  "samples": [
+   {
+    "event_id": "941fa4f49097346b",
+    "attention": "高",
+    "core_hook": "STAR OCEAN 3 AND 5 DECOMP REQUEST switch port"
+   }
+  ],
+  "preflight": {
+   "script_class": "含CJK",
+   "cores_lat": [],
+   "cores_cjk": [
+    "之海",
+    "星之",
+    "星之海洋",
+    "海洋"
+   ],
+   "cjk_sub2": [
+    "之海",
+    "星之",
+    "海洋"
+   ],
+   "match_note": "含2字CJK词元[之海/星之/海洋]:放宽匹配(街机改版先例),若词元泛易假阳须人工核top3;2字子词≠必假阳(街机改版真相关);语义歧义零LLM治不了须人工,不预测命中率,不自动改词"
+  }
+ },
+ {
+  "ip_name": "stardew valley",
+  "candidate_word": "星露谷",
+  "word_kind": "IP大盘",
+  "gap_kind": "不在编辑映射表",
+  "note": "首个中文别名(§11.2)；粒度/角度/消歧须人工核",
+  "cards": 1,
+  "attention_max": "高",
+  "major_event_cards": 0,
+  "queues": [
+   "潜力待验证"
+  ],
+  "entries": [
+   "A"
+  ],
+  "samples": [
+   {
+    "event_id": "a38c94df6c772b1b",
+    "attention": "高",
+    "core_hook": "Stardew Valley Gets Dual-Screen Handheld Support For AYN Tho"
+   }
+  ],
+  "preflight": {
+   "script_class": "含CJK",
+   "cores_lat": [],
+   "cores_cjk": [
+    "星露",
+    "星露谷",
+    "露谷"
+   ],
+   "cjk_sub2": [
+    "星露",
+    "露谷"
+   ],
+   "match_note": "含2字CJK词元[星露/露谷]:放宽匹配(街机改版先例),若词元泛易假阳须人工核top3;2字子词≠必假阳(街机改版真相关);语义歧义零LLM治不了须人工,不预测命中率,不自动改词"
+  }
+ },
+ {
+  "ip_name": "diablo",
+  "candidate_word": "暗黑破坏神",
+  "word_kind": "IP大盘",
+  "gap_kind": "不在编辑映射表",
+  "note": "首个中文别名(§11.2)；粒度/角度/消歧须人工核",
+  "cards": 1,
+  "attention_max": "高",
+  "major_event_cards": 0,
+  "queues": [
+   "潜力待验证"
+  ],
+  "entries": [
+   "A"
+  ],
+  "samples": [
+   {
+    "event_id": "c50c99338769106b",
+    "attention": "高",
+    "core_hook": "Diablo 1 - Local COOP - Online Restored on Mister"
+   }
+  ],
+  "preflight": {
+   "script_class": "含CJK",
+   "cores_lat": [],
+   "cores_cjk": [
+    "坏神",
+    "暗黑",
+    "暗黑破坏神",
+    "破坏",
+    "黑破"
+   ],
+   "cjk_sub2": [
+    "坏神",
+    "暗黑",
+    "破坏",
+    "黑破"
+   ],
+   "match_note": "含2字CJK词元[坏神/暗黑/破坏/黑破]:放宽匹配(街机改版先例),若词元泛易假阳须人工核top3;2字子词≠必假阳(街机改版真相关);语义歧义零LLM治不了须人工,不预测命中率,不自动改词"
+  }
+ },
+ {
+  "ip_name": "phantasy star",
+  "candidate_word": "梦幻之星",
+  "word_kind": "IP大盘",
+  "gap_kind": "不在编辑映射表",
+  "note": "首个中文别名(§11.2)；粒度/角度/消歧须人工核",
+  "cards": 1,
+  "attention_max": "高",
+  "major_event_cards": 0,
+  "queues": [
+   "潜力待验证"
+  ],
+  "entries": [
+   "A"
+  ],
+  "samples": [
+   {
+    "event_id": "b5e5fd6035c26144",
+    "attention": "高",
+    "core_hook": "Phantasy Star Portable 2 Infinity - English Localization v2 "
+   }
+  ],
+  "preflight": {
+   "script_class": "含CJK",
+   "cores_lat": [],
+   "cores_cjk": [
+    "之星",
+    "幻之",
+    "梦幻",
+    "梦幻之星"
+   ],
+   "cjk_sub2": [
+    "之星",
+    "幻之",
+    "梦幻"
+   ],
+   "match_note": "含2字CJK词元[之星/幻之/梦幻]:放宽匹配(街机改版先例),若词元泛易假阳须人工核top3;2字子词≠必假阳(街机改版真相关);语义歧义零LLM治不了须人工,不预测命中率,不自动改词"
+  }
+ },
+ {
+  "ip_name": "plants vs zombies",
+  "candidate_word": "植物大战僵尸",
+  "word_kind": "IP大盘",
+  "gap_kind": "不在编辑映射表",
+  "note": "首个中文别名(§11.2)；粒度/角度/消歧须人工核",
+  "cards": 1,
+  "attention_max": "高",
+  "major_event_cards": 0,
+  "queues": [
+   "潜力待验证"
+  ],
+  "entries": [
+   "A"
+  ],
+  "samples": [
+   {
+    "event_id": "e872612deb9d712e",
+    "attention": "高",
+    "core_hook": "经典塔防游戏回归：《植物大战僵尸：重植版》12 月 3 日登陆苹果 Apple Arcade"
+   }
+  ],
+  "preflight": {
+   "script_class": "含CJK",
+   "cores_lat": [],
+   "cores_cjk": [
+    "僵尸",
+    "大战",
+    "战僵",
+    "植物",
+    "植物大战僵尸",
+    "物大"
+   ],
+   "cjk_sub2": [
+    "僵尸",
+    "大战",
+    "战僵",
+    "植物",
+    "物大"
+   ],
+   "match_note": "含2字CJK词元[僵尸/大战/战僵/植物/物大]:放宽匹配(街机改版先例),若词元泛易假阳须人工核top3;2字子词≠必假阳(街机改版真相关);语义歧义零LLM治不了须人工,不预测命中率,不自动改词"
+  }
+ },
+ {
+  "ip_name": "fire emblem",
+  "candidate_word": "火焰纹章",
+  "word_kind": "IP大盘",
+  "gap_kind": "不在编辑映射表",
+  "note": "首个中文别名(§11.2)；粒度/角度/消歧须人工核",
+  "cards": 1,
+  "attention_max": "高",
+  "major_event_cards": 0,
+  "queues": [
+   "潜力待验证"
+  ],
+  "entries": [
+   "A"
+  ],
+  "samples": [
+   {
+    "event_id": "4993eb4d287e9dfe",
+    "attention": "高",
+    "core_hook": "Fire Emblem: Fortune’s Weave and Switch 2 Hit New Sales Mile"
+   }
+  ],
+  "preflight": {
+   "script_class": "含CJK",
+   "cores_lat": [],
+   "cores_cjk": [
+    "火焰",
+    "火焰纹章",
+    "焰纹",
+    "纹章"
+   ],
+   "cjk_sub2": [
+    "火焰",
+    "焰纹",
+    "纹章"
+   ],
+   "match_note": "含2字CJK词元[火焰/焰纹/纹章]:放宽匹配(街机改版先例),若词元泛易假阳须人工核top3;2字子词≠必假阳(街机改版真相关);语义歧义零LLM治不了须人工,不预测命中率,不自动改词"
+  }
+ },
+ {
+  "ip_name": "bomberman",
+  "candidate_word": "炸弹人",
+  "word_kind": "IP大盘",
+  "gap_kind": "不在编辑映射表",
+  "note": "首个中文别名(§11.2)；粒度/角度/消歧须人工核",
+  "cards": 1,
+  "attention_max": "高",
+  "major_event_cards": 0,
+  "queues": [
+   "潜力待验证"
+  ],
+  "entries": [
+   "A"
+  ],
+  "samples": [
+   {
+    "event_id": "8eb25ab3d7daa7a1",
+    "attention": "高",
+    "core_hook": "Atomic Bomberman for Switch"
+   }
+  ],
+  "preflight": {
+   "script_class": "含CJK",
+   "cores_lat": [],
+   "cores_cjk": [
+    "弹人",
+    "炸弹",
+    "炸弹人"
+   ],
+   "cjk_sub2": [
+    "弹人",
+    "炸弹"
+   ],
+   "match_note": "含2字CJK词元[弹人/炸弹]:放宽匹配(街机改版先例),若词元泛易假阳须人工核top3;2字子词≠必假阳(街机改版真相关);语义歧义零LLM治不了须人工,不预测命中率,不自动改词"
+  }
+ },
+ {
+  "ip_name": "banjo-kazooie",
+  "candidate_word": "班卓熊",
+  "word_kind": "IP大盘",
+  "gap_kind": "不在编辑映射表",
+  "note": "首个中文别名(§11.2)；粒度/角度/消歧须人工核",
+  "cards": 1,
+  "attention_max": "高",
+  "major_event_cards": 0,
+  "queues": [
+   "潜力待验证"
+  ],
+  "entries": [
+   "A"
+  ],
+  "samples": [
+   {
+    "event_id": "7d957c2267992f75",
+    "attention": "高",
+    "core_hook": "Banjo-Kazooie Wii U Port (Release)"
+   }
+  ],
+  "preflight": {
+   "script_class": "含CJK",
+   "cores_lat": [],
+   "cores_cjk": [
+    "卓熊",
+    "班卓",
+    "班卓熊"
+   ],
+   "cjk_sub2": [
+    "卓熊",
+    "班卓"
+   ],
+   "match_note": "含2字CJK词元[卓熊/班卓]:放宽匹配(街机改版先例),若词元泛易假阳须人工核top3;2字子词≠必假阳(街机改版真相关);语义歧义零LLM治不了须人工,不预测命中率,不自动改词"
+  }
+ },
+ {
+  "ip_name": "hollow knight",
+  "candidate_word": "空洞骑士",
+  "word_kind": "IP大盘",
+  "gap_kind": "不在编辑映射表",
+  "note": "首个中文别名(§11.2)；粒度/角度/消歧须人工核",
+  "cards": 1,
+  "attention_max": "高",
+  "major_event_cards": 0,
+  "queues": [
+   "潜力待验证"
+  ],
+  "entries": [
+   "A"
+  ],
+  "samples": [
+   {
+    "event_id": "28f890d997a6174e",
+    "attention": "高",
+    "core_hook": "Gallery: Hollow Knight & Silksong's Switch 2 Physicals Are A"
+   }
+  ],
+  "preflight": {
+   "script_class": "含CJK",
+   "cores_lat": [],
+   "cores_cjk": [
+    "洞骑",
+    "空洞",
+    "空洞骑士",
+    "骑士"
+   ],
+   "cjk_sub2": [
+    "洞骑",
+    "空洞",
+    "骑士"
+   ],
+   "match_note": "含2字CJK词元[洞骑/空洞/骑士]:放宽匹配(街机改版先例),若词元泛易假阳须人工核top3;2字子词≠必假阳(街机改版真相关);语义歧义零LLM治不了须人工,不预测命中率,不自动改词"
+  }
+ },
+ {
+  "ip_name": "roblox",
+  "candidate_word": "罗布乐思",
+  "word_kind": "IP大盘",
+  "gap_kind": "不在编辑映射表",
+  "note": "首个中文别名(§11.2)；粒度/角度/消歧须人工核",
+  "cards": 1,
+  "attention_max": "高",
+  "major_event_cards": 0,
+  "queues": [
+   "潜力待验证"
+  ],
+  "entries": [
+   "A"
+  ],
+  "samples": [
+   {
+    "event_id": "e74e234f83edfcac",
+    "attention": "高",
+    "core_hook": "Roblox Forsaken on Nintendo 3DS/2DS! — INDEV Fan Port"
+   }
+  ],
+  "preflight": {
+   "script_class": "含CJK",
+   "cores_lat": [],
+   "cores_cjk": [
+    "乐思",
+    "布乐",
+    "罗布",
+    "罗布乐思"
+   ],
+   "cjk_sub2": [
+    "乐思",
+    "布乐",
+    "罗布"
+   ],
+   "match_note": "含2字CJK词元[乐思/布乐/罗布]:放宽匹配(街机改版先例),若词元泛易假阳须人工核top3;2字子词≠必假阳(街机改版真相关);语义歧义零LLM治不了须人工,不预测命中率,不自动改词"
+  }
+ },
+ {
+  "ip_name": "yoshi",
+  "candidate_word": "耀西",
+  "word_kind": "IP大盘",
+  "gap_kind": "不在编辑映射表",
+  "note": "首个中文别名(§11.2)；粒度/角度/消歧须人工核",
+  "cards": 1,
+  "attention_max": "高",
+  "major_event_cards": 0,
+  "queues": [
+   "潜力待验证"
+  ],
+  "entries": [
+   "A"
+  ],
+  "samples": [
+   {
+    "event_id": "972288f717083a71",
+    "attention": "高",
+    "core_hook": "[Homebrew] [Release] - Map Wiimote throw to B in Yoshi's Woo"
+   }
+  ],
+  "preflight": {
+   "script_class": "含CJK",
+   "cores_lat": [],
+   "cores_cjk": [
+    "耀西"
+   ],
+   "cjk_sub2": [
+    "耀西"
+   ],
+   "match_note": "含2字CJK词元[耀西]:放宽匹配(街机改版先例),若词元泛易假阳须人工核top3;2字子词≠必假阳(街机改版真相关);语义歧义零LLM治不了须人工,不预测命中率,不自动改词"
+  }
+ },
+ {
+  "ip_name": "league of legends",
+  "candidate_word": "英雄联盟",
+  "word_kind": "IP大盘",
+  "gap_kind": "不在编辑映射表",
+  "note": "首个中文别名(§11.2)；粒度/角度/消歧须人工核",
+  "cards": 1,
+  "attention_max": "高",
+  "major_event_cards": 0,
+  "queues": [
+   "潜力待验证"
+  ],
+  "entries": [
+   "A"
+  ],
+  "samples": [
+   {
+    "event_id": "6156b81d840ba02e",
+    "attention": "高",
+    "core_hook": "League of Legends: New Dawn Unveiled With Debut Trailer, Rio"
+   }
+  ],
+  "preflight": {
+   "script_class": "含CJK",
+   "cores_lat": [],
+   "cores_cjk": [
+    "联盟",
+    "英雄",
+    "英雄联盟",
+    "雄联"
+   ],
+   "cjk_sub2": [
+    "联盟",
+    "英雄",
+    "雄联"
+   ],
+   "match_note": "含2字CJK词元[联盟/英雄/雄联]:放宽匹配(街机改版先例),若词元泛易假阳须人工核top3;2字子词≠必假阳(街机改版真相关);语义歧义零LLM治不了须人工,不预测命中率,不自动改词"
+  }
+ },
+ {
+  "ip_name": "spider-man",
+  "candidate_word": "蜘蛛侠",
+  "word_kind": "IP大盘",
+  "gap_kind": "不在编辑映射表",
+  "note": "首个中文别名(§11.2)；粒度/角度/消歧须人工核",
+  "cards": 1,
+  "attention_max": "高",
+  "major_event_cards": 0,
+  "queues": [
+   "潜力待验证"
+  ],
+  "entries": [
+   "A"
+  ],
+  "samples": [
+   {
+    "event_id": "2b4d483e1403c2d0",
+    "attention": "高",
+    "core_hook": "PS5 QSSR support added to Marvel’s Spider-Man 2, CONTROL Res"
+   }
+  ],
+  "preflight": {
+   "script_class": "含CJK",
+   "cores_lat": [],
+   "cores_cjk": [
+    "蛛侠",
+    "蜘蛛",
+    "蜘蛛侠"
+   ],
+   "cjk_sub2": [
+    "蛛侠",
+    "蜘蛛"
+   ],
+   "match_note": "含2字CJK词元[蛛侠/蜘蛛]:放宽匹配(街机改版先例),若词元泛易假阳须人工核top3;2字子词≠必假阳(街机改版真相关);语义歧义零LLM治不了须人工,不预测命中率,不自动改词"
+  }
+ },
+ {
+  "ip_name": "bloodborne",
+  "candidate_word": "血源诅咒",
+  "word_kind": "IP大盘",
+  "gap_kind": "不在编辑映射表",
+  "note": "首个中文别名(§11.2)；粒度/角度/消歧须人工核",
+  "cards": 1,
+  "attention_max": "高",
+  "major_event_cards": 0,
+  "queues": [
+   "潜力待验证"
+  ],
+  "entries": [
+   "A"
+  ],
+  "samples": [
+   {
+    "event_id": "3e749cad82c03ed1",
+    "attention": "高",
+    "core_hook": "Bloodborne android port on Retroid Pocket Duo?"
+   }
+  ],
+  "preflight": {
+   "script_class": "含CJK",
+   "cores_lat": [],
+   "cores_cjk": [
+    "源诅",
+    "血源",
+    "血源诅咒",
+    "诅咒"
+   ],
+   "cjk_sub2": [
+    "源诅",
+    "血源",
+    "诅咒"
+   ],
+   "match_note": "含2字CJK词元[源诅/血源/诅咒]:放宽匹配(街机改版先例),若词元泛易假阳须人工核top3;2字子词≠必假阳(街机改版真相关);语义歧义零LLM治不了须人工,不预测命中率,不自动改词"
+  }
+ },
+ {
+  "ip_name": "cyberpunk",
+  "candidate_word": "赛博朋克",
+  "word_kind": "IP大盘",
+  "gap_kind": "不在编辑映射表",
+  "note": "首个中文别名(§11.2)；粒度/角度/消歧须人工核",
+  "cards": 1,
+  "attention_max": "高",
+  "major_event_cards": 0,
+  "queues": [
+   "潜力待验证"
+  ],
+  "entries": [
+   "A"
+  ],
+  "samples": [
+   {
+    "event_id": "00ec9655513d5099",
+    "attention": "高",
+    "core_hook": "Cyberpunk 60fps patch file (updated)"
+   }
+  ],
+  "preflight": {
+   "script_class": "含CJK",
+   "cores_lat": [],
+   "cores_cjk": [
+    "博朋",
+    "朋克",
+    "赛博",
+    "赛博朋克"
+   ],
+   "cjk_sub2": [
+    "博朋",
+    "朋克",
+    "赛博"
+   ],
+   "match_note": "含2字CJK词元[博朋/朋克/赛博]:放宽匹配(街机改版先例),若词元泛易假阳须人工核top3;2字子词≠必假阳(街机改版真相关);语义歧义零LLM治不了须人工,不预测命中率,不自动改词"
+  }
+ },
+ {
+  "ip_name": "super meat boy",
+  "candidate_word": "超级肉食男孩",
+  "word_kind": "IP大盘",
+  "gap_kind": "不在编辑映射表",
+  "note": "首个中文别名(§11.2)；粒度/角度/消歧须人工核",
+  "cards": 1,
+  "attention_max": "高",
+  "major_event_cards": 0,
+  "queues": [
+   "潜力待验证"
+  ],
+  "entries": [
+   "A"
+  ],
+  "samples": [
+   {
+    "event_id": "fb4b43f052027481",
+    "attention": "高",
+    "core_hook": "Team Meat Whips Out Remake Of Classic Brutal Platformer Supe"
+   }
+  ],
+  "preflight": {
+   "script_class": "含CJK",
+   "cores_lat": [],
+   "cores_cjk": [
+    "男孩",
+    "级肉",
+    "肉食",
+    "超级",
+    "超级肉食男孩",
+    "食男"
+   ],
+   "cjk_sub2": [
+    "男孩",
+    "级肉",
+    "肉食",
+    "超级",
+    "食男"
+   ],
+   "match_note": "含2字CJK词元[男孩/级肉/肉食/超级/食男]:放宽匹配(街机改版先例),若词元泛易假阳须人工核top3;2字子词≠必假阳(街机改版真相关);语义歧义零LLM治不了须人工,不预测命中率,不自动改词"
+  }
+ },
+ {
+  "ip_name": "tekken",
+  "candidate_word": "铁拳",
+  "word_kind": "IP大盘",
+  "gap_kind": "不在编辑映射表",
+  "note": "首个中文别名(§11.2)；粒度/角度/消歧须人工核",
+  "cards": 1,
+  "attention_max": "高",
+  "major_event_cards": 0,
+  "queues": [
+   "潜力待验证"
+  ],
+  "entries": [
+   "A"
+  ],
+  "samples": [
+   {
+    "event_id": "496fa9bc0abedac6",
+    "attention": "高",
+    "core_hook": "贴脸开大：当着 XBOX 高层的面，前《铁拳》总监原田胜弘直言希望别再推出 XSS 这样的主机"
+   }
+  ],
+  "preflight": {
+   "script_class": "含CJK",
+   "cores_lat": [],
+   "cores_cjk": [
+    "铁拳"
+   ],
+   "cjk_sub2": [
+    "铁拳"
+   ],
+   "match_note": "含2字CJK词元[铁拳]:放宽匹配(街机改版先例),若词元泛易假阳须人工核top3;2字子词≠必假阳(街机改版真相关);语义歧义零LLM治不了须人工,不预测命中率,不自动改词"
+  }
+ },
+ {
+  "ip_name": "metroid",
+  "candidate_word": "银河战士",
+  "word_kind": "IP大盘",
+  "gap_kind": "不在编辑映射表",
+  "note": "首个中文别名(§11.2)；粒度/角度/消歧须人工核",
+  "cards": 1,
+  "attention_max": "高",
+  "major_event_cards": 0,
+  "queues": [
+   "潜力待验证"
+  ],
+  "entries": [
+   "A"
+  ],
+  "samples": [
+   {
+    "event_id": "f87e6dffd9348eb2",
+    "attention": "高",
+    "core_hook": "Super Metroid (SNES) for GBA decomp port by nickdesaulniers"
+   }
+  ],
+  "preflight": {
+   "script_class": "含CJK",
+   "cores_lat": [],
+   "cores_cjk": [
+    "战士",
+    "河战",
+    "银河",
+    "银河战士"
+   ],
+   "cjk_sub2": [
+    "战士",
+    "河战",
+    "银河"
+   ],
+   "match_note": "含2字CJK词元[战士/河战/银河]:放宽匹配(街机改版先例),若词元泛易假阳须人工核top3;2字子词≠必假阳(街机改版真相关);语义歧义零LLM治不了须人工,不预测命中率,不自动改词"
+  }
+ },
+ {
+  "ip_name": "quake",
+  "candidate_word": "雷神之锤",
+  "word_kind": "IP大盘",
+  "gap_kind": "不在编辑映射表",
+  "note": "首个中文别名(§11.2)；粒度/角度/消歧须人工核",
+  "cards": 1,
+  "attention_max": "高",
+  "major_event_cards": 0,
+  "queues": [
+   "潜力待验证"
+  ],
+  "entries": [
+   "A"
+  ],
+  "samples": [
+   {
+    "event_id": "8604a7501305c230",
+    "attention": "高",
+    "core_hook": "Pinedra GPU, first public beta release: Quake I+II"
+   }
+  ],
+  "preflight": {
+   "script_class": "含CJK",
+   "cores_lat": [],
+   "cores_cjk": [
+    "之锤",
+    "神之",
+    "雷神",
+    "雷神之锤"
+   ],
+   "cjk_sub2": [
+    "之锤",
+    "神之",
+    "雷神"
+   ],
+   "match_note": "含2字CJK词元[之锤/神之/雷神]:放宽匹配(街机改版先例),若词元泛易假阳须人工核top3;2字子词≠必假阳(街机改版真相关);语义歧义零LLM治不了须人工,不预测命中率,不自动改词"
+  }
+ },
+ {
+  "ip_name": "professor layton",
+  "candidate_word": "雷顿教授",
+  "word_kind": "IP大盘",
+  "gap_kind": "不在编辑映射表",
+  "note": "首个中文别名(§11.2)；粒度/角度/消歧须人工核",
+  "cards": 1,
+  "attention_max": "高",
+  "major_event_cards": 0,
+  "queues": [
+   "潜力待验证"
+  ],
+  "entries": [
+   "A"
+  ],
+  "samples": [
+   {
+    "event_id": "8dbc9ef35353f1c6",
+    "attention": "高",
+    "core_hook": "Professor Layton and the New World of Steam arrives December"
+   }
+  ],
+  "preflight": {
+   "script_class": "含CJK",
+   "cores_lat": [],
+   "cores_cjk": [
+    "教授",
+    "雷顿",
+    "雷顿教授",
+    "顿教"
+   ],
+   "cjk_sub2": [
+    "教授",
+    "雷顿",
+    "顿教"
+   ],
+   "match_note": "含2字CJK词元[教授/雷顿/顿教]:放宽匹配(街机改版先例),若词元泛易假阳须人工核top3;2字子词≠必假阳(街机改版真相关);语义歧义零LLM治不了须人工,不预测命中率,不自动改词"
+  }
+ },
+ {
+  "ip_name": "fbneo",
+  "candidate_word": "fbneo",
+  "word_kind": "项目/平台",
+  "gap_kind": "不在编辑映射表",
+  "note": "项目名原样；中文品类词(开源掌机/PS4模拟器等)须人工补",
+  "cards": 1,
+  "attention_max": "中",
+  "major_event_cards": 0,
+  "queues": [
+   "系列跟踪"
+  ],
+  "entries": [
+   "A"
+  ],
+  "samples": [
+   {
+    "event_id": "series:d2cc3233969a",
+    "attention": "中",
+    "core_hook": "fbneo 持续更新跟踪（2个事件）"
+   }
+  ],
+  "preflight": {
+   "script_class": "纯拉丁",
+   "cores_lat": [
+    "fbneo"
+   ],
+   "cores_cjk": [],
+   "cjk_sub2": [],
+   "match_note": "纯拉丁词:B站易词元级模糊兜底(model2-nx→NX CAD先例),须核top3/考虑补中文品类词;纯拉丁≠必兜底(Batocera/shadPS4纯拉丁但实测可靠);命中率须联网实测,不预测,不自动改词"
+  }
+ },
+ {
+  "ip_name": "melonds",
+  "candidate_word": "melonds",
+  "word_kind": "项目/平台",
+  "gap_kind": "不在编辑映射表",
+  "note": "项目名原样；中文品类词(开源掌机/PS4模拟器等)须人工补",
+  "cards": 1,
+  "attention_max": "中",
+  "major_event_cards": 0,
+  "queues": [
+   "潜力待验证"
+  ],
+  "entries": [
+   "A"
+  ],
+  "samples": [
+   {
+    "event_id": "dcb51f31fa9f4042",
+    "attention": "中",
+    "core_hook": "MelonDS iOS Hazy, too bright"
+   }
+  ],
+  "preflight": {
+   "script_class": "纯拉丁",
+   "cores_lat": [
+    "melonds"
+   ],
+   "cores_cjk": [],
+   "cjk_sub2": [],
+   "match_note": "纯拉丁词:B站易词元级模糊兜底(model2-nx→NX CAD先例),须核top3/考虑补中文品类词;纯拉丁≠必兜底(Batocera/shadPS4纯拉丁但实测可靠);命中率须联网实测,不预测,不自动改词"
+  }
+ },
+ {
+  "ip_name": "vita3k",
+  "candidate_word": "vita3k",
+  "word_kind": "项目/平台",
+  "gap_kind": "不在编辑映射表",
+  "note": "项目名原样；中文品类词(开源掌机/PS4模拟器等)须人工补",
+  "cards": 1,
+  "attention_max": "中",
+  "major_event_cards": 0,
+  "queues": [
+   "系列跟踪"
+  ],
+  "entries": [
+   "A"
+  ],
+  "samples": [
+   {
+    "event_id": "series:eb98034a488a",
+    "attention": "中",
+    "core_hook": "vita3k 持续更新跟踪（15个事件）"
+   }
+  ],
+  "preflight": {
+   "script_class": "纯拉丁",
+   "cores_lat": [
+    "vita3k"
+   ],
+   "cores_cjk": [],
+   "cjk_sub2": [],
+   "match_note": "纯拉丁词:B站易词元级模糊兜底(model2-nx→NX CAD先例),须核top3/考虑补中文品类词;纯拉丁≠必兜底(Batocera/shadPS4纯拉丁但实测可靠);命中率须联网实测,不预测,不自动改词"
+  }
+ },
+ {
+  "ip_name": "tetris",
+  "candidate_word": "俄罗斯方块",
+  "word_kind": "IP大盘",
+  "gap_kind": "不在编辑映射表",
+  "note": "首个中文别名(§11.2)；粒度/角度/消歧须人工核",
+  "cards": 1,
+  "attention_max": "中",
+  "major_event_cards": 0,
+  "queues": [
+   "潜力待验证"
+  ],
+  "entries": [
+   "A"
+  ],
+  "samples": [
+   {
+    "event_id": "026c8fc6290adc67",
+    "attention": "中",
+    "core_hook": "Puyo Puyo Tetris (Jan 9, 2014 PS Vita demo)"
+   }
+  ],
+  "preflight": {
+   "script_class": "含CJK",
+   "cores_lat": [],
+   "cores_cjk": [
+    "俄罗",
+    "俄罗斯方块",
+    "斯方",
+    "方块",
+    "罗斯"
+   ],
+   "cjk_sub2": [
+    "俄罗",
+    "斯方",
+    "方块",
+    "罗斯"
+   ],
+   "match_note": "含2字CJK词元[俄罗/斯方/方块/罗斯]:放宽匹配(街机改版先例),若词元泛易假阳须人工核top3;2字子词≠必假阳(街机改版真相关);语义歧义零LLM治不了须人工,不预测命中率,不自动改词"
+  }
+ },
+ {
+  "ip_name": "hatsune miku",
+  "candidate_word": "初音未来",
+  "word_kind": "IP大盘",
+  "gap_kind": "不在编辑映射表",
+  "note": "首个中文别名(§11.2)；粒度/角度/消歧须人工核",
+  "cards": 1,
+  "attention_max": "中",
+  "major_event_cards": 0,
+  "queues": [
+   "潜力待验证"
+  ],
+  "entries": [
+   "A"
+  ],
+  "samples": [
+   {
+    "event_id": "6ce06123cfb1772c",
+    "attention": "中",
+    "core_hook": "Hatsune Miku and Umamusume cars crash on first lap of profes"
+   }
+  ],
+  "preflight": {
+   "script_class": "含CJK",
+   "cores_lat": [],
+   "cores_cjk": [
+    "初音",
+    "初音未来",
+    "未来",
+    "音未"
+   ],
+   "cjk_sub2": [
+    "初音",
+    "未来",
+    "音未"
+   ],
+   "match_note": "含2字CJK词元[初音/未来/音未]:放宽匹配(街机改版先例),若词元泛易假阳须人工核top3;2字子词≠必假阳(街机改版真相关);语义歧义零LLM治不了须人工,不预测命中率,不自动改词"
+  }
+ },
+ {
+  "ip_name": "nier",
+  "candidate_word": "尼尔",
+  "word_kind": "IP大盘",
+  "gap_kind": "不在编辑映射表",
+  "note": "首个中文别名(§11.2)；粒度/角度/消歧须人工核",
+  "cards": 1,
+  "attention_max": "中",
+  "major_event_cards": 0,
+  "queues": [
+   "潜力待验证"
+  ],
+  "entries": [
+   "A"
+  ],
+  "samples": [
+   {
+    "event_id": "6ff78fe4363dcada",
+    "attention": "中",
+    "core_hook": "Square Enix responds after Nier Automata update triggers mas"
+   }
+  ],
+  "preflight": {
+   "script_class": "含CJK",
+   "cores_lat": [],
+   "cores_cjk": [
+    "尼尔"
+   ],
+   "cjk_sub2": [
+    "尼尔"
+   ],
+   "match_note": "含2字CJK词元[尼尔]:放宽匹配(街机改版先例),若词元泛易假阳须人工核top3;2字子词≠必假阳(街机改版真相关);语义歧义零LLM治不了须人工,不预测命中率,不自动改词"
+  }
+ },
+ {
+  "ip_name": "digimon",
+  "candidate_word": "数码宝贝",
+  "word_kind": "IP大盘",
+  "gap_kind": "不在编辑映射表",
+  "note": "首个中文别名(§11.2)；粒度/角度/消歧须人工核",
+  "cards": 1,
+  "attention_max": "中",
+  "major_event_cards": 0,
+  "queues": [
+   "潜力待验证"
+  ],
+  "entries": [
+   "A"
+  ],
+  "samples": [
+   {
+    "event_id": "79e78d2770729f19",
+    "attention": "中",
+    "core_hook": "A Fan-Made First-Person Version Of Digimon World For PS1 Is "
+   }
+  ],
+  "preflight": {
+   "script_class": "含CJK",
+   "cores_lat": [],
+   "cores_cjk": [
+    "宝贝",
+    "数码",
+    "数码宝贝",
+    "码宝"
+   ],
+   "cjk_sub2": [
+    "宝贝",
+    "数码",
+    "码宝"
+   ],
+   "match_note": "含2字CJK词元[宝贝/数码/码宝]:放宽匹配(街机改版先例),若词元泛易假阳须人工核top3;2字子词≠必假阳(街机改版真相关);语义歧义零LLM治不了须人工,不预测命中率,不自动改词"
+  }
+ },
+ {
+  "ip_name": "blazblue",
+  "candidate_word": "苍翼默示录",
+  "word_kind": "IP大盘",
+  "gap_kind": "不在编辑映射表",
+  "note": "首个中文别名(§11.2)；粒度/角度/消歧须人工核",
+  "cards": 1,
+  "attention_max": "中",
+  "major_event_cards": 0,
+  "queues": [
+   "潜力待验证"
+  ],
+  "entries": [
+   "A"
+  ],
+  "samples": [
+   {
+    "event_id": "275b318fcea6d74e",
+    "attention": "中",
+    "core_hook": "Blazblue Calamity Trigger on my PSP during my 15 minute brea"
+   }
+  ],
+  "preflight": {
+   "script_class": "含CJK",
+   "cores_lat": [],
+   "cores_cjk": [
+    "示录",
+    "翼默",
+    "苍翼",
+    "苍翼默示录",
+    "默示"
+   ],
+   "cjk_sub2": [
+    "示录",
+    "翼默",
+    "苍翼",
+    "默示"
+   ],
+   "match_note": "含2字CJK词元[示录/翼默/苍翼/默示]:放宽匹配(街机改版先例),若词元泛易假阳须人工核top3;2字子词≠必假阳(街机改版真相关);语义歧义零LLM治不了须人工,不预测命中率,不自动改词"
+  }
+ },
+ {
+  "ip_name": "street fighter",
+  "candidate_word": "街霸",
+  "word_kind": "IP大盘",
+  "gap_kind": "不在编辑映射表",
+  "note": "首个中文别名(§11.2)；粒度/角度/消歧须人工核",
+  "cards": 1,
+  "attention_max": "中",
+  "major_event_cards": 0,
+  "queues": [
+   "潜力待验证"
+  ],
+  "entries": [
+   "A"
+  ],
+  "samples": [
+   {
+    "event_id": "f937aecb32b63625",
+    "attention": "中",
+    "core_hook": "Opponent order not randomized as should be, Super Street Fig"
+   }
+  ],
+  "preflight": {
+   "script_class": "含CJK",
+   "cores_lat": [],
+   "cores_cjk": [
+    "街霸"
+   ],
+   "cjk_sub2": [
+    "街霸"
+   ],
+   "match_note": "含2字CJK词元[街霸]:放宽匹配(街机改版先例),若词元泛易假阳须人工核top3;2字子词≠必假阳(街机改版真相关);语义歧义零LLM治不了须人工,不预测命中率,不自动改词"
+  }
+ },
+ {
+  "ip_name": "f-zero",
+  "candidate_word": "零式赛车",
+  "word_kind": "IP大盘",
+  "gap_kind": "不在编辑映射表",
+  "note": "首个中文别名(§11.2)；粒度/角度/消歧须人工核",
+  "cards": 1,
+  "attention_max": "中",
+  "major_event_cards": 0,
+  "queues": [
+   "潜力待验证"
+  ],
+  "entries": [
+   "A"
+  ],
+  "samples": [
+   {
+    "event_id": "f1ed4553845b36b4",
+    "attention": "中",
+    "core_hook": "This Impressive New Game Boy Color Game May Look A Little Fa"
+   }
+  ],
+  "preflight": {
+   "script_class": "含CJK",
+   "cores_lat": [],
+   "cores_cjk": [
+    "式赛",
+    "赛车",
+    "零式",
+    "零式赛车"
+   ],
+   "cjk_sub2": [
+    "式赛",
+    "赛车",
+    "零式"
+   ],
+   "match_note": "含2字CJK词元[式赛/赛车/零式]:放宽匹配(街机改版先例),若词元泛易假阳须人工核top3;2字子词≠必假阳(街机改版真相关);语义歧义零LLM治不了须人工,不预测命中率,不自动改词"
+  }
+ },
+ {
+  "ip_name": "gundam",
+  "candidate_word": "高达",
+  "word_kind": "IP大盘",
+  "gap_kind": "不在编辑映射表",
+  "note": "首个中文别名(§11.2)；粒度/角度/消歧须人工核",
+  "cards": 1,
+  "attention_max": "中",
+  "major_event_cards": 0,
+  "queues": [
+   "潜力待验证"
+  ],
+  "entries": [
+   "A"
+  ],
+  "samples": [
+   {
+    "event_id": "0c7353268b164216",
+    "attention": "中",
+    "core_hook": "Gundam Assemble: Hands-On With Mobile Suit Gundam’s Miniatur"
+   }
+  ],
+  "preflight": {
+   "script_class": "含CJK",
+   "cores_lat": [],
+   "cores_cjk": [
+    "高达"
+   ],
+   "cjk_sub2": [
+    "高达"
+   ],
+   "match_note": "含2字CJK词元[高达]:放宽匹配(街机改版先例),若词元泛易假阳须人工核top3;2字子词≠必假阳(街机改版真相关);语义歧义零LLM治不了须人工,不预测命中率,不自动改词"
+  }
+ },
+ {
+  "ip_name": "wuthering",
+  "candidate_word": "鸣潮",
+  "word_kind": "IP大盘",
+  "gap_kind": "不在编辑映射表",
+  "note": "首个中文别名(§11.2)；粒度/角度/消歧须人工核",
+  "cards": 1,
+  "attention_max": "中",
+  "major_event_cards": 0,
+  "queues": [
+   "潜力待验证"
+  ],
+  "entries": [
+   "A"
+  ],
+  "samples": [
+   {
+    "event_id": "b7575912db0ad329",
+    "attention": "中",
+    "core_hook": "《鸣潮》3.8 版本将为索尼 PS5 Pro 带来 PSSR，PC 端开放“资源分类下载”及“资源清理”功能"
+   }
+  ],
+  "preflight": {
+   "script_class": "含CJK",
+   "cores_lat": [],
+   "cores_cjk": [
+    "鸣潮"
+   ],
+   "cjk_sub2": [
+    "鸣潮"
+   ],
+   "match_note": "含2字CJK词元[鸣潮]:放宽匹配(街机改版先例),若词元泛易假阳须人工核top3;2字子词≠必假阳(街机改版真相关);语义歧义零LLM治不了须人工,不预测命中率,不自动改词"
+  }
+ }
+]

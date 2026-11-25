@@ -1,0 +1,248 @@
+{
+  "schema_version": 1,
+  "kind": "statejump_showcase",
+  "game_id": "ninja_gaiden1_nes_us",
+  "game_title": "Ninja Gaiden / 忍者龙剑传 (NES, 1989 Tecmo)",
+  "platform": "NES",
+  "core": "NesHawk",
+  "system": "NES",
+  "rom": "F:/taspipe_scratch/ng1_showcase/ninja_gaiden.nes",
+  "bizhawk": "F:/开源掌机教程/02-模拟器库/BizHawk/BizHawk-2.8",
+  "base_state": "F:/taspipe_scratch/ng1_showcase/base.state",
+  "fps": 60.0988,
+  "template": "fc_tianma_cover",
+  "catalog": {
+    "status": "complete",
+    "expected_total": 6,
+    "sources": [
+      "https://datacrystal.tcrf.net/wiki/Ninja_Gaiden_(NES)/RAM_map",
+      "https://strategywiki.org/wiki/Ninja_Gaiden/Items",
+      "目标与实施路线.md §1 & §3 T3/T4 忍者龙剑传忍术与道具要素包"
+    ],
+    "coverage_note": "忍者龙剑传 1 代全部 5 种忍术副武器（手里剑、风车手里剑、忍火轮、空翻斩、火龙之术）+ 龙剑基础挥砍完整盘点；0x00C5 为当前忍术 ID，0x0064 为忍术灵力值"
+  },
+  "elements": [
+    {
+      "element_id": "dragon_sword_slash",
+      "label": "Dragon Sword Slash (龙剑挥砍)",
+      "kind": "move",
+      "base_state": null,
+      "trigger": {
+        "macro": "B,,,,B,,,,B,,,,,,,,,,,,,,,,,,,,",
+        "extra": 25,
+        "patches": []
+      },
+      "detection": {
+        "frame": 8,
+        "success_checks": [
+          {
+            "check_id": "dragon_sword_blade_sig",
+            "plugin_id": "frame_region_color_fraction",
+            "params": {
+              "region": [0.20, 0.35, 0.78, 0.78],
+              "rgb": [248, 248, 248],
+              "tol": 26,
+              "min_fraction": 0.008
+            },
+            "required": true
+          }
+        ]
+      },
+      "negative_control": {
+        "macro": null,
+        "patches": []
+      },
+      "note": "隼龙默认近战武器龙剑；运行 universal_authoring calibrate 自动实测更新帧与区域。"
+    },
+    {
+      "element_id": "throwing_star",
+      "label": "Throwing Star (手里剑)",
+      "kind": "skill",
+      "base_state": null,
+      "trigger": {
+        "macro": "Up+B,Up+B,Up+B,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,",
+        "extra": 25,
+        "patches": [
+          {"addr": 100, "value": 99},
+          {"addr": 197, "value": 128}
+        ]
+      },
+      "detection": {
+        "frame": 12,
+        "success_checks": [
+          {
+            "check_id": "shuriken_flight_sig",
+            "plugin_id": "frame_region_color_fraction",
+            "params": {
+              "region": [0.25, 0.35, 0.85, 0.72],
+              "rgb": [248, 248, 248],
+              "tol": 26,
+              "min_fraction": 0.006
+            },
+            "required": true
+          }
+        ]
+      },
+      "negative_control": {
+        "macro": null,
+        "patches": [
+          {"addr": 100, "value": 99},
+          {"addr": 197, "value": 128}
+        ]
+      },
+      "note": "消耗 3 点忍力直线投掷十字手里剑。"
+    },
+    {
+      "element_id": "windmill_throwing_star",
+      "label": "Windmill Throwing Star (风车手里剑)",
+      "kind": "skill",
+      "base_state": null,
+      "trigger": {
+        "macro": "Up+B,Up+B,Up+B,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,",
+        "extra": 35,
+        "patches": [
+          {"addr": 100, "value": 99},
+          {"addr": 197, "value": 130}
+        ]
+      },
+      "detection": {
+        "frame": 16,
+        "success_checks": [
+          {
+            "check_id": "windmill_shuriken_sig",
+            "plugin_id": "frame_region_color_fraction",
+            "params": {
+              "region": [0.25, 0.30, 0.88, 0.76],
+              "rgb": [248, 184, 88],
+              "tol": 28,
+              "min_fraction": 0.008
+            },
+            "required": true
+          }
+        ]
+      },
+      "negative_control": {
+        "macro": null,
+        "patches": [
+          {"addr": 100, "value": 99},
+          {"addr": 197, "value": 130}
+        ]
+      },
+      "note": "消耗 5 点忍力投掷大型回旋风车手里剑，穿透并往返。"
+    },
+    {
+      "element_id": "art_of_the_fire_wheel",
+      "label": "Art of the Fire Wheel (忍火轮之术)",
+      "kind": "skill",
+      "base_state": null,
+      "trigger": {
+        "macro": "Up+B,Up+B,Up+B,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,",
+        "extra": 25,
+        "patches": [
+          {"addr": 100, "value": 99},
+          {"addr": 197, "value": 132}
+        ]
+      },
+      "detection": {
+        "frame": 14,
+        "success_checks": [
+          {
+            "check_id": "fire_wheel_diagonal_sig",
+            "plugin_id": "frame_region_color_fraction",
+            "params": {
+              "region": [0.20, 0.15, 0.85, 0.65],
+              "rgb": [248, 120, 56],
+              "tol": 28,
+              "min_fraction": 0.01
+            },
+            "required": true
+          }
+        ]
+      },
+      "negative_control": {
+        "macro": null,
+        "patches": [
+          {"addr": 100, "value": 99},
+          {"addr": 197, "value": 132}
+        ]
+      },
+      "note": "消耗 5 点忍力向斜上方连续发射三枚烈焰火轮。"
+    },
+    {
+      "element_id": "jump_and_slash",
+      "label": "Jump & Slash (旋转空翻斩)",
+      "kind": "skill",
+      "base_state": null,
+      "trigger": {
+        "macro": "A,A,A,A,A,A,,,,,,Up+B,Up+B,Up+B,Up+B,,,,,,,,,,,,,,,,,,,,,,,,",
+        "extra": 25,
+        "patches": [
+          {"addr": 100, "value": 99},
+          {"addr": 197, "value": 134}
+        ]
+      },
+      "detection": {
+        "frame": 16,
+        "success_checks": [
+          {
+            "check_id": "jump_slash_spin_sig",
+            "plugin_id": "frame_region_color_fraction",
+            "params": {
+              "region": [0.20, 0.20, 0.78, 0.75],
+              "rgb": [120, 200, 248],
+              "tol": 28,
+              "min_fraction": 0.01
+            },
+            "required": true
+          }
+        ]
+      },
+      "negative_control": {
+        "macro": null,
+        "patches": [
+          {"addr": 100, "value": 99},
+          {"addr": 197, "value": 134}
+        ]
+      },
+      "note": "跳跃中按 Up+B 消耗 5 点忍力施展周身无敌旋转斩（秒杀 Boss 神技）。"
+    },
+    {
+      "element_id": "invincible_fire_wheel",
+      "label": "Invincible Fire Wheel (护身火龙轮)",
+      "kind": "skill",
+      "base_state": null,
+      "trigger": {
+        "macro": "Up+B,Up+B,Up+B,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,",
+        "extra": 35,
+        "patches": [
+          {"addr": 100, "value": 99},
+          {"addr": 197, "value": 136}
+        ]
+      },
+      "detection": {
+        "frame": 18,
+        "success_checks": [
+          {
+            "check_id": "orbit_fire_wheel_sig",
+            "plugin_id": "frame_region_color_fraction",
+            "params": {
+              "region": [0.18, 0.25, 0.80, 0.80],
+              "rgb": [248, 120, 56],
+              "tol": 28,
+              "min_fraction": 0.012
+            },
+            "required": true
+          }
+        ]
+      },
+      "negative_control": {
+        "macro": null,
+        "patches": [
+          {"addr": 100, "value": 99},
+          {"addr": 197, "value": 136}
+        ]
+      },
+      "note": "召唤四团火焰围绕隼龙周身高速旋转护体。"
+    }
+  ]
+}

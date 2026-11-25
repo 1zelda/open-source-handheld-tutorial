@@ -1,0 +1,30 @@
+W1119 11:54:53.664000 35092 E:\SHARE\py313-cuda\torch\distributed\elastic\multiprocessing\redirects.py:29] NOTE: Redirects are currently not supported in Windows or MacOs.
+Loading weights:   0%|          | 0/391 [00:00<?, ?it/s]Loading weights: 100%|██████████| 391/391 [00:00<00:00, 62930.65it/s]
+Loading weights:   0%|          | 0/393 [00:00<?, ?it/s]Loading weights:   2%|▏         | 6/393 [00:00<00:06, 56.67it/s]Loading weights:   3%|▎         | 12/393 [00:00<00:06, 57.69it/s]Loading weights:   5%|▍         | 18/393 [00:00<00:08, 44.08it/s]Loading weights:   7%|▋         | 26/393 [00:00<00:06, 53.76it/s]Loading weights:   8%|▊         | 32/393 [00:00<00:08, 45.06it/s]Loading weights:   9%|▉         | 37/393 [00:01<00:19, 17.91it/s]Loading weights:  10%|█         | 41/393 [00:02<00:33, 10.36it/s]Loading weights: 100%|██████████| 393/393 [00:02<00:00, 167.20it/s]
+Q01  OK  strict_pass    status=pass         retrieval=hybrid_union12 gold_pos=3 cond=Y refusal=-
+Q02  OK  strict_pass    status=pass         retrieval=hybrid_union12 gold_pos=4 cond=Y refusal=-
+Q03  OK  strict_pass    status=pass         retrieval=hybrid_union12 gold_pos=2 cond=Y refusal=-
+Q04  OK  gold_in_topk   status=pass         retrieval=hybrid_union12 gold_pos=1 cond=- refusal=-
+Q05  OK  strict_pass    status=pass         retrieval=hybrid_union12 gold_pos=1 cond=- refusal=-
+Q06  OK  gold_in_topk   status=inconclusive retrieval=hybrid_union12 gold_pos=6 cond=- refusal=-
+Q07  OK  gold_in_topk   status=pass         retrieval=hybrid_union12 gold_pos=1 cond=- refusal=-
+Q08  FAIL gold_in_topk   status=inconclusive retrieval=hybrid_union12 gold_pos=None cond=- refusal=-
+Q09  OK  refuse         status=inconclusive retrieval=hybrid_union12 gold_pos=None cond=- refusal=unanswerable
+Q10  FAIL strict_pass    status=pass         retrieval=hybrid_union12 gold_pos=None cond=- refusal=-
+Q11  OK  version_guard  status=pass         retrieval=hybrid_union12 gold_pos=None cond=- refusal=-
+Q12  OK  refuse         status=miss         retrieval=?              gold_pos=None cond=- refusal=out_of_scope
+Q13  OK  refuse         status=miss         retrieval=?              gold_pos=None cond=- refusal=out_of_scope
+Q14  OK  refuse         status=miss         retrieval=?              gold_pos=None cond=- refusal=out_of_scope
+Q15  OK  refuse         status=inconclusive retrieval=hybrid_union12 gold_pos=None cond=- refusal=unanswerable
+Q16  OK  gold_in_topk   status=inconclusive retrieval=hybrid_union12 gold_pos=1 cond=- refusal=-
+Q17  OK  gold_in_topk   status=pass         retrieval=hybrid_union12 gold_pos=1 cond=Y refusal=-
+Q18  OK  strict_pass    status=pass         retrieval=hybrid_union12 gold_pos=3 cond=Y refusal=-
+P19  OK  gold_in_topk   status=pass         retrieval=hybrid_union12 gold_pos=1 cond=Y refusal=-
+P20  OK  refuse         status=miss         retrieval=?              gold_pos=None cond=- refusal=out_of_scope
+P21  OK  refuse         status=inconclusive retrieval=hybrid_union12 gold_pos=None cond=- refusal=unanswerable
+P22  OK  gold_in_topk   status=pass         retrieval=hybrid_union12 gold_pos=2 cond=Y refusal=-
+P23  OK  gold_in_topk   status=inconclusive retrieval=hybrid_union12 gold_pos=6 cond=- refusal=-
+P24  OK  gold_in_topk   status=pass         retrieval=hybrid_union12 gold_pos=1 cond=- refusal=-
+P25  OK  refuse         status=inconclusive retrieval=hybrid_union12 gold_pos=None cond=- refusal=unanswerable
+P26  OK  refuse         status=miss         retrieval=?              gold_pos=None cond=- refusal=out_of_scope
+{"total": 26, "ok": 24, "by_tier": {"strict_pass": {"total": 6, "ok": 5}, "gold_in_topk": {"total": 10, "ok": 9}, "refuse": {"total": 9, "ok": 9}, "version_guard": {"total": 1, "ok": 1}}, "failed_ids": ["Q08", "Q10"]}

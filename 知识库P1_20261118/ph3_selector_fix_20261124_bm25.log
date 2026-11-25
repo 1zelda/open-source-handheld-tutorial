@@ -1,0 +1,179 @@
+===== 26 questions ， replace =====
+Q01  unchanged_ok   fc=count            prod=True  sim=True  rank=3 first_gold_w=3
+Q02  fixed          fc=role_attribution prod=False sim=True  rank=10 first_gold_w=12
+Q03  unchanged_fail fc=None             prod=False sim=False rank=None first_gold_w=None
+Q04  unchanged_ok   fc=capability       prod=True  sim=True  rank=1 first_gold_w=3
+Q05  regressed      fc=None             prod=True  sim=False rank=None first_gold_w=None
+Q06  unchanged_fail fc=count            prod=False sim=False rank=25 first_gold_w=None
+Q07  unchanged_ok   fc=count            prod=True  sim=True  rank=None first_gold_w=None
+Q08  unchanged_ok   fc=player_role      prod=True  sim=True  rank=19 first_gold_w=20
+Q09  unchanged_ok   fc=exact_value      prod=True  sim=True  rank=None first_gold_w=None
+Q10  unchanged_ok   fc=capability       prod=True  sim=True  rank=1 first_gold_w=3
+Q11  unchanged_ok   fc=None             prod=True  sim=True  rank=None first_gold_w=None
+Q12  unchanged_ok   fc=None             prod=True  sim=True  rank=None first_gold_w=None
+Q13  unchanged_ok   fc=None             prod=True  sim=True  rank=None first_gold_w=None
+Q14  unchanged_ok   fc=None             prod=True  sim=True  rank=None first_gold_w=None
+Q15  unchanged_ok   fc=None             prod=True  sim=True  rank=None first_gold_w=None
+Q16  unchanged_ok   fc=None             prod=True  sim=True  rank=None first_gold_w=None
+Q17  unchanged_ok   fc=capability       prod=True  sim=True  rank=3 first_gold_w=None
+Q18  unchanged_fail fc=None             prod=False sim=False rank=None first_gold_w=None
+P19  unchanged_ok   fc=None             prod=True  sim=True  rank=None first_gold_w=None
+P20  unchanged_ok   fc=None             prod=True  sim=True  rank=None first_gold_w=None
+P21  unchanged_ok   fc=exact_value      prod=True  sim=True  rank=None first_gold_w=None
+P22  unchanged_ok   fc=None             prod=True  sim=True  rank=None first_gold_w=None
+P23  unchanged_ok   fc=None             prod=True  sim=True  rank=None first_gold_w=None
+P24  unchanged_ok   fc=None             prod=True  sim=True  rank=None first_gold_w=None
+P25  unchanged_ok   fc=None             prod=True  sim=True  rank=None first_gold_w=None
+P26  unchanged_ok   fc=None             prod=True  sim=True  rank=None first_gold_w=None
+===== probes ext ， replace =====
+XX01   insufficient_source newly_passed  fc=exact_value rank=1
+XX02   insufficient_source still_refused fc=None rank=None
+XX03   positive_control    still_refused fc=None rank=None
+XX04   ambiguous           still_refused fc=None rank=None
+XX05   insufficient_source intercepted   fc=None rank=None
+XX06   insufficient_source newly_passed  fc=count rank=2
+XX07   insufficient_source still_refused fc=None rank=None
+XX08   insufficient_source still_refused fc=None rank=None
+XX09   insufficient_source still_refused fc=None rank=None
+XX10   insufficient_source newly_passed  fc=count rank=7
+XX11   true_negative       newly_passed  fc=capability rank=12
+XX12   true_negative       still_refused fc=None rank=None
+XX13   true_negative       still_refused fc=None rank=None
+XX14   true_negative       still_refused fc=None rank=None
+XX15   positive_control    still_refused fc=count rank=None
+XX16   insufficient_source newly_passed  fc=capability rank=5
+XX17   insufficient_source intercepted   fc=None rank=None
+XX18   insufficient_source still_refused fc=None rank=None
+XX19   insufficient_source intercepted   fc=None rank=None
+XX20   insufficient_source intercepted   fc=None rank=None
+XX21   positive_control    intercepted   fc=None rank=None
+XX22   true_negative       intercepted   fc=None rank=None
+XX23   insufficient_source still_refused fc=None rank=None
+XX24   insufficient_source still_refused fc=None rank=None
+XX25   true_negative       still_refused fc=None rank=None
+XX26   insufficient_source still_refused fc=None rank=None
+XX27   insufficient_source still_refused fc=None rank=None
+XX28   true_negative       still_refused fc=None rank=None
+XX29   insufficient_source still_refused fc=None rank=None
+XX30   insufficient_source intercepted   fc=None rank=None
+===== probes base ， replace =====
+BW01   None                still_refused fc=None rank=None
+BW02   None                newly_passed  fc=count rank=5
+BW03   None                newly_passed  fc=capability rank=13
+BW04   None                still_refused fc=None rank=None
+BW05   None                still_refused fc=None rank=None
+BW06   None                still_refused fc=count rank=None
+BW07   None                still_refused fc=None rank=None
+BW08   None                intercepted   fc=None rank=None
+BW09   None                still_refused fc=None rank=None
+BW10   None                intercepted   fc=None rank=None
+BW11   None                still_refused fc=None rank=None
+BW12   None                intercepted   fc=None rank=None
+BW13   None                still_refused fc=None rank=None
+BW14   None                still_refused fc=None rank=None
+BW15   None                still_refused fc=None rank=None
+BW16   None                still_refused fc=None rank=None
+BW17   None                intercepted   fc=None rank=None
+BW18   None                intercepted   fc=None rank=None
+BW19   None                newly_passed  fc=capability rank=4
+BW20   None                still_refused fc=None rank=None
+BW21   None                intercepted   fc=None rank=None
+BW22   None                intercepted   fc=None rank=None
+BW23   None                intercepted   fc=None rank=None
+BW24   None                still_refused fc=None rank=None
+BW25   None                still_refused fc=None rank=None
+BW26   None                still_refused fc=None rank=None
+BW27   None                still_refused fc=None rank=None
+BW28   None                newly_passed  fc=exact_value rank=2
+BW29   None                still_passed  fc=capability rank=3
+BW30   None                intercepted   fc=None rank=None
+===== 26 questions ， scoped =====
+Q01  unchanged_ok   fc=count            prod=True  sim=True  rank=3 first_gold_w=3
+Q02  fixed          fc=role_attribution prod=False sim=True  rank=10 first_gold_w=12
+Q03  unchanged_fail fc=None             prod=False sim=False rank=None first_gold_w=None
+Q04  unchanged_ok   fc=capability       prod=True  sim=True  rank=1 first_gold_w=3
+Q05  unchanged_ok   fc=None             prod=True  sim=True  rank=None first_gold_w=None
+Q06  unchanged_fail fc=count            prod=False sim=False rank=25 first_gold_w=None
+Q07  unchanged_ok   fc=count            prod=True  sim=True  rank=None first_gold_w=None
+Q08  unchanged_ok   fc=player_role      prod=True  sim=True  rank=19 first_gold_w=20
+Q09  unchanged_ok   fc=exact_value      prod=True  sim=True  rank=None first_gold_w=None
+Q10  unchanged_ok   fc=capability       prod=True  sim=True  rank=1 first_gold_w=3
+Q11  unchanged_ok   fc=None             prod=True  sim=True  rank=None first_gold_w=None
+Q12  unchanged_ok   fc=None             prod=True  sim=True  rank=None first_gold_w=None
+Q13  unchanged_ok   fc=None             prod=True  sim=True  rank=None first_gold_w=None
+Q14  unchanged_ok   fc=None             prod=True  sim=True  rank=None first_gold_w=None
+Q15  unchanged_ok   fc=None             prod=True  sim=True  rank=None first_gold_w=None
+Q16  unchanged_ok   fc=None             prod=True  sim=True  rank=None first_gold_w=None
+Q17  unchanged_ok   fc=capability       prod=True  sim=True  rank=3 first_gold_w=None
+Q18  unchanged_fail fc=None             prod=False sim=False rank=None first_gold_w=None
+P19  unchanged_ok   fc=None             prod=True  sim=True  rank=None first_gold_w=None
+P20  unchanged_ok   fc=None             prod=True  sim=True  rank=None first_gold_w=None
+P21  unchanged_ok   fc=exact_value      prod=True  sim=True  rank=None first_gold_w=None
+P22  unchanged_ok   fc=None             prod=True  sim=True  rank=None first_gold_w=None
+P23  unchanged_ok   fc=None             prod=True  sim=True  rank=None first_gold_w=None
+P24  unchanged_ok   fc=None             prod=True  sim=True  rank=None first_gold_w=None
+P25  unchanged_ok   fc=None             prod=True  sim=True  rank=None first_gold_w=None
+P26  unchanged_ok   fc=None             prod=True  sim=True  rank=None first_gold_w=None
+===== probes ext ， scoped =====
+XX01   insufficient_source newly_passed  fc=exact_value rank=1
+XX02   insufficient_source still_refused fc=None rank=None
+XX03   positive_control    still_refused fc=None rank=None
+XX04   ambiguous           still_refused fc=None rank=None
+XX05   insufficient_source still_passed  fc=None rank=None
+XX06   insufficient_source newly_passed  fc=count rank=2
+XX07   insufficient_source still_refused fc=None rank=None
+XX08   insufficient_source still_refused fc=None rank=None
+XX09   insufficient_source still_refused fc=None rank=None
+XX10   insufficient_source newly_passed  fc=count rank=7
+XX11   true_negative       newly_passed  fc=capability rank=12
+XX12   true_negative       still_refused fc=None rank=None
+XX13   true_negative       still_refused fc=None rank=None
+XX14   true_negative       still_refused fc=None rank=None
+XX15   positive_control    still_refused fc=count rank=None
+XX16   insufficient_source newly_passed  fc=capability rank=5
+XX17   insufficient_source still_passed  fc=None rank=None
+XX18   insufficient_source still_refused fc=None rank=None
+XX19   insufficient_source still_passed  fc=None rank=None
+XX20   insufficient_source still_passed  fc=None rank=None
+XX21   positive_control    still_passed  fc=None rank=None
+XX22   true_negative       still_passed  fc=None rank=None
+XX23   insufficient_source still_refused fc=None rank=None
+XX24   insufficient_source still_refused fc=None rank=None
+XX25   true_negative       still_refused fc=None rank=None
+XX26   insufficient_source still_refused fc=None rank=None
+XX27   insufficient_source still_refused fc=None rank=None
+XX28   true_negative       still_refused fc=None rank=None
+XX29   insufficient_source still_refused fc=None rank=None
+XX30   insufficient_source still_passed  fc=None rank=None
+===== probes base ， scoped =====
+BW01   None                still_refused fc=None rank=None
+BW02   None                newly_passed  fc=count rank=5
+BW03   None                newly_passed  fc=capability rank=13
+BW04   None                still_refused fc=None rank=None
+BW05   None                still_refused fc=None rank=None
+BW06   None                still_refused fc=count rank=None
+BW07   None                still_refused fc=None rank=None
+BW08   None                still_passed  fc=None rank=None
+BW09   None                still_refused fc=None rank=None
+BW10   None                still_passed  fc=None rank=None
+BW11   None                still_refused fc=None rank=None
+BW12   None                still_passed  fc=None rank=None
+BW13   None                still_refused fc=None rank=None
+BW14   None                still_refused fc=None rank=None
+BW15   None                still_refused fc=None rank=None
+BW16   None                still_refused fc=None rank=None
+BW17   None                still_passed  fc=None rank=None
+BW18   None                still_passed  fc=None rank=None
+BW19   None                newly_passed  fc=capability rank=4
+BW20   None                still_refused fc=None rank=None
+BW21   None                still_passed  fc=None rank=None
+BW22   None                still_passed  fc=None rank=None
+BW23   None                still_passed  fc=None rank=None
+BW24   None                still_refused fc=None rank=None
+BW25   None                still_refused fc=None rank=None
+BW26   None                still_refused fc=None rank=None
+BW27   None                still_refused fc=None rank=None
+BW28   None                newly_passed  fc=exact_value rank=2
+BW29   None                still_passed  fc=capability rank=3
+BW30   None                still_passed  fc=None rank=None
+ARM bm25_only | DONE ph3_selector_fix_20261124_bm25.md

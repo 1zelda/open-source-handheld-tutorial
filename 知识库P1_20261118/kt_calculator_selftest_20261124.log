@@ -1,0 +1,2176 @@
+taspipe selftest (M0-M6 + audio + M8 ledger + M7 search + sync + warp + M10 probes + T1 unwrap/mux + T2 fceux + auto/acquire/state_registry/statebuild/statejump/showcase/matrix + exporter mask + bundle + calibrate gates + base provenance + cheat candidates + state profile gate + resource discovery)
+  [1] Profile 合法枚举通过
+  [2] 未知平台枚举被拒
+  [3] Profile 缺 profile_id 被拒
+  [4] Element 带 CheckSpec 通过
+  [5] CheckSpec 非法 plugin_id 被拒
+  [6] Element 负例缺 case_id 被拒
+  [7] State origin 枚举通过
+  [8] 未知 StateOrigin 被拒
+  [9] InputPlan clock_unit 通过
+  [10] 全 pass => pass
+  [11] 有 fail => fail
+  [12] 证据不足 => inconclusive 不是通过
+  [13] 空检查 => inconclusive
+  [14] 错误码枚举通过
+  [15] 未知错误码被拒
+  [16] norm_sha1 规范化大写去空白
+  [17] map_platform NES
+  [18] map_platform PSX->PS1
+  [19] map_platform Arcade+MAME
+  [20] map_platform Arcade+FBNeo
+  [21] map_platform GBA 已建模（11-21 实测到盘里有 GBA ROM 后补进 schema）
+  [22] map_platform 未建模平台返回 None+说明
+  [23] emulator_match 命中本地 BizHawk
+  [24] emulator_match 缺版本=>None+说明
+  [25] emulator_match 非 BizHawk 管线
+  [26] emulator_match 小写 h 的 'Bizhawk' 也算 BizHawk 管线
+  [27] emulator_match 'EmuHawk <版本> (Core: …)' 命中并可说明写法差
+  [28] emulator_match 全小写+后缀文本仍解析版本
+  [29] emulator_match 反证—2.9.1 不许被裁成 2.9(只有尾巴 .0 才是同一次发布)
+  [30] emulator_match 版本没装=>emulator_version_absent，不是 missing_resource
+  [31] emulator_match 非 BizHawk 文本=>unsupported_capability，不是 missing_resource
+  [32] read_bk2_header 解析 .bk2
+  [33] read_bk2_header 解开 .zip 外壳
+  [34] read_bk2_header 非容器=>None
+  [35] resolve_movie 优先已解压 .bk2
+  [36] resolve_movie 缺失=>None+说明
+  [37] NES 探针：缺目录=>available False
+  [38] NES 探针：截图链路 audio_capture=False（如实报缺口）
+  [39] NES 探针：缺目录 interactive_step=False（转真需可用+实跑证据，见 test_statejump）
+  [40] NES 探针：时钟单位 emu_frame
+  [41] 路径探测：网络壳错误(1326等)=>不存在不抛异常
+  [42] 路径探测：真实文件=>True（反证格，防恒 False）
+  [43] NES 探针：含 EmuHawk.exe 目录=>available True（反证格）
+  [44] _cap 结构
+  [45] 后端验收：证据不足=>inconclusive
+  [46] 后端验收：有 fail=>fail
+  [47] 招式闸门：谱面符号·/或 采集前拦下（编译器不吃：看不懂字符 '·'（记法 '→↓↘·A或C'））
+  [48] 招式闸门：编译器记法 →↓↘+A 放行
+  [49] 检测：天空帧=>pass
+  [50] 检测：黑帧=>fail
+  [51] 检测：未注册插件=>inconclusive 不静默通过
+  [52] 游戏包：正例过+负例拒=>pass
+  [53] 游戏包：负例被误放=>fail（闸门有效）
+  [54] 切片：帧数对+目标在=>pass
+  [55] 切片：帧数不符=>fail
+  [56] 切片：错段检测不到目标=>fail
+  [57] 音频：有原声 max_db=-6.0 > -20
+  [58] 音频：onset=0.2≈0.2s
+  [59] 音频：立体声 onset=0.2≈0.2s（不翻倍）
+  [60] 音频：全静音 max_db<=-90
+  [61] 音频：全静音 onset=None
+  [62] 音频：trim_span 界尾后时长≈span（0.500s≈0.5s）
+  [63] 音频：反证 span=None 保留尾巴（1.300s>1s），界尾非默认
+  [64] 同步：LogKey 列位解析+按下沿（按住不算沿）
+  [65] 同步：单键过滤
+  [66] 同步：合成点击对准 => pass（n=118 中位偏移=0.0ms 三段中位=[0.0, 0.0, 0.0]ms 漂移=0.0ms）
+  [67] 同步：音轨整体迟 120ms => fail（恒量反证）
+  [68] 同步：累积漂移 => fail（三段检查抓住）
+  [69] 同步：无瞬态 => inconclusive 不冒充
+  [70] 同步：有效样本<30 => inconclusive
+  [71] warp：非线性时钟残差>50ms（单 atempo 校不准）
+  [72] warp：校正后时长==帧时间轴长
+  [73] warp：正例对齐 => pass（逐帧锚点 n=600 速率[0.705,1.295] 时长10.00s==10.00s 声锚6个 最大偏移=13ms）
+  [74] warp：锚点与现场帧不符 => fail（防用错曲线）
+  [75] warp：起点偏 200ms => fail（多锚点抓住位移）
+  [76] warp：帧目录缺失 => inconclusive
+  [77] warp：声锚<3 => inconclusive
+  [78] 台账：register 只记元数据(pending/无产物)
+  [79] 台账：pending 不可复用
+  [80] 台账：complete 校验产物后 done
+  [81] 台账：done+指纹+产物校验 => 可复用(inconclusive 不强制重跑)
+  [82] 台账：指纹变 => 不复用
+  [83] 台账：产物 sha256 不符 => 不复用(旧文件不冒充新产物)
+  [84] 台账：产物缺失 => 不复用
+  [85] 台账：complete 产物缺失 => fail 不假 done
+  [86] 台账：fail 后重跑 attempt+1
+  [87] 台账：旧失败现场保留不覆盖
+  [88] 台账：summary attempts=历史条数
+  [89] 台账：summary 逐条直接计数 done/failed
+  [90] 区域插件：顶部绿血条 => pass
+  [91] 区域插件：无血条片头 => fail
+  [92] 区域插件：省略 region 走整帧，绿占比被稀释 => fail
+  [93] 区域插件：region 越界 => inconclusive 不静默通过
+  [94] 区域插件：region 长度非法 => inconclusive
+  [95] M9：第二款游戏包走同一 gamepack => 正例过+负例拒
+  [96] 搜索判分：damage>=min => pass
+  [97] 搜索判分：damage<min => fail
+  [98] 搜索判分：缺观察量 => inconclusive 不是通过
+  [99] 搜索判分：未注册插件 => inconclusive
+  [100] 搜索：能力不合格 => UNSUPPORTED_CAPABILITY，不评估
+  [101] 搜索：修复扰动 => pass 有解
+  [102] 搜索：命中窗口内 approach=60
+  [103] 搜索：解可复播（复播复现）
+  [104] 搜索：先尝试原动作 seed
+  [105] 搜索：seed+30+60 共 3 个候选命中
+  [106] 搜索：吞吐被测量
+  [107] 搜索：超预算 => SEARCH_BUDGET_EXHAUSTED 无解
+  [108] 搜索：超预算 verdict=inconclusive，按预算停下
+  [109] 搜索：超预算明确不是证明无解
+  [110] 搜索：复播不复现 => NONDETERMINISM，不冒充解
+  [111] 搜索：未注册插件命中也不放行（受控）
+  [112] 搜索台账：修复 pass
+  [113] 搜索台账：GENERATE done 带可校验产物
+  [114] 搜索台账：解写成 solution.json 产物
+  [115] 搜索台账：超预算记 SEARCH_BUDGET_EXHAUSTED
+  [116] 搜索台账：done/failed 逐条直接计数
+  [117] M10 PS1：前端+核心+BIOS+游戏齐 => available True
+  [118] M10 PS1：BIOS/游戏检出
+  [119] M10 PS1：资源齐但管线未接线 => 能力全 False（不冒充已验证）
+  [120] M10 PS1：缺资源 => available False
+  [121] M10 PS1：如实列 4 项缺失（前端/核心/BIOS/游戏）
+  [122] M10 PS1：缺失含 BIOS（Octoshock 无 HLE，必须）
+  [123] M10 PS1：仅缺 BIOS 也 => blocked（必须真实 BIOS）
+  [124] M10 PSP：exe+游戏齐 => available True
+  [125] M10 PSP：无 flash0 => 固件 False
+  [126] M10 PSP：固件可选，缺固件不列入阻塞缺失（HLE 替代）
+  [127] M10 PSP：管线未接线 => 能力全 False
+  [128] M10 PSP：无构建 exe => available False
+  [129] M10 PSP：缺失含已构建 PPSSPP（当前仅克隆源码）
+  [130] M10 运行：缺资源 => fail（不伪装成功）
+  [131] M10 运行：错误码 MISSING_RESOURCE
+  [132] M10 运行：缺资源不产出成片
+  [133] M10 运行：资源齐但管线未接线 => UNSUPPORTED_CAPABILITY
+  [134] M10 运行：未接线 => fail 不冒充通过
+  [135] M10 真机 ps1_bizhawk：采集能力恒未接线 supported=False
+  [136] M10 真机 ps1_bizhawk：available 与 missing 一致
+  [137] M10 真机 psp_ppsspp：采集能力恒未接线 supported=False
+  [138] M10 真机 psp_ppsspp：available 与 missing 一致
+  [139] T1 外壳zip=>解出内部bk2
+  [140] T1 解包后顶层含Header.txt(BizHawk可加载)
+  [141] T1 真bk2原样拷贝不解包
+  [142] T1 非zip(fm2)原样拷贝
+  [143] T1 zip!ROM 条目解出到工作目录且字节一致
+  [144] T1 apad mux 保留全部视频帧(音轨短不截视频)
+  [145] T1 反证:无apad的-shortest确实截帧(夹具有效)
+  [146] 2.9 force_core 写 LastWrittenFrom=2.9
+  [147] 2.9 写 Detailed=Version 2.9
+  [148] 2.9 仍强制 PreferredCores
+  [149] 2.9 FirstBoot=False
+  [150] force_core 保留已有配置键
+  [151] force_core 合并而非覆盖 PreferredCores
+  [152] 2.8 目录写 2.8 标记(旧版同样安全)
+  [153] 非BizHawk命名不臆造版本标记
+  [154] DIALOG_TITLES 认得 privileged 框
+  [155] DIALOG_TITLES 认得 Mismatched version 框
+  [156] 回归锁:两个新标题在册
+  [157] 反证:旧标题表确实漏认 privileged(夹具能复现卡死)
+  [158] 主窗口签名认得(点框须跳过): 'Kunio-kun no Nekketsu Soccer League [NES] - BizHawk'
+  [159] 修复后框表不再误匹配主窗口: 'Kunio-kun no Nekketsu Soccer League [NES] - BizHawk'
+  [160] 主窗口签名认得(点框须跳过): 'Ninja Gaiden [NES] - BizHawk'
+  [161] 修复后框表不再误匹配主窗口: 'Ninja Gaiden [NES] - BizHawk'
+  [162] 主窗口签名认得(点框须跳过): 'BizHawk'
+  [163] 修复后框表不再误匹配主窗口: 'BizHawk'
+  [164] 真框不被主窗口签名误吞: 'Mismatched version in config file'
+  [165] 真框仍命中框表(须点掉): 'Mismatched version in config file'
+  [166] 真框不被主窗口签名误吞: 'This EmuHawk is privileged'
+  [167] 真框仍命中框表(须点掉): 'This EmuHawk is privileged'
+  [168] 真框不被主窗口签名误吞: 'Warning'
+  [169] 真框仍命中框表(须点掉): 'Warning'
+  [170] 真框不被主窗口签名误吞: 'Error'
+  [171] 真框仍命中框表(须点掉): 'Error'
+  [172] 回归锁:裸 BizHawk 已从 DIALOG_TITLES 移除
+  [173] 反证:旧框表(含裸BizHawk)确实误匹配主窗口(夹具能复现误伤)
+  [174] 空标题不认作主窗口(chromeless 不可见,dismiss 本就不命中)
+  [175] None 标题不崩
+  [176] 生产判定:可见主窗口不点(误伤根因已堵)
+  [177] 生产判定:启动期裸 BizHawk 主窗口不点
+  [178] 生产判定:可见 Mismatched 框点掉
+  [179] 生产判定:可见 privileged 框点掉
+  [180] 生产判定:不可见框不点(visibility 闸)
+  [181] 生产判定:无关可见窗口(Lua Console)不点
+  [182] 生产判定:chromeless 空标题不点
+  [183] 反证:旧口径(裸BizHawk+无主窗口跳过)确实判主窗口可点(夹具复现误伤)
+  [184] 框证据:同标题同正文去重(轮询重复不灌满产物)
+  [185] 框证据:同标题不同正文各留一条(去重键含正文)
+  [186] 恒量反证:去重后条数==唯一(标题,正文)组合数
+  [187] 反证:不去重时同一框会重复入账(夹具有效)
+  [188] 无效 PID 不点框也不臆造证据记录
+  [189] 向后兼容:旧调用不传 records 仍返回 int(statejump/control_runtime 靠它累加)
+  [190] 产物字段在册:watch_process 恒返回 dismissed_dialogs(哪怕空)
+  [191] 产物字段在册:watch_process 恒返回 stall_windows(表外窗口也留证据)
+  [192] 产物字段在册:watch_process 恒返回 windows_at_kill(放弃那一刻还剩什么)
+  [193] 框证据可 JSON 落盘(不会因元组/句柄炸产物)
+  [194] 无效 PID 不臆造停滞窗口
+  [195] 不存在的 PID 返回空窗口列表
+  [196] 窗口证据:同内容去重(每轮轮询不灌满产物)
+  [197] 窗口证据:正文不同各留一条(去重键含正文)
+  [198] 反证:不去重时同一窗口会重复三次(夹具有效)
+  [199] 链式框:窗口集合一变就再点一轮(实点 2 轮)
+  [200] 链式框:点完第二个框后回放走完，不再被误杀
+  [201] 链式框:两种窗口都进产物(旧逻辑只会留第一种)
+  [202] 恒量反证:屏幕一点不变就补点到上限即收手(实点 3 轮，上限 1+2，不是无限重试)
+  [203] 恒量反证:同一窗口反复出现仍按停滞收手
+  [204] windows_at_kill 记下放弃那一刻的窗口(归因用)
+  [205] 同一张框再出现:补点到第二方才走(实点 2 轮)
+  [206] 同一张框再出现:补点后回放走完，不再被 0 帧误杀
+  [207] 同一张框再出现:去重后仍只留一条窗口证据
+  [208] 链式框重试轮次上限在册(防两个框互相反复弹时不收手)
+  [209] 同一张框的补点上限在册(补满就收手，不无限点)
+  [210] 整窗全黑=inconclusive(不是 pass，也不是 fail：黑场可能只是淡入)
+  [211] 有一帧亮就 pass，reason 点名第几帧
+  [212] reason 带实测亮度，阈值判错了看得见
+  [213] 0 帧窗=无图可看，不猜
+  [214] 帧数虚报时只按真存在的 PNG 判定，全黑照旧 inconclusive(不许拿缺图当有图)
+  [215] 黑场阈值在册(恒量反证:阈值 0 时全黑也算有画面)
+  [216] 固件闸门:洛克人X2 真实弹框正文=>inconclusive，不是 pass
+  [217] 固件闸门:点名固件规格 SNES+CX4
+  [218] 固件闸门:reason 不许替 BizHawk 编降级机制（HLE 是我 11-22 的臆测，dll 字面量没这句）
+  [219] 固件闸门:reason 讲明 desync 通过不等于芯片被复刻
+  [220] 固件闸门:管理员特权框不算固件降级(恒量反证:见框就降档会连 FC 一起拖下水)
+  [221] 固件闸门:控制台渠道看过且空的=真无降级证据（NES 这类无固件平台不误伤）
+  [222] 固件闸门:连渠道都没有=不许 pass（ab17 的 gate:pass 就是直接调 watch_process 少了 console_texts）
+  [223] 固件闸门:缺渠道那条 reason 必须点名缺的是哪个渠道，不许只写「无证据」
+  [224] 固件闸门:正文没点出具体芯片也照样拦(缺证据不等于通过)
+  [225] 固件闸门:BizHawk 固件库键名写法也认
+  [226] 固件闸门:纯字符串记录也吃得下(旧产物/自测)
+  [227] 固件闸门:三处记录同一规格只计一次，不重复刷
+  [228] 固件闸门(实测文案):缺失仍继续=>inconclusive
+  [229] 固件闸门(实测文案):缺失仍继续 reason 仍写清 desync 不背书芯片
+  [230] 固件闸门(实测文案):名字对内容不对=>inconclusive
+  [231] 固件闸门(实测文案):名字对内容不对 reason 仍写清 desync 不背书芯片
+  [232] 固件闸门(实测文案):坏长度=>inconclusive
+  [233] 固件闸门(实测文案):坏长度 reason 仍写清 desync 不背书芯片
+  [234] 固件闸门(实测文案):satisfy 请求=>inconclusive
+  [235] 固件闸门(实测文案):satisfy 请求 reason 仍写清 desync 不背书芯片
+  [236] 固件闸门(实测文案):反引号请求=>inconclusive
+  [237] 固件闸门(实测文案):反引号请求 reason 仍写清 desync 不背书芯片
+  [238] 固件闸门(实测文案):存档内固件不符=>inconclusive
+  [239] 固件闸门(实测文案):存档内固件不符 reason 仍写清 desync 不背书芯片
+  [240] 固件闸门(实测文案):2.3 带引号=>inconclusive
+  [241] 固件闸门(实测文案):2.3 带引号 reason 仍写清 desync 不背书芯片
+  [242] 固件闸门(实测文案):2.9 致命=>fail，不是降一档就完事
+  [243] 固件闸门(实测文案):2.11 核心加载不了=>fail，不是降一档就完事
+  [244] 固件闸门:2.3 的 "SNES:CX4" 不被冒号截成 SNES，且长名吃掉短名不重复列
+  [245] 固件闸门:BizHawk 真正的请求名是裸 CX4，两种句式都点得出名
+  [246] 固件闸门:11-23 臂1 实测（Firmware 目录清空）只有这句，必须拦成 inconclusive
+  [247] 固件闸门:这句的请求名是裸文件名 cx4.rom，照字面抽，不写成 SNES+CX4
+  [248] 固件闸门:两档 reason 的措辞都只准引用 dll 字面量，不准出现我编的机制名
+  [249] 固件闸门(恒量反证):固件配置页那句 advisory 不算降级证据
+  [250] 固件闸门(恒量反证):核心加载异常堆栈里的类名 FirmwareManager 不算固件降级证据
+  [251] 固件闸门(恒量反证):异常正文不许抽出固件规格名(抽出来就会去点掉别的芯片的账)
+  [252] 固件闸门:弹框与控制台日志同判据(只盯框会把「压根没弹框」当成「没降级」)
+  [253] 固件闸门:从每帧刷屏里只挑固件行(300 行噪音不进产物)，命中行去重保序
+  [254] 固件闸门:没有日志就返回空，不拿缺文件当有证据
+  [255] 固件闸门(生产路径):run_replay 真把控制台固件行带进了 watchdog 记录
+  [256] 固件闸门(生产路径):这份 watchdog 记录真能把该跑判成 inconclusive
+  [257] 固件闸门(生产路径):模拟器控制台有落盘件可查，不再 DEVNULL 丢掉
+  [258] ASCII 闸门:纯 ASCII work 应抛 RuntimeError（实得 RuntimeError）
+  [259] ASCII 闸门:含中文 work 应抛 ValueError（实得 ValueError）
+  [260] ASCII 闸门:拦在 Popen 之前（只有 ASCII 那臂摸得到进程，中文臂不留半个模拟器）
+  [261] ROM md5 闸门:合成 bk2 Header.txt 的 MD5 行可读出(去头口径)
+  [262] ROM md5 闸门:录像读不到声明时返回空串(不设闸,未知格式不拦)
+  [263] ROM md5 闸门:去头 md5 命中 → 放行并返回期望值
+  [264] ROM md5 闸门:错镜像臂 RuntimeError 且报文点名期望/实件 md5
+  [265] ROM md5 闸门:非 iNES 实件按整文件 md5 口径命中
+  [266] ROM md5 闸门(生产路径):错镜像在 run_replay 里拦在 Popen 之前
+  [267] ROM md5 闸门(生产路径):匹配臂穿过闸门一路走到 Popen(SENTINEL)
+  [268] 固件闸门(缺固件):生产装配路径真的产出了这一格
+  [269] 固件闸门(缺固件):该格判 inconclusive
+  [270] 固件闸门(缺固件):规格名落在产物 reason 里
+  [271] 固件闸门(缺固件):出片也没把整片验收费洗成 pass
+  [272] 固件闸门(无降级):生产装配路径真的产出了这一格
+  [273] 固件闸门(无降级):该格判 pass
+  [274] fceux：fm2 帧数==输入行数(含 lag 帧直转)
+  [275] fceux：romChecksum base64→16字节 hex
+  [276] fceux：romChecksum 0x hex 口径也解析
+  [277] fceux：作者/port0/port1 解析
+  [278] fceux：命令 1→reset / 2→power
+  [279] fceux：按钮位置映射 Right/A
+  [280] fceux：多键 Down+Up / Start
+  [281] fceux：bk2 渲染序 UDLRTSBA(R 在第4位/UD 在前两位)
+  [282] fceux：fm3(zip 外壳)解出内部 fm2
+  [283] fceux：.nes 去 16 字节 iNES 头算 MD5(==fm2 romChecksum 口径)
+  [284] fceux：反证—去头 MD5 确实不同于整文件 MD5(夹具有效)
+  [285] fceux：非 iNES 文件对整文件算 MD5
+  [286] fceux：bk2 四件套齐
+  [287] fceux：Header 含 Platform/Core/SHA1/MD5
+  [288] fceux：LogKey 与真 BizHawk NesHawk 逐字一致
+  [289] fceux：power+Right 帧渲染 |P.|...R....|
+  [290] fceux：反证—小写 p 不是 BizHawk 的 Power 助记符(Bk2MnemonicLookup Power='P')
+  [291] fceux：reset 帧渲染 |.r|
+  [292] fceux：palFlag 原文进 Header(照抄 Fm2Import，缺键会按 60Hz 跑)
+  [293] fceux：SyncSettings 端口映射(port0=1/port1=0)
+  [294] fceux：SyncSettings 与 BizHawk 2.8 原生 NES bk2 逐字段相同(11-21 实测样本 4751)
+  [295] fceux：palFlag 1→Header PAL 1
+  [296] fceux：StartsFromSavestate=1 记 error
+  [297] fceux：to_bk2 拒绝从存档起始的电影
+  [298] fceux：to_bk2 拒绝 fourscore(四手柄)
+  [299] fceux：FCM v2 帧数/格式
+  [300] fceux：合规 FCM 不报错(空存档块 16 字节)
+  [301] fceux：Reset 命令落在第 0 帧
+  [302] fceux：FCM 记录的状态从 gap 之后第一帧起生效(1 帧中立 + 3 帧 A)
+  [303] fceux：FCM MD5@32/游戏名/作者/rerecord
+  [304] fceux：反证—24 是 FCS 块、28 才是输入起始(旧代码把 24-27 当 first_frame 会错 16 字节)
+  [305] fceux：反证—gap 帧沿用上一条状态(第 0 帧只有 Reset，A 从第 2 帧起)
+  [306] fceux：解出帧数 != 头声明帧数 => 记 error
+  [307] fceux：FCM 内嵌存档非空(>16 字节)=>记 error
+  [308] fceux：FCM 输入长度越界=>记 error
+  [309] fceux：反证—起点错位时输入体吃不完且前 60 帧无按键(闸门抓得到)
+  [310] fceux：反证—死输入日志的帧数照样对得上，只有中立判据抓得到
+  [311] fceux：to_bk2 拦下死输入日志
+  [312] fceux：FCM 影片名含换行=>压平成一行 Author
+  [313] fceux：反证—换行不产生第二条无键名头行
+  [314] fceux：convert_pub MD5 一致=>pass 并写出 _converted bk2
+  [315] fceux：convert_pub MD5 错配=>拒绝(防 desync)
+  [316] fceux接线：resolve_movie 命中 _converted 缓存
+  [317] fceux接线：emulator_match FCEUX 提示转换且保留'非 BizHawk'，码是管线不是缺资源
+  [318] fceux接线：assess 转换后 blocked→replayable 路由 BizHawk 2.8
+  [319] fceux接线：profile backend=nes_bizhawk
+  [320] fceux接线：未转换=>resolve_movie None+转换提示
+  [321] fceux接线：未转换=>assess blocked
+  [322] fceux核心：native_reference 取到同 SHA1 原生片的 Core/Board/版本/端口写法
+  [323] fceux核心：SHA1 无原生片时 native_reference 给 None(不臆造)
+  [324] fceux核心：不给 bizhawk_dirs 时按最小 pub_id 取参照(可复现)
+  [325] fceux核心：同 ROM 多张原生片时优先本机已装且未卡核的(避开实测 0 帧的 2.3.x)
+  [326] fceux核心：反证—只有卡核版本可选时仍给参照，不静默换成别的
+  [327] fceux核心：auto 写 QuickNes+mmc3+2.9(而非硬写 NesHawk/2.8)
+  [328] fceux核心：QuickNes 件写 QuickNES+QuickNESSyncSettings，端口照 fm2 port0/port1
+  [329] fceux核心：显式 core=NesHawk 保持旧字节口径(不带原生片板型)
+  [330] fceux核心：反证—换核心只动 Header/Sync，输入日志逐字节不变(问题不在转换内容)
+  [331] fceux核心：参照片确实是 SubNESHawk(下面拒绝的前提成立)
+  [332] fceux核心：auto 继承到子帧核心=>拒写并点名参照片，不产出废文件
+  [333] fceux核心：拒写=真没落盘，不是写完再报错
+  [334] fceux核心：绕过 convert_pub 直接 to_bk2 也一样拦(闸门在写手上，不在调用方)
+  [335] fceux核心：直写被拦时也没留下半个文件
+  [336] fceux核心：反证—同一部片显式换帧量化核心照旧能转(拦的是核心不是这部片)
+  [337] fceux核心：查不到参照片=>退回 NesHawk/2.8 并如实登记 core_source
+  [338] fceux核心：2.10 的 quickerNES 用 Port1/Port2 写法(两种 QuickNES 写法不混用)
+  [339] speed=realtime 不动节流配置(默认臂字节不变)
+  [340] speed=unthrottled 关时钟节流+关声音+允许 turbo 期跑 Lua
+  [341] speed 未知档位当场 RuntimeBlocked，不静默退回 realtime
+  [342] frameskip=0 不动 _configure 已写的 FrameSkip=0
+  [343] frameskip=8 写进 config（只跳渲染，实测截图与 RAM 仍逐帧同源）
+  [344] frameskip=61 当场 RuntimeBlocked，不静默夹紧
+  [345] frameskip=-1 当场 RuntimeBlocked，不静默夹紧
+  [346] frameskip='8' 当场 RuntimeBlocked，不静默夹紧
+  [347] frameskip=8.0 当场 RuntimeBlocked，不静默夹紧
+  [348] acquire：ROM 本地命中 => ready/local
+  [349] acquire：ROM 未命中+无 resolver => blocked（不自动抓）
+  [350] acquire：阻塞码 MISSING_RESOURCE
+  [351] acquire：门控 resolver 命中+哈希符 => ready/own_netdisk
+  [352] acquire：resolver 哈希不符 => blocked（哈希闸门）
+  [353] acquire：resolver 未命中 => blocked
+  [354] acquire：required_rom_sha1 出版物优先
+  [355] acquire：index_cheats 读本地索引
+  [356] acquire：index_cheats 缺索引 => []
+  [357] acquire：resolve_cheat query 命中中文索引 => found
+  [358] acquire：命中项文件真在
+  [359] acquire：索引有但文件缺 => missing（present 过滤）
+  [360] acquire：无匹配 => missing（可选资源，非 blocked）
+  [361] acquire：平台不符 => missing
+  [362] acquire：ROM ready+cheat found => ready
+  [363] acquire：cheat 缺但 need_cheat=False => ready（金手指可选）
+  [364] acquire：cheat 缺且 need_cheat=True => blocked
+  [365] acquire：ROM 缺 => blocked
+  [366] acquire：原生 bk2 缺 ROM 照常进清单，不劝退（恒量正对照）
+  [367] acquire：FCEUX 内层片记 not_judgeable_locally，与 registry 同一支函数
+  [368] acquire：FCEUX 内层+缺 ROM → 只说风险，不说必然（先验不许冒名判决）
+  [369] acquire：反例 7429 随 fidelity 一起到手，读清单的人看得见它被推翻过
+  [370] acquire：没登记 local_movie 就是 no_movie，不硬套保真度
+  [371] acquire：候选链按 出版物→Header 顺序给全，不丢掉 Header 那一份
+  [372] acquire：过期站点哈希挡不住本地命中 => 仍 ready，采信 Header
+  [373] acquire：两份账不一致要同时点名（只报一个，下个人还会去找那个错的）
+  [374] acquire：首选真能对上时不采信后面的来源（恒量反证：只有 rom_idx 键变）
+  [375] acquire：全候选都不中才 blocked，并逐个点名候选哈希与来源
+  [376] acquire：门控 resolver 给的文件对上 Header 候选也认（逐候选验哈希，不锁首选）
+  [377] acquire：resolver 给的哈希不在任何候选里 => 仍 blocked（哈希闸门没因此放松）
+  [378] acquire：整链（ROM+保真度+金手指）在过期站点哈希下照样 ready
+  [379] acquire：只有 version 页有哈希时照样收进候选（不因为来源靠后就丢）
+  [380] acquire：注入 versions 索引真的被用上（反证：换一个索引结果就跟着变）
+  [381] 状态资产：profile 缺 rom_sha1/emulator 不许建包（复用范围无法界定）
+  [382] 状态资产：profile_id 带路径分隔符被拒
+  [383] 状态资产：建包落在 <game>/<profile>/<revision>，初始档位 candidate
+  [384] 状态资产：同 revision 重复建包被拒（不覆盖已冻结资产）
+  [385] 状态资产：源文件不存在不许登记
+  [386] 状态资产：存档名不合 [a-z0-9_] 被拒
+  [387] 状态资产：登记是拷贝不是引用 scratch，并记 sha256 封条
+  [388] 状态资产：candidate 不许被生产消费（未验证不当已验证用）
+  [389] 状态资产：无该场景名被拒
+  [390] 状态资产：state_verified 后生产可取件
+  [391] 状态资产：实物被改动 => sha256 不符，不返回坏路径
+  [392] 状态资产：旁路档位无 blockers 被拒（没出处的降级不算测过）
+  [393] 状态资产：未知档位被拒
+  [394] 状态资产：旁路档位与 blockers 落进 package
+  [395] 状态资产：旁路档位立刻不可消费（不是「测过没通过还能用」）
+  [396] 状态资产：attach_nav 把配方写进包（自带重建方法，不靠人记忆）
+  [397] 状态资产：引导态随包走（NesHawk 上电 RAM 随机，冷启动重跑不可字节复现）
+  [398] 状态资产：逐步验收带画面+RAM 证据入包（中文标签退化成 navNN 槽名）
+  [399] 状态资产：全中文标签用 fallback 槽名，真实标签仍在 note 里
+  [400] 状态资产：可控性/跨进程重载/引导件三条一起记
+  [401] 状态资产复用：同一条已验证导航链直接命中，不重跑模拟器
+  [402] 状态资产复用：配方不同 => 不命中（不许拿别的链的存档顶）
+  [403] 状态资产复用：要的槽位不在包里 => 不命中
+  [404] 状态资产失效传播：stale 的包不再计入复用（已验证数不重复计数）
+  [405] 状态资产：latest 按可消费档位过滤，stale 不会被当最新可用
+  [406] 状态资产：list_packages 逐包现查状态与槽位，不写死名单
+  [407] 状态资产：台账能反查每条验收结论
+  [408] 状态资产：只差 ZIP 时间戳的两份存档内容指纹相同 => 复现判据用指纹
+  [409] 状态资产：文件 sha256 会随时间戳变，只当实物封条，不当复现判据
+  [410] 状态资产：非 ZIP 容器取指纹被拒（不静默给空指纹）
+  [411] 状态资产：夹具反查真实资产仓，没有多出 test_game（探针不写真实状态）
+  [412] statebuild：movie => normal_prefix ready
+  [413] statebuild：movie 机制 replay_movie
+  [414] statebuild：checkpoint => tas_checkpoint
+  [415] statebuild：arcade_move => display_patch ready
+  [416] statebuild：savestate 缺文件 => blocked MISSING_RESOURCE
+  [417] statebuild：savestate 有文件 => ready
+  [418] statebuild：cheat 有代码 => ready
+  [419] statebuild：cheat 缺代码 => blocked
+  [420] statebuild：NES savestate 无证据 => blocked supported=False
+  [421] statebuild：NES display_patch => UNSUPPORTED_CAPABILITY
+  [422] statebuild：NES cheat 无证据 => UNSUPPORTED_CAPABILITY
+  [423] statebuild：NES movie 仍 ready（无证据态下电影路径仍可用）
+  [424] statebuild：未知 source => blocked state=None
+  [425] statebuild：未知 source => SCHEMA_INVALID
+  [426] statebuild：_cap_supported dict 形式
+  [427] statebuild：_cap_supported bool 形式
+  [428] statebuild：_cap_supported 缺键 => False
+  [429] statebuild 反证：缺目录 NES 探针 savestate/ram_read 恒 False（avail 闸如实）
+  [430] 宏谱：规范透传
+  [431] 宏谱：U/D/L/R 别名展开
+  [432] 宏谱：空帧=中立保留
+  [433] 宏谱：未知键被拒
+  [434] 宏谱：含空白被拒
+  [435] 宏谱：空谱被拒
+  [436] StateSession：相对 work 归一绝对（Lua io.open 按 EmuHawk cwd 解析，相对路径启动即崩）
+  [437] 指令：ping 线格式
+  [438] 指令：read 地址十进制
+  [439] 指令：write 线格式
+  [440] 指令：attempt 线格式（spec=- 表无宏）
+  [441] 指令：未知 op 被拒
+  [442] 指令：id<1 被拒
+  [443] 指令：地址越界被拒
+  [444] 指令：字节越界被拒
+  [445] 指令：run 帧数<1 被拒
+  [446] 指令：attempt extra<0 被拒
+  [447] 指令：中文路径被拒（Lua io 转码坑）
+  [448] 指令：含空白路径被拒
+  [449] 指令：ramdump 线格式
+  [450] 指令：dump 线格式（宏+空档）
+  [451] 指令：dump 缺省 spec=- extra=0
+  [452] 指令：dump extra<0 被拒
+  [453] 指令：ramdump 长度<1 被拒
+  [454] 指令：dump 中文目录被拒
+  [455] 响应：ok 解析
+  [456] 响应：err 解析
+  [457] 响应：非法状态被拒
+  [458] 响应：id 非整数被拒
+  [459] CRLF 闸门：_send 落盘恰为 LF 结尾，无 \r
+  [460] CRLF 闸门：cmd.txt 不含任何 CR 字节
+  [461] 单实例预检：tasklist 只点名 EmuHawk 的 PID，忽略别的进程与坏行
+  [462] 单实例预检：tasklist 量不到就返回空，不在这里编造结论
+  [463] 单实例预检：进程枚举只返回 EmuHawk PID，不依赖本机是否安装 psutil
+  [464] 单实例预检：有活实例时启动前就拒，报错带 PID（不再让看门狗报含糊的 dead）
+  [465] 单实例预检：反证格——空闲时不该报单实例，失败要来自后面的真步骤
+  [466] 模板闸门：无字面 CR（Python 三引号 \r 转义坑会编译失败）
+  [467] 模板闸门：Lua 侧 read(*a) 后剥尾 CR/LF 在册（>1024B 修复配套）
+  [468] 模板闸门：截图 flushing 态在册（坑：截完即 respond 会拷到旧图/半截图→假阳性）
+  [469] 模板闸门：旧 flush_shot 已除（坑：其 frameadvance 在 pcall 内会跨 C-call yield 崩溃）
+  [470] 模板闸门：resp 直写不用 rename（坑：rename 落盘 Python 侧不可见）
+  [471] 模板闸门：dump/ramdump op 在册（全量盘点逐帧采集 / 经验 RAM 标定）
+  [472] 模板闸门：dump 末帧交 flushing 过 IEND 完整性查（防半截图进 encode_video）
+  [473] 宏有效回归：相同画面必判无效（锁死反转 bug）
+  [474] 像素比对：相同字节=>相等
+  [475] 宏有效回归：不同画面判有效（ffmpeg 像素复核）
+  [476] 证据门：报告缺失=>False
+  [477] 证据门：报告损坏=>False
+  [478] 证据门：未全 pass=>False
+  [479] 证据门：全 pass=>True
+  [480] probe 双闸：可用+证据全 pass => savestate/ram_read/interactive_step 转真
+  [481] probe 双闸：可用但无证据 => 仍 False（不凭接线臆造）
+  [482] probe 双闸：缺 BizHawk 目录 => 能力 False（反证格仍立）
+  [483] OAM：队长脚底/球心坐标解码
+  [484] OAM：球在脚边=我方持球
+  [485] OAM：场上无对手组时 opp_dist=None
+  [486] OAM 反证：球离脚 40px 不得判持球
+  [487] OAM 反证：球组 palette 非 0 不算球
+  [488] OAM 反证：缺 0xC0 号码标记=None
+  [489] OAM 反证：球组不足 4 sprite=None
+  [490] OAM：对手贴球时 holder_team=3（白帽客队实测）
+  [491] OAM：opp_dist 量到贴脸对手
+  [492] 追球方向：右
+  [493] 追球方向：上
+  [494] 追球方向：对角
+  [495] 追球方向：死区不按键
+  [496] 必杀球 tile 出正常集但在扩展集（变形球可被时间线捕获）
+  [497] 净持球正例：队长本人持球且无贴脸对手
+  [498] 净持球：远敌(>40)不拒
+  [499] 净持球反证：球在队友脚下(holder_dist≠dist)不得判持球
+  [500] 净持球反证：邻敌贴脸(<=40)拒
+  [501] 净持球反证：客队持球拒
+  [502] 净持球反证：球离脚拒
+  [503] 净持球反证：OAM 解析 None 拒
+  [504] 单帧按键不生效：宏生成器帧数下限必须是 2
+  [505] hold() 把 0/1 帧抬到 2 帧（旧 max(1,..) 会静默产出吞键宏）
+  [506] 宏谱审计：两处单帧都要点名（键名+起始帧+帧数）
+  [507] 宏谱审计反证：合规宏不得报违规
+  [508] 画面团块球判据：12×12 近白命中并给球心
+  [509] 球判据反证：球员白衫 10×16 不得当球（只按面积筛就会误判）
+  [510] 球判据反证：y>=190 HUD 带整条裁掉，带内白块不得当球
+  [511] 球判据反证：180 灰不达标（判据用 min(R,G,B)>190）
+  [512] 球判据反证：中圈标记 13×5 扁条不得当球
+  [513] tile 集包含关系仍成立（扩展集只作诊断）
+  [514] showcase 指令：dump 原子携带 base+RAM patches
+  [515] showcase 指令：非法 RAM patch 地址被拒
+  [516] showcase 模板：读档+patches 在逐帧采集前原子执行，无空闲帧漂移
+  [517] showcase 契约：dump 返回实际采集帧数而非模拟器绝对 framecount
+  [518] showcase schema：完整单要素包通过校验
+  [519] showcase schema：清单调研 draft 不得生产
+  [520] showcase schema：检测帧越出采集窗被拒
+  [521] showcase schema：未知检测插件在采集前拒
+  [522] showcase plan：ROM/base/EmuHawk/完整清单齐全才 ready
+  [523] auto/showcase：指纹输入含 pack+ROM+base
+  [524] auto/showcase：plan 走 showcase 分支，不要求 TAS 出版物
+  [525] showcase 获取：包内路径挪盘 => 按哈希命中本地索引，不判死
+  [526] showcase 获取：本地也没有且没注入钩子 => 诚实 blocked（不自动抓商业全集）
+  [527] showcase 获取：注入网盘 resolver 后走通（网盘优先）
+  [528] showcase 获取：resolver 交回哈希不符件 => blocked，不拿错版本出片
+  [529] showcase 获取：包内件哈希不符仍 blocked（RAM 地址按版本标的）
+  [530] showcase plan：resources 报解析后的 ROM，run 不再各判一套
+  [531] showcase plan：ROM 取不到 => blocked（不带着 None 路径往下跑）
+  [532] showcase 音频：audio=True 显式 blocked（不静默出哑片给解说工厂）
+  [533] auto/showcase：spec.audio 透传到 showcase 并被诚实拦下
+  [534] showcase 检测：正例过+中立反例拒 => pass
+  [535] showcase 反证：反例也过同检测器 => fail
+  [536] showcase 检测：证据不足不得算 pass
+  [537] showcase 帧闸：半 PNG/假 PNG 不得进入编码
+  [538] showcase 生产：单要素正/反例+编码+合辑全链 done
+  [539] showcase 产物：正式合辑与反例片段均真实落盘
+  [540] showcase 对照：正/反例同 base 同总帧数，反例默认中立
+  [541] showcase 对照：反例继承相同 RAM 前置补丁，隔离宏效果
+  [542] showcase 逐要素 base：特殊场景覆盖公共 base，正反例仍共享同一快照
+  [543] showcase 会话：生产结束关闭 EmuHawk
+  [544] showcase 续跑：同指纹复用要素与合辑，不重启采集会话
+  [545] showcase 全量闸：清单 1/2 未 authoring 齐全，不许直接全量跑
+  [546] showcase --only：单要素可试跑但不生成正式全量合辑
+  [547] showcase 缺口：delivery 五字段齐全才过 schema
+  [548] showcase 缺口：未注册的 status 被拒
+  [549] showcase 缺口：没写批准日期被拒
+  [550] showcase 缺口：没说清缺哪一步被拒
+  [551] showcase 缺口：plan 把必交数减到 1 并点名缺口要素
+  [552] showcase 缺口：7/8 型产物照出正式合辑，不必等最后一格
+  [553] showcase 缺口：分母仍是 2，full_collection=False 不许冒充全量
+  [554] showcase 缺口：产物里逐条点名谁挂起、谁批的、哪天
+  [555] showcase 缺口：挂起要素不采集、不进合辑
+  [556] showcase 缺口：只为本轮必交要素起一次会话
+  [557] showcase 缺口：--only 显式点名仍可重试，挂起不等于封死
+  [558] showcase 缺口：拿声明把必交要素清空 => 拦死
+  [559] auto/showcase：run 生产入口已接线
+  [560] auto：JobSpec 缺 game 被拒
+  [561] auto：JobSpec 非法 job_type 被拒
+  [562] auto：JobSpec 非法 source 被拒
+  [563] auto：要素任务缺 pack/elements 被拒
+  [564] auto：JobSpec frames<=0 被拒
+  [565] auto：JobSpec 合法通关通过
+  [566] auto：from_dict 未知字段被拒（不静默丢弃）
+  [567] auto：from_dict 报错里给出最接近的合法键
+  [568] auto：from_dict 合法键正常入库
+  [569] auto：slug 与 out 无关
+  [570] auto：指纹参数排除 out（位置无关）
+  [571] auto：_spec_fp_params 不含 out
+  [572] auto：load_elements 内联优先
+  [573] auto：orchestrate run 缺 out 被拒
+  [574] auto：load_elements 读 pack
+  [575] auto：load_elements 缺 pack 被拒
+  [576] auto：resolve_job 合成 lib => replayable
+  [577] auto：plan 合成 ready（resolve+acquire+state 全过）
+  [578] auto：plan acquire ready
+  [579] auto：plan movie => normal_prefix
+  [580] auto：expected_fingerprint 不采集即算出指纹
+  [581] auto：指纹与 out 无关（矩阵可跳过）
+  [582] auto：savestate 通关任务在契约层拒绝，不再索要无关金手指
+  [583] auto：orchestrate 未知游戏 => resolve blocked
+  [584] auto：编排层拦冷门（闸门码=title_off_popularity_list）
+  [585] auto：冷门作品停在 selection，不进采集
+  [586] auto：冷门作品没产出任何视频
+  [587] auto：显式 allow 才放行冷门，且留下 warning 痕迹
+  [588] auto：全阶段 pass => job pass
+  [589] auto：任一格 inconclusive 时 job 不许升 pass
+  [590] auto：任一格 fail 时 job 判 fail，不被同链的 pass 掩盖
+  [591] auto：空台账不给 pass（有成片≠有证据）
+  [592] auto：链路失败时阶段全 pass 仍判 fail（反证：verdict 不是唯一判据）
+  [593] auto：run_playthrough 逐格读出台账 verdict（capture=pass / export=inconclusive）
+  [594] auto：成片在但 export 格未验 => job 判 inconclusive，不再冒 pass
+  [595] registry：ROM 缺位只挡就绪，不挡身份（profile 仍解析出）
+  [596] auto：网盘独占 ROM => resolve ready、拦在 acquire（没注入钩子时仍诚实 blocked）
+  [597] auto：注入 resolver 后同一格走通（acquire 死锁解除）
+  [598] auto：网盘独占时指纹也算得出（矩阵不把它当没做过反复重跑）
+  [599] auto：resolver 返回哈希不符件 => acquire blocked（不伪装 ready）
+  [600] 状态契约：showcase 预检不访问电影库
+  [601] 状态契约：showcase 经真实编排/采集/判定/台账路径完成合成样例
+  [602] 状态契约：showcase 拓扑闸门先于任何采集执行
+  [603] 状态契约：showcase 正反例补丁真实传到 dump 消费方
+  [604] 状态契约：showcase 执行机制/ROM/复用指纹可对账
+  [605] 状态契约：showcase 落盘执行记录且关闭会话
+  [606] 状态契约：savestate 预检不访问电影库
+  [607] 状态契约：savestate 经真实编排/采集/判定/台账路径完成合成样例
+  [608] 状态契约：savestate 拓扑闸门先于任何采集执行
+  [609] 状态契约：savestate 正反例补丁真实传到 dump 消费方
+  [610] 状态契约：savestate 执行机制/ROM/复用指纹可对账
+  [611] 状态契约：savestate 落盘执行记录且关闭会话
+  [612] 状态契约：cheat 预检不访问电影库
+  [613] 状态契约：cheat 经真实编排/采集/判定/台账路径完成合成样例
+  [614] 状态契约：cheat 拓扑闸门先于任何采集执行
+  [615] 状态契约：cheat 正反例补丁真实传到 dump 消费方
+  [616] 状态契约：cheat 执行机制/ROM/复用指纹可对账
+  [617] 状态契约：cheat 落盘执行记录且关闭会话
+  [618] 状态契约：同指纹续跑不再采集正反例
+  [619] 状态契约：纯存档任务不要求金手指
+  [620] 状态契约：纯存档真实经过无补丁采集路径
+  [621] 状态契约：声明 cheat 却无补丁不能假完成/复用
+  [622] 状态契约：不支持的任务参数明确拦截 ['job_type']
+  [623] 状态契约：不支持的任务参数明确拦截 ['pub_id']
+  [624] 状态契约：不支持的任务参数明确拦截 ['frames']
+  [625] 状态契约：不支持的任务参数明确拦截 ['elements']
+  [626] 状态契约：不支持的任务参数明确拦截 ['cheat_query']
+  [627] 状态契约：missing_hash 在预检和直达生产入口一致拦截
+  [628] 状态契约：missing_hash 不能生成可复用作业指纹
+  [629] 状态契约：wrong_hash 在预检和直达生产入口一致拦截
+  [630] 状态契约：wrong_hash 不能生成可复用作业指纹
+  [631] 状态契约：unverified_platform 在预检和直达生产入口一致拦截
+  [632] 状态契约：unverified_platform 不能生成可复用作业指纹
+  [633] 状态契约：未声明 ROM 哈希直接拒绝
+  [634] 状态契约：错误版本文件存在也不能生成资源指纹
+  [635] 状态契约：showcase 原声请求不得在预检假 ready
+  [636] 状态契约：savestate 原声请求不得在预检假 ready
+  [637] 状态契约：cheat 原声请求不得在预检假 ready
+  [638] 状态契约：showcase 显式拒绝非本路线的 lib 参数
+  [639] 状态契约：savestate 显式拒绝非本路线的 lib 参数
+  [640] 状态契约：cheat 显式拒绝非本路线的 lib 参数
+  [641] 状态契约：原声硬阻塞在索引扫描/网盘调用前短路
+  [642] 状态契约：未核验平台在索引扫描/网盘调用前短路
+  [643] 状态契约：跳过失效索引候选，真实命中后清除历史阻塞
+  [644] 状态契约：索引键哈希不能替代文件字节校验
+  [645] 状态契约：授权 resolver 命中后不遗留旧路径阻塞
+  [646] 判据分离：采集指纹带上存这份初态的模拟器/核心实物身份
+  [647] 判据分离：采集指纹参数里不许出现判据字段
+  [648] 判据分离：声明核心变了采集指纹必须变
+  [649] 判据分离：只改判据取样帧不得改动采集指纹
+  [650] 判据分离：判据声明必须进判定指纹
+  [651] 判据分离：判据实现(detect.py)字节变了必须重判
+  [652] 判据分离：首轮采集正反例各一次并判定一次（实际 2/1）
+  [653] 判据分离：同指纹续跑不重录也不重判（实际 0/0）
+  [654] 判据分离：只改判据不得重录（实际重录 0 次）
+  [655] 判据分离：改宽的判据必须当场把要素判成 fail
+  [656] 判据分离：判据改回原样同样只重判，要素恢复 pass
+  [657] 判据分离：初态出处/核心实物变了必须重录（实际 2/1）
+  [658] 内容闸门：五键全相符 => 放行且证据带实际指纹
+  [659] 内容闸门：单键不符 => 拒绝且逐键报差
+  [660] 内容闸门：已建档游戏的未登记状态 => fail closed
+  [661] 内容闸门：未建档游戏明确标记缺轴，不伪装成已验内容
+  [662] 内容闸门：只改 ZIP 时间戳仍命中同一内容指纹
+  [663] 内容闸门：物理层失败不被内容相符覆盖
+  [664] 拓扑闸门：同字节 Core.bin => match
+  [665] 拓扑闸门：单字节差 => 首差异偏移 2
+  [666] 拓扑闸门：长度差 => 短长度处报差异
+  [667] 拓扑闸门：BizVersion 身份单独报告
+  [668] 拓扑闸门：坏 zip => 不 match 不抛异常
+  [669] 拓扑闸门：缺 Core.bin => 不 match
+  [670] 拓扑闸门：Core.bin 不符 => profile_mismatch 整体拒绝
+  [671] 拓扑闸门：不符时零采集、无片段、会话已关
+  [672] 拓扑闸门：不符证据落盘可查
+  [673] 拓扑闸门：零帧加载失败 => profile_mismatch 不冒充其他失败
+  [674] 内容闸门：五键不符 => profile_mismatch 整体拒绝且零采集
+  [675] 内容闸门：不符证据落盘且保留 expected/actual
+  [676] 拓扑闸门：相符 => 正常采集，同 sha 状态只核一次
+  [677] 拓扑/内容闸门：报告携带物理层与五键内容证据
+  [678] 拓扑闸门：要素 override 坏状态在 dump 前被拒
+  [679] 拓扑闸门：声明与配置不符 => 不启动模拟器即拒
+  [680] 拓扑闸门：声明相符 => 放行且证据含实际拓扑
+  [681] 拓扑闸门：sync_settings 非 str/bool 值被拒
+  [682] A1 value999 不截断
+  [683] A2 value-1 不变255
+  [684] A3 1234:ABCD 不变205
+  [685] A4 255 边界可候选
+  [686] A5 256 阻塞
+  [687] A6 无平台内存偏移不执行
+  [688] A7 复合码半截不输出
+  [689] A8 复合码全支持才候选
+  [690] A9 复合混加密码整条阻塞
+  [691] A10 GameGenie 不当裸写
+  [692] A10b 带数字横杠码不猜 GG
+  [693] A11 GB Gameshark 分类不执行
+  [694] A12 无平台 hex8 不猜 SNES
+  [695] A13 NES 下 hex8 未知编码
+  [696] A14 SNES 7E 段映射域偏移
+  [697] A15 SNES ROM 总线不猜
+  [698] A16 SNES PAR 紧凑码
+  [699] A17 SNES 低总线不猜
+  [700] A17b SNES 7F  bank=WRAM 高半
+  [701] A18 无平台不做 SNES 映射
+  [702] A19 NES 不套 SNES 映射
+  [703] A20 NES RAM 直映
+  [704] A21 NES 镜像段阻塞
+  [705] A22 非法整数给原因
+  [706] A23 未知 handler 阻塞
+  [707] A24 未知字段保留且阻塞
+  [708] A25 大端阻塞
+  [709] A26 enable 原样保留不阻塞
+  [710] A27 声明数与条目数一致
+  [711] A28 同名两版本都保留
+  [712] A29 默认截断可核对
+  [713] A30 全量取回 12x45 逐格复算
+  [714] A31 返回条数与实物一致
+  [715] A32 文件翻页取回剩余
+  [716] A33 条目翻页取回剩余
+  [717] A34 blocker 汇总可复算
+{
+  "pack": "C:\\Users\\Administrator\\AppData\\Local\\Temp\\cheat_candidate_8r2b2cyo\\t_auto_inject\\inject.showcase.json",
+  "platform": "NES",
+  "cht_files_found": 1,
+  "candidates_saved_to": "C:\\Users\\Administrator\\AppData\\Local\\Temp\\cheat_candidate_8r2b2cyo\\t_auto_inject\\reports\\candidates.json",
+  "pack_unchanged": true,
+  "injected": false
+}
+  [718] A35 报告写新路径且包不变
+  [719] A36 原码可追溯
+  [720] A37 不默认 sibling 覆盖
+  [721] B1 无效根结构化报错非空字典
+  [722] B2 空目录同样报缺 split
+  [723] B3 坏 JSON 点名路径
+  [724] B4 坏 JSON 游戏不被丢弃
+  [725] B5 好 JSON 反证格
+  [726] B6 重名跨 split 保留两条
+  [727] B7 重名点名 split
+  [728] B8 缺 rom.sha 报缺
+  [729] B9 无 state 报缺且仍列出
+  [730] B10 缺 data.json 报缺
+  [731] B11 完整目录零缺项反证
+  [732] B12 默认页 50/总 60
+  [733] B13 翻页余 10
+  [734] B14 limit=None 全量
+  [735] B15 越界页空但总数不变
+  [736] B16 三种计数分开且现算
+  [737] B17 逐 split 计数
+  [738] B18 缺失 split 显式 exists=False
+  [739] B19 过滤大小写不敏感
+  [740] B20 无命中 total=0 非报错
+  [741] B21 仓库根自动定位 data
+  [742] B22 包位置与克隆同套盘点
+  [743] B23 双根计数聚合
+  [744] B24 跨根重名点名
+  [745] B25 显式 root 时不扫默认根
+  [746] B26 旧入口兼容别名
+  [747] matrix：产物在 => present
+  [748] matrix：产物缺 => not present
+  [749] matrix：无产物字段 => not present
+  [750] matrix：要素产物全在 => present
+  [751] matrix：要素产物缺一 => not present
+  [752] matrix：站点哈希过期、只有 bk2 Header 对得上本地 => 预筛放行（旧两处筛会误杀）
+  [753] matrix：两份候选都不在本地时预筛照样拦（恒量反证：只换 romset）
+  [754] matrix：出版物 rom_sha1 直接命中仍放行（换候选顺序不许把首选弄丢）
+  [755] matrix：coverage pass 逐格直接计数=2
+  [756] matrix：coverage skipped/done 分开计
+  [757] matrix：coverage blocked/failed 分开计
+  [758] matrix：coverage total=6
+  [759] matrix：cell_done 无 job.json => 未完成
+  [760] matrix：cell_done status!=done => 未完成
+  [761] matrix：cell_done verdict!=pass => 未完成
+  [762] matrix：cell_done 产物缺 => 未完成
+  [763] matrix：cell_done 指纹不符 => 未完成
+  [764] matrix：cell_done 全符 => 已完成
+  [765] matrix：cell_done 指纹算不出(None) => 未完成
+  [766] matrix：run_matrix 已完成格跳过（不重采集）
+  [767] matrix：run_matrix no-skip => 重跑
+  [768] matrix：run_matrix 非法格 => invalid
+  [769] matrix：famous 预筛掉无ROM+排除名+同名去重+名单外冷门 => 只剩 1 格
+  [770] matrix：famous 格带 frames/job_type
+  [771] matrix：famous 反证——换成名作就建格（拦的是冷门不是资源）
+  [772] matrix：slice_frames NES 不抬高（600 保持）
+  [773] matrix：slice_frames SNES 600 => 抬到 3000 下限
+  [774] matrix：slice_frames SFC 别名同样抬高
+  [775] matrix：slice_frames 已超下限就尊重原值
+  [776] matrix：slice_frames None=整片，不动
+  [777] matrix：slice_frames 未标定平台不臆造下限
+  [778] matrix：slice_frames 空平台不臆造下限
+  [779] matrix：slice_frames 下限抬高后封顶到片长
+  [780] matrix：slice_frames 显式请求不被封顶改动
+  [781] matrix：slice_frames 整片请求不封顶不抬高
+  [782] matrix：slice_frames 读不到片长不臆造上限
+  [783] matrix：slice_frames 片长充裕时下限生效
+  [784] registry：index_roms 命中本地 ROM
+  [785] registry：index_roms 二次调用结果一致（走缓存不漂移）
+  [786] registry：ROM 内容改了索引跟着改（缓存按 mtime/大小失效）
+  [787] 资源指纹：zip!条目按条目字节计算 SHA-256
+  [788] 资源指纹：zip!条目按条目字节计算 SHA-1
+  [789] 资源指纹：ledger fingerprint 支持 zip!条目
+  [790] mask：屏洞由 alpha==0 自动量出
+  [791] mask：画面整数倍贴合屏洞(x2)
+  [792] mask：画面在屏洞内居中
+  [793] mask：无透明屏洞的遮罩被拒（不静默满铺）
+  [794] mask：compose 端到端非 fail
+  [795] mask：帧数保留
+  [796] mask/showcase：无音轨采集不伪报缺证据，audio_preserved=pass
+  [797] mask：成片画幅=遮罩画幅
+  [798] mask：四周环绕美术压在画面之上(角落=遮罩红,容编码损失)
+  [799] mask：屏洞中心露出游戏画面(绿)
+  [800] bundle：生成即 draft，不是默认已放行
+  [801] bundle：合辑/要素段/负对照三类素材都入账
+  [802] bundle：showcase 逐帧采集如实标 has_audio=false（不假装带原声）
+  [803] bundle：素材路径全相对、无盘符无 ..（可整目录搬走）
+  [804] bundle：files[] 与盘上实物一一对上（不含 manifest 自己）
+  [805] bundle：帧→时刻映射按真实时间基逐帧给出（解说对句不用自己推算 fps 小数）
+  [806] bundle：事件带锚点帧/合辑窗口/触发输入（含 RAM 写入原值）
+  [807] bundle：事实句只复述知识包字段并标出处，没编招式效果
+  [808] bundle：发布政策未审查 + 要素线时间轴模式如实声明
+  [809] bundle：干净小样 verify(draft) 全通过
+  [810] bundle：未审查的包不许当 ready 交付（self_produced 不算放行）
+  [811] bundle：没有审查人署名不许升 ready
+  [812] bundle：署名审查后 ready 包能通过交付校验
+  [813] bundle 反例：实物被截断 => 拦下（哈希/大小现算，不信手填）
+  [814] bundle 反例：丢文件 => 拦下
+  [815] bundle 反例：包里有没登记的东西 => 视为未完成交接
+  [816] bundle 反例：声明帧数与实物差 1（错帧/被重采样）=> 拦下
+  [817] bundle 反例：合辑窗口长度 != 段长（时间映射不可信）=> 拦下
+  [818] bundle 反例：清单写 .. 逃逸路径 => 拒收
+  [819] bundle 反例：clip 写绝对路径 => 拒收
+  [820] bundle 反例：帧映射少一行 => 拦下（末帧会被解说错位）
+  [821] bundle 反例：映射帧号跳号 => 拦下
+  [822] bundle 反例：声明 50Hz 而实物 60.0988（错区域/错时钟档）=> 拦下
+  [823] bundle 反例：gameplay 层没过 => 整包不算 pass
+  [824] bundle 反例：把没测出的要素写成通过 => 拦下（假 pass）
+  [825] bundle 反例：未知字段不静默忽略 => 契约漂移当场暴露
+  [826] bundle 反例：整组字段缺失 => 拦下
+  [827] bundle 反例：状态包版本/任务指纹留空 => 两条各点名一次（复用范围无法界定）
+  [828] bundle 反例：清单声明 9 只交付 5 => 不许当完整包
+  [829] bundle 反例：缺全要素合辑 => 不算完整包
+  [830] bundle 反例：无出处/无证据/空原句的事实 => 三条各拦一次
+  [831] bundle 反例：包内出现 ROM 路径线索 => 拦下（交接包不带游戏文件）
+  [832] bundle 反例：素材其实有声却声明无原声 => 拦下（解说排 ducking 会对不上）
+  [833] bundle：所有篡改反例都只在临时副本上动，干净小样本身没被改
+  [834] 标定：局部色块正例 vs 空反例 => 接受
+  [835] 标定：正例占比按 729px 区域实测 = 0.549
+  [836] 标定：min_fraction 夹在反例之上、正例 0.9 之下（正过反拒有余量）
+  [837] 标定：min_fraction 不越界 1（曾算出 1.334 的永不满足判据）
+  [838] 标定：region 面积受限于局部，不吞整屏
+  [839] 标定：正负例余量 < 0.05 => 拒（草坪级噪声不算要素签名）
+  [840] 标定：不存在能分开正负例的阈值 => 拒，不写回不可用判据
+  [841] 标定：镜头滚动造成的整屏背景差异 => RuntimeError，不静默出参
+  [842] 标定：正反例逐帧相同（触发宏未生效）=> RuntimeError
+  [843] 标定：稀薄臂+稠密结 => 子窗搜索救回且余量过闸
+  [844] 标定：子窗 region 仍受局部面积上限
+  [845] 标定：只有稀薄臂（无结）=> 仍 RuntimeError，子窗不放宽闸门
+  [846] 标定：正例全程恒定的背景瓦片（负臂被遮挡才显区分）=> RuntimeError 静态地物闸门
+  [847] base 出处闸门：状态资产仓内未登记的存档 => plan 拦下
+  [848] base 出处闸门：未登记 base 时整包 blocked，不进采集
+  [849] base 出处闸门：登记过且 state_verified 的存档 => 放行
+  [850] base 出处闸门：candidate 档位的资产被拒（未达可消费档位）
+  [851] base 出处闸门：仓外 base_state 不受管（反证格，防误杀历史包）
+  [852] base 出处闸门：plan 确实把 base_state 送进出处核对（不是死代码）
+  [853] 跨平台宏 [1/30]: SNES X/Y/L/R 与 LT/RT 别名正常展开
+  [854] 跨平台宏 [2/30]: MD 6 键手柄 A/B/C/X/Y/Z 与 Mode 别名正常展开
+  [855] 跨平台宏 [3/30]: PS1 Triangle/Circle/Cross/Square 及肩键正常展开
+  [856] 跨平台宏 [4/30]: 街机 FBNeo Coin/Start/A/B/C/D 正常展开
+  [857] 跨平台宏 [5/30]: GBA L/R 肩键与 Up+B 组合正常展开
+  [858] 跨平台宏 [6/30]: NES 平台混入 X 键必抛 SchemaError
+  [859] 跨平台宏 [7/30]: GBA 平台混入 C 键必抛 SchemaError
+  [860] 跨平台宏 [8/30]: 未知怀旧平台名必抛 SchemaError
+  [861] 扩展内存 [9/30]: SNES 0x1FFFF WRAM 顶界地址放行
+  [862] 扩展内存 [10/30]: GBA 0x3FFFF 十六进制地址解析放行
+  [863] 扩展内存 [11/30]: PS1 2MB MainRAM 0x1FFFFF 顶界地址放行
+  [864] 扩展内存 [12/30]: 含空格内存域 '68K RAM' 按线格式编码为 '68K%20RAM'
+  [865] 扩展内存 [13/30]: NES 地址超出 0xFFFF 必抛 SchemaError
+  [866] 扩展内存 [14/30]: SNES 地址超出 0x1FFFF 必抛 SchemaError
+  [867] 模板与转换 [15/30]: STATE_LUA_TMPL 无字面 CR 且保持 flushing 异步落盘状态机
+  [868] 模板与转换 [16/30]: Snes9x .smv 帧数与 16-bit 掩码按键精确解析
+  [869] 模板与转换 [17/30]: VBA .vbm GBA 帧与肩键掩码精确解析
+  [870] 模板与转换 [18/30]: 非法 .smv 文件头被 MovieConvertError 拦截
+  [871] 多平台包校验 [19/30]: SNES showcase.json 通过校验
+  [872] 多平台包校验 [20/30]: GBA showcase.json 通过校验
+  [873] 多平台包校验 [21/30]: MD showcase.json 通过校验
+  [874] 多平台包校验 [22/30]: 街机 ARCADE_FBNEO showcase.json 通过校验
+  [875] 多平台包校验 [23/30]: catalog.status != complete 被拒（防半成品冒充全量）
+  [876] 多平台包校验 [24/30]: detection.frame 越界必抛 SchemaError
+  [877] 自动标定 [25/30]: 正反例逐帧差分准确锁定峰值帧 f0005
+  [878] 自动标定 [26/30]: 归一化 region 落在 [0.01, 0.99] 安全界内
+  [879] 自动标定 [27/30]: 特效主色簇聚类 RGB 准确还原 (248, 136, 48)
+  [880] 自动标定 [28/30]: min_fraction 在正例与反例之间留有充足安全余量
+  [881] 自动标定 [29/30]: 标定参数经 detect.run_check 复核满足正例 PASS 且反例 FAIL
+  [882] 自动标定 [30/30]: 正反例无视觉差异时强制抛 RuntimeError 拦截假宏
+  [883] 来源库 [1] 身份门：本地 ini+setlist 命中 => resolved 并出检索计划
+  [884] 来源库 [2] 身份门读出卡全名（不拿中文叫法当身份）
+  [885] 来源库 [3] 身份门给出 rom 级 sha1（可复算）
+  [886] 来源库 [4] 反证格：setlist 查无此 set => blocked，不出检索计划
+  [887] 来源库 [5] 反证格：缺 set/rom => blocked（身份未定不得开搜）
+  [888] 来源库 [6] 主机路径：本地 sha1 + 扩展名定身份
+  [889] 来源库 [7] 未知要素类型 => SchemaError（不进执行）
+  [890] 来源库 [8] 未知平台枚举 => SchemaError
+  [891] 来源库 [9] 库内优先门：verified_read 进 primary，candidate/dead 不进
+  [892] 来源库 [10] candidate 只进延伸段（未命中才扩大搜索）
+  [893] 来源库 [11] dead 站进禁用段并附关停当期证据
+  [894] 来源库 [12] 排序：已读+命中过该游戏+首选层 => 排第一
+  [895] 来源库 [13] 逐站检索词由 recipes 渲染（不是每次现编）
+  [896] 来源库 [14] absence 必扫层从库里现查（不写死站名）
+  [897] 来源库 [15] unreachable 只给快照通道，不冒充直连已读
+  [898] 来源库 [16] 反证格：ARCADE 专属站不得进 NES 计划（平台过滤真在跑）
+  [899] 来源库 [17] 反证格：把已读来源降为 candidate => 必须落延伸段（优先门不是死代码）
+  [900] 来源库 [18] hit 带正文取证 => pass，candidate 自动升 verified_read
+  [901] 来源库 [19] 台账产物门：done 必须对应真实产物且 sha256 一致
+  [902] 来源库 [20] 反证格：hit 不带取证 => inconclusive，不算命中
+  [903] 来源库 [21] 反证格：取证文件不存在 => inconclusive
+  [904] 来源库 [22] 反证格：取证文件为空 => inconclusive
+  [905] 来源库 [23] 失败尝试不得把已验证来源降级
+  [906] 来源库 [24] 台账追加式：4 次尝试都留痕，不覆盖失败历史
+  [907] 来源库 [25] 复用门：最新 attempt 为 done + 指纹一致 + 产物校验通过 => 可复用
+  [908] 来源库 [26] 反证格：产物字节被改 => 不可复用，还原后又可复用（sha256 校验真在跑）
+  [909] 来源库 [27] 台账摘要按最新 attempt 逐条计数（s_cand 历史 done 不冒充当前可用，不用总数减失败倒推）
+  [910] 来源库 [28] snippet => inconclusive + 只升 snippet_only
+  [911] 来源库 [29] 反证格：快照永不升 verified_read
+  [912] 来源库 [30] absence 门：两层都无 miss => blocked 并点名缺哪层
+  [913] 来源库 [31] 反证格：只扫网盘缺 B站 => 仍 blocked（搜不到别说成不存在）
+  [914] 来源库 [32] 两层都有 miss => 允许下「不存在」结论并留支撑 job
+  [915] 来源库 [33] 「不存在」声称落库可追溯
+  [916] 来源库 [34] ingest 去重：同域名同路径 => SchemaError
+  [917] 来源库 [35] 新站默认 candidate 入库分类（不冒充已验证）
+  [918] 来源库 [36] 反证格：verified_read 无取证 => SchemaError
+  [919] 来源库 [37] 未知 layer => SchemaError
+  [920] 来源库 [38] render 产物与主数据一致 => render_sync 绿
+  [921] 来源库 [39] 反证格：手改生成块一个词 => render_sync 红（两份真相会被抓）
+  [922] 来源库 [40] 无生成块标记 => SchemaError（不猜插入点）
+  [923] 来源库 [41] 结构化来源 + 逐要素归属 => 覆盖门/野来源门/迁移门全绿
+  [924] 来源库 [42] 反证格：自由文本来源 => 迁移门红
+  [925] 来源库 [43] 反证格：野 source_id（库里没有）=> 野来源门红
+  [926] 来源库 [44] 反证格：引用已关停站 => dead 引用门红
+  [927] 来源库 [45] 反证格：要素 e2 无来源支撑 => 覆盖门红
+  [928] 来源库 [46] 三态门：只有快照支撑 => inconclusive（不是 pass 也不是 fail）
+  [929] 来源库 [47] 反证格：零要素取得支撑时不得报 pass（空支撑不算已验证）
+  [930] 来源库 [48] 反证格：来源条目含未知字段 => 红（不放任自由格式）
+  [931] 来源库 [49] schema 门拒：未知字段
+  [932] 来源库 [50] schema 门拒：source_id 非法
+  [933] 来源库 [51] schema 门拒：layer 未知
+  [934] 来源库 [52] schema 门拒：status 未知
+  [935] 来源库 [53] schema 门拒：platforms 为空
+  [936] 来源库 [54] schema 门拒：要素类型未知
+  [937] 来源库 [55] schema 门拒：verified_read 缺取证
+  [938] 来源库 [56] schema 门拒：取证文件不存在
+  [939] 来源库 [57] schema 门拒：非 candidate 缺验证日期
+  [940] 来源库 [58] schema 门拒：dead 缺 closure
+  [941] 来源库 [59] 反证格：探活失败不得自动判 dead（失败≠站没了）
+  [942] 来源库 [60] 升 dead 必须给 reason
+  [943] 来源库 [61] 人给当期证据才升 dead，并落 closure
+  [944] 来源库 [62] 直连恢复只升 snippet_only，内容仍需真读才升 verified_read
+  [945] 来源库 [63] 反证格：「不存在」声称的支撑 job 不在台账 => 红
+  [946] 来源库 [反查] 真实文件未被探针写动 sources.json（mtime+sha256 一致）
+  [947] 来源库 [反查] 探针未创建真实文件 检索台账.json
+  [948] 来源库 [反查] 真实文件未被探针写动 复古游戏文献来源库.md（mtime+sha256 一致）
+  [949] 知识库 [1] 清洗丢导航/JS/空表格行且保留正文（丢弃计数可见）
+  [950] 知识库 [2] 反证格：纯链接行与 JS 行不得进正文
+  [951] 知识库 [3] 反证格：空表格行（| | |）不得当正文切进索引
+  [952] 知识库 [4] 反证格：短正文词（燕返）保留、导航词（登录）丢弃——不许过度清洗
+  [953] 知识库 [5] prose 切块带原文行号（可回指 path#L）
+  [954] 知识库 [6] 标题进 heading 字段（检索结果能报小节）
+  [955] 知识库 [7] table 按 25 行切（30 行 => 2 块）
+  [956] 知识库 [8] 反证格：超长段按 HARD_MAX 强制断块（不产出巨块）
+  [957] 知识库 [9] 中文长串整词 + 全部 bigram 成词（燕返/触发 都能命中）
+  [958] 知识库 [10] ASCII 标识符小写成词（set 名可命中）
+  [959] 知识库 [11] 十六进制/RAM 地址成词（$3F6 / 00AA / BD18）
+  [960] 知识库 [12] 反证格：箭头指令序列成词，无箭头文本不产生箭头 token
+  [961] 知识库 [13] corpus_map 通过 schema
+  [962] 知识库 [14] 反证格：corpus_map 未知字段 => SchemaError
+  [963] 知识库 [15] 反证格：revision 未定义 => SchemaError
+  [964] 知识库 [16] 反证格：authority 非法 => SchemaError
+  [965] 知识库 [17] 反证格：kind 非法 => SchemaError
+  [966] 知识库 [18] 反证格：排除索引不给 reason => SchemaError（不许静默跳过）
+  [967] 知识库 [19] 反证格：同一份正文登记两次 => SchemaError
+  [968] 知识库 [20] 反证格：平台不在 PLATFORMS => SchemaError
+  [969] 知识库 [21] build 产出块且区分入索引/显式排除（7 入 1 排除）
+  [970] 知识库 [22] 反证格：声明排除的正文不得偷偷进索引，且理由留档
+  [971] 知识库 [23] 增量：源文件未变 => 全部复用（不重复切块）
+  [972] 知识库 [24] 反证格：源文件 sha256 变了 => 不复用旧块
+  [973] 知识库 [25] 反证格：清洗/分词流水线版本变了 => 强制重建（旧块不许冒充新口径）
+  [974] 知识库 [26] 每块都带 source_id/revision/status/authority/text_sha（可溯源可验篡改）
+  [975] 知识库 [27] 索引原子写：不留 .tmp 残件
+  [976] 知识库 [27b] 产物级：全库无巨块（最长块 ≤ HARD_MAX 1200）
+  [977] 知识库 [28] 反证格：语料绑定野 source_id => build 拒（先 ingest 再入库）
+  [978] 知识库 [29] verified_read + authoritative 命中 => pass
+  [979] 知识库 [30] 我方跨版本实测件（*_multi）对同游戏任一版本算本版本证据
+  [980] 知识库 [31] 三态门：只有二手件命中 => inconclusive（不是 pass 也不是 miss）
+  [981] 知识库 [32] 反证格：跨版本出招表不得当本地卡权威（ECK 问 UM 表 => inconclusive + 警告）
+  [982] 知识库 [33] 同一份表问它自己的版本（UM）=> pass（版本对了才是权威）
+  [983] 知识库 [33b] 反证格：权威件确有命中但只匹配单字（或）=> 不算证据，不得升 pass
+  [984] 知识库 [33c] top3 附条件（P1 批准口径）：本版本权威可答件在第2位 => pass 必带 condition，最高分仍是跨版本表且警告保留
+  [985] 知识库 [33d] 正对照：同一查询问 UM，最高分即本版本权威 => pass 且不带条件
+  [986] 知识库 [34] 反证格：手游正文不得混进 NES 查询（平台分区生效）
+  [987] 知识库 [35] 无候选 => miss（本地没收集，不等于『不存在』）
+  [988] 知识库 [36] 有候选但无词命中 => miss（并提示换术语/走延伸段）
+  [989] 知识库 [37] 反证格：require_verified 下无权威命中不得放行
+  [990] 知识库 [38] 空查询 => SchemaError（别空检索）
+  [991] 知识库 [39] 反证格：未定义 revision => SchemaError（不许静默当全库检索）
+  [992] 知识库 [53] kana 占比函数：纯中文=0、5假名2汉字=5/7（阈值判据可复算）
+  [993] 知识库 [54] v3 切块：kana 主导件按章节切成小段且标 lang=ja（不是 700 字大块）
+  [994] 知识库 [55] v3 切块：章节标题前置进块文本，正文 ≤300 字
+  [995] 知识库 [56] 反证格：中文主导件（夹少量日文词）不重切，仍走原切块标 zh
+  [996] 知识库 [57] 域外零语料 => miss+out_of_scope（不许拿本地足球语料冒充电竞答案）
+  [997] 知识库 [58] 第二个域外语料同样拒答（路由不是只认一个域）
+  [998] 知识库 [59] 反证格：显式 revision 过滤优先于域限制（用户点名查本地不误拒）
+  [999] 知识库 [60] 可答性：词命中但库内无 40 位 hex => 证据不足拒答（词命中≠回答问题）
+  [1000] 知识库 [61] 正对照：同一问法、库里真有 SHA1 事实 => pass（拒答不是摆烂）
+  [1001] 知识库 [62] 反证格：问场数不许拿『6人制』串答（量词映射）
+  [1002] 知识库 [63] 跨语量词映射：日文『試合』与中文『场』都能答场数
+  [1003] 知识库 [64] 反证格：权威可答件被压到第4位（top3 外）=> 仍 inconclusive（附条件不是无底线）
+  [1004] 知识库 [65] 无稠密指纹件 => 明示退回 BM25 主干（不静默顶包）
+  [1005] 知识库 [66] 反证格：稠密指纹与索引漂移 => 不用稠密且明示原因（不加载模型）
+  [1006] 知识库 [67] 假名串成词：短串整词+bigram、长串只 bigram（与汉字同待遇，纯假名块不再 dl=0）
+  [1007] 知识库 [68] 全角字母数字归一：tokens(２Ｐ)==tokens(2p)，且不是万物等价（1p 可区分）
+  [1008] 知识库 [69] 真贪心打包：短参数段合并进同一块（首尾参数同块，不再散落零分小块）
+  [1009] 知识库 [70] 反证格：两段合计超 300 不得合并，块正文仍 ≤300（贪心不是无上限塞块）
+  [1010] 知识库 [71] 跨语扩展：中文触发词追加日文表层形式（協力/モード/ポジション/2p）
+  [1011] 知识库 [72] 反证格：无触发词的问句不扩展（不往查询里掺无关日文词）
+  [1012] 知识库 [73] 日文 howto 形态关：セレクト/プレイ/開始 是操作证据（P22/P23 类不再误杀）
+  [1013] 知识库 [74] 反证格：日文块没有任何操作形态词 => 仍不可答（形态关不是见日文就放）
+  [1014] 知识库 [75] top_window 旋钮：显式 5 让第4位权威件附条件出证（默认仍是 [64] 的 top3）
+  [1015] 知识库 [76] 扩展透明：query 结果带 query_expansion 字段（走了哪些日文词可查）
+  [1016] 知识库 [77] 反证格：window5 会放行只沾话题词的长背景权威块（假阳性机制）⇒ 默认必须守 top3（2026-11-19 探针 3/4 翻转假阳性，用户授权实测后否决转默认）
+  [1017] 知识库 [78] 结构关：≥2 网址的块是来源清单不是答案正文 => 不可答（W14/W27 假阳性根因，形态词再像答案也拦）
+  [1018] 知识库 [79] 正对照：单网址不触发结构关（正文带一条出处链接不算来源清单）
+  [1019] 知识库 [80] 话题锚：中文 howto 块只沾泛话题词（必杀/触发）无焦点重叠 => 不可答（W11 假阳性根因）
+  [1020] 知识库 [81] 正对照：同一问句、块真讲输球后果 => 可答（话题锚不是见 howto 就杀）
+  [1021] 知识库 [82] 日文块豁免话题锚：中文焦点词天然不重叠，跨语块仍由形态关把关（P22 类不误杀；lang=ja 显式传入）
+  [1022] 知识库 [83] 词法锚：重排把 BM25 top1 挤出 top8 => 锚回第8席，top1 仍是重排选择、不重复占位（Q10 机制：gold BM25第1/重排第11）
+  [1023] 知识库 [84] 反证格：BM25 top1 已在榜内/无 BM25 候选 => 原样返回（锚不是无条件加塞，空榜不造块）
+  [1024] 知识库 [85] 量词串答：问『几首』块答『11 条』(胜利姿势) => 不可答（X06 假阳性根因，count 量词须匹配『首』）
+  [1025] 知识库 [86] 正对照：块真含『8 首』=> 可答（量词关不是见 count 就杀）
+  [1026] 知识库 [87] 属性焦点：问『X是什么射门』块只命中主语海月、缺『射门』=> 不可答（X07 假阳性根因）
+  [1027] 知识库 [88] 正对照：块真讲射门种类 => 可答（属性焦点不是见射门问句就杀）
+  [1028] 知识库 [89] 域泛词停用：howto 块只命中域泛词『球员』(已停用)、缺主语『治疗/受伤』 => 不可答（X25 w3 假阳性根因）
+  [1029] 知识库 [90] 正对照+反证 R3：块只 1 个焦点命中『治疗』仍可答 => 可答（证明未实施『≥2 焦点命中』一刀切——那会误杀同义换述真答案，模拟已否）
+  [1030] 知识库 [91] 反证格：域泛词球员/射门已停用，但 KOF 域标识词 eck/kof98 不停用（全量停用版误杀 W18 八神庵连招被数据否决，p5_fix_sim_c3_out.txt）
+  [1031] 知识库 [92] yesno 焦点闸门：块含『可以』(YESNO_RE 命中)但不讲打雷/击倒/门将 => 不可答（X16 假阳性根因：对照控室段冒充答案）
+  [1032] 知识库 [93] 正对照：块真讲打雷击倒门将+含『不能』=> 可答（yesno 焦点闸门不是见 yesno 就杀，有焦点重叠即放行）
+  [1033] 知识库 [94] 射门影响形态关：块含雨天/场地/影响但无『射门』=> 不可答（X26 假阳性根因：对照控室段沾天气词但不答射门影响）
+  [1034] 知识库 [95] 正对照：块真讲射门+雨天影响 => 可答（射门影响形态关不是见影响问句就杀）
+  [1035] 知识库 [96] yesno 隐性肯定：真答案『守门员专用必杀技为龙卷风拳』不含显性是非词 => 专用必杀技 命中 YESNO_RE 判可答（W03 真答案根因：旧校验器把隐性肯定挡在门外）
+  [1036] 知识库 [97] 反证格：规则块讲守门员(焦点重叠)但不讲必杀、无是非词 => 不可答（W03 证据错机制：沾守门员冒充答案，intent_ok=False 挡住）
+  [1037] 知识库 [98] 反证格：才能/持有 泛词未收进 YESNO_RE（即使焦点重叠仍 intent_ok=False）（模拟证 才能 会让 X16 球员数据块冒充答案引 2 假阳，E4 被否，p7_yesno_sim_out.txt）
+  [1038] 知识库 [99] 正对照：既有显性是非词『可以』仍生效 => 可答（P7 只补隐性肯定形态，不废原有 YESNO_RE 词）
+  [1039] 知识库 [40] 基线：覆盖/归属/身份/索引同步/溯源六门全绿
+  [1040] 知识库 [41] 三态门：只有二手/跨版本正文的版本 => authoritative_ready inconclusive
+  [1041] 知识库 [42] 反证格：verified_read 的取证正文未进 corpus_map => 覆盖门红（收而不入库＝白收）
+  [1042] 知识库 [43] 反证格：正文挂到别的来源名下（不在其 evidence 列表）=> 归属门红
+  [1043] 知识库 [44] 反证格：野 source_id => 归属门红
+  [1044] 知识库 [45] 反证格：手游正文被判成 FC 版本（与 games_hit 冲突）=> 身份门红
+  [1045] 知识库 [46] 反证格：手改索引块正文 => text_sha 不符判红
+  [1046] 知识库 [47] 反证格：来源已降级但索引块仍写 verified_read => 溯源门红
+  [1047] 知识库 [48] 反证格：源文件变了索引没重建 => 同步门红
+  [1048] 知识库 [49] 三态门：索引未建 => inconclusive（不假装核对过）
+  [1049] 知识库 [50] route 第②步先查本地正文，并回报库内块数与 query 命令
+  [1050] 知识库 [51] 反证格：索引不存在 => route 如实报 not_built（不假装有正文）
+  [1051] 知识库 [52] 反证格：身份未定仍 blocked（知识库接线不得放宽身份门）
+  [1052] 知识库 [108] hybrid_only 件通过 schema（index:false + hybrid_only:true 合法）
+  [1053] 知识库 [109] 反证格：hybrid_only 非布尔 => SchemaError
+  [1054] 知识库 [110] 反证格：hybrid_only 挂 index:true 件 => SchemaError（只能挂 index:false）
+  [1055] 知识库 [111] base build 排除 hybrid_only 件（bm25 兜底零回归的构造保证）
+  [1056] 知识库 [112] hybrid build 收录 hybrid_only 对照件（富集索引独有）
+  [1057] 知识库 [113] base ⊂ enriched：base 块全在富集索引且富集严格更多（再索引只增不改 base）
+  [1058] 知识库 [114] 域内 IDF 隔离：同子池 True≠False（池内 N/df/avgdl）但召回块集不变
+  [1059] 知识库 [115] 反证：domain_local=False 逐块等于全局 BM25 原公式（兜底臂构造零改动）
+  [1060] 知识库 [116] 自动选臂：hybrid 富集件无稠密指纹 => 退回 base+全局（不静默顶包）
+  [1061] 知识库 [117] 显式 index_hybrid.json => 域内 IDF（尊重调用方文件名）
+  [1062] 知识库 [118] 反证：显式 base 索引名 => 全局 IDF（不因富集件存在误切域内）
+  [1063] 知识库 [119] 正对照：hybrid 富集件就绪 => 自动切富集索引+域内 IDF（默认检索随环境升级）
+  [1064] 知识库 [120] 缺 numpy：ready 返回 (False,原因) 不抛（可选依赖隔离）
+  [1065] 知识库 [121] 缺 numpy：enhance 返回 (None,None,原因) 不抛
+  [1066] 知识库 [122] 缺 numpy 环境全链路 query 仍走 bm25 兜底并 pass
+  [1067] 知识库 [123] 故障注入降级与冷启动 bm25 逐格一致（status/hits/score/counts）
+  [1068] 知识库 [124] 降级身份一致：bm25_only+base 索引名+无域内注记+原因明示（不静默顶包）
+  [1069] 知识库 [125] topk 契约 bm25 臂：topk=3 返回 ≤3
+  [1070] 知识库 [126] topk 契约 hybrid 臂：mock 增强全序也只返回 topk=3（两臂同契约）
+  [1071] 知识库 [127] selected_evidence：pass 恰带 1 块放行依据且位于 top_window 内
+  [1072] 知识库 [128] 反证格：miss 不出 selected_evidence（无放行不得伪造出证）
+  [1073] 知识库 [129] 富集索引审计：hybrid_only 合法收录不再误报漂移
+  [1074] 知识库 [130] base 审计：hybrid_only 排除在外仍判同步
+  [1075] 知识库 [131] 反证格：富集索引丢了 hybrid_only 块 => 同步门红（不是无脑放行）
+  [1076] 知识库 [132] 反证格：base 误收 hybrid_only 块 => 同步门红
+  [1077] 知识库 [133] 版本钉解析：ECK/98UM 各自命中，无版本词不报
+  [1078] 知识库 [134] 反证格：拉丁词边界（checkeck/98umx 子串不误报）
+  [1079] 知识库 [135] 版本钉只暴露信息：显式 revision 问句加 ECK 后 hits/score/status 逐格不变
+  [1080] 知识库 [136] v2 反例：金标在 hits 但放行依据是无关块 => v1 过/v2 不过（Q10 型假 pass）
+  [1081] 知识库 [137] v2 正格：放行依据就是金标块 => 正确出证
+  [1082] 知识库 [138] v2 反例：pass 无 selected_evidence => 不过（契约缺失不放行）
+  [1083] 知识库 [139] v2 拒答档与 v1 同口径：miss 过/pass 不过且记错误出证
+  [1084] 知识库 [140] v2 版本守卫收紧：top1 非 UM 但放行依据是 UM 块 => v2 不过
+  [1085] 知识库 [141] v2 分表逐格计数==逐题求和；gold_in_topk 档 v1/v2 同口径
+  [1086] 知识库 [142] v2 引用有效性反证：放行块 locator 无行号锚 => citation_valid=False
+  [1087] 知识库 [199] 自动路由：LOL+DOTA2 同时命中两域，不挑单一域
+  [1088] 知识库 [200] 反证格：拉丁子串不误报；强词命中时不被共享弱词拖进第二域
+  [1089] 知识库 [201] 生产路径：LOL+DOTA2 自动查两域且都诚实报本地无料，不落全库泛搜
+  [1090] 知识库 [202] 多域正例：一域有权威证据也不合并成总pass；逐域证据保留且总体要求拆分
+  [1091] 知识库 [203] 查询留痕：动态落到探针KB目录，记出证定位不记全文（真实目录零污染）
+  [1092] 知识库 [203b] 多域诊断只记外层一次：逐域状态/证据不丢，未传log_sink不写真实日志
+  [1093] 知识库 [204] 真实标题反证：拳皇15+冠军不被泛词拖成KOF98或LOL（版本未登记须诚实留空）
+  [1094] 知识库 [205] 热血格斗传说：官方四输入可答；KT公式二手不升pass；Rev.B原版不借补丁能力且补丁自身仍非权威
+  [1095] 知识库 [206] KT候选计算：生日公式可算且始终reference_only，不产生硬证据
+  [1096] 知识库 [207] KT候选边界：12/31与闰日2/29有效，公式按20项周期循环
+  [1097] 知识库 [208] 反证格：非法月份/日期、布尔与字符串不得混入KT候选
+  [1098] 知识库 [143] 审计撤回段识别：必杀全清单 L65/L230/L257 三处撤回/作废均在册
+  [1099] 知识库 [144] 反证格：继承检查只扫 authoritative 件（reference_only 文件不进清单）
+  [1100] 知识库 [145] 四游戏明确路由：LOL/DOTA/CS2/VAL 各归其域（强词命中），空语料 corpus_available=False
+  [1101] 知识库 [146] 生产路径：CS2/VAL 问句拒答 out_of_scope，candidates=0（不落全库泛搜）
+  [1102] 知识库 [147] 恒量反证：既有 86 题（26评测+60探针）路由逐格不变（新域不抢旧问句）
+  [1103] 知识库 [148] 选题层 content_domains 推导不受空语料新域影响（域锚点/入口B口径不变）
+  [1104] 知识库 [149] schema_v2 冻结件：18表+双时间列齐+权限非法值被拒+同业务ID多行版本可存（v1主键缺陷反证）；v1原件字节未动
+  [1105] 知识库 [150] source_policy_v1：E01–E19 齐全+五维枚举合法+GRID/Steam商用denied+VLR自动denied
+  [1106] 知识库 [151] 反证格：403未核=unknown非denied非allowed（E06）；免key官方渠道=allowed（E02）；代码MIT≠数据商用（E09）
+  [1107] 知识库 [152] init_db 幂等：连建两次仍 18 表+权限种子 19 行
+  [1108] 知识库 [153] 夹具导入：2实体2证据1快照，缺name者跳过不造空实体（反证）
+  [1109] 知识库 [154] 证据可回溯：JSON Pointer 定位+原文往返一致+字段级绑定2条
+  [1110] 知识库 [155] 幂等反证：同字节重复导入四计数全0（不增殖）
+  [1111] 知识库 [156] 唯一证据契约：pass恰1块+快照sha对得上+答案带截至补丁条件+zh_CN名/称号映射正确（实测语言包name/title语义相反）
+  [1112] 知识库 [157] 版本钉硬过滤：未导入补丁miss；英文别名可查；同名歧义要澄清不猜
+  [1113] 知识库 [215] 静态实体扩展：item/summoner 各1实体1证据1快照，英文ID别名可查
+  [1114] 知识库 [216] 静态查询：装备按external_id、技能按英文别名定位，各绑定唯一快照证据且售价/冷却/范围原样输出
+  [1115] 知识库 [217] 类型白名单：未登记的静态实体类型拒绝，不把装备伪装成英雄
+  [1116] 知识库 [218] v2→v3 在线迁移：原实体保留、外键零异常、新类型可写且重复初始化幂等
+  [1117] 知识库 [219] 覆盖看板：只读生产聚合文本+三类电竞证据；动态表0不冒充真实覆盖；域级评测不重复摊到知识类型；输入mtime+sha不变
+  [1118] 知识库 [158] 权限闸门反证：automated_access=denied 时导入被拦
+  [1119] 知识库 [159] 修订链：当前查询用修正版；knowledge_as_of回放旧版；superseded_at当刻边界归新版
+  [1120] 知识库 [160] 赛果状态反证：cancelled/pending不pass，winner字段有值也不从比分推断
+  [1121] 知识库 [161] 证据资格反证：撤稿证据/未绑定字段都不pass
+  [1122] 知识库 [162] 选择器白名单反证：非白名单过滤列被拒（注入面），表名同样走白名单
+  [1123] 知识库 [163] 阵容时效陷阱对：只有旧闭区间名单→现状拒冒充；同库历史as_of查询pass（正对照）
+  [1124] 知识库 [164] 结束未知≠开放反证+区间左闭右开：as_of=valid_to已无效、前一日有效
+  [1125] 知识库 [165] 官宣≠生效：未来生效的官宣转会不会切换当前归属，只进附注
+  [1126] 知识库 [166] 赛事补丁硬过滤：只认当局记录补丁，公网更新补丁不顶替；未记录返回None诚实
+  [1127] 知识库 [167] 刷新失败只留痕：last_verified_at与既有ok快照逐字节一致，失败不刷核验时间
+  [1128] 知识库 [反查] 电竞真实件未被探针写动 facts_v1.db（状态一致）
+  [1129] 知识库 [反查] 电竞真实件未被探针写动 snapshots（状态一致）
+  [1130] 知识库 [168] 选择器正对照：金表行过七项核查被选中（排他/队内/原生条件正确解析）
+  [1131] 知识库 [169] 方法学段不得承担归属出证：来源资格够但无归属行被拒（Q02 病假）
+  [1132] 知识库 [169b] 生产初筛同步排他归属：方法学段有原生词但无同行排他归属被拒；金表同项恒量正对照放行
+  [1133] 知识库 [170] 『会使』≠『只有他会』：排他问无仅/只有标志被肯否关拒
+  [1134] 知识库 [170b] 恒量正对照：同块补『仅』即过肯否关（证明拒的是排他形态不是块本身）
+  [1135] 知识库 [170c] 已有合格证据优先：两个块都过核查时保留 incumbent，不无理由换证
+  [1136] 知识库 [170d] 初筛反证：生产可答性已拒的块不得被选择器单独救活
+  [1137] 知识库 [171] 同技能错角色：选择器 mechanics 放行但金标角色核对判失败（评估层必须抓住）
+  [1138] 知识库 [172] 同角色错技能：问燕返而块只归属龙卷拳，主体一致关拒
+  [1139] 知识库 [173] 同单位错对象：问热血队而块答巴西队，队内范围关拒
+  [1140] 知识库 [173b] 恒量正对照：同数量改热血队即过（证明拒的是范围不是数字）
+  [1141] 知识库 [174] 同哈希错文件：40位哈希在但对象词是乙号不是甲号，数值归属关拒
+  [1142] 知识库 [174b] 恒量正对照：同哈希改甲号文件即过（证明拒的是对象不是哈希形态）
+  [1143] 知识库 [175] 同游戏错版本：revision_match=False 来源资格关拒
+  [1144] 知识库 [176] 同玩家错模式：问合作而块答对战，条件覆盖关拒
+  [1145] 知识库 [176b] 同模式错玩家：问二号而块答1P，玩家编号关拒
+  [1146] 知识库 [176c] 恒量正对照：合作+2P+GK 同行即过
+  [1147] 知识库 [177] 肯否互换：否定问而块给肯定证据，肯否关拒
+  [1148] 知识库 [177b] 恒量正对照：同块改否定即过
+  [1149] 知识库 [178] 撤回旧结论：status=retracted 来源资格关拒（不冒充已验证）
+  [1150] 知识库 [179] 正确块在列表但低分位：方法学第1被拒、金表第2被选中，beyond_window 标记策略调整（不偷翻默认）
+  [1151] 知识库 [180] 复杂问题（因果）：不强行归类，返回材料+缺口不下结论
+  [1152] 知识库 [181] 全游戏排他反证：巴西 Bûnyo 使用块推翻『全游戏唯一』主张，整问拒答
+  [1153] 知识库 [182] 队内范围恒量正对照：同巴西块在队内问下不构成反证，金表仍被选中
+  [1154] 知识库 [183] 真实Q02修复：问框架退评分后金表第1位过七项核查，生产默认pass且方法学段仍被拒
+  [1155] 知识库 [189] 生产默认修复：未启用选择器时 Q02 已由生产可答性直接判 pass，证据恰为金表
+  [1156] 知识库 [190] audit 只报告不改判：看见窗口内金表后保留生产 pass/同一证据
+  [1157] 知识库 [191] scoped 窗口内正对照：金表已在 top3，无需扩窗即可放行
+  [1158] 知识库 [192] 显式扩窗边界：候选本就在窗口内时不伪报跨窗，仍保持 pass/金表
+  [1159] 知识库 [197] 真实Q03修复：标题词退评分后按键序列金表第2位，生产默认pass
+  [1160] 知识库 [198] 按键输入证据形态恒量反证：完整A/B计数序列通过，单A计数与纯方法描述被拒
+  [1161] 知识库 [199] 真实Q06召回修复：上场→プレイ跨语扩展后日文金表第17位；top3外仍诚实inconclusive
+  [1162] 知识库 [200] 评分词边界：仅显式过滤的排他/按键问退框架词，普通问与全库检索原样保留
+  [1163] 知识库 [201] 非目标回归：W22要素盘点输入问仍由生产路径pass且未触发按键序列专用评分
+  [1164] 知识库 [193] scoped/replace 边界：复杂问句 scoped 保留原判，replace 不强行下结论
+  [1165] 知识库 [194] 真实Q10不换证：主体词修正后原3v3限制块过核查并保留为唯一证据
+  [1166] 知识库 [195] 选择器模式反证：未知模式拒绝，不允许静默按 replace 执行
+  [1167] 知识库 [196] 扩窗反证：未显式选择模式时单独打开扩窗开关拒绝
+  [1168] 知识库 [196b] 选择器正文失败关闭：索引读不到时拒绝降级到截断 snippet
+  [1169] 知识库 [196c] 选择器缺块失败关闭：命中块正文不在索引时拒绝用 snippet 补证据
+  [1170] 知识库 [184] 阶段4日文全角归一正对照：中文问句穿透２Ｐ協力/ＧＫ全角块，属性+条件双过
+  [1171] 知识库 [184b] 日文块答2P=FW（位置值不同）：属性+条件仍过全角归一，答案对错属金标评估层非选择器
+  [1172] 知识库 [185] 词面命中假pass反例：名单表只有ＧＫ/ポジション无玩家编号同行，属性关拒
+  [1173] 知识库 [186] 真实Q08候选：金标2c71bd81ff2d第19位过七项被选中/beyond_window，名单表1439bdc2bb1f词面假pass被拒，生产默认仍假pass未偷翻
+  [1174] 知识库 [187] 精准引用缺口登记：Q08金标块含L48决定性句(２ＰはＧＫ/協力)但定位L47-L47，漂移1行；修好后本格转红须改断言为覆盖
+  [1175] 知识库 [188] 人物档案擅长守门反例：全角ＧＫ/キーパー在但无玩家编号同行，属性关拒（答不了谁操作）
+  [1176] 知识库 [188b] 恒量正对照：同块补一行玩家编号+位置，属性+条件即过（拒的是缺编号非ＧＫ词面）
+  [1177] 知识库 [220] 签名题恒量反证：任意引号不算签名，签名判据/ひっさつOK才算
+  [1178] 知识库 [221] 位置题主体恒量反证：被问人物不出现在证据行即拒，元永门将正对照过
+  [1179] 知识库 [222] 片段资格：S1 小节下的无标记子句继承二手资格，不随整件权威放行
+  [1180] 知识库 [223] 片段资格正对照：同小节显式我方实测可覆盖继承来源
+  [1181] 知识库 [224] 片段资格：作废句单独判 retracted，不得借同块其他句放行
+  [1182] 知识库 [225] 混合块不连坐：撤回单元格排除，签名单元格仍可出证且摘录落到签名
+  [1183] 知识库 [226] fragment_policy 非法值拒绝，禁止静默回落 legacy
+  [1184] 知识库 [227] 真实Q18：strict 仍选中金标L251-L259，摘录精确落到签名而非任意引号
+  [1185] 知识库 [228] 真实P24：窄同义扩展把同口径/回放无法对齐金标提进生产窗口
+  [1186] 知识库 [230] 真实X21：人物候选聚焦把元永门将实测块提进生产窗口，strict保留有效行
+  [1187] 知识库 [231] 查询日志聚合：总数/去重/状态/证据率/坏行/空问/缺指纹/契约异常逐格可复算
+  [1188] 知识库 [231b] schema_v2多域聚合：采用日志逐域状态/证据，不把总体inconclusive摊给每域
+  [1189] 知识库 [232] 射门方法题：日文守门员操作段不得冒充射门答案，真实Q16错误pass撤回
+  [1190] 知识库 [233] 玩家分工题：位置名单无玩家编号同行不得出证，真实Q08错误pass撤回
+  [1191] 知识库 [232c] 隐藏结局题：只谈秘技触发不得出证，扩窗选择器撤回Q17错证
+  [1192] 知识库 [229-X05] 真实继承源探针：legacy假pass被strict片段资格拦截
+  [1193] 知识库 [229-X17] 真实继承源探针：legacy假pass被strict片段资格拦截
+  [1194] 知识库 [229-X19] 真实继承源探针：legacy假pass被strict片段资格拦截
+  [1195] 知识库 [229-X20] 真实继承源探针：legacy假pass被strict片段资格拦截
+  [1196] 知识库 [229-X30] 真实继承源探针：legacy假pass被strict片段资格拦截
+  [1197] 知识库 [232b] NLI 校准失败必须留档：24 样本不倒推绿灯，macro-F1 不越界
+  [1198] 知识库 [233b] NLI 缺完整 claim 不运行，禁止拿问题冒充主张
+  [1199] 知识库 [234] 指纹/输入序列等结构化事实不交给 NLI 替代硬判据
+  [1200] 知识库 [235] NLI 只能接在身份/版本/权限硬关之后
+  [1201] 知识库 [236] NLI 支持只附影子提示，不新增 pass、不改出证块
+  [1202] 知识库 [237] NLI 矛盾只标 veto_candidate，绝不擅自推翻生产 pass
+  [1203] 知识库 [238] 生产 query 缺 claim 返回 not_run，且不拖垮检索
+  [1204] 知识库 [239] 真实失败校准件让生产 NLI 保持关闭，不加载模型硬跑
+  [1205] 知识库 [240] query_auto 把 NLI 参数透传全部命中域，不漏域
+  [1206] 知识库 [241] NLI 日志只落标签/概率/阈值，不落 claim 或 premise 正文
+  [1207] 知识库 [242] 诊断不吞错：非法选择器仍抛 SchemaError
+  [1208] 知识库 [242b] 异常诊断留痕：错误状态/调用ID/零计数入同一有界契约
+  [1209] 知识库 [243] 日志边界恒量反证：超长问/原因/证据/域/事件全部截断，正文与凭证字段不落盘
+{
+ "q": "热血队内，燕返原生只有哪个角色会使？",
+ "game": "nekketsu_soccer2",
+ "revision": null,
+ "platform": null,
+ "want": [],
+ "route": {
+  "domain": "retro_soccer",
+  "game_ids": [
+   "nekketsu_soccer2"
+  ],
+  "revisions": [],
+  "corpus_available": true,
+  "matched": [
+   "燕返",
+   "热血队"
+  ],
+  "tier": "strong"
+ },
+ "index_used": "index.json",
+ "index_sha256": "ecc7bbcce5dcd64fbbb4064d3fbcdde21ee18fdb4da1dec428040ca6356a1c60",
+ "counts": {
+  "candidates": 178,
+  "hits": 19,
+  "answerable": 3,
+  "strong": 2
+ },
+ "query_term_filter": {
+  "mode": "attribution",
+  "removed": [
+   "个角",
+   "会使",
+   "只有",
+   "哪个",
+   "有哪",
+   "热血",
+   "热血队内",
+   "生只",
+   "色会",
+   "血队",
+   "角色",
+   "返原",
+   "队内"
+  ]
+ },
+ "retrieval_note": "稠密指纹件未建（py -3 -m taspipe.kb dense）",
+ "retrieval": "bm25_only",
+ "authority_warnings": [
+  "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+  "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+  "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+  "sohu_game 是二手件（reference_only），须与官方件或我方实测交叉核对",
+  "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+  "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+  "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+  "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+  "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+  "sohu_game 是二手件（reference_only），须与官方件或我方实测交叉核对",
+  "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对"
+ ],
+ "status": "pass",
+ "hits": [
+  {
+   "chunk_id": "f7f8e8316295",
+   "score": 11.382,
+   "source_id": "local_soccer2_super_list",
+   "status": "verified_read",
+   "authority": "authoritative",
+   "revision": "nekketsu_soccer2_multi",
+   "game_id": "nekketsu_soccer2",
+   "platform": "NES",
+   "revision_match": true,
+   "locator": "_工具脚本/taspipe/游戏包/热血足球联盟_必杀全清单.md#L70-L85",
+   "heading": "3. 一般个人技/必杀技（S1 发动法原文）",
+   "matched_terms": [
+    "原生",
+    "燕返"
+   ],
+   "snippet": "| 技 | 日文 | 发动 | 备注 |\n|---|---|---|---|\n| 爆裂攻击(铁膝盖) | ばくれつあたっく | 跳跃**落地时按 B**，可连按连发 | 着地技；≥4 人会 |\n| 燕返 | つばめがえし | 带球跳跃立即出现(空中翻跟头) | 仅 Yoritsune 原生；秘技后全员 |\n| 必杀运球(旋风撞人) | ひっさつどりぶる | 带球中连按两次上 或 两次下 | 撞倒对方含门将(概率) |\n| 龙卷拳(升龙拳) | とるねーどぱんち | 方向左/右",
+   "answerability": {
+    "answerable": true,
+    "intent": "identity",
+    "focus_ok": true,
+    "pattern_ok": true,
+    "intent_ok": true,
+    "focus_hit": [
+     "原生",
+     "燕返"
+    ],
+    "url_list": false,
+    "topic_anchor_ok": true,
+    "exclusive_attribution_ok": true,
+    "position_subject_ok": true,
+    "position_subjects": [],
+    "shot_method_ok": true,
+    "player_role_ok": true,
+    "ending_capability_ok": true,
+    "input_sequence_ok": true
+   }
+  },
+  {
+   "chunk_id": "8996c7a159ef",
+   "score": 10.242,
+   "source_id": "local_soccer2_super_list",
+   "status": "verified_read",
+   "authority": "authoritative",
+   "revision": "nekketsu_soccer2_multi",
+   "game_id": "nekketsu_soccer2",
+   "platform": "NES",
+   "revision_match": true,
+   "locator": "_工具脚本/taspipe/游戏包/热血足球联盟_必杀全清单.md#L137-L158",
+   "heading": "5. 生产接线（11-14 实测更新）",
+   "matched_terms": [
+    "原生",
+    "燕返"
+   ],
+   "snippet": "⇒ 现状改成 **untested（未在任何有效条件下测过）**，不是\"不可触发\"。用户 11-14 亲口\"其实打出过好多次必杀了\"，\n有效条件下的真阳性一定存在，责任在我的测量方式，不在 ROM。\n真采 23 必杀仍需正对照：先在**当前 jf ROM** 上按 §6 的三条铁律重跑触发链，仍全负再谈日版原版 ROM（网盘仅两 hack 无日版；外部=门控待批）。\n本清单 23+13 项在 CN/hack 上全部标 **honest gap（不可复现，证据见下）**，不冒充",
+   "answerability": {
+    "answerable": false,
+    "intent": "identity",
+    "focus_ok": true,
+    "pattern_ok": false,
+    "intent_ok": true,
+    "focus_hit": [
+     "原生",
+     "燕返"
+    ],
+    "url_list": false,
+    "topic_anchor_ok": true,
+    "exclusive_attribution_ok": false,
+    "position_subject_ok": true,
+    "position_subjects": [],
+    "shot_method_ok": true,
+    "player_role_ok": true,
+    "ending_capability_ok": true,
+    "input_sequence_ok": true
+   }
+  },
+  {
+   "chunk_id": "3f1cfd48b780",
+   "score": 7.405,
+   "source_id": "1ang_com",
+   "status": "verified_read",
+   "authority": "reference_only",
+   "revision": "nekketsu_soccer2_fc_jp",
+   "game_id": "nekketsu_soccer2",
+   "platform": "NES",
+   "revision_match": true,
+   "locator": "_工具脚本/taspipe/游戏包/来源库/取证/1ang_热血足球联盟图文攻略_20261118.md#L525-L536",
+   "heading": "よりつね(Yoritsune)",
+   "matched_terms": [
+    "燕返"
+   ],
+   "snippet": "体力50，踢射力24，防御力20，走力类型A\n必杀技：『にんじゃしゅーと(Ninja Shoot)』（忍者踢射）、『つばめがえし(Tsubamegaeshi)』（燕返）\n性格：难以捉摸\n喜好：梅干\n厌恶：偶像歌手\n简介：『服部学園』所属（与服部有关的，十之八九与忍者、功夫高手有关，「服部半蔵」扬名后世）。他的移动能力很高，贵重的万能型球员，会用燕返（这里的「燕返し」，与「佐々木小次郎」得意技能同名），也就是空中翻跟头。担当前锋时，连续使用必杀踢射。缺点是命中率低，要想提升命中",
+   "answerability": {
+    "answerable": false,
+    "intent": "identity",
+    "focus_ok": true,
+    "pattern_ok": false,
+    "intent_ok": true,
+    "focus_hit": [
+     "燕返"
+    ],
+    "url_list": false,
+    "topic_anchor_ok": true,
+    "exclusive_attribution_ok": false,
+    "position_subject_ok": true,
+    "position_subjects": [],
+    "shot_method_ok": true,
+    "player_role_ok": true,
+    "ending_capability_ok": true,
+    "input_sequence_ok": true
+   }
+  },
+  {
+   "chunk_id": "b5a2c9ad96c4",
+   "score": 6.616,
+   "source_id": "local_soccer2_super_list",
+   "status": "verified_read",
+   "authority": "authoritative",
+   "revision": "nekketsu_soccer2_multi",
+   "game_id": "nekketsu_soccer2",
+   "platform": "NES",
+   "revision_match": true,
+   "locator": "_工具脚本/taspipe/游戏包/热血足球联盟_必杀全清单.md#L262-L264",
+   "heading": "8-6 对手 11 队补强（S10 逐队 + S3 名称）",
+   "matched_terms": [
+    "燕返"
+   ],
+   "snippet": "名称已知仍仅 3：巴西食人鱼（S3）/阿根廷香蕉（S3）/塞内加尔白鸟（S1/S10）。S10 给了其余各队的**行为侧写**（喀麦隆 Dakosuta 必杀可吹飞强豪门将；巴西 Bûnyo 速度快+燕返、Santosu 命中强、门将 Rodorigesu 与德国 Burême 同级最强；意大利连续必杀+门将弱点在禁区上方、巴西门将弱点在禁区下方；德国不会燕返故必杀概率低；墨西哥全员面具）。**结论维持：8 队必杀名称文献确无，只能实测看球变形再命名。**\n胜利姿势全 11 ",
+   "answerability": {
+    "answerable": false,
+    "intent": "identity",
+    "focus_ok": true,
+    "pattern_ok": false,
+    "intent_ok": true,
+    "focus_hit": [
+     "燕返"
+    ],
+    "url_list": false,
+    "topic_anchor_ok": true,
+    "exclusive_attribution_ok": true,
+    "position_subject_ok": true,
+    "position_subjects": [],
+    "shot_method_ok": true,
+    "player_role_ok": true,
+    "ending_capability_ok": true,
+    "input_sequence_ok": true
+   }
+  },
+  {
+   "chunk_id": "42b773880ef0",
+   "score": 6.256,
+   "source_id": "local_soccer2_super_list",
+   "status": "verified_read",
+   "authority": "authoritative",
+   "revision": "nekketsu_soccer2_multi",
+   "game_id": "nekketsu_soccer2",
+   "platform": "NES",
+   "revision_match": true,
+   "locator": "_工具脚本/taspipe/游戏包/热血足球联盟_必杀全清单.md#L24-L33",
+   "heading": "1. 发动与状态规则（S1 原文，生产闸门依据）",
+   "matched_terms": [
+    "燕返"
+   ],
+   "snippet": "- 必杀踢射：持球跳（A+B）到**最高点按 B**；**发动时不能按方向键**，否则变成挑球不是人球同跳。\n- 难度：`やさしい` 容易 = 敌我**都不能**发动必杀射门；`ふつう` 普通 = 次次发动；`むずかしい` 困难 = 仅会燕返者 100%。\n⇒ 采集必须在普通难度（导航默认值待实测确认；若必杀不触发先查难度）。\n- 秘技：比赛中 Start 暂停 → A×3 B×1 A×3 B×1 A×7 → Start 解除，听到必杀音效=成功；全员获得全部**技能**（燕",
+   "answerability": {
+    "answerable": true,
+    "intent": "identity",
+    "focus_ok": true,
+    "pattern_ok": true,
+    "intent_ok": true,
+    "focus_hit": [
+     "燕返"
+    ],
+    "url_list": false,
+    "topic_anchor_ok": true,
+    "exclusive_attribution_ok": true,
+    "position_subject_ok": true,
+    "position_subjects": [],
+    "shot_method_ok": true,
+    "player_role_ok": true,
+    "ending_capability_ok": true,
+    "input_sequence_ok": true
+   }
+  },
+  {
+   "chunk_id": "a1281da97fd0",
+   "score": 5.872,
+   "source_id": "1ang_com",
+   "status": "verified_read",
+   "authority": "reference_only",
+   "revision": "nekketsu_soccer2_fc_jp",
+   "game_id": "nekketsu_soccer2",
+   "platform": "NES",
+   "revision_match": true,
+   "locator": "_工具脚本/taspipe/游戏包/来源库/取证/1ang_热血足球联盟图文攻略_20261118.md#L653-L656",
+   "heading": "ぶらじる | Brazil | 巴西",
+   "matched_terms": [
+    "燕返"
+   ],
+   "snippet": "实力仅次于意大利的强豪。使用燕返，连续发动强力必杀踢射。最好不要让他们带球突破到热血一侧的阵地。阵型2-2-1。胜利姿势如同里约热内卢狂欢节上的舞蹈。值得注意的是，中场球员『ぶーにょ(Bûnyo)』速度很快，频繁使用燕返，如同热血队里的『よりつね(Yoritsune)』，一定要盯住他，不要让他拿球。后卫『さんとす(Santosu)』命中很强，而且体格很好，即使对手的必杀踢射打在他身上，也很难贯通过去。门将『ろどりげす(Rodorigesu)』命中很强，对手的必杀踢射想把他吹飞",
+   "answerability": {
+    "answerable": false,
+    "intent": "identity",
+    "focus_ok": true,
+    "pattern_ok": false,
+    "intent_ok": true,
+    "focus_hit": [
+     "燕返",
+     "血队"
+    ],
+    "url_list": false,
+    "topic_anchor_ok": true,
+    "exclusive_attribution_ok": true,
+    "position_subject_ok": true,
+    "position_subjects": [],
+    "shot_method_ok": true,
+    "player_role_ok": true,
+    "ending_capability_ok": true,
+    "input_sequence_ok": true
+   }
+  },
+  {
+   "chunk_id": "8e34d9a96bc7",
+   "score": 5.396,
+   "source_id": "1ang_com",
+   "status": "verified_read",
+   "authority": "reference_only",
+   "revision": "nekketsu_soccer2_fc_jp",
+   "game_id": "nekketsu_soccer2",
+   "platform": "NES",
+   "revision_match": true,
+   "locator": "_工具脚本/taspipe/游戏包/来源库/取证/1ang_热血足球联盟图文攻略_20261118.md#L679-L691",
+   "heading": "どいつ | Duits | 德国",
+   "matched_terms": [
+    "燕返"
+   ],
+   "snippet": "强豪球队。命中很强，善用必杀运球技能，只是，因为不会燕返技能，降低了发动必杀踢射的概率。即便如此，球门前普通踢射的威力，仍然对门将造成很大威胁。阵型2-2-1。胜利姿势为中场球员『えっけると(Ekkeruto)』连续不断吃香肠。热血队如果选择球员错误，上场球员命中不行，则败北的可能性极大。门将『ぶれーめ(Burême)』腿脚快，与巴西队门将一样，是最强级别的。\n官方说明书上说，全都是如同Cyborg一样的选手，球队非常坚固。队伍力量为5。\n全胜夺冠心得\n首先，说明一下如何选择",
+   "answerability": {
+    "answerable": false,
+    "intent": "identity",
+    "focus_ok": true,
+    "pattern_ok": false,
+    "intent_ok": true,
+    "focus_hit": [
+     "只有",
+     "燕返",
+     "血队"
+    ],
+    "url_list": false,
+    "topic_anchor_ok": true,
+    "exclusive_attribution_ok": true,
+    "position_subject_ok": true,
+    "position_subjects": [],
+    "shot_method_ok": true,
+    "player_role_ok": true,
+    "ending_capability_ok": true,
+    "input_sequence_ok": true
+   }
+  },
+  {
+   "chunk_id": "0c728e701059",
+   "score": 5.295,
+   "source_id": "local_soccer2_super_list",
+   "status": "verified_read",
+   "authority": "authoritative",
+   "revision": "nekketsu_soccer2_multi",
+   "game_id": "nekketsu_soccer2",
+   "platform": "NES",
+   "revision_match": true,
+   "locator": "_工具脚本/taspipe/游戏包/热血足球联盟_必杀全清单.md#L251-L259",
+   "heading": "8-5 跨来源冲突表（不许悄悄选边）",
+   "matched_terms": [
+    "燕返"
+   ],
+   "snippet": "| 争议点 | 来源甲 | 来源乙 | 我方实测 | 现状 |\n|---|---|---|---|---|\n| 难度档位效果 | S1：困难=敌强我弱，仅燕返者 100% 必杀 | S9：困难=敌我 AI 同涨（废选项） | 无 | 文献冲突，待实测 |\n| 龙卷踢触发 | S1：无球接近球时 跳跃+B | S8：敌球权时 超常冲刺中 十字+A | 无 | 冲突，采集时两法都试 |\n| 钻子攻击触发 | S1：无球接近球时 冲刺+B 或 跳跃+B | S8：敌球权时 超常冲刺",
+   "answerability": {
+    "answerable": false,
+    "intent": "identity",
+    "focus_ok": true,
+    "pattern_ok": false,
+    "intent_ok": true,
+    "focus_hit": [
+     "燕返"
+    ],
+    "url_list": false,
+    "topic_anchor_ok": true,
+    "exclusive_attribution_ok": true,
+    "position_subject_ok": true,
+    "position_subjects": [],
+    "shot_method_ok": true,
+    "player_role_ok": true,
+    "ending_capability_ok": true,
+    "input_sequence_ok": true
+   }
+  },
+  {
+   "chunk_id": "2e4c8ac797cf",
+   "score": 5.216,
+   "source_id": "sohu_game",
+   "status": "verified_read",
+   "authority": "reference_only",
+   "revision": "nekketsu_soccer2_fc_unspecified",
+   "game_id": "nekketsu_soccer2",
+   "platform": "NES",
+   "revision_match": true,
+   "locator": "_工具脚本/taspipe/游戏包/来源库/取证/sohu_必杀最强小辫子_20261118.md#L71-L89",
+   "heading": "No.0 忍者射门——赖常",
+   "matched_terms": [
+    "燕返"
+   ],
+   "snippet": "他的射门必杀“香蕉环射门”堪称简单粗暴，似乎有隐藏属性加持，连德国队的门将都有一定几率能踢飞。而且津根的香蕉射门跟阿根廷队的不同，他的射门会在飞行一段距离后变成香蕉原地停留一会儿，这就让他的射门同样具备骗出对方CPU守门员假动作的功能，计算好球的飞行距离后还是蛮实用的。\n《热血足球》传说中的卡密萨马，日本队唯一隐藏基佬——海月，无论数值还是技能都十分一般的选手，但在一些大神玩家的手中出神入化如同神一般的存在。\n海月的必杀射门与巴西队的十分相似，都是踢出一只自带抛物线的鱼，虽说",
+   "answerability": {
+    "answerable": false,
+    "intent": "identity",
+    "focus_ok": true,
+    "pattern_ok": false,
+    "intent_ok": true,
+    "focus_hit": [
+     "只有",
+     "燕返"
+    ],
+    "url_list": false,
+    "topic_anchor_ok": true,
+    "exclusive_attribution_ok": true,
+    "position_subject_ok": true,
+    "position_subjects": [],
+    "shot_method_ok": true,
+    "player_role_ok": true,
+    "ending_capability_ok": true,
+    "input_sequence_ok": true
+   }
+  },
+  {
+   "chunk_id": "7b54dd5683d3",
+   "score": 5.191,
+   "source_id": "1ang_com",
+   "status": "verified_read",
+   "authority": "reference_only",
+   "revision": "nekketsu_soccer2_fc_jp",
+   "game_id": "nekketsu_soccer2",
+   "platform": "NES",
+   "revision_match": true,
+   "locator": "_工具脚本/taspipe/游戏包/来源库/取证/1ang_热血足球联盟图文攻略_20261118.md#L673-L676",
+   "heading": "いたりあ | Italia | 意大利",
+   "matched_terms": [
+    "燕返"
+   ],
+   "snippet": "最强球队。体力优秀，奔跑迅速，使用燕返，连续发动必杀踢射。阵型2-2-1。胜利姿势为中场球员『らふぁえれ(Rafaere)』一只手拿着烟花爆竹来回追赶同伴，同伴在哭泣。我方要想取胜，一定要力争，不让意大利球员拿到球。\n官方说明书上说，足球意识超强，运斤成风的优胜候补No.1球队！队伍力量为5。",
+   "answerability": {
+    "answerable": false,
+    "intent": "identity",
+    "focus_ok": true,
+    "pattern_ok": false,
+    "intent_ok": true,
+    "focus_hit": [
+     "燕返"
+    ],
+    "url_list": false,
+    "topic_anchor_ok": true,
+    "exclusive_attribution_ok": false,
+    "position_subject_ok": true,
+    "position_subjects": [],
+    "shot_method_ok": true,
+    "player_role_ok": true,
+    "ending_capability_ok": true,
+    "input_sequence_ok": true
+   }
+  },
+  {
+   "chunk_id": "ae59bde1790f",
+   "score": 5.115,
+   "source_id": "1ang_com",
+   "status": "verified_read",
+   "authority": "reference_only",
+   "revision": "nekketsu_soccer2_fc_jp",
+   "game_id": "nekketsu_soccer2",
+   "platform": "NES",
+   "revision_match": true,
+   "locator": "_工具脚本/taspipe/游戏包/来源库/取证/1ang_热血足球联盟图文攻略_20261118.md#L739-L756",
+   "heading": "火光目前喜欢的最佳阵容",
+   "matched_terms": [
+    "燕返"
+   ],
+   "snippet": "うがじん(DF) かいずき(FW)   つねを(GK)     かるろす(FW)   ほりばた(DF) よりつね(MF)\n阵型2-2-1，主要依靠电脑控制的球员们防守，进攻方面由我一个人连续带球突破就足够了。\n除了门将『つねを(Tsunewo)』与主力『よりつね(Yoritsune)』外，所有队员的走力类型全都是恶路越野四驱车D，这样就可以无视水地、泥地、沙地等粘脚地形，以正常移动速度应对敌手。\n『よりつね(Yoritsune)』是热血队唯一拥有燕返技能的球员，也是唯一的A型",
+   "answerability": {
+    "answerable": false,
+    "intent": "identity",
+    "focus_ok": true,
+    "pattern_ok": false,
+    "intent_ok": true,
+    "focus_hit": [
+     "只有",
+     "燕返",
+     "血队"
+    ],
+    "url_list": false,
+    "topic_anchor_ok": true,
+    "exclusive_attribution_ok": true,
+    "position_subject_ok": true,
+    "position_subjects": [],
+    "shot_method_ok": true,
+    "player_role_ok": true,
+    "ending_capability_ok": true,
+    "input_sequence_ok": true
+   }
+  },
+  {
+   "chunk_id": "0a8c31260aa7",
+   "score": 5.084,
+   "source_id": "local_soccer2_super_list",
+   "status": "verified_read",
+   "authority": "authoritative",
+   "revision": "nekketsu_soccer2_multi",
+   "game_id": "nekketsu_soccer2",
+   "platform": "NES",
+   "revision_match": true,
+   "locator": "_工具脚本/taspipe/游戏包/热血足球联盟_honest_gap_manifest.md#L23-L27",
+   "heading": "2. 为什么必杀全灭（三杠杆实证堵死，详见说明书 §26）",
+   "matched_terms": [
+    "燕返"
+   ],
+   "snippet": "1. **难度锁定**：mode 屏难度行有字无光标；Down×6 模式行回绕、←→ 只动人数列 ⇒ 难度不可设，默认疑容易（S1：容易敌我都不能必杀）。\n2. **无人球同跳**：hack 方向+AB=纯挑球、静止 AB=人跳球不动 ⇒ 文献\"持球跳最高点 B\"无法执行。\n3. **秘技无效**：AAABAAABAAAAAAA 三段对照无燕返翻转（probe18），疑前作《世界杯》码。\n约 60 触发链跨四变体全负（无全屏闪/球变形/电光）。",
+   "answerability": {
+    "answerable": false,
+    "intent": "identity",
+    "focus_ok": true,
+    "pattern_ok": false,
+    "intent_ok": true,
+    "focus_hit": [
+     "燕返"
+    ],
+    "url_list": false,
+    "topic_anchor_ok": true,
+    "exclusive_attribution_ok": false,
+    "position_subject_ok": true,
+    "position_subjects": [],
+    "shot_method_ok": true,
+    "player_role_ok": true,
+    "ending_capability_ok": true,
+    "input_sequence_ok": true
+   }
+  },
+  {
+   "chunk_id": "df1e88148541",
+   "score": 5.068,
+   "source_id": "1ang_com",
+   "status": "verified_read",
+   "authority": "reference_only",
+   "revision": "nekketsu_soccer2_fc_jp",
+   "game_id": "nekketsu_soccer2",
+   "platform": "NES",
+   "revision_match": true,
+   "locator": "_工具脚本/taspipe/游戏包/来源库/取证/1ang_热血足球联盟图文攻略_20261118.md#L627-L630",
+   "heading": "かめるーん | Cameroon |喀麦隆",
+   "matched_terms": [
+    "燕返"
+   ],
+   "snippet": "中坚级别球队，接近强豪。使用燕返，必杀踢射也是相当强大，命中强。阵型2-1-2。胜利姿势为中场球员『わりおば(Warioba)』骑着鸵鸟来回跑。值得注意的是，前锋『だこすた(Dakosuta)』的命中达到了强豪级别，必杀踢射能吹飞强豪球队门将，看到他拿球，就要小心了。\n官方说明书上说，拥有动物一样敏锐的个人技术，非洲球队中的No.1。队伍力量为4。",
+   "answerability": {
+    "answerable": false,
+    "intent": "identity",
+    "focus_ok": true,
+    "pattern_ok": false,
+    "intent_ok": true,
+    "focus_hit": [
+     "燕返"
+    ],
+    "url_list": false,
+    "topic_anchor_ok": true,
+    "exclusive_attribution_ok": false,
+    "position_subject_ok": true,
+    "position_subjects": [],
+    "shot_method_ok": true,
+    "player_role_ok": true,
+    "ending_capability_ok": true,
+    "input_sequence_ok": true
+   }
+  },
+  {
+   "chunk_id": "84195609bde8",
+   "score": 4.917,
+   "source_id": "local_soccer2_super_list",
+   "status": "verified_read",
+   "authority": "authoritative",
+   "revision": "nekketsu_soccer2_multi",
+   "game_id": "nekketsu_soccer2",
+   "platform": "NES",
+   "revision_match": true,
+   "locator": "_工具脚本/taspipe/游戏包/热血足球联盟_必杀全清单.md#L36-L49",
+   "heading": "2. 热血队 12 人必杀射门（S1 日文原名 + S2 中文译名与效果）",
+   "matched_terms": [
+    "燕返"
+   ],
+   "snippet": "| # | 角色(罗马音) | 日文原名 | 中文译名(S2) | 球变形/效果（S2/S3，检测器正例依据） | 其他技能(S1) |\n|---|---|---|---|---|---|\n| 1 | Kunio くにお | なっつしゅーと Nuts Shoot | 坚果射门 | 球变坚果椭圆直线飞 | 爆裂攻击 |\n| 2 | Yoritsune よりつね | にんじゃしゅーと Ninja Shoot | 忍者射门 | 球变飞镖飞一段消失→再现弹地飞奔；禁区内自动隐身 | ",
+   "answerability": {
+    "answerable": false,
+    "intent": "identity",
+    "focus_ok": true,
+    "pattern_ok": false,
+    "intent_ok": true,
+    "focus_hit": [
+     "燕返"
+    ],
+    "url_list": false,
+    "topic_anchor_ok": true,
+    "exclusive_attribution_ok": false,
+    "position_subject_ok": true,
+    "position_subjects": [],
+    "shot_method_ok": true,
+    "player_role_ok": true,
+    "ending_capability_ok": true,
+    "input_sequence_ok": true
+   }
+  },
+  {
+   "chunk_id": "3548208d0a2d",
+   "score": 4.88,
+   "source_id": "1ang_com",
+   "status": "verified_read",
+   "authority": "reference_only",
+   "revision": "nekketsu_soccer2_fc_jp",
+   "game_id": "nekketsu_soccer2",
+   "platform": "NES",
+   "revision_match": true,
+   "locator": "_工具脚本/taspipe/游戏包/来源库/取证/1ang_热血足球联盟图文攻略_20261118.md#L823-L839",
+   "heading": "秘技",
+   "matched_terms": [
+    "燕返"
+   ],
+   "snippet": "比赛中按START键暂停，{A键按３次＋B键按１次＋A键按３次＋B键按１次＋A键按７次}，再按START键解除暂停，听到必杀踢射的发动音效，就成功了。这样就能使全部球员拥有全部必杀技，比如平时不会燕返的球员也会用燕返了，平时不会用爆裂攻击的球员也会用铁膝盖顶人了。\n缺点是效果只能持续半场比赛，另外半场比赛需要重新使用秘技。这就意味着，每次进行比赛都要使用一次秘技。\n更多热血足球3攻略-FC热血足球3(热血足球联盟)游戏图文攻略相关问题\n问题：《都市天际线》独特建筑和地标建筑有",
+   "answerability": {
+    "answerable": false,
+    "intent": "identity",
+    "focus_ok": true,
+    "pattern_ok": false,
+    "intent_ok": true,
+    "focus_hit": [
+     "燕返"
+    ],
+    "url_list": true,
+    "topic_anchor_ok": true,
+    "exclusive_attribution_ok": false,
+    "position_subject_ok": true,
+    "position_subjects": [],
+    "shot_method_ok": true,
+    "player_role_ok": true,
+    "ending_capability_ok": true,
+    "input_sequence_ok": true
+   }
+  },
+  {
+   "chunk_id": "186ce44afd80",
+   "score": 4.51,
+   "source_id": "setsumei_cloudfree",
+   "status": "verified_read",
+   "authority": "authoritative",
+   "revision": "nekketsu_soccer2_fc_jp",
+   "game_id": "nekketsu_soccer2",
+   "platform": "NES",
+   "revision_match": true,
+   "locator": "_工具脚本/taspipe/游戏包/来源库/取证/setsumei_热血足球说明书扫描_20261118.md#L260-L262",
+   "heading": "＜必殺技について＞",
+   "matched_terms": [
+    "燕返"
+   ],
+   "snippet": "＜必殺技について＞\nさすが～♥  \n　各選手は必殺シュート以外に必殺技も持っているの！！　「必殺ドリブル」や「必殺燕返し」なんていう攻撃の技や、「ドリブル・アタック」や「トルネード・キック」っていう守備の技を持っていたりするの。もう、ドキドキものよ。  \n　あと、キーパーだけの必殺技「トルネード・パンチ」っていうのもあるのよ。すごいでしょ♥　各必殺技はその技を持っていないと出すことはできないので、控え室の選手データーを見て誰がどの技を持っているのか調べてみてね。  \n　だけど",
+   "answerability": {
+    "answerable": false,
+    "intent": "identity",
+    "focus_ok": true,
+    "pattern_ok": false,
+    "intent_ok": true,
+    "focus_hit": [
+     "燕返"
+    ],
+    "url_list": false,
+    "topic_anchor_ok": true,
+    "exclusive_attribution_ok": false,
+    "position_subject_ok": true,
+    "position_subjects": [],
+    "shot_method_ok": true,
+    "player_role_ok": true,
+    "ending_capability_ok": true,
+    "input_sequence_ok": true
+   }
+  },
+  {
+   "chunk_id": "0cbfe31bd687",
+   "score": 4.5,
+   "source_id": "1ang_com",
+   "status": "verified_read",
+   "authority": "reference_only",
+   "revision": "nekketsu_soccer2_fc_jp",
+   "game_id": "nekketsu_soccer2",
+   "platform": "NES",
+   "revision_match": true,
+   "locator": "_工具脚本/taspipe/游戏包/来源库/取证/1ang_热血足球联盟图文攻略_20261118.md#L337-L359",
+   "heading": "热血FC等候室",
+   "matched_terms": [
+    "燕返"
+   ],
+   "snippet": "『ハイパー・ダッシュ(Hyper Dash)』，超常冲刺。冲刺中朝进行方向连按两次方向键。普通冲刺基础上发动更快速的冲刺。\n『ヒール・リフティング(Heel Lifting)』，脚跟挑球。拿球时，无论面朝哪个方向，{←AB}同时按或者{→AB}同时按全都可以发动。\n『フェイント・アタック(Feint Attack)』，虚攻，做假动作。冲刺运球过程中，方向键上或下连续按2次。\n『ダイビング・ヘッド(Diving Head)』，鱼跃头球。在足球附近时，{←B}或者{→B}同时按。",
+   "answerability": {
+    "answerable": true,
+    "intent": "identity",
+    "focus_ok": true,
+    "pattern_ok": true,
+    "intent_ok": true,
+    "focus_hit": [
+     "只有",
+     "有哪",
+     "燕返"
+    ],
+    "url_list": false,
+    "topic_anchor_ok": true,
+    "exclusive_attribution_ok": true,
+    "position_subject_ok": true,
+    "position_subjects": [],
+    "shot_method_ok": true,
+    "player_role_ok": true,
+    "ending_capability_ok": true,
+    "input_sequence_ok": true
+   }
+  },
+  {
+   "chunk_id": "9bbb7d89c9f4",
+   "score": 3.944,
+   "source_id": "sohu_game",
+   "status": "verified_read",
+   "authority": "reference_only",
+   "revision": "nekketsu_soccer2_fc_unspecified",
+   "game_id": "nekketsu_soccer2",
+   "platform": "NES",
+   "revision_match": true,
+   "locator": "_工具脚本/taspipe/游戏包/来源库/取证/sohu_必杀最强小辫子_20261118.md#L91-L106",
+   "heading": "No.0 忍者射门——赖常",
+   "matched_terms": [
+    "燕返"
+   ],
+   "snippet": "小辫子更神的地方在于他的必杀技“忍者射门”，这招射门会在禁区会自动隐身。根据这个特性，如果你直接在禁区踢出必杀，足球则会在你踢出的一瞬间直接隐身停留在空中，利用好这个特性可以骗出CPU电脑的无限升龙拳，让他们一直对着空气跳跃，而我们则可以趁他们跳跃的间隙闯空门了！\n要说这一招的练习成本几乎等于0，因为小辫子的燕返本身是高空球，高空球在禁区必然能射出必杀射门的，这一招几乎可针对所有队伍的守门员，而且跟海月那种需要计算距离和角度的金鱼射门比起来不知平民了太多。\n以上就是淼哥心目中",
+   "answerability": {
+    "answerable": false,
+    "intent": "identity",
+    "focus_ok": true,
+    "pattern_ok": false,
+    "intent_ok": true,
+    "focus_hit": [
+     "燕返"
+    ],
+    "url_list": false,
+    "topic_anchor_ok": true,
+    "exclusive_attribution_ok": false,
+    "position_subject_ok": true,
+    "position_subjects": [],
+    "shot_method_ok": true,
+    "player_role_ok": true,
+    "ending_capability_ok": true,
+    "input_sequence_ok": true
+   }
+  },
+  {
+   "chunk_id": "0793dce04d1b",
+   "score": 3.3,
+   "source_id": "1ang_com",
+   "status": "verified_read",
+   "authority": "reference_only",
+   "revision": "nekketsu_soccer2_fc_jp",
+   "game_id": "nekketsu_soccer2",
+   "platform": "NES",
+   "revision_match": true,
+   "locator": "_工具脚本/taspipe/游戏包/来源库/取证/1ang_热血足球联盟图文攻略_20261118.md#L709-L718",
+   "heading": "どいつ | Duits | 德国",
+   "matched_terms": [
+    "燕返"
+   ],
+   "snippet": "临近锦标赛前，也就是接近16连胜的时候，『めきしこ』（墨西哥）、『もんごる』（外蒙古）、『いんぐらんど』（英格兰)，这三支球队最适合在决赛前热身，太弱的球队不必理睬，没必要与他们浪费时间，太强的球队也不要去挑衅，万一输了，会导致全胜夺冠前功尽弃，太划不来。\n决赛里的意大利队，要比平时的意大利队厉害的多，不可等闲视之。\n面对意大利这样的强大对手，如何取胜？意大利可以说是天矛地盾，射门如同天矛无坚不摧，门将如同地盾无物不克。我方必须选择最好的门将，最好的后卫来防守，火光操纵的中场",
+   "answerability": {
+    "answerable": false,
+    "intent": "identity",
+    "focus_ok": true,
+    "pattern_ok": false,
+    "intent_ok": true,
+    "focus_hit": [
+     "只有",
+     "燕返"
+    ],
+    "url_list": false,
+    "topic_anchor_ok": true,
+    "exclusive_attribution_ok": true,
+    "position_subject_ok": true,
+    "position_subjects": [],
+    "shot_method_ok": true,
+    "player_role_ok": true,
+    "ending_capability_ok": true,
+    "input_sequence_ok": true
+   }
+  }
+ ],
+ "reason": "2 条 verified_read + authoritative 可答命中，权威件在第 1 位",
+ "selected_evidence": [
+  {
+   "chunk_id": "f7f8e8316295",
+   "score": 11.382,
+   "source_id": "local_soccer2_super_list",
+   "status": "verified_read",
+   "authority": "authoritative",
+   "revision": "nekketsu_soccer2_multi",
+   "game_id": "nekketsu_soccer2",
+   "platform": "NES",
+   "revision_match": true,
+   "locator": "_工具脚本/taspipe/游戏包/热血足球联盟_必杀全清单.md#L70-L85",
+   "heading": "3. 一般个人技/必杀技（S1 发动法原文）",
+   "matched_terms": [
+    "原生",
+    "燕返"
+   ],
+   "snippet": "| 技 | 日文 | 发动 | 备注 |\n|---|---|---|---|\n| 爆裂攻击(铁膝盖) | ばくれつあたっく | 跳跃**落地时按 B**，可连按连发 | 着地技；≥4 人会 |\n| 燕返 | つばめがえし | 带球跳跃立即出现(空中翻跟头) | 仅 Yoritsune 原生；秘技后全员 |\n| 必杀运球(旋风撞人) | ひっさつどりぶる | 带球中连按两次上 或 两次下 | 撞倒对方含门将(概率) |\n| 龙卷拳(升龙拳) | とるねーどぱんち | 方向左/右",
+   "answerability": {
+    "answerable": true,
+    "intent": "identity",
+    "focus_ok": true,
+    "pattern_ok": true,
+    "intent_ok": true,
+    "focus_hit": [
+     "原生",
+     "燕返"
+    ],
+    "url_list": false,
+    "topic_anchor_ok": true,
+    "exclusive_attribution_ok": true,
+    "position_subject_ok": true,
+    "position_subjects": [],
+    "shot_method_ok": true,
+    "player_role_ok": true,
+    "ending_capability_ok": true,
+    "input_sequence_ok": true
+   }
+  }
+ ]
+}
+  [1210] 知识库 [243b] CLI生产入口真跑：单条诊断落隔离目录，调用方/过滤参数/出证状态与耗时齐全
+Q02 True pass/-
+DONE 1/1 isolation=True C:\Users\Administrator\AppData\Local\Temp\kb_blind_gate_k_nsb515\blind.md
+  [1211] 知识库 [244] 隔离盲测生产入口：真实Q02按grade_v2正确出证，no-log不造日志，真实状态零写动
+DONE 1/1 isolation=False C:\Users\Administrator\AppData\Local\Temp\kb_blind_iso__ix2add_\out.md
+  [1212] 知识库 [244b] 隔离失败恒量反证：受保护文件mtime/hash变化即退出1并点名，不冒充盲测成功
+INPUT ERROR B expect 必须是 ['gold_in_topk', 'refuse', 'strict_pass', 'version_guard'] 之一
+INPUT ERROR 输出路径不得覆盖真实知识库状态或题集原件
+  [1213] 知识库 [244c] 盲测输入边界：未知档位与覆盖真实索引均退出2，且不写半截产物
+  [1214] 知识库 [反查] 真实文件未被探针写动 index.json（mtime+sha256 一致）
+  [1215] 知识库 [反查] 真实文件未被探针写动 corpus_map.json（mtime+sha256 一致）
+  [1216] 知识库 [反查] 真实文件未被探针写动 sources.json（mtime+sha256 一致）
+  [1217] 知识库 [反查] 真实文件未被探针写动 检索台账.json（mtime+sha256 一致）
+  [1218] STATE_LUA_TMPL 用 read(*a) 整份读（>1024B cmd 不截断）
+  [1219] STATE_LUA_TMPL 不再用 read(*l) 逐行（1024B 截断坑）
+  [1220] STATE_LUA_TMPL gsub 去 CR（Windows CRLF 坑）
+  [1221] attempt() 无 patches 参数（补丁只走 dump）
+  [1222] dump() 有 patches 参数（授武器生产路径）
+  [1223] _format_patches dict→addr:byte 串
+  [1224] _format_patches 空列表→'-'
+  [1225] _format_patches 非 dict 项被拒
+  [1226] 静止阈值 600 帧=实测 800 帧静止的 3/4
+  [1227] 末段窗 1500 帧 / 步长 20
+  [1228] movie 帧数能定末段窗（不必声明 verify.length）
+  [1229] 声明长度优先于素材帧数
+  [1230] boot 又没声明长度＝预测不了末帧，明说不测
+  [1231] 没有通关声称的任务不为末段多花截图
+  [1232] 显式关掉就不采样
+  [1233] stride 可覆盖
+  [1234] 尾段同一张图＝判出静止窗
+  [1235] 只量尾部的连续同图段，中途重图不算
+  [1236] 静止窗长度按采样数报出来
+  [1237] 画面一直在换＝没静止
+  [1238] 阈值抬到 700 就不算静止（阈值真在用）
+  [1239] 两张同图=200 帧静止，不到阈值不算静止
+  [1240] 单张采样不足，明说测不了而不是蒙一个数
+  [1241] 图读不到＝不测，不许凭空造静止窗
+  [1242] 证词取自静止窗之前 → 降档
+  [1243] 降档理由要给出下一步该干什么
+  [1244] 证词就在末屏 → 不冤枉（7429 形）
+  [1245] 没到阈值的短暂定格不动声称
+  [1246] 否证不需要证词，闸门不许反过来拦否证
+  [1247] 没有判据的任务无从谈起证词位置
+  [1248] Lua 侧采样器在位
+  [1249] tail_samples 在 runtime→report 的搬运名单里（漏了就是静默丢数据）
+  [1250] None 上线是 z 哨兵（这就是 Lua 侧 nil 判不到它的原因）
+  [1251] Lua 解码器把 z 解成 NULL 哨兵——这句不在就说明 wire 约定改了，闸门要跟着改
+  [1252] Lua 里又出现只判 nil 的 tail_probe 守卫（NULL 哨兵会被当成有配置，整趟 0 帧失败）
+  [1253] tail_probe 的两处守卫（采样循环与启动前校验）必须同时按 nil+NULL 双判，少一处就是半修
+  [1254] 双判没有收敛成一个函数，而是各写一遍——下一处新增字段还会重犯
+  [1255] 观察任务（无通关判据）的 tail_probe 应该是 None——这个形状就是 0 帧事故的现场
+  [1256] None 上线的字节形状变了，Lua 侧的哨兵判断得跟着重核
+  [1257] FCEUX 转出的 bk2＝本机通关有风险
+  [1258] 这一格自带『只是先验』的标记，消费者想当判决用也得先看见这行
+  [1259] 反斜杠路径同样认得 _converted（Windows 写法不许漏）
+  [1260] 路径不在 _converted，但 movie_note 写了 FCEUX 也照样认
+  [1261] BizHawk 原生 bk2＝可判，但仍要截图证词
+  [1262] 大写后缀也认（不许因为 .BK2 掉进未实测）
+  [1263] 其它内层录制器记 unproven，不冒充可判
+  [1264] 没有电影就是 no_movie，不硬套保真度
+  [1265] 空串路径同样算没电影（别掉进 .suffix 分支）
+  [1266] 每条判定都带一句人话理由，台账消费者不必自己猜
+  [1267] 口径闭集：四种判定和理由表一一对应，报表层不许自加第五种
+  [1268] 台账头合计走 registry.summarize_verdicts，与逐条判定同源（2 可判/1 不可判/1 无片/1 未实测）
+  [1269] 反证格：评估条目漏了 fidelity 就抛 SchemaError（不许静默少一格）
+  [1270] 反证格：未知 verdict 也抛（口径漂移当场炸）
+  [1271] assess() 出口真的带 fidelity（漏了就是台账没这根轴）
+  [1272] build() 的合计调用同一个函数，不在两处各数一遍
+  [1273] registry.json 的 summary 里有这根轴的键名
+  [1274] 先验入的是权威台账：registry.json 必须在（缺了就等于没落账）
+  [1275] 台账里 7429 的先验确实是 FCEUX 内层——它不是漏判，是先验被实测推翻的那一条
+  [1276] 7429 的 pass 随台账一起走：读到这一格的人当场看见它被推翻过
+  [1277] 台账头合计＝逐条同数（先验漏一格就对不上，当场红）
+  [1278] 判据表实测平台被改成 ('NES',)：换成别的值就得同时交出该平台的地址映射实测、可读窗口实测和帧量化实测，plan 与结果侧两处闸门会一起空转（判据表实测范围钉在 NES，放宽要连代码证据一起放宽）
+  [1279] predicate_axis('NES')=table_measured，应为 table_measured
+  [1280] predicate_axis('NES') 没把平台原样带出来：{'platform': 'NES', 'predicate_verdict': 'table_measured', 'why': 'NES：判据地址、可读窗口、帧量化换算在这台机器上实测过（7429 的 $0081＝HUD ENEMY 就是这么找到的）'}
+  [1281] predicate_axis('SNES')=table_missing，应为 table_missing
+  [1282] predicate_axis('SNES') 没把平台原样带出来：{'platform': 'SNES', 'predicate_verdict': 'table_missing', 'why': 'SNES：本平台没有本机实测过的判据表：地址/域/帧量化沿用 NES 那套映射，换平台读到的不是同一个含义。放片和看图不受影响，写通关判据要么补本平台判据表，要么只交 §35 截图证词；control.plan 用 predicate_platform_unproven 拦在启动前'}
+  [1283] predicate_axis('GB')=table_missing，应为 table_missing
+  [1284] predicate_axis('GB') 没把平台原样带出来：{'platform': 'GB', 'predicate_verdict': 'table_missing', 'why': 'GB：本平台没有本机实测过的判据表：地址/域/帧量化沿用 NES 那套映射，换平台读到的不是同一个含义。放片和看图不受影响，写通关判据要么补本平台判据表，要么只交 §35 截图证词；control.plan 用 predicate_platform_unproven 拦在启动前'}
+  [1285] predicate_axis('PSX')=table_missing，应为 table_missing
+  [1286] predicate_axis('PSX') 没把平台原样带出来：{'platform': 'PSX', 'predicate_verdict': 'table_missing', 'why': 'PSX：本平台没有本机实测过的判据表：地址/域/帧量化沿用 NES 那套映射，换平台读到的不是同一个含义。放片和看图不受影响，写通关判据要么补本平台判据表，要么只交 §35 截图证词；control.plan 用 predicate_platform_unproven 拦在启动前'}
+  [1287] predicate_axis('')=table_missing，应为 table_missing
+  [1288] predicate_axis('') 没把平台原样带出来：{'platform': '', 'predicate_verdict': 'table_missing', 'why': '(未知平台)：本平台没有本机实测过的判据表：地址/域/帧量化沿用 NES 那套映射，换平台读到的不是同一个含义。放片和看图不受影响，写通关判据要么补本平台判据表，要么只交 §35 截图证词；control.plan 用 predicate_platform_unproven 拦在启动前'}
+  [1289] SNES 那一格的 why 没点名启动前闸门码，读到台账的人不知道真跑会被拦（判据表文案与生产闸门必须同一名，台账才不是第二口径）
+  [1290] 判据表合计走 registry.summarize_predicates，与逐条同源（1 实测/2 缺表）
+  [1291] 反证格：评估条目漏了 predicate 就抛 SchemaError（不许静默少一根轴）
+  [1292] 反证格：未知 predicate_verdict 也抛（口径漂移当场炸）
+  [1293] assess()/build() 出口真的带这根轴（只在函数里算、不落台账=下一轮又没人知道）
+  [1294] 权威台账里没有 predicate 这根轴（p={'platform': 'ChannelF', 'predicate_verdict': 'table_missing', 'why': 'ChannelF：本平台没有本机实测过的判据表：地址/域/帧量化沿用 NES 那套映射，换平台读到的不是同一个含义。放片和看图不受影响，写通关判据要么补本平台判据表，要么只交 §35 截图证词；control.plan 用 predicate_platform_unproven 拦在启动前'}）：改了生产者必须重建 registry.json，python -m taspipe.registry build
+  [1295] SNES 的 completion 判据没被判据表闸门拦住——NES 地址冒充 SNES 通关就是假证据（非 NES 的判定断言必须拦在启动前）
+  [1296] SNES 的 assert 步骤同样漏拦——判定不只活在 completion 里
+  [1297] NES 的正对照撞上了判据表闸门（实测范围写错，或闸门写反了）——NES 实测过判据表，不受这条限制
+  [1298] SNES 只读地址的观察被判据表闸门挡了——补判据表本来就要读地址，看图流程不许受这条限制
+  [1299] --allow 没把它降级成 warning（blockers=['completion_evidence_missing', 'missing_emulator', 'missing_rom', 'missing_start'] warnings=['predicate_platform_unproven']）——放行只该买到「这一次真跑过」
+  [1300] 带警告时 pass 没被降级——非 NES 的 NES 地址数字能直接冒充通关
+  [1301] 没有该警告却动了判定（闸门误伤已实测平台）
+  [1302] NES 正对照被降级
+  [1303] 降级函数把 fail 翻成了别的——它只许往下走
+  [1304] control 侧自己抄了一份平台名单（两份口径迟早漂移，实测范围只认 registry 那一格）
+  [1305] 闸门码在生产里的出现次数不够：启动前拦截与结果侧降级必须同时存在，少一处就是静默放行
+  [1306] wall = setup + process，别的都不许算进去
+  [1307] fps 的分母是 process（含冷启），不是 wall
+  [1308] 扣掉冷启之后的稳态速率要单列，否则批跑节奏会被模拟器启动时间压低
+  [1309] 心跳来得和退出一样晚，就没有稳态段可算，不许造一个除零/负数的速率
+  [1310] 0 帧（截断/没启动）不许带 fps——那正是 replay_never_started 与'跑得慢'长一样的地方
+  [1311] 没跑成也要留下耗时，否则故障趟在产物里是空白
+  [1312] 缺端点就缺端点，不许把不完整的段拼成一个看起来像实测的数
+  [1313] frames_advanced 为 None 时只少 fps，wall 照样落地
+  [1314] finally 那次还没实到帧数，先不出 fps
+  [1315] 搬运后重算：wall 不变、fps 补上——覆盖而不是第二套口径
+  [1316] taspipe 各模块没有调用未定义的名字（挪函数忘删调用点=实跑才炸）: 
+  [1317] 根目录交付文档在册: 测试问题与闸门说明书.md
+  [1318] 测试问题与闸门说明书.md 无控制字符/无未替换占位符: 
+  [1319] 根目录交付文档在册: 选题规则_只测热门作品_2026-11-22.md
+  [1320] 选题规则_只测热门作品_2026-11-22.md 无控制字符/无未替换占位符: 
+  [1321] 反证:换页符与占位符真出现时这条尺子必须抓到
+  [1322] 槽位：NES -> NES（实测 NES）
+  [1323] 槽位：fc -> NES（实测 NES）
+  [1324] 槽位：Famicom -> NES（实测 NES）
+  [1325] 槽位：SNES -> SNES（实测 SNES）
+  [1326] 槽位：SFC -> SNES（实测 SNES）
+  [1327] 槽位：Super Nintendo -> SNES（实测 SNES）
+  [1328] 槽位：未知平台 'GENESIS' 直接拒绝，不兜底 NES
+  [1329] 槽位：未知平台 'GBA' 直接拒绝，不兜底 NES
+  [1330] 槽位：未知平台 '' 直接拒绝，不兜底 NES
+  [1331] 槽位：未知平台 None 直接拒绝，不兜底 NES
+  [1332] 槽位：拒绝理由点名「是谁」和「已知槽位」，不是空喊失败
+  [1333] 槽位：Core 两处都查不到时拒绝，不默认 NesHawk
+  [1334] 槽位：platform_code 缺失时退回 bk2 Header 自述（Platform/Core 都读出来）
+  [1335] 槽位：产物写明平台名是从哪来的（Header 兜底不能伪装成台账声明）
+  [1336] 槽位：台账优先，Header 只在台账缺位时才说话（恒量反证：同文件两种口径不许翻）
+  [1337] 槽位闸门：SNES 电影 + NES 槽位 => 拦下，理由点名两边是谁
+  [1338] 槽位闸门：同一本电影配对了槽位不许亮（恒量反证：只有 system 变）
+  [1339] 槽位闸门：FC/NES 别名归一后不许误报（恒量反证：同 Platform 的写法差）
+  [1340] 槽位闸门：槽位本身不认识时不拦（该由 bizhawk_replay_inputs 拒，不重复判）
+  [1341] 槽位闸门：文件读不到 Header 就不拦，不臆测非 BizHawk 容器
+  [1342] 槽位闸门：zip 里没 Header.txt 时返回 None（缺声明 ≠ 声明不符）
+  [1343] 槽位闸门：外层 zip 包内层 bk2 也要能读出 Platform（转换件就是这形状）
+  [1344] 槽位闸门：StateSession 构造时就拒，不等 EmuHawk 起来跑到 0 帧
+  [1345] 槽位闸门：配对槽位的状态会话照常构造（恒量反证：只有 system 变）
+  [1346] 边框分支：bezel=auto system=NES -> True
+  [1347] 边框分支：bezel=auto system=FC -> True
+  [1348] 边框分支：bezel=auto system=SNES -> False
+  [1349] 边框分支：bezel=auto system=None -> False
+  [1350] 边框分支：bezel=on system=SNES -> True
+  [1351] 边框分支：bezel=off system=NES -> False
+  [1352] 边框分支：bezel=off system=SNES -> False
+  [1353] 边框分支反证：SNES 只在显式 --border on 时才进 FC 缓存这条路
+  [1354] 音频闸门：任何平台都不给 pass（无头 A/V dump 未接通）
+  [1355] 音频闸门：文案区分「NES 已实测不可用」与「SNES 未单独实测」
+  [1356] 槽位：auto 用的就是 registry 那张表（同一个对象），不是抄第二份
+  [1357] 环境闸门：装得上的包不许误报缺失
+  [1358] 环境闸门：缺的包要点名是谁
+  [1359] 环境闸门：本解释器已装齐生产依赖（实测解释器 C:\Python313\python.exe）
+SELFTEST OK 1359/1359

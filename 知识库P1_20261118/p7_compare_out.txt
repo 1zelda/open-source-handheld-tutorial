@@ -1,0 +1,12 @@
+bm25评测grades逐字段: 0 差异
+  零差异 OK
+  summary: 23/26 fail=['Q03', 'Q06', 'Q08']
+bm25探针逐格(状态+hits排序): 0 差异
+  零差异 OK
+hybrid评测grades逐字段: 0 差异
+  零差异 OK
+  summary: 24/26 fail=['Q02', 'Q08']
+hybrid探针逐格(状态+hits排序): 0 差异
+  零差异 OK
+
+两臂总差异: 0（应 0）

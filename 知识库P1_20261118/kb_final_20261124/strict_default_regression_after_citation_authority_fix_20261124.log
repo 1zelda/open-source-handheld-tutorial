@@ -1,0 +1,54 @@
+Q01  default=pass        /True  strict=inconclusive/False
+Q02  default=pass        /True  strict=inconclusive/False
+Q03  default=pass        /True  strict=inconclusive/False
+Q04  default=pass        /True  strict=inconclusive/True 
+Q05  default=pass        /True  strict=inconclusive/False
+Q06  default=pass        /True  strict=pass        /True 
+Q07  default=pass        /True  strict=pass        /True 
+Q08  default=pass        /True  strict=pass        /True 
+Q09  default=inconclusive/True  strict=inconclusive/True 
+Q10  default=pass        /True  strict=pass        /True 
+Q11  default=inconclusive/True  strict=inconclusive/True 
+Q12  default=miss        /True  strict=miss        /True 
+Q13  default=miss        /True  strict=miss        /True 
+Q14  default=miss        /True  strict=miss        /True 
+Q15  default=inconclusive/True  strict=inconclusive/True 
+Q16  default=inconclusive/True  strict=inconclusive/True 
+Q17  default=inconclusive/True  strict=inconclusive/True 
+Q18  default=pass        /True  strict=inconclusive/False
+P19  default=inconclusive/True  strict=inconclusive/True 
+P20  default=miss        /True  strict=miss        /True 
+P21  default=inconclusive/True  strict=inconclusive/True 
+P22  default=pass        /True  strict=pass        /True 
+P23  default=pass        /True  strict=pass        /True 
+P24  default=pass        /True  strict=pass        /True 
+P25  default=inconclusive/True  strict=inconclusive/True 
+P26  default=miss        /True  strict=miss        /True 
+{
+  "json": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261124\\strict_default_regression_after_citation_authority_fix_20261124.json",
+  "summary": {
+    "default_raw_pass": 13,
+    "strict_raw_pass": 7,
+    "default_v2_ok": 26,
+    "strict_v2_ok": 21,
+    "strict_intercepted": [
+      "Q01",
+      "Q02",
+      "Q03",
+      "Q04",
+      "Q05",
+      "Q18"
+    ],
+    "strict_v2_regressed": [
+      "Q01",
+      "Q02",
+      "Q03",
+      "Q05",
+      "Q18"
+    ],
+    "wrong_evidence_default": [],
+    "wrong_evidence_strict": []
+  },
+  "isolation_ok": true,
+  "ok": true
+}

@@ -87,6 +87,20 @@ def _audio_max_db(path, ffmpeg="ffmpeg"):
 
 # ------------------------------------------------------------- NES / BizHawk
 
+# 失效网络映射壳（Z: 幽灵盘等）的 stat 错误按"不存在"处理，其余 OSError 原样抛。
+# 见《测试问题与闸门说明书》§32.1：Python 3.13 pathlib 不吞 WinError 1326。
+_NET_SHELL_WINERRORS = {53, 67, 1231, 1326}
+
+
+def _is_file_probe(path):
+    try:
+        return Path(path).is_file()
+    except OSError as e:
+        if getattr(e, "winerror", None) in _NET_SHELL_WINERRORS:
+            return False
+        raise
+
+
 class BizHawkNESBackend:
     backend_id = "nes_bizhawk"
 
@@ -95,7 +109,7 @@ class BizHawkNESBackend:
 
     def probe(self):
         exe = Path(self.bizhawk_dir) / "EmuHawk.exe"
-        avail = exe.is_file()
+        avail = _is_file_probe(exe)
         sj_ok, sj_ev = statejump_evidence()
         live = avail and sj_ok           # 能力转真双闸：BizHawk 可用 + 实跑验收全 pass
         sj_note = sj_ev if live else f"需 BizHawk 可用且实跑验收全 pass；{sj_ev}"
@@ -128,17 +142,22 @@ class BizHawkNESBackend:
         desync = res["desync"]
         term = res.get("termination", "unknown")
         wd = res.get("watchdog", {})
-        from .watchdog import replay_verdict, exit_verdict
+        from .watchdog import replay_verdict, exit_verdict, firmware_verdict
         _V = {"pass": Verdict.PASS, "fail": Verdict.FAIL,
               "inconclusive": Verdict.INCONCLUSIVE}
         v_desync = _V[replay_verdict(desync, term)]
         v_exit = _V[exit_verdict(term)]
+        v_fw = _V[firmware_verdict(wd)[0]]
         checks = [
             CheckResult("replay_no_desync", v_desync,
                         evidence_refs=[res["work"] + "/cap.txt"],
                         reason=res["report"] + f" | termination={term}"),
             CheckResult("watchdog_clean_exit", v_exit,
                         reason=f"termination={term}; dismissed={wd.get('dismissed', 0)}"),
+            # 缺芯片固件的静默降级（BizHawk 弹原生 Warning 框，点掉就继续跑完，
+            # desync 查不出；正文与 stdout 两条渠道都由 watchdog.firmware_verdict 收）。
+            CheckResult("chip_firmware_missing", v_fw,
+                        reason=firmware_verdict(wd)[1]),
             CheckResult("frames_captured",
                         Verdict.PASS if res["n_frames"] > 0 else Verdict.FAIL,
                         reason=f"{res['n_frames']}/{frames} 帧"),
@@ -472,15 +491,15 @@ class BizHawkPS1Backend:
         ordered = sorted(dirs, key=ver_key, reverse=True)
         for v in ordered:                      # 优先带 PS1 核心 dll 的最高版本
             d = Path(dirs[v])
-            if (d / "EmuHawk.exe").is_file() and any(
-                    (d / "dll" / n).is_file() for n in PS1_CORE_DLLS):
+            if _is_file_probe(d / "EmuHawk.exe") and any(
+                    _is_file_probe(d / "dll" / n) for n in PS1_CORE_DLLS):
                 return str(d)
         return dirs[ordered[0]] if ordered else None
 
     def probe(self):
         bh = self._discover_bizhawk()
         exe = str(Path(bh) / "EmuHawk.exe") if bh else None
-        exe_ok = bool(exe and Path(exe).is_file())
+        exe_ok = bool(exe and _is_file_probe(exe))
         core = _find_first([Path(bh) / "dll"], names=PS1_CORE_DLLS) if bh else None
         bios_search = list(self.bios_dirs)
         if bh:
@@ -605,7 +624,14 @@ def _nes_backend_from_registry(pub_id):
                          "; ".join(b["reason"] for b in r["blockers"]))
     prof = r["profile"]
     bizhawk = prof["capability_report"]["bizhawk_dir"]
-    return BizHawkNESBackend(bizhawk), prof, r["movie"], r["rom_match"][0]
+    # 平台槽位与核心名由注册表决定，不靠函数默认值：写死 NES 时一本 SNES 出版物
+    # 会走 FC 封面分支、并按 NES 的音频闸门出证（11-22 record full --pub 7406 实测）。
+    try:
+        slot = R.bizhawk_replay_inputs(r, movie=r["movie"])
+    except R.SchemaError as e:
+        raise SystemExit(f"pub {pub_id} 回放槽位解析失败: {e}")
+    return (BizHawkNESBackend(bizhawk), prof, r["movie"], r["rom_match"][0],
+            slot["system"], slot["core"])
 
 
 def main():
@@ -667,9 +693,9 @@ def main():
         return 0
 
     if args.cmd == "run-nes":
-        be, prof, movie, rom = _nes_backend_from_registry(args.pub)
+        be, prof, movie, rom, system, core = _nes_backend_from_registry(args.pub)
         run = be.run_batch(prof, movie, rom, args.frames, args.out,
-                           fps=args.fps, ffmpeg=args.ffmpeg)
+                           fps=args.fps, ffmpeg=args.ffmpeg, core=core, system=system)
         print(json.dumps(run, ensure_ascii=False, indent=1))
         return 0 if run["verification"]["verdict"] != "fail" else 2
 

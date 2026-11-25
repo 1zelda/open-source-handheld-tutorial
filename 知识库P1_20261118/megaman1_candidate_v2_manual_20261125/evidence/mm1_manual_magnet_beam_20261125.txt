@@ -1,0 +1,10 @@
+洛克人1 官方说明书：Magnet Beam 出现关卡 制造台阶 向上攀爬（美国NES手册第5及15页）
+
+来源：Capcom 美国 NES 官方说明书扫描件。
+核验：已读扫描页；中文为说明，英文为短引文；未收全本。
+
+Magnet Beam 在 Elecman 关卡中途出现。
+> A Magnet Beam will appear at the middle of the Elecman stage. Snare the Magnet Beam to create steps for climbing upward.
+
+取得 Magnet Beam 后可制造台阶，用于向上攀爬。
+> Magnet Beam. The player can create a step to go up.

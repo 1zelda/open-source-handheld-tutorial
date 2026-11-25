@@ -1,0 +1,16 @@
+洛克人2 官方说明书：NORMAL DIFFICULT START PASSWORD STAGE SELECT 八名 Robot Master Wily（美国NES手册第3页）
+
+来源：Capcom《MEGA MAN 2》美国 NES 官方说明书，任天堂官方数字复刻。
+核验：已读扫描页；中文为说明，英文为短引文；未收全本。
+
+标题画面用SELECT选择NORMAL或DIFFICULT模式，再按START开始。
+> Use SELECT to choose NORMAL or DIFFICULT mode. Press START to begin the game.
+
+玩家必须选择START或输入PASSWORD；PASSWORD选项在说明书后文说明。
+> You must now choose to START or enter a PASSWORD.
+
+STAGE SELECT画面显示八名敌方机器人和中间为Dr. Wily预留的位置。
+> This screen has pictures of all eight enemy robots plus a slot in the middle for Dr. Wily.
+
+用控制pad移动选择框，按START确认；初学者可先选Metal Man，或先试Air Man/Flash Man。
+> Use the control pad to move the flashing box to the opponent of your choice and press START.

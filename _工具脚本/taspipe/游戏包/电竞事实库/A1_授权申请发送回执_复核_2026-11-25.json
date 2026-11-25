@@ -1,0 +1,73 @@
+{
+  "schema_version": 1,
+  "recorded_at": "2026-11-24",
+  "status": "drafts_ready_send_blocked",
+  "reason": "Outlook 16.0 配置档案存在但账号数为 0；mailto 默认处理器为 ChromeHTML，未注册邮件客户端，当前无 Outlook 进程。没有真实发件账号，不能伪造已发送。",
+  "channel_probe": {
+    "probe_method": "registry_only_no_com",
+    "outlook_profile_present": true,
+    "outlook_accounts": 0,
+    "default_mailto_handler": "ChromeHTML",
+    "registered_mail_clients": 0,
+    "outlook_processes": 0,
+    "sent_count": 0
+  },
+  "drafts": [
+    {
+      "id": "A1_GRID",
+      "to": "sales@grid.gg",
+      "subject": "Commercial licensing enquiry - local esports fact-checking knowledge base",
+      "file": "A1_GRID_商用授权咨询_2026-11-24.eml",
+      "x_unsent": 1,
+      "sent_at": null,
+      "reply_received": false,
+      "official_sources": [
+        "https://grid.gg/riot-open-access/",
+        "https://www.grid.gg/plans/"
+      ],
+      "review_copy": "A1_GRID_商用授权咨询_发送复核_2026-11-25.eml"
+    },
+    {
+      "id": "A1_Liquipedia",
+      "to": "contact@liquipedia.net",
+      "subject": "LPDB access and commercial use enquiry - local fact-checking knowledge base",
+      "file": "A1_Liquipedia_LPDB授权咨询_2026-11-24.eml",
+      "x_unsent": 1,
+      "sent_at": null,
+      "reply_received": false,
+      "official_sources": [
+        "https://liquipedia.net/hub/Contact",
+        "https://liquipedia.net/api",
+        "https://liquipedia.net/api-terms-of-use"
+      ],
+      "access_note": "API terms page returned HTTP 403 from this machine; email asks for current policy and does not assert unverified terms.",
+      "review_copy": "A1_Liquipedia_LPDB授权咨询_发送复核_2026-11-25.eml"
+    },
+    {
+      "id": "A1_OpenDota",
+      "to": "support@opendota.com",
+      "subject": "OpenDota API data use and commercial licensing enquiry",
+      "file": "A1_OpenDota_数据用途咨询_2026-11-24.eml",
+      "x_unsent": 1,
+      "sent_at": null,
+      "reply_received": false,
+      "official_sources": [
+        "https://www.opendota.com/api-keys",
+        "https://blog.opendota.com/2014/08/01/faq/",
+        "https://github.com/odota/web/blob/master/src/lang/en-US.json"
+      ],
+      "access_note": "Code MIT licence is not treated as proof of data commercial permission; email asks for data terms explicitly.",
+      "review_copy": "A1_OpenDota_数据用途咨询_发送复核_2026-11-25.eml"
+    }
+  ],
+  "next_action": "用户提供频道 URL、署名/主体名称并配置任一真实发件账号后，打开三份发送复核副本，核对 From/收件人/正文/签名并发送；随后把 sent_at、message-id 与回执写回本文件。",
+  "last_probe_at": "2026-11-25",
+  "identity_inputs": {
+    "channel_url": null,
+    "channel_uid": null,
+    "channel_name": null,
+    "signature_or_legal_name": null,
+    "contact_email": null,
+    "note": "项目内唯一 B站 UID 296732 是 DOTA2 官方参考账号，不是用户频道，未采用。"
+  }
+}

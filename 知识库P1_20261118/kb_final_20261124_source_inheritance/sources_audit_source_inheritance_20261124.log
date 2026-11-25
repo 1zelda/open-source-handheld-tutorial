@@ -1,0 +1,114 @@
+{
+ "status": "fail",
+ "counts": {
+  "pass": 7,
+  "fail": 1,
+  "inconclusive": 1,
+  "sources": 90,
+  "packs": 23,
+  "elements_checked": 87,
+  "elements_supported": 87
+ },
+ "checks": [
+  {
+   "check_id": "registry_schema",
+   "verdict": "pass",
+   "reason": "90 条来源全部通过 schema",
+   "detail": []
+  },
+  {
+   "check_id": "verified_read_evidence",
+   "verdict": "pass",
+   "reason": "verified_read 的取证文件必须真实存在且非空",
+   "detail": []
+  },
+  {
+   "check_id": "pack_sources_migrated",
+   "verdict": "pass",
+   "reason": "知识包来源须为结构化引用（source_id/url/status/verified_date/element_ids）",
+   "detail": []
+  },
+  {
+   "check_id": "no_wild_sources",
+   "verdict": "fail",
+   "reason": "存在野来源",
+   "detail": [
+    "gba_aria_of_sorrow_souls.showcase.json: 来源字段未知 ['evidence_report']"
+   ]
+  },
+  {
+   "check_id": "no_dead_reference",
+   "verdict": "pass",
+   "reason": "不得引用已关停站",
+   "detail": []
+  },
+  {
+   "check_id": "element_coverage",
+   "verdict": "pass",
+   "reason": "87 个要素全部有来源支撑",
+   "detail": []
+  },
+  {
+   "check_id": "verified_support",
+   "verdict": "inconclusive",
+   "reason": "以下要素只有快照/不可达/候选层支撑，不得声称已全文核对（升 verified 须真读正文落取证，或本机实测落记录）",
+   "detail": [
+    "arcade_mslug_weapons.showcase.json/handgun_and_knife: 只有 candidate/unreachable 支撑",
+    "arcade_mslug_weapons.showcase.json/heavy_machine_gun_h: 只有 candidate/unreachable 支撑",
+    "arcade_mslug_weapons.showcase.json/rocket_launcher_r: 只有 candidate/unreachable 支撑",
+    "arcade_mslug_weapons.showcase.json/flame_shot_f: 只有 candidate/unreachable 支撑",
+    "arcade_mslug_weapons.showcase.json/shotgun_s: 只有 candidate/unreachable 支撑",
+    "arcade_mslug_weapons.showcase.json/hand_grenade_bomb: 只有 candidate/unreachable 支撑",
+    "arcade_mslug_weapons.showcase.json/sv001_metal_slug_tank: 只有 candidate/unreachable 支撑",
+    "gba_aria_of_sorrow_souls.showcase.json/primary_weapon_slash: 只有 snippet_only/unreachable 支撑",
+    "gba_aria_of_sorrow_souls.showcase.json/bullet_soul_cast: 只有 snippet_only/unreachable 支撑",
+    "gba_aria_of_sorrow_souls.showcase.json/guardian_soul_activate: 只有 snippet_only/unreachable 支撑",
+    "md_yu_yu_hakusho_moves.showcase.json/reigan_shot: 只有 candidate/unreachable 支撑",
+    "md_yu_yu_hakusho_moves.showcase.json/heavy_combo_attack: 只有 candidate/unreachable 支撑",
+    "md_yu_yu_hakusho_moves.showcase.json/plane_shift_dash: 只有 candidate/unreachable 支撑",
+    "ninja_cats_elements.showcase.json/yattarou_katana_slash: 只有 snippet_only/unreachable 支撑",
+    "ninja_cats_elements.showcase.json/nyankee_ninpo_special: 只有 snippet_only/unreachable 支撑",
+    "ninja_cats_elements.showcase.json/pururun_claw_heart: 只有 snippet_only/unreachable 支撑",
+    "ninja_cats_elements.showcase.json/sukashii_umbrella_shot: 只有 snippet_only/unreachable 支撑",
+    "ninja_cats_elements.showcase.json/gotton_wall_breaker: 只有 snippet_only/unreachable 支撑",
+    "ninja_cats_elements.showcase.json/mietoru_flight_wing: 只有 snippet_only/unreachable 支撑",
+    "ninja_cats_elements.showcase.json/otamage_swim_dive: 只有 snippet_only/unreachable 支撑",
+    "ninja_gaiden_elements.showcase.json/dragon_sword_slash: 只有 snippet_only/unreachable 支撑",
+    "ninja_gaiden_elements.showcase.json/throwing_star: 只有 snippet_only/unreachable 支撑",
+    "ninja_gaiden_elements.showcase.json/windmill_throwing_star: 只有 snippet_only/unreachable 支撑",
+    "ninja_gaiden_elements.showcase.json/art_of_the_fire_wheel: 只有 snippet_only/unreachable 支撑",
+    "ninja_gaiden_elements.showcase.json/jump_and_slash: 只有 snippet_only/unreachable 支撑",
+    "ninja_gaiden_elements.showcase.json/invincible_fire_wheel: 只有 snippet_only/unreachable 支撑",
+    "ps1_sotn_alucard_powers.showcase.json/alucard_sword_teleport_slash: 只有 snippet_only/unreachable 支撑",
+    "ps1_sotn_alucard_powers.showcase.json/hellfire_cape_teleport: 只有 snippet_only/unreachable 支撑",
+    "ps1_sotn_alucard_powers.showcase.json/soul_steal_fullscreen: 只有 snippet_only/unreachable 支撑",
+    "ps1_sotn_alucard_powers.showcase.json/soul_of_bat_transform: 只有 snippet_only/unreachable 支撑",
+    "ps1_sotn_alucard_powers.showcase.json/soul_of_wolf_dash: 只有 snippet_only/unreachable 支撑",
+    "ps1_sotn_alucard_powers.showcase.json/form_of_mist_cloud: 只有 snippet_only/unreachable 支撑",
+    "snes_megaman_x_arsenal.showcase.json/dash_spiral_crush_buster: 只有 snippet_only/unreachable 支撑",
+    "snes_megaman_x_arsenal.showcase.json/shotgun_ice_burst: 只有 snippet_only/unreachable 支撑",
+    "snes_megaman_x_arsenal.showcase.json/storm_tornado_column: 只有 snippet_only/unreachable 支撑",
+    "snes_megaman_x_arsenal.showcase.json/fire_wave_stream: 只有 snippet_only/unreachable 支撑",
+    "snes_megaman_x_arsenal.showcase.json/boomerang_cutter_arc: 只有 snippet_only/unreachable 支撑",
+    "snes_megaman_x_arsenal.showcase.json/chameleon_sting_prism: 只有 snippet_only/unreachable 支撑",
+    "snes_megaman_x_arsenal.showcase.json/hadoken_secret_capsule: 只有 snippet_only/unreachable 支撑",
+    "snes_super_metroid_abilities.showcase.json/power_beam_burst: 只有 candidate/unreachable 支撑",
+    "snes_super_metroid_abilities.showcase.json/charge_beam_release: 只有 candidate/unreachable 支撑",
+    "snes_super_metroid_abilities.showcase.json/morph_ball_transform: 只有 candidate/unreachable 支撑",
+    "snes_super_metroid_abilities.showcase.json/spin_jump_screw: 只有 candidate/unreachable 支撑"
+   ]
+  },
+  {
+   "check_id": "render_sync",
+   "verdict": "pass",
+   "reason": "生成块与主数据一致",
+   "detail": []
+  },
+  {
+   "check_id": "absence_claims_supported",
+   "verdict": "pass",
+   "reason": "每条「不存在」声称都有 miss 台账支撑",
+   "detail": []
+  }
+ ]
+}

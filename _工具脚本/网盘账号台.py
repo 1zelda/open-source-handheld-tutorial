@@ -331,6 +331,17 @@ SAFE_KEYS = ("alias", "driver", "mount_path", "created", "active", "remark",
              "cookie_refresh")
 
 
+def _account_slot(a):
+    raw = a.get("slot")
+    if raw is None or (isinstance(raw, str) and not raw.strip()):
+        return 1
+    try:
+        n = int(raw)
+    except (TypeError, ValueError):
+        return 1
+    return n if n >= 0 else 1
+
+
 def safe_rec(a):
     """把一条账号投影成「能上界面」的样子：白名单字段 + 密文长度，值一个都不给。"""
     rec = {k: a.get(k) for k in SAFE_KEYS if k in a}
@@ -339,10 +350,7 @@ def safe_rec(a):
     if isinstance(a.get("missing_required"), list):
         rec["missing_required"] = len(a["missing_required"])
     rec["cipher_len"] = len(a.get("secret") or "")    # DPAPI 密文长度：证明「存了但没给你看」
-    try:
-        rec["slot"] = int(rec.get("slot") or 1)       # 老记录没这栏＝第 1 槽（profile-<盘> 本来就是第 1 槽）
-    except (TypeError, ValueError):
-        rec["slot"] = 1
+    rec["slot"] = _account_slot(a)
     # 库里那份 secret_len（每个密文格的长度）不上界面：格名本身就是凭据线索，
     # 和上面「fields 只报个数」是同一条规矩——要证明存了，cipher_len 够了。
     rec["driver_label"] = DISKS.get(a.get("driver", ""), a.get("driver", ""))
@@ -629,10 +637,7 @@ def _live_slots(driver, db):
     for a in db["accounts"]:
         if a.get("driver") != driver or a.get("state") == "dead":
             continue
-        try:
-            n = int(a.get("slot") or 0)
-        except Exception:
-            n = 0
+        n = _account_slot(a)
         if n > 0:
             out.add(n)
     return out
@@ -662,9 +667,9 @@ def _slot_state(driver):
 def _clean_slot(driver, db):
     """「开新号」该落在哪一格。
 
-    11-08 用户第四次困惑：「只登了 4 个号，却说十格满了」。老写法把两种东西都当成「占着」：
+    11-08 用户第四次困惑：「只登了 4 个号，却说登录位满了」。老写法把两种东西都当成「占着」：
     ① 账号库里的号；② profile 目录还在（哪怕库里根本没这个号）。于是扫一次留一个空壳，
-    几次下来十格全成空壳，界面就喊「满了」——其实一个号都没多。
+    几次下来登录位全成空壳，界面就喊「满了」——其实一个号都没多。
     现在的判据只看**真占着**的两样：
       · 账号库里有号且没判死（state != dead）；
       · 这一格的窗口真开着、且页面还在网盘登录页（被别的程序导航走的不算，可以关掉重开）。
@@ -697,7 +702,7 @@ def _clean_slot(driver, db):
 
 
 def _why_full(driver, db):
-    """满了的时候把话说清楚：几个号、几个开着的窗口，免得再出「4 个号说十格满」这种鬼话。"""
+    """满了的时候把话说清楚：几个号、几个开着的窗口，免得再出「4 个号说登录位满」这种鬼话。"""
     used = _live_slots(driver, db)
     rows = _slot_state(driver)
     live = [n for n in range(1, qr.MAX_SLOTS + 1)
@@ -765,7 +770,7 @@ def reap_dead(auth, db=None, hours=6, force=False):
         a["fail_n"] = int(a.get("fail_n") or 0) + 1
         if a["fail_n"] < 2:
             continue                            # 一次失败先记着，下一轮再说
-        slot = int(a.get("slot") or 0)
+        slot = _account_slot(a)
         a["state"] = "dead"
         a["dead_at"] = time.strftime("%Y-%m-%d %H:%M:%S")
         a["slot"] = 0
@@ -1063,7 +1068,7 @@ def _act_qr(p, auth):
             clean = reuse or _clean_slot(driver, db0)
         except BaseException as e:
             # 以前这里 `except BaseException: clean = 0` 把异常吞成「满了」，
-            # 于是任何一个意外都长成同一句「十格都占满了」——用户当然觉得莫名其妙。
+            # 于是任何一个意外都长成同一句「登录位都占满了」——用户当然觉得莫名其妙。
             return False, ("挑登录位时出错了：%s: %s —— 这跟「占满」无关，"
                            "把这句话发给开发者看。" % (type(e).__name__, str(e)[:120])), None
         if not clean:
@@ -1146,7 +1151,7 @@ def _act_qr(p, auth):
                 break
     nxt = _next_slot(driver, db)
     if same:                                   # 同一个账号重扫 = 换凭据，不新开一条
-        prev = int(same.get("slot") or 0)
+        prev = _account_slot(same)
         if not prev:
             # 这个号之前体检判死、槽已经释放了（slot=0）。重新扫上就重新占一个空槽，
             # 不能走下面「并号」那条（会把它当成"库里已有"直接拒掉）。
@@ -1171,10 +1176,10 @@ def _act_qr(p, auth):
             stored = ""                        # 解不开（换机器/库坏了）就往下走覆盖那条路
         if prev == slot and stored == ck:      # 这一槽登着的就是它，库里那份一字不差
             return False, ("第 %d 槽登着的就是「%s」（%s）——和库里存的 cookie 一模一样，不用重扫，窗口给你留着。"
-                           "要加另一个号：把上面『登录位』调到%s再点『打开扫码窗口』，"
-                           "那是另一个独立 profile，不会顶掉这个号。"
+                           "要加另一个号：再点『扫码登录』%s，"
+                           "会另开一个独立 profile，不会顶掉这个号。"
                            % (slot, same.get("nickname") or same["alias"], same["alias"],
-                              ("第 %d 槽 " % nxt) if nxt else "（%d 个登录位都占着了，先删一个号）" % qr.MAX_SLOTS)), \
+                              ("自动登进第 %d 槽" % nxt) if nxt else "（%d 个登录位都占着了，先删一个号）" % qr.MAX_SLOTS)), \
                 dict(st, already=True, alias=same["alias"], next_slot=nxt)
         sec = secret_of(same) if same.get("secret") else {}
         sec.update({k: v for k, v in fields.items() if SECRET_RE.search(k)})
@@ -1193,7 +1198,7 @@ def _act_qr(p, auth):
             qr.purge(driver, slot)               # 这一格是并号扫出来的，删掉别留重复登录态
             return False, ("扫的这个号库里已经有了：「%s」（%s，一直登在第 %d 槽）—— 不是新号，所以没有新增账号；"
                            "第 %d 槽那个多扫出来的窗口已经关掉清空。"
-                           "要加下一个号：先在手机夸克 App 里退出/切换到另一个账号，再点『打开扫码窗口』扫。"
+                           "要加下一个号：先在手机夸克 App 里退出/切换到另一个账号，再点『扫码登录』扫。"
                            % (same.get("nickname") or same["alias"], same["alias"], prev, slot)), \
                    dict(st, already=True, duplicate=True, alias=same["alias"],
                         slot=prev, scanned_slot=slot, next_slot=nxt)
@@ -1424,7 +1429,7 @@ def refresh_from_profile(db, auth, a):
     都会被服务器滚新 cookie，所以每天开两次窗抓回来回写，登录态就能一直续下去。"""
     if a.get("driver") != "Quark" or not qr:
         return False, "非夸克或没扫码模块，续不了期"
-    slot = int(a.get("slot") or 1)
+    slot = _account_slot(a)
     if not os.path.isdir(qr.profile_of("Quark", slot)):
         return False, "没有 profile，续不了期（要重扫一次）"
     r = qr.start("Quark", slot)
@@ -1650,7 +1655,7 @@ def do_action(kind, payload=None):
 def cmd_list(args):
     db = load_db()
     if not db["accounts"]:
-        print("账号库是空的（%s）。开看板「网盘」页签（08-数据看板\\启动看板.bat）按『打开扫码窗口』扫一下，"
+        print("账号库是空的（%s）。开看板「网盘」页签（08-数据看板\\启动看板.bat）按『扫码登录』扫一下，"
               "或手填 cookie。" % DB_PATH)
         return 0
     for a in db["accounts"]:
@@ -1920,8 +1925,8 @@ def cmd_selftest(args):
 
     # 登录位（槽位）这套算术：一个 profile 一个号，换号扫是换格，不是顶掉上一个
     if qr:
-        if [qr.port_of("Quark", n) for n in (1, 2, 10)] != [9331, 9341, 9421]:
-            fails.append("夸克槽位端口算错：%s" % [qr.port_of("Quark", n) for n in (1, 2, 10)])
+        if [qr.port_of("Quark", n) for n in (1, 2, 10, 20)] != [9331, 9341, 9421, 9521]:
+            fails.append("夸克槽位端口算错：%s" % [qr.port_of("Quark", n) for n in (1, 2, 10, 20)])
         if qr.port_of("BaiduNetdisk", 3) != 9352 or qr.port_of("Thunder", 3) != 9353:
             fails.append("百度/迅雷的槽位端口没按「基址 +（槽-1)×10」走")
         if os.path.basename(qr.profile_of("Quark", 1)) != "profile-Quark":
@@ -1929,15 +1934,43 @@ def cmd_selftest(args):
                          % os.path.basename(qr.profile_of("Quark", 1)))
         if os.path.basename(qr.profile_of("Quark", 2)) != "profile-Quark-02":
             fails.append("第 2 槽该开新 profile，实际是 %s" % os.path.basename(qr.profile_of("Quark", 2)))
+        if os.path.basename(qr.profile_of("Quark", 20)) != "profile-Quark-20":
+            fails.append("第 20 槽该开新 profile，实际是 %s" % os.path.basename(qr.profile_of("Quark", 20)))
+        if os.path.basename(qr.state_path("Quark", 20)) != "session-Quark-20.json":
+            fails.append("第 20 槽状态文件名不对：%s" % os.path.basename(qr.state_path("Quark", 20)))
         got = [qr._slot(x) for x in ("0", "-3", "", "x", None, "999", 7)]
         if got != [1, 1, 1, 1, 1, qr.MAX_SLOTS, 7]:
             fails.append("slot 没夹在 1~%d 里：%s" % (qr.MAX_SLOTS, got))
-        if qr.MAX_SLOTS < 15:
-            fails.append("登录位只要了 %d 格，用户要的是每盘 15~20 格" % qr.MAX_SLOTS)
-        if _next_slot("Quark", {"accounts": [{"driver": "Quark", "slot": 1},
-                                             {"driver": "Quark"},
+        if qr.MAX_SLOTS != 20:
+            fails.append("登录位默认只要了 %d 格，用户要的是每盘 20 格" % qr.MAX_SLOTS)
+        _all_ports = sorted(qr.port_of(d, n) for d in DISKS for n in range(1, qr.MAX_SLOTS + 1))
+        if _all_ports != sorted(p for base in (9331, 9332, 9333) for p in range(base, 9524, 10)):
+            fails.append("三盘 60 个登录位端口没有逐一错开：%s" % _all_ports)
+        _slot_env_key = "OPENLIST_QR_MAX_SLOTS"
+        _slot_env_old = os.environ.get(_slot_env_key)
+        try:
+            _slot_limits = []
+            for _raw in (None, "10", "20", "60", "坏", "1", "61"):
+                if _raw is None:
+                    os.environ.pop(_slot_env_key, None)
+                else:
+                    os.environ[_slot_env_key] = _raw
+                _slot_limits.append(qr._max_slots())
+            if _slot_limits != [20, 10, 20, 60, 20, 20, 20]:
+                fails.append("槽数环境变量边界不对：%s" % _slot_limits)
+        finally:
+            if _slot_env_old is None:
+                os.environ.pop(_slot_env_key, None)
+            else:
+                os.environ[_slot_env_key] = _slot_env_old
+        if _live_slots("Quark", {"accounts": [{"driver": "Quark"}]}) != {1}:
+            fails.append("没标 slot 的老记录没有占第 1 槽")
+        if _live_slots("Quark", {"accounts": [{"driver": "Quark", "slot": 0},
+                                               {"driver": "Quark", "state": "dead"}]}):
+            fails.append("显式 slot=0 或 dead 账号仍占槽")
+        if _next_slot("Quark", {"accounts": [{"driver": "Quark"},
                                              {"driver": "Thunder", "slot": 2}]}) != 2:
-            fails.append("下一个空登录位算错（第 1 槽被占、没标 slot 的老记录按第 1 槽算）")
+            fails.append("下一个空登录位算错（没标 slot 的老记录应独自占第 1 槽）")
         if _next_slot("Quark", {"accounts": [{"driver": "Quark", "slot": n}
                                             for n in range(1, qr.MAX_SLOTS + 1)]}) != 0:
             fails.append("空位用光了还让开新槽")
@@ -1954,6 +1987,43 @@ def cmd_selftest(args):
             fails.append("字段表没带出可用浏览器，界面出不了『用哪个浏览器』下拉")
         if safe_rec({"alias": "x", "driver": "Quark"}).get("slot") != 1:
             fails.append("老记录没 slot 栏时该当第 1 槽")
+
+        _close_saved = {k: getattr(qr, k) for k in ("port_alive", "_cdp", "_read_state", "_rm_state")}
+        _run_saved, _sleep_saved = qr.subprocess.run, qr.time.sleep
+        _close_state = {"alive": True, "killed": False, "waits": 0, "removed": 0, "calls": []}
+        try:
+            qr._read_state = lambda d, n: {"pid": 4242}
+            qr.port_alive = lambda port, timeout=0.4: _close_state["alive"]
+            qr._cdp = lambda *a, **k: (_ for _ in ()).throw(RuntimeError("test close"))
+            qr._rm_state = lambda d, n: _close_state.update(removed=_close_state["removed"] + 1)
+
+            def _close_run(args, **kwargs):
+                _close_state["calls"].append(args)
+                _close_state["killed"] = True
+
+            def _close_sleep(seconds):
+                _close_state["waits"] += 1
+                if _close_state["killed"] and _close_state["waits"] >= 2:
+                    _close_state["alive"] = False
+
+            qr.subprocess.run, qr.time.sleep = _close_run, _close_sleep
+            _close_result = qr.close("Quark", 1)
+            if (not _close_result.get("ok") or _close_state["removed"] != 1
+                    or _close_state["waits"] < 2
+                    or _close_state["calls"] != [["taskkill", "/PID", "4242"]]):
+                fails.append("关闭：taskkill 后端口延迟释放应等待成功再清状态：%r / %r"
+                             % (_close_result, _close_state))
+            _close_state.update(alive=True, killed=False, waits=0, removed=0, calls=[])
+            qr.subprocess.run = lambda args, **kwargs: _close_state.update(killed=True)
+            qr.time.sleep = lambda seconds: _close_state.update(waits=_close_state["waits"] + 1)
+            _close_result = qr.close("Quark", 1)
+            if _close_result.get("ok") or _close_state["removed"]:
+                fails.append("关闭：端口仍未释放应报失败并保留状态，不能误报成功：%r / %r"
+                             % (_close_result, _close_state))
+        finally:
+            for k, v in _close_saved.items():
+                setattr(qr, k, v)
+            qr.subprocess.run, qr.time.sleep = _run_saved, _sleep_saved
 
     checks = [
         ("nope", {}, "不认识的动作"),

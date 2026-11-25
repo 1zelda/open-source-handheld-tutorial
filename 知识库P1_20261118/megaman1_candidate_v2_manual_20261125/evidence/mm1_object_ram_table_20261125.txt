@@ -1,0 +1,17 @@
+TASVideos GameResources：洛克人1对象 RAM 表（逐字摘录）
+ Game Screen# X (hi,lo) Xspd (hi,lo) Y (hi,lo) Yspd (hi,lo)
+ 
+ Rockman 1 $460 $480:$4A0 $4C0:$4E0 $600:$620 $660:$680
+ 
+ Rockman 2 $440 $460:$480 $600:$620 $4A0:$4C0 $640:$660
+ 
+ Rockman 3 $380 $360:$340 no RAM address? $3C0:$3A0 $460:$440
+ 
+ Rockman 4 $348 $330:$318 no RAM address? $378:$360 $3F0:$3D8
+ 
+ Rockman 5 
+ Rockman 6 
+ 
+ The variables for object # n can be found by adding n to each address.
+
+Boss has n =1 in RM1/2, Rockman always has n =0.

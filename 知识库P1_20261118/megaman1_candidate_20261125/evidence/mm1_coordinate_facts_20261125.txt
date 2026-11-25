@@ -1,0 +1,25 @@
+TASVideos GameResources：洛克人1坐标系统（逐字摘录）
+ Coordinate system
+
+ In Rockman and Rockman 2, every object of the game has the following properties:
+
+ Screen number (00―FF), it tells which screen the object resides in.
+
+ X position (00.00―FF.FF), it tells where in the screen the object is in.
+
+ Y position (00.00―FF.FF), it tells where in the screen the object is in.
+
+ X speed (−80.00―7F.FF).
+
+ Y speed (−80.00―7F.FF).
+
+ The position of the object has 8 bits of decimal part,
+but only the integer part can be observed on the screen.
+
+ Y coordinates increase towards the bottom of the screen
+
+ X coordinates increase towards the right
+
+ Negative Y speed means falling, positive Y speed means ascending
+
+ X speed is always positive. It is subtracted or added depending on Rockman’s facing.

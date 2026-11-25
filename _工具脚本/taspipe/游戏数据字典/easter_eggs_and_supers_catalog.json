@@ -1,0 +1,174 @@
+{
+  "schema_version": 1,
+  "title": "全平台经典秘籍、隐藏彩蛋、隐藏人物与超必杀技现成指令总表",
+  "description": "配合 taspipe.macro_compiler 与 taspipe.video_studio 直接调用，免手工编写帧序列与 HUD 字幕",
+  "categories": {
+    "1_secret_codes_and_easter_eggs": [
+      {
+        "id": "contra_30_lives_konami",
+        "game": "Contra / 魂斗罗 (FC/NES)",
+        "platform": "NES",
+        "label": "科乐美水下八人/30条命经典秘籍",
+        "notation": "↑ ↑ ↓ ↓ ← → ← → B A Start",
+        "preset_ref": "@KONAMI_CODE_NES",
+        "trigger_timing": "标题画面完全静止后输入，或字幕滚动中按完最后按 Start",
+        "ram_verification": {"addr": "0x0032", "expected_value": 29, "note": "P1 命数变为 30 (RAM 值为 29)"}
+      },
+      {
+        "id": "nekketsu_soccer2_all_supers",
+        "game": "Kunio-kun no Nekketsu Soccer League / 热血足球2 (FC/NES)",
+        "platform": "NES",
+        "label": "全员必杀射门解锁秘籍 (暂停输入 AAABAAABAAAAAAA)",
+        "notation": "Start -> A A A B A A A B A A A A A A A -> Start",
+        "preset_ref": "@SOCCER2_ALL_SKILLS_CHEAT",
+        "trigger_timing": "比赛开球进入活 play 后按 Start 暂停，依次按完自动听到清脆音效解锁全必杀"
+      },
+      {
+        "id": "mmx1_hadoken_capsule",
+        "game": "Mega Man X / 洛克人X1 (SFC/SNES)",
+        "platform": "SNES",
+        "label": "街霸联动隐藏第五胶囊：一击必杀波动拳 (Hadoken)",
+        "notation": "↓ ↘ → + Y (需满血状态)",
+        "preset_ref": "@MMX1_HADOKEN",
+        "patches": [
+          {"addr": "0x001F99", "value": 143, "domain": "WRAM"},
+          {"addr": "0x000BCF", "value": 32, "domain": "WRAM"}
+        ]
+      },
+      {
+        "id": "mmx2_shoryuken_capsule",
+        "game": "Mega Man X2 / 洛克人X2 (SFC/SNES)",
+        "platform": "SNES",
+        "label": "街霸联动隐藏胶囊：无敌火焰升龙拳 (Shoryuken)",
+        "notation": "→ ↓ ↘ + Y (需满血状态)",
+        "preset_ref": "@MMX2_SHORYUKEN"
+      },
+      {
+        "id": "kof97_orochi_iori_unlock",
+        "game": "The King of Fighters '97 / 拳皇97 (Arcade/NeoGeo)",
+        "platform": "ARCADE_FBNEO",
+        "label": "选人画面隐藏Boss：月之夜大蛇之血狂疯庵（暴走八神）",
+        "notation": "按住 Start: ← → ← → ← → + A+C",
+        "preset_ref": "@KOF97_UNLOCK_OROCHI_IORI"
+      },
+      {
+        "id": "kof97_orochi_leona_unlock",
+        "game": "The King of Fighters '97 / 拳皇97 (Arcade/NeoGeo)",
+        "platform": "ARCADE_FBNEO",
+        "label": "选人画面隐藏人物：暗之中大蛇之血觉醒莉安娜（暴走莉安娜）",
+        "notation": "按住 Start: ↑ ↓ ↑ ↓ ↑ ↓ + B+D",
+        "preset_ref": "@KOF97_UNLOCK_OROCHI_LEONA"
+      },
+      {
+        "id": "mslug_fat_marco_easter_egg",
+        "game": "Metal Slug 2 / X / 3 (Arcade/NeoGeo)",
+        "platform": "ARCADE_FBNEO",
+        "label": "合金弹头彩蛋变身：吃胖形态（大肚手雷与宽幅重机枪弹幕）",
+        "notation": "A (射击) / C (大号弹跳手雷)",
+        "patches": [
+          {"addr": "0x10808A", "value": 1, "domain": "m68K RAM"}
+        ]
+      },
+      {
+        "id": "sotn_shield_rod_alucard_shield",
+        "game": "Castlevania: Symphony of the Night / 恶魔城：月下夜想曲 (PS1)",
+        "platform": "PS1",
+        "label": "最强隐藏武器组合彩蛋：盾牌杖 + 阿鲁卡多之盾（无敌255攻回血护体）",
+        "notation": "左手装阿鲁卡多盾 + 右手装盾牌杖 -> Square + Circle 同按",
+        "preset_ref": "@SOTN_SHIELD_ROD_COMBO"
+      }
+    ],
+    "2_signature_super_moves_and_combos": [
+      {
+        "id": "kof98_kyo_orochinagi",
+        "game": "KOF '98 (Arcade)",
+        "platform": "ARCADE_FBNEO",
+        "character": "草薙京 (Kyo Kusanagi)",
+        "label": "里百八式·大蛇薙",
+        "notation": "↓ ↙ ← ↙ ↓ ↘ → + A/C",
+        "compiler_input": "2141236+C"
+      },
+      {
+        "id": "kof98_kyo_mushiki",
+        "game": "KOF '98 (Arcade)",
+        "platform": "ARCADE_FBNEO",
+        "character": "草薙京 (Kyo Kusanagi)",
+        "label": "最终决战奥义·无式（三神技之壹）",
+        "notation": "↓ ↘ → ↓ ↘ → + A/C",
+        "compiler_input": "236236+A"
+      },
+      {
+        "id": "kof98_iori_yaotome",
+        "game": "KOF '98 (Arcade)",
+        "platform": "ARCADE_FBNEO",
+        "character": "八神庵 (Iori Yagami)",
+        "label": "禁千贰百拾壹式·八稚女",
+        "notation": "↓ ↘ → ↘ ↓ ↙ ← + A/C",
+        "compiler_input": "2363214+C"
+      },
+      {
+        "id": "kof98_iori_yasakani",
+        "game": "KOF '98 (Arcade)",
+        "platform": "ARCADE_FBNEO",
+        "character": "八神庵 (Iori Yagami)",
+        "label": "里百八式·八酒杯（三神技之贰）",
+        "notation": "↓ ↙ ← ↙ ↓ ↘ → + A/C",
+        "compiler_input": "2141236+A"
+      },
+      {
+        "id": "sf2_ryu_shinku_hadoken",
+        "game": "Super Street Fighter II Turbo (Arcade)",
+        "platform": "ARCADE_FBNEO",
+        "character": "隆 (Ryu)",
+        "label": "真空波动拳 (Shinku Hadoken)",
+        "notation": "↓ ↘ → ↓ ↘ → + P",
+        "compiler_input": "236236+A"
+      },
+      {
+        "id": "sf2_guile_sonic_boom",
+        "game": "Street Fighter II (Arcade/SNES)",
+        "platform": "ARCADE_FBNEO",
+        "character": "古烈 (Guile)",
+        "label": "音速手刀 Sonic Boom（45帧蓄力技示范）",
+        "notation": "← 蓄 → + P",
+        "compiler_input": "[4]6+A"
+      },
+      {
+        "id": "sotn_alucard_soul_steal",
+        "game": "恶魔城：月下夜想曲 (PS1)",
+        "platform": "PS1",
+        "character": "阿鲁卡多 (Alucard)",
+        "label": "终极魔导必杀：全屏窃魂术 (Soul Steal)",
+        "notation": "← → ↘ ↓ ↙ ← → + Square",
+        "compiler_input": "@SOTN_SOUL_STEAL"
+      },
+      {
+        "id": "sotn_alucard_hellfire",
+        "game": "恶魔城：月下夜想曲 (PS1)",
+        "platform": "PS1",
+        "character": "阿鲁卡多 (Alucard)",
+        "label": "德古拉传承必杀：暗黑地狱火 (Hellfire)",
+        "notation": "↑ ↓ ↘ → + Square",
+        "compiler_input": "@SOTN_HELLFIRE"
+      },
+      {
+        "id": "yuyu_hiei_black_dragon",
+        "game": "幽游白书：魔强统一战 (MD/Genesis)",
+        "platform": "MD",
+        "character": "飞影 (Hiei)",
+        "label": "超灵击技：邪王炎杀黑龙波",
+        "notation": "↓ ↘ → ↓ ↘ → + A",
+        "compiler_input": "236236+A"
+      },
+      {
+        "id": "yuyu_yusuke_super_reigan",
+        "game": "幽游白书：魔强统一战 (MD/Genesis)",
+        "platform": "MD",
+        "character": "浦饭幽助 (Yusuke)",
+        "label": "超灵击技：全身灵丸巨炮",
+        "notation": "↓ ↘ → ↓ ↘ → + A",
+        "compiler_input": "236236+A"
+      }
+    ]
+  }
+}

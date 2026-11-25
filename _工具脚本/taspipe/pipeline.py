@@ -10,12 +10,12 @@ EXPORT 缺失/失效 => 只重跑合成。旧文件不冒充新产物：复用�
   python -m taspipe.pipeline status --out <dir>
 """
 import argparse
-import hashlib
 import json
 import os
 import sys
+import tempfile
 
-from .schema import Stage, FailureCode, asset
+from .schema import Stage, FailureCode, asset, sha1_resource
 from .ledger import Ledger, fingerprint
 from . import record, exporter
 
@@ -23,7 +23,7 @@ from . import record, exporter
 def run_chain(movie, rom, out_dir, bizhawk_dir, profile_id, frames=None, fps=60.0988,
               audio=False, core="NesHawk", system="NES",
               template=exporter.DEFAULT_TEMPLATE, ffmpeg="ffmpeg", ffprobe="ffprobe",
-              resume=True):
+              resume=True, work_root=None):
     from .backends import BizHawkNESBackend
     out_dir = str(out_dir)
     os.makedirs(out_dir, exist_ok=True)
@@ -44,9 +44,11 @@ def run_chain(movie, rom, out_dir, bizhawk_dir, profile_id, frames=None, fps=60.
         reused_capture = False
         cap_job = led.register(Stage.CAPTURE, "capture", cap_fp)
         try:
+            replay_work = (tempfile.mkdtemp(prefix="replay_", dir=work_root)
+                           if work_root else None)
             cap = record.run_full(be, prof, movie, rom, out_dir, frames=frames, fps=fps,
                                   ffmpeg=ffmpeg, ffprobe=ffprobe, core=core, system=system,
-                                  audio=audio, bezel="off")
+                                  audio=audio, bezel="off", work=replay_work)
         except Exception as e:
             led.fail(cap_job, FailureCode.NONDETERMINISM, f"{type(e).__name__}: {e}")
             raise
@@ -62,7 +64,7 @@ def run_chain(movie, rom, out_dir, bizhawk_dir, profile_id, frames=None, fps=60.
         led.complete(cap_job, [raw, run_json], v)
 
     # ---- EXPORT ----
-    sha1 = hashlib.sha1(open(rom, "rb").read()).hexdigest().upper()
+    sha1 = sha1_resource(rom).upper()
     tpl_path = os.path.join(exporter.template_dir(), template + ".json")
     exp_fp = fingerprint([raw, tpl_path], {"sha1": sha1, "template": template})
     reuse_e = led.reusable(Stage.EXPORT, "export", exp_fp) if resume else None
@@ -115,9 +117,10 @@ def main():
         return 0
 
     from .backends import _nes_backend_from_registry
-    be, prof, movie, rom = _nes_backend_from_registry(args.pub)
+    be, prof, movie, rom, system, core = _nes_backend_from_registry(args.pub)
     res = run_chain(movie, rom, args.out, be.bizhawk_dir, prof["profile_id"],
                     frames=args.frames, fps=args.fps, audio=args.audio,
+                    core=core, system=system,
                     template=args.template, ffmpeg=args.ffmpeg, ffprobe=args.ffprobe,
                     resume=not args.no_resume)
     print(json.dumps(res, ensure_ascii=False, indent=1))

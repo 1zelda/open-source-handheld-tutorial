@@ -1,0 +1,217 @@
+{
+  "status": "completed_reference_only",
+  "completed_at": "2026-11-24",
+  "game": "熱血格闘伝説",
+  "revision": "nekketsu_kakutou_densetsu_fc_jp",
+  "authority": "reference_only",
+  "rom_recomputed": false,
+  "hard_evidence_eligible": false,
+  "selected_evidence_emitted": false,
+  "scope": "名字、初始能力、升级成长、格斗类型、血型相性与证据边界研究",
+  "research_method": "官方说明书 OCR + 两份玩家攻略交叉核对；AIR BOOM 原页按 CP932 解码；主代理逐行复核关键原句",
+  "source_hierarchy": [
+    {
+      "level": "official",
+      "source": "TJC-NA 日文说明书 600DPI OCR",
+      "can_prove": "四项创建输入、名字 5 字上限、六项能力、血型参与相性",
+      "cannot_prove": "具体名字算法与血型数值矩阵"
+    },
+    {
+      "level": "secondary_player_guide",
+      "source": "AIR BOOM SR",
+      "can_prove": "该攻略公开的位置成长规则、部分初始状态规则、部分类型规则和密码结构",
+      "cannot_prove": "候选规则与原版 ROM 行为一致"
+    },
+    {
+      "level": "secondary_player_guide",
+      "source": "hmsong GameFAQs guide",
+      "can_prove": "成长位置规则、类型判定不确定性说明、候选血型 4×4 矩阵",
+      "cannot_prove": "矩阵数值的官方性或 ROM 一致性"
+    },
+    {
+      "level": "cross_check",
+      "source": "ゲーム＊やおよろず Retro / Rahga",
+      "can_prove": "名字/生日/血型影响范围的旁证",
+      "cannot_prove": "具体算法"
+    }
+  ],
+  "sources": [
+    {
+      "source_id": "tjc_na_manual_ocr",
+      "url": "https://archive.org/stream/nekketsu-kakutou-densetsu-tjc-na-fc-jp-manual-600-dpi/Nekketsu%20Kakutou%20Densetsu%20%5BTJC-NA%5D%28FC%29%28JP%29%20-Manual%28600DPI%29_djvu.txt",
+      "verified_locators": [
+        "OCR 384-437: character edit inputs and five-character name limit",
+        "OCR 475-486: compatibility, recovery speed and blood type",
+        "OCR 492-546: four fighting types",
+        "OCR 570-634: six stats and level growth"
+      ],
+      "fetched_copy_sha256": "c44c6415e793479801cf438d5e1a691c5e4562ffe75de0321416f78f7d70227e"
+    },
+    {
+      "source_id": "airboom_fighting_type",
+      "url": "https://airboomsr.web.fc2.com/kunio-kakutou/kakutou-type.htm",
+      "encoding": "Shift-JIS / CP932",
+      "verified_locators": [
+        "430-442: names of 2 characters or fewer are Kung Fu; third character constrains 3+ character names"
+      ],
+      "raw_html_bytes": 22735,
+      "raw_html_sha256": "fc0962b3e7299bfbf25c78d4fd16cfb5a46de8e7e1bffbc75e95e65afefa4cc2"
+    },
+    {
+      "source_id": "airboom_initial_status",
+      "url": "https://airboomsr.web.fc2.com/kunio-kakutou/syoki-status.htm",
+      "encoding": "Shift-JIS / CP932",
+      "verified_locators": [
+        "119-166: five name positions, initial speed/HP/defense tables and base-plus-bonus rule"
+      ],
+      "raw_html_bytes": 78294,
+      "raw_html_sha256": "bd9b1f6d94caab53aaf83c3d2d235dc1b34afcae4037c638ec2fad18aa2a3f09"
+    },
+    {
+      "source_id": "airboom_level_growth",
+      "url": "https://airboomsr.web.fc2.com/kunio-kakutou/level-up.htm",
+      "encoding": "Shift-JIS / CP932",
+      "verified_locators": [
+        "119-166: HP/Kick/Punch/Throw/Defense growth by name position; speed +9 every four levels"
+      ],
+      "raw_html_bytes": 70272,
+      "raw_html_sha256": "3276d655a77e1d32b1ef53c3faf443e9eb5b68df60523e4ea717ece3dfa6b3f5"
+    },
+    {
+      "source_id": "airboom_password",
+      "url": "https://airboomsr.web.fc2.com/kunio-kakutou/password-kaiseki.htm",
+      "encoding": "Shift-JIS / CP932",
+      "verified_locators": [
+        "119-140: 12-character password positions",
+        "1224-1261: blood type, fighting type and birthday password examples"
+      ],
+      "raw_html_bytes": 57373,
+      "raw_html_sha256": "94880c53dc20ee62203d9995ddff086e2b72d7b2602dfd3eda69ed74f07c1ff7"
+    },
+    {
+      "source_id": "airboom_zodiac_compatibility",
+      "url": "https://airboomsr.web.fc2.com/kunio-kakutou/aisyou.htm",
+      "encoding": "Shift-JIS / CP932",
+      "verified_locators": [
+        "page contains zodiac compatibility; no blood-type matrix found"
+      ],
+      "raw_html_bytes": 30100,
+      "raw_html_sha256": "1f71ede4494ee3842c3912596fc4835ff2dbe0f0c604cdcefde1ed6bf5c0f895"
+    },
+    {
+      "source_id": "hmsong_character_creation_guide",
+      "url": "https://web.archive.org/web/20220501171024id_/https://gamefaqs.gamespot.com/nes/581215-nekketsu-kakutou-densetsu/faqs/77644",
+      "author": "hmsong",
+      "guide_updated": "2020-02-16",
+      "verified_locators": [
+        "205-209: name determines initial stats, growth and fighter type",
+        "243-247: name position mapping",
+        "269-272: fighter type remains uncertain and involves positions 3-5",
+        "574-586: blood-type matrix and author interpretation"
+      ],
+      "fetched_copy_sha256": "fb310bd150d8a2697002c19181914411c3dcf22ab0745255cce9fb0b4cbec5b5",
+      "handling": "Only factual matrix and short quotation stored; full guide not mirrored"
+    },
+    {
+      "source_id": "mimora_retro_cross_check",
+      "url": "https://mimora.mimoza.jp/yao_game/retro/contents/ctg_main/memorandum/FC/detail/gmr_FC-0034.php",
+      "page_updated": "2023-11-16",
+      "verified_locators": [
+        "39: name and birthday change abilities",
+        "652: name changes abilities/style, birthday changes special moves, blood type changes partner compatibility"
+      ],
+      "fetched_copy_sha256": "b33697bccef753f7de9a36f1624cef632f69f6b91cb3d88e51a552a6e3e3ad11"
+    }
+  ],
+  "confirmed_by_official_manual": [
+    "Character creation has four inputs: name, birthday, blood type and partner",
+    "Name input is limited to five characters",
+    "Creation inputs determine character strength and partner compatibility",
+    "Compatibility depends on the player and partner blood types and affects ally-awareness recovery speed",
+    "There are six stats and stage-clear level growth"
+  ],
+  "secondary_candidate_rules": {
+    "growth_by_name_position": {
+      "1": "HP",
+      "2": "Kick",
+      "3": "Punch",
+      "4": "Throw",
+      "5": "Defense",
+      "speed": "independent of name; +9 every four level-ups"
+    },
+    "initial_status_by_name_position": {
+      "1": "speed and HP bonus",
+      "2": "Kick and HP base",
+      "3": "Punch/Kick/Throw/Defense base and fighter type",
+      "4": "Punch/Throw and fighter type",
+      "5": "Punch/Throw/Defense bonus and fighter type"
+    },
+    "fighter_type": {
+      "name_length_1_2": "all Kung Fu",
+      "name_length_3": "Kung Fu or Judo decided only by third character",
+      "name_length_4_5": "third character constrains later characters; complete final-type algorithm not published"
+    },
+    "blood_type_matrix": {
+      "columns": ["A", "B", "O", "AB"],
+      "rows": {
+        "A": [5, 7, 8, 6],
+        "B": [7, 5, 6, 8],
+        "O": [8, 6, 7, 5],
+        "AB": [6, 8, 5, 7]
+      },
+      "interpretation": "hmsong interprets it as team-level growth speed and initial team level; not ROM-verified"
+    }
+  },
+  "negative_findings": [
+    "No official numeric name-to-stat or name-to-type algorithm is present in the manual",
+    "No evidence supports direct blood-type modification of the six personal stats",
+    "AIR BOOM compatibility page is zodiac compatibility, not corroboration of the blood-type matrix",
+    "AIR BOOM does not provide the complete initial Punch/Kick/Throw tables",
+    "No complete 4-5 character final fighting-type algorithm is established"
+  ],
+  "unresolved_gaps": [
+    "Complete per-character initial Punch/Kick/Throw tables for positions 3-5",
+    "Complete 4-5 character final fighting-type algorithm",
+    "ROM-level validation of the blood-type matrix and its behavior mapping",
+    "ROM-level validation of every candidate name rule"
+  ],
+  "rom_verification_plan": [
+    "Vary one name position at a time while holding birthday, blood type and partner fixed; record six initial stats",
+    "Record each level-up delta and test the +9 speed-every-four-levels rule",
+    "Enumerate 3-5 character names and compare predicted versus actual fighter types",
+    "Enumerate 16 blood-type pairs and compare initial team level and ally-awareness recovery",
+    "Require source, input, raw state, output state, counterexample check and conclusion for every rule"
+  ],
+  "artifacts": {
+    "evidence_note": {
+      "path": "_工具脚本/taspipe/游戏包/来源库/取证/airboom_hmsong_熱血格闘伝説_名字血型公式摘录_20261124.md",
+      "bytes": 6546,
+      "sha256": "18154401a06f19cb8cdbcc00c17e7bc2cfbf4f95ec8352c3282dca4cc4b0785d"
+    },
+    "markdown_report": {
+      "path": "热血格斗传说_名字血型公式研究_2026-11-24.md",
+      "bytes": 10921,
+      "sha256": "f2f4b0442c003437126222f1b8d610ba2ee99dee6220d1e1853502d9805333fd"
+    },
+    "html_report": {
+      "path": "热血格斗传说_名字血型公式研究_2026-11-24.html",
+      "bytes": 14959,
+      "sha256": "9fd0aef06f9cab547a58fc22b258c81a9fc5f7042ab56df77c58294bd88c5add"
+    },
+    "pdf_report": {
+      "path": "热血格斗传说_名字血型公式研究_2026-11-24.pdf",
+      "bytes": 476462,
+      "sha256": "79816e490bc77e8f812a1154f22b05ad8603ce3529d46e82c482a963ca0f518d",
+      "pages": 5,
+      "page_character_counts": [843, 921, 835, 1335, 1013],
+      "text_overflow_pages": 0,
+      "visual_review": "passed all five rendered pages",
+      "renderer": "重新生成PDF.py / Edge headless / PyMuPDF"
+    }
+  },
+  "remaining_blockers": [
+    "合法原版 TJC-NA ROM 尚未到位，不能把候选规则升级为权威结论",
+    "A1 授权邮件待真实发件账号",
+    "A2 生产语义层与 A3 付费 API 待单独批准"
+  ]
+}

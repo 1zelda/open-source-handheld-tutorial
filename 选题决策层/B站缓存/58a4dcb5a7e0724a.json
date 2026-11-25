@@ -1,0 +1,43 @@
+{
+ "keyword": "Switch2 破解",
+ "status": "ok",
+ "ts": "2026-11-19T05:39:15Z",
+ "ts_epoch": 1795066755.637956,
+ "supply_num_results": 1000,
+ "n_videos": 20,
+ "relevant_count": 15,
+ "core_hit_rate": 0.75,
+ "full_hit_rate": 0.2,
+ "play_median": 8023.0,
+ "relevant_play_median": 8286,
+ "play_mean": 18081.6,
+ "play_max": 57808,
+ "play_total": 271224,
+ "engagement_median": 0.0232,
+ "recent_count": 15,
+ "recent_play_median": 8286,
+ "top3": [
+  {
+   "bvid": "BV1fsxZ68ESk",
+   "title": "上百款Switch游戏原生跑PC，任天堂的墙被AI踹开了，时之笛重制版、王国之泪、火焰纹章等全被搬上PC",
+   "author": "游闻录",
+   "play": 125588,
+   "pubdate": "2026-11-05"
+  },
+  {
+   "bvid": "BV1AU4q6JE11",
+   "title": "switch2破解社区黑客集体哑火，暂停发布switch2破解",
+   "author": "掌机百科",
+   "play": 57808,
+   "pubdate": "2026-11-06"
+  },
+  {
+   "bvid": "BV1gQHA6DEBP",
+   "title": "Switch 2 ns2jb破解实测！折腾两天，终于成功导出主机文件",
+   "author": "宸宸di爸爸",
+   "play": 54015,
+   "pubdate": "2026-10-24"
+  }
+ ],
+ "cache_hit": false
+}

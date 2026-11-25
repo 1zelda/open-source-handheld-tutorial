@@ -1,0 +1,8 @@
+[   0.0s] start
+[   2.0s] torch 2.8.0+cu128
+[   2.1s] cuda_available=True
+[ 179.9s] transformers 5.23.0
+W1119 00:22:39.712000 40472 E:\SHARE\py313-cuda\torch\distributed\elastic\multiprocessing\redirects.py:29] NOTE: Redirects are currently not supported in Windows or MacOs.
+[ 570.9s] sentence_transformers 6.3.0
+[ 570.9s] SentenceTransformer class imported
+Loading weights:   0%|          | 0/391 [00:00<?, ?it/s]Loading weights: 100%|██████████| 391/391 [00:00<00:00, 51046.56it/s]

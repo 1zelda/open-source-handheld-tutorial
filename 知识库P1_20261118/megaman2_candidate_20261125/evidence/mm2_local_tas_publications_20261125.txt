@@ -1,0 +1,83 @@
+# Mega Man 2 local TAS publication metadata — verbatim extract
+> Origin: 04-游戏资源库/TAS输入录像库/publications.json
+> Original line ranges: 96935-96973; 96975-97012
+> Qualification: Local publication metadata; not proof of ROM availability or gameplay verification.
+
+  "4057": {
+   "id": "4057",
+   "url": "https://tasvideos.org/4057M",
+   "platform": "NES",
+   "title": "NES Mega Man 2 \"zipless\" by warmCabin in 27:16.172",
+   "authors": "warmCabin",
+   "time": "27:16.172",
+   "published_utc": "10/28/2019 9:49:16 AM UTC",
+   "published_date": "10/28/2019",
+   "game_id": "10",
+   "game": "Mega Man 2",
+   "genres": [
+    "Action",
+    "Platformer"
+   ],
+   "tags": [
+    "Uses intentional deaths",
+    "Forgoes intentional deaths",
+    "Takes intentional damage",
+    "Forgoes time-saving glitches",
+    "Heavy luck manipulation",
+    "Uses hardest difficulty",
+    "Heavy resource management"
+   ],
+   "version_url": "https://tasvideos.org/Games/10/Versions/View/491",
+   "version_id": "10_491",
+   "version_name": "Rockman 2 - Dr. Wily no Nazo (J) [!].nes",
+   "video_links": [
+    "https://archive.org/download/megaman2j-tas-zipless-warmcabin/megaman2j-tas-zipless-warmcabin.mkv",
+    "https://archive.org/download/megaman2j-tas-zipless-warmcabin/megaman2j-tas-zipless-warmcabin_512kb.mp4"
+   ],
+   "emulator": "FCEUX 2.2.3",
+   "movie_url": "https://tasvideos.org/4057M?handler=Download",
+   "movie_ext": "fm3",
+   "console_verified": true,
+   "rating": 8.66,
+   "local_movie": "movies/NES/4057.fm3",
+   "rom_sha1": "FB51875D1FF4B0DEEE97E967E6434FF514F3C2F2",
+   "rom_md5": "055FB8DC626FB1FBADC0A193010A3E3F"
+
+  "4410": {
+   "id": "4410",
+   "url": "https://tasvideos.org/4410M",
+   "platform": "NES",
+   "title": "NES Mega Man 2 by Shinryuu in 23:38.980",
+   "authors": "Shinryuu",
+   "time": "23:38.980",
+   "published_utc": "3/11/2021 3:56:43 PM UTC",
+   "published_date": "3/11/2021",
+   "game_id": "10",
+   "game": "Mega Man 2",
+   "genres": [
+    "Action",
+    "Platformer"
+   ],
+   "tags": [
+    "Uses intentional deaths",
+    "Takes intentional damage",
+    "Heavy glitch abuse",
+    "Heavy luck manipulation",
+    "Uses hardest difficulty",
+    "Heavy resource management"
+   ],
+   "version_url": "https://tasvideos.org/Games/10/Versions/View/491",
+   "version_id": "10_491",
+   "version_name": "Rockman 2 - Dr. Wily no Nazo (J) [!].nes",
+   "video_links": [
+    "https://archive.org/download/megaman2-tasv2-shinryuu/megaman2-tasv2-shinryuu.mkv",
+    "https://archive.org/download/megaman2-tasv2-shinryuu/megaman2-tasv2-shinryuu_512kb.mp4"
+   ],
+   "emulator": "FCEUX 2.3.0",
+   "movie_url": "https://tasvideos.org/4410M?handler=Download",
+   "movie_ext": "fm2",
+   "console_verified": false,
+   "rating": 9.45,
+   "local_movie": "movies/NES/4410.fm2",
+   "rom_sha1": "FB51875D1FF4B0DEEE97E967E6434FF514F3C2F2",
+   "rom_md5": "055FB8DC626FB1FBADC0A193010A3E3F"

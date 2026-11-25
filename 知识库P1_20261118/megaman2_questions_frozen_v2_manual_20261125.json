@@ -1,0 +1,375 @@
+{
+  "schema_version": 3,
+  "status": "frozen",
+  "frozen_at": "2026-11-25",
+  "candidate_domain": "megaman2_candidate",
+  "candidate_revision": "megaman2_nes_us_manual",
+  "candidate_index_sha256": "864ce8e3724414a95f851fac669ac2fddaa0e8f4fe37e8116ab1f707247a3225",
+  "expected_counts": {
+    "total": 25,
+    "strict_pass": 15,
+    "weak": 3,
+    "refuse": 7
+  },
+  "manual_source": {
+    "source_id": "nintendo_mega_man_2_nes_us_manual",
+    "official_pdf": "https://www.nintendo.co.jp/clv/manuals/en/pdf/CLV-P-NABBE.pdf",
+    "excerpt_files": 8
+  },
+  "questions": [
+    {
+      "id": "MM101",
+      "q": "洛克人2 的 walking speed 是什么？",
+      "expect": "strict_pass",
+      "revision": "megaman2_nes_tasvideos_rockman2",
+      "source_id": "tasvideos_rockman_data_mm2_extract",
+      "gold": {
+        "anchor_chunk": "73a03b4b6a03",
+        "path_contains": "知识库P1_20261118/megaman2_candidate_v2_manual_20261125/evidence/mm2_tasvideos_walking_20261125.txt",
+        "line_start": 10,
+        "line_end": 10,
+        "source_id": "tasvideos_rockman_data_mm2_extract",
+        "revision": "megaman2_nes_tasvideos_rockman2"
+      }
+    },
+    {
+      "id": "MM102",
+      "q": "Rockman 2 的 X speed 内存地址是什么？",
+      "expect": "strict_pass",
+      "revision": "megaman2_nes_tasvideos_rockman2",
+      "source_id": "tasvideos_rockman_data_mm2_extract",
+      "gold": {
+        "anchor_chunk": "0b6888c54b1c",
+        "path_contains": "知识库P1_20261118/megaman2_candidate_v2_manual_20261125/evidence/mm2_tasvideos_object_table_20261125.txt",
+        "line_start": 14,
+        "line_end": 14,
+        "source_id": "tasvideos_rockman_data_mm2_extract",
+        "revision": "megaman2_nes_tasvideos_rockman2"
+      }
+    },
+    {
+      "id": "MM103",
+      "q": "MM2 的 jump Y speed 初始值是什么？",
+      "expect": "strict_pass",
+      "revision": "megaman2_nes_tasvideos_rockman2",
+      "source_id": "tasvideos_rockman_data_mm2_extract",
+      "gold": {
+        "anchor_chunk": "24e5c2b60c84",
+        "path_contains": "知识库P1_20261118/megaman2_candidate_v2_manual_20261125/evidence/mm2_tasvideos_jump_20261125.txt",
+        "line_start": 6,
+        "line_end": 6,
+        "source_id": "tasvideos_rockman_data_mm2_extract",
+        "revision": "megaman2_nes_tasvideos_rockman2"
+      }
+    },
+    {
+      "id": "MM104",
+      "q": "Mega Man 2 的 climbing speed 是什么？",
+      "expect": "strict_pass",
+      "revision": "megaman2_nes_tasvideos_rockman2",
+      "source_id": "tasvideos_rockman_data_mm2_extract",
+      "gold": {
+        "anchor_chunk": "92013d4679ac",
+        "path_contains": "知识库P1_20261118/megaman2_candidate_v2_manual_20261125/evidence/mm2_tasvideos_climb_transform_20261125.txt",
+        "line_start": 6,
+        "line_end": 6,
+        "source_id": "tasvideos_rockman_data_mm2_extract",
+        "revision": "megaman2_nes_tasvideos_rockman2"
+      }
+    },
+    {
+      "id": "MM105",
+      "q": "Ｍｅｇａ　Ｍａｎ　２ 的 walking speed 是什么？",
+      "expect": "strict_pass",
+      "revision": "megaman2_nes_tasvideos_rockman2",
+      "source_id": "tasvideos_rockman_data_mm2_extract",
+      "gold": {
+        "anchor_chunk": "73a03b4b6a03",
+        "path_contains": "知识库P1_20261118/megaman2_candidate_v2_manual_20261125/evidence/mm2_tasvideos_walking_20261125.txt",
+        "line_start": 10,
+        "line_end": 10,
+        "source_id": "tasvideos_rockman_data_mm2_extract",
+        "revision": "megaman2_nes_tasvideos_rockman2"
+      }
+    },
+    {
+      "id": "MM201",
+      "q": "洛克人2美版官方说明书里跳跃和射击：A 键和 B 键分别控制什么？",
+      "expect": "strict_pass",
+      "revision": "megaman2_nes_us_manual",
+      "source_id": "nintendo_mega_man_2_nes_us_manual",
+      "manual_pages": [
+        4,
+        5
+      ],
+      "gold": {
+        "anchor_chunk": "66705aa313c7",
+        "path_contains": "知识库P1_20261118/megaman2_candidate_v2_manual_20261125/evidence/mm2_manual_controls_20261125.txt",
+        "line_start": 10,
+        "line_end": 10,
+        "source_id": "nintendo_mega_man_2_nes_us_manual",
+        "revision": "megaman2_nes_us_manual"
+      }
+    },
+    {
+      "id": "MM202",
+      "q": "洛克人2官方说明书里 energy crystal 有什么作用，怎么使用？",
+      "expect": "strict_pass",
+      "revision": "megaman2_nes_us_manual",
+      "source_id": "nintendo_mega_man_2_nes_us_manual",
+      "manual_pages": [
+        6,
+        7
+      ],
+      "gold": {
+        "anchor_chunk": "a953e342d9a0",
+        "path_contains": "知识库P1_20261118/megaman2_candidate_v2_manual_20261125/evidence/mm2_manual_energy_20261125.txt",
+        "line_start": 10,
+        "line_end": 10,
+        "source_id": "nintendo_mega_man_2_nes_us_manual",
+        "revision": "megaman2_nes_us_manual"
+      }
+    },
+    {
+      "id": "MM203",
+      "q": "洛克人2官方说明书里 STAGE SELECT 怎样用控制pad移动选择框，按 START 确认对手？",
+      "expect": "strict_pass",
+      "revision": "megaman2_nes_us_manual",
+      "source_id": "nintendo_mega_man_2_nes_us_manual",
+      "manual_pages": [
+        3
+      ],
+      "gold": {
+        "anchor_chunk": "3f6fd6636573",
+        "path_contains": "知识库P1_20261118/megaman2_candidate_v2_manual_20261125/evidence/mm2_manual_stage_select_20261125.txt",
+        "line_start": 13,
+        "line_end": 13,
+        "source_id": "nintendo_mega_man_2_nes_us_manual",
+        "revision": "megaman2_nes_us_manual"
+      }
+    },
+    {
+      "id": "MM204",
+      "q": "洛克人2官方说明书里 PASSWORD 密码怎样记录和恢复进度？",
+      "expect": "strict_pass",
+      "revision": "megaman2_nes_us_manual",
+      "source_id": "nintendo_mega_man_2_nes_us_manual",
+      "manual_pages": [
+        9
+      ],
+      "gold": {
+        "anchor_chunk": "aedaaf262e9a",
+        "path_contains": "知识库P1_20261118/megaman2_candidate_v2_manual_20261125/evidence/mm2_manual_passwords_20261125.txt",
+        "line_start": 10,
+        "line_end": 10,
+        "source_id": "nintendo_mega_man_2_nes_us_manual",
+        "revision": "megaman2_nes_us_manual"
+      }
+    },
+    {
+      "id": "MM205",
+      "q": "洛克人2官方说明书里击败 Heat Man、Air Man、Flash Man 分别获得什么交通工具？",
+      "expect": "strict_pass",
+      "revision": "megaman2_nes_us_manual",
+      "source_id": "nintendo_mega_man_2_nes_us_manual",
+      "manual_pages": [
+        8
+      ],
+      "gold": {
+        "anchor_chunk": "c137b6258e23",
+        "path_contains": "知识库P1_20261118/megaman2_candidate_v2_manual_20261125/evidence/mm2_manual_special_items_20261125.txt",
+        "line_start": 7,
+        "line_end": 7,
+        "source_id": "nintendo_mega_man_2_nes_us_manual",
+        "revision": "megaman2_nes_us_manual"
+      }
+    },
+    {
+      "id": "MM206",
+      "q": "洛克人2官方说明书里 HOW TO BEAT AIRMAN 的基本步骤是什么？",
+      "expect": "strict_pass",
+      "revision": "megaman2_nes_us_manual",
+      "source_id": "nintendo_mega_man_2_nes_us_manual",
+      "manual_pages": [
+        10,
+        11,
+        12,
+        13
+      ],
+      "gold": {
+        "anchor_chunk": "411378cfd604",
+        "path_contains": "知识库P1_20261118/megaman2_candidate_v2_manual_20261125/evidence/mm2_manual_airman_20261125.txt",
+        "line_start": 1,
+        "line_end": 1,
+        "source_id": "nintendo_mega_man_2_nes_us_manual",
+        "revision": "megaman2_nes_us_manual"
+      }
+    },
+    {
+      "id": "MM207",
+      "q": "洛克人2官方说明书里八名 Robot Master 分别是谁？",
+      "expect": "strict_pass",
+      "revision": "megaman2_nes_us_manual",
+      "source_id": "nintendo_mega_man_2_nes_us_manual",
+      "manual_pages": [
+        14,
+        15
+      ],
+      "gold": {
+        "anchor_chunk": "98da8c07b277",
+        "path_contains": "知识库P1_20261118/megaman2_candidate_v2_manual_20261125/evidence/mm2_manual_robot_masters_20261125.txt",
+        "line_start": 6,
+        "line_end": 6,
+        "source_id": "nintendo_mega_man_2_nes_us_manual",
+        "revision": "megaman2_nes_us_manual"
+      }
+    },
+    {
+      "id": "MM208",
+      "q": "洛克人2官方说明书里 Metal Blade 的投掷方向、数量和用途是什么？",
+      "expect": "strict_pass",
+      "revision": "megaman2_nes_us_manual",
+      "source_id": "nintendo_mega_man_2_nes_us_manual",
+      "manual_pages": [
+        15
+      ],
+      "gold": {
+        "anchor_chunk": "e5dd353e2356",
+        "path_contains": "知识库P1_20261118/megaman2_candidate_v2_manual_20261125/evidence/mm2_manual_weapons_20261125.txt",
+        "line_start": 25,
+        "line_end": 25,
+        "source_id": "nintendo_mega_man_2_nes_us_manual",
+        "revision": "megaman2_nes_us_manual"
+      }
+    },
+    {
+      "id": "MM209",
+      "q": "洛克人2官方说明书里 Time Stopper 的效果和能量限制是什么？",
+      "expect": "strict_pass",
+      "revision": "megaman2_nes_us_manual",
+      "source_id": "nintendo_mega_man_2_nes_us_manual",
+      "manual_pages": [
+        15
+      ],
+      "gold": {
+        "anchor_chunk": "bb742ced21f6",
+        "path_contains": "知识库P1_20261118/megaman2_candidate_v2_manual_20261125/evidence/mm2_manual_weapons_20261125.txt",
+        "line_start": 22,
+        "line_end": 22,
+        "source_id": "nintendo_mega_man_2_nes_us_manual",
+        "revision": "megaman2_nes_us_manual"
+      }
+    },
+    {
+      "id": "MM210",
+      "q": "洛克人2官方说明书里 Crash Bomber 有什么用途？",
+      "expect": "strict_pass",
+      "revision": "megaman2_nes_us_manual",
+      "source_id": "nintendo_mega_man_2_nes_us_manual",
+      "manual_pages": [
+        15
+      ],
+      "gold": {
+        "anchor_chunk": "e5dd353e2356",
+        "path_contains": "知识库P1_20261118/megaman2_candidate_v2_manual_20261125/evidence/mm2_manual_weapons_20261125.txt",
+        "line_start": 28,
+        "line_end": 28,
+        "source_id": "nintendo_mega_man_2_nes_us_manual",
+        "revision": "megaman2_nes_us_manual"
+      }
+    },
+    {
+      "id": "MM301",
+      "q": "洛克人2 的 HP 内存地址是什么？",
+      "expect": "weak",
+      "revision": "megaman2_nes_memory_dictionary_unverified",
+      "source_id": "local_megaman2_memory_dictionary",
+      "gold": {
+        "anchor_chunk": "5b1b8289ac15",
+        "path_contains": "知识库P1_20261118/megaman2_candidate_v2_manual_20261125/evidence/mm2_local_memory_dictionary_20261125.txt",
+        "line_start": 10,
+        "line_end": 10,
+        "source_id": "local_megaman2_memory_dictionary",
+        "revision": "megaman2_nes_memory_dictionary_unverified"
+      }
+    },
+    {
+      "id": "MM302",
+      "q": "洛克人2 的 platform 是什么？",
+      "expect": "weak",
+      "revision": "megaman2_nes_title_catalog",
+      "source_id": "local_megaman2_title_catalog",
+      "gold": {
+        "anchor_chunk": "c5064a82d593",
+        "path_contains": "知识库P1_20261118/megaman2_candidate_v2_manual_20261125/evidence/mm2_local_title_catalog_20261125.txt",
+        "line_start": 1,
+        "line_end": 1,
+        "source_id": "local_megaman2_title_catalog",
+        "revision": "megaman2_nes_title_catalog"
+      }
+    },
+    {
+      "id": "MM303",
+      "q": "洛克人2 的 TAS 4057 用哪个版本？",
+      "expect": "weak",
+      "revision": "megaman2_nes_tas_publications",
+      "source_id": "local_megaman2_tas_publications",
+      "gold": {
+        "anchor_chunk": "4fa3ea17fd34",
+        "path_contains": "知识库P1_20261118/megaman2_candidate_v2_manual_20261125/evidence/mm2_local_tas_publications_20261125.txt",
+        "line_start": 6,
+        "line_end": 6,
+        "source_id": "local_megaman2_tas_publications",
+        "revision": "megaman2_nes_tas_publications"
+      }
+    },
+    {
+      "id": "MM401",
+      "q": "洛克人2 出招表",
+      "expect": "refuse",
+      "route_disposition": "candidate",
+      "reason_code": "move_list_not_collected"
+    },
+    {
+      "id": "MM402",
+      "q": "洛克人2 PAL 版 walking speed 是什么？",
+      "expect": "refuse",
+      "route_disposition": "version_not_collected",
+      "reason_code": "version_not_collected"
+    },
+    {
+      "id": "MM403",
+      "q": "MM2 美版ROM 的 walking speed 是什么？",
+      "expect": "refuse",
+      "route_disposition": "version_not_collected",
+      "reason_code": "version_not_collected"
+    },
+    {
+      "id": "MM404",
+      "q": "洛克人 的 walking speed 是什么？",
+      "expect": "refuse",
+      "route_disposition": "ambiguous_series",
+      "reason_code": "ambiguous_series"
+    },
+    {
+      "id": "MM405",
+      "q": "洛克人2 的作曲家是谁？",
+      "expect": "refuse",
+      "route_disposition": "candidate"
+    },
+    {
+      "id": "MM406",
+      "q": "洛克人2 的 walking speed 和拳皇98 的必杀射门分别是什么？",
+      "expect": "refuse",
+      "route_disposition": "multi_domain_needs_split",
+      "reason_code": "multi_domain_needs_split"
+    },
+    {
+      "id": "MM407",
+      "q": "洛克人2 PAL-B 官方说明书能直接照用吗？",
+      "expect": "refuse",
+      "route_disposition": "version_not_collected",
+      "reason_code": "version_not_collected"
+    }
+  ]
+}

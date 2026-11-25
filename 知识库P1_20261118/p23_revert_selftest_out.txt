@@ -1,0 +1,50 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "F:\开源掌机教程\_工具脚本\taspipe\selftest.py", line 2644, in <module>
+    sys.exit(main())
+             ~~~~^^
+  File "F:\开源掌机教程\_工具脚本\taspipe\selftest.py", line 2592, in main
+    test_backends()
+    ~~~~~~~~~~~~~^^
+  File "F:\开源掌机教程\_工具脚本\taspipe\selftest.py", line 129, in test_backends
+    probe = B.BizHawkNESBackend(r"Z:\no_such_bizhawk").probe()
+  File "F:\开源掌机教程\_工具脚本\taspipe\backends.py", line 98, in probe
+    avail = exe.is_file()
+  File "C:\Python313\Lib\pathlib\_abc.py", line 482, in is_file
+    return S_ISREG(self.stat(follow_symlinks=follow_symlinks).st_mode)
+                   ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python313\Lib\pathlib\_local.py", line 515, in stat
+    return os.stat(self, follow_symlinks=follow_symlinks)
+           ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+OSError: [WinError 64] 指定的网络名不再可用。: 'Z:\\no_such_bizhawk\\EmuHawk.exe'
+taspipe selftest (M0-M6 + audio + M8 ledger + M7 search + sync + warp + M10 probes + T1 unwrap/mux + T2 fceux + auto/acquire/state_registry/statebuild/statejump/showcase/matrix + exporter mask + bundle + calibrate gates + base provenance)
+  [1] Profile 合法枚举通过
+  [2] 未知平台枚举被拒
+  [3] Profile 缺 profile_id 被拒
+  [4] Element 带 CheckSpec 通过
+  [5] CheckSpec 非法 plugin_id 被拒
+  [6] Element 负例缺 case_id 被拒
+  [7] State origin 枚举通过
+  [8] 未知 StateOrigin 被拒
+  [9] InputPlan clock_unit 通过
+  [10] 全 pass => pass
+  [11] 有 fail => fail
+  [12] 证据不足 => inconclusive 不是通过
+  [13] 空检查 => inconclusive
+  [14] 错误码枚举通过
+  [15] 未知错误码被拒
+  [16] norm_sha1 规范化大写去空白
+  [17] map_platform NES
+  [18] map_platform PSX->PS1
+  [19] map_platform Arcade+MAME
+  [20] map_platform Arcade+FBNeo
+  [21] map_platform 未建模平台返回 None+说明
+  [22] emulator_match 命中本地 BizHawk
+  [23] emulator_match 缺版本=>None+说明
+  [24] emulator_match 非 BizHawk 管线
+  [25] read_bk2_header 解析 .bk2
+  [26] read_bk2_header 解开 .zip 外壳
+  [27] read_bk2_header 非容器=>None
+  [28] resolve_movie 优先已解压 .bk2
+  [29] resolve_movie 缺失=>None+说明

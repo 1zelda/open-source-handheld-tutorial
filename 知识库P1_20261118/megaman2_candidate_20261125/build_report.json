@@ -1,0 +1,132 @@
+{
+  "status": "built_isolated",
+  "candidate_domain": "megaman2_candidate",
+  "candidate_dir": "F:\\开源掌机教程\\知识库P1_20261118\\megaman2_candidate_20261125",
+  "build": {
+    "status": "built",
+    "index": "F:\\开源掌机教程\\知识库P1_20261118\\megaman2_candidate_20261125\\index.json",
+    "chunks": 15,
+    "terms": 472,
+    "files_indexed": 10,
+    "files_excluded": 0,
+    "bytes": 34088,
+    "report": [
+      {
+        "path": "知识库P1_20261118/megaman2_candidate_20261125/evidence/mm2_tasvideos_coordinates_20261125.txt",
+        "indexed": true,
+        "chunks": 2,
+        "dropped_lines": 0,
+        "reused": false,
+        "revision": "megaman2_nes_tasvideos_rockman2",
+        "authority": "authoritative",
+        "citation_aliases": []
+      },
+      {
+        "path": "知识库P1_20261118/megaman2_candidate_20261125/evidence/mm2_tasvideos_jump_20261125.txt",
+        "indexed": true,
+        "chunks": 1,
+        "dropped_lines": 0,
+        "reused": false,
+        "revision": "megaman2_nes_tasvideos_rockman2",
+        "authority": "authoritative",
+        "citation_aliases": []
+      },
+      {
+        "path": "知识库P1_20261118/megaman2_candidate_20261125/evidence/mm2_tasvideos_climb_transform_20261125.txt",
+        "indexed": true,
+        "chunks": 1,
+        "dropped_lines": 0,
+        "reused": false,
+        "revision": "megaman2_nes_tasvideos_rockman2",
+        "authority": "authoritative",
+        "citation_aliases": []
+      },
+      {
+        "path": "知识库P1_20261118/megaman2_candidate_20261125/evidence/mm2_tasvideos_jump_horizontal_20261125.txt",
+        "indexed": true,
+        "chunks": 1,
+        "dropped_lines": 0,
+        "reused": false,
+        "revision": "megaman2_nes_tasvideos_rockman2",
+        "authority": "authoritative",
+        "citation_aliases": []
+      },
+      {
+        "path": "知识库P1_20261118/megaman2_candidate_20261125/evidence/mm2_tasvideos_walking_20261125.txt",
+        "indexed": true,
+        "chunks": 1,
+        "dropped_lines": 0,
+        "reused": false,
+        "revision": "megaman2_nes_tasvideos_rockman2",
+        "authority": "authoritative",
+        "citation_aliases": []
+      },
+      {
+        "path": "知识库P1_20261118/megaman2_candidate_20261125/evidence/mm2_tasvideos_acceleration_20261125.txt",
+        "indexed": true,
+        "chunks": 2,
+        "dropped_lines": 0,
+        "reused": false,
+        "revision": "megaman2_nes_tasvideos_rockman2",
+        "authority": "authoritative",
+        "citation_aliases": []
+      },
+      {
+        "path": "知识库P1_20261118/megaman2_candidate_20261125/evidence/mm2_tasvideos_object_table_20261125.txt",
+        "indexed": true,
+        "chunks": 1,
+        "dropped_lines": 0,
+        "reused": false,
+        "revision": "megaman2_nes_tasvideos_rockman2",
+        "authority": "authoritative",
+        "citation_aliases": []
+      },
+      {
+        "path": "知识库P1_20261118/megaman2_candidate_20261125/evidence/mm2_local_memory_dictionary_20261125.txt",
+        "indexed": true,
+        "chunks": 1,
+        "dropped_lines": 0,
+        "reused": false,
+        "revision": "megaman2_nes_memory_dictionary_unverified",
+        "authority": "reference_only",
+        "citation_aliases": []
+      },
+      {
+        "path": "知识库P1_20261118/megaman2_candidate_20261125/evidence/mm2_local_title_catalog_20261125.txt",
+        "indexed": true,
+        "chunks": 1,
+        "dropped_lines": 0,
+        "reused": false,
+        "revision": "megaman2_nes_title_catalog",
+        "authority": "reference_only",
+        "citation_aliases": []
+      },
+      {
+        "path": "知识库P1_20261118/megaman2_candidate_20261125/evidence/mm2_local_tas_publications_20261125.txt",
+        "indexed": true,
+        "chunks": 4,
+        "dropped_lines": 0,
+        "reused": false,
+        "revision": "megaman2_nes_tas_publications",
+        "authority": "reference_only",
+        "citation_aliases": []
+      }
+    ]
+  },
+  "index_chunks": 15,
+  "index_sha256": "a72988e7f8a773fbaeb5f519f46b0f9ddd97eee8a6cda703b01434e880c05576",
+  "entries": 10,
+  "sources": 4,
+  "revision_counts": {
+    "megaman2_nes_tasvideos_rockman2": 9,
+    "megaman2_nes_memory_dictionary_unverified": 1,
+    "megaman2_nes_title_catalog": 1,
+    "megaman2_nes_tas_publications": 4
+  },
+  "authority_counts": {
+    "authoritative": 9,
+    "reference_only": 6
+  },
+  "verified_read_authoritative_chunks": 9,
+  "provenance": "知识库P1_20261118/megaman2_candidate_20261125/provenance.json"
+}

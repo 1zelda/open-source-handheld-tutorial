@@ -1,0 +1,166 @@
+{
+  "status": "scan_verified_short_excerpts_only",
+  "source_id": "archive_mega_man_nes_us_manual",
+  "title": "MEGA MAN — Game Pak Instructions (US NES)",
+  "creator": "Capcom",
+  "archive_item": "https://archive.org/details/mega-man-nes-manual",
+  "archive_pdf": "https://archive.org/download/mega-man-nes-manual/Mega-Man-Game-Manual.pdf",
+  "archive_publication_date": "2024-02-20",
+  "original_pdf_sha1": "4e5dd2d36bdd2f592eded91f996e7a751862d24b",
+  "downloaded_pdf_sha256": "0fa36c585743a67e76839a67a4fee88894d64eecc455e6b1bf9c4ae7f7937445",
+  "downloaded_pdf_bytes": 1125792,
+  "pdf_pages": 10,
+  "printed_page_range": "1-19 (landscape folded spreads)",
+  "region_identity_evidence": "Cover: Licensed For Play Only with the Nintendo Entertainment System; Capcom USA address; Printed in Japan.",
+  "verification": "All 10 scan pages were rendered and visually read. Selected passages on printed pages 4-10, 14 and 15 were compared with the typed transcription; the scan is authoritative.",
+  "typed_transcription_role": "navigation_only_not_indexed",
+  "full_manual_stored_in_candidate": false,
+  "excerpts": [
+    {
+      "target": "知识库P1_20261118/megaman1_candidate_v2_manual_20261125/evidence/mm1_manual_controls_20261125.txt",
+      "target_sha256": "46d161a334bbcb351f83c4695a65f61b2765bd60f8b59753e44a074e515f663e",
+      "scan_pdf_pages": [
+        8
+      ],
+      "printed_manual_pages": [
+        8
+      ],
+      "scan_visually_read": true,
+      "fact_count": 3,
+      "quotes": [
+        "Button A: Press to make MEGA MAN jump.",
+        "Button B: Press to fire.",
+        "MEGA MAN moves left. MEGA MAN moves right. MEGA MAN leaps upward. MEGA MAN crouches down."
+      ]
+    },
+    {
+      "target": "知识库P1_20261118/megaman1_candidate_v2_manual_20261125/evidence/mm1_manual_stage_select_20261125.txt",
+      "target_sha256": "101ff2d82baeb86255a0353d0d624d4419d5bf1a5ed3e615518b0fbb0203a864",
+      "scan_pdf_pages": [
+        9
+      ],
+      "printed_manual_pages": [
+        9
+      ],
+      "scan_visually_read": true,
+      "fact_count": 3,
+      "quotes": [
+        "Press START Button. Six of MEGA MAN's seven empire enemies will be displayed on the TV/monitor screen.",
+        "Re-press START Button. To begin encounter with the enemy character selected by the player.",
+        "Every time a key character is defeated by MEGA MAN, the background of enemy's regime becomes black.",
+        "When all of Dr. Wily's re-programmed humanoids are eliminated, and all backgrounds appear, Dr. Wily appears automatically."
+      ]
+    },
+    {
+      "target": "知识库P1_20261118/megaman1_candidate_v2_manual_20261125/evidence/mm1_manual_energy_20261125.txt",
+      "target_sha256": "7fcd286225455bcdc77145cd64af566b9b3293b1aaa8d2c13dad9856005033b0",
+      "scan_pdf_pages": [
+        4
+      ],
+      "printed_manual_pages": [
+        4
+      ],
+      "scan_visually_read": true,
+      "fact_count": 2,
+      "quotes": [
+        "A thermometer-shaped MEGA MAN \"Energy Meter\" appearing upper left in game-playing scenes serves to monitor MEGA MAN's power levels.",
+        "If and when MEGA MAN is bodily struck or hit with enemy projectiles, degrees of energy are lost.",
+        "Conversely, the player's MEGA MAN power is boosted by winning energy capsules."
+      ]
+    },
+    {
+      "target": "知识库P1_20261118/megaman1_candidate_v2_manual_20261125/evidence/mm1_manual_bonus_items_20261125.txt",
+      "target_sha256": "88e014d33a1d6604df84c54bc381a163eedac413d9070bd8ef46975a51e07db7",
+      "scan_pdf_pages": [
+        15
+      ],
+      "printed_manual_pages": [
+        15
+      ],
+      "scan_visually_read": true,
+      "fact_count": 3,
+      "quotes": [
+        "1 UP. It adds one player.",
+        "The player's life energy increases. The player's weapon energy increases.",
+        "Yashichi. 100,000 points bonus."
+      ]
+    },
+    {
+      "target": "知识库P1_20261118/megaman1_candidate_v2_manual_20261125/evidence/mm1_manual_magnet_beam_20261125.txt",
+      "target_sha256": "c62fadabe18c688c1f13bd523e2d703876559ce5bd2026152547232df755a681",
+      "scan_pdf_pages": [
+        5,
+        15
+      ],
+      "printed_manual_pages": [
+        5,
+        15
+      ],
+      "scan_visually_read": true,
+      "fact_count": 2,
+      "quotes": [
+        "A Magnet Beam will appear at the middle of the Elecman stage. Snare the Magnet Beam to create steps for climbing upward.",
+        "Magnet Beam. The player can create a step to go up."
+      ]
+    },
+    {
+      "target": "知识库P1_20261118/megaman1_candidate_v2_manual_20261125/evidence/mm1_manual_robot_masters_20261125.txt",
+      "target_sha256": "5906ca4dd558d2d7182242c1c54acab8c873197597fe4a88d58a5bbab100c656",
+      "scan_pdf_pages": [
+        6,
+        7
+      ],
+      "printed_manual_pages": [
+        6,
+        7
+      ],
+      "scan_visually_read": true,
+      "fact_count": 6,
+      "quotes": [
+        "Cutman: Designed to function as a lumberjack ... capable of gnawing through giant forest timbers.",
+        "Iceman: Impervious to chilling sub-zero temperatures ... under extreme climatic conditions.",
+        "Gutsman: ... capable of lifting and transporting huge boulders.",
+        "Bombman: ... utilizes intensely explosive explosives to clear lands for Dr. Wright's construction projects.",
+        "Fireman: Melts and molds metals with flame-throwing torch ...",
+        "Elecman: ... planned for conducting electrical operations ... supervising nuclear power plants."
+      ]
+    },
+    {
+      "target": "知识库P1_20261118/megaman1_candidate_v2_manual_20261125/evidence/mm1_manual_progression_rewards_20261125.txt",
+      "target_sha256": "f11295517fc622dacdff20fd62d95056d31cc518c22356c7d919291b5a896f42",
+      "scan_pdf_pages": [
+        5,
+        9
+      ],
+      "printed_manual_pages": [
+        5,
+        9
+      ],
+      "scan_visually_read": true,
+      "fact_count": 3,
+      "quotes": [
+        "Each time MEGA MAN successfully out-duels each of his six foes, he acquires new firepower as MEGA MAN enters final stage to defeat evil Dr. Wily.",
+        "All MEGA MAN must use the newly-acquired armament wisely, for he can use them just once while engaged in battle with Dr. Wily.",
+        "Dr. Wily appears automatically. It is now time for the player to conquer Dr. Wily in his seventh and final stage."
+      ]
+    },
+    {
+      "target": "知识库P1_20261118/megaman1_candidate_v2_manual_20261125/evidence/mm1_manual_victory_scores_20261125.txt",
+      "target_sha256": "a8684e89feee81ed989dc1cf4e92dfb8b200111e7485fa4158f82973fb57853d",
+      "scan_pdf_pages": [
+        10,
+        14
+      ],
+      "printed_manual_pages": [
+        10,
+        14
+      ],
+      "scan_visually_read": true,
+      "fact_count": 2,
+      "quotes": [
+        "Earn From 50,000 To 100,000 Points Per Victory.",
+        "Dr. Wily. 200,000 Points. It appears on the final stage."
+      ]
+    }
+  ]
+}

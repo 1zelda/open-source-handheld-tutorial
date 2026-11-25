@@ -1,0 +1,60 @@
+{
+  "all_checks_ok": true,
+  "checks": {
+    "old_default_unchanged": true,
+    "old_default_changed_ids": [],
+    "base_isolation": true,
+    "hybrid_isolation": true,
+    "question_fingerprints_match_between_arms": true,
+    "probe_fingerprints_match_between_arms": true,
+    "x23_frozen_label_preserved": true,
+    "q18_source_claim_corrected": true,
+    "Q01_default_pass_strict_refused": true,
+    "Q02_default_pass_strict_refused": true,
+    "Q03_default_pass_strict_refused": true,
+    "Q04_default_pass_strict_refused": true,
+    "Q05_default_pass_strict_refused": true,
+    "Q18_default_pass_strict_refused": true,
+    "X03_default_pass_strict_refused": true,
+    "X04_default_pass_strict_refused": true,
+    "X23_default_pass_strict_refused": true,
+    "X21_authoritative_control_still_passes": true
+  },
+  "summary_v2": {
+    "base_default": {
+      "ok": 26,
+      "failed_ids": []
+    },
+    "base_strict": {
+      "ok": 21,
+      "failed_ids": [
+        "Q01",
+        "Q02",
+        "Q03",
+        "Q05",
+        "Q18"
+      ]
+    },
+    "hybrid_default": {
+      "ok": 22,
+      "failed_ids": [
+        "Q02",
+        "Q08",
+        "Q10",
+        "Q18"
+      ]
+    },
+    "hybrid_strict": {
+      "ok": 19,
+      "failed_ids": [
+        "Q01",
+        "Q02",
+        "Q03",
+        "Q05",
+        "Q08",
+        "Q10",
+        "Q18"
+      ]
+    }
+  }
+}

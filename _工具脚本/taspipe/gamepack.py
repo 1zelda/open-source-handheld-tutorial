@@ -48,8 +48,7 @@ def run_element(pack, el, base=None):
     pos_checks = _checks(element.success_checks, pos_frame) if pos_frame else []
     pos_verdict = _verdict(pos_checks) if pos_checks else Verdict.INCONCLUSIVE
 
-    checks = [CheckResult("positive_passed",
-                          Verdict.PASS if pos_verdict == Verdict.PASS else Verdict.FAIL,
+    checks = [CheckResult("positive_passed", pos_verdict,
                           evidence_refs=[str(pos_frame)],
                           reason=f"positive verdict={pos_verdict.value}")]
     neg_detail = []
@@ -57,13 +56,13 @@ def run_element(pack, el, base=None):
         nf = frames.get(nc.get("frame"))
         nchecks = _checks(element.success_checks, nf) if nf else []
         nv = _verdict(nchecks) if nchecks else Verdict.INCONCLUSIVE
-        # 负例必须"不被判通过"。若负例也 pass => 检测器分不清，FAIL。
-        rejected = nv != Verdict.PASS
+        rejected = nv == Verdict.FAIL
+        check_verdict = (Verdict.PASS if rejected else
+                         Verdict.FAIL if nv == Verdict.PASS else Verdict.INCONCLUSIVE)
         checks.append(CheckResult(
-            f"negative_{nc['case_id']}_rejected",
-            Verdict.PASS if rejected else Verdict.FAIL,
+            f"negative_{nc['case_id']}_rejected", check_verdict,
             evidence_refs=[str(nf)],
-            reason=f"negative verdict={nv.value}（须 != pass）"))
+            reason=f"negative verdict={nv.value}（须明确 fail 才算拒绝）"))
         neg_detail.append({"case_id": nc["case_id"], "frame": nf,
                            "verdict": nv.value, "rejected": rejected,
                            "checks": [to_dict(c) for c in nchecks]})
@@ -103,8 +102,9 @@ def main():
     for r in doc["results"]:
         print(f"  [{r['verification']['verdict']}] {r['element_id']} "
               f"positive={r['positive']['verdict']} "
-              f"negatives=" + ",".join(f"{n['case_id']}:{'拒' if n['rejected'] else '误放'}"
-                                       for n in r["negatives"]))
+              f"negatives=" + ",".join(
+                  f"{n['case_id']}:{'拒' if n['rejected'] else '误放' if n['verdict'] == 'pass' else '未验'}"
+                  for n in r["negatives"]))
     return 0 if doc["passed"] == doc["total"] else 2
 
 

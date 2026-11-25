@@ -1,0 +1,2928 @@
+{
+  "version": "ip-2026-11-19-v4",
+  "basis": "编辑假设，11-19用户点名校准（Kirby/Pikmin/塞尔达/异度之刃/龙珠/星刃/Sea of Stars/NS2越狱/shadPS4/Switch模拟器下架）。v4=projects(软件项目,可作系列身份)与platforms(平台/硬件,只作知名度不作系列身份)分离，防平台名吞并无关新闻，只收游戏/动漫IP与复古相关；拉丁别名按词边界匹配，中文按子串。增删须升版本号。",
+  "mass": [
+    [
+      "zelda",
+      "塞尔达",
+      "时之笛",
+      "ocarina of time",
+      "旷野之息",
+      "王国之泪",
+      "breath of the wild",
+      "tears of the kingdom"
+    ],
+    [
+      "mario",
+      "马力欧",
+      "马里奥"
+    ],
+    [
+      "kirby",
+      "卡比",
+      "星之卡比"
+    ],
+    [
+      "pikmin",
+      "皮克敏"
+    ],
+    [
+      "pokemon",
+      "宝可梦",
+      "精灵宝可梦",
+      "口袋妖怪"
+    ],
+    [
+      "xenoblade",
+      "异度之刃",
+      "异度神剑"
+    ],
+    [
+      "dragon ball",
+      "龙珠",
+      "七龙珠",
+      "budokai",
+      "sparking zero",
+      "电光炸裂",
+      "武道会"
+    ],
+    [
+      "stellar blade",
+      "星刃",
+      "剑星"
+    ],
+    [
+      "sea of stars",
+      "星之海"
+    ],
+    [
+      "minecraft",
+      "我的世界"
+    ],
+    [
+      "gta",
+      "侠盗猎车",
+      "grand theft auto"
+    ],
+    [
+      "final fantasy",
+      "最终幻想"
+    ],
+    [
+      "monster hunter",
+      "怪物猎人"
+    ],
+    [
+      "resident evil",
+      "生化危机"
+    ],
+    [
+      "elden ring",
+      "艾尔登法环",
+      "法环"
+    ],
+    [
+      "smash bros",
+      "大乱斗"
+    ],
+    [
+      "splatoon",
+      "斯普拉遁",
+      "喷射战士"
+    ],
+    [
+      "animal crossing",
+      "动物森友会",
+      "动森"
+    ],
+    [
+      "fire emblem",
+      "火焰纹章",
+      "风花雪月"
+    ],
+    [
+      "metroid",
+      "银河战士",
+      "密特罗德"
+    ],
+    [
+      "donkey kong",
+      "大金刚",
+      "咚奇刚"
+    ],
+    [
+      "sonic",
+      "索尼克",
+      "音速小子"
+    ],
+    [
+      "persona",
+      "女神异闻录"
+    ],
+    [
+      "dragon quest",
+      "勇者斗恶龙"
+    ],
+    [
+      "kingdom hearts",
+      "王国之心"
+    ],
+    [
+      "nier",
+      "尼尔"
+    ],
+    [
+      "tales of",
+      "传说系列",
+      "破晓传说",
+      "狂战传说",
+      "薄暮传说"
+    ],
+    [
+      "star ocean",
+      "星之海洋"
+    ],
+    [
+      "chrono trigger",
+      "时空之轮",
+      "超时空之钥"
+    ],
+    [
+      "mega man",
+      "洛克人"
+    ],
+    [
+      "castlevania",
+      "恶魔城"
+    ],
+    [
+      "contra",
+      "魂斗罗"
+    ],
+    [
+      "metal slug",
+      "合金弹头"
+    ],
+    [
+      "street fighter",
+      "街霸",
+      "街头霸王"
+    ],
+    [
+      "tekken",
+      "铁拳"
+    ],
+    [
+      "king of fighters",
+      "拳皇",
+      "kof98",
+      "kof97",
+      "kof2002",
+      "kof13",
+      "kof15"
+    ],
+    [
+      "fatal fury",
+      "饿狼传说",
+      "garou"
+    ],
+    [
+      "samurai shodown",
+      "samurai spirits",
+      "侍魂"
+    ],
+    [
+      "ninja gaiden",
+      "忍者龙剑传"
+    ],
+    [
+      "double dragon",
+      "双截龙"
+    ],
+    [
+      "final fight",
+      "快打旋风"
+    ],
+    [
+      "dark souls",
+      "黑暗之魂",
+      "黑魂"
+    ],
+    [
+      "bloodborne",
+      "血源诅咒"
+    ],
+    [
+      "sekiro",
+      "只狼"
+    ],
+    [
+      "skyrim",
+      "上古卷轴",
+      "老滚"
+    ],
+    [
+      "fallout",
+      "辐射"
+    ],
+    [
+      "witcher",
+      "巫师",
+      "猎魔人"
+    ],
+    [
+      "cyberpunk",
+      "赛博朋克",
+      "2077"
+    ],
+    [
+      "baldurs gate",
+      "博德之门"
+    ],
+    [
+      "diablo",
+      "暗黑破坏神"
+    ],
+    [
+      "starcraft",
+      "星际争霸"
+    ],
+    [
+      "warcraft",
+      "魔兽争霸",
+      "魔兽世界"
+    ],
+    [
+      "overwatch",
+      "守望先锋"
+    ],
+    [
+      "league of legends",
+      "英雄联盟"
+    ],
+    [
+      "dota2",
+      "dota 2",
+      "刀塔"
+    ],
+    [
+      "valorant",
+      "无畏契约"
+    ],
+    [
+      "counter-strike",
+      "反恐精英",
+      "cs2"
+    ],
+    [
+      "apex legends",
+      "apex英雄"
+    ],
+    [
+      "fortnite",
+      "堡垒之夜"
+    ],
+    [
+      "pubg",
+      "绝地求生"
+    ],
+    [
+      "call of duty",
+      "使命召唤"
+    ],
+    [
+      "battlefield",
+      "战地风云"
+    ],
+    [
+      "halo",
+      "光环",
+      "最后一战"
+    ],
+    [
+      "doom",
+      "毁灭战士"
+    ],
+    [
+      "quake",
+      "雷神之锤"
+    ],
+    [
+      "half-life",
+      "半条命",
+      "半衰期"
+    ],
+    [
+      "portal",
+      "传送门"
+    ],
+    [
+      "mass effect",
+      "质量效应"
+    ],
+    [
+      "dragon age",
+      "龙腾世纪"
+    ],
+    [
+      "assassins creed",
+      "刺客信条"
+    ],
+    [
+      "far cry",
+      "孤岛惊魂"
+    ],
+    [
+      "rainbow six",
+      "彩虹六号"
+    ],
+    [
+      "splinter cell",
+      "细胞分裂"
+    ],
+    [
+      "prince of persia",
+      "波斯王子"
+    ],
+    [
+      "rayman",
+      "雷曼"
+    ],
+    [
+      "age of empires",
+      "帝国时代"
+    ],
+    [
+      "civilization",
+      "文明帝国"
+    ],
+    [
+      "xcom",
+      "幽浮"
+    ],
+    [
+      "total war",
+      "全面战争"
+    ],
+    [
+      "warhammer",
+      "战锤"
+    ],
+    [
+      "rimworld",
+      "环世界"
+    ],
+    [
+      "factorio",
+      "异星工厂"
+    ],
+    [
+      "terraria",
+      "泰拉瑞亚"
+    ],
+    [
+      "stardew valley",
+      "星露谷"
+    ],
+    [
+      "hollow knight",
+      "空洞骑士",
+      "丝之歌",
+      "silksong"
+    ],
+    [
+      "celeste",
+      "蔚蓝"
+    ],
+    [
+      "dead cells",
+      "死亡细胞"
+    ],
+    [
+      "hades",
+      "哈迪斯",
+      "黑帝斯"
+    ],
+    [
+      "cuphead",
+      "茶杯头"
+    ],
+    [
+      "shovel knight",
+      "铲子骑士"
+    ],
+    [
+      "blasphemous",
+      "渎神"
+    ],
+    [
+      "ori and",
+      "奥日",
+      "精灵与森林",
+      "精灵与萤火"
+    ],
+    [
+      "bloodstained",
+      "血污",
+      "夜之仪式"
+    ],
+    [
+      "octopath",
+      "歧路旅人",
+      "八方旅人"
+    ],
+    [
+      "triangle strategy",
+      "三角战略"
+    ],
+    [
+      "live a live",
+      "时空勇士",
+      "狂飙骑士"
+    ],
+    [
+      "bravely default",
+      "勇气默示录"
+    ],
+    [
+      "shin megami tensei",
+      "真女神转生"
+    ],
+    [
+      "advance wars",
+      "高级战争"
+    ],
+    [
+      "wario",
+      "瓦力欧",
+      "瓦里奥"
+    ],
+    [
+      "yoshi",
+      "耀西"
+    ],
+    [
+      "luigi",
+      "路易吉",
+      "路易基"
+    ],
+    [
+      "star fox",
+      "星际火狐"
+    ],
+    [
+      "f-zero",
+      "零式赛车"
+    ],
+    [
+      "banjo-kazooie",
+      "班卓熊"
+    ],
+    [
+      "goldeneye",
+      "黄金眼"
+    ],
+    [
+      "perfect dark",
+      "完美黑暗"
+    ],
+    [
+      "genshin",
+      "原神"
+    ],
+    [
+      "honkai",
+      "崩坏",
+      "星穹铁道"
+    ],
+    [
+      "zenless",
+      "绝区零"
+    ],
+    [
+      "wuthering",
+      "鸣潮"
+    ],
+    [
+      "arknights",
+      "明日方舟"
+    ],
+    [
+      "blue archive",
+      "蔚蓝档案",
+      "碧蓝档案"
+    ],
+    [
+      "azur lane",
+      "碧蓝航线"
+    ],
+    [
+      "girls frontline",
+      "少女前线"
+    ],
+    [
+      "nikke",
+      "胜利女神"
+    ],
+    [
+      "punishing",
+      "战双帕弥什"
+    ],
+    [
+      "reverse 1999",
+      "重返未来1999"
+    ],
+    [
+      "fate grand order",
+      "fgo",
+      "命运冠位指定"
+    ],
+    [
+      "uma musume",
+      "赛马娘"
+    ],
+    [
+      "idolmaster",
+      "偶像大师"
+    ],
+    [
+      "lovelive",
+      "love live"
+    ],
+    [
+      "bang dream",
+      "邦多利",
+      "少女乐团派对"
+    ],
+    [
+      "project sekai",
+      "世界计划",
+      "pjsk"
+    ],
+    [
+      "hatsune miku",
+      "初音未来",
+      "初音",
+      "vocaloid"
+    ],
+    [
+      "touhou",
+      "东方project",
+      "东方红魔乡",
+      "东方妖妖梦"
+    ],
+    [
+      "danganronpa",
+      "弹丸论破",
+      "枪弹辩驳"
+    ],
+    [
+      "ace attorney",
+      "逆转裁判"
+    ],
+    [
+      "zero escape",
+      "极限脱出",
+      "九人游戏"
+    ],
+    [
+      "ghost trick",
+      "幽灵诡计"
+    ],
+    [
+      "professor layton",
+      "雷顿教授"
+    ],
+    [
+      "ni no kuni",
+      "二之国"
+    ],
+    [
+      "tetris",
+      "俄罗斯方块"
+    ],
+    [
+      "puyo puyo",
+      "魔法气泡",
+      "噗哟噗哟"
+    ],
+    [
+      "puzzle bobble",
+      "泡泡龙",
+      "bust-a-move"
+    ],
+    [
+      "bomberman",
+      "炸弹人"
+    ],
+    [
+      "adventure island",
+      "冒险岛",
+      "高桥名人"
+    ],
+    [
+      "strider",
+      "出击飞龙"
+    ],
+    [
+      "bionic commando",
+      "希魔复活",
+      "生化尖兵"
+    ],
+    [
+      "battle city",
+      "坦克大战"
+    ],
+    [
+      "jackal",
+      "赤色要塞"
+    ],
+    [
+      "green beret",
+      "绿色兵团"
+    ],
+    [
+      "salamander",
+      "沙罗曼蛇",
+      "life force"
+    ],
+    [
+      "willow",
+      "威洛",
+      "风云际会"
+    ],
+    [
+      "genpei touma den",
+      "源平讨魔传"
+    ],
+    [
+      "valkyrie no densetsu",
+      "女武神传说",
+      "瓦尔基里传说"
+    ],
+    [
+      "dragon spirit",
+      "龙魂"
+    ],
+    [
+      "dragon saber",
+      "龙刃"
+    ],
+    [
+      "youkai dochuuki",
+      "妖怪道中记",
+      "shadow land"
+    ],
+    [
+      "dr mario",
+      "马里奥医生"
+    ],
+    [
+      "wrecking crew",
+      "拆屋工"
+    ],
+    [
+      "ice climber",
+      "敲冰块",
+      "爱斯基摩人"
+    ],
+    [
+      "balloon fight",
+      "气球大战"
+    ],
+    [
+      "excitebike",
+      "越野机车",
+      "疯狂摩托车"
+    ],
+    [
+      "clu clu land",
+      "克鲁克鲁大陆",
+      "泡泡精灵"
+    ],
+    [
+      "karnov",
+      "卡诺夫",
+      "暴力刑警"
+    ],
+    [
+      "fighters history",
+      "格斗历史"
+    ],
+    [
+      "world heroes",
+      "世界英雄"
+    ],
+    [
+      "savage reign",
+      "风云默示录"
+    ],
+    [
+      "art of fighting",
+      "龙虎之拳"
+    ],
+    [
+      "darkstalkers",
+      "恶魔战士",
+      "吸血鬼猎人"
+    ],
+    [
+      "marvel vs capcom",
+      "漫画英雄对卡普空"
+    ],
+    [
+      "x-men",
+      "x战警",
+      "变种特攻"
+    ],
+    [
+      "jojo",
+      "乔乔的奇妙冒险",
+      "jojo的奇妙冒险"
+    ],
+    [
+      "dungeons dragons",
+      "龙与地下城",
+      "暗黑秘影",
+      "毁灭之塔"
+    ],
+    [
+      "alien vs predator",
+      "异形对铁血战士"
+    ],
+    [
+      "gauntlet",
+      "圣铠"
+    ],
+    [
+      "knights of the round",
+      "圆桌骑士",
+      "圆桌武士"
+    ],
+    [
+      "captain commando",
+      "名将",
+      "上尉密令"
+    ],
+    [
+      "cadillacs and dinosaurs",
+      "恐龙快打",
+      "恐龙新世纪"
+    ],
+    [
+      "the punisher",
+      "惩罚者",
+      "制裁者"
+    ],
+    [
+      "knights of valour",
+      "三国战纪",
+      "三国战记"
+    ],
+    [
+      "oriental legend",
+      "西游释厄传"
+    ],
+    [
+      "warriors of fate",
+      "三国志",
+      "吞食天地",
+      "tenchi wo kurau"
+    ],
+    [
+      "sengoku",
+      "战国传承"
+    ],
+    [
+      "tengai",
+      "战国之刃",
+      "魔境传说"
+    ],
+    [
+      "gunforce",
+      "钢之部队"
+    ],
+    [
+      "ninja spirit",
+      "忍者精神",
+      "龙行忍者"
+    ],
+    [
+      "shadow dancer",
+      "影子舞者"
+    ],
+    [
+      "shinobi",
+      "超级忍"
+    ],
+    [
+      "alex kidd",
+      "阿历克斯小子",
+      "天空魔城"
+    ],
+    [
+      "wonder boy",
+      "神奇小子",
+      "冒险世界"
+    ],
+    [
+      "phantasy star",
+      "梦幻之星"
+    ],
+    [
+      "shining force",
+      "光明力量",
+      "光明与黑暗"
+    ],
+    [
+      "langrisser",
+      "梦幻模拟战",
+      "兰古瑞萨"
+    ],
+    [
+      "metal max",
+      "重装机兵",
+      "机甲战士"
+    ],
+    [
+      "front mission",
+      "雷霆任务",
+      "前线任务"
+    ],
+    [
+      "super robot wars",
+      "超级机器人大战",
+      "机战"
+    ],
+    [
+      "gundam",
+      "高达",
+      "钢弹",
+      "sd高达"
+    ],
+    [
+      "macross",
+      "超时空要塞",
+      "太空堡垒"
+    ],
+    [
+      "evangelion",
+      "新世纪福音战士",
+      "eva"
+    ],
+    [
+      "sailor moon",
+      "美少女战士"
+    ],
+    [
+      "naruto",
+      "火影忍者"
+    ],
+    [
+      "one piece",
+      "海贼王",
+      "航海王"
+    ],
+    [
+      "bleach",
+      "死神",
+      "境·界"
+    ],
+    [
+      "digimon",
+      "数码宝贝",
+      "数码暴龙"
+    ],
+    [
+      "yu-gi-oh",
+      "游戏王"
+    ],
+    [
+      "hearthstone",
+      "炉石传说"
+    ],
+    [
+      "clash royale",
+      "皇室战争"
+    ],
+    [
+      "clash of clans",
+      "部落冲突"
+    ],
+    [
+      "brawl stars",
+      "荒野乱斗"
+    ],
+    [
+      "mobile legends",
+      "无尽对决"
+    ],
+    [
+      "honor of kings",
+      "王者荣耀"
+    ],
+    [
+      "peacekeeper elite",
+      "和平精英"
+    ],
+    [
+      "crossfire",
+      "穿越火线"
+    ],
+    [
+      "dungeon fighter",
+      "地下城与勇士",
+      "dnf"
+    ],
+    [
+      "maplestory",
+      "冒险岛online",
+      "新枫之谷"
+    ],
+    [
+      "ragnarok",
+      "仙境传说"
+    ],
+    [
+      "lineage",
+      "天堂"
+    ],
+    [
+      "legend of mir",
+      "热血传奇"
+    ],
+    [
+      "fantasy westward journey",
+      "梦幻西游"
+    ],
+    [
+      "jianxia",
+      "剑侠情缘",
+      "剑网3"
+    ],
+    [
+      "tianlong",
+      "天龙八部"
+    ],
+    [
+      "justice online",
+      "逆水寒"
+    ],
+    [
+      "moonlight blade",
+      "天涯明月刀"
+    ],
+    [
+      "blade soul",
+      "剑灵"
+    ],
+    [
+      "black desert",
+      "黑色沙漠"
+    ],
+    [
+      "lost ark",
+      "命运方舟",
+      "失落的方舟"
+    ],
+    [
+      "blue protocol",
+      "蓝色协议"
+    ],
+    [
+      "tower of fantasy",
+      "幻塔"
+    ],
+    [
+      "aether gazer",
+      "深空之眼"
+    ],
+    [
+      "path to nowhere",
+      "无期迷途"
+    ],
+    [
+      "limbus company",
+      "边狱公司",
+      "边狱巴士"
+    ],
+    [
+      "snowbreak",
+      "尘白禁区"
+    ],
+    [
+      "strinova",
+      "卡拉彼丘"
+    ],
+    [
+      "delta force",
+      "三角洲行动"
+    ],
+    [
+      "arena breakout",
+      "暗区突围"
+    ],
+    [
+      "naraka",
+      "永劫无间"
+    ],
+    [
+      "black myth",
+      "黑神话",
+      "悟空"
+    ],
+    [
+      "wuchang",
+      "明末",
+      "渊虚之羽"
+    ],
+    [
+      "where winds meet",
+      "燕云十六声"
+    ],
+    [
+      "sword and fairy",
+      "仙剑奇侠传",
+      "仙剑"
+    ],
+    [
+      "xuanyuan sword",
+      "轩辕剑"
+    ],
+    [
+      "heroes of might and magic",
+      "魔法门",
+      "英雄无敌"
+    ],
+    [
+      "red alert",
+      "红色警戒",
+      "红警"
+    ],
+    [
+      "command conquer",
+      "命令与征服"
+    ],
+    [
+      "star wars",
+      "星球大战",
+      "星战",
+      "绝地",
+      "曼达洛人"
+    ],
+    [
+      "star trek",
+      "星际迷航"
+    ],
+    [
+      "lord of the rings",
+      "指环王",
+      "魔戒"
+    ],
+    [
+      "harry potter",
+      "哈利波特",
+      "霍格沃茨"
+    ],
+    [
+      "spider-man",
+      "蜘蛛侠",
+      "漫威蜘蛛侠"
+    ],
+    [
+      "batman",
+      "蝙蝠侠",
+      "阿卡姆"
+    ],
+    [
+      "god of war",
+      "战神",
+      "奎托斯"
+    ],
+    [
+      "the last of us",
+      "最后生还者",
+      "美国末日"
+    ],
+    [
+      "uncharted",
+      "神秘海域",
+      "秘境探险"
+    ],
+    [
+      "horizon zero dawn",
+      "horizon forbidden west",
+      "地平线",
+      "零之曙光",
+      "西之绝境"
+    ],
+    [
+      "ghost of tsushima",
+      "对马岛之魂",
+      "对马战鬼",
+      "羊蹄山之魂"
+    ],
+    [
+      "death stranding",
+      "死亡搁浅"
+    ],
+    [
+      "metal gear",
+      "合金装备",
+      "潜龙谍影"
+    ],
+    [
+      "silent hill",
+      "寂静岭"
+    ],
+    [
+      "fatal frame",
+      "零系列",
+      "零刺青之声",
+      "零濡鸦巫女"
+    ],
+    [
+      "siren",
+      "死魂曲",
+      "尸人"
+    ],
+    [
+      "clock tower",
+      "钟楼"
+    ],
+    [
+      "alone in the dark",
+      "鬼屋魔影"
+    ],
+    [
+      "outlast",
+      "逃生",
+      "绝命精神病院"
+    ],
+    [
+      "amnesia",
+      "失忆症",
+      "黑暗后裔"
+    ],
+    [
+      "phasmophobia",
+      "恐鬼症"
+    ],
+    [
+      "lethal company",
+      "致命公司"
+    ],
+    [
+      "content warning",
+      "内容警告"
+    ],
+    [
+      "repo",
+      "r.e.p.o."
+    ],
+    [
+      "among us",
+      "太空狼人杀",
+      "我们之中"
+    ],
+    [
+      "fall guys",
+      "糖豆人"
+    ],
+    [
+      "gang beasts",
+      "基佬大乱斗",
+      "野兽帮派"
+    ],
+    [
+      "human fall flat",
+      "人类一败涂地",
+      "面条人"
+    ],
+    [
+      "getting over it",
+      "掘地求升",
+      "罐装天才"
+    ],
+    [
+      "chained together",
+      "链在一起"
+    ],
+    [
+      "it takes two",
+      "双人成行"
+    ],
+    [
+      "a way out",
+      "逃出生天"
+    ],
+    [
+      "split fiction",
+      "双影奇境"
+    ],
+    [
+      "overcooked",
+      "胡闹厨房",
+      "煮糊了",
+      "分手厨房"
+    ],
+    [
+      "moving out",
+      "胡闹搬家",
+      "分手搬家"
+    ],
+    [
+      "unravel",
+      "毛线小精灵"
+    ],
+    [
+      "little nightmares",
+      "小小梦魇",
+      "噩梦小儿"
+    ],
+    [
+      "limbo",
+      "地狱边境"
+    ],
+    [
+      "fez",
+      "菲斯"
+    ],
+    [
+      "braid",
+      "时空幻境"
+    ],
+    [
+      "super meat boy",
+      "超级肉食男孩",
+      "肉肉哥"
+    ],
+    [
+      "the binding of isaac",
+      "以撒的结合",
+      "以撒"
+    ],
+    [
+      "enter the gungeon",
+      "挺进地牢",
+      "枪牢"
+    ],
+    [
+      "nuclear throne",
+      "核王座"
+    ],
+    [
+      "risk of rain",
+      "雨中冒险"
+    ],
+    [
+      "wizard of legend",
+      "传说法师"
+    ],
+    [
+      "children of morta",
+      "莫塔之子",
+      "莫塔守山人"
+    ],
+    [
+      "moonlighter",
+      "夜勤人",
+      "月光商人"
+    ],
+    [
+      "graveyard keeper",
+      "守墓人",
+      "墓地管理员"
+    ],
+    [
+      "my time at portia",
+      "波西亚时光"
+    ],
+    [
+      "my time at sandrock",
+      "沙石镇时光"
+    ],
+    [
+      "coral island",
+      "珊瑚岛"
+    ],
+    [
+      "sun haven",
+      "太阳港"
+    ],
+    [
+      "roots of pacha",
+      "帕查的根源",
+      "帕夏时代"
+    ],
+    [
+      "dinkum",
+      "澳洲梦想镇",
+      "金垦小镇"
+    ],
+    [
+      "palia",
+      "帕利亚"
+    ],
+    [
+      "dreamlight valley",
+      "迪士尼梦幻星谷"
+    ],
+    [
+      "spiritfarer",
+      "灵魂摆渡者",
+      "逝者如斯"
+    ],
+    [
+      "a short hike",
+      "短途旅行",
+      "小小徒步"
+    ],
+    [
+      "lil gator game",
+      "小鳄鱼游戏"
+    ],
+    [
+      "frog detective",
+      "青蛙侦探"
+    ],
+    [
+      "chicory",
+      "菊苣",
+      "上色精灵"
+    ],
+    [
+      "wandersong",
+      "流浪之歌",
+      "吟游诗人"
+    ],
+    [
+      "tunic",
+      "丘尼克"
+    ],
+    [
+      "deaths door",
+      "死亡之门",
+      "死神之门"
+    ],
+    [
+      "stray",
+      "流浪猫"
+    ],
+    [
+      "journey",
+      "风之旅人"
+    ],
+    [
+      "abzu",
+      "智慧之海"
+    ],
+    [
+      "the pathless",
+      "无路之旅",
+      "无尽路径"
+    ],
+    [
+      "sable",
+      "沙贝",
+      "沙漠旅人"
+    ],
+    [
+      "eastward",
+      "风来之国"
+    ],
+    [
+      "unsighted",
+      "无形者",
+      "盲剑士"
+    ],
+    [
+      "ender lilies",
+      "终焉之百合"
+    ],
+    [
+      "ender magnolia",
+      "终焉之木兰"
+    ],
+    [
+      "momodora",
+      "桃与多拉"
+    ],
+    [
+      "minoria",
+      "米诺利亚"
+    ],
+    [
+      "iconoclasts",
+      "反叛者",
+      "偶像破坏者"
+    ],
+    [
+      "crosscode",
+      "远星物语",
+      "交叉代码"
+    ],
+    [
+      "chained echoes",
+      "锁链回声"
+    ],
+    [
+      "cris tales",
+      "水晶传说"
+    ],
+    [
+      "astlibra",
+      "阿斯特利布拉"
+    ],
+    [
+      "sand land",
+      "沙漠大冒险",
+      "sandland"
+    ],
+    [
+      "last blade",
+      "月华剑士",
+      "幕末浪漫"
+    ],
+    [
+      "melty blood",
+      "月姬格斗"
+    ],
+    [
+      "under night in-birth",
+      "夜下降生"
+    ],
+    [
+      "blazblue",
+      "苍翼默示录"
+    ],
+    [
+      "guilty gear",
+      "罪恶装备",
+      "圣骑士之战"
+    ],
+    [
+      "skullgirls",
+      "骷髅女孩"
+    ],
+    [
+      "power rangers",
+      "恐龙战队",
+      "超凡战队"
+    ],
+    [
+      "tmnt",
+      "忍者神龟",
+      "teenage mutant ninja"
+    ],
+    [
+      "transformers",
+      "变形金刚"
+    ],
+    [
+      "ultraman",
+      "奥特曼",
+      "超人力霸王"
+    ],
+    [
+      "kamen rider",
+      "假面骑士",
+      "蒙面超人"
+    ],
+    [
+      "godzilla",
+      "哥斯拉",
+      "酷斯拉"
+    ],
+    [
+      "king kong",
+      "金刚"
+    ],
+    [
+      "pacific rim",
+      "环太平洋"
+    ],
+    [
+      "avatar",
+      "阿凡达",
+      "降世神通",
+      "last airbender"
+    ],
+    [
+      "rick and morty",
+      "瑞克和莫蒂"
+    ],
+    [
+      "south park",
+      "南方公园",
+      "南方四贱客"
+    ],
+    [
+      "the simpsons",
+      "辛普森一家"
+    ],
+    [
+      "family guy",
+      "恶搞之家",
+      "居家男人"
+    ],
+    [
+      "futurama",
+      "飞出个未来"
+    ],
+    [
+      "bojack horseman",
+      "马男波杰克"
+    ],
+    [
+      "lego",
+      "乐高"
+    ],
+    [
+      "roblox",
+      "罗布乐思"
+    ],
+    [
+      "vrchat",
+      "vr聊天"
+    ],
+    [
+      "gorilla tag",
+      "猩猩抓人"
+    ],
+    [
+      "beat saber",
+      "节奏光剑"
+    ],
+    [
+      "pistol whip",
+      "手枪鞭"
+    ],
+    [
+      "superhot",
+      "燥热"
+    ],
+    [
+      "alyx",
+      "半衰期爱莉克斯"
+    ],
+    [
+      "boneworks",
+      "骨架工坊"
+    ],
+    [
+      "bonelab",
+      "骨架实验室"
+    ],
+    [
+      "blade sorcery",
+      "剑与魔法"
+    ],
+    [
+      "pavlov",
+      "巴甫洛夫"
+    ],
+    [
+      "contractors",
+      "承包商"
+    ],
+    [
+      "into the radius",
+      "进入半径"
+    ],
+    [
+      "demeo",
+      "德梅奥"
+    ],
+    [
+      "asgards wrath",
+      "阿斯加德之怒"
+    ],
+    [
+      "lone echo",
+      "孤独回声"
+    ],
+    [
+      "budget cuts",
+      "预算削减"
+    ],
+    [
+      "trover saves the universe",
+      "特罗弗拯救宇宙"
+    ],
+    [
+      "squadrons",
+      "星球大战中队"
+    ],
+    [
+      "vader immortal",
+      "维德不朽"
+    ],
+    [
+      "fallen order",
+      "绝地陨落的武士团"
+    ],
+    [
+      "jedi survivor",
+      "绝地幸存者"
+    ],
+    [
+      "star wars outlaws",
+      "星球大战亡命之徒"
+    ],
+    [
+      "battlefront",
+      "星际大战前线"
+    ],
+    [
+      "republic commando",
+      "共和国突击队"
+    ],
+    [
+      "kotor",
+      "旧共和国武士",
+      "knights of the old republic"
+    ],
+    [
+      "swtor",
+      "旧共和国"
+    ],
+    [
+      "jedi knight",
+      "绝地武士"
+    ],
+    [
+      "dark forces",
+      "黑暗力量"
+    ],
+    [
+      "x-wing",
+      "x翼战机"
+    ],
+    [
+      "tie fighter",
+      "tie战机"
+    ],
+    [
+      "rogue squadron",
+      "侠盗中队"
+    ],
+    [
+      "empire at war",
+      "帝国战争"
+    ],
+    [
+      "saint seiya",
+      "圣斗士星矢",
+      "圣斗士"
+    ],
+    [
+      "fist of the north star",
+      "北斗神拳"
+    ],
+    [
+      "city hunter",
+      "城市猎人",
+      "寒羽良"
+    ],
+    [
+      "cats eye",
+      "猫眼三姐妹"
+    ],
+    [
+      "ranma",
+      "乱马"
+    ],
+    [
+      "urusei yatsura",
+      "福星小子"
+    ],
+    [
+      "maison ikkoku",
+      "相聚一刻",
+      "一刻公寓"
+    ],
+    [
+      "slam dunk",
+      "灌篮高手",
+      "篮球飞人"
+    ],
+    [
+      "captain tsubasa",
+      "足球小将",
+      "天使之翼"
+    ],
+    [
+      "blue lock",
+      "蓝色监狱",
+      "蓝锁"
+    ],
+    [
+      "kuroko basketball",
+      "黑子的篮球",
+      "影子篮球员"
+    ],
+    [
+      "haikyu",
+      "排球少年"
+    ],
+    [
+      "prince of tennis",
+      "网球王子"
+    ],
+    [
+      "one outs",
+      "超智游戏"
+    ],
+    [
+      "diamond no ace",
+      "钻石王牌",
+      "ace of diamond"
+    ],
+    [
+      "hajime no ippo",
+      "第一神拳"
+    ],
+    [
+      "ashita no joe",
+      "明日之丈",
+      "小拳王"
+    ],
+    [
+      "doraemon",
+      "哆啦a梦",
+      "机器猫",
+      "小叮当"
+    ],
+    [
+      "crayon shin-chan",
+      "蜡笔小新"
+    ],
+    [
+      "chibi maruko-chan",
+      "樱桃小丸子"
+    ],
+    [
+      "anpanman",
+      "面包超人"
+    ],
+    [
+      "kochikame",
+      "乌龙派出所",
+      "两津勘吉"
+    ],
+    [
+      "dr slump",
+      "阿拉蕾",
+      "怪博士与机器娃娃",
+      "iq博士"
+    ],
+    [
+      "lone wolf and cub",
+      "带子雄狼",
+      "斩虎屠龙剑"
+    ],
+    [
+      "zatoichi",
+      "座头市",
+      "盲侠"
+    ],
+    [
+      "lady snowblood",
+      "修罗雪姬"
+    ],
+    [
+      "seven samurai",
+      "七武士"
+    ],
+    [
+      "yojimbo",
+      "用心棒",
+      "大镖客"
+    ],
+    [
+      "sanjuro",
+      "椿三十郎"
+    ],
+    [
+      "hidden fortress",
+      "战国英豪"
+    ],
+    [
+      "throne of blood",
+      "蜘蛛巢城"
+    ],
+    [
+      "rashomon",
+      "罗生门"
+    ],
+    [
+      "kagemusha",
+      "影武者"
+    ],
+    [
+      "red beard",
+      "红胡子"
+    ],
+    [
+      "high and low",
+      "天国与地狱"
+    ],
+    [
+      "stray dog",
+      "野良犬"
+    ],
+    [
+      "drunken angel",
+      "泥醉天使"
+    ],
+    [
+      "ikiru",
+      "生之欲"
+    ],
+    [
+      "miyamoto musashi",
+      "宫本武藏"
+    ],
+    [
+      "yagyu",
+      "柳生十兵卫"
+    ],
+    [
+      "shogun",
+      "幕府将军"
+    ],
+    [
+      "blue eye samurai",
+      "蓝眼武士"
+    ],
+    [
+      "vinland saga",
+      "冰海战记",
+      "海盗战记"
+    ],
+    [
+      "berserk",
+      "剑风传奇",
+      "烙印战士"
+    ],
+    [
+      "vagabond",
+      "浪客行"
+    ],
+    [
+      "golden kamuy",
+      "黄金神威"
+    ],
+    [
+      "dungeon meshi",
+      "迷宫饭",
+      "delicious in dungeon"
+    ],
+    [
+      "frieren",
+      "葬送的芙莉莲"
+    ],
+    [
+      "spy x family",
+      "间谍过家家"
+    ],
+    [
+      "chainsaw man",
+      "电锯人",
+      "链锯人"
+    ],
+    [
+      "jujutsu kaisen",
+      "咒术回战"
+    ],
+    [
+      "demon slayer",
+      "鬼灭之刃"
+    ],
+    [
+      "my hero academia",
+      "我的英雄学院"
+    ],
+    [
+      "attack on titan",
+      "进击的巨人"
+    ],
+    [
+      "tokyo ghoul",
+      "东京喰种",
+      "东京食尸鬼"
+    ],
+    [
+      "parasyte",
+      "寄生兽"
+    ],
+    [
+      "death note",
+      "死亡笔记"
+    ],
+    [
+      "fullmetal alchemist",
+      "钢之炼金术师",
+      "钢炼"
+    ],
+    [
+      "hunter x hunter",
+      "全职猎人"
+    ],
+    [
+      "yu yu hakusho",
+      "幽游白书"
+    ],
+    [
+      "slayers",
+      "秀逗魔导士",
+      "魔剑美神"
+    ],
+    [
+      "record of lodoss",
+      "罗德斯岛战记"
+    ],
+    [
+      "legend of the galactic heroes",
+      "银河英雄传说",
+      "银英传"
+    ],
+    [
+      "gintama",
+      "银魂"
+    ],
+    [
+      "sakamoto days",
+      "坂本日常",
+      "坂本days"
+    ],
+    [
+      "dandadan",
+      "胆大党",
+      "当哒当"
+    ],
+    [
+      "kaiju no 8",
+      "怪兽8号"
+    ],
+    [
+      "solo leveling",
+      "我独自升级"
+    ],
+    [
+      "omniscient reader",
+      "全知读者视角"
+    ],
+    [
+      "tower of god",
+      "神之塔"
+    ],
+    [
+      "the god of high school",
+      "高校之神"
+    ]
+  ],
+  "niche": [
+    [
+      "热血系列",
+      "热血高校",
+      "热血物语",
+      "热血足球",
+      "热血篮球",
+      "热血冰球",
+      "热血新纪录",
+      "热血进行曲",
+      "热血时代剧",
+      "热血躲避球",
+      "热血曲棍球",
+      "热血少女",
+      "热血硬派",
+      "热血格斗传说",
+      "国夫君",
+      "kunio-kun",
+      "nekketsu",
+      "river city"
+    ],
+    [
+      "downtown nekketsu",
+      "kunio zero",
+      "river city ransom",
+      "river city girls",
+      "river city melee"
+    ],
+    [
+      "combatribes",
+      "部落格斗"
+    ],
+    [
+      "double dragon gaiden",
+      "双截龙外传",
+      "rise of the dragons",
+      "double dragon neon",
+      "return of double dragon"
+    ],
+    [
+      "battletoads",
+      "忍者蛙"
+    ],
+    [
+      "gradius",
+      "宇宙巡航机"
+    ],
+    [
+      "r-type",
+      "异形战机"
+    ],
+    [
+      "darius",
+      "太空战斗机",
+      "dariusburst"
+    ],
+    [
+      "raiden",
+      "雷电",
+      "raiden fighters"
+    ],
+    [
+      "twinbee",
+      "兵蜂",
+      "parodius",
+      "疯狂大射击"
+    ],
+    [
+      "thunder force",
+      "雷霆力量"
+    ],
+    [
+      "gaiares",
+      "盖亚雷斯"
+    ],
+    [
+      "musha",
+      "武藏",
+      "m.u.s.h.a."
+    ],
+    [
+      "aleste",
+      "阿雷斯特"
+    ],
+    [
+      "spriggan",
+      "斯普利根"
+    ],
+    [
+      "gun-nac",
+      "枪纳克"
+    ],
+    [
+      "zanac",
+      "扎纳克"
+    ],
+    [
+      "1942",
+      "1943",
+      "1944",
+      "19xx",
+      "1941",
+      "1945"
+    ],
+    [
+      "sonic wings",
+      "音速之翼",
+      "aero fighters",
+      "strikers 1945",
+      "打击者1945"
+    ],
+    [
+      "gunbird",
+      "枪鸟"
+    ],
+    [
+      "sengoku ace",
+      "战国ace"
+    ],
+    [
+      "dragon blaze",
+      "龙之火焰"
+    ],
+    [
+      "battle garegga",
+      "战斗加雷加",
+      "garegga"
+    ],
+    [
+      "espgaluda",
+      "长空超翼神"
+    ],
+    [
+      "mushihimesama",
+      "虫姬"
+    ],
+    [
+      "deathsmiles",
+      "死亡微笑"
+    ],
+    [
+      "ibara",
+      "荆棘"
+    ],
+    [
+      "dodonpachi",
+      "怒首领蜂",
+      "donpachi",
+      "首领蜂"
+    ],
+    [
+      "ketsui",
+      "决意"
+    ],
+    [
+      "eschatos",
+      "末世"
+    ],
+    [
+      "soukyuugurentai",
+      "苍穹红莲队"
+    ],
+    [
+      "batsugun",
+      "爆军"
+    ],
+    [
+      "dogyuun",
+      "土偶军"
+    ],
+    [
+      "samesame",
+      "鲛鲛",
+      "fire shark",
+      "火鲨"
+    ],
+    [
+      "hellfire",
+      "地狱火"
+    ],
+    [
+      "zero wing",
+      "零翼"
+    ],
+    [
+      "truxton",
+      "达人王",
+      "tatsujin",
+      "达人"
+    ],
+    [
+      "outzone",
+      "奥zone"
+    ],
+    [
+      "vimana",
+      "维摩那"
+    ],
+    [
+      "burning force",
+      "燃烧力量"
+    ],
+    [
+      "tiger heli",
+      "虎式直升机",
+      "tiger-heli"
+    ],
+    [
+      "thunder blade",
+      "雷霆之刃",
+      "super thunder blade"
+    ],
+    [
+      "after burner",
+      "afterburner",
+      "冲破火网"
+    ],
+    [
+      "galaxy force",
+      "银河力量"
+    ],
+    [
+      "space harrier",
+      "太空哈利"
+    ],
+    [
+      "outrun",
+      "out run",
+      "turbo outrun"
+    ],
+    [
+      "power drift",
+      "动力漂移"
+    ],
+    [
+      "hang-on",
+      "hang on",
+      "super hang-on",
+      "摩托车"
+    ],
+    [
+      "g-loc",
+      "gloc",
+      "空战"
+    ],
+    [
+      "air buster",
+      "aero blasters",
+      "空中堡垒"
+    ],
+    [
+      "ghosts n goblins",
+      "魔界村",
+      "makai mura"
+    ],
+    [
+      "ghouls n ghosts",
+      "大魔界村"
+    ],
+    [
+      "super ghouls n ghosts",
+      "超魔界村",
+      "makai cho mura"
+    ],
+    [
+      "devil world",
+      "恶魔世界"
+    ],
+    [
+      "strider hiryu",
+      "出击飞龙",
+      "strider 2"
+    ],
+    [
+      "bionic commando rearmed",
+      "希魔复活重装"
+    ],
+    [
+      "rygar",
+      "莱加",
+      "阿格斯战士"
+    ],
+    [
+      "solomons key",
+      "所罗门之钥",
+      "solomon no kagi"
+    ],
+    [
+      "fire n ice",
+      "火与冰",
+      "solomons key 2"
+    ],
+    [
+      "lode runner",
+      "淘金者"
+    ],
+    [
+      "spelunker",
+      "洞穴探险"
+    ],
+    [
+      "boulder dash",
+      "巨石冲刺"
+    ],
+    [
+      "dig dug",
+      "挖金子"
+    ],
+    [
+      "mr do",
+      "do先生"
+    ],
+    [
+      "mappy",
+      "猫捉老鼠"
+    ],
+    [
+      "pac-man",
+      "吃豆人",
+      "pacman",
+      "pac man"
+    ],
+    [
+      "ms pac-man",
+      "吃豆小姐"
+    ],
+    [
+      "galaga",
+      "大蜜蜂"
+    ],
+    [
+      "galaxian",
+      "小蜜蜂"
+    ],
+    [
+      "space invaders",
+      "太空侵略者"
+    ],
+    [
+      "asteroids",
+      "小行星"
+    ],
+    [
+      "centipede",
+      "蜈蚣"
+    ],
+    [
+      "millipede",
+      "千足虫"
+    ],
+    [
+      "defender",
+      "防卫者"
+    ],
+    [
+      "stargate",
+      "星际之门"
+    ],
+    [
+      "robotron",
+      "机器人"
+    ],
+    [
+      "joust",
+      "鸵鸟骑士"
+    ],
+    [
+      "bubble bobble",
+      "泡泡龙"
+    ],
+    [
+      "rainbow islands",
+      "彩虹岛"
+    ],
+    [
+      "parasol stars",
+      "阳伞之星"
+    ],
+    [
+      "liquid kids",
+      "液体小子"
+    ],
+    [
+      "columns",
+      "宝石方块"
+    ],
+    [
+      "dr robotnik mean bean machine",
+      "蛋头博士的豆子机",
+      "mean bean machine"
+    ],
+    [
+      "puyo puyo tetris",
+      "魔法气泡俄罗斯方块"
+    ],
+    [
+      "lumines",
+      "音乐方块"
+    ],
+    [
+      "meteos",
+      "陨石方块"
+    ],
+    [
+      "planet puzzle league",
+      "行星拼图联盟"
+    ],
+    [
+      "pokemon puzzle league",
+      "宝可梦拼图联盟"
+    ],
+    [
+      "tetris attack",
+      "俄罗斯方块攻击"
+    ],
+    [
+      "panel de pon",
+      "面板de pon"
+    ],
+    [
+      "money idol exchanger",
+      "金钱偶像交换"
+    ],
+    [
+      "puzz loop",
+      "拼图循环"
+    ],
+    [
+      "magnetica",
+      "磁石"
+    ],
+    [
+      "zuma",
+      "祖玛"
+    ],
+    [
+      "luxor",
+      "卢克索"
+    ],
+    [
+      "bejeweled",
+      "宝石迷阵"
+    ],
+    [
+      "peggle",
+      "幻幻球"
+    ],
+    [
+      "bookworm",
+      "书虫"
+    ],
+    [
+      "insaniquarium",
+      "怪怪水族馆"
+    ],
+    [
+      "plants vs zombies",
+      "植物大战僵尸"
+    ],
+    [
+      "feeding frenzy",
+      "大鱼吃小鱼"
+    ],
+    [
+      "diner dash",
+      "美女餐厅"
+    ],
+    [
+      "cooking mama",
+      "料理妈妈"
+    ],
+    [
+      "nintendogs",
+      "任天狗"
+    ],
+    [
+      "brain age",
+      "脑锻炼",
+      "脑白金"
+    ],
+    [
+      "wii fit",
+      "wii健身"
+    ],
+    [
+      "ring fit adventure",
+      "健身环大冒险",
+      "ring fit"
+    ],
+    [
+      "just dance",
+      "舞力全开"
+    ],
+    [
+      "dance dance revolution",
+      "劲舞革命",
+      "ddr"
+    ],
+    [
+      "beatmania",
+      "狂热节拍"
+    ],
+    [
+      "popn music",
+      "流行音乐"
+    ],
+    [
+      "guitarfreaks",
+      "吉他高手"
+    ],
+    [
+      "drummania",
+      "鼓手"
+    ],
+    [
+      "taiko no tatsujin",
+      "太鼓达人",
+      "taiko"
+    ],
+    [
+      "maimai",
+      "舞萌"
+    ],
+    [
+      "chunithm",
+      "中二节奏"
+    ],
+    [
+      "ongeki",
+      "音击"
+    ],
+    [
+      "sound voltex",
+      "音律炫动"
+    ],
+    [
+      "muse dash",
+      "喵斯快跑"
+    ],
+    [
+      "deemo",
+      "古树旋律"
+    ],
+    [
+      "cytus",
+      "音乐世界"
+    ],
+    [
+      "voez",
+      "兰空"
+    ],
+    [
+      "arcaea",
+      "韵律源点"
+    ],
+    [
+      "phigros",
+      "菲格罗斯"
+    ],
+    [
+      "rizline",
+      "律动轨迹"
+    ],
+    [
+      "paradigm reboot",
+      "范式重启"
+    ],
+    [
+      "dynamix",
+      "炫彩律动"
+    ],
+    [
+      "lanota",
+      "拉诺塔"
+    ],
+    [
+      "tone sphere",
+      "音球"
+    ],
+    [
+      "overrapid",
+      "超速律动"
+    ],
+    [
+      "kof r-1",
+      "拳皇r-1"
+    ],
+    [
+      "kof r-2",
+      "拳皇r-2"
+    ],
+    [
+      "kof maximum impact",
+      "拳皇maximum impact"
+    ],
+    [
+      "kof neowave",
+      "拳皇neowave"
+    ],
+    [
+      "kof xi",
+      "拳皇xi"
+    ],
+    [
+      "kof xii",
+      "拳皇xii"
+    ],
+    [
+      "kof xiii",
+      "拳皇xiii"
+    ],
+    [
+      "kof xiv",
+      "拳皇xiv"
+    ],
+    [
+      "kof xv",
+      "拳皇xv"
+    ],
+    [
+      "kof allstar",
+      "拳皇allstar"
+    ],
+    [
+      "kof destiny",
+      "拳皇命运"
+    ],
+    [
+      "kof another day",
+      "拳皇another day"
+    ],
+    [
+      "kof sky stage",
+      "拳皇sky stage"
+    ],
+    [
+      "kof wing",
+      "拳皇wing"
+    ],
+    [
+      "mugen"
+    ],
+    [
+      "ikemen"
+    ],
+    [
+      "capcom vs snk",
+      "卡普空对snk"
+    ],
+    [
+      "snk vs capcom",
+      "snk对卡普空",
+      "svc chaos"
+    ],
+    [
+      "cvs2"
+    ],
+    [
+      "marvel super heroes",
+      "漫威超级英雄"
+    ],
+    [
+      "marvel super heroes vs street fighter",
+      "漫威对街霸"
+    ],
+    [
+      "x-men vs street fighter",
+      "x战警对街霸"
+    ],
+    [
+      "x-men children of the atom",
+      "x战警原子之子"
+    ],
+    [
+      "marvel vs capcom 2",
+      "漫威对卡普空2"
+    ],
+    [
+      "marvel vs capcom 3",
+      "漫威对卡普空3"
+    ],
+    [
+      "marvel vs capcom infinite",
+      "漫威对卡普空无限"
+    ],
+    [
+      "tatsunoko vs capcom",
+      "龙之子对卡普空"
+    ],
+    [
+      "street fighter alpha",
+      "街霸alpha"
+    ],
+    [
+      "street fighter zero",
+      "街霸zero"
+    ],
+    [
+      "street fighter iii",
+      "街霸3",
+      "3rd strike",
+      "三度冲击"
+    ],
+    [
+      "street fighter iv",
+      "街霸4"
+    ],
+    [
+      "street fighter v",
+      "街霸5"
+    ],
+    [
+      "street fighter 6",
+      "街霸6"
+    ],
+    [
+      "street fighter ex",
+      "街霸ex"
+    ],
+    [
+      "street fighter the movie",
+      "街霸电影版"
+    ],
+    [
+      "pocket fighter",
+      "口袋战士"
+    ],
+    [
+      "super puzzle fighter",
+      "超级口袋战士"
+    ],
+    [
+      "vampire savior",
+      "吸血鬼救世主"
+    ],
+    [
+      "vampire hunter",
+      "吸血鬼猎人"
+    ],
+    [
+      "night warriors",
+      "午夜斗士"
+    ],
+    [
+      "cyberbots",
+      "机甲战士"
+    ],
+    [
+      "red earth",
+      "红色地球",
+      "warzard"
+    ],
+    [
+      "jojo heritage for the future",
+      "jojo未来遗产"
+    ],
+    [
+      "jojo venture",
+      "jojo冒险"
+    ],
+    [
+      "garou mark of the wolves",
+      "饿狼传说狼之烙印"
+    ],
+    [
+      "rbff",
+      "饿狼传说real bout"
+    ],
+    [
+      "rbff2",
+      "饿狼传说real bout 2"
+    ],
+    [
+      "rbff special",
+      "饿狼传说real bout special"
+    ],
+    [
+      "breakers",
+      "爆裂者"
+    ],
+    [
+      "breakers revenge",
+      "爆裂者复仇"
+    ],
+    [
+      "karnovs revenge",
+      "卡诺夫的复仇"
+    ]
+  ],
+  "projects": [
+    "shadps4",
+    "rpcs3",
+    "dolphin",
+    "ppsspp",
+    "retroarch",
+    "batocera",
+    "spruce",
+    "muos",
+    "knulli",
+    "onionos",
+    "rocknix",
+    "emuelec",
+    "arkos",
+    "jelos",
+    "portmaster",
+    "ryujinx",
+    "yuzu",
+    "suyu",
+    "sudachi",
+    "citron",
+    "skyline",
+    "citra",
+    "azahar",
+    "lime3ds",
+    "melonds",
+    "mgba",
+    "duckstation",
+    "pcsx2",
+    "xenia",
+    "cemu",
+    "vita3k",
+    "aethersx2",
+    "nethersx2",
+    "flycast",
+    "mame",
+    "fbneo",
+    "mesen",
+    "hekate",
+    "atmosphere",
+    "atmosphère",
+    "missioncontrol",
+    "goldleaf",
+    "tinfoil",
+    "checkpoint",
+    "edizon",
+    "sys-clk",
+    "model2",
+    "supermodel",
+    "darkos",
+    "port0r",
+    "ultra-hand",
+    "tesla-menu",
+    "ovlloader",
+    "saltnx",
+    "hbmenu",
+    "hbloader",
+    "lockpick",
+    "scummvm",
+    "dosbox",
+    "wine",
+    "proton",
+    "dxvk",
+    "vkd3d",
+    "box64",
+    "box86",
+    "termux",
+    "winlator",
+    "mobox",
+    "cassia",
+    "gamehub"
+  ],
+  "major_events": [
+    "下架",
+    "takedown",
+    "takes down",
+    "taken down",
+    "dmca",
+    "delisted",
+    "jailbreak",
+    "越狱",
+    "破解",
+    "exploit",
+    "泄露",
+    "leak",
+    "诉讼",
+    "lawsuit",
+    "sued",
+    "起诉",
+    "停服",
+    "停运",
+    "shutdown",
+    "shut down",
+    "收购",
+    "acquired",
+    "review bomb",
+    "差评轰炸",
+    "争议",
+    "backlash"
+  ],
+  "platforms": [
+    "gamesir",
+    "8bitdo",
+    "retroid",
+    "anbernic",
+    "miyoo",
+    "r36s",
+    "rg35",
+    "rg40",
+    "rg55",
+    "steam deck",
+    "rog ally",
+    "legion go",
+    "msi claw",
+    "switch 2",
+    "ns2",
+    "ps5",
+    "ps4",
+    "xbox",
+    "vita",
+    "psp",
+    "3ds",
+    "nds",
+    "gba",
+    "game boy",
+    "gameboy",
+    "n64",
+    "ps1",
+    "ps2",
+    "dreamcast",
+    "saturn",
+    "genesis",
+    "megadrive",
+    "neo geo",
+    "neogeo",
+    "pc engine",
+    "turbografx",
+    "wonderswan",
+    "game gear",
+    "lynx",
+    "jaguar",
+    "3do",
+    "cdi",
+    "amiga",
+    "atari",
+    "commodore",
+    "msx",
+    "zx spectrum",
+    "x68000",
+    "pc-98",
+    "fm towns",
+    "pc88"
+  ]
+}

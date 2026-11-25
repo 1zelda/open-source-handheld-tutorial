@@ -1,0 +1,53 @@
+{
+  "status": "isolated_candidate_ready_for_ram_tooling_only",
+  "date": "2026-11-25",
+  "candidate_revision": "megaman1_nes_us",
+  "candidate_index": "知识库P1_20261118/megaman1_candidate_20261125/index.json",
+  "candidate_index_sha256": "5e126eddf0eae98e6b8a446cd54f37400b861d5e93ecf89d3004f16d3a252581",
+  "index_chunks": 9,
+  "index_files": 7,
+  "terms": 504,
+  "authority_counts": {
+    "authoritative": 7,
+    "reference_only": 2
+  },
+  "source_status_counts": {
+    "verified_read": 9
+  },
+  "evaluation": {
+    "questions": 12,
+    "strict_pass_questions": 9,
+    "refuse_questions": 3,
+    "default_grade_v2": "12/12",
+    "strict_grade_v2": "12/12",
+    "wrong_evidence_default": 0,
+    "wrong_evidence_strict": 0,
+    "real_state_unchanged": true
+  },
+  "production_ready": false,
+  "whole_game_knowledge_base": false,
+  "production_route_wired": false,
+  "production_consumer_wired": false,
+  "covered": [
+    "对象RAM表",
+    "坐标轴与对象编号",
+    "BizHawk内存覆盖与callback机制",
+    "本机武器RAM实测",
+    "本机对象表定位T1实测",
+    "segmented TAS与FM2导入通用参考"
+  ],
+  "remaining_gates": [
+    "kb_route.py 增加 megaman 域",
+    "专用生产问答消费方",
+    "官方说明书级游戏内容语料",
+    "PAL-B 与 NTSC 美版跨版等价验证",
+    "候选 dense/hybrid 富集件",
+    "真实用户查询样本"
+  ],
+  "observed_shared_state": {
+    "production_index_sha256_during_eval": "5c6fdb832cac502845d2e9dce269f25023dd435af42a5f59c772efbe9169596b",
+    "news_snapshot_sha256_during_eval": "2a93e76d5876c1181e7784a20eca0f4d84888d0292d281fc6eea3564090b9260",
+    "written_by_this_task": false,
+    "note": "只验证本任务前后不变；未替并行 KB 会话同步或重建。"
+  }
+}

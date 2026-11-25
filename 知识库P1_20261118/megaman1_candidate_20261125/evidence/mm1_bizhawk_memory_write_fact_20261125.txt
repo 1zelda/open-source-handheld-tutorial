@@ -1,0 +1,10 @@
+TASVideos BizHawk FAQ：内存覆盖与 memory write callback（逐字摘录）
+ Memory Manipulation
+
+ I'm trying to cheat/poke/freeze a memory address, but it keeps changing
+
+ Bizhawk can only overwrite your address once per frame, so if the game changes it more frequently, you'll have to use memory write callbacks to track when the game does so, to overwrite it yourself right after that.
+
+ But since some callbacks happen before the event, and some happen after (depending on the core), you may have to change CPU registers instead, where the value initially comes from upon the memory write.
+
+ Note that not every Bizhawk core implements memory callbacks and register editing.

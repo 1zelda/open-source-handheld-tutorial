@@ -1,0 +1,170 @@
+{
+  "schema_version": 1,
+  "kind": "statejump_showcase",
+  "game_id": "yuyu_makyo_md",
+  "game_title": "Yu Yu Hakusho: Makyo Toitsusen / 幽游白书：魔强统一战 (MD/Genesis, 1994 Treasure)",
+  "platform": "MD",
+  "core": "GPGX",
+  "system": "GEN",
+  "rom": "F:/taspipe_scratch/md_yuyu/yuyu_hakusho.md",
+  "bizhawk": "F:/开源掌机教程/02-模拟器库/BizHawk/BizHawk-2.8",
+  "base_state": "F:/taspipe_scratch/md_yuyu/base.state",
+  "fps": 59.9227,
+  "template": "fc_tianma_cover",
+  "catalog": {
+    "status": "complete",
+    "expected_total": 3,
+    "sources": [
+      {
+        "source_id": "strategywiki",
+        "url": "https://strategywiki.org/wiki/Yu_Yu_Hakusho:_Makyo_Toitsusen",
+        "status": "unreachable",
+        "verified_date": "2026-11-18",
+        "element_ids": [
+          "reigan_shot",
+          "heavy_combo_attack",
+          "plane_shift_dash"
+        ],
+        "note": "本机直连 403，只有搜索快照。"
+      },
+      {
+        "source_id": "gamefaqs",
+        "url": "https://gamefaqs.gamespot.com/genesis/563235-yu-yu-hakusho-makyo-toitsusen",
+        "status": "candidate",
+        "verified_date": null,
+        "element_ids": [
+          "reigan_shot",
+          "heavy_combo_attack",
+          "plane_shift_dash"
+        ],
+        "note": "candidate：知道存在，本轮未取正文。"
+      }
+    ],
+    "coverage_note": "MD/世嘉五代跨平台要素盘点示范包：支持 6 键手柄（A/B/C/X/Y/Z）招式宏，展示浦饭幽助灵丸蓄力、重击连段与换线闪避（通过 taspipe.retro_platforms run-showcase 运行）"
+  },
+  "elements": [
+    {
+      "element_id": "reigan_shot",
+      "label": "Reigan (↓↘→+A 灵丸发射)",
+      "kind": "move",
+      "base_state": null,
+      "trigger": {
+        "macro": "Down,Down,Down+Right,Down+Right,Right,Right,Right+A,Right+A,,,,A,A,A,,,,,,,,,,,,,,,,",
+        "extra": 30,
+        "patches": []
+      },
+      "detection": {
+        "frame": 18,
+        "success_checks": [
+          {
+            "check_id": "md_reigan_beam_sig",
+            "plugin_id": "frame_region_color_fraction",
+            "params": {
+              "region": [
+                0.2,
+                0.25,
+                0.88,
+                0.78
+              ],
+              "rgb": [
+                120,
+                216,
+                248
+              ],
+              "tol": 28,
+              "min_fraction": 0.012
+            },
+            "required": true
+          }
+        ]
+      },
+      "negative_control": {
+        "macro": null,
+        "patches": []
+      },
+      "note": "MD 6键手柄 236+A 蓄力并按 A 发射灵丸。"
+    },
+    {
+      "element_id": "heavy_combo_attack",
+      "label": "Heavy Combo (B+C 重攻击连段)",
+      "kind": "move",
+      "base_state": null,
+      "trigger": {
+        "macro": "A,A,,B,B,,B,B,,,,,,,,,,,,,,,,,,,,",
+        "extra": 25,
+        "patches": []
+      },
+      "detection": {
+        "frame": 12,
+        "success_checks": [
+          {
+            "check_id": "md_heavy_hit_sig",
+            "plugin_id": "frame_region_color_fraction",
+            "params": {
+              "region": [
+                0.2,
+                0.3,
+                0.8,
+                0.82
+              ],
+              "rgb": [
+                248,
+                200,
+                120
+              ],
+              "tol": 28,
+              "min_fraction": 0.01
+            },
+            "required": true
+          }
+        ]
+      },
+      "negative_control": {
+        "macro": null,
+        "patches": []
+      },
+      "note": "轻攻击接重攻击连击。"
+    },
+    {
+      "element_id": "plane_shift_dash",
+      "label": "Plane Shift (C/Z 双线战线切换)",
+      "kind": "move",
+      "base_state": null,
+      "trigger": {
+        "macro": "C,C,C,C,C,C,,,,,,,,,,,,,,,,,,,,,,,,",
+        "extra": 25,
+        "patches": []
+      },
+      "detection": {
+        "frame": 12,
+        "success_checks": [
+          {
+            "check_id": "md_plane_shift_sig",
+            "plugin_id": "frame_region_color_fraction",
+            "params": {
+              "region": [
+                0.2,
+                0.2,
+                0.8,
+                0.82
+              ],
+              "rgb": [
+                240,
+                240,
+                248
+              ],
+              "tol": 28,
+              "min_fraction": 0.01
+            },
+            "required": true
+          }
+        ]
+      },
+      "negative_control": {
+        "macro": null,
+        "patches": []
+      },
+      "note": "按 C 键在前景线与背景线之间跳跃切换。"
+    }
+  ]
+}

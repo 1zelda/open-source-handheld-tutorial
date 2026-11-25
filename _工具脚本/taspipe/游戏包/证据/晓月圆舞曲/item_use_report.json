@@ -1,0 +1,35 @@
+{
+  "status": "pass",
+  "source": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_clean_gameplay1\\base.state",
+  "cases": {
+    "full_hp": {
+      "before": {
+        "hp": 320,
+        "potion_count": 1
+      },
+      "after": {
+        "hp": 320,
+        "potion_count": 1
+      },
+      "menu_state": "F:/taspipe_scratch/gba_parallel_20261124/aria_item_use4/work/full_hp_menu.state"
+    },
+    "damaged_hp": {
+      "before": {
+        "hp": 100,
+        "potion_count": 1
+      },
+      "after": {
+        "hp": 200,
+        "potion_count": 0
+      },
+      "menu_state": "F:/taspipe_scratch/gba_parallel_20261124/aria_item_use4/work/damaged_hp_menu.state"
+    }
+  },
+  "actual_core": "BizHawk.Emulation.Cores.Nintendo.GBA.MGBAHawk",
+  "checks": {
+    "seeded_potion_visible": true,
+    "full_hp_rejects_use": true,
+    "damaged_hp_consumes_potion": true,
+    "same_item_address": true
+  }
+}

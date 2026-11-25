@@ -1,0 +1,75 @@
+W1119 12:29:50.267000 32592 E:\SHARE\py313-cuda\torch\distributed\elastic\multiprocessing\redirects.py:29] NOTE: Redirects are currently not supported in Windows or MacOs.
+Loading weights:   0%|          | 0/391 [00:00<?, ?it/s]Loading weights: 100%|██████████| 391/391 [00:00<00:00, 62778.89it/s]
+Loading weights:   0%|          | 0/393 [00:00<?, ?it/s]Loading weights:   1%|          | 3/393 [00:00<00:20, 18.83it/s]Loading weights:   1%|▏         | 5/393 [00:01<02:25,  2.66it/s]Loading weights:   2%|▏         | 6/393 [00:01<02:23,  2.69it/s]Loading weights:   2%|▏         | 7/393 [00:03<03:59,  1.61it/s]Loading weights:   2%|▏         | 8/393 [00:04<04:26,  1.44it/s]Loading weights:   3%|▎         | 13/393 [00:05<02:49,  2.25it/s]Loading weights:   4%|▎         | 14/393 [00:05<02:36,  2.42it/s]Loading weights:   4%|▍         | 15/393 [00:06<02:18,  2.72it/s]Loading weights:   4%|▍         | 16/393 [00:06<02:18,  2.73it/s]Loading weights:   4%|▍         | 17/393 [00:06<02:13,  2.82it/s]Loading weights:   5%|▍         | 18/393 [00:07<02:35,  2.41it/s]Loading weights:   5%|▍         | 19/393 [00:07<02:33,  2.44it/s]Loading weights:   5%|▌         | 21/393 [00:08<01:44,  3.57it/s]Loading weights:   6%|▌         | 22/393 [00:08<01:32,  4.02it/s]Loading weights:   6%|▌         | 23/393 [00:08<01:18,  4.71it/s]Loading weights:   6%|▌         | 24/393 [00:08<01:19,  4.64it/s]Loading weights:   6%|▋         | 25/393 [00:08<01:23,  4.41it/s]Loading weights:   7%|▋         | 26/393 [00:09<01:46,  3.45it/s]Loading weights:   7%|▋         | 27/393 [00:09<02:25,  2.52it/s]Loading weights:   7%|▋         | 28/393 [00:10<02:30,  2.43it/s]Loading weights:   7%|▋         | 29/393 [00:10<02:04,  2.92it/s]Loading weights:   8%|▊         | 30/393 [00:11<02:34,  2.36it/s]Loading weights:   8%|▊         | 31/393 [00:11<02:28,  2.44it/s]Loading weights:   8%|▊         | 32/393 [00:11<02:10,  2.76it/s]Loading weights:   8%|▊         | 33/393 [00:12<02:50,  2.11it/s]Loading weights:   9%|▊         | 34/393 [00:13<02:57,  2.02it/s]Loading weights:   9%|▉         | 35/393 [00:13<02:22,  2.52it/s]Loading weights:   9%|▉         | 36/393 [00:13<02:51,  2.08it/s]Loading weights:  10%|▉         | 38/393 [00:14<01:50,  3.22it/s]Loading weights:  10%|▉         | 39/393 [00:14<01:41,  3.48it/s]Loading weights:  10%|█         | 40/393 [00:14<01:37,  3.63it/s]Loading weights:  10%|█         | 41/393 [00:15<02:04,  2.82it/s]Loading weights:  11%|█         | 44/393 [00:16<02:04,  2.80it/s]Loading weights:  11%|█▏        | 45/393 [00:16<01:56,  2.99it/s]Loading weights:  12%|█▏        | 46/393 [00:17<02:49,  2.05it/s]Loading weights:  12%|█▏        | 47/393 [00:17<02:27,  2.34it/s]Loading weights:  12%|█▏        | 48/393 [00:18<02:55,  1.96it/s]Loading weights:  12%|█▏        | 49/393 [00:19<03:35,  1.59it/s]Loading weights:  13%|█▎        | 50/393 [00:19<02:55,  1.96it/s]Loading weights:  13%|█▎        | 51/393 [00:20<02:55,  1.95it/s]Loading weights: 100%|██████████| 393/393 [00:20<00:00, 19.54it/s]
+========================================================================
+Q08 双人合作模式下二号玩家操作什么位置？ {'revision': 'nekketsu_soccer2_fc_jp'}
+候选 178；gold 块下标 [5]
+查询词 ['2', 'ショ', 'ジシ', 'ポジ', 'ポジション', 'モー', 'モード', 'ョン', 'ード', '下二', '么位', '二号', '人合', '什么', '位置', '作什', '作模', '協力', '双人', '号玩', '合作', '家操', '式下', '操作', '模式', '玩家']
+-- BM25 top10（gold 位次见 *）
+   1 score= 52.676 setsumei_热血足球说明书扫描_20261118.md L376-401 matched=['ショ', 'ジシ', 'ポジ', 'ポジション', 'ョン', '協力']
+   2 score= 51.753 setsumei_热血足球说明书扫描_20261118.md L403-428 matched=['2', 'ショ', 'ジシ', 'ポジ', 'ポジション', 'ョン', '協力']
+   3 score= 51.086 setsumei_热血足球说明书扫描_20261118.md L430-453 matched=['ショ', 'ジシ', 'ポジ', 'ポジション', 'ョン', '協力']
+   4 score= 44.988 setsumei_热血足球说明书扫描_20261118.md L345-374 matched=['2', 'ショ', 'ジシ', 'ポジ', 'ポジション', 'ョン']
+   5 score= 41.442 setsumei_热血足球说明书扫描_20261118.md L104-110 matched=['2', 'ショ', 'ジシ', 'ポジ', 'ポジション', 'ョン']
+   6 score= 29.947 setsumei_热血足球说明书扫描_20261118.md L547-550 matched=['ショ', 'ジシ', 'ポジ', 'ョン', '操作']
+   7 score= 28.738 setsumei_热血足球说明书扫描_20261118.md L52-72 matched=['2', 'モー', 'ード', '協力']
+   8 score= 26.967 setsumei_热血足球说明书扫描_20261118.md L307-323 matched=['2', 'モー', 'ード', '操作']
+   9 score= 26.049 setsumei_热血足球说明书扫描_20261118.md L327-341 matched=['2', 'モー', 'ード', '操作']
+  10 score= 24.750 setsumei_热血足球说明书扫描_20261118.md L19-33 matched=['2', 'モー', 'ード', '操作']
+  gold L47-47 BM25 位次=19 score=14.985215352616091 matched=['2', '協力', '操作']
+  gold 稠密位次=40
+-- 稠密 top5
+   1 sim=0.542 1ang_热血足球联盟图文攻略_20261118.md L759-774
+   2 sim=0.524 热血足球联盟_必杀全清单.md L51-66
+   3 sim=0.523 1ang_热血足球联盟图文攻略_20261118.md L601-602
+   4 sim=0.520 setsumei_热血足球说明书扫描_20261118.md L155-196
+   5 sim=0.507 热血足球联盟_必杀全清单.md L101-119
+池大小 77；gold 在池内：[True]
+-- 重排 top10（分数）
+   1 rerank=  0.258 1ang_热血足球联盟图文攻略_20261118.md L161-164
+   2 rerank=  0.165 1ang_热血足球联盟图文攻略_20261118.md L601-602
+   3 rerank=  0.046 1ang_热血足球联盟图文攻略_20261118.md L455-466
+   4 rerank=  0.022 csdn_wangsitan_热血足球Bug记录_20261118.md L188-203
+   5 rerank=  0.016 1ang_热血足球联盟图文攻略_20261118.md L759-774
+   6 rerank=  0.015 1ang_热血足球联盟图文攻略_20261118.md L167-180
+   7 rerank=  0.012 1ang_热血足球联盟图文攻略_20261118.md L373-374
+   8 rerank=  0.011 1ang_热血足球联盟图文攻略_20261118.md L525-536
+   9 rerank=  0.011 1ang_热血足球联盟图文攻略_20261118.md L369-370
+  10 rerank=  0.009 1ang_热血足球联盟图文攻略_20261118.md L553-599
+  gold 重排位次=70 rerank=0.000
+========================================================================
+Q10 KOF98 ECK 能不能关掉队友改成 1v1？ {'revision': 'kof98eck'}
+候选 25；gold 块下标 [513]
+查询词 ['1', 'eck', 'kof98', 'v1', '不能', '关掉', '友改', '掉队', '改成', '能不', '能关', '队友']
+-- BM25 top10（gold 位次见 *）
+ * 1 score=  5.898 素材生产规范.md L185-190 matched=['1', '队友']
+   2 score=  5.708 素材生产规范.md L18-31 matched=['eck']
+   3 score=  5.669 素材生产规范.md L60-65 matched=['1', '不能']
+   4 score=  5.655 素材生产规范.md L107-121 matched=['改成']
+   5 score=  5.274 素材生产规范.md L180-182 matched=['不能']
+   6 score=  2.839 素材生产规范.md L34-59 matched=['不能']
+   7 score=  1.862 kof98eck.ini L1-32 matched=['v1']
+   8 score=  1.146 kof98eck.ini L33-58 matched=['1']
+   9 score=  1.115 素材生产规范.md L140-155 matched=['1']
+  10 score=  0.985 素材生产规范.md L161-176 matched=['1']
+  gold L185-190 BM25 位次=1 score=5.898199678854044 matched=['1', '队友']
+  gold 稠密位次=3
+-- 稠密 top5
+   1 sim=0.541 素材生产规范.md L18-31
+   2 sim=0.539 kof98eck.ini L1-32
+ * 3 sim=0.514 素材生产规范.md L185-190
+   4 sim=0.501 素材生产规范.md L34-59
+   5 sim=0.477 素材生产规范.md L107-121
+池大小 25；gold 在池内：[True]
+-- 重排 top10（分数）
+   1 rerank=  0.063 素材生产规范.md L18-31
+   2 rerank=  0.053 kof98eck.ini L1-32
+   3 rerank=  0.026 素材生产规范.md L107-121
+   4 rerank=  0.014 素材生产规范.md L140-155
+   5 rerank=  0.014 gamersky_kof98um全角色出招表_20261118.md L503-571
+   6 rerank=  0.006 素材生产规范.md L34-59
+   7 rerank=  0.005 gamersky_kof98um全角色出招表_20261118.md L307-456
+   8 rerank=  0.005 gamersky_kof98um全角色出招表_20261118.md L601-625
+   9 rerank=  0.005 gamersky_kof98um全角色出招表_20261118.md L460-500
+  10 rerank=  0.004 gamersky_kof98um全角色出招表_20261118.md L572-599
+  gold 重排位次=11 rerank=0.003

@@ -1,0 +1,23 @@
+{
+  "production_dense_present": {
+    "base": false,
+    "hybrid": false
+  },
+  "dense_ready": {
+    "base": [
+      false,
+      "稠密指纹件未建（py -3 -m taspipe.kb dense）"
+    ],
+    "hybrid": [
+      false,
+      "稠密指纹件未建（py -3 -m taspipe.kb dense）"
+    ]
+  },
+  "auto_index": "F:\\开源掌机教程\\_工具脚本\\taspipe\\游戏包\\知识库\\index.json",
+  "auto_domain_local": false,
+  "base_query_count": 30,
+  "base_queries_unchanged": true,
+  "old_delivery_hashes_ok": true,
+  "old_delivery_state_changed": [],
+  "all_checks_ok": true
+}

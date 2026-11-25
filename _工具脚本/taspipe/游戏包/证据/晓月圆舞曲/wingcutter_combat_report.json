@@ -1,0 +1,321 @@
+{
+  "status": "pass",
+  "rom_sha1": "40AAB076A528F52E93260BB98D91A40039E0DA02",
+  "source": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_combat_states1\\states\\base.state",
+  "bizhawk": "F:\\taspipe_scratch\\gba_parallel_20261124\\production_gameplay1\\slots\\8506d01381be\\slot_0\\BizHawk-2.11.1",
+  "cases": {
+    "red24": {
+      "patch": [
+        {
+          "addr": 78429,
+          "value": 24,
+          "domain": "EWRAM"
+        }
+      ],
+      "before": {
+        "red": 24,
+        "blue": 0,
+        "yellow": 0,
+        "hp": 320,
+        "mp": 80,
+        "str": 10,
+        "def": 12,
+        "int": 11,
+        "lck": 9
+      },
+      "after": {
+        "red": 24,
+        "blue": 0,
+        "yellow": 0,
+        "hp": 320,
+        "mp": 59,
+        "str": 10,
+        "def": 12,
+        "int": 11,
+        "lck": 9
+      },
+      "frames": 120,
+      "shots": {
+        "8": {
+          "path": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_wingcutter_combat1\\red24\\f0008.png",
+          "sha256": "8BFC7E60CED3CFB284BF8072D9DE2D8F198D00AB1915B69FB8073B7866842BA2",
+          "size": [
+            240,
+            160
+          ]
+        },
+        "12": {
+          "path": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_wingcutter_combat1\\red24\\f0012.png",
+          "sha256": "9F63B58F07B94773F96B10DF113B93A0E5DDB0A151231098B0DA61BE97AC9BF0",
+          "size": [
+            240,
+            160
+          ]
+        },
+        "16": {
+          "path": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_wingcutter_combat1\\red24\\f0016.png",
+          "sha256": "C4F65B555B31DDC21E33FD3317E4068E47EA06820ED52A84E01283457D53696B",
+          "size": [
+            240,
+            160
+          ]
+        },
+        "20": {
+          "path": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_wingcutter_combat1\\red24\\f0020.png",
+          "sha256": "06F3DE9079F567E7713FE21FE253ED29ACCC9AF9261AF187A45725D10836C611",
+          "size": [
+            240,
+            160
+          ]
+        },
+        "24": {
+          "path": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_wingcutter_combat1\\red24\\f0024.png",
+          "sha256": "EF707749AAC25F4D32A2F5C980E1AB7CDEFF73C971162E29267D0A37457500DF",
+          "size": [
+            240,
+            160
+          ]
+        },
+        "30": {
+          "path": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_wingcutter_combat1\\red24\\f0030.png",
+          "sha256": "FDB1AB2704B66AB0FC3D791EFA869E49EBAC82D09C692BF31566B0C0F2618B8D",
+          "size": [
+            240,
+            160
+          ]
+        },
+        "40": {
+          "path": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_wingcutter_combat1\\red24\\f0040.png",
+          "sha256": "5DF98E6E18D3FBF823E6969C999DB23E0064ED42028044A54BC5235600047CFD",
+          "size": [
+            240,
+            160
+          ]
+        },
+        "60": {
+          "path": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_wingcutter_combat1\\red24\\f0060.png",
+          "sha256": "260FA50EB79B89EE3B007A12BAFD2399E9E87076E523F5C6ADE420A720FFB051",
+          "size": [
+            240,
+            160
+          ]
+        },
+        "119": {
+          "path": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_wingcutter_combat1\\red24\\f0119.png",
+          "sha256": "9E7328E91BC0D37C2893BFDB0C94C42A3E856822167B26EC48CA0C97151CF6A7",
+          "size": [
+            240,
+            160
+          ]
+        }
+      }
+    },
+    "red0": {
+      "patch": [
+        {
+          "addr": 78429,
+          "value": 0,
+          "domain": "EWRAM"
+        }
+      ],
+      "before": {
+        "red": 0,
+        "blue": 0,
+        "yellow": 0,
+        "hp": 320,
+        "mp": 80,
+        "str": 10,
+        "def": 12,
+        "int": 11,
+        "lck": 9
+      },
+      "after": {
+        "red": 0,
+        "blue": 0,
+        "yellow": 0,
+        "hp": 320,
+        "mp": 80,
+        "str": 10,
+        "def": 12,
+        "int": 11,
+        "lck": 9
+      },
+      "frames": 120,
+      "shots": {
+        "8": {
+          "path": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_wingcutter_combat1\\red0\\f0008.png",
+          "sha256": "6AC6E6508EF21E093A5C4E3CB6820B50743B7EB934FE5BAE283F4599C4DA2E57",
+          "size": [
+            240,
+            160
+          ]
+        },
+        "12": {
+          "path": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_wingcutter_combat1\\red0\\f0012.png",
+          "sha256": "F9553B7EA6F62ADBC978441FC36FB1253E088BBBDF936EFE015AFAE6C6C4B508",
+          "size": [
+            240,
+            160
+          ]
+        },
+        "16": {
+          "path": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_wingcutter_combat1\\red0\\f0016.png",
+          "sha256": "9485BB6150F0D3751FFC49CC3AD05E608B8D52481F352B6CC654A0A33D941317",
+          "size": [
+            240,
+            160
+          ]
+        },
+        "20": {
+          "path": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_wingcutter_combat1\\red0\\f0020.png",
+          "sha256": "4775D0200D530D2471860FE7CD6A30A32E27E1534C928492543BA411B3C5B66B",
+          "size": [
+            240,
+            160
+          ]
+        },
+        "24": {
+          "path": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_wingcutter_combat1\\red0\\f0024.png",
+          "sha256": "D9768CDE750757118ED6AC57984661E5839A32E173D825DDB3FE0ED4A42CC9FD",
+          "size": [
+            240,
+            160
+          ]
+        },
+        "30": {
+          "path": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_wingcutter_combat1\\red0\\f0030.png",
+          "sha256": "23A0714DB0FD380FBF6C96BCA400E139FEDFF36E09838AB622EAF79EEE2158F6",
+          "size": [
+            240,
+            160
+          ]
+        },
+        "40": {
+          "path": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_wingcutter_combat1\\red0\\f0040.png",
+          "sha256": "EE2F667BBA54A43319A63D93702759929B7A83998492DA9B2113F5338187A7E7",
+          "size": [
+            240,
+            160
+          ]
+        },
+        "60": {
+          "path": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_wingcutter_combat1\\red0\\f0060.png",
+          "sha256": "E0C5E58A16C9D2380C4B05F6F8585B32E02793B79E18BC66E0AD85C8F581A855",
+          "size": [
+            240,
+            160
+          ]
+        },
+        "119": {
+          "path": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_wingcutter_combat1\\red0\\f0119.png",
+          "sha256": "E0C5E58A16C9D2380C4B05F6F8585B32E02793B79E18BC66E0AD85C8F581A855",
+          "size": [
+            240,
+            160
+          ]
+        }
+      }
+    }
+  },
+  "pixel_diffs": {
+    "8": {
+      "mean_channel_difference": 1.606310763888889,
+      "changed_pixels": 756,
+      "bbox": [
+        81,
+        11,
+        186,
+        144
+      ]
+    },
+    "12": {
+      "mean_channel_difference": 1.6657118055555555,
+      "changed_pixels": 799,
+      "bbox": [
+        74,
+        11,
+        206,
+        144
+      ]
+    },
+    "16": {
+      "mean_channel_difference": 1.6989756944444443,
+      "changed_pixels": 792,
+      "bbox": [
+        54,
+        11,
+        226,
+        144
+      ]
+    },
+    "20": {
+      "mean_channel_difference": 1.4312760416666668,
+      "changed_pixels": 678,
+      "bbox": [
+        34,
+        11,
+        240,
+        144
+      ]
+    },
+    "24": {
+      "mean_channel_difference": 1.2461371527777778,
+      "changed_pixels": 569,
+      "bbox": [
+        14,
+        11,
+        130,
+        144
+      ]
+    },
+    "30": {
+      "mean_channel_difference": 1.0273784722222221,
+      "changed_pixels": 472,
+      "bbox": [
+        0,
+        11,
+        132,
+        144
+      ]
+    },
+    "40": {
+      "mean_channel_difference": 0.8705121527777777,
+      "changed_pixels": 400,
+      "bbox": [
+        76,
+        11,
+        132,
+        144
+      ]
+    },
+    "60": {
+      "mean_channel_difference": 0.19633680555555555,
+      "changed_pixels": 86,
+      "bbox": [
+        76,
+        11,
+        127,
+        140
+      ]
+    },
+    "119": {
+      "mean_channel_difference": 0.18875,
+      "changed_pixels": 83,
+      "bbox": [
+        77,
+        11,
+        127,
+        140
+      ]
+    }
+  },
+  "checks": {
+    "red24_loaded": true,
+    "red0_control": true,
+    "red24_consumes_mp": true,
+    "red0_does_not_consume_mp": true,
+    "visible_effect": true
+  },
+  "actual_core": "BizHawk.Emulation.Cores.Nintendo.GBA.MGBAHawk",
+  "pid": 56276
+}

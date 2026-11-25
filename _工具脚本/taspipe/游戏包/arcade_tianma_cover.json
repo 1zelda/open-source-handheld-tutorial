@@ -1,0 +1,21 @@
+{
+  "name": "arcade_tianma_cover",
+  "mode": "cover",
+  "canvas": [1920, 1080],
+  "bg_blur": 26,
+  "bg_brightness": 0.30,
+  "accent": [248, 184, 56],
+  "fallback_bg": [28, 16, 16],
+  "gameplay": {
+    "max_w_frac": 0.72,
+    "max_h_frac": 0.92,
+    "margin_x": 48
+  },
+  "panel": {
+    "gap": 40,
+    "margin_right": 48,
+    "pad": 20,
+    "box_max_h_frac": 0.58,
+    "box_top": 96
+  }
+}

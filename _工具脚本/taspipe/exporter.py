@@ -121,7 +121,7 @@ def build_bezel(cover, gw, gh, out_png, tpl):
         panel_x0 = gx + sw + pn["gap"]
         panel_x1 = cw - pn["margin_right"]
         panel_w = max(120, panel_x1 - panel_x0)
-        box_fit = _fit(box, panel_w - pn["pad"], int(ch * pn["box_max_h_frac"]))
+        box_fit = _fit(box, panel_w - pn.get("pad", 20), int(ch * pn["box_max_h_frac"]))
         bx = panel_x0 + (panel_w - box_fit.width) // 2
         by = pn["box_top"]
         bez.alpha_composite(box_fit, (bx, by))
@@ -131,17 +131,17 @@ def build_bezel(cover, gw, gh, out_png, tpl):
         if logo_p and os.path.isfile(logo_p):
             logo = Image.open(logo_p).convert("RGBA")
             logo_fit = _fit(logo, panel_w - pn["pad"],
-                            ch - (by + box_fit.height) - pn["logo_bottom_reserve"])
+                            ch - (by + box_fit.height) - pn.get("logo_bottom_reserve", 60))
             lx = panel_x0 + (panel_w - logo_fit.width) // 2
-            ly = by + box_fit.height + pn["logo_gap"]
+            ly = by + box_fit.height + pn.get("logo_gap", 24)
             bez.alpha_composite(logo_fit, (lx, ly))
             layout["logo_xy"] = [lx, ly]
             layout["logo_size"] = list(logo_fit.size)
         bez = bez.convert("RGB")
         dr = ImageDraw.Draw(bez)
-        b = gp["border"]
+        b = gp.get("border", 3)
         dr.rectangle([gx - b, gy - b, gx + sw + b, gy + sh + b], outline=accent, width=b)
-        pb = pn["border"]
+        pb = pn.get("border", 2)
         dr.rectangle([bx - pb, by - pb, bx + box_fit.width + pb, by + box_fit.height + pb],
                      outline=accent, width=pb)
     else:
@@ -150,7 +150,7 @@ def build_bezel(cover, gw, gh, out_png, tpl):
         layout["overlay_xy"] = [gx, gy]
         layout["cover_found"] = False
         dr = ImageDraw.Draw(bez)
-        b = gp["border"]
+        b = gp.get("border", 3)
         dr.rectangle([gx - b, gy - b, gx + sw + b, gy + sh + b], outline=accent, width=b)
     bez.save(out_png)
     return layout
@@ -250,11 +250,12 @@ def compose(gameplay, out_mp4, rom_sha1=None, slug=None, covers_root=None,
         checks.append(CheckResult("duration_preserved",
                                   Verdict.PASS if abs(out_dur - in_dur) < 0.5 else Verdict.INCONCLUSIVE,
                                   reason=f"成片 {out_dur:.2f}s vs 原片 {in_dur:.2f}s"))
-        checks.append(CheckResult("audio_preserved",
-                                  Verdict.PASS if (has_audio and any(
-                                      s.get("codec_type") == "audio" for s in od.get("streams", [])))
-                                  else Verdict.INCONCLUSIVE,
-                                  reason="音轨 -c:a copy 原样保留" if has_audio else "原片无音轨"))
+        out_has_audio = any(s.get("codec_type") == "audio" for s in od.get("streams", []))
+        audio_verdict = (Verdict.PASS if out_has_audio else Verdict.FAIL) if has_audio else Verdict.INCONCLUSIVE
+        checks.append(CheckResult("audio_preserved", audio_verdict,
+                                  reason=("音轨 -c:a copy 原样保留" if has_audio and out_has_audio else
+                                          "原片有音轨但成片丢失" if has_audio else
+                                          "原片无音轨；正式素材音频未验证")))
     ver = _verification("ver_" + rid, rid, Stage.EXPORT, checks)
     run = {"schema_version": 1, "run_id": rid, "purpose": "bezel_export",
            "input_ref": gameplay, "template": tpl.get("name"), "cover": cover, "layout": layout,

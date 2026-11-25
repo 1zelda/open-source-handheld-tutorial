@@ -1,0 +1,324 @@
+{
+  "schema_version": 1,
+  "kind": "statejump_showcase",
+  "game_id": "megaman1_nes_us",
+  "game_title": "Mega Man (NES, USA, 1987 Capcom)",
+  "platform": "NES",
+  "core": "NesHawk",
+  "system": "NES",
+  "rom": "F:/taspipe_scratch/mm_showcase/clean_megaman1.nes",
+  "bizhawk": "F:/开源掌机教程/02-模拟器库/BizHawk/BizHawk-2.8",
+  "base_state": "F:/taspipe_scratch/mm_showcase/base.state",
+  "fps": 60.0988,
+  "template": "fc_tianma_mask",
+  "catalog": {
+    "status": "complete",
+    "expected_total": 8,
+    "sources": [
+      "https://datacrystal.tcrf.net/wiki/Mega_Man_(NES)/RAM_map",
+      "https://nesmaps.com/maps/MegaMan/MegaMan.html",
+      "https://strategywiki.org/wiki/Mega_Man/Weapons"
+    ],
+    "coverage_note": "Mega Man 1 (NES) 全 8 项武器与辅助装置完整盘点（含 Super Arm 巨石专用场景 base_state 覆盖）"
+  },
+  "elements": [
+    {
+      "element_id": "mega_buster",
+      "label": "Mega Buster (P)",
+      "kind": "weapon",
+      "base_state": null,
+      "trigger": {
+        "macro": "B,,,,B,,,,B,,,,,,,,,,,,,,,,,,,,",
+        "extra": 25,
+        "patches": []
+      },
+      "detection": {
+        "frame": 10,
+        "success_checks": [
+          {
+            "check_id": "mega_buster_pellet_sig",
+            "plugin_id": "frame_region_color_fraction",
+            "params": {
+              "region": [0.22, 0.42, 0.78, 0.68],
+              "rgb": [248, 216, 120],
+              "tol": 26,
+              "min_fraction": 0.008
+            },
+            "required": true
+          }
+        ]
+      },
+      "negative_control": {
+        "macro": null,
+        "patches": []
+      },
+      "note": "默认主武器 Mega Buster，连射三发黄色能量弹；运行 universal_authoring calibrate 将自动实测更新最佳帧与阈值。"
+    },
+    {
+      "element_id": "rolling_cutter",
+      "label": "Rolling Cutter (C)",
+      "kind": "weapon",
+      "base_state": null,
+      "trigger": {
+        "macro": "B,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,",
+        "extra": 30,
+        "patches": [
+          {"addr": 107, "value": 28},
+          {"addr": 95, "value": 1}
+        ]
+      },
+      "detection": {
+        "frame": 14,
+        "success_checks": [
+          {
+            "check_id": "rolling_cutter_arc_sig",
+            "plugin_id": "frame_region_color_fraction",
+            "params": {
+              "region": [0.25, 0.32, 0.80, 0.72],
+              "rgb": [240, 240, 240],
+              "tol": 26,
+              "min_fraction": 0.01
+            },
+            "required": true
+          }
+        ]
+      },
+      "negative_control": {
+        "macro": null,
+        "patches": [
+          {"addr": 107, "value": 28},
+          {"addr": 95, "value": 1}
+        ]
+      },
+      "note": "Cut Man 武器回旋剪刀；0x006B(107) 为能量，正反例共享相同前置补丁，中立反例不按 B。"
+    },
+    {
+      "element_id": "ice_slasher",
+      "label": "Ice Slasher (I)",
+      "kind": "weapon",
+      "base_state": null,
+      "trigger": {
+        "macro": "B,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,",
+        "extra": 25,
+        "patches": [
+          {"addr": 108, "value": 28},
+          {"addr": 95, "value": 2}
+        ]
+      },
+      "detection": {
+        "frame": 12,
+        "success_checks": [
+          {
+            "check_id": "ice_slasher_shard_sig",
+            "plugin_id": "frame_region_color_fraction",
+            "params": {
+              "region": [0.25, 0.38, 0.82, 0.68],
+              "rgb": [188, 236, 248],
+              "tol": 26,
+              "min_fraction": 0.008
+            },
+            "required": true
+          }
+        ]
+      },
+      "negative_control": {
+        "macro": null,
+        "patches": [
+          {"addr": 108, "value": 28},
+          {"addr": 95, "value": 2}
+        ]
+      },
+      "note": "Ice Man 武器寒冰裂斩；0x006C(108) 为能量。"
+    },
+    {
+      "element_id": "hyper_bomb",
+      "label": "Hyper Bomb (B)",
+      "kind": "weapon",
+      "base_state": null,
+      "trigger": {
+        "macro": "B,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,",
+        "extra": 45,
+        "patches": [
+          {"addr": 109, "value": 28},
+          {"addr": 95, "value": 3}
+        ]
+      },
+      "detection": {
+        "frame": 18,
+        "success_checks": [
+          {
+            "check_id": "hyper_bomb_arc_sig",
+            "plugin_id": "frame_region_color_fraction",
+            "params": {
+              "region": [0.24, 0.28, 0.78, 0.76],
+              "rgb": [120, 216, 120],
+              "tol": 28,
+              "min_fraction": 0.008
+            },
+            "required": true
+          }
+        ]
+      },
+      "negative_control": {
+        "macro": null,
+        "patches": [
+          {"addr": 109, "value": 28},
+          {"addr": 95, "value": 3}
+        ]
+      },
+      "note": "Bomb Man 武器超级炸弹；抛物线投掷 + 爆炸帧窗。"
+    },
+    {
+      "element_id": "fire_storm",
+      "label": "Fire Storm (F)",
+      "kind": "weapon",
+      "base_state": null,
+      "trigger": {
+        "macro": "B,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,",
+        "extra": 25,
+        "patches": [
+          {"addr": 110, "value": 28},
+          {"addr": 95, "value": 4}
+        ]
+      },
+      "detection": {
+        "frame": 12,
+        "success_checks": [
+          {
+            "check_id": "fire_storm_shield_sig",
+            "plugin_id": "frame_region_color_fraction",
+            "params": {
+              "region": [0.18, 0.35, 0.82, 0.75],
+              "rgb": [248, 120, 56],
+              "tol": 28,
+              "min_fraction": 0.012
+            },
+            "required": true
+          }
+        ]
+      },
+      "negative_control": {
+        "macro": null,
+        "patches": [
+          {"addr": 110, "value": 28},
+          {"addr": 95, "value": 4}
+        ]
+      },
+      "note": "Fire Man 武器烈火风暴；同时出现前方火球与环绕身体火焰护盾。"
+    },
+    {
+      "element_id": "thunder_beam",
+      "label": "Thunder Beam (E)",
+      "kind": "weapon",
+      "base_state": null,
+      "trigger": {
+        "macro": "B,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,",
+        "extra": 25,
+        "patches": [
+          {"addr": 111, "value": 28},
+          {"addr": 95, "value": 5}
+        ]
+      },
+      "detection": {
+        "frame": 10,
+        "success_checks": [
+          {
+            "check_id": "thunder_beam_3way_sig",
+            "plugin_id": "frame_region_color_fraction",
+            "params": {
+              "region": [0.15, 0.12, 0.88, 0.88],
+              "rgb": [248, 232, 160],
+              "tol": 28,
+              "min_fraction": 0.015
+            },
+            "required": true
+          }
+        ]
+      },
+      "negative_control": {
+        "macro": null,
+        "patches": [
+          {"addr": 111, "value": 28},
+          {"addr": 95, "value": 5}
+        ]
+      },
+      "note": "Elec Man 武器闪电光束；上、下、前全屏三向闪电。"
+    },
+    {
+      "element_id": "super_arm",
+      "label": "Super Arm (G)",
+      "kind": "weapon",
+      "base_state": "F:/taspipe_scratch/mm_showcase/base_guts_block.state",
+      "trigger": {
+        "macro": "B,,,,,,,,,,,,,,,,,,B,,,,,,,,,,,,,,,,,,",
+        "extra": 30,
+        "patches": [
+          {"addr": 112, "value": 28},
+          {"addr": 95, "value": 6}
+        ]
+      },
+      "detection": {
+        "frame": 12,
+        "success_checks": [
+          {
+            "check_id": "super_arm_lift_block_sig",
+            "plugin_id": "frame_region_color_fraction",
+            "params": {
+              "region": [0.20, 0.20, 0.75, 0.75],
+              "rgb": [216, 160, 96],
+              "tol": 28,
+              "min_fraction": 0.02
+            },
+            "required": true
+          }
+        ]
+      },
+      "negative_control": {
+        "macro": null,
+        "patches": [
+          {"addr": 112, "value": 28},
+          {"addr": 95, "value": 6}
+        ]
+      },
+      "note": "Guts Man 武器超级手臂；使用专用巨石场景快照 base_guts_block.state，第一下 B 举起巨石，第二下 B 投掷。"
+    },
+    {
+      "element_id": "magnet_beam",
+      "label": "Magnet Beam (M)",
+      "kind": "weapon_utility",
+      "base_state": null,
+      "trigger": {
+        "macro": "B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,,,,,,,,,,,,,,,,,,,,",
+        "extra": 25,
+        "patches": [
+          {"addr": 113, "value": 28},
+          {"addr": 95, "value": 7}
+        ]
+      },
+      "detection": {
+        "frame": 18,
+        "success_checks": [
+          {
+            "check_id": "magnet_beam_platform_sig",
+            "plugin_id": "frame_region_color_fraction",
+            "params": {
+              "region": [0.25, 0.40, 0.88, 0.68],
+              "rgb": [168, 228, 252],
+              "tol": 26,
+              "min_fraction": 0.012
+            },
+            "required": true
+          }
+        ]
+      },
+      "negative_control": {
+        "macro": null,
+        "patches": [
+          {"addr": 113, "value": 28},
+          {"addr": 95, "value": 7}
+        ]
+      },
+      "note": "辅助装置磁力光束平台；按住 B 16 帧延伸平台光束。"
+    }
+  ]
+}

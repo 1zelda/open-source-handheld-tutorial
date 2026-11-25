@@ -1,0 +1,144 @@
+{
+  "schema_version": "ram_calibration/1.0",
+  "game_id": "castlevania_aria_gba",
+  "profile": {
+    "rom": "F:/BaiduNetdiskDownload/rom/gba/恶魔城晓月圆舞曲.gba",
+    "rom_sha1": "40aab076a528f52e93260bb98d91a40039e0da02",
+    "bizhawk": "F:/开源掌机教程/02-模拟器库/BizHawk/BizHawk-2.11.1",
+    "isolated_slot": true,
+    "core": "mGBA",
+    "system": "GBA",
+    "domain": "EWRAM",
+    "state_package": {
+      "game_id": "castlevania_aria_gba",
+      "profile_id": "aria_us_40aab076",
+      "revision": "r20261125T120000"
+    },
+    "window": {
+      "start": 78429,
+      "length": 128
+    }
+  },
+  "base_state": "yellow_damage_route",
+  "macros": {
+    "yellow_damage": "Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,B,B,B,B,B,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,"
+  },
+  "matrix": {
+    "case_id": "yellow_soul_{value}_vs_empty",
+    "values": [
+      1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12,
+      13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24,
+      25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35
+    ],
+    "template": {
+      "kind": "scenario",
+      "base_state": "yellow_damage_route",
+      "arms": [
+        {
+          "name": "yellow_{value}",
+          "steps": [
+            {
+              "macro": "-",
+              "extra": 0,
+              "patches": [
+                {
+                  "addr": 78431,
+                  "value": "{value}"
+                }
+              ],
+              "expect": [
+                {
+                  "addr": 78431,
+                  "value": "{value}"
+                },
+                {
+                  "addr": 78448,
+                  "width": 2,
+                  "value": 80
+                }
+              ],
+              "screen": {
+                "reference": "$base",
+                "relation": "equal"
+              }
+            },
+            {
+              "state": "$previous",
+              "macro": "@yellow_damage",
+              "capture_frames": 226,
+              "expect": [
+                {
+                  "addr": 78431,
+                  "value": "{value}"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "yellow0",
+          "steps": [
+            {
+              "macro": "-",
+              "extra": 0,
+              "patches": [
+                {
+                  "addr": 78431,
+                  "value": 0
+                }
+              ],
+              "expect": [
+                {
+                  "addr": 78431,
+                  "value": 0
+                },
+                {
+                  "addr": 78448,
+                  "width": 2,
+                  "value": 80
+                }
+              ],
+              "screen": {
+                "reference": "$base",
+                "relation": "equal"
+              }
+            },
+            {
+              "state": "$previous",
+              "macro": "@yellow_damage",
+              "capture_frames": 226,
+              "expect": [
+                {
+                  "addr": 78431,
+                  "value": 0
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "comparisons": [
+        {
+          "left": "yellow_{value}",
+          "right": "yellow0",
+          "left_step": 1,
+          "right_step": 1,
+          "relation": "equal",
+          "frames": [
+            80, 85
+          ]
+        },
+        {
+          "left": "yellow_{value}",
+          "right": "yellow0",
+          "left_step": 1,
+          "right_step": 1,
+          "relation": "different",
+          "frames": [
+            86, 90, 100, 120, 164
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "version": 1,
+  "id": "pub_5246",
+  "mode": "session",
+  "purpose": "playthrough",
+  "game": "Nova the Squirrel",
+  "platform": "NES",
+  "rom": {
+    "path": "F:\\开源掌机教程\\04-游戏资源库\\TAS输入录像库\\roms_verify\\NES\\nova_v1.0.6a.nes",
+    "sha1": "b6b07ee76492ed475f39167c89b342353f999231"
+  },
+  "profile": {
+    "bizhawk": "F:\\开源掌机教程\\02-模拟器库\\BizHawk\\BizHawk-2.8",
+    "core": "NesHawk",
+    "system": "NES"
+  },
+  "start": {
+    "kind": "movie",
+    "path": "F:\\开源掌机教程\\04-游戏资源库\\TAS输入录像库\\movies\\NES\\5246.bk2",
+    "sha256": "31e37b9fd84b1ea9cdcac7ce1fabe8d0334c3a835f545c988c2f58cc81377b4d"
+  },
+  "steps": [
+    {
+      "id": "full_movie",
+      "op": "replay",
+      "frames": "end"
+    }
+  ],
+  "record": {
+    "video": false,
+    "audio": false,
+    "fps": 60.0988
+  }
+}

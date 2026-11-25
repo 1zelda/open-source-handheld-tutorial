@@ -1,0 +1,40 @@
+START_UTC 2026-11-24T08:11:12.244761+00:00
+SOURCE_BEFORE {"taspipe/kb.py": "104c29c06a985254f7d21cf61361dfd3cee8f12af2a99ad7c1198f36ceba2a41", "taspipe/kb_selftest_gates.py": "dfed2190e39cc0007fe754a665fe847d852833d0e4f337b0766cbd4953f54d2e", "taspipe/nkd_kt.py": "aadb1d76045826e26a9d8f6b0b9702c84dfa9975a772b4974742e70edbe45d06", "taspipe/selftest.py": "786774e931ee118413164b996226bb41b2725c78f9148ce052cd0932e9b9571c"}
+KT_TARGETED_FUNCTION_OK 3/3
+CLI_VALID_BEGIN
+{
+  "schema_version": 1,
+  "game": "熱血格闘伝説",
+  "revision": "nekketsu_kakutou_densetsu_fc_jp",
+  "input": {
+    "month": 1,
+    "day": 1
+  },
+  "formula": "KT# = (出生月 + 出生日 - 1) mod 20",
+  "candidate_kt_number": 1,
+  "candidate_moves": [
+    "Stone Guard",
+    "Spin Attack",
+    "Bomb Kick"
+  ],
+  "status": "reference_only",
+  "authority": "reference_only",
+  "source_id": "dammit9x_nkd_faq",
+  "source_locator": "_工具脚本/taspipe/游戏包/来源库/取证/dammit9x_熱血格闘伝説_角色公式参考_20261124.md#L9-L36",
+  "archived_sources": [
+    "https://web.archive.org/web/20010819104652id_/http://www.rahga.com/nkd/",
+    "https://web.archive.org/web/20010215090626id_/http://yokohama.cool.ne.jp/tyaf/Games/kak.html"
+  ],
+  "provenance": "FAQ 表注明 adapted from http://www.rahga.com/nkd/；Rahga 2001-08-19 与 Afric Acid 2001-02-15 快照同表，均为玩家攻略，原站正文不等于官方或 ROM 证据。",
+  "rom_recomputed": false,
+  "hard_evidence_eligible": false,
+  "warning": "二手 FAQ 候选，未经原版 ROM 复算；不得进入硬证据通道或自动文稿定论。"
+}
+CLI_VALID_END
+usage: taspipe.kb [-h]
+                  {build,query,kt-candidates,dense,audit,show,coverage} ...
+taspipe.kb: error: 无效生日：2/30（day is out of range for month）
+SOURCE_AFTER {"taspipe/kb.py": "104c29c06a985254f7d21cf61361dfd3cee8f12af2a99ad7c1198f36ceba2a41", "taspipe/kb_selftest_gates.py": "dfed2190e39cc0007fe754a665fe847d852833d0e4f337b0766cbd4953f54d2e", "taspipe/nkd_kt.py": "aadb1d76045826e26a9d8f6b0b9702c84dfa9975a772b4974742e70edbe45d06", "taspipe/selftest.py": "786774e931ee118413164b996226bb41b2725c78f9148ce052cd0932e9b9571c"}
+SOURCE_STABLE True
+EXIT_CODES function=0 cli_valid=0 cli_invalid=2
+END_UTC 2026-11-24T08:11:12.580790+00:00

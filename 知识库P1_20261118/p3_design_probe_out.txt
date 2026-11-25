@@ -1,0 +1,76 @@
+=== 假阳性块（必须变不可答）===
+W11 一直输球会怎么样 L137-158 intent=howto 现=True 新=False R1=False R2=True focus_hit=[]
+W14 禁区高空球怎么顶 L216-225 intent=howto 现=True 新=False R1=True R2=True focus_hit=[]
+W27 有没有隐藏结局？ L216-225 intent=existence 现=True 新=False R1=True R2=False focus_hit=['结局']
+
+=== 26 题金标块（必须保持可答；refuse/无gold题跳过）===
+Q01 OK 热血足球联盟一共有多少种必杀射门？
+    L3 现=True 新=True R1=False R2=False hit=['射门', '必杀', '杀射', '种必']
+Q02 OK 燕返原生只有哪个角色会使？
+    L70 现=True 新=True R1=False R2=False hit=['原生', '燕返']
+Q03 OK 热血足球2 暂停秘技的按键输入是什么？
+    L24 现=True 新=True R1=False R2=False hit=['暂停', '秘技']
+Q04 OK 容易难度下对手能不能发动必杀射门？
+    L24 现=True 新=True R1=False R2=False hit=['かし', 'さし', 'しい', 'ずか']
+Q05 OK 我想控制队长以外的队员，该怎么换人？
+    L24 现=True 新=True R1=False R2=False hit=['换人', '控制', '队长']
+Q06 OK 热血足球联盟每队上场几名球员？
+    L47 现=True 新=True R1=False R2=False hit=[]
+Q07 OK 热血联赛模式一共有多少场比赛？
+    L76 现=True 新=True R1=False R2=False hit=['モー', 'ード', '試合']
+Q08 OK 双人合作模式下二号玩家操作什么位置？
+    L47 现=True 新=True R1=False R2=False hit=['2', '協力', '操作']
+Q10 OK KOF98 ECK 能不能关掉队友改成 1v1？
+    L185 现=True 新=True R1=False R2=False hit=['队友']
+Q16 OK 怎么射门才能让守门员扑不到？
+    L1 现=False 新=False R1=False R2=False hit=['守门', '射门', '门员']
+    L71 现=False 新=False R1=False R2=False hit=['守门', '射门', '才能', '门员']
+    L91 现=False 新=False R1=False R2=False hit=['守门', '射门', '门员']
+    L1 现=False 新=False R1=False R2=False hit=['守门', '射门', '门员']
+    L77 现=False 新=False R1=False R2=False hit=['守门', '射门', '门员']
+    L3 现=False 新=False R1=False R2=False hit=['射门']
+    L10 现=True 新=False R1=True R2=False hit=['射门']
+    L24 现=True 新=True R1=False R2=False hit=['射门', '才能']
+    L36 现=True 新=True R1=False R2=False hit=['射门']
+    L51 现=True 新=True R1=False R2=False hit=['射门']
+    L70 现=True 新=True R1=False R2=False hit=['パー', '射门']
+    L88 现=False 新=False R1=False R2=False hit=['不到', '射门']
+    L101 现=True 新=True R1=False R2=False hit=['才能']
+    L120 现=True 新=True R1=False R2=False hit=['不到']
+    L137 现=True 新=True R1=False R2=False hit=['射门']
+    L159 现=True 新=True R1=False R2=False hit=['不到']
+    L164 现=True 新=False R1=False R2=True hit=[]
+    L182 现=True 新=True R1=False R2=False hit=['射门']
+    L194 现=True 新=True R1=False R2=False hit=['不到']
+    L216 现=True 新=False R1=True R2=True hit=[]
+    L229 现=False 新=False R1=False R2=True hit=[]
+    L234 现=False 新=False R1=False R2=True hit=[]
+    L242 现=False 新=False R1=False R2=False hit=['守门']
+    L251 现=True 新=True R1=False R2=False hit=['不到']
+    L262 现=True 新=False R1=False R2=True hit=[]
+Q17 OK 一直输球会不会触发隐藏结局？
+    L1 现=True 新=True R1=False R2=False hit=['一直', '结局', '触发', '隐藏']
+    L65 现=True 新=True R1=False R2=False hit=['不会', '会触', '结局', '触发']
+    L83 现=True 新=True R1=False R2=False hit=['结局']
+Q18 OK 暂停秘技成功的判定签名是什么？
+    L251 现=True 新=True R1=False R2=False hit=['秘技', '签名']
+P19 OK 热血足球的世界杯模式怎么触发？
+    L1 现=True 新=True R1=False R2=False hit=['世界', '杯模', '界杯', '的世']
+P22 OK 说明书里的 PK 战模式怎么玩？
+    L327 现=True 新=True R1=False R2=False hit=['pk', 'モー', 'ード']
+P23 OK 说明书里状态（ステータス）一节讲了哪些参数？
+    L267 现=True 新=True R1=False R2=False hit=['ステ', 'タス', 'テー', 'ータ']
+P24 OK 测试问题与闸门说明书里，ROM 修订版对不上该怎
+    L76 现=True 新=True R1=False R2=False hit=['rom', '不上', '修订', '对不']
+
+=== 探针真阳性/现状pass题的代表块（抽查不误杀）===
+W02 热血足球联盟 必杀射 L3-7 intent=count 现=True 新=True R1=False R2=False hit=['射门', '必杀', '杀射']
+W01 热血足球2 燕返怎么 L70-85 intent=howto 现=True 新=True R1=False R2=False hit=['燕返']
+W07 热血足球2 暂停秘技 L251-259 intent=identity 现=True 新=True R1=False R2=False hit=['秘技', '签名']
+W29 拳皇98 ECK 能 L185-190 intent=yesno 现=True 新=True R1=False R2=False hit=['队战']
+P22 说明书里的 PK 战 L327-341 intent=howto 现=True 新=True R1=False R2=False hit=['pk', 'モー', 'ード']
+P23 说明书里状态（ステー L267-288 intent=topic 现=True 新=True R1=False R2=False hit=['ステ', 'タス', 'テー', 'ータ']
+Q05 我想控制队长以外的队 L24-33 intent=howto 现=True 新=True R1=False R2=False hit=['换人', '控制', '队长']
+Q16 怎么射门才能让守门员 L3-7 intent=howto 现=False 新=False R1=False R2=False hit=['射门']
+
+金标误杀数：0

@@ -1,0 +1,107 @@
+PASS  T1a 12列台账读回
+PASS  T1b 老10列缺列补空不崩
+PASS  T2 转载3篇归1事件
+PASS  T2b 转载性质注明
+PASS  T3 不同tag不合并
+PASS  T4 旧闻不进今日优先
+PASS  T5 反证:HOT商业八卦关注=低
+PASS  T6 维护提交影响=低
+PASS  T7 官方release近期→今日优先
+PASS  T8 反证:需求信号恒未知
+PASS  T8b HOT只作参考注明
+PASS  T9a bm25快照走生产路径显式退回
+PASS  T9b 域内题有候选非error
+PASS  T9c 反证:域外零语料拒答
+PASS  T9d 快照sha已记录
+PASS  T29a 反证:unrouted+kb pass→降级unanchored不当硬证据
+PASS  T29b routed域内pass保留(不误降)
+PASS  T29c 降级计数按受影响卡计(2域外+1域内=2)
+PASS  T29e 反证:meta文档域(project_docs)pass降级(弱词tas⊂Fantasy)
+PASS  T29d 真实语料:Kirby绝不pass(域锚点闸门现查)
+PASS  T29f 真实语料:FF新闻绝不靠内部文档域pass
+PASS  T10a 没时间scope=editor_capacity
+PASS  T10b 拒绝scope=editorial_judgment
+PASS  T10c 采纳标题进历史(现查)
+PASS  T10d 讲过的信息增量=低
+PASS  T11 冷知识进长期选题
+PASS  T12a 卡字段齐全
+PASS  T12b 仅标题判断必标
+PASS  T12c 八维齐全
+PASS  T13a 产物7件齐全
+PASS  T13b JSON卡数=队列和=输入数
+PASS  T13c 无tmp残留
+PASS  T13d 运行记录带队列计数
+PASS  T14a hybrid闸门常量在
+PASS  T14b off模式原样保留
+PASS  T16a 无pub用first_seen代理
+PASS  T16b 反证:近期无pub不进长期选题
+PASS  T17 反证:不知名项目常规发布不进今日优先
+PASS  T18 Kirby知名度高+关注高
+PASS  T19 takedown重大事件标记+知名度高
+PASS  T20 shadPS4×3归1系列卡
+PASS  T21 反证:不同repo不并系列
+PASS  T22 反证:重大事件不折叠
+PASS  T23 系列卡契约
+PASS  T24a 平台名project_key=None
+PASS  T24b 反证:PS5两条不并系列
+PASS  T25 Kirby含Switch2自成卡+知名度高
+PASS  T26a 反证:<2次观测需求恒未知
+PASS  T26b 2次升温→中+媒体覆盖代理
+PASS  T26c 反证:升温封顶中不许高
+PASS  T26d 下降→低
+PASS  T26e score_event接demand_override
+PASS  T27a 反证:reference_only不挖
+PASS  T27b 反证:无受众匹配不挖
+PASS  T27c 同game≥2revision版本差异中
+PASS  T27d 挖题卡entry=B且长期选题(不许今日优先)
+PASS  T27e 与新闻标题去重
+PASS  T27f 真实快照挖题卡字段齐全(现查)
+PASS  T28a 抽取去script/nav留正文
+PASS  T28b 版权:snippet≤240
+PASS  T28c body ok翻title_only=False+snippet≤240
+PASS  T28d body精修反差维→中
+PASS  T28e 反证:fetch失败显式error留痕
+PASS  T28f body error保持title_only=True
+PASS  T28g 反证:UA头latin-1可编(防中文头复发)
+PASS  T28h 反证:fetch错误不写缓存(允许重试)
+PASS  T28i 反证:HTTP200无正文标empty不冒ok
+PASS  T28j empty不翻title_only
+PASS  T28k 反证:ok-空文本陈旧缓存不信任(重取)
+PASS  T30a 热IP词(热血足球)真相关视频→高需求
+PASS  T30b 反证:模糊兜底(model2-nx→NX CAD)核心命中0→未知不冒充中
+PASS  T30c 反证:412风控→error→未知不冒充0需求
+PASS  T30d 反证:空结果→empty→未知不冒充高
+PASS  T30e 互动率=(赞+藏+弹幕+评)/播放=0.1
+PASS  T30f recency只算近90天(老视频排除)
+PASS  T30g 去污染中位剔除兜底(相关50000≠原始25050,核心命中0.5)
+PASS  T30h 反证:缓存只ok(error不写,允许重试)
+PASS  T30i 限速/退避常量在(防风控)
+PASS  T30j 反证:阈值未定→未知(先跑数据不写死)
+PASS  T30k CJK复合词2字子词命中(街机改版不假旗/拳皇无街机词不算)
+PASS  T30l 诚实边界:高命中≠语义相关警示在reason(星之海歧义须人工核)
+PASS  T30m 版权:top3短标题≤TITLE_MAX
+PASS  T30n 反证:供给capped1000不抬高需求(低播放→低)
+PASS  T30o evergreen区分:总中位高但近期播放低(老爆款非当前热)
+PASS  T31pre load_probe只读合成探针(8词,不联网)
+PASS  T31a 映射可靠高(kirby→星之卡比,带代理/粒度)
+PASS  T31b 优先级:B站高优先于热度时序中
+PASS  T31c 反证:污染词(核心命中0)退回热度时序中,不冒充未知/高
+PASS  T31d 反证:未映射IP(final fantasy)退回热度时序,标未探针
+PASS  T31e 反证:映射词不在探针结果→未探针未知
+PASS  T31f 粒度警示:switch2角度/拳皇细分
+PASS  T31g 消歧:sea of stars实测词=英文Sea of Stars(非星之海)
+PASS  T31h ★反证:喂高demand低匹配事件队列不变(仅信息维,不进关注/队列)
+PASS  T31i 版权:evidence带bvid+探针ts+短标题≤60
+PASS  T31j 频道适配:热血足球长尾老爆款/塞尔达当前活跃
+PASS  T31k 反证:可靠低(拳皇98)不冒充中
+PASS  T31l build_demand_map计数一致(映射2可靠2/未映射2)
+PASS  T15a 真实反馈.db未被试跑写
+PASS  T15b 真实产出目录未被试跑写
+PASS  T15c 真实热度快照.db未被试跑写
+PASS  T15d 真实正文缓存未被试跑写
+PASS  T15e 真实B站热度实验产出未被试跑写
+PASS  T15f 真实B站缓存未被试跑写
+PASS  T15g 真实探针结果.json未被回流试跑写(只读)
+
+自检合计 104 格：PASS 104 / FAIL 0
+全绿

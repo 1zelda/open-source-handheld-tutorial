@@ -1,0 +1,134 @@
+{
+  "schema_version": 1,
+  "recorded_at": "2026-11-24",
+  "item": "A3 付费 API 预算闸门与凭据安全收口",
+  "status": "implemented_fail_closed_paid_disabled_until_budget_configured",
+  "production_guards": {
+    "unknown_price_is_paid": true,
+    "unknown_price_execution": "refused",
+    "named_model_bypasses_allow_paid": false,
+    "allow_paid_without_complete_budget": "refused_before_network",
+    "required_budget_fields": [
+      "run_budget_cny",
+      "daily_budget_cny",
+      "run_token_limit",
+      "daily_token_limit",
+      "run_request_limit",
+      "daily_request_limit"
+    ],
+    "budget_defaults": {
+      "run_budget_cny": 0.0,
+      "daily_budget_cny": 0.0,
+      "run_token_limit": 0,
+      "daily_token_limit": 0,
+      "run_request_limit": 0,
+      "daily_request_limit": 0
+    },
+    "token_and_request_limits_must_be_integers": true,
+    "input_token_estimate": "UTF-8 字节数保守上界；当前未接 tokenizer",
+    "default_max_output_tokens": 2048,
+    "explicit_max_tokens_preserved": true,
+    "price_unit": "CNY per 1,000,000 tokens",
+    "successful_usage_recorded": true,
+    "gemini_thought_tokens_billed": true,
+    "pending_attempt_behavior": "请求发出后若进程中断或传输层结果未知，台账保留 pending；后续付费调用按未知成本拒绝",
+    "http_response_behavior": "明确 HTTP 响应会结算 pending；成功响应同时回填真实 usage 与成本",
+    "concurrency_guard": "生产 --ask/--init 使用 Windows 文件锁，并在锁内重读配置与台账；第二进程直接拒绝，避免并发绕过预算",
+    "lock_file_pattern": "_工具脚本/_apikey池台账.json.lock",
+    "paid_api_calls_this_round": 0,
+    "recharge_or_topup_this_round": false,
+    "key_revocation_this_round": false
+  },
+  "credential_safety": {
+    "secret_storage": "Windows Credential Manager only",
+    "json_stores_references_only": true,
+    "config_sensitive_finding": null,
+    "ledger_sensitive_finding": null,
+    "credential_reference_count": 1,
+    "readable_credential_reference_count": 1,
+    "credential_references": [
+      {
+        "platform": "gemini-aistudio",
+        "account": "zeldalink114115@gmail.com",
+        "label": "key-A",
+        "reference": "QoderAPIKey/gemini-aistudio/zeldalink114115@gmail.com/key-A",
+        "readable": true
+      }
+    ],
+    "mask_contains_secret_fragments": false,
+    "recursive_sensitive_field_guard": true,
+    "credential_like_value_guard": true,
+    "rejected_save_leaves_target_or_tmp": false,
+    "add_key_preflights_config_before_credential_write": true,
+    "gitignore_verified_paths": [
+      "_工具脚本/apikey池.json",
+      "_工具脚本/_apikey池台账.json",
+      "_工具脚本/apikey池.json.tmp",
+      "_工具脚本/_apikey池台账.json.tmp",
+      "_工具脚本/apikey池.py.bak-1124-a3"
+    ]
+  },
+  "verification": {
+    "baseline_selftest": "91/91",
+    "final_selftest": "148/148",
+    "selftest_command": "python apikey池.py --selftest",
+    "py_compile": "passed",
+    "network_calls_in_selftest": 0,
+    "production_path_paid_stub": "passed",
+    "blocked_paid_paths_make_zero_calls": true,
+    "successful_paid_stub_records_attempts_req_usage_and_exact_cost": true,
+    "default_and_explicit_output_caps_sent": true,
+    "all_six_budget_boundaries_tested": true,
+    "historical_unknown_cost_blocks": true,
+    "pending_unknown_cost_blocks": true,
+    "second_process_lock_probe": "blocked",
+    "lock_release_probe": "acquired",
+    "real_ledger_byte_identical_during_selftest": true,
+    "real_config_byte_identical_during_selftest": true,
+    "current_quota_day": "2026-11-23",
+    "current_daily_totals": {
+      "requests": 0,
+      "tokens": 0,
+      "cost_cny": 0.0,
+      "pending": 0,
+      "unknown_cost": false
+    }
+  },
+  "artifacts": [
+    {
+      "path": "_工具脚本/apikey池.py",
+      "bytes": 95495,
+      "sha256": "7e43e7527f021e572ab06e639c2484749aeead93223d36407c6d65026a4d5941"
+    },
+    {
+      "path": "_工具脚本/apikey池.json",
+      "bytes": 12438,
+      "sha256": "0892af010f4061a967b6a499b1cddab23fc221d773e270d3799dbc5ed032bcbf"
+    },
+    {
+      "path": "_工具脚本/_apikey池台账.json",
+      "bytes": 1226,
+      "sha256": "9d3d25fae204e4255de125df0afcf80da35150616045235783597d472ec5ea27"
+    },
+    {
+      "path": ".gitignore",
+      "bytes": 856,
+      "sha256": "bfb2a6c2406d914145fd53e86727afa6e8302e77a234cdc34b2dd655038a53ad"
+    }
+  ],
+  "backups": [
+    {
+      "path": "_工具脚本/apikey池.py.bak-1124-a3",
+      "bytes": 70474
+    },
+    {
+      "path": "_工具脚本/apikey池.json.bak-1124-a3",
+      "bytes": 11858
+    },
+    {
+      "path": ".gitignore.bak-1124-a3",
+      "bytes": 563
+    }
+  ],
+  "next_action": "付费执行保持关闭。若确实需要付费，先由用户明确填写六项预算/额度，再逐项检查价格与每日台账；配置不完整时无需尝试，系统会在联网前拒绝。"
+}

@@ -1,0 +1,246 @@
+[bm25] 评测 grades 逐字段: 5 差异
+  Q03.refusal: unanswerable->None
+  Q07.gold_pos: 3->5
+  Q07.condition: 权威可答件在第3位，非最高分；出证须附此条件->None
+  Q10.gold_pos: 1->4
+  Q16.gold_pos: 1->5
+  ok 回归(pass->fail): []  ok 新增(fail->pass): []
+  summary 基线 23/26 -> 再索引 23/26 fail=['Q03', 'Q06', 'Q08']
+
+[bm25] 探针状态翻转: 7 处
+  W03 w3: inconclusive->pass
+  W03 w5: inconclusive->pass
+  W09 w3: inconclusive->pass
+  W09 w5: inconclusive->pass
+  X12 w5: pass->inconclusive
+  X18 w3: inconclusive->pass
+  X18 w5: inconclusive->pass
+  其中回归(pass->非pass): ['X12 w5']
+  hits 排序变化: 54 处 ['W03 w3', 'W03 w5', 'W05 w3', 'W05 w5', 'W06 w3', 'W06 w5', 'W07 w3', 'W07 w5', 'W08 w3', 'W08 w5', 'W09 w3', 'W09 w5', 'W14 w3', 'W14 w5', 'W19 w3', 'W19 w5', 'W27 w3', 'W27 w5', 'W28 w3', 'W28 w5', 'W30 w3', 'W30 w5', 'X04 w3', 'X04 w5', 'X05 w3', 'X05 w5', 'X08 w3', 'X08 w5', 'X09 w3', 'X09 w5', 'X11 w3', 'X11 w5', 'X12 w3', 'X12 w5', 'X15 w3', 'X15 w5', 'X16 w3', 'X16 w5', 'X18 w3', 'X18 w5', 'X19 w3', 'X19 w5', 'X21 w3', 'X21 w5', 'X22 w3', 'X22 w5', 'X23 w3', 'X23 w5', 'X26 w3', 'X26 w5', 'X29 w3', 'X29 w5', 'X30 w3', 'X30 w5']
+
+[bm25] 焦点格 w3 放行块原文（判真阳/假阳）:
+  --- W03 [regression] w3=pass refusal=None cond=None
+      q: 热血足球2 守门员能不能用必杀？
+      rank1 2e317b9f1bbf auth=authoritative ans=True setsumei_热血足球说明书_编者中文对照_20261119.md#L7-L10
+         热血足球联盟是 **6 人制**足球，规定时间内进球多的球队获胜。若同分结束比赛，则以 **PK 战**决定胜负。比赛中有犯规（ペナルティ）判定，也可以罚任意球（フリーキック）。
+**1P 单人游玩**时，操作 MF 队长角色一人，同时向队
+      rank2 141a669374a9 auth=reference_only ans=True sohu_必杀最强小辫子_20261118.md#L1-L69
+         *   文章
+*   总阅读
+*   游戏领域优质创作者
+2023-02-17 00:41
+发布于：辽宁省
+这是老男孩游戏盒的第535篇原创，作者@怀旧淼哥
+最近有FC游戏水友给淼哥留言说，希望讲一期《热血足球》里的必杀射门盘点——《热血足
+      rank3 9f60ab7cc1b6 auth=reference_only ans=False urawaza_FC热血足球_编者中文对照_20261119.md#L11-L17
+         - **爆裂攻击（ばくれつあたっく）**：敌球时，跳跃落地后按 B。
+- **燕返（つばめがえし）**：运球（ドリブル）中跳跃。
+- **龙卷风踢（とるねーどきっく）**：敌球时，超级冲刺（ハイパー・ダッシュ）中按十字键＋A。
+- **钻头
+      rank4 9265c746273b auth=reference_only ans=True 1ang_热血足球联盟图文攻略_20261118.md#L1-L129
+         热血足球3攻略-FC热血足球3(热血足球联盟)游戏图文攻略 - 乐米网一昂
+function doFav(u, t) { }
+日版名：くにおくんの熱血サッカーリーグ
+罗马音：Kunio Kun No Nekketsu Soccer Leag
+      rank5 2e4c8ac797cf auth=reference_only ans=True sohu_必杀最强小辫子_20261118.md#L71-L89
+         他的射门必杀“香蕉环射门”堪称简单粗暴，似乎有隐藏属性加持，连德国队的门将都有一定几率能踢飞。而且津根的香蕉射门跟阿根廷队的不同，他的射门会在飞行一段距离后变成香蕉原地停留一会儿，这就让他的射门同样具备骗出对方CPU守门员假动作的功能，计算
+  --- W09 [regression] w3=pass refusal=None cond=None
+      q: 热血足球2 双人合作怎么玩？
+      rank1 2e317b9f1bbf auth=authoritative ans=True setsumei_热血足球说明书_编者中文对照_20261119.md#L7-L10
+         热血足球联盟是 **6 人制**足球，规定时间内进球多的球队获胜。若同分结束比赛，则以 **PK 战**决定胜负。比赛中有犯规（ペナルティ）判定，也可以罚任意球（フリーキック）。
+**1P 单人游玩**时，操作 MF 队长角色一人，同时向队
+      rank2 9265c746273b auth=reference_only ans=True 1ang_热血足球联盟图文攻略_20261118.md#L1-L129
+         热血足球3攻略-FC热血足球3(热血足球联盟)游戏图文攻略 - 乐米网一昂
+function doFav(u, t) { }
+日版名：くにおくんの熱血サッカーリーグ
+罗马音：Kunio Kun No Nekketsu Soccer Leag
+      rank3 300476ef6ecd auth=reference_only ans=False xiaoji001_热血足球hack汉化版_20261118.md#L1-L100
+         热血足球 hack（汉化版） | 小鸡模拟器
+[![小鸡模拟器](/images/logonew.png)](https://www.xiaoji001.com)
+平台分类
+游戏分类
+用户上传游戏！
+游戏原名：熱血高校ドッジボール部 サッカ
+      rank4 ecc1c751f7a2 auth=reference_only ans=False sohu_一直输球隐藏大结局_20261118.md#L1-L63
+         *   文章
+*   总阅读
+*   游戏领域优质创作者
+2023-01-04 22:36
+发布于：辽宁省
+这是老男孩游戏盒的第501篇原创，作者@怀旧淼哥
+很多80后、90后老男孩都在怀念当年的红白机时光，其实当年大家打游戏很多时候都在傻
+      rank5 4d37bae4996e auth=reference_only ans=False sohu_一直输球隐藏大结局_20261118.md#L83-L98
+         这三种结局其实都可以看做同一种结局，毕竟不论走哪条结局路线，通关动画播完后，游戏都会卡死在Technos开头的挥拳动画上，这三种结局都无法进行续关，所以一旦选择进入世界杯，就意味着在《热血足球》这款游戏里不可能踢满36场了。
+如此看来，《热
+  --- W14 [regression] w3=inconclusive refusal=None cond=None
+      q: 热血足球联盟 禁区高空球怎么顶？
+      rank1 9265c746273b auth=reference_only ans=True 1ang_热血足球联盟图文攻略_20261118.md#L1-L129
+         热血足球3攻略-FC热血足球3(热血足球联盟)游戏图文攻略 - 乐米网一昂
+function doFav(u, t) { }
+日版名：くにおくんの熱血サッカーリーグ
+罗马音：Kunio Kun No Nekketsu Soccer Leag
+      rank2 de8504fe7e4d auth=authoritative ans=False 热血足球联盟_必杀全清单.md#L10-L21
+         - S1 天幻网《FC热血足球联盟困难模式全胜夺冠》转载（乐米网一昂，2022-04-05）：
+（原站 http://1lifeclear.ffsky.cn/56.htm 本机直连失败，用转载副本；逐选手日文原名+发动法+秘技+难度规则）
+
+      rank3 9bbb7d89c9f4 auth=reference_only ans=False sohu_必杀最强小辫子_20261118.md#L91-L106
+         小辫子更神的地方在于他的必杀技“忍者射门”，这招射门会在禁区会自动隐身。根据这个特性，如果你直接在禁区踢出必杀，足球则会在你踢出的一瞬间直接隐身停留在空中，利用好这个特性可以骗出CPU电脑的无限升龙拳，让他们一直对着空气跳跃，而我们则可以趁
+      rank4 d394a4c3412d auth=reference_only ans=False 1ang_热血足球联盟图文攻略_20261118.md#L131-L158
+         热血联盟模式里，选手们的状态是可变的，选手们存在情绪设定。在『みーてぃんぐ(Meeting)』会面选项里，与选手对话或者使用物品，就会引起情绪变化。而且，可以看到选手数据资料，得知选手的性格与嗜好。
+开场白
+\[1\]こんにちは、熱血高校サ
+      rank5 2c9b59c2df7a auth=authoritative ans=True 热血足球联盟_honest_gap_manifest.md#L8-L20
+         - declared（《热血足球联盟_必杀全清单.md》）：23 必杀射门（12 角色 + 11 对手）+ 13 一般技 = **36**。
+- delivered（CN/hack 四变体 jf/wl/hack_jump/hack_se 实
+  --- X16 [trap] w3=inconclusive refusal=None cond=None
+      q: 热血足球 打雷会不会把门将击倒？
+      rank1 ec8277f3ea2b auth=reference_only ans=True 1ang_热血足球联盟图文攻略_20261118.md#L289-L335
+         『ちゅういほう』，注意报。截图上的「かみなり」意思是“雷”，说明比赛中会打雷，闪电有时会把门将击倒。
+成绩表 选手数据
+当前联盟战成绩。截图上日本语的含义，前面“热血联盟模式”里已经讲解过了，这里不再赘述。
+上面截图是热血FC默认队长『くに
+      rank2 2e317b9f1bbf auth=authoritative ans=False setsumei_热血足球说明书_编者中文对照_20261119.md#L7-L10
+         热血足球联盟是 **6 人制**足球，规定时间内进球多的球队获胜。若同分结束比赛，则以 **PK 战**决定胜负。比赛中有犯规（ペナルティ）判定，也可以罚任意球（フリーキック）。
+**1P 单人游玩**时，操作 MF 队长角色一人，同时向队
+      rank3 9f60ab7cc1b6 auth=reference_only ans=False urawaza_FC热血足球_编者中文对照_20261119.md#L11-L17
+         - **爆裂攻击（ばくれつあたっく）**：敌球时，跳跃落地后按 B。
+- **燕返（つばめがえし）**：运球（ドリブル）中跳跃。
+- **龙卷风踢（とるねーどきっく）**：敌球时，超级冲刺（ハイパー・ダッシュ）中按十字键＋A。
+- **钻头
+      rank4 79daaa4d521a auth=reference_only ans=True sohu_一直输球隐藏大结局_20261118.md#L65-L81
+         这种情况下就需要适当进行放水，比如把一些强力的同伴从场上换掉，把一些数值较低的替补放到重要位置。再比如让队长跑到自家门前，靠传乌龙球的方式射门给对方送分之类的。
+亚洲、非洲、南美、欧洲四个联盟一共12个队，总共36场比赛，说实话全踢败还真挺
+      rank5 b5a2c9ad96c4 auth=authoritative ans=False 热血足球联盟_必杀全清单.md#L262-L264
+         名称已知仍仅 3：巴西食人鱼（S3）/阿根廷香蕉（S3）/塞内加尔白鸟（S1/S10）。S10 给了其余各队的**行为侧写**（喀麦隆 Dakosuta 必杀可吹飞强豪门将；巴西 Bûnyo 速度快+燕返、Santosu 命中强、门将 Ro
+  --- X17 [trap] w3=pass refusal=None cond=权威可答件在第2位，非最高分；出证须附此条件
+      q: 热血足球 全败结局画面显示的密码是什么？
+      rank1 79daaa4d521a auth=reference_only ans=True sohu_一直输球隐藏大结局_20261118.md#L65-L81
+         这种情况下就需要适当进行放水，比如把一些强力的同伴从场上换掉，把一些数值较低的替补放到重要位置。再比如让队长跑到自家门前，靠传乌龙球的方式射门给对方送分之类的。
+亚洲、非洲、南美、欧洲四个联盟一共12个队，总共36场比赛，说实话全踢败还真挺
+      rank2 8e97f000b03d auth=authoritative ans=True 热血足球联盟_必杀全清单.md#L234-L239
+         - 世界杯触发：CN 汉化版自述"踢 16 场、总积分 ≥70"晋级锦标赛式 Technos Japan Cup（S1 口径=16 连胜；S9=16 场 70 分，两口径并存待实测）；参赛队=喀/阿/巴/意/德中 3-4 支。
+- 联盟结构
+      rank3 ecc1c751f7a2 auth=reference_only ans=True sohu_一直输球隐藏大结局_20261118.md#L1-L63
+         *   文章
+*   总阅读
+*   游戏领域优质创作者
+2023-01-04 22:36
+发布于：辽宁省
+这是老男孩游戏盒的第501篇原创，作者@怀旧淼哥
+很多80后、90后老男孩都在怀念当年的红白机时光，其实当年大家打游戏很多时候都在傻
+      rank4 4d37bae4996e auth=reference_only ans=True sohu_一直输球隐藏大结局_20261118.md#L83-L98
+         这三种结局其实都可以看做同一种结局，毕竟不论走哪条结局路线，通关动画播完后，游戏都会卡死在Technos开头的挥拳动画上，这三种结局都无法进行续关，所以一旦选择进入世界杯，就意味着在《热血足球》这款游戏里不可能踢满36场了。
+如此看来，《热
+      rank5 ec3707ada6de auth=reference_only ans=True 1ang_热血足球联盟图文攻略_20261118.md#L167-L180
+         下文中的A键与B键指的是FC手柄按键，不是计算机键盘。
+本作的游戏模式有3个，按方向键选择，A键决定，B键取消。难度模式也有3个，操作同上。
+上面截图是游戏模式与难度模式画面，下面开始对截图中的日本语进行讲解。
+『ねっけつ　りーぐ(Nekk
+  --- X18 [trap] w3=pass refusal=None cond=None
+      q: 热血足球 每支球队最多能挑战几次？
+      rank1 c6142f67a99f auth=authoritative ans=True setsumei_热血足球说明书_编者中文对照_20261119.md#L21-L22
+         从世界各国 **4 个联赛、12 支球队**中选择对战球队进行远征比赛。与每支球队最多对战 **3 次**，胜记白星、负记黑星。在**全部 36 场比赛**中取得一定胜率与胜点（积分）后，即可获得争夺世界第一足球球队宝座的「テクノスジャパン
+      rank2 b146ec96724d auth=reference_only ans=True 1ang_热血足球联盟图文攻略_20261118.md#L183-L192
+         世界各国共有4个联盟12支球队，选择好要挑战的球队，就可以进行远征比赛了，有时坐车，有时乘船，有时飞机。每支球队最多可以挑战3次，胜利1次获得1颗白星，失败1次获得1颗黑星。
+全世界12支球队，最可以比赛36次，过程中根据胜率取得一定数量的
+      rank3 9265c746273b auth=reference_only ans=True 1ang_热血足球联盟图文攻略_20261118.md#L1-L129
+         热血足球3攻略-FC热血足球3(热血足球联盟)游戏图文攻略 - 乐米网一昂
+function doFav(u, t) { }
+日版名：くにおくんの熱血サッカーリーグ
+罗马音：Kunio Kun No Nekketsu Soccer Leag
+      rank4 79daaa4d521a auth=reference_only ans=True sohu_一直输球隐藏大结局_20261118.md#L65-L81
+         这种情况下就需要适当进行放水，比如把一些强力的同伴从场上换掉，把一些数值较低的替补放到重要位置。再比如让队长跑到自家门前，靠传乌龙球的方式射门给对方送分之类的。
+亚洲、非洲、南美、欧洲四个联盟一共12个队，总共36场比赛，说实话全踢败还真挺
+      rank5 141a669374a9 auth=reference_only ans=True sohu_必杀最强小辫子_20261118.md#L1-L69
+         *   文章
+*   总阅读
+*   游戏领域优质创作者
+2023-02-17 00:41
+发布于：辽宁省
+这是老男孩游戏盒的第535篇原创，作者@怀旧淼哥
+最近有FC游戏水友给淼哥留言说，希望讲一期《热血足球》里的必杀射门盘点——《热血足
+  --- X23 [mechanism] w3=inconclusive refusal=None cond=None
+      q: 热血足球 倒挂金钩怎么使出来？
+      rank1 4d37bae4996e auth=reference_only ans=True sohu_一直输球隐藏大结局_20261118.md#L83-L98
+         这三种结局其实都可以看做同一种结局，毕竟不论走哪条结局路线，通关动画播完后，游戏都会卡死在Technos开头的挥拳动画上，这三种结局都无法进行续关，所以一旦选择进入世界杯，就意味着在《热血足球》这款游戏里不可能踢满36场了。
+如此看来，《热
+      rank2 141a669374a9 auth=reference_only ans=False sohu_必杀最强小辫子_20261118.md#L1-L69
+         *   文章
+*   总阅读
+*   游戏领域优质创作者
+2023-02-17 00:41
+发布于：辽宁省
+这是老男孩游戏盒的第535篇原创，作者@怀旧淼哥
+最近有FC游戏水友给淼哥留言说，希望讲一期《热血足球》里的必杀射门盘点——《热血足
+      rank3 0cbfe31bd687 auth=reference_only ans=True 1ang_热血足球联盟图文攻略_20261118.md#L337-L359
+         『ハイパー・ダッシュ(Hyper Dash)』，超常冲刺。冲刺中朝进行方向连按两次方向键。普通冲刺基础上发动更快速的冲刺。
+『ヒール・リフティング(Heel Lifting)』，脚跟挑球。拿球时，无论面朝哪个方向，{←AB}同时按或者{→A
+      rank4 42b773880ef0 auth=authoritative ans=True 热血足球联盟_必杀全清单.md#L24-L33
+         - 必杀踢射：持球跳（A+B）到**最高点按 B**；**发动时不能按方向键**，否则变成挑球不是人球同跳。
+- 难度：`やさしい` 容易 = 敌我**都不能**发动必杀射门；`ふつう` 普通 = 次次发动；`むずかしい` 困难 = 仅会燕
+      rank5 ecc1c751f7a2 auth=reference_only ans=False sohu_一直输球隐藏大结局_20261118.md#L1-L63
+         *   文章
+*   总阅读
+*   游戏领域优质创作者
+2023-01-04 22:36
+发布于：辽宁省
+这是老男孩游戏盒的第501篇原创，作者@怀旧淼哥
+很多80后、90后老男孩都在怀念当年的红白机时光，其实当年大家打游戏很多时候都在傻
+  --- X26 [mechanism] w3=inconclusive refusal=None cond=None
+      q: 热血足球 雨天场地对射门有什么影响？
+      rank1 79daaa4d521a auth=reference_only ans=True sohu_一直输球隐藏大结局_20261118.md#L65-L81
+         这种情况下就需要适当进行放水，比如把一些强力的同伴从场上换掉，把一些数值较低的替补放到重要位置。再比如让队长跑到自家门前，靠传乌龙球的方式射门给对方送分之类的。
+亚洲、非洲、南美、欧洲四个联盟一共12个队，总共36场比赛，说实话全踢败还真挺
+      rank2 3548208d0a2d auth=reference_only ans=False 1ang_热血足球联盟图文攻略_20261118.md#L823-L839
+         比赛中按START键暂停，{A键按３次＋B键按１次＋A键按３次＋B键按１次＋A键按７次}，再按START键解除暂停，听到必杀踢射的发动音效，就成功了。这样就能使全部球员拥有全部必杀技，比如平时不会燕返的球员也会用燕返了，平时不会用爆裂攻击的
+      rank3 31e7271be1b1 auth=authoritative ans=False setsumei_热血足球说明书_编者中文对照_20261119.md#L25-L31
+         控室里可以制定作战、与热血 FC 队员开会，你即球队队长。队员个性丰富，比赛中会有个性行动与感情变化。各国各有天气，比赛中天气会变化，记得看天气预报制定作战。
+- **作战会议**：阵型（フォーメーション）按对手与状况变更；位置（ポジション
+      rank4 ecc1c751f7a2 auth=reference_only ans=False sohu_一直输球隐藏大结局_20261118.md#L1-L63
+         *   文章
+*   总阅读
+*   游戏领域优质创作者
+2023-01-04 22:36
+发布于：辽宁省
+这是老男孩游戏盒的第501篇原创，作者@怀旧淼哥
+很多80后、90后老男孩都在怀念当年的红白机时光，其实当年大家打游戏很多时候都在傻
+      rank5 141a669374a9 auth=reference_only ans=False sohu_必杀最强小辫子_20261118.md#L1-L69
+         *   文章
+*   总阅读
+*   游戏领域优质创作者
+2023-02-17 00:41
+发布于：辽宁省
+这是老男孩游戏盒的第535篇原创，作者@怀旧淼哥
+最近有FC游戏水友给淼哥留言说，希望讲一期《热血足球》里的必杀射门盘点——《热血足
+  --- X28 [mechanism] w3=inconclusive refusal=None cond=None
+      q: 拳皇98 ECK 金手指怎么用？
+      rank1 d8f7dc37af38 auth=cross_version ans=False gamersky_kof98um全角色出招表_20261118.md#L460-L500
+         2014-12-31
+*   [![《拳皇98：终极对决》全角色出招表一览](https://imgs.gamersky.com/pic/2014/i1217xdj_5.jpg)](https://www.gamersky.com/hand
+      rank2 7079444f69cb auth=cross_version ans=False gamersky_kof98um全角色出招表_20261118.md#L307-L456
+         俱乐部飞标 指天回旋脚击中后↓↘→+B或D
+追击踩踏 ↓↓+B
+真正反击 ↓↙←+A或C
+回身真落 真正反击中←↙↓↘→+A或C
+油锤冠顶 真正反击中←↙↓↘→+B或D
+垂直之箭 →↓↘+B或D
+玛丽掠夺 垂直之箭击中后→↓↘+B或D
+超必
+      rank3 82a8dd031067 auth=authoritative ans=False 素材生产规范.md#L3-L15
+         写这份是为了回答一个问题：**怎么保证「拿到招表 → 一次性录出全部干净素材」这条路走得通，
+而不是靠反复试**。要消灭的三种浪费，按用户原话：
+1. 「出招都没有打到人」——片子能出、画面会动，但那一招没落在对手身上，素材没法用；
+2. 
+      rank4 5c4e57e18025 auth=cross_version ans=False gamersky_kof98um全角色出招表_20261118.md#L3-L305
+         ﻿
+本站
+2014-12-17 15:57:01 来源：游侠论坛 作者：kuangjian 编辑：Shy夏夏　[我要投稿](http://bbs.gamersky.com/thread-348492-1-1.html)
+随着拳皇98:终极对
+      rank5 8c20fcc4311e auth=authoritative ans=True 素材生产规范.md#L18-L31
+         **规矩**：招表里的每一行先归一化成 `cmd`（编译后的记法）+ `name` + `slug` + `char_id`，
+归一化只允许发生在这一层；模拟器那一侧永远只吃 `cmd`。看不懂、有歧义、指向别的地方的记法
+**必须炸**，
+
+==== [bm25] 跑前规则判定 ====
+R2 评测 ok 回归: 0  探针 pass 回归: 1
+R3 探针 inconclusive->pass 救回: ['W03 w3: inconclusive->pass', 'W03 w5: inconclusive->pass', 'W09 w3: inconclusive->pass', 'W09 w5: inconclusive->pass', 'X18 w3: inconclusive->pass', 'X18 w5: inconclusive->pass']

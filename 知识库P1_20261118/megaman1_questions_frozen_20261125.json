@@ -1,0 +1,177 @@
+{
+  "schema_version": 2,
+  "status": "frozen",
+  "frozen_at": "2026-11-25",
+  "design_note": "洛克人1隔离候选子域题集。金标已按候选索引真实 chunk 重锚；只覆盖 NTSC 美版 RAM/工具方法，不接生产路由，不代表整款游戏知识库。",
+  "candidate_revision": "megaman1_nes_us",
+  "candidate_index": "知识库P1_20261118/megaman1_candidate_20261125/index.json",
+  "candidate_index_sha256": "5e126eddf0eae98e6b8a446cd54f37400b861d5e93ecf89d3004f16d3a252581",
+  "source_draft": "知识库P1_20261118/megaman1_questions_draft_20261124.json",
+  "rom_identity": {
+    "path": "04-游戏资源库/TAS输入录像库/roms_verify/NES/megamanhd.nes",
+    "sha1": "2F88381557339A14C20428455F6991C1EB902C99",
+    "bytes": 131088,
+    "identity_basis": "生产 catalog + NesCartDB NTSC 判定；文件名 hd 不是版本身份"
+  },
+  "questions": [
+    {
+      "id": "MM01",
+      "q": "洛克人1 的坐标轴方向是什么？",
+      "filters": {"revision": "megaman1_nes_us"},
+      "expect": "strict_pass",
+      "gold": {
+        "path_contains": "mm1_coordinate_facts_20261125.txt",
+        "line_start": 1,
+        "line_end": 25,
+        "anchor_chunk": "b1ea3cbd31fb"
+      },
+      "fact": "X 向右增大，Y 向下增大；位置有 8 位小数，屏上只显示整数部分",
+      "authority_basis": "TASVideos GameResources 已取回原文，verified_read + authoritative"
+    },
+    {
+      "id": "MM02",
+      "q": "洛克人1 的 X 坐标对象表地址范围是什么？",
+      "filters": {"revision": "megaman1_nes_us"},
+      "expect": "strict_pass",
+      "gold": {
+        "path_contains": "mm1_object_ram_table_20261125.txt",
+        "line_start": 1,
+        "line_end": 17,
+        "anchor_chunk": "91b55bcd7e14"
+      },
+      "fact": "Rockman 1 的 X(hi,lo) 为 $480:$4A0",
+      "authority_basis": "TASVideos GameResources 内存表",
+      "refinement_reason": "去掉“多少”，避免被意图分类器误判为计数题；事实与金标不变。"
+    },
+    {
+      "id": "MM03",
+      "q": "洛克人1 的对象编号 n 怎样换算各项内存地址？",
+      "filters": {"revision": "megaman1_nes_us"},
+      "expect": "strict_pass",
+      "gold": {
+        "path_contains": "mm1_object_ram_table_20261125.txt",
+        "line_start": 1,
+        "line_end": 17,
+        "anchor_chunk": "91b55bcd7e14"
+      },
+      "fact": "各属性表基地址加 n",
+      "authority_basis": "TASVideos GameResources 原文"
+    },
+    {
+      "id": "MM04",
+      "q": "洛克人1 中 Rockman 和 Boss 分别固定是哪个对象编号？",
+      "filters": {"revision": "megaman1_nes_us"},
+      "expect": "strict_pass",
+      "gold": {
+        "path_contains": "mm1_object_ram_table_20261125.txt",
+        "line_start": 1,
+        "line_end": 17,
+        "anchor_chunk": "91b55bcd7e14"
+      },
+      "fact": "Rockman 恒为 n=0；Boss 为 n=1",
+      "authority_basis": "TASVideos GameResources 原文"
+    },
+    {
+      "id": "MM05",
+      "q": "洛克人1 的 Screen# 和 Yspd 对象表地址范围分别是什么？",
+      "filters": {"revision": "megaman1_nes_us"},
+      "expect": "strict_pass",
+      "gold": {
+        "path_contains": "mm1_object_ram_table_20261125.txt",
+        "line_start": 1,
+        "line_end": 17,
+        "anchor_chunk": "91b55bcd7e14"
+      },
+      "fact": "Screen# $460；Yspd(hi,lo) $660:$680",
+      "authority_basis": "TASVideos GameResources 内存表"
+    },
+    {
+      "id": "MM06",
+      "q": "BizHawk 为什么不能只每帧覆盖一次内存值，需要什么机制？",
+      "filters": {"revision": "megaman1_nes_us"},
+      "expect": "strict_pass",
+      "gold": {
+        "path_contains": "mm1_bizhawk_memory_write_fact_20261125.txt",
+        "line_start": 1,
+        "line_end": 10,
+        "anchor_chunk": "b8e620db8b4c"
+      },
+      "fact": "游戏可能在一帧内多次改变该值；需要用 memory write callback，且核心的回调时序可能不同",
+      "authority_basis": "TASVideos BizHawk FAQ 已取回原文",
+      "refinement_reason": "把“内存地址”改为“内存值”，避免问句被误判为地址取值题；机制事实不变。"
+    },
+    {
+      "id": "MM07",
+      "q": "owned 和 current_weapon 两个内存字段分别对应什么？",
+      "filters": {"revision": "megaman1_nes_us"},
+      "expect": "strict_pass",
+      "gold": {
+        "path_contains": "mm1_local_weapon_ram_excerpt_20261125.txt",
+        "line_start": 4,
+        "line_end": 7,
+        "anchor_chunk": "0d852bfc5b79"
+      },
+      "fact": "owned=$5D 位场；current_weapon=$5F",
+      "authority_basis": "本机生产实测与截图/差分记录；项目文档域",
+      "refinement_reason": "游戏身份由 revision 过滤提供，问句聚焦字段名，避免标题词让无关地址表抢到可答性。"
+    },
+    {
+      "id": "MM08",
+      "q": "current_weapon 字段的值 0 到 7 分别代表什么武器？",
+      "filters": {"revision": "megaman1_nes_us"},
+      "expect": "strict_pass",
+      "gold": {
+        "path_contains": "mm1_local_weapon_ram_excerpt_20261125.txt",
+        "line_start": 4,
+        "line_end": 7,
+        "anchor_chunk": "0d852bfc5b79"
+      },
+      "fact": "0=P，1=C，2=I，3=B，4=F，5=E，6=G，7=M",
+      "authority_basis": "本机生产实测与菜单差分",
+      "refinement_reason": "游戏身份由 revision 过滤提供，问句聚焦 current_weapon，避免标题词让无关地址表抢到可答性。"
+    },
+    {
+      "id": "MM09",
+      "q": "洛克人1 写 $0480 和 $0600 为什么能移动角色？",
+      "filters": {"revision": "megaman1_nes_us"},
+      "expect": "strict_pass",
+      "gold": {
+        "path_contains": "mm1_local_position_probe_excerpt_20261125.txt",
+        "line_start": 5,
+        "line_end": 17,
+        "anchor_chunk": "3885c96f461e"
+      },
+      "fact": "它们是 Rockman n=0 的权威对象表 X/Y 高位；游戏从对象表重算派生显示量",
+      "authority_basis": "本机 T1 五臂受控实测，含恒量反证"
+    },
+    {
+      "id": "MM10",
+      "q": "洛克人1 怎样从现有存档点继续制作某个时刻的画面？",
+      "filters": {"revision": "megaman1_nes_us"},
+      "expect": "refuse",
+      "gold": null,
+      "fact": "候选语料只有 segmented TAS 通用术语与 FM2 导入参考流程，没有洛克人1到目标时刻的存档点证据；不得冒充已证流程",
+      "authority_basis": "reference_only 且问题与证据不匹配，冻结为拒答反例"
+    },
+    {
+      "id": "MM11",
+      "q": "洛克人1官方说明书是否记载角色创建系统？",
+      "filters": {"revision": "megaman1_nes_us"},
+      "expect": "refuse",
+      "gold": null,
+      "fact": "没有官方说明书或角色创建系统证据；不得编造",
+      "authority_basis": "缺证拒答反例",
+      "refinement_reason": "改用“是否记载”聚焦官方说明书存在性，避免泛化公式模式把对象编号赋值误当角色创建公式。"
+    },
+    {
+      "id": "MM12",
+      "q": "洛克人1 PAL-B 版的坐标表是否可以直接当作 NTSC 美版结论？",
+      "filters": {"revision": "megaman1_nes_us"},
+      "expect": "refuse",
+      "gold": null,
+      "fact": "PAL-B 与 NTSC 美版身份不同，未验证跨版等价前不得代答",
+      "authority_basis": "版本身份反例",
+      "refinement_reason": "补“是否”触发是非意图，要求证据明确讨论跨版等价；仅有 NTSC 坐标正文不得放行。"
+    }
+  ]
+}

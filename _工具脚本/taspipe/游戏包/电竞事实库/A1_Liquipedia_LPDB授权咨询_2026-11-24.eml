@@ -1,0 +1,39 @@
+To: contact@liquipedia.net
+Subject:
+ LPDB access and commercial use enquiry - local fact-checking knowledge base
+X-Unsent: 1
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+MIME-Version: 1.0
+
+Hello Liquipedia team,
+
+I run a Bilibili game-content channel with approximately 75,000 followers. Th=
+e channel is commercial in nature. We are building a local, non-generative fa=
+ct-checking knowledge base for video scripts.
+
+Our intended use is narrow: verify factual claims, retain source locators, an=
+d show the applicable version/time conditions in our videos. We do not plan t=
+o redistribute raw feeds, datasets, API payloads, or bulk source text. Data w=
+ould be stored locally, and published videos would cite the source rather tha=
+n reproduce large excerpts.
+
+No commercial data collection will begin unless the applicable permission is =
+confirmed.
+
+We would like to use Liquipedia/LPDB esports metadata for cross-checking play=
+er and team identities, match results, event dates, and roster changes across=
+ multiple game titles.
+
+Could you please confirm the current policy and access process for:
+1. Automated LPDB/API access for this use case;
+2. Commercial use in monetized video scripts and local fact-checking records;
+3. Rate limits, caching, storage, and retention requirements;
+4. Required attribution and any restrictions on derived summaries;
+5. Whether an API account, written approval, or paid arrangement is required.
+
+The API terms page returned HTTP 403 from our network, so we are asking for t=
+he current authoritative policy rather than assuming older terms still apply.
+
+Best regards,
+Bilibili game-content creator (approximately 75,000 followers)

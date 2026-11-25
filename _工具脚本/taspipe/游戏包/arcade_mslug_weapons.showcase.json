@@ -1,0 +1,438 @@
+{
+  "schema_version": 1,
+  "kind": "statejump_showcase",
+  "game_id": "mslug1_arcade_neogeo",
+  "game_title": "Metal Slug: Super Vehicle-001 / 合金弹头1：全武器弹幕与SV-001载具盘点 (Arcade/NeoGeo, 1996 Nazca/SNK)",
+  "platform": "ARCADE_FBNEO",
+  "core": "FBNeo",
+  "system": "ARCADE",
+  "rom": "F:/tas_rig/roms/mslug.zip",
+  "bizhawk": "F:/开源掌机教程/02-模拟器库/BizHawk/BizHawk-2.8",
+  "base_state": "F:/tas_rig/states/mslug_stage1_flat.fs",
+  "fps": 59.18,
+  "template": "arcade_tianma_cover",
+  "catalog": {
+    "status": "complete",
+    "expected_total": 7,
+    "sources": [
+      {
+        "source_id": "local_fbneo_setlist",
+        "url": null,
+        "status": "verified_read",
+        "verified_date": "2026-11-18",
+        "element_ids": [],
+        "note": "身份层：rom=F:/tas_rig/roms/mslug.zip；mslug 有多版（mslug/mslug2…），先定 set 再查表。"
+      },
+      {
+        "source_id": "strategywiki",
+        "url": "https://strategywiki.org/wiki/Metal_Slug/Weapons",
+        "status": "unreachable",
+        "verified_date": "2026-11-18",
+        "element_ids": [
+          "handgun_and_knife",
+          "heavy_machine_gun_h",
+          "rocket_launcher_r",
+          "flame_shot_f",
+          "shotgun_s",
+          "hand_grenade_bomb",
+          "sv001_metal_slug_tank"
+        ],
+        "note": "本机直连 403，只有搜索快照，未全文核对。"
+      },
+      {
+        "source_id": "arcade_museum_com",
+        "url": "https://www.arcade-museum.com/game_detail.php?game_id=8675",
+        "status": "candidate",
+        "verified_date": null,
+        "element_ids": [
+          "handgun_and_knife",
+          "heavy_machine_gun_h",
+          "rocket_launcher_r",
+          "flame_shot_f",
+          "shotgun_s",
+          "hand_grenade_bomb",
+          "sv001_metal_slug_tank"
+        ],
+        "note": "KLOV 基础档案；本轮未取正文（candidate），不得当已验证来源。"
+      }
+    ],
+    "coverage_note": "合金弹头 1 代全部 5 种常规/强化枪械（Handgun、H弹、R弹、F弹、S弹）+ 手榴弹抛投 + SV-001 Metal Slug 坦克主副武器完整盘点"
+  },
+  "elements": [
+    {
+      "element_id": "handgun_and_knife",
+      "label": "Handgun & Combat Knife (默认手枪连射与近战军刀)",
+      "kind": "weapon",
+      "base_state": null,
+      "trigger": {
+        "macro": "A,,,,A,,,,A,,,,A,,,,,,,,,,,,,,,,,,,,",
+        "extra": 25,
+        "patches": []
+      },
+      "detection": {
+        "frame": 10,
+        "success_checks": [
+          {
+            "check_id": "mslug_handgun_muzzle_bullet",
+            "plugin_id": "frame_region_color_fraction",
+            "params": {
+              "region": [
+                0.22,
+                0.4,
+                0.82,
+                0.72
+              ],
+              "rgb": [
+                248,
+                232,
+                160
+              ],
+              "tol": 26,
+              "min_fraction": 0.006
+            },
+            "required": true
+          }
+        ]
+      },
+      "negative_control": {
+        "macro": null,
+        "patches": []
+      },
+      "note": "P1 默认无限弹药手枪连续点射。"
+    },
+    {
+      "element_id": "heavy_machine_gun_h",
+      "label": "Heavy Machine Gun [H] (H弹·重机枪扇形扫射)",
+      "kind": "weapon",
+      "base_state": null,
+      "trigger": {
+        "macro": "A,A,A,A,Up+A,Up+A,Up+A,Up+A,Up+Right+A,Up+Right+A,Right+A,Right+A,,,,,,,,,,,,,,,,,,,,",
+        "extra": 30,
+        "patches": [
+          {
+            "addr": "0x10808A",
+            "value": 1,
+            "domain": "m68K RAM"
+          },
+          {
+            "addr": "0x10808C",
+            "value": 200,
+            "domain": "m68K RAM"
+          }
+        ]
+      },
+      "detection": {
+        "frame": 14,
+        "success_checks": [
+          {
+            "check_id": "mslug_h_gun_tracer_stream",
+            "plugin_id": "frame_region_color_fraction",
+            "params": {
+              "region": [
+                0.2,
+                0.15,
+                0.9,
+                0.75
+              ],
+              "rgb": [
+                248,
+                216,
+                88
+              ],
+              "tol": 28,
+              "min_fraction": 0.015
+            },
+            "required": true
+          }
+        ]
+      },
+      "negative_control": {
+        "macro": null,
+        "patches": [
+          {
+            "addr": "0x10808A",
+            "value": 1,
+            "domain": "m68K RAM"
+          },
+          {
+            "addr": "0x10808C",
+            "value": 200,
+            "domain": "m68K RAM"
+          }
+        ]
+      },
+      "note": "H弹支持 8 方向与斜角扫射。"
+    },
+    {
+      "element_id": "rocket_launcher_r",
+      "label": "Rocket Launcher [R] (R弹·重型火箭筒与尾烟)",
+      "kind": "weapon",
+      "base_state": null,
+      "trigger": {
+        "macro": "A,A,A,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,",
+        "extra": 35,
+        "patches": [
+          {
+            "addr": "0x10808A",
+            "value": 2,
+            "domain": "m68K RAM"
+          },
+          {
+            "addr": "0x10808C",
+            "value": 30,
+            "domain": "m68K RAM"
+          }
+        ]
+      },
+      "detection": {
+        "frame": 18,
+        "success_checks": [
+          {
+            "check_id": "mslug_r_rocket_plume",
+            "plugin_id": "frame_region_color_fraction",
+            "params": {
+              "region": [
+                0.25,
+                0.35,
+                0.88,
+                0.75
+              ],
+              "rgb": [
+                240,
+                144,
+                64
+              ],
+              "tol": 28,
+              "min_fraction": 0.014
+            },
+            "required": true
+          }
+        ]
+      },
+      "negative_control": {
+        "macro": null,
+        "patches": [
+          {
+            "addr": "0x10808A",
+            "value": 2,
+            "domain": "m68K RAM"
+          },
+          {
+            "addr": "0x10808C",
+            "value": 30,
+            "domain": "m68K RAM"
+          }
+        ]
+      },
+      "note": "R弹发射大型火箭弹并拖出推进尾焰。"
+    },
+    {
+      "element_id": "flame_shot_f",
+      "label": "Flame Shot [F] (F弹·大范围火焰喷射器)",
+      "kind": "weapon",
+      "base_state": null,
+      "trigger": {
+        "macro": "A,A,A,A,A,A,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,",
+        "extra": 35,
+        "patches": [
+          {
+            "addr": "0x10808A",
+            "value": 3,
+            "domain": "m68K RAM"
+          },
+          {
+            "addr": "0x10808C",
+            "value": 30,
+            "domain": "m68K RAM"
+          }
+        ]
+      },
+      "detection": {
+        "frame": 16,
+        "success_checks": [
+          {
+            "check_id": "mslug_f_fireball_cloud",
+            "plugin_id": "frame_region_color_fraction",
+            "params": {
+              "region": [
+                0.25,
+                0.28,
+                0.86,
+                0.8
+              ],
+              "rgb": [
+                248,
+                120,
+                32
+              ],
+              "tol": 28,
+              "min_fraction": 0.035
+            },
+            "required": true
+          }
+        ]
+      },
+      "negative_control": {
+        "macro": null,
+        "patches": [
+          {
+            "addr": "0x10808A",
+            "value": 3,
+            "domain": "m68K RAM"
+          },
+          {
+            "addr": "0x10808C",
+            "value": 30,
+            "domain": "m68K RAM"
+          }
+        ]
+      },
+      "note": "F弹喷射翻滚烈焰团。"
+    },
+    {
+      "element_id": "shotgun_s",
+      "label": "Shotgun [S] (S弹·大口径高威散弹枪)",
+      "kind": "weapon",
+      "base_state": null,
+      "trigger": {
+        "macro": "A,A,A,A,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,",
+        "extra": 30,
+        "patches": [
+          {
+            "addr": "0x10808A",
+            "value": 4,
+            "domain": "m68K RAM"
+          },
+          {
+            "addr": "0x10808C",
+            "value": 30,
+            "domain": "m68K RAM"
+          }
+        ]
+      },
+      "detection": {
+        "frame": 8,
+        "success_checks": [
+          {
+            "check_id": "mslug_s_blast_cone",
+            "plugin_id": "frame_region_color_fraction",
+            "params": {
+              "region": [
+                0.24,
+                0.25,
+                0.78,
+                0.78
+              ],
+              "rgb": [
+                248,
+                240,
+                184
+              ],
+              "tol": 28,
+              "min_fraction": 0.025
+            },
+            "required": true
+          }
+        ]
+      },
+      "negative_control": {
+        "macro": null,
+        "patches": [
+          {
+            "addr": "0x10808A",
+            "value": 4,
+            "domain": "m68K RAM"
+          },
+          {
+            "addr": "0x10808C",
+            "value": 30,
+            "domain": "m68K RAM"
+          }
+        ]
+      },
+      "note": "S弹枪口瞬间爆发高亮度扇形冲击波。"
+    },
+    {
+      "element_id": "hand_grenade_bomb",
+      "label": "Hand Grenade (C键·高爆手榴弹投掷)",
+      "kind": "weapon",
+      "base_state": null,
+      "trigger": {
+        "macro": "C,C,C,,,,C,C,C,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,",
+        "extra": 45,
+        "patches": []
+      },
+      "detection": {
+        "frame": 32,
+        "success_checks": [
+          {
+            "check_id": "mslug_grenade_explosion_plume",
+            "plugin_id": "frame_region_color_fraction",
+            "params": {
+              "region": [
+                0.3,
+                0.2,
+                0.88,
+                0.82
+              ],
+              "rgb": [
+                248,
+                160,
+                56
+              ],
+              "tol": 28,
+              "min_fraction": 0.022
+            },
+            "required": true
+          }
+        ]
+      },
+      "negative_control": {
+        "macro": null,
+        "patches": []
+      },
+      "note": "按 C 键抛投手榴弹并在前方起爆。"
+    },
+    {
+      "element_id": "sv001_metal_slug_tank",
+      "label": "SV-001 Metal Slug (合金弹头坦克：重机枪扫射 + 127mm 主炮轰击)",
+      "kind": "transform",
+      "base_state": "F:/tas_rig/states/mslug_sv001_mounted.fs",
+      "trigger": {
+        "macro": "A,A,A,A,Up+A,Up+A,Up+Right+A,Up+Right+A,,,,C,C,C,C,,,,,,,,,,,,,,,,,,,,,,,,",
+        "extra": 45,
+        "patches": []
+      },
+      "detection": {
+        "frame": 24,
+        "success_checks": [
+          {
+            "check_id": "sv001_cannon_shell_blast",
+            "plugin_id": "frame_region_color_fraction",
+            "params": {
+              "region": [
+                0.25,
+                0.15,
+                0.92,
+                0.82
+              ],
+              "rgb": [
+                248,
+                184,
+                72
+              ],
+              "tol": 28,
+              "min_fraction": 0.028
+            },
+            "required": true
+          }
+        ]
+      },
+      "negative_control": {
+        "macro": null,
+        "patches": []
+      },
+      "note": "绑定已乘上 SV-001 坦克的专用快照 mslug_sv001_mounted.fs。"
+    }
+  ]
+}

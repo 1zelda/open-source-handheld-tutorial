@@ -1,0 +1,40 @@
+{
+  "schema": "kb_final_validation_after_citation_authority_fix_v1",
+  "taken_at": "2026-11-24T15:47:34Z",
+  "shared_sha256": {
+    "index": "2a93e76d5876c1181e7784a20eca0f4d84888d0292d281fc6eea3564090b9260",
+    "snapshot": "2a93e76d5876c1181e7784a20eca0f4d84888d0292d281fc6eea3564090b9260",
+    "kb": "1844d8baceb5ce65f2432908a84425ee1fcb8cb1f6e35e8d10c2f3a25331d08f",
+    "provenance": "4bcf3411ab460320ecff0120458141f44315b6cb0af1713143cc75470a6e7463",
+    "gates": "158409770f627268070075f5859196c26d5b117f1e7e113d0878cd5bb910d068"
+  },
+  "checks": {
+    "shared_index_sha": true,
+    "snapshot_sha": true,
+    "kb_sha": true,
+    "provenance_sha": true,
+    "gates_sha": true,
+    "manifest_index": true,
+    "manifest_snapshot": true,
+    "report_sha": true,
+    "inventory_count": true,
+    "inventory_hashes": true,
+    "pdf_qa": true,
+    "pdf_qa_count": true,
+    "pdf_pages": true,
+    "blind": true,
+    "heldout": true,
+    "full_domain": true,
+    "strict_v2": true,
+    "strict_raw": true,
+    "gates": true,
+    "state_isolation": true,
+    "dynamic_esports_zero": true,
+    "identity_promoted_zero": true,
+    "megaman_draft": true,
+    "old_delivery_unchanged": true,
+    "git_untouched": true
+  },
+  "inventory_hash_mismatches": [],
+  "ok": true
+}

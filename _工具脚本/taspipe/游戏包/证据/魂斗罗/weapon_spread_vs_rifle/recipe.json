@@ -1,0 +1,133 @@
+{
+  "schema_version": "ram_calibration/1.0",
+  "game_id": "contra_nes_us",
+  "profile": {
+    "rom": "F:/开源掌机教程/04-游戏资源库/TAS输入录像库/roms_verify/NES/contra_u.nes",
+    "rom_sha1": "C9EA66BB7CB30AD5343F1721B1D4D3219859319B",
+    "bizhawk": "F:/开源掌机教程/02-模拟器库/BizHawk/BizHawk-2.8",
+    "core": "NesHawk",
+    "system": "NES",
+    "domain": "System Bus",
+    "state_package": {
+      "game_id": "contra_nes_us",
+      "profile_id": "contra_u_c9ea66bb",
+      "revision": "r20261125T020305"
+    },
+    "window": {
+      "start": 0,
+      "length": 2048
+    }
+  },
+  "base_state": "base",
+  "macros": {
+    "fire_probe": "B,,,,B,,,,B,,,,"
+  },
+  "cases": [
+    {
+      "id": "spread_vs_rifle",
+      "kind": "scenario",
+      "arms": [
+        {
+          "name": "spread",
+          "steps": [
+            {
+              "macro": "-",
+              "extra": 0,
+              "patches": [
+                {
+                  "addr": 170,
+                  "value": 3
+                }
+              ],
+              "expect": [
+                {
+                  "addr": 170,
+                  "value": 3
+                }
+              ],
+              "screen": {
+                "reference": "$base",
+                "relation": "near",
+                "max_changed_fraction": 0.02
+              }
+            },
+            {
+              "state": "$previous",
+              "macro": "@fire_probe",
+              "extra": 17,
+              "capture_frames": 30,
+              "expect": [
+                {
+                  "addr": 170,
+                  "value": 3
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "rifle",
+          "steps": [
+            {
+              "macro": "-",
+              "extra": 0,
+              "patches": [
+                {
+                  "addr": 170,
+                  "value": 0
+                }
+              ],
+              "expect": [
+                {
+                  "addr": 170,
+                  "value": 0
+                }
+              ],
+              "screen": {
+                "reference": "$base",
+                "relation": "near",
+                "max_changed_fraction": 0.02
+              }
+            },
+            {
+              "state": "$previous",
+              "macro": "@fire_probe",
+              "extra": 17,
+              "capture_frames": 30,
+              "expect": [
+                {
+                  "addr": 170,
+                  "value": 0
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "comparisons": [
+        {
+          "left": "spread",
+          "right": "rifle",
+          "left_step": 1,
+          "right_step": 1,
+          "relation": "different",
+          "frames": [
+            6,
+            12,
+            20,
+            "final"
+          ]
+        }
+      ],
+      "claims": [
+        {
+          "name": "current_weapon",
+          "addr": 170,
+          "width": 1,
+          "level": "gameplay",
+          "note": "同状态、同输入，0x00AA=03 散弹与 0x00AA=00 步枪产生真实画面差异；不扩展为完整武器表已验证。"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "version": "profiles-2026-11-19-v1",
+  "profiles": [
+    {
+      "id": "主号_复古掌机与经典游戏",
+      "platform": "B站",
+      "audience": "复古游戏/掌机/模拟器爱好者，老玩家为主",
+      "goals": ["服务老观众", "积累长期搜索内容", "圈层重点突破"],
+      "basis": "初始设定（UP主自述复古游戏区定位），待自家后台数据校准",
+      "interests": ["掌机", "开源掌机", "模拟器", "复古", "怀旧", "经典", "FC", "SFC", "GBA", "GBC", "NDS", "PSP", "PSV", "Vita", "Switch", "3DS", "热血", "拳皇", "KOF", "街机", "移植", "破解", "固件", "PortMaster", "Batocera", "RetroArch", "EmuELEC", "spruce", "OnionOS", "MuOS", "Knulli", "Rocknix", "TAS", "金手指", "改版", "hack", "汉化的", "中文游戏", "世嘉", "任天堂", "索尼", "Game Boy", "N64", "PS1", "PS2", "DC", "土星", "SS", "MD", "Genesis", "NeoGeo", "MAME", "FBNeo", "R36S", "RG35", "Miyoo", "Anbernic", "Retroid", "Steam Deck", "FPGA", "MiSTer"],
+      "focus_domains": ["Switch移植", "Vita PSP", "开源掌机与固件", "模拟器与核心", "引擎重实现", "PortMaster", "FPGA", "源码泄露/安全", "下架抢救"]
+    },
+    {
+      "id": "矩阵_泛游戏资讯",
+      "platform": "B站",
+      "audience": "泛游戏玩家（假设档案，未校准）",
+      "goals": ["扩大触达"],
+      "basis": "假设档案：矩阵账号定位未定，先占位，不得当实测受众",
+      "interests": ["原神", "英雄联盟", "LOL", "DOTA", "电竞", "MSI", "S赛", "3A", "新游", "发售", "Steam", "Epic", "PlayStation", "Xbox", "任天堂", "Switch", "手游", "版号", "停服", "联动"],
+      "focus_domains": []
+    }
+  ]
+}

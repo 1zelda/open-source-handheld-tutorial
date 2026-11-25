@@ -1,0 +1,52 @@
+{
+  "pages": 3,
+  "section4_page": 2,
+  "snapshot_pages": [
+    1,
+    2,
+    3
+  ],
+  "check_count": 19,
+  "candidate_index_sha256": "5e126eddf0eae98e6b8a446cd54f37400b861d5e93ecf89d3004f16d3a252581",
+  "checks": {
+    "pages_positive": true,
+    "conclusion_present": true,
+    "isolation_present": true,
+    "evaluation_present": true,
+    "readiness_present": true,
+    "delivery_index_present": true,
+    "candidate_sha_present": true,
+    "candidate_sha_matches": true,
+    "default_12_present": true,
+    "strict_12_present": true,
+    "wrong_zero_present": true,
+    "not_production_present": true,
+    "current_section_page_found": true,
+    "no_replacement_char": true,
+    "no_blank_pages": true,
+    "no_outside_blocks": true,
+    "no_dom_overflow": true,
+    "delivery_links_present": true,
+    "delivery_links_resolve": true
+  },
+  "dom_overflow": [],
+  "outside_blocks": [],
+  "delivery_link_targets": [
+    "F:\\开源掌机教程\\知识库P1_20261118\\megaman1_candidate_20261125\\index.json",
+    "F:\\开源掌机教程\\知识库P1_20261118\\megaman1_candidate_build_20261125.json",
+    "F:\\开源掌机教程\\知识库P1_20261118\\megaman1_questions_frozen_20261125.json",
+    "F:\\开源掌机教程\\知识库P1_20261118\\megaman1_candidate_eval_20261125.json",
+    "F:\\开源掌机教程\\知识库P1_20261118\\megaman1_candidate_eval_20261125.md",
+    "F:\\开源掌机教程\\知识库P1_20261118\\megaman1_candidate_20261125\\eval_query_log.jsonl",
+    "F:\\开源掌机教程\\知识库P1_20261118\\megaman1_corpus_readiness_20261125.md",
+    "F:\\开源掌机教程\\知识库P1_20261118\\megaman1_candidate_readiness_20261125.json",
+    "F:\\开源掌机教程\\知识库P1_20261118\\build_megaman1_candidate_20261125.py",
+    "F:\\开源掌机教程\\知识库P1_20261118\\eval_megaman1_candidate_20261125.py"
+  ],
+  "page_text_lengths": [
+    1077,
+    1114,
+    818
+  ],
+  "pdf_bytes": 309149
+}

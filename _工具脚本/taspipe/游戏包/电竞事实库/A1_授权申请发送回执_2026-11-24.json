@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "recorded_at": "2026-11-24",
+  "status": "drafts_ready_send_blocked",
+  "reason": "本机 Outlook COM 可创建邮件，但配置账号为 0；默认 mailto 处理器为空。不能在没有发件账号时伪造已发送。",
+  "channel_probe": {
+    "outlook_com_available": true,
+    "outlook_accounts": 0,
+    "default_mailto_command": null,
+    "sent_count": 0
+  },
+  "drafts": [
+    {
+      "id": "A1_GRID",
+      "to": "sales@grid.gg",
+      "subject": "Commercial licensing enquiry - local esports fact-checking knowledge base",
+      "file": "A1_GRID_商用授权咨询_2026-11-24.eml",
+      "x_unsent": 1,
+      "sent_at": null,
+      "reply_received": false,
+      "official_sources": [
+        "https://grid.gg/riot-open-access/",
+        "https://www.grid.gg/plans/"
+      ]
+    },
+    {
+      "id": "A1_Liquipedia",
+      "to": "contact@liquipedia.net",
+      "subject": "LPDB access and commercial use enquiry - local fact-checking knowledge base",
+      "file": "A1_Liquipedia_LPDB授权咨询_2026-11-24.eml",
+      "x_unsent": 1,
+      "sent_at": null,
+      "reply_received": false,
+      "official_sources": [
+        "https://liquipedia.net/hub/Contact",
+        "https://liquipedia.net/api",
+        "https://liquipedia.net/api-terms-of-use"
+      ],
+      "access_note": "API terms page returned HTTP 403 from this machine; email asks for current policy and does not assert unverified terms."
+    },
+    {
+      "id": "A1_OpenDota",
+      "to": "support@opendota.com",
+      "subject": "OpenDota API data use and commercial licensing enquiry",
+      "file": "A1_OpenDota_数据用途咨询_2026-11-24.eml",
+      "x_unsent": 1,
+      "sent_at": null,
+      "reply_received": false,
+      "official_sources": [
+        "https://www.opendota.com/api-keys",
+        "https://blog.opendota.com/2014/08/01/faq/",
+        "https://github.com/odota/web/blob/master/src/lang/en-US.json"
+      ],
+      "access_note": "Code MIT licence is not treated as proof of data commercial permission; email asks for data terms explicitly."
+    }
+  ],
+  "next_action": "用户配置任一真实发件账号后，打开三份 .eml，核对收件人/正文/签名并发送；随后把 sent_at、message-id 与回执写回本文件。"
+}

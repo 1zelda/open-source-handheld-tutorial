@@ -1,0 +1,40 @@
+{
+ "ts": "2026-11-19T05:41:18Z",
+ "words": 16,
+ "cookie_ok": true,
+ "cookie_names": [
+  "buvid3",
+  "b_nut"
+ ],
+ "cookie_error": "",
+ "status_counts": {
+  "ok": 16
+ },
+ "demand_counts": {
+  "高": 4,
+  "低": 7,
+  "中": 4,
+  "未知": 1
+ },
+ "thresholds": {
+  "play_median_high": 35000,
+  "play_median_mid": 8000,
+  "_basis": "推算自2026-11-19试点15个可靠词(核心命中≥0.3)的去污染播放中位分布：p75≈35184→高切点35000，median≈8286→中切点8000。top4(异度之刃/星之卡比/剑星/热血足球35184-98628)与其余(≤18212)有自然空档。n=15小样本，阈值为推算非定论，待扩词+自家后台数据校准。",
+  "_caveat": "纯播放中位偏向大众IP；本频道retro-handheld niche(开源掌机/热血足球/拳皇98/Batocera)播放偏低但互动率(0.045-0.063)与近90天活跃度(9-15)反超大众IP(互动0.019-0.026/近期0-6)。需求判读须并看互动+近期，不许单凭播放塌成一个分。供给numResults恒capped1000无区分度，已弃用。"
+ },
+ "relevance_min": 0.3,
+ "contaminated_words": [
+  "toniisound"
+ ],
+ "reliable_ok_words": 15,
+ "relevant_play_median_distribution": {
+  "min": 2531,
+  "p25": 5331.5,
+  "median": 8286,
+  "p75": 35184.5,
+  "max": 98627.5
+ },
+ "pages_per_word": 1,
+ "min_interval_s": 1.5,
+ "note": "平台已有内容热度代理，非本选题实测；试点手map词，自动card→keyword回流后续；供给numResults恒capped1000无区分度；核心命中<闸门＝模糊兜底判未知；高命中≠语义相关(星之海歧义须换无歧义词+人工核top3)"
+}

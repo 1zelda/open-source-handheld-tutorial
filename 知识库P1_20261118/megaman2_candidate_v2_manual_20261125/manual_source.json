@@ -1,0 +1,182 @@
+{
+  "status": "scan_verified_short_excerpts_only",
+  "source_id": "nintendo_mega_man_2_nes_us_manual",
+  "title": "MEGA MAN 2 — Game Pak Instructions (US NES)",
+  "creator": "Capcom",
+  "official_host": "Nintendo Co., Ltd.",
+  "official_pdf": "https://www.nintendo.co.jp/clv/manuals/en/pdf/CLV-P-NABBE.pdf",
+  "archive_item": "https://archive.org/details/mega-man-2-nes-manual",
+  "archive_pdf": "https://archive.org/download/mega-man-2-nes-manual/Mega-Man-2-Game-Manual.pdf",
+  "archive_publication_date": "2024-02-20",
+  "official_pdf_sha1": "0909b493a1a2092d7258eef952a8d4b461e5c781",
+  "downloaded_pdf_sha256": "d3c7acf731d551dc6e1cb755b7f0d83289508598bd6d368620e950fbc373599d",
+  "downloaded_pdf_bytes": 1554314,
+  "archive_pdf_sha256": "268d08002ab673b2ff70a277ac532f376e6809fe6d1978ae5760c473dcd802ad",
+  "archive_pdf_bytes": 1063374,
+  "pdf_pages": 20,
+  "printed_page_range": "1-20 (PDF page equals printed page; page 20 is the digital-reproduction notice)",
+  "region_identity_evidence": "Cover code NES-XR-USA; page 2 Licensed by Nintendo For Play On The Nintendo Entertainment System; Capcom branding; page 20 Printed in Japan.",
+  "verification": "All 20 official PDF pages were rendered. Selected passages on pages 2-15 were visually read from the page images; the PDF has no text layer.",
+  "typed_transcription_role": "not_used_image_only_pdf",
+  "full_manual_stored_in_candidate": false,
+  "excerpts": [
+    {
+      "target": "知识库P1_20261118/megaman2_candidate_v2_manual_20261125/evidence/mm2_manual_controls_20261125.txt",
+      "target_sha256": "76935cbf5a218f388015d82c8e6c1e32f3ba94745099191e2995699541e8a184",
+      "scan_pdf_pages": [
+        4,
+        5
+      ],
+      "printed_manual_pages": [
+        4,
+        5
+      ],
+      "scan_visually_read": true,
+      "fact_count": 5,
+      "quotes": [
+        "Pushing RIGHT and LEFT on the controller moves Mega Man right and left. This works even when he is jumping or falling.",
+        "The A button is used for jumping. The longer you hold the button down, the higher Mega Man will jump.",
+        "The B button is used for shooting. ... Mega Man can shoot while he is jumping or falling.",
+        "The START button is used for changing weapons, using energy crystals, ... It is also a convenient way to pause the game.",
+        "When Mega Man is damaged, he is invulnerable for a second or two."
+      ]
+    },
+    {
+      "target": "知识库P1_20261118/megaman2_candidate_v2_manual_20261125/evidence/mm2_manual_stage_select_20261125.txt",
+      "target_sha256": "a1cd6232aba5db6b45ef1e0d3ea0645252244c423c26b0900295d28be8d43b80",
+      "scan_pdf_pages": [
+        3
+      ],
+      "printed_manual_pages": [
+        3
+      ],
+      "scan_visually_read": true,
+      "fact_count": 4,
+      "quotes": [
+        "Use SELECT to choose NORMAL or DIFFICULT mode. Press START to begin the game.",
+        "You must now choose to START or enter a PASSWORD.",
+        "This screen has pictures of all eight enemy robots plus a slot in the middle for Dr. Wily.",
+        "Use the control pad to move the flashing box to the opponent of your choice and press START."
+      ]
+    },
+    {
+      "target": "知识库P1_20261118/megaman2_candidate_v2_manual_20261125/evidence/mm2_manual_energy_20261125.txt",
+      "target_sha256": "af7740b2a5f9f761ef8adab42f884944631d03d2c11157bac7242dd4e680d0af",
+      "scan_pdf_pages": [
+        6,
+        7
+      ],
+      "printed_manual_pages": [
+        6,
+        7
+      ],
+      "scan_visually_read": true,
+      "fact_count": 5,
+      "quotes": [
+        "When the meter reaches zero points, one Mega Man life will be lost.",
+        "There is also an energy crystal. This is a full load of energy that Mega Man can carry around with him.",
+        "Push the START button again to fill your energy back up to maximum.",
+        "This tells how much charge remains in the current weapon.",
+        "1 UP. Adds One Player."
+      ]
+    },
+    {
+      "target": "知识库P1_20261118/megaman2_candidate_v2_manual_20261125/evidence/mm2_manual_special_items_20261125.txt",
+      "target_sha256": "b12fff9d052c66504ab81dacb67fd295972b54b94d0e924ccf2dd1a841cdab44",
+      "scan_pdf_pages": [
+        8
+      ],
+      "printed_manual_pages": [
+        8
+      ],
+      "scan_visually_read": true,
+      "fact_count": 3,
+      "quotes": [
+        "Acquired when Heat Man is defeated. This is a levitation platform. Up to three may be launched at a time.",
+        "Acquired when Air Man is defeated. This is a jet sled. Use it to fly over difficult areas.",
+        "Acquired when Flash Man is defeated. This is an elevator and may only be used against a wall."
+      ]
+    },
+    {
+      "target": "知识库P1_20261118/megaman2_candidate_v2_manual_20261125/evidence/mm2_manual_passwords_20261125.txt",
+      "target_sha256": "9642405c433aaf86ddd8fbc8182c3b0b65ce3ac55150884f55e0cd71211fda94",
+      "scan_pdf_pages": [
+        9
+      ],
+      "printed_manual_pages": [
+        9
+      ],
+      "scan_visually_read": true,
+      "fact_count": 3,
+      "quotes": [
+        "After defeating each enemy, you will have a choice between either Stage Select or Password.",
+        "Simply keep track of where the bubbles are and next time you begin the game, you can continue from that point.",
+        "Move the cursor around with the control pad and hit the A button in each square that had a bubble in it before."
+      ]
+    },
+    {
+      "target": "知识库P1_20261118/megaman2_candidate_v2_manual_20261125/evidence/mm2_manual_airman_20261125.txt",
+      "target_sha256": "d9f8f1b1492e7d9c8f70e8358b40fd63779159d8fe7a7c0c50a220f5e6eaa130",
+      "scan_pdf_pages": [
+        10,
+        11,
+        12,
+        13
+      ],
+      "printed_manual_pages": [
+        10,
+        11,
+        12,
+        13
+      ],
+      "scan_visually_read": true,
+      "fact_count": 4,
+      "quotes": [
+        "Push the START button to pause at the end of each section. (Remember: You must push START again to return to the game.)",
+        "Jump onto it as soon as it starts to lower its horns, run across and jump to the platform on the other side.",
+        "Jump up and shoot him until he explodes. Then jump onto his Thunder Chariot.",
+        "Airman throws small tornados which deflect your shots and damage you."
+      ]
+    },
+    {
+      "target": "知识库P1_20261118/megaman2_candidate_v2_manual_20261125/evidence/mm2_manual_robot_masters_20261125.txt",
+      "target_sha256": "f3aa25b64b4787f92d8f7529faf038334fb9d10d255c5aa5d16c8b111d8a6c39",
+      "scan_pdf_pages": [
+        14,
+        15
+      ],
+      "printed_manual_pages": [
+        14,
+        15
+      ],
+      "scan_visually_read": true,
+      "fact_count": 2,
+      "quotes": [
+        "Wood Man Clash Man Quick Man Heat Man Metal Man Air Man Flash Man Bubble Man",
+        "As Mega Man defeats each enemy, he acquires their powers."
+      ]
+    },
+    {
+      "target": "知识库P1_20261118/megaman2_candidate_v2_manual_20261125/evidence/mm2_manual_weapons_20261125.txt",
+      "target_sha256": "1cb02571cca7b67ac866ba1939785953681c252118c5c0777cd3834146daa38c",
+      "scan_pdf_pages": [
+        15
+      ],
+      "printed_manual_pages": [
+        15
+      ],
+      "scan_visually_read": true,
+      "fact_count": 8,
+      "quotes": [
+        "The longer you hold the fire button, the bigger the fireball.",
+        "Air Shooter throws small tornados.",
+        "The leaves are then thrown in the direction the control pad is pushed.",
+        "Bubble Lead is a bubble that rolls along the ground in front of you.",
+        "Quick Boomerang can throw up to three boomerangs.",
+        "It cannot be turned off early.",
+        "This is probably the best general purpose weapon and the energy lasts a long time.",
+        "Crash Bomber can be thrown at walls and will detonate after a short delay."
+      ]
+    }
+  ]
+}

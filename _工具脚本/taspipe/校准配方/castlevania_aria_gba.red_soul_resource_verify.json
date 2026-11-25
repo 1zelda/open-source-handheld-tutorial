@@ -1,0 +1,154 @@
+{
+  "schema_version": "ram_calibration/1.0",
+  "game_id": "castlevania_aria_gba",
+  "note": "红魂35/47固定Up+B路线资源消耗验证；只证明魂槽保持、MP消耗和画面差异，不把全屏差分直接当作技能检测器。",
+  "profile": {
+    "rom": "F:/BaiduNetdiskDownload/rom/gba/恶魔城晓月圆舞曲.gba",
+    "rom_sha1": "40aab076a528f52e93260bb98d91a40039e0da02",
+    "bizhawk": "F:/开源掌机教程/02-模拟器库/BizHawk/BizHawk-2.11.1",
+    "isolated_slot": true,
+    "core": "mGBA",
+    "system": "GBA",
+    "domain": "EWRAM",
+    "state_package": {
+      "game_id": "castlevania_aria_gba",
+      "profile_id": "aria_us_40aab076",
+      "revision": "r20261125T145623"
+    },
+    "window": {
+      "start": 78429,
+      "length": 128
+    }
+  },
+  "base_state": "base",
+  "macros": {
+    "up_b": "Up+B"
+  },
+  "matrix": {
+    "case_id": "red_soul_{value}_resource_verify",
+    "values": [35, 47],
+    "template": {
+      "kind": "scenario",
+      "base_state": "base",
+      "arms": [
+        {
+          "name": "red_{value}",
+          "steps": [
+            {
+              "macro": "-",
+              "extra": 0,
+              "patches": [
+                {
+                  "addr": 78429,
+                  "value": "{value}"
+                }
+              ],
+              "expect": [
+                {
+                  "addr": 78429,
+                  "value": "{value}"
+                },
+                {
+                  "addr": 78448,
+                  "width": 2,
+                  "value": 80
+                }
+              ],
+              "screen": {
+                "reference": "$base",
+                "relation": "equal"
+              }
+            },
+            {
+              "state": "$previous",
+              "macro": "@up_b",
+              "extra": 89,
+              "capture_frames": 90,
+              "expect": [
+                {
+                  "addr": 78429,
+                  "value": "{value}"
+                },
+                {
+                  "addr": 78448,
+                  "width": 2,
+                  "op": "<",
+                  "value": 80
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "red0",
+          "steps": [
+            {
+              "macro": "-",
+              "extra": 0,
+              "patches": [
+                {
+                  "addr": 78429,
+                  "value": 0
+                }
+              ],
+              "expect": [
+                {
+                  "addr": 78429,
+                  "value": 0
+                },
+                {
+                  "addr": 78448,
+                  "width": 2,
+                  "value": 80
+                }
+              ],
+              "screen": {
+                "reference": "$base",
+                "relation": "equal"
+              }
+            },
+            {
+              "state": "$previous",
+              "macro": "@up_b",
+              "extra": 89,
+              "capture_frames": 90,
+              "expect": [
+                {
+                  "addr": 78429,
+                  "value": 0
+                },
+                {
+                  "addr": 78448,
+                  "width": 2,
+                  "value": 80
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "comparisons": [
+        {
+          "left": "red_{value}",
+          "right": "red0",
+          "left_step": 1,
+          "right_step": 1,
+          "relation": "different",
+          "frames": [8, 12, 20, 40, 60, "final"]
+        }
+      ],
+      "claims": [
+        {
+          "addr": 78429,
+          "level": "gameplay",
+          "note": "固定Up+B路线后目标红魂槽仍保持；正例只改该槽，负例改为0。"
+        },
+        {
+          "addr": 78448,
+          "level": "gameplay",
+          "note": "固定Up+B路线末帧MP低于初始80；只验证资源消耗，不自动判定技能语义或检测器。"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "candidates_scope": {
+    "C1_用必杀": [
+      "W03"
+    ],
+    "C2_能不能用必杀": [
+      "W03"
+    ],
+    "C3_必杀能不能": [
+      "W03",
+      "Q04"
+    ]
+  },
+  "flips": [
+    [
+      "bm25",
+      "W03",
+      "w3",
+      5,
+      "79daaa4d521a",
+      "_工具脚本/taspipe/游戏包/来源库/取证/sohu_一直输球隐藏大结局_20261118.md#L65-L81",
+      false
+    ],
+    [
+      "bm25",
+      "W03",
+      "w5",
+      5,
+      "79daaa4d521a",
+      "_工具脚本/taspipe/游戏包/来源库/取证/sohu_一直输球隐藏大结局_20261118.md#L65-L81",
+      false
+    ]
+  ],
+  "checked": 18,
+  "rules_blocked": true,
+  "skill_pass": false,
+  "verdict": false
+}

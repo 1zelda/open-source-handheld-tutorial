@@ -1,0 +1,41 @@
+W1118 23:22:14.037000 28940 E:\SHARE\py313-cuda\torch\distributed\elastic\multiprocessing\redirects.py:29] NOTE: Redirects are currently not supported in Windows or MacOs.
+Loading weights:   0%|          | 0/391 [00:00<?, ?it/s]Loading weights: 100%|██████████| 391/391 [00:00<00:00, 57301.64it/s]
+== 跨语题：金标块在稠密路（候选集内）的排名 ==
+Q06 候选123 金标稠密排名=12 稠密top3=['1ang_热血足球联盟图文攻略_202611', '1ang_热血足球联盟图文攻略_202611', '热血足球联盟_必杀全清单.md']
+Q07 候选123 金标稠密排名=1 稠密top3=['setsumei_热血足球说明书扫描_202', '1ang_热血足球联盟图文攻略_202611', 'sohu_一直输球隐藏大结局_2026111']
+Q08 候选123 金标稠密排名=87 稠密top3=['1ang_热血足球联盟图文攻略_202611', '热血足球联盟_必杀全清单.md', '1ang_热血足球联盟图文攻略_202611']
+== 关键题 rrf_rerank top3 ==
+Q01 inconclusive
+    0.0323 reference_only sohu_必杀最强小辫子_20261118.md#L1-L69
+    0.0313 authoritative 热血足球联盟_honest_gap_manifest.md#L8-L20
+    0.0306 authoritative 热血足球联盟_必杀全清单.md#L3-L7
+Q02 inconclusive
+    0.0308 reference_only sohu_必杀最强小辫子_20261118.md#L71-L89
+    0.0313 authoritative 热血足球联盟_必杀全清单.md#L24-L33
+    0.0309 reference_only 1ang_热血足球联盟图文攻略_20261118.md#L525-L536
+Q03 inconclusive
+    0.0328 reference_only 1ang_热血足球联盟图文攻略_20261118.md#L823-L839
+    0.0299 authoritative 热血足球联盟_必杀全清单.md#L24-L33
+    0.0294 authoritative 热血足球联盟_必杀全清单.md#L120-L136
+Q09 pass
+    0.0306 authoritative 素材生产规范.md#L180-L182
+    0.0313 authoritative 素材生产规范.md#L140-L155
+    0.0301 authoritative 素材生产规范.md#L18-L31
+Q11 pass
+    0.0325 authoritative 素材生产规范.md#L140-L155
+    0.0323 cross_version gamersky_kof98um全角色出招表_20261118.md#L3-L305
+    0.0299 authoritative 素材生产规范.md#L3-L15
+Q12 inconclusive
+    0.032 reference_only 1ang_热血足球联盟图文攻略_20261118.md#L183-L192
+    0.0161 reference_only quanjizhong_thread677_街机改版整合_20261118.md#L8291-L8315
+    0.0252 reference_only quanjizhong_thread677_街机改版整合_20261118.md#L6066-L6090
+Q18 inconclusive
+    0.0323 reference_only 1ang_热血足球联盟图文攻略_20261118.md#L823-L839
+    0.0323 authoritative 热血足球联盟_必杀全清单.md#L137-L158
+    0.0312 authoritative 热血足球联盟_必杀全清单.md#L251-L259
+Exception ignored in: <function QdrantClient.__del__ at 0x000001A3B7210B80>
+Traceback (most recent call last):
+  File "F:\kb_pilot_venv\Lib\site-packages\qdrant_client\qdrant_client.py", line 172, in __del__
+  File "F:\kb_pilot_venv\Lib\site-packages\qdrant_client\qdrant_client.py", line 181, in close
+  File "F:\kb_pilot_venv\Lib\site-packages\qdrant_client\local\qdrant_local.py", line 113, in close
+ImportError: sys.meta_path is None, Python is likely shutting down

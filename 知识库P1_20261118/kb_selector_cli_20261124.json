@@ -1,0 +1,1678 @@
+{
+ "q": "热血队内，燕返原生只有哪个角色会使？",
+ "game": "nekketsu_soccer2",
+ "revision": null,
+ "platform": null,
+ "want": [],
+ "route": {
+  "domain": "retro_soccer",
+  "game_ids": [
+   "nekketsu_soccer2"
+  ],
+  "revisions": [],
+  "corpus_available": true,
+  "matched": [
+   "燕返",
+   "热血队"
+  ],
+  "tier": "strong"
+ },
+ "counts": {
+  "candidates": 178,
+  "hits": 30,
+  "answerable": 2,
+  "strong": 2
+ },
+ "retrieval_note": "当前环境缺 sentence_transformers（用带依赖的 venv 或装依赖）",
+ "retrieval": "bm25_only",
+ "index_used": "index.json",
+ "authority_warnings": [
+  "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+  "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+  "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+  "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+  "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+  "tencent_cloud_dev 是二手件（reference_only），须与官方件或我方实测交叉核对",
+  "sohu_game 是二手件（reference_only），须与官方件或我方实测交叉核对",
+  "sohu_game 是二手件（reference_only），须与官方件或我方实测交叉核对",
+  "csdn_wangsitan_bug 是二手件（reference_only），须与官方件或我方实测交叉核对",
+  "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+  "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+  "csdn_wangsitan_bug 是二手件（reference_only），须与官方件或我方实测交叉核对",
+  "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+  "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+  "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+  "sohu_game 是二手件（reference_only），须与官方件或我方实测交叉核对",
+  "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+  "sohu_game 是二手件（reference_only），须与官方件或我方实测交叉核对",
+  "csdn_wangsitan_bug 是二手件（reference_only），须与官方件或我方实测交叉核对",
+  "1ang_com 是二手件（reference_only），须与官方件或我方实测交叉核对",
+  "csdn_wangsitan_bug 是二手件（reference_only），须与官方件或我方实测交叉核对"
+ ],
+ "status": "pass",
+ "hits": [
+  {
+   "chunk_id": "ae59bde1790f",
+   "score": 20.024,
+   "source_id": "1ang_com",
+   "status": "verified_read",
+   "authority": "reference_only",
+   "revision": "nekketsu_soccer2_fc_jp",
+   "game_id": "nekketsu_soccer2",
+   "platform": "NES",
+   "revision_match": true,
+   "locator": "_工具脚本/taspipe/游戏包/来源库/取证/1ang_热血足球联盟图文攻略_20261118.md#L739-L756",
+   "heading": "火光目前喜欢的最佳阵容",
+   "matched_terms": [
+    "只有",
+    "热血",
+    "燕返",
+    "血队"
+   ],
+   "snippet": "うがじん(DF) かいずき(FW)   つねを(GK)     かるろす(FW)   ほりばた(DF) よりつね(MF)\n阵型2-2-1，主要依靠电脑控制的球员们防守，进攻方面由我一个人连续带球突破就足够了。\n除了门将『つねを(Tsunewo)』与主力『よりつね(Yoritsune)』外，所有队员的走力类型全都是恶路越野四驱车D，这样就可以无视水地、泥地、沙地等粘脚地形，以正常移动速度应对敌手。\n『よりつね(Yoritsune)』是热血队唯一拥有燕返技能的球员，也是唯一的A型",
+   "answerability": {
+    "answerable": false,
+    "intent": "identity",
+    "focus_ok": true,
+    "pattern_ok": false,
+    "intent_ok": true,
+    "focus_hit": [
+     "只有",
+     "燕返",
+     "血队"
+    ],
+    "url_list": false,
+    "topic_anchor_ok": true
+   }
+  },
+  {
+   "chunk_id": "a6cfec36c24a",
+   "score": 19.031,
+   "source_id": "1ang_com",
+   "status": "verified_read",
+   "authority": "reference_only",
+   "revision": "nekketsu_soccer2_fc_jp",
+   "game_id": "nekketsu_soccer2",
+   "platform": "NES",
+   "revision_match": true,
+   "locator": "_工具脚本/taspipe/游戏包/来源库/取证/1ang_热血足球联盟图文攻略_20261118.md#L647-L650",
+   "heading": "あるぜんちん | Argentine | 阿根廷",
+   "matched_terms": [
+    "会使",
+    "热血",
+    "血队"
+   ],
+   "snippet": "中坚级别球队。会使用必杀运球。然而，当比分一致或者比分落后于热血时，门将拿到球就离开球门自己带球向前突破，使热血队有机可乘。而且，必杀踢射虽然很强，却只是偶尔发动。阵型2-2-1。胜利姿势是把香蕉当成小沙包扔着耍。\n官方说明书上说，南美强豪球队，拥有敏锐的个人技术，缺点是门将。队伍力量为4。",
+   "answerability": {
+    "answerable": false,
+    "intent": "identity",
+    "focus_ok": true,
+    "pattern_ok": false,
+    "intent_ok": true,
+    "focus_hit": [
+     "会使",
+     "血队"
+    ],
+    "url_list": false,
+    "topic_anchor_ok": true
+   }
+  },
+  {
+   "chunk_id": "0cbfe31bd687",
+   "score": 15.883,
+   "source_id": "1ang_com",
+   "status": "verified_read",
+   "authority": "reference_only",
+   "revision": "nekketsu_soccer2_fc_jp",
+   "game_id": "nekketsu_soccer2",
+   "platform": "NES",
+   "revision_match": true,
+   "locator": "_工具脚本/taspipe/游戏包/来源库/取证/1ang_热血足球联盟图文攻略_20261118.md#L337-L359",
+   "heading": "热血FC等候室",
+   "matched_terms": [
+    "只有",
+    "哪个",
+    "有哪",
+    "燕返"
+   ],
+   "snippet": "『ハイパー・ダッシュ(Hyper Dash)』，超常冲刺。冲刺中朝进行方向连按两次方向键。普通冲刺基础上发动更快速的冲刺。\n『ヒール・リフティング(Heel Lifting)』，脚跟挑球。拿球时，无论面朝哪个方向，{←AB}同时按或者{→AB}同时按全都可以发动。\n『フェイント・アタック(Feint Attack)』，虚攻，做假动作。冲刺运球过程中，方向键上或下连续按2次。\n『ダイビング・ヘッド(Diving Head)』，鱼跃头球。在足球附近时，{←B}或者{→B}同时按。",
+   "answerability": {
+    "answerable": false,
+    "intent": "identity",
+    "focus_ok": true,
+    "pattern_ok": false,
+    "intent_ok": true,
+    "focus_hit": [
+     "只有",
+     "有哪",
+     "燕返"
+    ],
+    "url_list": false,
+    "topic_anchor_ok": true
+   }
+  },
+  {
+   "chunk_id": "8996c7a159ef",
+   "score": 15.834,
+   "source_id": "local_soccer2_super_list",
+   "status": "verified_read",
+   "authority": "authoritative",
+   "revision": "nekketsu_soccer2_multi",
+   "game_id": "nekketsu_soccer2",
+   "platform": "NES",
+   "revision_match": true,
+   "locator": "_工具脚本/taspipe/游戏包/热血足球联盟_必杀全清单.md#L137-L158",
+   "heading": "5. 生产接线（11-14 实测更新）",
+   "matched_terms": [
+    "原生",
+    "热血",
+    "燕返",
+    "角色"
+   ],
+   "snippet": "⇒ 现状改成 **untested（未在任何有效条件下测过）**，不是\"不可触发\"。用户 11-14 亲口\"其实打出过好多次必杀了\"，\n有效条件下的真阳性一定存在，责任在我的测量方式，不在 ROM。\n真采 23 必杀仍需正对照：先在**当前 jf ROM** 上按 §6 的三条铁律重跑触发链，仍全负再谈日版原版 ROM（网盘仅两 hack 无日版；外部=门控待批）。\n本清单 23+13 项在 CN/hack 上全部标 **honest gap（不可复现，证据见下）**，不冒充",
+   "answerability": {
+    "answerable": true,
+    "intent": "identity",
+    "focus_ok": true,
+    "pattern_ok": true,
+    "intent_ok": true,
+    "focus_hit": [
+     "原生",
+     "燕返"
+    ],
+    "url_list": false,
+    "topic_anchor_ok": true
+   }
+  },
+  {
+   "chunk_id": "a1281da97fd0",
+   "score": 15.227,
+   "source_id": "1ang_com",
+   "status": "verified_read",
+   "authority": "reference_only",
+   "revision": "nekketsu_soccer2_fc_jp",
+   "game_id": "nekketsu_soccer2",
+   "platform": "NES",
+   "revision_match": true,
+   "locator": "_工具脚本/taspipe/游戏包/来源库/取证/1ang_热血足球联盟图文攻略_20261118.md#L653-L656",
+   "heading": "ぶらじる | Brazil | 巴西",
+   "matched_terms": [
+    "热血",
+    "燕返",
+    "血队"
+   ],
+   "snippet": "实力仅次于意大利的强豪。使用燕返，连续发动强力必杀踢射。最好不要让他们带球突破到热血一侧的阵地。阵型2-2-1。胜利姿势如同里约热内卢狂欢节上的舞蹈。值得注意的是，中场球员『ぶーにょ(Bûnyo)』速度很快，频繁使用燕返，如同热血队里的『よりつね(Yoritsune)』，一定要盯住他，不要让他拿球。后卫『さんとす(Santosu)』命中很强，而且体格很好，即使对手的必杀踢射打在他身上，也很难贯通过去。门将『ろどりげす(Rodorigesu)』命中很强，对手的必杀踢射想把他吹飞",
+   "answerability": {
+    "answerable": false,
+    "intent": "identity",
+    "focus_ok": true,
+    "pattern_ok": false,
+    "intent_ok": true,
+    "focus_hit": [
+     "燕返",
+     "血队"
+    ],
+    "url_list": false,
+    "topic_anchor_ok": true
+   }
+  },
+  {
+   "chunk_id": "8e34d9a96bc7",
+   "score": 13.566,
+   "source_id": "1ang_com",
+   "status": "verified_read",
+   "authority": "reference_only",
+   "revision": "nekketsu_soccer2_fc_jp",
+   "game_id": "nekketsu_soccer2",
+   "platform": "NES",
+   "revision_match": true,
+   "locator": "_工具脚本/taspipe/游戏包/来源库/取证/1ang_热血足球联盟图文攻略_20261118.md#L679-L691",
+   "heading": "どいつ | Duits | 德国",
+   "matched_terms": [
+    "只有",
+    "热血",
+    "燕返",
+    "血队"
+   ],
+   "snippet": "强豪球队。命中很强，善用必杀运球技能，只是，因为不会燕返技能，降低了发动必杀踢射的概率。即便如此，球门前普通踢射的威力，仍然对门将造成很大威胁。阵型2-2-1。胜利姿势为中场球员『えっけると(Ekkeruto)』连续不断吃香肠。热血队如果选择球员错误，上场球员命中不行，则败北的可能性极大。门将『ぶれーめ(Burême)』腿脚快，与巴西队门将一样，是最强级别的。\n官方说明书上说，全都是如同Cyborg一样的选手，球队非常坚固。队伍力量为5。\n全胜夺冠心得\n首先，说明一下如何选择",
+   "answerability": {
+    "answerable": false,
+    "intent": "identity",
+    "focus_ok": true,
+    "pattern_ok": false,
+    "intent_ok": true,
+    "focus_hit": [
+     "只有",
+     "燕返",
+     "血队"
+    ],
+    "url_list": false,
+    "topic_anchor_ok": true
+   }
+  },
+  {
+   "chunk_id": "5e3d5b9ea915",
+   "score": 13.51,
+   "source_id": "tencent_cloud_dev",
+   "status": "verified_read",
+   "authority": "reference_only",
+   "revision": "nekketsu_soccer2_fc_unspecified",
+   "game_id": "nekketsu_soccer2",
+   "platform": "NES",
+   "revision_match": true,
+   "locator": "_工具脚本/taspipe/游戏包/来源库/取证/tencentcloud_热血足球联盟杂谈_20261118.md#L13-L46",
+   "heading": "《热血足球联盟》FC时期最好足球游戏，必杀层出不穷，一玩就是一天",
+   "matched_terms": [
+    "个角",
+    "热血",
+    "色会",
+    "角色"
+   ],
+   "snippet": "学习\n活动\n专区\n圈层\n工具\n[MCP广场![](https://qccommunity.qcloudimg.com/image/new.png)](https://cloud.tencent.com/developer/mcp)\n文章/答案/技术大牛搜索\n搜索关闭\n发布\n文章来源：企鹅号 - 玲珑心游戏\n热血系列的经典游戏总是给我们留下深刻的印象。每一款游戏都是一个类型游戏中最顶尖的。从格斗到物语，在从躲避球到篮球。每款游戏都是可以让我们和小伙伴儿疯狂的玩上一整天。但是小时",
+   "answerability": {
+    "answerable": false,
+    "intent": "identity",
+    "focus_ok": true,
+    "pattern_ok": false,
+    "intent_ok": true,
+    "focus_hit": [
+     "个角",
+     "色会"
+    ],
+    "url_list": true,
+    "topic_anchor_ok": true
+   }
+  },
+  {
+   "chunk_id": "2e4c8ac797cf",
+   "score": 13.278,
+   "source_id": "sohu_game",
+   "status": "verified_read",
+   "authority": "reference_only",
+   "revision": "nekketsu_soccer2_fc_unspecified",
+   "game_id": "nekketsu_soccer2",
+   "platform": "NES",
+   "revision_match": true,
+   "locator": "_工具脚本/taspipe/游戏包/来源库/取证/sohu_必杀最强小辫子_20261118.md#L71-L89",
+   "heading": "No.0 忍者射门——赖常",
+   "matched_terms": [
+    "只有",
+    "热血",
+    "燕返",
+    "角色"
+   ],
+   "snippet": "他的射门必杀“香蕉环射门”堪称简单粗暴，似乎有隐藏属性加持，连德国队的门将都有一定几率能踢飞。而且津根的香蕉射门跟阿根廷队的不同，他的射门会在飞行一段距离后变成香蕉原地停留一会儿，这就让他的射门同样具备骗出对方CPU守门员假动作的功能，计算好球的飞行距离后还是蛮实用的。\n《热血足球》传说中的卡密萨马，日本队唯一隐藏基佬——海月，无论数值还是技能都十分一般的选手，但在一些大神玩家的手中出神入化如同神一般的存在。\n海月的必杀射门与巴西队的十分相似，都是踢出一只自带抛物线的鱼，虽说",
+   "answerability": {
+    "answerable": false,
+    "intent": "identity",
+    "focus_ok": true,
+    "pattern_ok": false,
+    "intent_ok": true,
+    "focus_hit": [
+     "只有",
+     "燕返"
+    ],
+    "url_list": false,
+    "topic_anchor_ok": true
+   }
+  },
+  {
+   "chunk_id": "4d37bae4996e",
+   "score": 11.486,
+   "source_id": "sohu_game",
+   "status": "verified_read",
+   "authority": "reference_only",
+   "revision": "nekketsu_soccer2_fc_unspecified",
+   "game_id": "nekketsu_soccer2",
+   "platform": "NES",
+   "revision_match": true,
+   "locator": "_工具脚本/taspipe/游戏包/来源库/取证/sohu_一直输球隐藏大结局_20261118.md#L83-L98",
+   "heading": "原创 FC热血足球，一直输球就能触发隐藏大结局？玩了20多年都不知道",
+   "matched_terms": [
+    "有哪",
+    "热血"
+   ],
+   "snippet": "这三种结局其实都可以看做同一种结局，毕竟不论走哪条结局路线，通关动画播完后，游戏都会卡死在Technos开头的挥拳动画上，这三种结局都无法进行续关，所以一旦选择进入世界杯，就意味着在《热血足球》这款游戏里不可能踢满36场了。\n如此看来，《热血足球》这款经典游戏还是有一些烂尾要素存在的。毕竟这是一款发售自1993年FC末期的游戏，考虑到当时Technos Japan公司本身的债务状况也不是很健康，《热血足球》或多或少进行了一些赶工也说不定。不然以《热血》系列一贯的高质量制作，且",
+   "answerability": {
+    "answerable": false,
+    "intent": "identity",
+    "focus_ok": true,
+    "pattern_ok": false,
+    "intent_ok": true,
+    "focus_hit": [
+     "有哪"
+    ],
+    "url_list": false,
+    "topic_anchor_ok": true
+   }
+  },
+  {
+   "chunk_id": "f7f8e8316295",
+   "score": 11.354,
+   "source_id": "local_soccer2_super_list",
+   "status": "verified_read",
+   "authority": "authoritative",
+   "revision": "nekketsu_soccer2_multi",
+   "game_id": "nekketsu_soccer2",
+   "platform": "NES",
+   "revision_match": true,
+   "locator": "_工具脚本/taspipe/游戏包/热血足球联盟_必杀全清单.md#L70-L85",
+   "heading": "3. 一般个人技/必杀技（S1 发动法原文）",
+   "matched_terms": [
+    "原生",
+    "燕返"
+   ],
+   "snippet": "| 技 | 日文 | 发动 | 备注 |\n|---|---|---|---|\n| 爆裂攻击(铁膝盖) | ばくれつあたっく | 跳跃**落地时按 B**，可连按连发 | 着地技；≥4 人会 |\n| 燕返 | つばめがえし | 带球跳跃立即出现(空中翻跟头) | 仅 Yoritsune 原生；秘技后全员 |\n| 必杀运球(旋风撞人) | ひっさつどりぶる | 带球中连按两次上 或 两次下 | 撞倒对方含门将(概率) |\n| 龙卷拳(升龙拳) | とるねーどぱんち | 方向左/右",
+   "answerability": {
+    "answerable": true,
+    "intent": "identity",
+    "focus_ok": true,
+    "pattern_ok": true,
+    "intent_ok": true,
+    "focus_hit": [
+     "原生",
+     "燕返"
+    ],
+    "url_list": false,
+    "topic_anchor_ok": true
+   }
+  },
+  {
+   "chunk_id": "de8504fe7e4d",
+   "score": 10.113,
+   "source_id": "local_soccer2_super_list",
+   "status": "verified_read",
+   "authority": "authoritative",
+   "revision": "nekketsu_soccer2_multi",
+   "game_id": "nekketsu_soccer2",
+   "platform": "NES",
+   "revision_match": true,
+   "locator": "_工具脚本/taspipe/游戏包/热血足球联盟_必杀全清单.md#L10-L21",
+   "heading": "0. 来源（引用即出处，正文不臆造）",
+   "matched_terms": [
+    "热血",
+    "血队"
+   ],
+   "snippet": "- S1 天幻网《FC热血足球联盟困难模式全胜夺冠》转载（乐米网一昂，2022-04-05）：\n（原站 http://1lifeclear.ffsky.cn/56.htm 本机直连失败，用转载副本；逐选手日文原名+发动法+秘技+难度规则）\n- S2 搜狐《FC〈热血足球联盟〉热血队队员必杀技集锦》（踏破仙阙，2019-08-29）：\nhttps://www.sohu.com/a/337254221_120099888 （12 人中文译名+球变形效果逐条）\n- S3 搜狐《〈F",
+   "answerability": {
+    "answerable": false,
+    "intent": "identity",
+    "focus_ok": true,
+    "pattern_ok": false,
+    "intent_ok": true,
+    "focus_hit": [
+     "血队"
+    ],
+    "url_list": true,
+    "topic_anchor_ok": true
+   }
+  },
+  {
+   "chunk_id": "e2045199c848",
+   "score": 9.999,
+   "source_id": "csdn_wangsitan_bug",
+   "status": "verified_read",
+   "authority": "reference_only",
+   "revision": "nekketsu_soccer2_fc_unspecified",
+   "game_id": "nekketsu_soccer2",
+   "platform": "NES",
+   "revision_match": true,
+   "locator": "_工具脚本/taspipe/游戏包/来源库/取证/csdn_wangsitan_热血足球Bug记录_20261118.md#L250-L274",
+   "heading": "相关推荐",
+   "matched_terms": [
+    "个角",
+    "热血",
+    "角色"
+   ],
+   "snippet": "【_FC_】_热血__足球__联盟_ 内存使用_记录_\npid(player\\_id): 玩家编号，00--03。 rid(role\\_id): 角色编号，00--0B，有时0C对应球。 tid(team\\_id): 队伍编号，00/01。 一般方向：上为00，顺时针每45度加20。 0004,pid: key A B Select Start U D L R 0008,pid: changed\\_key\nwangsitan的专栏 2299\n](https://blog.cs",
+   "answerability": {
+    "answerable": false,
+    "intent": "identity",
+    "focus_ok": true,
+    "pattern_ok": false,
+    "intent_ok": true,
+    "focus_hit": [
+     "个角"
+    ],
+    "url_list": true,
+    "topic_anchor_ok": true
+   }
+  },
+  {
+   "chunk_id": "c6fecb423d8a",
+   "score": 9.965,
+   "source_id": "1ang_com",
+   "status": "verified_read",
+   "authority": "reference_only",
+   "revision": "nekketsu_soccer2_fc_jp",
+   "game_id": "nekketsu_soccer2",
+   "platform": "NES",
+   "revision_match": true,
+   "locator": "_工具脚本/taspipe/游戏包/来源库/取证/1ang_热血足球联盟图文攻略_20261118.md#L619-L622",
+   "heading": "もんごる | Mongol | 外蒙古",
+   "matched_terms": [
+    "热血",
+    "血队"
+   ],
+   "snippet": "防守型球队，比韩国队、泰国队或多或少厉害一些。阵型2-1-2。胜利姿势为叠罗汉绕着球场跑。值得注意的是，门将是除热血队外亚洲球队中最强的，命中最高，别指望他会出现黄油手。\n官方说明书上说，依靠后卫的活跃支撑局面，似乎是防守牢固的球队。队伍力量为2。",
+   "answerability": {
+    "answerable": false,
+    "intent": "identity",
+    "focus_ok": true,
+    "pattern_ok": false,
+    "intent_ok": true,
+    "focus_hit": [
+     "血队"
+    ],
+    "url_list": false,
+    "topic_anchor_ok": true
+   }
+  },
+  {
+   "chunk_id": "09e4a7db5b20",
+   "score": 9.808,
+   "source_id": "1ang_com",
+   "status": "verified_read",
+   "authority": "reference_only",
+   "revision": "nekketsu_soccer2_fc_jp",
+   "game_id": "nekketsu_soccer2",
+   "platform": "NES",
+   "revision_match": true,
+   "locator": "_工具脚本/taspipe/游戏包/来源库/取证/1ang_热血足球联盟图文攻略_20261118.md#L667-L670",
+   "heading": "いんぐらんど | England | 英格兰",
+   "matched_terms": [
+    "热血",
+    "血队"
+   ],
+   "snippet": "拿球时喜欢使用必杀运球把人撞飞，并没有什么特别强大的地方。只是，热血队需要安排『げんえい(Gen'ei)』、『かるろす(Karurosu)』、『つねを(Tsunewo)』三人中的一人担当门将，其他人极有可能防不住英格兰的必杀踢射。阵型2-2-1。胜利姿势为弹奏电吉他。\n官方说明书上说，有些乱暴的球队，具有攻击力。队伍力量为3。",
+   "answerability": {
+    "answerable": false,
+    "intent": "identity",
+    "focus_ok": true,
+    "pattern_ok": false,
+    "intent_ok": true,
+    "focus_hit": [
+     "血队"
+    ],
+    "url_list": false,
+    "topic_anchor_ok": true
+   }
+  },
+  {
+   "chunk_id": "ae478886e098",
+   "score": 9.641,
+   "source_id": "csdn_wangsitan_bug",
+   "status": "verified_read",
+   "authority": "reference_only",
+   "revision": "nekketsu_soccer2_fc_unspecified",
+   "game_id": "nekketsu_soccer2",
+   "platform": "NES",
+   "revision_match": true,
+   "locator": "_工具脚本/taspipe/游戏包/来源库/取证/csdn_wangsitan_热血足球Bug记录_20261118.md#L188-L203",
+   "heading": "【FC】热血足球联盟 Bug记录",
+   "matched_terms": [
+    "热血",
+    "血队"
+   ],
+   "snippet": "热血队以外的球队，自定义的阵型、战术可能无效\n打平后的点球，轮到左方门将守门时，空中动作的朝向是向右的，包括直跳接球和升龙拳\n关注博主即可阅读全文\n·\n收录于\n当前文章被以下社区和专栏收录：\n版权声明：本文为博主原创文章，遵循 [CC 4.0 BY-SA](http://creativecommons.org/licenses/by-sa/4.0/) 版权协议，转载请附上原文出处链接和本声明。",
+   "answerability": {
+    "answerable": false,
+    "intent": "identity",
+    "focus_ok": true,
+    "pattern_ok": false,
+    "intent_ok": true,
+    "focus_hit": [
+     "血队"
+    ],
+    "url_list": false,
+    "topic_anchor_ok": true
+   }
+  },
+  {
+   "chunk_id": "3548208d0a2d",
+   "score": 9.429,
+   "source_id": "1ang_com",
+   "status": "verified_read",
+   "authority": "reference_only",
+   "revision": "nekketsu_soccer2_fc_jp",
+   "game_id": "nekketsu_soccer2",
+   "platform": "NES",
+   "revision_match": true,
+   "locator": "_工具脚本/taspipe/游戏包/来源库/取证/1ang_热血足球联盟图文攻略_20261118.md#L823-L839",
+   "heading": "秘技",
+   "matched_terms": [
+    "热血",
+    "燕返"
+   ],
+   "snippet": "比赛中按START键暂停，{A键按３次＋B键按１次＋A键按３次＋B键按１次＋A键按７次}，再按START键解除暂停，听到必杀踢射的发动音效，就成功了。这样就能使全部球员拥有全部必杀技，比如平时不会燕返的球员也会用燕返了，平时不会用爆裂攻击的球员也会用铁膝盖顶人了。\n缺点是效果只能持续半场比赛，另外半场比赛需要重新使用秘技。这就意味着，每次进行比赛都要使用一次秘技。\n更多热血足球3攻略-FC热血足球3(热血足球联盟)游戏图文攻略相关问题\n问题：《都市天际线》独特建筑和地标建筑有",
+   "answerability": {
+    "answerable": false,
+    "intent": "identity",
+    "focus_ok": true,
+    "pattern_ok": false,
+    "intent_ok": true,
+    "focus_hit": [
+     "燕返"
+    ],
+    "url_list": true,
+    "topic_anchor_ok": true
+   }
+  },
+  {
+   "chunk_id": "b5a2c9ad96c4",
+   "score": 9.246,
+   "source_id": "local_soccer2_super_list",
+   "status": "verified_read",
+   "authority": "authoritative",
+   "revision": "nekketsu_soccer2_multi",
+   "game_id": "nekketsu_soccer2",
+   "platform": "NES",
+   "revision_match": true,
+   "locator": "_工具脚本/taspipe/游戏包/热血足球联盟_必杀全清单.md#L262-L264",
+   "heading": "8-6 对手 11 队补强（S10 逐队 + S3 名称）",
+   "matched_terms": [
+    "热血",
+    "燕返"
+   ],
+   "snippet": "名称已知仍仅 3：巴西食人鱼（S3）/阿根廷香蕉（S3）/塞内加尔白鸟（S1/S10）。S10 给了其余各队的**行为侧写**（喀麦隆 Dakosuta 必杀可吹飞强豪门将；巴西 Bûnyo 速度快+燕返、Santosu 命中强、门将 Rodorigesu 与德国 Burême 同级最强；意大利连续必杀+门将弱点在禁区上方、巴西门将弱点在禁区下方；德国不会燕返故必杀概率低；墨西哥全员面具）。**结论维持：8 队必杀名称文献确无，只能实测看球变形再命名。**\n胜利姿势全 11 ",
+   "answerability": {
+    "answerable": false,
+    "intent": "identity",
+    "focus_ok": true,
+    "pattern_ok": false,
+    "intent_ok": true,
+    "focus_hit": [
+     "燕返"
+    ],
+    "url_list": false,
+    "topic_anchor_ok": true
+   }
+  },
+  {
+   "chunk_id": "9265c746273b",
+   "score": 9.169,
+   "source_id": "1ang_com",
+   "status": "verified_read",
+   "authority": "reference_only",
+   "revision": "nekketsu_soccer2_fc_jp",
+   "game_id": "nekketsu_soccer2",
+   "platform": "NES",
+   "revision_match": true,
+   "locator": "_工具脚本/taspipe/游戏包/来源库/取证/1ang_热血足球联盟图文攻略_20261118.md#L1-L129",
+   "heading": "热血足球3攻略-FC热血足球3(热血足球联盟)游戏图文攻略",
+   "matched_terms": [
+    "热血",
+    "血队"
+   ],
+   "snippet": "热血足球3攻略-FC热血足球3(热血足球联盟)游戏图文攻略 - 乐米网一昂\nfunction doFav(u, t) { }\n日版名：くにおくんの熱血サッカーリーグ\n罗马音：Kunio Kun No Nekketsu Soccer League\n汉语名：库尼奥君的热血足球联盟\n简称：热血足球联盟\n海贼商命名：热血足球3\n类型：体育运动(Sports)\n对应机种：FC\n游戏设计：甲斐浩二\n开发与发售：Technos Japan\n发售日期：1993年4月23日\n本作是FC版『熱血",
+   "answerability": {
+    "answerable": false,
+    "intent": "identity",
+    "focus_ok": true,
+    "pattern_ok": false,
+    "intent_ok": true,
+    "focus_hit": [
+     "血队"
+    ],
+    "url_list": false,
+    "topic_anchor_ok": true
+   }
+  },
+  {
+   "chunk_id": "0a46489c58b9",
+   "score": 9.078,
+   "source_id": "local_soccer2_super_list",
+   "status": "verified_read",
+   "authority": "authoritative",
+   "revision": "nekketsu_soccer2_multi",
+   "game_id": "nekketsu_soccer2",
+   "platform": "NES",
+   "revision_match": true,
+   "locator": "_工具脚本/taspipe/游戏包/热血足球联盟_必杀全清单.md#L242-L248",
+   "heading": "8-4 Bug 与怪行为清单（S7 Bug 记录 + S9）",
+   "matched_terms": [
+    "热血",
+    "血队"
+   ],
+   "snippet": "1. 热血队以外的球队，自定义阵型/战术可能无效（S7）。\n2. 点球大战轮到**左方门将**守门时，空中动作朝向恒为向右（含直跳接球、升龙拳）（S7）。\n3. 36 场全败/全胜/半半卡死；世界杯结局后卡死（S9，见 8-3）。\n4. \"选手一闪一闪\"非故障（S10 转官方手册原文）。\n5. 闪电（注意报=雷）有时会**击倒门将**（S10 天气预报节）。\n6. 泰国/几内亚门将、落后时的阿根廷门将、以及\"まかせる\"默认下的门将，会拿到球就自己带球出击（S10；战术设定应改",
+   "answerability": {
+    "answerable": false,
+    "intent": "identity",
+    "focus_ok": true,
+    "pattern_ok": false,
+    "intent_ok": true,
+    "focus_hit": [
+     "血队"
+    ],
+    "url_list": false,
+    "topic_anchor_ok": true
+   }
+  },
+  {
+   "chunk_id": "42b773880ef0",
+   "score": 9.06,
+   "source_id": "local_soccer2_super_list",
+   "status": "verified_read",
+   "authority": "authoritative",
+   "revision": "nekketsu_soccer2_multi",
+   "game_id": "nekketsu_soccer2",
+   "platform": "NES",
+   "revision_match": true,
+   "locator": "_工具脚本/taspipe/游戏包/热血足球联盟_必杀全清单.md#L24-L33",
+   "heading": "1. 发动与状态规则（S1 原文，生产闸门依据）",
+   "matched_terms": [
+    "燕返",
+    "角色"
+   ],
+   "snippet": "- 必杀踢射：持球跳（A+B）到**最高点按 B**；**发动时不能按方向键**，否则变成挑球不是人球同跳。\n- 难度：`やさしい` 容易 = 敌我**都不能**发动必杀射门；`ふつう` 普通 = 次次发动；`むずかしい` 困难 = 仅会燕返者 100%。\n⇒ 采集必须在普通难度（导航默认值待实测确认；若必杀不触发先查难度）。\n- 秘技：比赛中 Start 暂停 → A×3 B×1 A×3 B×1 A×7 → Start 解除，听到必杀音效=成功；全员获得全部**技能**（燕",
+   "answerability": {
+    "answerable": false,
+    "intent": "identity",
+    "focus_ok": true,
+    "pattern_ok": false,
+    "intent_ok": true,
+    "focus_hit": [
+     "燕返"
+    ],
+    "url_list": false,
+    "topic_anchor_ok": true
+   }
+  },
+  {
+   "chunk_id": "0a08974d0f20",
+   "score": 8.914,
+   "source_id": "1ang_com",
+   "status": "verified_read",
+   "authority": "reference_only",
+   "revision": "nekketsu_soccer2_fc_jp",
+   "game_id": "nekketsu_soccer2",
+   "platform": "NES",
+   "revision_match": true,
+   "locator": "_工具脚本/taspipe/游戏包/来源库/取证/1ang_热血足球联盟图文攻略_20261118.md#L441-L452",
+   "heading": "さじ(Saji)",
+   "matched_terms": [
+    "会使"
+   ],
+   "snippet": "体力55，踢射力27，防御力15，走力类型B\n必杀技：『うぃりーしゅーと(Wheelie Shoot)』（前轮离地踢射）、『とるねーどきっく(Tornado Kick)』（龙卷踢）\n性格：任性\n喜好：动画\n厌恶：汉字\n简介：『死愚魔高校』所属。让他做前锋(Forward)，会使出令人意外的连续干劲。",
+   "answerability": {
+    "answerable": false,
+    "intent": "identity",
+    "focus_ok": true,
+    "pattern_ok": false,
+    "intent_ok": true,
+    "focus_hit": [
+     "会使"
+    ],
+    "url_list": false,
+    "topic_anchor_ok": true
+   }
+  },
+  {
+   "chunk_id": "9bbb7d89c9f4",
+   "score": 8.714,
+   "source_id": "sohu_game",
+   "status": "verified_read",
+   "authority": "reference_only",
+   "revision": "nekketsu_soccer2_fc_unspecified",
+   "game_id": "nekketsu_soccer2",
+   "platform": "NES",
+   "revision_match": true,
+   "locator": "_工具脚本/taspipe/游戏包/来源库/取证/sohu_必杀最强小辫子_20261118.md#L91-L106",
+   "heading": "No.0 忍者射门——赖常",
+   "matched_terms": [
+    "热血",
+    "燕返",
+    "角色"
+   ],
+   "snippet": "小辫子更神的地方在于他的必杀技“忍者射门”，这招射门会在禁区会自动隐身。根据这个特性，如果你直接在禁区踢出必杀，足球则会在你踢出的一瞬间直接隐身停留在空中，利用好这个特性可以骗出CPU电脑的无限升龙拳，让他们一直对着空气跳跃，而我们则可以趁他们跳跃的间隙闯空门了！\n要说这一招的练习成本几乎等于0，因为小辫子的燕返本身是高空球，高空球在禁区必然能射出必杀射门的，这一招几乎可针对所有队伍的守门员，而且跟海月那种需要计算距离和角度的金鱼射门比起来不知平民了太多。\n以上就是淼哥心目中",
+   "answerability": {
+    "answerable": false,
+    "intent": "identity",
+    "focus_ok": true,
+    "pattern_ok": false,
+    "intent_ok": true,
+    "focus_hit": [
+     "燕返"
+    ],
+    "url_list": false,
+    "topic_anchor_ok": true
+   }
+  },
+  {
+   "chunk_id": "84195609bde8",
+   "score": 7.453,
+   "source_id": "local_soccer2_super_list",
+   "status": "verified_read",
+   "authority": "authoritative",
+   "revision": "nekketsu_soccer2_multi",
+   "game_id": "nekketsu_soccer2",
+   "platform": "NES",
+   "revision_match": true,
+   "locator": "_工具脚本/taspipe/游戏包/热血足球联盟_必杀全清单.md#L36-L49",
+   "heading": "2. 热血队 12 人必杀射门（S1 日文原名 + S2 中文译名与效果）",
+   "matched_terms": [
+    "燕返",
+    "角色"
+   ],
+   "snippet": "| # | 角色(罗马音) | 日文原名 | 中文译名(S2) | 球变形/效果（S2/S3，检测器正例依据） | 其他技能(S1) |\n|---|---|---|---|---|---|\n| 1 | Kunio くにお | なっつしゅーと Nuts Shoot | 坚果射门 | 球变坚果椭圆直线飞 | 爆裂攻击 |\n| 2 | Yoritsune よりつね | にんじゃしゅーと Ninja Shoot | 忍者射门 | 球变飞镖飞一段消失→再现弹地飞奔；禁区内自动隐身 | ",
+   "answerability": {
+    "answerable": false,
+    "intent": "identity",
+    "focus_ok": true,
+    "pattern_ok": false,
+    "intent_ok": true,
+    "focus_hit": [
+     "燕返"
+    ],
+    "url_list": false,
+    "topic_anchor_ok": true
+   }
+  },
+  {
+   "chunk_id": "3f1cfd48b780",
+   "score": 7.344,
+   "source_id": "1ang_com",
+   "status": "verified_read",
+   "authority": "reference_only",
+   "revision": "nekketsu_soccer2_fc_jp",
+   "game_id": "nekketsu_soccer2",
+   "platform": "NES",
+   "revision_match": true,
+   "locator": "_工具脚本/taspipe/游戏包/来源库/取证/1ang_热血足球联盟图文攻略_20261118.md#L525-L536",
+   "heading": "よりつね(Yoritsune)",
+   "matched_terms": [
+    "燕返"
+   ],
+   "snippet": "体力50，踢射力24，防御力20，走力类型A\n必杀技：『にんじゃしゅーと(Ninja Shoot)』（忍者踢射）、『つばめがえし(Tsubamegaeshi)』（燕返）\n性格：难以捉摸\n喜好：梅干\n厌恶：偶像歌手\n简介：『服部学園』所属（与服部有关的，十之八九与忍者、功夫高手有关，「服部半蔵」扬名后世）。他的移动能力很高，贵重的万能型球员，会用燕返（这里的「燕返し」，与「佐々木小次郎」得意技能同名），也就是空中翻跟头。担当前锋时，连续使用必杀踢射。缺点是命中率低，要想提升命中",
+   "answerability": {
+    "answerable": false,
+    "intent": "identity",
+    "focus_ok": true,
+    "pattern_ok": false,
+    "intent_ok": true,
+    "focus_hit": [
+     "燕返"
+    ],
+    "url_list": false,
+    "topic_anchor_ok": true
+   }
+  },
+  {
+   "chunk_id": "0faf32bd68c9",
+   "score": 7.193,
+   "source_id": "sohu_game",
+   "status": "verified_read",
+   "authority": "reference_only",
+   "revision": "nekketsu_soccer2_fc_unspecified",
+   "game_id": "nekketsu_soccer2",
+   "platform": "NES",
+   "revision_match": true,
+   "locator": "_工具脚本/taspipe/游戏包/来源库/取证/sohu_热血队队员必杀集锦_20261118.md#L1-L75",
+   "heading": "FC《热血足球联盟》热血队队员必杀技集锦，当年你最喜欢谁",
+   "matched_terms": [
+    "热血",
+    "血队"
+   ],
+   "snippet": "FC《热血足球联盟》热血队队员必杀技集锦，当年你最喜欢谁\\_总体\n2019-08-29 12:35\nFC的热血足球在80和90的游戏玩家中，已经深入人心，不在介绍了，我们直接进入主题。\n首先是主角国夫的必杀技，坚果射门，球踢出去像一颗坚果，飞行速度一般，力量一般，技能特效一般，总体一般，没有特别出彩的地方。\n坚果射门\n赖常的必杀技，忍者射门，球踢出去变成一颗飞镖飞行一段距离消失，再出现时球弹地飞奔球门而去，飞行速度快，力量较强，技能特效炫，总体很强。\n忍者射门\n卡洛斯的必杀技",
+   "answerability": {
+    "answerable": false,
+    "intent": "identity",
+    "focus_ok": true,
+    "pattern_ok": false,
+    "intent_ok": true,
+    "focus_hit": [
+     "血队"
+    ],
+    "url_list": false,
+    "topic_anchor_ok": true
+   }
+  },
+  {
+   "chunk_id": "97755071be65",
+   "score": 6.515,
+   "source_id": "local_soccer2_super_list",
+   "status": "verified_read",
+   "authority": "authoritative",
+   "revision": "nekketsu_soccer2_multi",
+   "game_id": "nekketsu_soccer2",
+   "platform": "NES",
+   "revision_match": true,
+   "locator": "_工具脚本/taspipe/游戏包/热血足球联盟_honest_gap_manifest.md#L44-L46",
+   "heading": "5. 解锁条件",
+   "matched_terms": [
+    "热血",
+    "角色"
+   ],
+   "snippet": "- 日版原版 ROM（合法来源，用户自有/已购）→ 普通档+人球同跳存在 → 逐角色采 23 必杀。\n- 运动鲁棒要素检测器（光流/背景建模或 OAM 球 tile 出集+全屏闪联合判据）→ 活场地可标定。\n两者具备前，本清单即热血足球线的诚实交付边界。",
+   "answerability": {
+    "answerable": false,
+    "intent": "identity",
+    "focus_ok": false,
+    "pattern_ok": false,
+    "intent_ok": true,
+    "focus_hit": [],
+    "url_list": false,
+    "topic_anchor_ok": false
+   }
+  },
+  {
+   "chunk_id": "2c9b59c2df7a",
+   "score": 6.276,
+   "source_id": "local_soccer2_super_list",
+   "status": "verified_read",
+   "authority": "authoritative",
+   "revision": "nekketsu_soccer2_multi",
+   "game_id": "nekketsu_soccer2",
+   "platform": "NES",
+   "revision_match": true,
+   "locator": "_工具脚本/taspipe/游戏包/热血足球联盟_honest_gap_manifest.md#L8-L20",
+   "heading": "1. 覆盖反查（declared vs delivered）",
+   "matched_terms": [
+    "热血",
+    "角色"
+   ],
+   "snippet": "- declared（《热血足球联盟_必杀全清单.md》）：23 必杀射门（12 角色 + 11 对手）+ 13 一般技 = **36**。\n- delivered（CN/hack 四变体 jf/wl/hack_jump/hack_se 实测可复现的**必杀**）：**0**。\n- 差集 = 36，全部进 gaps（§3）。**无一项必杀在本地 CN/hack 上复现**，不交付任何必杀正例。\n可复现的**非必杀**动作（探针级证据，非 calibrated bundle）：",
+   "answerability": {
+    "answerable": false,
+    "intent": "identity",
+    "focus_ok": false,
+    "pattern_ok": false,
+    "intent_ok": true,
+    "focus_hit": [],
+    "url_list": false,
+    "topic_anchor_ok": false
+   }
+  },
+  {
+   "chunk_id": "4bae74d6c726",
+   "score": 5.881,
+   "source_id": "csdn_wangsitan_bug",
+   "status": "verified_read",
+   "authority": "reference_only",
+   "revision": "nekketsu_soccer2_fc_unspecified",
+   "game_id": "nekketsu_soccer2",
+   "platform": "NES",
+   "revision_match": true,
+   "locator": "_工具脚本/taspipe/游戏包/来源库/取证/csdn_wangsitan_热血足球Bug记录_20261118.md#L380-L424",
+   "heading": "相关推荐",
+   "matched_terms": [
+    "热血",
+    "角色"
+   ],
+   "snippet": "](https://blog.csdn.net/wangsitan/article/details/7669729)\n[\n基于拉盖尔多项式坂口型双单叶函数系数界的无训练低光照图像增强Matlab代码.rar\n最新发布\n](https://download.csdn.net/download/qq_59747472/93874907)\n11-17\n[\n基于拉盖尔多项式坂口型双单叶函数系数界的无训练低光照图像增强Matlab代码.rar\n](https://download.cs",
+   "answerability": {
+    "answerable": false,
+    "intent": "identity",
+    "focus_ok": false,
+    "pattern_ok": false,
+    "intent_ok": true,
+    "focus_hit": [],
+    "url_list": true,
+    "topic_anchor_ok": false
+   }
+  },
+  {
+   "chunk_id": "0793dce04d1b",
+   "score": 5.815,
+   "source_id": "1ang_com",
+   "status": "verified_read",
+   "authority": "reference_only",
+   "revision": "nekketsu_soccer2_fc_jp",
+   "game_id": "nekketsu_soccer2",
+   "platform": "NES",
+   "revision_match": true,
+   "locator": "_工具脚本/taspipe/游戏包/来源库/取证/1ang_热血足球联盟图文攻略_20261118.md#L709-L718",
+   "heading": "どいつ | Duits | 德国",
+   "matched_terms": [
+    "只有",
+    "燕返"
+   ],
+   "snippet": "临近锦标赛前，也就是接近16连胜的时候，『めきしこ』（墨西哥）、『もんごる』（外蒙古）、『いんぐらんど』（英格兰)，这三支球队最适合在决赛前热身，太弱的球队不必理睬，没必要与他们浪费时间，太强的球队也不要去挑衅，万一输了，会导致全胜夺冠前功尽弃，太划不来。\n决赛里的意大利队，要比平时的意大利队厉害的多，不可等闲视之。\n面对意大利这样的强大对手，如何取胜？意大利可以说是天矛地盾，射门如同天矛无坚不摧，门将如同地盾无物不克。我方必须选择最好的门将，最好的后卫来防守，火光操纵的中场",
+   "answerability": {
+    "answerable": false,
+    "intent": "identity",
+    "focus_ok": true,
+    "pattern_ok": false,
+    "intent_ok": true,
+    "focus_hit": [
+     "只有",
+     "燕返"
+    ],
+    "url_list": false,
+    "topic_anchor_ok": true
+   }
+  },
+  {
+   "chunk_id": "2720cd5358a3",
+   "score": 5.689,
+   "source_id": "csdn_wangsitan_bug",
+   "status": "verified_read",
+   "authority": "reference_only",
+   "revision": "nekketsu_soccer2_fc_unspecified",
+   "game_id": "nekketsu_soccer2",
+   "platform": "NES",
+   "revision_match": true,
+   "locator": "_工具脚本/taspipe/游戏包/来源库/取证/csdn_wangsitan_热血足球Bug记录_20261118.md#L426-L462",
+   "heading": "相关推荐",
+   "matched_terms": [
+    "个角"
+   ],
+   "snippet": "](https://blog.csdn.net/wangsitan/article/details/7631478)\n[\n政府科技管理者如何解决技术转移项目备案信息不统一的问题？.docx\n](https://download.csdn.net/download/BIZKEEN/93874208)\n11-17\n[\n政府科技管理者如何解决技术转移项目备案信息不统一的问题？\n](https://download.csdn.net/download/BIZKEEN/93874208",
+   "answerability": {
+    "answerable": false,
+    "intent": "identity",
+    "focus_ok": true,
+    "pattern_ok": false,
+    "intent_ok": true,
+    "focus_hit": [
+     "个角"
+    ],
+    "url_list": true,
+    "topic_anchor_ok": true
+   }
+  }
+ ],
+ "reason": "第10位块过七项核查",
+ "fact_selector": {
+  "mode": "scoped",
+  "fact_class": "role_attribution",
+  "verdict": "pass",
+  "selected": "f7f8e8316295",
+  "selected_rank": 10,
+  "beyond_window": true,
+  "counterexample_blocks": [],
+  "reason": "第10位块过七项核查",
+  "per_block": [
+   {
+    "rank": 1,
+    "chunk_id": "ae59bde1790f",
+    "checks": {
+     "subject_match": true,
+     "attribute_match": true,
+     "attribute_reason": "归属行5条/方法学词0个",
+     "condition_coverage": false,
+     "condition_reason": "原生✗；队内范围✓",
+     "value_attribution": true,
+     "value_reason": "非数值类，不适用",
+     "polarity": true,
+     "polarity_reason": "排他问须归属行含仅/只有/唯一✓",
+     "source_eligibility": false,
+     "source_reason": "authority=reference_only/status=verified_read/rev_match=True",
+     "counter_evidence": true,
+     "counter_reason": "见 select 跨块反证",
+     "eligible": false,
+     "initial_screen": false,
+     "initial_reason": "生产可答性初筛已拒，选择器不得单独救活"
+    }
+   },
+   {
+    "rank": 2,
+    "chunk_id": "a6cfec36c24a",
+    "checks": {
+     "subject_match": true,
+     "attribute_match": false,
+     "attribute_reason": "归属行0条/方法学词0个；无技能→角色归属行，方法学段不得承担归属出证",
+     "condition_coverage": false,
+     "condition_reason": "原生✗；队内范围✓",
+     "value_attribution": true,
+     "value_reason": "非数值类，不适用",
+     "polarity": false,
+     "polarity_reason": "排他问须归属行含仅/只有/唯一✗（『会使』≠『只有他会』）",
+     "source_eligibility": false,
+     "source_reason": "authority=reference_only/status=verified_read/rev_match=True",
+     "counter_evidence": true,
+     "counter_reason": "见 select 跨块反证",
+     "eligible": false,
+     "initial_screen": false,
+     "initial_reason": "生产可答性初筛已拒，选择器不得单独救活"
+    }
+   },
+   {
+    "rank": 3,
+    "chunk_id": "0cbfe31bd687",
+    "checks": {
+     "subject_match": true,
+     "attribute_match": true,
+     "attribute_reason": "归属行1条/方法学词0个",
+     "condition_coverage": false,
+     "condition_reason": "原生✗；队内范围✓",
+     "value_attribution": true,
+     "value_reason": "非数值类，不适用",
+     "polarity": true,
+     "polarity_reason": "排他问须归属行含仅/只有/唯一✓",
+     "source_eligibility": false,
+     "source_reason": "authority=reference_only/status=verified_read/rev_match=True",
+     "counter_evidence": true,
+     "counter_reason": "见 select 跨块反证",
+     "eligible": false,
+     "initial_screen": false,
+     "initial_reason": "生产可答性初筛已拒，选择器不得单独救活"
+    }
+   },
+   {
+    "rank": 4,
+    "chunk_id": "8996c7a159ef",
+    "checks": {
+     "subject_match": true,
+     "attribute_match": false,
+     "attribute_reason": "归属行0条/方法学词30个；无技能→角色归属行，方法学段不得承担归属出证",
+     "condition_coverage": true,
+     "condition_reason": "原生✓；队内范围✓",
+     "value_attribution": true,
+     "value_reason": "非数值类，不适用",
+     "polarity": true,
+     "polarity_reason": "排他问须归属行含仅/只有/唯一✓",
+     "source_eligibility": true,
+     "source_reason": "authority=authoritative/status=verified_read/rev_match=True",
+     "counter_evidence": true,
+     "counter_reason": "见 select 跨块反证",
+     "eligible": false
+    }
+   },
+   {
+    "rank": 5,
+    "chunk_id": "a1281da97fd0",
+    "checks": {
+     "subject_match": true,
+     "attribute_match": true,
+     "attribute_reason": "归属行1条/方法学词0个",
+     "condition_coverage": false,
+     "condition_reason": "原生✗；队内范围✓",
+     "value_attribution": true,
+     "value_reason": "非数值类，不适用",
+     "polarity": true,
+     "polarity_reason": "排他问须归属行含仅/只有/唯一✓",
+     "source_eligibility": false,
+     "source_reason": "authority=reference_only/status=verified_read/rev_match=True",
+     "counter_evidence": true,
+     "counter_reason": "见 select 跨块反证",
+     "eligible": false,
+     "initial_screen": false,
+     "initial_reason": "生产可答性初筛已拒，选择器不得单独救活"
+    }
+   },
+   {
+    "rank": 6,
+    "chunk_id": "8e34d9a96bc7",
+    "checks": {
+     "subject_match": true,
+     "attribute_match": true,
+     "attribute_reason": "归属行1条/方法学词0个",
+     "condition_coverage": false,
+     "condition_reason": "原生✗；队内范围✓",
+     "value_attribution": true,
+     "value_reason": "非数值类，不适用",
+     "polarity": true,
+     "polarity_reason": "排他问须归属行含仅/只有/唯一✓",
+     "source_eligibility": false,
+     "source_reason": "authority=reference_only/status=verified_read/rev_match=True",
+     "counter_evidence": true,
+     "counter_reason": "见 select 跨块反证",
+     "eligible": false,
+     "initial_screen": false,
+     "initial_reason": "生产可答性初筛已拒，选择器不得单独救活"
+    }
+   },
+   {
+    "rank": 7,
+    "chunk_id": "5e3d5b9ea915",
+    "checks": {
+     "subject_match": true,
+     "attribute_match": false,
+     "attribute_reason": "归属行0条/方法学词0个；无技能→角色归属行，方法学段不得承担归属出证",
+     "condition_coverage": false,
+     "condition_reason": "原生✗；队内范围✓",
+     "value_attribution": true,
+     "value_reason": "非数值类，不适用",
+     "polarity": false,
+     "polarity_reason": "排他问须归属行含仅/只有/唯一✗（『会使』≠『只有他会』）",
+     "source_eligibility": false,
+     "source_reason": "authority=reference_only/status=verified_read/rev_match=True",
+     "counter_evidence": true,
+     "counter_reason": "见 select 跨块反证",
+     "eligible": false,
+     "initial_screen": false,
+     "initial_reason": "生产可答性初筛已拒，选择器不得单独救活"
+    }
+   },
+   {
+    "rank": 8,
+    "chunk_id": "2e4c8ac797cf",
+    "checks": {
+     "subject_match": true,
+     "attribute_match": true,
+     "attribute_reason": "归属行1条/方法学词0个",
+     "condition_coverage": false,
+     "condition_reason": "原生✗；队内范围✓",
+     "value_attribution": true,
+     "value_reason": "非数值类，不适用",
+     "polarity": true,
+     "polarity_reason": "排他问须归属行含仅/只有/唯一✓",
+     "source_eligibility": false,
+     "source_reason": "authority=reference_only/status=verified_read/rev_match=True",
+     "counter_evidence": true,
+     "counter_reason": "见 select 跨块反证",
+     "eligible": false,
+     "initial_screen": false,
+     "initial_reason": "生产可答性初筛已拒，选择器不得单独救活"
+    }
+   },
+   {
+    "rank": 9,
+    "chunk_id": "4d37bae4996e",
+    "checks": {
+     "subject_match": true,
+     "attribute_match": false,
+     "attribute_reason": "归属行0条/方法学词0个；无技能→角色归属行，方法学段不得承担归属出证",
+     "condition_coverage": false,
+     "condition_reason": "原生✗；队内范围✓",
+     "value_attribution": true,
+     "value_reason": "非数值类，不适用",
+     "polarity": true,
+     "polarity_reason": "排他问须归属行含仅/只有/唯一✓",
+     "source_eligibility": false,
+     "source_reason": "authority=reference_only/status=verified_read/rev_match=True",
+     "counter_evidence": true,
+     "counter_reason": "见 select 跨块反证",
+     "eligible": false,
+     "initial_screen": false,
+     "initial_reason": "生产可答性初筛已拒，选择器不得单独救活"
+    }
+   },
+   {
+    "rank": 10,
+    "chunk_id": "f7f8e8316295",
+    "checks": {
+     "subject_match": true,
+     "attribute_match": true,
+     "attribute_reason": "归属行1条/方法学词1个",
+     "condition_coverage": true,
+     "condition_reason": "原生✓；队内范围✓",
+     "value_attribution": true,
+     "value_reason": "非数值类，不适用",
+     "polarity": true,
+     "polarity_reason": "排他问须归属行含仅/只有/唯一✓",
+     "source_eligibility": true,
+     "source_reason": "authority=authoritative/status=verified_read/rev_match=True",
+     "counter_evidence": true,
+     "counter_reason": "见 select 跨块反证",
+     "eligible": true
+    }
+   },
+   {
+    "rank": 11,
+    "chunk_id": "de8504fe7e4d",
+    "checks": {
+     "subject_match": true,
+     "attribute_match": false,
+     "attribute_reason": "归属行0条/方法学词0个；无技能→角色归属行，方法学段不得承担归属出证",
+     "condition_coverage": false,
+     "condition_reason": "原生✗；队内范围✓",
+     "value_attribution": true,
+     "value_reason": "非数值类，不适用",
+     "polarity": false,
+     "polarity_reason": "排他问须归属行含仅/只有/唯一✗（『会使』≠『只有他会』）",
+     "source_eligibility": true,
+     "source_reason": "authority=authoritative/status=verified_read/rev_match=True",
+     "counter_evidence": true,
+     "counter_reason": "见 select 跨块反证",
+     "eligible": false,
+     "initial_screen": false,
+     "initial_reason": "生产可答性初筛已拒，选择器不得单独救活"
+    }
+   },
+   {
+    "rank": 12,
+    "chunk_id": "e2045199c848",
+    "checks": {
+     "subject_match": true,
+     "attribute_match": false,
+     "attribute_reason": "归属行0条/方法学词0个；无技能→角色归属行，方法学段不得承担归属出证",
+     "condition_coverage": false,
+     "condition_reason": "原生✗；队内范围✓",
+     "value_attribution": true,
+     "value_reason": "非数值类，不适用",
+     "polarity": false,
+     "polarity_reason": "排他问须归属行含仅/只有/唯一✗（『会使』≠『只有他会』）",
+     "source_eligibility": false,
+     "source_reason": "authority=reference_only/status=verified_read/rev_match=True",
+     "counter_evidence": true,
+     "counter_reason": "见 select 跨块反证",
+     "eligible": false,
+     "initial_screen": false,
+     "initial_reason": "生产可答性初筛已拒，选择器不得单独救活"
+    }
+   },
+   {
+    "rank": 13,
+    "chunk_id": "c6fecb423d8a",
+    "checks": {
+     "subject_match": true,
+     "attribute_match": false,
+     "attribute_reason": "归属行0条/方法学词0个；无技能→角色归属行，方法学段不得承担归属出证",
+     "condition_coverage": false,
+     "condition_reason": "原生✗；队内范围✓",
+     "value_attribution": true,
+     "value_reason": "非数值类，不适用",
+     "polarity": false,
+     "polarity_reason": "排他问须归属行含仅/只有/唯一✗（『会使』≠『只有他会』）",
+     "source_eligibility": false,
+     "source_reason": "authority=reference_only/status=verified_read/rev_match=True",
+     "counter_evidence": true,
+     "counter_reason": "见 select 跨块反证",
+     "eligible": false,
+     "initial_screen": false,
+     "initial_reason": "生产可答性初筛已拒，选择器不得单独救活"
+    }
+   },
+   {
+    "rank": 14,
+    "chunk_id": "09e4a7db5b20",
+    "checks": {
+     "subject_match": true,
+     "attribute_match": false,
+     "attribute_reason": "归属行0条/方法学词0个；无技能→角色归属行，方法学段不得承担归属出证",
+     "condition_coverage": false,
+     "condition_reason": "原生✗；队内范围✓",
+     "value_attribution": true,
+     "value_reason": "非数值类，不适用",
+     "polarity": false,
+     "polarity_reason": "排他问须归属行含仅/只有/唯一✗（『会使』≠『只有他会』）",
+     "source_eligibility": false,
+     "source_reason": "authority=reference_only/status=verified_read/rev_match=True",
+     "counter_evidence": true,
+     "counter_reason": "见 select 跨块反证",
+     "eligible": false,
+     "initial_screen": false,
+     "initial_reason": "生产可答性初筛已拒，选择器不得单独救活"
+    }
+   },
+   {
+    "rank": 15,
+    "chunk_id": "ae478886e098",
+    "checks": {
+     "subject_match": true,
+     "attribute_match": false,
+     "attribute_reason": "归属行0条/方法学词0个；无技能→角色归属行，方法学段不得承担归属出证",
+     "condition_coverage": false,
+     "condition_reason": "原生✗；队内范围✓",
+     "value_attribution": true,
+     "value_reason": "非数值类，不适用",
+     "polarity": false,
+     "polarity_reason": "排他问须归属行含仅/只有/唯一✗（『会使』≠『只有他会』）",
+     "source_eligibility": false,
+     "source_reason": "authority=reference_only/status=verified_read/rev_match=True",
+     "counter_evidence": true,
+     "counter_reason": "见 select 跨块反证",
+     "eligible": false,
+     "initial_screen": false,
+     "initial_reason": "生产可答性初筛已拒，选择器不得单独救活"
+    }
+   },
+   {
+    "rank": 16,
+    "chunk_id": "3548208d0a2d",
+    "checks": {
+     "subject_match": true,
+     "attribute_match": false,
+     "attribute_reason": "归属行0条/方法学词0个；无技能→角色归属行，方法学段不得承担归属出证",
+     "condition_coverage": false,
+     "condition_reason": "原生✗；队内范围✓",
+     "value_attribution": true,
+     "value_reason": "非数值类，不适用",
+     "polarity": false,
+     "polarity_reason": "排他问须归属行含仅/只有/唯一✗（『会使』≠『只有他会』）",
+     "source_eligibility": false,
+     "source_reason": "authority=reference_only/status=verified_read/rev_match=True",
+     "counter_evidence": true,
+     "counter_reason": "见 select 跨块反证",
+     "eligible": false,
+     "initial_screen": false,
+     "initial_reason": "生产可答性初筛已拒，选择器不得单独救活"
+    }
+   },
+   {
+    "rank": 17,
+    "chunk_id": "b5a2c9ad96c4",
+    "checks": {
+     "subject_match": true,
+     "attribute_match": true,
+     "attribute_reason": "归属行1条/方法学词1个",
+     "condition_coverage": false,
+     "condition_reason": "原生✗；队内范围✗（归属行属他队，不在问句范围）",
+     "value_attribution": true,
+     "value_reason": "非数值类，不适用",
+     "polarity": true,
+     "polarity_reason": "排他问须归属行含仅/只有/唯一✓",
+     "source_eligibility": true,
+     "source_reason": "authority=authoritative/status=verified_read/rev_match=True",
+     "counter_evidence": true,
+     "counter_reason": "见 select 跨块反证",
+     "eligible": false,
+     "initial_screen": false,
+     "initial_reason": "生产可答性初筛已拒，选择器不得单独救活"
+    }
+   },
+   {
+    "rank": 18,
+    "chunk_id": "9265c746273b",
+    "checks": {
+     "subject_match": true,
+     "attribute_match": false,
+     "attribute_reason": "归属行0条/方法学词0个；无技能→角色归属行，方法学段不得承担归属出证",
+     "condition_coverage": false,
+     "condition_reason": "原生✗；队内范围✓",
+     "value_attribution": true,
+     "value_reason": "非数值类，不适用",
+     "polarity": false,
+     "polarity_reason": "排他问须归属行含仅/只有/唯一✗（『会使』≠『只有他会』）",
+     "source_eligibility": false,
+     "source_reason": "authority=reference_only/status=verified_read/rev_match=True",
+     "counter_evidence": true,
+     "counter_reason": "见 select 跨块反证",
+     "eligible": false,
+     "initial_screen": false,
+     "initial_reason": "生产可答性初筛已拒，选择器不得单独救活"
+    }
+   },
+   {
+    "rank": 19,
+    "chunk_id": "0a46489c58b9",
+    "checks": {
+     "subject_match": true,
+     "attribute_match": false,
+     "attribute_reason": "归属行0条/方法学词0个；无技能→角色归属行，方法学段不得承担归属出证",
+     "condition_coverage": false,
+     "condition_reason": "原生✗；队内范围✓",
+     "value_attribution": true,
+     "value_reason": "非数值类，不适用",
+     "polarity": false,
+     "polarity_reason": "排他问须归属行含仅/只有/唯一✗（『会使』≠『只有他会』）",
+     "source_eligibility": true,
+     "source_reason": "authority=authoritative/status=verified_read/rev_match=True",
+     "counter_evidence": true,
+     "counter_reason": "见 select 跨块反证",
+     "eligible": false,
+     "initial_screen": false,
+     "initial_reason": "生产可答性初筛已拒，选择器不得单独救活"
+    }
+   },
+   {
+    "rank": 20,
+    "chunk_id": "42b773880ef0",
+    "checks": {
+     "subject_match": true,
+     "attribute_match": false,
+     "attribute_reason": "归属行2条/方法学词4个",
+     "condition_coverage": false,
+     "condition_reason": "原生✗；队内范围✓",
+     "value_attribution": true,
+     "value_reason": "非数值类，不适用",
+     "polarity": true,
+     "polarity_reason": "排他问须归属行含仅/只有/唯一✓",
+     "source_eligibility": true,
+     "source_reason": "authority=authoritative/status=verified_read/rev_match=True",
+     "counter_evidence": true,
+     "counter_reason": "见 select 跨块反证",
+     "eligible": false,
+     "initial_screen": false,
+     "initial_reason": "生产可答性初筛已拒，选择器不得单独救活"
+    }
+   },
+   {
+    "rank": 21,
+    "chunk_id": "0a08974d0f20",
+    "checks": {
+     "subject_match": true,
+     "attribute_match": false,
+     "attribute_reason": "归属行0条/方法学词0个；无技能→角色归属行，方法学段不得承担归属出证",
+     "condition_coverage": false,
+     "condition_reason": "原生✗；队内范围✓",
+     "value_attribution": true,
+     "value_reason": "非数值类，不适用",
+     "polarity": false,
+     "polarity_reason": "排他问须归属行含仅/只有/唯一✗（『会使』≠『只有他会』）",
+     "source_eligibility": false,
+     "source_reason": "authority=reference_only/status=verified_read/rev_match=True",
+     "counter_evidence": true,
+     "counter_reason": "见 select 跨块反证",
+     "eligible": false,
+     "initial_screen": false,
+     "initial_reason": "生产可答性初筛已拒，选择器不得单独救活"
+    }
+   },
+   {
+    "rank": 22,
+    "chunk_id": "9bbb7d89c9f4",
+    "checks": {
+     "subject_match": true,
+     "attribute_match": false,
+     "attribute_reason": "归属行0条/方法学词0个；无技能→角色归属行，方法学段不得承担归属出证",
+     "condition_coverage": false,
+     "condition_reason": "原生✗；队内范围✓",
+     "value_attribution": true,
+     "value_reason": "非数值类，不适用",
+     "polarity": true,
+     "polarity_reason": "排他问须归属行含仅/只有/唯一✓",
+     "source_eligibility": false,
+     "source_reason": "authority=reference_only/status=verified_read/rev_match=True",
+     "counter_evidence": true,
+     "counter_reason": "见 select 跨块反证",
+     "eligible": false,
+     "initial_screen": false,
+     "initial_reason": "生产可答性初筛已拒，选择器不得单独救活"
+    }
+   },
+   {
+    "rank": 23,
+    "chunk_id": "84195609bde8",
+    "checks": {
+     "subject_match": true,
+     "attribute_match": false,
+     "attribute_reason": "归属行0条/方法学词0个；无技能→角色归属行，方法学段不得承担归属出证",
+     "condition_coverage": false,
+     "condition_reason": "原生✗；队内范围✓",
+     "value_attribution": true,
+     "value_reason": "非数值类，不适用",
+     "polarity": false,
+     "polarity_reason": "排他问须归属行含仅/只有/唯一✗（『会使』≠『只有他会』）",
+     "source_eligibility": true,
+     "source_reason": "authority=authoritative/status=verified_read/rev_match=True",
+     "counter_evidence": true,
+     "counter_reason": "见 select 跨块反证",
+     "eligible": false,
+     "initial_screen": false,
+     "initial_reason": "生产可答性初筛已拒，选择器不得单独救活"
+    }
+   },
+   {
+    "rank": 24,
+    "chunk_id": "3f1cfd48b780",
+    "checks": {
+     "subject_match": true,
+     "attribute_match": false,
+     "attribute_reason": "归属行0条/方法学词0个；无技能→角色归属行，方法学段不得承担归属出证",
+     "condition_coverage": false,
+     "condition_reason": "原生✗；队内范围✓",
+     "value_attribution": true,
+     "value_reason": "非数值类，不适用",
+     "polarity": false,
+     "polarity_reason": "排他问须归属行含仅/只有/唯一✗（『会使』≠『只有他会』）",
+     "source_eligibility": false,
+     "source_reason": "authority=reference_only/status=verified_read/rev_match=True",
+     "counter_evidence": true,
+     "counter_reason": "见 select 跨块反证",
+     "eligible": false,
+     "initial_screen": false,
+     "initial_reason": "生产可答性初筛已拒，选择器不得单独救活"
+    }
+   },
+   {
+    "rank": 25,
+    "chunk_id": "0faf32bd68c9",
+    "checks": {
+     "subject_match": true,
+     "attribute_match": false,
+     "attribute_reason": "归属行0条/方法学词0个；无技能→角色归属行，方法学段不得承担归属出证",
+     "condition_coverage": false,
+     "condition_reason": "原生✗；队内范围✓",
+     "value_attribution": true,
+     "value_reason": "非数值类，不适用",
+     "polarity": false,
+     "polarity_reason": "排他问须归属行含仅/只有/唯一✗（『会使』≠『只有他会』）",
+     "source_eligibility": false,
+     "source_reason": "authority=reference_only/status=verified_read/rev_match=True",
+     "counter_evidence": true,
+     "counter_reason": "见 select 跨块反证",
+     "eligible": false,
+     "initial_screen": false,
+     "initial_reason": "生产可答性初筛已拒，选择器不得单独救活"
+    }
+   },
+   {
+    "rank": 26,
+    "chunk_id": "97755071be65",
+    "checks": {
+     "subject_match": false,
+     "attribute_match": false,
+     "attribute_reason": "归属行0条/方法学词2个；无技能→角色归属行，方法学段不得承担归属出证",
+     "condition_coverage": false,
+     "condition_reason": "原生✗；队内范围✓",
+     "value_attribution": true,
+     "value_reason": "非数值类，不适用",
+     "polarity": false,
+     "polarity_reason": "排他问须归属行含仅/只有/唯一✗（『会使』≠『只有他会』）",
+     "source_eligibility": true,
+     "source_reason": "authority=authoritative/status=verified_read/rev_match=True",
+     "counter_evidence": true,
+     "counter_reason": "见 select 跨块反证",
+     "eligible": false,
+     "initial_screen": false,
+     "initial_reason": "生产可答性初筛已拒，选择器不得单独救活"
+    }
+   },
+   {
+    "rank": 27,
+    "chunk_id": "2c9b59c2df7a",
+    "checks": {
+     "subject_match": false,
+     "attribute_match": false,
+     "attribute_reason": "归属行0条/方法学词5个；无技能→角色归属行，方法学段不得承担归属出证",
+     "condition_coverage": false,
+     "condition_reason": "原生✗；队内范围✓",
+     "value_attribution": true,
+     "value_reason": "非数值类，不适用",
+     "polarity": false,
+     "polarity_reason": "排他问须归属行含仅/只有/唯一✗（『会使』≠『只有他会』）",
+     "source_eligibility": true,
+     "source_reason": "authority=authoritative/status=verified_read/rev_match=True",
+     "counter_evidence": true,
+     "counter_reason": "见 select 跨块反证",
+     "eligible": false,
+     "initial_screen": false,
+     "initial_reason": "生产可答性初筛已拒，选择器不得单独救活"
+    }
+   },
+   {
+    "rank": 28,
+    "chunk_id": "4bae74d6c726",
+    "checks": {
+     "subject_match": false,
+     "attribute_match": false,
+     "attribute_reason": "归属行0条/方法学词0个；无技能→角色归属行，方法学段不得承担归属出证",
+     "condition_coverage": false,
+     "condition_reason": "原生✗；队内范围✓",
+     "value_attribution": true,
+     "value_reason": "非数值类，不适用",
+     "polarity": false,
+     "polarity_reason": "排他问须归属行含仅/只有/唯一✗（『会使』≠『只有他会』）",
+     "source_eligibility": false,
+     "source_reason": "authority=reference_only/status=verified_read/rev_match=True",
+     "counter_evidence": true,
+     "counter_reason": "见 select 跨块反证",
+     "eligible": false,
+     "initial_screen": false,
+     "initial_reason": "生产可答性初筛已拒，选择器不得单独救活"
+    }
+   },
+   {
+    "rank": 29,
+    "chunk_id": "0793dce04d1b",
+    "checks": {
+     "subject_match": true,
+     "attribute_match": true,
+     "attribute_reason": "归属行1条/方法学词0个",
+     "condition_coverage": false,
+     "condition_reason": "原生✗；队内范围✗（归属行属他队，不在问句范围）",
+     "value_attribution": true,
+     "value_reason": "非数值类，不适用",
+     "polarity": true,
+     "polarity_reason": "排他问须归属行含仅/只有/唯一✓",
+     "source_eligibility": false,
+     "source_reason": "authority=reference_only/status=verified_read/rev_match=True",
+     "counter_evidence": true,
+     "counter_reason": "见 select 跨块反证",
+     "eligible": false,
+     "initial_screen": false,
+     "initial_reason": "生产可答性初筛已拒，选择器不得单独救活"
+    }
+   },
+   {
+    "rank": 30,
+    "chunk_id": "2720cd5358a3",
+    "checks": {
+     "subject_match": true,
+     "attribute_match": false,
+     "attribute_reason": "归属行0条/方法学词0个；无技能→角色归属行，方法学段不得承担归属出证",
+     "condition_coverage": false,
+     "condition_reason": "原生✗；队内范围✓",
+     "value_attribution": true,
+     "value_reason": "非数值类，不适用",
+     "polarity": false,
+     "polarity_reason": "排他问须归属行含仅/只有/唯一✗（『会使』≠『只有他会』）",
+     "source_eligibility": false,
+     "source_reason": "authority=reference_only/status=verified_read/rev_match=True",
+     "counter_evidence": true,
+     "counter_reason": "见 select 跨块反证",
+     "eligible": false,
+     "initial_screen": false,
+     "initial_reason": "生产可答性初筛已拒，选择器不得单独救活"
+    }
+   }
+  ]
+ },
+ "selected_evidence": [
+  {
+   "chunk_id": "f7f8e8316295",
+   "score": 11.354,
+   "source_id": "local_soccer2_super_list",
+   "status": "verified_read",
+   "authority": "authoritative",
+   "revision": "nekketsu_soccer2_multi",
+   "game_id": "nekketsu_soccer2",
+   "platform": "NES",
+   "revision_match": true,
+   "locator": "_工具脚本/taspipe/游戏包/热血足球联盟_必杀全清单.md#L70-L85",
+   "heading": "3. 一般个人技/必杀技（S1 发动法原文）",
+   "matched_terms": [
+    "原生",
+    "燕返"
+   ],
+   "snippet": "| 技 | 日文 | 发动 | 备注 |\n|---|---|---|---|\n| 爆裂攻击(铁膝盖) | ばくれつあたっく | 跳跃**落地时按 B**，可连按连发 | 着地技；≥4 人会 |\n| 燕返 | つばめがえし | 带球跳跃立即出现(空中翻跟头) | 仅 Yoritsune 原生；秘技后全员 |\n| 必杀运球(旋风撞人) | ひっさつどりぶる | 带球中连按两次上 或 两次下 | 撞倒对方含门将(概率) |\n| 龙卷拳(升龙拳) | とるねーどぱんち | 方向左/右",
+   "answerability": {
+    "answerable": true,
+    "intent": "identity",
+    "focus_ok": true,
+    "pattern_ok": true,
+    "intent_ok": true,
+    "focus_hit": [
+     "原生",
+     "燕返"
+    ],
+    "url_list": false,
+    "topic_anchor_ok": true
+   }
+  }
+ ],
+ "condition": "选择器第10位过七项核查；显式允许跨出 top_window"
+}

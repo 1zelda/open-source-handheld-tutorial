@@ -1,0 +1,7 @@
+# 本机实测：洛克人1武器 RAM 地址与值表（隔离候选摘录）
+来源：测试问题与闸门说明书.md 第712-716行；逐字摘录，不含撤回段。
+### 33.1 owned/current 地址实证与三条撤回
+- **owned=0x5D 位场**（bit=菜单行：1B 2E 3G 4I 5C 6F 7M，bit0=P 不画行）；写 0xFF 菜单出全 7 行、
+  写 0x40 只出 F 行（`ramdiff/w/bit_40/f0029.png` 亲看）。文献"0x5D=all_stages_complete"单一语义撤回。
+- **current_weapon=0x5F**，值表 0P 1C 2I 3B 4F 5E 6G 7M：菜单逐行装备 + `attempt(ram=)` 冻结差分
+  （`ramdiff/e/equip_table.json`），装色亲看互证（Bomb 绿 / Elec 奶油 / Fire 红 / Ice 淡紫）。

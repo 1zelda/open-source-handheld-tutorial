@@ -1,0 +1,12 @@
+# Rockman 2 walking speed — verbatim extract
+> Origin: _工具脚本/taspipe/游戏包/来源库/取证/tasvideos_gameresources_rockman_data_2026-11-23.txt
+> Original line ranges: 281-287
+> Qualification: Source-scoped technical evidence; no PAL/US regional equivalence is asserted.
+
+ Walking
+
+ Walking speed 
+
+ In Rockman 1 and 2, during walking, Rockman’s X speed is 01.60.
+
+ In Rockman 3 and 4, during walking, Rockman’s X speed is 01.4C.

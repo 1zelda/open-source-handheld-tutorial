@@ -1,0 +1,52 @@
+
+########## 候选 C1+C2 ##########
+=== 嫌疑块（须变不可答，X30 除外）===
+  X01 L194-210 现=True 新=True r3_kill=False hit=['地址']
+  X06 L262-264 现=True 新=False r3_kill=False hit=[]
+  X07 L229-231 现=True 新=False r3_kill=False hit=['海月']
+  X24 L101-119 现=True 新=True r3_kill=False hit=['存档']
+  X25 L137-158 现=True 新=True r3_kill=False hit=['球员']
+  X26 L137-158 现=True 新=True r3_kill=False hit=['射门']
+  X28 L18-31 现=True 新=True r3_kill=False hit=['eck']
+  X30 L3-7 现=True 新=True r3_kill=False hit=['体技', '发动', '合体']
+=== 26 题金标块（须仍可答）===
+  金标误杀数：0
+=== 26+60 逐题域内可答权威块清零回归（pass→inconclusive）===
+  X06   REGRESS 热血足球 应援曲一共有几首？ 现可答权威14→0
+  清零回归题数：1
+
+########## 候选 C1+C2+R3 ##########
+=== 嫌疑块（须变不可答，X30 除外）===
+  X01 L194-210 现=True 新=False r3_kill=True hit=['地址']
+  X06 L262-264 现=True 新=False r3_kill=True hit=[]
+  X07 L229-231 现=True 新=False r3_kill=False hit=['海月']
+  X24 L101-119 现=True 新=False r3_kill=True hit=['存档']
+  X25 L137-158 现=True 新=False r3_kill=True hit=['球员']
+  X26 L137-158 现=True 新=False r3_kill=True hit=['射门']
+  X28 L18-31 现=True 新=False r3_kill=True hit=['eck']
+  X30 L3-7 现=True 新=True r3_kill=False hit=['体技', '发动', '合体']
+=== 26 题金标块（须仍可答）===
+  Q10 KILLED KOF98 ECK 能不能关掉队友改成 1v1？
+     L185 现=True 新=False r3=True hit=['队友']
+  金标误杀数：1
+=== 26+60 逐题域内可答权威块清零回归（pass→inconclusive）===
+  Q10   REGRESS KOF98 ECK 能不能关掉队友改成 1v1？ 现可答权威7→0
+  Q12   REGRESS 2025年英雄联盟全球总决赛冠军是哪支战队？ 现可答权威3→0
+  P20   REGRESS 2025年MSI季中冠军赛冠军是哪支战队？ 现可答权威2→0
+  X01   REGRESS 热血足球 1P 得分的内存地址是多少？ 现可答权威4→0
+  X02   REGRESS 热血足球 韩国队赢球后是什么庆祝动作？ 现可答权威7→0
+  X06   REGRESS 热血足球 应援曲一共有几首？ 现可答权威14→0
+  X10   REGRESS 热血足球联盟 阵型一共有几种？ 现可答权威2→0
+  X15   REGRESS 热血足球联盟 支持几个手柄同时玩？ 现可答权威1→0
+  X16   REGRESS 热血足球 打雷会不会把门将击倒？ 现可答权威10→0
+  X27   REGRESS 热血足球 走力 A 型是什么意思？ 现可答权威2→0
+  X28   REGRESS 拳皇98 ECK 金手指怎么用？ 现可答权威3→0
+  W13   REGRESS 热血足球2 前B和后B分别是什么动作？ 现可答权威5→0
+  W15   REGRESS 热血足球2 换人有什么限制？ 现可答权威2→0
+  W18   REGRESS KOF98 ECK 八神庵的连招怎么按？ 现可答权威1→0
+  W20   REGRESS 素材生产规范里整局素材的时长要求是多少？ 现可答权威19→0
+  W23   REGRESS ECK 实测结论记录在哪份文档？ 现可答权威8→0
+  W24   REGRESS 原神新角色什么时候上线？ 现可答权威1→0
+  W25   REGRESS LOL S15 全球总决赛冠军是谁？ 现可答权威1→0
+  W29   REGRESS 拳皇98 ECK 能不能关掉队战？ 现可答权威7→0
+  清零回归题数：19

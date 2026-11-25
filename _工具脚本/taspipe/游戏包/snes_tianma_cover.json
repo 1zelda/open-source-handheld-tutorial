@@ -1,0 +1,21 @@
+{
+  "name": "snes_tianma_cover",
+  "mode": "cover",
+  "canvas": [1920, 1080],
+  "bg_blur": 28,
+  "bg_brightness": 0.32,
+  "accent": [168, 132, 248],
+  "fallback_bg": [22, 18, 36],
+  "gameplay": {
+    "max_w_frac": 0.68,
+    "max_h_frac": 0.92,
+    "margin_x": 64
+  },
+  "panel": {
+    "gap": 48,
+    "margin_right": 64,
+    "pad": 24,
+    "box_max_h_frac": 0.58,
+    "box_top": 96
+  }
+}

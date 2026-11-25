@@ -1,0 +1,13 @@
+{
+  "manifest": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261124\\final_manifest_after_citation_authority_fix_20261124.json",
+  "index_sha256": "2a93e76d5876c1181e7784a20eca0f4d84888d0292d281fc6eea3564090b9260",
+  "project_selftest": 1462,
+  "kb_gates": 302,
+  "cross_platform": 33,
+  "topic_selftest": 166,
+  "blind": 26,
+  "heldout": 16,
+  "full_domain": 16,
+  "strict_v2": 21,
+  "strict_status_pass": 7
+}

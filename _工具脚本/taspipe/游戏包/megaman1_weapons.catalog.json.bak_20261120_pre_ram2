@@ -1,0 +1,227 @@
+{
+  "game_id": "megaman1_nes_us",
+  "game_title": "Mega Man (NES, USA, 1987 Capcom)",
+  "platform": "NES",
+  "backend_id": "bizhawk_neshawk",
+  "job_type": "items",
+  "catalog_kind": "weapons",
+  "status": "ready_for_authoring",
+  "blockers": [],
+  "rom_candidates": [
+    {
+      "path": "04-游戏资源库/TAS输入录像库/roms_verify/NES/mega_man_usa.nes",
+      "sha1": "d8b8c5e2ee76f2ec1820123bb9f8c70f5e603923",
+      "bytes": 131088,
+      "mapper": 2,
+      "clean_boot_verified": true,
+      "verified_date": "2026-11-20",
+      "identity": "不在 BizHawk NesCartDB；可正常入关实玩，但版本身份未钉死，不作生产首选"
+    },
+    {
+      "path": "04-游戏资源库/TAS输入录像库/roms_verify/NES/megamanhd.nes",
+      "sha1": "2f88381557339a14c20428455f6991c1eb902c99",
+      "bytes": 131088,
+      "mapper": 2,
+      "clean_boot_verified": true,
+      "verified_date": "2026-11-20",
+      "identity": "NesCartDB 在库 'Mega Man' NES-NTSC 正规 dump（文件名 hd 是误导）；生产首选，showcase rom_sha1 已钉此值",
+      "production_copy": "F:/taspipe_scratch/mm_showcase/megaman1_ntsc_hd.nes"
+    },
+    {
+      "path": "F:/BaiduNetdiskDownload/rom/nes/洛克人1.nes",
+      "sha1": "0fe255649359ece8cb64b6f24acaf09f17af746c",
+      "bytes": 131088,
+      "mapper": 2,
+      "clean_boot_verified": true,
+      "verified_date": "2026-11-20",
+      "identity": "NesCartDB 在库 'Mega Man' NES-PAL-B 欧版（50Hz）；可正常实玩但区域≠USA，不得冒充美版进 NTSC 生产（fps 60.0988 假设）"
+    }
+  ],
+  "ram_documented_unverified": {
+    "life": "0x006A",
+    "invincible": "0x0055 (=04)",
+    "all_stages_complete": "0x005D (=FF)",
+    "weapon_energy_range": "0x006B..0x0071",
+    "current_weapon": null,
+    "owned_flags": null,
+    "note": "addresses from DataCrystal/nesmaps search snippets only; NOT confirmed in-game. current-weapon and owned-flags addresses unknown; must be discovered by in-game ramdump diff once a clean ROM reaches gameplay, then each verified with detector pos/neg. 2026-11-20 复测补充：boot 时 0x006B..0x0071 全 0、选关页全 28 属正常初始化，不能拿能量值当 owned/已通关指示；0x0023/0x0046 随选关方向键变化（光标相关）。"
+  },
+  "elements": [
+    {
+      "element_id": "mega_buster",
+      "label": "Mega Buster (P)",
+      "kind": "weapon",
+      "source_boss": null,
+      "energy_address": null,
+      "energy_address_confirmed": false,
+      "trigger": {
+        "input": "B",
+        "note": "default weapon, always owned"
+      },
+      "expected_visual": "small yellow pellet projectile"
+    },
+    {
+      "element_id": "rolling_cutter",
+      "label": "Rolling Cutter (C)",
+      "kind": "weapon",
+      "source_boss": "Cut Man",
+      "energy_address": "0x006B",
+      "energy_address_confirmed": false,
+      "trigger": {
+        "input": "B",
+        "note": "select weapon then B"
+      },
+      "expected_visual": "boomerang scissor arc"
+    },
+    {
+      "element_id": "ice_slasher",
+      "label": "Ice Slasher (I)",
+      "kind": "weapon",
+      "source_boss": "Ice Man",
+      "energy_address": "0x006C",
+      "energy_address_confirmed": false,
+      "trigger": {
+        "input": "B",
+        "note": "select weapon then B"
+      },
+      "expected_visual": "white/ice shard projectile"
+    },
+    {
+      "element_id": "hyper_bomb",
+      "label": "Hyper Bomb (B)",
+      "kind": "weapon",
+      "source_boss": "Bomb Man",
+      "energy_address": "0x006D",
+      "energy_address_confirmed": false,
+      "trigger": {
+        "input": "B",
+        "note": "select weapon then B"
+      },
+      "expected_visual": "thrown bomb arc + explosion"
+    },
+    {
+      "element_id": "fire_storm",
+      "label": "Fire Storm (F)",
+      "kind": "weapon",
+      "source_boss": "Fire Man",
+      "energy_address": "0x006E",
+      "energy_address_confirmed": false,
+      "trigger": {
+        "input": "B",
+        "note": "select weapon then B"
+      },
+      "expected_visual": "fireball + flame shield"
+    },
+    {
+      "element_id": "thunder_beam",
+      "label": "Thunder Beam (E)",
+      "kind": "weapon",
+      "source_boss": "Elec Man",
+      "energy_address": "0x006F",
+      "energy_address_confirmed": false,
+      "trigger": {
+        "input": "B",
+        "note": "select weapon then B"
+      },
+      "expected_visual": "three-way lightning bolts"
+    },
+    {
+      "element_id": "super_arm",
+      "label": "Super Arm (G)",
+      "kind": "weapon",
+      "source_boss": "Guts Man",
+      "energy_address": "0x0070",
+      "energy_address_confirmed": false,
+      "trigger": {
+        "input": "B near block",
+        "note": "lifts/throws blocks; needs a block in range"
+      },
+      "expected_visual": "Mega Man lifting/throwing a block"
+    },
+    {
+      "element_id": "magnet_beam",
+      "label": "Magnet Beam (M)",
+      "kind": "weapon_utility",
+      "source_boss": null,
+      "energy_address": "0x0071",
+      "energy_address_confirmed": false,
+      "trigger": {
+        "input": "B",
+        "note": "utility platform beam, found in Elec Man stage"
+      },
+      "expected_visual": "horizontal green platform beam"
+    }
+  ],
+  "sources": [
+    {
+      "source_id": "local_project_manual",
+      "url": null,
+      "status": "verified_read",
+      "verified_date": "2026-11-18",
+      "element_ids": [
+        "mega_buster",
+        "rolling_cutter",
+        "ice_slasher",
+        "hyper_bomb",
+        "fire_storm",
+        "thunder_beam",
+        "super_arm",
+        "magnet_beam"
+      ],
+      "note": "§22 dump 逐帧采集 frameadvance 不能在 pcall 内；§23 本地洛克人 ROM 进不了 gameplay（选关 D-pad 无效＋未战斗直跳 CLEAR POINTS）的资源门控实测。 §23.1（2026-11-20）复测推翻 §23 旧判定：三 ROM 均正常入关，旧异常为度量假象。"
+    },
+    {
+      "source_id": "datacrystal",
+      "url": "https://datacrystal.tcrf.net/wiki/Mega_Man_(NES)/RAM_map",
+      "status": "snippet_only",
+      "verified_date": "2026-11-18",
+      "element_ids": [
+        "mega_buster",
+        "rolling_cutter",
+        "ice_slasher",
+        "hyper_bomb",
+        "fire_storm",
+        "thunder_beam",
+        "super_arm",
+        "magnet_beam"
+      ],
+      "note": "只有搜索快照（fetch 403），未全文核对。"
+    },
+    {
+      "source_id": "nesmaps",
+      "url": "https://nesmaps.com/maps/MegaMan/MegaMan.html",
+      "status": "snippet_only",
+      "verified_date": "2026-11-18",
+      "element_ids": [
+        "mega_buster",
+        "rolling_cutter",
+        "ice_slasher",
+        "hyper_bomb",
+        "fire_storm",
+        "thunder_beam",
+        "super_arm",
+        "magnet_beam"
+      ],
+      "note": "内存码 006A/0055/005D 来自搜索快照，未全文核对。"
+    },
+    {
+      "source_id": "neoseeker",
+      "url": "https://www.neoseeker.com/mega-man-legacy-collection/faqs/85172-mega-man-m.html",
+      "status": "unreachable",
+      "verified_date": "2026-11-18",
+      "element_ids": [
+        "mega_buster",
+        "rolling_cutter",
+        "ice_slasher",
+        "hyper_bomb",
+        "fire_storm",
+        "thunder_beam",
+        "super_arm",
+        "magnet_beam"
+      ],
+      "note": "本机直连 403；Clear Points / platform maker 只有快照。"
+    }
+  ],
+  "acceptance": "every element above displayed one-by-one in-game and detector-verified (pos+neg), compiled into a reel; NOT met yet (authoring pending: base state + RAM diff + calibration)",
+  "retraction_2026_11_20": "旧 blocked_resource 三条异常（选关 D-pad 无效 / Start 直跳 CLEAR POINTS / 开局能量预满）经隔离 BizHawk fresh-boot 逐帧复测全部推翻，均为度量假象：标题→选关切换有约 90–140 帧延迟，旧探针在切换完成前截图/输入；CLEAR POINTS 卡片是正常入关演出；boot 能量全 0、选关页才初始化为 28。三份 ROM 均可正常入关实玩。详见 知识候选/megaman1_nes_us/复测结论_2026-11-20.md 与 测试问题与闸门说明书.md §23.1。剩余真缺口：current_weapon/owned_flags 地址未钉死（须 gameplay RAM 差分）、检测器参数未标定。"
+}

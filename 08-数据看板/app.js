@@ -491,7 +491,7 @@ function ndSchema(driver) {
 }
 
 function qrPaintSlots(driver, s) {
-  // 一格登录位 = 一个独立 profile = 一个号的登录态;十格并排摆出来,谁占着哪格一目了然
+  // 一格登录位 = 一个独立 profile = 一个号的登录态;20 格并排摆出来,谁占着哪格一目了然
   const sel = $('#qrSlot');
   const who = {};
   (((nd.last || {}).accounts) || []).filter((a) => a.driver === driver && (a.slot || 0) > 0)
@@ -536,7 +536,7 @@ function qrPaintSlots(driver, s) {
   const bad = ((s.qr_browsers || {}).unusable || []).map((u) => u.file + '(' + u.why + ')').join(' ');
   ex.title = '这一格的窗口用哪个浏览器开。' + (bad ? ' 本机装了但用不了:' + bad : '');
 
-  // 登录位用量：用户第四次困惑就是「只登了 4 个号，界面却说十格满了」——
+  // 登录位用量：用户第四次困惑就是「只登了 4 个号，界面却说登录位满了」——
   // 把「几个号 / 共几格 / 下一个空位」摆在按钮下面，占没占满一眼就能核对。
   const note = $('#qrSlotsNote');
   if (note) {
@@ -1451,7 +1451,7 @@ async function loadNetdisk() {
         <button class="ghost" data-act="edit" data-alias="${esc(a.alias)}" data-driver="${esc(a.driver)}" data-remark="${esc(a.remark || '')}">改凭据</button>
         <button class="ghost" data-act="del" data-alias="${esc(a.alias)}">删</button></td>
     </tr>`).join('') + '</tbody>'
-    : '<tbody><tr><td class="empty">账号库是空的 —— 一次都没登录过。按上面『▶ 打开扫码窗口』扫一下就行,不用手填。</td></tr></tbody>';
+    : '<tbody><tr><td class="empty">账号库是空的 —— 一次都没登录过。按上面『▶ 扫码登录』扫一下就行,不用手填。</td></tr></tbody>';
 
   $('#ndScopeTable').innerHTML = '<thead><tr><th>档位</th><th>本地目录</th><th>网盘前缀</th><th>挂到</th><th>enable</th><th>台账已记</th><th>体积</th><th>最近</th><th>说明</th></tr></thead><tbody>' +
     r.scopes.map((s) => `<tr>

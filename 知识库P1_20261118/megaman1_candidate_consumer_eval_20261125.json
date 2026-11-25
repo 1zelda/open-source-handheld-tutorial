@@ -1,0 +1,999 @@
+{
+  "status": "evaluated_isolated_candidate_consumer",
+  "taken_at": "2026-11-25",
+  "consumer": "taspipe.kb_megaman1.ask",
+  "candidate_revision": "megaman1_nes_us",
+  "candidate_index": "F:\\开源掌机教程\\知识库P1_20261118\\megaman1_candidate_20261125\\index.json",
+  "candidate_index_sha256": "5e126eddf0eae98e6b8a446cd54f37400b861d5e93ecf89d3004f16d3a252581",
+  "production_route_wired": false,
+  "production_consumer_wired": false,
+  "production_defaults_unchanged": true,
+  "external_generative_model_calls": 0,
+  "paid_api_calls": 0,
+  "summary": {
+    "route_total": 13,
+    "route_ok": 13,
+    "default_ok": 12,
+    "strict_ok": 12,
+    "default_wrong": 0,
+    "strict_wrong": 0,
+    "default_missed": 0,
+    "strict_missed": 0
+  },
+  "route_cases": [
+    {
+      "id": "R01",
+      "q": "洛克人1 的坐标轴方向是什么？",
+      "expected": "candidate",
+      "actual": "candidate",
+      "ok": true,
+      "blocked_no_retrieval": true,
+      "route": {
+        "domain": "megaman1_candidate",
+        "disposition": "candidate",
+        "matched": [
+          "洛克人1"
+        ],
+        "revision": "megaman1_nes_us",
+        "reason": "显式洛克人1别名；只查 NTSC 美版 RAM/工具方法候选"
+      }
+    },
+    {
+      "id": "R02",
+      "q": "洛克人 １ 的坐标轴方向是什么？",
+      "expected": "candidate",
+      "actual": "candidate",
+      "ok": true,
+      "blocked_no_retrieval": true,
+      "route": {
+        "domain": "megaman1_candidate",
+        "disposition": "candidate",
+        "matched": [
+          "洛克人1"
+        ],
+        "revision": "megaman1_nes_us",
+        "reason": "显式洛克人1别名；只查 NTSC 美版 RAM/工具方法候选"
+      }
+    },
+    {
+      "id": "R03",
+      "q": "Ｍｅｇａ　Ｍａｎ　１ 的坐标轴方向是什么？",
+      "expected": "candidate",
+      "actual": "candidate",
+      "ok": true,
+      "blocked_no_retrieval": true,
+      "route": {
+        "domain": "megaman1_candidate",
+        "disposition": "candidate",
+        "matched": [
+          "Mega Man 1"
+        ],
+        "revision": "megaman1_nes_us",
+        "reason": "显式洛克人1别名；只查 NTSC 美版 RAM/工具方法候选"
+      }
+    },
+    {
+      "id": "R04",
+      "q": "rockman 1 的坐标轴方向是什么？",
+      "expected": "candidate",
+      "actual": "candidate",
+      "ok": true,
+      "blocked_no_retrieval": true,
+      "route": {
+        "domain": "megaman1_candidate",
+        "disposition": "candidate",
+        "matched": [
+          "Rockman 1"
+        ],
+        "revision": "megaman1_nes_us",
+        "reason": "显式洛克人1别名；只查 NTSC 美版 RAM/工具方法候选"
+      }
+    },
+    {
+      "id": "R05",
+      "q": "洛克人 的坐标轴方向是什么？",
+      "expected": "ambiguous_series",
+      "actual": "ambiguous_series",
+      "ok": true,
+      "blocked_no_retrieval": true,
+      "route": {
+        "domain": "megaman1_candidate",
+        "disposition": "ambiguous_series",
+        "matched": [],
+        "revision": null,
+        "reason": "只给系列名或缺代次，不能认定是洛克人1；请补作品代次/版本"
+      }
+    },
+    {
+      "id": "R06",
+      "q": "Mega Man X 的坐标轴方向是什么？",
+      "expected": "ambiguous_series",
+      "actual": "ambiguous_series",
+      "ok": true,
+      "blocked_no_retrieval": true,
+      "route": {
+        "domain": "megaman1_candidate",
+        "disposition": "ambiguous_series",
+        "matched": [],
+        "revision": null,
+        "reason": "只给系列名或缺代次，不能认定是洛克人1；请补作品代次/版本"
+      }
+    },
+    {
+      "id": "R07",
+      "q": "洛克人2 的坐标轴方向是什么？",
+      "expected": "ambiguous_series",
+      "actual": "ambiguous_series",
+      "ok": true,
+      "blocked_no_retrieval": true,
+      "route": {
+        "domain": "megaman1_candidate",
+        "disposition": "ambiguous_series",
+        "matched": [],
+        "revision": null,
+        "reason": "只给系列名或缺代次，不能认定是洛克人1；请补作品代次/版本"
+      }
+    },
+    {
+      "id": "R08",
+      "q": "洛克人1 PAL-B 的坐标表能直接照用吗？",
+      "expected": "version_not_collected",
+      "actual": "version_not_collected",
+      "ok": true,
+      "blocked_no_retrieval": true,
+      "route": {
+        "domain": "megaman1_candidate",
+        "disposition": "version_not_collected",
+        "matched": [
+          "洛克人1"
+        ],
+        "revision": null,
+        "reason": "候选只覆盖 NTSC 美版；问句点名 PAL-B，不得跨版代答"
+      }
+    },
+    {
+      "id": "R09",
+      "q": "Mega Man 1 欧版的坐标表能直接照用吗？",
+      "expected": "version_not_collected",
+      "actual": "version_not_collected",
+      "ok": true,
+      "blocked_no_retrieval": true,
+      "route": {
+        "domain": "megaman1_candidate",
+        "disposition": "version_not_collected",
+        "matched": [
+          "Mega Man 1"
+        ],
+        "revision": null,
+        "reason": "候选只覆盖 NTSC 美版；问句点名 欧版，不得跨版代答"
+      }
+    },
+    {
+      "id": "R10",
+      "q": "拳皇98 的坐标轴方向是什么？",
+      "expected": "not_matched",
+      "actual": "not_matched",
+      "ok": true,
+      "blocked_no_retrieval": true,
+      "route": {
+        "domain": "unrouted",
+        "disposition": "not_matched",
+        "matched": [],
+        "revision": null,
+        "reason": "未命中洛克人1显式别名；候选消费方不借其他库顶包"
+      }
+    },
+    {
+      "id": "R11",
+      "q": "洛克人1 和拳皇98 的坐标轴分别是什么？",
+      "expected": "multi_domain_needs_split",
+      "actual": "multi_domain_needs_split",
+      "ok": true,
+      "blocked_no_retrieval": true,
+      "route": {
+        "domain": "megaman1_candidate",
+        "disposition": "multi_domain_needs_split",
+        "matched": [
+          "洛克人1"
+        ],
+        "revision": null,
+        "reason": "问句同时点名其他游戏内容域，候选消费方不合并放行"
+      }
+    },
+    {
+      "id": "R12",
+      "q": "owned 和 current_weapon 两个内存字段分别对应什么？",
+      "expected": "not_matched",
+      "actual": "not_matched",
+      "ok": true,
+      "blocked_no_retrieval": true,
+      "route": {
+        "domain": "unrouted",
+        "disposition": "not_matched",
+        "matched": [],
+        "revision": null,
+        "reason": "未命中洛克人1显式别名；候选消费方不借其他库顶包"
+      }
+    },
+    {
+      "id": "R13",
+      "q": "洛克人1 NTSC 美版的坐标轴方向是什么？",
+      "expected": "candidate",
+      "actual": "candidate",
+      "ok": true,
+      "blocked_no_retrieval": true,
+      "route": {
+        "domain": "megaman1_candidate",
+        "disposition": "candidate",
+        "matched": [
+          "洛克人1"
+        ],
+        "revision": "megaman1_nes_us",
+        "reason": "显式洛克人1别名；只查 NTSC 美版 RAM/工具方法候选"
+      }
+    }
+  ],
+  "questions": [
+    {
+      "id": "MM01",
+      "q": "洛克人1 的坐标轴方向是什么？",
+      "expect": "strict_pass",
+      "default": {
+        "id": "MM01",
+        "tier": "strict_pass",
+        "ok": true,
+        "why": "status=pass, selected_gold=True, direct_recall=True",
+        "status": "pass",
+        "n_hits": 2,
+        "top1": "知识库P1_20261118/megaman1_candidate_20261125/evidence/mm1_coordinate_facts_20261125.txt#L1-L25",
+        "direct_recall": true,
+        "equivalent_recall": null,
+        "correct_evidence": true,
+        "wrong_evidence": false,
+        "missed_answer": false,
+        "citation_valid": true,
+        "version_condition_error": false,
+        "selected_locator": "知识库P1_20261118/megaman1_candidate_20261125/evidence/mm1_coordinate_facts_20261125.txt#L1-L25",
+        "route_ok": true,
+        "evidence_ok": true,
+        "index_ok": true,
+        "refusal": null,
+        "reason": "2 条 verified_read + authoritative 可答命中，权威件在第 1 位",
+        "route_disposition": "candidate"
+      },
+      "strict": {
+        "id": "MM01",
+        "tier": "strict_pass",
+        "ok": true,
+        "why": "status=pass, selected_gold=True, direct_recall=True",
+        "status": "pass",
+        "n_hits": 2,
+        "top1": "知识库P1_20261118/megaman1_candidate_20261125/evidence/mm1_coordinate_facts_20261125.txt#L1-L25",
+        "direct_recall": true,
+        "equivalent_recall": null,
+        "correct_evidence": true,
+        "wrong_evidence": false,
+        "missed_answer": false,
+        "citation_valid": true,
+        "version_condition_error": false,
+        "selected_locator": "知识库P1_20261118/megaman1_candidate_20261125/evidence/mm1_coordinate_facts_20261125.txt#L1-L25",
+        "route_ok": true,
+        "evidence_ok": true,
+        "index_ok": true,
+        "refusal": null,
+        "reason": "2 条 verified_read + authoritative 可答命中，权威件在第 1 位",
+        "route_disposition": "candidate"
+      }
+    },
+    {
+      "id": "MM02",
+      "q": "洛克人1 的 X 坐标对象表地址范围是什么？",
+      "expect": "strict_pass",
+      "default": {
+        "id": "MM02",
+        "tier": "strict_pass",
+        "ok": true,
+        "why": "status=pass, selected_gold=True, direct_recall=True",
+        "status": "pass",
+        "n_hits": 2,
+        "top1": "知识库P1_20261118/megaman1_candidate_20261125/evidence/mm1_object_ram_table_20261125.txt#L1-L17",
+        "direct_recall": true,
+        "equivalent_recall": null,
+        "correct_evidence": true,
+        "wrong_evidence": false,
+        "missed_answer": false,
+        "citation_valid": true,
+        "version_condition_error": false,
+        "selected_locator": "知识库P1_20261118/megaman1_candidate_20261125/evidence/mm1_object_ram_table_20261125.txt#L1-L17",
+        "route_ok": true,
+        "evidence_ok": true,
+        "index_ok": true,
+        "refusal": null,
+        "reason": "2 条 verified_read + authoritative 可答命中，权威件在第 1 位",
+        "route_disposition": "candidate"
+      },
+      "strict": {
+        "id": "MM02",
+        "tier": "strict_pass",
+        "ok": true,
+        "why": "status=pass, selected_gold=True, direct_recall=True",
+        "status": "pass",
+        "n_hits": 2,
+        "top1": "知识库P1_20261118/megaman1_candidate_20261125/evidence/mm1_object_ram_table_20261125.txt#L1-L17",
+        "direct_recall": true,
+        "equivalent_recall": null,
+        "correct_evidence": true,
+        "wrong_evidence": false,
+        "missed_answer": false,
+        "citation_valid": true,
+        "version_condition_error": false,
+        "selected_locator": "知识库P1_20261118/megaman1_candidate_20261125/evidence/mm1_object_ram_table_20261125.txt#L1-L17",
+        "route_ok": true,
+        "evidence_ok": true,
+        "index_ok": true,
+        "refusal": null,
+        "reason": "2 条 verified_read + authoritative 可答命中，权威件在第 1 位",
+        "route_disposition": "candidate"
+      }
+    },
+    {
+      "id": "MM03",
+      "q": "洛克人1 的对象编号 n 怎样换算各项内存地址？",
+      "expect": "strict_pass",
+      "default": {
+        "id": "MM03",
+        "tier": "strict_pass",
+        "ok": true,
+        "why": "status=pass, selected_gold=True, direct_recall=True",
+        "status": "pass",
+        "n_hits": 3,
+        "top1": "知识库P1_20261118/megaman1_candidate_20261125/evidence/mm1_object_ram_table_20261125.txt#L1-L17",
+        "direct_recall": true,
+        "equivalent_recall": null,
+        "correct_evidence": true,
+        "wrong_evidence": false,
+        "missed_answer": false,
+        "citation_valid": true,
+        "version_condition_error": false,
+        "selected_locator": "知识库P1_20261118/megaman1_candidate_20261125/evidence/mm1_object_ram_table_20261125.txt#L1-L17",
+        "route_ok": true,
+        "evidence_ok": true,
+        "index_ok": true,
+        "refusal": null,
+        "reason": "1 条 verified_read + authoritative 可答命中，权威件在第 1 位",
+        "route_disposition": "candidate"
+      },
+      "strict": {
+        "id": "MM03",
+        "tier": "strict_pass",
+        "ok": true,
+        "why": "status=pass, selected_gold=True, direct_recall=True",
+        "status": "pass",
+        "n_hits": 3,
+        "top1": "知识库P1_20261118/megaman1_candidate_20261125/evidence/mm1_object_ram_table_20261125.txt#L1-L17",
+        "direct_recall": true,
+        "equivalent_recall": null,
+        "correct_evidence": true,
+        "wrong_evidence": false,
+        "missed_answer": false,
+        "citation_valid": true,
+        "version_condition_error": false,
+        "selected_locator": "知识库P1_20261118/megaman1_candidate_20261125/evidence/mm1_object_ram_table_20261125.txt#L1-L17",
+        "route_ok": true,
+        "evidence_ok": true,
+        "index_ok": true,
+        "refusal": null,
+        "reason": "1 条 verified_read + authoritative 可答命中，权威件在第 1 位",
+        "route_disposition": "candidate"
+      }
+    },
+    {
+      "id": "MM04",
+      "q": "洛克人1 中 Rockman 和 Boss 分别固定是哪个对象编号？",
+      "expect": "strict_pass",
+      "default": {
+        "id": "MM04",
+        "tier": "strict_pass",
+        "ok": true,
+        "why": "status=pass, selected_gold=True, direct_recall=True",
+        "status": "pass",
+        "n_hits": 2,
+        "top1": "知识库P1_20261118/megaman1_candidate_20261125/evidence/mm1_object_ram_table_20261125.txt#L1-L17",
+        "direct_recall": true,
+        "equivalent_recall": null,
+        "correct_evidence": true,
+        "wrong_evidence": false,
+        "missed_answer": false,
+        "citation_valid": true,
+        "version_condition_error": false,
+        "selected_locator": "知识库P1_20261118/megaman1_candidate_20261125/evidence/mm1_object_ram_table_20261125.txt#L1-L17",
+        "route_ok": true,
+        "evidence_ok": true,
+        "index_ok": true,
+        "refusal": null,
+        "reason": "2 条 verified_read + authoritative 可答命中，权威件在第 1 位",
+        "route_disposition": "candidate"
+      },
+      "strict": {
+        "id": "MM04",
+        "tier": "strict_pass",
+        "ok": true,
+        "why": "status=pass, selected_gold=True, direct_recall=True",
+        "status": "pass",
+        "n_hits": 2,
+        "top1": "知识库P1_20261118/megaman1_candidate_20261125/evidence/mm1_object_ram_table_20261125.txt#L1-L17",
+        "direct_recall": true,
+        "equivalent_recall": null,
+        "correct_evidence": true,
+        "wrong_evidence": false,
+        "missed_answer": false,
+        "citation_valid": true,
+        "version_condition_error": false,
+        "selected_locator": "知识库P1_20261118/megaman1_candidate_20261125/evidence/mm1_object_ram_table_20261125.txt#L1-L17",
+        "route_ok": true,
+        "evidence_ok": true,
+        "index_ok": true,
+        "refusal": null,
+        "reason": "2 条 verified_read + authoritative 可答命中，权威件在第 1 位",
+        "route_disposition": "candidate"
+      }
+    },
+    {
+      "id": "MM05",
+      "q": "洛克人1 的 Screen# 和 Yspd 对象表地址范围分别是什么？",
+      "expect": "strict_pass",
+      "default": {
+        "id": "MM05",
+        "tier": "strict_pass",
+        "ok": true,
+        "why": "status=pass, selected_gold=True, direct_recall=True",
+        "status": "pass",
+        "n_hits": 2,
+        "top1": "知识库P1_20261118/megaman1_candidate_20261125/evidence/mm1_object_ram_table_20261125.txt#L1-L17",
+        "direct_recall": true,
+        "equivalent_recall": null,
+        "correct_evidence": true,
+        "wrong_evidence": false,
+        "missed_answer": false,
+        "citation_valid": true,
+        "version_condition_error": false,
+        "selected_locator": "知识库P1_20261118/megaman1_candidate_20261125/evidence/mm1_object_ram_table_20261125.txt#L1-L17",
+        "route_ok": true,
+        "evidence_ok": true,
+        "index_ok": true,
+        "refusal": null,
+        "reason": "2 条 verified_read + authoritative 可答命中，权威件在第 1 位",
+        "route_disposition": "candidate"
+      },
+      "strict": {
+        "id": "MM05",
+        "tier": "strict_pass",
+        "ok": true,
+        "why": "status=pass, selected_gold=True, direct_recall=True",
+        "status": "pass",
+        "n_hits": 2,
+        "top1": "知识库P1_20261118/megaman1_candidate_20261125/evidence/mm1_object_ram_table_20261125.txt#L1-L17",
+        "direct_recall": true,
+        "equivalent_recall": null,
+        "correct_evidence": true,
+        "wrong_evidence": false,
+        "missed_answer": false,
+        "citation_valid": true,
+        "version_condition_error": false,
+        "selected_locator": "知识库P1_20261118/megaman1_candidate_20261125/evidence/mm1_object_ram_table_20261125.txt#L1-L17",
+        "route_ok": true,
+        "evidence_ok": true,
+        "index_ok": true,
+        "refusal": null,
+        "reason": "2 条 verified_read + authoritative 可答命中，权威件在第 1 位",
+        "route_disposition": "candidate"
+      }
+    },
+    {
+      "id": "MM06",
+      "q": "BizHawk 为什么不能只每帧覆盖一次内存值，需要什么机制？",
+      "expect": "strict_pass",
+      "default": {
+        "id": "MM06",
+        "tier": "strict_pass",
+        "ok": true,
+        "why": "status=pass, selected_gold=True, direct_recall=True",
+        "status": "pass",
+        "n_hits": 3,
+        "top1": "知识库P1_20261118/megaman1_candidate_20261125/evidence/mm1_bizhawk_memory_write_fact_20261125.txt#L1-L10",
+        "direct_recall": true,
+        "equivalent_recall": null,
+        "correct_evidence": true,
+        "wrong_evidence": false,
+        "missed_answer": false,
+        "citation_valid": true,
+        "version_condition_error": false,
+        "selected_locator": "知识库P1_20261118/megaman1_candidate_20261125/evidence/mm1_bizhawk_memory_write_fact_20261125.txt#L1-L10",
+        "route_ok": true,
+        "evidence_ok": true,
+        "index_ok": true,
+        "refusal": null,
+        "reason": "2 条 verified_read + authoritative 可答命中，权威件在第 1 位",
+        "route_disposition": "candidate"
+      },
+      "strict": {
+        "id": "MM06",
+        "tier": "strict_pass",
+        "ok": true,
+        "why": "status=pass, selected_gold=True, direct_recall=True",
+        "status": "pass",
+        "n_hits": 3,
+        "top1": "知识库P1_20261118/megaman1_candidate_20261125/evidence/mm1_bizhawk_memory_write_fact_20261125.txt#L1-L10",
+        "direct_recall": true,
+        "equivalent_recall": null,
+        "correct_evidence": true,
+        "wrong_evidence": false,
+        "missed_answer": false,
+        "citation_valid": true,
+        "version_condition_error": false,
+        "selected_locator": "知识库P1_20261118/megaman1_candidate_20261125/evidence/mm1_bizhawk_memory_write_fact_20261125.txt#L1-L10",
+        "route_ok": true,
+        "evidence_ok": true,
+        "index_ok": true,
+        "refusal": null,
+        "reason": "2 条 verified_read + authoritative 可答命中，权威件在第 1 位",
+        "route_disposition": "candidate"
+      }
+    },
+    {
+      "id": "MM07",
+      "q": "owned 和 current_weapon 两个内存字段分别对应什么？",
+      "expect": "strict_pass",
+      "default": {
+        "id": "MM07",
+        "tier": "strict_pass",
+        "ok": true,
+        "why": "status=pass, selected_gold=True, direct_recall=True",
+        "status": "pass",
+        "n_hits": 2,
+        "top1": "知识库P1_20261118/megaman1_candidate_20261125/evidence/mm1_local_weapon_ram_excerpt_20261125.txt#L4-L7",
+        "direct_recall": true,
+        "equivalent_recall": null,
+        "correct_evidence": true,
+        "wrong_evidence": false,
+        "missed_answer": false,
+        "citation_valid": true,
+        "version_condition_error": false,
+        "selected_locator": "知识库P1_20261118/megaman1_candidate_20261125/evidence/mm1_local_weapon_ram_excerpt_20261125.txt#L4-L7",
+        "route_ok": true,
+        "evidence_ok": true,
+        "index_ok": true,
+        "refusal": null,
+        "reason": "1 条 verified_read + authoritative 可答命中，权威件在第 1 位",
+        "route_disposition": "candidate"
+      },
+      "strict": {
+        "id": "MM07",
+        "tier": "strict_pass",
+        "ok": true,
+        "why": "status=pass, selected_gold=True, direct_recall=True",
+        "status": "pass",
+        "n_hits": 2,
+        "top1": "知识库P1_20261118/megaman1_candidate_20261125/evidence/mm1_local_weapon_ram_excerpt_20261125.txt#L4-L7",
+        "direct_recall": true,
+        "equivalent_recall": null,
+        "correct_evidence": true,
+        "wrong_evidence": false,
+        "missed_answer": false,
+        "citation_valid": true,
+        "version_condition_error": false,
+        "selected_locator": "知识库P1_20261118/megaman1_candidate_20261125/evidence/mm1_local_weapon_ram_excerpt_20261125.txt#L4-L7",
+        "route_ok": true,
+        "evidence_ok": true,
+        "index_ok": true,
+        "refusal": null,
+        "reason": "1 条 verified_read + authoritative 可答命中，权威件在第 1 位",
+        "route_disposition": "candidate"
+      }
+    },
+    {
+      "id": "MM08",
+      "q": "current_weapon 字段的值 0 到 7 分别代表什么武器？",
+      "expect": "strict_pass",
+      "default": {
+        "id": "MM08",
+        "tier": "strict_pass",
+        "ok": true,
+        "why": "status=pass, selected_gold=True, direct_recall=True",
+        "status": "pass",
+        "n_hits": 3,
+        "top1": "知识库P1_20261118/megaman1_candidate_20261125/evidence/mm1_local_weapon_ram_excerpt_20261125.txt#L4-L7",
+        "direct_recall": true,
+        "equivalent_recall": null,
+        "correct_evidence": true,
+        "wrong_evidence": false,
+        "missed_answer": false,
+        "citation_valid": true,
+        "version_condition_error": false,
+        "selected_locator": "知识库P1_20261118/megaman1_candidate_20261125/evidence/mm1_local_weapon_ram_excerpt_20261125.txt#L4-L7",
+        "route_ok": true,
+        "evidence_ok": true,
+        "index_ok": true,
+        "refusal": null,
+        "reason": "1 条 verified_read + authoritative 可答命中，权威件在第 1 位",
+        "route_disposition": "candidate"
+      },
+      "strict": {
+        "id": "MM08",
+        "tier": "strict_pass",
+        "ok": true,
+        "why": "status=pass, selected_gold=True, direct_recall=True",
+        "status": "pass",
+        "n_hits": 3,
+        "top1": "知识库P1_20261118/megaman1_candidate_20261125/evidence/mm1_local_weapon_ram_excerpt_20261125.txt#L4-L7",
+        "direct_recall": true,
+        "equivalent_recall": null,
+        "correct_evidence": true,
+        "wrong_evidence": false,
+        "missed_answer": false,
+        "citation_valid": true,
+        "version_condition_error": false,
+        "selected_locator": "知识库P1_20261118/megaman1_candidate_20261125/evidence/mm1_local_weapon_ram_excerpt_20261125.txt#L4-L7",
+        "route_ok": true,
+        "evidence_ok": true,
+        "index_ok": true,
+        "refusal": null,
+        "reason": "1 条 verified_read + authoritative 可答命中，权威件在第 1 位",
+        "route_disposition": "candidate"
+      }
+    },
+    {
+      "id": "MM09",
+      "q": "洛克人1 写 $0480 和 $0600 为什么能移动角色？",
+      "expect": "strict_pass",
+      "default": {
+        "id": "MM09",
+        "tier": "strict_pass",
+        "ok": true,
+        "why": "status=pass, selected_gold=True, direct_recall=True",
+        "status": "pass",
+        "n_hits": 4,
+        "top1": "知识库P1_20261118/megaman1_candidate_20261125/evidence/mm1_local_position_probe_excerpt_20261125.txt#L5-L17",
+        "direct_recall": true,
+        "equivalent_recall": null,
+        "correct_evidence": true,
+        "wrong_evidence": false,
+        "missed_answer": false,
+        "citation_valid": true,
+        "version_condition_error": false,
+        "selected_locator": "知识库P1_20261118/megaman1_candidate_20261125/evidence/mm1_local_position_probe_excerpt_20261125.txt#L5-L17",
+        "route_ok": true,
+        "evidence_ok": true,
+        "index_ok": true,
+        "refusal": null,
+        "reason": "3 条 verified_read + authoritative 可答命中，权威件在第 1 位",
+        "route_disposition": "candidate"
+      },
+      "strict": {
+        "id": "MM09",
+        "tier": "strict_pass",
+        "ok": true,
+        "why": "status=pass, selected_gold=True, direct_recall=True",
+        "status": "pass",
+        "n_hits": 4,
+        "top1": "知识库P1_20261118/megaman1_candidate_20261125/evidence/mm1_local_position_probe_excerpt_20261125.txt#L5-L17",
+        "direct_recall": true,
+        "equivalent_recall": null,
+        "correct_evidence": true,
+        "wrong_evidence": false,
+        "missed_answer": false,
+        "citation_valid": true,
+        "version_condition_error": false,
+        "selected_locator": "知识库P1_20261118/megaman1_candidate_20261125/evidence/mm1_local_position_probe_excerpt_20261125.txt#L5-L17",
+        "route_ok": true,
+        "evidence_ok": true,
+        "index_ok": true,
+        "refusal": null,
+        "reason": "3 条 verified_read + authoritative 可答命中，权威件在第 1 位",
+        "route_disposition": "candidate"
+      }
+    },
+    {
+      "id": "MM10",
+      "q": "洛克人1 怎样从现有存档点继续制作某个时刻的画面？",
+      "expect": "refuse",
+      "default": {
+        "id": "MM10",
+        "tier": "refuse",
+        "ok": true,
+        "why": "status=inconclusive（pass 即失败：缺证据不许冒充事实）",
+        "status": "inconclusive",
+        "n_hits": 3,
+        "top1": "知识库P1_20261118/megaman1_candidate_20261125/evidence/mm1_object_ram_table_20261125.txt#L1-L17",
+        "direct_recall": false,
+        "equivalent_recall": null,
+        "correct_evidence": true,
+        "wrong_evidence": false,
+        "missed_answer": false,
+        "citation_valid": true,
+        "version_condition_error": false,
+        "selected_locator": null,
+        "route_ok": true,
+        "evidence_ok": true,
+        "index_ok": true,
+        "refusal": "unanswerable",
+        "reason": "命中全部未过逐事实可答性核查（词命中≠回答问题），缺证据不冒充事实",
+        "route_disposition": "candidate"
+      },
+      "strict": {
+        "id": "MM10",
+        "tier": "refuse",
+        "ok": true,
+        "why": "status=inconclusive（pass 即失败：缺证据不许冒充事实）",
+        "status": "inconclusive",
+        "n_hits": 3,
+        "top1": "知识库P1_20261118/megaman1_candidate_20261125/evidence/mm1_object_ram_table_20261125.txt#L1-L17",
+        "direct_recall": false,
+        "equivalent_recall": null,
+        "correct_evidence": true,
+        "wrong_evidence": false,
+        "missed_answer": false,
+        "citation_valid": true,
+        "version_condition_error": false,
+        "selected_locator": null,
+        "route_ok": true,
+        "evidence_ok": true,
+        "index_ok": true,
+        "refusal": "unanswerable",
+        "reason": "命中全部未过逐事实可答性核查（词命中≠回答问题），缺证据不冒充事实",
+        "route_disposition": "candidate"
+      }
+    },
+    {
+      "id": "MM11",
+      "q": "洛克人1官方说明书是否记载角色创建系统？",
+      "expect": "refuse",
+      "default": {
+        "id": "MM11",
+        "tier": "refuse",
+        "ok": true,
+        "why": "status=inconclusive（pass 即失败：缺证据不许冒充事实）",
+        "status": "inconclusive",
+        "n_hits": 4,
+        "top1": "知识库P1_20261118/megaman1_candidate_20261125/evidence/mm1_coordinate_facts_20261125.txt#L1-L25",
+        "direct_recall": false,
+        "equivalent_recall": null,
+        "correct_evidence": true,
+        "wrong_evidence": false,
+        "missed_answer": false,
+        "citation_valid": true,
+        "version_condition_error": false,
+        "selected_locator": null,
+        "route_ok": true,
+        "evidence_ok": true,
+        "index_ok": true,
+        "refusal": "unanswerable",
+        "reason": "命中全部未过逐事实可答性核查（词命中≠回答问题），缺证据不冒充事实",
+        "route_disposition": "candidate"
+      },
+      "strict": {
+        "id": "MM11",
+        "tier": "refuse",
+        "ok": true,
+        "why": "status=inconclusive（pass 即失败：缺证据不许冒充事实）",
+        "status": "inconclusive",
+        "n_hits": 4,
+        "top1": "知识库P1_20261118/megaman1_candidate_20261125/evidence/mm1_coordinate_facts_20261125.txt#L1-L25",
+        "direct_recall": false,
+        "equivalent_recall": null,
+        "correct_evidence": true,
+        "wrong_evidence": false,
+        "missed_answer": false,
+        "citation_valid": true,
+        "version_condition_error": false,
+        "selected_locator": null,
+        "route_ok": true,
+        "evidence_ok": true,
+        "index_ok": true,
+        "refusal": "unanswerable",
+        "reason": "命中全部未过逐事实可答性核查（词命中≠回答问题），缺证据不冒充事实",
+        "route_disposition": "candidate"
+      }
+    },
+    {
+      "id": "MM12",
+      "q": "洛克人1 PAL-B 版的坐标表是否可以直接当作 NTSC 美版结论？",
+      "expect": "refuse",
+      "default": {
+        "id": "MM12",
+        "tier": "refuse",
+        "ok": true,
+        "why": "status=inconclusive（pass 即失败：缺证据不许冒充事实）",
+        "status": "inconclusive",
+        "n_hits": 0,
+        "top1": null,
+        "direct_recall": false,
+        "equivalent_recall": null,
+        "correct_evidence": true,
+        "wrong_evidence": false,
+        "missed_answer": false,
+        "citation_valid": true,
+        "version_condition_error": false,
+        "selected_locator": null,
+        "route_ok": true,
+        "evidence_ok": true,
+        "index_ok": true,
+        "refusal": "version_not_collected",
+        "reason": "候选只覆盖 NTSC 美版；问句点名 PAL-B，不得跨版代答",
+        "route_disposition": "version_not_collected"
+      },
+      "strict": {
+        "id": "MM12",
+        "tier": "refuse",
+        "ok": true,
+        "why": "status=inconclusive（pass 即失败：缺证据不许冒充事实）",
+        "status": "inconclusive",
+        "n_hits": 0,
+        "top1": null,
+        "direct_recall": false,
+        "equivalent_recall": null,
+        "correct_evidence": true,
+        "wrong_evidence": false,
+        "missed_answer": false,
+        "citation_valid": true,
+        "version_condition_error": false,
+        "selected_locator": null,
+        "route_ok": true,
+        "evidence_ok": true,
+        "index_ok": true,
+        "refusal": "version_not_collected",
+        "reason": "候选只覆盖 NTSC 美版；问句点名 PAL-B，不得跨版代答",
+        "route_disposition": "version_not_collected"
+      }
+    }
+  ],
+  "failure_close": {
+    "rows": [
+      {
+        "id": "FC01",
+        "ok": true
+      },
+      {
+        "id": "FC02",
+        "ok": true
+      },
+      {
+        "id": "FC03",
+        "ok": true
+      },
+      {
+        "id": "FC04",
+        "ok": true
+      }
+    ],
+    "ok": 4,
+    "total": 4
+  },
+  "query_log": {
+    "path": "F:\\开源掌机教程\\知识库P1_20261118\\megaman1_candidate_20261125\\qc\\consumer_query_log_20261125.jsonl",
+    "lines": 24,
+    "sha256": "a8ccea9f04e67f5f82ce04fa19d48f625797658b824304057b281f5bc0451597",
+    "entry_points": [
+      "mm1-candidate-consumer-default",
+      "mm1-candidate-consumer-strict"
+    ],
+    "retrieval_rows": 22,
+    "blocked_rows": 2
+  },
+  "isolation": {
+    "ok": true,
+    "changed_paths": [],
+    "real_state_before": {
+      "F:\\开源掌机教程\\_工具脚本\\taspipe\\游戏包\\知识库\\index.json": {
+        "present": true,
+        "bytes": 3682167,
+        "mtime_ns": 1795541157149583400,
+        "sha256": "fe56dc5427418a6c5a4d60cc16610e1920ea0fafa4ba42ce479c294e80f95f8b"
+      },
+      "F:\\开源掌机教程\\_工具脚本\\taspipe\\游戏包\\知识库\\corpus_map.json": {
+        "present": true,
+        "bytes": 26962,
+        "mtime_ns": 1795541147914463200,
+        "sha256": "eb8b727a832dbf1aec7555e0bbe431193c6a1d46a0318102095c58e425c1b77d"
+      },
+      "F:\\开源掌机教程\\_工具脚本\\taspipe\\游戏包\\来源库\\sources.json": {
+        "present": true,
+        "bytes": 62632,
+        "mtime_ns": 1795542085993128300,
+        "sha256": "0407abdb9b10f4b1dcb77b7592b1858fc117007486fbe24669bde98dfdb60614"
+      },
+      "F:\\开源掌机教程\\_工具脚本\\taspipe\\游戏包\\来源库\\检索台账.json": {
+        "present": true,
+        "bytes": 3188,
+        "mtime_ns": 1795540789186842400,
+        "sha256": "95a6079f9927de0fb7b0fce9dd4c313e0cd55daeec33342364a4fc18d736f1b6"
+      },
+      "F:\\开源掌机教程\\_工具脚本\\taspipe\\游戏包\\知识库\\query_log.jsonl": {
+        "present": true,
+        "bytes": 1044,
+        "mtime_ns": 1795463914085772600,
+        "sha256": "f73c57ae2080d8f525bdd5cdfb52b0a50f1cc5cf0cca5b89c4003b803602a91d"
+      },
+      "F:\\开源掌机教程\\_工具脚本\\taspipe\\游戏包\\电竞事实库\\facts_v1.db": {
+        "present": true,
+        "bytes": 2056192,
+        "mtime_ns": 1795464415053952300,
+        "sha256": "32f029f41629cb3774e701a705d521aa49550c76deabbc0affc760bec264d5c1"
+      },
+      "F:\\开源掌机教程\\选题决策层\\kb快照\\index.json": {
+        "present": true,
+        "bytes": 3607419,
+        "mtime_ns": 1795533626202927000,
+        "sha256": "2a93e76d5876c1181e7784a20eca0f4d84888d0292d281fc6eea3564090b9260"
+      },
+      "F:\\开源掌机教程\\_工具脚本\\taspipe\\游戏包\\知识库\\index_hybrid.json": {
+        "present": true,
+        "bytes": 3719641,
+        "mtime_ns": 1795541157731106500,
+        "sha256": "fa3c4bfe7788db629a98d7529289baf2e325a98d6fea470b4ba32071c7e4cce8"
+      },
+      "F:\\开源掌机教程\\_工具脚本\\taspipe\\游戏包\\知识库\\terms_hybrid.json": {
+        "present": false
+      }
+    },
+    "real_state_after": {
+      "F:\\开源掌机教程\\_工具脚本\\taspipe\\游戏包\\知识库\\index.json": {
+        "present": true,
+        "bytes": 3682167,
+        "mtime_ns": 1795541157149583400,
+        "sha256": "fe56dc5427418a6c5a4d60cc16610e1920ea0fafa4ba42ce479c294e80f95f8b"
+      },
+      "F:\\开源掌机教程\\_工具脚本\\taspipe\\游戏包\\知识库\\corpus_map.json": {
+        "present": true,
+        "bytes": 26962,
+        "mtime_ns": 1795541147914463200,
+        "sha256": "eb8b727a832dbf1aec7555e0bbe431193c6a1d46a0318102095c58e425c1b77d"
+      },
+      "F:\\开源掌机教程\\_工具脚本\\taspipe\\游戏包\\来源库\\sources.json": {
+        "present": true,
+        "bytes": 62632,
+        "mtime_ns": 1795542085993128300,
+        "sha256": "0407abdb9b10f4b1dcb77b7592b1858fc117007486fbe24669bde98dfdb60614"
+      },
+      "F:\\开源掌机教程\\_工具脚本\\taspipe\\游戏包\\来源库\\检索台账.json": {
+        "present": true,
+        "bytes": 3188,
+        "mtime_ns": 1795540789186842400,
+        "sha256": "95a6079f9927de0fb7b0fce9dd4c313e0cd55daeec33342364a4fc18d736f1b6"
+      },
+      "F:\\开源掌机教程\\_工具脚本\\taspipe\\游戏包\\知识库\\query_log.jsonl": {
+        "present": true,
+        "bytes": 1044,
+        "mtime_ns": 1795463914085772600,
+        "sha256": "f73c57ae2080d8f525bdd5cdfb52b0a50f1cc5cf0cca5b89c4003b803602a91d"
+      },
+      "F:\\开源掌机教程\\_工具脚本\\taspipe\\游戏包\\电竞事实库\\facts_v1.db": {
+        "present": true,
+        "bytes": 2056192,
+        "mtime_ns": 1795464415053952300,
+        "sha256": "32f029f41629cb3774e701a705d521aa49550c76deabbc0affc760bec264d5c1"
+      },
+      "F:\\开源掌机教程\\选题决策层\\kb快照\\index.json": {
+        "present": true,
+        "bytes": 3607419,
+        "mtime_ns": 1795533626202927000,
+        "sha256": "2a93e76d5876c1181e7784a20eca0f4d84888d0292d281fc6eea3564090b9260"
+      },
+      "F:\\开源掌机教程\\_工具脚本\\taspipe\\游戏包\\知识库\\index_hybrid.json": {
+        "present": true,
+        "bytes": 3719641,
+        "mtime_ns": 1795541157731106500,
+        "sha256": "fa3c4bfe7788db629a98d7529289baf2e325a98d6fea470b4ba32071c7e4cce8"
+      },
+      "F:\\开源掌机教程\\_工具脚本\\taspipe\\游戏包\\知识库\\terms_hybrid.json": {
+        "present": false
+      }
+    }
+  },
+  "remaining": [
+    "官方说明书级玩法语料未建立",
+    "整款游戏覆盖未建立",
+    "PAL-B 跨版等价未验证",
+    "生产 DOMAINS/corpus map/index 未接线"
+  ]
+}

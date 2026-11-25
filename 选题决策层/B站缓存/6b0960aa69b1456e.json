@@ -1,0 +1,43 @@
+{
+ "keyword": "剑星",
+ "status": "ok",
+ "ts": "2026-11-19T05:39:11Z",
+ "ts_epoch": 1795066751.767906,
+ "supply_num_results": 1000,
+ "n_videos": 20,
+ "relevant_count": 19,
+ "core_hit_rate": 0.95,
+ "full_hit_rate": 0.95,
+ "play_median": 48011.0,
+ "relevant_play_median": 49491,
+ "play_mean": 139060.6,
+ "play_max": 1274810,
+ "play_total": 2642152,
+ "engagement_median": 0.0195,
+ "recent_count": 6,
+ "recent_play_median": 9559.5,
+ "top3": [
+  {
+   "bvid": "BV12NPMzdEFQ",
+   "title": "【剑星】4K一周目、困难难度、无伤、全支线、全收集攻略解说【全集】",
+   "author": "MaDaLaoShi",
+   "play": 1274810,
+   "pubdate": "2026-03-01"
+  },
+  {
+   "bvid": "BV1Q3K9zKEDw",
+   "title": "韩式擦边！若隐若现！吐槽金大师艺术之作《剑星》！",
+   "author": "XDC城北徐公",
+   "play": 318496,
+   "pubdate": "2025-06-26"
+  },
+  {
+   "bvid": "BV1SKMzzcEMq",
+   "title": "【游戏杂谈】扒光伊芙的衣服，《剑星》还剩下什么？",
+   "author": "老猫打游戏",
+   "play": 255878,
+   "pubdate": "2025-06-13"
+  }
+ ],
+ "cache_hit": false
+}

@@ -1,0 +1,480 @@
+{
+  "schema_version": 1,
+  "kind": "statejump_showcase",
+  "game_id": "megaman1_nes_us",
+  "game_title": "Mega Man (NES, USA, 1987 Capcom)",
+  "platform": "NES",
+  "core": "NesHawk",
+  "system": "NES",
+  "rom": "F:/taspipe_scratch/mm_showcase/megaman1_ntsc_hd.nes",
+  "rom_sha1": "2F88381557339A14C20428455F6991C1EB902C99",
+  "bizhawk": "F:/taspipe_scratch/mm_showcase/bizhawk",
+  "base_state": "F:/taspipe_scratch/mm_showcase/base.state",
+  "fps": 60.0988,
+  "template": "fc_tianma_mask",
+  "catalog": {
+    "status": "complete",
+    "expected_total": 8,
+    "sources": [
+      {
+        "source_id": "local_project_manual",
+        "url": null,
+        "status": "verified_read",
+        "verified_date": "2026-11-18",
+        "element_ids": [
+          "mega_buster",
+          "rolling_cutter",
+          "ice_slasher",
+          "hyper_bomb",
+          "fire_storm",
+          "thunder_beam",
+          "super_arm",
+          "magnet_beam"
+        ],
+        "note": "§22–23 逐帧采集实测；§23.1（2026-11-20）复测撤回旧资源门控判定，三 ROM 均正常入关。"
+      },
+      {
+        "source_id": "datacrystal",
+        "url": "https://datacrystal.tcrf.net/wiki/Mega_Man_(NES)/RAM_map",
+        "status": "snippet_only",
+        "verified_date": "2026-11-18",
+        "element_ids": [
+          "mega_buster",
+          "rolling_cutter",
+          "ice_slasher",
+          "hyper_bomb",
+          "fire_storm",
+          "thunder_beam",
+          "super_arm",
+          "magnet_beam"
+        ],
+        "note": "只有搜索快照，未全文核对。"
+      },
+      {
+        "source_id": "nesmaps",
+        "url": "https://nesmaps.com/maps/MegaMan/MegaMan.html",
+        "status": "snippet_only",
+        "verified_date": "2026-11-18",
+        "element_ids": [
+          "mega_buster",
+          "rolling_cutter",
+          "ice_slasher",
+          "hyper_bomb",
+          "fire_storm",
+          "thunder_beam",
+          "super_arm",
+          "magnet_beam"
+        ],
+        "note": "只有搜索快照。"
+      },
+      {
+        "source_id": "strategywiki",
+        "url": "https://strategywiki.org/wiki/Mega_Man/Weapons",
+        "status": "unreachable",
+        "verified_date": "2026-11-18",
+        "element_ids": [
+          "mega_buster",
+          "rolling_cutter",
+          "ice_slasher",
+          "hyper_bomb",
+          "fire_storm",
+          "thunder_beam",
+          "super_arm",
+          "magnet_beam"
+        ],
+        "note": "本机直连 403，只有搜索快照。"
+      }
+    ],
+    "coverage_note": "敌兵效果重制版（reel9）：8/8 全部带敌兵受击/受效画面。mega_buster/ice_slasher=TAS 词元从 515M_inner .fcm 原样提取（走廊打飞行兵 f8120 起、Fire Man Boss 房 f19700 起），反例=剥 B 帧；rolling_cutter/hyper_bomb/fire_storm/magnet_beam=reel8c 已验证配方照抄（通用平地房打右侧石台梅特）；thunder_beam=water_fx 房 t49 配方、super_arm=carry2 持块投掷（t44 实证块飞行+白闪）。t56/bubble.state 暂停中取态导致玩家隐身已证伪（§49）、w1fire 方格房标定胜出背景瓦片假签名（敌人漂移类，11-24 逐像素复盘）已双双撤回。cache 到 delivery.status 见各元素 note 与 reel9 产物报告。"
+  },
+  "elements": [
+    {
+      "element_id": "mega_buster",
+      "label": "Mega Buster (P)",
+      "kind": "weapon",
+      "base_state": "F:/taspipe_scratch/mm_nav/t56/guts.state",
+      "trigger": {
+        "macro": ",,,,,,Right,Right,Right,Right,Right,Right,B,,Right,Right,Right,Right,Right,Right,Right,Right,,Right,Right,Right,Right,Right,Right,Right,Right,,Right,Right,Right,Right,Right,Right,Right,,Right,Right,Right,Right,Right,Right,Right,,Right,Right,Right,Right,Right,Right,Right,,Right,Right,Right,Right,Right,Right,Right,,Right,Right,Right,Right,Right,Right,Right,,Right,Right,Right,Right,Right,Right,Right,B,Right,Right,Right,Right,Right,Right,Right,,Right,Right,Right,Right,Right,Right,Right,,Right,Right,Right,Right,Right,Right,Right,,Right,Right,Right,Right,Right,Right,Right,,Right,Right,Right,Right,Right,Right,Right,,Right,Right,Right,Right,Right,Right,Right,,Right,Right,Right,Right,Right,Right,Right,,Right,Right,Right,Right,Right,B,Right,Right,Right,Right,Right,Right,Right,,Right,Right,Right,Right,Right,Right,Right,,Right,Right,Right,Right,Right,Right,Right,,Right,Right,Right,Right,Right,Right,Right,,Right,Right,Right,Right,Right,Right,Right,,Right,Right,Right,Right,Right,Right,Right,,Right,Right,Right,Right,Right,Right,Right,,Right,Right,Right,Right,Right,B,B,B,B,B,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,",
+        "extra": 0,
+        "patches": []
+      },
+      "detection": {
+        "frame": 27,
+        "success_checks": [
+          {
+            "check_id": "mega_buster_visual_sig",
+            "plugin_id": "frame_region_color_fraction",
+            "params": {
+              "region": [
+                0.602,
+                0.554,
+                0.695,
+                0.696
+              ],
+              "rgb": [
+                254,
+                254,
+                254
+              ],
+              "tol": 26,
+              "min_fraction": 0.21
+            },
+            "required": true
+          }
+        ]
+      },
+      "negative_control": {
+        "macro": ",,,,,,Right,Right,Right,Right,Right,Right,,,Right,Right,Right,Right,Right,Right,Right,Right,,Right,Right,Right,Right,Right,Right,Right,Right,,Right,Right,Right,Right,Right,Right,Right,,Right,Right,Right,Right,Right,Right,Right,,Right,Right,Right,Right,Right,Right,Right,,Right,Right,Right,Right,Right,Right,Right,,Right,Right,Right,Right,Right,Right,Right,,Right,Right,Right,Right,Right,Right,Right,,Right,Right,Right,Right,Right,Right,Right,,Right,Right,Right,Right,Right,Right,Right,,Right,Right,Right,Right,Right,Right,Right,,Right,Right,Right,Right,Right,Right,Right,,Right,Right,Right,Right,Right,Right,Right,,Right,Right,Right,Right,Right,Right,Right,,Right,Right,Right,Right,Right,Right,Right,,Right,Right,Right,Right,Right,,Right,Right,Right,Right,Right,Right,Right,,Right,Right,Right,Right,Right,Right,Right,,Right,Right,Right,Right,Right,Right,Right,,Right,Right,Right,Right,Right,Right,Right,,Right,Right,Right,Right,Right,Right,Right,,Right,Right,Right,Right,Right,Right,Right,,Right,Right,Right,Right,Right,Right,Right,,Right,Right,Right,Right,Right,,,,,,,,,,,,,,,,,,,,,,,,,,,,",
+        "patches": []
+      },
+      "note": "TAS 实录（bisqwit 515M）：W1 前走廊 f8120 起原样词元，普通弹平射飞行敌兵，白色弹着火花+击杀（f8196-8200 实证）。cur=0/owned=128 由 t56 RAM 打印佐证。反例=同词元剥 B。"
+    },
+    {
+      "element_id": "rolling_cutter",
+      "label": "Rolling Cutter (C)",
+      "kind": "weapon",
+      "base_state": null,
+      "trigger": {
+        "macro": "Start,Start,Start,Start,Start,Start,Start,Start,,,,,,,,,,,,,,,,,,,,,,,Down,Down,Down,Down,,,,,,,Down,Down,Down,Down,,,,,,,Down,Down,Down,Down,,,,,,,Down,Down,Down,Down,,,,,,,Down,Down,Down,Down,,,,,,,Start,Start,Start,Start,Start,Start,Start,Start,,,,,,,,,,,,,,,,,,,,,,,,,B,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,",
+        "extra": 0,
+        "patches": [
+          {
+            "addr": 93,
+            "value": 255
+          }
+        ]
+      },
+      "detection": {
+        "frame": 132,
+        "success_checks": [
+          {
+            "check_id": "rolling_cutter_visual_sig",
+            "plugin_id": "frame_region_color_fraction",
+            "params": {
+              "region": [
+                0.668,
+                0.625,
+                0.734,
+                0.714
+              ],
+              "rgb": [
+                254,
+                254,
+                254
+              ],
+              "tol": 26,
+              "min_fraction": 0.148
+            },
+            "required": true
+          }
+        ]
+      },
+      "negative_control": {
+        "macro": "Start,Start,Start,Start,Start,Start,Start,Start,,,,,,,,,,,,,,,,,,,,,,,Down,Down,Down,Down,,,,,,,Down,Down,Down,Down,,,,,,,Down,Down,Down,Down,,,,,,,Down,Down,Down,Down,,,,,,,Down,Down,Down,Down,,,,,,,Start,Start,Start,Start,Start,Start,Start,Start,,,,,,,,,,,,,,,,,,,,,,,,,,",
+        "patches": [
+          {
+            "addr": 93,
+            "value": 255
+          }
+        ]
+      },
+      "note": "Guts 关橙色岩房（base.state）：菜单装备 C 后回旋剪刀飞向右侧石台梅特，命中白闪（reel8c 同配方 f132 已验证）。反例=同前缀剥 B。"
+    },
+    {
+      "element_id": "ice_slasher",
+      "label": "Ice Slasher (I)",
+      "kind": "weapon",
+      "base_state": "F:/taspipe_scratch/mm_nav/t62/fireman.state",
+      "trigger": {
+        "macro": "Start,,,,,,,,,,,,Up,Start,,,,,,,,,,,,,,,,,,,,,,,,,,Right,A+B+Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,A+Right,A+B+Right,A+Right,A+Right,A+Right,A+Right,A+Right,A+Right,A+Right,A+Right,A+Right,A+Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,B+Right,Right,Right,Right,Right,A+Right,Right,Right,Select+Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Select+Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,A+Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,,,,Right,Right,Right,Right,Right,Right,Right,A+B+Right,Right,Right,Right,Right,Right,Right,Left,Left,Left,Left,Left,Left,Left,Left,Left,Left,Left,Left,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,B+Right,,,,,,A+Left,A+Left,Left,Left,Left,Left,Left,Left,Left,Left,Left,Left,Left,Left,Left,Left,B+Right,Left,Left,Left,Left,Left,Left,Left,Left,Left,Left,Left,Left,Left,Left,Left,Left,Left,Left,Left,Left,Left,Left,Left,Left,Left,Left,Left,Left,Left,Left,Left,Left,Left,Left,Left,Left,Left,Left,Left,Left,Left,Left,Left,Left,Left,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,",
+        "extra": 0,
+        "patches": []
+      },
+      "detection": {
+        "frame": 210,
+        "success_checks": [
+          {
+            "check_id": "ice_slasher_visual_sig",
+            "plugin_id": "frame_region_color_fraction",
+            "params": {
+              "region": [
+                0.559,
+                0.701,
+                0.664,
+                0.826
+              ],
+              "rgb": [
+                254,
+                254,
+                254
+              ],
+              "tol": 26,
+              "min_fraction": 0.237
+            },
+            "required": true
+          }
+        ]
+      },
+      "negative_control": {
+        "macro": "Start,,,,,,,,,,,,Up,Start,,,,,,,,,,,,,,,,,,,,,,,,,,Right,A+Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,A+Right,A+Right,A+Right,A+Right,A+Right,A+Right,A+Right,A+Right,A+Right,A+Right,A+Right,A+Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,A+Right,Right,Right,Select+Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Select+Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,A+Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,,,,Right,Right,Right,Right,Right,Right,Right,A+Right,Right,Right,Right,Right,Right,Right,Left,Left,Left,Left,Left,Left,Left,Left,Left,Left,Left,Left,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,,,,,,A+Left,A+Left,Left,Left,Left,Left,Left,Left,Left,Left,Left,Left,Left,Left,Left,Left,Right,Left,Left,Left,Left,Left,Left,Left,Left,Left,Left,Left,Left,Left,Left,Left,Left,Left,Left,Left,Left,Left,Left,Left,Left,Left,Left,Left,Left,Left,Left,Left,Left,Left,Left,Left,Left,Left,Left,Left,Left,Left,Left,Left,Left,Left,",
+        "patches": []
+      },
+      "note": "Fire Man Boss 房（TAS f19700 取态，战斗进行中）：TAS 原样词元 f19700-19990，冰弹连射命中 Boss 白闪（span 全景表 11-23 已核）。反例=同词元剥 B（走位不开火）。"
+    },
+    {
+      "element_id": "hyper_bomb",
+      "label": "Hyper Bomb (B)",
+      "kind": "weapon",
+      "base_state": null,
+      "trigger": {
+        "macro": "Start,Start,Start,Start,Start,Start,Start,Start,,,,,,,,,,,,,,,,,,,,,,,Down,Down,Down,Down,,,,,,,Start,Start,Start,Start,Start,Start,Start,Start,,,,,,,,,,,,,,,,,,,,,,,,,B,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,",
+        "extra": 200,
+        "patches": [
+          {
+            "addr": 93,
+            "value": 255
+          }
+        ]
+      },
+      "detection": {
+        "frame": 229,
+        "success_checks": [
+          {
+            "check_id": "hyper_bomb_visual_sig",
+            "plugin_id": "frame_region_color_fraction",
+            "params": {
+              "region": [
+                0.637,
+                0.732,
+                0.766,
+                0.879
+              ],
+              "rgb": [
+                254,
+                254,
+                254
+              ],
+              "tol": 26,
+              "min_fraction": 0.293
+            },
+            "required": true
+          }
+        ]
+      },
+      "negative_control": {
+        "macro": "Start,Start,Start,Start,Start,Start,Start,Start,,,,,,,,,,,,,,,,,,,,,,,Down,Down,Down,Down,,,,,,,Start,Start,Start,Start,Start,Start,Start,Start,,,,,,,,,,,,,,,,,,,,,,,,",
+        "patches": [
+          {
+            "addr": 93,
+            "value": 255
+          }
+        ]
+      },
+      "note": "Guts 关橙色岩房（base.state）：菜单装备 B（row1）后抛弹炸右侧石台梅特，弧线抛掷+落地大爆炸（reel8c 同配方 f239 白爆已验证）。反例=同前缀剥 B。"
+    },
+    {
+      "element_id": "fire_storm",
+      "label": "Fire Storm (F)",
+      "kind": "weapon",
+      "base_state": null,
+      "trigger": {
+        "macro": "Start,Start,Start,Start,Start,Start,Start,Start,,,,,,,,,,,,,,,,,,,,,,,Down,Down,Down,Down,,,,,,,Down,Down,Down,Down,,,,,,,Down,Down,Down,Down,,,,,,,Down,Down,Down,Down,,,,,,,Down,Down,Down,Down,,,,,,,Down,Down,Down,Down,,,,,,,Start,Start,Start,Start,Start,Start,Start,Start,,,,,,,,,,,,,,,,,,,,,,,,,B,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,",
+        "extra": 25,
+        "patches": [
+          {
+            "addr": 93,
+            "value": 255
+          }
+        ]
+      },
+      "detection": {
+        "frame": 143,
+        "success_checks": [
+          {
+            "check_id": "fire_storm_visual_sig",
+            "plugin_id": "frame_region_color_fraction",
+            "params": {
+              "region": [
+                0.844,
+                0.723,
+                0.918,
+                0.804
+              ],
+              "rgb": [
+                181,
+                50,
+                32
+              ],
+              "tol": 26,
+              "min_fraction": 0.14
+            },
+            "required": true
+          }
+        ]
+      },
+      "negative_control": {
+        "macro": "Start,Start,Start,Start,Start,Start,Start,Start,,,,,,,,,,,,,,,,,,,,,,,Down,Down,Down,Down,,,,,,,Down,Down,Down,Down,,,,,,,Down,Down,Down,Down,,,,,,,Down,Down,Down,Down,,,,,,,Down,Down,Down,Down,,,,,,,Down,Down,Down,Down,,,,,,,Start,Start,Start,Start,Start,Start,Start,Start,,,,,,,,,,,,,,,,,,,,,,,,",
+        "patches": [
+          {
+            "addr": 93,
+            "value": 255
+          }
+        ]
+      },
+      "note": "Guts 关橙色岩房（base.state）：菜单装备 F 后火盾环绕，撞右侧石台梅特连环爆炸（reel8c 同配方：爆炸暗红 min0.14+火盾橄榄色双签已验证）。反例=同前缀剥 B。"
+    },
+    {
+      "element_id": "thunder_beam",
+      "label": "Thunder Beam (E)",
+      "kind": "weapon",
+      "base_state": "F:/taspipe_scratch/mm_nav/t48/water_fx.state",
+      "trigger": {
+        "macro": "Start,Start,Start,Start,Start,Start,Start,Start,,,,,,,,,,,,,,,,,,,,,,,Down,Down,Down,Down,,,,,,,Down,Down,Down,Down,,,,,,,Start,Start,Start,Start,Start,Start,Start,Start,,,,,,,,,,,,,,,,,,,,,,,,,A,A,A,Left,Left,Left,Left+B,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,",
+        "extra": 0,
+        "patches": [
+          {
+            "addr": 93,
+            "value": 255
+          }
+        ]
+      },
+      "detection": {
+        "frame": 105,
+        "success_checks": [
+          {
+            "check_id": "thunder_beam_visual_sig",
+            "plugin_id": "frame_region_color_fraction",
+            "params": {
+              "region": [
+                0.348,
+                0.554,
+                0.414,
+                0.643
+              ],
+              "rgb": [
+                254,
+                254,
+                254
+              ],
+              "tol": 26,
+              "min_fraction": 0.07
+            },
+            "required": true
+          }
+        ]
+      },
+      "negative_control": {
+        "macro": "Start,Start,Start,Start,Start,Start,Start,Start,,,,,,,,,,,,,,,,,,,,,,,Down,Down,Down,Down,,,,,,,Down,Down,Down,Down,,,,,,,Start,Start,Start,Start,Start,Start,Start,Start,,,,,,,,,,,,,,,,,,,,,,,,,A,A,A,Left,Left,Left,Left,",
+        "patches": [
+          {
+            "addr": 93,
+            "value": 255
+          }
+        ]
+      },
+      "note": "water_fx 房（TAS f52118 取景+Right×3+B 已清场）：菜单装备 E 后按 t49 配方左射三向雷，t004 命中 Shower 全白闪、t006 复绿存活。暂停菜单期间 Shower 不动，配方时机保持。"
+    },
+    {
+      "element_id": "super_arm",
+      "label": "Super Arm (G)",
+      "kind": "weapon",
+      "base_state": "F:/taspipe_scratch/mm_nav/t41/carry2.state",
+      "trigger": {
+        "macro": "Right,Right,Right,B,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,",
+        "extra": 0,
+        "patches": []
+      },
+      "detection": {
+        "frame": 42,
+        "success_checks": [
+          {
+            "check_id": "super_arm_visual_sig",
+            "plugin_id": "frame_region_color_fraction",
+            "params": {
+              "region": [
+                0.555,
+                0.46,
+                0.684,
+                0.598
+              ],
+              "rgb": [
+                21,
+                95,
+                218
+              ],
+              "tol": 26,
+              "min_fraction": 0.335
+            },
+            "required": true
+          }
+        ]
+      },
+      "negative_control": {
+        "macro": "Right,Right,Right,,",
+        "patches": []
+      },
+      "note": "carry2=TAS f52118 持块状态（cur=6 SuperArm 已装备、调色板原装）：Right×3+B 把金块投向 Shower，t44 实证块飞行 t002-004 白闪命中、Shower 存活。反例=只走位不投。检测占位。"
+    },
+    {
+      "element_id": "magnet_beam",
+      "label": "Magnet Beam (M)",
+      "kind": "weapon_utility",
+      "base_state": null,
+      "trigger": {
+        "macro": "Start,Start,Start,Start,Start,Start,Start,Start,,,,,,,,,,,,,,,,,,,,,,,Down,Down,Down,Down,,,,,,,Down,Down,Down,Down,,,,,,,Down,Down,Down,Down,,,,,,,Down,Down,Down,Down,,,,,,,Down,Down,Down,Down,,,,,,,Down,Down,Down,Down,,,,,,,Down,Down,Down,Down,,,,,,,Start,Start,Start,Start,Start,Start,Start,Start,,,,,,,,,,,,,,,,,,,,,,,,,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,,,,,,,,,,,,,,,,,,,,",
+        "extra": 25,
+        "patches": [
+          {
+            "addr": 93,
+            "value": 255
+          }
+        ]
+      },
+      "detection": {
+        "frame": 156,
+        "success_checks": [
+          {
+            "check_id": "magnet_beam_visual_sig",
+            "plugin_id": "frame_region_color_fraction",
+            "params": {
+              "region": [
+                0.609,
+                0.746,
+                0.703,
+                0.799
+              ],
+              "rgb": [
+                72,
+                206,
+                223
+              ],
+              "tol": 26,
+              "min_fraction": 0.054
+            },
+            "required": true
+          }
+        ]
+      },
+      "negative_control": {
+        "macro": "Start,Start,Start,Start,Start,Start,Start,Start,,,,,,,,,,,,,,,,,,,,,,,Down,Down,Down,Down,,,,,,,Down,Down,Down,Down,,,,,,,Down,Down,Down,Down,,,,,,,Down,Down,Down,Down,,,,,,,Down,Down,Down,Down,,,,,,,Down,Down,Down,Down,,,,,,,Down,Down,Down,Down,,,,,,,Start,Start,Start,Start,Start,Start,Start,Start,,,,,,,,,,,,,,,,,,,,,,,,",
+        "patches": [
+          {
+            "addr": 93,
+            "value": 255
+          }
+        ]
+      },
+      "note": "辅助装置磁力光束平台；按住 B 16 帧延伸平台光束。 ｜2026-11-20 RAM 实证：owned=0x5D(位场,bit=菜单行)、current=0x5F；旧 addr95/能量补丁撤回(能量开局即28=no-op)；装备走菜单宏(调色板在装备事件加载)，反例=同装备不按 B。检测参数待 calibrate 实测回写。"
+    }
+  ],
+  "identity_note": "rom = megamanhd.nes 的副本（NesCartDB NES-NTSC 正规 dump，sha1 2f883815…）；2026-11-20 复测确认可正常入关实玩。网盘洛克人1.nes 为 PAL-B、mega_man_usa.nes 身份未钉死，均不用于本包。",
+  "ram_map_verified": {
+    "date": "2026-11-20",
+    "owned_flags": "0x5D 位场：bit1=B bit2=E bit3=G bit4=I bit5=C bit6=F bit7=M，bit0=P(不画行)；0xFF=全拥有（菜单 7 行亲看）",
+    "current_weapon": "0x5F：0=P 1=C 2=I 3=B 4=F 5=E 6=G 7=M（菜单逐行装备冻结 RAM 差分+装色亲看）",
+    "menu_row_order": "B E G I C F M P；光标起点 P，Down×k：B1 E2 G3 I4 C5 F6 M7",
+    "retracted": "addr95=武器编号（猜）；0x6B..0x71 能量补丁（开局即 28，no-op）；0x5D=all_stages_complete 单一语义（实为拥有位场）",
+    "palette_rule": "角色与弹体调色板在菜单装备事件加载；只写 0x5F 几何对颜色错 ⇒ 生产宏必须菜单装备",
+    "evidence": "F:/taspipe_scratch/mm_showcase/ramdiff/{sweep.json,w/weapon_probe.json,e/equip_table.json,f/,bit_*,g/,cut/}"
+  }
+}

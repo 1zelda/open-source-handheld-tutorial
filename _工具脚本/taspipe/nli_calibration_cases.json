@@ -1,0 +1,179 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-11-24",
+  "purpose": "人工构造的三分类影子校准；不代表真实问题的通过率。",
+  "model": {
+    "id": "MoritzLaurer/mDeBERTa-v3-base-mnli-xnli",
+    "revision": "8adb042d524ecd5c26d3e3ba0e3fbcf7e2d0864c"
+  },
+  "cases": [
+    {
+      "id": "Q01_E",
+      "source_chunk": "a3e5a236ca2e",
+      "premise": "必殺シュートは日本チームが12人ぶん、対戦チームが11チームぶん、合計23種類。",
+      "hypothesis": "必殺シュートは合計23種類である。",
+      "expected": "entailment"
+    },
+    {
+      "id": "Q01_C",
+      "source_chunk": "a3e5a236ca2e",
+      "premise": "必殺シュートは日本チームが12人ぶん、対戦チームが11チームぶん、合計23種類。",
+      "hypothesis": "必殺シュートは合計12種類である。",
+      "expected": "contradiction"
+    },
+    {
+      "id": "Q01_N",
+      "source_chunk": "a3e5a236ca2e",
+      "premise": "必殺シュートは日本チームが12人ぶん、対戦チームが11チームぶん、合計23種類。",
+      "hypothesis": "必殺シュートはすべてボタンひとつで出る。",
+      "expected": "neutral"
+    },
+    {
+      "id": "Q02_E",
+      "source_chunk": "f7f8e8316295",
+      "premise": "燕返｜つばめがえし｜ボールを持ったままジャンプするとすぐ出る｜ヨリツネだけが最初から使える。裏技を使えば全員使える。",
+      "hypothesis": "燕返を最初から使えるのはヨリツネだけである。",
+      "expected": "entailment"
+    },
+    {
+      "id": "Q02_C",
+      "source_chunk": "f7f8e8316295",
+      "premise": "燕返｜つばめがえし｜ボールを持ったままジャンプするとすぐ出る｜ヨリツネだけが最初から使える。裏技を使えば全員使える。",
+      "hypothesis": "燕返は最初から全員が使える。",
+      "expected": "contradiction"
+    },
+    {
+      "id": "Q02_N",
+      "source_chunk": "f7f8e8316295",
+      "premise": "燕返｜つばめがえし｜ボールを持ったままジャンプするとすぐ出る｜ヨリツネだけが最初から使える。裏技を使えば全員使える。",
+      "hypothesis": "燕返は走りながらでも同じ高さで出る。",
+      "expected": "neutral"
+    },
+    {
+      "id": "Q03_E",
+      "source_chunk": "42b773880ef0",
+      "premise": "ポーズの裏技はスタートで一時停止し、Aを3回、Bを1回、Aを3回、Bを1回、Aを7回押してからスタートで再開する。",
+      "hypothesis": "ポーズの裏技では最後にもう一度スタートを押す。",
+      "expected": "entailment"
+    },
+    {
+      "id": "Q03_C",
+      "source_chunk": "42b773880ef0",
+      "premise": "ポーズの裏技はスタートで一時停止し、Aを3回、Bを1回、Aを3回、Bを1回、Aを7回押してからスタートで再開する。",
+      "hypothesis": "ポーズの裏技は最後にセレクトを押して再開する。",
+      "expected": "contradiction"
+    },
+    {
+      "id": "Q03_N",
+      "source_chunk": "42b773880ef0",
+      "premise": "ポーズの裏技はスタートで一時停止し、Aを3回、Bを1回、Aを3回、Bを1回、Aを7回押してからスタートで再開する。",
+      "hypothesis": "ポーズの裏技は対戦相手にも同じ効果を及ぼす。",
+      "expected": "neutral"
+    },
+    {
+      "id": "Q04_E",
+      "source_chunk": "42b773880ef0",
+      "premise": "やさしい難易度では、味方も敵も必殺シュートを出せない。",
+      "hypothesis": "やさしい難易度では敵チームは必殺シュートを出せない。",
+      "expected": "entailment"
+    },
+    {
+      "id": "Q04_C",
+      "source_chunk": "42b773880ef0",
+      "premise": "やさしい難易度では、味方も敵も必殺シュートを出せない。",
+      "hypothesis": "やさしい難易度では敵チームだけは必殺シュートを出せる。",
+      "expected": "contradiction"
+    },
+    {
+      "id": "Q04_N",
+      "source_chunk": "42b773880ef0",
+      "premise": "やさしい難易度では、味方も敵も必殺シュートを出せない。",
+      "hypothesis": "やさしい難易度では得点が入りにくくなる。",
+      "expected": "neutral"
+    },
+    {
+      "id": "Q05_E",
+      "source_chunk": "42b773880ef0",
+      "premise": "1PはキャプテンのMFを固定操作する。控室の作戦会議でポジションを選べば、どの選手でもMFに替えられる。",
+      "hypothesis": "1Pは通常、キャプテンであるMFを操作する。",
+      "expected": "entailment"
+    },
+    {
+      "id": "Q05_C",
+      "source_chunk": "42b773880ef0",
+      "premise": "1PはキャプテンのMFを固定操作する。控室の作戦会議でポジションを選べば、どの選手でもMFに替えられる。",
+      "hypothesis": "1Pは通常、GKを固定操作する。",
+      "expected": "contradiction"
+    },
+    {
+      "id": "Q05_N",
+      "source_chunk": "42b773880ef0",
+      "premise": "1PはキャプテンのMFを固定操作する。控室の作戦会議でポジションを選べば、どの選手でもMFに替えられる。",
+      "hypothesis": "2Pは初期設定ではDFを操作する。",
+      "expected": "neutral"
+    },
+    {
+      "id": "Q10_E",
+      "source_chunk": "51fcabcc7db8",
+      "premise": "3対3のチームバトルはROM側の制限であり、4つの入力経路を試しても1対1にはできなかった。",
+      "hypothesis": "この素材のチームバトルはROM側の制限で1対1に変更できない。",
+      "expected": "entailment"
+    },
+    {
+      "id": "Q10_C",
+      "source_chunk": "51fcabcc7db8",
+      "premise": "3対3のチームバトルはROM側の制限であり、4つの入力経路を試しても1対1にはできなかった。",
+      "hypothesis": "この素材は設定を変えれば1対1で遊べる。",
+      "expected": "contradiction"
+    },
+    {
+      "id": "Q10_N",
+      "source_chunk": "51fcabcc7db8",
+      "premise": "3対3のチームバトルはROM側の制限であり、4つの入力経路を試しても1対1にはできなかった。",
+      "hypothesis": "味方CPUは難易度が上がると連携攻撃を増やす。",
+      "expected": "neutral"
+    },
+    {
+      "id": "NKD_E",
+      "source_chunk": "2af68bb8a7ab",
+      "premise": "熱血格闘伝説の名前入力は5文字以内である。",
+      "hypothesis": "熱血格闘伝説で付けられる主人公の名前は5文字までである。",
+      "expected": "entailment"
+    },
+    {
+      "id": "NKD_C",
+      "source_chunk": "2af68bb8a7ab",
+      "premise": "熱血格闘伝説の名前入力は5文字以内である。",
+      "hypothesis": "熱血格闘伝説で付けられる主人公の名前は10文字までである。",
+      "expected": "contradiction"
+    },
+    {
+      "id": "NKD_N",
+      "source_chunk": "2af68bb8a7ab",
+      "premise": "熱血格闘伝説の名前入力は5文字以内である。",
+      "hypothesis": "熱血格闘伝説では血液型によって体力が変わる。",
+      "expected": "neutral"
+    },
+    {
+      "id": "ASW_E",
+      "source_chunk": "15d2dbeae3d6",
+      "premise": "ファミコン版『熱血格闘伝説』の発売日は1992年12月23日で、プレイ人数は1人から4人である。",
+      "hypothesis": "ファミコン版『熱血格闘伝説』は4人まで遊べる。",
+      "expected": "entailment"
+    },
+    {
+      "id": "ASW_C",
+      "source_chunk": "15d2dbeae3d6",
+      "premise": "ファミコン版『熱血格闘伝説』の発売日は1992年12月23日で、プレイ人数は1人から4人である。",
+      "hypothesis": "ファミコン版『熱血格闘伝説』は2人までしか遊べない。",
+      "expected": "contradiction"
+    },
+    {
+      "id": "ASW_N",
+      "source_chunk": "15d2dbeae3d6",
+      "premise": "ファミコン版『熱血格闘伝説』の発売日は1992年12月23日で、プレイ人数は1人から4人である。",
+      "hypothesis": "ファミコン版『熱血格闘伝説』には通信対戦機能がある。",
+      "expected": "neutral"
+    }
+  ]
+}

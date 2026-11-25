@@ -1,0 +1,13 @@
+{
+  "schema_version": 2,
+  "domain": "megaman2_candidate",
+  "index_path": "知识库P1_20261118/megaman2_candidate_v2_manual_20261125/index.json",
+  "index_sha256": "864ce8e3724414a95f851fac669ac2fddaa0e8f4fe37e8116ab1f707247a3225",
+  "map_path": "知识库P1_20261118/megaman2_candidate_v2_manual_20261125/corpus_map.json",
+  "registry_path": "知识库P1_20261118/megaman2_candidate_v2_manual_20261125/sources.json",
+  "default_revision": "megaman2_nes_tasvideos_rockman2",
+  "manual_revision": "megaman2_nes_us_manual",
+  "frozen_questions": "知识库P1_20261118/megaman2_questions_frozen_v2_manual_20261125.json",
+  "frozen_at": "2026-11-25",
+  "production_route_wired": true
+}

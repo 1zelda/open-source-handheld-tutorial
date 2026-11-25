@@ -1,0 +1,379 @@
+{
+ "schema_version": 1,
+ "revisions": {
+  "nekketsu_soccer2_fc_jp": {
+   "game_id": "nekketsu_soccer2",
+   "platform": "NES",
+   "name": "くにおくんの熱血サッカーリーグ（FC 1993 日版原版，中文圈称热血足球3/联盟）"
+  },
+  "nekketsu_soccer2_fc_cn_hack": {
+   "game_id": "nekketsu_soccer2",
+   "platform": "NES",
+   "name": "热血足球联盟 CN 汉化/hack 族（jf 等，难度行与跳跃语义与日版不同）"
+  },
+  "nekketsu_soccer2_fc_unspecified": {
+   "game_id": "nekketsu_soccer2",
+   "platform": "NES",
+   "name": "中文文章只写『热血足球/联盟』未点名日版或汉化版（只作线索，用前须过身份门）"
+  },
+  "nekketsu_soccer2_multi": {
+   "game_id": "nekketsu_soccer2",
+   "platform": "NES",
+   "name": "我方跨版本实测与清单（必杀全清单 / honest gap / 真人捕获通路）"
+  },
+  "nekketsu_soccer_mobile": {
+   "game_id": "nekketsu_soccer_mobile",
+   "platform": "MOBILE",
+   "name": "ARC SYSTEM WORKS 授权手游《热血足球》（奥义槽/终结射门升级，与 FC 无关）"
+  },
+  "kof98um": {
+   "game_id": "kof98",
+   "platform": "ARCADE",
+   "name": "拳皇98 终极对决（UM）官方出招表体系"
+  },
+  "kof98eck": {
+   "game_id": "kof98",
+   "platform": "ARCADE",
+   "name": "拳皇98 Easy Combo Edition Hack（本地卡 sha1 c5947d19…，简化连招版）"
+  },
+  "arcade_hack_multi": {
+   "game_id": "multi",
+   "platform": "ARCADE",
+   "name": "街机改版总表（8200 款跨游戏 set 清单，不是单卡权威）"
+  },
+  "project_docs": {
+   "game_id": "multi",
+   "platform": "ANY",
+   "name": "本项目文档（闸门口径 / 生产路线 / 进度台账）"
+  },
+  "tooling": {
+   "game_id": "multi",
+   "platform": "ANY",
+   "name": "本地工具与代码入口（由生产代码直接消费，不进正文检索）"
+  }
+ },
+ "entries": [
+  {
+   "path": "_工具脚本/taspipe/游戏包/来源库/取证/setsumei_热血足球说明书扫描_20261118.md",
+   "source_id": "setsumei_cloudfree",
+   "revision": "nekketsu_soccer2_fc_jp",
+   "kind": "prose",
+   "authority": "authoritative",
+   "element_types": [
+    "说明书",
+    "攻略",
+    "基础档案"
+   ],
+   "note": "官方说明书扫描（日版原名くにおくんの熱血サッカーリーグ），日版规则的权威正文"
+  },
+  {
+   "path": "_工具脚本/taspipe/游戏包/来源库/取证/setsumei_热血足球说明书_编者中文对照_20261119.md",
+   "source_id": "setsumei_cloudfree",
+   "revision": "nekketsu_soccer2_fc_jp",
+   "kind": "prose",
+   "authority": "authoritative",
+   "element_types": [
+    "说明书",
+    "攻略",
+    "基础档案"
+   ],
+   "note": "编者中文对照（忠实译自上方官方说明书 setsumei_cloudfree，独立衍生件，日文原件字节未动）；权威性与原文同源。独立成件而非追加文末：日文主导件整份走 chunk_ja 硬标 lang=ja，追加中文会被误标 ja 吃日文豁免绕过中文话题锚关。★#23 裁定撤回索引（见 reason），译文留作参考"
+  },
+  {
+   "path": "_工具脚本/taspipe/游戏包/来源库/取证/urawaza_FC热血足球_20261118.md",
+   "source_id": "game_urawaza",
+   "revision": "nekketsu_soccer2_fc_jp",
+   "kind": "prose",
+   "authority": "reference_only",
+   "element_types": [
+    "彩蛋",
+    "隐藏要素",
+    "金手指"
+   ],
+   "note": "日文裏技站条目系统，但属二手；升 authoritative 须与说明书或我方实测交叉核对"
+  },
+  {
+   "path": "_工具脚本/taspipe/游戏包/来源库/取证/urawaza_FC热血足球_编者中文对照_20261119.md",
+   "source_id": "game_urawaza",
+   "revision": "nekketsu_soccer2_fc_jp",
+   "kind": "prose",
+   "authority": "reference_only",
+   "element_types": [
+    "彩蛋",
+    "隐藏要素",
+    "金手指"
+   ],
+   "note": "编者中文对照（译自二手裏技站 game_urawaza，独立衍生件，日文原件字节未动）；继承 reference_only，升 authoritative 须交叉核对。仅译全必杀秘技与 7 条指令表正文。★#23 裁定撤回索引（见 reason），译文留作参考"
+  },
+  {
+   "path": "_工具脚本/taspipe/游戏包/来源库/取证/1ang_热血足球联盟图文攻略_20261118.md",
+   "source_id": "1ang_com",
+   "revision": "nekketsu_soccer2_fc_jp",
+   "kind": "prose",
+   "authority": "reference_only",
+   "element_types": [
+    "攻略",
+    "必杀宏",
+    "基础档案"
+   ],
+   "note": "标题自称『热血足球3(热血足球联盟)』＝日版联盟；火光攻略镜像，二手图文，含大量站点导航噪声"
+  },
+  {
+   "path": "_工具脚本/taspipe/游戏包/来源库/取证/csdn_wangsitan_热血足球Bug记录_20261118.md",
+   "source_id": "csdn_wangsitan_bug",
+   "revision": "nekketsu_soccer2_fc_unspecified",
+   "kind": "prose",
+   "authority": "reference_only",
+   "element_types": [
+    "bug",
+    "攻略"
+   ],
+   "note": "含 RAM/阵型字节表（BD18 策略 / BD19 阵型 / pid·rid·team_id / 0004 按键掩码），但正文未点名日版或汉化版；用前须过身份门。页面混入 CSDN 侧栏推荐（单片机/开关电源等）噪声"
+  },
+  {
+   "path": "_工具脚本/taspipe/游戏包/来源库/取证/sohu_必杀最强小辫子_20261118.md",
+   "source_id": "sohu_game",
+   "revision": "nekketsu_soccer2_fc_unspecified",
+   "kind": "prose",
+   "authority": "reference_only",
+   "element_types": [
+    "必杀宏"
+   ],
+   "note": "小辫子（赖常）最强论与我方实测『燕返仅小辫子独有』方向一致，但未点名版本，属二手杂谈"
+  },
+  {
+   "path": "_工具脚本/taspipe/游戏包/来源库/取证/sohu_热血队队员必杀集锦_20261118.md",
+   "source_id": "sohu_game",
+   "revision": "nekketsu_soccer2_fc_unspecified",
+   "kind": "prose",
+   "authority": "reference_only",
+   "element_types": [
+    "必杀宏"
+   ],
+   "note": "标题写《热血足球联盟》但未点名日版/汉化版；逐队员必杀描述只作线索"
+  },
+  {
+   "path": "_工具脚本/taspipe/游戏包/来源库/取证/sohu_一直输球隐藏大结局_20261118.md",
+   "source_id": "sohu_game",
+   "revision": "nekketsu_soccer2_fc_unspecified",
+   "kind": "prose",
+   "authority": "reference_only",
+   "element_types": [
+    "隐藏要素",
+    "彩蛋"
+   ],
+   "note": "文中称《热血足球》并出现世界杯/16场70积分/12对手/难度选项，疑为初代（熱血高校ドッジボール部サッカー編）而非联盟，未核实；不得当联盟依据。作者自承情报来自百度搜"
+  },
+  {
+   "path": "_工具脚本/taspipe/游戏包/来源库/取证/tencentcloud_热血足球联盟杂谈_20261118.md",
+   "source_id": "tencent_cloud_dev",
+   "revision": "nekketsu_soccer2_fc_unspecified",
+   "kind": "prose",
+   "authority": "reference_only",
+   "element_types": [
+    "攻略",
+    "彩蛋"
+   ],
+   "note": "转载杂谈，怀旧向，无版本与帧数据"
+  },
+  {
+   "path": "_工具脚本/taspipe/游戏包/来源库/取证/xiaoji001_热血足球hack汉化版_20261118.md",
+   "source_id": "xiaoji001",
+   "revision": "nekketsu_soccer2_fc_cn_hack",
+   "kind": "prose",
+   "authority": "reference_only",
+   "element_types": [
+    "版本对照",
+    "攻略"
+   ],
+   "note": "hack/汉化版条目页，可用于版本对照，不含逐帧机制"
+  },
+  {
+   "path": "_工具脚本/taspipe/游戏包/来源库/取证/9game_热血足球技能攻略_20261118.md",
+   "source_id": "9game",
+   "revision": "nekketsu_soccer_mobile",
+   "kind": "prose",
+   "authority": "not_applicable",
+   "element_types": [
+    "攻略",
+    "必杀宏"
+   ],
+   "note": "★身份错配已抓出：正文是 ARC SYSTEM WORKS 授权手游《热血足球》（积攒奥义槽/满奥义跳+射/终结射门升级），不是 FC 联盟。原登记 games_hit=nekketsu_soccer2 + platforms=NES 属错配，已更正为手游；不得当 FC 必杀依据"
+  },
+  {
+   "path": "_工具脚本/taspipe/游戏包/来源库/取证/gamersky_kof98um全角色出招表_20261118.md",
+   "source_id": "gamersky_handbook",
+   "revision": "kof98um",
+   "kind": "prose",
+   "authority": "cross_version",
+   "element_types": [
+    "出招表",
+    "攻略"
+   ],
+   "note": "拳皇98UM 全角色出招表（53 页）。11-18 已结案：本地卡是 kof98eck（Easy Combo Edition Hack），这套 UM 官方指令表不是该卡的权威，只作跨版本参考"
+  },
+  {
+   "path": "_工具脚本/taspipe/游戏包/来源库/取证/quanjizhong_thread677_街机改版整合_20261118.md",
+   "source_id": "quanjizhong_top",
+   "revision": "arcade_hack_multi",
+   "kind": "table",
+   "authority": "reference_only",
+   "element_types": [
+    "身份",
+    "版本对照",
+    "攻略"
+   ],
+   "note": "8200 款改版 set 总表（set名 + 中文描述 + 英文描述），按行切块；查某 set 身份须先过本地 FBNeo setlist，本表只作候选与命名对照"
+  },
+  {
+   "path": "F:/tas_rig/docs/素材生产规范.md",
+   "source_id": "local_fbneo_rig",
+   "revision": "kof98eck",
+   "kind": "prose",
+   "authority": "authoritative",
+   "element_types": [
+    "必杀宏",
+    "出招表",
+    "视频验证"
+   ],
+   "note": "ECK 卡实测素材生产规范（站位 +0xba 唯一权威、AVI_DROP_MAX、1x 无中途掉帧等），我方实跑结论"
+  },
+  {
+   "path": "F:/工具链/fbneo/nightly/config/games/kof98eck.ini",
+   "source_id": "local_fbneo_setlist",
+   "revision": "kof98eck",
+   "kind": "table",
+   "authority": "authoritative",
+   "element_types": [
+    "身份",
+    "版本对照"
+   ],
+   "note": "本地 FBNeo 该 set 的配置首行＝身份权威（sources.resolve_identity 直接消费）"
+  },
+  {
+   "path": "F:/工具链/fbneo/nightly/config/fbneo64.roms.dat",
+   "source_id": "local_fbneo_setlist",
+   "revision": "kof98eck",
+   "kind": "table",
+   "authority": "authoritative",
+   "index": false,
+   "reason": "450KB 全量 setlist 由 sources.resolve_identity 按 ^<set>\\s*\\+ 精确查；切块进 BM25 只会稀释召回，身份查询走 identity 层不走知识库",
+   "element_types": [
+    "身份",
+    "版本对照"
+   ]
+  },
+  {
+   "path": "测试问题与闸门说明书.md",
+   "source_id": "local_project_manual",
+   "revision": "project_docs",
+   "kind": "prose",
+   "authority": "authoritative",
+   "note": "本项目实测口径与闸门目录（27 节），跨游戏通用"
+  },
+  {
+   "path": "_工具脚本/taspipe/要素盘点路线模板.md",
+   "source_id": "local_route_template",
+   "revision": "project_docs",
+   "kind": "prose",
+   "authority": "authoritative",
+   "note": "S0–S10 正确路线 + G0–G10 错误阀门 + 逐游戏填槽清单"
+  },
+  {
+   "path": "_工具脚本/taspipe/目标与实施路线.md",
+   "source_id": "local_goal_plan",
+   "revision": "project_docs",
+   "kind": "prose",
+   "authority": "authoritative",
+   "note": "T1–T4 进度与验收口径"
+  },
+  {
+   "path": "_工具脚本/taspipe/游戏包/热血足球联盟_必杀全清单.md",
+   "source_id": "local_soccer2_super_list",
+   "revision": "nekketsu_soccer2_multi",
+   "kind": "prose",
+   "authority": "authoritative",
+   "element_types": [
+    "必杀宏",
+    "出招表",
+    "隐藏要素"
+   ],
+   "note": "证据级必杀全清单（日版12+对手11=23，一角色一必杀须换人；燕返仅小辫子）"
+  },
+  {
+   "path": "_工具脚本/taspipe/游戏包/热血足球联盟_honest_gap_manifest.md",
+   "source_id": "local_soccer2_super_list",
+   "revision": "nekketsu_soccer2_multi",
+   "kind": "prose",
+   "authority": "authoritative",
+   "element_types": [
+    "必杀宏",
+    "bug"
+   ],
+   "note": "诚实缺口清单：哪些必杀尚未实测复现，不冒充已验证"
+  },
+  {
+   "path": "_工具脚本/taspipe/registry.py",
+   "source_id": "local_rom_sha1_index",
+   "revision": "tooling",
+   "kind": "code",
+   "authority": "authoritative",
+   "index": false,
+   "reason": "代码不是文献正文；本地 ROM sha1 索引由 registry.index_roms 直接消费",
+   "element_types": [
+    "身份",
+    "版本对照"
+   ]
+  },
+  {
+   "path": "_工具脚本/taspipe/acquire.py",
+   "source_id": "local_rom_sha1_index",
+   "revision": "tooling",
+   "kind": "code",
+   "authority": "authoritative",
+   "index": false,
+   "reason": "代码不是文献正文；三级 resolver（网盘→本地→外部门控）由生产路径直接调用",
+   "element_types": [
+    "身份",
+    "版本对照"
+   ]
+  },
+  {
+   "path": "_工具脚本/taspipe/retro_cheat_runner.py",
+   "source_id": "local_libretro_cht",
+   "revision": "tooling",
+   "kind": "code",
+   "authority": "authoritative",
+   "index": false,
+   "reason": "代码入口；.cht 金手指库本体在 libretro-database，按游戏精确查，不进 BM25",
+   "element_types": [
+    "金手指"
+   ]
+  },
+  {
+   "path": "_工具脚本/已验证代码库/nekketsu_soccer/soccer2_live_capture.py",
+   "source_id": "local_live_capture",
+   "revision": "nekketsu_soccer2_multi",
+   "kind": "code",
+   "authority": "authoritative",
+   "index": false,
+   "reason": "真人操作捕获通路是代码不是机制正文；键位与 Lua 口径已写进说明书 §26",
+   "element_types": [
+    "必杀宏"
+   ]
+  },
+  {
+   "path": "F:/tas_rig/rig.py",
+   "source_id": "local_fbneo_rig",
+   "revision": "kof98eck",
+   "kind": "code",
+   "authority": "authoritative",
+   "index": false,
+   "reason": "代码入口；ECK 实测结论已在同来源的 素材生产规范.md 里入索引",
+   "element_types": [
+    "必杀宏",
+    "视频验证"
+   ]
+  }
+ ]
+}

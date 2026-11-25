@@ -1,0 +1,154 @@
+{
+  "schema_version": "ram_calibration/1.0",
+  "game_id": "castlevania_aria_gba",
+  "note": "黄魂10/15/26/27/28/29固定受击路线末帧HP优势验证；只证明这些候选在该路线中最终HP高于空魂对照292，不自动判定具体机制或检测器。",
+  "profile": {
+    "rom": "F:/BaiduNetdiskDownload/rom/gba/恶魔城晓月圆舞曲.gba",
+    "rom_sha1": "40aab076a528f52e93260bb98d91a40039e0da02",
+    "bizhawk": "F:/开源掌机教程/02-模拟器库/BizHawk/BizHawk-2.11.1",
+    "isolated_slot": true,
+    "core": "mGBA",
+    "system": "GBA",
+    "domain": "EWRAM",
+    "state_package": {
+      "game_id": "castlevania_aria_gba",
+      "profile_id": "aria_us_40aab076",
+      "revision": "r20261125T145623"
+    },
+    "window": {
+      "start": 78429,
+      "length": 128
+    }
+  },
+  "base_state": "yellow_damage_route",
+  "macros": {
+    "yellow_damage": "Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,B,B,B,B,B,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,"
+  },
+  "matrix": {
+    "case_id": "yellow_soul_{value}_hp_advantage",
+    "values": [10, 15, 26, 27, 28, 29],
+    "template": {
+      "kind": "scenario",
+      "base_state": "yellow_damage_route",
+      "arms": [
+        {
+          "name": "yellow_{value}",
+          "steps": [
+            {
+              "macro": "-",
+              "extra": 0,
+              "patches": [
+                {
+                  "addr": 78431,
+                  "value": "{value}"
+                }
+              ],
+              "expect": [
+                {
+                  "addr": 78431,
+                  "value": "{value}"
+                },
+                {
+                  "addr": 78448,
+                  "width": 2,
+                  "value": 80
+                }
+              ],
+              "screen": {
+                "reference": "$base",
+                "relation": "equal"
+              }
+            },
+            {
+              "state": "$previous",
+              "macro": "@yellow_damage",
+              "extra": 88,
+              "capture_frames": 226,
+              "expect": [
+                {
+                  "addr": 78431,
+                  "value": "{value}"
+                },
+                {
+                  "addr": 78446,
+                  "width": 2,
+                  "op": ">",
+                  "value": 292
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "yellow0",
+          "steps": [
+            {
+              "macro": "-",
+              "extra": 0,
+              "patches": [
+                {
+                  "addr": 78431,
+                  "value": 0
+                }
+              ],
+              "expect": [
+                {
+                  "addr": 78431,
+                  "value": 0
+                },
+                {
+                  "addr": 78448,
+                  "width": 2,
+                  "value": 80
+                }
+              ],
+              "screen": {
+                "reference": "$base",
+                "relation": "equal"
+              }
+            },
+            {
+              "state": "$previous",
+              "macro": "@yellow_damage",
+              "extra": 88,
+              "capture_frames": 226,
+              "expect": [
+                {
+                  "addr": 78431,
+                  "value": 0
+                },
+                {
+                  "addr": 78446,
+                  "width": 2,
+                  "value": 292
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "comparisons": [
+        {
+          "left": "yellow_{value}",
+          "right": "yellow0",
+          "left_step": 1,
+          "right_step": 1,
+          "relation": "different",
+          "frames": [120, 164, 225]
+        }
+      ],
+      "claims": [
+        {
+          "addr": 78431,
+          "level": "gameplay",
+          "note": "固定受击路线后目标黄魂槽仍保持；正例只改该槽，负例改为0。"
+        },
+        {
+          "addr": 78446,
+          "level": "gameplay",
+          "note": "固定受击路线末帧当前HP严格高于空魂对照292；这是路线结果，不单独区分回血、减伤或行动变化。"
+        }
+      ]
+    }
+  }
+}

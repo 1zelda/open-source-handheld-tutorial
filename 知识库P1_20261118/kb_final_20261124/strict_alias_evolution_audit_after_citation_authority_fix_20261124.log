@@ -1,0 +1,21 @@
+{
+  "json": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261124\\strict_alias_evolution_audit_after_citation_authority_fix_20261124.json",
+  "md": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261124\\strict_alias_evolution_audit_after_citation_authority_fix_20261124.md",
+  "ok": true,
+  "v2": {
+    "旧strict_裸编号连坐": 22,
+    "临时strict_未知与已知编号全部不降级": 25,
+    "当前strict_来源别名资格": 21
+  },
+  "current_intercepted": [
+    "X03",
+    "X04",
+    "X05",
+    "X17",
+    "X19",
+    "X20",
+    "X22",
+    "X23",
+    "X30"
+  ]
+}

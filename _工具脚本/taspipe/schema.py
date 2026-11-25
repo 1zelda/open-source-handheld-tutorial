@@ -5,12 +5,96 @@
 所有记录带 schema_version；引用产物用内容指纹（sha256）。
 """
 import hashlib
+import json
 import os
 import re
+import zipfile
 from dataclasses import dataclass, field, asdict
 from enum import Enum
+from pathlib import Path
+
+
+def split_rom_spec(spec):
+    """把 `压缩.zip!内部条目` 拆成 (包路径, 条目名)；普通路径返回 (路径, None)。
+
+    ROM 池里大量文件是压缩包内的单条目，逐条寻址才能不改写原包又拿到明文件给模拟器。
+    只按最后一个 `.zip!` 切，条目名里再出现的 `!` 保持原样。
+    """
+    text = str(spec)
+    low = text.lower()
+    i = low.rfind(".zip!")
+    if i < 0:
+        return Path(spec), None
+    return Path(text[:i + 4]), text[i + 5:]
 
 SCHEMA_VERSION = 1
+
+SNES_CORE_IDENTITIES = {
+    "BSNES": {
+        "sync_type": "BizHawk.Emulation.Cores.Nintendo.SNES.LibsnesCore+SnesSyncSettings, BizHawk.Emulation.Cores",
+        "waterbox": "libsnes.wbx",
+    },
+    "BSNESv115+": {
+        "sync_type": "BizHawk.Emulation.Cores.Nintendo.BSNES.BsnesCore+SnesSyncSettings, BizHawk.Emulation.Cores",
+        "waterbox": "bsnes.wbx",
+    },
+    "Snes9x": {
+        "sync_type": "BizHawk.Emulation.Cores.Nintendo.SNES9X.Snes9x+SyncSettings, BizHawk.Emulation.Cores",
+        "waterbox": "snes9x.wbx",
+    },
+}
+
+
+def core_identity_expectation(system, core):
+    identity = SNES_CORE_IDENTITIES.get(core) if system == "SNES" else None
+    return dict(identity or {})
+
+
+def state_sync_settings(path):
+    with zipfile.ZipFile(path) as state:
+        names = {name.lower(): name for name in state.namelist()}
+        if "syncsettings.json" not in names:
+            return None
+        try:
+            value = json.loads(state.read(names["syncsettings.json"]))
+        except (ValueError, UnicodeError) as exc:
+            raise SchemaError(f"state SyncSettings.json is invalid: {exc}") from exc
+    if not isinstance(value, dict) or not isinstance(value.get("o"), dict):
+        raise SchemaError("state SyncSettings.json must contain an object under o")
+    sync_type = value["o"].get("$type")
+    if not isinstance(sync_type, str) or not sync_type or "+" not in sync_type or "," not in sync_type:
+        raise SchemaError("state SyncSettings.json has no valid CLR $type")
+    return value
+
+
+def adopt_state_sync_settings(sync):
+    value = sync["o"]
+    sync_type = value["$type"]
+    return sync_type.split("+", 1)[0], json.loads(json.dumps(value, allow_nan=False))
+
+
+def verify_core_identity(expectation, sync, log_text):
+    expected_type = expectation.get("sync_type")
+    if not expected_type:
+        return {"verdict": "unverified", "reason": "requested core has no exact identity expectation"}
+    actual_type = (sync or {}).get("o", {}).get("$type")
+    if actual_type is not None and actual_type != expected_type:
+        return {"verdict": "fail", "expected": expectation, "actual_sync_type": actual_type,
+                "reason": "zero-frame state CLR type does not match requested core"}
+    waterbox = expectation.get("waterbox")
+    mounts = re.findall(r"(?im)^\s*Mouting\s+`([^`]+\.wbx)`", log_text or "")
+    if waterbox and waterbox not in mounts:
+        return {"verdict": "fail", "expected": expectation, "actual_sync_type": actual_type,
+                "waterbox_mounts": mounts, "reason": "runtime log does not prove the expected Waterbox core loaded"}
+    conflicting = sorted(set(mounts) - {waterbox})
+    if conflicting:
+        return {"verdict": "fail", "expected": expectation, "actual_sync_type": actual_type,
+                "waterbox_mounts": mounts, "reason": "runtime log contains a different Waterbox core mount"}
+    if actual_type is None and not waterbox:
+        return {"verdict": "fail", "expected": expectation, "reason": "zero-frame state has no CLR identity"}
+    return {"verdict": "pass", "expected": expectation, "actual_sync_type": actual_type,
+            "waterbox_mounts": mounts, "evidence": "state CLR type and runtime Waterbox mount",
+            "reason": "zero-frame CLR type and runtime Waterbox mount match the requested core"}
 
 
 class SchemaError(ValueError):
@@ -24,6 +108,13 @@ class Platform(str, Enum):
     PS1 = "PS1"
     PSP = "PSP"
     SNES = "SNES"
+    # 下面五个和 retro_platforms.PLATFORM_SPECS 的键一一对应（帧量化/按键表已经写好），
+    # 之前 enum 里没有，站点 display name "Genesis"/"GBA"/"GB" 只能落到"平台未建模"。
+    GB = "GB"
+    GBC = "GBC"
+    GBA = "GBA"
+    MD = "MD"
+    PCE = "PCE"
 
 
 class ClockUnit(str, Enum):
@@ -70,6 +161,11 @@ class FailureCode(str, Enum):
     CAPTURE_WRONG_SEGMENT = "capture_wrong_segment"  # 只重做采集，不重搜输入
     SEARCH_BUDGET_EXHAUSTED = "search_budget_exhausted"  # 不是"证明无解"
     UNSUPPORTED_CAPABILITY = "unsupported_capability"
+    DRIVER_STALL_MEASURED = "driver_stall_measured"  # 该模拟器版本实测不进放映，连启动都不必试
+    EMULATOR_VERSION_ABSENT = "emulator_version_absent"  # 登记的 BizHawk 版本本地没装（不是缺 ROM）
+    EMULATOR_VERSION_UNVERIFIED = "emulator_version_unverified"  # bk2 但版本写法不是 BizHawk，需按核心实测选臂
+    DRIVER_PLATFORM_UNPROVEN = "driver_platform_unproven"  # 资源齐但控制运行器在该平台没跑过整片，不等于能跑
+    EMULATOR_VERSION_INHERITED = "emulator_version_inherited"  # 登记版本没装，改用同 ROM 原生片的臂，待实测确认
     SCHEMA_INVALID = "schema_invalid"
 
 
@@ -79,6 +175,28 @@ def sha256_file(path):
         for chunk in iter(lambda: f.read(1 << 20), b""):
             h.update(chunk)
     return h.hexdigest()
+
+
+def _resource_digest(path, algorithm):
+    archive, entry = split_rom_spec(path)
+    h = hashlib.new(algorithm)
+    if entry is None:
+        with open(archive, "rb") as f:
+            for chunk in iter(lambda: f.read(1 << 20), b""):
+                h.update(chunk)
+        return h.hexdigest()
+    with zipfile.ZipFile(archive) as z, z.open(entry) as f:
+        for chunk in iter(lambda: f.read(1 << 20), b""):
+            h.update(chunk)
+    return h.hexdigest()
+
+
+def sha256_resource(path):
+    return _resource_digest(path, "sha256")
+
+
+def sha1_resource(path):
+    return _resource_digest(path, "sha1")
 
 
 def asset(path):

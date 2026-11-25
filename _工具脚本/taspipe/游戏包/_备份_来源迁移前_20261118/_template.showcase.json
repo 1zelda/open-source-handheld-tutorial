@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "kind": "statejump_showcase",
+  "game_id": "replace_with_game_revision",
+  "game_title": "Replace with game title and revision",
+  "platform": "NES",
+  "core": "NesHawk",
+  "system": "NES",
+  "rom": "F:/ASCII_OR_RELATIVE/path/game.nes",
+  "bizhawk": "F:/path/to/BizHawk",
+  "base_state": "F:/ASCII_OR_RELATIVE/path/gameplay_base.state",
+  "fps": 60.0988,
+  "template": "none",
+  "catalog": {
+    "status": "complete",
+    "expected_total": 1,
+    "sources": [
+      "Replace with manual/guide/catalog source; do not invent entries"
+    ],
+    "coverage_note": "expected_total is the researched full list, not the number authored so far"
+  },
+  "elements": [
+    {
+      "element_id": "replace_element",
+      "label": "Replace with element name",
+      "kind": "weapon_or_item_or_move",
+      "base_state": null,
+      "trigger": {
+        "macro": "B,,,,,,,,,,,,,,,,,,,,,,,,,,,,",
+        "extra": 30,
+        "patches": []
+      },
+      "detection": {
+        "frame": 10,
+        "success_checks": [
+          {
+            "check_id": "replace_visual_signature",
+            "plugin_id": "frame_region_color_fraction",
+            "params": {
+              "region": [0.25, 0.25, 0.75, 0.75],
+              "rgb": [255, 255, 255],
+              "tol": 12,
+              "min_fraction": 0.1
+            },
+            "required": true
+          }
+        ]
+      },
+      "negative_control": {
+        "macro": null,
+        "patches": []
+      },
+      "note": "Neutral control uses the same base, patches and total frames unless patches are explicitly overridden"
+    }
+  ]
+}

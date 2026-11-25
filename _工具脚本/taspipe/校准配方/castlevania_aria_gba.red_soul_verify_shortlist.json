@@ -1,0 +1,158 @@
+{
+  "schema_version": "ram_calibration/1.0",
+  "game_id": "castlevania_aria_gba",
+  "note": "红魂实帧抽查后的首批 verify 短名单；只验槽位、MP 消费与正反例画面，不替代中文菜单身份验收。",
+  "profile": {
+    "rom": "F:/BaiduNetdiskDownload/rom/gba/恶魔城晓月圆舞曲.gba",
+    "rom_sha1": "40aab076a528f52e93260bb98d91a40039e0da02",
+    "bizhawk": "F:/开源掌机教程/02-模拟器库/BizHawk/BizHawk-2.11.1",
+    "isolated_slot": true,
+    "core": "mGBA",
+    "system": "GBA",
+    "domain": "EWRAM",
+    "state_package": {
+      "game_id": "castlevania_aria_gba",
+      "profile_id": "aria_us_40aab076",
+      "revision": "r20261125T120000"
+    },
+    "window": {
+      "start": 78429,
+      "length": 128
+    }
+  },
+  "base_state": "base",
+  "macros": {
+    "up_b": "Up+B"
+  },
+  "matrix": {
+    "case_id": "red_soul_{value}_verify_vs_empty",
+    "values": [4, 5, 12, 24, 31, 37],
+    "template": {
+      "kind": "scenario",
+      "base_state": "base",
+      "arms": [
+        {
+          "name": "red_{value}",
+          "steps": [
+            {
+              "macro": "-",
+              "extra": 0,
+              "patches": [
+                {
+                  "addr": 78429,
+                  "value": "{value}"
+                }
+              ],
+              "expect": [
+                {
+                  "addr": 78429,
+                  "value": "{value}"
+                },
+                {
+                  "addr": 78448,
+                  "width": 2,
+                  "value": 80
+                }
+              ],
+              "screen": {
+                "reference": "$base",
+                "relation": "equal"
+              }
+            },
+            {
+              "state": "$previous",
+              "macro": "@up_b",
+              "extra": 89,
+              "capture_frames": 90,
+              "expect": [
+                {
+                  "addr": 78429,
+                  "value": "{value}"
+                },
+                {
+                  "addr": 78448,
+                  "width": 2,
+                  "op": "<",
+                  "value": 80
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "red0",
+          "steps": [
+            {
+              "macro": "-",
+              "extra": 0,
+              "patches": [
+                {
+                  "addr": 78429,
+                  "value": 0
+                }
+              ],
+              "expect": [
+                {
+                  "addr": 78429,
+                  "value": 0
+                },
+                {
+                  "addr": 78448,
+                  "width": 2,
+                  "value": 80
+                }
+              ],
+              "screen": {
+                "reference": "$base",
+                "relation": "equal"
+              }
+            },
+            {
+              "state": "$previous",
+              "macro": "@up_b",
+              "extra": 89,
+              "capture_frames": 90,
+              "expect": [
+                {
+                  "addr": 78429,
+                  "value": 0
+                },
+                {
+                  "addr": 78448,
+                  "width": 2,
+                  "value": 80
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "comparisons": [
+        {
+          "left": "red_{value}",
+          "right": "red0",
+          "left_step": 1,
+          "right_step": 1,
+          "relation": "different",
+          "frames": [8, 12, 20, 40, 60, "final"]
+        }
+      ],
+      "claims": [
+        {
+          "name": "red_soul_equipped_id",
+          "addr": 78429,
+          "width": 1,
+          "level": "gameplay",
+          "note": "同一战斗初态只改红魂槽，Up+B 产生实帧差异；不据此认定中文菜单名或全部红魂身份。"
+        },
+        {
+          "name": "current_mp",
+          "addr": 78448,
+          "width": 2,
+          "level": "consumption",
+          "note": "目标红魂施法后 MP 低于 80，空槽保持 80；不固定具体消耗值。"
+        }
+      ]
+    }
+  }
+}

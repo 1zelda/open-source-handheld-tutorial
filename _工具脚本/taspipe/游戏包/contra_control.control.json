@@ -1,0 +1,48 @@
+{
+  "version": 1,
+  "id": "contra_control",
+  "mode": "session",
+  "purpose": "control",
+  "game": "Contra (USA)",
+  "platform": "NES",
+  "rom": {
+    "path": "F:/开源掌机教程/04-游戏资源库/TAS输入录像库/roms_verify/NES/contra_u.nes",
+    "sha1": "c9ea66bb7cb30ad5343f1721b1d4d3219859319b"
+  },
+  "profile": {
+    "bizhawk": "F:/开源掌机教程/02-模拟器库/BizHawk/BizHawk-2.8",
+    "core": "NesHawk",
+    "system": "NES",
+    "sync_settings": {
+      "NesLeftPort": "ControllerNES",
+      "NesRightPort": "ControllerNES"
+    }
+  },
+  "start": {
+    "kind": "state",
+    "path": "F:/开源掌机教程/04-游戏资源库/TAS输入录像库/状态资产/contra_nes_us/contra_u_c9ea66bb/r20261114T043740/states/base.state",
+    "sha256": "d80339aceebb87c8a5674bed232cac94d0c23f9840094aeb1495fa87e2505111"
+  },
+  "macros": {
+    "fire": [
+      {"frames": 4, "players": {"1": ["B"]}},
+      {"frames": 20, "players": {}}
+    ]
+  },
+  "steps": [
+    {"id": "initial", "op": "observe", "watches": [{"id": "weapon", "domain": "RAM", "addr": "0xAA"}]},
+    {"id": "equip_spread", "op": "patch", "writes": [{"domain": "RAM", "addr": "0xAA", "value": 3}]},
+    {"id": "spread_ready", "op": "assert", "checks": [{"id": "weapon", "domain": "RAM", "addr": "0xAA", "cmp": "eq", "value": 3}]},
+    {"id": "save_start", "op": "checkpoint", "name": "spread"},
+    {"id": "first_fire", "op": "macro", "name": "fire"},
+    {"id": "first_result", "op": "checkpoint", "name": "shot_a"},
+    {"id": "branch", "op": "load", "name": "spread"},
+    {"id": "equip_machine", "op": "patch", "writes": [{"domain": "RAM", "addr": "0xAA", "expect": 3, "value": 1}]},
+    {"id": "machine_ready", "op": "assert", "checks": [{"id": "weapon", "domain": "RAM", "addr": "0xAA", "cmp": "eq", "value": 1}]},
+    {"id": "undo_branch", "op": "load", "name": "spread"},
+    {"id": "restored", "op": "until", "max_frames": 10, "checks": [{"id": "weapon", "domain": "RAM", "addr": "0xAA", "cmp": "eq", "value": 3}]},
+    {"id": "second_fire", "op": "macro", "name": "fire"},
+    {"id": "second_result", "op": "checkpoint", "name": "shot_b"}
+  ],
+  "record": {"video": true, "audio": false, "fps": 60.0988}
+}

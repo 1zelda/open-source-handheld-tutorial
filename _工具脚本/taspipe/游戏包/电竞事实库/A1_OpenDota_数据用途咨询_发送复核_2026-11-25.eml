@@ -1,0 +1,42 @@
+To: support@opendota.com
+Subject: OpenDota API data use and commercial licensing enquiry
+X-Unsent: 1
+MIME-Version: 1.0
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+
+Hello OpenDota support team,
+
+I run a Bilibili game-content channel with approximately 75,000 followers. Th=
+e channel is commercial in nature. We are building a local, non-generative fa=
+ct-checking knowledge base for video scripts.
+
+Our intended use is narrow: verify factual claims, retain source locators, an=
+d show the applicable version/time conditions in our videos. We do not plan t=
+o redistribute raw feeds, datasets, API payloads, or bulk source text. Data w=
+ould be stored locally, and published videos would cite the source rather tha=
+n reproduce large excerpts.
+
+No commercial data collection will begin unless the applicable permission is =
+confirmed.
+
+We would like to use OpenDota match, hero, team, and tournament metadata to c=
+ross-check Dota 2 facts in video scripts. We understand that the open-source =
+code licence and the terms governing API data are separate questions.
+
+Could you please confirm:
+1. Whether this commercial, local fact-checking use is permitted under the cu=
+rrent data terms;
+2. Whether an API key and linked payment method are required, and what usage =
+tiers/fees apply;
+3. Rate limits, caching, storage, and retention conditions;
+4. Required attribution and restrictions on derived factual summaries in mone=
+tized videos;
+5. Any prohibition on redistributing raw API responses or building a public m=
+irror.
+
+We will not enable paid usage or begin commercial collection until the applic=
+able terms are confirmed.
+
+Best regards,
+Bilibili game-content creator (approximately 75,000 followers)

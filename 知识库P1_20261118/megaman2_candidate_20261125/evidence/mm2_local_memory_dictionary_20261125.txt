@@ -1,0 +1,14 @@
+# MegaMan2_NES local memory dictionary — verbatim extract
+> Origin: _工具脚本/taspipe/游戏数据字典/expanded_50_games_memory_maps.json
+> Original line ranges: 15-23
+> Qualification: Secondary local aggregate; per-field provenance and ROM identity are not established.
+
+    "MegaMan2_NES": {
+      "platform": "NES",
+      "stable_retro_id": "MegaMan2-Nes",
+      "domain": "RAM",
+      "hp": {"addr": "0x06C0", "max": 28},
+      "weapons_owned_bitmask_1": {"addr": "0x009A", "max": 255, "note": "AtomicFire/AirShooter/LeafShield/BubbleLead/QuickBoomerang/TimeStopper/MetalBlade/ClashBomber"},
+      "weapons_owned_bitmask_2": {"addr": "0x009B", "max": 7, "note": "Item-1 / Item-2 / Item-3"},
+      "weapon_select": {"addr": "0x00A9", "values": {"Buster": 0, "AtomicFire": 1, "AirShooter": 2, "LeafShield": 3, "BubbleLead": 4, "QuickBoomerang": 5, "TimeStopper": 6, "MetalBlade": 7, "ClashBomber": 8, "Item1": 9, "Item2": 10, "Item3": 11}},
+      "energy_range": {"start": "0x009C", "end": "0x00A6", "max": 28}

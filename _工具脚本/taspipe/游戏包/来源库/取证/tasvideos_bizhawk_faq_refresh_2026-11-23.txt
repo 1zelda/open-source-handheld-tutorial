@@ -1,0 +1,228 @@
+来源：https://tasvideos.org/BizHawk/FAQ
+抓取：2026-11-23（最终 URL https://tasvideos.org/BizHawk/FAQ）
+用途：BizHawk FAQ：内存写会被仿真刷掉 + 内存写回调（memory write callbacks）
+sha256=416da7bd749510ce
+
+Bizhawk/FAQ - TASVideos 
+
+ TASVideos
+
+ Tool-assisted game movies
+
+ When human skills are just not enough
+
+ Home 
+
+ Games 
+ Games List 
+ Game Resources 
+ Platforms 
+
+ Movies 
+ Publications 
+ User Files 
+ Stars 
+ Recommended for Newcomers 
+ Movie Classes 
+
+ Submissions 
+ Submission Workbench 
+ Submit a Movie 
+
+ Tools 
+ BizHawk 
+ libTAS 
+ Emulator List 
+
+ Forum 
+
+ Chat 
+ Discord and IRC 
+ Other TAS Communities 
+
+ Resources 
+ Articles 
+ FAQ 
+ How to TAS 
+
+ About 
+ TASVideos 
+ Site Rules 
+ AI Policy 
+ Staff 
+ How to Help 
+ Site History 
+
+ Dark 
+ Light 
+ Auto 
+
+ Register 
+
+ Log in 
+
+ Bizhawk 
+
+ FAQ
+
+ Table of contents 
+ Introduction
+ What does BizHawk mean?
+ 
+ Looking at the framerate counter, I don't seem to be able to reach 100% speed
+
+ Crashes And Such
+ Out of memory errors while recording movies
+
+ Memory Manipulation
+ I'm trying to cheat/poke/freeze a memory address, but it keeps changing
+
+ Running Games
+ I get the error "You are missing the needed firmware files to load this Rom"
+ 
+ Where can I find the Firmware files?
+ 
+ How do I use N64 texture packs?
+ 
+ Does that include .hts packs?
+
+ Recording a Video
+ How do I make it stop splitting the video near 2GB?
+ 
+ How to prevent splitting on resolution changes?
+ 
+ The recorded video has tiny resolution. How to fix that?
+ 
+ AVI Writer crashes when I try to select a codec or even cancel
+
+ TAStudio
+ My TAStudio project got corrupted and doesn't load anymore. What do I do?
+ 
+ TAStudio forces an empty frame at the end of my inputs. How do I remove it?
+
+ Having problems? Read this before asking. Or expect to be pointed to this when you ask.
+
+ See also the issue tracker or the Platform-Specific documentation page relevant to your needs.
+
+ More info: https://github.com/TASEmulators/BizHawk#usage 
+
+ Introduction
+
+ What does BizHawk mean?
+
+ BizHawk is Hawk Biz.
+
+ Looking at the framerate counter, I don't seem to be able to reach 100% speed
+
+ (Before doing anything, check you haven't accidentally hit the speed hotkey. Reset speed is bound to Shift+'=' by default, or select Config > Speed/Skip > Speed 100% .)
+
+ For rendering the window and especially for A/V encoding, using a dedicated GPU (if you have one) is going to be better than using the GPU integrated into your CPU.
+See this comment from Spikestuff for how to force EmuHawk to run on an NVIDIA GPU.
+It's similar for AMD GPUs, using the AMD app instead of NVIDIA's.
+
+ The cores ported to BizHawk are generally going to be slower than their standalone emulators because we force them into single-threaded mode in order to make rerecording work.
+This usually isn't enough to bring them under 100%, but for older PCs emulating newer consoles it does.
+
+ Crashes And Such
+
+ Out of memory errors while recording movies
+
+ Use config > customize > Store movie working data on disk instead of RAM - This will eliminate most of the possible out of memory errors by simply not using RAM. This option has been well-validated.
+
+ -or-
+
+ Use config > customize > Store movie working data in extended > 1GB Ram - This option is useful on 64bit systems with >=8GB of RAM - `AWE` is employed to access more memory than normal in a 32bit process. As mentioned, this has not yet been well validated and may require admin permissions.
+
+ Memory Manipulation
+
+ I'm trying to cheat/poke/freeze a memory address, but it keeps changing
+
+ Bizhawk can only overwrite your address once per frame, so if the game changes it more frequently, you'll have to use memory write callbacks to track when the game does so, to overwrite it yourself right after that.
+
+ But since some callbacks happen before the event, and some happen after (depending on the core), you may have to change CPU registers instead, where the value initially comes from upon the memory write.
+
+ Note that not every Bizhawk core implements memory callbacks and register editing.
+
+ Running Games
+
+ I get the error "You are missing the needed firmware files to load this Rom"
+
+ This is due to not having the Firmware/BIOS file(s) in the Firmware folder.
+
+ Where can I find the Firmware files?
+
+ You need to dump them from the hardware. They are not legally download able due to being copyrighted.
+
+ How do I use N64 texture packs?
+
+ Here's a guide on the Ocarina of Time Randomizer Wiki.
+
+ Does that include .hts packs?
+
+ Short answer: No.
+
+Long answer: See this comment on our issue tracker and the others in that thread.
+
+ Recording a Video
+
+ How do I make it stop splitting the video near 2GB?
+
+ File -> AVI/WAV -> Config and Record AVI/WAV -> FFmpeg writer -> AVI Lossless FFV1 
+
+ How to prevent splitting on resolution changes?
+
+ File -> AVI/WAV -> Config and Record AVI/WAV -> Resize Video 
+
+ The resizing filter is Nearest Neighbor.
+
+ Another option (allows to control resizing filter):
+
+ Set exact window resolution:
+ Config -> Display -> Use custom size 
+
+ Set Final Filter for resizing.
+
+ Make Bizhawk capture client area instead of the internal framebuffer:
+ File -> AVI/WAV -> Capture OSD 
+
+ Disable on-scree-display itself if you want:
+ View -> Display blah-blah 
+
+ The recorded video has tiny resolution. How to fix that?
+
+ Do the same as right above, just set some real high resolution. In this case you won't need lossless video, so pick something lighter:
+
+ File -> AVI/WAV -> Config and Record AVI/WAV -> FFmpeg writer -> Matroska 
+
+ AVI Writer crashes when I try to select a codec or even cancel
+
+ In regedit , go to HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Drivers32 and look for all names that start with VIDC (any case). One of them is probably your issue.
+
+ TAStudio
+
+ My TAStudio project got corrupted and doesn't load anymore. What do I do?
+
+ TAStudio projects are .zip files. Get latest 7zip, open your .tasproj with it, and remove the GreenZone file.
+
+ If it can't remove it, unzip the whole .tasproj to some folder (ignore the errors/warnings), remove the GreenZone file, compress everything back to .zip , and rename that to .tasproj .
+
+ If the .tasproj still has issues loading, you can create a new .tasproj using BizHawk, unzip it to a new folder, copy the previous Input Log.txt file over, and recompress that movie.
+
+ TAStudio forces an empty frame at the end of my inputs. How do I remove it?
+
+ It's not an extra frame, it's just a visual representation of when your last input will be sent to the game. See how TAStudio's first frame is 0? That is the point before anything has been emulated, it's just a way to send inputs to the game on its first frame of emulation, which is listed as frame 1 in TAStudio.
+
+ During old-school movie recording (without TAStudio) you hold down your inputs before the frame you need, and hit the Frame Advance hotkey, and that way those inputs are being recorded to your movie file. If you open that movie as an archive and then open Input Log.txt in a text editor, you won't see the 0th frame there when you started holding down your inputs, you'll only see the 1st frame when you've actually sent them to the game. Similarly if you open your .tasproj file the same way, the last "empty" frame won't be there. Because the last frame is when the game has received your last inputs.
+
+ Bizhawk/FAQ last edited by YoshiRulz on 8/27/2025 2:27 PM 
+
+ Page History 
+ Latest diff 
+ List referrers 
+ View Source 
+
+ &copy; 2026 - TASVideos v2.6-6601994 
+ License 
+ Terms 
+ Privacy 
+ API

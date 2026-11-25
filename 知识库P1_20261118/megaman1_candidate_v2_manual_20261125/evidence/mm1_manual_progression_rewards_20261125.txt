@@ -1,0 +1,13 @@
+洛克人1 官方说明书：击败六名 Robot Master 获得新火力 Wily 最终关 仅用一次（美国NES手册第5及9页）
+
+来源：Capcom 美国 NES 官方说明书扫描件。
+核验：已读扫描页；中文为说明，英文为短引文；未收全本。
+
+每次 MEGA MAN 成功单挑击败六名对手之一，就会获得一种新 firepower，进入最终关挑战 Dr. Wily 时使用。
+> Each time MEGA MAN successfully out-duels each of his six foes, he acquires new firepower as MEGA MAN enters final stage to defeat evil Dr. Wily.
+
+新获得的武器只能在与 Dr. Wily 的战斗中使用一次。
+> All MEGA MAN must use the newly-acquired armament wisely, for he can use them just once while engaged in battle with Dr. Wily.
+
+击败 Wily 所有机器人手下且全部背景出现后，Wily 自动出现，第七最终关开始。
+> Dr. Wily appears automatically. It is now time for the player to conquer Dr. Wily in his seventh and final stage.

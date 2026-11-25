@@ -1,0 +1,98 @@
+W1119 04:01:19.807000 41028 E:\SHARE\py313-cuda\torch\distributed\elastic\multiprocessing\redirects.py:29] NOTE: Redirects are currently not supported in Windows or MacOs.
+Loading weights:   0%|          | 0/391 [00:00<?, ?it/s]Loading weights: 100%|██████████| 391/391 [00:00<00:00, 54585.70it/s]
+Loading weights:   0%|          | 0/393 [00:00<?, ?it/s]Loading weights:   1%|          | 2/393 [00:00<02:50,  2.29it/s]Loading weights:   1%|          | 3/393 [00:01<02:41,  2.42it/s]Loading weights:   1%|          | 4/393 [00:01<01:58,  3.29it/s]Loading weights:   1%|▏         | 5/393 [00:01<02:30,  2.57it/s]Loading weights:   2%|▏         | 6/393 [00:02<02:04,  3.10it/s]Loading weights:   2%|▏         | 7/393 [00:02<01:43,  3.74it/s]Loading weights:   2%|▏         | 8/393 [00:03<02:51,  2.25it/s]Loading weights:   2%|▏         | 9/393 [00:03<02:17,  2.78it/s]Loading weights:   3%|▎         | 10/393 [00:03<02:49,  2.26it/s]Loading weights:   3%|▎         | 11/393 [00:04<02:23,  2.67it/s]Loading weights:   3%|▎         | 12/393 [00:04<03:05,  2.05it/s]Loading weights:   3%|▎         | 13/393 [00:05<03:03,  2.07it/s]Loading weights:   4%|▎         | 14/393 [00:05<02:28,  2.56it/s]Loading weights:   4%|▍         | 15/393 [00:05<02:34,  2.45it/s]Loading weights:   4%|▍         | 16/393 [00:06<03:35,  1.75it/s]Loading weights:   4%|▍         | 17/393 [00:07<02:48,  2.23it/s]Loading weights:   5%|▍         | 18/393 [00:07<02:27,  2.55it/s]Loading weights:   5%|▍         | 19/393 [00:07<02:03,  3.03it/s]Loading weights:   5%|▌         | 20/393 [00:07<02:03,  3.01it/s]Loading weights:   5%|▌         | 21/393 [00:08<02:56,  2.11it/s]Loading weights:   6%|▌         | 22/393 [00:09<03:04,  2.01it/s]Loading weights:   6%|▌         | 23/393 [00:09<03:23,  1.82it/s]Loading weights:   6%|▋         | 25/393 [00:10<02:45,  2.22it/s]Loading weights:   7%|▋         | 27/393 [00:10<01:49,  3.33it/s]Loading weights:   7%|▋         | 29/393 [00:10<01:19,  4.61it/s]Loading weights:   8%|▊         | 30/393 [00:11<01:58,  3.06it/s]Loading weights:   8%|▊         | 31/393 [00:12<02:35,  2.32it/s]Loading weights:   8%|▊         | 32/393 [00:12<02:50,  2.12it/s]Loading weights:   8%|▊         | 33/393 [00:13<02:17,  2.62it/s]Loading weights:   9%|▊         | 34/393 [00:13<01:51,  3.21it/s]Loading weights:   9%|▉         | 36/393 [00:13<01:14,  4.80it/s]Loading weights:   9%|▉         | 37/393 [00:14<01:55,  3.07it/s]Loading weights:  10%|▉         | 38/393 [00:14<02:08,  2.76it/s]Loading weights:  10%|▉         | 39/393 [00:15<02:34,  2.30it/s]Loading weights:  10%|█         | 40/393 [00:15<03:05,  1.90it/s]Loading weights:  10%|█         | 41/393 [00:16<02:56,  1.99it/s]Loading weights:  11%|█         | 42/393 [00:16<02:39,  2.20it/s]Loading weights:  11%|█         | 43/393 [00:17<02:21,  2.47it/s]Loading weights:  11%|█         | 44/393 [00:17<02:52,  2.02it/s]Loading weights: 100%|██████████| 393/393 [00:17<00:00, 22.16it/s]
+W01 SAME                     w3=pass         w5=pass         cond5=- | 热血足球2 燕返怎么触发？
+W02 inconclusive->pass       w3=inconclusive w5=pass         cond5=Y | 热血足球联盟 必杀射门有几种？
+    rank3 auth=authoritative ans=False _工具脚本/taspipe/游戏包/热血足球联盟_honest_gap_manifest.md#L8-L20
+      - declared（《热血足球联盟_必杀全清单.md》）：23 必杀射门（12 角色 + 11 对手）+ 13 一般技 = **36**。
+- delivered（CN/hack 四变体 jf/wl/hack_jump/hack_se 实测可复现的**必杀**）：**0**。
+- 差集 = 36，全部进 gaps（§3）。**无一项必杀在本地 CN/hack 上复现**，不交付任何必杀正例。
+可
+    rank4 auth=authoritative ans=True _工具脚本/taspipe/游戏包/热血足球联盟_必杀全清单.md#L3-L7
+      > 任务口径：用户 2026-11-14「再继续测试热血足球 这次的必杀技更多 一定要全」。
+> 总量口径（搜狐·雷凌老男孩）：日本队 12 人每人必杀各不相同 + 11 支对手队 = **23 种必杀射门**；
+> 另有一般个人技/合体技（天幻网攻略转载逐条列发动法）。本清单 = 23 射门 + 一般技 + Hyper Shoot。
+> 规则：名称/效果/发动法只认下列来源原文；实测未复现的标 
+    rank5 auth=reference_only ans=False _工具脚本/taspipe/游戏包/来源库/取证/sohu_热血队队员必杀集锦_20261118.md#L77-L100
+      精准射门
+九门的必杀技，书呆子射门，球踢出去变成一支铅笔旋转着向球门飞去，球速一般，力量较差，技能特效较好，总体一般。
+书呆子射门
+海月的必杀技，土佐鲣射门，球踢出去变成一条鱼上下游动，球速很慢，力量较差，技能特效优秀，总体一般。
+土佐鲣射门
+津根的必杀技，香蕉环射门，球踢出去在球和香蕉之间不停的切换，在切换时会停顿在空中，从而影响到守门员的判断，球速很慢，力量较差，技能特效优秀，总体一般。
+香蕉
+W03 SAME                     w3=inconclusive w5=inconclusive cond5=- | 热血足球2 守门员能不能用必杀？
+W04 SAME                     w3=inconclusive w5=inconclusive cond5=- | 热血足球 小辫子是谁？
+W05 SAME                     w3=inconclusive w5=inconclusive cond5=- | 热血足球2 点球大战怎么进？
+W06 SAME                     w3=pass         w5=pass         cond5=Y | 热血足球联盟 一共多少场比赛？
+W07 SAME                     w3=pass         w5=pass         cond5=- | 热血足球2 暂停秘技的签名是什么？
+W08 SAME                     w3=pass         w5=pass         cond5=- | 热血足球 美纱子是什么位置？
+W09 SAME                     w3=inconclusive w5=inconclusive cond5=- | 热血足球2 双人合作怎么玩？
+W10 SAME                     w3=inconclusive w5=inconclusive cond5=- | 热血足球联盟 难度怎么选？
+W11 inconclusive->pass       w3=inconclusive w5=pass         cond5=Y | 热血足球2 一直输球会怎么样？
+    rank3 auth=reference_only ans=False _工具脚本/taspipe/游戏包/来源库/取证/csdn_wangsitan_热血足球Bug记录_20261118.md#L188-L203
+      热血队以外的球队，自定义的阵型、战术可能无效
+打平后的点球，轮到左方门将守门时，空中动作的朝向是向右的，包括直跳接球和升龙拳
+关注博主即可阅读全文
+·
+收录于
+当前文章被以下社区和专栏收录：
+版权声明：本文为博主原创文章，遵循 [CC 4.0 BY-SA](http://creativecommons.org/licenses/by-sa/4.0/) 版权协议，转载请附上原文出处链接和本声明。
+    rank4 auth=reference_only ans=True _工具脚本/taspipe/游戏包/来源库/取证/sohu_一直输球隐藏大结局_20261118.md#L65-L81
+      这种情况下就需要适当进行放水，比如把一些强力的同伴从场上换掉，把一些数值较低的替补放到重要位置。再比如让队长跑到自家门前，靠传乌龙球的方式射门给对方送分之类的。
+亚洲、非洲、南美、欧洲四个联盟一共12个队，总共36场比赛，说实话全踢败还真挺难做到的。如果你不幸达到了此战绩，你会发现《热血足球》这个游戏突然就此卡住，既无法跟任何队进行对战也无法退出比赛，什么A键、B键、Select键、Start键全
+    rank5 auth=authoritative ans=True _工具脚本/taspipe/游戏包/热血足球联盟_必杀全清单.md#L137-L158
+      ⇒ 现状改成 **untested（未在任何有效条件下测过）**，不是"不可触发"。用户 11-14 亲口"其实打出过好多次必杀了"，
+有效条件下的真阳性一定存在，责任在我的测量方式，不在 ROM。
+真采 23 必杀仍需正对照：先在**当前 jf ROM** 上按 §6 的三条铁律重跑触发链，仍全负再谈日版原版 ROM（网盘仅两 hack 无日版；外部=门控待批）。
+本清单 23+13 项在 CN
+W12 SAME                     w3=pass         w5=pass         cond5=- | 热血足球联盟 S级必杀有哪些？
+W13 SAME                     w3=inconclusive w5=inconclusive cond5=- | 热血足球2 前B和后B分别是什么动作？
+W14 inconclusive->pass       w3=inconclusive w5=pass         cond5=Y | 热血足球联盟 禁区高空球怎么顶？
+    rank3 auth=reference_only ans=False _工具脚本/taspipe/游戏包/来源库/取证/csdn_wangsitan_热血足球Bug记录_20261118.md#L188-L203
+      热血队以外的球队，自定义的阵型、战术可能无效
+打平后的点球，轮到左方门将守门时，空中动作的朝向是向右的，包括直跳接球和升龙拳
+关注博主即可阅读全文
+·
+收录于
+当前文章被以下社区和专栏收录：
+版权声明：本文为博主原创文章，遵循 [CC 4.0 BY-SA](http://creativecommons.org/licenses/by-sa/4.0/) 版权协议，转载请附上原文出处链接和本声明。
+    rank4 auth=authoritative ans=True _工具脚本/taspipe/游戏包/热血足球联盟_必杀全清单.md#L216-L225
+      - S7 CSDN wangsitan 系列（同作者连发四篇，数据级）：
+- Bug 记录 https://blog.csdn.net/wangsitan/article/details/7669725 （两条 Bug，见 8-4）
+- 数据记录 https://blog.csdn.net/wenzhang.../7669353 （$BD18=策略、$BD19=阵型，阵型仅 3 种 00:2-1-
+    rank5 auth=authoritative ans=True _工具脚本/taspipe/游戏包/热血足球联盟_必杀全清单.md#L137-L158
+      ⇒ 现状改成 **untested（未在任何有效条件下测过）**，不是"不可触发"。用户 11-14 亲口"其实打出过好多次必杀了"，
+有效条件下的真阳性一定存在，责任在我的测量方式，不在 ROM。
+真采 23 必杀仍需正对照：先在**当前 jf ROM** 上按 §6 的三条铁律重跑触发链，仍全负再谈日版原版 ROM（网盘仅两 hack 无日版；外部=门控待批）。
+本清单 23+13 项在 CN
+W15 SAME                     w3=pass         w5=pass         cond5=- | 热血足球2 换人有什么限制？
+W16 SAME                     w3=pass         w5=pass         cond5=Y | 拳皇98 ECK 草薙京出招表是什么？
+W17 SAME                     w3=pass         w5=pass         cond5=- | 拳皇98 简化连招版和普通版有什么区别？
+W18 SAME                     w3=pass         w5=pass         cond5=- | KOF98 ECK 八神庵的连招怎么按？
+W19 SAME                     w3=inconclusive w5=inconclusive cond5=- | 拳皇98UM 官方指令表能不能当 ECK 的权威？
+W20 SAME                     w3=pass         w5=pass         cond5=Y | 素材生产规范里整局素材的时长要求是多少？
+W21 SAME                     w3=pass         w5=pass         cond5=- | TAS 流水线的泛化矩阵是干什么的？
+W22 SAME                     w3=pass         w5=pass         cond5=- | 要素盘点的输入是什么？
+W23 SAME                     w3=pass         w5=pass         cond5=- | ECK 实测结论记录在哪份文档？
+W24 SAME                     w3=miss         w5=miss         cond5=- | 原神新角色什么时候上线？
+W25 SAME                     w3=miss         w5=miss         cond5=- | LOL S15 全球总决赛冠军是谁？
+W26 SAME                     w3=miss         w5=miss         cond5=- | DOTA TI14 奖金池多少？
+W27 inconclusive->pass       w3=inconclusive w5=pass         cond5=Y | 热血足球2 有没有隐藏结局？
+    rank3 auth=reference_only ans=True _工具脚本/taspipe/游戏包/来源库/取证/sohu_一直输球隐藏大结局_20261118.md#L83-L98
+      这三种结局其实都可以看做同一种结局，毕竟不论走哪条结局路线，通关动画播完后，游戏都会卡死在Technos开头的挥拳动画上，这三种结局都无法进行续关，所以一旦选择进入世界杯，就意味着在《热血足球》这款游戏里不可能踢满36场了。
+如此看来，《热血足球》这款经典游戏还是有一些烂尾要素存在的。毕竟这是一款发售自1993年FC末期的游戏，考虑到当时Technos Japan公司本身的债务状况也不是很健康，《
+    rank4 auth=authoritative ans=True _工具脚本/taspipe/游戏包/热血足球联盟_必杀全清单.md#L216-L225
+      - S7 CSDN wangsitan 系列（同作者连发四篇，数据级）：
+- Bug 记录 https://blog.csdn.net/wangsitan/article/details/7669725 （两条 Bug，见 8-4）
+- 数据记录 https://blog.csdn.net/wenzhang.../7669353 （$BD18=策略、$BD19=阵型，阵型仅 3 种 00:2-1-
+    rank5 auth=reference_only ans=False _工具脚本/taspipe/游戏包/来源库/取证/1ang_热血足球联盟图文攻略_20261118.md#L659-L662
+      稍稍擅长硬汉强攻战术，全员头戴面具，失分时看出不球员表情变化。阵型1-2-2。胜利姿势是变成仙人掌欢笑。
+官方说明书上说，神秘的足球队，据说擅长格斗足球。队伍力量为2。
+W28 SAME                     w3=inconclusive w5=inconclusive cond5=- | 热血足球联盟 ROM 的 SHA1 是多少？
+W29 SAME                     w3=pass         w5=pass         cond5=Y | 拳皇98 ECK 能不能关掉队战？
+W30 SAME                     w3=pass         w5=pass         cond5=Y | 燕返 最高点 必杀
+
+共 30 题；翻转 4 条：['W02:inconclusive->pass', 'W11:inconclusive->pass', 'W14:inconclusive->pass', 'W27:inconclusive->pass']
+变差 0 条；域外误放行 0 条
+written F:\开源掌机教程\知识库P1_20261118\probe_window_results.json

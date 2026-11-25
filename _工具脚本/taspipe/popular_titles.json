@@ -1,0 +1,2065 @@
+{
+ "version": "2026-11-22",
+ "rule": "只测最有名、大家玩得多的作品：T1=该平台维基畅销表有>=100万行；T2=中文怀旧/合集层点名或 T1 系列的正传编号续作；写了 demote 的行有销量也不进名单（销量不能买门票）；其余一律 off_list。",
+ "platforms_gated": [
+  "NES",
+  "SNES"
+ ],
+ "sources": {
+  "en_nes": "https://en.wikipedia.org/wiki/List_of_best-selling_Nintendo_Entertainment_System_video_games",
+  "en_snes": "https://en.wikipedia.org/wiki/List_of_best-selling_Super_Nintendo_Entertainment_System_video_games",
+  "zh_nes": "https://zh.wikipedia.org/w/index.php?oldid=92833426",
+  "zh_snes": "https://zh.wikipedia.org/w/index.php?oldid=92831668",
+  "cn_list_sina2011": "http://tech.sina.com.cn/h/2011-05-19/05101756925.shtml（用到第2~11页：第一名~第十名系列 + 「未上榜的英雄们」10 条 + 「非系列作品中的经典」）",
+  "cn_list_haiwainet2016": "http://news.haiwainet.cn/n/2016/0830/c3541840-30269475-4.html"
+ },
+ "rows": [
+  {
+   "title": "Super Mario Bros.",
+   "platform": "NES",
+   "tier": "T1",
+   "sales": 40240000,
+   "cn": "超级马里奥兄弟",
+   "aliases": [
+    "Super Mario Brothers",
+    "超级玛丽",
+    "マリオブラザーズ"
+   ],
+   "basis": "EN 维基「NES 畅销游戏列表」销量行 40,240,000"
+  },
+  {
+   "title": "Duck Hunt",
+   "platform": "NES",
+   "tier": "T1",
+   "sales": 28310000,
+   "cn": "打鸭子",
+   "aliases": [
+    "打鴨子"
+   ],
+   "basis": "EN 维基「NES 畅销游戏列表」销量行 28,310,000"
+  },
+  {
+   "title": "Super Mario Bros. 3",
+   "platform": "NES",
+   "tier": "T1",
+   "sales": 18000000,
+   "cn": "超级马里奥兄弟3",
+   "aliases": [
+    "Super Mario Brothers 3",
+    "Super Mario 3"
+   ],
+   "basis": "EN 维基「NES 畅销游戏列表」销量行 18,000,000"
+  },
+  {
+   "title": "Tetris",
+   "platform": "NES",
+   "tier": "T1",
+   "sales": 8000000,
+   "cn": "俄罗斯方块",
+   "aliases": [
+    "俄羅斯方塊"
+   ],
+   "basis": "EN 维基「NES 畅销游戏列表」销量行 8,000,000"
+  },
+  {
+   "title": "Super Mario Bros. 2 (international version)",
+   "platform": "NES",
+   "tier": "T1",
+   "sales": 7460000,
+   "cn": "超级马里奥兄弟2（海外版）",
+   "aliases": [
+    "Super Mario Bros. 2",
+    "Super Mario Bros. 2 (USA)"
+   ],
+   "basis": "EN 维基「NES 畅销游戏列表」销量行 7,460,000"
+  },
+  {
+   "title": "The Legend of Zelda",
+   "platform": "NES",
+   "tier": "T1",
+   "sales": 6510000,
+   "cn": "塞尔达传说",
+   "aliases": [
+    "塞尔达传说",
+    "Zelda"
+   ],
+   "basis": "EN 维基「NES 畅销游戏列表」销量行 6,510,000"
+  },
+  {
+   "title": "Dr. Mario",
+   "platform": "NES",
+   "tier": "T1",
+   "sales": 4850000,
+   "cn": "",
+   "aliases": [
+    "Mario Doctor",
+    "马里奥医生"
+   ],
+   "basis": "EN 维基「NES 畅销游戏列表」销量行 4,850,000"
+  },
+  {
+   "title": "Zelda II: The Adventure of Link",
+   "platform": "NES",
+   "tier": "T1",
+   "sales": 4380000,
+   "cn": "林克的冒险",
+   "aliases": [
+    "林克的冒险",
+    "The Adventure of Link"
+   ],
+   "basis": "EN 维基「NES 畅销游戏列表」销量行 4,380,000"
+  },
+  {
+   "title": "Excitebike",
+   "platform": "NES",
+   "tier": "T1",
+   "sales": 4160000,
+   "cn": "越野摩托车",
+   "aliases": [
+    "激走摩托车"
+   ],
+   "basis": "EN 维基「NES 畅销游戏列表」销量行 4,160,000"
+  },
+  {
+   "title": "Golf",
+   "platform": "NES",
+   "tier": "T1",
+   "sales": 4010000,
+   "cn": "高尔夫球",
+   "aliases": [],
+   "basis": "EN 维基「NES 畅销游戏列表」销量行 4,010,000"
+  },
+  {
+   "title": "Teenage Mutant Ninja Turtles",
+   "platform": "NES",
+   "tier": "T1",
+   "sales": 4000000,
+   "cn": "激龟忍者传",
+   "aliases": [
+    "TMNT",
+    "激龟忍者传"
+   ],
+   "basis": "EN 维基「NES 畅销游戏列表」销量行 4,000,000"
+  },
+  {
+   "title": "Dragon Quest III",
+   "platform": "NES",
+   "tier": "T1",
+   "sales": 3895000,
+   "cn": "勇者斗恶龙III",
+   "aliases": [
+    "Dragon Warrior III"
+   ],
+   "basis": "EN 维基「NES 畅销游戏列表」销量行 3,895,000"
+  },
+  {
+   "title": "Kung Fu",
+   "platform": "NES",
+   "tier": "T1",
+   "sales": 3500000,
+   "cn": "成龙踢馆",
+   "aliases": [
+    "Yie Ar Kung-Fu",
+    "Yie Ar Kung Fu"
+   ],
+   "basis": "EN 维基「NES 畅销游戏列表」销量行 3,500,000"
+  },
+  {
+   "title": "Baseball",
+   "platform": "NES",
+   "tier": "T1",
+   "sales": 3200000,
+   "cn": "棒球",
+   "aliases": [],
+   "basis": "EN 维基「NES 畅销游戏列表」销量行 3,200,000",
+   "demote": "日本本土向C：任天堂棒球，中文怀旧层未点名"
+  },
+  {
+   "title": "Dragon Quest IV",
+   "platform": "NES",
+   "tier": "T1",
+   "sales": 3180000,
+   "cn": "勇者斗恶龙IV",
+   "aliases": [
+    "Dragon Warrior IV"
+   ],
+   "basis": "EN 维基「NES 畅销游戏列表」销量行 3,180,000"
+  },
+  {
+   "title": "World Class Track Meet",
+   "platform": "NES",
+   "tier": "T1",
+   "sales": 3080000,
+   "cn": "世界竞技大会",
+   "aliases": [],
+   "basis": "EN 维基「NES 畅销游戏列表」销量行 3,080,000",
+   "demote": "外设A：Power Pad 体感垫专用卡，没垫子玩不了，中文怀旧层也没拿它当代表"
+  },
+  {
+   "title": "Punch-Out!!",
+   "platform": "NES",
+   "tier": "T1",
+   "sales": 3000000,
+   "cn": "拳无虚发",
+   "aliases": [
+    "Mike Tyson's Punch-Out!!",
+    "Mike Tyson Boxing",
+    "Punch Out"
+   ],
+   "basis": "EN 维基「NES 畅销游戏列表」销量行 3,000,000"
+  },
+  {
+   "title": "Metroid",
+   "platform": "NES",
+   "tier": "T1",
+   "sales": 2730000,
+   "cn": "银河战士",
+   "aliases": [
+    "银河战士"
+   ],
+   "basis": "EN 维基「NES 畅销游戏列表」销量行 2,730,000"
+  },
+  {
+   "title": "Super Mario Bros. 2 (Japanese version)",
+   "platform": "NES",
+   "tier": "T1",
+   "sales": 2650000,
+   "cn": "超级马里奥兄弟2（日版/失落的关卡）",
+   "aliases": [
+    "Super Mario Bros.: The Lost Levels",
+    "超级马里奥兄弟USA"
+   ],
+   "basis": "EN 维基「NES 畅销游戏列表」销量行 2,650,000",
+   "demote": "同作重复：和海外版 SMB2 是同一 ROM 的另一区划行，不占两格"
+  },
+  {
+   "title": "Dragon Quest II",
+   "platform": "NES",
+   "tier": "T1",
+   "sales": 2550000,
+   "cn": "勇者斗恶龙II",
+   "aliases": [
+    "Dragon Warrior II"
+   ],
+   "basis": "EN 维基「NES 畅销游戏列表」销量行 2,550,000"
+  },
+  {
+   "title": "Ice Hockey",
+   "platform": "NES",
+   "tier": "T1",
+   "sales": 2420000,
+   "cn": "冰上曲棍球",
+   "aliases": [],
+   "basis": "EN 维基「NES 畅销游戏列表」销量行 2,420,000",
+   "demote": "日本本土向C：任天堂冰球，中文怀旧层未点名"
+  },
+  {
+   "title": "Pro Wrestling",
+   "platform": "NES",
+   "tier": "T1",
+   "sales": 2400000,
+   "cn": "职业摔角",
+   "aliases": [],
+   "basis": "EN 维基「NES 畅销游戏列表」销量行 2,400,000",
+   "demote": "日本本土向C：任天堂早期职业摔角，中文怀旧层未点名"
+  },
+  {
+   "title": "Mario Bros.",
+   "platform": "NES",
+   "tier": "T1",
+   "sales": 2280000,
+   "cn": "马里奥兄弟",
+   "aliases": [],
+   "basis": "EN 维基「NES 畅销游戏列表」销量行 2,280,000"
+  },
+  {
+   "title": "Tennis",
+   "platform": "NES",
+   "tier": "T1",
+   "sales": 2170000,
+   "cn": "网球",
+   "aliases": [],
+   "basis": "EN 维基「NES 畅销游戏列表」销量行 2,170,000",
+   "demote": "日本本土向C：任天堂网球，中文怀旧层未点名"
+  },
+  {
+   "title": "Volleyball",
+   "platform": "NES",
+   "tier": "T1",
+   "sales": 2150000,
+   "cn": "排球",
+   "aliases": [],
+   "basis": "EN 维基「NES 畅销游戏列表」销量行 2,150,000",
+   "demote": "日本本土向C：排球小游戏，中文怀旧层未点名"
+  },
+  {
+   "title": "Mah-Jong",
+   "platform": "NES",
+   "tier": "T1",
+   "sales": 2140000,
+   "cn": "麻将",
+   "aliases": [],
+   "basis": "EN 维基「NES 畅销游戏列表」销量行 2,140,000",
+   "demote": "日本本土向C：FC 麻将卡，中文层的麻将记忆不在这张"
+  },
+  {
+   "title": "R.C. Pro-Am",
+   "platform": "NES",
+   "tier": "T1",
+   "sales": 2140000,
+   "cn": "RC Pro-Am 赛车",
+   "aliases": [
+    "RC Pro-Am",
+    "R/C Pro-Am"
+   ],
+   "basis": "EN 维基「NES 畅销游戏列表」销量行 2,140,000"
+  },
+  {
+   "title": "Pro Yakyū Family Stadium (R.B.I. Baseball)",
+   "platform": "NES",
+   "tier": "T1",
+   "sales": 2050000,
+   "cn": "职业棒球家庭球场",
+   "aliases": [],
+   "basis": "EN 维基「NES 畅销游戏列表」销量行 2,050,000",
+   "demote": "联盟授权B：日职棒球卡，中文怀旧层未点名"
+  },
+  {
+   "title": "Dragon Quest",
+   "platform": "NES",
+   "tier": "T1",
+   "sales": 2000000,
+   "cn": "勇者斗恶龙",
+   "aliases": [
+    "Dragon Warrior"
+   ],
+   "basis": "EN 维基「NES 畅销游戏列表」销量行 2,000,000"
+  },
+  {
+   "title": "Top Gun",
+   "platform": "NES",
+   "tier": "T1",
+   "sales": 2000000,
+   "cn": "壮志凌云",
+   "aliases": [],
+   "basis": "EN 维基「NES 畅销游戏列表」销量行 2,000,000",
+   "demote": "电影授权E：壮志凌云，中文层玩的是空战射击一路，不是这张卡"
+  },
+  {
+   "title": "Soccer",
+   "platform": "NES",
+   "tier": "T1",
+   "sales": 1960000,
+   "cn": "足球",
+   "aliases": [],
+   "basis": "EN 维基「NES 畅销游戏列表」销量行 1,960,000",
+   "demote": "题材错位B：任天堂足球，中文层玩的是热血足球"
+  },
+  {
+   "title": "Rad Racer",
+   "platform": "NES",
+   "tier": "T1",
+   "sales": 1960000,
+   "cn": "幻影赛车",
+   "aliases": [],
+   "basis": "EN 维基「NES 畅销游戏列表」销量行 1,960,000",
+   "demote": "日本本土向C：赛车卡，中文层记忆在越野摩托车"
+  },
+  {
+   "title": "Pinball",
+   "platform": "NES",
+   "tier": "T1",
+   "sales": 1850000,
+   "cn": "弹珠台",
+   "aliases": [],
+   "basis": "EN 维基「NES 畅销游戏列表」销量行 1,850,000"
+  },
+  {
+   "title": "Ninja Gaiden",
+   "platform": "NES",
+   "tier": "T1",
+   "sales": 1800000,
+   "cn": "忍者龙剑传",
+   "aliases": [
+    "忍者龙剑传"
+   ],
+   "basis": "EN 维基「NES 畅销游戏列表」销量行 1,800,000"
+  },
+  {
+   "title": "Kid Icarus",
+   "platform": "NES",
+   "tier": "T1",
+   "sales": 1760000,
+   "cn": "光神话 帕尔提娜之镜",
+   "aliases": [],
+   "basis": "EN 维基「NES 畅销游戏列表」销量行 1,760,000"
+  },
+  {
+   "title": "Yoshi",
+   "platform": "NES",
+   "tier": "T1",
+   "sales": 1750000,
+   "cn": "耀西",
+   "aliases": [],
+   "basis": "EN 维基「NES 畅销游戏列表」销量行 1,750,000",
+   "demote": "日本本土向C：耀西蛋落地玩法，中文层记忆在耀西岛"
+  },
+  {
+   "title": "Kirby's Adventure",
+   "platform": "NES",
+   "tier": "T1",
+   "sales": 1750000,
+   "cn": "",
+   "aliases": [
+    "梦之泉物语"
+   ],
+   "basis": "EN 维基「NES 畅销游戏列表」销量行 1,750,000"
+  },
+  {
+   "title": "DuckTales",
+   "platform": "NES",
+   "tier": "T1",
+   "sales": 1670000,
+   "cn": "唐老鸭梦冒险",
+   "aliases": [],
+   "basis": "EN 维基「NES 畅销游戏列表」销量行 1,670,000"
+  },
+  {
+   "title": "Ghosts 'n Goblins",
+   "platform": "NES",
+   "tier": "T1",
+   "sales": 1640000,
+   "cn": "魔界村",
+   "aliases": [
+    "Ghost'n Goblins",
+    "魔界村"
+   ],
+   "basis": "EN 维基「NES 畅销游戏列表」销量行 1,640,000"
+  },
+  {
+   "title": "Bases Loaded",
+   "platform": "NES",
+   "tier": "T1",
+   "sales": 1580000,
+   "cn": "满垒全垒打",
+   "aliases": [],
+   "basis": "EN 维基「NES 畅销游戏列表」销量行 1,580,000",
+   "demote": "联盟授权B：美职棒，中文怀旧层未点名"
+  },
+  {
+   "title": "Donkey Kong Classics",
+   "platform": "NES",
+   "tier": "T1",
+   "sales": 1560000,
+   "cn": "大金刚合集",
+   "aliases": [],
+   "basis": "EN 维基「NES 畅销游戏列表」销量行 1,560,000",
+   "demote": "合集D：DK1+DKJr 拼盘，两个单品已各占一行"
+  },
+  {
+   "title": "Tecmo Bowl",
+   "platform": "NES",
+   "tier": "T1",
+   "sales": 1530000,
+   "cn": "特库摩碗",
+   "aliases": [],
+   "basis": "EN 维基「NES 畅销游戏列表」销量行 1,530,000",
+   "demote": "联盟授权B：NFL 授权橄榄球，中文怀旧层未点名"
+  },
+  {
+   "title": "F1 Race",
+   "platform": "NES",
+   "tier": "T1",
+   "sales": 1520000,
+   "cn": "F1赛车",
+   "aliases": [],
+   "basis": "EN 维基「NES 畅销游戏列表」销量行 1,520,000",
+   "demote": "日本本土向C：F1赛车，中文怀旧层未点名"
+  },
+  {
+   "title": "Mega Man 2",
+   "platform": "NES",
+   "tier": "T1",
+   "sales": 1510000,
+   "cn": "洛克人2",
+   "aliases": [
+    "洛克人2",
+    "Rockman 2"
+   ],
+   "basis": "EN 维基「NES 畅销游戏列表」销量行 1,510,000"
+  },
+  {
+   "title": "Lode Runner",
+   "platform": "NES",
+   "tier": "T1",
+   "sales": 1500000,
+   "cn": "淘金者",
+   "aliases": [],
+   "basis": "EN 维基「NES 畅销游戏列表」销量行 1,500,000"
+  },
+  {
+   "title": "Xevious",
+   "platform": "NES",
+   "tier": "T1",
+   "sales": 1500000,
+   "cn": "铁板阵",
+   "aliases": [],
+   "basis": "EN 维基「NES 畅销游戏列表」销量行 1,500,000"
+  },
+  {
+   "title": "Ice Climber",
+   "platform": "NES",
+   "tier": "T1",
+   "sales": 1500000,
+   "cn": "冰山攀登者",
+   "aliases": [],
+   "basis": "EN 维基「NES 畅销游戏列表」销量行 1,500,000"
+  },
+  {
+   "title": "Ninja Hattori-kun",
+   "platform": "NES",
+   "tier": "T1",
+   "sales": 1500000,
+   "cn": "忍者服部君",
+   "aliases": [],
+   "basis": "EN 维基「NES 畅销游戏列表」销量行 1,500,000",
+   "demote": "动漫授权E：忍者服部君，中文层无对应记忆"
+  },
+  {
+   "title": "Mighty Bomb Jack",
+   "platform": "NES",
+   "tier": "T1",
+   "sales": 1500000,
+   "cn": "炸弹杰克",
+   "aliases": [],
+   "basis": "EN 维基「NES 畅销游戏列表」销量行 1,500,000",
+   "demote": "日本本土向C：炸弹杰克，中文怀旧层未点名"
+  },
+  {
+   "title": "Nintendo World Cup",
+   "platform": "NES",
+   "tier": "T1",
+   "sales": 1480000,
+   "cn": "任天堂世界杯（日版同作＝热血足球）",
+   "aliases": [],
+   "basis": "EN 维基「NES 畅销游戏列表」销量行 1,480,000"
+  },
+  {
+   "title": "4 Nin Uchi Mahjong",
+   "platform": "NES",
+   "tier": "T1",
+   "sales": 1450000,
+   "cn": "四人麻将",
+   "aliases": [],
+   "basis": "EN 维基「NES 畅销游戏列表」销量行 1,450,000",
+   "demote": "日本本土向C：四人麻将，中文怀旧层未点名"
+  },
+  {
+   "title": "Final Fantasy III",
+   "platform": "NES",
+   "tier": "T1",
+   "sales": 1400000,
+   "cn": "最终幻想III",
+   "aliases": [],
+   "basis": "EN 维基「NES 畅销游戏列表」销量行 1,400,000"
+  },
+  {
+   "title": "Gyromite",
+   "platform": "NES",
+   "tier": "T1",
+   "sales": 1320000,
+   "cn": "陀螺机器人",
+   "aliases": [],
+   "basis": "EN 维基「NES 畅销游戏列表」销量行 1,320,000",
+   "demote": "日本本土向C：任天堂机器人陀螺，中文怀旧层未点名"
+  },
+  {
+   "title": "Final Fantasy",
+   "platform": "NES",
+   "tier": "T1",
+   "sales": 1300000,
+   "cn": "最终幻想",
+   "aliases": [],
+   "basis": "EN 维基「NES 畅销游戏列表」销量行 1,300,000"
+  },
+  {
+   "title": "Pro Yakyū Family Stadium '87",
+   "platform": "NES",
+   "tier": "T1",
+   "sales": 1300000,
+   "cn": "职业棒球家庭球场87",
+   "aliases": [],
+   "basis": "EN 维基「NES 畅销游戏列表」销量行 1,300,000",
+   "demote": "联盟授权B：日职棒球年度版"
+  },
+  {
+   "title": "Hogan's Alley",
+   "platform": "NES",
+   "tier": "T1",
+   "sales": 1270000,
+   "cn": "",
+   "aliases": [],
+   "basis": "EN 维基「NES 畅销游戏列表」销量行 1,270,000",
+   "demote": "外设A：NES 光枪专用，掌机映射不出枪"
+  },
+  {
+   "title": "Ninja Kid",
+   "platform": "NES",
+   "tier": "T1",
+   "sales": 1250000,
+   "cn": "忍者小子",
+   "aliases": [],
+   "basis": "EN 维基「NES 畅销游戏列表」销量行 1,250,000",
+   "demote": "日本本土向C：忍者小子，中文怀旧层未点名"
+  },
+  {
+   "title": "Dragon Power",
+   "platform": "NES",
+   "tier": "T1",
+   "sales": 1250000,
+   "cn": "七龙珠 神龙之谜",
+   "aliases": [],
+   "basis": "EN 维基「NES 畅销游戏列表」销量行 1,250,000",
+   "demote": "动漫授权E：龙珠FC首作，中文层认龙珠不认这张卡"
+  },
+  {
+   "title": "Battletoads",
+   "platform": "NES",
+   "tier": "T1",
+   "sales": 1250000,
+   "cn": "忍者蛙",
+   "aliases": [
+    "忍者蛙"
+   ],
+   "basis": "EN 维基「NES 畅销游戏列表」销量行 1,250,000"
+  },
+  {
+   "title": "TwinBee",
+   "platform": "NES",
+   "tier": "T1",
+   "sales": 1200000,
+   "cn": "兵蜂",
+   "aliases": [],
+   "basis": "EN 维基「NES 畅销游戏列表」销量行 1,200,000"
+  },
+  {
+   "title": "Ganbare Goemon! Karakuri Dōchū",
+   "platform": "NES",
+   "tier": "T1",
+   "sales": 1200000,
+   "cn": "大盗五右卫门",
+   "aliases": [],
+   "basis": "EN 维基「NES 畅销游戏列表」销量行 1,200,000",
+   "demote": "日本本土向C：五右卫门日本独占"
+  },
+  {
+   "title": "Chip 'n Dale Rescue Rangers",
+   "platform": "NES",
+   "tier": "T1",
+   "sales": 1200000,
+   "cn": "松鼠大作战",
+   "aliases": [
+    "Chip n Dale no Daisakusen",
+    "松鼠大作战"
+   ],
+   "basis": "EN 维基「NES 畅销游戏列表」销量行 1,200,000"
+  },
+  {
+   "title": "Tecmo Super Bowl",
+   "platform": "NES",
+   "tier": "T1",
+   "sales": 1190000,
+   "cn": "特库摩超级碗",
+   "aliases": [],
+   "basis": "EN 维基「NES 畅销游戏列表」销量行 1,190,000",
+   "demote": "联盟授权B：NFL/NFLPA 橄榄球，美国 cult 但中文层无怀旧基础"
+  },
+  {
+   "title": "Doraemon",
+   "platform": "NES",
+   "tier": "T1",
+   "sales": 1150000,
+   "cn": "哆啦A梦",
+   "aliases": [],
+   "basis": "EN 维基「NES 畅销游戏列表」销量行 1,150,000",
+   "demote": "动漫授权E：哆啦A梦，中文层认动画角色多过认这张卡"
+  },
+  {
+   "title": "Commando",
+   "platform": "NES",
+   "tier": "T1",
+   "sales": 1140000,
+   "cn": "战场之狼",
+   "aliases": [],
+   "basis": "EN 维基「NES 畅销游戏列表」销量行 1,140,000"
+  },
+  {
+   "title": "Donkey Kong",
+   "platform": "NES",
+   "tier": "T1",
+   "sales": 1130000,
+   "cn": "大金刚",
+   "aliases": [
+    "大金刚"
+   ],
+   "basis": "EN 维基「NES 畅销游戏列表」销量行 1,130,000"
+  },
+  {
+   "title": "Yoshi's Cookie",
+   "platform": "NES",
+   "tier": "T1",
+   "sales": 1120000,
+   "cn": "耀西饼干",
+   "aliases": [],
+   "basis": "EN 维基「NES 畅销游戏列表」销量行 1,120,000",
+   "demote": "日本本土向C：耀西饼干消除，中文怀旧层未点名"
+  },
+  {
+   "title": "Donkey Kong Jr.",
+   "platform": "NES",
+   "tier": "T1",
+   "sales": 1110000,
+   "cn": "大金刚Jr.",
+   "aliases": [],
+   "basis": "EN 维基「NES 畅销游戏列表」销量行 1,110,000"
+  },
+  {
+   "title": "Popeye",
+   "platform": "NES",
+   "tier": "T1",
+   "sales": 1100000,
+   "cn": "大力水手",
+   "aliases": [],
+   "basis": "EN 维基「NES 畅销游戏列表」销量行 1,100,000"
+  },
+  {
+   "title": "Pro Yakyū Family Stadium '88",
+   "platform": "NES",
+   "tier": "T1",
+   "sales": 1080000,
+   "cn": "职业棒球家庭球场88",
+   "aliases": [],
+   "basis": "EN 维基「NES 畅销游戏列表」销量行 1,080,000",
+   "demote": "联盟授权B：日职棒球年度版"
+  },
+  {
+   "title": "Mega Man 3",
+   "platform": "NES",
+   "tier": "T1",
+   "sales": 1080000,
+   "cn": "",
+   "aliases": [
+    "洛克人3",
+    "Rockman 3"
+   ],
+   "basis": "EN 维基「NES 畅销游戏列表」销量行 1,080,000"
+  },
+  {
+   "title": "Famicom Jump: Hero Retsuden",
+   "platform": "NES",
+   "tier": "T1",
+   "sales": 1060000,
+   "cn": "Famicom Jump 英雄列传",
+   "aliases": [],
+   "basis": "EN 维基「NES 畅销游戏列表」销量行 1,060,000",
+   "demote": "合集D：Jump 角色大乱斗合集，不是单独一部名作"
+  },
+  {
+   "title": "Tag Team Match: MUSCLE",
+   "platform": "NES",
+   "tier": "T1",
+   "sales": 1050000,
+   "cn": "筋肉人摔角大赛",
+   "aliases": [],
+   "basis": "EN 维基「NES 畅销游戏列表」销量行 1,050,000",
+   "demote": "日本本土向C：筋肉人摔角，中文层无对应记忆"
+  },
+  {
+   "title": "Adventure Island",
+   "platform": "NES",
+   "tier": "T1",
+   "sales": 1050000,
+   "cn": "高桥名人的冒险岛",
+   "aliases": [
+    "高橋名人之冒險島",
+    "Hudson's Adventure Island"
+   ],
+   "basis": "EN 维基「NES 畅销游戏列表」销量行 1,050,000"
+  },
+  {
+   "title": "WWF WrestleMania",
+   "platform": "NES",
+   "tier": "T1",
+   "sales": 1042408,
+   "cn": "WWF摔角嘉年华",
+   "aliases": [],
+   "basis": "EN 维基「NES 畅销游戏列表」销量行 1,042,408",
+   "demote": "摔角授权B：WWF 摔跤，中文怀旧层未点名这张卡"
+  },
+  {
+   "title": "Ninja JaJaMaru-kun",
+   "platform": "NES",
+   "tier": "T1",
+   "sales": 1000000,
+   "cn": "忍者贾贾丸",
+   "aliases": [],
+   "basis": "EN 维基「NES 畅销游戏列表」销量行 1,000,000",
+   "demote": "日本本土向C：贾贾丸，中文怀旧层未点名"
+  },
+  {
+   "title": "1942",
+   "platform": "NES",
+   "tier": "T1",
+   "sales": 1000000,
+   "cn": "1942",
+   "aliases": [],
+   "basis": "EN 维基「NES 畅销游戏列表」销量行 1,000,000"
+  },
+  {
+   "title": "Bomberman",
+   "platform": "NES",
+   "tier": "T1",
+   "sales": 1000000,
+   "cn": "炸弹人",
+   "aliases": [],
+   "basis": "EN 维基「NES 畅销游戏列表」销量行 1,000,000"
+  },
+  {
+   "title": "Hydlide",
+   "platform": "NES",
+   "tier": "T1",
+   "sales": 1000000,
+   "cn": "英雄传",
+   "aliases": [],
+   "basis": "EN 维基「NES 畅销游戏列表」销量行 1,000,000",
+   "demote": "日本本土向C：早期动作RPG，以粗糙著称，中文怀旧层未点名"
+  },
+  {
+   "title": "Gradius",
+   "platform": "NES",
+   "tier": "T1",
+   "sales": 1000000,
+   "cn": "宇宙巡航舰",
+   "aliases": [
+    "宇宙巡航舰"
+   ],
+   "basis": "EN 维基「NES 畅销游戏列表」销量行 1,000,000"
+  },
+  {
+   "title": "Tiger Heli",
+   "platform": "NES",
+   "tier": "T1",
+   "sales": 1000000,
+   "cn": "虎式直升机",
+   "aliases": [],
+   "basis": "EN 维基「NES 畅销游戏列表」销量行 1,000,000",
+   "demote": "日本本土向C：直升机射击，中文怀旧层未点名"
+  },
+  {
+   "title": "Momotarō Densetsu",
+   "platform": "NES",
+   "tier": "T1",
+   "sales": 1000000,
+   "cn": "桃太郎传说",
+   "aliases": [],
+   "basis": "EN 维基「NES 畅销游戏列表」销量行 1,000,000",
+   "demote": "日本本土向C：桃太郎题材RPG，中文层无对应记忆"
+  },
+  {
+   "title": "Metal Gear",
+   "platform": "NES",
+   "tier": "T1",
+   "sales": 1000000,
+   "cn": "合金装备",
+   "aliases": [
+    "合金装备"
+   ],
+   "basis": "EN 维基「NES 畅销游戏列表」销量行 1,000,000"
+  },
+  {
+   "title": "NES Open Tournament Golf",
+   "platform": "NES",
+   "tier": "T1",
+   "sales": 1000000,
+   "cn": "NES公开赛高尔夫",
+   "aliases": [],
+   "basis": "EN 维基「NES 畅销游戏列表」销量行 1,000,000",
+   "demote": "同系列重复D：高尔夫已有 4,010,000 主条目行"
+  },
+  {
+   "title": "Castlevania",
+   "platform": "NES",
+   "tier": "T1",
+   "sales": 1000000,
+   "cn": "恶魔城",
+   "aliases": [
+    "恶魔城"
+   ],
+   "basis": "EN 维基「NES 畅销游戏列表」销量行 1,000,000"
+  },
+  {
+   "title": "Fester's Quest",
+   "platform": "NES",
+   "tier": "T1",
+   "sales": 1000000,
+   "cn": "",
+   "aliases": [],
+   "basis": "EN 维基「NES 畅销游戏列表」销量行 1,000,000",
+   "demote": "影视授权E：美剧改编俯视角射击，中文层无记忆"
+  },
+  {
+   "title": "Mickey Mousecapade",
+   "platform": "NES",
+   "tier": "T1",
+   "sales": 1000000,
+   "cn": "米奇老鼠大冒险",
+   "aliases": [],
+   "basis": "EN 维基「NES 畅销游戏列表」销量行 1,000,000",
+   "demote": "影视授权E：米奇双人卡，中文怀旧层未点名"
+  },
+  {
+   "title": "Super Mario World",
+   "platform": "SNES",
+   "tier": "T1",
+   "sales": 20610000,
+   "cn": "超级马里奥世界",
+   "aliases": [
+    "Super Mario World 1"
+   ],
+   "basis": "EN 维基「SNES 畅销游戏列表」销量行 20,610,000"
+  },
+  {
+   "title": "Super Mario All-Stars",
+   "platform": "SNES",
+   "tier": "T1",
+   "sales": 10550000,
+   "cn": "超级马里奥合集",
+   "aliases": [
+    "Super Mario Allstars: Super Mario Bros.",
+    "Super Mario All-Stars: Super Mario Bros. 2",
+    "Super Mario All-Stars: Super Mario Bros. 3",
+    "Super Mario All-Stars: The Lost Levels"
+   ],
+   "basis": "EN 维基「SNES 畅销游戏列表」销量行 10,550,000"
+  },
+  {
+   "title": "Donkey Kong Country",
+   "platform": "SNES",
+   "tier": "T1",
+   "sales": 9300000,
+   "cn": "超级大金刚",
+   "aliases": [
+    "Super Donkey Kong"
+   ],
+   "basis": "EN 维基「SNES 畅销游戏列表」销量行 9,300,000"
+  },
+  {
+   "title": "Super Mario Kart",
+   "platform": "SNES",
+   "tier": "T1",
+   "sales": 8760000,
+   "cn": "超级马里奥赛车",
+   "aliases": [],
+   "basis": "EN 维基「SNES 畅销游戏列表」销量行 8,760,000"
+  },
+  {
+   "title": "Street Fighter II: The World Warrior",
+   "platform": "SNES",
+   "tier": "T1",
+   "sales": 6300000,
+   "cn": "街头霸王II",
+   "aliases": [
+    "Street Fighter II"
+   ],
+   "basis": "EN 维基「SNES 畅销游戏列表」销量行 6,300,000"
+  },
+  {
+   "title": "Donkey Kong Country 2: Diddy's Kong Quest",
+   "platform": "SNES",
+   "tier": "T1",
+   "sales": 5150000,
+   "cn": "超级大金刚2",
+   "aliases": [
+    "Super Donkey Kong 2"
+   ],
+   "basis": "EN 维基「SNES 畅销游戏列表」销量行 5,150,000"
+  },
+  {
+   "title": "The Legend of Zelda: A Link to the Past",
+   "platform": "SNES",
+   "tier": "T1",
+   "sales": 4610000,
+   "cn": "塞尔达传说 众神的三角力量",
+   "aliases": [
+    "A Link to the Past",
+    "众神的三角力量"
+   ],
+   "basis": "EN 维基「SNES 畅销游戏列表」销量行 4,610,000"
+  },
+  {
+   "title": "Super Mario World 2: Yoshi's Island",
+   "platform": "SNES",
+   "tier": "T1",
+   "sales": 4120000,
+   "cn": "超级马里奥世界2 耀西岛",
+   "aliases": [],
+   "basis": "EN 维基「SNES 畅销游戏列表」销量行 4,120,000"
+  },
+  {
+   "title": "Street Fighter II Turbo",
+   "platform": "SNES",
+   "tier": "T1",
+   "sales": 4100000,
+   "cn": "街头霸王II 极速版",
+   "aliases": [],
+   "basis": "EN 维基「SNES 畅销游戏列表」销量行 4,100,000"
+  },
+  {
+   "title": "Star Fox",
+   "platform": "SNES",
+   "tier": "T1",
+   "sales": 4000000,
+   "cn": "星际火狐",
+   "aliases": [
+    "Star Wing",
+    "星际火狐"
+   ],
+   "basis": "EN 维基「SNES 畅销游戏列表」销量行 4,000,000"
+  },
+  {
+   "title": "Donkey Kong Country 3: Dixie Kong's Double Trouble!",
+   "platform": "SNES",
+   "tier": "T1",
+   "sales": 3510000,
+   "cn": "超级大金刚3",
+   "aliases": [
+    "Super Donkey Kong 3"
+   ],
+   "basis": "EN 维基「SNES 畅销游戏列表」销量行 3,510,000"
+  },
+  {
+   "title": "Final Fantasy VI",
+   "platform": "SNES",
+   "tier": "T1",
+   "sales": 3420000,
+   "cn": "最终幻想VI",
+   "aliases": [],
+   "basis": "EN 维基「SNES 畅销游戏列表」销量行 3,420,000"
+  },
+  {
+   "title": "Killer Instinct",
+   "platform": "SNES",
+   "tier": "T1",
+   "sales": 3200000,
+   "cn": "杀手学堂",
+   "aliases": [
+    "杀手学堂"
+   ],
+   "basis": "EN 维基「SNES 畅销游戏列表」销量行 3,200,000"
+  },
+  {
+   "title": "Dragon Quest VI",
+   "platform": "SNES",
+   "tier": "T1",
+   "sales": 3200000,
+   "cn": "勇者斗恶龙VI",
+   "aliases": [
+    "Dragon Quest VI: Realms of Revelation",
+    "Dragon Quest VI: Maboroshi no Daichi"
+   ],
+   "basis": "EN 维基「SNES 畅销游戏列表」销量行 3,200,000"
+  },
+  {
+   "title": "F-Zero",
+   "platform": "SNES",
+   "tier": "T1",
+   "sales": 2850000,
+   "cn": "F-Zero 未来赛车",
+   "aliases": [
+    "F Zero",
+    "F-ZERO"
+   ],
+   "basis": "EN 维基「SNES 畅销游戏列表」销量行 2,850,000"
+  },
+  {
+   "title": "Dragon Quest V",
+   "platform": "SNES",
+   "tier": "T1",
+   "sales": 2800000,
+   "cn": "勇者斗恶龙V",
+   "aliases": [
+    "Dragon Quest V: Hand of the Heavenly Bride"
+   ],
+   "basis": "EN 维基「SNES 畅销游戏列表」销量行 2,800,000"
+  },
+  {
+   "title": "Chrono Trigger",
+   "platform": "SNES",
+   "tier": "T1",
+   "sales": 2500000,
+   "cn": "时空之轮",
+   "aliases": [
+    "时空之轮"
+   ],
+   "basis": "EN 维基「SNES 畅销游戏列表」销量行 2,500,000"
+  },
+  {
+   "title": "Final Fantasy V",
+   "platform": "SNES",
+   "tier": "T1",
+   "sales": 2450000,
+   "cn": "最终幻想V",
+   "aliases": [],
+   "basis": "EN 维基「SNES 畅销游戏列表」销量行 2,450,000"
+  },
+  {
+   "title": "Mario Paint",
+   "platform": "SNES",
+   "tier": "T1",
+   "sales": 2310000,
+   "cn": "马里奥画笔",
+   "aliases": [],
+   "basis": "EN 维基「SNES 畅销游戏列表」销量行 2,310,000",
+   "demote": "外设A：必须接 SFC 鼠标，掌机给不了鼠标输入"
+  },
+  {
+   "title": "Super Mario RPG",
+   "platform": "SNES",
+   "tier": "T1",
+   "sales": 2140000,
+   "cn": "超级马里奥RPG",
+   "aliases": [
+    "Super Mario RPG: Legend of the Seven Stars"
+   ],
+   "basis": "EN 维基「SNES 畅销游戏列表」销量行 2,140,000"
+  },
+  {
+   "title": "Pilotwings",
+   "platform": "SNES",
+   "tier": "T1",
+   "sales": 2000000,
+   "cn": "飞行俱乐部",
+   "aliases": [],
+   "basis": "EN 维基「SNES 畅销游戏列表」销量行 2,000,000",
+   "demote": "飞行模拟E：有 2,000,000 行，偏模拟驾驶，观赏性与大众记忆都弱"
+  },
+  {
+   "title": "Super Street Fighter II",
+   "platform": "SNES",
+   "tier": "T1",
+   "sales": 2000000,
+   "cn": "超级街头霸王II",
+   "aliases": [
+    "Super Street Fighter II: The New Challengers"
+   ],
+   "basis": "EN 维基「SNES 畅销游戏列表」销量行 2,000,000"
+  },
+  {
+   "title": "SimCity",
+   "platform": "SNES",
+   "tier": "T1",
+   "sales": 1980000,
+   "cn": "模拟城市",
+   "aliases": [],
+   "basis": "EN 维基「SNES 畅销游戏列表」销量行 1,980,000",
+   "demote": "经营模拟E：有 1,980,000 行，但中文怀旧层没把它当 SFC 代表作"
+  },
+  {
+   "title": "Secret of Mana",
+   "platform": "SNES",
+   "tier": "T1",
+   "sales": 1830000,
+   "cn": "圣剑传说2",
+   "aliases": [
+    "Seiken Densetsu 2",
+    "圣剑传说2"
+   ],
+   "basis": "EN 维基「SNES 畅销游戏列表」销量行 1,830,000"
+  },
+  {
+   "title": "Final Fantasy IV",
+   "platform": "SNES",
+   "tier": "T1",
+   "sales": 1800000,
+   "cn": "最终幻想IV",
+   "aliases": [],
+   "basis": "EN 维基「SNES 畅销游戏列表」销量行 1,800,000"
+  },
+  {
+   "title": "Disney's Aladdin",
+   "platform": "SNES",
+   "tier": "T1",
+   "sales": 1750000,
+   "cn": "迪士尼阿拉丁",
+   "aliases": [],
+   "basis": "EN 维基「SNES 畅销游戏列表」销量行 1,750,000"
+  },
+  {
+   "title": "Super Puyo Puyo",
+   "platform": "SNES",
+   "tier": "T1",
+   "sales": 1700000,
+   "cn": "超级魔法气泡",
+   "aliases": [],
+   "basis": "EN 维基「SNES 畅销游戏列表」销量行 1,700,000",
+   "demote": "身份存疑：1,700,000 行是 Banpresto 日版超级魔法气泡；本地另有 Super Puyo Puyo 2 与 Kirby's Avalanche，按 T2 处理"
+  },
+  {
+   "title": "Super Scope 6",
+   "platform": "SNES",
+   "tier": "T1",
+   "sales": 1650000,
+   "cn": "",
+   "aliases": [],
+   "basis": "EN 维基「SNES 畅销游戏列表」销量行 1,650,000",
+   "demote": "外设A：Nintendo Scope 光枪专用"
+  },
+  {
+   "title": "Mortal Kombat II",
+   "platform": "SNES",
+   "tier": "T1",
+   "sales": 1510000,
+   "cn": "真人快打II",
+   "aliases": [],
+   "basis": "EN 维基「SNES 畅销游戏列表」销量行 1,510,000"
+  },
+  {
+   "title": "Romancing SaGa 2",
+   "platform": "SNES",
+   "tier": "T1",
+   "sales": 1490000,
+   "cn": "浪漫沙加2",
+   "aliases": [],
+   "basis": "EN 维基「SNES 畅销游戏列表」销量行 1,490,000"
+  },
+  {
+   "title": "Final Fight",
+   "platform": "SNES",
+   "tier": "T1",
+   "sales": 1480000,
+   "cn": "快打旋风",
+   "aliases": [
+    "快打旋风"
+   ],
+   "basis": "EN 维基「SNES 畅销游戏列表」销量行 1,480,000"
+  },
+  {
+   "title": "Dragon Ball Z: Super Butōden",
+   "platform": "SNES",
+   "tier": "T1",
+   "sales": 1450000,
+   "cn": "龙珠Z 超武斗传",
+   "aliases": [],
+   "basis": "EN 维基「SNES 畅销游戏列表」销量行 1,450,000",
+   "demote": "身份存疑：本地两张龙珠卡分别是超悟空传/超赛传说，对不上这张超武斗传的行"
+  },
+  {
+   "title": "Kirby Super Star",
+   "platform": "SNES",
+   "tier": "T1",
+   "sales": 1440000,
+   "cn": "星之卡比 超级豪华版",
+   "aliases": [],
+   "basis": "EN 维基「SNES 畅销游戏列表」销量行 1,440,000"
+  },
+  {
+   "title": "Super Metroid",
+   "platform": "SNES",
+   "tier": "T1",
+   "sales": 1420000,
+   "cn": "超级银河战士",
+   "aliases": [
+    "超级银河战士"
+   ],
+   "basis": "EN 维基「SNES 畅销游戏列表」销量行 1,420,000"
+  },
+  {
+   "title": "Dragon Quest III",
+   "platform": "SNES",
+   "tier": "T1",
+   "sales": 1400000,
+   "cn": "勇者斗恶龙I&II",
+   "aliases": [],
+   "basis": "EN 维基「SNES 畅销游戏列表」销量行 1,400,000"
+  },
+  {
+   "title": "Romancing SaGa",
+   "platform": "SNES",
+   "tier": "T1",
+   "sales": 1320000,
+   "cn": "浪漫沙加",
+   "aliases": [
+    "SaGa",
+    "浪漫沙加"
+   ],
+   "basis": "EN 维基「SNES 畅销游戏列表」销量行 1,320,000"
+  },
+  {
+   "title": "Wonder Project J",
+   "platform": "SNES",
+   "tier": "T1",
+   "sales": 1300000,
+   "cn": "奇妙计划J",
+   "aliases": [],
+   "basis": "EN 维基「SNES 畅销游戏列表」销量行 1,300,000",
+   "demote": "日本本土向C：奇妙计划J 日本独占"
+  },
+  {
+   "title": "Romancing SaGa 3",
+   "platform": "SNES",
+   "tier": "T1",
+   "sales": 1300000,
+   "cn": "浪漫沙加3",
+   "aliases": [],
+   "basis": "EN 维基「SNES 畅销游戏列表」销量行 1,300,000"
+  },
+  {
+   "title": "The Lion King",
+   "platform": "SNES",
+   "tier": "T1",
+   "sales": 1270000,
+   "cn": "狮子王",
+   "aliases": [],
+   "basis": "EN 维基「SNES 畅销游戏列表」销量行 1,270,000",
+   "demote": "用户点名D：2026-11-22 用户明确说狮子王是冷门，有 1,270,000 行也不测"
+  },
+  {
+   "title": "NBA Jam",
+   "platform": "SNES",
+   "tier": "T1",
+   "sales": 1220000,
+   "cn": "NBA嘉年华",
+   "aliases": [],
+   "basis": "EN 维基「SNES 畅销游戏列表」销量行 1,220,000",
+   "demote": "联盟授权B：1,220,000 行且中文表点名，但本地 SFC 库没有这张 ROM"
+  },
+  {
+   "title": "Mortal Kombat 3",
+   "platform": "SNES",
+   "tier": "T1",
+   "sales": 1220000,
+   "cn": "真人快打3",
+   "aliases": [],
+   "basis": "EN 维基「SNES 畅销游戏列表」销量行 1,220,000"
+  },
+  {
+   "title": "The Magical Quest Starring Mickey Mouse",
+   "platform": "SNES",
+   "tier": "T1",
+   "sales": 1210000,
+   "cn": "米奇魔法大冒险",
+   "aliases": [],
+   "basis": "EN 维基「SNES 畅销游戏列表」销量行 1,210,000"
+  },
+  {
+   "title": "Dragon Quest I & II",
+   "platform": "SNES",
+   "tier": "T1",
+   "sales": 1200000,
+   "cn": "勇者斗恶龙I&II",
+   "aliases": [],
+   "basis": "EN 维基「SNES 畅销游戏列表」销量行 1,200,000"
+  },
+  {
+   "title": "Ken Griffey Jr. Presents Major League Baseball",
+   "platform": "SNES",
+   "tier": "T1",
+   "sales": 1200000,
+   "cn": "肯·格里菲大联盟棒球",
+   "aliases": [],
+   "basis": "EN 维基「SNES 畅销游戏列表」销量行 1,200,000",
+   "demote": "联盟授权B：美职棒年度卡"
+  },
+  {
+   "title": "Derby Stallion III",
+   "platform": "SNES",
+   "tier": "T1",
+   "sales": 1200000,
+   "cn": "德比赛马III",
+   "aliases": [],
+   "basis": "EN 维基「SNES 畅销游戏列表」销量行 1,200,000",
+   "demote": "养成C：赛马养成"
+  },
+  {
+   "title": "Mega Man X",
+   "platform": "SNES",
+   "tier": "T1",
+   "sales": 1160000,
+   "cn": "洛克人X",
+   "aliases": [
+    "Rockman X",
+    "洛克人X"
+   ],
+   "basis": "EN 维基「SNES 畅销游戏列表」销量行 1,160,000"
+  },
+  {
+   "title": "Dragon Ball Z: Super Butōden 2",
+   "platform": "SNES",
+   "tier": "T1",
+   "sales": 1150000,
+   "cn": "龙珠Z 超武斗传2",
+   "aliases": [],
+   "basis": "EN 维基「SNES 畅销游戏列表」销量行 1,150,000",
+   "demote": "身份存疑：同上，本地没有这行对应的 ROM"
+  },
+  {
+   "title": "Derby Stallion '96",
+   "platform": "SNES",
+   "tier": "T1",
+   "sales": 1100000,
+   "cn": "德比赛马96",
+   "aliases": [],
+   "basis": "EN 维基「SNES 畅销游戏列表」销量行 1,100,000",
+   "demote": "养成C：赛马养成年度版"
+  },
+  {
+   "title": "Super Ghouls 'n Ghosts",
+   "platform": "SNES",
+   "tier": "T1",
+   "sales": 1090000,
+   "cn": "超魔界村",
+   "aliases": [],
+   "basis": "EN 维基「SNES 畅销游戏列表」销量行 1,090,000"
+  },
+  {
+   "title": "Final Fight 2",
+   "platform": "SNES",
+   "tier": "T1",
+   "sales": 1030000,
+   "cn": "快打旋风2",
+   "aliases": [],
+   "basis": "EN 维基「SNES 畅销游戏列表」销量行 1,030,000"
+  },
+  {
+   "title": "Super Tetris 2 + Bombliss",
+   "platform": "SNES",
+   "tier": "T1",
+   "sales": 1000000,
+   "cn": "超级俄罗斯方块2+炸弹人",
+   "aliases": [],
+   "basis": "EN 维基「SNES 畅销游戏列表」销量行 1,000,000",
+   "demote": "拼接卡D：俄罗斯方块2+炸弹人双拼，两个系列各有单品条目"
+  },
+  {
+   "title": "Tetris 2",
+   "platform": "SNES",
+   "tier": "T1",
+   "sales": 1000000,
+   "cn": "俄罗斯方块2",
+   "aliases": [],
+   "basis": "EN 维基「SNES 畅销游戏列表」销量行 1,000,000"
+  },
+  {
+   "title": "Space Invaders: The Original Game",
+   "platform": "SNES",
+   "tier": "T1",
+   "sales": 1000000,
+   "cn": "太空侵略者 原版合集",
+   "aliases": [],
+   "basis": "EN 维基「SNES 畅销游戏列表」销量行 1,000,000",
+   "demote": "复刻合集D：太空侵略者复刻拼盘，原作另有更合适载体"
+  },
+  {
+   "title": "Super Star Wars",
+   "platform": "SNES",
+   "tier": "T1",
+   "sales": 1000000,
+   "cn": "超级星球大战",
+   "aliases": [],
+   "basis": "EN 维基「SNES 畅销游戏列表」销量行 1,000,000"
+  },
+  {
+   "title": "Super Bomberman 2",
+   "platform": "SNES",
+   "tier": "T1",
+   "sales": 1000000,
+   "cn": "超级炸弹人2",
+   "aliases": [
+    "Bomberman 2"
+   ],
+   "basis": "EN 维基「SNES 畅销游戏列表」销量行 1,000,000"
+  },
+  {
+   "title": "Battle City",
+   "platform": "NES",
+   "sales": null,
+   "cn": "坦克大战",
+   "aliases": [
+    "Tank 1990",
+    "Battle City (1985)"
+   ],
+   "basis": "中文层点名：海都网/新浪科技 FC 怀旧榜把《坦克大战》列为常玩经典",
+   "tier": "T2",
+   "publisher": ""
+  },
+  {
+   "title": "River City Ransom",
+   "platform": "NES",
+   "sales": null,
+   "cn": "热血物语",
+   "aliases": [
+    "Downtown Nekketsu Monogatari",
+    "热血物语",
+    "くにおくん"
+   ],
+   "basis": "中文层点名：新浪科技 2011《十大最受欢迎的FC系列游戏》第三名 热血系列（Technos）",
+   "tier": "T2",
+   "publisher": ""
+  },
+  {
+   "title": "Double Dragon",
+   "platform": "NES",
+   "sales": null,
+   "cn": "双截龙",
+   "aliases": [
+    "双截龙",
+    "Battle Rope"
+   ],
+   "basis": "中文层点名：新浪科技 2011 FC 系列榜第六名 双截龙系列（TECHNOS）",
+   "tier": "T2",
+   "publisher": ""
+  },
+  {
+   "title": "Double Dragon II: The Revenge",
+   "platform": "NES",
+   "sales": null,
+   "cn": "双截龙2",
+   "aliases": [
+    "双截龙II"
+   ],
+   "basis": "T1 系列（双截龙）编号正传续作，fcyouxi 中文榜点名《双截龙2》",
+   "tier": "T2",
+   "publisher": ""
+  },
+  {
+   "title": "Adventure Island II",
+   "platform": "NES",
+   "sales": null,
+   "cn": "冒险岛2",
+   "aliases": [],
+   "basis": "T1 系列（高桥名人的冒险岛）编号正传续作，新浪 2011 第四名 冒险岛系列",
+   "tier": "T2",
+   "publisher": ""
+  },
+  {
+   "title": "Adventure Island III",
+   "platform": "NES",
+   "sales": null,
+   "cn": "冒险岛3",
+   "aliases": [],
+   "basis": "T1 系列编号正传续作",
+   "tier": "T2",
+   "publisher": ""
+  },
+  {
+   "title": "Castlevania II: Simon's Quest",
+   "platform": "NES",
+   "sales": null,
+   "cn": "恶魔城2",
+   "aliases": [],
+   "basis": "T1 系列（恶魔城，中文怀旧层点名）编号正传续作",
+   "tier": "T2",
+   "publisher": ""
+  },
+  {
+   "title": "Castlevania III: Dracula's Curse",
+   "platform": "NES",
+   "sales": null,
+   "cn": "恶魔城3",
+   "aliases": [],
+   "basis": "T1 系列编号正传续作",
+   "tier": "T2",
+   "publisher": ""
+  },
+  {
+   "title": "Contra",
+   "platform": "NES",
+   "sales": null,
+   "cn": "魂斗罗",
+   "aliases": [
+    "Gryzor",
+    "魂斗罗"
+   ],
+   "basis": "中文层点名：新浪科技 2011《十大最受欢迎的FC系列游戏》第二名 魂斗罗系列（Konami）；注意 EN NES 畅销表根本没有 Contra 这一行，所以它只能靠中文层拿 T2，不能拿销量当依据",
+   "tier": "T2",
+   "publisher": ""
+  },
+  {
+   "title": "Super C",
+   "platform": "NES",
+   "sales": null,
+   "cn": "超级魂斗罗",
+   "aliases": [
+    "Super Contra",
+    "魂斗罗4"
+   ],
+   "basis": "T1 系列（魂斗罗）正传续作，中文层《超级魂斗罗》常玩",
+   "tier": "T2",
+   "publisher": ""
+  },
+  {
+   "title": "Ninja Gaiden II: The Dark Sword of Chaos",
+   "platform": "NES",
+   "sales": null,
+   "cn": "忍者龙剑传2",
+   "aliases": [],
+   "basis": "T1 系列编号正传续作，新浪 2011 第八名 忍者龙剑传系列",
+   "tier": "T2",
+   "publisher": ""
+  },
+  {
+   "title": "Ninja Gaiden III: The Ancient Ship of Doom",
+   "platform": "NES",
+   "sales": null,
+   "cn": "忍者龙剑传3",
+   "aliases": [],
+   "basis": "T1 系列编号正传续作",
+   "tier": "T2",
+   "publisher": ""
+  },
+  {
+   "title": "Mega Man",
+   "platform": "NES",
+   "sales": null,
+   "cn": "洛克人1",
+   "aliases": [
+    "Rockman"
+   ],
+   "basis": "T1 系列（洛克人2/3 有行）初代，新浪 2011 第七名 洛克人系列",
+   "tier": "T2",
+   "publisher": ""
+  },
+  {
+   "title": "Mega Man 4",
+   "platform": "NES",
+   "sales": null,
+   "cn": "洛克人4",
+   "aliases": [
+    "Rockman 4"
+   ],
+   "basis": "T1 系列编号正传续作",
+   "tier": "T2",
+   "publisher": ""
+  },
+  {
+   "title": "Mega Man 5",
+   "platform": "NES",
+   "sales": null,
+   "cn": "洛克人5",
+   "aliases": [
+    "Rockman 5"
+   ],
+   "basis": "T1 系列编号正传续作",
+   "tier": "T2",
+   "publisher": ""
+  },
+  {
+   "title": "Mega Man 6",
+   "platform": "NES",
+   "sales": null,
+   "cn": "洛克人6",
+   "aliases": [
+    "Rockman 6"
+   ],
+   "basis": "T1 系列编号正传续作",
+   "tier": "T2",
+   "publisher": ""
+  },
+  {
+   "title": "Rush'n Attack",
+   "platform": "NES",
+   "sales": null,
+   "cn": "赤色要塞",
+   "aliases": [
+    "Green Beret",
+    "赤色要塞"
+   ],
+   "basis": "中文层点名：腾讯新闻科乐美“老四强”、32r 红白机合集榜均列《赤色要塞》",
+   "tier": "T2",
+   "publisher": ""
+  },
+  {
+   "title": "Donkey Kong 3",
+   "platform": "NES",
+   "sales": null,
+   "cn": "大金刚3",
+   "aliases": [],
+   "basis": "T1 系列（大金刚/DK Jr.）编号正传第3作",
+   "tier": "T2",
+   "publisher": ""
+  },
+  {
+   "title": "DuckTales 2",
+   "platform": "NES",
+   "sales": null,
+   "cn": "唐老鸭梦冒险2",
+   "aliases": [],
+   "basis": "T1 系列（唐老鸭，中文表点名 167万）编号正传续作",
+   "tier": "T2",
+   "publisher": ""
+  },
+  {
+   "title": "Street Fighter II: The World Warrior",
+   "platform": "NES",
+   "sales": null,
+   "cn": "街头霸王II",
+   "aliases": [],
+   "basis": "存疑待核：NES 官方没发行街霸II，本地这条多半是合集/盗版命名，先按 T2 登记并标 under_review",
+   "under_review": "NES 官方未发行《街头霸王II》，需核实本地 ROM 到底是什么",
+   "tier": "T2",
+   "publisher": ""
+  },
+  {
+   "title": "Super Castlevania IV",
+   "platform": "SNES",
+   "sales": null,
+   "cn": "超级恶魔城4",
+   "aliases": [
+    "Castlevania: Super Castlevania IV"
+   ],
+   "basis": "T1 系列（恶魔城，中文层点名）正传续作，SFC 代表作",
+   "tier": "T2",
+   "publisher": ""
+  },
+  {
+   "title": "Contra III: The Alien Wars",
+   "platform": "SNES",
+   "sales": null,
+   "cn": "魂斗罗3",
+   "aliases": [
+    "Genjin Tora 3",
+    "三代魂斗罗"
+   ],
+   "basis": "T1 系列（魂斗罗）正传续作，中文层《三代魂斗罗》是 SFC 常玩目",
+   "tier": "T2",
+   "publisher": ""
+  },
+  {
+   "title": "Final Fight 3",
+   "platform": "SNES",
+   "sales": null,
+   "cn": "快打旋风3",
+   "aliases": [
+    "Street Fighter: Final Fight 3"
+   ],
+   "basis": "T1 系列（快打旋风 1,480,000 / 快打旋风2 1,030,000）编号正传第3作",
+   "tier": "T2",
+   "publisher": ""
+  },
+  {
+   "title": "Kirby's Dream Course",
+   "platform": "SNES",
+   "sales": null,
+   "cn": "卡比高尔夫球",
+   "aliases": [
+    "Kirby's Golf"
+   ],
+   "basis": "T1 系列（星之卡比 超级豪华版 1,440,000；中文表点名 星之卡比）衍生正作",
+   "tier": "T2",
+   "publisher": ""
+  },
+  {
+   "title": "Star Fox 2",
+   "platform": "SNES",
+   "sales": null,
+   "cn": "星际火狐2",
+   "aliases": [],
+   "basis": "T1 系列（星际火狐 4,000,000）编号正传续作",
+   "tier": "T2",
+   "publisher": ""
+  },
+  {
+   "title": "Super Bomberman",
+   "platform": "SNES",
+   "sales": null,
+   "cn": "超级炸弹人",
+   "aliases": [
+    "Bomberman"
+   ],
+   "basis": "T1 系列（超级炸弹人2 1,000,000）初代，中文层《炸弹人》点名",
+   "tier": "T2",
+   "publisher": ""
+  },
+  {
+   "title": "Super Bomberman 3",
+   "platform": "SNES",
+   "sales": null,
+   "cn": "超级炸弹人3",
+   "aliases": [],
+   "basis": "T1 系列编号正传续作",
+   "tier": "T2",
+   "publisher": ""
+  },
+  {
+   "title": "Super Bomberman 4",
+   "platform": "SNES",
+   "sales": null,
+   "cn": "超级炸弹人4",
+   "aliases": [],
+   "basis": "T1 系列编号正传续作",
+   "tier": "T2",
+   "publisher": ""
+  },
+  {
+   "title": "Super Bomberman 5",
+   "platform": "SNES",
+   "sales": null,
+   "cn": "超级炸弹人5",
+   "aliases": [],
+   "basis": "T1 系列编号正传续作",
+   "tier": "T2",
+   "publisher": ""
+  },
+  {
+   "title": "Mega Man X2",
+   "platform": "SNES",
+   "sales": null,
+   "cn": "洛克人X2",
+   "aliases": [
+    "Rockman X2"
+   ],
+   "basis": "T1 系列（洛克人X 1,160,000）编号正传续作",
+   "tier": "T2",
+   "publisher": ""
+  },
+  {
+   "title": "Mega Man X3",
+   "platform": "SNES",
+   "sales": null,
+   "cn": "洛克人X3",
+   "aliases": [
+    "Rockman X3"
+   ],
+   "basis": "T1 系列编号正传续作",
+   "tier": "T2",
+   "publisher": ""
+  },
+  {
+   "title": "Mega Man 7",
+   "platform": "SNES",
+   "sales": null,
+   "cn": "洛克人7",
+   "aliases": [
+    "Rockman 7"
+   ],
+   "basis": "T1 系列（洛克人）编号正传续作",
+   "tier": "T2",
+   "publisher": ""
+  },
+  {
+   "title": "Trials of Mana",
+   "platform": "SNES",
+   "sales": null,
+   "cn": "圣剑传说3",
+   "aliases": [
+    "Seiken Densetsu 3"
+   ],
+   "basis": "T1 系列（圣剑传说2 1,830,000）编号正传续作",
+   "tier": "T2",
+   "publisher": ""
+  },
+  {
+   "title": "Super Street Fighter II Turbo",
+   "platform": "SNES",
+   "sales": null,
+   "cn": "超级街霸II Turbo",
+   "aliases": [],
+   "basis": "T1 系列（超级街头霸王II 2,000,000）版本续作，中文层《街头霸王II 极速版》点名",
+   "tier": "T2",
+   "publisher": ""
+  },
+  {
+   "title": "Super Punch-Out!!",
+   "platform": "SNES",
+   "sales": null,
+   "cn": "超级拳无虚发",
+   "aliases": [
+    "Super Punch Out"
+   ],
+   "basis": "T1 系列（Punch-Out!! NES 3,000,000，中文层《拳无虚发》点名）SFC 正传续作",
+   "tier": "T2",
+   "publisher": ""
+  },
+  {
+   "title": "Kirby's Avalanche",
+   "platform": "SNES",
+   "sales": null,
+   "cn": "星之卡比 魔法气泡",
+   "aliases": [],
+   "basis": "星之卡比衍生（噗呦消除），本地另有 Super Puyo Puyo 2 同一玩法的另一区划命名",
+   "under_review": "170万 行属 Banpresto 日版《超级魔法气泡》，本条只按系列衍生登记，不引用销量",
+   "tier": "T2",
+   "publisher": ""
+  },
+  {
+   "title": "Super Puyo Puyo 2",
+   "platform": "SNES",
+   "sales": null,
+   "cn": "超级魔法气泡2",
+   "aliases": [],
+   "basis": "魔法气泡系列编号正传续作（与 Kirby's Avalanche 是同一玩法的两种区划命名）",
+   "under_review": "本地这张到底是日版超级魔法气泡2 还是美版 Kirby's Avalanche 需核实，核实前不占测试格",
+   "tier": "T2",
+   "publisher": ""
+  },
+  {
+   "title": "EarthBound",
+   "platform": "SNES",
+   "sales": null,
+   "cn": "地球冒险",
+   "aliases": [
+    "MOTHER2"
+   ],
+   "basis": "存疑待核：EN SFC 畅销表没有 EarthBound 行，中文 FC 怀旧榜是 NES 口径，暂未给档",
+   "under_review": "需要 SFC 口径的中文点名或官方出货数才升 T1/T2",
+   "tier": "T2",
+   "publisher": ""
+  },
+  {
+   "title": "Mortal Kombat",
+   "platform": "SNES",
+   "sales": null,
+   "cn": "真人快打",
+   "aliases": [],
+   "basis": "T1 系列（真人快打II 1,510,000 / 真人快打3 122万，中文表均点名）初代",
+   "tier": "T2",
+   "publisher": ""
+  },
+  {
+   "title": "Double Dragon III: The Sacred Stones",
+   "platform": "NES",
+   "sales": null,
+   "cn": "双截龙3",
+   "aliases": [],
+   "basis": "T1 系列（双截龙，新浪 2011 第六名）编号正传第3作",
+   "tier": "T2",
+   "publisher": ""
+  },
+  {
+   "title": "Adventure Island IV",
+   "platform": "NES",
+   "sales": null,
+   "cn": "冒险岛4",
+   "aliases": [],
+   "basis": "T1 系列（高桥名人的冒险岛，新浪 2011 第四名）编号正传第4作",
+   "tier": "T2",
+   "publisher": ""
+  },
+  {
+   "title": "Pac-Man",
+   "platform": "NES",
+   "sales": null,
+   "cn": "吃豆人",
+   "aliases": [
+    "PAC-MAN"
+   ],
+   "basis": "中文层点名：新浪科技 2011 FC 怀旧榜「未上榜的英雄们」列《吃豆人》；EN NES 畅销表没有该标题行，只靠中文层进名单（与魂斗罗同待遇，不引用销量）",
+   "tier": "T2",
+   "publisher": ""
+  },
+  {
+   "title": "Romance of the Three Kingdoms",
+   "platform": "NES",
+   "sales": null,
+   "cn": "三国志",
+   "aliases": [
+    "三國志"
+   ],
+   "basis": "中文层点名：新浪科技 2011「未上榜的英雄们」列《三国系列》，光荣三国志初代",
+   "tier": "T2",
+   "publisher": ""
+  },
+  {
+   "title": "Romance of the Three Kingdoms II",
+   "platform": "NES",
+   "sales": null,
+   "cn": "三国志2",
+   "aliases": [
+    "三國志II"
+   ],
+   "basis": "中文层点名：新浪科技 2011「未上榜的英雄们」列《三国系列》，本地这张即三国志II",
+   "tier": "T2",
+   "publisher": ""
+  },
+  {
+   "title": "Saint Seiya: Ougon Densetsu",
+   "platform": "NES",
+   "sales": null,
+   "cn": "圣斗士黄金传说",
+   "aliases": [
+    "Saint Seiya"
+   ],
+   "basis": "中文层点名：新浪科技 2011「未上榜的英雄们」列《圣斗士之黄金十二宫》，本地拼写是该作的日版罗马名 Ougon Densetsu",
+   "tier": "T2",
+   "publisher": ""
+  },
+  {
+   "title": "Saint Seiya: Ougon Densetsu Kanketsu Hen",
+   "platform": "NES",
+   "sales": null,
+   "cn": "圣斗士黄金传说完结篇",
+   "aliases": [],
+   "basis": "中文层点名：同上《圣斗士之黄金十二宫》系列的完结篇，本地有对应 ROM",
+   "tier": "T2",
+   "publisher": ""
+  },
+  {
+   "title": "Super Dodge Ball",
+   "platform": "NES",
+   "sales": null,
+   "cn": "热血高校躲避球部",
+   "aliases": [
+    "Nekketsu Koukou Dodgeball Bu"
+   ],
+   "basis": "中文层点名：新浪科技 2011 第三名《热血系列》（原文列举热血足球/冰球/格斗/新纪录），本条即该系列的躲避球作",
+   "tier": "T2",
+   "publisher": ""
+  },
+  {
+   "title": "Shin Nekketsu Kouha: Kunio-tachi no Banka",
+   "platform": "SNES",
+   "sales": null,
+   "cn": "新热血くにおくん",
+   "aliases": [],
+   "basis": "中文层点名：新浪科技 2011 第三名《热血系列》SFC 正传",
+   "tier": "T2",
+   "publisher": ""
+  },
+  {
+   "title": "Teenage Mutant Ninja Turtles II: The Arcade Game",
+   "platform": "NES",
+   "sales": null,
+   "cn": "忍者神龟2",
+   "aliases": [
+    "TMNT2"
+   ],
+   "basis": "T1 系列（忍者神龟 NES 4,000,000，新浪 2011「未上榜的英雄们」亦列《忍者神龟系列》）编号正传第2作",
+   "tier": "T2",
+   "publisher": ""
+  },
+  {
+   "title": "Teenage Mutant Ninja Turtles III: The Manhattan Project",
+   "platform": "NES",
+   "sales": null,
+   "cn": "忍者神龟3 曼哈顿计划",
+   "aliases": [
+    "TMNT3"
+   ],
+   "basis": "T1 系列（忍者神龟 NES 4,000,000）编号正传第3作",
+   "tier": "T2",
+   "publisher": ""
+  },
+  {
+   "title": "Teenage Mutant Ninja Turtles IV: Turtles in Time",
+   "platform": "SNES",
+   "sales": null,
+   "cn": "忍者神龟4 时空大冒险",
+   "aliases": [
+    "TMNT IV"
+   ],
+   "basis": "T1 系列（忍者神龟 NES 4,000,000，中文层点名）编号正传第4作，SFC 版",
+   "tier": "T2",
+   "publisher": ""
+  }
+ ]
+}

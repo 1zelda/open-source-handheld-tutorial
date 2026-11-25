@@ -1,0 +1,13 @@
+洛克人1 官方说明书：A键 B键 控制动作 跳跃 射击 十字键操作（美国NES手册第8页）
+
+来源：Capcom 美国 NES 官方说明书扫描件。
+核验：已读扫描页；中文为说明，英文为短引文；未收全本。
+
+Button A：按 A 键使 MEGA MAN 跳跃。
+> Button A: Press to make MEGA MAN jump.
+
+Button B：按 B 键射击。
+> Button B: Press to fire.
+
+Control Pad：左使 MEGA MAN 向左移动，右使其向右移动，上使其向上跳，下使其蹲下。
+> MEGA MAN moves left. MEGA MAN moves right. MEGA MAN leaps upward. MEGA MAN crouches down.

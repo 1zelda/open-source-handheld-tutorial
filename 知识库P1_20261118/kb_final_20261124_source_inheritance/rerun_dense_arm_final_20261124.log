@@ -1,0 +1,225 @@
+W1125 00:15:00.827000 53452 E:\SHARE\py313-cuda\torch\distributed\elastic\multiprocessing\redirects.py:29] NOTE: Redirects are currently not supported in Windows or MacOs.
+Loading weights:   0%|          | 0/391 [00:00<?, ?it/s]Loading weights: 100%|██████████| 391/391 [00:00<00:00, 22494.66it/s]
+Loading weights:   0%|          | 0/393 [00:00<?, ?it/s]Loading weights:   1%|          | 4/393 [00:09<14:41,  2.27s/it]Loading weights:   1%|▏         | 5/393 [00:09<11:36,  1.79s/it]Loading weights:   2%|▏         | 6/393 [00:09<08:47,  1.36s/it]Loading weights:   2%|▏         | 7/393 [00:10<08:04,  1.25s/it]Loading weights:   2%|▏         | 8/393 [00:11<07:18,  1.14s/it]Loading weights:   2%|▏         | 9/393 [00:11<05:47,  1.11it/s]Loading weights:   3%|▎         | 10/393 [00:12<04:54,  1.30it/s]Loading weights:   3%|▎         | 11/393 [00:13<05:02,  1.26it/s]Loading weights:   3%|▎         | 12/393 [00:13<04:21,  1.46it/s]Loading weights:   3%|▎         | 13/393 [00:14<04:45,  1.33it/s]Loading weights:   4%|▎         | 14/393 [00:14<03:50,  1.64it/s]Loading weights:   4%|▍         | 15/393 [00:15<03:31,  1.79it/s]Loading weights:   4%|▍         | 16/393 [00:15<03:33,  1.76it/s]Loading weights:   4%|▍         | 17/393 [00:15<02:44,  2.28it/s]Loading weights:   5%|▍         | 18/393 [00:16<02:19,  2.69it/s]Loading weights:   5%|▍         | 19/393 [00:16<02:11,  2.85it/s]Loading weights:   5%|▌         | 20/393 [00:17<03:15,  1.91it/s]Loading weights:   5%|▌         | 21/393 [00:17<02:42,  2.29it/s]Loading weights:   6%|▌         | 22/393 [00:17<02:19,  2.65it/s]Loading weights:   6%|▌         | 23/393 [00:18<02:22,  2.59it/s]Loading weights:   6%|▌         | 24/393 [00:18<02:07,  2.88it/s]Loading weights:   6%|▋         | 25/393 [00:18<01:52,  3.27it/s]Loading weights:   7%|▋         | 27/393 [00:18<01:15,  4.82it/s]Loading weights:   7%|▋         | 28/393 [00:19<01:50,  3.29it/s]Loading weights:   7%|▋         | 29/393 [00:20<02:23,  2.54it/s]Loading weights:   8%|▊         | 31/393 [00:20<01:42,  3.52it/s]Loading weights:   8%|▊         | 32/393 [00:21<01:47,  3.36it/s]Loading weights:   8%|▊         | 33/393 [00:21<02:43,  2.21it/s]Loading weights:   9%|▊         | 34/393 [00:22<02:48,  2.13it/s]Loading weights:   9%|▉         | 37/393 [00:22<01:30,  3.93it/s]Loading weights:  10%|▉         | 38/393 [00:22<01:22,  4.28it/s]Loading weights:  10%|▉         | 39/393 [00:22<01:24,  4.20it/s]Loading weights:  10%|█         | 41/393 [00:23<01:03,  5.52it/s]Loading weights:  11%|█         | 42/393 [00:23<01:40,  3.48it/s]Loading weights:  11%|█         | 43/393 [00:23<01:38,  3.56it/s]Loading weights:  11%|█         | 44/393 [00:24<01:58,  2.95it/s]Loading weights:  11%|█▏        | 45/393 [00:25<02:23,  2.43it/s]Loading weights:  12%|█▏        | 46/393 [00:25<02:42,  2.14it/s]Loading weights:  12%|█▏        | 47/393 [00:25<02:25,  2.38it/s]Loading weights:  12%|█▏        | 48/393 [00:26<02:19,  2.48it/s]Loading weights: 100%|██████████| 393/393 [00:26<00:00, 14.90it/s]
+Q01 hybrid_default=pass hybrid_strict=inconclusive
+Q02 hybrid_default=inconclusive hybrid_strict=inconclusive
+Q03 hybrid_default=pass hybrid_strict=inconclusive
+Q04 hybrid_default=pass hybrid_strict=inconclusive
+Q05 hybrid_default=pass hybrid_strict=pass
+Q06 hybrid_default=pass hybrid_strict=pass
+Q07 hybrid_default=pass hybrid_strict=pass
+Q08 hybrid_default=pass hybrid_strict=pass
+Q09 hybrid_default=inconclusive hybrid_strict=inconclusive
+Q10 hybrid_default=pass hybrid_strict=pass
+Q11 hybrid_default=pass hybrid_strict=pass
+Q12 hybrid_default=miss hybrid_strict=miss
+Q13 hybrid_default=miss hybrid_strict=miss
+Q14 hybrid_default=miss hybrid_strict=miss
+Q15 hybrid_default=inconclusive hybrid_strict=inconclusive
+Q16 hybrid_default=pass hybrid_strict=pass
+Q17 hybrid_default=inconclusive hybrid_strict=inconclusive
+Q18 hybrid_default=pass hybrid_strict=inconclusive
+P19 hybrid_default=inconclusive hybrid_strict=inconclusive
+P20 hybrid_default=miss hybrid_strict=miss
+P21 hybrid_default=inconclusive hybrid_strict=inconclusive
+P22 hybrid_default=pass hybrid_strict=pass
+P23 hybrid_default=pass hybrid_strict=pass
+P24 hybrid_default=pass hybrid_strict=pass
+P25 hybrid_default=inconclusive hybrid_strict=inconclusive
+P26 hybrid_default=miss hybrid_strict=miss
+X03 hybrid_default=pass hybrid_strict=inconclusive
+X04 hybrid_default=pass hybrid_strict=inconclusive
+X21 hybrid_default=pass hybrid_strict=pass
+X23 hybrid_default=pass hybrid_strict=inconclusive
+DONE F:\开源掌机教程\知识库P1_20261118\kb_final_20261124_source_inheritance\regression_hybrid_20261124.json isolation True
+{
+  "all_checks_ok": true,
+  "checks": {
+    "old_default_unchanged": true,
+    "old_default_changed_ids": [],
+    "base_isolation": true,
+    "hybrid_isolation": true,
+    "question_fingerprints_match_between_arms": true,
+    "probe_fingerprints_match_between_arms": true,
+    "x23_frozen_label_preserved": true,
+    "q18_source_claim_corrected": true,
+    "Q01_default_pass_strict_refused": true,
+    "Q02_default_pass_strict_refused": true,
+    "Q03_default_pass_strict_refused": true,
+    "Q04_default_pass_strict_refused": true,
+    "Q05_default_pass_strict_refused": true,
+    "Q18_default_pass_strict_refused": true,
+    "X03_default_pass_strict_refused": true,
+    "X04_default_pass_strict_refused": true,
+    "X23_default_pass_strict_refused": true,
+    "X21_authoritative_control_still_passes": true
+  },
+  "summary_v2": {
+    "base_default": {
+      "ok": 26,
+      "failed_ids": []
+    },
+    "base_strict": {
+      "ok": 21,
+      "failed_ids": [
+        "Q01",
+        "Q02",
+        "Q03",
+        "Q05",
+        "Q18"
+      ]
+    },
+    "hybrid_default": {
+      "ok": 22,
+      "failed_ids": [
+        "Q02",
+        "Q08",
+        "Q10",
+        "Q18"
+      ]
+    },
+    "hybrid_strict": {
+      "ok": 19,
+      "failed_ids": [
+        "Q01",
+        "Q02",
+        "Q03",
+        "Q05",
+        "Q08",
+        "Q10",
+        "Q18"
+      ]
+    }
+  }
+}
+{
+  "json": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261124_source_inheritance\\source_inheritance_arm_audit_20261124.json",
+  "md": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261124_source_inheritance\\source_inheritance_arm_audit_20261124.md",
+  "summaries": {
+    "base_default": {
+      "status_pass": 13,
+      "status_inconclusive": 8,
+      "status_miss": 5,
+      "v2_ok": 26,
+      "v2_failed_ids": [],
+      "wrong_evidence_ids": [],
+      "missed_answer_ids": [
+        "Q16",
+        "Q17",
+        "P19"
+      ]
+    },
+    "base_strict": {
+      "status_pass": 7,
+      "status_inconclusive": 14,
+      "status_miss": 5,
+      "v2_ok": 21,
+      "v2_failed_ids": [
+        "Q01",
+        "Q02",
+        "Q03",
+        "Q05",
+        "Q18"
+      ],
+      "wrong_evidence_ids": [],
+      "missed_answer_ids": [
+        "Q01",
+        "Q02",
+        "Q03",
+        "Q04",
+        "Q05",
+        "Q16",
+        "Q17",
+        "Q18",
+        "P19"
+      ]
+    },
+    "hybrid_default": {
+      "status_pass": 14,
+      "status_inconclusive": 7,
+      "status_miss": 5,
+      "v2_ok": 22,
+      "v2_failed_ids": [
+        "Q02",
+        "Q08",
+        "Q10",
+        "Q18"
+      ],
+      "wrong_evidence_ids": [
+        "Q06",
+        "Q08",
+        "Q10",
+        "Q16",
+        "Q18",
+        "P22",
+        "P23",
+        "P24"
+      ],
+      "missed_answer_ids": [
+        "Q02",
+        "Q17",
+        "P19"
+      ]
+    },
+    "hybrid_strict": {
+      "status_pass": 10,
+      "status_inconclusive": 11,
+      "status_miss": 5,
+      "v2_ok": 19,
+      "v2_failed_ids": [
+        "Q01",
+        "Q02",
+        "Q03",
+        "Q05",
+        "Q08",
+        "Q10",
+        "Q18"
+      ],
+      "wrong_evidence_ids": [
+        "Q05",
+        "Q06",
+        "Q08",
+        "Q10",
+        "Q16",
+        "P22",
+        "P23"
+      ],
+      "missed_answer_ids": [
+        "Q01",
+        "Q02",
+        "Q03",
+        "Q04",
+        "Q17",
+        "Q18",
+        "P19"
+      ]
+    }
+  },
+  "detail_count": 37,
+  "probe_count": 4
+}
+生产稠密件已全部清理
+{
+  "production_dense_present": {
+    "base": false,
+    "hybrid": false
+  },
+  "dense_ready": {
+    "base": [
+      false,
+      "稠密指纹件未建（py -3 -m taspipe.kb dense）"
+    ],
+    "hybrid": [
+      false,
+      "稠密指纹件未建（py -3 -m taspipe.kb dense）"
+    ]
+  },
+  "auto_index": "F:\\开源掌机教程\\_工具脚本\\taspipe\\游戏包\\知识库\\index.json",
+  "auto_domain_local": false,
+  "base_query_count": 30,
+  "base_queries_unchanged": true,
+  "old_delivery_hashes_ok": true,
+  "old_delivery_state_changed": [],
+  "all_checks_ok": true
+}
+DENSE_ARM_RERUN_OK_AND_ISOLATED

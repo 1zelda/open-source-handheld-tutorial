@@ -1,0 +1,37 @@
+W1119 00:45:42.114000 45932 E:\SHARE\py313-cuda\torch\distributed\elastic\multiprocessing\redirects.py:29] NOTE: Redirects are currently not supported in Windows or MacOs.
+Loading weights:   0%|          | 0/391 [00:00<?, ?it/s]Loading weights: 100%|██████████| 391/391 [00:00<00:00, 45385.87it/s]
+Batches:   0%|          | 0/51 [00:00<?, ?it/s]Batches:   2%|▏         | 1/51 [00:11<09:37, 11.54s/it]Batches:   4%|▍         | 2/51 [00:14<05:09,  6.32s/it]Batches:   6%|▌         | 3/51 [00:16<03:33,  4.44s/it]Batches:   8%|▊         | 4/51 [00:18<02:42,  3.45s/it]Batches:  10%|▉         | 5/51 [00:23<03:06,  4.06s/it]Batches:  12%|█▏        | 6/51 [00:25<02:25,  3.23s/it]Batches:  14%|█▎        | 7/51 [00:26<01:59,  2.73s/it]Batches:  16%|█▌        | 8/51 [00:28<01:41,  2.35s/it]Batches:  18%|█▊        | 9/51 [00:29<01:26,  2.07s/it]Batches:  20%|█▉        | 10/51 [00:31<01:16,  1.87s/it]Batches:  22%|██▏       | 11/51 [00:32<01:08,  1.71s/it]Batches:  24%|██▎       | 12/51 [00:33<01:01,  1.58s/it]Batches:  25%|██▌       | 13/51 [00:35<00:58,  1.53s/it]Batches:  27%|██▋       | 14/51 [00:36<00:54,  1.47s/it]Batches:  29%|██▉       | 15/51 [00:37<00:49,  1.36s/it]Batches:  31%|███▏      | 16/51 [00:38<00:43,  1.26s/it]Batches:  33%|███▎      | 17/51 [00:39<00:40,  1.19s/it]Batches:  35%|███▌      | 18/51 [00:40<00:37,  1.14s/it]Batches:  37%|███▋      | 19/51 [00:41<00:33,  1.05s/it]Batches:  39%|███▉      | 20/51 [00:42<00:32,  1.04s/it]Batches:  41%|████      | 21/51 [00:43<00:31,  1.03s/it]Batches:  43%|████▎     | 22/51 [00:44<00:30,  1.05s/it]Batches:  45%|████▌     | 23/51 [00:45<00:27,  1.00it/s]Batches:  47%|████▋     | 24/51 [00:46<00:24,  1.09it/s]Batches:  49%|████▉     | 25/51 [00:47<00:22,  1.18it/s]Batches:  51%|█████     | 26/51 [00:47<00:19,  1.26it/s]Batches:  53%|█████▎    | 27/51 [00:48<00:18,  1.31it/s]Batches:  55%|█████▍    | 28/51 [00:48<00:16,  1.42it/s]Batches:  57%|█████▋    | 29/51 [00:49<00:13,  1.60it/s]Batches:  59%|█████▉    | 30/51 [00:49<00:11,  1.86it/s]Batches:  61%|██████    | 31/51 [00:49<00:08,  2.23it/s]Batches:  63%|██████▎   | 32/51 [00:50<00:07,  2.63it/s]Batches:  65%|██████▍   | 33/51 [00:50<00:05,  3.16it/s]Batches:  67%|██████▋   | 34/51 [00:50<00:04,  3.77it/s]Batches:  69%|██████▊   | 35/51 [00:50<00:03,  4.44it/s]Batches:  71%|███████   | 36/51 [00:50<00:02,  5.26it/s]Batches:  75%|███████▍  | 38/51 [00:50<00:01,  7.38it/s]Batches:  80%|████████  | 41/51 [00:51<00:00, 10.83it/s]Batches:  88%|████████▊ | 45/51 [00:51<00:00, 15.94it/s]Batches:  96%|█████████▌| 49/51 [00:51<00:00, 20.95it/s]Batches: 100%|██████████| 51/51 [00:51<00:00,  1.01s/it]
+嵌入 816 块耗时 51.3s (CUDA)
+阶段A完成：嵌入模型已释放
+The CrossEncoder `automodel_args` argument was renamed and is now deprecated. Please use `model_kwargs` instead.
+Loading weights:   0%|          | 0/393 [00:00<?, ?it/s]Loading weights:   1%|          | 3/393 [00:00<00:14, 27.00it/s]Loading weights:   2%|▏         | 6/393 [00:00<00:39,  9.81it/s]Loading weights:   2%|▏         | 8/393 [00:01<01:20,  4.78it/s]Loading weights:   2%|▏         | 9/393 [00:02<02:50,  2.25it/s]Loading weights:   3%|▎         | 10/393 [00:03<03:26,  1.86it/s]Loading weights:   3%|▎         | 11/393 [00:04<03:42,  1.71it/s]Loading weights:   3%|▎         | 12/393 [00:04<03:12,  1.98it/s]Loading weights:   3%|▎         | 13/393 [00:04<02:37,  2.41it/s]Loading weights:   4%|▎         | 14/393 [00:05<02:49,  2.23it/s]Loading weights:   4%|▍         | 15/393 [00:05<02:59,  2.10it/s]Loading weights:   4%|▍         | 16/393 [00:06<02:31,  2.50it/s]Loading weights:   4%|▍         | 17/393 [00:06<02:14,  2.80it/s]Loading weights:   5%|▍         | 18/393 [00:06<02:22,  2.63it/s]Loading weights:   5%|▍         | 19/393 [00:07<02:23,  2.60it/s]Loading weights:   5%|▌         | 20/393 [00:07<02:34,  2.42it/s]Loading weights:   6%|▌         | 24/393 [00:07<01:02,  5.90it/s]Loading weights:   7%|▋         | 26/393 [00:08<01:16,  4.82it/s]Loading weights:   7%|▋         | 28/393 [00:08<01:28,  4.14it/s]Loading weights:   7%|▋         | 29/393 [00:09<01:37,  3.74it/s]Loading weights:   8%|▊         | 30/393 [00:09<01:38,  3.69it/s]Loading weights:   8%|▊         | 31/393 [00:10<01:50,  3.26it/s]Loading weights:   8%|▊         | 32/393 [00:10<01:55,  3.11it/s]Loading weights:   8%|▊         | 33/393 [00:10<01:55,  3.11it/s]Loading weights:   9%|▊         | 34/393 [00:11<01:52,  3.20it/s]Loading weights:   9%|▉         | 35/393 [00:11<02:21,  2.53it/s]Loading weights:   9%|▉         | 36/393 [00:12<02:39,  2.23it/s]Loading weights:  10%|▉         | 38/393 [00:12<01:37,  3.66it/s]Loading weights:  10%|▉         | 39/393 [00:12<01:44,  3.39it/s]Loading weights:  10%|█         | 40/393 [00:13<03:13,  1.83it/s]Loading weights:  10%|█         | 41/393 [00:14<02:33,  2.30it/s]Loading weights:  11%|█         | 42/393 [00:15<04:45,  1.23it/s]Loading weights:  11%|█         | 43/393 [00:16<04:39,  1.25it/s]Loading weights:  11%|█         | 44/393 [00:17<04:24,  1.32it/s]Loading weights:  11%|█▏        | 45/393 [00:18<04:39,  1.25it/s]Loading weights:  12%|█▏        | 46/393 [00:18<03:41,  1.57it/s]Loading weights: 100%|██████████| 393/393 [00:18<00:00, 21.27it/s]
+阶段B：重排器就绪
+Q01 retro_soccer FAIL/inconclusive OK/pass
+Q02 retro_soccer FAIL/inconclusive FAIL/pass
+Q03 retro_soccer FAIL/inconclusive OK/pass
+Q04 retro_soccer OK/pass OK/pass
+Q05 unrouted OK/pass OK/pass
+Q06 retro_soccer FAIL/inconclusive FAIL/inconclusive
+Q07 retro_soccer FAIL/inconclusive FAIL/inconclusive
+Q08 unrouted FAIL/inconclusive FAIL/inconclusive
+Q09 kof98 OK/insufficient_evidence OK/insufficient_evidence
+Q10 kof98 OK/pass OK/pass
+Q11 kof98 OK/pass OK/pass
+Q12 NOT_FOUND esports_lol
+Q13 NOT_FOUND esports_dota
+Q14 NOT_FOUND modern_games
+Q15 retro_soccer OK/insufficient_evidence OK/insufficient_evidence
+Q16 retro_soccer OK/inconclusive OK/inconclusive
+Q17 retro_soccer OK/inconclusive OK/pass
+Q18 unrouted FAIL/inconclusive OK/pass
+P19 retro_soccer FAIL/inconclusive FAIL/inconclusive
+P20 NOT_FOUND esports_lol
+P21 retro_soccer OK/insufficient_evidence OK/insufficient_evidence
+P22 project_docs FAIL/miss FAIL/miss
+P23 project_docs FAIL/miss FAIL/miss
+P24 project_docs OK/pass OK/pass
+P25 retro_soccer OK/insufficient_evidence OK/insufficient_evidence
+P26 NOT_FOUND esports_dota
+strict_top1 {"total": 26, "ok": 16, "by_tier": {"strict_pass": {"total": 6, "ok": 2}, "gold_in_topk": {"total": 10, "ok": 4}, "refuse": {"total": 9, "ok": 9}, "version_guard": {"total": 1, "ok": 1}}, "failed_ids": ["Q01", "Q02", "Q03", "Q06", "Q07", "Q08", "Q18", "P19", "P22", "P23"]}
+top3_conditional {"total": 26, "ok": 19, "by_tier": {"strict_pass": {"total": 6, "ok": 5}, "gold_in_topk": {"total": 10, "ok": 4}, "refuse": {"total": 9, "ok": 9}, "version_guard": {"total": 1, "ok": 1}}, "failed_ids": ["Q02", "Q06", "Q07", "Q08", "P19", "P22", "P23"]}
+EXIT=0

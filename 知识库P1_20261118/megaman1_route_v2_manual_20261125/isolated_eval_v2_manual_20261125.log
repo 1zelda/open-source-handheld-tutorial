@@ -1,0 +1,14 @@
+{
+  "all_ok": true,
+  "question_counts": {
+    "total": 23,
+    "strict_pass": 20,
+    "refuse": 3
+  },
+  "default": 23,
+  "strict": 23,
+  "wrong_default": 0,
+  "wrong_strict": 0,
+  "changed_paths": [],
+  "report": "F:\\开源掌机教程\\知识库P1_20261118\\megaman1_candidate_v2_manual_eval_20261125.json"
+}

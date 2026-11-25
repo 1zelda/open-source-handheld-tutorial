@@ -1,0 +1,38 @@
+{
+ "date": "2026-11-18",
+ "generated_at": "2026-11-18T20:42:12Z",
+ "ledger_sha256": "07267055b0ba50a2128b782f75abda2c5fd698cd2f1daf1c0a4d44ae6d1d0387",
+ "ledger_rows": 34193,
+ "events_total": 32947,
+ "candidates_in_window": 11658,
+ "window_days": 14,
+ "kb_limit": 40,
+ "kb": {
+  "mode": "bm25",
+  "downgrade": null,
+  "queried": 40,
+  "index_sha256": "85a70d22e04654dbba6d5130c719ece2460e79fb2c36d2dfe62ebbfcbb0f1077",
+  "snapshot": "F:\\开源掌机教程\\选题决策层\\kb快照\\index.json"
+ },
+ "profile_id": "主号_复古掌机与经典游戏",
+ "profile_basis": "初始设定（UP主自述复古游戏区定位），待自家后台数据校准",
+ "rule_version": "rules-2026-11-19-v2",
+ "ip_table_version": "ip-2026-11-19-v4",
+ "series_count": 75,
+ "unwired_slots": [
+  "语义分析槽位（拆主次/找角度/反差确认，须用户批准外部模型）",
+  "入口B：知识库主动挖题",
+  "正文采集（当前仅标题判断）",
+  "需求信号时序（无历史快照，不编造热度）",
+  "发布效果回流（P3）"
+ ],
+ "entry": "A 新闻筛选（入口B未接线）",
+ "queue_counts": {
+  "今日优先": 24,
+  "潜力待验证": 1437,
+  "长期选题": 1,
+  "系列跟踪": 75,
+  "低优先归档": 8778
+ },
+ "cards_total": 10315
+}

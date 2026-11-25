@@ -1,0 +1,48 @@
+{
+  "status": "pass",
+  "checked": 7,
+  "files": [
+    {
+      "path": "知识库改进优化指导_2026-11-24_strict片段修正回填.md",
+      "expected": "66c1bdeb0f3cde492751cbfbea237c6ff3083eb4218927481b5a833139635657",
+      "actual": "66c1bdeb0f3cde492751cbfbea237c6ff3083eb4218927481b5a833139635657",
+      "unchanged": true
+    },
+    {
+      "path": "知识库P1_20261118/kb_final_20261124/final_manifest_after_strict_citation_fix_20261124.json",
+      "expected": "7855b800e0862ce551e3aeb211f362c931f27ba067869f4de3b532f30ba2d934",
+      "actual": "7855b800e0862ce551e3aeb211f362c931f27ba067869f4de3b532f30ba2d934",
+      "unchanged": true
+    },
+    {
+      "path": "知识库P1_20261118/kb_final_20261124/artifact_inventory_after_strict_citation_fix_20261124.json",
+      "expected": "e728670c4aea20544a0bc719432435b1d7efc34bbce52e80d88ea99e8ac8b9fd",
+      "actual": "e728670c4aea20544a0bc719432435b1d7efc34bbce52e80d88ea99e8ac8b9fd",
+      "unchanged": true
+    },
+    {
+      "path": "知识库改进优化指导_2026-11-24_来源继承修正回填.md",
+      "expected": "ca1894547caf36f7f53a0c7ee26703823b89e856007d064b4e993806710cf728",
+      "actual": "ca1894547caf36f7f53a0c7ee26703823b89e856007d064b4e993806710cf728",
+      "unchanged": true
+    },
+    {
+      "path": "知识库P1_20261118/kb_final_20261124_source_inheritance/final_manifest_source_inheritance_20261124.json",
+      "expected": "7bbcce947e1fe0afdeb90836eecbe52390090e284ada8516d6897ff69ce8a4d7",
+      "actual": "7bbcce947e1fe0afdeb90836eecbe52390090e284ada8516d6897ff69ce8a4d7",
+      "unchanged": true
+    },
+    {
+      "path": "知识库P1_20261118/kb_final_20261124_source_inheritance/artifact_inventory_source_inheritance_20261124.json",
+      "expected": "256484703f4cf1cba8df3163c025d01e175aa1c4b901a7f98e0a912a56d3a5c9",
+      "actual": "256484703f4cf1cba8df3163c025d01e175aa1c4b901a7f98e0a912a56d3a5c9",
+      "unchanged": true
+    },
+    {
+      "path": "知识库改进优化指导_2026-11-25_来源审计修正回填.pdf",
+      "expected": "7ebb18b529b21f930aca6a11df1580c01dcd6a0396beff6c6466792fae9d4bea",
+      "actual": "7ebb18b529b21f930aca6a11df1580c01dcd6a0396beff6c6466792fae9d4bea",
+      "unchanged": true
+    }
+  ]
+}

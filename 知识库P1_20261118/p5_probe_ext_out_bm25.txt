@@ -1,0 +1,129 @@
+W01 [regression] SAME                     w3=inconclusive w5=inconclusive cond5=- | 热血足球2 燕返怎么触发？
+W02 [regression] SAME                     w3=inconclusive w5=inconclusive cond5=- | 热血足球联盟 必杀射门有几种？
+W03 [regression] SAME                     w3=inconclusive w5=inconclusive cond5=- | 热血足球2 守门员能不能用必杀？
+W04 [regression] SAME                     w3=inconclusive w5=inconclusive cond5=- | 热血足球 小辫子是谁？
+W05 [regression] SAME                     w3=inconclusive w5=inconclusive cond5=- | 热血足球2 点球大战怎么进？
+W06 [regression] SAME                     w3=inconclusive w5=inconclusive cond5=- | 热血足球联盟 一共多少场比赛？
+W07 [regression] SAME                     w3=inconclusive w5=inconclusive cond5=- | 热血足球2 暂停秘技的签名是什么？
+W08 [regression] SAME                     w3=pass         w5=pass         cond5=- | 热血足球 美纱子是什么位置？
+W09 [regression] SAME                     w3=inconclusive w5=inconclusive cond5=- | 热血足球2 双人合作怎么玩？
+W10 [regression] SAME                     w3=pass         w5=pass         cond5=Y | 热血足球联盟 难度怎么选？
+W11 [regression] SAME                     w3=inconclusive w5=inconclusive cond5=- | 热血足球2 一直输球会怎么样？
+W12 [regression] SAME                     w3=pass         w5=pass         cond5=Y | 热血足球联盟 S级必杀有哪些？
+W13 [regression] SAME                     w3=inconclusive w5=inconclusive cond5=- | 热血足球2 前B和后B分别是什么动作？
+W14 [regression] inconclusive->pass       w3=inconclusive w5=pass         cond5=Y | 热血足球联盟 禁区高空球怎么顶？
+    rank3 auth=reference_only ans=False _工具脚本/taspipe/游戏包/来源库/取证/sohu_必杀最强小辫子_20261118.md#L91-L106
+      小辫子更神的地方在于他的必杀技“忍者射门”，这招射门会在禁区会自动隐身。根据这个特性，如果你直接在禁区踢出必杀，足球则会在你踢出的一瞬间直接隐身停留在空中，利用好这个特性可以骗出CPU电脑的无限升龙拳，让他们一直对着空气跳跃，而我们则可以趁他们跳跃的间隙闯空门了！
+要说这一招的练习成本几乎等于0，因为小辫子的燕返本身是高空球，高空球在禁区必然能射出必杀射门的，这一招几乎可针对所有队伍的守门员，而且
+    rank4 auth=reference_only ans=False _工具脚本/taspipe/游戏包/来源库/取证/1ang_热血足球联盟图文攻略_20261118.md#L131-L158
+      热血联盟模式里，选手们的状态是可变的，选手们存在情绪设定。在『みーてぃんぐ(Meeting)』会面选项里，与选手对话或者使用物品，就会引起情绪变化。而且，可以看到选手数据资料，得知选手的性格与嗜好。
+开场白
+\[1\]こんにちは、熱血高校サッカー部・マネージャーの「みさこ」です。
+\[2\]ついに「熱血サッカーリーグ」の世界１をきめる　「テクノスジャパン・カップ」がひらかれることになりました。
+\
+    rank5 auth=authoritative ans=True _工具脚本/taspipe/游戏包/热血足球联盟_honest_gap_manifest.md#L8-L20
+      - declared（《热血足球联盟_必杀全清单.md》）：23 必杀射门（12 角色 + 11 对手）+ 13 一般技 = **36**。
+- delivered（CN/hack 四变体 jf/wl/hack_jump/hack_se 实测可复现的**必杀**）：**0**。
+- 差集 = 36，全部进 gaps（§3）。**无一项必杀在本地 CN/hack 上复现**，不交付任何必杀正例。
+可
+W15 [regression] SAME                     w3=inconclusive w5=inconclusive cond5=- | 热血足球2 换人有什么限制？
+W16 [regression] SAME                     w3=inconclusive w5=inconclusive cond5=- | 拳皇98 ECK 草薙京出招表是什么？
+W17 [regression] SAME                     w3=pass         w5=pass         cond5=Y | 拳皇98 简化连招版和普通版有什么区别？
+W18 [regression] SAME                     w3=pass         w5=pass         cond5=Y | KOF98 ECK 八神庵的连招怎么按？
+W19 [regression] SAME                     w3=inconclusive w5=inconclusive cond5=- | 拳皇98UM 官方指令表能不能当 ECK 的权威？
+W20 [regression] SAME                     w3=inconclusive w5=inconclusive cond5=- | 素材生产规范里整局素材的时长要求是多少？
+W21 [regression] SAME                     w3=pass         w5=pass         cond5=- | TAS 流水线的泛化矩阵是干什么的？
+W22 [regression] SAME                     w3=pass         w5=pass         cond5=- | 要素盘点的输入是什么？
+W23 [regression] SAME                     w3=pass         w5=pass         cond5=- | ECK 实测结论记录在哪份文档？
+W24 [regression] SAME                     w3=miss         w5=miss         cond5=- | 原神新角色什么时候上线？
+W25 [regression] SAME                     w3=miss         w5=miss         cond5=- | LOL S15 全球总决赛冠军是谁？
+W26 [regression] SAME                     w3=miss         w5=miss         cond5=- | DOTA TI14 奖金池多少？
+W27 [regression] SAME                     w3=inconclusive w5=inconclusive cond5=- | 热血足球2 有没有隐藏结局？
+W28 [regression] SAME                     w3=inconclusive w5=inconclusive cond5=- | 热血足球联盟 ROM 的 SHA1 是多少？
+W29 [regression] SAME                     w3=pass         w5=pass         cond5=Y | 拳皇98 ECK 能不能关掉队战？
+W30 [regression] SAME                     w3=pass         w5=pass         cond5=- | 燕返 最高点 必杀
+X01 [rescue    ] SAME                     w3=inconclusive w5=inconclusive cond5=- | 热血足球 1P 得分的内存地址是多少？
+X02 [rescue    ] SAME                     w3=inconclusive w5=inconclusive cond5=- | 热血足球 韩国队赢球后是什么庆祝动作？
+X03 [rescue    ] SAME                     w3=inconclusive w5=inconclusive cond5=- | 热血足球 龙卷拳谁能用？
+X04 [rescue    ] SAME                     w3=inconclusive w5=inconclusive cond5=- | 热血足球 三倍加速怎么发动？
+X05 [rescue    ] SAME                     w3=pass         w5=pass         cond5=- | 热血足球 选手一闪一闪是故障吗？
+X06 [rescue    ] SAME                     w3=inconclusive w5=inconclusive cond5=- | 热血足球 应援曲一共有几首？
+X07 [rescue    ] SAME                     w3=inconclusive w5=inconclusive cond5=- | 热血足球 海月是什么射门？
+X08 [rescue    ] SAME                     w3=inconclusive w5=inconclusive cond5=- | 热血足球 哪个队员体力最高？
+X09 [rescue    ] SAME                     w3=inconclusive w5=inconclusive cond5=- | 热血足球 香蕉环射门有什么特点？
+X10 [rescue    ] SAME                     w3=inconclusive w5=inconclusive cond5=- | 热血足球联盟 阵型一共有几种？
+X11 [trap      ] SAME                     w3=inconclusive w5=inconclusive cond5=- | 热血足球联盟 能不能联网对战？
+X12 [trap      ] inconclusive->pass       w3=inconclusive w5=pass         cond5=Y | 热血足球联盟 怎么给球员升级加点？
+    rank3 auth=reference_only ans=False _工具脚本/taspipe/游戏包/来源库/取证/1ang_热血足球联盟图文攻略_20261118.md#L823-L839
+      比赛中按START键暂停，{A键按３次＋B键按１次＋A键按３次＋B键按１次＋A键按７次}，再按START键解除暂停，听到必杀踢射的发动音效，就成功了。这样就能使全部球员拥有全部必杀技，比如平时不会燕返的球员也会用燕返了，平时不会用爆裂攻击的球员也会用铁膝盖顶人了。
+缺点是效果只能持续半场比赛，另外半场比赛需要重新使用秘技。这就意味着，每次进行比赛都要使用一次秘技。
+更多热血足球3攻略-FC热血足球
+    rank4 auth=reference_only ans=False _工具脚本/taspipe/游戏包/来源库/取证/1ang_热血足球联盟图文攻略_20261118.md#L131-L158
+      热血联盟模式里，选手们的状态是可变的，选手们存在情绪设定。在『みーてぃんぐ(Meeting)』会面选项里，与选手对话或者使用物品，就会引起情绪变化。而且，可以看到选手数据资料，得知选手的性格与嗜好。
+开场白
+\[1\]こんにちは、熱血高校サッカー部・マネージャーの「みさこ」です。
+\[2\]ついに「熱血サッカーリーグ」の世界１をきめる　「テクノスジャパン・カップ」がひらかれることになりました。
+\
+    rank5 auth=authoritative ans=True _工具脚本/taspipe/游戏包/热血足球联盟_honest_gap_manifest.md#L8-L20
+      - declared（《热血足球联盟_必杀全清单.md》）：23 必杀射门（12 角色 + 11 对手）+ 13 一般技 = **36**。
+- delivered（CN/hack 四变体 jf/wl/hack_jump/hack_se 实测可复现的**必杀**）：**0**。
+- 差集 = 36，全部进 gaps（§3）。**无一项必杀在本地 CN/hack 上复现**，不交付任何必杀正例。
+可
+X13 [trap      ] SAME                     w3=inconclusive w5=inconclusive cond5=- | 热血足球 有没有办法跳过中场休息？
+X14 [trap      ] SAME                     w3=inconclusive w5=inconclusive cond5=- | 热血足球 怎么解锁隐藏球队？
+X15 [trap      ] SAME                     w3=inconclusive w5=inconclusive cond5=- | 热血足球联盟 支持几个手柄同时玩？
+X16 [trap      ] SAME                     w3=inconclusive w5=inconclusive cond5=- | 热血足球 打雷会不会把门将击倒？
+X17 [trap      ] SAME                     w3=pass         w5=pass         cond5=Y | 热血足球 全败结局画面显示的密码是什么？
+X18 [trap      ] SAME                     w3=inconclusive w5=inconclusive cond5=- | 热血足球 每支球队最多能挑战几次？
+X19 [mechanism ] SAME                     w3=pass         w5=pass         cond5=Y | 热血足球 美纱子的电话有什么用？
+X20 [mechanism ] SAME                     w3=pass         w5=pass         cond5=- | 热血足球 德国队为什么必杀概率低？
+X21 [mechanism ] SAME                     w3=pass         w5=pass         cond5=- | 热血足球 元永在队里打什么位置？
+X22 [mechanism ] SAME                     w3=pass         w5=pass         cond5=Y | 热血足球 意大利门将的弱点在哪里？
+X23 [mechanism ] inconclusive->pass       w3=inconclusive w5=pass         cond5=Y | 热血足球 倒挂金钩怎么使出来？
+    rank3 auth=reference_only ans=True _工具脚本/taspipe/游戏包/来源库/取证/1ang_热血足球联盟图文攻略_20261118.md#L337-L359
+      『ハイパー・ダッシュ(Hyper Dash)』，超常冲刺。冲刺中朝进行方向连按两次方向键。普通冲刺基础上发动更快速的冲刺。
+『ヒール・リフティング(Heel Lifting)』，脚跟挑球。拿球时，无论面朝哪个方向，{←AB}同时按或者{→AB}同时按全都可以发动。
+『フェイント・アタック(Feint Attack)』，虚攻，做假动作。冲刺运球过程中，方向键上或下连续按2次。
+『ダイビング・ヘッド(
+    rank4 auth=reference_only ans=False _工具脚本/taspipe/游戏包/来源库/取证/sohu_一直输球隐藏大结局_20261118.md#L1-L63
+      *   文章
+*   总阅读
+*   游戏领域优质创作者
+2023-01-04 22:36
+发布于：辽宁省
+这是老男孩游戏盒的第501篇原创，作者@怀旧淼哥
+很多80后、90后老男孩都在怀念当年的红白机时光，其实当年大家打游戏很多时候都在傻玩和瞎玩，许多游戏的细节都搞得不甚清楚，就比如30年后你问一些朋友《热血足球》的世界杯模式如何触发啊？问10个人保准9个人都回答不上来！
+《热血足球》故事模式触
+    rank5 auth=authoritative ans=True _工具脚本/taspipe/游戏包/热血足球联盟_必杀全清单.md#L24-L33
+      - 必杀踢射：持球跳（A+B）到**最高点按 B**；**发动时不能按方向键**，否则变成挑球不是人球同跳。
+- 难度：`やさしい` 容易 = 敌我**都不能**发动必杀射门；`ふつう` 普通 = 次次发动；`むずかしい` 困难 = 仅会燕返者 100%。
+⇒ 采集必须在普通难度（导航默认值待实测确认；若必杀不触发先查难度）。
+- 秘技：比赛中 Start 暂停 → A×3 B×1 A×3 B×1
+X24 [mechanism ] SAME                     w3=inconclusive w5=inconclusive cond5=- | 热血足球 怎么存档进度？
+X25 [mechanism ] SAME                     w3=inconclusive w5=inconclusive cond5=- | 热血足球 球员受伤了怎么治疗？
+X26 [mechanism ] SAME                     w3=inconclusive w5=inconclusive cond5=- | 热血足球 雨天场地对射门有什么影响？
+X27 [mechanism ] SAME                     w3=inconclusive w5=inconclusive cond5=- | 热血足球 走力 A 型是什么意思？
+X28 [mechanism ] inconclusive->pass       w3=inconclusive w5=pass         cond5=Y | 拳皇98 ECK 金手指怎么用？
+    rank3 auth=authoritative ans=False F:/tas_rig/docs/素材生产规范.md#L3-L15
+      写这份是为了回答一个问题：**怎么保证「拿到招表 → 一次性录出全部干净素材」这条路走得通，
+而不是靠反复试**。要消灭的三种浪费，按用户原话：
+1. 「出招都没有打到人」——片子能出、画面会动，但那一招没落在对手身上，素材没法用；
+2. 「不停地重复同一个片段」——同一招同一距离录第二遍，或者改一个数就把整批重跑；
+3. 「每次都重头开始」——上一轮量出来的偏移、距离、时序，下一轮又从零试一遍。
+    rank4 auth=cross_version ans=False _工具脚本/taspipe/游戏包/来源库/取证/gamersky_kof98um全角色出招表_20261118.md#L3-L305
+      ﻿
+本站
+2014-12-17 15:57:01 来源：游侠论坛 作者：kuangjian 编辑：Shy夏夏　[我要投稿](http://bbs.gamersky.com/thread-348492-1-1.html)
+随着拳皇98:终极对决的推出，很多新玩家还不是很熟悉出招表，下面小编带给大家全角色的出招表
+[![游民星空](http://img1.gamersky.com/image2014/
+    rank5 auth=authoritative ans=True F:/tas_rig/docs/素材生产规范.md#L18-L31
+      **规矩**：招表里的每一行先归一化成 `cmd`（编译后的记法）+ `name` + `slug` + `char_id`，
+归一化只允许发生在这一层；模拟器那一侧永远只吃 `cmd`。看不懂、有歧义、指向别的地方的记法
+**必须炸**，不许"挑一个最像的"。
+- **数**：底账 `data/kof98eck_moves.json` 605 行记法 → 展开 **1079 条**可录单元（拆「
+X29 [mechanism ] SAME                     w3=inconclusive w5=inconclusive cond5=- | 热血足球 秘技效果能持续多久？
+X30 [mechanism ] SAME                     w3=pass         w5=pass         cond5=Y | 热血足球 合体技有哪些发动方法？
+
+共 60 题；翻转 4 条：['W14:inconclusive->pass', 'X12:inconclusive->pass', 'X23:inconclusive->pass', 'X28:inconclusive->pass']
+变差 0 条；域外误放行 0 条；trap格放行 ['X12', 'X17']
+written F:\开源掌机教程\知识库P1_20261118\p5_probe_ext_results.json

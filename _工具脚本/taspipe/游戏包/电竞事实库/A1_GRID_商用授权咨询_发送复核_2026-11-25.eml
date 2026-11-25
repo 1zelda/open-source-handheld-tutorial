@@ -1,0 +1,51 @@
+To: sales@grid.gg
+Subject:
+ Commercial licensing enquiry - local esports fact-checking knowledge base
+X-Unsent: 1
+MIME-Version: 1.0
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+
+Hello GRID Sales team,
+
+I run a Bilibili game-content channel with approximately 75,000 followers. Th=
+e channel is commercial in nature. We are building a local, non-generative fa=
+ct-checking knowledge base for video scripts.
+
+Our intended use is narrow: verify factual claims, retain source locators, an=
+d show the applicable version/time conditions in our videos. We do not plan t=
+o redistribute raw feeds, datasets, API payloads, or bulk source text. Data w=
+ould be stored locally, and published videos would cite the source rather tha=
+n reproduce large excerpts.
+
+No commercial data collection will begin unless the applicable permission is =
+confirmed.
+
+We are interested in official esports match results, participant/team identit=
+ies, event dates, and related metadata. Your Riot Open Access page states tha=
+t Open Access is for non-commercial use and directs commercial licensing enqu=
+iries to this address, so we are contacting you before using GRID data for th=
+is commercial channel.
+
+Could you please confirm:
+1. Which commercial licence would cover this local fact-checking and script-v=
+erification use case?
+2. Which endpoints/data fields are available, and are there restrictions by t=
+itle, tournament, territory, or audience?
+3. What attribution, storage, retention, caching, and rate-limit conditions a=
+pply?
+4. May derived factual summaries appear in monetized videos, provided we cite=
+ GRID and do not redistribute raw data?
+5. What fees, minimum commitments, application materials, and technical onboa=
+rding steps would apply?
+
+Our initial field list is: tournament and series identifiers; game title; eve=
+nt dates; team and participant identifiers and roles; match and series result=
+s/scores; roster-change announcements; patch labels and deployment dates. We =
+are not requesting live telemetry, video, chat, or personal data.
+
+We can provide the channel URL, expected query volume, and a more detailed da=
+ta-field list if helpful.
+
+Best regards,
+Bilibili game-content creator (approximately 75,000 followers)

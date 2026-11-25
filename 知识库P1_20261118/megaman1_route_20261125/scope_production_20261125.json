@@ -1,0 +1,41 @@
+{
+  "status": "production_candidate_route_wired",
+  "taken_at": "2026-11-25",
+  "revision": "megaman1_nes_us",
+  "production_domain": "megaman1",
+  "backend": "megaman1_candidate",
+  "production_entry_point": "taspipe.kb.query_auto",
+  "candidate_only": true,
+  "whole_game_knowledge_base": false,
+  "candidate_index": "知识库P1_20261118/megaman1_candidate_20261125/index.json",
+  "candidate_index_sha256": "5e126eddf0eae98e6b8a446cd54f37400b861d5e93ecf89d3004f16d3a252581",
+  "coverage": [
+    "对象RAM表",
+    "坐标轴与小数位置",
+    "BizHawk内存写机制",
+    "本机武器RAM实测",
+    "本机对象表定位实测"
+  ],
+  "reference_only_coverage": [
+    "FM2导入社区流程",
+    "segmented TAS通用术语"
+  ],
+  "not_covered": [
+    "官方说明书级玩法",
+    "整款游戏内容知识库",
+    "PAL-B与其他版本跨版等价",
+    "目标时刻存档点与续作流程"
+  ],
+  "route_boundaries": {
+    "explicit_alias": "candidate",
+    "explicit_revision_without_alias": "candidate",
+    "series_generic_without_installment": "ambiguous_series",
+    "other_installment": "not_borrowed",
+    "pal_or_european_version": "version_not_collected",
+    "multi_domain": "domain_local_evidence_only; outer inconclusive without evidence",
+    "missing_or_invalid_candidate_index": "fail_closed_without_production_fallback"
+  },
+  "production_defaults_unchanged": true,
+  "external_generative_model_calls": 0,
+  "paid_api_calls": 0
+}

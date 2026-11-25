@@ -1,0 +1,23 @@
+{
+  "status": "isolated_candidate_not_production",
+  "revision": "megaman1_nes_us",
+  "coverage": [
+    "对象RAM表",
+    "BizHawk内存写机制",
+    "本机武器RAM实测",
+    "本机对象表定位实测"
+  ],
+  "reference_only_coverage": [
+    "FM2导入社区流程",
+    "segmented TAS通用术语"
+  ],
+  "not_covered": [
+    "官方说明书级玩法",
+    "整款游戏内容知识库",
+    "PAL-B等价性",
+    "生产路由"
+  ],
+  "production_defaults_unchanged": true,
+  "external_generative_model_calls": 0,
+  "paid_api_calls": 0
+}

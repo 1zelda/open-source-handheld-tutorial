@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>A1–A3 实施记录｜2026-11-24</title>
+<style>
+  @page { size: A4; margin: 16mm 15mm 18mm; }
+  * { box-sizing: border-box; }
+  body { margin: 0; color: #172033; background: #fff; font-family: "Microsoft YaHei", "PingFang SC", sans-serif; font-size: 10.5pt; line-height: 1.5; }
+  h1 { font-size: 25pt; line-height: 1.2; margin: 0 0 6mm; letter-spacing: .02em; }
+  h2 { font-size: 16pt; margin: 7mm 0 3mm; padding-bottom: 2mm; border-bottom: 1.2pt solid #243b6b; color: #243b6b; }
+  h3 { font-size: 12pt; margin: 6mm 0 2mm; color: #243b6b; }
+  p { margin: 0 0 3mm; }
+  ul, ol { margin: 1mm 0 4mm 5mm; padding-left: 5mm; }
+  li { margin: 0 0 1.4mm; }
+  code { font-family: Consolas, "Courier New", monospace; font-size: 9pt; background: #f2f4f8; padding: .3mm 1mm; border-radius: 1mm; overflow-wrap: anywhere; }
+  table { width: 100%; border-collapse: collapse; margin: 3mm 0 5mm; font-size: 9.5pt; }
+  th, td { border: .6pt solid #c8d0df; padding: 2mm 2.3mm; vertical-align: top; overflow-wrap: anywhere; }
+  th { background: #eaf0fa; text-align: left; color: #243b6b; }
+  .meta { color: #5b6578; font-size: 9.5pt; margin-bottom: 7mm; }
+  .lead { font-size: 12pt; padding: 4mm 5mm; background: #f3f6fc; border-left: 3pt solid #496aa8; margin: 0 0 7mm; }
+  .status { display: inline-block; padding: .6mm 2mm; border-radius: 2mm; font-size: 8.8pt; font-weight: 700; white-space: nowrap; }
+  .done { color: #17603a; background: #e3f4ea; }
+  .blocked { color: #8a4b00; background: #fff0d8; }
+  .off { color: #6b3d8f; background: #f1e8f8; }
+  .safe { color: #174f7a; background: #e3f1fa; }
+  .callout { padding: 3.5mm 4mm; margin: 4mm 0; border: .8pt solid #d8deea; border-radius: 2mm; background: #fafbfe; break-inside: avoid; }
+  .warning { border-color: #e5bd7c; background: #fff8ec; }
+  .small { font-size: 9pt; color: #5b6578; }
+  .hash { font-family: Consolas, monospace; font-size: 8pt; word-break: break-all; }
+  .sources { font-size: 9pt; }
+  .sources li { overflow-wrap: anywhere; }
+  .keep { break-inside: avoid; }
+  footer { margin-top: 5mm; padding-top: 3mm; border-top: .6pt solid #c8d0df; color: #697386; font-size: 8.5pt; }
+</style>
+</head>
+<body>
+<h1>A1–A3 实施记录</h1>
+<div class="meta">记录日期：2026-11-24　｜　项目：F:\开源掌机教程　｜　范围：授权申请、NLI 影子语义层、付费 API 与凭据安全</div>
+
+<div class="lead">本轮把能自动完成的实现、验证和回执全部做完；没有把“邮件草稿”写成“已发送”，没有把“校准失败”的 NLI 写进生产裁决，也没有在预算未配置时发起任何付费请求。</div>
+
+<h2>一、结果总览</h2>
+<table>
+  <thead><tr><th style="width:12%">项目</th><th style="width:24%">状态</th><th>实际结果</th></tr></thead>
+  <tbody>
+    <tr><td><strong>A1</strong><br>授权申请</td><td><span class="status blocked">草稿就绪 · 发送阻塞</span></td><td>GRID、Liquipedia、OpenDota 三封 .eml 已生成并解析通过；全部带 <code>X-Unsent: 1</code>，<code>sent_at=null</code>，发送数 0。本机没有 Outlook 配置档案，也没有默认 mailto 处理器。</td></tr>
+    <tr><td><strong>A2</strong><br>NLI 影子层</td><td><span class="status off">已接线 · 生产关闭</span></td><td>mDeBERTa NLI 只能附影子提示或否决候选，不能新增/撤销生产 pass。24 例校准失败，阈值保持 <code>null</code>；86 行影子评测的生产状态与证据全部未变。知识库闸门复跑 <strong>252/252</strong>。</td></tr>
+    <tr><td><strong>A3</strong><br>付费与凭据</td><td><span class="status safe">已收口 · 付费默认拒绝</span></td><td>未知价格按收费且拒绝执行；点名型号不绕过付费开关；六项预算/额度缺一即拒绝；请求中断保留未知成本；生产 CLI 加进程锁。API 安全自检 <strong>148/148</strong>，付费请求 0。</td></tr>
+  </tbody>
+</table>
+
+<h2>二、A1：三封授权申请</h2>
+<h3>已完成</h3>
+<table>
+  <thead><tr><th>对象</th><th>收件地址</th><th>邮件件</th><th>字节</th></tr></thead>
+  <tbody>
+    <tr><td>GRID</td><td>sales@grid.gg</td><td><code>A1_GRID_商用授权咨询_2026-11-24.eml</code></td><td>2,010</td></tr>
+    <tr><td>Liquipedia</td><td>contact@liquipedia.net</td><td><code>A1_Liquipedia_LPDB授权咨询_2026-11-24.eml</code></td><td>1,753</td></tr>
+    <tr><td>OpenDota</td><td>support@opendota.com</td><td><code>A1_OpenDota_数据用途咨询_2026-11-24.eml</code></td><td>1,791</td></tr>
+  </tbody>
+</table>
+<ul>
+  <li>三封邮件均可被 Python 邮件解析器读取，主题与收件地址符合申请目标。</li>
+  <li>Liquipedia 的 API 条款页在本机返回 403，因此邮件只询问当前政策，没有把未核实的条款写成既定事实。</li>
+  <li>OpenDota 代码采用 MIT 许可不等于数据可商用；邮件明确询问数据用途与商业授权。</li>
+</ul>
+<h3>发送阻塞点</h3>
+<div class="callout warning">
+  <strong>当前发送数为 0。</strong>本轮只读复查显示：<code>HKCU\Software\Microsoft\Office\Outlook\Profiles</code> 不存在，<code>mailto\UserChoice</code> 也不存在；此前 Outlook COM 探针测得配置账号为 0。没有真实发件账号，就不能伪造“已发送”。
+</div>
+<p><strong>下一步：</strong>用户配置任一真实发件账号后，打开三份 .eml，核对收件人、正文和签名并发送；随后把 <code>sent_at</code>、message-id 与回执写回 <code>A1_授权申请发送回执_2026-11-24.json</code>。</p>
+
+<h2>三、A2：NLI 影子语义层</h2>
+<h3>生产契约</h3>
+<ul>
+  <li>模型：<code>MoritzLaurer/mDeBERTa-v3-base-mnli-xnli</code>；固定 revision：<code>8adb042d524ecd5c26d3e3ba0e3fbcf7e2d0864c</code>。</li>
+  <li>设备与精度：CUDA FP32；不静默回退 CPU。</li>
+  <li>输入：候选证据作为 premise，完整原子主张作为 hypothesis；禁止拿问题冒充主张。</li>
+  <li>位置：身份、版本、权限等硬闸门之后；结构化事实不交给 NLI 替代硬判据。</li>
+  <li>权限：只能产生 <code>supports_shadow</code>、<code>veto_candidate</code>、<code>uncertain</code>、<code>not_applicable</code>、<code>not_run</code>；不能创建或撤销生产 pass。</li>
+  <li>多域：<code>kb.query_auto()</code> 把参数透传每个命中域，不合并成一个总 pass。</li>
+  <li>日志：只存标签、概率、margin、阈值、设备、revision 和字符数，不存 claim/premise 正文。</li>
+</ul>
+
+<h3>校准结果：失败，因此保持关闭</h3>
+<table>
+  <thead><tr><th>样本</th><th>Accuracy</th><th>Macro-F1</th><th>阈值</th><th>生产状态</th></tr></thead>
+  <tbody><tr><td>24</td><td>0.7500</td><td>0.7414</td><td><code>null</code></td><td><span class="status off">not_run / default off</span></td></tr></tbody>
+</table>
+<table>
+  <thead><tr><th>真实标签 ↓ / 预测 →</th><th>entailment</th><th>neutral</th><th>contradiction</th></tr></thead>
+  <tbody>
+    <tr><td>entailment</td><td>7</td><td>1</td><td>0</td></tr>
+    <tr><td>neutral</td><td>1</td><td>4</td><td>3</td></tr>
+    <tr><td>contradiction</td><td>0</td><td>1</td><td>7</td></tr>
+  </tbody>
+</table>
+<div class="callout warning">
+  entailment 的正例最低概率为 0.5000，但负例最高概率达 0.8201；contradiction 的正例最低概率为 0.5000，但负例最高概率达 0.9955。两类正负概率区间均重叠，不能发布自动支持/否决阈值。
+</div>
+<p>24 例只用于影子校准，不代表真实通过率，也不具统计显著性。若仍要推进，先扩充并人工复核跨语言校准集，证明正负概率可分离且中性误判可控，再单独批准阈值与影子启用。</p>
+
+<h3>影子评测复算</h3>
+<table>
+  <thead><tr><th>总行数</th><th>生产状态/证据未变</th><th>有人工原子 claim</th><th>原始预测</th><th>跳过</th></tr></thead>
+  <tbody><tr><td>86</td><td>86</td><td>8</td><td>5</td><td>无 claim 78；无生产 pass 3</td></tr></tbody>
+</table>
+<p>原始预测标签：entailment 3、contradiction 1、neutral 1。校准报告的 24 条预测全部为 <code>shadow_decision=disabled</code>。知识库生产路径复跑：<strong>KB_SELFTEST OK 252/252</strong>。</p>
+
+<h2>四、A3：付费 API 与凭据安全</h2>
+<h3>付费执行闸门</h3>
+<table>
+  <thead><tr><th>闸门</th><th>当前行为</th></tr></thead>
+  <tbody>
+    <tr><td>未知价格</td><td>按收费处理；即使 <code>--allow-paid</code> 且预算完整，也因未知价格拒绝请求。</td></tr>
+    <tr><td>点名型号</td><td>只限制型号，不绕过 <code>--allow-paid</code> 和预算。</td></tr>
+    <tr><td>六项预算/额度</td><td>每轮/每日金额、token、请求上限必须全部 &gt; 0；token/请求须为整数。当前全部为 0，付费执行直接拒绝。</td></tr>
+    <tr><td>输入估算</td><td>未接 tokenizer，按 UTF-8 字节数取保守上界；默认输出上限 2048，显式 <code>--max-tokens</code> 原样保留。</td></tr>
+    <tr><td>真实用量</td><td>成功后回填 attempts、req、输入/输出/思考 token 与人民币成本；Gemini 思考 token 计费。</td></tr>
+    <tr><td>中断/超时</td><td>请求发出后若进程中断或传输层结果未知，台账保留 pending；后续付费调用按未知成本拒绝。</td></tr>
+    <tr><td>并发</td><td>生产 <code>--ask/--init</code> 使用 Windows 文件锁，锁内重读配置与台账；第二进程直接拒绝。</td></tr>
+  </tbody>
+</table>
+
+<h3>凭据安全</h3>
+<ul>
+  <li>密钥值只存 Windows Credential Manager；JSON 只存凭据引用。</li>
+  <li>本轮扫描：配置与台账的敏感字段命中均为 0，疑似密钥值命中均为 0；1 个凭据引用存在且可读。</li>
+  <li>掩码只显示“已配置（N 字符）”，不输出首尾片段。</li>
+  <li><code>save()</code> 在打开临时文件前递归拒绝敏感字段和常见密钥值；被拒绝时目标文件与 <code>.tmp</code> 都不生成。</li>
+  <li><code>.gitignore</code> 已验证覆盖配置、台账、对应 <code>.tmp</code> 与脚本备份。</li>
+</ul>
+
+<h3>验证结果</h3>
+<table>
+  <thead><tr><th>验证</th><th>结果</th></tr></thead>
+  <tbody>
+    <tr><td>基线 → 最终 API 安全自检</td><td>91/91 → <strong>148/148</strong></td></tr>
+    <tr><td>付费阻断路径</td><td>无 allow-paid、零预算、未知价格均发起 0 次调用</td></tr>
+    <tr><td>成功付费替身</td><td>attempts/req/usage/成本逐格通过；默认与显式输出上限均进入请求体</td></tr>
+    <tr><td>六项预算边界</td><td>逐项触发；恰好等于上限不误杀</td></tr>
+    <tr><td>进程锁</td><td>父进程持锁时子进程 blocked；释放后子进程 acquired</td></tr>
+    <tr><td>真实状态</td><td>自检期间真实台账与配置字节不变；测试请求全部走替身，不联网</td></tr>
+    <tr><td>当前付费请求/充值/撤 key</td><td>0 / 未执行 / 未执行</td></tr>
+  </tbody>
+</table>
+
+<h3>产物指纹</h3>
+<table>
+  <thead><tr><th>文件</th><th>字节</th><th>SHA-256</th></tr></thead>
+  <tbody>
+    <tr><td><code>_工具脚本/apikey池.py</code></td><td>95,495</td><td class="hash">7e43e7527f021e572ab06e639c2484749aeead93223d36407c6d65026a4d5941</td></tr>
+    <tr><td><code>_工具脚本/apikey池.json</code></td><td>12,438</td><td class="hash">0892af010f4061a967b6a499b1cddab23fc221d773e270d3799dbc5ed032bcbf</td></tr>
+    <tr><td><code>_工具脚本/_apikey池台账.json</code></td><td>1,226</td><td class="hash">9d3d25fae204e4255de125df0afcf80da35150616045235783597d472ec5ea27</td></tr>
+    <tr><td><code>.gitignore</code></td><td>856</td><td class="hash">bfb2a6c2406d914145fd53e86727afa6e8302e77a234cdc34b2dd655038a53ad</td></tr>
+  </tbody>
+</table>
+
+<h2>五、下一步</h2>
+<ol>
+  <li><strong>邮件：</strong>配置真实发件账号后发送三封授权申请，并回填 message-id/时间/回执。</li>
+  <li><strong>NLI：</strong>维持生产关闭；只有校准集扩大并证明阈值可分离后，才另批启用。</li>
+  <li><strong>付费 API：</strong>继续维持零预算默认；确需付费时，由用户明确填写六项上限，再检查价格和当日台账。</li>
+</ol>
+
+<h2>来源</h2>
+<ul class="sources">
+  <li>GRID Riot Open Access：https://grid.gg/riot-open-access/</li>
+  <li>GRID Plans：https://www.grid.gg/plans/</li>
+  <li>Liquipedia Contact：https://liquipedia.net/hub/Contact</li>
+  <li>Liquipedia API：https://liquipedia.net/api</li>
+  <li>Liquipedia API Terms：https://liquipedia.net/api-terms-of-use</li>
+  <li>OpenDota API Keys：https://www.opendota.com/api-keys</li>
+  <li>OpenDota FAQ：https://blog.opendota.com/2014/08/01/faq/</li>
+  <li>OpenDota Web localization source：https://github.com/odota/web/blob/master/src/lang/en-US.json</li>
+</ul>
+
+<footer>本记录只陈述本轮可复核产物与实测结果。未发送邮件、未启用 NLI 自动裁决、未发起付费调用、未创建 git commit。</footer>
+</body>
+</html>

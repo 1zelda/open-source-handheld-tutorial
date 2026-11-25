@@ -1,0 +1,38 @@
+{
+  "schema": "kb_final_delivery_verification_v1",
+  "manifest_artifacts_checked": 3,
+  "inventory_artifacts_checked": 84,
+  "prior_delivery_artifacts_checked": 3,
+  "markdown_sources_checked": [
+    "F:\\开源掌机教程\\知识库改进优化指导_2026-11-24_来源继承修正回填.md",
+    "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261124_source_inheritance\\artifact_inventory_source_inheritance_20261124.md"
+  ],
+  "missing_links": [],
+  "pdf_checks": {
+    "pages_positive": true,
+    "source_section_present": true,
+    "four_arm_section_present": true,
+    "dense_section_present": true,
+    "final_fingerprint_section_present": true,
+    "base_sha_present": true,
+    "hybrid_sha_present": true,
+    "code_sha_present": true,
+    "gates_sha_present": true,
+    "project_gate_present": true,
+    "kb_gate_present": true,
+    "cross_gate_present": true,
+    "topic_gate_present": true,
+    "strict_grade_present": true,
+    "x23_conflict_present": true,
+    "q18_separated": true,
+    "sources_failure_disclosed": true,
+    "manifest_matches_index": true,
+    "manifest_matches_hybrid": true,
+    "no_replacement_char": true,
+    "no_blank_pages": true,
+    "no_outside_blocks": true,
+    "no_dom_overflow": true
+  },
+  "dense_isolation_ok": true,
+  "all_checks_ok": true
+}

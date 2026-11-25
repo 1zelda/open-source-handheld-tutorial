@@ -1,0 +1,706 @@
+{
+  "schema": "news_snapshot_consumer_smoke_after_citation_authority_fix_v1",
+  "taken_at": "2026-11-24T15:27:40Z",
+  "consumer": "选题决策层/知识对照.py:crosscheck -> taspipe.kb:query_auto",
+  "index": {
+    "path": "F:\\开源掌机教程\\_工具脚本\\taspipe\\游戏包\\知识库\\index.json",
+    "bytes": 3607419,
+    "mtime_ns": 1795533170116696400,
+    "sha256": "2a93e76d5876c1181e7784a20eca0f4d84888d0292d281fc6eea3564090b9260",
+    "chunks": 773
+  },
+  "news_snapshot": {
+    "path": "F:\\开源掌机教程\\选题决策层\\kb快照\\index.json",
+    "bytes": 3607419,
+    "mtime_ns": 1795533626202927000,
+    "sha256": "2a93e76d5876c1181e7784a20eca0f4d84888d0292d281fc6eea3564090b9260",
+    "chunks": 773,
+    "synced": true
+  },
+  "smoke": {
+    "events": [
+      {
+        "event_id": "smoke-soccer-broad",
+        "titles": [
+          "《热血足球联盟》燕返怎么触发？"
+        ]
+      },
+      {
+        "event_id": "smoke-soccer-role",
+        "titles": [
+          "热血足球联盟双人合作模式下二号玩家操作什么位置？"
+        ]
+      },
+      {
+        "event_id": "smoke-soccer-count",
+        "titles": [
+          "热血足球联盟每队上场几名球员？"
+        ]
+      },
+      {
+        "event_id": "smoke-fighting",
+        "titles": [
+          "《热血格斗传说》角色创建有几种能力？"
+        ]
+      },
+      {
+        "event_id": "smoke-kof98",
+        "titles": [
+          "KOF98 ECK 能不能关掉队友改成 1v1？"
+        ]
+      },
+      {
+        "event_id": "smoke-unrouted",
+        "titles": [
+          "这条标题没有可识别的游戏实体"
+        ]
+      },
+      {
+        "event_id": "smoke-multi",
+        "titles": [
+          "LOL 与 DOTA2 的赛制有什么不同？"
+        ]
+      }
+    ],
+    "results": {
+      "smoke-soccer-broad": {
+        "mode": "bm25",
+        "status": "inconclusive",
+        "retrieval": "bm25_only",
+        "retrieval_note": "稠密指纹件未建（py -3 -m taspipe.kb dense）",
+        "reason": "可答命中只有快照/二手/跨版本支撑，或本版本权威件只匹配到单字噪声（不算证据）",
+        "refusal": "",
+        "selected_evidence": [],
+        "index_used": "index.json",
+        "index_sha256": "2a93e76d5876c1181e7784a20eca0f4d84888d0292d281fc6eea3564090b9260",
+        "version_hints": [],
+        "auto_routing": {
+          "mode": "single",
+          "domains": [
+            {
+              "domain": "retro_soccer",
+              "game_ids": [
+                "nekketsu_soccer2"
+              ],
+              "revisions": [],
+              "corpus_available": true,
+              "matched": [
+                "热血足球",
+                "燕返"
+              ],
+              "tier": "strong"
+            }
+          ]
+        },
+        "domain_results": [],
+        "hits": [
+          {
+            "locator": "_工具脚本/taspipe/游戏包/来源库/取证/1ang_热血足球联盟图文攻略_20261118.md#L1-L129",
+            "snippet": "热血足球3攻略-FC热血足球3(热血足球联盟)游戏图文攻略 - 乐米网一昂\nfunction doFav(u, t) { }\n日版名：くにおくんの熱血サッカーリーグ\n罗马音：Kunio Kun No Nekketsu Soccer League\n汉语名：库尼奥君的热血足球联盟\n简称：热血足球联盟\n海贼商命名：热血足球3\n类型：体育运动(Sports)\n对应机种：FC\n游戏设计：甲斐浩二\n开发与发售：Technos Japan\n发售日期：1993年4月23日\n本作是FC版『熱血",
+            "authority": "reference_only",
+            "status": "verified_read",
+            "answerable": true
+          },
+          {
+            "locator": "_工具脚本/taspipe/游戏包/热血足球联盟_必杀全清单.md#L10-L21",
+            "snippet": "- S1 天幻网《FC热血足球联盟困难模式全胜夺冠》转载（乐米网一昂，2022-04-05）：\n（原站 http://1lifeclear.ffsky.cn/56.htm 本机直连失败，用转载副本；逐选手日文原名+发动法+秘技+难度规则）\n- S2 搜狐《FC〈热血足球联盟〉热血队队员必杀技集锦》（踏破仙阙，2019-08-29）：\nhttps://www.sohu.com/a/337254221_120099888 （12 人中文译名+球变形效果逐条）\n- S3 搜狐《〈F",
+            "authority": "authoritative",
+            "status": "verified_read",
+            "answerable": false
+          },
+          {
+            "locator": "_工具脚本/taspipe/游戏包/来源库/取证/1ang_热血足球联盟图文攻略_20261118.md#L823-L839",
+            "snippet": "比赛中按START键暂停，{A键按３次＋B键按１次＋A键按３次＋B键按１次＋A键按７次}，再按START键解除暂停，听到必杀踢射的发动音效，就成功了。这样就能使全部球员拥有全部必杀技，比如平时不会燕返的球员也会用燕返了，平时不会用爆裂攻击的球员也会用铁膝盖顶人了。\n缺点是效果只能持续半场比赛，另外半场比赛需要重新使用秘技。这就意味着，每次进行比赛都要使用一次秘技。\n更多热血足球3攻略-FC热血足球3(热血足球联盟)游戏图文攻略相关问题\n问题：《都市天际线》独特建筑和地标建筑有",
+            "authority": "reference_only",
+            "status": "verified_read",
+            "answerable": false
+          }
+        ]
+      },
+      "smoke-soccer-role": {
+        "mode": "bm25",
+        "status": "pass",
+        "retrieval": "bm25_only",
+        "retrieval_note": "稠密指纹件未建（py -3 -m taspipe.kb dense）",
+        "reason": "1 条 verified_read + authoritative 可答命中，权威件在第 2 位",
+        "refusal": "",
+        "selected_evidence": [
+          {
+            "chunk_id": "b52a862e000a",
+            "score": 12.86,
+            "source_id": "setsumei_cloudfree",
+            "status": "verified_read",
+            "authority": "authoritative",
+            "revision": "nekketsu_soccer2_fc_jp",
+            "game_id": "nekketsu_soccer2",
+            "platform": "NES",
+            "revision_match": true,
+            "locator": "_工具脚本/taspipe/游戏包/来源库/取证/setsumei_热血足球说明书扫描_20261118.md#L47-L48",
+            "heading": "＜ゲームのルール＞",
+            "matched_terms": [
+              "2p",
+              "協力"
+            ],
+            "snippet": "＜ゲームのルール＞\n　まず、「熱血サッカーリーグ」の試合ルールから説明するわよ。この「サッカーリーグ」は６人制のサッカーで、一定時間内に多く得点したチームが勝ち！　もしも同点で試合が終了した場合はＰＫ戦によって勝敗を決めるのよ！　また試合中には「ペナルティ」の判定があり「フリー・キック」もできちゃうの。やったね♥  \n　１ＰプレイはＭＦのキャプテン・キャラ一人を操作しながらチームメイトへ指示を送ってプレイするの。２Ｐ協力プレイでは、１ＰはＭＦ・キャラを、２ＰはＧＫ・キャラを操",
+            "answerability": {
+              "answerable": true,
+              "intent": "identity",
+              "focus_ok": true,
+              "pattern_ok": true,
+              "intent_ok": true,
+              "focus_hit": [
+                "操作"
+              ],
+              "url_list": false,
+              "topic_anchor_ok": true,
+              "exclusive_attribution_ok": true,
+              "position_subject_ok": true,
+              "position_subjects": [],
+              "shot_method_ok": true,
+              "player_role_ok": true,
+              "ending_capability_ok": true,
+              "input_sequence_ok": true,
+              "team_shot_ok": true,
+              "technique_ok": true,
+              "multiplayer_mode_ok": true
+            }
+          }
+        ],
+        "index_used": "index.json",
+        "index_sha256": "2a93e76d5876c1181e7784a20eca0f4d84888d0292d281fc6eea3564090b9260",
+        "version_hints": [],
+        "auto_routing": {
+          "mode": "single",
+          "domains": [
+            {
+              "domain": "retro_soccer",
+              "game_ids": [
+                "nekketsu_soccer2"
+              ],
+              "revisions": [],
+              "corpus_available": true,
+              "matched": [
+                "热血足球"
+              ],
+              "tier": "strong"
+            }
+          ]
+        },
+        "domain_results": [],
+        "hits": [
+          {
+            "locator": "_工具脚本/taspipe/游戏包/来源库/取证/setsumei_热血足球说明书扫描_20261118.md#L52-L72",
+            "snippet": "＜ゲームモード説明＞\n**＜ゲームモード説明＞**\n![](p5.png)\nゲームモードは３つ。  \n十字レバーで選んでＡで決定、Ｂでキャンセルよ。難易度を選んだら、さあ、スタート！  \n熱血リーグ・モード\n世界にある４つのサッカーリーグに遠征し、世界一のサッカーチームをめざすモードなの。１Ｐプレイと、２Ｐ協力プレイがあるからね。\n対戦プレイ・モード\nお好みのチームをセレクトして、友達４人までと対戦プレイができるよ。さあ全員集合！\nＰＫ戦プレイ・モード\nＰＫ戦だけをプレイする",
+            "authority": "authoritative",
+            "status": "verified_read",
+            "answerable": false
+          },
+          {
+            "locator": "_工具脚本/taspipe/游戏包/来源库/取证/setsumei_热血足球说明书扫描_20261118.md#L47-L48",
+            "snippet": "＜ゲームのルール＞\n　まず、「熱血サッカーリーグ」の試合ルールから説明するわよ。この「サッカーリーグ」は６人制のサッカーで、一定時間内に多く得点したチームが勝ち！　もしも同点で試合が終了した場合はＰＫ戦によって勝敗を決めるのよ！　また試合中には「ペナルティ」の判定があり「フリー・キック」もできちゃうの。やったね♥  \n　１ＰプレイはＭＦのキャプテン・キャラ一人を操作しながらチームメイトへ指示を送ってプレイするの。２Ｐ協力プレイでは、１ＰはＭＦ・キャラを、２ＰはＧＫ・キャラを操",
+            "authority": "authoritative",
+            "status": "verified_read",
+            "answerable": true
+          },
+          {
+            "locator": "_工具脚本/taspipe/游戏包/来源库/取证/setsumei_热血足球说明书扫描_20261118.md#L376-L401",
+            "snippet": "＜「熱血ＦＣ」メンバー紹介＞\nよりつね  \n服部学園  \nポジション ： ＦＷ  \n性格 ： よくわからない  \n好物 ： うめぼし  \n嫌な物 ： アイドル歌手\n![](p19-5.png)\nかいずき  \n一本釣水産高校  \nポジション ： ＭＦ  \n性格 ： 協力的  \n好物 ： 演歌・海産物  \n嫌な物 ： 女の子\n![](p19-6.png)\nげんえい  \n熱血高校  \nポジション ： ＧＫ  \n性格 ： 協力的  \n好物 ： 漬物  \n嫌な物 ： いいかげんな奴\n!",
+            "authority": "authoritative",
+            "status": "verified_read",
+            "answerable": false
+          }
+        ]
+      },
+      "smoke-soccer-count": {
+        "mode": "bm25",
+        "status": "pass",
+        "retrieval": "bm25_only",
+        "retrieval_note": "稠密指纹件未建（py -3 -m taspipe.kb dense）",
+        "reason": "2 条 verified_read + authoritative 可答命中，权威件在第 1 位",
+        "refusal": "",
+        "selected_evidence": [
+          {
+            "chunk_id": "b52a862e000a",
+            "score": 37.255,
+            "source_id": "setsumei_cloudfree",
+            "status": "verified_read",
+            "authority": "authoritative",
+            "revision": "nekketsu_soccer2_fc_jp",
+            "game_id": "nekketsu_soccer2",
+            "platform": "NES",
+            "revision_match": true,
+            "locator": "_工具脚本/taspipe/游戏包/来源库/取证/setsumei_热血足球说明书扫描_20261118.md#L47-L48",
+            "heading": "＜ゲームのルール＞",
+            "matched_terms": [
+              "カー",
+              "サッ",
+              "ッカ",
+              "プレ",
+              "レイ"
+            ],
+            "snippet": "＜ゲームのルール＞\n　まず、「熱血サッカーリーグ」の試合ルールから説明するわよ。この「サッカーリーグ」は６人制のサッカーで、一定時間内に多く得点したチームが勝ち！　もしも同点で試合が終了した場合はＰＫ戦によって勝敗を決めるのよ！　また試合中には「ペナルティ」の判定があり「フリー・キック」もできちゃうの。やったね♥  \n　１ＰプレイはＭＦのキャプテン・キャラ一人を操作しながらチームメイトへ指示を送ってプレイするの。２Ｐ協力プレイでは、１ＰはＭＦ・キャラを、２ＰはＧＫ・キャラを操",
+            "answerability": {
+              "answerable": true,
+              "intent": "count",
+              "focus_ok": false,
+              "pattern_ok": true,
+              "intent_ok": true,
+              "focus_hit": [],
+              "url_list": false,
+              "topic_anchor_ok": true,
+              "exclusive_attribution_ok": true,
+              "position_subject_ok": true,
+              "position_subjects": [],
+              "shot_method_ok": true,
+              "player_role_ok": true,
+              "ending_capability_ok": true,
+              "input_sequence_ok": true,
+              "team_shot_ok": true,
+              "technique_ok": true,
+              "multiplayer_mode_ok": true
+            }
+          }
+        ],
+        "index_used": "index.json",
+        "index_sha256": "2a93e76d5876c1181e7784a20eca0f4d84888d0292d281fc6eea3564090b9260",
+        "version_hints": [],
+        "auto_routing": {
+          "mode": "single",
+          "domains": [
+            {
+              "domain": "retro_soccer",
+              "game_ids": [
+                "nekketsu_soccer2"
+              ],
+              "revisions": [],
+              "corpus_available": true,
+              "matched": [
+                "热血足球"
+              ],
+              "tier": "strong"
+            }
+          ]
+        },
+        "domain_results": [],
+        "hits": [
+          {
+            "locator": "_工具脚本/taspipe/游戏包/来源库/取证/setsumei_热血足球说明书扫描_20261118.md#L47-L48",
+            "snippet": "＜ゲームのルール＞\n　まず、「熱血サッカーリーグ」の試合ルールから説明するわよ。この「サッカーリーグ」は６人制のサッカーで、一定時間内に多く得点したチームが勝ち！　もしも同点で試合が終了した場合はＰＫ戦によって勝敗を決めるのよ！　また試合中には「ペナルティ」の判定があり「フリー・キック」もできちゃうの。やったね♥  \n　１ＰプレイはＭＦのキャプテン・キャラ一人を操作しながらチームメイトへ指示を送ってプレイするの。２Ｐ協力プレイでは、１ＰはＭＦ・キャラを、２ＰはＧＫ・キャラを操",
+            "authority": "authoritative",
+            "status": "verified_read",
+            "answerable": true
+          },
+          {
+            "locator": "_工具脚本/taspipe/游戏包/来源库/取证/setsumei_热血足球说明书扫描_20261118.md#L52-L72",
+            "snippet": "＜ゲームモード説明＞\n**＜ゲームモード説明＞**\n![](p5.png)\nゲームモードは３つ。  \n十字レバーで選んでＡで決定、Ｂでキャンセルよ。難易度を選んだら、さあ、スタート！  \n熱血リーグ・モード\n世界にある４つのサッカーリーグに遠征し、世界一のサッカーチームをめざすモードなの。１Ｐプレイと、２Ｐ協力プレイがあるからね。\n対戦プレイ・モード\nお好みのチームをセレクトして、友達４人までと対戦プレイができるよ。さあ全員集合！\nＰＫ戦プレイ・モード\nＰＫ戦だけをプレイする",
+            "authority": "authoritative",
+            "status": "verified_read",
+            "answerable": true
+          },
+          {
+            "locator": "_工具脚本/taspipe/游戏包/来源库/取证/setsumei_热血足球说明书扫描_20261118.md#L327-L341",
+            "snippet": "＜「ＰＫ戦プレイ・モード」の説明＞\n**＜「ＰＫ戦プレイ・モード」の説明＞**\n　ＰＫ戦プレイ出場６チームの中から、チームをセレクトしたら、ＰＫ戦だけの対戦開始！  \n![](p18-1.png)\n![](p18-2.png)\n**ＰＫ戦・設定画面**  \n　画面の指示に従って設定してね♥  \n　ＰＫ戦プレイ・１Ｐモードは1Ｐ ｖｓ ＣＯＭの対戦で、この時はすべての選手を操作してね。２Ｐモードは１Ｐ ｖｓ ２ＰのＰＫ合戦よ。",
+            "authority": "authoritative",
+            "status": "verified_read",
+            "answerable": false
+          }
+        ]
+      },
+      "smoke-fighting": {
+        "mode": "bm25",
+        "status": "pass",
+        "retrieval": "bm25_only",
+        "retrieval_note": "稠密指纹件未建（py -3 -m taspipe.kb dense）",
+        "reason": "1 条 verified_read + authoritative 可答命中，权威件在第 2 位",
+        "refusal": "",
+        "selected_evidence": [
+          {
+            "chunk_id": "5a5b98575b8a",
+            "score": 12.462,
+            "source_id": "archive_nkd_manual",
+            "status": "verified_read",
+            "authority": "authoritative",
+            "revision": "nekketsu_kakutou_densetsu_fc_jp",
+            "game_id": "nekketsu_kakutou_densetsu",
+            "platform": "NES",
+            "revision_match": true,
+            "locator": "_工具脚本/taspipe/游戏包/来源库/取证/manual_熱血格闘伝説_TJC-NA_说明书摘录_20261124.md#L21-L24",
+            "heading": "格斗类型与能力（说明书“格闘タイプの説明”“キャラクターのステータス”）",
+            "matched_terms": [
+              "格斗",
+              "能力"
+            ],
+            "snippet": "- 格斗类型共4种：バランスタイプ、マーシャルアーツタイプ、カンフータイプ、くのいちタイプ。\n- 能力共6项：HP、手投、足投、投げ技、すばやさ、防御。\n- 等级在故事模式通关舞台后提升，个人能力随之成长。",
+            "answerability": {
+              "answerable": true,
+              "intent": "count",
+              "focus_ok": true,
+              "pattern_ok": true,
+              "intent_ok": true,
+              "focus_hit": [
+                "格斗",
+                "能力"
+              ],
+              "url_list": false,
+              "topic_anchor_ok": true,
+              "exclusive_attribution_ok": true,
+              "position_subject_ok": true,
+              "position_subjects": [],
+              "shot_method_ok": true,
+              "player_role_ok": true,
+              "ending_capability_ok": true,
+              "input_sequence_ok": true,
+              "team_shot_ok": true,
+              "technique_ok": true,
+              "multiplayer_mode_ok": true
+            }
+          }
+        ],
+        "index_used": "index.json",
+        "index_sha256": "2a93e76d5876c1181e7784a20eca0f4d84888d0292d281fc6eea3564090b9260",
+        "version_hints": [],
+        "auto_routing": {
+          "mode": "single",
+          "domains": [
+            {
+              "domain": "retro_fighting",
+              "game_ids": [
+                "nekketsu_kakutou_densetsu"
+              ],
+              "revisions": [],
+              "corpus_available": true,
+              "matched": [
+                "热血格斗传说"
+              ],
+              "tier": "strong"
+            }
+          ]
+        },
+        "domain_results": [],
+        "hits": [
+          {
+            "locator": "_工具脚本/taspipe/游戏包/来源库/取证/dammit9x_熱血格闘伝説_角色公式参考_20261124.md#L47-L49",
+            "snippet": "- FAQ 没给出名字到六项能力或格斗类型的公式。\n- FAQ 没给出血型到能力值的公式；不得把“血型可输入”写成“血型决定某项能力”。\n- KT 公式与相性表尚未由本机原版 ROM 逐例复算，原站也未能取回；升级 authoritative 前须补原站快照或本机受控实验。",
+            "authority": "reference_only",
+            "status": "verified_read",
+            "answerable": false
+          },
+          {
+            "locator": "_工具脚本/taspipe/游戏包/来源库/取证/manual_熱血格闘伝説_TJC-NA_说明书摘录_20261124.md#L21-L24",
+            "snippet": "- 格斗类型共4种：バランスタイプ、マーシャルアーツタイプ、カンフータイプ、くのいちタイプ。\n- 能力共6项：HP、手投、足投、投げ技、すばやさ、防御。\n- 等级在故事模式通关舞台后提升，个人能力随之成长。",
+            "authority": "authoritative",
+            "status": "verified_read",
+            "answerable": true
+          },
+          {
+            "locator": "_工具脚本/taspipe/游戏包/来源库/取证/manual_熱血格闘伝説_TJC-NA_说明书摘录_20261124.md#L12-L18",
+            "snippet": "- 创建角色前可选角色编辑或输入密码。\n- 编辑项决定角色强度与搭档相性。\n- 四项输入：好きな名前、誕生日、血液型、一緒に闘うパートナー。\n- 名字限制：5文字以内。\n- 仲間意識表示玩家与搭档的关系；数值好时CPU搭档更合作，坏时会攻击玩家。\n- 相性影响仲間意識恢复速度；相性由角色衣服颜色表示，顺序为赤、青、白、緑、黄。",
+            "authority": "authoritative",
+            "status": "verified_read",
+            "answerable": false
+          }
+        ]
+      },
+      "smoke-kof98": {
+        "mode": "bm25",
+        "status": "pass",
+        "retrieval": "bm25_only",
+        "retrieval_note": "稠密指纹件未建（py -3 -m taspipe.kb dense）",
+        "reason": "2 条 verified_read + authoritative 可答命中，权威件在第 1 位",
+        "refusal": "",
+        "selected_evidence": [
+          {
+            "chunk_id": "51fcabcc7db8",
+            "score": 4.956,
+            "source_id": "local_fbneo_rig",
+            "status": "verified_read",
+            "authority": "authoritative",
+            "revision": "kof98eck",
+            "game_id": "kof98",
+            "platform": "ARCADE",
+            "revision_match": true,
+            "locator": "F:/tas_rig/docs/素材生产规范.md#L185-L190",
+            "heading": "这份规范现在还不能保证的事（诚实清单）",
+            "matched_terms": [
+              "队友"
+            ],
+            "snippet": "1. 空中招（46 条）、连锁取消（53 条填不出前置）、简化输入指代不明 —— 这三类现在**录不出合格片**；\n2. VS 卡名字 → char_id 这一步还靠人眼，没有 OCR/模板比对闸门；\n3. `+0x18` 那格到底是什么还没查（能改打斗、但 P1/P2 同值，所以不是坐标）；\n4. 「打中人」的判据还没按招式类别分档，远程技在贴脸距离会被误判成不合格；\n5. 整批 683 条（按实测 49~60 s/条 ≈ 11~12 小时、约 1.4~1.8 GB）还没跑",
+            "answerability": {
+              "answerable": true,
+              "intent": "yesno",
+              "focus_ok": true,
+              "pattern_ok": true,
+              "intent_ok": true,
+              "focus_hit": [
+                "队友"
+              ],
+              "url_list": false,
+              "topic_anchor_ok": true,
+              "exclusive_attribution_ok": true,
+              "position_subject_ok": true,
+              "position_subjects": [],
+              "shot_method_ok": true,
+              "player_role_ok": true,
+              "ending_capability_ok": true,
+              "input_sequence_ok": true,
+              "team_shot_ok": true,
+              "technique_ok": true,
+              "multiplayer_mode_ok": true
+            }
+          }
+        ],
+        "index_used": "index.json",
+        "index_sha256": "2a93e76d5876c1181e7784a20eca0f4d84888d0292d281fc6eea3564090b9260",
+        "version_hints": [
+          "kof98eck"
+        ],
+        "auto_routing": {
+          "mode": "single",
+          "domains": [
+            {
+              "domain": "kof98",
+              "game_ids": [
+                "kof98"
+              ],
+              "revisions": [],
+              "corpus_available": true,
+              "matched": [
+                "KOF98",
+                "kof98",
+                "ECK"
+              ],
+              "tier": "strong"
+            }
+          ]
+        },
+        "domain_results": [],
+        "hits": [
+          {
+            "locator": "F:/tas_rig/docs/素材生产规范.md#L185-L190",
+            "snippet": "1. 空中招（46 条）、连锁取消（53 条填不出前置）、简化输入指代不明 —— 这三类现在**录不出合格片**；\n2. VS 卡名字 → char_id 这一步还靠人眼，没有 OCR/模板比对闸门；\n3. `+0x18` 那格到底是什么还没查（能改打斗、但 P1/P2 同值，所以不是坐标）；\n4. 「打中人」的判据还没按招式类别分档，远程技在贴脸距离会被误判成不合格；\n5. 整批 683 条（按实测 49~60 s/条 ≈ 11~12 小时、约 1.4~1.8 GB）还没跑",
+            "authority": "authoritative",
+            "status": "verified_read",
+            "answerable": true
+          },
+          {
+            "locator": "F:/tas_rig/docs/素材生产规范.md#L107-L121",
+            "snippet": "补偿本身还有一道代数闸门：`avi 帧数 − head_cut = 电影帧数 − 垫帧 + 起手留帧`，与 lost 取值无关\n（`selftest` 对 lost 11/13/19/25/27/31/36 逐格验），所以\"起步多丢几帧\"永远只是多切几帧垫帧，\n不会改成片长度、也不会挪动招式第一帧。\n- **数**：HUD 气槽/血条的行列坐标都是从原生 304×224 逐列扫出来的（`GAUGE_BAR_X`、`HP_BAR_X` 等）。\n- **闸门**：`capture",
+            "authority": "authoritative",
+            "status": "verified_read",
+            "answerable": false
+          },
+          {
+            "locator": "F:/tas_rig/docs/素材生产规范.md#L180-L182",
+            "snippet": "**能读的读回来（+0xba、HUD、血条、帧数），不能证明的写死在闸门里（站位杠杆=空集），\n被拦的按原因码记账（rom/cmd/歧义），要不要重录只看指纹。**",
+            "authority": "authoritative",
+            "status": "verified_read",
+            "answerable": true
+          }
+        ]
+      },
+      "smoke-unrouted": {
+        "mode": "bm25",
+        "status": "inconclusive",
+        "retrieval": "bm25_only",
+        "retrieval_note": "稠密指纹件未建（py -3 -m taspipe.kb dense）",
+        "reason": "自动路由未锚定游戏内容域（route=unrouted/tier=none），全库或内部文档域词面命中不可当硬证据；原pass理由：2 条 verified_read + authoritative 可答命中，权威件在第 1 位",
+        "refusal": "unanchored",
+        "selected_evidence": [],
+        "index_used": "index.json",
+        "index_sha256": "2a93e76d5876c1181e7784a20eca0f4d84888d0292d281fc6eea3564090b9260",
+        "version_hints": [],
+        "auto_routing": {
+          "mode": "single",
+          "domains": [
+            {
+              "domain": "unrouted",
+              "game_ids": null,
+              "revisions": null,
+              "corpus_available": true,
+              "matched": [],
+              "tier": "none"
+            }
+          ]
+        },
+        "domain_results": [],
+        "hits": [
+          {
+            "locator": "测试问题与闸门说明书.md#L1516-L1537",
+            "snippet": "| 量 | 值 |\n|---|---|\n| 整文件索引 | 1646 键 / 1911 文件，356.3s |\n| 去头索引 | 126 键 / 参与 140 文件，2.8s（跳过 zip 条目 1403、非 .nes 368、读失败 0） |\n| 台账有站点哈希的游戏 | 3754 个不同哈希 |\n| 其中整文件索引**已**命中 | 110 |\n| **只有**去头才命中 | **2 个哈希 → 3 条出版物（4776 / 4831 / 5231，全 NES）** |\n那",
+            "authority": "authoritative",
+            "status": "verified_read",
+            "answerable": true
+          },
+          {
+            "locator": "_工具脚本/taspipe/游戏包/来源库/取证/1ang_热血足球联盟图文攻略_20261118.md#L679-L691",
+            "snippet": "强豪球队。命中很强，善用必杀运球技能，只是，因为不会燕返技能，降低了发动必杀踢射的概率。即便如此，球门前普通踢射的威力，仍然对门将造成很大威胁。阵型2-2-1。胜利姿势为中场球员『えっけると(Ekkeruto)』连续不断吃香肠。热血队如果选择球员错误，上场球员命中不行，则败北的可能性极大。门将『ぶれーめ(Burême)』腿脚快，与巴西队门将一样，是最强级别的。\n官方说明书上说，全都是如同Cyborg一样的选手，球队非常坚固。队伍力量为5。\n全胜夺冠心得\n首先，说明一下如何选择",
+            "authority": "reference_only",
+            "status": "verified_read",
+            "answerable": true
+          },
+          {
+            "locator": "测试问题与闸门说明书.md#L905-L923",
+            "snippet": "产物：`F:/taspipe_scratch/mm_nav/{t4,t5,t7,t8,t9,t10,t11,movie}/`。EmuHawk 全程串行、跑完 0 进程。\n**新增可用能力（画面级证据，可复用）**：写权威对象表 `$0480≈250` + 按住 `Right`（**须落地**）能让引擎自己做\n一次合法的水平过屏。T5 迭代步进器与 T10 扫屏用这条腿走到 Cut 关屏 0→1→2→3，全程 0 伤害（`$006B` 恒 28）。\n`$001B` 是水平屏号（",
+            "authority": "authoritative",
+            "status": "verified_read",
+            "answerable": true
+          }
+        ]
+      },
+      "smoke-multi": {
+        "mode": "bm25",
+        "status": "miss",
+        "retrieval": "mixed",
+        "retrieval_note": "",
+        "reason": "自动识别到多个域，但这些域本地均无语料：esports_lol、esports_dota",
+        "refusal": "out_of_scope",
+        "selected_evidence": [],
+        "index_used": "index.json",
+        "index_sha256": "2a93e76d5876c1181e7784a20eca0f4d84888d0292d281fc6eea3564090b9260",
+        "version_hints": [],
+        "auto_routing": {
+          "mode": "multi",
+          "domains": [
+            {
+              "domain": "esports_lol",
+              "game_ids": [],
+              "revisions": [],
+              "corpus_available": false,
+              "matched": [
+                "LOL",
+                "lol"
+              ],
+              "tier": "strong"
+            },
+            {
+              "domain": "esports_dota",
+              "game_ids": [],
+              "revisions": [],
+              "corpus_available": false,
+              "matched": [
+                "DOTA2"
+              ],
+              "tier": "strong"
+            }
+          ]
+        },
+        "domain_results": [
+          {
+            "domain": "esports_lol",
+            "tier": "strong",
+            "matched": [
+              "LOL",
+              "lol"
+            ],
+            "corpus_available": false,
+            "status": "miss",
+            "refusal": "out_of_scope",
+            "reason": "路由到 esports_lol（命中 []），该域库内零语料（不是『不存在』，只是本地没收集）",
+            "retrieval": null,
+            "counts": {
+              "candidates": 0,
+              "hits": 0
+            },
+            "selected_evidence": [],
+            "index_used": "index.json",
+            "index_sha256": "2a93e76d5876c1181e7784a20eca0f4d84888d0292d281fc6eea3564090b9260"
+          },
+          {
+            "domain": "esports_dota",
+            "tier": "strong",
+            "matched": [
+              "DOTA2"
+            ],
+            "corpus_available": false,
+            "status": "miss",
+            "refusal": "out_of_scope",
+            "reason": "路由到 esports_dota（命中 []），该域库内零语料（不是『不存在』，只是本地没收集）",
+            "retrieval": null,
+            "counts": {
+              "candidates": 0,
+              "hits": 0
+            },
+            "selected_evidence": [],
+            "index_used": "index.json",
+            "index_sha256": "2a93e76d5876c1181e7784a20eca0f4d84888d0292d281fc6eea3564090b9260"
+          }
+        ],
+        "hits": []
+      }
+    },
+    "stats": {
+      "mode": "bm25",
+      "downgrade": null,
+      "queried": 7,
+      "unanchored_downgraded": 1,
+      "routing": "auto_multi",
+      "multi_domain_queries": 1,
+      "query_log": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261124\\news_snapshot_crosscheck_after_citation_authority_fix_20261124.query_log.jsonl",
+      "logged_queries": 7,
+      "index_sha256": "2a93e76d5876c1181e7784a20eca0f4d84888d0292d281fc6eea3564090b9260",
+      "snapshot": "F:\\开源掌机教程\\选题决策层\\kb快照\\index.json"
+    },
+    "isolated_query_log": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261124\\news_snapshot_crosscheck_after_citation_authority_fix_20261124.query_log.jsonl",
+    "logged_queries": 7,
+    "golden_path_passes": [
+      "smoke-soccer-role",
+      "smoke-soccer-count",
+      "smoke-fighting",
+      "smoke-kof98"
+    ],
+    "statuses": {
+      "smoke-soccer-broad": "inconclusive",
+      "smoke-soccer-role": "pass",
+      "smoke-soccer-count": "pass",
+      "smoke-fighting": "pass",
+      "smoke-kof98": "pass",
+      "smoke-unrouted": "inconclusive",
+      "smoke-multi": "miss"
+    }
+  },
+  "real_state": {
+    "before": {
+      "F:\\开源掌机教程\\_工具脚本\\taspipe\\游戏包\\知识库\\index.json": {
+        "path": "F:\\开源掌机教程\\_工具脚本\\taspipe\\游戏包\\知识库\\index.json",
+        "bytes": 3607419,
+        "mtime_ns": 1795533170116696400,
+        "sha256": "2a93e76d5876c1181e7784a20eca0f4d84888d0292d281fc6eea3564090b9260"
+      },
+      "F:\\开源掌机教程\\选题决策层\\kb快照\\index.json": {
+        "path": "F:\\开源掌机教程\\选题决策层\\kb快照\\index.json",
+        "bytes": 3607419,
+        "mtime_ns": 1795533626202927000,
+        "sha256": "2a93e76d5876c1181e7784a20eca0f4d84888d0292d281fc6eea3564090b9260"
+      },
+      "F:\\开源掌机教程\\选题决策层\\查询日志.jsonl": {
+        "path": "F:\\开源掌机教程\\选题决策层\\查询日志.jsonl",
+        "bytes": 9641,
+        "mtime_ns": 1795464843807700500,
+        "sha256": "87b4e228b58bc3402a0baa5b0db3103cc51c672e10e0b3f8f7c8c1fabd070cac"
+      }
+    },
+    "after": {
+      "F:\\开源掌机教程\\_工具脚本\\taspipe\\游戏包\\知识库\\index.json": {
+        "path": "F:\\开源掌机教程\\_工具脚本\\taspipe\\游戏包\\知识库\\index.json",
+        "bytes": 3607419,
+        "mtime_ns": 1795533170116696400,
+        "sha256": "2a93e76d5876c1181e7784a20eca0f4d84888d0292d281fc6eea3564090b9260"
+      },
+      "F:\\开源掌机教程\\选题决策层\\kb快照\\index.json": {
+        "path": "F:\\开源掌机教程\\选题决策层\\kb快照\\index.json",
+        "bytes": 3607419,
+        "mtime_ns": 1795533626202927000,
+        "sha256": "2a93e76d5876c1181e7784a20eca0f4d84888d0292d281fc6eea3564090b9260"
+      },
+      "F:\\开源掌机教程\\选题决策层\\查询日志.jsonl": {
+        "path": "F:\\开源掌机教程\\选题决策层\\查询日志.jsonl",
+        "bytes": 9641,
+        "mtime_ns": 1795464843807700500,
+        "sha256": "87b4e228b58bc3402a0baa5b0db3103cc51c672e10e0b3f8f7c8c1fabd070cac"
+      }
+    },
+    "changed_paths": [],
+    "unchanged": true
+  },
+  "ok": true
+}

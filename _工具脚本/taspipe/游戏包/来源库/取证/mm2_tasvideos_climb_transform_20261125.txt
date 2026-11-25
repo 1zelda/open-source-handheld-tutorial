@@ -1,0 +1,14 @@
+# Rockman 2 climbing and transforming — verbatim extract
+> Origin: _工具脚本/taspipe/游戏包/来源库/取证/tasvideos_gameresources_rockman_data_2026-11-23.txt
+> Original line ranges: 253-261
+> Qualification: Source-scoped technical evidence; no PAL/US regional equivalence is asserted.
+
+ In Rockman 1 and 2, Rockman climbs at speed of 00.C0.
+
+ In Rockman 3, Rockman climbs at speed of 01.4C.
+
+ Transforming
+
+ In Rockman 1, Rockman’s Y speed and position are accumulated even during transforming. (Which allows him to pass through enemies without hurting himself.)
+
+ In Rockman 2, Y speed is reset when pausing. During transforming, enemies move. (Which allows them to pass through Rockman without hurting him.)

@@ -1,0 +1,609 @@
+{
+  "status": "failed",
+  "rom_sha1": "40AAB076A528F52E93260BB98D91A40039E0DA02",
+  "bizhawk": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_inventory_address_matrix2\\slots\\slots\\8506d01381be\\slot_0\\BizHawk-2.11.1",
+  "cases": {
+    "yellow22": {
+      "baseline": {
+        "red": 1,
+        "blue": 0,
+        "yellow": 0,
+        "level": 1,
+        "hp": 320,
+        "mp": 80,
+        "max_hp": 320,
+        "max_mp": 80,
+        "str": 10,
+        "def": 12,
+        "int": 11,
+        "lck": 9,
+        "yellow_inventory_1336c": 255,
+        "red_inventory_1331b": 255
+      },
+      "menu": {
+        "red": 1,
+        "blue": 0,
+        "yellow": 22,
+        "level": 1,
+        "hp": 320,
+        "mp": 80,
+        "max_hp": 320,
+        "max_mp": 80,
+        "str": 10,
+        "def": 12,
+        "int": 11,
+        "lck": 9,
+        "yellow_inventory_1336c": 255,
+        "red_inventory_1331b": 255
+      },
+      "gameplay": {
+        "red": 1,
+        "blue": 0,
+        "yellow": 22,
+        "level": 1,
+        "hp": 320,
+        "mp": 80,
+        "max_hp": 320,
+        "max_mp": 80,
+        "str": 10,
+        "def": 12,
+        "int": 11,
+        "lck": 9,
+        "yellow_inventory_1336c": 255,
+        "red_inventory_1331b": 255
+      },
+      "reopen": {
+        "red": 1,
+        "blue": 0,
+        "yellow": 22,
+        "level": 1,
+        "hp": 320,
+        "mp": 80,
+        "max_hp": 320,
+        "max_mp": 80,
+        "str": 10,
+        "def": 12,
+        "int": 11,
+        "lck": 9,
+        "yellow_inventory_1336c": 255,
+        "red_inventory_1331b": 255
+      },
+      "close_screen": "gameplay",
+      "reopen_screen": "soul_set",
+      "empty_control": {
+        "red": 1,
+        "blue": 0,
+        "yellow": 0,
+        "level": 1,
+        "hp": 320,
+        "mp": 80,
+        "max_hp": 320,
+        "max_mp": 80,
+        "str": 10,
+        "def": 12,
+        "int": 11,
+        "lck": 9,
+        "yellow_inventory_1336c": 255,
+        "red_inventory_1331b": 255
+      },
+      "direct_clear": {
+        "red": 1,
+        "blue": 0,
+        "yellow": 0,
+        "level": 1,
+        "hp": 320,
+        "mp": 80,
+        "max_hp": 320,
+        "max_mp": 80,
+        "str": 10,
+        "def": 12,
+        "int": 11,
+        "lck": 9,
+        "yellow_inventory_1336c": 255,
+        "red_inventory_1331b": 255
+      },
+      "menu_shot": {
+        "path": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_yellow_wingcutter_mp4\\yellow22_menu_frames\\f0369.png",
+        "sha256": "D76440DF7B797F4BA888DCF3C2197D41FAF62A741DD74EA39CC47ECB9B860EF4",
+        "size": [
+          240,
+          160
+        ]
+      },
+      "close_shot": {
+        "path": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_yellow_wingcutter_mp4\\yellow22_close.png",
+        "sha256": "B163028806B24B045C934ABFD0D22F67B6CE7424422D17B6F51827D55369E8B2",
+        "size": [
+          240,
+          160
+        ]
+      },
+      "reopen_shot": {
+        "path": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_yellow_wingcutter_mp4\\yellow22_reopen.png",
+        "sha256": "BB749C350F7BF695753F1FC31AEB22890E53307961657076E39A692870DA4184",
+        "size": [
+          240,
+          160
+        ]
+      },
+      "empty_shot": {
+        "path": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_yellow_wingcutter_mp4\\yellow0_menu_frames\\f0094.png",
+        "sha256": "1C14922069C488C138AFA17D5503103D9D5ADEFE18B5215C73B4B596C01472EC",
+        "size": [
+          240,
+          160
+        ]
+      },
+      "clear_shot": {
+        "path": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_yellow_wingcutter_mp4\\yellow22_clear_frames\\f0060.png",
+        "sha256": "B163028806B24B045C934ABFD0D22F67B6CE7424422D17B6F51827D55369E8B2",
+        "size": [
+          240,
+          160
+        ]
+      }
+    },
+    "red24": {
+      "menu": {
+        "red": 24,
+        "blue": 0,
+        "yellow": 0,
+        "level": 1,
+        "hp": 320,
+        "mp": 80,
+        "max_hp": 320,
+        "max_mp": 80,
+        "str": 10,
+        "def": 12,
+        "int": 11,
+        "lck": 9,
+        "yellow_inventory_1336c": 255,
+        "red_inventory_1331b": 255
+      },
+      "gameplay": {
+        "red": 24,
+        "blue": 0,
+        "yellow": 0,
+        "level": 1,
+        "hp": 320,
+        "mp": 80,
+        "max_hp": 320,
+        "max_mp": 80,
+        "str": 10,
+        "def": 12,
+        "int": 11,
+        "lck": 9,
+        "yellow_inventory_1336c": 255,
+        "red_inventory_1331b": 255
+      },
+      "reopen": {
+        "red": 24,
+        "blue": 0,
+        "yellow": 0,
+        "level": 1,
+        "hp": 320,
+        "mp": 80,
+        "max_hp": 320,
+        "max_mp": 80,
+        "str": 10,
+        "def": 12,
+        "int": 11,
+        "lck": 9,
+        "yellow_inventory_1336c": 255,
+        "red_inventory_1331b": 255
+      },
+      "close_screen": "gameplay",
+      "reopen_screen": "soul_set",
+      "menu_shot": {
+        "path": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_yellow_wingcutter_mp4\\red24_menu_frames\\f0352.png",
+        "sha256": "D2D41FB7A39FFB2980DB2234FF3C5CA6A252AAE40BCECB00EC29E4C06662DCB1",
+        "size": [
+          240,
+          160
+        ]
+      },
+      "close_shot": {
+        "path": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_yellow_wingcutter_mp4\\red24_close.png",
+        "sha256": "B163028806B24B045C934ABFD0D22F67B6CE7424422D17B6F51827D55369E8B2",
+        "size": [
+          240,
+          160
+        ]
+      },
+      "reopen_shot": {
+        "path": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_yellow_wingcutter_mp4\\red24_reopen.png",
+        "sha256": "56C43F8E61066B124A40892D5E09D5B75789DEABF0E49240CF8605378172A4FD",
+        "size": [
+          240,
+          160
+        ]
+      },
+      "cast": {
+        "red24": {
+          "state": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_yellow_wingcutter_mp4\\work\\red24_game.state",
+          "patches": [],
+          "shots": {
+            "12": {
+              "path": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_yellow_wingcutter_mp4\\cast_red24_frames\\f0012.png",
+              "sha256": "DC77D08A1F47F6AD4E3AF8DD14BA39AF5403A12D8C70CC2B1AE4315BDDA91AE5",
+              "size": [
+                240,
+                160
+              ]
+            },
+            "20": {
+              "path": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_yellow_wingcutter_mp4\\cast_red24_frames\\f0020.png",
+              "sha256": "13BBCB48267BB91DBAA1C374A86A52A473D5C108A1D786698A69C9D70A7C7410",
+              "size": [
+                240,
+                160
+              ]
+            },
+            "30": {
+              "path": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_yellow_wingcutter_mp4\\cast_red24_frames\\f0030.png",
+              "sha256": "F806F8D4414A058A47AA06B8D0B197E1B88530AC9D865B6C792A43FF1ED70EC8",
+              "size": [
+                240,
+                160
+              ]
+            },
+            "60": {
+              "path": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_yellow_wingcutter_mp4\\cast_red24_frames\\f0060.png",
+              "sha256": "EB38D7CDC1DF7D47934C70FC235E0D7D8BA6CBCCFA14B811ACB5B175BA44B240",
+              "size": [
+                240,
+                160
+              ]
+            },
+            "119": {
+              "path": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_yellow_wingcutter_mp4\\cast_red24_frames\\f0119.png",
+              "sha256": "FF290F0EC435E58377FF2195D44C344853F82315617E040060FA49BFDDF47847",
+              "size": [
+                240,
+                160
+              ]
+            }
+          },
+          "after": {
+            "red": 24,
+            "blue": 0,
+            "yellow": 0,
+            "level": 1,
+            "hp": 320,
+            "mp": 59,
+            "max_hp": 320,
+            "max_mp": 80,
+            "str": 10,
+            "def": 12,
+            "int": 11,
+            "lck": 9,
+            "yellow_inventory_1336c": 255,
+            "red_inventory_1331b": 255
+          }
+        },
+        "red24_clear": {
+          "state": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_yellow_wingcutter_mp4\\work\\red24_game.state",
+          "patches": [
+            {
+              "addr": 78429,
+              "value": 0,
+              "domain": "EWRAM"
+            }
+          ],
+          "shots": {
+            "12": {
+              "path": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_yellow_wingcutter_mp4\\cast_red24_clear_frames\\f0012.png",
+              "sha256": "D656E2FEE01B699665AC612BC891960991CBABB54782B3B637EE124720ED1842",
+              "size": [
+                240,
+                160
+              ]
+            },
+            "20": {
+              "path": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_yellow_wingcutter_mp4\\cast_red24_clear_frames\\f0020.png",
+              "sha256": "7958EA393BF53BDCB1863447EEAE5D09D68F27381D823AD0C293824C71A84596",
+              "size": [
+                240,
+                160
+              ]
+            },
+            "30": {
+              "path": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_yellow_wingcutter_mp4\\cast_red24_clear_frames\\f0030.png",
+              "sha256": "C4CC17A0A32C598A2DC8B1C934BCC3B29010EDC3AD0CBD9BD201D97023C94433",
+              "size": [
+                240,
+                160
+              ]
+            },
+            "60": {
+              "path": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_yellow_wingcutter_mp4\\cast_red24_clear_frames\\f0060.png",
+              "sha256": "413E1FA2FA469FB33B457DDEC1806F6C87E07A5E1AE917F54BB8BE191D3FE1A2",
+              "size": [
+                240,
+                160
+              ]
+            },
+            "119": {
+              "path": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_yellow_wingcutter_mp4\\cast_red24_clear_frames\\f0119.png",
+              "sha256": "FF290F0EC435E58377FF2195D44C344853F82315617E040060FA49BFDDF47847",
+              "size": [
+                240,
+                160
+              ]
+            }
+          },
+          "after": {
+            "red": 0,
+            "blue": 0,
+            "yellow": 0,
+            "level": 1,
+            "hp": 320,
+            "mp": 80,
+            "max_hp": 320,
+            "max_mp": 80,
+            "str": 10,
+            "def": 12,
+            "int": 11,
+            "lck": 9,
+            "yellow_inventory_1336c": 255,
+            "red_inventory_1331b": 255
+          }
+        },
+        "empty_red": {
+          "state": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_clean_gameplay1\\empty_red.state",
+          "patches": [],
+          "shots": {
+            "12": {
+              "path": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_yellow_wingcutter_mp4\\cast_empty_red_frames\\f0012.png",
+              "sha256": "D656E2FEE01B699665AC612BC891960991CBABB54782B3B637EE124720ED1842",
+              "size": [
+                240,
+                160
+              ]
+            },
+            "20": {
+              "path": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_yellow_wingcutter_mp4\\cast_empty_red_frames\\f0020.png",
+              "sha256": "7958EA393BF53BDCB1863447EEAE5D09D68F27381D823AD0C293824C71A84596",
+              "size": [
+                240,
+                160
+              ]
+            },
+            "30": {
+              "path": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_yellow_wingcutter_mp4\\cast_empty_red_frames\\f0030.png",
+              "sha256": "C4CC17A0A32C598A2DC8B1C934BCC3B29010EDC3AD0CBD9BD201D97023C94433",
+              "size": [
+                240,
+                160
+              ]
+            },
+            "60": {
+              "path": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_yellow_wingcutter_mp4\\cast_empty_red_frames\\f0060.png",
+              "sha256": "FF290F0EC435E58377FF2195D44C344853F82315617E040060FA49BFDDF47847",
+              "size": [
+                240,
+                160
+              ]
+            },
+            "119": {
+              "path": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_yellow_wingcutter_mp4\\cast_empty_red_frames\\f0119.png",
+              "sha256": "FF290F0EC435E58377FF2195D44C344853F82315617E040060FA49BFDDF47847",
+              "size": [
+                240,
+                160
+              ]
+            }
+          },
+          "after": {
+            "red": 0,
+            "blue": 0,
+            "yellow": 0,
+            "level": 1,
+            "hp": 320,
+            "mp": 80,
+            "max_hp": 320,
+            "max_mp": 80,
+            "str": 10,
+            "def": 12,
+            "int": 11,
+            "lck": 9,
+            "yellow_inventory_1336c": 255,
+            "red_inventory_1331b": 255
+          }
+        },
+        "red1": {
+          "state": "F:/taspipe_scratch/gba_parallel_20261124/aria_yellow_wingcutter_mp4/work/base.state",
+          "patches": [],
+          "shots": {
+            "12": {
+              "path": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_yellow_wingcutter_mp4\\cast_red1_frames\\f0012.png",
+              "sha256": "06ADD432CAB43EF3B460B5CE445201D99DEFC5186F1A9C81F239F00CDB40FA2B",
+              "size": [
+                240,
+                160
+              ]
+            },
+            "20": {
+              "path": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_yellow_wingcutter_mp4\\cast_red1_frames\\f0020.png",
+              "sha256": "A2DB4C2F6A557E5F0CA2B535E6F7D12EC9256FF8F17B61D1F1B87886BA860077",
+              "size": [
+                240,
+                160
+              ]
+            },
+            "30": {
+              "path": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_yellow_wingcutter_mp4\\cast_red1_frames\\f0030.png",
+              "sha256": "A62E5B97B03698EFC985CC1EADBB6920CDFB269FDDDE1B9670475AC26B981587",
+              "size": [
+                240,
+                160
+              ]
+            },
+            "60": {
+              "path": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_yellow_wingcutter_mp4\\cast_red1_frames\\f0060.png",
+              "sha256": "DAFF2C903CCE9416E99B39ACEBC4E0903B29CB821A7E1C1B9C6AC65E653DB32A",
+              "size": [
+                240,
+                160
+              ]
+            },
+            "119": {
+              "path": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_yellow_wingcutter_mp4\\cast_red1_frames\\f0119.png",
+              "sha256": "413E1FA2FA469FB33B457DDEC1806F6C87E07A5E1AE917F54BB8BE191D3FE1A2",
+              "size": [
+                240,
+                160
+              ]
+            }
+          },
+          "after": {
+            "red": 1,
+            "blue": 0,
+            "yellow": 0,
+            "level": 1,
+            "hp": 320,
+            "mp": 72,
+            "max_hp": 320,
+            "max_mp": 80,
+            "str": 10,
+            "def": 12,
+            "int": 11,
+            "lck": 9,
+            "yellow_inventory_1336c": 255,
+            "red_inventory_1331b": 255
+          }
+        }
+      },
+      "cast_pixel_diffs": {
+        "red24_vs_red24_clear": {
+          "12": 752,
+          "20": 743,
+          "30": 441,
+          "60": 26,
+          "119": 0
+        },
+        "red24_vs_empty_red": {
+          "12": 752,
+          "20": 743,
+          "30": 441,
+          "60": 41,
+          "119": 0
+        },
+        "red24_vs_red1": {
+          "12": 260,
+          "20": 259,
+          "30": 108,
+          "60": 15,
+          "119": 15
+        }
+      },
+      "comparison_policy": "Only red24 vs red24_clear uses the same state and changes the red-soul slot."
+    },
+    "mp": {
+      "merman": {
+        "before": {
+          "red": 4,
+          "blue": 0,
+          "yellow": 0,
+          "level": 1,
+          "hp": 320,
+          "mp": 80,
+          "max_hp": 320,
+          "max_mp": 80,
+          "str": 10,
+          "def": 12,
+          "int": 11,
+          "lck": 9,
+          "yellow_inventory_1336c": 255,
+          "red_inventory_1331b": 255
+        },
+        "after": {
+          "red": 4,
+          "blue": 0,
+          "yellow": 0,
+          "level": 1,
+          "hp": 320,
+          "mp": 69,
+          "max_hp": 320,
+          "max_mp": 80,
+          "str": 10,
+          "def": 12,
+          "int": 11,
+          "lck": 9,
+          "yellow_inventory_1336c": 255,
+          "red_inventory_1331b": 255
+        },
+        "delta": -11,
+        "shot": {
+          "path": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_yellow_wingcutter_mp4\\mp_merman_frames\\f0029.png",
+          "sha256": "3099FD52FEC7515E01672B8EBD3F06C75A828284CBB3D6109103AEBAA556E9D0",
+          "size": [
+            240,
+            160
+          ]
+        }
+      },
+      "empty_red": {
+        "before": {
+          "red": 0,
+          "blue": 0,
+          "yellow": 0,
+          "level": 1,
+          "hp": 320,
+          "mp": 80,
+          "max_hp": 320,
+          "max_mp": 80,
+          "str": 10,
+          "def": 12,
+          "int": 11,
+          "lck": 9,
+          "yellow_inventory_1336c": 255,
+          "red_inventory_1331b": 255
+        },
+        "after": {
+          "red": 0,
+          "blue": 0,
+          "yellow": 0,
+          "level": 1,
+          "hp": 320,
+          "mp": 80,
+          "max_hp": 320,
+          "max_mp": 80,
+          "str": 10,
+          "def": 12,
+          "int": 11,
+          "lck": 9,
+          "yellow_inventory_1336c": 255,
+          "red_inventory_1331b": 255
+        },
+        "delta": 0,
+        "shot": {
+          "path": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_yellow_wingcutter_mp4\\mp_empty_red_frames\\f0029.png",
+          "sha256": "559AC798DDA8663B15E1B77E2C679CF8F73485F6096807967789E665A5B8F8A2",
+          "size": [
+            240,
+            160
+          ]
+        }
+      }
+    }
+  },
+  "checks": {
+    "yellow_close_gameplay": true,
+    "yellow_reopen_soul_set": true,
+    "yellow_menu_id22": true,
+    "yellow_persisted_after_reopen": true,
+    "yellow_str_plus_one": false,
+    "yellow_empty_str_baseline": true,
+    "yellow_clear_removes_bonus": true,
+    "red24_close_gameplay": true,
+    "red24_reopen_soul_set": true,
+    "red24_menu_id": true,
+    "red24_persisted_after_reopen": true,
+    "red24_visible_effect": true,
+    "merman_consumes_mp": true,
+    "empty_red_does_not_consume_mp": true
+  },
+  "actual_core": "BizHawk.Emulation.Cores.Nintendo.GBA.MGBAHawk",
+  "pid": 32616
+}

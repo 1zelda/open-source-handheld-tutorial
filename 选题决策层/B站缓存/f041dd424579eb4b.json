@@ -1,0 +1,39 @@
+{
+ "keyword": "星之海",
+ "status": "ok",
+ "ts": "2026-11-19T05:23:42Z",
+ "ts_epoch": 1795065822.7089958,
+ "supply_num_results": 1000,
+ "n_videos": 20,
+ "play_median": 114083.5,
+ "play_mean": 237746.5,
+ "play_max": 1053285,
+ "play_total": 4754929,
+ "engagement_median": 0.0309,
+ "recent_count": 0,
+ "recent_play_median": 0,
+ "top3": [
+  {
+   "bvid": "BV1Fk4y1A7pg",
+   "title": "哪个女孩子能拒绝星之海啊！！裙摆转动的那一刻像在银河中跳舞！",
+   "author": "江清月辞",
+   "play": 1053285,
+   "pubdate": "2023-09-03"
+  },
+  {
+   "bvid": "BV1nV8WzoE59",
+   "title": "论龙岛异兽第一—星之海！能有多帅！一共出场三次，帅的不谈！昨晚和江湖团遇见了，阿乐说要坐上世界第一，星之海：“我们等你”",
+   "author": "江湖有龙崽",
+   "play": 707126,
+   "pubdate": "2025-07-26"
+  },
+  {
+   "bvid": "BV1obmXBFEn5",
+   "title": "星之海怒杀天下会！！不要太帅",
+   "author": "青银小刀",
+   "play": 472062,
+   "pubdate": "2025-12-13"
+  }
+ ],
+ "cache_hit": false
+}

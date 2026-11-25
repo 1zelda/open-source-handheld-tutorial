@@ -1,0 +1,2038 @@
+{
+  "schema_version": 1,
+  "updated": "2026-11-23",
+  "note": "机器可读主数据。人读清单由 `python -m taspipe.sources render --write` 单向生成到 复古游戏文献来源库.md 的 GENERATED 块；禁止手改生成块。状态口径：verified_read=本机取到正文并核对（必须带 evidence 文件）；snippet_only=只拿到搜索快照；unreachable=本机直连失败但站点活着（走快照）；candidate=知道存在、本轮未验；dead=已关停（必须带 closure 证据）。",
+  "sources": [
+    {
+      "source_id": "local_fbneo_setlist",
+      "name": "本地 FBNeo setlist（fbneo64.roms.dat + games/<set>.ini）",
+      "kind": "local",
+      "layer": "local_emu",
+      "platforms": [
+        "ARCADE"
+      ],
+      "element_types": [
+        "身份",
+        "版本对照",
+        "出招表"
+      ],
+      "status": "verified_read",
+      "last_verified": "2026-11-18",
+      "urls": [],
+      "evidence": [
+        "F:/工具链/fbneo/nightly/config/games/kof98eck.ini",
+        "F:/工具链/fbneo/nightly/config/fbneo64.roms.dat"
+      ],
+      "recipes": {
+        "set": "读 config/games/{set}.ini 首行全名 + roms.dat 里 `{set} +`"
+      },
+      "notes": "定身份最快最权威的口，离线可用。ini 首行=全名；`+`=该 set 在库内可用。实测 kof98eck 全名含 (Easy Combo Edition, Hack)；本机 roms/kof98eck.zip 41,735,830B sha1 c5947d193d2d01cbf9343e3f7ef70a7bb3bbf6ed。",
+      "games_hit": [
+        "kof98eck"
+      ],
+      "sets": [
+        "kof98eck",
+        "kof98bc2k2",
+        "kof98cp",
+        "kof98cb",
+        "kof98evo",
+        "kof98k",
+        "kof98ka"
+      ]
+    },
+    {
+      "source_id": "local_rom_sha1_index",
+      "name": "本地 ROM sha1 索引（registry.index_roms / acquire 三级 resolver 第一级）",
+      "kind": "local",
+      "layer": "local_emu",
+      "platforms": [
+        "ANY"
+      ],
+      "element_types": [
+        "身份",
+        "版本对照"
+      ],
+      "status": "verified_read",
+      "last_verified": "2026-11-18",
+      "urls": [],
+      "evidence": [
+        "_工具脚本/taspipe/registry.py",
+        "_工具脚本/taspipe/acquire.py"
+      ],
+      "notes": "本地优先→自有网盘钩子→外部门控。红线：不自动抓商业 ROM 全集。"
+    },
+    {
+      "source_id": "local_libretro_cht",
+      "name": "本地 libretro-database/cht 金手指库（数万款全平台 .cht）",
+      "kind": "local",
+      "layer": "cheat_db",
+      "platforms": [
+        "ANY"
+      ],
+      "element_types": [
+        "金手指"
+      ],
+      "status": "verified_read",
+      "last_verified": "2026-11-18",
+      "urls": [],
+      "evidence": [
+        "_工具脚本/taspipe/retro_cheat_runner.py"
+      ],
+      "recipes": {
+        "cn": "python -m taspipe.retro_cheat_runner search-cht --platform {platform} --query {game}"
+      },
+      "notes": "路径 02-模拟器库/已clone仓库/工具与ROM管理/libretro-database/cht；需完整检出，缺库时诚实报 hint 不硬跑。"
+    },
+    {
+      "source_id": "local_live_capture",
+      "name": "真人操作捕获通路（soccer2_live_capture.py）",
+      "kind": "local",
+      "layer": "tas_macro",
+      "platforms": [
+        "NES"
+      ],
+      "element_types": [
+        "必杀宏"
+      ],
+      "status": "verified_read",
+      "last_verified": "2026-11-18",
+      "urls": [],
+      "evidence": [
+        "_工具脚本/已验证代码库/nekketsu_soccer/soccer2_live_capture.py"
+      ],
+      "notes": "文献找不到宏时，自己录就是唯一权威路径。start/stop/ingest 三段。",
+      "games_hit": [
+        "nekketsu_soccer2"
+      ]
+    },
+    {
+      "source_id": "local_fbneo_rig",
+      "name": "F:\\tas_rig FBNeo 电影实测（rig.py + 素材生产规范）",
+      "kind": "local",
+      "layer": "tas_macro",
+      "platforms": [
+        "ARCADE"
+      ],
+      "element_types": [
+        "必杀宏",
+        "出招表",
+        "视频验证"
+      ],
+      "status": "verified_read",
+      "last_verified": "2026-11-18",
+      "urls": [],
+      "evidence": [
+        "F:/tas_rig/rig.py",
+        "F:/tas_rig/docs/素材生产规范.md"
+      ],
+      "notes": "reset→advance→HUD 判分，hit/damage 闸门；指令真值的兜底权威。ECK 卡 3v3 队战是 ROM 侧限制，关不掉。",
+      "games_hit": [
+        "kof98eck"
+      ],
+      "sets": [
+        "kof98eck"
+      ]
+    },
+    {
+      "source_id": "archive_fbnarcade",
+      "name": "archive.org FBNeo 全集目录（set 文件名+大小+日期）",
+      "layer": "identity",
+      "platforms": [
+        "ARCADE"
+      ],
+      "element_types": [
+        "身份",
+        "版本对照"
+      ],
+      "status": "snippet_only",
+      "last_verified": "2026-11-18",
+      "urls": [
+        "https://archive.org/download/fbnarcade-fullnonmerged/arcade/"
+      ],
+      "notes": "用来确认官方库里到底有没有这个 set 名（列到 kof98eck.zip 41.3M）。"
+    },
+    {
+      "source_id": "mame_hash_xml",
+      "name": "MAME hash/<机种>.xml + cheat/*.xml",
+      "layer": "identity",
+      "platforms": [
+        "ARCADE"
+      ],
+      "element_types": [
+        "身份",
+        "版本对照",
+        "金手指"
+      ],
+      "status": "candidate",
+      "last_verified": null,
+      "urls": [
+        "https://github.com/mamedev/mame/blob/master/hash/neogeo.xml"
+      ],
+      "notes": "只含官方 set 的 rom 级 sha1；hack 在 hbmame/hackmame。同目录 cheat/*.xml 是逐游戏金手指文件。本机未验。"
+    },
+    {
+      "source_id": "hbmame_setlist",
+      "name": "hbmame/hackmame set 描述（hack 身份第二份表）",
+      "layer": "identity",
+      "platforms": [
+        "ARCADE"
+      ],
+      "element_types": [
+        "身份",
+        "版本对照"
+      ],
+      "status": "snippet_only",
+      "last_verified": "2026-11-18",
+      "urls": [],
+      "notes": "经 quanjizhong 总表转述。set 名与 FBNeo 不完全一致：kof98eck ↔ kof98hh04 系是否同一物**未证**，要拿 zip 内 rom 级 sha1 对。",
+      "games_hit": [
+        "kof98eck"
+      ]
+    },
+    {
+      "source_id": "no_intro_redump",
+      "name": "No-Intro / Redump / VGCDatabase dat（家用机卡带版本鉴定）",
+      "layer": "identity",
+      "platforms": [
+        "NES",
+        "SNES",
+        "MD",
+        "GBA",
+        "GB",
+        "N64",
+        "PS1",
+        "PSP",
+        "PCE"
+      ],
+      "element_types": [
+        "身份",
+        "版本对照"
+      ],
+      "status": "candidate",
+      "last_verified": null,
+      "urls": [
+        "https://no-intro.org/",
+        "https://redump.org/",
+        "https://vgcdatabase.net/"
+      ],
+      "notes": "本轮未验。主机游戏判版本先走这里，别拿中文叫法当身份。"
+    },
+    {
+      "source_id": "1ang_com",
+      "name": "乐米网一昂（火光 FC 攻略镜像站）",
+      "layer": "cn_console",
+      "platforms": [
+        "NES"
+      ],
+      "element_types": [
+        "攻略",
+        "必杀宏",
+        "彩蛋",
+        "基础档案"
+      ],
+      "status": "verified_read",
+      "last_verified": "2026-11-18",
+      "urls": [
+        "https://www.1ang.com/"
+      ],
+      "evidence": [
+        "_工具脚本/taspipe/游戏包/来源库/取证/1ang_热血足球联盟图文攻略_20261118.md"
+      ],
+      "recipes": {
+        "cn": "site:1ang.com {game}"
+      },
+      "notes": "URL 模式 /wenzhang/<uuid>。火光文带全量系统讲解+人物属性；同作者还挂热血篮球/新纪录/时代剧 ⇒ 顺藤摸瓜查同系列。",
+      "games_hit": [
+        "nekketsu_soccer2"
+      ]
+    },
+    {
+      "source_id": "csdn_wangsitan_bug",
+      "name": "CSDN wangsitan（=火光）热血足球 Bug 记录",
+      "layer": "cn_console",
+      "platforms": [
+        "NES"
+      ],
+      "element_types": [
+        "bug",
+        "攻略"
+      ],
+      "status": "verified_read",
+      "last_verified": "2026-11-18",
+      "urls": [
+        "https://blog.csdn.net/wangsitan"
+      ],
+      "evidence": [
+        "_工具脚本/taspipe/游戏包/来源库/取证/csdn_wangsitan_热血足球Bug记录_20261118.md"
+      ],
+      "recipes": {
+        "cn": "site:blog.csdn.net {game}"
+      },
+      "notes": "这位作者专啃 Technos 数据，同法适用其他 FC 游戏。论坛原帖多已死，CSDN 是转载锚点。",
+      "games_hit": [
+        "nekketsu_soccer2"
+      ]
+    },
+    {
+      "source_id": "csdn_wangsitan_data",
+      "name": "CSDN wangsitan 数据记录/金手指/内存使用记录（四件套另三篇）",
+      "layer": "cn_console",
+      "platforms": [
+        "NES"
+      ],
+      "element_types": [
+        "金手指",
+        "bug"
+      ],
+      "status": "snippet_only",
+      "last_verified": "2026-11-18",
+      "urls": [
+        "https://blog.csdn.net/wangsitan"
+      ],
+      "notes": "本轮只取到 Bug 记录正文，另三篇只到搜索层。得分=0x52E/0x52F 这类可直接用于出片改比分。",
+      "games_hit": [
+        "nekketsu_soccer2"
+      ]
+    },
+    {
+      "source_id": "sohu_game",
+      "name": "搜狐游戏号（踏仙阙/雷凌老男孩等杂谈）",
+      "layer": "cn_console",
+      "platforms": [
+        "NES",
+        "SNES",
+        "MD",
+        "GBA"
+      ],
+      "element_types": [
+        "攻略",
+        "必杀宏",
+        "彩蛋",
+        "隐藏要素"
+      ],
+      "status": "verified_read",
+      "last_verified": "2026-11-18",
+      "urls": [
+        "https://www.sohu.com/"
+      ],
+      "evidence": [
+        "_工具脚本/taspipe/游戏包/来源库/取证/sohu_必杀最强小辫子_20261118.md",
+        "_工具脚本/taspipe/游戏包/来源库/取证/sohu_一直输球隐藏大结局_20261118.md",
+        "_工具脚本/taspipe/游戏包/来源库/取证/sohu_热血队队员必杀集锦_20261118.md"
+      ],
+      "recipes": {
+        "cn": "搜狐 FC {game} 必杀 / 隐藏结局"
+      },
+      "notes": "必杀集锦、强弱排行、隐藏结局杂谈；球变形/特效描述以中文杂谈最细。热血足球世界杯/三结局/废密码就是这里挖到的。",
+      "games_hit": [
+        "nekketsu_soccer2"
+      ]
+    },
+    {
+      "source_id": "tencent_cloud_dev",
+      "name": "腾讯云开发者社区（游戏杂谈转载层）",
+      "layer": "cn_console",
+      "platforms": [
+        "NES"
+      ],
+      "element_types": [
+        "攻略",
+        "彩蛋"
+      ],
+      "status": "verified_read",
+      "last_verified": "2026-11-18",
+      "urls": [
+        "https://cloud.tencent.com/developer"
+      ],
+      "evidence": [
+        "_工具脚本/taspipe/游戏包/来源库/取证/tencentcloud_热血足球联盟杂谈_20261118.md"
+      ],
+      "notes": "本轮新发现：《热血足球联盟》FC 时期最好足球游戏杂谈，可当搜狐之外的第二份中文杂谈。",
+      "games_hit": [
+        "nekketsu_soccer2"
+      ]
+    },
+    {
+      "source_id": "9game",
+      "name": "九游手机游戏（技能攻略解析）",
+      "layer": "cn_console",
+      "platforms": [
+        "MOBILE"
+      ],
+      "element_types": [
+        "攻略",
+        "必杀宏"
+      ],
+      "status": "verified_read",
+      "last_verified": "2026-11-18",
+      "urls": [
+        "https://www.9game.cn/"
+      ],
+      "evidence": [
+        "_工具脚本/taspipe/游戏包/来源库/取证/9game_热血足球技能攻略_20261118.md"
+      ],
+      "notes": "本轮新发现：《热血足球》怎么放技能 攻略解析。手游站口径，须与实机核对。 ★11-18 身份更正：取证正文实为 ARC SYSTEM WORKS 授权手游《热血足球》（积攒奥义槽/满奥义跳+射/终结射门升级），非 FC 热血足球联盟；原登记 NES+nekketsu_soccer2 属错配，已改 MOBILE，不得当 FC 必杀依据。",
+      "games_hit": [
+        "nekketsu_soccer_mobile"
+      ]
+    },
+    {
+      "source_id": "xiaoji001",
+      "name": "小鸡模拟器（hack/汉化版条目）",
+      "layer": "cn_console",
+      "platforms": [
+        "NES"
+      ],
+      "element_types": [
+        "版本对照",
+        "攻略"
+      ],
+      "status": "verified_read",
+      "last_verified": "2026-11-18",
+      "urls": [
+        "https://www.xiaoji001.com/"
+      ],
+      "evidence": [
+        "_工具脚本/taspipe/游戏包/来源库/取证/xiaoji001_热血足球hack汉化版_20261118.md"
+      ],
+      "notes": "本轮新发现：热血足球 hack（汉化版）条目 ⇒ FC 侧也有 hack 身份问题，先定版本再查表。",
+      "games_hit": [
+        "nekketsu_soccer2"
+      ]
+    },
+    {
+      "source_id": "baidu_baike",
+      "name": "百度百科（基础档案兜底）",
+      "layer": "cn_console",
+      "platforms": [
+        "ANY"
+      ],
+      "element_types": [
+        "基础档案"
+      ],
+      "status": "snippet_only",
+      "last_verified": "2026-11-18",
+      "urls": [
+        "https://baike.baidu.com/"
+      ],
+      "notes": "发售日/厂商兜底，不当机制权威。"
+    },
+    {
+      "source_id": "gamersky_handbook",
+      "name": "游民星空 handbook（拳皇98UM 全角色出招表 53 页）",
+      "layer": "cn_arcade",
+      "platforms": [
+        "ARCADE"
+      ],
+      "element_types": [
+        "出招表",
+        "攻略"
+      ],
+      "status": "verified_read",
+      "last_verified": "2026-11-18",
+      "urls": [
+        "https://www.gamersky.com/handbook/201412/499871.shtml"
+      ],
+      "evidence": [
+        "_工具脚本/taspipe/游戏包/来源库/取证/gamersky_kof98um全角色出招表_20261118.md"
+      ],
+      "notes": "53 页逐角色图，含里队/BOSS。是 98UM **官方**表 ⇒ 只能当 ECK hack 卡的角色与招式名录，**不是指令权威**（管线那 1079 行的出处）。",
+      "games_hit": [
+        "kof98eck"
+      ]
+    },
+    {
+      "source_id": "hackrom_cn",
+      "name": "hackrom.cn（经典怀旧游戏 / HACK 社区）",
+      "layer": "cn_arcade_hack",
+      "platforms": [
+        "ARCADE"
+      ],
+      "element_types": [
+        "出招表",
+        "金手指",
+        "必杀宏",
+        "攻略"
+      ],
+      "status": "unreachable",
+      "last_verified": "2026-11-18",
+      "urls": [
+        "http://www.hackrom.cn/",
+        "http://www.hackrom.cn/html/8/491.html",
+        "http://www.hackrom.cn/html/3/620.html",
+        "http://www.hackrom.cn/html/3/2106.html",
+        "http://www.hackrom.cn/html/7/974.html",
+        "http://www.hackrom.cn/index.php?m=content&c=index&f=search&key={game}"
+      ],
+      "reachability": {
+        "direct": "fail",
+        "checked": "2026-11-18",
+        "note": "首页与文章页直连 fetch 失败 2 次；站点活着（一周前还有更新）"
+      },
+      "notes": "中文圈唯一成体系写 FBNeo(FBN) 格式作弊码 + hack 版出招表的站，对本线价值最高。快照见真记法「外式＋轰斧阳：→＋B」「百式＋鬼燃烧：→↓↘＋A或C」；金手指条目形如 [0]电脑生命值/[1]游戏级数/[4]P1按SELECT键选择角色；拳皇97 FBN 金手指注明 QQ 群搬运。栏目页 /html/8/（出招表）、/html/3/（教程）。引用一律标未全文核对。"
+    },
+    {
+      "source_id": "quanjizhong_top",
+      "name": "全机种社区《街机改版整合 PC用》thread-677",
+      "layer": "cn_arcade_hack",
+      "platforms": [
+        "ARCADE"
+      ],
+      "element_types": [
+        "身份",
+        "版本对照",
+        "出招表",
+        "金手指",
+        "攻略"
+      ],
+      "status": "verified_read",
+      "last_verified": "2026-11-18",
+      "urls": [
+        "https://www.quanjizhong.top/thread-677-1-1.html"
+      ],
+      "evidence": [
+        "_工具脚本/taspipe/游戏包/来源库/取证/quanjizhong_thread677_街机改版整合_20261118.md"
+      ],
+      "recipes": {
+        "set": "在总表里搜 {set} 或中文版本名"
+      },
+      "notes": "8200 款街机 hack 的 set名→中文版名总表（hbmame 目录），正文 75 万字符已真读，分 3 页。ECK 家族写作 kof98hh04=拳皇'98 梦战斗未结束（ECK 降龙版 2020-01-01），同族 hh111/112/113/122/124/126/132 共 8 个带日期变体；另有 kof98hh01 黄金加强简化版、kof98ecm/evo/evox/ch/chl/cn1/f 等。帖内说明整合包 UI 右侧显示出招表+秘籍+攻略、Tab 带作弊 ⇒ hack 卡自带出招表是官方表之外的第二份权威。网盘链接需回帖才可见。",
+      "games_hit": [
+        "kof98eck"
+      ],
+      "sets": [
+        "kof98hh04",
+        "kof98hh111",
+        "kof98hh112",
+        "kof98hh113",
+        "kof98hh122",
+        "kof98hh124",
+        "kof98hh126",
+        "kof98hh132"
+      ]
+    },
+    {
+      "source_id": "mamecn_com",
+      "name": "街机中国 mamecn.com（出招表专栏 /czb/）",
+      "layer": "cn_arcade_hack",
+      "platforms": [
+        "ARCADE"
+      ],
+      "element_types": [
+        "出招表",
+        "彩蛋",
+        "隐藏要素",
+        "攻略"
+      ],
+      "status": "snippet_only",
+      "last_verified": "2026-11-18",
+      "urls": [
+        "https://www.mamecn.com/czb/",
+        "https://www.mamecn.com/jiejiyouxichuzhaobiao/"
+      ],
+      "recipes": {
+        "cn": "site:mamecn.com {game} 出招表 隐藏人物"
+      },
+      "notes": "URL 模式 /czb/<拼音>.html；页脚署名街机中国网站荣誉出品，多为 2018 前后老稿，内容是玩家实战口径（与官方表措辞不同），同页挂 ROM 地址与隐藏人物/隐藏必杀连招。"
+    },
+    {
+      "source_id": "gotvg_skilllist",
+      "name": "游聚对战平台内置出招表（*.gotvg.com/skilllist/）",
+      "layer": "cn_arcade_hack",
+      "platforms": [
+        "ARCADE"
+      ],
+      "element_types": [
+        "出招表",
+        "必杀宏"
+      ],
+      "status": "snippet_only",
+      "last_verified": "2026-11-18",
+      "urls": [
+        "http://sf2.gotvg.com/skilllist/"
+      ],
+      "recipes": {
+        "cn": "http://{游戏前缀}.gotvg.com/skilllist/"
+      },
+      "notes": "平台侧指令是联机玩家实测能按出来的那版，与 ROM 表可能不同 ⇒ 宏的真值参照。"
+    },
+    {
+      "source_id": "yeshen_qh",
+      "name": "约战/夜神手游化攻略（一图流简易连招）",
+      "layer": "cn_arcade_hack",
+      "platforms": [
+        "ARCADE"
+      ],
+      "element_types": [
+        "必杀宏",
+        "出招表"
+      ],
+      "status": "snippet_only",
+      "last_verified": "2026-11-18",
+      "urls": [
+        "https://www.yeshen.com/blog/qh-3/"
+      ],
+      "notes": "↓A+↓→↓→A 这种简化指令的中文表述参照，不是街机原版。"
+    },
+    {
+      "source_id": "csdn_neogeo_driver",
+      "name": "CSDN Gou_Hailong《街机 SNK NeoGeo 中英文名字与驱动对照表》",
+      "layer": "cn_arcade_hack",
+      "platforms": [
+        "ARCADE"
+      ],
+      "element_types": [
+        "身份",
+        "版本对照"
+      ],
+      "status": "snippet_only",
+      "last_verified": "2026-11-18",
+      "urls": [
+        "https://blog.csdn.net/Gou_Hailong/article/details/141757112"
+      ],
+      "notes": "中文名↔英文↔驱动/set 名三列对照，把玩家口中的「98 增强版」翻成 set 名。"
+    },
+    {
+      "source_id": "ffsky_main",
+      "name": "天幻主站 article（六大常用模拟器简易教程/金手指开关）",
+      "layer": "cn_console",
+      "platforms": [
+        "ANY"
+      ],
+      "element_types": [
+        "金手指",
+        "攻略"
+      ],
+      "status": "snippet_only",
+      "last_verified": "2026-11-18",
+      "urls": [
+        "https://www.ffsky.com/"
+      ],
+      "notes": "Project64/WinKawaks/MAME 金手指开关与作弊菜单操作原文（2004 年稿）。1lifeclear 子域不可达，主站 article 页搜索层可见。"
+    },
+    {
+      "source_id": "ffsky_1lifeclear",
+      "name": "天幻 1lifeclear 子域（原站）",
+      "layer": "cn_console",
+      "platforms": [
+        "NES"
+      ],
+      "element_types": [
+        "攻略"
+      ],
+      "status": "unreachable",
+      "last_verified": "2026-11-18",
+      "urls": [
+        "http://1lifeclear.ffsky.cn/"
+      ],
+      "reachability": {
+        "direct": "fail",
+        "checked": "2026-11-18",
+        "note": "直连失败，别再重试"
+      },
+      "notes": "用 1ang 转载替代。"
+    },
+    {
+      "source_id": "zhihu",
+      "name": "知乎（隐藏人物/老攻略专栏）",
+      "layer": "cn_community",
+      "platforms": [
+        "ANY"
+      ],
+      "element_types": [
+        "彩蛋",
+        "隐藏要素",
+        "攻略"
+      ],
+      "status": "snippet_only",
+      "last_verified": "2026-11-18",
+      "urls": [
+        "https://zhuanlan.zhihu.com/p/718638935"
+      ],
+      "notes": "KOF 隐藏人物出现方法类长文。"
+    },
+    {
+      "source_id": "sina_old_game",
+      "name": "新浪游戏老稿（2005 历代隐藏人物出现方法）",
+      "layer": "cn_community",
+      "platforms": [
+        "ARCADE"
+      ],
+      "element_types": [
+        "彩蛋",
+        "隐藏要素"
+      ],
+      "status": "snippet_only",
+      "last_verified": "2026-11-18",
+      "urls": [
+        "https://games.sina.com.cn/"
+      ],
+      "notes": "LOGO〈K-I〉→ 真·草薙京/八神庵 这类老解锁码的中文出处。"
+    },
+    {
+      "source_id": "tieba_baidu",
+      "name": "百度贴吧（金手指吧/拳皇吧/各游戏吧）",
+      "layer": "cn_community",
+      "platforms": [
+        "ANY"
+      ],
+      "element_types": [
+        "金手指",
+        "彩蛋",
+        "攻略",
+        "必杀宏"
+      ],
+      "status": "candidate",
+      "last_verified": null,
+      "urls": [
+        "https://tieba.baidu.com/"
+      ],
+      "notes": "缺口层：中文社区一手实测与金手指码常只活在贴吧，本轮未验。"
+    },
+    {
+      "source_id": "nga_cn",
+      "name": "NGA 玩家社区",
+      "layer": "cn_community",
+      "platforms": [
+        "ANY"
+      ],
+      "element_types": [
+        "攻略",
+        "彩蛋"
+      ],
+      "status": "candidate",
+      "last_verified": null,
+      "urls": [
+        "https://bbs.nga.cn/"
+      ],
+      "notes": "缺口层，本轮未验。"
+    },
+    {
+      "source_id": "a9vg",
+      "name": "A9VG 电玩部落",
+      "layer": "cn_community",
+      "platforms": [
+        "ANY"
+      ],
+      "element_types": [
+        "攻略",
+        "彩蛋",
+        "隐藏要素"
+      ],
+      "status": "candidate",
+      "last_verified": null,
+      "urls": [
+        "https://bbs.a9vg.com/"
+      ],
+      "notes": "缺口层，主机老游戏隐藏要素常在这里，本轮未验。"
+    },
+    {
+      "source_id": "stage1st",
+      "name": "Stage1st 论坛",
+      "layer": "cn_community",
+      "platforms": [
+        "ANY"
+      ],
+      "element_types": [
+        "攻略",
+        "彩蛋"
+      ],
+      "status": "candidate",
+      "last_verified": null,
+      "urls": [
+        "https://bbs.saraba1st.com/"
+      ],
+      "notes": "缺口层，本轮未验。"
+    },
+    {
+      "source_id": "bahamut_tw",
+      "name": "巴哈姆特（繁中攻略/精華區）",
+      "layer": "cn_community",
+      "platforms": [
+        "ANY"
+      ],
+      "element_types": [
+        "攻略",
+        "彩蛋",
+        "金手指"
+      ],
+      "status": "candidate",
+      "last_verified": null,
+      "urls": [
+        "https://forum.gamer.com.tw/"
+      ],
+      "notes": "缺口层：繁中精华区常收日文攻略翻译，本轮未验。"
+    },
+    {
+      "source_id": "5ch_jp",
+      "name": "5ch 日文串（裏技/解析/改造）",
+      "layer": "jp_urawaza",
+      "platforms": [
+        "ANY"
+      ],
+      "element_types": [
+        "彩蛋",
+        "bug",
+        "金手指"
+      ],
+      "status": "candidate",
+      "last_verified": null,
+      "urls": [
+        "https://5ch.net/"
+      ],
+      "notes": "缺口层：日文一手解析串，本轮未验。"
+    },
+    {
+      "source_id": "own_quark_netdisk",
+      "name": "自有夸克网盘（acquire.py netdisk_resolver + quark skill）",
+      "kind": "netdisk",
+      "layer": "cn_netdisk",
+      "platforms": [
+        "ANY"
+      ],
+      "element_types": [
+        "攻略",
+        "金手指",
+        "身份",
+        "纸媒原文"
+      ],
+      "status": "candidate",
+      "last_verified": null,
+      "urls": [
+        "https://pan.quark.cn/"
+      ],
+      "notes": "网盘只当备份、F 盘为准；成品可进自己网盘，禁分享链接/群/视频附件。判「查不到/不存在」前必扫这层（11-16 规矩）。"
+    },
+    {
+      "source_id": "netdisk_search_aggregators",
+      "name": "网盘搜索聚合站（夸克/百度盘搜）",
+      "kind": "netdisk",
+      "layer": "cn_netdisk",
+      "platforms": [
+        "ANY"
+      ],
+      "element_types": [
+        "攻略",
+        "金手指",
+        "纸媒原文"
+      ],
+      "status": "candidate",
+      "last_verified": null,
+      "urls": [],
+      "notes": "缺口层：具体站名待 ingest 回填。判「不存在」前必扫中文网盘层，别只扫网页。"
+    },
+    {
+      "source_id": "archive_dianruan",
+      "name": "archive.org《电子游戏软件》合订本 1993–2002（逐册 _djvu.txt 全文）",
+      "layer": "cn_print",
+      "platforms": [
+        "ANY"
+      ],
+      "element_types": [
+        "纸媒原文",
+        "攻略",
+        "金手指",
+        "彩蛋"
+      ],
+      "status": "snippet_only",
+      "last_verified": "2026-11-18",
+      "urls": [
+        "https://archive.org/details/game-software-93-02"
+      ],
+      "notes": "中文纸媒全文王牌：每册带 _djvu.txt（2.2–2.4MB/册）可全文检索游戏名与秘技/金手指/密码。★本轮只确认文件存在，**未取正文**（旧库标[已读]属过度声称，已更正）。OCR 有脏字，引用要回图核对。"
+    },
+    {
+      "source_id": "archive_dianruan_zk",
+      "name": "archive.org《电子游戏软件》增刊（gs-zk）",
+      "layer": "cn_print",
+      "platforms": [
+        "ANY"
+      ],
+      "element_types": [
+        "纸媒原文",
+        "攻略"
+      ],
+      "status": "snippet_only",
+      "last_verified": "2026-11-18",
+      "urls": [
+        "https://archive.org/stream/gs-zk/"
+      ],
+      "notes": "1999 年增刊创刊五年纪念特辑等同系列全文。"
+    },
+    {
+      "source_id": "archive_gamebooks",
+      "name": "archive.org 游戏书籍合集（gamebooks_mhsg）",
+      "layer": "cn_print",
+      "platforms": [
+        "ANY"
+      ],
+      "element_types": [
+        "纸媒原文",
+        "基础档案"
+      ],
+      "status": "snippet_only",
+      "last_verified": "2026-11-18",
+      "urls": [
+        "https://archive.org/details/gamebooks_mhsg"
+      ],
+      "notes": "含《电子游戏年鉴1998》《电子游戏软件1998增刊》等。"
+    },
+    {
+      "source_id": "ucg_cn",
+      "name": "UCG 游戏机实用技术官网",
+      "layer": "cn_print",
+      "platforms": [
+        "ANY"
+      ],
+      "element_types": [
+        "纸媒原文",
+        "攻略"
+      ],
+      "status": "snippet_only",
+      "last_verified": "2026-11-18",
+      "urls": [
+        "https://www.ucg.cn/"
+      ],
+      "notes": "现役媒体、攻略书商城；老合订本不在官网。"
+    },
+    {
+      "source_id": "dazhong_soft",
+      "name": "《大众软件》/《家用电脑与游戏》合订本扫描",
+      "layer": "cn_print",
+      "platforms": [
+        "PC_DOS",
+        "NES"
+      ],
+      "element_types": [
+        "纸媒原文",
+        "攻略",
+        "金手指"
+      ],
+      "status": "candidate",
+      "last_verified": null,
+      "urls": [],
+      "notes": "缺口层：尚未找到可全文检索的扫描源，遇到即 ingest。"
+    },
+    {
+      "source_id": "game_urawaza",
+      "name": "裏技.com（game-urawaza.com）",
+      "layer": "jp_urawaza",
+      "platforms": [
+        "NES",
+        "SNES",
+        "N64",
+        "ARCADE"
+      ],
+      "element_types": [
+        "彩蛋",
+        "隐藏要素",
+        "金手指",
+        "出招表",
+        "攻略"
+      ],
+      "status": "verified_read",
+      "last_verified": "2026-11-18",
+      "urls": [
+        "https://game-urawaza.com/"
+      ],
+      "evidence": [
+        "_工具脚本/taspipe/游戏包/来源库/取证/urawaza_FC热血足球_20261118.md",
+        "_工具脚本/taspipe/游戏包/来源库/取证/urawaza_FC热血足球_编者中文对照_20261119.md"
+      ],
+      "recipes": {
+        "jp": "{日版名} 裏技 site:game-urawaza.com"
+      },
+      "notes": "按机种+五十音组织：/{FC|SFC|N64}/{あ行首字}/{游戏名}.html（热血足球=FC/ku/kuniokun_soccer.html）。首页明写「格闘ゲームのコマンド一覧も掲載」⇒ 格斗指令也查这里。",
+      "games_hit": [
+        "nekketsu_soccer2"
+      ]
+    },
+    {
+      "source_id": "asw_kuniokun_complete",
+      "name": "ARC SYSTEM WORKS《くにおくん熱血コンプリート ファミコン編》官方介绍",
+      "layer": "official_manual",
+      "platforms": [
+        "NES"
+      ],
+      "element_types": [
+        "说明书",
+        "基础档案"
+      ],
+      "status": "verified_read",
+      "last_verified": "2026-11-24",
+      "urls": [
+        "https://www.kuniokun.jp/famicom/ttl-comment/index.html#fighting"
+      ],
+      "evidence": [
+        "_工具脚本/taspipe/游戏包/来源库/取证/asw_熱血格闘伝説_官方页摘录_20261124.md"
+      ],
+      "notes": "官方身份/发售日/人数/模式/玩家自创主角与输入项决定强度；无开放许可，只本地取证。",
+      "games_hit": [
+        "nekketsu_kakutou_densetsu"
+      ]
+    },
+    {
+      "source_id": "archive_nkd_manual",
+      "name": "Internet Archive《熱血格闘伝説》TJC-NA 日版说明书扫描",
+      "kind": "print",
+      "layer": "official_manual",
+      "platforms": [
+        "NES"
+      ],
+      "element_types": [
+        "说明书",
+        "出招表",
+        "攻略",
+        "基础档案"
+      ],
+      "status": "verified_read",
+      "last_verified": "2026-11-24",
+      "urls": [
+        "https://archive.org/details/nekketsu-kakutou-densetsu-tjc-na-fc-jp-manual-600-dpi",
+        "https://archive.org/stream/nekketsu-kakutou-densetsu-tjc-na-fc-jp-manual-600-dpi/Nekketsu%20Kakutou%20Densetsu%20%5BTJC-NA%5D%28FC%29%28JP%29%20-Manual%28600DPI%29_djvu.txt"
+      ],
+      "evidence": [
+        "_工具脚本/taspipe/游戏包/来源库/取证/manual_熱血格闘伝説_TJC-NA_说明书摘录_20261124.md"
+      ],
+      "notes": "只保存短摘录；OCR有噪声，作品级无开放许可，不公开再分发扫描全文。",
+      "games_hit": [
+        "nekketsu_kakutou_densetsu"
+      ]
+    },
+    {
+      "source_id": "dammit9x_nkd_faq",
+      "name": "dammit9x《Nekketsu Kakutou Densetsu FAQ/Guide》v1.0",
+      "kind": "site",
+      "layer": "en_tech",
+      "platforms": [
+        "NES"
+      ],
+      "element_types": [
+        "出招表",
+        "攻略"
+      ],
+      "status": "verified_read",
+      "last_verified": "2026-11-24",
+      "urls": [
+        "https://raw.githubusercontent.com/dammit9x/vgr/master/faqs/nekketsu_kakutou_densetsu_a.txt"
+      ],
+      "evidence": [
+        "_工具脚本/taspipe/游戏包/来源库/取证/dammit9x_熱血格闘伝説_角色公式参考_20261124.md"
+      ],
+      "notes": "作者限制仅个人私用；KT/星座表转引自rahga.com/nkd，原站2026-11-24未取回，故语料authority=reference_only。",
+      "games_hit": [
+        "nekketsu_kakutou_densetsu"
+      ]
+    },
+    {
+      "source_id": "dvd_nkd_revb",
+      "name": "DvD Translations《(4 Player) Nekketsu Fighting Legend》Rev.B README",
+      "kind": "site",
+      "layer": "en_tech",
+      "platforms": [
+        "NES"
+      ],
+      "element_types": [
+        "版本对照",
+        "基础档案"
+      ],
+      "status": "verified_read",
+      "last_verified": "2026-11-24",
+      "urls": [
+        "https://dvdtranslations.eludevisibility.org/nekketsu/ReadMe-DvD_Translations-Nekketsu_Fighting_Legend.txt"
+      ],
+      "evidence": [
+        "_工具脚本/taspipe/游戏包/来源库/取证/dvd_熱血格闘伝説_RevB版本边界_20261124.md"
+      ],
+      "notes": "NES 4-Score/Satellite第3/4人补丁，仅Rumble模式；不得回填原版FC能力，不存补丁ROM。",
+      "games_hit": [
+        "nekketsu_kakutou_densetsu"
+      ]
+    },
+    {
+      "source_id": "setsumei_cloudfree",
+      "name": "げーむのせつめいしょ（官方说明书扫描）",
+      "layer": "official_manual",
+      "platforms": [
+        "NES",
+        "SNES"
+      ],
+      "element_types": [
+        "说明书",
+        "攻略"
+      ],
+      "status": "verified_read",
+      "last_verified": "2026-11-18",
+      "urls": [
+        "https://setsumei.cloudfree.jp/famicom/"
+      ],
+      "evidence": [
+        "_工具脚本/taspipe/游戏包/来源库/取证/setsumei_热血足球说明书扫描_20261118.md",
+        "_工具脚本/taspipe/游戏包/来源库/取证/setsumei_热血足球说明书_编者中文对照_20261119.md"
+      ],
+      "recipes": {
+        "jp": "https://setsumei.cloudfree.jp/famicom/{游戏名}/{游戏名}.html"
+      },
+      "notes": "台词/规则原文。",
+      "games_hit": [
+        "nekketsu_soccer2"
+      ]
+    },
+    {
+      "source_id": "kakusi_jp",
+      "name": "kakusi.jp（隠しコマンド汇总）",
+      "layer": "jp_urawaza",
+      "platforms": [
+        "ANY"
+      ],
+      "element_types": [
+        "彩蛋",
+        "隐藏要素"
+      ],
+      "status": "snippet_only",
+      "last_verified": "2026-11-18",
+      "urls": [
+        "https://kakusi.jp/"
+      ],
+      "notes": "裏技.com 收录不到时的补充。"
+    },
+    {
+      "source_id": "atelier_isin",
+      "name": "atelier-digital-isin.info（FC 裏技回顾）",
+      "layer": "jp_urawaza",
+      "platforms": [
+        "NES"
+      ],
+      "element_types": [
+        "彩蛋",
+        "攻略"
+      ],
+      "status": "snippet_only",
+      "last_verified": "2026-11-18",
+      "urls": [
+        "https://atelier-digital-isin.info/"
+      ],
+      "notes": "补充层。"
+    },
+    {
+      "source_id": "akihabara_beep",
+      "name": "akihabara-beep.com（街机/FC 回顾）",
+      "layer": "jp_urawaza",
+      "platforms": [
+        "NES",
+        "ARCADE"
+      ],
+      "element_types": [
+        "彩蛋",
+        "攻略"
+      ],
+      "status": "snippet_only",
+      "last_verified": "2026-11-18",
+      "urls": [
+        "https://akihabara-beep.com/"
+      ],
+      "notes": "补充层。"
+    },
+    {
+      "source_id": "ja_wikipedia",
+      "name": "日文维基百科",
+      "layer": "jp_urawaza",
+      "platforms": [
+        "ANY"
+      ],
+      "element_types": [
+        "基础档案",
+        "身份"
+      ],
+      "status": "unreachable",
+      "last_verified": "2026-11-18",
+      "urls": [
+        "https://ja.wikipedia.org/"
+      ],
+      "reachability": {
+        "direct": "fail",
+        "checked": "2026-11-18",
+        "note": "两路径都试过，直连失败"
+      },
+      "notes": "只能用搜索快照间接取证，引用注明快照未全文核对。"
+    },
+    {
+      "source_id": "hamtum_net",
+      "name": "はむつんゲームサークル（FC 裏技·パスワード名鑑）",
+      "layer": "jp_urawaza",
+      "platforms": [
+        "NES"
+      ],
+      "element_types": [
+        "彩蛋",
+        "金手指"
+      ],
+      "status": "candidate",
+      "last_verified": null,
+      "urls": [
+        "https://hamtum.net/"
+      ],
+      "notes": "本轮只搜到 YouTube/博客二手转述，未直连。"
+    },
+    {
+      "source_id": "famitsu_urawaza",
+      "name": "ファミ通 裏技/攻略页",
+      "layer": "jp_urawaza",
+      "platforms": [
+        "ANY"
+      ],
+      "element_types": [
+        "攻略",
+        "彩蛋",
+        "金手指"
+      ],
+      "status": "candidate",
+      "last_verified": null,
+      "urls": [
+        "https://www.famitsu.com/"
+      ],
+      "notes": "缺口层：日文官方系媒体攻略，本轮未验。"
+    },
+    {
+      "source_id": "tcrf_net",
+      "name": "TCRF（The Cutting Room Floor，未使用内容/Debug）",
+      "layer": "en_tech",
+      "platforms": [
+        "ANY"
+      ],
+      "element_types": [
+        "未使用内容",
+        "彩蛋",
+        "bug",
+        "身份"
+      ],
+      "status": "unreachable",
+      "last_verified": "2026-11-18",
+      "urls": [
+        "https://tcrf.net/The_King_of_Fighters_%2798_(Neo_Geo)",
+        "https://tcrf.net/The_King_of_Fighters_%2798_Ultimate_Match_Final_Edition",
+        "https://tcrf.net/Category:King_of_Fighters_series"
+      ],
+      "reachability": {
+        "direct": "403",
+        "checked": "2026-11-18",
+        "note": "直连 403 Forbidden，页面确实存在"
+      },
+      "recipes": {
+        "en": "{rom名} tcrf unused"
+      },
+      "notes": "判某彩蛋是否官方遗留的第一站。快照写明：街机版 MAME 有 NGM(kof98) 与 NGH(kof98h) 两套修订，NGM 含歌词 NGH 不含；98UMFE 存 Orochi Iori/Orochi Leona/Goenitz/Orochi 四张未使用头像；'94/'96/'99/R-2 都有独立页（'96 页写 DIP 开关调试效果）。"
+    },
+    {
+      "source_id": "datacrystal",
+      "name": "Data Crystal（内存表/ROM 数据，TCRF 团队接手）",
+      "layer": "en_tech",
+      "platforms": [
+        "ANY"
+      ],
+      "element_types": [
+        "金手指",
+        "未使用内容"
+      ],
+      "status": "snippet_only",
+      "last_verified": "2026-11-18",
+      "urls": [
+        "https://datacrystal.tcrf.net/wiki/Mega_Man_(NES)/RAM_map"
+      ],
+      "notes": "Mega Man RAM map 只拿到快照（fetch 403）；KOF'98 独立条目本轮未见，别当已收录。",
+      "games_hit": [
+        "megaman1"
+      ]
+    },
+    {
+      "source_id": "supercombo_wiki",
+      "name": "SuperCombo Wiki（帧数据/Hit Stun/逐版本 FAQ）",
+      "layer": "en_tech",
+      "platforms": [
+        "ARCADE"
+      ],
+      "element_types": [
+        "帧数据",
+        "出招表",
+        "攻略"
+      ],
+      "status": "snippet_only",
+      "last_verified": "2026-11-18",
+      "urls": [
+        "https://wiki.supercombo.gg/w/The_King_of_Fighters_%2798/FAQ"
+      ],
+      "recipes": {
+        "en": "{rom名} frame data site:wiki.supercombo.gg"
+      },
+      "notes": "只有官方正作有帧表，hack 版无。"
+    },
+    {
+      "source_id": "dreamcancel",
+      "name": "dreamcancel.com（逐角色页 System/Controls/Changelist）",
+      "layer": "en_tech",
+      "platforms": [
+        "ARCADE"
+      ],
+      "element_types": [
+        "帧数据",
+        "出招表",
+        "攻略"
+      ],
+      "status": "snippet_only",
+      "last_verified": "2026-11-18",
+      "urls": [
+        "https://www.dreamcancel.com/wiki/The_King_of_Fighters_%2798_UMFE/King"
+      ],
+      "notes": "UMFE 逐角色页，含 Advanced Strategy。"
+    },
+    {
+      "source_id": "strategywiki",
+      "name": "StrategyWiki",
+      "layer": "en_tech",
+      "platforms": [
+        "ANY"
+      ],
+      "element_types": [
+        "攻略",
+        "出招表",
+        "金手指"
+      ],
+      "status": "unreachable",
+      "last_verified": "2026-11-18",
+      "urls": [
+        "https://strategywiki.org/wiki/The_King_of_Fighters_%2798/Kyo_Kusanagi",
+        "https://strategywiki.org/wiki/Kunio-kun_no_Nekketsu_Soccer_League"
+      ],
+      "reachability": {
+        "direct": "403",
+        "checked": "2026-11-18",
+        "note": "直连 403"
+      },
+      "notes": "现有 KOF/热血足球知识包曾引它 ⇒ 引用只能标快照，不得当已全文核对。",
+      "games_hit": [
+        "kof98eck",
+        "nekketsu_soccer2"
+      ]
+    },
+    {
+      "source_id": "neoseeker",
+      "name": "Neoseeker FAQs",
+      "layer": "en_tech",
+      "platforms": [
+        "ANY"
+      ],
+      "element_types": [
+        "攻略",
+        "金手指",
+        "彩蛋"
+      ],
+      "status": "unreachable",
+      "last_verified": "2026-11-18",
+      "urls": [
+        "https://www.neoseeker.com/mega-man-legacy-collection/faqs/85172-mega-man-m.html"
+      ],
+      "reachability": {
+        "direct": "403",
+        "checked": "2026-11-18",
+        "note": "fetch 403，快照见 Clear Points / platform maker"
+      },
+      "notes": "洛克人包引过它。",
+      "games_hit": [
+        "megaman1"
+      ]
+    },
+    {
+      "source_id": "nesmaps",
+      "name": "NESMaps（地图 + 内存码）",
+      "layer": "en_tech",
+      "platforms": [
+        "NES"
+      ],
+      "element_types": [
+        "金手指",
+        "攻略"
+      ],
+      "status": "snippet_only",
+      "last_verified": "2026-11-18",
+      "urls": [
+        "https://nesmaps.com/maps/MegaMan/MegaMan.html"
+      ],
+      "notes": "memory codes 006A/0055/005D。",
+      "games_hit": [
+        "megaman1"
+      ]
+    },
+    {
+      "source_id": "gamefaqs",
+      "name": "GameFAQs",
+      "layer": "en_tech",
+      "platforms": [
+        "ANY"
+      ],
+      "element_types": [
+        "攻略",
+        "金手指",
+        "彩蛋",
+        "出招表"
+      ],
+      "status": "candidate",
+      "last_verified": null,
+      "urls": [
+        "https://gamefaqs.gamespot.com/"
+      ],
+      "notes": "缺口层：英文最大 FAQ 库，本轮未验。"
+    },
+    {
+      "source_id": "gamehacking_org",
+      "name": "GameHacking.org 码库",
+      "layer": "cheat_db",
+      "platforms": [
+        "ANY"
+      ],
+      "element_types": [
+        "金手指"
+      ],
+      "status": "candidate",
+      "last_verified": null,
+      "urls": [
+        "https://gamehacking.org/"
+      ],
+      "notes": "缺口层，本轮未验。"
+    },
+    {
+      "source_id": "romhacking_net",
+      "name": "romhacking.net（Downloads→Cheat Codes / 改版）",
+      "layer": "cheat_db",
+      "platforms": [
+        "ANY"
+      ],
+      "element_types": [
+        "金手指",
+        "未使用内容",
+        "版本对照"
+      ],
+      "status": "candidate",
+      "last_verified": null,
+      "urls": [
+        "https://www.romhacking.net/"
+      ],
+      "notes": "缺口层，本轮未验。"
+    },
+    {
+      "source_id": "scribd_kof98codes",
+      "name": "SCRIBD《King of Fighters 98 Codes》老 PDF",
+      "layer": "en_tech",
+      "platforms": [
+        "ARCADE"
+      ],
+      "element_types": [
+        "彩蛋",
+        "金手指",
+        "出招表"
+      ],
+      "status": "snippet_only",
+      "last_verified": "2026-11-18",
+      "urls": [
+        "https://www.scribd.com/document/75151607/King-of-Fighters-98-Codes"
+      ],
+      "notes": "英文 moves + character codes，含 Shingo 等解锁码，适合交叉验证解锁码措辞。"
+    },
+    {
+      "source_id": "kof98recomp",
+      "name": "GitHub kof98recomp（KOF'98 反编译重制工程）",
+      "layer": "en_tech",
+      "platforms": [
+        "ARCADE"
+      ],
+      "element_types": [
+        "未使用内容",
+        "身份"
+      ],
+      "status": "snippet_only",
+      "last_verified": "2026-11-18",
+      "urls": [
+        "https://github.com/danilopaulinodasilva/kof98recomp"
+      ],
+      "notes": "要求自备 MAME set kof98h dump。与「游戏自动移植工厂」线直接相关，值得单独评估。"
+    },
+    {
+      "source_id": "bilibili",
+      "name": "B站（实况/全人物集锦/专栏/一键大招实测）",
+      "layer": "video",
+      "platforms": [
+        "ANY"
+      ],
+      "element_types": [
+        "视频验证",
+        "必杀宏",
+        "彩蛋",
+        "出招表"
+      ],
+      "status": "snippet_only",
+      "last_verified": "2026-11-18",
+      "urls": [
+        "https://search.bilibili.com/all?keyword={game}",
+        "https://www.bilibili.com/read/cv30341047",
+        "https://www.bilibili.com/video/BV1HS411N7JS"
+      ],
+      "recipes": {
+        "cn": "B站 {game} 全人物 超必杀 集锦 / 一键大招 / 隐藏要素"
+      },
+      "notes": "很多隐藏要素只活在视频里，文字站不写。cv30341047=街机版操作系统+出招表、BV1HS411N7JS=全人物超必杀/MAX 集锦+出招表、「小马模拟器 拳皇98 一键大招/无限奈落」=宏已有人做过。只到快照，逐条真读后才升 verified_read。判「不存在」前必扫这层。"
+    },
+    {
+      "source_id": "youtube",
+      "name": "YouTube（全解锁 move list / 实况）",
+      "layer": "video",
+      "platforms": [
+        "ANY"
+      ],
+      "element_types": [
+        "视频验证",
+        "出招表",
+        "彩蛋"
+      ],
+      "status": "snippet_only",
+      "last_verified": "2026-11-18",
+      "urls": [
+        "https://www.youtube.com/watch?v=Y3W0pfUf1ak"
+      ],
+      "recipes": {
+        "en": "{rom名} all character move list / all secrets"
+      },
+      "notes": "KOF '98 Slugfest All Character Move List 3 段全解锁视频。"
+    },
+    {
+      "source_id": "douyin_kuaishou",
+      "name": "抖音/快手（金手指/一键大招实测短视频）",
+      "layer": "video",
+      "platforms": [
+        "ANY"
+      ],
+      "element_types": [
+        "必杀宏",
+        "金手指",
+        "视频验证"
+      ],
+      "status": "candidate",
+      "last_verified": null,
+      "urls": [],
+      "notes": "缺口层：MAME 金手指类短视频，本轮未验。"
+    },
+    {
+      "source_id": "tasvideos_gameresources",
+      "name": "TASVideos GameResources（逐游戏 trick 与输入条件）",
+      "layer": "tas_macro",
+      "platforms": [
+        "ANY"
+      ],
+      "element_types": [
+        "必杀宏",
+        "帧数据",
+        "bug"
+      ],
+      "status": "snippet_only",
+      "last_verified": "2026-11-18",
+      "urls": [
+        "https://tasvideos.org/GameResources/Arcade",
+        "https://tasvideos.org/3521G"
+      ],
+      "recipes": {
+        "en": "tasvideos {rom名} game resources"
+      },
+      "notes": "记哪些 trick 实时做不到、输入条件是什么 ⇒ 宏的真值来源。KOF'96 = 3521G。"
+    },
+    {
+      "source_id": "wlgooo_manuals",
+      "name": "FC+SFC 官方说明书 PDF 824 卷（资源页）",
+      "layer": "official_manual",
+      "platforms": [
+        "NES",
+        "SNES"
+      ],
+      "element_types": [
+        "说明书",
+        "纸媒原文"
+      ],
+      "status": "snippet_only",
+      "last_verified": "2026-11-18",
+      "urls": [
+        "https://www.wlgooo.com/71312.html"
+      ],
+      "notes": "属 ROM/资源站，取用受本项目版权边界约束：只作自用备份，不外分享。"
+    },
+    {
+      "source_id": "snk_neogeo_manual",
+      "name": "SNK/Neo Geo 原厂说明书与出招表扫描",
+      "layer": "official_manual",
+      "platforms": [
+        "ARCADE"
+      ],
+      "element_types": [
+        "说明书",
+        "出招表"
+      ],
+      "status": "candidate",
+      "last_verified": null,
+      "urls": [],
+      "notes": "缺口层：原厂出招表是官方指令权威，尚未找到可直读扫描源。"
+    },
+    {
+      "source_id": "nintendo_sega_manuals",
+      "name": "Nintendo/Sega 官方手册扫描库",
+      "layer": "official_manual",
+      "platforms": [
+        "NES",
+        "SNES",
+        "MD"
+      ],
+      "element_types": [
+        "说明书"
+      ],
+      "status": "candidate",
+      "last_verified": null,
+      "urls": [],
+      "notes": "缺口层，本轮未验（setsumei 已覆盖部分 FC）。"
+    },
+    {
+      "source_id": "console_guide_hubs",
+      "name": "逐机种攻略站缺口（SFC/MD/GBA/GB/N64/PS1/PCE）",
+      "layer": "cn_console",
+      "platforms": [
+        "SNES",
+        "MD",
+        "GBA",
+        "GB",
+        "N64",
+        "PS1",
+        "PCE"
+      ],
+      "element_types": [
+        "攻略",
+        "彩蛋",
+        "金手指",
+        "隐藏要素"
+      ],
+      "status": "candidate",
+      "last_verified": null,
+      "urls": [],
+      "notes": "缺口层：这些机种还没有专属攻略站条目。遇到好站立即 ingest 回填，别把「库里没有」说成「网上没有」。"
+    },
+    {
+      "source_id": "arcade_nonfighting",
+      "name": "街机非格斗资料层（横版过关/射击/清版）",
+      "layer": "cn_arcade",
+      "platforms": [
+        "ARCADE"
+      ],
+      "element_types": [
+        "攻略",
+        "出招表",
+        "金手指",
+        "彩蛋"
+      ],
+      "status": "candidate",
+      "last_verified": null,
+      "urls": [],
+      "notes": "缺口层：mamecn/hackrom 以格斗为主，非格斗（如三国战纪/恐龙快打/合金弹头）专属层待补。"
+    },
+    {
+      "source_id": "pc_dos_hubs",
+      "name": "DOS/Win9x 老 PC 游戏资料层",
+      "layer": "cn_console",
+      "platforms": [
+        "PC_DOS"
+      ],
+      "element_types": [
+        "攻略",
+        "金手指",
+        "彩蛋"
+      ],
+      "status": "candidate",
+      "last_verified": null,
+      "urls": [],
+      "notes": "缺口层：老 PC 攻略/密码/修改器资料尚未建条目。"
+    },
+    {
+      "source_id": "oldmanemu",
+      "name": "老男人游戏网 OldmanEmu（已关停）",
+      "layer": "cn_netdisk",
+      "platforms": [
+        "ANY"
+      ],
+      "element_types": [
+        "攻略",
+        "金手指",
+        "身份"
+      ],
+      "status": "dead",
+      "last_verified": "2026-11-18",
+      "urls": [
+        "https://www.oldmanemu.net/"
+      ],
+      "closure": {
+        "date": "2026-03-20",
+        "reason": "收任天堂律师函后整站关闭，打开只显示 Forbidden",
+        "report_urls": [
+          "https://www.sohu.com/a/999151610_99969083",
+          "https://finance.sina.com.cn/tech/roll/2026-03-21/doc-inhrshai7829202.shtml"
+        ],
+        "historical_index": "http://game.boxy.cn/rom-share-oldman/"
+      },
+      "notes": "别再当活站查。历史索引仍可在 game.boxy.cn 看到条目名。"
+    },
+    {
+      "source_id": "rexue_zuiqiang_forum",
+      "name": "热血最强论坛（原帖多已死）",
+      "layer": "cn_community",
+      "platforms": [
+        "NES"
+      ],
+      "element_types": [
+        "攻略",
+        "金手指"
+      ],
+      "status": "unreachable",
+      "last_verified": "2026-11-18",
+      "urls": [],
+      "reachability": {
+        "direct": "fail",
+        "checked": "2026-11-18",
+        "note": "原帖多已死，未逐一当期核实"
+      },
+      "notes": "CSDN wangsitan 是转载锚点，引用时标 CSDN。"
+    },
+    {
+      "source_id": "local_project_manual",
+      "name": "测试问题与闸门说明书（taspipe 实测口径与闸门口径）",
+      "kind": "local",
+      "layer": "local_docs",
+      "platforms": [
+        "ANY"
+      ],
+      "element_types": [
+        "攻略",
+        "出招表",
+        "必杀宏",
+        "金手指",
+        "隐藏要素",
+        "bug",
+        "基础档案"
+      ],
+      "status": "verified_read",
+      "last_verified": "2026-11-18",
+      "urls": [],
+      "evidence": [
+        "测试问题与闸门说明书.md"
+      ],
+      "notes": "45,351B，26 节。§2 招式谱面符号编译闸门（KOF98）；§19–21 热血足球2 状态跳跃/看门狗/帧 parity；§22–23 洛克人逐帧采集与选关门控；§24 showcase 全量盘点框架（原子前置态+反例+全量口径）；§25 球权/必杀判据改 OAM 字节；§26 CN/hack 族必杀不可触发的负证据链。要素真值以本机实测为准，网站只作名录。",
+      "games_hit": [
+        "kof98_arcade_kyo",
+        "megaman1_nes_us",
+        "nekketsu_soccer2_fc_jp",
+        "nekketsu_soccer2_fc_cn_hack"
+      ]
+    },
+    {
+      "source_id": "local_route_template",
+      "name": "要素盘点可复用生产路线模板（正确路线 + 错误阀门）",
+      "kind": "local",
+      "layer": "local_docs",
+      "platforms": [
+        "ANY"
+      ],
+      "element_types": [
+        "攻略",
+        "基础档案",
+        "必杀宏",
+        "隐藏要素"
+      ],
+      "status": "verified_read",
+      "last_verified": "2026-11-18",
+      "urls": [],
+      "evidence": [
+        "_工具脚本/taspipe/要素盘点路线模板.md"
+      ],
+      "notes": "12,065B。§1 有序步骤（S1 调研挂点已改为强制先跑 sources route）；§2 错误阀门；§3 逐游戏填槽清单；§4 热血足球2 逐游戏卡示例（导航输入链 + 暂停金手指 AAABAAABAAAAAAA）；§5 举一反三。",
+      "games_hit": [
+        "nekketsu_soccer2_fc_jp"
+      ]
+    },
+    {
+      "source_id": "local_soccer2_super_list",
+      "name": "热血足球联盟必杀全清单 + honest gap manifest（证据级）",
+      "kind": "local",
+      "layer": "local_docs",
+      "platforms": [
+        "NES"
+      ],
+      "element_types": [
+        "必杀宏",
+        "出招表",
+        "隐藏要素",
+        "攻略",
+        "bug"
+      ],
+      "status": "verified_read",
+      "last_verified": "2026-11-18",
+      "urls": [],
+      "evidence": [
+        "_工具脚本/taspipe/游戏包/热血足球联盟_必杀全清单.md",
+        "_工具脚本/taspipe/游戏包/热血足球联盟_honest_gap_manifest.md"
+      ],
+      "notes": "29,352B 全清单（23 必杀=日版12+对手11，一角色一必杀须换人；燕返仅小辫子；前B头/后B倒钩/平地步数/禁区高空球）。gap manifest 记 CN/hack 族难度锁定+无人球同跳的 honest gap，不冒充可复现。",
+      "games_hit": [
+        "nekketsu_soccer2_fc_jp",
+        "nekketsu_soccer2_fc_cn_hack"
+      ],
+      "recipes": {
+        "cn": "读 热血足球联盟_必杀全清单.md 找 {game} 的必杀编号与触发条件"
+      }
+    },
+    {
+      "source_id": "local_goal_plan",
+      "name": "目标与实施路线（T1–T4 进度与验收口径）",
+      "kind": "local",
+      "layer": "local_docs",
+      "platforms": [
+        "ANY"
+      ],
+      "element_types": [
+        "基础档案",
+        "攻略"
+      ],
+      "status": "verified_read",
+      "last_verified": "2026-11-18",
+      "urls": [],
+      "evidence": [
+        "_工具脚本/taspipe/目标与实施路线.md"
+      ],
+      "notes": "9,194B。记 T1 名作通关出片已完成（忍者龙剑传 4751 → 验证/t1_ninja_gaiden/final_60s/），但 §3 明写「T3 本体（忍者龙剑传忍术正负例包）尚未开工」⇒ 本文档不能当要素真值来源，只作进度与口径。",
+      "games_hit": [
+        "ninja_gaiden1_nes_us"
+      ]
+    },
+    {
+      "source_id": "arcade_museum_com",
+      "name": "KLOV / arcade-museum（街机基础档案与版本）",
+      "kind": "site",
+      "layer": "en_tech",
+      "platforms": [
+        "ARCADE"
+      ],
+      "element_types": [
+        "基础档案",
+        "版本对照"
+      ],
+      "status": "candidate",
+      "last_verified": null,
+      "urls": [
+        "https://www.arcade-museum.com/game_detail.php?game_id=8675"
+      ],
+      "evidence": [],
+      "notes": "合金弹头包引过此站；本轮未取正文，先入库当候选，遇到再验。"
+    },
+    {
+      "source_id": "wiki_supermetroid_run",
+      "name": "supermetroid.run wiki（超级银河战士 RAM Map）",
+      "kind": "site",
+      "layer": "en_tech",
+      "platforms": [
+        "SNES"
+      ],
+      "element_types": [
+        "金手指",
+        "未使用内容",
+        "基础档案"
+      ],
+      "status": "candidate",
+      "last_verified": null,
+      "urls": [
+        "https://wiki.supermetroid.run/RAM_Map"
+      ],
+      "evidence": [],
+      "notes": "超级银河战士包引过此站；本轮未取正文，candidate。社区维护的逐地址表，比通用攻略站更细。"
+    },
+    {
+      "source_id": "tasvideos_mm1_object_ram_table",
+      "name": "TASVideos GameResources NES/Rockman/Data（Rockman 1 每对象坐标表）",
+      "kind": "site",
+      "layer": "en_tech",
+      "platforms": [
+        "NES"
+      ],
+      "element_types": [
+        "帧数据",
+        "基础档案"
+      ],
+      "status": "verified_read",
+      "last_verified": "2026-11-23",
+      "urls": [
+        "https://tasvideos.org/GameResources/NES/Rockman/Data"
+      ],
+      "notes": "原文：Rockman 1 Screen# $460 / X(hi,lo) $480:$4A0 / Xspd $4C0:$4E0 / Y(hi,lo) $600:$620 / Yspd $660:$680；对象 n=各地址+n；Rockman 恒 n=0、Boss n=1；跳时 Yspd 置 04.DF、每帧 -00.40。2026-11-23 直连 200 取回 28,481B，本机 T1 实测 $0480/$0600 写位生效（像素级）。（取证文件 sha256=1869f8c514a534592be6f5c588f94aaca82ea42b0317324ec6a6fd8c5bb06c91，12762 B）",
+      "evidence": [
+        "知识库P1_20261118/megaman1_candidate_20261125/evidence/mm1_object_ram_source_20261125.txt"
+      ]
+    },
+    {
+      "source_id": "tasvideos_bizhawk_faq_write_refresh",
+      "name": "TASVideos BizHawk FAQ（内存写每帧只覆盖一次 + memory write callbacks）",
+      "kind": "site",
+      "layer": "tas_macro",
+      "platforms": [
+        "NES",
+        "SNES"
+      ],
+      "element_types": [
+        "基础档案",
+        "帧数据"
+      ],
+      "status": "verified_read",
+      "last_verified": "2026-11-23",
+      "urls": [
+        "https://tasvideos.org/BizHawk/FAQ"
+      ],
+      "notes": "原文：'Bizhawk can only overwrite your address once per frame, so if the game changes it more frequently, you'll have to use memory write callbacks'；并警告不是每个 core 实现回调与寄存器编辑。解释了本项目写 $0022 被打回、必须写权威表的现象。（取证文件 sha256=071c944aa4e06395e02203c24402e59912bed3e93c256354118940dffae0c6d7，7800 B）",
+      "evidence": [
+        "知识库P1_20261118/megaman1_candidate_20261125/evidence/mm1_bizhawk_faq_source_20261125.txt"
+      ]
+    },
+    {
+      "source_id": "tasvideos_forum_19912_fm2_import",
+      "name": "TASVideos 论坛 Topic 19912：FCEUX .fm2/.fm3 转 BizHawk .tasproj",
+      "kind": "site",
+      "layer": "tas_macro",
+      "platforms": [
+        "NES"
+      ],
+      "element_types": [
+        "基础档案"
+      ],
+      "status": "verified_read",
+      "last_verified": "2026-11-23",
+      "urls": [
+        "https://tasvideos.org/Forum/Topics/19912"
+      ],
+      "notes": "编辑者 DrD2k9 提供 .fm2/.fm3 → BizHawk .tasproj 输入转换；Spikestuff 给出 File>Export to FM2 / BizHawk 内导入的常规路径。= 社区'拿别人到过的时刻'的标准做法。（取证文件 sha256=9c99e7106eba2f54b538148d72cd527fa64ed5e25778b1658f5b9e6eef8215e9，7298 B）",
+      "evidence": [
+        "知识库P1_20261118/megaman1_candidate_20261125/evidence/mm1_fm2_import_reference_20261125.txt"
+      ]
+    },
+    {
+      "source_id": "tasvideos_glossary_segmented",
+      "name": "TASVideos 术语表（分段式 TAS 定义）",
+      "kind": "site",
+      "layer": "tas_macro",
+      "platforms": [
+        "NES",
+        "SNES",
+        "ARCADE"
+      ],
+      "element_types": [
+        "基础档案",
+        "说明书"
+      ],
+      "status": "verified_read",
+      "last_verified": "2026-11-23",
+      "urls": [
+        "https://tasvideos.org/Glossary"
+      ],
+      "notes": "分段式 TAS：一段一段从存档点接续，不从头重放整局。本项目'要特定时刻就找已到过该时刻的输入档 + 从帧接续'的依据。（取证文件 sha256=3c6619e5037c095478f1206c03a274dc8fbdddfc77fc32ebff78a62d0e1f1937，21046 B）",
+      "evidence": [
+        "知识库P1_20261118/megaman1_candidate_20261125/evidence/mm1_segmented_tas_reference_20261125.txt"
+      ]
+    },
+    {
+      "source_id": "datacrystal_rockman_u_ram_map",
+      "name": "Data Crystal NES Rockman (U) RAM map",
+      "kind": "site",
+      "layer": "en_tech",
+      "platforms": [
+        "NES"
+      ],
+      "element_types": [
+        "帧数据",
+        "基础档案"
+      ],
+      "status": "unreachable",
+      "last_verified": "2026-11-23",
+      "urls": [
+        "https://datacrystal.tcrf.net/wiki/NES/Rockman_(U)/RAM_map"
+      ],
+      "notes": "2026-11-23 直连 403；Wayback availability API 对该 URL 返回 none（无快照）。未读原文，不作任何设计前提。（无本地取证文件）"
+    },
+    {
+      "source_id": "tcrf_rockman_nes",
+      "name": "TCRF Rockman (NES)（调试模式/关卡段直接访问）",
+      "kind": "site",
+      "layer": "en_tech",
+      "platforms": [
+        "NES"
+      ],
+      "element_types": [
+        "隐藏要素",
+        "彩蛋",
+        "基础档案"
+      ],
+      "status": "unreachable",
+      "last_verified": "2026-11-23",
+      "urls": [
+        "https://tcrf.net/Rockman_(NES)"
+      ],
+      "notes": "2026-11-23 直连 403（含 index.php?action=raw）；Wayback availability 返回 none。上一轮引用的 '$31 直接进关卡段' 因此降级为待核线索，不进设计前提。（无本地取证文件）"
+    },
+    {
+      "source_id": "gamefaqs_mega_man_22041",
+      "name": "GameFAQs Mega Man (NES) 图文攻略 22041",
+      "kind": "site",
+      "layer": "en_tech",
+      "platforms": [
+        "NES"
+      ],
+      "element_types": [
+        "攻略",
+        "隐藏要素"
+      ],
+      "status": "unreachable",
+      "last_verified": "2026-11-23",
+      "urls": [
+        "https://gamefaqs.gamespot.com/nes/587834-mega-man/faqs/22041"
+      ],
+      "notes": "2026-11-23 直连 403；Wayback availability 返回 none。'Cut Man boss 房地面砖可举' 暂无本地原文，待换渠道取证。（无本地取证文件）"
+    },
+    {
+      "source_id": "local_mm1_taspipe_measurements",
+      "name": "本机实测：洛克人1武器 RAM 与对象表定位试验（隔离候选摘录）",
+      "kind": "local",
+      "layer": "local_docs",
+      "platforms": [
+        "NES"
+      ],
+      "element_types": [
+        "帧数据",
+        "基础档案"
+      ],
+      "status": "verified_read",
+      "last_verified": "2026-11-25",
+      "urls": [],
+      "evidence": [
+        "知识库P1_20261118/megaman1_candidate_20261125/evidence/mm1_local_weapon_ram_excerpt_20261125.txt",
+        "知识库P1_20261118/megaman1_candidate_20261125/evidence/mm1_local_position_probe_excerpt_20261125.txt"
+      ],
+      "notes": "仅收录已核本机实测段落；外部原文与参考性社区材料保持各自来源资格。",
+      "games_hit": [
+        "megaman1"
+      ]
+    }
+  ],
+  "absence_claims": [
+    {
+      "claim": "Data Crystal / TCRF / GameFAQs 三家对 Rockman (U) 的页面，本机 2026-11-23 无法取回原文",
+      "checked_on": "2026-11-23",
+      "method": "直连 + Wayback availability API + web/2024id_ 与 web/2 两种快照形式",
+      "result": "直连 403（datacrystal.tcrf.net / tcrf.net / gamefaqs.gamespot.com）；availability 全部 status=none；快照形式返回 HTTPError",
+      "not_a_claim_of": "不代表这些页面不存在或内容有误；只代表本机此刻读不到，引用其内容一律标'待核'"
+    }
+  ]
+}

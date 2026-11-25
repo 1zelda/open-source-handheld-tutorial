@@ -1,0 +1,9 @@
+P19 gold -> ecc1c751f7a2 L1-63
+P20 域外零语料 route=esports_lol
+P21 可答性全否断言过（域内 377 块）
+P22 gold -> c7e55bfd51e3 L329-329
+P23 gold -> 9e0df7e8e93e L269-269
+P24 gold -> b4545c140456 L76-79
+P25 可答性全否断言过（域内 377 块）
+P26 域外零语料 route=esports_dota
+冻结 26 题（原18 + 新8）

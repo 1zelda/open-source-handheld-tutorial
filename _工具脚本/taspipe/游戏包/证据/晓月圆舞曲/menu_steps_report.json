@@ -1,0 +1,231 @@
+{
+  "status": "completed",
+  "rom_sha1": "40AAB076A528F52E93260BB98D91A40039E0DA02",
+  "cases": [
+    {
+      "kind": "yellow",
+      "down_presses": 0,
+      "equipped_id": 0,
+      "shot": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_menu_steps2\\yellow_down00.png",
+      "state": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_menu_steps2\\work\\yellow_down00.state"
+    },
+    {
+      "kind": "yellow",
+      "down_presses": 1,
+      "equipped_id": 2,
+      "shot": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_menu_steps2\\yellow_down01.png",
+      "state": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_menu_steps2\\work\\yellow_down01.state"
+    },
+    {
+      "kind": "yellow",
+      "down_presses": 2,
+      "equipped_id": 4,
+      "shot": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_menu_steps2\\yellow_down02.png",
+      "state": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_menu_steps2\\work\\yellow_down02.state"
+    },
+    {
+      "kind": "yellow",
+      "down_presses": 3,
+      "equipped_id": 6,
+      "shot": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_menu_steps2\\yellow_down03.png",
+      "state": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_menu_steps2\\work\\yellow_down03.state"
+    },
+    {
+      "kind": "yellow",
+      "down_presses": 4,
+      "equipped_id": 8,
+      "shot": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_menu_steps2\\yellow_down04.png",
+      "state": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_menu_steps2\\work\\yellow_down04.state"
+    },
+    {
+      "kind": "yellow",
+      "down_presses": 5,
+      "equipped_id": 10,
+      "shot": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_menu_steps2\\yellow_down05.png",
+      "state": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_menu_steps2\\work\\yellow_down05.state"
+    },
+    {
+      "kind": "yellow",
+      "down_presses": 6,
+      "equipped_id": 12,
+      "shot": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_menu_steps2\\yellow_down06.png",
+      "state": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_menu_steps2\\work\\yellow_down06.state"
+    },
+    {
+      "kind": "yellow",
+      "down_presses": 7,
+      "equipped_id": 14,
+      "shot": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_menu_steps2\\yellow_down07.png",
+      "state": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_menu_steps2\\work\\yellow_down07.state"
+    },
+    {
+      "kind": "yellow",
+      "down_presses": 8,
+      "equipped_id": 16,
+      "shot": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_menu_steps2\\yellow_down08.png",
+      "state": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_menu_steps2\\work\\yellow_down08.state"
+    },
+    {
+      "kind": "yellow",
+      "down_presses": 9,
+      "equipped_id": 18,
+      "shot": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_menu_steps2\\yellow_down09.png",
+      "state": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_menu_steps2\\work\\yellow_down09.state"
+    },
+    {
+      "kind": "yellow",
+      "down_presses": 10,
+      "equipped_id": 20,
+      "shot": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_menu_steps2\\yellow_down10.png",
+      "state": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_menu_steps2\\work\\yellow_down10.state"
+    },
+    {
+      "kind": "yellow",
+      "down_presses": 11,
+      "equipped_id": 22,
+      "shot": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_menu_steps2\\yellow_down11.png",
+      "state": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_menu_steps2\\work\\yellow_down11.state"
+    },
+    {
+      "kind": "yellow",
+      "down_presses": 12,
+      "equipped_id": 24,
+      "shot": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_menu_steps2\\yellow_down12.png",
+      "state": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_menu_steps2\\work\\yellow_down12.state"
+    },
+    {
+      "kind": "yellow",
+      "down_presses": 13,
+      "equipped_id": 26,
+      "shot": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_menu_steps2\\yellow_down13.png",
+      "state": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_menu_steps2\\work\\yellow_down13.state"
+    },
+    {
+      "kind": "yellow",
+      "down_presses": 14,
+      "equipped_id": 28,
+      "shot": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_menu_steps2\\yellow_down14.png",
+      "state": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_menu_steps2\\work\\yellow_down14.state"
+    },
+    {
+      "kind": "red",
+      "down_presses": 0,
+      "equipped_id": 0,
+      "shot": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_menu_steps2\\red_down00.png",
+      "state": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_menu_steps2\\work\\red_down00.state"
+    },
+    {
+      "kind": "red",
+      "down_presses": 1,
+      "equipped_id": 2,
+      "shot": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_menu_steps2\\red_down01.png",
+      "state": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_menu_steps2\\work\\red_down01.state"
+    },
+    {
+      "kind": "red",
+      "down_presses": 2,
+      "equipped_id": 4,
+      "shot": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_menu_steps2\\red_down02.png",
+      "state": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_menu_steps2\\work\\red_down02.state"
+    },
+    {
+      "kind": "red",
+      "down_presses": 3,
+      "equipped_id": 6,
+      "shot": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_menu_steps2\\red_down03.png",
+      "state": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_menu_steps2\\work\\red_down03.state"
+    },
+    {
+      "kind": "red",
+      "down_presses": 4,
+      "equipped_id": 8,
+      "shot": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_menu_steps2\\red_down04.png",
+      "state": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_menu_steps2\\work\\red_down04.state"
+    },
+    {
+      "kind": "red",
+      "down_presses": 5,
+      "equipped_id": 10,
+      "shot": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_menu_steps2\\red_down05.png",
+      "state": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_menu_steps2\\work\\red_down05.state"
+    },
+    {
+      "kind": "red",
+      "down_presses": 6,
+      "equipped_id": 12,
+      "shot": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_menu_steps2\\red_down06.png",
+      "state": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_menu_steps2\\work\\red_down06.state"
+    },
+    {
+      "kind": "red",
+      "down_presses": 7,
+      "equipped_id": 14,
+      "shot": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_menu_steps2\\red_down07.png",
+      "state": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_menu_steps2\\work\\red_down07.state"
+    },
+    {
+      "kind": "red",
+      "down_presses": 8,
+      "equipped_id": 16,
+      "shot": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_menu_steps2\\red_down08.png",
+      "state": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_menu_steps2\\work\\red_down08.state"
+    },
+    {
+      "kind": "red",
+      "down_presses": 9,
+      "equipped_id": 18,
+      "shot": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_menu_steps2\\red_down09.png",
+      "state": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_menu_steps2\\work\\red_down09.state"
+    },
+    {
+      "kind": "red",
+      "down_presses": 10,
+      "equipped_id": 20,
+      "shot": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_menu_steps2\\red_down10.png",
+      "state": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_menu_steps2\\work\\red_down10.state"
+    },
+    {
+      "kind": "red",
+      "down_presses": 11,
+      "equipped_id": 22,
+      "shot": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_menu_steps2\\red_down11.png",
+      "state": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_menu_steps2\\work\\red_down11.state"
+    },
+    {
+      "kind": "red",
+      "down_presses": 12,
+      "equipped_id": 24,
+      "shot": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_menu_steps2\\red_down12.png",
+      "state": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_menu_steps2\\work\\red_down12.state"
+    },
+    {
+      "kind": "red",
+      "down_presses": 13,
+      "equipped_id": 26,
+      "shot": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_menu_steps2\\red_down13.png",
+      "state": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_menu_steps2\\work\\red_down13.state"
+    },
+    {
+      "kind": "red",
+      "down_presses": 14,
+      "equipped_id": 28,
+      "shot": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_menu_steps2\\red_down14.png",
+      "state": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_menu_steps2\\work\\red_down14.state"
+    },
+    {
+      "kind": "red",
+      "down_presses": 15,
+      "equipped_id": 30,
+      "shot": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_menu_steps2\\red_down15.png",
+      "state": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_menu_steps2\\work\\red_down15.state"
+    },
+    {
+      "kind": "red",
+      "down_presses": 16,
+      "equipped_id": 32,
+      "shot": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_menu_steps2\\red_down16.png",
+      "state": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_menu_steps2\\work\\red_down16.state"
+    }
+  ],
+  "actual_core": "BizHawk.Emulation.Cores.Nintendo.GBA.MGBAHawk"
+}

@@ -1,0 +1,43 @@
+{
+ "keyword": "拳皇98",
+ "status": "ok",
+ "ts": "2026-11-19T05:38:57Z",
+ "ts_epoch": 1795066737.7244081,
+ "supply_num_results": 1000,
+ "n_videos": 20,
+ "relevant_count": 20,
+ "core_hit_rate": 1.0,
+ "full_hit_rate": 1.0,
+ "play_median": 5221.0,
+ "relevant_play_median": 5221.0,
+ "play_mean": 31859,
+ "play_max": 285636,
+ "play_total": 637180,
+ "engagement_median": 0.032,
+ "recent_count": 10,
+ "recent_play_median": 596.5,
+ "top3": [
+  {
+   "bvid": "BV1Jh4y1U7mB",
+   "title": "正规渠道下载拳皇全集/Winkawaks模拟器/拳皇97/拳皇98/拳皇2002/官方版",
+   "author": "李知金2001",
+   "play": 285636,
+   "pubdate": "2023-08-24"
+  },
+  {
+   "bvid": "BV1be4y1o759",
+   "title": "拳皇98全人物MAX超必杀（高画质）",
+   "author": "罗刹教主火云邪神",
+   "play": 124387,
+   "pubdate": "2022-09-06"
+  },
+  {
+   "bvid": "BV1vE421A7US",
+   "title": "【街机音乐】拳皇98 OST",
+   "author": "青春狂ACE",
+   "play": 57989,
+   "pubdate": "2024-07-17"
+  }
+ ],
+ "cache_hit": false
+}

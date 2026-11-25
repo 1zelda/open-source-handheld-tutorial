@@ -1,0 +1,135 @@
+{
+  "schema_version": "ram_calibration/1.0",
+  "game_id": "castlevania_aria_gba",
+  "note": "红魂 1-55 同态 Up+B 候选扫描；scout 只产生视觉/RAM 候选，不把候选当已验证技能。",
+  "profile": {
+    "rom": "F:/BaiduNetdiskDownload/rom/gba/恶魔城晓月圆舞曲.gba",
+    "rom_sha1": "40aab076a528f52e93260bb98d91a40039e0da02",
+    "bizhawk": "F:/开源掌机教程/02-模拟器库/BizHawk/BizHawk-2.11.1",
+    "isolated_slot": true,
+    "core": "mGBA",
+    "system": "GBA",
+    "domain": "EWRAM",
+    "state_package": {
+      "game_id": "castlevania_aria_gba",
+      "profile_id": "aria_us_40aab076",
+      "revision": "r20261125T120000"
+    },
+    "window": {
+      "start": 78429,
+      "length": 128
+    }
+  },
+  "base_state": "base",
+  "macros": {
+    "up_b": "Up+B"
+  },
+  "matrix": {
+    "case_id": "red_soul_{value}_vs_empty",
+    "values": [
+      1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20,
+      21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40,
+      41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55
+    ],
+    "template": {
+      "kind": "scenario",
+      "base_state": "base",
+      "arms": [
+        {
+          "name": "red_{value}",
+          "steps": [
+            {
+              "macro": "-",
+              "extra": 0,
+              "patches": [
+                {
+                  "addr": 78429,
+                  "value": "{value}"
+                }
+              ],
+              "expect": [
+                {
+                  "addr": 78429,
+                  "value": "{value}"
+                },
+                {
+                  "addr": 78448,
+                  "width": 2,
+                  "value": 80
+                }
+              ],
+              "screen": {
+                "reference": "$base",
+                "relation": "equal"
+              }
+            },
+            {
+              "state": "$previous",
+              "macro": "@up_b",
+              "extra": 89,
+              "capture_frames": 90,
+              "expect": [
+                {
+                  "addr": 78429,
+                  "value": "{value}"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "red0",
+          "steps": [
+            {
+              "macro": "-",
+              "extra": 0,
+              "patches": [
+                {
+                  "addr": 78429,
+                  "value": 0
+                }
+              ],
+              "expect": [
+                {
+                  "addr": 78429,
+                  "value": 0
+                },
+                {
+                  "addr": 78448,
+                  "width": 2,
+                  "value": 80
+                }
+              ],
+              "screen": {
+                "reference": "$base",
+                "relation": "equal"
+              }
+            },
+            {
+              "state": "$previous",
+              "macro": "@up_b",
+              "extra": 89,
+              "capture_frames": 90,
+              "expect": [
+                {
+                  "addr": 78429,
+                  "value": 0
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "comparisons": [
+        {
+          "left": "red_{value}",
+          "right": "red0",
+          "left_step": 1,
+          "right_step": 1,
+          "relation": "different",
+          "frames": [8, 12, 20, 40, 60, "final"]
+        }
+      ]
+    }
+  }
+}

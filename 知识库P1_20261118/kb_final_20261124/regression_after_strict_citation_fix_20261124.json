@@ -1,0 +1,262 @@
+{
+  "schema": "kb_post_strict_citation_fix_regression_v1",
+  "base_total": 26,
+  "base_pass": 13,
+  "strict_pass": 12,
+  "strict_intercepted_ids": [
+    "Q01"
+  ],
+  "strict_newly_passed_ids": [],
+  "rows": [
+    {
+      "id": "Q01",
+      "base_status": "pass",
+      "strict_status": "inconclusive",
+      "base_selected": [
+        "_工具脚本/taspipe/游戏包/热血足球联盟_必杀全清单.md#L3-L7"
+      ],
+      "strict_selected": []
+    },
+    {
+      "id": "Q02",
+      "base_status": "pass",
+      "strict_status": "pass",
+      "base_selected": [
+        "_工具脚本/taspipe/游戏包/热血足球联盟_必杀全清单.md#L70-L85"
+      ],
+      "strict_selected": [
+        "_工具脚本/taspipe/游戏包/热血足球联盟_必杀全清单.md#L70-L85"
+      ]
+    },
+    {
+      "id": "Q03",
+      "base_status": "pass",
+      "strict_status": "pass",
+      "base_selected": [
+        "_工具脚本/taspipe/游戏包/热血足球联盟_必杀全清单.md#L24-L33"
+      ],
+      "strict_selected": [
+        "_工具脚本/taspipe/游戏包/热血足球联盟_必杀全清单.md#L24-L33"
+      ]
+    },
+    {
+      "id": "Q04",
+      "base_status": "pass",
+      "strict_status": "pass",
+      "base_selected": [
+        "_工具脚本/taspipe/游戏包/热血足球联盟_必杀全清单.md#L24-L33"
+      ],
+      "strict_selected": [
+        "_工具脚本/taspipe/游戏包/热血足球联盟_必杀全清单.md#L24-L33"
+      ]
+    },
+    {
+      "id": "Q05",
+      "base_status": "pass",
+      "strict_status": "pass",
+      "base_selected": [
+        "_工具脚本/taspipe/游戏包/热血足球联盟_必杀全清单.md#L24-L33"
+      ],
+      "strict_selected": [
+        "_工具脚本/taspipe/游戏包/热血足球联盟_必杀全清单.md#L24-L33"
+      ]
+    },
+    {
+      "id": "Q06",
+      "base_status": "pass",
+      "strict_status": "pass",
+      "base_selected": [
+        "_工具脚本/taspipe/游戏包/来源库/取证/setsumei_热血足球说明书扫描_20261118.md#L47-L48"
+      ],
+      "strict_selected": [
+        "_工具脚本/taspipe/游戏包/来源库/取证/setsumei_热血足球说明书扫描_20261118.md#L47-L48"
+      ]
+    },
+    {
+      "id": "Q07",
+      "base_status": "pass",
+      "strict_status": "pass",
+      "base_selected": [
+        "_工具脚本/taspipe/游戏包/来源库/取证/setsumei_热血足球说明书扫描_20261118.md#L76-L85"
+      ],
+      "strict_selected": [
+        "_工具脚本/taspipe/游戏包/来源库/取证/setsumei_热血足球说明书扫描_20261118.md#L76-L85"
+      ]
+    },
+    {
+      "id": "Q08",
+      "base_status": "pass",
+      "strict_status": "pass",
+      "base_selected": [
+        "_工具脚本/taspipe/游戏包/来源库/取证/setsumei_热血足球说明书扫描_20261118.md#L47-L48"
+      ],
+      "strict_selected": [
+        "_工具脚本/taspipe/游戏包/来源库/取证/setsumei_热血足球说明书扫描_20261118.md#L47-L48"
+      ]
+    },
+    {
+      "id": "Q09",
+      "base_status": "inconclusive",
+      "strict_status": "inconclusive",
+      "base_selected": [],
+      "strict_selected": []
+    },
+    {
+      "id": "Q10",
+      "base_status": "pass",
+      "strict_status": "pass",
+      "base_selected": [
+        "F:/tas_rig/docs/素材生产规范.md#L185-L190"
+      ],
+      "strict_selected": [
+        "F:/tas_rig/docs/素材生产规范.md#L185-L190"
+      ]
+    },
+    {
+      "id": "Q11",
+      "base_status": "inconclusive",
+      "strict_status": "inconclusive",
+      "base_selected": [],
+      "strict_selected": []
+    },
+    {
+      "id": "Q12",
+      "base_status": "miss",
+      "strict_status": "miss",
+      "base_selected": [],
+      "strict_selected": []
+    },
+    {
+      "id": "Q13",
+      "base_status": "miss",
+      "strict_status": "miss",
+      "base_selected": [],
+      "strict_selected": []
+    },
+    {
+      "id": "Q14",
+      "base_status": "miss",
+      "strict_status": "miss",
+      "base_selected": [],
+      "strict_selected": []
+    },
+    {
+      "id": "Q15",
+      "base_status": "inconclusive",
+      "strict_status": "inconclusive",
+      "base_selected": [],
+      "strict_selected": []
+    },
+    {
+      "id": "Q16",
+      "base_status": "inconclusive",
+      "strict_status": "inconclusive",
+      "base_selected": [],
+      "strict_selected": []
+    },
+    {
+      "id": "Q17",
+      "base_status": "inconclusive",
+      "strict_status": "inconclusive",
+      "base_selected": [],
+      "strict_selected": []
+    },
+    {
+      "id": "Q18",
+      "base_status": "pass",
+      "strict_status": "pass",
+      "base_selected": [
+        "_工具脚本/taspipe/游戏包/热血足球联盟_必杀全清单.md#L251-L259"
+      ],
+      "strict_selected": [
+        "_工具脚本/taspipe/游戏包/热血足球联盟_必杀全清单.md#L251-L259"
+      ]
+    },
+    {
+      "id": "P19",
+      "base_status": "inconclusive",
+      "strict_status": "inconclusive",
+      "base_selected": [],
+      "strict_selected": []
+    },
+    {
+      "id": "P20",
+      "base_status": "miss",
+      "strict_status": "miss",
+      "base_selected": [],
+      "strict_selected": []
+    },
+    {
+      "id": "P21",
+      "base_status": "inconclusive",
+      "strict_status": "inconclusive",
+      "base_selected": [],
+      "strict_selected": []
+    },
+    {
+      "id": "P22",
+      "base_status": "pass",
+      "strict_status": "pass",
+      "base_selected": [
+        "_工具脚本/taspipe/游戏包/来源库/取证/setsumei_热血足球说明书扫描_20261118.md#L327-L341"
+      ],
+      "strict_selected": [
+        "_工具脚本/taspipe/游戏包/来源库/取证/setsumei_热血足球说明书扫描_20261118.md#L327-L341"
+      ]
+    },
+    {
+      "id": "P23",
+      "base_status": "pass",
+      "strict_status": "pass",
+      "base_selected": [
+        "_工具脚本/taspipe/游戏包/来源库/取证/setsumei_热血足球说明书扫描_20261118.md#L267-L288"
+      ],
+      "strict_selected": [
+        "_工具脚本/taspipe/游戏包/来源库/取证/setsumei_热血足球说明书扫描_20261118.md#L267-L288"
+      ]
+    },
+    {
+      "id": "P24",
+      "base_status": "pass",
+      "strict_status": "pass",
+      "base_selected": [
+        "测试问题与闸门说明书.md#L76-L79"
+      ],
+      "strict_selected": [
+        "测试问题与闸门说明书.md#L76-L79"
+      ]
+    },
+    {
+      "id": "P25",
+      "base_status": "inconclusive",
+      "strict_status": "inconclusive",
+      "base_selected": [],
+      "strict_selected": []
+    },
+    {
+      "id": "P26",
+      "base_status": "miss",
+      "strict_status": "miss",
+      "base_selected": [],
+      "strict_selected": []
+    }
+  ],
+  "isolation": {
+    "ok": true,
+    "changed_paths": []
+  },
+  "production_defaults": {
+    "top_window": 3,
+    "fragment_policy": null,
+    "fact_selector": null
+  },
+  "code": {
+    "kb": "6ee930803ab891535351c0a77c97b4bb8f6950364e9c1a9af66d5101f77ca4ad",
+    "kb_selector": "5843b007d66e88e2d6ac2d6d7fd3a62249d80308d6f153879739227af358be71",
+    "kb_provenance": "12babf001ddb13543a987f962139eb79688bc5e89f4128b71a0682e720ddbc83",
+    "kb_blind_eval": "d7f4debf10c8c3aefaa4d3fcd0f4de58458a77d44b6fa698220c866709b758ad",
+    "sources": "21d26ebf3265a422fe7eea949e18babb3f4aa51664bb40e5f55f1f47ae8c6d43",
+    "kb_esports": "581dc5a328e4abab77c563b419faa4d2f65c2301379cce791a1b5c0aeabbc9db",
+    "producer": "7c044bdfe0aaa193eaf7f6f814e2a4d56fb9742f383ed61854ac1a0c0a4dc839"
+  }
+}

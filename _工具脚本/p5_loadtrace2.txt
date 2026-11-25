@@ -1,0 +1,3 @@
+importing sentence_transformers...
+W1119 15:23:27.047000 18348 E:\SHARE\py313-cuda\torch\distributed\elastic\multiprocessing\redirects.py:29] NOTE: Redirects are currently not supported in Windows or MacOs.
+ST imported OK

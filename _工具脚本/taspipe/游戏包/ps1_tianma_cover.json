@@ -1,0 +1,21 @@
+{
+  "name": "ps1_tianma_cover",
+  "mode": "cover",
+  "canvas": [1920, 1080],
+  "bg_blur": 30,
+  "bg_brightness": 0.28,
+  "accent": [88, 168, 248],
+  "fallback_bg": [16, 22, 32],
+  "gameplay": {
+    "max_w_frac": 0.70,
+    "max_h_frac": 0.92,
+    "margin_x": 56
+  },
+  "panel": {
+    "gap": 44,
+    "margin_right": 56,
+    "pad": 24,
+    "box_max_h_frac": 0.56,
+    "box_top": 100
+  }
+}

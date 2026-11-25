@@ -1,0 +1,43 @@
+{
+ "keyword": "热血足球",
+ "status": "ok",
+ "ts": "2026-11-19T05:38:55Z",
+ "ts_epoch": 1795066735.390349,
+ "supply_num_results": 1000,
+ "n_videos": 20,
+ "relevant_count": 18,
+ "core_hit_rate": 0.9,
+ "full_hit_rate": 0.85,
+ "play_median": 19458.5,
+ "relevant_play_median": 35184.5,
+ "play_mean": 167032.8,
+ "play_max": 1097646,
+ "play_total": 3006590,
+ "engagement_median": 0.0454,
+ "recent_count": 4,
+ "recent_play_median": 365.5,
+ "top3": [
+  {
+   "bvid": "BV1q341187EH",
+   "title": "早以为已经熟练的《热血足球》，其实还隐藏了超多有趣的细节",
+   "author": "玩主小小虫",
+   "play": 1097646,
+   "pubdate": "2021-11-16"
+  },
+  {
+   "bvid": "BV1k4411L75i",
+   "title": "《热血足球》史上最骚的玩法，花式安排意大利队",
+   "author": "我本将心向青丝丶",
+   "play": 616864,
+   "pubdate": "2019-05-24"
+  },
+  {
+   "bvid": "BV1WkmoYtEXq",
+   "title": "『热血足球』全必杀排名，很狂很暴力胆小勿进",
+   "author": "咖咕啦",
+   "play": 510644,
+   "pubdate": "2024-11-15"
+  }
+ ],
+ "cache_hit": false
+}

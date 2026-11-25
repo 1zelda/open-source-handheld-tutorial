@@ -1,0 +1,198 @@
+{
+  "schema": "kb_strict_probe_change_audit_after_citation_fix_v1",
+  "index": {
+    "name": "index.json",
+    "sha16": "01ba5d9cd9e0e5c1",
+    "chunks": 770
+  },
+  "code": {
+    "kb": "6ee930803ab89153",
+    "kb_answer": "da05727ede62ffb3",
+    "kb_selector": "5843b007d66e88e2",
+    "kb_route": "a22fe95be89c1c57",
+    "kb_dense": "76ae1934b59d798b",
+    "kb_provenance": "12babf001ddb1354",
+    "eval_common": "461aad1af957eacc",
+    "producer": "4112752fecdad192"
+  },
+  "production_defaults": {
+    "top_window": 3,
+    "fragment_policy": null,
+    "fact_selector": null
+  },
+  "probe_change_summary": {
+    "old_strict_v2_ok": 22,
+    "current_strict_v2_ok": 25,
+    "restored_vs_old_strict": [
+      "X03",
+      "X04",
+      "X23"
+    ],
+    "newly_passed_vs_current_base": [],
+    "current_strict_intercepted": [
+      "X05",
+      "X17",
+      "X19",
+      "X20",
+      "X22",
+      "X30"
+    ],
+    "frozen_labels_modified": false
+  },
+  "restored_questions": [
+    {
+      "id": "Q02",
+      "base_status": "pass",
+      "strict_status": "pass",
+      "base_selected": [
+        "_工具脚本/taspipe/游戏包/热血足球联盟_必杀全清单.md#L70-L85"
+      ],
+      "strict_selected": [
+        "_工具脚本/taspipe/游戏包/热血足球联盟_必杀全清单.md#L70-L85"
+      ],
+      "restored_gold_chunk": true
+    },
+    {
+      "id": "Q03",
+      "base_status": "pass",
+      "strict_status": "pass",
+      "base_selected": [
+        "_工具脚本/taspipe/游戏包/热血足球联盟_必杀全清单.md#L24-L33"
+      ],
+      "strict_selected": [
+        "_工具脚本/taspipe/游戏包/热血足球联盟_必杀全清单.md#L24-L33"
+      ],
+      "restored_gold_chunk": true
+    },
+    {
+      "id": "Q04",
+      "base_status": "pass",
+      "strict_status": "pass",
+      "base_selected": [
+        "_工具脚本/taspipe/游戏包/热血足球联盟_必杀全清单.md#L24-L33"
+      ],
+      "strict_selected": [
+        "_工具脚本/taspipe/游戏包/热血足球联盟_必杀全清单.md#L24-L33"
+      ],
+      "restored_gold_chunk": true
+    },
+    {
+      "id": "Q05",
+      "base_status": "pass",
+      "strict_status": "pass",
+      "base_selected": [
+        "_工具脚本/taspipe/游戏包/热血足球联盟_必杀全清单.md#L24-L33"
+      ],
+      "strict_selected": [
+        "_工具脚本/taspipe/游戏包/热血足球联盟_必杀全清单.md#L24-L33"
+      ],
+      "restored_gold_chunk": true
+    }
+  ],
+  "probe_details": [
+    {
+      "id": "X03",
+      "question": "热血足球 龙卷拳谁能用？",
+      "frozen_kind": "positive_control",
+      "frozen_kind_v1": "rescue",
+      "frozen_kind_note": "官方说明书明写キーパーだけの必殺技トルネード・パンチ，authoritative直接出证；1angL377只有门将才能使用作线索",
+      "frozen_evidence": "setsumeiL262(authoritative);1angL377",
+      "old_strict_status": "inconclusive",
+      "old_strict_class": "intercepted",
+      "current_base_status": "pass",
+      "current_strict_status": "pass",
+      "current_strict_class": "still_passed",
+      "new_pass_vs_current_base": false,
+      "selected_evidence": [
+        {
+          "chunk_id": "f7f8e8316295",
+          "locator": "_工具脚本/taspipe/游戏包/热血足球联盟_必杀全清单.md#L70-L85",
+          "heading": "3. 一般个人技/必杀技（S1 发动法原文）",
+          "fragment_provenance": {
+            "policy": "strict",
+            "eligible": true,
+            "reason": "eligible_fragment",
+            "relevant_segments": 2,
+            "eligible_segments": 2,
+            "reference_segments": 0,
+            "retracted_segments": 0,
+            "evidence_excerpt": "龙卷拳(升龙拳)"
+          }
+        }
+      ]
+    },
+    {
+      "id": "X04",
+      "question": "热血足球 三倍加速怎么发动？",
+      "frozen_kind": "ambiguous",
+      "frozen_kind_v1": "rescue",
+      "frozen_kind_note": "三倍加速发动法S1(连按两次前)vs S8(敌球权A+B同按)跨源冲突，必杀全清单L256冲突表明列无实测；应报冲突不许选边",
+      "frozen_evidence": "必杀全清单L256冲突表;1angL389;urawazaL234",
+      "old_strict_status": "inconclusive",
+      "old_strict_class": "intercepted",
+      "current_base_status": "pass",
+      "current_strict_status": "pass",
+      "current_strict_class": "still_passed",
+      "new_pass_vs_current_base": false,
+      "selected_evidence": [
+        {
+          "chunk_id": "84195609bde8",
+          "locator": "_工具脚本/taspipe/游戏包/热血足球联盟_必杀全清单.md#L36-L49",
+          "heading": "2. 热血队 12 人必杀射门（S1 日文原名 + S2 中文译名与效果）",
+          "fragment_provenance": {
+            "policy": "strict",
+            "eligible": true,
+            "reason": "eligible_fragment",
+            "relevant_segments": 3,
+            "eligible_segments": 3,
+            "reference_segments": 0,
+            "retracted_segments": 0,
+            "evidence_excerpt": "三倍加速"
+          }
+        }
+      ]
+    },
+    {
+      "id": "X23",
+      "question": "热血足球 倒挂金钩怎么使出来？",
+      "frozen_kind": "insufficient_source",
+      "frozen_kind_v1": "mechanism",
+      "frozen_kind_note": "倒挂金钩=球附近跳起方向后+B：必杀全清单L32在§1(S1操作表原文)节；S1二手reference_only",
+      "frozen_evidence": "必杀全清单L32(S1节)",
+      "old_strict_status": "inconclusive",
+      "old_strict_class": "intercepted",
+      "current_base_status": "pass",
+      "current_strict_status": "pass",
+      "current_strict_class": "still_passed",
+      "new_pass_vs_current_base": false,
+      "selected_evidence": [
+        {
+          "chunk_id": "42b773880ef0",
+          "locator": "_工具脚本/taspipe/游戏包/热血足球联盟_必杀全清单.md#L24-L33",
+          "heading": "1. 发动与状态规则（S1 原文，生产闸门依据）",
+          "fragment_provenance": {
+            "policy": "strict",
+            "eligible": true,
+            "reason": "eligible_fragment",
+            "relevant_segments": 2,
+            "eligible_segments": 2,
+            "reference_segments": 0,
+            "retracted_segments": 0,
+            "evidence_excerpt": "Hyper Shoot（超常踢射/电光球）：把握好时机倒挂金钩/跳跃头球使球带电"
+          }
+        }
+      ]
+    }
+  ],
+  "x23_disposition": {
+    "classification": "frozen_annotation_conflict",
+    "decision": "retain_frozen_label_and_keep_strict_shadow_only",
+    "reason": "冻结说明把 S1 直接视为二手 reference_only；修正后的规则只把显式转述、参考段、待核段与撤回段降级，裸来源编号本身不构成二手证据。X23 与 Q02-Q05 同属该规则变化，不能单独改标签凑满分。",
+    "production_impact": "none; fragment_policy=None remains the production default",
+    "follow_up": "如需重审 S1 文件级权威，应统一审计 corpus_map 与来源资格，不得只针对 X23 加特例。"
+  },
+  "isolation": {
+    "ok": true,
+    "changed_paths": []
+  }
+}

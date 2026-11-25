@@ -7,6 +7,14 @@
 .workbuddy/
 _scratch/
 
+# ===== API 凭据配置、台账及临时/备份件（明文只在 Windows 凭据管理器）=====
+_工具脚本/apikey池.json
+_工具脚本/_apikey池台账.json
+_工具脚本/apikey池.json.*
+_工具脚本/_apikey池台账.json.*
+_工具脚本/apikey池.py.bak-*
+.gitignore.bak-*
+
 # ===== 常见垃圾文件 =====
 __pycache__/
 *.pyc

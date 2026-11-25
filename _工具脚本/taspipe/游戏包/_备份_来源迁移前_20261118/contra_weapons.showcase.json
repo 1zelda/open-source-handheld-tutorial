@@ -1,0 +1,452 @@
+{
+  "schema_version": 1,
+  "kind": "statejump_showcase",
+  "game_id": "contra_nes_us",
+  "game_title": "Contra / 魂斗罗 (NES, 1988 Konami)",
+  "platform": "NES",
+  "core": "NesHawk",
+  "system": "NES",
+  "rom": "F:/开源掌机教程/04-游戏资源库/TAS输入录像库/roms_verify/NES/contra_u.nes",
+  "rom_sha1": "C9EA66BB7CB30AD5343F1721B1D4D3219859319B",
+  "bizhawk": "F:/开源掌机教程/02-模拟器库/BizHawk/BizHawk-2.8",
+  "base_state": "F:/开源掌机教程/04-游戏资源库/TAS输入录像库/状态资产/contra_nes_us/contra_u_c9ea66bb/r20261114T043740/states/base.state",
+  "fps": 60.0988,
+  "template": "fc_tianma_cover",
+  "catalog": {
+    "status": "complete",
+    "expected_total": 5,
+    "sources": [
+      "https://datacrystal.tcrf.net/wiki/Contra_(NES)/RAM_map",
+      "https://strategywiki.org/wiki/Contra/Weapons"
+    ],
+    "coverage_note": "FC 魂斗罗 5 大主战枪械弹幕（Rifle 默认步枪、Machine Gun M弹、Fire Ball F弹、Spread Gun S散弹、Laser L激光）全展示。0x00AA 为 P1 当前武器寄存器：低 4 位=枪 ID（0 步枪/1 机枪/2 火焰/3 散弹/4 激光，5 起为非法值且不开火），bit 0x10= Rapid 加速位，只改变弹速不改变弹幕形状（11-14 实测 0x01/0x11 逐帧弹幕一致）。base_state 为已登记可复用状态 contra_u_c9ea66bb/r20261114T043740（关卡通用起始位，0x00AC=7，fc 854，跨进程内容指纹一致）。"
+  },
+  "elements": [
+    {
+      "element_id": "default_rifle",
+      "label": "Default Rifle (默认步枪)",
+      "kind": "weapon",
+      "base_state": null,
+      "trigger": {
+        "macro": "B,,,,B,,,,B,,,,B,,,,,,,,,,,,,,,,",
+        "extra": 25,
+        "patches": [
+          {
+            "addr": 170,
+            "value": 0
+          }
+        ]
+      },
+      "detection": {
+        "frame": 19,
+        "success_checks": [
+          {
+            "check_id": "muzzle_white_min",
+            "plugin_id": "frame_region_color_fraction",
+            "params": {
+              "region": [
+                0.23,
+                0.375,
+                0.42,
+                0.42
+              ],
+              "rgb": [
+                254,
+                254,
+                254
+              ],
+              "tol": 30,
+              "min_fraction": 0.01
+            },
+            "required": true
+          },
+          {
+            "check_id": "muzzle_warm_max",
+            "plugin_id": "frame_region_color_fraction_max",
+            "params": {
+              "region": [
+                0.23,
+                0.375,
+                0.42,
+                0.42
+              ],
+              "rgb": [
+                254,
+                130,
+                112
+              ],
+              "tol": 40,
+              "max_fraction": 0.0005
+            },
+            "required": true
+          }
+        ]
+      },
+      "negative_control": {
+        "macro": null,
+        "patches": [
+          {
+            "addr": 170,
+            "value": 0
+          }
+        ]
+      },
+      "note": "P1 初始标准步枪点射。",
+      "calibration": {
+        "measured_peaks": "muzzle 白 0.0272 / 暖 0.0000（步枪弹头纯白，五枪里唯一暖色恒 0）",
+        "negative_control": "空按对照 5 区域暖/白占比全为 0.0000（写 0x00AA 不改变静止画面）",
+        "cross_check": "五枪判据在彼此选定帧上互斥（逐帧命中表见 detector_final.json 同源数据）",
+        "sampled": "2026-11-14 由 contra_u_c9ea66bb/r20261114T043740 base_state + 本包 trigger 宏逐帧采集"
+      }
+    },
+    {
+      "element_id": "machine_gun_m",
+      "label": "Machine Gun - M (M弹·重机枪连射)",
+      "kind": "weapon",
+      "base_state": null,
+      "trigger": {
+        "macro": "B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,,,,,,,,,,,,,,,,",
+        "extra": 25,
+        "patches": [
+          {
+            "addr": 170,
+            "value": 17
+          }
+        ]
+      },
+      "detection": {
+        "frame": 19,
+        "success_checks": [
+          {
+            "check_id": "muzzle_warm_range",
+            "plugin_id": "frame_region_color_fraction_range",
+            "params": {
+              "region": [
+                0.23,
+                0.375,
+                0.42,
+                0.42
+              ],
+              "rgb": [
+                254,
+                130,
+                112
+              ],
+              "tol": 40,
+              "min_fraction": 0.004,
+              "max_fraction": 0.012
+            },
+            "required": true
+          },
+          {
+            "check_id": "upper_warm_max",
+            "plugin_id": "frame_region_color_fraction_max",
+            "params": {
+              "region": [
+                0.28,
+                0.26,
+                0.46,
+                0.375
+              ],
+              "rgb": [
+                254,
+                130,
+                112
+              ],
+              "tol": 40,
+              "max_fraction": 0.0005
+            },
+            "required": true
+          },
+          {
+            "check_id": "lower_warm_max",
+            "plugin_id": "frame_region_color_fraction_max",
+            "params": {
+              "region": [
+                0.28,
+                0.42,
+                0.46,
+                0.52
+              ],
+              "rgb": [
+                254,
+                130,
+                112
+              ],
+              "tol": 40,
+              "max_fraction": 0.0005
+            },
+            "required": true
+          }
+        ]
+      },
+      "negative_control": {
+        "macro": null,
+        "patches": [
+          {
+            "addr": 170,
+            "value": 17
+          }
+        ]
+      },
+      "note": "0x00AA=0x11(M弹+R加速)，按住 B 全自动高速连射红白圆弹。",
+      "calibration": {
+        "measured_peaks": "muzzle 暖 0.0061、mid 0.0073、far 0.0083，upper/lower 恒 0（水平连射，不展开）",
+        "negative_control": "空按对照 5 区域暖/白占比全为 0.0000（写 0x00AA 不改变静止画面）",
+        "cross_check": "五枪判据在彼此选定帧上互斥（逐帧命中表见 detector_final.json 同源数据）",
+        "sampled": "2026-11-14 由 contra_u_c9ea66bb/r20261114T043740 base_state + 本包 trigger 宏逐帧采集"
+      }
+    },
+    {
+      "element_id": "fire_thrower_f",
+      "label": "Fire Thrower - F (F弹·旋转火焰弹)",
+      "kind": "weapon",
+      "base_state": null,
+      "trigger": {
+        "macro": "B,,,,B,,,,B,,,,,,,,,,,,,,,,,,,,",
+        "extra": 30,
+        "patches": [
+          {
+            "addr": 170,
+            "value": 18
+          }
+        ]
+      },
+      "detection": {
+        "frame": 20,
+        "success_checks": [
+          {
+            "check_id": "upper_warm_min",
+            "plugin_id": "frame_region_color_fraction",
+            "params": {
+              "region": [
+                0.28,
+                0.26,
+                0.46,
+                0.375
+              ],
+              "rgb": [
+                254,
+                130,
+                112
+              ],
+              "tol": 40,
+              "min_fraction": 0.006
+            },
+            "required": true
+          },
+          {
+            "check_id": "lower_warm_min",
+            "plugin_id": "frame_region_color_fraction",
+            "params": {
+              "region": [
+                0.28,
+                0.42,
+                0.46,
+                0.52
+              ],
+              "rgb": [
+                254,
+                130,
+                112
+              ],
+              "tol": 40,
+              "min_fraction": 0.006
+            },
+            "required": true
+          },
+          {
+            "check_id": "muzzle_warm_max",
+            "plugin_id": "frame_region_color_fraction_max",
+            "params": {
+              "region": [
+                0.23,
+                0.375,
+                0.42,
+                0.42
+              ],
+              "rgb": [
+                254,
+                130,
+                112
+              ],
+              "tol": 40,
+              "max_fraction": 0.03
+            },
+            "required": true
+          }
+        ]
+      },
+      "negative_control": {
+        "macro": null,
+        "patches": [
+          {
+            "addr": 170,
+            "value": 18
+          }
+        ]
+      },
+      "note": "0x00AA=0x12(F弹+R加速)，发射螺旋推进火球。",
+      "calibration": {
+        "measured_peaks": "upper 暖 0.0092、lower 0.0109、far 0.0611、muzzle 0.0224（唯一上下都扫到的抛物线）",
+        "negative_control": "空按对照 5 区域暖/白占比全为 0.0000（写 0x00AA 不改变静止画面）",
+        "cross_check": "五枪判据在彼此选定帧上互斥（逐帧命中表见 detector_final.json 同源数据）",
+        "sampled": "2026-11-14 由 contra_u_c9ea66bb/r20261114T043740 base_state + 本包 trigger 宏逐帧采集"
+      }
+    },
+    {
+      "element_id": "spread_gun_s",
+      "label": "Spread Gun - S (S弹·五向散弹枪)",
+      "kind": "weapon",
+      "base_state": null,
+      "trigger": {
+        "macro": "B,,,,B,,,,B,,,,,,,,,,,,,,,,,,,,",
+        "extra": 25,
+        "patches": [
+          {
+            "addr": 170,
+            "value": 19
+          }
+        ]
+      },
+      "detection": {
+        "frame": 6,
+        "success_checks": [
+          {
+            "check_id": "muzzle_warm_min",
+            "plugin_id": "frame_region_color_fraction",
+            "params": {
+              "region": [
+                0.23,
+                0.375,
+                0.42,
+                0.42
+              ],
+              "rgb": [
+                254,
+                130,
+                112
+              ],
+              "tol": 40,
+              "min_fraction": 0.012
+            },
+            "required": true
+          },
+          {
+            "check_id": "mid_warm_max",
+            "plugin_id": "frame_region_color_fraction_max",
+            "params": {
+              "region": [
+                0.42,
+                0.375,
+                0.58,
+                0.42
+              ],
+              "rgb": [
+                254,
+                130,
+                112
+              ],
+              "tol": 40,
+              "max_fraction": 0.01
+            },
+            "required": true
+          }
+        ]
+      },
+      "negative_control": {
+        "macro": null,
+        "patches": [
+          {
+            "addr": 170,
+            "value": 19
+          }
+        ]
+      },
+      "note": "0x00AA=0x13(S弹+R加速)，发射扇形五向散弹。",
+      "calibration": {
+        "measured_peaks": "muzzle 暖 0.0163 > mid 0.0073，upper 0.0050/lower 0.0059（近端扇形，射程短）",
+        "negative_control": "空按对照 5 区域暖/白占比全为 0.0000（写 0x00AA 不改变静止画面）",
+        "cross_check": "五枪判据在彼此选定帧上互斥（逐帧命中表见 detector_final.json 同源数据）",
+        "sampled": "2026-11-14 由 contra_u_c9ea66bb/r20261114T043740 base_state + 本包 trigger 宏逐帧采集"
+      }
+    },
+    {
+      "element_id": "laser_gun_l",
+      "label": "Laser Gun - L (L弹·高威穿透激光)",
+      "kind": "weapon",
+      "base_state": null,
+      "trigger": {
+        "macro": "B,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,",
+        "extra": 25,
+        "patches": [
+          {
+            "addr": 170,
+            "value": 20
+          }
+        ]
+      },
+      "detection": {
+        "frame": 30,
+        "success_checks": [
+          {
+            "check_id": "far_warm_min",
+            "plugin_id": "frame_region_color_fraction",
+            "params": {
+              "region": [
+                0.58,
+                0.375,
+                0.72,
+                0.42
+              ],
+              "rgb": [
+                254,
+                130,
+                112
+              ],
+              "tol": 40,
+              "min_fraction": 0.05
+            },
+            "required": true
+          },
+          {
+            "check_id": "upper_warm_max",
+            "plugin_id": "frame_region_color_fraction_max",
+            "params": {
+              "region": [
+                0.28,
+                0.26,
+                0.46,
+                0.375
+              ],
+              "rgb": [
+                254,
+                130,
+                112
+              ],
+              "tol": 40,
+              "max_fraction": 0.0005
+            },
+            "required": true
+          }
+        ]
+      },
+      "negative_control": {
+        "macro": null,
+        "patches": [
+          {
+            "addr": 170,
+            "value": 20
+          }
+        ]
+      },
+      "note": "0x00AA=0x14(L弹+R加速)，发射长条形穿透光束。",
+      "calibration": {
+        "measured_peaks": "far 暖 0.1000、muzzle 0.0816，upper/lower 恒 0（伸得最远的平直光束）",
+        "negative_control": "空按对照 5 区域暖/白占比全为 0.0000（写 0x00AA 不改变静止画面）",
+        "cross_check": "五枪判据在彼此选定帧上互斥（逐帧命中表见 detector_final.json 同源数据）",
+        "sampled": "2026-11-14 由 contra_u_c9ea66bb/r20261114T043740 base_state + 本包 trigger 宏逐帧采集"
+      }
+    }
+  ]
+}

@@ -1,0 +1,195 @@
+{
+  "schema_version": 1,
+  "frozen_at": "2026-11-24",
+  "design_note": "独立留出集：不重复 Q01-Q18/P19-P26 的同一事实；金标来自索引中的原始权威块，不按查询结果倒推。",
+  "questions": [
+    {
+      "id": "H01",
+      "q": "热血足球联盟日版说明书的4P模式怎样分队？",
+      "filters": {"revision": "nekketsu_soccer2_fc_jp"},
+      "expect": "strict_pass",
+      "gold": {
+        "path_contains": "setsumei_热血足球说明书扫描",
+        "line_start": 320,
+        "line_end": 323,
+        "anchor_chunk": "468eb386ff88"
+      },
+      "fact": "1P+3P 对 2P+4P；3P、4P 操作门将"
+    },
+    {
+      "id": "H02",
+      "q": "热血足球联盟3P模式中第三人控制什么位置？",
+      "filters": {"revision": "nekketsu_soccer2_fc_jp"},
+      "expect": "strict_pass",
+      "gold": {
+        "path_contains": "setsumei_热血足球说明书扫描",
+        "line_start": 320,
+        "line_end": 323,
+        "anchor_chunk": "468eb386ff88"
+      },
+      "fact": "3P 操作 1P 队的门将"
+    },
+    {
+      "id": "H03",
+      "q": "日版说明书说点球战的1P模式能操作哪些选手？",
+      "filters": {"revision": "nekketsu_soccer2_fc_jp"},
+      "expect": "strict_pass",
+      "gold": {
+        "path_contains": "setsumei_热血足球说明书扫描",
+        "line_start": 327,
+        "line_end": 341,
+        "anchor_chunk": "518b15638c5f"
+      },
+      "fact": "1P 对 COM 的点球战可操作所有选手"
+    },
+    {
+      "id": "H04",
+      "q": "热血足球联盟日版说明书里元永的场上位置是什么？",
+      "filters": {"revision": "nekketsu_soccer2_fc_jp"},
+      "expect": "strict_pass",
+      "gold": {
+        "path_contains": "setsumei_热血足球说明书扫描",
+        "line_start": 393,
+        "line_end": 399,
+        "anchor_chunk": "1439bdc2bb1f"
+      },
+      "fact": "げんえい（元永）位置 GK"
+    },
+    {
+      "id": "H05",
+      "q": "热血足球联盟里巴西队的必杀射门叫什么名字？",
+      "filters": {"game": "nekketsu_soccer2"},
+      "expect": "strict_pass",
+      "gold": {
+        "path_contains": "必杀全清单",
+        "line_start": 88,
+        "line_end": 90,
+        "anchor_chunk": "19e0ef066b52"
+      },
+      "fact": "巴西：食人鱼射门"
+    },
+    {
+      "id": "H06",
+      "q": "热血足球联盟的爆裂攻击在落地时要按哪个键？",
+      "filters": {"game": "nekketsu_soccer2"},
+      "expect": "strict_pass",
+      "gold": {
+        "path_contains": "必杀全清单",
+        "line_start": 70,
+        "line_end": 72,
+        "anchor_chunk": "f7f8e8316295"
+      },
+      "fact": "跳跃落地时按 B，可连按连发"
+    },
+    {
+      "id": "H07",
+      "q": "热血足球联盟的龙卷拳怎样发动，哪些角色能用？",
+      "filters": {"game": "nekketsu_soccer2"},
+      "expect": "strict_pass",
+      "gold": {
+        "path_contains": "必杀全清单",
+        "line_start": 70,
+        "line_end": 75,
+        "anchor_chunk": "f7f8e8316295"
+      },
+      "fact": "方向左/右+B+B；仅门将"
+    },
+    {
+      "id": "H08",
+      "q": "暂停秘技会改变角色原有的射门种类吗？",
+      "filters": {"game": "nekketsu_soccer2"},
+      "expect": "strict_pass",
+      "gold": {
+        "path_contains": "必杀全清单",
+        "line_start": 27,
+        "line_end": 28,
+        "anchor_chunk": "42b773880ef0"
+      },
+      "fact": "效果只持续半场；射门种类仍按角色身份，秘技不改射门种类"
+    },
+    {
+      "id": "H09",
+      "q": "热血格斗传说的格斗类型一共有几种，分别是什么？",
+      "filters": {"revision": "nekketsu_kakutou_densetsu_fc_jp"},
+      "expect": "strict_pass",
+      "gold": {
+        "path_contains": "TJC-NA_说明书摘录",
+        "line_start": 19,
+        "line_end": 23,
+        "anchor_chunk": "5a5b98575b8a"
+      },
+      "fact": "4种：平衡、武术、功夫、女忍"
+    },
+    {
+      "id": "H10",
+      "q": "热血格斗传说说明书列出的六项能力参数有哪些？",
+      "filters": {"revision": "nekketsu_kakutou_densetsu_fc_jp"},
+      "expect": "strict_pass",
+      "gold": {
+        "path_contains": "TJC-NA_说明书摘录",
+        "line_start": 19,
+        "line_end": 23,
+        "anchor_chunk": "5a5b98575b8a"
+      },
+      "fact": "HP、手投、足投、投げ技、すばやさ、防御"
+    },
+    {
+      "id": "H11",
+      "q": "热血格斗传说要挑战Double Tiger需要满足什么联赛条件？",
+      "filters": {"revision": "nekketsu_kakutou_densetsu_fc_jp"},
+      "expect": "strict_pass",
+      "gold": {
+        "path_contains": "TJC-NA_说明书摘录",
+        "line_start": 33,
+        "line_end": 37,
+        "anchor_chunk": "fe0ab5a776f5"
+      },
+      "fact": "19场至少15胜，且15胜时排名第6位以内"
+    },
+    {
+      "id": "H12",
+      "q": "热血格斗传说的角色名字和生日怎样换算成六项能力？",
+      "filters": {"revision": "nekketsu_kakutou_densetsu_fc_jp"},
+      "expect": "strict_pass",
+      "gold": {
+        "path_contains": "TJC-NA_说明书摘录",
+        "line_start": 33,
+        "line_end": 37,
+        "anchor_chunk": "fe0ab5a776f5"
+      },
+      "fact": "说明书没有给出名字或血型到六项能力的公式；FAQ 公式属于参考档"
+    },
+    {
+      "id": "H13",
+      "q": "KOF98 ECK 卡带的 CRC32 校验值是多少？",
+      "filters": {"revision": "kof98eck"},
+      "expect": "refuse",
+      "gold": null,
+      "fact": "库内没有 CRC32 事实，必须拒答，不得用 SHA1 冒充"
+    },
+    {
+      "id": "H14",
+      "q": "草薙京在 KOF98 ECK 的燃烧之手出招指令是什么？",
+      "filters": {"revision": "kof98eck"},
+      "expect": "version_guard",
+      "gold": null,
+      "fact": "gamersky 的 KOF98UM 指令表不得作为 ECK 权威"
+    },
+    {
+      "id": "H15",
+      "q": "CS2 当前职业比赛使用的地图池是什么？",
+      "filters": {},
+      "expect": "refuse",
+      "gold": null,
+      "fact": "CS2 动态域未采集，应 out_of_scope"
+    },
+    {
+      "id": "H16",
+      "q": "英雄联盟和无畏契约2026年全球赛事的冠军分别是谁？",
+      "filters": {},
+      "expect": "refuse",
+      "gold": null,
+      "fact": "两个动态电竞域均未采集，应多域 out_of_scope"
+    }
+  ]
+}

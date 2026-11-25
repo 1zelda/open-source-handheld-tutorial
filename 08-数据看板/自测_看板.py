@@ -369,7 +369,7 @@ check("网盘 探测有效 = 文件里 last_ok 为真", nd["store"]["ok"], sum(1
 # 只走「必定被拒」的错路:phase=poll/start 会真去开浏览器、真会往库里写,自测绝不碰。
 _static_html = open(os.path.join(HERE, "index.html"), encoding="utf-8").read()
 _static_js = open(os.path.join(HERE, "app.js"), encoding="utf-8").read()
-check("网盘 界面有『打开扫码窗口』这个按钮", 'id="qrStart"' in _static_html, True)
+check("网盘 界面有『扫码登录』这个按钮", 'id="qrStart"' in _static_html, True)
 check("网盘 接口交代扫码模块装没装成", ("qr_ready" in nd["account"], "qr_err" in nd["account"]), (True, True))
 q_code, q_j = post("/api/netdisk/action", {"action": "qr", "driver": "Quark", "phase": "no-such-phase"})
 check("网盘 扫码错阶段:回 200 + ok=False 且点名不认识",
@@ -396,14 +396,14 @@ note("网盘 现在:扫码窗口", "画面拿得到(有窗口在开)" if s_code2
 
 # ---- 登录位(槽位):一个 profile 只有一个登录位,多账号靠多开槽位,后扫的不顶掉先扫的 ----
 _sl = nd["schema"].get("qr_slots") or []
-check("网盘 登录位表满格(格数=上限,上限不只一格)",
-      (len(_sl) > 1, len(_sl) == nd["schema"]["qr_max_slot"]), (True, True))
+check("网盘 登录位表满格(默认 20 格)",
+      (len(_sl), nd["schema"]["qr_max_slot"]), (20, 20))
 check("网盘 每个登录位都交代端口/profile/在不在听/被哪个浏览器占着",
       sorted({k for s in _sl for k in s}),
       ["exe", "foreign_url", "listening", "page_ok", "port", "profile", "profile_exists", "slot", "started_at"])
 check("网盘 登录位编号从 1 排到底、端口两两不撞",
       ([s["slot"] for s in _sl], len({s["port"] for s in _sl})),
-      (list(range(1, len(_sl) + 1)), len(_sl)))
+      (list(range(1, 21)), 20))
 # 端口和 profile 名不许看板/界面自己拼,必须是扫码模块那一份现给的
 check("网盘 端口按槽位每格 +10、profile 名跟着槽位走",
       [s["slot"] for s in _sl
@@ -411,6 +411,17 @@ check("网盘 端口按槽位每格 +10、profile 名跟着槽位走",
        or s["profile"] != ("profile-Quark" if s["slot"] == 1
                            else "profile-Quark-%02d" % s["slot"])],
       [])
+check("网盘 第 20 槽端口/profile 是独立一套",
+      [(s["port"], os.path.basename(s["profile"])) for s in _sl if s["slot"] == 20],
+      [(9521, "profile-Quark-20")])
+_nd_three = {d: get("/api/netdisk_fields", driver=d) for d in ("Quark", "BaiduNetdisk", "Thunder")}
+check("网盘 三个盘即使 OpenList 没起也各回 20 槽实时状态",
+      [(d, j.get("qr_ready"), j.get("qr_max_slot"), len(j.get("qr_slots") or []))
+       for d, j in _nd_three.items()],
+      [(d, True, 20, 20) for d in ("Quark", "BaiduNetdisk", "Thunder")])
+check("网盘 三盘 60 个调试端口互不重复",
+      [p for d, j in _nd_three.items() for p in [s["port"] for s in j["qr_slots"]]],
+      list(range(9331, 9524, 10)) + list(range(9332, 9524, 10)) + list(range(9333, 9524, 10)))
 _bt = nd["schema"].get("qr_browsers") or {}
 check("网盘 浏览器分成「能拿来扫码」和「装了但抓不到 cookie」两堆",
       (bool(_bt.get("ok")),
@@ -428,8 +439,8 @@ _, q_j3 = post("/api/netdisk/action", {"action": "qr", "driver": "Quark",
                                        "phase": "no-such-phase", "slot": 7})
 check("网盘 扫码带登录位也照旧被错阶段挡在门外(没顺手开窗口)",
       (q_j3.get("ok"), "不认识的扫码阶段" in (q_j3.get("msg") or "")), (False, True))
-check("网盘 界面有「登录位」「用哪个浏览器」两个下拉",
-      ('id="qrSlot"' in _static_html and 'id="qrExe"' in _static_html), True)
+check("网盘 界面登录位下拉隐藏、浏览器选择保留",
+      ('id="qrSlot" hidden' in _static_html and 'id="qrExe"' in _static_html), True)
 check("网盘 界面把槽位带进轮询和画面请求(不是只画个样子)",
       ("&slot=" in _static_js and "slot: nd.slot" in _static_js and
        "qrPaintSlots" in _static_js), True)
@@ -452,6 +463,16 @@ check("网盘 界面把看守状态画出来(不然用户只能靠猜)",
       ("ndWatch(r.account.watch)" in _static_js and "服务端看守" in _static_js), True)
 check("网盘 界面切回这一页时会跟到真开着的那格(不死盯第 1 槽)",
       ("s.qr_slots" in _static_js and "other.slot" in _static_js), True)
+check("网盘 二维码预览就在本页(blob 图 + 2 秒轮询,不弹新窗口)",
+      ('id="qrShot"' in _static_html and 'id="qrImg"' in _static_html
+       and "URL.createObjectURL(await r.blob())" in _static_js
+       and "setInterval(qrTick, 2000)" in _static_js
+       and "window.open(" not in _static_js), True)
+with open(os.path.join(HERE, "看板.py"), encoding="utf-8") as _f:
+    _watch_py = _f.read()
+check("网盘 服务端 15 秒看守复用生产 qr/poll 动作",
+      ("WATCH_SEC = 15" in _watch_py
+       and 'mod.do_action("qr", {"phase": "poll", "driver": driver, "slot": slot})' in _watch_py), True)
 
 # ---- 11-08 「槽位别让我选 / 不弹窗 / 聚焦登录框 / 失效自动释放」的闸门 ----
 with open(os.path.join(ROOT, "08-数据看板", "index.html"), encoding="utf-8") as _f:
@@ -464,8 +485,8 @@ check("网盘 页面给 app.js 带版本号(不然旧脚本在内存/缓存里�
       ("app.js?v=" in _idx_html), True)
 check("网盘 登录位不再让人选(下拉隐藏,由服务端自动分配)",
       ('id="qrSlot" hidden' in _idx_html and "自动分配" in _static_js), True)
-check("网盘 start 一律自己挑最干净的格子、十格满要明说",
-      ("clean = _clean_slot(driver, db0)" in _acct_py and "十格都占满了" in _acct_py), True)
+check("网盘 start 一律自己挑最干净的格子、满了要明说",
+      ("clean = _clean_slot(driver, db0)" in _acct_py and "登录位" in _acct_py), True)
 check("网盘 扫码默认无窗口(headless),不再弹浏览器",
       ("--headless=new" in _qr_py and "QR_HEADED" in _qr_py), True)
 check("网盘 画面按登录卡片裁剪(只给二维码那一块)",
@@ -524,7 +545,8 @@ def keys_of(obj):
 # 唯一的例外是 schema —— 那是账号台向 OpenList 现取的**字段说明书**,里面的 "secret"
 # 是"这一格是不是密文"的布尔属性,不是凭据值本身;它单独由上面那条属性名白名单把关。
 bad_keys = sorted(k for k in keys_of({k: v for k, v in nd.items() if k != "schema"})
-                  if re.search(r"(cookie|token|password|secret|plain|credential)", k, re.I))
+                  if k != "cookie_refresh"
+                  and re.search(r"(cookie|token|password|secret|plain|credential)", k, re.I))
 check("网盘 返回体不含凭据字段名(字段表另议)", bad_keys, [])
 
 # 只剩一个端口:界面与文档里不许再有 5320 那张单独页面残留
@@ -559,6 +581,21 @@ pmod, pwhy = kb.acct_mod()
 check("探针 账号台模块读进来了(进程内)", (pmod is not None, pwhy), (True, ""))
 pmod.DB_PATH = PROBE_DB          # 明细现在出自账号台的 list_safe(),它读的是这个常量
 
+_saved_schema = pmod.form_schema
+_saved_nd_cache = dict(kb._nd_fields_cache)
+try:
+    pmod.form_schema = lambda driver: {"ok": False, "msg": "OpenList 没在听", "driver": driver}
+    kb._nd_fields_cache.pop("Quark", None)
+    _failed_schema = kb.api_netdisk_fields({"driver": ["Quark"]})
+    check("探针 OpenList 失败也回 20 槽实时状态,且不缓存失败",
+          (_failed_schema.get("ok"), _failed_schema.get("qr_max_slot"),
+           len(_failed_schema.get("qr_slots") or []), "Quark" in kb._nd_fields_cache),
+          (False, 20, 20, False))
+finally:
+    pmod.form_schema = _saved_schema
+    kb._nd_fields_cache.clear()
+    kb._nd_fields_cache.update(_saved_nd_cache)
+
 # 槽位的算术只许有一份来源:界面和账号台都现读扫码模块,不许各自拼端口/拼目录名。
 # 拼错一格就是"两个号挤同一个 profile",后果是后扫的把先扫的顶掉。
 _qrm = getattr(pmod, "qr", None)
@@ -577,30 +614,53 @@ if _qrm:
         if os.path.basename(_qrm.state_path("Quark", _n)) != _ws:
             _bad.append("夸克第%d槽状态文件名" % _n)
     check("探针 每格登录位端口/目录/状态文件各走各的(第 1 槽沿用老地址不变)", _bad, [])
-    check("探针 三个盘的同一格也不撞车",
-          len({_qrm.port_of("Quark", 1), _qrm.port_of("BaiduNetdisk", 1), _qrm.port_of("Thunder", 1),
-               _qrm.port_of("Quark", _mx), _qrm.port_of("BaiduNetdisk", _mx), _qrm.port_of("Thunder", _mx)}),
-          6)
+    check("探针 三盘全部 60 个端口互不重复",
+          sorted(_qrm.port_of(d, n) for d in ("Quark", "BaiduNetdisk", "Thunder")
+                 for n in range(1, _mx + 1)),
+          sorted(p for base in (9331, 9332, 9333) for p in range(base, 9524, 10)))
     check("探针 登录位号越界/乱填一律夹回合法格",
           [_qrm._slot(x) for x in (0, -5, "abc", "", None, 999, "3", str(_mx))],
           [1, 1, 1, 1, 1, _mx, 3, _mx])
-    # 11-08 用户：「每个平台 15-20 个」—— 十格早就不够了
-    check("探针 每个盘的登录位 ≥15 格(用户要 15~20)", _mx >= 15, True)
+    check("探针 每个盘默认 20 个登录位", _mx, 20)
+    _env_key = "OPENLIST_QR_MAX_SLOTS"
+    _env_old = os.environ.get(_env_key)
+    try:
+        _limit_cases = []
+        for _raw in (None, "10", "20", "60", "坏", "1", "61"):
+            if _raw is None:
+                os.environ.pop(_env_key, None)
+            else:
+                os.environ[_env_key] = _raw
+            _limit_cases.append(_qrm._max_slots())
+        check("探针 槽数环境变量只收 2~60,默认/越界都回 20",
+              _limit_cases, [20, 10, 20, 60, 20, 20, 20])
+    finally:
+        if _env_old is None:
+            os.environ.pop(_env_key, None)
+        else:
+            os.environ[_env_key] = _env_old
     check("探针 下一个空登录位跳过占着的格、按盘各算各的",
           pmod._next_slot("Quark", {"accounts": [{"driver": "Quark", "slot": 1},
-                                                 {"driver": "Quark"},          # 老记录没这栏 = 占第 1 格
                                                  {"driver": "Quark", "slot": 3},
                                                  {"driver": "Thunder", "slot": 2}]}), 2)
+    check("探针 没写 slot 的老记录独自占第 1 槽",
+          (pmod._live_slots("Quark", {"accounts": [{"driver": "Quark"}]}),
+           pmod._next_slot("Quark", {"accounts": [{"driver": "Quark"}]})), ({1}, 2))
+    check("探针 显式 slot=0 与 dead 不占槽,非法槽按老记录保护第 1 槽",
+          (pmod._live_slots("Quark", {"accounts": [{"driver": "Quark", "slot": 0},
+                                                   {"driver": "Quark", "state": "dead"}]}),
+           [pmod._account_slot({"slot": v}) for v in (None, "", "坏", -2, "0", "7")]),
+          (set(), [1, 1, 1, 1, 0, 7]))
     check("探针 空位用光了才报 0(调用方才好说「这盘没空位了」)",
           pmod._next_slot("Quark", {"accounts": [{"driver": "Quark", "slot": _n}
                                                  for _n in range(1, _mx + 1)]}), 0)
     # 11-08 改口径:以前「没找到二维码」就回 None(界面只剩一句提示);现在退回整页首屏
     # (用户:「没显示出二维码 那就显示页面 然后想办法稍微聚焦一点也行」),所以这里只验
     # 「按槽位取、有明确交代」,不再要求必须是 None。
-    _s3 = pmod.screenshot("Quark", 3)
-    check("探针 截图接口按槽位取(第 1 槽以外也认,不是写死第一格)",
-          (isinstance(_s3, tuple) and len(_s3) == 2
-           and (_s3[0] is not None or bool(_s3[1]))), True)
+    _s20 = pmod.screenshot("Quark", 20)
+    check("探针 截图接口认第 20 槽(不是只认前 10 槽)",
+          (isinstance(_s20, tuple) and len(_s20) == 2
+           and (_s20[0] is not None or bool(_s20[1]))), True)
     note("网盘 现在:登录位上限", "每个盘 %d 格(第 1 槽 %d / 第 %d 槽 %d)" %
          (_mx, _qrm.port_of("Quark", 1), _mx, _qrm.port_of("Quark", _mx)))
     # 端口通 ≠ 我们的登录窗口:别的程序(录播)会连上我们的调试端口把页面导航走(11-08 撞过:
@@ -632,7 +692,7 @@ if _qrm:
           ("page_ok" in _app_js and "被别的程序占用" in _app_js), True)
     _acct_src = open(os.path.join(ROOT, "_工具脚本", "网盘账号台.py"), encoding="utf-8").read()
     check("探针 账号台选槽/跟槽都认 page_ok(跳过被占槽)", "page_ok" in _acct_src, True)
-    # 11-08「4 个号却说十格满」:异常不许被吞成「满了」这句话
+    # 11-08「4 个号却说登录位满」:异常不许被吞成「满了」这句话
     check("探针 挑登录位出错时如实报错,不再一律说成「占满」",
           "except BaseException://n            clean = 0" in _acct_src, False)
     # 选槽只看「号 + 活窗口」:profile 残留一律不算占位,否则扫一次留一个空壳,很快假满
@@ -648,6 +708,18 @@ if _qrm:
         check("探针 号 + 活窗口才算占位:全满才回 0", pmod._clean_slot("Quark", _db_4), 0)
         check("探针 满了那句话要交代几个号、几个窗口",
               ("4 个号" in pmod._why_full("Quark", _db_4)), True)
+        _qrm.slots = lambda d: [{"slot": _n, "listening": False, "page_ok": True,
+                                 "profile_exists": True} for _n in range(1, _mx + 1)]
+        _saved_isdir, _saved_purge = pmod.os.path.isdir, pmod._hard_purge
+        _purged = []
+        try:
+            pmod.os.path.isdir = lambda path: os.path.basename(path) in ("profile-Quark", "profile-Quark-02")
+            pmod._hard_purge = lambda driver, slot: _purged.append(slot) or True
+            _orphan_n = pmod._reap_orphan_profiles("Quark", {"accounts": [{"driver": "Quark"}]})
+            check("探针 清空壳不误删没写 slot 的老记录第 1 槽 profile",
+                  (_orphan_n, _purged), (1, [2]))
+        finally:
+            pmod.os.path.isdir, pmod._hard_purge = _saved_isdir, _saved_purge
     finally:
         _qrm.slots = _orig_slots
     check("界面 扫码登录排在工作台前面(先登号,再操作网盘)",

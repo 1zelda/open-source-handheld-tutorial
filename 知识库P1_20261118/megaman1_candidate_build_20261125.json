@@ -1,0 +1,402 @@
+{
+  "status": "built_isolated",
+  "candidate_revision": "megaman1_nes_us",
+  "candidate_dir": "F:\\开源掌机教程\\知识库P1_20261118\\megaman1_candidate_20261125",
+  "build": {
+    "status": "built",
+    "index": "F:\\开源掌机教程\\知识库P1_20261118\\megaman1_candidate_20261125\\index.json",
+    "chunks": 9,
+    "terms": 504,
+    "files_indexed": 7,
+    "files_excluded": 0,
+    "bytes": 21057,
+    "report": [
+      {
+        "path": "知识库P1_20261118/megaman1_candidate_20261125/evidence/mm1_coordinate_facts_20261125.txt",
+        "indexed": true,
+        "chunks": 1,
+        "dropped_lines": 0,
+        "reused": false,
+        "revision": "megaman1_nes_us",
+        "authority": "authoritative",
+        "citation_aliases": []
+      },
+      {
+        "path": "知识库P1_20261118/megaman1_candidate_20261125/evidence/mm1_object_ram_table_20261125.txt",
+        "indexed": true,
+        "chunks": 1,
+        "dropped_lines": 0,
+        "reused": false,
+        "revision": "megaman1_nes_us",
+        "authority": "authoritative",
+        "citation_aliases": []
+      },
+      {
+        "path": "知识库P1_20261118/megaman1_candidate_20261125/evidence/mm1_bizhawk_memory_write_fact_20261125.txt",
+        "indexed": true,
+        "chunks": 1,
+        "dropped_lines": 0,
+        "reused": false,
+        "revision": "megaman1_nes_us",
+        "authority": "authoritative",
+        "citation_aliases": []
+      },
+      {
+        "path": "知识库P1_20261118/megaman1_candidate_20261125/evidence/mm1_fm2_import_reference_fact_20261125.txt",
+        "indexed": true,
+        "chunks": 1,
+        "dropped_lines": 0,
+        "reused": false,
+        "revision": "megaman1_nes_us",
+        "authority": "reference_only",
+        "citation_aliases": []
+      },
+      {
+        "path": "知识库P1_20261118/megaman1_candidate_20261125/evidence/mm1_segmented_tas_reference_fact_20261125.txt",
+        "indexed": true,
+        "chunks": 1,
+        "dropped_lines": 0,
+        "reused": false,
+        "revision": "megaman1_nes_us",
+        "authority": "reference_only",
+        "citation_aliases": []
+      },
+      {
+        "path": "知识库P1_20261118/megaman1_candidate_20261125/evidence/mm1_local_weapon_ram_excerpt_20261125.txt",
+        "indexed": true,
+        "chunks": 2,
+        "dropped_lines": 0,
+        "reused": false,
+        "revision": "megaman1_nes_us",
+        "authority": "authoritative",
+        "citation_aliases": []
+      },
+      {
+        "path": "知识库P1_20261118/megaman1_candidate_20261125/evidence/mm1_local_position_probe_excerpt_20261125.txt",
+        "indexed": true,
+        "chunks": 2,
+        "dropped_lines": 0,
+        "reused": false,
+        "revision": "megaman1_nes_us",
+        "authority": "authoritative",
+        "citation_aliases": []
+      }
+    ]
+  },
+  "index_sha256": "5e126eddf0eae98e6b8a446cd54f37400b861d5e93ecf89d3004f16d3a252581",
+  "index_chunks": 9,
+  "index_stats": {
+    "N": 9,
+    "avgdl": 94.55555555555556,
+    "terms": 504
+  },
+  "authority_counts": {
+    "authoritative": 7,
+    "reference_only": 2
+  },
+  "revision_counts": {
+    "megaman1_nes_us": 9
+  },
+  "source_status_counts": {
+    "verified_read": 9
+  },
+  "external_verbatim_copies": {
+    "tasvideos_mm1_object_ram_table": {
+      "source": "_工具脚本/taspipe/游戏包/来源库/取证/tasvideos_gameresources_rockman_data_2026-11-23.txt",
+      "target": "知识库P1_20261118/megaman1_candidate_20261125/evidence/mm1_object_ram_source_20261125.txt",
+      "sha256": "1869f8c514a534592be6f5c588f94aaca82ea42b0317324ec6a6fd8c5bb06c91",
+      "bytes": 12762,
+      "verbatim_copy": true
+    },
+    "tasvideos_bizhawk_faq_write_refresh": {
+      "source": "_工具脚本/taspipe/游戏包/来源库/取证/tasvideos_bizhawk_faq_refresh_2026-11-23.txt",
+      "target": "知识库P1_20261118/megaman1_candidate_20261125/evidence/mm1_bizhawk_faq_source_20261125.txt",
+      "sha256": "071c944aa4e06395e02203c24402e59912bed3e93c256354118940dffae0c6d7",
+      "bytes": 7800,
+      "verbatim_copy": true
+    },
+    "tasvideos_forum_19912_fm2_import": {
+      "source": "_工具脚本/taspipe/游戏包/来源库/取证/tasvideos_forum_19912_bizhawk_import_fm2_2026-11-23.txt",
+      "target": "知识库P1_20261118/megaman1_candidate_20261125/evidence/mm1_fm2_import_reference_20261125.txt",
+      "sha256": "9c99e7106eba2f54b538148d72cd527fa64ed5e25778b1658f5b9e6eef8215e9",
+      "bytes": 7298,
+      "verbatim_copy": true
+    },
+    "tasvideos_glossary_segmented": {
+      "source": "_工具脚本/taspipe/游戏包/来源库/取证/tasvideos_glossary_segmented_tas_2026-11-23.txt",
+      "target": "知识库P1_20261118/megaman1_candidate_20261125/evidence/mm1_segmented_tas_reference_20261125.txt",
+      "sha256": "3c6619e5037c095478f1206c03a274dc8fbdddfc77fc32ebff78a62d0e1f1937",
+      "bytes": 21046,
+      "verbatim_copy": true
+    }
+  },
+  "external_curated_excerpts": [
+    {
+      "source": "_工具脚本/taspipe/游戏包/来源库/取证/tasvideos_gameresources_rockman_data_2026-11-23.txt",
+      "target": "知识库P1_20261118/megaman1_candidate_20261125/evidence/mm1_coordinate_facts_20261125.txt",
+      "target_sha256": "04a167859b19efe702f983a2058fb9322ab6a38f3fee70137134989e390b29f2",
+      "ranges": [
+        {
+          "source_line_start": 167,
+          "source_line_end": 190,
+          "verbatim_lines": [
+            " Coordinate system",
+            "",
+            " In Rockman and Rockman 2, every object of the game has the following properties:",
+            "",
+            " Screen number (00―FF), it tells which screen the object resides in.",
+            "",
+            " X position (00.00―FF.FF), it tells where in the screen the object is in.",
+            "",
+            " Y position (00.00―FF.FF), it tells where in the screen the object is in.",
+            "",
+            " X speed (−80.00―7F.FF).",
+            "",
+            " Y speed (−80.00―7F.FF).",
+            "",
+            " The position of the object has 8 bits of decimal part,",
+            "but only the integer part can be observed on the screen.",
+            "",
+            " Y coordinates increase towards the bottom of the screen",
+            "",
+            " X coordinates increase towards the right",
+            "",
+            " Negative Y speed means falling, positive Y speed means ascending",
+            "",
+            " X speed is always positive. It is subtracted or added depending on Rockman’s facing."
+          ]
+        }
+      ],
+      "source_id": "tasvideos_mm1_object_ram_table",
+      "kind": "prose"
+    },
+    {
+      "source": "_工具脚本/taspipe/游戏包/来源库/取证/tasvideos_gameresources_rockman_data_2026-11-23.txt",
+      "target": "知识库P1_20261118/megaman1_candidate_20261125/evidence/mm1_object_ram_table_20261125.txt",
+      "target_sha256": "e1038244daadc47ff325a09c88deee1ead76d4ae306d8b58e63123f6eb0cc013",
+      "ranges": [
+        {
+          "source_line_start": 428,
+          "source_line_end": 443,
+          "verbatim_lines": [
+            " Game Screen# X (hi,lo) Xspd (hi,lo) Y (hi,lo) Yspd (hi,lo)",
+            " ",
+            " Rockman 1 $460 $480:$4A0 $4C0:$4E0 $600:$620 $660:$680",
+            " ",
+            " Rockman 2 $440 $460:$480 $600:$620 $4A0:$4C0 $640:$660",
+            " ",
+            " Rockman 3 $380 $360:$340 no RAM address? $3C0:$3A0 $460:$440",
+            " ",
+            " Rockman 4 $348 $330:$318 no RAM address? $378:$360 $3F0:$3D8",
+            " ",
+            " Rockman 5 ",
+            " Rockman 6 ",
+            " ",
+            " The variables for object # n can be found by adding n to each address.",
+            "",
+            "Boss has n =1 in RM1/2, Rockman always has n =0."
+          ]
+        }
+      ],
+      "source_id": "tasvideos_mm1_object_ram_table",
+      "kind": "table"
+    },
+    {
+      "source": "_工具脚本/taspipe/游戏包/来源库/取证/tasvideos_bizhawk_faq_refresh_2026-11-23.txt",
+      "target": "知识库P1_20261118/megaman1_candidate_20261125/evidence/mm1_bizhawk_memory_write_fact_20261125.txt",
+      "target_sha256": "96b5e708fa790d861630aa0050f72c7cdc2dd8fcd071b135560d949236e72367",
+      "ranges": [
+        {
+          "source_line_start": 136,
+          "source_line_end": 144,
+          "verbatim_lines": [
+            " Memory Manipulation",
+            "",
+            " I'm trying to cheat/poke/freeze a memory address, but it keeps changing",
+            "",
+            " Bizhawk can only overwrite your address once per frame, so if the game changes it more frequently, you'll have to use memory write callbacks to track when the game does so, to overwrite it yourself right after that.",
+            "",
+            " But since some callbacks happen before the event, and some happen after (depending on the core), you may have to change CPU registers instead, where the value initially comes from upon the memory write.",
+            "",
+            " Note that not every Bizhawk core implements memory callbacks and register editing."
+          ]
+        }
+      ],
+      "source_id": "tasvideos_bizhawk_faq_write_refresh",
+      "kind": "prose"
+    },
+    {
+      "source": "_工具脚本/taspipe/游戏包/来源库/取证/tasvideos_forum_19912_bizhawk_import_fm2_2026-11-23.txt",
+      "target": "知识库P1_20261118/megaman1_candidate_20261125/evidence/mm1_fm2_import_reference_fact_20261125.txt",
+      "target_sha256": "3c4e65858c7acfa0498ac528aa12d3d42e20f1ee0d92b8859fb07436594337e1",
+      "ranges": [
+        {
+          "source_line_start": 135,
+          "source_line_end": 151,
+          "verbatim_lines": [
+            "Location: The land down under.",
+            "",
+            " Useless topic is useless.",
+            "",
+            "",
+            "",
+            "If your file is in the fm3 format (TAS Editor)",
+            "",
+            "File > Export to FM2",
+            "",
+            "(You know the thing you should do before submitting, instead of submitting an evil fm3 file, which is possible.)",
+            "",
+            "",
+            "",
+            "Now within BizHawk.",
+            "",
+            ""
+          ]
+        }
+      ],
+      "source_id": "tasvideos_forum_19912_fm2_import",
+      "kind": "prose"
+    },
+    {
+      "source": "_工具脚本/taspipe/游戏包/来源库/取证/tasvideos_glossary_segmented_tas_2026-11-23.txt",
+      "target": "知识库P1_20261118/megaman1_candidate_20261125/evidence/mm1_segmented_tas_reference_fact_20261125.txt",
+      "target_sha256": "ae787c14d1cd0588bba5cc465fa0bafa0aa2ea5b1beb46465113dd7c74d121a3",
+      "ranges": [
+        {
+          "source_line_start": 455,
+          "source_line_end": 461,
+          "verbatim_lines": [
+            " Segmented, Multi-segment",
+            "",
+            " Made in parts.",
+            "",
+            " A segmented movie consists of individual levels or sections of a game which each are played separately.",
+            "",
+            " Making of segmented movies can be seen as a limited form of re-recording: instead of saving/loading at any point at will, saving/loading is only done at segment borders."
+          ]
+        }
+      ],
+      "source_id": "tasvideos_glossary_segmented",
+      "kind": "prose"
+    }
+  ],
+  "local_excerpts": [
+    {
+      "source": "测试问题与闸门说明书.md",
+      "source_line_start": 712,
+      "source_line_end": 716,
+      "target": "知识库P1_20261118/megaman1_candidate_20261125/evidence/mm1_local_weapon_ram_excerpt_20261125.txt",
+      "target_sha256": "f92bbce0ded4f040f34a635c5ee5c6e91400f2ccd67777942de6aba92ced565d",
+      "verbatim_lines": [
+        "### 33.1 owned/current 地址实证与三条撤回",
+        "- **owned=0x5D 位场**（bit=菜单行：1B 2E 3G 4I 5C 6F 7M，bit0=P 不画行）；写 0xFF 菜单出全 7 行、",
+        "  写 0x40 只出 F 行（`ramdiff/w/bit_40/f0029.png` 亲看）。文献\"0x5D=all_stages_complete\"单一语义撤回。",
+        "- **current_weapon=0x5F**，值表 0P 1C 2I 3B 4F 5E 6G 7M：菜单逐行装备 + `attempt(ram=)` 冻结差分",
+        "  （`ramdiff/e/equip_table.json`），装色亲看互证（Bomb 绿 / Elec 奶油 / Fire 红 / Ice 淡紫）。"
+      ]
+    },
+    {
+      "source": "场景取得方法_调研与设计_2026-11-23.md",
+      "source_line_start": 44,
+      "source_line_end": 58,
+      "target": "知识库P1_20261118/megaman1_candidate_20261125/evidence/mm1_local_position_probe_excerpt_20261125.txt",
+      "target_sha256": "2d1e8eb38c77cdb640597d42957cbeb38262e32afb17c16ae7031b38f37ad2f8",
+      "verbatim_lines": [
+        "## 3. T1 实测：权威表 vs 派生副本（全部臂等长 = 4 空帧，同一个 root `cut_spawn.state`）",
+        "",
+        "| 臂 | 补丁 | 读回 `$0022` / `$0025` | 相机 `$001A/$001B` | 与基线像素差 |",
+        "|---|---|---|---|---|",
+        "| `ctl_none` | 无 | 128 / 148 | 0 / 0 | 0（恒量基线） |",
+        "| `derived_ctl` | `$0022=200` | **128** / 148 | 0 / 0 | **0** |",
+        "| `x_only` | `$0480=176` | **168** / 148 | **40** / 0 | **20,042（34.95%）** |",
+        "| `scr12` | `$0460=12` | 232 / 148 | 0 / **3** | 566 |",
+        "| `bossroom` | `$0460=12,$0480=32,$0600=84` | 232 / **84** | 0 / 3 | 566 |",
+        "",
+        "看图定案（`F:/taspipe_scratch/mm_nav/t1/t1_sheet.png`、`t1_zoom_right.png`）：",
+        "- `derived_ctl` 与基线**逐像素相同** ⇒ 写显示副本 = 完全无效，不是\"没测出来\"。",
+        "- `x_only` 相机整屏右滚 40 px ⇒ 写 `$0480`（X hi）**真的把角色搬动了**，游戏从这张表重算显示量。",
+        "- `bossroom` 角色被抬到半空（y=84，画面右上角悬着） ⇒ 写 `$0600`（Y hi）**逐字生效**。",
+        "- `scr12`：写 `$0460=12` 被引擎重算成 **3**，X 同步变 232 ⇒ 屏号是派生量，不能指定房间。"
+      ]
+    }
+  ],
+  "real_state_before": {
+    "F:\\开源掌机教程\\_工具脚本\\taspipe\\游戏包\\知识库\\index.json": {
+      "present": true,
+      "bytes": 3608260,
+      "mtime_ns": 1795536695274513300,
+      "sha256": "5c6fdb832cac502845d2e9dce269f25023dd435af42a5f59c772efbe9169596b"
+    },
+    "F:\\开源掌机教程\\_工具脚本\\taspipe\\游戏包\\知识库\\corpus_map.json": {
+      "present": true,
+      "bytes": 23464,
+      "mtime_ns": 1795529628746809500,
+      "sha256": "907d4c719a9e93e2ad62c9c21d5e1aac916c5d7a0fea759818cd5c6414d8f19e"
+    },
+    "F:\\开源掌机教程\\_工具脚本\\taspipe\\游戏包\\来源库\\sources.json": {
+      "present": true,
+      "bytes": 57733,
+      "mtime_ns": 1795464127056654400,
+      "sha256": "177d14bc9a7a95cade7790c06b6c061834b16167454e28dd30679682a3117667"
+    },
+    "F:\\开源掌机教程\\_工具脚本\\taspipe\\游戏包\\知识库\\query_log.jsonl": {
+      "present": true,
+      "bytes": 1044,
+      "mtime_ns": 1795463914085772600,
+      "sha256": "f73c57ae2080d8f525bdd5cdfb52b0a50f1cc5cf0cca5b89c4003b803602a91d"
+    },
+    "F:\\开源掌机教程\\_工具脚本\\taspipe\\游戏包\\电竞事实库\\facts_v1.db": {
+      "present": true,
+      "bytes": 2056192,
+      "mtime_ns": 1795464415053952300,
+      "sha256": "32f029f41629cb3774e701a705d521aa49550c76deabbc0affc760bec264d5c1"
+    },
+    "F:\\开源掌机教程\\选题决策层\\kb快照\\index.json": {
+      "present": true,
+      "bytes": 3607419,
+      "mtime_ns": 1795533626202927000,
+      "sha256": "2a93e76d5876c1181e7784a20eca0f4d84888d0292d281fc6eea3564090b9260"
+    }
+  },
+  "real_state_after": {
+    "F:\\开源掌机教程\\_工具脚本\\taspipe\\游戏包\\知识库\\index.json": {
+      "present": true,
+      "bytes": 3608260,
+      "mtime_ns": 1795536695274513300,
+      "sha256": "5c6fdb832cac502845d2e9dce269f25023dd435af42a5f59c772efbe9169596b"
+    },
+    "F:\\开源掌机教程\\_工具脚本\\taspipe\\游戏包\\知识库\\corpus_map.json": {
+      "present": true,
+      "bytes": 23464,
+      "mtime_ns": 1795529628746809500,
+      "sha256": "907d4c719a9e93e2ad62c9c21d5e1aac916c5d7a0fea759818cd5c6414d8f19e"
+    },
+    "F:\\开源掌机教程\\_工具脚本\\taspipe\\游戏包\\来源库\\sources.json": {
+      "present": true,
+      "bytes": 57733,
+      "mtime_ns": 1795464127056654400,
+      "sha256": "177d14bc9a7a95cade7790c06b6c061834b16167454e28dd30679682a3117667"
+    },
+    "F:\\开源掌机教程\\_工具脚本\\taspipe\\游戏包\\知识库\\query_log.jsonl": {
+      "present": true,
+      "bytes": 1044,
+      "mtime_ns": 1795463914085772600,
+      "sha256": "f73c57ae2080d8f525bdd5cdfb52b0a50f1cc5cf0cca5b89c4003b803602a91d"
+    },
+    "F:\\开源掌机教程\\_工具脚本\\taspipe\\游戏包\\电竞事实库\\facts_v1.db": {
+      "present": true,
+      "bytes": 2056192,
+      "mtime_ns": 1795464415053952300,
+      "sha256": "32f029f41629cb3774e701a705d521aa49550c76deabbc0affc760bec264d5c1"
+    },
+    "F:\\开源掌机教程\\选题决策层\\kb快照\\index.json": {
+      "present": true,
+      "bytes": 3607419,
+      "mtime_ns": 1795533626202927000,
+      "sha256": "2a93e76d5876c1181e7784a20eca0f4d84888d0292d281fc6eea3564090b9260"
+    }
+  },
+  "real_state_unchanged": true,
+  "production_index_untouched": "F:\\开源掌机教程\\_工具脚本\\taspipe\\游戏包\\知识库\\index.json",
+  "candidate_scope": "RAM/tooling subdomain only; not a whole-game knowledge base"
+}

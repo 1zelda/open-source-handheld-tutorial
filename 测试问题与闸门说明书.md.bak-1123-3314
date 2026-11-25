@@ -1,0 +1,1778 @@
+# 测试问题与闸门说明书（taspipe / 开源掌机教程）
+
+> 立规（用户 2026-11-10）：**测试/实跑踩的每一个坑，收尾必须二选一落地——写成代码闸门（selftest 断言或生产路径检查，下次自动拦住），或写进本说明书（根因+规避口径）。不允许"这次修好就过去"。**
+> 能自动判的进闸门（新增断言要看 selftest 绿灯计数涨）；只能靠作者/人判断的进本说明书。闸门数字与提示词/说明书同源。
+> 当前 selftest 基线：**331/331**（2026-11-10，含看门狗主窗口误伤回归本轮 +26；上一轮 T3 状态跳跃前置件 305，再上一轮 266）。
+
+运行约定：在 `F:\开源掌机教程\_工具脚本` 下 `py -3 -m taspipe.<module>`；自检 `py -3 -m taspipe.selftest`。
+
+---
+
+## 1. 音频尾巴使音画时长闸误报（已落闸门）
+- **现象**：Metroid transform 采集 `audio_sync_review` fail：`校正后音频 17.247s != 帧时间轴 16.473s`，但回放本身无 desync、帧数齐、原声非静音。
+- **根因**：loopback 录音 `rec.stop()` 比末帧晚约一个 watchdog 退出间隔（~0.8s 尾巴）。旧代码只按 `load_offset` 裁前缀，尾巴留在 wav 里，时长闸把"产品多了一段尾音"判成不同步。
+- **闸门/修复**：`record.py` 改用 `audio.trim_span(wav, ss, span, out)`，把音频界定到 `[帧0, 末帧+1帧]` 的真实跨度（`-t span`），不再留尾巴。`audio.trim_span` 为生产函数。
+- **selftest**：`test_audio` +2——界尾后时长≈span；**反证** span=None 保留尾巴(>1s)，证明界尾非默认、闸门能区分。
+- **规避**：不要靠"放宽时长闸容差"绕过；那是把产品缺陷洗成通过。要界尾。
+
+## 2. 招式谱面排版符号编译不过、浪费采集（已落闸门）
+- **现象**：KOF98 必杀技 catalog 记法 `→↓↘·A或C` / `→↘↓↙←·B或D` 送采集，`cmd_compile` 抛 `CmdError 看不懂字符 '·'`，白跑一次采集。
+- **根因**：catalog 是给人看的排版（`·` 分隔、`或` 多选）；编译器只认 箭头/数字/ABCD/`+`/`蓄`。
+- **闸门/修复**：`backends.FBNeoBackend.compile_check(notation)` 采集前送真编译器；`auto.run_arcade_moves` 编译不过直接记 inconclusive 并**跳过采集**。
+- **selftest**：`test_backends` +2——`·/或` 采集前拦下；编译器记法 `→↓↘+A` 放行。
+- **说明书口径（作者）**：写包时把 catalog 记法转成编译器记法：去掉 `·`、`或` 选一个具体键，如 `→↓↘·A或C`→`→↓↘+A`。见 `kof98_kyo_moves.pack.json` note。
+
+## 3. 切剪中点采样窗太窄（说明书口径，作者判断）
+- **现象**：Metroid 未拾取球只在 ~frame650 单帧 blink（645/655 即 0.0），若 frame_range 中点落在 blink 外，clip 验收 fail。
+- **根因**：`clipper.verify_clip` 只验**切片中点帧**（`mid = expected_frames//2`，对应源帧 `start+mid`）。单帧窗不可用。
+- **规避**：选 `frame_range` 使中点落在**稳定检测窗**内；先抽帧量窗宽再定范围。Metroid 改用拾取冻结姿（frame690-920 占比≈0.133 稳定），`frame_range=[650,930]`→中点 790 在窗内。
+- **为何不进自动闸门**：窗宽/中点落点是作者对游戏画面的判断，无法通用自动断言；靠本条 + 包内 negative_cases 反证。
+
+## 4. 不带 --audio 时 audio_preserved 判 inconclusive（说明书口径）
+- **现象**：静音采集的 clip 导出 `audio_preserved=inconclusive`，拖整体 verdict。
+- **根因**：源无音轨，导出无法证明"原声保留"，三态里如实标 inconclusive（不是 bug）。
+- **规避**：真实交付一律 `--audio` 采集，让 clip 带游戏原声→pass。静音只用于调试。
+
+## 5. 检测器颜色/区域不能臆测（说明书口径）
+- **现象**：以为 Metroid 球是纯白，实测淡青(185,232,245)/被举起时淡黄(226,222,142)；用错 rgb 占比全 0。
+- **规避**：先抽帧采样真实像素均值再定 `rgb/tol/region`；并配负例反证（负例占比应≈0）。见 `metroid_upgrade.pack.json`：正例窗 0.133、负例全 0.0、阈值 0.05 两侧余量充足；负例含"球未拾取"(650) 以区分已/未拾取。
+
+## 6. gamepack CLI 是位置参数（说明书口径）
+- `py -3 -m taspipe.gamepack run <pack.json>`，**不是** `--pack`。auto 才用 `--pack`。
+
+## 7. BizHawk ≥2.9 启动卡死（已有闸门， prior）
+- 配置版本标记（config.ini LastWrittenFrom*）+ watchdog DIALOG_TITLES 含 privileged/Mismatched version。selftest `test_bizhawk29_compat` 覆盖。复发先查这两处。
+
+## 8. 夸克直链 403 反盗链 → 开 OpenList 服务端代理（infra 已改 + 说明书）
+- **现象**：`tianma_fetch.fetch` 走 `/d+sign` 302 到夸克 OSS 签名链，裸客户端回 403（callback auth-cdn checkplay）。
+- **根因**：夸克反盗链校验回调；OpenList storage `web_proxy=False` 时把直链甩给客户端自己抓。
+- **修复**：admin 将该 storage `web_proxy=True`（服务端代下载），用户已批准。API 口径：`GET /api/admin/storage/list`、`GET /api/admin/storage/get?id=N` 读全量；`POST /api/admin/storage/update` 回传**全量** JSON。**别用 POST list**（回 SPA HTML → JSONDecodeError）。
+- **规避**：下载网盘文件一律走 OpenList 代理（web_proxy=True），不要裸抓夸克直链。
+
+## 9. 天马G 遮罩 .cfg 无洞坐标 → 屏洞靠 alpha 自动量（已落闸门）
+- **现象**：`nes.cfg`/`nes-SusGoART.cfg` 只有 `overlay0_full_screen=true`、`descs=0`，没有屏幕矩形。
+- **根因**：RetroArch 全屏遮罩的"洞"就是 PNG 的透明区，不在 cfg 里。
+- **闸门**：`exporter._build_mask_bezel` 用 `alpha==0` bbox 自动量洞；无洞（全不透明）抛 SystemExit 拒收。selftest mask +2（自动量出 / 无洞被拒）。
+- **规避**：别手写洞坐标进模板；换遮罩只改 `mask` 文件名，洞自动重量。
+
+## 10. 遮罩合成顺序：遮罩必须压画面之上（已落闸门）
+- **现象**：若照卡图模式把画面 overlay 在遮罩之上，扫描线/圆角会被画面盖住失效。
+- **根因**：遮罩美术/扫描线/圆角在 PNG 里，需作为顶层 alpha 盖住画面。
+- **闸门/修复**：mask 模式三层 ffmpeg：纯色底→画面(integer scale)→遮罩(alpha) overlay 0:0。selftest 产物级断言：角落=遮罩红、屏洞中心=游戏绿（证明顺序与贴洞）。
+- **规避**：新增遮罩风格不要改回两层 overlay。
+
+## 11. 像素断言要容编码损失（已落闸门，度量假象）
+- **现象**：断言角落 `==(255,0,0)` 失败，实测 `(253,0,0)`。
+- **根因**：libx264 yuv420 有损，纯色也偏 ±2；逐字节相等是度量假象，不是产品缺陷。
+- **闸门**：改红主导阈值 `(r>150,g<80,b<80)`；先抽帧量真值再定阈值（数据驱动）。
+- **规避**：产物像素断言用主导色/容差，别用逐字节相等；但容差要拿真值验过，不能放宽到洗缺陷。
+
+## 12. auto CLI 必须带子命令 run/plan（说明书口径，usage）
+- **现象**：`py -3 -m taspipe.auto The Legend of Zelda ...` 报 `invalid choice: 'The Legend of Zelda' (choose from run, plan)`。
+- **根因**：`auto.py:442` `add_subparsers(dest="cmd", required=True)`，auto 是子命令式 CLI，游戏名不是位置参数。
+- **规避**：`py -3 -m taspipe.auto run --game <名> --type <playthrough|moves|items|transform|easter_egg> --pub <id> [--pack <路径>] [--frames N] [--audio] [--out <目录>]`；只预演不出片用 `plan`。要素类（moves/items/transform/easter_egg）必须给 `--pack`（或 elements）。对照：`gamepack` 是位置参数（§6），`auto` 是 `run/plan` 子命令 + `--pack` 旗标，两者别混。
+
+## 13. ROM 修订版对不上 → acquire 如实 blocked（已有闸门，作者选材口径）
+- **现象**：想拿 Mega Man 1 做要素，本地 dump 的 sha1 不等于任何 Mega Man 1 出版物要求的 sha1，回放无法对齐。
+- **根因/闸门**：`acquire.resolve_rom`（`acquire.py:84-108`）先按 `required_rom_sha1`（出版物 rom_sha1 → bk2 Header → version 页，`acquire.py:57-71`）在本地 `index_roms` 里找**完全相等**的一份；找不到返回 `status=blocked` + `MISSING_RESOURCE`，绝不硬跑。`index_roms`（`registry.py:52-66`）对 `roms_verify/` 下文件按**全文件字节**算 sha1。**这是闸门在正常工作，不是 bug。**
+- **规避（作者）**：选出版物前先确认本地 `roms_verify` 里确有 sha1 完全相等的那一份；TASVideos 的 required sha1 是去头(headerless)口径，放进 `roms_verify` 的 ROM 要与出版物**同口径同修订版**。对不上就换一款本地确有匹配 ROM 的名作（本轮 Zelda 命中出版物 3232，Mega Man 放弃）。**别为了跑通去放宽哈希闸**——那会 desync 出废片。
+
+## 14. 采集窗太短错过事件（说明书口径，作者判断）
+- **现象**：SMB 只采 1200 帧，全程小 Mario（无吃蘑菇变大事件），拿不到"道具"要素帧。
+- **根因**：道具/能力/彩蛋事件发生在回放后段，短窗根本没覆盖到。
+- **规避**：要素采集先把回放跑够长（本轮 Zelda 跑到 12000 帧），再抽帧扫描定位事件**稳定窗**，最后按 §3 把 `frame_range` 中点放进稳定窗。窗长/事件落点是作者对游戏画面的判断，无法通用自动断言；靠本条 + 包内 negative_cases 反证。
+
+## 15. 检测 region 是归一化 0..1 且 int 截断（说明书口径）
+- **现象**：想把检测限定到像素 y102-130，直接填 `region=[0,102,256,130]` 会越界 inconclusive；填 `102/224` 又可能因 `int()` 向下截断落到 101 行。
+- **根因**：`detect._region_color_fraction` 的 region 是**归一化** `[x0,y0,x1,y1]`（0..1），内部 `int(y0*h)` 向下截断。
+- **规避**：region 填归一化值并略加垫（y102/224→`0.456`、y130/224→`0.581`，使 `int()` 落在目标行）；越界/空像素 => inconclusive 不静默过。改 region 后务必用生产 `run_check` 在正负例上复量（本轮 Kung Fu 正例 0.008-0.022 / 负例 0.000）。
+
+## 16. "腾空"≠"踢击"：检测带随姿态变化，要量连续窗（说明书口径，refines §3/§5）
+- **现象**：Kung Fu 飞踢以为"腾空带 560-600 连续"，实测 580（低腾空）白衣占比 0.0，只有踢姿高的 560 / 590-608 firing。
+- **根因**：判别带（高腾空白衣）keyed on **姿态高度**，不是"是否腾空"；腾空弧里只有踢姿段落在带内。
+- **规避**：别假设事件窗连续；逐帧量出**连续 firing 段**（本轮 590-608），把 `frame_range` 中点放进该段（`[560,640]`→中点 600）。负例要含"腾空但非踢姿"(580)，证明判别 keyed on 踢姿而非任意腾空。
+
+## 17. 夸克「列目录正常 ≠ 下载态有效」＋ cookie 快照不滚动（已修生产路径，2026-11-10 实测定案）
+- **现象**：保活报告全绿（列到 5 项），但 OpenList 代理下载回 403（OSS `RequestDeniedByCallback: require login`，回调 auth-cdn.uc.cn/outer/oss/checkplay）或 412（drive.quark.cn Tengine Precondition Failed）。扫码登录后没几天就复发。
+- **根因（已实测钉死）**：夸克两条命根 cookie 寿命不同——`__pus` ≈9 天（列目录够用）、`__puus` ≈18h（下载 checkplay 回调必需）。OpenList 存的是扫码那一刻的 cookie **快照**，自己永远不滚；浏览器 profile 每次访问 pan.quark.cn 都会被服务器滚新两条。所以扫码 ≈18h 后下载先死、列目录还绿着，保活只列目录就是**假绿**。
+- **持久化方案（已落地 `网盘账号台.py`）**：`refresh_from_profile()` 开该号独立 profile 窗（已开着就 Page.navigate 强制重导航）→ 等 `__puus` expiry 距现在 >17h（`_puus_fresh` 纯函数，光 cookie 在不算，磁盘旧值也在）→ CDP 抓 cookie → `identity_of` 核对 uid 不符拒写 → `store_secret`+`activate` 生产路径回写 → `_download_probe` 实测字节（根目录最小文件 Range 0-255，要 200/206 且字节数对）。`keepalive` 对每个活跃夸克号先续期再列目录，报告带 `cookie_refresh` 与 `refresh_failed`；窗口用完即关（没登录态的窗留着给用户扫码）。**profile 没了的号续不了期，必须人扫一次重建 profile**（手机夸克 App 切到对应账号）；此后每天两次保活（08:30 daily_run + 20:30 计划任务 Qoder_Handheld_QuarkKeepalive，2026-11-10 用户授权后已建，间隔 12h < 18h 寿命）即可一直续命。
+- **连带 bug（同日修复）**：`register()` 的 storage/update 是整行覆盖，原来只发账号库管的字段，把 `web_proxy` 等存储级设置冲成零值——重扫/activate 后夸克变直链，本机拉 CDN 必 412。现在 `_carry_storage_opts()` 纯函数把旧行非托管字段全带回来，selftest 钉死（web_proxy/proxy_range/extract_folder/webdav_policy 不丢、只读字段不发回）。
+- **规避**：① 下载失败先拿最小文件做 Range 0-255 探针，别把账号过期当配置问题反复改 storage；② 保活全绿 ≠ 能下载，看报告的 `cookie_refresh.ok` 和 `refresh_failed`；③ 只有 profile 被删/从未建过的号才需要重扫，且必须**同槽**（异槽扫同号只更新库不回写挂载，等于没修）。
+- **闸门**：`网盘账号台.py selftest` 新增 `_carry_storage_opts` 5 条 + `_puus_fresh` 5 条断言（含「只有 __pus 该判不新鲜」「expires 非数字不炸」）。
+
+## 18. 网盘侧目录会挪位，object not found 先怀疑路径（已修生产路径，2026-11-10）
+- **现象**：`tianma_fetch` 的 BASE `/quark-tuiuw33s/750A218G` 报 `failed get dir: object not found`（HTTP 500），疑似下载通道坏了。
+- **根因**：网盘侧把 `750A218G` 挪进了 `天马6t合集/` 子目录，旧 BASE 失效。不是 auth 问题。
+- **修复**：`tianma_fetch.py:18` BASE 改 `/quark-tuiuw33s/天马6t合集/750A218G`，list_games 实测回 32 款。
+- **规避**：fs/list 报 object not found 先从根目录重新 list 定位新路径；只有探针证明文件级下载 403/412 才按 §17 处理。
+
+## 19. T3 状态跳跃前置件：协议/截图/确定性踩坑（多数已落闸门，2026-11-10 热血足球2 实跑）
+
+> 背景：`statejump.StateSession` 起持久 EmuHawk + 文件指令通道（cmd.txt/resp.txt，id 单调去重），
+> 走位一次到「要素前一刻」→ save 快照 → 每次尝试 = attempt（load+宏+空档+截图，单指令原子）秒级。
+> 实跑验收 `验证/t3_statejump/report.json` 9/9 全 pass；selftest `test_statejump` +39。下列坑除两条作者判断外都已落成代码闸门。
+
+- **19.1 Windows CRLF 把指令毒成 `ping\r`（已落闸门）**：Python 文本模式写 `\n`→`\r\n`，Lua 切词得 `ping\r` 认不出 op。修复：`_send` 用 `newline=""` 落盘恰为 LF；Lua 侧 `string.gsub(line, "\r$", "")` 再剥一道。闸门：`test_statejump` 字节级断言 `cmd.txt == b"1 ping\n"` 且不含任何 CR；模板无字面 CR、剥 CR 语句在册。
+- **19.2 Python 三引号模板里 `"\r"` 变字面 CR → Lua 编译失败（已落闸门）**：模板源码里的 `\r` 需要双转义，否则三引号串里落成真实 CR 字节，Lua 加载即报错。闸门：断言 `"\r" not in STATE_LUA_TMPL`。
+- **19.3 截图竞态：截完即 respond 会拷到旧图/半截图（已落闸门）**：`client.screenshot` 是**延迟**的（排队，下一帧 frameadvance 才写盘）。若指令处理完立刻 respond，Python 拷到的是上一张/写了一半的 PNG → 假阳性。修复：模板设 `flushing` 态，主循环 frameadvance + `png_complete`（查 IEND 尾块）确认写完整再 respond。闸门：模板含 `png_complete/flushing/queue_shot`。
+- **19.4 `emu.frameadvance()` 不能在 pcall 内（已落闸门）**：Lua 5.1 中 frameadvance 会 yield 协程，在 pcall（C-call）内调用抛 "attempt to yield across metamethod/C-call boundary"。旧 `flush_shot` 把 frameadvance 包在 pcall 里就是这个崩。修复：yield 只放主循环体，`png_complete/queue_shot` 不 yield。闸门：断言旧 `flush_shot` 已除、`flushing` 态在册。
+- **19.5 resp 用 os.rename 落盘 Python 侧不可见（已落闸门）**：rename 替换 resp.txt 后 Python 轮询读不到新内容。修复：`io.open(resp_path, "w")` 直写。闸门：断言模板用直写、无 `os.rename`。
+- **19.6 中文/空白路径进 Lua io 会转码损坏（已落闸门）**：存档/截图路径含中文或空格，Lua io 转码坏。修复：`format_command` 校验路径纯 ASCII、无空白，中文路径先落临时工作目录。闸门：中文路径、含空白路径被拒。
+- **19.7 宏有效性把「相等」当「有效」→ 假阳性绿灯（已落闸门，最危险）**：`_png_pixels_equal` 返回 True=**相等**；重写时误写成「相等=>宏有效」，导致 neutral==macro（哈希都一样）却报 macro_effective PASS。修复：抽纯函数 `macro_is_effective` 返回 `not eq`，verify 用 `if effective:`。闸门：相同画面必判无效、不同画面（ffmpeg 像素复核）判有效，锁死反转。**这是假阴性最危险的形态：实际没生效却报通过。**
+- **19.8 能力凭 API 存在就标 supported（已落闸门）**：savestate/ram_read/interactive_step 转真须**双闸**——BizHawk 可用 + `验证/t3_statejump/report.json` 全 pass；缺任一 => False。闸门：`statejump_evidence` 缺失/损坏/未全过=>False、全 pass=>True；probe 双闸（可用+证据转真 / 可用无证据仍 False / 缺目录 False 反证格）。
+- **19.9 校验抛 ValueError 而 selftest `raises` 只接 SchemaError → 静默退出（已落闸门）**：协议校验函数原抛裸 `ValueError`，`raises()` 只捕 `SchemaError`，未捕异常使 selftest 在断言 217 后 EXIT=1 无绿灯。修复：校验统一抛 `SchemaError`（`ValueError` 子类，调用方不受影响）。闸门：`test_statejump` 的 `raises` 断言把异常类型钉死为 SchemaError，改回 ValueError 即崩。
+- **19.10 游戏开头输入锁定期（说明书口径，作者判断 + 生产机制）**：热血足球2 信件画面前 ~780 帧忽略一切输入，frame180 按 Start 无反应，macro_effective 误判无效。根因是**游戏行为**不是管线 bug。生产机制：verify 用「响应态搜索」（每轮 +600 帧再试宏，最多 4 轮）找到输入真正响应的状态再验收。规避：换游戏先实测输入从哪帧响应，别假设开机即可控；该窗因游戏而异，无法通用自动断言。
+- **19.11 跨进程确定性比对要用同一 base（说明书口径，生产 verify 钉死）**：det_a 从初始 base（frame197）采，但响应态搜索把 base 推进到 frame797，det_cross 用最终 base => 状态不同误报 desync。修复：determinism_reload/macro/cross 全部移到响应态搜索 + keep("base") **之后**，统一用最终 st。规避：确定性三比对（reload/macro/跨进程）必须共享同一快照基准；verify 实跑断言字节一致，属生产验收非 selftest 纯函数。
+
+## 20. 看门狗点框误伤主窗口 → 间歇性「EmuHawk 启动失败」（已落闸门，2026-11-10 热血足球2 实跑）
+
+> 背景：`statejump.StateSession.start()` 起 EmuHawk 后由 `_Guard` 线程盯心跳；首心跳写出前若 >5s 无进展，
+> 调 `watchdog.dismiss_bizhawk_dialog(pid)` 按标题点掉模态框。本轮热血足球2 导航摸底时间歇性抛
+> `RuntimeError("EmuHawk 启动失败（看门狗标 dead）")`，工作目录只有 rom.nes + session.lua、无 heartbeat/session.log => Lua 从未初始化。
+
+- **20.1 根因：裸 `BizHawk` 子串匹配主窗口**：旧 `DIALOG_TITLES` 含裸 `"BizHawk"`，而主窗口标题是 `"{游戏} [NES] - BizHawk"`（启动期可能裸 `"BizHawk"`）。`any(t in title)` 子串匹配把主窗口当成模态框，启动稍慢（首心跳 >5s）时看门狗对主窗口发 `WM_COMMAND/IDOK` + 回车，打断 Lua 初始化 => 心跳永远写不出 => 45s 停滞树杀标 dead。**间歇性**源于启动快慢竞态： boot <5s 时 dismiss 不触发（正常），>5s 时触发误伤（失败）。
+- **20.2 诊断证据（排除假因）**：① 非 chromeless——两种窗口模式都偶发；② 非 ROM 头——stdout `"ROM was not a multiple of 1024 bytes / Game was not in DB"` 是 benign 提示；③ `diag_loop` **禁用点框** => 3/3 稳定启动（反证点框是元凶）；④ `diag_clicklog` 加枚举日志后 4/4 不点（Heisenbug：额外枚举拖慢竞态掩盖了误伤）；⑤ 真 `Mismatched version` 框类名是 `WindowsForms10.Window.8.app.0.<hash>`（**非** `#32770`），与主窗口同类 => 无法靠类名区分，**只能靠标题**。
+- **20.3 修复（双层）**：① `DIALOG_TITLES` 去掉裸 `"BizHawk"`，只留具体框标题（`Warning/Error/Exception/警告/错误/privileged/Mismatched version`）；② 新增纯函数 `_is_emuhawk_main_window(title)`（`title=="BizHawk"` 或 `endswith("- BizHawk")`）显式跳过主窗口；③ 把整条点框判定抽成纯函数 `_should_dismiss(title, visible, titles)` = 可见 + 非主窗口 + 命中框表，`dismiss_bizhawk_dialog` 循环直接调它（夹具即生产口径）。
+- **20.4 闸门（selftest `test_bizhawk29_compat` +26）**：零件层——主窗口签名认得 3 种主窗口标题、修复后框表不再误匹配它们、真框（Mismatched/privileged/Warning/Error）不被主窗口签名误吞且仍命中框表、裸 BizHawk 已移除、空/None 标题不崩；生产判定层——`_should_dismiss` 对可见主窗口/裸 BizHawk 判不点、对可见真框判点、不可见框不点（visibility 闸）、无关窗口（Lua Console）不点、chromeless 空标题不点；**双向反证**——旧框表（含裸 BizHawk）确实误匹配主窗口、旧口径（无主窗口跳过）确实判主窗口可点（夹具复现误伤，改回即崩）。
+- **20.5 实跑复核**：`_scratch/loop_startup.py` 真 `StateSession.start()` 路径（点框默认开启）连跑 5 次 => **5/5 稳定**，boot+run120 帧推进正常。注：本轮 5 次 boot 均 ~3s（<5s 阈值，dismissed=0），未触发慢启动竞态；慢启动下的误伤拦截由 `_should_dismiss` 纯函数闸门保证（与 boot 快慢无关，逻辑恒跳过主窗口）。
+- **20.6 规避口径（迁移到其他游戏/后端）**：自动点框只能按**具体模态框标题**命中，绝不按程序名裸子串（程序名几乎必出现在主窗口标题里）；主窗口与自定义模态框可能同窗口类名（WinForms），类名过滤不可靠，须用标题签名显式排除主窗口；点框判定抽纯函数 + 双向反证夹具（修复后不点 + 旧口径会点），把竞态型 Heisenbug 转成确定性闸门。
+
+## 21. 冻结/转场态单帧按键被采样窗忽略 → 帧 parity 敏感（说明书口径，2026-11-10 热血足球2 实跑）
+
+> 背景：热血足球2 导航/触发摸底（probe5/probe6/probe8）发现「同一单帧宏有时生效有时被忽略」，看似随机。
+> 根因是**游戏输入采样行为**，不是管线 bug；与 §19.10 输入锁定期同源但更细（锁定期是整段忽略，本条是窗内/窗外 parity）。
+
+- **21.1 根因：转场/冻结态只在特定采样窗接受按键**：标题画面、KICK OFF 冻结等转场态并非每帧都读输入，单帧 press 落在采样窗外即被忽略。且**截图本身会推进帧**（`client.screenshot` 排队到下一帧 frameadvance 才写盘），改变 parity：probe5 在按 B 前先截了一张 base 图（推进帧进入接受窗）=> B 生效开赛；probe8 不截图直接单帧 B => 被忽略仍冻结。同一宏在不同前置帧数下结果不同 => 表现为「偶发失效」。
+- **21.2 规避/生产机制：转场态一律按住多帧**：冻结/转场态用**按住多帧宏**（如 `Start×10`、`B×5`、`A+B×3`）覆盖采样窗，不依赖 parity；单帧 press 只用于已确认的活 play 态。导航摸底（路线模板 S4）先实测输入响应窗再定宏。probe8 改按住宏后可靠开赛（p1_receive 活 play）+ 跳起（p2_apex）。
+- **21.3 与必杀触发的关系（诚实缺口，非宏无效）**：probe8 按住宏开赛+跳起成功，但**球不在我方脚下**（p2_apex/p3_shot/p4_after 球独立在地面）=> 「持球跳起最高点按 B」的必杀射门**未触发**。根因是**球权求解缺失**（开球盲传失球权、冻结态忽略跳跃），不是宏谱错。必杀以持球为前提，无球权则宏谱再对也打不出 => 逐游戏球权/持球检测器未 authoring，按红线报 inconclusive，不冒充已复现。
+
+---
+
+## 附：本轮新增闸门清单（selftest 253→257）
+| # | 断言 | 位置 |
+|---|------|------|
+| +1 | 谱面符号 ·/或 采集前拦下 | selftest.test_backends → backends.compile_check |
+| +2 | 编译器记法 →↓↘+A 放行 | selftest.test_backends |
+| +3 | trim_span 界尾后时长≈span | selftest.test_audio → audio.trim_span |
+| +4 | 反证 span=None 留尾巴 | selftest.test_audio |
+
+## 附：环绕遮罩本轮闸门清单（selftest 257→266）
+| # | 断言 | 位置 |
+|---|------|------|
+| +1 | 屏洞由 alpha==0 自动量出 | selftest.test_exporter_mask → exporter._build_mask_bezel |
+| +2 | 画面整数倍贴合屏洞 | selftest.test_exporter_mask |
+| +3 | 画面在屏洞内居中 | selftest.test_exporter_mask |
+| +4 | 无透明屏洞的遮罩被拒 | selftest.test_exporter_mask |
+| +5 | compose 端到端非 fail | selftest.test_exporter_mask |
+| +6 | 帧数保留 | selftest.test_exporter_mask |
+| +7 | 成片画幅=遮罩画幅 | selftest.test_exporter_mask |
+| +8 | 环绕美术压画面之上(角落=遮罩红,容损失) | selftest.test_exporter_mask |
+| +9 | 屏洞中心露出游戏画面 | selftest.test_exporter_mask |
+
+## 附：T3 状态跳跃前置件本轮闸门清单（selftest 266→305，+39）
+| 组 | 断言数 | 内容 | 位置 |
+|---|---|---|---|
+| 宏谱解析 | 6 | 规范透传/别名展开/空帧中立 + 未知键/空白/空谱被拒 | selftest.test_statejump → statejump.parse_macro |
+| 指令线格式 | 12 | ping/read/write/attempt 格式 + 未知op/id<1/地址越界/字节越界/帧数<1/extra<0/中文路径/空白路径被拒 | statejump.format_command |
+| 响应解析 | 4 | ok/err 解析 + 非法状态/id非整数被拒 | statejump.parse_response |
+| 字节级 CRLF | 2 | _send 落盘恰 LF 结尾、cmd.txt 无任何 CR | statejump.StateSession._send |
+| 模板内容 | 5 | 无字面CR/剥CR在册/flushing态在册/旧flush_shot已除/resp直写非rename | tas_replay.STATE_LUA_TMPL |
+| 宏有效语义 | 3 | 相同画面判无效(锁反转)/相同字节=>相等/不同画面判有效(ffmpeg) | statejump.macro_is_effective |
+| 证据门控 | 4 | 报告缺失/损坏/未全过=>False、全pass=>True | backends.statejump_evidence |
+| probe 双闸 | 3 | 可用+证据转真/可用无证据仍False/缺目录False(反证格) | backends.BizHawkNESBackend.probe |
+
+> 19.10（输入锁定期）、19.11（跨进程同 base）属作者判断/生产 verify 验收，不进 selftest 纯函数闸门，口径见 §19。
+
+## 附：看门狗主窗口误伤回归本轮闸门清单（selftest 305→331，+26）
+| 组 | 断言数 | 内容 | 位置 |
+|---|---|---|---|
+| 主窗口签名 | 6 | 3 种主窗口标题认得 + 修复后框表不再误匹配它们 | selftest.test_bizhawk29_compat → watchdog._is_emuhawk_main_window / DIALOG_TITLES |
+| 真框仍命中 | 8 | Mismatched/privileged/Warning/Error 不被主窗口签名误吞 + 仍命中框表 | watchdog._is_emuhawk_main_window / DIALOG_TITLES |
+| 回归锁+反证 | 2 | 裸 BizHawk 已移除 + 旧框表确实误匹配主窗口(夹具复现) | watchdog.DIALOG_TITLES |
+| 边界 | 2 | 空标题/None 不认作主窗口且不崩 | watchdog._is_emuhawk_main_window |
+| 生产判定 | 7 | _should_dismiss：可见主窗口/裸BizHawk不点、可见真框点、不可见不点、Lua Console不点、空标题不点 | watchdog._should_dismiss |
+| 生产反证 | 1 | 旧口径(裸BizHawk+无主窗口跳过)确实判主窗口可点(夹具复现误伤) | selftest.test_bizhawk29_compat |
+
+> §20 看门狗误伤属竞态型 Heisenbug：实跑 5/5 稳定但本轮 boot 均 <5s 未触发慢启动竞态，慢启动拦截由 `_should_dismiss` 纯函数闸门保证（与 boot 快慢无关）。
+
+## 22. dump 逐帧采集的 frameadvance 不能在 pcall 内（已落闸门，2026-11-11 洛克人实跑）
+根因：Lua 5.1 `emu.frameadvance()` 会 yield 协程；放在 `pcall` dispatch 内 => `attempt to yield across metamethod/C-call boundary`。首版 dump 把逐帧循环写在 pcall 里直接崩。
+规避：dump 只做"状态 setup"（`dumping={...}; return nil`），逐帧 frameadvance+截图放**主循环**（与 pending/flushing 同范式）；末帧交 flushing 态过 `png_complete` IEND 查再 respond。ramdump 无 frameadvance，故可留在 pcall 内。错误 handler 须同时清 `dumping=nil`。
+闸门：selftest 模板闸门断言 `op == "dump"`/`op == "ramdump"` 在册 + dump 末帧 `path = lastpath` 路由到 flushing 且 flushing 做 `png_complete(flushing.path)`。
+**闸门写法教训**：断言不要钉死"实现变量名"。首版钉 `png_complete(lastpath)`，重构走 flushing 后该字面消失导致假红；应钉"不变量"（末帧路由到 flushing ＋ flushing 做 IEND 查）两半都断言，重构不假红、删任一_half_必红。
+
+## 23. 本地"洛克人"ROM 进不了 gameplay：选关 D-pad 无效＋未战斗直跳 CLEAR POINTS（资源门控，2026-11-11 实测）
+现象：`mega_man_usa.nes` 与 `megamanhd.nes`（sha1 不同、均 mapper2/128KB）标题→Start 到选关屏后，D-pad 按住 40 帧光标不动；Start 进关直接出「CUTMAN / CLEAR POINTS / 80000」过场又回选关，到不了 gameplay；boot 时武器能量区 0x6B..0x71 已全 28。
+反证格（排除注入链路）：同一 StateSession、同一 NesHawk 核心，热血足球 ROM 选模式屏 Down×40 光标正常移动 ⇒ 手柄注入无问题，异常在这两个 MM1 dump 自身。
+口径：「CLEAR POINTS」计分过场在 MM1 真实存在（neoseeker 攻略提及），但**干净开局不应在未战斗时触发**，且选关 D-pad 应能移光标；二者叠加＋预满武器能量 ⇒ 疑似改版/训练版或坏 dump，文件名≠干净版（§13 修订版口径延伸）。
+门控：authoring 要素包前必须先过「干净开局签名」——能到 gameplay 且 HUD/武器菜单可控；到不了就报 blocked/资源缺口，**不臆造 RAM、不拿过场帧冒充要素帧**。
+已记文档地址（仅搜索快照，**未在游戏内实证**；待干净 ROM/导航后逐条过检测器正负例）：life 0x006A；无敌 0x0055=04；全关完成 0x005D=FF；武器能量 0x006B..0x0071（Cut/Ice/Bomb/Fire/Elec/Guts/Magnet 顺序待证）；当前武器/已拥有标志地址未知（需 gameplay 内差分发现）。
+
+### 23.1 复测推翻（2026-11-20，用户质疑触发；本节三条"异常"全部撤回）
+
+隔离副本 fresh boot（零存档零补丁）逐帧截图+RAM dump 复测三份 ROM（含网盘新增
+`洛克人1.nes` sha1 0fe25564…），**全部能正常入关实玩**。上文现象三条均为度量假象：
+
+1. "D-pad 无效"假：光标边框**闪烁**，单张截图恰逢灭相位；RAM 0x23/0x46 随方向键变化、
+   不同方向序列进不同关（Cut/Elec）⇒ D-pad 有效。旧测试还把标题页误当选关页。
+2. "未战斗直跳 CLEAR POINTS"假：该卡片是**正常入关演出**（Boss 名+分数逐字打出→READY→
+   关卡 HUD），三份 ROM 一致；旧证据只是演出中段帧。
+3. "boot 能量预满"假：boot 时 0x6B..0x71 全 0，选关页才 28（正常初始化）⇒ 这些地址
+   在未持有武器时就读 28，**不能当"已持有/已满"判据**。
+
+**新输入时序坑（落闸门）**：标题→选关切换有 **≈90–140 帧延迟**（Start 立即被识别但画面慢切）。
+反证格：无输入 855 帧仍标题；只 D-pad 不切；Start 后 66 帧仍标题、94–137 帧才切。
+⇒ 导航宏 Start 后留 **≥150 帧**再截图/再输入；判"按键无效"前必须先度过切换延迟；
+判光标位置用 RAM 差分或连拍，不用单帧；判"已通关/异常"必须看 CLEAR 卡片之后有无 READY+HUD。
+
+**身份改判（NesCartDB 现查）**：`megamanhd.nes`=NTSC 已知正规 dump（文件名误导）；
+网盘`洛克人1.nes`=**PAL-B**（50Hz，另档，不能冒充美版）；`mega_man_usa.nes` 不在库身份存疑。
+生产钉 NTSC 选 hd。剩余真缺口=版本 no-intro 交叉核对、mm_showcase 路径缺失、包无 rom_sha1、
+RAM/检测器实证——**不再是"进不了 gameplay"硬阻塞**。证据：候选目录`复测结论_2026-11-20.md`
++ `F:/taspipe_scratch/mm_retest_20261120/`（探针/日志/截图/RAM）。
+
+### 23.2 authoring 启动轮（2026-11-20 晚）：生产包改判 + 两个生产路径真坑
+**改判落地**：`megaman1_weapons.catalog.json` status=ready_for_authoring、blockers=[]、
+三候选逐份 clean_boot_verified=true+身份钉死（hd=NTSC 首选/网盘=PAL-B 另档/usa 不在库）；
+`megaman1_weapons.showcase.json` 补 rom_sha1=2F883815…（hd）、rom 指向
+`F:/taspipe_scratch/mm_showcase/megaman1_ntsc_hd.nes` 副本、bizhawk 指向隔离副本
+`mm_showcase/bizhawk`（原件 config 字节不动）。改前备份 `*.bak_20261120_pre_regrade`。
+base.state/base.png 由**生产路径** `universal_authoring probe-rom --preset megaman1` 产出
+（round 0 命中：action_effective/menu_effective 全 true、RAM 差分 118 字节），base.png 亲眼看=
+真实地面+HUD，非菜单/过场。产物在 `F:/taspipe_scratch/mm_showcase/probe_hd2/`。
+**base 关身份更正（2026-11-20 深夜）**：旧稿写"Cut Man 关"**错**。base.png 与选关 Right×1
+进 Guts 的导航帧 `ramdiff/guts/stage/f0671.png` 布局逐件同（传送带+黑坑+砖洞+右高台黄块+
+玩家同站位），差异仅敌兵/闪光粒子=帧偏移眨眼，故 sha256 不等**不是**关不同。预设 step2
+Up×20+Right×20 是多步光标路径，实测落点=Guts（右上格）。**base.state=Guts Man 关出生段**。
+规矩：关身份以画面布局+导航出处双证定，不许凭单帧印象或字节哈希不等下结论。
+
+**坑一（save 返回值）**：`StateSession.save(name)` 会追加 `.state` 后缀并**返回真实落盘路径**；
+`navigate_and_verify_rom` 旧代码忽略返回值、拿自拼路径 copy/load ⇒ 可控性闸门明明全绿却在
+`shutil.copy2` 崩 FileNotFoundError（现场文件名 `cand_r0.state.state` 双后缀）。
+修：`cand = Path(sess.save(f"cand_r{round_idx}"))`（同文件 soccer2 段一直是正确写法，可对照）。
+反证格：修前 probe_hd 崩、修后 probe_hd2 EXIT=0 status=ready。
+**规矩：凡 sess.save/shot 一类带后缀改写的方法，一律消费返回值，禁止自拼落盘路径。**
+
+**坑二（预设时序就是旧假象的生产源头）**：megaman1 预设旧 step1=Start 12 帧+wait 120（共 132 帧）
+< §23.1 实测标题→选关 90–140 帧切换延迟 ⇒ 后续方向键/确认落在标题页，生产路径自己复现了
+"选关 D-pad 无效"假象。修：wait 120→180（Start 后 ≥150 帧铁律）。
+**规矩：导航预设每个转场 wait 必须 ≥ 实测切换延迟上限+余量；新游戏入预设前先跑 §23.1 式反证格
+（无输入/单键/留足帧三臂）定延迟，不许拍脑袋写 wait。**
+
+### 23.3 新复制模拟器副本首启慢于看门狗 45s ⇒ 假"启动失败"（2026-11-20 晚）
+现象：mm_showcase/bizhawk 刚从复测副本 cp -r 出来，`calibrate` 连三次报
+"EmuHawk 启动失败（看门狗标 dead）"，work 目录无 heartbeat/session.log；
+但**同一副本手动无看门狗启动（hello/session.lua）都活**，且两臂对照诊断
+（A=裸 Popen 无看门狗 / B=有看门狗但点框禁用）在**新 work 目录** 4–8s 就写心跳、无任何模态框。
+换全新 work 目录重跑 calibrate 一次成功（mega_buster 首闭环）。
+归因：新副本 exe/dll 冷缓存+杀软首扫使首启超过 `_Guard.stall_timeout=45s`，被树杀；
+手动启动无看门狗故同冷态能活（反证格）；暖机后启动 4–8s（diag A/B + calib 四次成功）。
+**规矩：新建模拟器副本后先做一次无看门狗暖机启动（hello 级 Lua 即可）再跑生产会话；
+生产报"启动失败"先查副本是否首启/是否暖机，别急着改看门狗常数或怀疑 ROM。
+复用被杀会话的 work 目录也会踩文件_handle_残留，重跑一律换新 work 目录。**
+证据：`F:/taspipe_scratch/mm_showcase/`（diag_boot.py、diag_A/diag_B、calib_buster1–4.log、
+sess_manual.log、hello2_run.log）。首闭环产物：mega_buster frame=9、
+region=[0.488,0.728,0.73,0.799]、rgb=[229,230,149]、pos=0.073/neg=0.017→min_fraction=0.04，
+已回写 showcase 包；pos/f0009.png 亲眼=射击姿态+黄色弹丸，neg 同帧站立无弹。
+
+## 附：全量盘点逐帧采集本轮闸门清单（selftest 331→339，+8）
+| 组 | 断言数 | 内容 | 位置 |
+|---|---|---|---|
+| ramdump/dump 线格式 | 3 | ramdump 线格式、dump 宏+空档线格式、dump 缺省 spec=- extra=0 | selftest.test_statejump → statejump.format_command |
+| 参数拒绝 | 3 | dump extra<0、ramdump length<1、dump 中文目录 被拒 | statejump._v_dump / _v_ramdump |
+
+## 24. showcase 全量盘点框架：原子前置态、反例与全量口径（selftest 339→365，+26）
+问题一：旧 `dump()` 文档称“返回帧数”，Lua 实际返回 `emu.framecount()`（绝对帧号），调用方会把 315 帧误当 315 张截图。现改为 flushing 携带 `dumping.total`，Python 返回值与实际 PNG 数一致；runner 同时逐张检查文件名、PNG 签名与 IEND。
+问题二：生产采集若拆成 load/write/dump 三条指令，指令间主循环会空跑，破坏帧精确。现 dump 线格式可原子携带 base state 与 RAM patches，在 `dumping` 启动前一次完成读档和写入，不在 pcall 内 frameadvance。
+问题三：单要素探针容易冒充“全量盘点”。新 `showcase.py` 要求 catalog 完整来源与 expected_total；默认反例与正例共享 base、patches、总帧数并跑同检测器。正例未过、反例误放、证据 inconclusive 均不算通过；`--only` 只出试跑片段，清单齐全且全要素导出通过才生成正式 `reel.mp4`。
+问题四：statejump dump 无音轨，旧 exporter 把“原片无音轨”记为 audio_preserved=inconclusive，导致模板成片永不能全 pass。现“无音轨无需保留”是明确 pass；有音轨但导出丢失仍不得静默通过。
+
+| 组 | 断言数 | 内容 | 位置 |
+|---|---|---|---|
+| 协议与返回契约 | 4 | dump 原子 base+patches、非法地址拒、Lua 前置态在册、返回实际采集帧数 | selftest.test_showcase → statejump/tas_replay |
+| schema | 4 | 合法包、draft 拒、检测帧越界拒、未知插件拒 | showcase.validate_spec |
+| plan/指纹 | 3 | 资源+清单 ready、pack+ROM+base 指纹、auto plan 接线 | showcase.plan / auto |
+| 正负例 | 3 | 正过反拒 pass、反例误放 fail、证据不足 inconclusive | showcase.verify_detection |
+| 帧完整性 | 1 | 假 PNG/半 PNG 不得编码 | showcase.validate_frames |
+| 生产夹具 | 6 | 合成全链、正/反例片段落盘、同总帧、同 patches、会话关闭、指纹复用不重启 | showcase.run（合成假会话，非真实 ROM 验收） |
+| 全量口径 | 2 | 清单 1/2 全量跑 blocked；--only 通过也只 partial 且无正式合辑 | showcase.run |
+| 逐要素 base | 1 | 特殊场景覆盖公共 base，正反例仍共享同一专用快照 | showcase.resource_paths / run |
+| auto 生产入口 | 1 | source=showcase run 分支接线 | auto.orchestrate |
+| 无音轨模板导出 | 1 | 无音轨不伪报证据不足 | selftest.test_exporter_mask → exporter.compose |
+
+> 365/365 是本轮真实执行 `python -u -m taspipe.selftest` 的结果。showcase 生产链使用合成帧+假会话验证框架逻辑，**不代表洛克人真实 ROM、八武器或合辑已验收**；真实实测步骤见根目录《洛克人全量盘点交接说明书.md》。
+| 模板闸门 | 2 | dump/ramdump op 在册；dump 末帧交 flushing 过 IEND 查（不变量两半） | tas_replay.STATE_LUA_TMPL |
+
+## 25. 热血足球2 球权/必杀判据：像素差作废、改 OAM 字节（2026-11-14 实跑，部分已落生产闸门）
+问题一：`save()` 与 `shot()` **都**自己补后缀（.state / .png）。传带后缀的名字会落成 `*.state.state` / `*.png.png`，
+调用方按原名找文件即 FileNotFoundError。口径：传无后缀名、用返回值。（save 后缀陷阱此前已记，shot 本轮补全。）
+问题二：`use_state()` 只把中文路径资产搬进 ASCII 工作目录并返回路径，**不读档**。漏 `load()` 会让探针从 boot 跑：
+OAM 全 (248,0,0,0)、RAM diff 全空，看起来像"解析器坏了"。本轮 possession scan 40 帧全 None 即此因。
+问题三：KICK OFF 仪式冻结**持续到首个有效输入**；无输入 run 再多帧 RAM/OAM 也恒定不变。
+"扫描自然持球"必须先 macro 一个 A 解除冻结，否则扫的是冻结态。
+问题四：整图/ play 区像素差**不能**当持球或必杀判据：天气粒子 ~40px 过阈、镜头滚动一次 2.6 万 px（55% play 区）
+冒充"射门特效"。本轮 26228px 的 ready 就是镜头滚动假阳性，接触表证明球根本没离脚。
+问题五（替代判据，已落 `universal_authoring.solve_soccer2_possession_base` 生产闸门）：ramdump 2048B 含 $0200 OAM 页。
+球 = 2×2 sprite 组 tile∈{C3,C4,C5,D3,D4,D5} 且 attr&3==0，球心=(minX+8,minY+8)；受控队长 = tile 0xC0 号码标记，
+脚底 = 标记X+4 / 同组腿 tile{10,11,20,21,30,31} maxY+8；队伍 = attr&3（1 我方 / 2,3 对手）。
+我方持球闸门 = 球心距队长脚底 <14px（真阳性实测 13.9 且截图球在脚边）。必杀发动 = 球 tile 出正常集（待首个真阳性复核）。
+问题六：1P 固定 MF 队长；旧 base 时刻持球者 attr&3==3 = **对手**（白帽衫是客队）。"队友持球 A+方向传给自己"四候选
+实测全部无效（球距队长 40+px）。有效路线 = RAM 反馈追球控制器：朝球跑、近距 B 铲球、队友持球按 A 要球；2 步即持球。
+问题七：金手指暂停冻结球权，但**任何无输入长窗（30/60 帧）都会让球滚离脚边或被断**（13.9→18.4px 判丢；
+一次 60 帧窗后球直接飞出屏幕上沿）。口径：活性与球权合一循环——2 帧 RAM tick 判冻结（冻则补 Start），
+活则追球贴回队长，dist<14 才存 base；不许用长无输入窗做活性自检。
+问题八：休息室「开球」须 **A 确认**（Start 无效）；**场地/天气每场随机**（土场/绿茵/雪面均实测，同一 kickoff 资产不同会话可不同）；KICK OFF 横幅保留到首个有效输入。
+场地/菜单判据别写死颜色。战术策略屏 **Start 退出**（B 无效）；内含改变阵形/改变位置两段（逐角色换位路线 b 的入口）。
+问题九：`StateSession(work=相对路径)` 启动即崩：模板把 work 原样嵌进 Lua，`io.open` 按 **EmuHawk 进程 cwd**
+（BizHawk 目录）解析相对路径 ⇒ heartbeat/session.log 全 nil，`logf:write` 抛 LuaScriptException，进程秒退、
+看门狗标 dead。表象像" emulator 间歇启动失败"，实为路径口径。已修：`__init__` 对 rom/bizhawk/movie/work 一律
+abspath；selftest 加断言（相对 work 归一绝对）。排查口诀：session.log **不存在**（而非有错误行）= Lua 没活过第一行。
+
+## 26. 热血足球联盟 CN/hack 族必杀不可触发：难度锁定+跳跃语义不符（2026-11-14 实跑闭合，负证据链）
+
+约 60 条触发链跨 jf/wl/hack_jump/hack_se 四变体全负（无全屏闪/球变形/电光，仅普通射门/挑球/进球）。三杠杆实证堵死：
+1. **难度行有字无光标、不可达**：mode 屏 Down×6 光标在模式行（热血联盟/密码/对战/点球）回绕（RAM $005D=93 只 1↔2），
+   ←→ 只动人数列（$07C4=1988/$07C9=1993），难度行（简单/普通/困难、やさしい/ふつう/むずかしい）永远无光标
+   （`soccer2_difficulty_row.py`+`soccer2_diff_ram.py`，jf+jump 双证，截图 m6_down/r2_right）。
+   S1 容易档敌我都不能必杀 ⇒ 默认疑容易且不可改。旧"Left×2 归零再 Right×N 盲操设普通"**作废**。
+   $02CC–$02FF(716–767) 是 OAM 相位噪声，diff 前先跑 no-input 基线剔除。
+2. **hack 无"人球同跳"**：方向+AB=纯脚跟挑球（球单独后左飞、顶点 f1–2、落地 f5–6）；静止 AB=人跳球不动；
+   跑动 AB 松方向=人跳。文献"持球跳最高点 B"在 hack 无法执行 ⇒ 空中 B 必落空（`soccer2_vs_jumpcal.py`/`vs_apex.py`）。
+3. **秘技 AAABAAABAAAAAAA 无效**（probe18 三段对照无燕返翻转），疑前作《世界杯》码。
+配套语义（已进 `soccer2_hack_probe.py`/生产求解器）：KICK OFF 锁定须首个有效输入解除（A=传球式开球）；
+净持球 base = holder_team==1 且 \|holder_dist−dist\|<0.6 且 opp_dist>40，邻敌先反向带球 16f 再判；追球≤60 步、追球期禁 B。
+高球飞行=四点星形 sprite（不在球 tile 集）⇒ OAM 解析 None；scrums 隐藏标记/球 ⇒ 长 None 段，均非代码 bug。
+目视误读更正：白色横带=镜头滚动下的场地边界线；横向球员 sprite=普通射门随挥/滑铲；雷雨全屏白闪+锯齿电光=天气**非**必杀。
+ROM 谱系：jf=393232B(384KB 扩改)、wl=jump=se=262160B(256KB 原版尺寸)，jump/se 为 wl 基 hack（diff 2861/2889 字节）。
+**用户路线复核（probe33_userroute，排除"动作晚/球被抢"假说）**：开球 A 传→队友持球按 A/B 要回传→接球瞬间立即触发。
+接球时 opp=123.8px、触发帧球仍在队长脚下（dist13.9/holder_team1）⇒ 球权干净且动作不晚；
+immB/immAB_B/immRunB/teamB 四变体仍仅普通射门（圆球、无闪/变形/电光，见 probe33 帧）。
+（注：此四变体输入本身不符合攻略记载的触发族，见下方 11-15 更正；不能据此断言 ROM 阻断。）
+**空中连段复核（probe34_aerial，排除"挑球→接住→空中及时 AB"假说）**：从净持球 received.state 出发，
+静止第 1 次 AB 挑球→隔 d2∈{2,4,6}f 第 2 次 AB 接跳→隔 d3∈{2,4}f 空中按 B 或 A+B，共 12 组时序。
+全分辨率抽帧（d2_a2_B_t10 球在空中、d4_a2_AB_t14 球在脚边）确认：球始终为普通圆白 sprite，
+无坚果/鱼/香蕉/铅笔变形、无全屏闪、无电光；第 2 次 AB 只人跳、球不随人（hack 无人球同跳）⇒ 空中接球不成立。
+12 组全仅普通挑球/跳/射门（aerial_sheet.png 12×6）。
+**11-15 重大更正（撤回"版本/ROM 代码阻断"结论）**：用户指出"指令基本不变、变的是招式样式；一个角色只懂一个必杀，要换角色；头球/倒钩时机不对"。
+查攻略证实（搜狐/百科/知乎/ffsky）：① 日本队 12 人每人必杀不同 + 11 对手队 = 23，**必须换角色**才能采全；
+② **燕返=方向+A+B 仅小辫子(赖常)独有** ⇒ 先前"hack 无人球同跳"是**角色特异**（默认控的不是小辫子），非版本删除；
+③ 触发族=跳最高点 B / 前 B 头球 / 后 B 倒钩 / 平地步数(3或8)后 B / **高空球在禁区必出必杀**；先前空中连段与 probe33 四变体输入均不符这些族，且全在**中场**而非禁区；
+④ 暂停秘技 A3B1A3B1A7 的签名是**得分框"必杀技OK"**（解锁全员必杀），**不是**燕返翻转 ⇒ probe18 看错签名误判"无效"。
+复核实测：probe36/37 暂停成功（暂停时得分框显 0-0）、5 种按压节奏均**未现"必杀技OK"**（jump）；probe38 平地步数/最高点B/前B/后B 12 变体在中场仍仅普通球。
+⇒ 负证据至今可由**错角色+错位置+错输入**解释，**不能**归因版本；"需日版原版"降级为备选正对照而非主因。
+⇒ 下一步=角色感知采集：换/传至目标角色（含小辫子）+ 进禁区 + 按该角色步数/高空球触发；暂停秘技换节奏/换变体再验。
+证据：`probe36_unlock/37_timing/38_triggers/`（soccer2_unlock/{before,coded,unpaused}_box、timing_sheet、trigger_sheet）。
+**用户双AB接球连段逐帧复核（probe41 jump / probe42 wl）**：静止 AB挑→隔2f AB接跳→隔2f B，t=1..20 每帧抽。
+两版均：第1次AB球上/离身、第2次AB只人跳、**球不在人上方⇒"接住"不成形**、B=普通射门（圆球/高球星形，无变形/闪/电光）。
+⇒ 连段本身按用户描述执行了，但"人球同跳接球"是**小辫子(赖常)燕返专属**；自动控到的角色(くによ/よりみつ/たかし…)非小辫子⇒接球不成形。
+⇒ 与用户"换角色"口径一致：须**让小辫子持球**再跑双AB接球+B 才可能成形；此为下一步角色感知采集的首要正对照。
+probe39 进禁区+高空球/燕返/最高点B 9 变体（possess 全 True）仍普通球；probe40 wl 暂停秘技未进暂停（计时照走）待复核。
+证据：`probe39_inbox/41_catch/42_wlcatch/`（inbox_sheet、catch_fine×2、wl_unlock_box）。
+
+**11-15 改道：必杀采集不再由 agent 猜连段，改为"真人打 + 帧级捕获 + 机器复现"**（用户口径"其实打出过好多次必杀了"直接否掉版本阻断说）。
+通道已建成并过闸门，脚本 `_工具脚本/已验证代码库/nekketsu_soccer/soccer2_live_capture.py`，工作目录 `F:\taspipe_scratch\soccer2_live\`。
+- 键位（写进 BizHawk `config.ini` 的 `AllTrollers["NES Controller"]`，原方向键/X/Z/Enter/Space 保留，备份 `config.ini.bak_before_live_keys`）：
+  上下左右=W/S/A/D；FC 只有 A/B ⇒ **A=J、B=K**，另 **Select(换人)=L、Start(暂停)=;**；`DisplayInput=true` 画面左上角可核对按键是否吃到。
+- BizHawk 2.8 Lua 三条实测口径（踩坑固化）：**`movie.record` 不存在**（attempt to call field 'record' (a nil value)）；
+  **`client.speedmode` 只收数字**，传 `"normal"` 会在 main:4 抛 LuaScriptException 且 Lua 直接不跑（症状=capture.log 不生成，容易误判成模拟器没起）；
+  **`joypad.get(1)` 返回裸按钮名 A/B/Up/Down/Left/Right/Select/Start**（不带 `P1 ` 前缀，而 `joypad.get()` 带前缀），且**含真人键盘实时状态**⇒逐帧采样=输入录像。
+- 产物：`inputs.tsv`（帧号\t按钮+按钮）、`live.bk2`（用 `taspipe.fceux.to_bk2`，MD5 按**去 16 字节头**口径，保证 `PlayMovieMatchHash` 肯放）、
+  `live_end.state`（停录瞬间状态，可从这点继续跑）、`live_frames.json`/`live_macro.txt`（行程编码后的宏与事件时间轴）。
+- 自测闸门：合成 SendInput 真实按键 D→J+K→L→;，录到 Right/A/B(A+B 同帧)/Select/Start，9/9 PASS；回放 `live.bk2` 300 帧出图 15 张、互异 8 张（全同=电影没真放）。
+  这条"真人一次、机器万次"的通道同样适用于其他怀旧游戏（键位与宏格式是平台无关的）。
+
+## 27. 文献来源库系统化：先查库→未命中延伸→命中入库分类（2026-11-18 实跑，selftest 523→589，+66）
+
+**根因**：`游戏包/复古游戏文献来源库.md` 此前是**没人消费的手写 Markdown**，15 个知识包的 `sources` 是自由文本 URL。
+后果＝每开一款游戏都从头自由搜、搜过的站不沉淀、"已读/快照/候选"混为一谈、"查不到"没有中文层证据。
+用户 11-18 要求："下次命中这些内容之后主动先去搜索这些，而不是每次都要漫无目的地搜索；没搜到就继续延伸；搜到就入库分类管理"。
+
+### 27.1 主数据与产物分工（不许两份真相）
+- **唯一主数据**：`游戏包/来源库/sources.json`（79 条来源；状态分布 verified_read 19 / snippet_only 28 / unreachable 7 / candidate 24 / dead 1）。
+- **人读清单是产物**：`复古游戏文献来源库.md` 的 `<!-- BEGIN GENERATED: sources -->…<!-- END GENERATED: sources -->` 块由 `sources render --write` 单向生成；
+  `audit` 的 `render_sync` 逐字节比对该块，手改一个词就判红（反证格 [39] 实证）。无标记 => `SchemaError`，不猜插入点（[40]）。
+- **代码**：`_工具脚本/taspipe/sources.py`（43,960B）；闸门 `_工具脚本/taspipe/sources_selftest_gates.py`（26,499B）。
+- 维度：15 层 × 15 要素类型 × 13 平台（别名归一 FC/FAMICOM→NES、SFC→SNES、MEGADRIVE/GENESIS→MD、FBNEO/MAME→ARCADE、DOS→PC_DOS；★11-18 新增 MOBILE，用于把"手游《热血足球》"这类错配来源关进自己的平台分区，不许混进 FC 查询）。
+
+### 27.2 生产命令（S1 的操作面，模板已强制）
+```bash
+py -3 -m taspipe.sources route --game <名> --set <街机set> | --rom <本地路径> --platform <平台> --want 出招表,必杀宏,金手指
+py -3 -m taspipe.sources log --source-id <sid> --game <名> --want <要素> --verdict hit --evidence <取证正文路径>
+py -3 -m taspipe.sources ingest --url <新站> --layer <层> --status candidate   # 命中新站立即入库分类
+py -3 -m taspipe.sources claim-absence --game <名> --want <要素>              # 判"不存在"前的中文层门
+py -3 -m taspipe.sources render --write && py -3 -m taspipe.sources audit
+py -3 -m taspipe.sources recheck --source-id <sid>                            # 探活；失败不自动判 dead
+```
+
+### 27.3 硬闸口径（命中即停 / inconclusive，不静默通过）
+- **身份门**：街机先读本地 FBNeo `config/games/<set>.ini` 首行 + `fbneo64.roms.dat` 的 `^<set>\s*\+` + `roms/<set>.zip` sha1/size；主机读本地 rom sha1。
+  身份不明 => `route` 返回 `blocked`，**不出检索计划**（[1]–[8]，含"只给游戏名不给 set/rom"反证格）。
+- **库内优先**：`primary` 段按 `STATUS_W + 30(首选层) + 20(games_hit) + 25(sets) + 10(platform)` 排序；`primary` 全 miss 才走 `extension`；`dead` 进 `forbidden` 禁止直连（[9]–[17]）。
+- **hit 必须带取证**：`log --verdict hit` 而 evidence 文件不存在/为空 => 判 **inconclusive，不算命中**（[18]–[24]）。
+- **三态**：snippet 永不升 verified_read；只有快照/不可达/候选支撑的要素 => `verified_support` **inconclusive**（不是 pass 也不是 fail）（[28][29][46]）。
+- **台账复用**：`Ledger.reusable` 只认"最新 attempt 为 done + 指纹一致 + 产物校验过 + verdict≠fail"；摘要按 key 的最新 attempt 逐格计数，**不用总数减失败倒推**（[25]–[27]）。
+- **不存在声称**：`claim-absence` 要求中文网盘层与 B站视频层**已有 miss 记录**，层名单运行时从库里推（不写死 id）；支撑 job 不在台账 => 红（[30]–[33][63]）。
+- **探活不等于判死**：`recheck` 失败只记 unreachable，升 dead 必须人给当期证据 + reason + closure.date（[59]–[62]）。
+- **schema 拒收 10 类**：未知字段 / source_id 非法 / layer 未知 / status 未知 / platforms 空 / 要素类型未知 / verified_read 缺取证 / 取证文件不存在 / 非 candidate 缺验证日期 / dead 缺 closure（[49]–[58]）。
+
+### 27.4 本轮实跑数字（都是真跑，不是推算）
+- 独立跑 `py -3 -u -m taspipe.sources_selftest_gates` => **SOURCES_SELFTEST OK 66/66**（63 条编号闸门 + 3 条真实文件反查）。
+- `--inject` 挂进 `selftest.py`（`test_sources_registry()`，幂等：重复注入 call/def 各仍 1 处）后全量 => **SELFTEST OK 589/589**，注入前基线 **523/523**，**+66 绿灯计数真涨**。
+- 真实库 `sources audit` => `status inconclusive`，**8 pass / 0 fail / 1 inconclusive**；79 来源、19 包、79 要素全部有来源支撑（`element_coverage` pass），
+  但 **43 个要素只有 snippet_only/unreachable/candidate 支撑** => `verified_support` inconclusive。这是**真实收集缺口，不是"齐全"**。
+- 探针隔离：`REG_JSON/LEDGER_JSON/MD_PATH/PACKS_DIR/FBNEO_CFG` 五个常量全部 patch 进临时目录，跑完反查真实 `sources.json`、`复古游戏文献来源库.md` 的 mtime+sha256 未变、真实 `检索台账.json` 未被创建（[64]–[66]）。
+
+### 27.5 本轮踩坑（四条，前三条是夹具错、第四条是判据真漏洞）
+1. **[11] 夹具要素类型不匹配**：`s_dead` 只挂 `攻略`，而 route 的 want 是 `彩蛋` ⇒ 没进 forbidden。修夹具补 `彩蛋`，不放宽闸门。
+2. **route 探针 KeyError 'primary'**：探针只给游戏名没给 rom，身份门正确返回 `blocked`（没有 primary 键）。修探针补 `--rom`，**保留硬门**。
+3. **[25] reusable 返回 None**：该 key 的最新 attempt 是 failed（台账语义正确）。改为新建一条 done key 再验复用/篡改/摘要。
+4. **[47] 空支撑假绿（真漏洞，已修判据）**：旧写法 `if covered_total and not supported:` —— 包里**一个来源都没有**时 `covered_total==0`，
+   条件短路落到 else 报 **pass**。改成 `if not supported:`（零要素/零支撑一律 inconclusive）。
+   教训：**"没有要素"和"要素都验过了"必须区分**，否则空包能冒充已验证；反证格要把对照包临时改名移走，否则它仍在贡献 supported 计数。
+
+### 27.6 诚实缺口（下一步，不冒充已完成）
+- **真实检索台账 0 条**：系统建成，但此前调研没落 `log`；下次任何 S1 调研必须逐站落 hit/miss/snippet，否则 `claim-absence` 永远 blocked。
+- **43 个弱支撑要素**升 verified 只有两条路：真读正文落取证文件（`游戏包/来源库/取证/`），或本机实测落记录；快照不算。
+- **魂斗罗 `00AA:16` 冲突待复核**：cht 码低半字节 6 与包内 note "5 起为非法值且不开火" 矛盾，须实测重定，不先改文案。
+- **KOF 包身份错位**：pack 的 rom 指 `F:/tas_rig/roms/kof98.zip`（原版），而 rig 证据来自 `kof98eck`；引用出招表前须先按 §27.3 身份门定 set。
+
+## 28. 本地文献知识库（LLM 知识库的本地臂）：正文切块 + BM25 + 身份分区 + 三态检索（2026-11-18 实跑，selftest 589→646，+57）
+
+来源库（§27）解决"去哪找"，本节解决"找回来的正文怎么变成可检索、可溯源、敢下结论的知识"。
+**运行时零大模型**：清洗/切块/分词/BM25 全是确定性代码；LLM 只允许离线一次性 author 语料登记。
+
+### 28.1 三层分工（谁是真相）
+| 层 | 件 | 职责 |
+|---|---|---|
+| 语料层 | `_工具脚本/taspipe/游戏包/知识库/corpus_map.json` | 唯一主数据：每份正文绑 `source_id` + `revision`（版本身份）+ `kind` + `authority`；排除索引必须给 `reason` |
+| 索引层 | 同目录 `index.json`（GENERATED，原子写） | 清洗→切块→分词→BM25 倒排；每块带 `chunk_id/path#L行号/source_id/revision/status/authority/text_sha` |
+| 闸门层 | `taspipe/kb.py` 的 `query` / `audit` | 每条命中都回 source_id + 状态 + 权威级 + 可回指行号；三态判定 pass / inconclusive / miss |
+
+`authority` 四档：`authoritative`（官方件/我方实测）、`reference_only`（二手攻略杂谈）、
+`cross_version`（别版本表，**只有问它自己那版才算权威**）、`not_applicable`（手游等无关平台）。
+`revision` 按游戏版本分区（fc_jp / fc_cn_hack / fc_unspecified / *_multi / kof98um / kof98eck / arcade_multi / mobile / project_docs / tooling）——
+**同一个问题在不同版本下结论不同**，这是把 §26 的 ECK-vs-98UM 教训写成代码。
+
+### 28.2 命令（在 `_工具脚本` 下）
+```
+py -3 -m taspipe.kb build [--force]        # 增量建索引（源文件 sha256 + PIPELINE 双判据）
+py -3 -m taspipe.kb query --q "问题" --revision kof98eck --platform ARCADE [--require-verified]
+py -3 -m taspipe.kb audit                  # 7 门；非 pass 退 2
+py -3 -m taspipe.kb show                   # 库内版本/块数/权威块数
+py -3 -u -m taspipe.kb_selftest_gates [--inject]
+```
+`sources route` 第②步已改成"先查本地知识库正文"，并回报 `kb.{status,chunks,authoritative_verified,query_cmd}`；
+索引不存在时如实报 `not_built`，**不假装有正文**。
+
+### 28.3 硬闸口径
+- **三态**：`miss` = 本地没收集（**不等于"不存在"**，必须走延伸段 + 中文网盘层扫描）；
+  `inconclusive` = 有线索但无权威支撑（二手/跨版本/未 verified）；`pass` = verified_read + 本版本权威命中。
+- **pass 的两条附加判据（★本轮补，见 28.5 第 6 条）**：
+  ① **内容词门**：权威块必须匹配到至少一个 len≥2 的词（多字词/指令串）；只匹配单字（如"或"）不算证据。
+  ② **最高分门**：`pass` 要求**最高分命中本身就是本版本权威**；若最高分是跨版本/二手件、本版本权威件只在低分位，
+  判 inconclusive 并在 reason 里点名双方 source_id 与 score（"最相关证据不是本版本权威，不得直接下结论"）。
+- **增量双判据**：源文件 sha256 相同 **且** `PIPELINE` 相同才复用旧块。PIPELINE = `clean2|tok2|chunk2|max700|hard1200|rows25`，
+  清洗器/分词器/切块参数任一改动都必须让全库重建，否则旧块会冒充新口径。
+- **巨块上限**：单块 ≤ `HARD_MAX=1200` 字符；单行超长正文按 HARD_MAX 强制切片（行号仍指原行）。
+- **溯源不可漂**：`audit` 逐块重算 `text_sha`、重算源文件 sha256、比对块的 `status` 与来源库当前状态；
+  手改索引正文 / 源文件改了没重建 / 来源降级但块仍写 verified_read，三者都判红。
+- **收而不入库＝白收**：`evidence_coverage` 要求每个 verified_read 来源的取证正文都进 corpus_map，缺一份判红。
+- **身份冲突**：语料的 revision 所属 game_id 必须与来源 `games_hit` 相容（手游正文挂到 FC 版本 ⇒ 红）。
+
+### 28.4 实跑数字（本轮真跑，非推算）
+- `kb build --force` => 首次 **chunks=555 / terms=35806 / indexed=19 / excluded=6**；写完本节后再 `kb build` =>
+  **chunks=562 / indexed=19 / excluded=6**（说明书自身是语料，§28 正文也进了索引）；再跑一次 => 19 份全复用。
+  **terms/bytes 不写死在这里**：说明书每改一次就变（本轮 36329→36460→36526），以 `kb show` 现查为准。
+- `kb_selftest_gates` => **60/60**（56 条编号闸门含 [27b] 产物级巨块检查、[33b–d] 噪声/最高分门 + 4 条真实文件 mtime/sha256 反查）。
+- `--inject` 后全量 `selftest` => **649/649**（来源库注入后基线 589/589，**+60**）；再 `--inject` => `[幂等跳过]`。
+- `sources_selftest_gates` => **66/66**（route 接线未破坏来源库闸门）；`sources audit` => 8 pass / 0 fail / 1 inconclusive。
+- 身份门 A/B（同一条查询 `俱乐部飞标 ↓↘→+B或D`，platform=ARCADE）：
+  问 `kof98um` => **pass**（strong 2，最高分即本版本权威）；
+  问 `kof98eck` => **inconclusive**（strong 1，reason 点名"最高分是 gamersky_handbook（cross_version/kof98um，78.645），
+  本版本权威件 local_fbneo_rig 只在低分位（26.326）"）。
+- `kb audit` => 6 pass / 0 fail / 1 inconclusive；`authoritative_ready` 点名 4 个版本没有 verified_read+authoritative 正文
+  （kof98um、nekketsu_soccer2_fc_cn_hack、nekketsu_soccer2_fc_unspecified、nekketsu_soccer_mobile）。
+
+### 28.5 本轮闸门抓出的真缺陷（都已修生产代码，不是改夹具迁就）
+1. **空表格行当正文**：`| | | |` 这类纯竖线行被切成 prose 块（gamersky 那块 L3–L297 全是竖线）。
+   修法：`_is_chrome` 增"去掉空白与竖线后为空 ⇒ 噪声"。dropped_lines 212→267，该块消失。
+2. **箭头指令搜不到**：`↓↘→+A或C` 的箭头不在 `\u4e00-\u9fff` 区间，整串指令被丢掉。
+   修法：`ARROW_RE` 单独成词 + CJK_RUN 纳入箭头字符，`TOKEN_VERSION` 升到 2。
+3. **清洗器改动不失效增量**：源文件 sha 没变 ⇒ 旧块继续复用，新清洗口径形同没改。
+   修法：把 `CLEAN_VERSION/TOKEN_VERSION/CHUNK_VERSION` 写进索引 `pipeline` 字段并纳入复用判据 + audit 漂移检查。
+4. **单行巨块（闸门 [8] 抓出）**：HARD_MAX 只在"逐行累加"处断块，一整段一行的爬取正文（>1200 字符单行）会产出巨块。
+   修法：`chunk_prose` 对超长单行按 HARD_MAX 切片，`CHUNK_VERSION` 升到 2。
+   注：本轮真实库 555 块数量未变（现有 19 份正文没有超长单行），**这是预防性修复，闸门用夹具证明它真生效**。
+5. **来源身份错配（9game）**：结构化字段写 NES/nekketsu_soccer2，正文却是手游《热血足球》。
+   修法：新增 `MOBILE` 平台（平台数 12→13）、改 `games_hit=nekketsu_soccer_mobile`、note 记更正、重渲染 MD；
+   `identity_conflict` 闸门从此守这一类错。
+6. **噪声命中把结论抬成 pass（复测抓出，最危险的一条）**：旧 `_strong` 只看"权威 + verified + 版本对"，不看相关性。
+   实测 `俱乐部飞标 ↓↘→+B或D` 问 `kof98eck`：rig 规范只匹配到箭头碎词 `↓↘`/`↘→`（26.3 分）甚至单字 `或`（4.2 分），
+   却被算成 3 条 strong ⇒ 判 **pass**，而真正讲这招的 gamersky 表是 **98UM 的跨版本件（78.6 分）**。
+   这正是 §26 那次"拿 98UM 官方指令表当 ECK 权威"的错误，差点被自动化重新犯一遍。
+   修法：加**内容词门**（len≥2 才算证据）+ **最高分门**（最高分命中必须是本版本权威，否则 inconclusive 并点名双方分数）；
+   新增闸门 [33b]（单字噪声）/[33c]（权威件只在低分位）/[33d]（正对照：问 UM 仍 pass）。
+   教训：**"有权威件命中"不等于"权威件回答了这个问题"**；相关性必须进判据，否则身份分区会被低分噪声绕过。
+
+### 28.6 诚实缺口（不冒充已完成）
+- **多数取证是二手（reference_only）**：机制类问题除非命中官方说明书/我方清单/rig 规范，否则只能给 inconclusive。
+  4 个版本 0 块权威正文（见 28.4），要升 pass 只有真读官方件或本机实测两条路。
+- **19 个知识包 JSON 尚未进语料**：当前 corpus 只收 md/ini 正文；showcase 包里的宏与判据还没被检索层覆盖。
+- **没有语义臂**：BM25 是词面匹配，同义改写（"必杀"/"超杀"/"大招"）靠 bigram 兜，召回不如 embedding；
+  本地 bge-m3 语义臂与 Qoder QMind 云端问答臂都是**可选后续**，未开工。
+- **文档改动会让索引同步门变红**：说明书自身是语料，改完文档必须 `kb build`（本轮就红过一次，属正确行为）。
+- **最高分门偏保守，会误降一些真能回答的问题**：实测 `燕返 怎么触发 小辫子`（revision=nekketsu_soccer2_fc_jp）
+  => inconclusive，因为二手 sohu 文章重复关键词更多（26.8 / 19.5 分）压过我方 `热血足球联盟_必杀全清单.md`（10.6 分，authoritative）。
+  结论方向是安全的（不冒充已核对），但**人要看 hits 里的权威件**，不能只读 status。
+  后续可选改进：给 authoritative 件加权威加权、或按"内容词覆盖率"而非纯 BM25 排序；**未做，不冒充已解决**。
+- **索引字节数会差 1 字节，不是非确定性**：`files[].reused` 从 `false` 变 `true` 正好少 1 字符。
+  本轮实测两次连续 build 的 JSON 深度逐键比对**零差异**（chunks/postings/stats/files 全同）。
+
+## 29. 知识库 P1 生产接线 + P2 日文根因修复（2026-11-19 实跑，闸门 74→84，selftest 663→673）
+
+### 29.1 P1 接线（用户批准口径：top3_conditional + union12）
+- 三新模块：`kb_route.py`（8 域路由+意图+焦点，零 LLM）、`kb_answer.py`（逐事实可答性三关）、
+  `kb_dense.py`（可选增强：BGE-M3 + RRF + bge-reranker-v2-m3，union12 池）。
+- **状态词表不变**（pass/inconclusive/miss），新语义走字段：`refusal=out_of_scope`（域外零语料→miss）/
+  `unanswerable`（词命中≠回答问题→inconclusive）；pass 非 top1 必带 `condition`；
+  `retrieval=hybrid_union12|bm25_only` + `retrieval_note`（缺指纹件/缺依赖明示退回，不静默顶包）。
+- 稠密件指纹先验（npz 存在 + index_sha 一致 + 块数相符 + 依赖可导入）才加载模型；CUDA 优先单例。
+- 28.6 的"没有语义臂…未开工"**作废**：语义臂已是可选增强层。28.6 的"最高分门误降"由 top3 附条件缓解。
+- 命令：`py -3 -m taspipe.kb dense`（venv=F:\kb_pilot_venv，HF_HUB_CACHE=F:/kb_pilot_hf_cache，HF_HUB_OFFLINE=1）。
+
+### 29.2 P2 修的是三个真缺陷（不是调参）
+1. **tokens() 丢假名**：CJK_RUN 只含汉字+箭头，纯假名块 dl=0，BM25 永久看不见（P23 金标块根因）。
+   修：KANA_RUN 与汉字同待遇（整词≤6 + bigram）；TOKEN_VERSION 2→3。
+2. **_ja_pack 假贪心**：文档说贪心实际逐段出块，ステータス节参数名散落零分小块。
+   修：真贪心段落合并 ≤300 字，超长段才按。句切；CHUNK_VERSION 3→4。
+3. **全角不成词**：２Ｐ/１Ｐ 被 ASCII_RE 漏掉。修：FULLWIDTH_ALNUM 归一后再分词。
+- 跨语查询扩展 `kb_route.JA_SYNONYMS`：每个日文形式**语料实测计数>0 才收**（プレイヤー=0 排除）；
+  只扩 BM25 查询侧，不改问句原文/稠密向量/可答性焦点；结果带 `query_expansion` 字段透明可查。
+- `kb_answer.HOWTO_RE` 补日文形态词（セレクト/プレイ/方法/遊び方/やり方/開始）——P22 类日文操作块不再误杀。
+- `top_window` 参数化（query/CLI `--top-window`），**默认 3 是用户批准口径不动**；5 只是测量变体。
+
+### 29.3 实跑数字（本轮真跑）
+- 闸门 **84/84**（+10：[67]-[76] 含反证格）、全量 selftest **673/673**（+10）。
+- 索引重建（总块数不写死，以 `kb show` 现查为准——本节自身就是语料，写死必自噬）：
+  ja 逐段出块 265→贪心合并 66；zh 块逐块同 v2 sha 零漂移（说明书自身合法编辑除外）；
+  ja 形态/内容覆盖/正文溯源全过；16 题金标行全部有新块覆盖（`verify_rebuild_v4.py`）。
+- dense 全量重建 **cuda**（块数/秒数以 p2_dense_out.txt 现查为准）；26 题三路：**bm25_only 23/26**（P1 是 20）、**hybrid 默认 23/26**（P1 是 22）、
+  **hybrid+window5 24/26**（纯增 Q02，零回归）；**refuse 9/9 三路全保持**；audit 6 pass/0 fail/1 inconclusive
+  （authoritative_ready 是接线前就有的语料缺口，旧索引同判）。
+- P22/P23 两路都转 pass 且金标高位——假名成词+贪心+形态关在**无稠密**时也生效。
+
+### 29.4 本轮抓出的坑（已落闸门/脚本）
+1. **闸门夹具变量遮蔽外层夹具**：新闸门用 `extra` 当临时变量，遮蔽了外层语料文件路径 `extra`，
+   让审计反证格 [42] 的"删条目"变空操作、假绿转红。此前 `real` 犯过同类错。
+   规矩：闸门内临时变量不得与夹具变量同名（real/extra/ja/m/reg 等）。
+2. **ja 句切行号是近似值 + 每块前置标题**：按行号判覆盖/按整行判溯源都会假红（v3 起如此，
+   金标锚靠事实文本不靠行号）。验证改**内容级**：去标题按打包顺序拼接查子串（verify_rebuild_v4.py）。
+3. **tokens 整词≤6 是设计**：ステータスについて 是 10 字连串只出 bigram，闸门期望值要按设计复算，
+   别把"长串没整词"当 bug（[67] 首跑就这么红过）。
+
+### 29.5 诚实缺口
+- **Q08 仍失败**：跨语扩展已触发（協力/モード/ポジション/2 全进查询），但金标 L47 全库唯一一处，
+  被メンバー紹介段（ポジション 高频）压出 top8；稠密也救不回。不硬调参，留待后续（如焦点词加权）。
+- **Q10 hybrid 失败 / bm25 通过**：union12 重排把金标块（素材生产规范 L185-190）挤出 top8，
+  与 P1 诊断一致，是池口径的真代价；window5 也救不回（金标不在 hits）。
+- **window5 已实测否决转默认**（2026-11-19，用户授权"测试后由你决定"）：见 §29.6。
+  `--top-window 5` 只是测量旋钮，生产默认 top3 不动。
+
+### 29.6 窗口边界探针：window5 否决记录（2026-11-19 实跑，闸门 84→85，selftest 673→674）
+- 30 条人工探针（`知识库P1_20261118/probe_questions.json`）走生产 kb.query 双窗口对比：
+  翻转 4 条（W02/W11/W14/W27 全 inconclusive→pass）、变差 0、域外误放行 0。
+- **逐条读放行块原文审计：4 条翻转里 3 条假阳性**。W11/W14/W27 放行的"权威件"是
+  必杀全清单的测量方法学段（L137-158）与来源清单段（L216-225），只沾话题词、答非所问；
+  真答案在 reference_only 搜狐块里，top3 拒答才是正确保守。只有 W02（必杀几种，
+  清单 L3-7 答 23 种）是真救回——与冻结集 Q02 同类。
+- 跑前定死的规则：任一翻转假阳性 ⇒ 维持 top3。据此**否决 window5 转默认**，生产代码零改动。
+- 根因备注：可答性三关对 existence/howto 意图偏松（话题词命中即过），窗口越宽越容易被钻；
+  治本要做块-问句话题相关性核查，留待后续。当前守 top3 兜底。
+- 新闸门 **[77]**：隔离夹具复现该假阳性机制（长背景权威块沾话题词，top3 拒 / window5 放），
+  把"默认守 top3"钉成断言，防后人只看 24/26 就翻默认。
+- 教训：**冻结集纯增≠可以翻默认**——冻结集没覆盖的题型（权威块答非所问）才是放宽窗口的真代价；
+  翻默认前必须补边界探针并逐条读原文，不许只比总分。
+- 交付：`知识库P1_20261118/窗口探针决策_2026-11-19.md`（含逐条审计表与底账清单）。
+
+## 30. P3 可答性话题相关性核查（2026-11-19 实跑，闸门 85→90，selftest 674→679）
+- 治 §29.6 抓出的根因：可答性对 howto/existence 偏松，权威块沾话题词即冒充答案。
+  三关扩五关（kb_answer.py，零 LLM）：
+  **R1 结构关** 块含 ≥2 网址 ⇒ 来源清单不是答案正文（单网址不触发）；
+  **R2 话题锚** 中文块 howto/existence 硬性要求焦点词重叠（焦点集并入跨语扩展词），
+  **日文块豁免**（中文焦点天然不重叠，仍由形态关把关，P22/P23 不误杀）。
+  annotate 新增 url_list/topic_anchor_ok 分解字段；kb.py 按块 lang 传入；查询时计算，索引不用重建。
+- 方法教训：**先只读诊断量误杀面再动代码**（p3_design_probe.py：3 假阳性块全堵、
+  26 题金标误杀 0、真阳性抽查全活），诊断绿了才改生产。
+- 实测：30 题探针翻转 4→**1**（仅 W02 真救回，3 假阳性两窗口全拒）；
+  26 题三路 **23/23/24 逐格零漂移**、refuse 9/9×3、audit 6pass/1inconclusive 不变。
+- 新闸门 [78]-[82]：结构关正反 / 话题锚正反 / 日文豁免。[77] 保留（钉窗口机制本身）。
+- **默认仍 top3**：window5 的假阳性根因虽已治掉（探针上只剩真救回），30 题仍是有限样本，
+  转默认须更大探针集或用户点头，不擅自翻案。
+- 残留 Q08/Q10 属检索排序层，本轮不触及，如实保留。
+- 交付：`知识库P1_20261118/P3报告_2026-11-19.md`。
+
+## 31. P4 排序层：F1 被数据否决 + F2 词法锚（2026-11-19 实跑，闸门 90→92，selftest 679→681）
+- 诊断（只读复算）：Q08 gold BM25 第19/稠密第40/重排 0.000 第70——三路全盲；
+  Q10 gold BM25 **第1**/稠密第3/重排 0.003 第11——增强层推翻主干。
+- **F1 扩展词去噪三变体全被模拟否决**（p4_fix_sim.py / p4_fix_sim2.py）：
+  整词扩展让 Q07 gold 3→23、P22 1→8 丢 top1；降权 0.5/0.3/整1半0.5 让 Q08 最好仍 18 名、
+  Q07 掉到 11/22/7。gold 自己吃扩展词（協力），去噪伤 gold 比伤噪声重。
+  **Q08 判为模型能力缺口（嵌入/重排对这条跨语问句全盲），不是接线 bug，不逐题硬调参，如实保留。**
+- **F2 词法锚落生产**：`kb_dense.anchor_top8`——BM25 top1 被重排挤出 top8 时锚回**第8席**；
+  只保席位不抬名次（top1 仍是重排选择）、不重复占位、空榜不造块。
+  治 Q10：gold 本就是 BM25 top1，锚回榜内 + top3 已有可答权威件 ⇒ strict_pass 转绿。
+  bm25_only 臂不走 enhance 零影响；Q11 version_guard（top1 不得 gamersky）不受影响。
+- 新闸门 [83] 正例 / [84] 反证格（已在榜内/空候选原样返回）。
+- 实测（624 块索引）：hybrid **23→24**/26（Q10 转绿，gold 在第8席；余 Q02/Q08）、
+  bm25_only 23/26 零漂移、window5 24→25/26（余 Q08）；refuse 9/9×3、version_guard 1/1×3、
+  30 探针翻转仍 1（W02 真救回）变差 0 域外误放行 0、audit 6pass/1inconclusive 不变。
+- 方法教训沿用 §30：**先只读诊断+模拟量误杀面，数据不支持就不改**——F1 三变体全否、
+  只落数据支持的 F2；修不了的如实标"模型能力缺口"，不硬调参凑绿灯。
+- 交付：`知识库P1_20261118/P4报告_2026-11-19.md`。
+
+## 32. TAS 任务A（作弊候选无损解析）与 P0 状态入口本轮踩坑（2026-11-20 实跑）
+
+权威计划见根目录《TAS采集系统_实施与派工_2026-11-20.md》；本轮产物在
+`_scratch/tas_taskA_20261120/` 与 `_scratch/tas_p0_20261120/`。
+
+### 32.1 Z: 幽灵盘使"探不存在路径"夹具炸 WinError 1326（环境漂移，非回归；已落闸门）
+- `net use`/`subst` 均空，但 `os.stat('Z:/')` 报 1326（失效网络映射壳）。Python 3.13 的
+  `Path.is_file()/exists()` 只吞 ENOENT 一类 errno，**1326 原样抛**，于是
+  `BizHawkNESBackend(r"Z:\no_such_bizhawk").probe()` 这类故意探不存在路径的夹具从绿变红
+  （test_backends/test_statebuild/test_statejump 三函数，765 检查中其余 28 函数全绿）。
+- **判因口径：先比 mtime/旧日志再归因代码**——backends.py 自 11-10 未改、同日早先同代码为绿，
+  证明是环境漂移不是本轮回归。不得为迁就夹具改共享核心判据。
+- **已落闸门（2026-11-20 主代理合并窗口）**：`backends._is_file_probe` 对
+  winerror ∈ {53, 67, 1231, 1326}（网络壳错误）按"不存在"返回 False，**其余 OSError 原样抛**；
+  接线 NES probe、PS1 `_discover_bizhawk` 扫描、PS1 probe 三处。反证格两条：真实含
+  EmuHawk.exe 目录 => True / available True（防恒 False）。合并后全量 **818/818、32 函数、
+  退出码 0**，三函数恢复绿（ENV_BLOCKED 清零）。
+- 同类残留点（本轮未扩 scope，配置指向死网络路径时仍会炸，后续合并窗口处理）：
+  `registry.py:97`、`retro_platforms.py:422`、`showcase.py:319`、`statebuild.py:212`。
+
+### 32.2 编码字母表不许凭记忆写（已修生产代码+测试）
+- Game Genie 字母表初版凭记忆写错，真实魂斗罗码 SZUSOPVI/SXNVZPAX 落进 unknown_code_part（131 条）。
+  按 BizHawk 源码 `NesGameGenieDecoder.cs` 取证修正为 **A P Z L G I T Y E O X U K S V N**
+  （含 V/O/U，无 W），证据副本存 `_scratch/tas_taskA_20261120/NesGameGenieDecoder.cs`。
+  修正后 unknown_code_part 131→0。**规则：任何编码/字母表/位映射常量必须附源码或官方取证件。**
+
+### 32.3 import 方式跑 selftest 绕过 `__main__` 的 stdout reconfigure（runner 口径）
+- `python -c "from taspipe import selftest"` 逐函数回归时，模块 `__main__` 里的
+  `sys.stdout.reconfigure(encoding='utf-8')` 不执行，重定向 stdout 按 GBK 建编码器，print '⇒' 炸
+  UnicodeEncodeError。**逐函数 runner 开头必须自己 reconfigure 一次**（与用户记忆
+  reference-windows-detached-service-traps 第 8/30/41 条同族）。
+
+### 32.4 P0 控制器拓扑根因 → P1 闸门已落地（2026-11-20）
+- 原存档 ControllerDeck 含两个 ControllerNES，隔离配置二号端口 UnpluggedNES ⇒ 读档即重置
+  （RAM 0xAC 7→255→0，Core.bin 14982→14977 字节从控制器尾段起差异），五项判据全黑片。
+  仅改副本 NesRightPort=ControllerNES 后 Core.bin 逐字节一致、画面恢复。
+- **生产闸门已实现**（任务书 §2 P1 实施记录为权威）：声明层=包可选 `sync_settings`
+  对比 config.ini NES Controls（启动前）；物理层=每个去重状态 sha256 在任何 dump 前
+  零帧加载→回存→Core.bin 核对（`statejump.check_state_profile`，Lua attempt 零帧分支
+  保帧对齐），差异抛 `StateProfileMismatch` 整包 blocked（code=profile_mismatch），
+  证据落 `evidence/state_profile_gate_*.json`。不全局替用户开二号手柄、不改存档二进制消差。
+- 真机双臂实测：坏臂（副本 UnpluggedNES）首跑 blocked、first_diff_offset=14976、
+  **0 媒体**；好臂 done/pass 5/5、闸门按去重状态只跑一次；续跑 gates=[] 全复用、
+  31 媒体 sha+mtime 逐件未动。共享 selftest 837/837（+16 闸门检查 +3 顺序断言）。
+  验收件：`F:/taspipe_scratch/tas_p1_20261120/`（run_bad/run_good/run_good_resume.log、
+  out_bad/out_good）+ 仓内 `_scratch/tas_p1_20261120/acceptance_*.log`。
+- 坑：要素 override 状态会被拷成 `session_work/{element_id}.state` 改名，闸门按
+  工作副本名识别（合成夹具曾按原名匹配而假通过，已修）。
+
+### 32.5 旧《TAS与游戏彩蛋_必杀技实测及回传说明书》部分口径已被 11-20 任务书取代
+- 旧书 Step 0 期望 `SELFTEST OK 395/395` 是当时计数，不是永久断言（11-20 合并+P1 后
+  共享 selftest 为 33 函数/837 检查，计数随登记增长，以当轮实跑为准）。
+- 旧书 Step 1 的 `auto-inject-cht` 语义已变：**只产候选报告（injected=false /
+  verified_in_game=false），不再写游戏包**；复合码/未知编码整条 blocked，原码全保留。
+- `auto.py` 不再查询 TAS 出版物或回落电影采集；`audio=True` 仍硬拦（任务E 未验收前）。
+  按旧书逐条重跑前先对照任务书 §2/§4，不得把旧命令的"跑通"当新契约验收。
+
+### 32.6 任务A 合并记录（2026-11-20 主代理合并窗口）
+- `cheat_candidate_selftest.run_cheat_candidate_gates(ok_fn, raises_fn)` 适配共享 ok 计数，
+  `selftest.test_cheat_candidates` 挂入总入口（32 函数）；独立入口
+  `py -3 -u -m taspipe.cheat_candidate_selftest` 仍可单跑（39/39）。
+- 共享全量 **818/818、退出码 0**；作弊候选 39 条在共享日志 [460]–[498] 逐条编号可查；
+  Z: 闸门新增 3 检查 [34]–[36]。修改前备份与哈希：`_scratch/tas_merge_20261120/before/`；
+  全量日志：`_scratch/tas_merge_20261120/shared_selftest_after_merge.log`。
+- 本轮只改 selftest.py / backends.py / cheat_candidate_selftest.py 三文件；
+  原始 .cht、生产游戏包、真实索引未动（kb 反查闸门 [815]–[818] 同轮断言一致）。
+
+### 32.7 stable-retro 发现语义与洛克人资源缺口（2026-11-20 派工前核实）
+- `stable_retro.data.list_games()` 默认 inttype=DEFAULT=**仅 stable**，且只收有
+  `rom.sha` 的目录、跨 split `sorted(set(...))` 合并重名（源码 data/__init__.py L373-382
+  已读）。拿它当"资源发现"会静默漏掉 contrib/experimental 与不完整目录 ⇒ 任务B 口径
+  改为显式根优先、统一只读盘点、逐 split 独立记录（任务书 §6 修订）。
+- 洛克人1 showcase 包无 rom_sha1，rom/base.state/Super Arm 巨石存档三个引用路径全部
+  不存在（mm_showcase 临时区已清）；roms_verify 两份候选 clean_boot_verified=false。
+  ⇒ 任务C 口径：8 项名单只作待核候选，资料研究与资源运行分开报（任务书 §7 修订）。
+
+## 33. MM1 武器 RAM 钉死与七要素标定本轮踩坑（2026-11-20 晚，authoring 第二轮）
+
+### 33.1 owned/current 地址实证与三条撤回
+- **owned=0x5D 位场**（bit=菜单行：1B 2E 3G 4I 5C 6F 7M，bit0=P 不画行）；写 0xFF 菜单出全 7 行、
+  写 0x40 只出 F 行（`ramdiff/w/bit_40/f0029.png` 亲看）。文献"0x5D=all_stages_complete"单一语义撤回。
+- **current_weapon=0x5F**，值表 0P 1C 2I 3B 4F 5E 6G 7M：菜单逐行装备 + `attempt(ram=)` 冻结差分
+  （`ramdiff/e/equip_table.json`），装色亲看互证（Bomb 绿 / Elec 奶油 / Fire 红 / Ice 淡紫）。
+- 撤回：`addr95=武器编号`（猜）；`0x6B..0x71=28` 能量补丁（开局即 28，no-op）。
+- 扫频假阳教训：0x42=FF 回标题、0x45=FF 右半屏 tile 坏、0x60/0x68=FF 菜单不画——
+  "面板非棕像素计数"把背景也算高分 ⇒ **命中必须亲看帧**，度量命中≠语义命中。
+
+### 33.2 调色板在菜单装备事件加载 ⇒ 生产宏必须真装备
+只写 0x5F 弹体**几何对但颜色错**（fire_4 火球渲成青色）。角色/弹体调色板只在菜单确认装备时加载。
+故 showcase trigger 宏 = `START 菜单 + Down×k + START 确认 + 射击`，补丁只留 owned=0x5D:FF；
+反例 = 同装备宏不按 B（ neg 也变色，正好暴露"认装色当释放"陷阱）。菜单行序 B E G I C F M P、
+光标起点 P ⇒ k：B1 E2 G3 I4 C5 F6 M7。
+
+### 33.3 calibrate 整轮结束才回写 ⇒ 中途崩溃丢已标参数（已修生产代码）
+calib 第 3/4 个要素抛错时，前两个已标好的 detection **一起丢**，生产 run 拿旧猜参全 fail
+（run7 四 fail 的 reason 全是旧 region/旧 rgb）。已改 `calibrate_showcase_pack` 逐要素原子回写
+（tmp + os.replace）。规矩：**凡"跑完才写盘"的批处理，回写粒度=单元**；失败重跑只补缺失单元。
+
+### 33.4 稀薄签名：整簇外框过不了余量闸门 ≠ 无签名（子窗搜索已落生产+selftest）
+thunder_beam 全屏三向闪电整簇外框占比≈0.03 < CALIB_MIN_MARGIN 0.05，但弹体交汇结 24×24 窗
+pos=0.181/neg=0。`calibrate_element_detector` 增加簇内滑稠密子窗重试；**闸门常数不动**，
+子窗仍走 `_calib_cluster` 同一套余量/可分性/面积闸门；整屏级簇（外框超面积）不做子窗救援
+（否则镜头滚动每个子窗都"稠密"会绕过局部性闸门，selftest D 反证）。selftest F/G：稀薄臂+稠密结
+救回 / 只有稀薄臂仍 RuntimeError。共享计数 863→**866**。
+
+### 33.5 Hyper Bomb 引信≈落地后 120 帧：extra 45 太短（已改 200）
+投掷后黑弹落地**坐着不爆**，f0220 才白爆（`ramdiff/bomb/fuse/f0220.png` 亲看）。
+检测帧必须落爆炸窗（候选表易混淆#5），extra 不足=正例里根本没有爆炸 ⇒ 标定"无签名"假象。
+
+### 33.6 dump(state=None) 是续跑不是重开：导航宏别重复 boot 段
+选关探针把 `NEUT+Start` 重复拼进每条 dump ⇒ 第二条 dump 在选关屏又按了一次 Start 直接确认进关，
+"Up 移动光标"假象。规矩：**无 state 的 dump 从当前帧续跑**；累积导航只拼增量段。
+
+### 33.7 Super Arm 选景仍缺（诚实缺口，不许顶包；2026-11-20 深夜根因升级）
+- **根因（裁带放大实证）**：Guts 出生段右高台上的"黄色块"=**敌兵**——4x 放大见双眼、
+  且帧间位移（`ramdiff/identity/zoom_lift6_f0201.png` vs `zoom_walk40_f0141.png`）。
+  出生段**根本没有可举 block** ⇒ lift1–lift6 六次尝试（含规范跳台/满跳+空中 Right50/
+  地面 Right40 对照）失败是场景无块，不是操作或传送带问题。旧"传送带左推抵消走位"
+  归因**撤回**（walk40 对照帧玩家不在裁剪区，归因证据不足）。
+- Cut Man 城口绿砖堆=**地形**不是可举 block（`ramdiff/cut/lift/f0110.png` 举空）。
+- **状态身份表（零帧加载截图实证，`ramdiff/identity/*.state.png`）**：
+  `base.state`(23191B)=Guts 出生段（生产 probe-rom 权威）；旧 `base_guts_block.state`
+  (13030B)=**Cut 城口**，已改名 `base_cut_city.state`；旧 `base_guts_conveyor.state`
+  (23013B)=Guts 出生段备份，已改名 `base_guts_spawn_backup.state`。
+  规矩：**状态文件名不等于关身份**；逐份零帧截图+导航出处双证定身份，字节哈希不等
+  可能只是敌兵/眨眼帧偏移（base.png vs guts/stage/f0671.png 布局同而 sha 不等）。
+- 元素 note 与 catalog blockers 已点名；pack super_arm.base_state 改指 `base.state`。
+- 下一步选景候选（文献 F2 L60 / F4）：Cut Boss 房 2 绿块 / Elec 关黄块；须导航到房再验举/投/碎。
+- **小图必须裁带放大**：256×224 全图目视把敌兵看成可举黄块两次（§33.8 同源规矩扩展到
+  "是什么"判断：身份/可交互性结论必须放大裁剪复核）。
+
+### 33.8 预览图坐标≠真实像素坐标
+Read 预览把 256×224 放大成 320×240；按预览读坐标量 region 会全偏（护盾火球第一次量到空区）。
+规矩：**坐标一律像素扫描/_load_rgb_grid 实测**，预览只用于"有没有/是什么"的目视判断。
+
+### 33.9 Fire Storm 双 check 已补齐（任务书要求火球+护盾）
+第二 check `fire_storm_shield_sig` = 环绕护盾火球 tight region [0.47,0.65,0.55,0.72] rgb(189,191,0)，
+f143 实测 pos 0.081 / neg 0.000（反例同装备无火 ⇒ 角色像素不算签名）。生产 run7c 双 check 正过反拒。
+
+### 33.10 MM1 选关光标=外圈循环，Up/Down 无效（2026-11-20 深夜实证）
+逐 hold 单步实测（每次 hold 方向 4–20 帧=1 步，自动重复阈值>20 帧）：
+Right×1=Guts、×2=Ice、×3=Bomb ⇒ **Right=顺时针外圈** Cut→Guts→Ice→Bomb→Fire→Elec→Cut；
+**Left=逆时针**（Elec=Left×1）；**Up/Down 实测光标不动**（hold Down 8 帧+延迟 60 帧仍 Cut）。
+光标边框**眨眼**⇒单张截图可能 blink-off 看不见，判光标位置必须 dump 一段窗取 blink-on 帧或放大复核。
+规矩：选关导航配方按"外圈循环步数"写（Left/Right 各 k 次独立 hold），不许按 2×3 网格 Up/Down 行/列写；
+预设 megaman1 的 Up+Right 净效果=Right×1=Guts（desc 已更正）。证据 `mm_showcase/ramdiff/sel/`+`identity/zoom_sel_*`。
+
+### 33.11 Super Arm 举块=必须"同层侧贴"，站顶/远距离均举空（park 为诚实缺口）
+- MM1 原生 Super Arm 只举**现成 block**（Maker/PoweredUp 的"凭空造块/站旁闪提示"属粉丝引擎，M7 排除）。
+- 可举 block 位置（文献 videochums 全文 L60/L69）：**Cut Boss 房 2 砖块** / **Elec Boss 房块** / Elec 中段 Magnet 房块；Cut 重赛房**无** block（L106）。
+- 举块判定=玩家与 block **同层侧贴**；站块顶按 B 举空（lift7 实证玩家站绿砖顶）、远距离按 B 举空（早期 cut/lift）。
+- Cut 关绿砖堆是否=可举 block **仍未实证**（lift7 站顶无效，未做同层侧贴对照）；Guts 出生段"黄块"=敌兵（§33.7）。
+- **park 决策**：盲宏把玩家摆到"块侧同层"反复失败（lift1–7），属逐款磨陷阱；不再盲试。下一步具体配方=
+  选关 Cut(默认)/Elec(Left×1) → _checkpoint_ 逐段导航到 Boss 房（每段 dump+亲看+save）→ 站块侧同层 → equip Guts+B 举 → 再 B 投 → calibrate。该导航子工程单列，不冒充已完成。
+- 现状：7/8 要素已 calibrate+生产 pass；Super Arm 挂 catalog blocker，8/8 后才出正式全量合辑。
+
+### 33.12 Guts 大坑不可越（相机锁+无空中控制）与 Elec 选景坐标（2026-11-20 夜，同_run 像素实测）
+- **测量法**：移动/相位结论必须**同_run dump 逐帧像素 bbox**（角色=蓝 b>140,g>90,r<100；绿平台=g>140,r<120,b<120；相机锚=岩壁右缘 world480）。禁止跨 dump 目视代数——本次 idle(g26) 与 jump(g33) 同帧平台 Δ≈38-43px，系平台曲线随玩家状态变，跨 dump 对齐是假象。
+- **Guts 不可越**：g33_meas 实测右移跳时相机把角色锁在屏幕中央（screen x≈116-124 恒定），绿平台在屏幕空间自右以 1px/f 逼近、最近 screen≈153-170；角色右缘≤148 ⇒ 恒差≥5-22px，**从顶 shelf 跳抓 platform1 机制上不可行**（MM1 无空中控制+相机锁）。Guts Boss 房前棕块（world≈3620）需越 bottomless 大坑（480→1180），唯一载体抓不到 ⇒ 放弃 Guts 作为 Super Arm 场景。
+- **Cut 出生段无块**：base_cut_city 右列绿砖=地形，授 Super Arm（dump patches 0x5D=255/0x5F=6）同层侧贴 B 举空（cut2 f0022），与 §33.7 一致。
+- **Elec 为下一选景**：map_elec.png（1024×5040，nesmaps 带标签，本地 ramdiff/gutsnav/）首批橄榄黄 Super Arm 块在 p1 底/p2 顶（world y≈1540-1770）邻梯、品红点标记；选关 Left×1（§33.10）。导航子工程单列。
+- **EmuHawk 启动回归**：段末 base.state 与 ROM-boot 均"看门狗 dead"即崩（此前同配置正常）；biz_helper.exe=搜狗输入法组件非模拟器；无残留 EmuHawk 进程。属环境故障，待下一会话诊断（config.ini/单实例/固件）。Super Arm 导航因此暂停，7/8 现状不变。
+- **★上条"环境故障"结论已撤回（同夜复测）**：手动带 session.lua 起 EmuHawk 加载 "Mega Man"/UxROM/NTSC 正常且 20s 不退；config.ini JSON 合法；单次干净启动即成功。真因=**快速重试时上一个 EmuHawk 尚未退净、锁住 work/rom.nes ⇒ 新进程即退 ⇒ 看门狗判 dead**（非环境/非 ROM/非 lua）。规矩：**串行一次一个模拟器，重试前先确认上一 EmuHawk 进程已退出**（context close 后留 1–2s 或 tasklist 核实无 hawk 再重开），别连续快速重启制造假故障。
+- **★Elec 选景已落地**：boot→PRESS START 屏在 f≈350（早于 f300 的法告屏按 Start 无效）→选关光标默认 CUTMAN→Left×1=ELECMAN→Start 入关；入关演出(ELECMAN/C 传送)约需再 ~250 帧，**idle 220 不够、480 到玩法出生段 READY 屏**。已存 `ramdiff/gutsnav/elec_spawn.state`（frame 1380，save op 收尾）。下一步=从该 checkpoint 逐段导航到最近可举橄榄黄块（地图 p1底/p2顶 world y≈1540-1770 邻梯）→同层侧贴 equip Guts+B 举/B 投→calibrate。
+
+### 33.13 ★base.state 是 Guts 出生段而非干净 boot：旧"选关宏"实为开暂停菜单，cut_spawn.state 已用真·fresh boot 重建（2026-11-20 深夜）
+- **根因（推翻旧前提）**：`base.state` 不是 title/干净 boot，而是 **Guts Man 出生段（已在关内）**。证据：① 以 `state=base.state` 跑"选关宏"（idle→Start→idle→Start）后 dump 末帧=棕岩+传送带+黑城廓=Guts 采石场（与 g33_meas 同景），非 Cut 城市；② 单独 `state=base.state + Start` 后 dump=**暂停菜单**（棕色框+Mega Man 头像+武器编号"02"），关内按 Start 只会开暂停菜单，根本不会进选关。⇒ 此前所有"base.state→选关→Cut/Elec"的宏实际都在 Guts 关内反复开合暂停菜单，产出的 `cut_spawn.state`(旧,23354B) 是 **Guts 传送带漂移态**、不是 Cut。旧"cut2 绿砖=地形""Cut 出生段无块"两条结论的截图其实是 Guts 画面（结论方向仍对，但证据错位）。
+- **正解=真·fresh boot 选关**：StateSession 启动即把 ROM boot 到 title（见 `mm_showcase/diag_boot.py`：拷 rom.nes + STATE_LUA_TMPL + EmuHawk --chromeless）。**不要** load base.state；`dump(..., state=None)` 从 title 起跑。实测时序（megaman1_ntsc_hd.nes）：PRESS START 字约在 **f≈600-680** 才出现（f350 太早、按 Start 无效），f720 按 Start→f877 见 **选关六格网**（CUT/GUTS 顶行、ELEC/ICE 中行、FIRE/BOMB 底行，默认光标=CUTMAN 左上）。再按 Start→传送演出→约 idle 1300 帧到 Cut 玩法出生段 READY（青天+灰楼+绿砖台，与 map_cut.png 左下一致）。
+- **重建件**：`ramdiff/gutsnav/cut_spawn.state`（新,13013B，macro+save 收尾，已 dump 复核为 Cut 城市）。旧 23354B 作废。
+- **Super Arm 块位置（文献+地图定案）**：MM1 里 Mega Man 的 Super Arm 只对特定"Break 块"生效——**靠近时该块会闪烁**（GameFAQs Whammychip 原话），绿砖/棕岩/橄榄堆全是地形举空（解释 e8/e10/cut2 全败）。Break 块只在 **Cut 关竖井 ledge** 与 **Cut/Elec Boss 房中央**（Elec 关另有 Magnet Beam 房围块）。map_cut.png 图例"Break"=品红块，竖井在 map x≈800-900 上行、品红块在 ledge 上。
+- **剩余=导航子工程**：从 cut_spawn 到竖井 Break 块需右移约 3 屏 + 爬竖井（有 Flyer 敌兵、绿砖柱阻挡），是逐段 checkpoint 平台跳跃；盲宏右移会顶墙（cv f0119 顶绿砖柱）。Elec 迷宫到 Magnet Beam/Boss 房更长。此导航为独立子工程，非"缺干净 ROM/缺 checkpoint"类硬阻塞——cut_spawn/elec_spawn 两个真 checkpoint 现已就绪。
+
+## 34. BizHawk 链式弹窗：第一个框点掉后第二个框没人管，SNES 回放 0 帧被当成"卡死"（2026-11-22 实跑，selftest 1066→1088）
+
+- **现象**：热门名作矩阵里 SNES 只有 F-Zero 出了画面，洛克人X2（5628）连续两格 `stalled_killed`、心跳 0 帧。旧产物只有 `dismissed=1` 一个数字，问不出"到底还挡着谁"。
+- **根因（产物级证据）**：BizHawk 2.9.1 一次弹**两个**框。第一个 `This EmuHawk is privileged`（类名 `WindowsForms10.Window.8.app…`）点掉之后才弹第二个 `Warning` / 类名 `#32770`，正文 `Couldn't find firmware SNES+CX4.  Will attempt to continue…`。`watchdog.watch_process()` 旧逻辑每轮停滞只点一次框（`pending_since` 一旦置位就不再点，只等宽限然后树杀），所以第二个框永远没被点 ⇒ 0 帧、`stalled_killed`。旧代码里 `dismissed=1` 恰恰是"只点了一轮"的证据，而不是"只弹了一个框"。
+- **归因为什么以前做不到**：`dismiss` 只回计数、框正文一点都没落进产物；停滞瞬间屏幕上有什么也没记。本轮把三样补进返回值：`dismissed_dialogs`（点过的框标题+子控件正文）、`stall_windows`（停滞期所有可见非主窗口，含框表认不出的）、`windows_at_kill`（放弃那一刻的窗口）。`tas_replay.py` 把整个 watchdog dict 落进 `run_*.run.json`，所以这三样在生产产物里可查。
+- **修复**：`watch_process` 改成"窗口集合一变就再点一轮"（`_window_key` 比较 title+class+texts），集合不变且过了 `dismiss_grace` 才收手，外加 `MAX_STALL_ROUNDS = 8` 防止两个框互相反复弹时不收手。纯函数判定 `_should_dismiss` 没动，主窗口误伤那条老规矩（§热血足球2）仍然成立。
+- **真机验证**（走生产入口 `tas_replay.py`，非脚本代跑）：X2 5628 / 600 帧 → `dismissed=2`、`stalls=2`，两个框的正文都进了产物，见 `F:\taspipe_scratch\x2_stall_probe3\tas_replay_stdout.txt`（1690B，sha256 前缀 `aba4f05a76ecce1f`）。看门狗这条缺陷到此关闭。
+- **闸门**：`selftest.test_bizhawk29_compat()` 里加两臂夹具——链式臂（点完第一个才弹第二个）必须点 2 轮且 `termination=exited`、两种窗口都进产物；静止臂（同一个框点了还在）必须只点 1 轮然后 `stalled_killed`，`windows_at_kill` 记下那个框。恒量反证格另钉"不去重时同一窗口重复三次"。全套 selftest **1088/1088 OK**（上一轮 1066，本次 +22 格）。`test_tas_watchdog.py` 17 项仍全过。
+
+## 35. 洛克人X2/X3 仍 0 帧 = 本机缺 CX4 固件，不是看门狗、不是 BizHawk 版本（2026-11-22 文件级盘点，待用户批）
+
+- **一句话**：框点掉了，X2 还是 0 帧（`last heartbeat 0`）。因为 bsnes 跑 CX4 卡带要真固件，弹的是"尝试继续"，实际连第 1 帧都没推进。
+- **反证（排除"BSNES 慢"）**：同一入口、同一 BizHawk 2.9.1、同 SNES/BSNES，F-Zero 600 帧 `termination=complete`、`watchdog.elapsed=44.6s`（`F:\taspipe_scratch\famous_run_20261122\f_zero_playthrough_7406\run_6f3bad4a5b3a.run.json`）。X2 在同样的时间预算里连心跳文件都没写第一帧 ⇒ 不是速度问题。
+- **文件级证据（电影头自报需求）**：SNES 电影库 252 个 `.bk2`，逐个解开内层读 `Header.txt`，只有 **5 个**声明固件需求，且要的是同一个文件：
+
+  | 电影 id | GameName | Core | 需要 | 固件 SHA1 |
+  |---|---|---|---|---|
+  | 3250 / 5628 | Mega Man X2 (USA) | BSNES | CX4 | A002F4EFBA42775A31185D443F3ED1790B0E949A |
+  | 6891 | Rockman X2 (Japan) | BSNESv115+ | CX4 | 同上 |
+  | 3241 / 3247 | Mega Man X3 (USA) | BSNES | CX4 | 同上 |
+
+- **本机为什么没有**：`F:\开源掌机教程\02-模拟器库\BizHawk\` 下 9 个 build（2.3/2.3.1/2.8/2.9/2.9.1/2.10/2.11/2.11.1 + 2 个安装包）的 `Firmware\` 目录**全为空**；本地那两个官方安装包 zip 里也**没有任何 cx4/dsp 固件条目**（BizHawk 本来就不随带固件）。⇒ 补这个文件属于"固件准备"，按既定口径归用户批准，我没擅自下载、没往模拟器目录写东西。
+- **影响面**：5/252 部 SNES 电影（约 2%），但里面包含热门名单上的 **Mega Man X2（T2，洛克人X 系列 1,160,000）** 和 **Mega Man X3（T2）**——即"是否所有热门 SNES 都能跑通"这个问题目前唯一的硬缺口。同一份 `cx4.bin` 解锁全部 5 部。
+- **不做的事**：不换核强跑（这批电影头写死 `Core BSNES`，换 Snes9x 会立刻 desync，跑出来的画面不能算通关证据）；不把 0 帧格洗成"未测/不适用"。X2 在覆盖台账里保持 `stalled_killed + 缺固件` 的诚实档位。
+- **顺带记一个产物缺口**：`tas_replay.py:560` 在 `n_frames == 0` 时 `sys.exit(2)`，`main()` 在编码前就退出，所以**0 帧的失败格没有任何产物**（`F:\taspipe_scratch\x2_stall_probe3\` 里没有 `run_*.run.json`，那次的 watchdog 证据只存在于 stdout）。归因只能靠命令行输出，进不了台账。是否把"失败格也落一份 run.json"接进生产，等用户点头再动（涉及产物契约变更）。
+
+## 36. SNES 回放吞吐实测：整窗严格等于"启动 32.1s + 帧/60"，解限速无效——瓶颈是逐帧截图落盘（2026-11-22 实跑）
+
+- **三档斜率**（F-Zero 7406 / SNES / BSNES / BizHawk 2.9.1，走生产入口 `tas_replay.py`，逐格串行、每格前确认上一 EmuHawk 已退净）：
+
+  | 帧窗 | watchdog elapsed | 成片 |
+  |---|---|---|
+  | 300 | 37.1s | `w300.mp4` 64,355B |
+  | 900 | 47.1s | `w900.mp4` 1,714,141B |
+  | 1500 | 57.1s | `w1500.mp4` 5,143,361B |
+
+  两两差都是**整 10.0s / 600 帧** ⇒ 稳态 60.0 fps，固定启动成本 32.1s。产物在 `F:\taspipe_scratch\snes_fps_20261122\`（含 `slope.json`）。NES 侧 Donkey Kong 5254 的 600 帧 9.98s 也是整 60fps ⇒ **60fps 是采集口径的共同上限，不是 SNES 慢**。
+- **整片成本 = 帧数 ÷ 60**：F-Zero 39.4min、Mega Man 7 41.3min、Mega Man X2 31.0min（有固件之后）、DKC2 26.8min、Zelda 22.3min、SMB 那条 5,788,209 帧 = **26.8 小时**。
+- **"大概是被限速了"这个假设被实测否证**，三条路都量过：
+  1. `client.speedmode("maximum")`：一臂报 1500 帧但产物全不在（无 `cap.txt`、frames 目录空、无 mp4）；另一臂可复现地 **0 帧 + `stalled_killed`**，`windows_at_kill` 记下 `Lua Console` 窗口。两臂互斥 ⇒ 那个"成功"数不作数，且字符串写法实测会把脚本打死。
+  2. `client.speedmode("turbo")`：同样 0 帧、`stalled_killed`、弹 `Lua Console`。
+  3. `client.speedmode(400)`（数字形式，仓库音频线一直在用）：跑通，1500 帧**逐帧 SHA 与限速臂零差异**（`compared: 1500 | byte-diff: 0 | missing: 0 | extra: 0`，见 `s400_full.txt`），画面完全等价；但 `elapsed 58.6s` vs 限速臂 `57.1s` ⇒ **零提速**。
+- **定论**：速率由"每帧同步写 1280x720 PNG"决定，不由 speedmode 决定。要提速只能换采集路径（降分辨率、抽帧、或原生 A/V dump），加开关解决不了。
+- 因此试验用的 `--speed` 开关**已整体回退**：`tas_replay.py` 回到 sha `8ed7e54f3127776a`（与改前逐字节相同，备份在 `F:\taspipe_scratch\doc_edits_20261122\before\tas_replay.py`），回退当轮 selftest 复跑 1088/1088 OK（那还是补画面闸门之前的计数；§37 落地后全套是 1094/1094）。不留实测无效的旋钮。
+- **调用口径纠错（我自己踩的）**：`tas_replay.py --out` 要的是 **mp4 文件路径**；传目录时 ffmpeg 退 `4294967274`(EINVAL)、整格 rc=1，看起来像生产件坏了，其实是调用方错。X2 那次 0 帧的结论不受影响（它在编码前就 `exit(2)` 了）。
+- **顺带查出的入口不一致（实测过，未修，等点头）**：能把 `core/system` 按电影 Header 传下去的只有 `taspipe.auto`（走 `backends._nes_inputs`）。`record full --pub` 和 `pipeline run --pub` 两个 CLI 都吃函数默认值 `core="NesHawk", system="NES"`，也没有 `--core/--system` 参数。
+  - 实测这轮（18:16，`F:\taspipe_scratch\pic_gate_20261122\fzero.log`）：`python -m taspipe.record full --pub 7406 --frames 300 --out …` 帧确实采到了、`run_0ff725f1966b.mp4`（64,779B）也编出来了，随后在 `record.py:297` 崩 `FileNotFoundError: 'F:\BaiduNetdiskDownload\rom\snes\未来赛车.zip!未来赛车.sfc'`。链路是：`system` 被默认成 NES ⇒ `is_fc=True` ⇒ 进"FC 自动封面边框"分支 ⇒ 那行用 `Path(rom).read_bytes()` 算 ROM sha1，而 `zip!条目` 形式的规格不是文件系统路径，`read_bytes()` 必然失败（同"用 `isfile()` 判 `zip!条目` 必然 False"那一族坑，正确做法是走生产件 `split_rom_spec`）。
+  - **后果是产物级缺口**：mp4 留下了，`run_*.run.json` 一份没有 ⇒ 这一格进不了台账，只能靠 stdout 归因。`auto`/`pipeline` 显式传 `bezel="off"`，绕开了这条分支，所以 78 格批次从没暴露它。
+  - 该修的两处（属生产契约变更，等批准再动）：①ROM 取样改用现成 `split_rom_spec`，不许自己 `read_bytes()`；②`record`/`pipeline` CLI 的 `system/core` 从 profile 推出来（或补 `--core/--system` 参数）。
+- **副产品**：§34 新加的 `stall_windows` / `windows_at_kill` 第一次真用上了——`Lua Console` 不是对话框，旧产物里永远看不见这种"框表外窗口"。
+
+## 37. 矩阵格"600 帧几乎全黑"照样 6/7 pass：这条闸门链没有"看图"这一格（2026-11-22 实跑，selftest 1088→1094/1094）
+
+- **现象**：`record.py` 的 full_replay 链原本只有七项——`replay_no_desync` / `watchdog_clean_exit` / `endpoint_reached` / `video_encoded` / `final_video_frames` / `final_video_duration` / `audio_present`，**没有一项看过像素**。Mega Man 7 6092 那格 600 帧，30 点采样多数 `mean_luma≈3.6`（近黑），仍 6/7 pass。
+- **先更正我自己**：选题规则 §11 原文写"MM7 画面全黑"是过度概括（当时只看了 t=3/6/9s 三个时间点）。逐帧实测是 0→126，个别标题/厂标帧亮着；文档已就地改成带亮度的说法。
+- **已有闸门为什么没接住**：`picture_dead_tail` / `tail_stasis` 长在 `control.py` 那条链上，而且 `_picture_health` 只在 `completion == pass` 时才参与降级；矩阵这条链不经过它们。
+- **补法**：`record.picture_content()` 复用 `detect.py` 现成插件 `frame_luma_range`（不另写像素码），整窗均匀采样 ≤12 帧：
+  - 全黑 ⇒ **inconclusive**（黑场可能是合法淡入，判 fail 会误伤）；
+  - 有一帧亮 ⇒ pass，`reason` 点名第几帧 + 实测 `mean_luma`，阈值判错看得见；
+  - 0 帧 ⇒ inconclusive「无图可看」；帧数虚报 ⇒ 只按真存在的 PNG 判；
+  - 阈值 `PICTURE_LUMA_MIN = 8.0`，采样数 `PICTURE_SAMPLE = 12`，check_id=`picture_content`，直接落进 `run.json` 的 checks。
+- **边界（不冒认）**：它只回答"有没有画面"，不回答"进没进玩法"。DKC2 那种窗口里只有 Rareware / Nintendo 厂标，本闸门按设计放行——那是帧预算问题，不该由这条闸门冒充答案。
+- **聚合后果（查了代码才写）**：`schema.Verification.verdict` 是"任一 fail 即 fail，无 fail 但有 inconclusive 即 inconclusive"，所以一格画面全黑会把 `run.json` 顶层 verdict 拉到 `inconclusive`；`record.py:476/485` 的退出码只认 `fail`，故仍是 rc=0——**产物不会"红"，只有 verdict 字段会变**，看台账的人要读 verdict 而不是 exit code。
+- **自检**：六格新断言进 `test_bizhawk29_compat`（该函数原本不 `import os`，补了 `_os`），含两条恒量反证：阈值取 0 时全黑也会被算"有画面"；帧数虚报时不许拿缺图当有图（`seen == [0]` 精确断言，不写 `A or B`）。全套 **1094/1094 OK**，`test_tas_watchdog.py` 17 passed。
+- - **产物级验证（第一格）**：`python -u -m taspipe.auto run --game f-zero --type playthrough --pub 7406 --frames 300 --out F:/taspipe_scratch/pic_gate_20261122/fzero_auto` → `f_zero_playthrough_7406/run_2a33c006c4a4.run.json`（4,044B）。checks 里新增的那一格原样落盘：`picture_content = inconclusive`，`reason="0 帧，无图可看"`，`n_frames=0 / expected=300 / termination=stalled_killed`。这一格整片是 **fail**（`watchdog_clean_exit` / `endpoint_reached` / `video_encoded` 三项真 fail），**闸门没有把它洗成通过**——这正是 §39/§40 记的那个 privileged 框 0 帧故障，被这条新闸门如实标成「无图可看」而不是「跑完了」。
+- **「有画面 ⇒ pass」那一臂还没拿到**：同一出版物补点修好后重跑再记（见 §40），没跑到之前不许写成已验证。
+- **"有画面 ⇒ pass"那一臂还没拿到**：同一出版物补点修好后重跑再记（见 §40），没跑到之前不许写成已验证。
+
+## 38. 判产物的命令不许接管道：`| tail` 的退出码是 tail 的（2026-11-22 自己踩了两次）
+
+- **事故一**：`python -u tas_replay.py ... | tail -40` 报 rc=0，我据此以为那格跑成了；实际 stdout 显示 **0 帧 / RuntimeBlocked**。rc 是管道末端 `tail` 的。
+- **事故二**：`python -u -m taspipe.auto plan ... | tail -30` 超时转后台，结束后面板说 exit 0，但输出文件 **0 字节**——`tail` 的缓冲随进程切换丢了，计划状态根本没落盘。我因此差点把"plan ready"写进结论。
+- **口径**：凡是"退出码或输出要当证据"的运行，一律 `> 日志文件 2>&1; echo rc=$?`，日志落在 `F:\taspipe_scratch\...`，事后直接读文件；要截断就先落文件再看尾部。这条只能靠调用纪律，代码闸门管不到 shell 管道，所以写进说明书而不是 selftest。
+
+## 39. ROM 写成 `压缩包!条目` 时封面分支必崩：三处平台口径里只有一处走了拆分取字节（2026-11-22 实跑）
+
+- **现象**：`record.py` 的 full_replay 链在 FC 边框那一步要 ROM 的 sha1 去查天马封面，写法是
+  `hashlib.sha1(Path(rom).read_bytes())`。SNES 的 ROM 在台账里普遍是
+  `F:\BaiduNetdiskDownload\rom\snes\零式赛车.zip!零式赛车.sfc` 这种"压缩包!条目"，
+  `Path(...).read_bytes()` 把整串当一个文件名 ⇒
+  `FileNotFoundError: [Errno 2] No such file or directory: '...zip!...sfc'`，整条链 rc=1。
+  崩在**验收之前**，所以那一格既没有 run.json 也没有成片。
+- **为什么以前没炸**：这条分支只在 `bezel != "off"` 且有成片时执行，而过去全部实测样本是 NES 散文件 ROM；
+  第一次把 SNES 电影接进 `record full` 就撞上。同文件里的 `sha256_resource`、`pipeline.py` 早就用
+  `split_rom_spec` 取条目字节，**只有 sha1 这一路是裸读**——同一把尺子开了两个端口。
+- **修法**：`record.py:297` 换成 `schema.sha1_resource(rom).upper()`；`auto.py:_nes_inputs` 附近
+  同一写法的裸读也换掉。消费者是 `exporter.find_cover(rom_sha1=)`，它比的是"ROM 条目字节的 sha1"，
+  所以生产者必须按条目取字节，而不是把异常吞掉。闸门本来就在（`selftest.py:3522` 用合成
+  `zip!条目` 钉住 `sha1_resource` 等于条目字节 sha1），这次是把裸读的那两处接到那把尺子上。
+- **产物级验证**（`record full --pub 7406 --frames 300`，输出 `F:\taspipe_scratch\pic_gate_20261122\fzero2\`）：
+  `run_5822202c3811.run.json` 真生成了，rc=0；
+  `n_frames 300 / expected 300 / termination=complete / dismissed=1 / stalls=1 / elapsed=41.1s`；
+  `picture_content` pass（第 150 帧有画面，mean_luma=87.2，min=8.0，共采样 7 帧）；
+  封面那格不再抛异常，如实记 `bezel_cover = inconclusive`，里面带着算出来的
+  `sha1=D3EFD32B68F1FE37A82DB9D9929B7CA7CC1A3AF4`。
+  这个 sha1 我另外独立核过一遍：直接 `zipfile` 读条目 524,288B 求 sha1 = 同一个值，
+  而 `7406.bk2` 的 Header 里 `SHA1` 也写着它——三方同源，说明取的是条目字节而不是整包。
+- **顺带查出的口径缺陷（见 §41）**：这一格本来不该走 FC 封面分支。SNES 的出版物被当成 NES，
+  才会拿 SNES ROM 的 sha1 去查 FC 封面缓存。
+
+## 40. 任务级 verdict 会说谎：台账两格都写 inconclusive，job.json 却报 pass（2026-11-22 实跑，selftest 1098→1110）
+
+- **现象**：`F:\taspipe_scratch\pic_gate_20261122\fzero_auto2\f_zero_playthrough_7406\` 这一格，
+  `job.json` 写 `"verdict": "pass"`，而同目录 `ledger.json` 里 capture 和 export 两条
+  `verification_verdict` 都是 `inconclusive`（capture 的 run.json 里 `audio_present = inconclusive`）。
+  也就是说 job 层从没读过台账的判定。
+- **旧口径**：`run_playthrough` 的 verdict 只看 `failed_stage is None and deliverable_ref`——
+  "没崩 + mp4 存在"。
+- **为什么严重**：`record.py` 的 CLI 只在 `verdict == "fail"` 时返回非 0，inconclusive 照样绿灯退出。
+  读者拿 job.json 的 pass 当"这格整体验过"，实际音频轴根本没测。这属于"把重试/缺口说成通过"那一类，
+  不是措辞问题。
+- **修法**：新增 `auto._job_verdict(ok, stage_verdicts)`，按 **fail > inconclusive > pass** 聚合，
+  并且**空台账不给 pass**（没有证据就不算验过）。`run_playthrough` 从 `out_dir/ledger.json` 现查各格
+  verdict（键名 `verification_verdict` 与 `Ledger.complete` 同源），同时落一个 `stage_verdicts` 数组——
+  出了问题能一眼看出是哪格拖的，而不是一个笼统的 inconclusive。
+- **自检**：真值表 5 格 + 两条恒量反证（链路失败但阶段全 pass 仍判 fail；空台账不许 pass），
+  再加 2 格**接线证明**：patch 掉 `pipeline.run_chain`，用**真** `Ledger` 写
+  capture=pass / export=inconclusive，断言 `run_playthrough` 返回
+  `stage_verdicts == ["pass", "inconclusive"]` 且 verdict 为 `inconclusive`——
+  只测纯函数不能证明生产代码真去读了台账。全套 `SELFTEST OK 1110/1110`，
+  `pytest test_tas_watchdog.py` 17 passed。
+- **诚实边界**：这一改只让 job 层的**判定**诚实，不补音频。`--audio` 那条轴仍未实测，
+  要翻成 pass 得真验过，不能靠改聚合规则。
+- **产物复验**：同一 out_dir 重跑 `python -u -m taspipe.auto run --game f-zero --type playthrough
+  --source movie --pub 7406 --frames 300`，指纹 `71cc978a…` 不变 ⇒ `reused_capture=true /
+  reused_export=true`（没重开 EmuHawk），job 层从
+  `"verdict": "pass"`（修复前，见 `auto_run2.log`）变成
+  `"verdict": "inconclusive"` + `"stage_verdicts": ["inconclusive", "inconclusive"]`
+  （`auto_reuse.log`，rc=0）。台账一字未动，只是判定不再往上冒——这正是要的效果。
+
+## 41. SNES 出版物被三个 CLI 当成 NES：槽位/核心名终于由注册表决定，不再吃函数默认值（2026-11-22 实跑，selftest 1110→1136）
+
+- **现象**：修完 §39 再看那一格的出证，发现 `record full --pub 7406`（F-Zero，SNES）里挂着一条
+  `bezel_cover = inconclusive`，理由是「**FC** 自动边框：本地无 sha1=… 的天马封面」——
+  一本 SNES 出版物拿着 SNES ROM 的 sha1 去查 **FC** 封面缓存；同一次产物里 `audio_present`
+  的文案也写死「NES 发行版 2.8 实测不可用」。像素没问题（300/300、画面内容 pass），
+  **错的是判据所属平台**。
+- **根因**：三层函数都把默认值写成 NES——`record.run_full(core="NesHawk", system="NES")`、
+  `pipeline.run_chain(同)`、`BizHawkNESBackend.run_batch(同)`；而 `_nes_backend_from_registry()`
+  只返回 `(backend, profile, movie, rom)`，平台信息在 `assess` 里算出来了却没往上传。
+  三个 CLI（`record full` / `pipeline run` / `backends run-nes`）于是全部吃默认值。
+- **为什么片还是跑出来了**：BizHawk 真正加载哪个核心由电影自己说了算——
+  `7406.bk2` 的 Header 写着 `Platform SNES / Core BSNES / emuVersion GIT HEAD#2fc4683 /
+  SHA1 D3EFD32B68F1FE37A82DB9D9929B7CA7CC1A3AF4`。槽位名错填成 NES 只影响
+  `PreferredCores` 写哪个键，没拦住这次回放，但把录制层的两条判据带偏了。
+  **这就是"产物绿灯 ≠ 口径正确"**。
+- **修法（收成一个权威，不开第二个端口）**：
+  1. `registry.BIZHAWK_SYSTEMS`（别名表）+ `registry.bizhawk_replay_inputs(assess, movie)`：
+     `platform_code` 优先，缺了才读 bk2 Header 自述，并在返回值里写明 `platform_source`；
+     **未知平台直接 `SchemaError`，不兜底 NES**；Core 两处都查不到也拒（猜核心名=用错核心跑片）。
+  2. `_nes_backend_from_registry` 改返回 6 元组（多出 `system`、`core`），三个调用点都传下去；
+     解析失败转成 `SystemExit`，与既有的「不可回放」出口同一口径。
+  3. `auto._BIZHAWK_SYSTEM` 改成引用同一张表（`R.BIZHAWK_SYSTEMS`，自检钉 `is`），不再抄第二份。
+  4. `record.run_full` 把 `system`/`core` 写进 `run.json` 顶层——以后这类口径错在产物里就看得见，
+     不用回头读代码。
+  5. FC 封面判定从内联条件抽成纯函数 `record.fc_cover_branch(bezel, system)`（这条线正是误伤点）；
+     音频闸门改名 `headless_audio_gate(system)`，文案区分「NES 上实测不可用」与
+     「本平台未单独实测，只作已知缺口参考」——不把 NES 的测量说成全体。
+- **产物双臂**（逐格串行，每格前确认上一 EmuHawk 已退净；两格都在
+  `F:\taspipe_scratch\pic_gate_20261122\`）：
+  | 臂 | 命令 | 结果 |
+  |---|---|---|
+  | SNES | `record full --pub 7406 --frames 300 --out …/fzero3` | `system=SNES core=BSNES`，检查项里**不再有 bezel_\***，300/300 `termination=complete`，`picture_content` pass（第 150 帧 mean_luma=87.2，共采样 7 帧），`audio_present` inconclusive 带「SNES 未单独实测」，dismissed=1 / elapsed 41.6s，rc=0 |
+  | NES 控制臂 | `record full --pub 5246 --frames 300 --out …/contra5246` | `system=NES core=NesHawk`，`bezel_cover = inconclusive`（sha1=B6B07EE76492ED475F39167C89B342353F999231）⇒ FC 分支对真 NES 仍然生效，300/300，`picture_content` pass，rc=0 |
+  修复前后同一 SNES 格的 `picture_content` 数值逐字相同（frame 150 / 87.2 / 7 帧），
+  说明这次只动口径、没动像素。
+- **自检**：`SELFTEST OK 1136/1136`（+26 格）：别名表 6 格、未知平台拒绝 4 格 + 报错文案 1 格、
+  Header 兜底与来源标注 3 格、`fc_cover_branch` 7 格 + 反证 1 格、音频文案两臂 2 格、
+  「auto 与 registry 同一张表」1 格等；`pytest test_tas_watchdog.py` 17 passed。
+- **没做/边界**：未知平台现在直接拒，意味着 GBA/MD/PCE/PS1 那批走这三个 CLI 时会明确报错，
+  而不是像以前那样静默塞进 NES 槽位。BizHawk 对这些平台的槽位名我**没有在本机实测过**，
+  所以不凭猜登记进表——真机标定后再加。`auto` 的要素/状态任务没接这条 resolver（它们有自己的
+  平台来源），本轮未改。
+
+
+## 42. 槽位一致性闸门：错平台不再烧 60 秒才发现（11-22 深夜）
+
+### 42.1 为什么要再加一道闸门
+
+`record/pipeline/backends` 三个 CLI 写死 `system="NES"` 的缺陷已经在 §41 修掉，调用点
+现在都从 `registry.bizhawk_replay_inputs` 取槽位。但函数默认值还留在那儿：
+`run_full(..., core="NesHawk", system="NES")`、`run_chain(..., core="NesHawk", system="NES")`。
+任何一个新调用点忘了传参，就会再一次「SNES 电影进 NES 槽位」，而当时的表象是
+**60.4 秒 0 帧、watchdog 判 stalled_killed**——看起来像电影坏了，实际是槽位给错了。
+删默认值会让 `statejump` 等一批调用点当场炸；所以改成**启动前硬闸**：电影自己的
+Header 说它是谁，就跟要用的槽位比一次，不一致就直接拒。
+
+### 42.2 闸门本体
+
+新增纯函数 `taspipe/record.py:slot_conflict(movie, system)`，接进 `run_full()` 开头
+（`expected_frames` 之后、`_run_id()` 与 `tas_replay.run_replay` 之前）：
+
+- 平台名来自 `registry.read_bk2_header`，它自己会处理「外层 zip 里再包一个 .bk2」的
+  转换件形状；
+- 两边都用 `registry.BIZHAWK_SYSTEMS` 归一（FC/Famicom→NES，SFC/Super Nintendo→SNES）；
+- **只有两边都认得且确实不同才拦**，返回的理由点名「Header 声明是谁、槽位是谁、
+  槽位该从哪来」；
+- 读不到 Header、Header 没有 Platform、名字不认识（GENESIS/空/None）⇒ 返回 None 不拦。
+  缺声明不等于声明不符；未知槽位该由 `bizhawk_replay_inputs` 拒，不在这里重复判。
+
+不匹配时抛 `SchemaError`，所以拦在启动前：不启动 EmuHawk、不占 ROM 锁、不烧 60 秒、
+产物里不会留下一格看起来像「电影有问题」的 stalled_killed。
+
+### 42.3 真片逐格核对（不是夹具）
+
+对台账里 4 部真电影跑 `slot_conflict`：
+
+| pub | 台账平台 | Header Platform | system=NES | system=SNES | system=FC | system=None |
+|---|---|---|---|---|---|---|
+| 5254 Donkey Kong | NES | NES | None | **拦** | None | None |
+| 5628 Mega Man X2 | SNES | SNES | **拦** | None | **拦** | None |
+| 6849 Donkey Kong Country 2 | SNES | SNES | **拦** | None | **拦** | None |
+| 7406 F-Zero | SNES | SNES | **拦** | None | **拦** | None |
+
+拦下的理由文案（逐字）：`电影 Header 声明 Platform=SNES（归一 SNES），但回放槽位是 NES
+（归一 NES）；槽位应取自台账 platform_code或该 Header，别用默认值`。
+（原始输出见 `F:\taspipe_scratch\doc_edits_20261122\slotgate_probe.txt`，914 字节，
+生产函数只读跑的，不是夹具。）
+
+自检计数 **1136 → 1143**（+7 格：SNES 电影配 NES 槽位拦下并点名两边、同一本电影配对
+槽位不许亮（恒量反证，只有 system 变）、FC/NES 别名归一不许误报、槽位不认识时不拦、
+文件不是 zip 时不拦、zip 里没 Header.txt 时不拦（缺声明 ≠ 声明不符）、外层 zip 包内层
+bk2 也要读得出 Platform）。`SELFTEST OK 1143/1143`，rc=0。
+
+### 42.4 解释器口径坑：Anaconda 跑 selftest 会假报「代码坏了」
+
+`python -m taspipe.selftest` 用 `D:/Anaconda3/python.exe`（3.12.7）跑，在 `test_audio()`
+的 `import pyaudiowpatch` 处 traceback，rc=1，日志只有 71 行——看着像刚改的代码炸了，
+其实本机生产解释器是 PATH 上的 `python`（3.13.3，装了 pyaudiowpatch）。
+**口径：taspipe 一律用 PATH 上的 `python`，不要用 Anaconda。**
+
+### 42.5 Mega Man X2 卡死的归因：撤回「槽位错了」，也撤回「芯片字节闸门」
+
+5628 是台账 25 部可回放里唯一 `stalled_killed` 且 **0 帧**的一部。两条候选解释：
+
+1. ~~槽位写死 NES~~ —— 不成立。5628 是走 `auto` 跑的，而 `auto._nes_inputs` 写死 NES
+   那条在 11-22 早上就修了；同批 6849/7406/6092 三部 SNES 出片正常，电影 Header 也
+   自述 SNES（§42.3）。0 帧不是槽位造成的。
+2. **CX4 固件缺口**（与 §待批的 CX4 同一件事）：本机 BizHawk-2.9、2.9.1、2.11 三棵树
+   里 `cx4*` 文件 0 个，`Dev/Chip` 目录压根不存在；而 Mega Man X2 按公开资料是 CX4
+   游戏。**一致，但还不是证据**——那趟 diag 只弹过一个「This EmuHawk is privileged」
+   对话框（watchdog dismissed=1），没有第二条写着 CX4 的错误。
+
+我本来想把这条做成闸门（读 SNES ROM 头 `$7FD5` 的芯片 nibble，缺固件就不启动），
+但按老规矩先拿已知答案自检，**失败**：
+
+| pub | 应为 | 我的多偏移解析读成 |
+|---|---|---|
+| 7406 F-Zero | 无特殊芯片 | none ✔ |
+| 5628 Mega Man X2 | CX4 | none ✘ |
+| 6849 DKC2 | SA-1 | DSP-1 ✘ |
+| 6092 Mega Man 7 | 无特殊芯片 | DSP-1 ✘ |
+
+四部里三部读错 ⇒ 偏移猜法不可信，**这个闸门作废，不写进生产代码**。
+
+补一条实测：槽位闸门落地后 5628 连跑三档切片，**60/60、600/600、3000/3000 帧全部
+`termination=complete`、`desync=False`**，原来那趟 600 帧 0 帧 `stalled_killed` 没复现。
+所以现在的话只能说「0 帧那次的原因未定」，既不能定成槽位，也不能定成 CX4 固件。
+在这之前不许把「CX4 缺固件」写成 5628 的定案——而且 §42.8 会看到，缺固件确实存在，
+但它并没有挡住画面。
+
+### 42.6 同一道闸门也拦状态会话，另外把解释器选择做成启动前提示
+
+槽位不一致不只烧回放：`statejump.StateSession` 拿着 SNES 电影配 NES 槽位起会话，症状
+同样是 0 帧卡死，而它发生在 EmuHawk 起来之后。所以 `StateSession.__init__` 里直接复用
+`record.slot_conflict`（同一支函数，不抄第二份逻辑），不一致就 `SchemaError`，构造阶段
+就拒。自检 +2 格（配对槽位的状态会话照常构造当恒量反证）。
+
+顺带堵掉一个会把人带偏的坑：`python -m taspipe.selftest` 选错解释器时报的是
+`ModuleNotFoundError: pyaudiowpatch`，日志停在 71 行，看起来像刚改的代码炸了。现在
+`selftest.main()` 启动前先过 `missing_deps(REQUIRED_DEPS)`，缺依赖就点名「哪个解释器、
+缺什么、生产口径该用谁」再 rc=1。自检 +3 格（装得上的包不许误报、缺的包要点名、
+本解释器已装齐）。
+
+计数 **1143 → 1156**（+9 格见 §42.3/§42.6/§42.7），`SELFTEST OK 1156/1156`，rc=0，
+实测解释器 `C:\Python313\python.exe`。
+
+### 42.7 假阻塞：站点登记的哈希过期，把「本地就有 ROM」报成缺资源
+
+11-22 那批热门切片里 5231（吃豆人）被卡在获取层，日志逐字：
+`本地无匹配 ROM（需 SHA1=A34E68372082513209A795786C8EEA493CC2CD14，来源 出版物 rom_sha1）`。
+实测三个来源：
+
+| 来源 | SHA-1 | 本地有没有 |
+|---|---|---|
+| 出版物 `rom_sha1` | A34E6837…CD14 | ✘ |
+| 电影 bk2 Header `SHA1` | 72717693…4D9B | ✔ `roms_verify/NES/pac_man_usa_tengen.nes` |
+| 本地中文命名副本 | 72717693…4D9B | ✔ `吃豆人.nes` |
+
+根因在 `acquire.required_rom_sha1()`：它按 出版物 → bk2 Header → version 页 取**第一个有值**
+的来源，然后 `resolve_rom()` 拿这一个值去本地索引比对，比对不上就写 `missing_resource`。
+所以一份过期的站点哈希会盖掉唯一能对上本地文件的那份账，表象却是「资源缺失」——
+这条属于「判据只认一份来源，来源本身却会过期」那一类，跟 §41 的槽位写死是同一形状。
+
+全库扫下来：台账 4694 条里可回放 25 部，出版物 `rom_sha1` 与台账/bk2 不一致的 **3 部**
+（5231 吃豆人、4776/4831 Alwa），这三部都是 台账 == bk2 Header ≠ 出版物。
+
+修复口径（`taspipe/acquire.py`）：
+
+- 新增 `rom_sha1_candidates(pub, lib)`，把三处来源**全部**收齐（去重、保持
+  出版物 → bk2 Header → version 页 的顺序）；
+- `resolve_rom()` 逐个候选去本地索引比对，**第一个真能对上文件的**算需求哈希，
+  `hash_source` 记的是采信的那一份；
+- 首选与采信的不是同一份时，产物里写 `hash_note`，**两份哈希都点名**——只报一个，
+  下一个人还会拿着那个错的去找资源；
+- 全部候选都不中才 `missing_resource`，且理由里逐个列出候选哈希与来源；
+- 门控网盘钩子的哈希校验同步改成「与**任一**候选一致」，不给放松：给回不在候选里的
+  文件仍 blocked（`哈希不符`），这条有反证格；
+- `required_rom_sha1()` 保留（仍返回首选），但文档说清它只是首选，判断本地能不能满足
+  必须走逐候选比对。
+
+自检 +5 格（候选链顺序、过期站点哈希挡不住本地命中、两份哈希都点名、首选真能对上时
+不许越序且 `hash_note` 为空——恒量反证只改 `rom_idx` 的键、全候选不中才 blocked 并列出
+候选、网盘给回 Header 候选也认、给回候选外哈希仍 blocked、整链 `acquire()` ready）。
+
+真数据核对（生产 CLI `python -m taspipe.auto plan --game "Pac-Man" --type playthrough
+--pub 5231`，rc=0）：`stages.acquire.status = ready`、`rom = …\pac_man_usa_tengen.nes`、
+`hash_source = bk2 Header`、`candidates` 两格齐全、`hash_note` 点名两份哈希。
+这条不是夹具，是台账真出版物 + 真本地 ROM。
+成片侧也复现了：`auto run … --frames 600` rc=0，`run_d7f8a0d3bdc1.run.json` ⇒
+system=NES/core=NesHawk、600/600、`termination=complete`、`desync=False`、
+`picture_content=pass`（mean_luma 12.1，近黑 2 帧=开场淡入）、mp4 600 帧 9.98s、
+采集 16.0s、job verdict=`inconclusive`（音频轴）。抽真帧看图：t=5.0s 与 t=9.8s 都是
+真迷宫，分数从 40 涨到 370、豆子与鬼的位置都变。
+
+### 42.8 固件缺口：从「猜 ROM 头字节」换成「读电影自己的声明」，外加片头切片的教训
+
+§42.5 那个芯片 nibble 闸门作废之后，正确的信息来源其实一直在电影 Header 里。
+
+- **Header 直接声明要哪块固件**：5628 的 bk2 Header 有
+  `SNES_Firmware_CX4 = A002F4EFBA42775A31185D443F3ED1790B0E949A`。这是录制器写下的，
+  不用我去 ROM 头猜偏移。
+- **BizHawk 自己的话被看门狗抓进产物**（`run_fa2e39077be4.run.json` 的
+  `watchdog.dismissed_dialogs`，标题 `Warning`、class `#32770`）：
+  `Couldn't find firmware SNES+CX4.  Will attempt to continue: Game may function
+  incorrectly without the requested firmware.` 同批还弹了 `This EmuHawk is privileged`，
+  `dismissed=3 / stalls=3`，600 帧与 3000 帧两档一模一样。本机第一次拿到 CX4 的原文证据，
+  不再是「一致但没证据」。
+- **全台账扫（`F:\taspipe_scratch\doc_edits_20261122\firmware_sweep.json`）**：4694 条里
+  1187 条电影 Header 声明了固件（1572 条 Header 读不出：非 BizHawk 容器），其中
+  `status=replayable` 只有 **4 条**——4776 Alwa、4791 Battle Kid（台账 `game` 字段写的却是
+  「I Wanna Be the Guy」，就是 §待批那条对不上）、5784 Nova the Squirrel，三条都声明
+  `NES_Firmware_Bios_FDS`；第 4 条就是 5628 的 `SNES_Firmware_CX4`。声明 CX4 的一共 5 条
+  （MMX2 ×3 版本、MMX3 ×2），另外 4 条本来就 blocked。本机 8 棵 BizHawk 树
+  （2.3/2.3.1/2.8/2.9/2.9.1/2.10/2.11/2.11.1）里 `cx4*` 与 `Dev/Chip` 命中 **0**，
+  连 `Firmware` 路径下的文件都是 **0**——一块固件都没有。
+- **但「声明了却缺」不能当判决**：4776 声明 FDS BIOS、本机同样没有，两片
+  `completion=pass` 实物（inbounds + terminal 保持段）就是这么出来的。所以这一格只留证据、
+  **不做成启动闸门**——做成闸门会当场误杀 4776 这类已经跑通的片子。要提固件缺口，
+  提的是「补上 cx4.bin（SHA1 A002F4EF…）再对照行为」这种可验证动作，不是「缺=坏」。
+- **片头切片不能当长片样片**：5628 整片 30:59.022（≈111,542 帧），**片头 600 帧只到版权页**——
+  `picture_content` 报「整窗 600 帧采样 13 帧全黑（mean_luma 最大 4.3 < min=8.0）」，
+  抽帧看图确认 t=9.8s 是 `© CAPCOM CO.,LTD.1994 / LICENSED BY NINTENDO`。窗口拉到 3000 帧
+  才吃到画面：`picture_content=pass`（第 1250 帧 mean_luma 37.7），t=20.8s 是真过场
+  （X 骑乘 + "It has been 6 months since the destruction of (Sigma)"），t=49.5s 是室内 Boss 场景。
+  ⇒ 闸门那句「别当跑通」是对的，但它只说明**这一窗没有画面证据**，不说明片子坏了；
+  对比 4751 忍者龙剑传，片头 600 帧就是真打斗（STAGE 1-1，分数在涨）。长片要么加窗口，
+  要么出整片，别拿片头一分钟当效果样片。
+- **SNES 吞吐模型要重测**：5628 两档切片给出 `600 帧 → 采集 94.6s`、`3000 帧 → 107.1s`。
+  两点反解 ⇒ 固定成本 ≈ 91.5s（三次弹窗停滞），边际 ≈ 2400 帧 / 12.5s ≈ **192 帧/秒**，
+  而 §36 记的是「32.1s 启动 + 帧/60」。这里只有两个点，还没做第三点验证，
+  所以先记成「§36 的 SNES 线性模型被这两档反驳，待第三点确认」，**不许直接改 §36 的数**。
+
+
+### 42.9 假阻塞到底影响多少部：全库穷尽的答案是 3 部（不是"一大批"）
+
+扫描方式：一个进程里把 `index_roms` 和 `index_versions` 各建一次，再逐条出版物调
+`acquire.rom_sha1_candidates(pub, lib, versions)`，看哪个候选能在本地索引里对上文件。
+（`versions` 那个注入参数就是为此加的：不注入的话每条都要 glob 一遍 `versions/`，
+4694 条直接扫到超时，第一版就是这么废掉的。）
+
+4694 条出版物的实测分布（`hash_sweep_full.txt`，索引就绪 307.0s，总耗时 376.4s）：
+
+| 量 | 条数 |
+|---|---|
+| 只有 1 个候选哈希 | 3647 |
+| 有 2 个候选哈希 | 901 |
+| 三处来源全无哈希 | 146 |
+| **首选与次选不一致** | **901** |
+| 全候选都对不上本地文件 | 4383 |
+| **旧代码会假阻塞（首选不中、靠后面才中）** | **3** |
+
+- 两份账不一致其实**很常见**（901 条），但真正造成假阻塞的只有 **3 条**：
+  4776 Alwa "inbounds"、4831 Alwa "any%"、5231 Pac-Man，全是 NES，全是
+  `出版物 rom_sha1 → bk2 Header` 这一跳。其余 898 条虽然两份不一致，但本地一个都对不上，
+  旧代码报 blocked 是对的（真缺资源）。
+- ⇒ 这次修复的净收益是「3 部从假缺资源变成可跑」，不是批量解放。把它写成"解放一大批"
+  就是夸大；反过来，"不一致有 901 条所以修复值了"也不成立——判据是**能不能对上本地文件**，
+  不是两份账像不像。
+- 顺带钉死一条成本口径：**每个新 CLI 进程都要付 ≈5.1 分钟的全库哈希**（307.0s，
+  进程内缓存不落盘）。批跑多任务时这笔钱按任务数乘，跟 §36 的采集时长是两笔独立开销。
+
+
+### 42.10 三格交叉后的真·可跑池：15 部（去重成 13 个矩阵格）
+
+口径先说清楚，免得把三个不同的"热门"当成一个：
+生产里有**两道**热门筛子，管的层不一样——
+
+- `popularity.is_famous(game, platform)`：名单成员资格，严格整名/别名匹配。
+  只有 `matrix.famous_playthrough_cells` 用它（决定"给谁建格"）。
+- `popularity.gate_blocker(spec)`：闸门，只管 `platforms_gated = ["NES", "SNES"]`。
+  `control.plan` / `auto.plan` / `auto.orchestrate` 用它。
+  非 NES/SNES 过得了这道闸门，但下游一定被 `driver_platform_unproven` 拦
+  （`PLATFORMS_DRIVER_PROVEN = ('NES','SNES')`）⇒ **没有漏网**，只是拦它的位置不同。
+
+三轴交叉（本地满足 165 × registry 快照 status × 热门），**两道筛子各量一遍**，因为它们的管辖范围不一样：
+
+| 口径 | 子集 | registry = replayable | registry = blocked | 合计 |
+|---|---|---|---|---|
+| `is_famous`（矩阵建格用） | 在名单上 | **15** | 43 | 58 |
+| `is_famous` | 名单外 | 10 | 97 | 107 |
+| `gate_blocker`（闸门用） | 放行 | **15** | 105 | 120 |
+| `gate_blocker` | 拦下 | 10 | 35 | 45 |
+
+- 两张表的 15 / 10 **一模一样**，因为 25 部可回放全是 NES/SNES，闸门管得到它们；
+  分歧全在 blocked 那一侧：`gate_blocker` 根本不查非 NES/SNES（GB 23、VBoy 8、Genesis 15…都算"放行"），
+  而 `is_famous` 按名字把它们也筛一遍 ⇒ **"直通 58"（矩阵口径）≠"直通 120"（闸门口径）**，
+  两个数不能混着说。审批单 D3 原先写"120 部在热门口径内"就是混了这两层，11-22 深夜已改成 15。
+- 本地满足 165 部的平台分布（`local_satisfiable.json` 现查）：
+  SNES 59 / NES 44 / GB 23 / Genesis 15 / VBoy 8 / PCE 6 / GBA 4 / Flash 2 / GBC 2 / DOS 1 / SGB 1 = 165。
+
+守恒核对：15 + 10 = 25 == `registry.json` 的 `summary.replayable`（25）。
+所以"整库 25 部可回放"这句话没错，但**其中 10 部不在名单上**（按 11-22 的口径不该测），
+真正既在名单上、又可回放、ROM 又在本地的 = **15 部**。
+
+这 15 条出版物（同名去重后 = **13 个矩阵格**，`local_satisfiable.json` + 快照 + 名单现推）：
+
+| pub | 平台 | 游戏 | 本地 ROM |
+|---|---|---|---|
+| 5254 | NES | Donkey Kong | donkey_kong_world_rev_1.nes |
+| 5280 | NES | Duck Hunt | duck_hunt.nes |
+| 6908 | NES | Kung Fu | kung_fu_u.nes |
+| 6725 | NES | Metroid | metroid_usa.nes |
+| 4751 | NES | Ninja Gaiden | ninja_gaiden_usa.nes |
+| 5441 | NES | Ninja Gaiden II: The Dark Sword of Chaos | ninja_gaiden_ii…nes |
+| 5231 | NES | Pac-Man | pac_man_usa_tengen.nes |
+| 6012 | NES | Super Mario Bros. | super_mario_bros_3d.nes |
+| 3232 | NES | The Legend of Zelda | the_legend_of_zelda_usa.nes |
+| 6849 | SNES | Donkey Kong Country 2 | 超级大金刚 2.zip!超级大金刚 2.sfc |
+| 7406 | SNES | F-Zero | 零式赛车.zip!零式赛车.sfc |
+| 6092 | SNES | Mega Man 7 | 洛克人 7.zip!洛克人 7.sfc |
+| 5628 | SNES | Mega Man X2 | 洛克人 X2.zip!洛克人 X2.sfc |
+
+- **去重会丢掉已有通关证据的那条**：`famous_playthrough_cells` 按 `game` 小写去重、保留先出现的，
+  于是 4812（Ninja Gaiden 的另一条出版物）和 **7429**（Ninja Gaiden II，`completion=pass` 实物
+  就挂在这一条上）被 4751/5441 顶掉。这不是 bug（两格内容相同），但**统计口径要说"15 部出版物 /
+  13 个格"**，不能一会儿说 15 一会儿说 13。
+- 13 格里再扣掉默认排除表 `DEFAULT_EXCLUDE = ("Ninja Gaiden", "Nova")`（已出片不重复跑）
+  = **默认参数下 11 格**。对比 `选题规则_只测热门作品_2026-11-22.md` §6 记的 **10 格**：
+  多出来的那一格就是 **5231 Pac-Man**，正是 §42.9 那 3 条假阻塞之一
+  ⇒ 候选链修复的净收益在矩阵这一层是**真多出一个格**，不只是账面解锁。
+  交叉核对另一条：`taspipe.popularity audit` 独立报"台账 25 → 命中 15"，与本节 15 部同数。
+- **产物级验证（22:23 实跑，不是推算）**：`python -u -m taspipe.matrix famous --out … --plan`
+  输出 `矩阵 11 格 | 覆盖 {"by_result": {"planned": 11}, "pass": 0, "total": 11}`，
+  11 格逐条 `status=ready`：Donkey Kong / Duck Hunt / Kung Fu / Metroid / **Pac-Man** /
+  Super Mario Bros. / The Legend of Zelda / DKC2 / F-Zero / Mega Man 7 / Mega Man X2。
+  全程 22:17→22:23（**≈6 分钟**，含全库索引）⇒ 这一趟和 §42.9 的 356s+评估对得上，
+  **批跑预算按"每进程 ≈6 分钟"记**（这一趟跑的时候同一台机上 `main_webui.py`（录播后端，PID 41032，累计 CPU 1700+ 秒）
+  在占盘，所以 6 分钟是**带并发负载的实测值**，不必再往最坏情况加。报告
+  `F:/taspipe_scratch/doc_edits_20261122/matrix_plan_after_fix/matrix_report.json`。
+  ⇒ matrix 预筛接线缺陷（旧代码只看站点+version 两处）到此是**跑通口径修复**，不再只是自检绿。
+- 45 条"本地有 ROM 却被名单拦下"的分档（`blocked_variants.py`，9 + 1 + 35 = 45 守恒）：
+  A 变体漏网 9 条（`Super Mario Bros., 2, The Lost Levels & 3`、`Battletoads & Double Dragon`、
+  `Battletoads in Battlemaniacs`×2、`Gradius III`、`Mega Man X multiple game`、
+  `Super Adventure Island` I/II、`Donkey Kong multiple game`）；B 别名差一点 1 条；
+  C 名单里连主干名都没有 35 条。
+  ⇒ **D7 的实测答案：那 9 条今天全部本来就 blocked**（缺 ROM / 缺模拟器版本 / 非 BizHawk 电影），
+  放宽粒度换来的可跑数 = **0**。所以"要不要把名单匹配放宽"不是今天该做的事。
+
+
+### 42.11 两本哈希账的机制查清了，但"改索引口径"实测一条都解放不了
+
+机制（逐字节验过，不是推断）：TASVideos 站点登记的 `rom_sha1` = **去掉 16 字节 iNES 头之后**的
+SHA1，而 bk2 `Header.txt` 里的 SHA1 = **整文件**SHA1。对 4776 / 4831 / 5231 三条实测：
+
+```
+4776  size=524304  站点=A26068CD…  Header=B84E3AA8…  整文件==Header True  去iNES头==站点 True   奥瓦的觉醒.nes
+4831  size=524304  站点=A26068CD…  Header=B84E3AA8…  整文件==Header True  去iNES头==站点 True   奥瓦的觉醒.nes
+5231  size= 24592  站点=A34E6837…  Header=72717693…  整文件==Header True  去iNES头==站点 True   pac_man_usa_tengen.nes
+```
+（Header 那一份是用生产件 `registry.read_bk2_header` 读的；第一版脚本自己去 zip 里翻
+`header.txt`，三条全读成空 ⇒ 又差点把"整文件==Header"写成 False。口径以生产函数为准。）
+4776 与 4831 是同一条 ROM 的两部电影（不同 run 类型），所以两份哈希各自相同。
+
+于是"两本账不一致"这件事本身被解释了，但**它不构成修复理由**。按"给 ROM 索引再加一份去头键"
+真量了一遍（`measure_headless_index.py` → `headless_measure.txt`）：
+
+| 量 | 值 |
+|---|---|
+| 整文件索引 | 1646 键 / 1911 文件，356.3s |
+| 去头索引 | 126 键 / 参与 140 文件，2.8s（跳过 zip 条目 1403、非 .nes 368、读失败 0） |
+| 台账有站点哈希的游戏 | 3754 个不同哈希 |
+| 其中整文件索引**已**命中 | 110 |
+| **只有**去头才命中 | **2 个哈希 → 3 条出版物（4776 / 4831 / 5231，全 NES）** |
+
+那 3 条正是 §42.9 里候选链已经解开的同一批 ⇒ **净新增可跑 = 0**。
+边界要说满：这是**下界**，zip 内部条目（1403 个）和 7z 这次没探，所以不能反过来断言
+"去头索引在所有库里都没用"；只能说**在已探范围内它不解决问题**，而它要改的是全部 NES 键的语义。
+按「要流水线不要逐款磨」，没量到收益的口径改动不落生产。
+
+再看"本地满足、但 11-21 快照仍报 `missing_resource`"的 37 条到底卡在哪
+（`split_missing_resource2.py`；上一版把 `win_sha1` 当字段去取，取不到就全塞进"不一致"桶，
+B=37 是脚本 bug，已修正重跑）：
+
+| 成因 | 条数 | 说明 |
+|---|---|---|
+| A 哈希口径一致、且只有 `missing_resource` 一个 blocker（换今天的索引就该翻） | **0** | |
+| B registry 要的那份 ≠ 今晚命中的那份 | 13 | Genesis 9 + PCE 3 + SNES 1 |
+| C 口径一致但还叠着别的 blocker | 24 | 全是 NES |
+
+- C 的 24 条第二个 blocker 是 `unsupported_capability`，reason 原文：
+  「非 BizHawk 原生管线；FCEUX .fm2/.fcm 可经 taspipe.fceux 转换为 .bk2 后走本地 BizHawk」，
+  配套的 `missing_resource` reason 是「FCEUX .fm2 需先转换：python -m taspipe.fceux convert --pub 1320」
+  ⇒ **这一档是 D4（重生成 NES 转换件）的锅，不是哈希账的锅。**
+  这 24 条 = **13 个不同游戏名**，其中 **9 个**（Battle City、Battle Kid 2、Cross Fire、DuckTales 2、
+  I Wanna Be the Guy、Ice Climber、Little Nemo、Shatterhand、`Super Mario Bros., 2, The Lost Levels & 3`）
+  是 §42.10 那 15 部可跑池里**没有**的名字——剩下 4 个（Donkey Kong / Metroid / SMB / Zelda）
+  已经有 BizHawk 原生臂在池内，所以 D4 解的是"广度 + 备选臂"，不是"13 部全新名作"。
+- B 的 13 条全部还叠着 `driver_platform_unproven` / `emulator_version_absent`
+  ⇒ 补对 ROM 也跑不了。唯一一条 SNES 是 6926《Battletoads in Battlemaniacs》，
+  它要 `SHA1=433B6C7F09DE42C869601A35129809AE3E8E5FE8`（来源标注 = bk2 Header）。
+- ⇒ **A = 0 顺手撤回一个猜测**：这 37 条不是"快照陈旧、重跑 build 就翻"。
+  之前怀疑 `local_bootstrap` 的 NES 剥头口径导致 registry 与 acquire 分叉——量下来分叉是真的
+  （机制见上），但它今天没锁住任何一条本来能跑的游戏。
+- 扩池子只剩两条路，都不在本次范围：**D4** 解 24 条 NES 转换件，**D3** 补 4383 条真缺 ROM
+  （用户口径：不动网盘）。
+
+### 42.12 「那么多模拟器打开/测试失败」拆开数：大部分根本没开模拟器，真开过的 24 次里 21 次跑完
+
+用户 11-22 深夜问"为什么那么多模拟器打开和测试都失败，是不是方法有问题"。
+只读已落盘产物逐条数（`why_fail.py` / `why_fail_runs.py`），不重跑：
+
+**一、启动前就被拦 = 4669 / 4694 条，这批压根没开模拟器**（blocker 码次，一条可叠多码）：
+
+| 码 | 次数 | 白话 |
+|---|---|---|
+| `missing_resource` | 5101 | 本地对不上 ROM（§42.9：4383 条全候选都不中） |
+| `unsupported_capability` | 3870 | 电影不是 BizHawk 原生格式（FCEUX .fm2/.fcm 等，要先转换 = D4） |
+| `driver_platform_unproven` | 1434 | 该平台驱动没实测过（只证过 NES/SNES） |
+| `emulator_version_absent` | 822 | 台账登记的模拟器版本本机没装（= D2） |
+| `driver_stall_measured` | 115 | 实测过会卡核 |
+| `emulator_version_inherited` | 73 | 用继承臂，要显式放行 |
+
+⇒ "失败很多"的主语不是模拟器，是**资源与准入**。把这批说成"模拟器打不开"是归因错。
+
+**二、真开过模拟器的 24 次 run（`*.run.json` 现查）**：`complete` **21** / `stalled_killed` **3**；
+帧数 ≥600 的 16 次、1–599 的 5 次、**0 帧只有 3 次**（MMX2×2、F-Zero×1）。
+
+**三、那 3 次 0 帧的根因已经查清，而且已经被修掉**（不是现在还在错）：
+- 旧看门狗只点掉 `This EmuHawk is privileged` 一个框（`dismissed=1`），
+  链式弹出的 `Warning: Couldn't find firmware SNES+CX4. Will attempt to continue…` 没点掉
+  ⇒ 模态框堵死 Lua ⇒ 60.3s / 60.4s 被树杀、0 帧。
+- 现在的 `watchdog.watch_process` 有「窗口集合一变就再点一轮（`MAX_STALL_ROUNDS=8`）+
+  同集合补点上限 `MAX_REPEAT_CLICKS=2` + 停滞现场快照 `stall_windows`/`windows_at_kill`」，
+  同一格 5628 后来 **`dismissed=3`、3000 帧 `complete`、第 1250 帧有画面（mean_luma 37.7）、
+  带边框 mp4 在盘**（`famous_slice2_20261122/mega_man_x2_playthrough_5628/run_d8945b24bce9`）。
+- 两条 `verdict=fail` 的 `job.json`（`famous_run_20261122`、`x2_diag_20261122`）是**旧代码那次的记录**，
+  后来的成功 run 不会回写它（`registry.py` 不读 attempt 的 `result.json`，§42 已记）
+  ⇒ **报"失败 3"时必须说清是历史快照，不是现状**。23 个 job.json 的裁决分布：
+  pass 10 / fail 3 / inconclusive 10；inconclusive 的主因是 SNES 判据地址表未标定（completion 轴），
+  不是"没跑起来"。
+
+**四、现在还剩的方法问题只有一个，而且是参数不是代码：帧预算**
+- MMX2 同一部电影：**60 帧全黑、600 帧全黑（mean_luma 最大 4.3 < 8.0）、3000 帧第 1250 帧才有画面**。
+  ⇒ 拿 `--frames 600` 的黑屏判"SNES 跑不通"就是方法错；`picture_content` 闸门判得对
+  （它说的是"无画面证据"，不是"游戏坏了"），错的是**我给的窗口太小**。
+- F-Zero 同理：300 帧 / 600 帧都 `complete` 且有产物，中间那次 0 帧是旧看门狗那档。
+- 规矩：**NES 600 帧够；SNES 大片头要按片头长度给（≥3000 起步）**。
+  改 `matrix` 默认帧预算属改生产默认值，按「不擅自改矩阵默认值」先报用户批，不自己翻。
+  ⇒ **11-22 夜已批准并落地**：`matrix.PICTURE_FLOOR_FRAMES={"SNES":3000,"SFC":3000}` +
+  `slice_frames()`，只抬高「被下限顶上去的那一档」，显式请求原样透传、且不许越过片长
+  （越过会把 `endpoint_reached` 的相等判定自造成 fail）。四部 SNES 3000 帧实物均已看图确认。
+
+**五、另一类别把 I/O 当失败**：每个新 CLI 进程要重哈希全库 ≈6 分钟（§42.9/§42.10），
+期间 CPU 只有 ~3%、输出 0 字节，看着像卡死；判死活要看 **CPU 增量**，不是看有没有输出。
+
+## 43. 缺芯片固件的静默降级现在会被点名：`chip_firmware_missing`（11-23 落地，selftest 1173→1189）
+
+**触发事实（不是推测）**：同一部电影 5628 的三次采集（60 / 600 / 3000 帧）都把这句存进
+`watchdog.dismissed_dialogs`：
+
+> `Couldn't find firmware SNES+CX4.  Will attempt to continue: Game may function incorrectly without the requested firmware.`
+
+而 7 格检查链没有任何一格去读它。`replay_no_desync=pass` 只说明电影自己的校验和过了，
+**不等于 CX4 的行为被复刻** ⇒ 成片可以带着未披露的降级被交出去。
+
+**闸门本体**：`watchdog.firmware_specs(dialogs)`（纯函数）+ `watchdog.firmware_verdict(watch)`。
+- 两种写法都认：弹框里的 `SNES+CX4`、固件库键名式的 `SNES_Firmware_CX4`；
+- 三处记录一起扫（`dismissed_dialogs` / `stall_windows` / `windows_at_kill`），同一规格只计一次；
+- 认得出降级但正文没点名规格的，返回 `?` 并**照样降档**（缺证据 ≠ 通过）。
+
+判 **inconclusive** 而不是 fail：回放确实跑完了、desync 也确实没报，只是"这块芯片没被复刻"
+不能当证据用。
+
+**接线（两条 capture 生产路径都接，不是只接一条）**：`record.run_full`（电影回放，
+matrix/auto 走这里）+ `backends.BizHawkBackend.run_batch`（控制/批次路径）。
+
+**验收**：
+- selftest **1189/1189**（本轮 +16）。其中 6 条不走纯函数：桩掉 `tas_replay.run_replay`
+  喂真实 MMX2 正文后调真 `record.run_full`，断言检查表里**有**这一格、判 inconclusive、
+  reason 带 `SNES+CX4`、且整片 `verification.verdict != pass`；另一臂只放 privileged 框，
+  判 pass —— 恒量反证，防"见框就降档"把根本没有固件的 FC 一起拖下水。
+  踩到的两个坑：`firmware_specs` 收裸字符串时被按字符迭代（现在先包成一条记录）；
+  `encode_video` 生产是 4 个位置参数，桩写 3 个会 TypeError 而不是判错。
+- 回溯审计 28 份 `*.run.json`：点名 **3** 份，全是 5628 那三次（60/600/3000 帧），
+  其余 25 份零误报 ⇒ 新闸门只在真降级处响。
+
+**已知不足（写清楚，别当成全覆盖）**：
+1. 证据来源是弹框正文 ⇒ 只有 BizHawk 真弹了框才拦得住。"固件在但哈希不符"那类降级
+   本机没有任何实物文本，因此没有对应 marker，属未覆盖，不是已排除。
+2. 事前不拦：仍要付 32.1s 启动 + 帧/60 才知道缺固件。事前判定得读电影声明，
+   见 §42.8 与 `_工具脚本/firmware_gap_sweep.py`（另一会话产出：2956 部 / 64 个键 /
+   **0 个键本机满满足**，89 个需求 SHA1 里只有 1 个整键命中）。
+
+**CX4 现在到底在不在（本轮实测边界，别记成"已就位"）**：
+`02-模拟器库\BizHawk\*\Firmware` 七个安装全部 **0 文件**；`BizHawk-2.9/config.ini` 的
+`FirmwareUserSpecifications` 为 `{}`、固件路径仍是 `./Firmware`；按文件名在 `%TEMP%`、
+`F:\taspipe_scratch`、`02-模拟器库`（深度 ≤4）搜 `*cx4*` 命中 **0** 个。
+⇒ 标准槽位里没有 CX4 实物。另会话报过一次"加载成功 sha1 263175"，我复现不到文件级证据；
+若确实发生过，只可能是用完即删的克隆目录里那份。**这条不影响闸门可用性**：
+固件放回原位 → 不弹框 → `chip_firmware_missing` 自然判 pass；被删掉 → 立刻点名。
+
+## 44. D1 指错了文件：`A002F4EF…` 是 Super Game Boy 2 引导 ROM，BizHawk 六个版本一致把 CX4 记成 `188D471F…`（11-23 字节级实测）
+
+**为什么要测**：§35 与审批单 D1 都写"Header 声明 `SNES_Firmware_CX4 = A002F4EF…`"，
+另一次会话报过"加载成功 sha1 263175"。两个数只能有一个是 CX4，而放错文件等于白放。
+用户把判定权交出来（"你来测试决定吧"），所以本轮不查网络、不启动模拟器，只拿本机字节说话。
+
+**方法**：想直接用 PowerShell 反射读 `FirmwareLibrary`，被中文路径的 ANSI 读取挡住
+（8.3 短名仍带中文）；改为直接解析程序集的 #US 堆。
+
+**第一个坑（差点误判成"规格不存在"）**：按 ASCII 找 `CX4` 在
+`dll\BizHawk.Emulation.Cores.dll` 里 **0 命中**，`SA1` 有 3 个——看着像"BizHawk 没有 CX4 规格"。
+换成 UTF-16LE 立刻命中：`CX4` ASCII 0 次 / UTF-16 1 次；40 位十六进制串 ASCII 5 个 / UTF-16 **284** 个。
+⇒ .NET 字符串字面量在 #US 堆里是 UTF-16，取证脚本必须双编码扫。
+
+**表的结构**：`(文件名, 描述, SHA1)` 三元循环。锚点是公开值
+**`E4E41472C454F928E53EB10E0509BF7D1146ECC1` = 任天堂 FDS disksys.rom 的 SHA1**，
+它在六个 build 里都紧跟在 `FDS_disksys-nintendo.rom` + `Bios (Nintendo)` **之后** ⇒ SHA1 在末尾。
+另一条独立支持：`SNES_dsp1.rom` 前面那个十六进制串在六个 build 里**恒定是 CX4 的 `188D471F…`**，
+说明它是 CX4 记录的槽位，不是 DSP1 的；`Bios (TwinFC)` 后面跟着 NES FDS BIOS 的哈希，同理。
+
+| 记录 | 描述 | BizHawk 期望 SHA1 |
+|---|---|---|
+| `SNES_cx4.rom` | CX4 Rom | **`188D471FEFEA71EB53F0EE7064697FF0971B1014`** |
+| `Rom_SGB2` | Super Game Boy 2 Rom | `A002F4EFBA42775A31185D443F3ED1790B0E949A` |
+| `SNES_dsp1.rom` | DSP1 Rom | `78B724811F5F18D8C67669D9390397EB1A47A5E2` |
+
+**跨 build 一致**：2.8 / 2.9 / 2.9.1 / 2.10 / 2.11 / 2.11.1 六版**完全相同**；
+2.3 / 2.3.1 的 Common 表里根本没有 `SNES_cx4.rom` 这个键（只有核心侧的 `cx4.rom` 请求名单），
+所以"CX4 = 188D471F"对**本机所有会用来回放的 build** 都成立。
+`_Firmware_` 只是拼名字用的字面量（`{system}_Firmware_{name}`），别当键名去搜。
+
+**`263175` 的归属**：扫 2.9 全部 dll/exe（ASCII + UTF-16），**没有任何 40 位十六进制串以 `263175` 开头**
+⇒ 那句话不是 BizHawk 2.9 认得的任何一块固件。
+
+**Header 原文（第三个坑）**：5628.bk2 是**双层 zip**，内层才有 `Header.txt`，
+写法是空格分隔 + `MovieVersion / emuVersion / GameName` 这类键名 ⇒ **本地转换件，不是上游原文**。
+五个声明 CX4 的电影（3250 / 5628 / 6891 / 3241 / 3247）Header 里那行**逐字节相同**：
+
+```
+SNES_Firmware_CX4 A002F4EFBA42775A31185D443F3ED1790B0E949A
+```
+
+**结论（决定怎么改）**：
+1. **要放的固件哈希目标是 `188D471F…`，不是 D1 写的 `A002F4EF…`**。照 D1 去取文件会取到一块 SGB2 引导 ROM，
+   BizHawk 大概率继续报缺固件，MMX2 还是降级。
+2. "电影声明 = A002F4EF / 模拟器期望 = 188D471F"这个冲突**没解决**，只登记：转换件 Header 的 provenance
+   不可信（转换器"照抄同 ROM 原生 bk2 的字段"），而 BizHawk 侧是按它自己那张表认固件的。
+   **谁说了算只能真机 A/B**：放一块 32KB 已知内容的假 `CX4.bin` 看它报"没找到"还是"哈希不符"——
+   这一条本轮没做，因为另一会话正占着 EmuHawk 槽位。
+3. `_firmware_check`（另一会话 11-23 批次一产出）**只认文件名、不核内容**，
+   正好会被"名字叫 CX4 但内容不对"骗过去；本轮实测给出了它该核的那个哈希。
+   已知不足见 §43 第 1 条，别再扩成新绿灯。
+
+**取证脚本**（只读、可重跑）：`F:\taspipe_scratch\cx4_probe_20261123\`
+——`scan_dll_firmware.py`（ASCII 版，留作反例）、`scan_dll_firmware_u16.py`、
+`cx4_authority.py`（含 `263175` 归属搜索）、`cx4_crossbuild.py`（六版对照 + 本机 cx4 命名文件搜索，
+命中 **0** 个真固件）、`fw_paths.py`、`bk2_shapes.py`。
+
+## 45. 固件不是按文件名认的：目录扫描认内容、配置注册才喂字节，外加状态字节那把尺子整条作废（11-23 深夜真机 A/B，用户授权我判定）
+
+**为什么要做**：§44 把哈希归属钉死了，但自己在结论第 2 条留了一句「谁说了算只能真机 A/B，本轮没做」。
+用户在 11-22 明确把测试和判定权一起交出来（「你来测试决定吧 我不懂」），所以这一节把三件事一次做完：
+① BizHawk 到底凭什么认固件；②「放一块文件」能不能把字节喂进核心；③ 喂进去的字节会不会改变复刻结果。
+前两条已实测完，第三条见 45.6。
+
+### 45.1 证据渠道有两条，第二条在生产里是活的（我中途误判过一次，已当面更正）
+
+| 渠道 | 落点 | 注入代码 | 消费代码 |
+|---|---|---|---|
+| 原生 Win32 模态框正文 | run.json 的 `watchdog.dismissed_dialogs[].texts` | `watch_process(records=dialogs)` | `record.py:244` `firmware_verdict(wd)` |
+| stdout 控制台行 | 工作目录 `emulator.log` → `watchdog.console_texts` | **`tas_replay.py:515`** `wd["console_texts"] = watchdog.firmware_console_lines(emulog)` | 同上（`firmware_verdict` 读 wd 的第四个键） |
+
+我一度在对话里断言「生产里 console_texts 从来没被注入，stdout 渠道是死的」——**错了**：注入点在下一层
+（tas_replay），record.py 只是从 `res["watchdog"]` 里拿现成的。判 `pass` 的是我自己 ab11 探针里那句
+`firmware_verdict(wd)`（探针不走 tas_replay，所以那个 wd 里真没有 console_texts），不是生产链路。
+教训：**「这条渠道没接上」这种指认，必须先把调用点逐层列出来再说**（与 §41 同一类错）。
+
+顺带把自造机制文案删了：`watchdog.py` 的 `firmware_verdict` 原来在 classes 为空时会写「走 HLE 兜底」，
+而 dll 字面量里根本没有 HLE 降级这句话（只有 `Couldn't find firmware {0}.  Will attempt to continue: {1}`），
+该兜底分支已删，`record.py` / `backends.py` 注释同步改口（SELFTEST 1220/1220 复跑确认）。
+
+### 45.2 目录里扔文件：四种文件名，警告正文一字不差（ab9 N 组）
+
+配置声明的固件目录就是 `<install>\Firmware`（config.ini 里 `"Type": "Firmware", "Path": "./Firmware"`，
+且 cwd=安装目录）。每臂只放列出的文件、跑 60 帧：
+
+| 臂 | 放进 Firmware 目录的文件 | 缺固件警告框 | 控制台 |
+|---|---|---|---|
+| n0_none | （空） | 有 | `Served libsnes request for firmware "cx4.rom"` |
+| n1_bare_cx4rom | `cx4.rom`（32KB, 0xCD） | **有，正文相同** | 同上 |
+| n2_db_name | `SNES_cx4.rom`（§44 表里的名字） | **有，正文相同** | 同上 |
+| n3_both | 上面两个都放 | **有，正文相同** | 同上 |
+| n4_wrong_len | `cx4.rom`（1KB） | **有，正文相同** | 同上 |
+
+正文全是：`Couldn't find firmware SNES+CX4.  Will attempt to continue: Game may function incorrectly without the requested firmware.`
+
+⇒ **「换个文件名试试」这条路是死的**。代码级支持（BizHawk.Client.Common.dll 的元数据名，ASCII 可扫）：
+`_firmwareSizes`、`KnownFirmwareFile`、`RealFirmwareFile`、`get_FirmwareHash`、`MissingFirmware`、
+`_firmwareUserSpecifications`、`GetFirmwareWithPath` —— 目录侧是「先按长度筛、再按哈希认」的识别模型，
+所以 0xCD 假字节无论叫什么名字都识别不了。`Served libsnes request` 那句在**什么都没放**的 n0 里同样出现，
+它只说明核心问过一次、BizHawk 回了一次，不说明回了什么（这正是 §43 要加 `served` 类、且绝不当 pass 的理由）。
+
+### 45.3 配置注册才是喂字节的门：生效的键名是裸芯片名（ab11）
+
+把路径写进 config.ini 的 `FirmwareUserSpecifications`（只动这一个对象，跑完无论成败都还原），
+八个候选键各跑一臂 60 帧，读「缺固件警告框还在不在」：
+
+| 键 | 警告框 | 键 | 警告框 |
+|---|---|---|---|
+| `CX4` | **消失** | `SNES CX4` | 在 |
+| `SNES+CX4` | **消失** | `Super Famicom CX4` | 在 |
+| `SNES_cx4.rom` | 在 | `SNES/CX4` | 在 |
+| `cx4.rom` | 在 | `SNESFIRMWARE_CX4` | 在 |
+
+基线 k0_none（什么都不注册）disc=3、91.6s；k1 八字全注册时 **disc=1、33.1s**——少的正是固件那张框，
+剩下那一个是 `EmuHawk detected it has Administrator privileges.`。
+
+⇒ 键名要写**芯片逻辑名 `CX4`**（或 `System+Name` 拼法 `SNES+CX4`），文件名一律不算键。
+⇒ 教程口径要改：**「把 cx4.rom 丢进 Firmware 目录」这句话对 2.9.1 + BSNES 不成立**——
+要么内容正好是表里那块（识别得了），要么在配置里按 `CX4` 显式指定路径。
+
+> **11-23 追加：本节这条「抑制」结论没能稳定复现，只算「ab11 批次内成立」。**
+> ab16 的 b1 臂（键 `CX4` + 目标名 `Firmware/cx4.rom` + 32KB `0xCD`，与 ab11 逐参数等价）**照样弹框**；
+> ab17 直接调 ab11 自己的 `run_arm` 又复现（fw=0、disc=0、9.0s）。两条路径写盘的 config **逐字节相同**（sha `7bffef5749a7`）。
+> 详见 45.6 与 45.10；在 ab18 定性之前，**不要把这张表当「注册门能喂进字节」的依据**用，
+> 更不能拿「警告框没了」单独翻 `chip_firmware_missing` 的判定（45.3 原话仍成立：目录侧认内容不认文件名）。
+
+### 45.4 状态字节这把尺子整条作废：三层压缩假象
+
+ab5 / ab9 一直在比 `.m11` 的字节数与逐字节差异，量出来是：
+
+* 同一进程、同一帧连存两次：差异 **0** 字节（88,490 vs 88,490）。
+* 换成两个新进程、配置完全相同：差异 **84,182 / 52,184 / 84,172** 字节，而文件总共才 88,490 字节。
+* ab9 L 组「30,000 帧差 109,853 字节」当时被我读成「芯片确实在算」。
+
+真相在容器层：`.m11` 是 **zip**（method=8 deflate），而成员 `Core.bin`、`Framebuffer.bmp` **自己还是 zstd 帧**
+（头 4 字节 `28 b5 2f fd`）。之前所谓「解包后比较」只解到 deflate 那一层，比的是压缩容器；容器对落盘顺序敏感，
+于是跨进程必然全红。用本机现成的 `bizhawk\dll\libzstd.dll` 经 ctypes 解到底
+（`_工具脚本\tmp\cx4_ab\state_decode.py`，不装任何 Python 包；注意 BizHawk 用流式压缩，
+`ZSTD_findDecompressedSize` 返回 -1，只能给足缓冲、拿返回值当长度）：
+
+| 比较（都无固件、同一帧 60） | 底层状态差异字节 | 连续段 |
+|---|---|---|
+| 同进程连存两次 | **0** | 1 |
+| c1 vs c2（跨进程） | 243 | 73 |
+| c2 vs c3 | 234 | 70 |
+| n0 vs c3 | 286 | 59 |
+| L1 vs n0 | 258 | 58 |
+| st1 vs n0 | 297 | 58 |
+
+底数就是 **234–297 字节 / 约 58–73 段**（`Core.bin` 底层 316,109 字节）。再看处理组：
+
+| 处理（放假固件 vs 不放） | 底层状态差异字节 | 帧缓冲 |
+|---|---|---|
+| n1_bare_cx4rom vs n0 | 256 | 相同 |
+| n2_db_name vs n0 | 257 | 相同 |
+| n3_both vs n0 | 255 | 相同 |
+| n4_wrong_len vs n0 | 302 | 相同 |
+| L1 vs L2 @ 60/10000/20000/30000 | 245 / 272 / 272 / 272 | 四处全部相同 |
+
+补两组**不用重跑**的长段对照（拿已存在的产物互比，两个不同批次、不同进程、同配置）：
+
+| 比较（同配置跨进程） | 底层状态差异字节 | 连续段 | 帧缓冲 |
+|---|---|---|---|
+| ab12 的 r0_none vs ab9 的 l1_none @10000/20000/30000 | 332 / 332 / 332 | 64 / 64 / 64 | 三处全部相同 |
+
+还有一件必须记下来的事：`Core.bin` 底层尺寸**随进度跳变**——帧 60 是 **316,109** 字节，帧 10,000 起是 **459,469** 字节
+（多出的 143,360 字节是 BSNES 序列化里后来才出现的内存区，不是压缩差异）。
+但**底数不随长度涨**：帧 60 是 234–297，帧 10k/20k/30k 是 272–332，基本同一档。
+⇒ 长段判据可以直接用：**差异 ≤ ~350 字节 = 没进状态；≫ 350 = 真进了**。
+（这里原写「ab13 再补带真注册的重复臂」：**ab13 那个脚本写了但从没跑**（无 log、无 json），不拿它当已发生；
+ 它要问的两件事后来分别由 **ab15**（长度/内容变体，4 臂）和 **ab18**（同一注册臂 x2/x4 各跑一次）做掉了，
+ 结论是注册臂 Core.bin 差 291/303 字节、仍在噪声带 ⇒ 见 §45.10，「注册门压框/喂字节」正式撤回。）
+
+全部落在噪声带里 ⇒ **正式撤回两条旧结论**：
+① 「放了固件状态从 88,484 变 88,493 ⇒ 文件被读进去了」（ab5）；
+② 「30,000 帧差 109,853 字节 ⇒ CX4 确实在算」（ab9 L 组）。
+
+新规矩：**比状态就先解到 zstd 底层，且每加一个标记长度就顺手留一对同条件跨进程对照**——
+不然底数只在帧 60 量过，长段差异无从解释。
+
+### 45.5 画面对照不用重跑：状态里就带着真帧，但它只覆盖开场演出
+
+`Framebuffer.bmp` 解到底层是 **256x224 32bpp 真 BMP（229,430 字节）**，所以 ab9 的 L 组已经免费给出了
+10,000 / 20,000 / 30,000 帧三处画面：L1 与 L2 **逐字节相同**。抽出来看图
+（`F:\taspipe_scratch\cx4_ab\out_fb_decoded\`）：
+
+* 帧 10,000：夜间沙漠 + 骑乘器，字幕 `…of Maverick Hunters have yet to destroy all of Sigma's followers.`
+* 帧 30,000：紫色大型机器人 + 小 X，字幕 `Lead by information gained by Dr. Cain, Mega Man X and the rest of the Hunters have`
+
+两句都是**开场演出**，而且 30,000 帧的字幕比 10,000 帧的更早（片头重放过一遍）。电影总帧实测
+**111,727**（bk2 双层 zip 内层 `Input Log.txt` 去掉 `[Input]` 与 `LogKey:` 两行后的行数），
+所以 30,000 帧只覆盖 **27%**，且全在 CX4 未必使能的段落。
+⇒ 「画面没变」当时**不能**推广到整片，也不该拿它当「固件内容无所谓」的证据；
+要问就得整片跑，而且得先把字节真喂进核心（45.3 那条门）——这就是 ab12。
+
+**ab12 的 r0 臂（什么都不放）12 个标记的画面已经真看过**（解状态就行，不用重跑），
+`F:\taspipe_scratch\cx4_ab\out_fb_decoded\r0_none_*.png`：
+
+| 标记 | 画面 |
+|---|---|
+| 10,000 | 夜间沙漠 + 骑乘器，字幕 `…of Maverick Hunters have yet to destroy all of Sigma's followers.` |
+| 20,000 / 30,000 | 紫色大型机器人 + 小 X（开场演出） |
+| 60,000 | 基地内景、两个大机器人头，字幕 `There they hope to wipe out the last of the resistance.` |
+| 100,000 | 黑色竖条之间 X **斜着画**（游戏进行中，精灵带角度；这算不算 CX4 的旋转我没拿攻略证据，只作观察） |
+| 110,000 / 111,600 | 111,600 = 标题画面 `MEGA MAN X2` + `GAME START / PASS WORD / OPTION MODE` |
+
+12 个标记的帧缓冲 sha1 **互不相同** ⇒ 状态确实随进度在走，不是同一帧存了十二遍。
+电影头（生产件 `registry.read_bk2_header` 实测）：Author=`Akiteru`、`rerecordCount 50987`、
+SHA1 `637079014421563283CDED6AEAA0604597B2E33C`、`SNES_Firmware_CX4 A002F4EF…`。
+
+### 45.6 整片 A/B 没做成：ab12 停批、ab15/ab16 六臂全弹框、ab17 又复现了 ab11
+
+**ab12（整片 111,700 帧两臂）**：`tmp/cx4_ab/ab12_full.py`，r0 什么都不放 / r1 注册 `CX4`→`Firmware/cx4_spec_dummy.bin`。
+
+* r0 干净跑完（心跳 `00111700 PLAY`、12 个标记状态、517.6s）；
+* r1 **disc=3、固件警告框仍在** ⇒ 脚本按自己的前提闸门打印「处理臂警告没消失，本臂没把字节喂进核心，停批」并以 rc=4 退出，
+  **没有写出 `ab12_full.json`**。
+* ⇒ 45.5 里那 12 个标记的画面/状态数字全部来自 r0 与 ab9 的 none 臂，是 **none-vs-none 的重复臂**，不是处理效应。
+  先前写进审批单的「整片画面分不出来」**作废**（见 `审批决策单_合并_2026-11-21.md` D1 行）。
+
+**ab15（4 臂 × 60 帧，注册 `CX4` 指向四种假字节：32K `0xCD` / 16K `0xCD` / 32K `0xAB` / 32K `0x00`）**：
+`dialogs` / `fw_console` / `gate` 三格四臂**一字不差**，警告框全部仍在；`core_len` 恒 316,109，
+`core_sha1` 四臂各异（噪声），`0xCD` 连续块命中 **0**。本件缺陷：没带 none 基线臂，判读权重全交给 ab16。
+
+**ab16（6 臂 × 60 帧，专测「门认名字 / 认位置 / 认长度」哪一个）**：`tmp/cx4_ab/ab16_name.py`，
+日志 `F:\taspipe_scratch\cx4_ab\ab16.log`、结果 `ab16_name.json`。
+
+| 臂 | 注册键 | 目标文件名 | 在 Firmware 里 | 长度 | 警告框 | 帧60 画面 sha1 | 帧60 `Core.bin` vs b0 |
+|---|---|---|---|---|---|---|---|
+| b0_none | — | — | — | — | 1 | `947be61b…` | — |
+| b1_spec_CX4rom_inFW | `CX4` | `cx4.rom` | 是 | 32768 | **1** | `947be61b…` | 257 B |
+| b2_spec_weird_inFW | `CX4` | `cx4_spec_dummy.bin` | 是 | 32768 | 1 | `947be61b…` | 257 B |
+| b3_spec_CX4rom_out | `CX4` | `cx4.rom` | **否**（`F:/taspipe_scratch/cx4_ab/ab16_files/`） | 32768 | 1 | `947be61b…` | 258 B |
+| b4_spec_CX4rom_16K | `CX4` | `cx4.rom` | 是 | 16384 | 1 | `947be61b…` | 258 B |
+| b5_file_only_nospec | 空 `{}` | `cx4.rom`（放着不注册） | 是 | 32768 | 1 | `947be61b…` | 257 B |
+
+恒量反证：六臂 `rom_sha1` 取值 1 种（`63707901…`）、`movie_sha256` 取值 1 种 ⇒ 不是喂错 ROM/电影。
+
+* ⇒ **本批没有任何一臂压掉警告框**，包括 45.3 里 ab11 的正对照（键 `CX4` + 目标名 `cx4.rom` + 32KB）。
+  「门按文件名认」这个猜想在 ab16 里也不成立——名字对了照样弹。
+* ⇒ **画面这把尺子跨进程是精确可复现的**：b0–b5 的 `Framebuffer.bmp` 逐字节相同（229,430B，sha1 `947be61be7bd8143…`），
+  所以判「固件改不改画面」可以直接判等，不需要容差；
+  `Core.bin` 同长 316,109B 却两两差 257–258B ⇒ 帧 60 的噪声底数就是 ~257B（补 45.4 的 234–297）。
+
+**ab17（直接调 ab11 自己的 `run_arm` 复跑）**：`tmp/cx4_ab/ab17_replicate_ab11.py`，日志 `ab17.log`。
+
+```
+r0_none     dismissed=3 fw_count=1 term=exited hb='00000060 PLAY' 93.1s   （两张框：Administrator + Couldn't find firmware SNES+CX4）
+r1_key_CX4  dismissed=0 fw_count=0 term=exited hb='00000060 PLAY'  9.0s   （all_dialogs=[] —— 连 Administrator 那张都没有）
+```
+
+⇒ **ab11 的抑制用 ab11 自己的代码在当下复现了**，ab16 用等价参数却没复现。
+静态核对（不烧模拟器，本轮实测）：`A11.set_spec` 与 `A16.spec_blob` 对同一 base 产出的注册块与整本 config
+**逐字节相同**（sha `7bffef5749a7`），且 `SCR`/`BIZ`/`CFG`/`MOVIE`/`ROM` 五个常量 ab11==ab12==ab16 全等、
+注册目标路径全等 ⇒ **「两边参数不同」被排除**。剩下两类可能：
+
+* （甲）批次留下的机器状态不同（config 被 EmuHawk 退出时回写、核心选择、`Firmware` 目录历史）；
+* （乙）ab11/ab17 那次「没弹框」根本不是固件找到了，而是**压根没走到固件请求**——
+  形状很可疑：`r1` 连每批都稳定出现的 `Administrator privileges` 框都没有（disc=0），用时 9.0s 也远低于 ~90s。
+
+→ 判别件是 **ab18**（同批交叉跑两条代码路径，Lua 里增报 `client.get_core_name()` 并保存 60 帧状态），见 45.10。
+
+顺带一条对 §36 的提醒：9.0s 与 91.7s 之差若由「每张框 ≈30s 等待」解释，则 §36 那个「32.1s 启动」里
+含了几张框的等待，不能当成纯启动开销——**SNES 吞吐在按 ab18 定性后要重量一次**。
+
+### 45.7 本轮踩到的度量/口径坑（都写进可复现件）
+
+1. **探针覆盖生产默认 = 自残**：ab6 把 `stall_timeout` 覆盖成 180s 又不写 heartbeat，而缺固件必弹框，
+   每臂光等框 3–9 分钟、一臂 8 分钟没动被我杀。改回生产默认 + 像 cap.lua 那样写 heartbeat 之后，
+   同一臂 91.6s 跑完。
+2. **「产物里没这个字段」≠「没发生」**：我据 ab4.json 没有 dialog 字段说过「全程 0 弹框」，
+   本轮窗口枚举证明每个无固件臂都弹（disc=3 / stalls=3，与 11-22 现场一致）。未测量不等于阴性。
+3. **Lua 整数键表字面量必须写 `[k]=`**：`{60:{…}}` 被 NLua 判 `'}' expected near ':'`，
+   模拟器活着但一帧没跑。现在 ab 件都带 `_never_started` 判据（心跳首字符不是数字就整批停跑）。
+4. **反斜杠在 bash 里会被吃掉**（本轮新踩，代价是白跑一趟）：
+   `> F:\taspipe_scratch\…log` 落成 0 字节怪文件 `F:taspipe_scratchcx4_abprod_5628_600.log`，
+   `--out F:\taspipe_scratch\fw_channel_20261123` 被改写成 `F:taspipe_scratch…`，
+   第一次生产复验因此什么都没产出（还差点把产物写进仓库工作树，已点名 taskkill 掉那个进程）。
+   **CLI 传路径一律用正斜杠。**
+5. **每个新 CLI 进程都要重哈希全库 ≈2–4 分钟**（`index_roms` 的缓存是进程内的），
+   所以「日志 0 字节 + EmuHawk 还没起」在那两分钟里是正常态，别当成崩了去并发第二条（并发只会互抢）。
+6. **把 config 字段写成「空值」= 非法 JSON，弹的是异常框不是固件框**（ab16 首轮踩，代价是一整批作废）：
+   `key=None` 时我把 `"FirmwareUserSpecifications"` 后面替换成空串 ⇒ BSNES 加载 ROM 抛
+   `System.NullReferenceException … BizHawk.Client.Common.FirmwareManager.Do…`，
+   弹「A core accepted the rom, but threw an exception while loading it」而不是固件提示。
+   更阴的是我的过滤器按子串 `irmware` 数框，**类名 `FirmwareManager` 也被数成「固件警告框 1 个」**——
+   假阳性正好把「臂没成立」伪装成「臂成立了」。三条一起修：空值写 `{}`、写盘前 `json.loads` 复算 + 注册块回读比对、
+   固件框只认正文 `Couldn'?t find (?:required )?firmware`；核心异常直接判整臂作废。
+   该异常件已冻结成 selftest 恒量反证 2 条（`firmware_verdict` 不许拿它当降级证据、
+   `firmware_specs` 不许从它抽出规格名），生产函数内绿数 117→119。
+7. **「日志逐行相同」与「框数不同」可以同时成立**：ab16 的 b1 与 ab11 的 key_CX4 那次，`emulator.log`
+   归一化后只差几行计时，警告框数却一个是 1 一个是 0 ⇒ 有一个是**采集假象**，
+   但先别据此说对方「那次是假的」——用同一批次交叉重跑（ab18）才是判别手段，不是文字推理。
+8. **跨批矛盾先静态排除「参数不同」**：本轮两条路径写的 config **逐字节相同**（sha `7bffef5749a7`）、
+   五个路径常量全等，才把问题收窄到「批次留下的状态」或「压根没走到那条代码路」。
+   静态比对不烧模拟器、几分钟就能做完，比再跑六臂便宜得多。
+
+### 45.8 产物审计与复验
+
+* 既有 28 个 run.json：带框正文 **3** 个（全是 5628），带 `Served libsnes` **0** 个（stdout 渠道当时还没落盘），
+  带 `chip_firmware_missing` 行 **0** 个（闸门 11-23 才落地）⇒ 闸门只有自检、没有产物级实例，故补 45.9 的复验。
+* 本机 8 棵 BizHawk 树固件实物 **0**（§42.8）；本轮所有实验都在 `F:\taspipe_scratch\cx4_ab\bizhawk`
+  这份**真副本**里做（`GetFileAttributesW` = 0x10 普通目录，不是 junction），没动任何装机；假固件跑完即删。
+
+### 45.9 复现命令
+
+```
+C:\Python313\python.exe -X utf8 tmp/cx4_ab/ab9_all.py       # C 组底数 + N 组文件名 + L 组长段
+C:\Python313\python.exe -X utf8 tmp/cx4_ab/ab11_spec.py     # FirmwareUserSpecifications 键 bisect
+C:\Python313\python.exe -X utf8 tmp/cx4_ab/state_decode.py  # zip→deflate→zstd 解到底层再比
+C:\Python313\python.exe -X utf8 tmp/cx4_ab/ab12_full.py     # 整片画面 A/B（当前会在处理臂前提闸门停批，rc=4）
+C:\Python313\python.exe -X utf8 tmp/cx4_ab/ab15_variants.py # 注册 CX4 × 四种假字节（长度/内容）
+C:\Python313\python.exe -X utf8 tmp/cx4_ab/ab16_name.py     # 六臂：名字/位置/长度/注册 四个变量一起 bisect
+C:\Python313\python.exe -X utf8 tmp/cx4_ab/ab17_replicate_ab11.py  # 直接调 ab11 的 run_arm 复跑 + 存 exe/config 快照
+C:\Python313\python.exe -X utf8 tmp/cx4_ab/ab18_xbatch.py   # 同批交叉跑 ab11/ab16 两条路径 + 核心名 + 状态字节
+C:\Python313\python.exe -X utf8 -m taspipe.record full --pub 5628 --frames 600 --out F:/taspipe_scratch/fw_channel_20261123
+```
+
+### 45.10 ab18：同批交叉跑两条代码路径 —— 45.3 的「抑制」正式撤回，但本题的真正答案在字节那格
+
+`tmp/cx4_ab/ab18_xbatch.py`，日志 `F:\taspipe_scratch\cx4_ab\ab18.log`，结果 `ab18_xbatch.json`。
+四臂串行、每臂 60 帧；x2/x4 **就是 ab11 自己的调用序列**（删假文件→写假字节→写注册块→启动→还原），
+x3 走 ab16 的 `run()`。两类的 Lua 都换成增强版：多写一行核心名、退出前存 `s60.m11`。
+
+| 臂 | 路径 | 注册块（启动瞬间实测） | 警告框 | disc | 用时 | 帧60 画面 sha1 | `Core.bin` vs x1 |
+|---|---|---|---|---|---|---|---|
+| x1_ab11_none | ab11 | `{}` | 1 | 3 | 91.6s | `947be61b…` | 0（自身） |
+| x2_ab11_CX4 | ab11 | `{ "CX4": "…/Firmware/cx4.rom" }` | **1** | 3 | 91.6s | `947be61b…` | **291 B** |
+| x3_ab16_CX4 | ab16 | 同上（ab16 未存启动瞬间，但 b1 存过） | **1** | 3 | 105.7s | `947be61b…` | **303 B** |
+| x4_ab11_CX4 | ab11（重复） | `{ "CX4": "…/Firmware/cx4.rom" }` | **1** | 3 | 92.5s | `947be61b…` | **258 B** |
+
+⇒ **45.3 的「注册 `CX4` 就压掉警告框」正式撤回**：在带着同批 none 基线的批次里，用 ab11 自己的代码跑两遍都照样弹。
+  ab17 的 r1（0 框 / 9.0s / 连 Administrator 框都没有）是**一次不稳定结果**，不是机制。
+  注意别把它说成「已排除换了核心」：`client.get_core_name()` 在本机 2.9.1 的 Lua 里取不到（pcall 捕到，心跳写 `core=取不到`），
+  核心身份现在只有侧证（bk2 Header `Core: BSNES`、日志 `Mouting libsnes.wbx` + `Served libsnes request`）。
+⇒ **更要紧的是与弹框无关的那一格**：三个「注册了假字节」的臂，`Core.bin` 相对 none 基线只差 258–303 字节，
+  全在 §45.4 / ab16 量到的跨进程噪声底数档（帧 60 ≈234–297），画面四臂逐字节相同。
+  ⇒ **假字节从来没进核心，一次都没进过**。所以「CX4 固件内容改不改画面」这个问题，
+  用假字节**永远问不出来**——不是「测出来没差别」，是「没有差别可测」。要答只能取内容经独立印证的
+  `188D471F…`（=审批单 D1，那一步要用户批），D1 维持**暂缓**不变。
+
+**顺带修掉一条实测暴露的假绿灯**（生产代码，不是探针）：`watchdog.firmware_verdict` 以前在
+「没有任何命中」时无条件返回 `pass`，而 ab17 那种 `watch_process` 裸返回值**根本没有 `console_texts` 键**，
+于是当场打印出 `gate: pass`。现在改成：**没有控制台渠道 ⇒ `inconclusive`**，reason 点名缺的是哪个渠道；
+`{"console_texts": []}`（渠道看过、确实空）才允许 pass。生产链路不受影响——`tas_replay.py:515`
+每次 `run_replay` 都写这个键，NES 这类无固件平台仍走空渠道 pass，不误伤。
+配套：selftest 里那条「无降级」夹具臂原来漏写 `console_texts`，属**夹具自己违反生产契约**，
+按契约补上而不是放宽闸门；渠道判据新增 3 条断言（`{"console_texts": []}`=pass、
+`{}`/`None`=inconclusive、缺渠道的 reason 必须点名渠道），替换原来 1 条「空 watch=pass」。
+全套实测 **1220 → 1224/1224**（本轮 +2、ab16 的异常件反证 +2），
+日志 `F:\taspipe_scratch\selftest_20261123_ab18b.log`，编号 [221]/[222]/[223] 就是这三条。

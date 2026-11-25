@@ -1,0 +1,43 @@
+{
+ "keyword": "Sea of Stars",
+ "status": "ok",
+ "ts": "2026-11-19T05:39:13Z",
+ "ts_epoch": 1795066753.7272162,
+ "supply_num_results": 1000,
+ "n_videos": 20,
+ "relevant_count": 19,
+ "core_hit_rate": 0.95,
+ "full_hit_rate": 0.85,
+ "play_median": 2862.5,
+ "relevant_play_median": 2531,
+ "play_mean": 16695.8,
+ "play_max": 153798,
+ "play_total": 317220,
+ "engagement_median": 0.0764,
+ "recent_count": 3,
+ "recent_play_median": 3264,
+ "top3": [
+  {
+   "bvid": "BV1S14y1C7q8",
+   "title": "【星之海】地毯式 全收集白金攻略解说！「完结」",
+   "author": "Pser_hanser",
+   "play": 406155,
+   "pubdate": "2023-08-29"
+  },
+  {
+   "bvid": "BV1aJ4m1M7UC",
+   "title": "“仅仅向前方看去  一切都会好的吧”！Sea Of Stars",
+   "author": "饿了的白熊",
+   "play": 153798,
+   "pubdate": "2024-07-06"
+  },
+  {
+   "bvid": "BV1s2421Z77H",
+   "title": "“宝藏神仙歌曲！！有生之年一定要听听这首歌！！！”《Sea Of Stars》",
+   "author": "Tki_tri",
+   "play": 100859,
+   "pubdate": "2024-08-05"
+  }
+ ],
+ "cache_hit": false
+}

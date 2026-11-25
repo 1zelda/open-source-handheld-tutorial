@@ -1,0 +1,43 @@
+{
+ "keyword": "Dolphin模拟器",
+ "status": "ok",
+ "ts": "2026-11-19T05:39:21Z",
+ "ts_epoch": 1795066761.9277968,
+ "supply_num_results": 1000,
+ "n_videos": 20,
+ "relevant_count": 20,
+ "core_hit_rate": 1.0,
+ "full_hit_rate": 0.2,
+ "play_median": 4993.5,
+ "relevant_play_median": 4993.5,
+ "play_mean": 12121.4,
+ "play_max": 68639,
+ "play_total": 242427,
+ "engagement_median": 0.0386,
+ "recent_count": 7,
+ "recent_play_median": 3176,
+ "top3": [
+  {
+   "bvid": "BV1CY4y1Y747",
+   "title": "【Wii模拟器完美JIT-iOS海豚】如何释放A系列芯片性能，让iPad不再盖泡面",
+   "author": "荷锄搬砖",
+   "play": 68639,
+   "pubdate": "2022-04-23"
+  },
+  {
+   "bvid": "BV1Seso6kEqi",
+   "title": "渡鸦读博模拟器，点击即玩",
+   "author": "西兰爆米花",
+   "play": 36419,
+   "pubdate": "2026-10-29"
+  },
+  {
+   "bvid": "BV1yQ1jYGEub",
+   "title": "WII NGC模拟器（Dolphin）PC版使用教程",
+   "author": "winzerokyo",
+   "play": 24935,
+   "pubdate": "2024-10-28"
+  }
+ ],
+ "cache_hit": false
+}

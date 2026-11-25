@@ -1,0 +1,270 @@
+{
+  "elements": {
+    "default_rifle": {
+      "detection_frame": 19,
+      "success_checks": [
+        {
+          "check_id": "muzzle_white_min",
+          "plugin_id": "frame_region_color_fraction",
+          "params": {
+            "region": [
+              0.23,
+              0.375,
+              0.42,
+              0.42
+            ],
+            "rgb": [
+              254,
+              254,
+              254
+            ],
+            "tol": 30,
+            "min_fraction": 0.01
+          },
+          "required": true
+        },
+        {
+          "check_id": "muzzle_warm_max",
+          "plugin_id": "frame_region_color_fraction_max",
+          "params": {
+            "region": [
+              0.23,
+              0.375,
+              0.42,
+              0.42
+            ],
+            "rgb": [
+              254,
+              130,
+              112
+            ],
+            "tol": 40,
+            "max_fraction": 0.0005
+          },
+          "required": true
+        }
+      ]
+    },
+    "machine_gun_m": {
+      "detection_frame": 19,
+      "success_checks": [
+        {
+          "check_id": "muzzle_warm_range",
+          "plugin_id": "frame_region_color_fraction_range",
+          "params": {
+            "region": [
+              0.23,
+              0.375,
+              0.42,
+              0.42
+            ],
+            "rgb": [
+              254,
+              130,
+              112
+            ],
+            "tol": 40,
+            "min_fraction": 0.004,
+            "max_fraction": 0.012
+          },
+          "required": true
+        },
+        {
+          "check_id": "upper_warm_max",
+          "plugin_id": "frame_region_color_fraction_max",
+          "params": {
+            "region": [
+              0.28,
+              0.26,
+              0.46,
+              0.375
+            ],
+            "rgb": [
+              254,
+              130,
+              112
+            ],
+            "tol": 40,
+            "max_fraction": 0.0005
+          },
+          "required": true
+        },
+        {
+          "check_id": "lower_warm_max",
+          "plugin_id": "frame_region_color_fraction_max",
+          "params": {
+            "region": [
+              0.28,
+              0.42,
+              0.46,
+              0.52
+            ],
+            "rgb": [
+              254,
+              130,
+              112
+            ],
+            "tol": 40,
+            "max_fraction": 0.0005
+          },
+          "required": true
+        }
+      ]
+    },
+    "fire_thrower_f": {
+      "detection_frame": 20,
+      "success_checks": [
+        {
+          "check_id": "upper_warm_min",
+          "plugin_id": "frame_region_color_fraction",
+          "params": {
+            "region": [
+              0.28,
+              0.26,
+              0.46,
+              0.375
+            ],
+            "rgb": [
+              254,
+              130,
+              112
+            ],
+            "tol": 40,
+            "min_fraction": 0.006
+          },
+          "required": true
+        },
+        {
+          "check_id": "lower_warm_min",
+          "plugin_id": "frame_region_color_fraction",
+          "params": {
+            "region": [
+              0.28,
+              0.42,
+              0.46,
+              0.52
+            ],
+            "rgb": [
+              254,
+              130,
+              112
+            ],
+            "tol": 40,
+            "min_fraction": 0.006
+          },
+          "required": true
+        },
+        {
+          "check_id": "muzzle_warm_max",
+          "plugin_id": "frame_region_color_fraction_max",
+          "params": {
+            "region": [
+              0.23,
+              0.375,
+              0.42,
+              0.42
+            ],
+            "rgb": [
+              254,
+              130,
+              112
+            ],
+            "tol": 40,
+            "max_fraction": 0.03
+          },
+          "required": true
+        }
+      ]
+    },
+    "spread_gun_s": {
+      "detection_frame": 6,
+      "success_checks": [
+        {
+          "check_id": "muzzle_warm_min",
+          "plugin_id": "frame_region_color_fraction",
+          "params": {
+            "region": [
+              0.23,
+              0.375,
+              0.42,
+              0.42
+            ],
+            "rgb": [
+              254,
+              130,
+              112
+            ],
+            "tol": 40,
+            "min_fraction": 0.012
+          },
+          "required": true
+        },
+        {
+          "check_id": "mid_warm_max",
+          "plugin_id": "frame_region_color_fraction_max",
+          "params": {
+            "region": [
+              0.42,
+              0.375,
+              0.58,
+              0.42
+            ],
+            "rgb": [
+              254,
+              130,
+              112
+            ],
+            "tol": 40,
+            "max_fraction": 0.01
+          },
+          "required": true
+        }
+      ]
+    },
+    "laser_gun_l": {
+      "detection_frame": 30,
+      "success_checks": [
+        {
+          "check_id": "far_warm_min",
+          "plugin_id": "frame_region_color_fraction",
+          "params": {
+            "region": [
+              0.58,
+              0.375,
+              0.72,
+              0.42
+            ],
+            "rgb": [
+              254,
+              130,
+              112
+            ],
+            "tol": 40,
+            "min_fraction": 0.05
+          },
+          "required": true
+        },
+        {
+          "check_id": "upper_warm_max",
+          "plugin_id": "frame_region_color_fraction_max",
+          "params": {
+            "region": [
+              0.28,
+              0.26,
+              0.46,
+              0.375
+            ],
+            "rgb": [
+              254,
+              130,
+              112
+            ],
+            "tol": 40,
+            "max_fraction": 0.0005
+          },
+          "required": true
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,591 @@
+{
+ "schema": "full_domain_eval_v1",
+ "taken_at": "2026-11-24 05:12:35",
+ "questions": [
+  {
+   "id": "F01",
+   "category": "esports_static",
+   "q": "亚索的英雄身份是什么？",
+   "grade": {
+    "ok": true,
+    "checks": {
+     "status": true,
+     "evidence_count": true,
+     "answer_contains": true,
+     "dataset_revision": true
+    }
+   },
+   "status": "pass",
+   "refusal": null,
+   "reason_code": "evidence_bound",
+   "answer_text": "截至补丁 16.23.1（Data Dragon zh_CN）：亚索，称号「疾风剑豪」。",
+   "evidence": {
+    "id": "cd3bc946e6fd44c1",
+    "locator": "/data/Yasuo"
+   },
+   "index_used": null,
+   "auto_routing": null
+  },
+  {
+   "id": "F02",
+   "category": "esports_static",
+   "q": "装备1001的静态售价是多少？",
+   "grade": {
+    "ok": true,
+    "checks": {
+     "status": true,
+     "evidence_count": true,
+     "answer_contains": true
+    }
+   },
+   "status": "pass",
+   "refusal": null,
+   "reason_code": "evidence_bound",
+   "answer_text": "截至补丁 16.23.1（Data Dragon zh_CN）：鞋子。略微提升移动速度 售价 300 金币。",
+   "evidence": {
+    "id": "6eab3085e78f664c",
+    "locator": "/data/1001"
+   },
+   "index_used": null,
+   "auto_routing": null
+  },
+  {
+   "id": "F03",
+   "category": "esports_static",
+   "q": "召唤师技能SummonerFlash的冷却和范围？",
+   "grade": {
+    "ok": true,
+    "checks": {
+     "status": true,
+     "evidence_count": true,
+     "answer_contains": true
+    }
+   },
+   "status": "pass",
+   "refusal": null,
+   "reason_code": "evidence_bound",
+   "answer_text": "截至补丁 16.23.1（Data Dragon zh_CN）：闪现。使你朝着你的指针位置瞬间传送一小段距离。 冷却 300。 范围 425。",
+   "evidence": {
+    "id": "2e12116b4728fb8f",
+    "locator": "/data/SummonerFlash"
+   },
+   "index_used": null,
+   "auto_routing": null
+  },
+  {
+   "id": "F04",
+   "category": "time_trap",
+   "q": "亚索在未导入补丁0.0.0的资料？",
+   "grade": {
+    "ok": true,
+    "checks": {
+     "status": true,
+     "reason_code": true,
+     "evidence_count": true,
+     "no_false_evidence": true,
+     "answer_contains": true
+    }
+   },
+   "status": "miss",
+   "refusal": null,
+   "reason_code": "version_not_collected",
+   "answer_text": null,
+   "evidence": {
+    "id": null,
+    "locator": null
+   },
+   "index_used": null,
+   "auto_routing": null
+  },
+  {
+   "id": "F05",
+   "category": "esports_static",
+   "q": "查询一个本地未收集的英雄XYZ123",
+   "grade": {
+    "ok": true,
+    "checks": {
+     "status": true,
+     "reason_code": true,
+     "evidence_count": true,
+     "no_false_evidence": true,
+     "answer_contains": true
+    }
+   },
+   "status": "miss",
+   "refusal": null,
+   "reason_code": "not_collected",
+   "answer_text": null,
+   "evidence": {
+    "id": null,
+    "locator": null
+   },
+   "index_used": null,
+   "auto_routing": null
+  },
+  {
+   "id": "F06",
+   "category": "esports_dynamic",
+   "q": "英雄联盟 2026全球总决赛冠军是谁",
+   "grade": {
+    "ok": true,
+    "checks": {
+     "status": true,
+     "refusal": true,
+     "evidence_count": true,
+     "no_false_evidence": true,
+     "answer_contains": true,
+     "domains": true
+    }
+   },
+   "status": "miss",
+   "refusal": "out_of_scope",
+   "reason_code": null,
+   "answer_text": null,
+   "evidence": {
+    "id": null,
+    "locator": null
+   },
+   "index_used": "index.json",
+   "auto_routing": {
+    "mode": "single",
+    "domains": [
+     {
+      "domain": "esports_lol",
+      "game_ids": [],
+      "revisions": [],
+      "corpus_available": false,
+      "matched": [
+       "英雄联盟",
+       "全球总决赛"
+      ],
+      "tier": "strong"
+     }
+    ]
+   }
+  },
+  {
+   "id": "F07",
+   "category": "esports_dynamic",
+   "q": "英雄联盟 T1 现在阵容有哪些人",
+   "grade": {
+    "ok": true,
+    "checks": {
+     "status": true,
+     "refusal": true,
+     "evidence_count": true,
+     "no_false_evidence": true,
+     "answer_contains": true,
+     "domains": true
+    }
+   },
+   "status": "miss",
+   "refusal": "out_of_scope",
+   "reason_code": null,
+   "answer_text": null,
+   "evidence": {
+    "id": null,
+    "locator": null
+   },
+   "index_used": "index.json",
+   "auto_routing": {
+    "mode": "single",
+    "domains": [
+     {
+      "domain": "esports_lol",
+      "game_ids": [],
+      "revisions": [],
+      "corpus_available": false,
+      "matched": [
+       "英雄联盟"
+      ],
+      "tier": "strong"
+     }
+    ]
+   }
+  },
+  {
+   "id": "F08",
+   "category": "time_trap",
+   "q": "Faker 最新转会去了哪队",
+   "grade": {
+    "ok": true,
+    "checks": {
+     "status": true,
+     "refusal": true,
+     "evidence_count": true,
+     "no_false_evidence": true,
+     "answer_contains": true,
+     "domains": true
+    }
+   },
+   "status": "miss",
+   "refusal": "out_of_scope",
+   "reason_code": null,
+   "answer_text": null,
+   "evidence": {
+    "id": null,
+    "locator": null
+   },
+   "index_used": "index.json",
+   "auto_routing": {
+    "mode": "single",
+    "domains": [
+     {
+      "domain": "esports_lol",
+      "game_ids": [],
+      "revisions": [],
+      "corpus_available": false,
+      "matched": [
+       "Faker"
+      ],
+      "tier": "strong"
+     }
+    ]
+   }
+  },
+  {
+   "id": "F09",
+   "category": "time_trap",
+   "q": "英雄联盟 当前职业比赛用哪个补丁",
+   "grade": {
+    "ok": true,
+    "checks": {
+     "status": true,
+     "refusal": true,
+     "evidence_count": true,
+     "no_false_evidence": true,
+     "answer_contains": true,
+     "domains": true
+    }
+   },
+   "status": "miss",
+   "refusal": "out_of_scope",
+   "reason_code": null,
+   "answer_text": null,
+   "evidence": {
+    "id": null,
+    "locator": null
+   },
+   "index_used": "index.json",
+   "auto_routing": {
+    "mode": "single",
+    "domains": [
+     {
+      "domain": "esports_lol",
+      "game_ids": [],
+      "revisions": [],
+      "corpus_available": false,
+      "matched": [
+       "英雄联盟"
+      ],
+      "tier": "strong"
+     }
+    ]
+   }
+  },
+  {
+   "id": "F10",
+   "category": "esports_other",
+   "q": "DOTA2 TI14 赛程",
+   "grade": {
+    "ok": true,
+    "checks": {
+     "status": true,
+     "refusal": true,
+     "evidence_count": true,
+     "no_false_evidence": true,
+     "answer_contains": true,
+     "domains": true
+    }
+   },
+   "status": "miss",
+   "refusal": "out_of_scope",
+   "reason_code": null,
+   "answer_text": null,
+   "evidence": {
+    "id": null,
+    "locator": null
+   },
+   "index_used": "index.json",
+   "auto_routing": {
+    "mode": "single",
+    "domains": [
+     {
+      "domain": "esports_dota",
+      "game_ids": [],
+      "revisions": [],
+      "corpus_available": false,
+      "matched": [
+       "DOTA2",
+       "TI14"
+      ],
+      "tier": "strong"
+     }
+    ]
+   }
+  },
+  {
+   "id": "F11",
+   "category": "esports_other",
+   "q": "CS2 Major 决赛结果",
+   "grade": {
+    "ok": true,
+    "checks": {
+     "status": true,
+     "refusal": true,
+     "evidence_count": true,
+     "no_false_evidence": true,
+     "answer_contains": true,
+     "domains": true
+    }
+   },
+   "status": "miss",
+   "refusal": "out_of_scope",
+   "reason_code": null,
+   "answer_text": null,
+   "evidence": {
+    "id": null,
+    "locator": null
+   },
+   "index_used": "index.json",
+   "auto_routing": {
+    "mode": "single",
+    "domains": [
+     {
+      "domain": "esports_cs2",
+      "game_ids": [],
+      "revisions": [],
+      "corpus_available": false,
+      "matched": [
+       "CS2",
+       "cs2"
+      ],
+      "tier": "strong"
+     }
+    ]
+   }
+  },
+  {
+   "id": "F12",
+   "category": "time_trap",
+   "q": "无畏契约最新补丁改了什么",
+   "grade": {
+    "ok": true,
+    "checks": {
+     "status": true,
+     "refusal": true,
+     "evidence_count": true,
+     "no_false_evidence": true,
+     "answer_contains": true,
+     "domains": true
+    }
+   },
+   "status": "miss",
+   "refusal": "out_of_scope",
+   "reason_code": null,
+   "answer_text": null,
+   "evidence": {
+    "id": null,
+    "locator": null
+   },
+   "index_used": "index.json",
+   "auto_routing": {
+    "mode": "single",
+    "domains": [
+     {
+      "domain": "esports_valorant",
+      "game_ids": [],
+      "revisions": [],
+      "corpus_available": false,
+      "matched": [
+       "无畏契约"
+      ],
+      "tier": "strong"
+     }
+    ]
+   }
+  },
+  {
+   "id": "F13",
+   "category": "modern_games",
+   "q": "原神 最新版本 更新了什么",
+   "grade": {
+    "ok": true,
+    "checks": {
+     "status": true,
+     "refusal": true,
+     "evidence_count": true,
+     "no_false_evidence": true,
+     "answer_contains": true,
+     "domains": true
+    }
+   },
+   "status": "miss",
+   "refusal": "out_of_scope",
+   "reason_code": null,
+   "answer_text": null,
+   "evidence": {
+    "id": null,
+    "locator": null
+   },
+   "index_used": "index.json",
+   "auto_routing": {
+    "mode": "single",
+    "domains": [
+     {
+      "domain": "modern_games",
+      "game_ids": [],
+      "revisions": [],
+      "corpus_available": false,
+      "matched": [
+       "原神"
+      ],
+      "tier": "strong"
+     }
+    ]
+   }
+  },
+  {
+   "id": "F14",
+   "category": "cross_domain",
+   "q": "英雄联盟和DOTA2 现在哪个赛事奖金更高",
+   "grade": {
+    "ok": true,
+    "checks": {
+     "status": true,
+     "refusal": true,
+     "evidence_count": true,
+     "no_false_evidence": true,
+     "answer_contains": true,
+     "domains": true,
+     "mode": true
+    }
+   },
+   "status": "miss",
+   "refusal": "out_of_scope",
+   "reason_code": null,
+   "answer_text": null,
+   "evidence": {
+    "id": null,
+    "locator": null
+   },
+   "index_used": "index.json",
+   "auto_routing": {
+    "mode": "multi",
+    "domains": [
+     {
+      "domain": "esports_lol",
+      "game_ids": [],
+      "revisions": [],
+      "corpus_available": false,
+      "matched": [
+       "英雄联盟"
+      ],
+      "tier": "strong"
+     },
+     {
+      "domain": "esports_dota",
+      "game_ids": [],
+      "revisions": [],
+      "corpus_available": false,
+      "matched": [
+       "DOTA2"
+      ],
+      "tier": "strong"
+     }
+    ]
+   }
+  },
+  {
+   "id": "F15",
+   "category": "retro_regression",
+   "q": "热血足球 PK战模式怎么玩",
+   "grade": {
+    "ok": true,
+    "checks": {
+     "status": true,
+     "evidence_count": true,
+     "answer_contains": true
+    }
+   },
+   "status": "pass",
+   "refusal": null,
+   "reason_code": null,
+   "answer_text": null,
+   "evidence": {
+    "id": "518b15638c5f",
+    "locator": "_工具脚本/taspipe/游戏包/来源库/取证/setsumei_热血足球说明书扫描_20261118.md#L327-L341"
+   },
+   "index_used": "index.json",
+   "auto_routing": null
+  },
+  {
+   "id": "F16",
+   "category": "retro_regression",
+   "q": "KOF98 ECK 能不能关掉队友改成1v1",
+   "grade": {
+    "ok": true,
+    "checks": {
+     "status": true,
+     "evidence_count": true,
+     "answer_contains": true
+    }
+   },
+   "status": "pass",
+   "refusal": null,
+   "reason_code": null,
+   "answer_text": null,
+   "evidence": {
+    "id": "51fcabcc7db8",
+    "locator": "F:/tas_rig/docs/素材生产规范.md#L185-L190"
+   },
+   "index_used": "index.json",
+   "auto_routing": null
+  }
+ ],
+ "summary": {
+  "total": 16,
+  "ok": 16,
+  "by_category": {
+   "esports_static": {
+    "ok": 4,
+    "total": 4
+   },
+   "time_trap": {
+    "ok": 4,
+    "total": 4
+   },
+   "esports_dynamic": {
+    "ok": 2,
+    "total": 2
+   },
+   "esports_other": {
+    "ok": 2,
+    "total": 2
+   },
+   "modern_games": {
+    "ok": 1,
+    "total": 1
+   },
+   "cross_domain": {
+    "ok": 1,
+    "total": 1
+   },
+   "retro_regression": {
+    "ok": 2,
+    "total": 2
+   }
+  }
+ },
+ "index_sha256": "ecc7bbcce5dcd64fbbb4064d3fbcdde21ee18fdb4da1dec428040ca6356a1c60",
+ "db_sha256": "32f029f41629cb3774e701a705d521aa49550c76deabbc0affc760bec264d5c1",
+ "code": {
+  "kb": "d5a3796412e10b44eb5a3f66faa04249fa2bd788257343ec9c6aaa977e3083e0",
+  "kb_answer": "e9a5cf2144dfe81890183e1d185b9af536540118df17078e29f39d2a8cddd53a",
+  "kb_esports": "581dc5a328e4abab77c563b419faa4d2f65c2301379cce791a1b5c0aeabbc9db",
+  "kb_provenance": "0ff8d170bbcf624b522b1e3b348eac14680fef8f2319a3b992c9ed4d76804b29",
+  "kb_route": "222a38bc272b0a035edcff6b68cd744c498b4f24224207ff44a3caa51e28c378",
+  "kb_selector": "5843b007d66e88e2d6ac2d6d7fd3a62249d80308d6f153879739227af358be71",
+  "producer": "1f1873c864fbdb7d854718002d1602cae175b98e36071372794e0730306d6f90"
+ }
+}

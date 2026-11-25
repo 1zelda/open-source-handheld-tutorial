@@ -1,0 +1,478 @@
+{
+  "pages": 8,
+  "section4_page": 4,
+  "snapshot_pages": [
+    1,
+    4,
+    7,
+    8
+  ],
+  "check_count": 30,
+  "manifest": {
+    "schema": "kb_final_manifest_after_citation_authority_fix_v1",
+    "generated_at": "2026-11-24T15:39:22Z",
+    "scope": "BM25 production default unchanged; strict alias qualification shadow-only; zero external generative model or paid API",
+    "production_unchanged": {
+      "top_window": 3,
+      "fragment_policy": null,
+      "fact_selector": null,
+      "strict_shadow_only": true,
+      "megaman_route_enabled": false,
+      "commercial_rom_or_bios_ingested": false
+    },
+    "index": {
+      "path": "F:\\开源掌机教程\\_工具脚本\\taspipe\\游戏包\\知识库\\index.json",
+      "bytes": 3607419,
+      "sha256": "2a93e76d5876c1181e7784a20eca0f4d84888d0292d281fc6eea3564090b9260",
+      "chunks": 773,
+      "built_at": "2026-11-24",
+      "token_version": null,
+      "pipeline": "clean2|tok4|chunk5|max700|hard1200|rows25|ja300"
+    },
+    "news_snapshot": {
+      "path": "F:\\开源掌机教程\\选题决策层\\kb快照\\index.json",
+      "bytes": 3607419,
+      "sha256": "2a93e76d5876c1181e7784a20eca0f4d84888d0292d281fc6eea3564090b9260",
+      "chunks": 773,
+      "synced": true
+    },
+    "hybrid_excluded": {
+      "path": "F:\\开源掌机教程\\_工具脚本\\taspipe\\游戏包\\知识库\\index_hybrid.json",
+      "bytes": 3644903,
+      "sha256": "15b1e925d098bd9ba37fd1d186ecf89bcd5876c255849602f14859177ae4a54d",
+      "chunks": 787,
+      "reason": "stale/unadopted dense arm; not used for final claims"
+    },
+    "corpus_map": {
+      "path": "F:\\开源掌机教程\\_工具脚本\\taspipe\\游戏包\\知识库\\corpus_map.json",
+      "bytes": 23464,
+      "sha256": "907d4c719a9e93e2ad62c9c21d5e1aac916c5d7a0fea759818cd5c6414d8f19e"
+    },
+    "sources": {
+      "path": "F:\\开源掌机教程\\_工具脚本\\taspipe\\游戏包\\来源库\\sources.json",
+      "bytes": 57733,
+      "sha256": "177d14bc9a7a95cade7790c06b6c061834b16167454e28dd30679682a3117667"
+    },
+    "esports_db": {
+      "path": "F:\\开源掌机教程\\_工具脚本\\taspipe\\游戏包\\电竞事实库\\facts_v1.db",
+      "bytes": 2056192,
+      "sha256": "32f029f41629cb3774e701a705d521aa49550c76deabbc0affc760bec264d5c1",
+      "dynamic_counts": {
+        "series": 0,
+        "membership": 0,
+        "transfer_event": 0,
+        "patch_deployment": 0
+      }
+    },
+    "code": {
+      "kb": "1844d8baceb5ce65f2432908a84425ee1fcb8cb1f6e35e8d10c2f3a25331d08f",
+      "kb_answer": "da05727ede62ffb3",
+      "kb_route": "a22fe95be89c1c57",
+      "kb_selector": "5843b007d66e88e2",
+      "kb_esports": "581dc5a328e4abab77c563b419faa4d2f65c2301379cce791a1b5c0aeabbc9db",
+      "grader": "461aad1af957eaccc8124efafb375e44812255af34e91faaddbd7362b6ef57a8",
+      "producer": "4112752fecdad192",
+      "kb_dense": "76ae1934b59d798b",
+      "kb_provenance": "4bcf3411ab460320ecff0120458141f44315b6cb0af1713143cc75470a6e7463",
+      "eval_common": "461aad1af957eaccc8124efafb375e44812255af34e91faaddbd7362b6ef57a8",
+      "runner": "9a70ae4a16c965f220116dd7398835c2d543f4481c1b5d675b707c69a00ca945"
+    },
+    "delivery_code": {
+      "kb": {
+        "path": "F:\\开源掌机教程\\_工具脚本\\taspipe\\kb.py",
+        "bytes": 90348,
+        "sha256": "1844d8baceb5ce65f2432908a84425ee1fcb8cb1f6e35e8d10c2f3a25331d08f"
+      },
+      "kb_provenance": {
+        "path": "F:\\开源掌机教程\\_工具脚本\\taspipe\\kb_provenance.py",
+        "bytes": 8699,
+        "sha256": "4bcf3411ab460320ecff0120458141f44315b6cb0af1713143cc75470a6e7463"
+      },
+      "kb_selftest_gates": {
+        "path": "F:\\开源掌机教程\\_工具脚本\\taspipe\\kb_selftest_gates.py",
+        "bytes": 173552,
+        "sha256": "158409770f627268070075f5859196c26d5b117f1e7e113d0878cd5bb910d068"
+      }
+    },
+    "evaluations": {
+      "blind": {
+        "passed": 26,
+        "total": 26,
+        "errors": 0,
+        "wrong_evidence_ids": [],
+        "isolation_ok": true,
+        "artifact": {
+          "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261124\\blind_eval_after_citation_authority_fix_20261124.json",
+          "bytes": 536211,
+          "sha256": "7d75baccf83ea4e1b758d11b99b12249a01c9c0d285d47e27ee6b884815aae29"
+        }
+      },
+      "heldout_blind": {
+        "passed": 16,
+        "total": 16,
+        "by_tier": {
+          "strict_pass": {
+            "total": 12,
+            "ok": 12
+          },
+          "refuse": {
+            "total": 3,
+            "ok": 3
+          },
+          "version_guard": {
+            "total": 1,
+            "ok": 1
+          }
+        },
+        "errors": 0,
+        "wrong_evidence_ids": [],
+        "isolation_ok": true,
+        "artifact": {
+          "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261124\\heldout_eval_after_citation_authority_fix_20261124.json",
+          "bytes": 125237,
+          "sha256": "0cb295cc6c23f6f35971c6f8fdcabe31f9914e430ef5f298ef8201ce92aa250b"
+        }
+      },
+      "full_domain": {
+        "passed": 16,
+        "total": 16,
+        "by_category": {
+          "esports_static": {
+            "ok": 4,
+            "total": 4
+          },
+          "time_trap": {
+            "ok": 4,
+            "total": 4
+          },
+          "esports_dynamic": {
+            "ok": 2,
+            "total": 2
+          },
+          "esports_other": {
+            "ok": 2,
+            "total": 2
+          },
+          "modern_games": {
+            "ok": 1,
+            "total": 1
+          },
+          "cross_domain": {
+            "ok": 1,
+            "total": 1
+          },
+          "retro_regression": {
+            "ok": 2,
+            "total": 2
+          }
+        },
+        "db_sha256": "32f029f41629cb3774e701a705d521aa49550c76deabbc0affc760bec264d5c1",
+        "artifact": {
+          "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261124\\full_domain_eval_after_citation_authority_fix_20261124.json",
+          "bytes": 12977,
+          "sha256": "3b5b4f04bb67df13dc63cbb2e42ea6cef0a3c6b3622d7a991c941e9b360ea34a"
+        }
+      },
+      "selector": {
+        "base_passed": 26,
+        "total": 26,
+        "modes": {
+          "scoped": {
+            "passed": 26,
+            "wrong_evidence": [],
+            "intercepted": [],
+            "newly_passed": []
+          },
+          "scoped_beyond": {
+            "passed": 26,
+            "wrong_evidence": [],
+            "intercepted": [],
+            "newly_passed": [
+              "X11"
+            ]
+          },
+          "replace": {
+            "passed": 23,
+            "wrong_evidence": [],
+            "intercepted": [
+              "X03",
+              "X04",
+              "X05",
+              "X17",
+              "X19",
+              "X20",
+              "X21",
+              "X22",
+              "X23",
+              "X30"
+            ],
+            "newly_passed": []
+          },
+          "strict_fragments": {
+            "passed": 21,
+            "wrong_evidence": [],
+            "intercepted": [
+              "X03",
+              "X04",
+              "X05",
+              "X17",
+              "X19",
+              "X20",
+              "X22",
+              "X23",
+              "X30"
+            ],
+            "newly_passed": []
+          }
+        },
+        "strict_shadow_only": true,
+        "artifact": {
+          "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261124\\selector_sweep_after_citation_authority_fix_20261124.json",
+          "bytes": 283626,
+          "sha256": "f7a046af5a4c86b7b2b615c315192e5f7f9cf096914a9dda1393692d4ed2f599"
+        }
+      },
+      "strict_status_comparison": {
+        "default_status_pass": 13,
+        "strict_status_pass": 7,
+        "default_v2": 26,
+        "strict_v2": 21,
+        "intercepted_ids": [
+          "Q01",
+          "Q02",
+          "Q03",
+          "Q04",
+          "Q05",
+          "Q18"
+        ],
+        "v2_regressed_ids": [
+          "Q01",
+          "Q02",
+          "Q03",
+          "Q05",
+          "Q18"
+        ],
+        "artifact": {
+          "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261124\\strict_default_regression_after_citation_authority_fix_20261124.json",
+          "bytes": 115282,
+          "sha256": "846f872fa297a567a8ad741546c5af9a019a5b0a8a07e9c7c483c6529e33718c"
+        }
+      },
+      "strict_alias_evolution": {
+        "old_v2": 22,
+        "temporary_v2": 25,
+        "current_v2": 21,
+        "x23_kind": "insufficient_source",
+        "x23_current_class": "intercepted",
+        "artifact": {
+          "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261124\\strict_alias_evolution_audit_after_citation_authority_fix_20261124.json",
+          "bytes": 32861,
+          "sha256": "c490af1e50a3d4716bc522de943b9290d3e872f6515e28be26614bb4cd16da06"
+        }
+      }
+    },
+    "gates": {
+      "project_selftest": {
+        "passed": 1462,
+        "total": 1462,
+        "ok": true,
+        "log": {
+          "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261124\\selftest_after_citation_authority_fix_20261124.log",
+          "bytes": 152358,
+          "sha256": "045bdc2b4533a7e4b6c4cbe226daf87b7608714c41e0bb546fa66d0a0435b6b8"
+        }
+      },
+      "kb_selftest": {
+        "passed": 302,
+        "total": 302,
+        "ok": true,
+        "log": {
+          "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261124\\kb_selftest_after_citation_authority_fix_20261124.log",
+          "bytes": 69663,
+          "sha256": "34153b07bae6daf145b9239d5fb605e517de600bd9518dd27aaefc62c48e6a73"
+        }
+      },
+      "cross_platform_selftest": {
+        "passed": 33,
+        "total": 33,
+        "ok": true,
+        "log": {
+          "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261124\\cross_platform_after_citation_authority_fix_20261124.log",
+          "bytes": 2685,
+          "sha256": "df44e52548c3d65bdd7bb22274f9e7a8cf50556a2270c8c4cc95bb9acf921ca6"
+        }
+      },
+      "topic_selftest": {
+        "passed": 166,
+        "total": 166,
+        "ok": true,
+        "log": {
+          "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261124\\topic_selftest_after_citation_authority_fix_20261124.log",
+          "bytes": 10576,
+          "sha256": "aed86117fa44632b158eac0767d0e6fbcc1d62535d26bab9d32f3e54b83636a9"
+        }
+      }
+    },
+    "identity_audit": {
+      "retained_unverified": 6,
+      "promoted": 0,
+      "identity_status_counts": {
+        "aggregate_not_single_identity": 1,
+        "unresolved_local_set": 1,
+        "documented_patch_boundary": 1,
+        "unresolved_exact_rom": 1,
+        "intentionally_unspecified": 1,
+        "separate_mobile_title": 1
+      },
+      "artifact": {
+        "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261124\\version_identity_audit_20261124.json",
+        "bytes": 12106,
+        "sha256": "8dae55e831beb3a1d58a83fe67faef0752e0d173e530ec5a95e458238950bbfb"
+      }
+    },
+    "megaman1": {
+      "draft_status": "draft_not_frozen",
+      "questions": 12,
+      "production_activated": false,
+      "draft": {
+        "path": "F:\\开源掌机教程\\知识库P1_20261118\\megaman1_questions_draft_20261124.json",
+        "bytes": 6090,
+        "sha256": "30f8d1d88485311c06f1786be92c18b0ab6fe2a3c6486a875c8c9b25ef70009a"
+      },
+      "readiness": {
+        "path": "F:\\开源掌机教程\\知识库P1_20261118\\megaman1_corpus_readiness_20261124.md",
+        "bytes": 5370,
+        "sha256": "4af3ef0cc30d2c6c5aa308a6ef6eb2a1055666cf71ff6ebb859185db84e408e8"
+      }
+    },
+    "news_consumer_smoke": {
+      "ok": true,
+      "logged_queries": 7,
+      "golden_path_passes": [
+        "smoke-soccer-role",
+        "smoke-soccer-count",
+        "smoke-fighting",
+        "smoke-kof98"
+      ],
+      "statuses": {
+        "smoke-soccer-broad": "inconclusive",
+        "smoke-soccer-role": "pass",
+        "smoke-soccer-count": "pass",
+        "smoke-fighting": "pass",
+        "smoke-kof98": "pass",
+        "smoke-unrouted": "inconclusive",
+        "smoke-multi": "miss"
+      },
+      "real_state_unchanged": true,
+      "artifact": {
+        "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261124\\news_snapshot_crosscheck_after_citation_authority_fix_20261124.json",
+        "bytes": 37015,
+        "sha256": "e7e3b9c96d06c64f02b7e89d466362b905dfe3f76a129e21e42e5595ee6b6f17"
+      }
+    },
+    "state_isolation": {
+      "ok": true,
+      "blind_changed_paths": [],
+      "heldout_changed_paths": [],
+      "strict_comparison_changed_paths": [],
+      "news_smoke_changed_paths": []
+    },
+    "prior_delivery_unchanged": {
+      "ok": true,
+      "artifacts": {
+        "知识库改进优化指导_2026-11-24_实施回填.md": {
+          "path": "F:\\开源掌机教程\\知识库改进优化指导_2026-11-24_实施回填.md",
+          "bytes": 25565,
+          "sha256": "f2c18269c68daa1bcd4c9d5b6c2d8c7ad16c1372e9d6eb2f04d3cd1a06468d94",
+          "expected_sha256": "f2c18269c68daa1bcd4c9d5b6c2d8c7ad16c1372e9d6eb2f04d3cd1a06468d94"
+        },
+        "知识库改进优化指导_2026-11-24_实施回填.pdf": {
+          "path": "F:\\开源掌机教程\\知识库改进优化指导_2026-11-24_实施回填.pdf",
+          "bytes": 834027,
+          "sha256": "b3e6c2c427517ef5c77b2f991c8a8d994820fc56c764993e1268253d805e5a50",
+          "expected_sha256": "b3e6c2c427517ef5c77b2f991c8a8d994820fc56c764993e1268253d805e5a50"
+        },
+        "知识库改进优化指导_2026-11-24_最终加固回填.md": {
+          "path": "F:\\开源掌机教程\\知识库改进优化指导_2026-11-24_最终加固回填.md",
+          "bytes": 31586,
+          "sha256": "c8b1b08e912e1d5cf760bde0a56cdb3544f371d70396ae0d166adcc7e9a5b098",
+          "expected_sha256": "c8b1b08e912e1d5cf760bde0a56cdb3544f371d70396ae0d166adcc7e9a5b098"
+        },
+        "知识库改进优化指导_2026-11-24_最终加固回填.pdf": {
+          "path": "F:\\开源掌机教程\\知识库改进优化指导_2026-11-24_最终加固回填.pdf",
+          "bytes": 906531,
+          "sha256": "53b3ab92b9a5fd9806e4fabccbd0165369e8baa187fcb546fde2fe20464ce061",
+          "expected_sha256": "53b3ab92b9a5fd9806e4fabccbd0165369e8baa187fcb546fde2fe20464ce061"
+        },
+        "知识库P1_20261118/kb_final_20261124/final_manifest.json": {
+          "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261124\\final_manifest.json",
+          "bytes": 11032,
+          "sha256": "2fd67d2dc5f771312b5f9eb95f7c497cf1fe89d74f29b1ab3114d3278405b630",
+          "expected_sha256": "2fd67d2dc5f771312b5f9eb95f7c497cf1fe89d74f29b1ab3114d3278405b630"
+        },
+        "知识库P1_20261118/kb_final_20261124/final_manifest_post_provenance_20261124.json": {
+          "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261124\\final_manifest_post_provenance_20261124.json",
+          "bytes": 14673,
+          "sha256": "a4ce75fca15bf82c6e7f244327618544036fd364757f25c1040d431898383745",
+          "expected_sha256": "a4ce75fca15bf82c6e7f244327618544036fd364757f25c1040d431898383745"
+        }
+      }
+    },
+    "report_md": {
+      "path": "F:\\开源掌机教程\\知识库改进优化指导_2026-11-24_来源别名修正回填.md",
+      "bytes": 14077,
+      "sha256": "90fc37af4267ef8b3cc68ee5623a76cdb4f993d410c41b13fc3b3498a5132715"
+    },
+    "artifact_inventory": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261124\\artifact_inventory_after_citation_authority_fix_20261124.md",
+    "delivery_dir": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261124",
+    "git": {
+      "commit_created": false,
+      "push_performed": false
+    }
+  },
+  "checks": {
+    "pages_positive": true,
+    "current_conclusion_present": true,
+    "rule_section_present": true,
+    "strict_section_present": true,
+    "evolution_section_present": true,
+    "news_section_present": true,
+    "history_section_present": true,
+    "remaining_section_present": true,
+    "final_sha_present": true,
+    "kb_sha_present": true,
+    "provenance_sha_present": true,
+    "gates_sha_present": true,
+    "manifest_matches_index": true,
+    "manifest_matches_snapshot": true,
+    "selftest_present": true,
+    "kb_gates_present": true,
+    "cross_gates_present": true,
+    "topic_gates_present": true,
+    "strict_grade_present": true,
+    "strict_raw_present": true,
+    "x23_consistent_present": true,
+    "heldout_present": true,
+    "identity_zero_promoted": true,
+    "megaman_draft_present": true,
+    "news_snapshot_synced": true,
+    "current_section_page_found": true,
+    "no_replacement_char": true,
+    "no_blank_pages": true,
+    "no_outside_blocks": true,
+    "no_dom_overflow": true
+  },
+  "dom_overflow": [],
+  "outside_blocks": [],
+  "page_text_lengths": [
+    1162,
+    756,
+    750,
+    848,
+    1028,
+    744,
+    844,
+    297
+  ],
+  "pdf_bytes": 588155
+}

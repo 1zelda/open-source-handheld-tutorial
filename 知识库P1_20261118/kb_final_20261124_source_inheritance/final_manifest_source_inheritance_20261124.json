@@ -1,0 +1,941 @@
+{
+  "schema": "kb_final_manifest_source_inheritance_v1",
+  "generated_at": "2026-11-24T16:26:43Z",
+  "scope": "来源资格继承统一修正；BM25 生产默认；strict 显式影子臂；稠密层未批准且已隔离；冻结标签未改；无外部生成或付费 API。",
+  "production_unchanged": {
+    "top_window": 3,
+    "fragment_policy": null,
+    "fact_selector": null,
+    "strict_production_default": false,
+    "dense_production_default": false,
+    "megaman_route_enabled": false,
+    "megaman_entries_indexed": 0,
+    "commercial_rom_or_bios_ingested": false
+  },
+  "index": {
+    "path": "F:\\开源掌机教程\\_工具脚本\\taspipe\\游戏包\\知识库\\index.json",
+    "bytes": 3608260,
+    "sha256": "5c6fdb832cac502845d2e9dce269f25023dd435af42a5f59c772efbe9169596b",
+    "chunks": 773,
+    "stats": {
+      "N": 773,
+      "avgdl": 413.738680465718,
+      "terms": 50783
+    },
+    "pipeline": "clean2|tok4|chunk5|max700|hard1200|rows25|ja300",
+    "built_at": "2026-11-25"
+  },
+  "hybrid_probe_index": {
+    "path": "F:\\开源掌机教程\\_工具脚本\\taspipe\\游戏包\\知识库\\index_hybrid.json",
+    "bytes": 3645745,
+    "sha256": "c3db477371d2eb5f00a63f5678f04d3b4caabe778a693ce57c83d65c39845ee3",
+    "chunks": 787,
+    "stats": {
+      "N": 787,
+      "avgdl": 409.09148665819566,
+      "terms": 51300
+    },
+    "pipeline": "clean2|tok4|chunk5|max700|hard1200|rows25|ja300",
+    "production_approved": false
+  },
+  "corpus_map": {
+    "path": "F:\\开源掌机教程\\_工具脚本\\taspipe\\游戏包\\知识库\\corpus_map.json",
+    "bytes": 23464,
+    "sha256": "907d4c719a9e93e2ad62c9c21d5e1aac916c5d7a0fea759818cd5c6414d8f19e"
+  },
+  "source_registry": {
+    "path": "F:\\开源掌机教程\\_工具脚本\\taspipe\\游戏包\\来源库\\sources.json",
+    "bytes": 57733,
+    "sha256": "177d14bc9a7a95cade7790c06b6c061834b16167454e28dd30679682a3117667"
+  },
+  "source_claim": {
+    "path": "F:\\开源掌机教程\\_工具脚本\\taspipe\\游戏包\\热血足球联盟_必杀全清单.md",
+    "bytes": 29371,
+    "sha256": "13380518bf791e6abf22ffeb5422428b4dd845673a1be2241eeac53d1b148d14"
+  },
+  "ledger": {
+    "path": "F:\\开源掌机教程\\测试问题与闸门说明书.md",
+    "bytes": 237608,
+    "sha256": "9968ba987854a432ff7be73e04007b8bb47db51961b8a2a1047a40d19c955e9f",
+    "appended_section": "53"
+  },
+  "code": {
+    "kb": "1844d8baceb5ce65f2432908a84425ee1fcb8cb1f6e35e8d10c2f3a25331d08f",
+    "kb_answer": "da05727ede62ffb378817179b2f2ff8ff856ff3e9bd963b6b4dc3712f9074023",
+    "kb_route": "a22fe95be89c1c5758add431b1615c7f2305c0d719fc81cef161e262179e5084",
+    "kb_selector": "5843b007d66e88e2d6ac2d6d7fd3a62249d80308d6f153879739227af358be71",
+    "kb_esports": "581dc5a328e4abab77c563b419faa4d2f65c2301379cce791a1b5c0aeabbc9db",
+    "grader": "461aad1af957eaccc8124efafb375e44812255af34e91faaddbd7362b6ef57a8",
+    "producer": "d7f4debf10c8c3aefaa4d3fcd0f4de58458a77d44b6fa698220c866709b758ad",
+    "kb_provenance": {
+      "path": "F:\\开源掌机教程\\_工具脚本\\taspipe\\kb_provenance.py",
+      "bytes": 8699,
+      "sha256": "4bcf3411ab460320ecff0120458141f44315b6cb0af1713143cc75470a6e7463"
+    },
+    "kb_selftest_gates": {
+      "path": "F:\\开源掌机教程\\_工具脚本\\taspipe\\kb_selftest_gates.py",
+      "bytes": 173552,
+      "sha256": "158409770f627268070075f5859196c26d5b117f1e7e113d0878cd5bb910d068"
+    },
+    "sources_audit": {
+      "path": "F:\\开源掌机教程\\_工具脚本\\taspipe\\sources.py",
+      "bytes": 44394,
+      "sha256": "21d26ebf3265a422fe7eea949e18babb3f4aa51664bb40e5f55f1f47ae8c6d43"
+    }
+  },
+  "evaluations": {
+    "blind": {
+      "passed": 26,
+      "total": 26,
+      "wrong_evidence_ids": [],
+      "missed_answer_ids": [
+        "Q16",
+        "Q17",
+        "P19"
+      ],
+      "isolation_ok": true,
+      "rerun_after_ledger_append": true,
+      "artifact": {
+        "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261124_source_inheritance\\blind_eval_source_inheritance_20261124.json",
+        "bytes": 536220,
+        "sha256": "1856c39b81aedce435394c4499bb9b665b9a4b6a15bf262c59f14725e9a21657"
+      }
+    },
+    "heldout_blind": {
+      "passed": 16,
+      "total": 16,
+      "wrong_evidence_ids": [],
+      "isolation_ok": true,
+      "rerun_after_ledger_append": true,
+      "artifact": {
+        "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261124_source_inheritance\\heldout_eval_source_inheritance_20261124.json",
+        "bytes": 125245,
+        "sha256": "824117f180b75e57dc8851c6a639ce4f1fd3d8060cb15ffc9df6f7944e9d14ff"
+      }
+    },
+    "full_domain": {
+      "passed": 16,
+      "total": 16,
+      "rerun_after_ledger_append": true,
+      "artifact": {
+        "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261124_source_inheritance\\full_domain_eval_source_inheritance_20261124.json",
+        "bytes": 12977,
+        "sha256": "82b3e740e5675fb0e7c487110faf79546030747ed2c93fea9ebd64801a958926"
+      }
+    },
+    "selector": {
+      "base": 26,
+      "modes": {
+        "scoped": {
+          "v2_ok": 26,
+          "wrong_evidence": [],
+          "newly_passed": [],
+          "intercepted": []
+        },
+        "scoped_beyond": {
+          "v2_ok": 26,
+          "wrong_evidence": [],
+          "newly_passed": [
+            "X11"
+          ],
+          "intercepted": []
+        },
+        "replace": {
+          "v2_ok": 23,
+          "wrong_evidence": [],
+          "newly_passed": [],
+          "intercepted": [
+            "X03",
+            "X04",
+            "X05",
+            "X17",
+            "X19",
+            "X20",
+            "X21",
+            "X22",
+            "X23",
+            "X30"
+          ]
+        },
+        "strict_fragments": {
+          "v2_ok": 21,
+          "wrong_evidence": [],
+          "newly_passed": [],
+          "intercepted": [
+            "X03",
+            "X04",
+            "X05",
+            "X17",
+            "X19",
+            "X20",
+            "X22",
+            "X23",
+            "X30"
+          ]
+        }
+      },
+      "artifact": {
+        "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261124_source_inheritance\\selector_source_inheritance_20261124.json",
+        "bytes": 283626,
+        "sha256": "6e93b060f7b397137ea66154623ecb53a37462f21e2c1d138542d74f284ef563"
+      }
+    },
+    "four_arm_audit": {
+      "summaries": {
+        "base_default": {
+          "status_pass": 13,
+          "status_inconclusive": 8,
+          "status_miss": 5,
+          "v2_ok": 26,
+          "v2_failed_ids": [],
+          "wrong_evidence_ids": [],
+          "missed_answer_ids": [
+            "Q16",
+            "Q17",
+            "P19"
+          ]
+        },
+        "base_strict": {
+          "status_pass": 7,
+          "status_inconclusive": 14,
+          "status_miss": 5,
+          "v2_ok": 21,
+          "v2_failed_ids": [
+            "Q01",
+            "Q02",
+            "Q03",
+            "Q05",
+            "Q18"
+          ],
+          "wrong_evidence_ids": [],
+          "missed_answer_ids": [
+            "Q01",
+            "Q02",
+            "Q03",
+            "Q04",
+            "Q05",
+            "Q16",
+            "Q17",
+            "Q18",
+            "P19"
+          ]
+        },
+        "hybrid_default": {
+          "status_pass": 14,
+          "status_inconclusive": 7,
+          "status_miss": 5,
+          "v2_ok": 22,
+          "v2_failed_ids": [
+            "Q02",
+            "Q08",
+            "Q10",
+            "Q18"
+          ],
+          "wrong_evidence_ids": [
+            "Q06",
+            "Q08",
+            "Q10",
+            "Q16",
+            "Q18",
+            "P22",
+            "P23",
+            "P24"
+          ],
+          "missed_answer_ids": [
+            "Q02",
+            "Q17",
+            "P19"
+          ]
+        },
+        "hybrid_strict": {
+          "status_pass": 10,
+          "status_inconclusive": 11,
+          "status_miss": 5,
+          "v2_ok": 19,
+          "v2_failed_ids": [
+            "Q01",
+            "Q02",
+            "Q03",
+            "Q05",
+            "Q08",
+            "Q10",
+            "Q18"
+          ],
+          "wrong_evidence_ids": [
+            "Q05",
+            "Q06",
+            "Q08",
+            "Q10",
+            "Q16",
+            "P22",
+            "P23"
+          ],
+          "missed_answer_ids": [
+            "Q01",
+            "Q02",
+            "Q03",
+            "Q04",
+            "Q17",
+            "Q18",
+            "P19"
+          ]
+        }
+      },
+      "x23_frozen_label_preserved": true,
+      "old_default_unchanged": true,
+      "artifact": {
+        "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261124_source_inheritance\\source_inheritance_arm_audit_20261124.json",
+        "bytes": 36402,
+        "sha256": "df2af8b73b92bea64e24b605d1731e209a729f10b4e9eb1ea7adbe2e11f83ad0"
+      }
+    },
+    "regression": {
+      "all_checks_ok": true,
+      "checks": {
+        "old_default_unchanged": true,
+        "old_default_changed_ids": [],
+        "base_isolation": true,
+        "hybrid_isolation": true,
+        "question_fingerprints_match_between_arms": true,
+        "probe_fingerprints_match_between_arms": true,
+        "x23_frozen_label_preserved": true,
+        "q18_source_claim_corrected": true,
+        "Q01_default_pass_strict_refused": true,
+        "Q02_default_pass_strict_refused": true,
+        "Q03_default_pass_strict_refused": true,
+        "Q04_default_pass_strict_refused": true,
+        "Q05_default_pass_strict_refused": true,
+        "Q18_default_pass_strict_refused": true,
+        "X03_default_pass_strict_refused": true,
+        "X04_default_pass_strict_refused": true,
+        "X23_default_pass_strict_refused": true,
+        "X21_authoritative_control_still_passes": true
+      },
+      "historical_annotation_conflicts": {
+        "Q01": "冻结 strict_pass 与来源资格冲突：23 种仅见搜狐 S3，S1 无可核验总量。",
+        "Q02": "冻结 strict_pass 与来源资格冲突：金表 L70-L85 属 S1 二手操作表。",
+        "Q03": "冻结 strict_pass 与来源资格冲突：按键序列属 S1 二手操作表。",
+        "Q04": "冻结 strict_pass 与来源资格冲突：难度句属 S1 二手操作表。",
+        "Q05": "冻结 strict_pass 与来源资格冲突：换人规则属 S1 二手操作表。",
+        "Q18": "新发现历史标注冲突：S1 只写发动音效，S8 才写ひっさつＯＫ且为二手件。",
+        "X03": "冻结 positive_control 与当前严格出证冲突：默认选中 S1 汇总表，官方件未进窗口。",
+        "X04": "冻结 ambiguous 与 legacy pass 冲突：S1/S8 发动法相反且无本地实测裁决。",
+        "X23": "按用户要求保留 insufficient_source 冻结标签；legacy pass 是文件级权威洗白。"
+      },
+      "artifact": {
+        "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261124_source_inheritance\\regression_source_inheritance_20261124.json",
+        "bytes": 250734,
+        "sha256": "5aa60234c4e45aa273fb97dae4008423adebb0fbda4a8945bcc9ae3416297f47"
+      }
+    }
+  },
+  "gates": {
+    "project_selftest": {
+      "passed": 1462,
+      "total": 1462,
+      "ok": true,
+      "log": {
+        "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261124_source_inheritance\\selftest_source_inheritance_20261124.log",
+        "bytes": 152358,
+        "sha256": "94cf1db8476a1b65c68596ac125ff5ecc8f8de12b50035c1cd7a77d3d849a1f8"
+      }
+    },
+    "kb_selftest": {
+      "passed": 302,
+      "total": 302,
+      "ok": true,
+      "log": {
+        "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261124_source_inheritance\\kb_selftest_source_inheritance_20261124.log",
+        "bytes": 69663,
+        "sha256": "c67ef1db6d8201aa4f3f7ad3908e0a47d793cd838988730de5e7d163aeda74a7"
+      }
+    },
+    "cross_platform_selftest": {
+      "passed": 33,
+      "total": 33,
+      "ok": true,
+      "log": {
+        "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261124_source_inheritance\\cross_platform_source_inheritance_20261124.log",
+        "bytes": 2685,
+        "sha256": "df44e52548c3d65bdd7bb22274f9e7a8cf50556a2270c8c4cc95bb9acf921ca6"
+      }
+    },
+    "topic_selftest": {
+      "passed": 166,
+      "total": 166,
+      "ok": true,
+      "log": {
+        "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261124_source_inheritance\\topic_selftest_source_inheritance_20261124.log",
+        "bytes": 10576,
+        "sha256": "aed86117fa44632b158eac0767d0e6fbcc1d62535d26bab9d32f3e54b83636a9"
+      }
+    }
+  },
+  "audits": {
+    "base": {
+      "status": "inconclusive",
+      "counts": {
+        "pass": 6,
+        "fail": 0,
+        "inconclusive": 3,
+        "entries": 35,
+        "revisions": 13,
+        "chunks": 773
+      },
+      "artifact": {
+        "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261124_source_inheritance\\kb_audit_base_source_inheritance_20261124.json",
+        "bytes": 21451,
+        "sha256": "f8fa7ef3066d35eb5cec9091a4259ba29b5b3e59b7f31505d806305278da45b1"
+      }
+    },
+    "hybrid": {
+      "status": "inconclusive",
+      "counts": {
+        "pass": 6,
+        "fail": 0,
+        "inconclusive": 3,
+        "entries": 35,
+        "revisions": 13,
+        "chunks": 787
+      },
+      "artifact": {
+        "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261124_source_inheritance\\kb_audit_hybrid_source_inheritance_20261124.json",
+        "bytes": 21451,
+        "sha256": "b3824908b7a32c525e208997a7c71e46722f6bab3678998d3580acbb70806616"
+      }
+    },
+    "sources": {
+      "status": "fail",
+      "counts": {
+        "pass": 7,
+        "fail": 1,
+        "inconclusive": 1,
+        "sources": 90,
+        "packs": 23,
+        "elements_checked": 87,
+        "elements_supported": 87
+      },
+      "artifact": {
+        "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261124_source_inheritance\\sources_audit_source_inheritance_20261124.json",
+        "bytes": 6186,
+        "sha256": "e0278c66fd7f7dd38fad1bdd1a9baab02d0929fd1f432775b5c5ab79758bb0e8"
+      }
+    }
+  },
+  "dense_isolation": {
+    "schema": "kb_dense_isolation_verification_v1",
+    "production_dense_present": {
+      "base": false,
+      "hybrid": false
+    },
+    "dense_ready": {
+      "base": [
+        false,
+        "稠密指纹件未建（py -3 -m taspipe.kb dense）"
+      ],
+      "hybrid": [
+        false,
+        "稠密指纹件未建（py -3 -m taspipe.kb dense）"
+      ]
+    },
+    "auto_index": "F:\\开源掌机教程\\_工具脚本\\taspipe\\游戏包\\知识库\\index.json",
+    "auto_domain_local": false,
+    "auto_index_is_base": true,
+    "probe_files": [
+      {
+        "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261124_source_inheritance\\dense_probe\\embeddings_5c6fdb832cac.npz",
+        "exists": true,
+        "size": 2943948,
+        "sha256": "2fced7e80bf298e422eccd2357dee9d52fc098a4f68597d6b9fd6f9ae468a665"
+      },
+      {
+        "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261124_source_inheritance\\dense_probe\\embeddings_c3db477371d2.npz",
+        "exists": true,
+        "size": 2997193,
+        "sha256": "f0ee65e1bd5bd442df7d328b8a0780b138cd8911fe8e634ed351d2b3a781ecfa"
+      }
+    ],
+    "base_rows": [
+      {
+        "id": "Q01",
+        "status": "pass",
+        "expected_status": "pass",
+        "selected_locators": [
+          "_工具脚本/taspipe/游戏包/热血足球联盟_必杀全清单.md#L3-L7"
+        ],
+        "expected_locators": [
+          "_工具脚本/taspipe/游戏包/热血足球联盟_必杀全清单.md#L3-L7"
+        ],
+        "retrieval": "bm25_only",
+        "index_used": "index.json",
+        "unchanged": true
+      },
+      {
+        "id": "Q02",
+        "status": "pass",
+        "expected_status": "pass",
+        "selected_locators": [
+          "_工具脚本/taspipe/游戏包/热血足球联盟_必杀全清单.md#L70-L85"
+        ],
+        "expected_locators": [
+          "_工具脚本/taspipe/游戏包/热血足球联盟_必杀全清单.md#L70-L85"
+        ],
+        "retrieval": "bm25_only",
+        "index_used": "index.json",
+        "unchanged": true
+      },
+      {
+        "id": "Q03",
+        "status": "pass",
+        "expected_status": "pass",
+        "selected_locators": [
+          "_工具脚本/taspipe/游戏包/热血足球联盟_必杀全清单.md#L24-L33"
+        ],
+        "expected_locators": [
+          "_工具脚本/taspipe/游戏包/热血足球联盟_必杀全清单.md#L24-L33"
+        ],
+        "retrieval": "bm25_only",
+        "index_used": "index.json",
+        "unchanged": true
+      },
+      {
+        "id": "Q04",
+        "status": "pass",
+        "expected_status": "pass",
+        "selected_locators": [
+          "_工具脚本/taspipe/游戏包/热血足球联盟_必杀全清单.md#L24-L33"
+        ],
+        "expected_locators": [
+          "_工具脚本/taspipe/游戏包/热血足球联盟_必杀全清单.md#L24-L33"
+        ],
+        "retrieval": "bm25_only",
+        "index_used": "index.json",
+        "unchanged": true
+      },
+      {
+        "id": "Q05",
+        "status": "pass",
+        "expected_status": "pass",
+        "selected_locators": [
+          "_工具脚本/taspipe/游戏包/热血足球联盟_必杀全清单.md#L24-L33"
+        ],
+        "expected_locators": [
+          "_工具脚本/taspipe/游戏包/热血足球联盟_必杀全清单.md#L24-L33"
+        ],
+        "retrieval": "bm25_only",
+        "index_used": "index.json",
+        "unchanged": true
+      },
+      {
+        "id": "Q06",
+        "status": "pass",
+        "expected_status": "pass",
+        "selected_locators": [
+          "_工具脚本/taspipe/游戏包/来源库/取证/setsumei_热血足球说明书扫描_20261118.md#L47-L48"
+        ],
+        "expected_locators": [
+          "_工具脚本/taspipe/游戏包/来源库/取证/setsumei_热血足球说明书扫描_20261118.md#L47-L48"
+        ],
+        "retrieval": "bm25_only",
+        "index_used": "index.json",
+        "unchanged": true
+      },
+      {
+        "id": "Q07",
+        "status": "pass",
+        "expected_status": "pass",
+        "selected_locators": [
+          "_工具脚本/taspipe/游戏包/来源库/取证/setsumei_热血足球说明书扫描_20261118.md#L76-L85"
+        ],
+        "expected_locators": [
+          "_工具脚本/taspipe/游戏包/来源库/取证/setsumei_热血足球说明书扫描_20261118.md#L76-L85"
+        ],
+        "retrieval": "bm25_only",
+        "index_used": "index.json",
+        "unchanged": true
+      },
+      {
+        "id": "Q08",
+        "status": "pass",
+        "expected_status": "pass",
+        "selected_locators": [
+          "_工具脚本/taspipe/游戏包/来源库/取证/setsumei_热血足球说明书扫描_20261118.md#L47-L48"
+        ],
+        "expected_locators": [
+          "_工具脚本/taspipe/游戏包/来源库/取证/setsumei_热血足球说明书扫描_20261118.md#L47-L48"
+        ],
+        "retrieval": "bm25_only",
+        "index_used": "index.json",
+        "unchanged": true
+      },
+      {
+        "id": "Q09",
+        "status": "inconclusive",
+        "expected_status": "inconclusive",
+        "selected_locators": [],
+        "expected_locators": [],
+        "retrieval": "bm25_only",
+        "index_used": "index.json",
+        "unchanged": true
+      },
+      {
+        "id": "Q10",
+        "status": "pass",
+        "expected_status": "pass",
+        "selected_locators": [
+          "F:/tas_rig/docs/素材生产规范.md#L185-L190"
+        ],
+        "expected_locators": [
+          "F:/tas_rig/docs/素材生产规范.md#L185-L190"
+        ],
+        "retrieval": "bm25_only",
+        "index_used": "index.json",
+        "unchanged": true
+      },
+      {
+        "id": "Q11",
+        "status": "inconclusive",
+        "expected_status": "inconclusive",
+        "selected_locators": [],
+        "expected_locators": [],
+        "retrieval": "bm25_only",
+        "index_used": "index.json",
+        "unchanged": true
+      },
+      {
+        "id": "Q12",
+        "status": "miss",
+        "expected_status": "miss",
+        "selected_locators": [],
+        "expected_locators": [],
+        "retrieval": null,
+        "index_used": "index.json",
+        "unchanged": true
+      },
+      {
+        "id": "Q13",
+        "status": "miss",
+        "expected_status": "miss",
+        "selected_locators": [],
+        "expected_locators": [],
+        "retrieval": null,
+        "index_used": "index.json",
+        "unchanged": true
+      },
+      {
+        "id": "Q14",
+        "status": "miss",
+        "expected_status": "miss",
+        "selected_locators": [],
+        "expected_locators": [],
+        "retrieval": null,
+        "index_used": "index.json",
+        "unchanged": true
+      },
+      {
+        "id": "Q15",
+        "status": "inconclusive",
+        "expected_status": "inconclusive",
+        "selected_locators": [],
+        "expected_locators": [],
+        "retrieval": "bm25_only",
+        "index_used": "index.json",
+        "unchanged": true
+      },
+      {
+        "id": "Q16",
+        "status": "inconclusive",
+        "expected_status": "inconclusive",
+        "selected_locators": [],
+        "expected_locators": [],
+        "retrieval": "bm25_only",
+        "index_used": "index.json",
+        "unchanged": true
+      },
+      {
+        "id": "Q17",
+        "status": "inconclusive",
+        "expected_status": "inconclusive",
+        "selected_locators": [],
+        "expected_locators": [],
+        "retrieval": "bm25_only",
+        "index_used": "index.json",
+        "unchanged": true
+      },
+      {
+        "id": "Q18",
+        "status": "pass",
+        "expected_status": "pass",
+        "selected_locators": [
+          "_工具脚本/taspipe/游戏包/热血足球联盟_必杀全清单.md#L251-L259"
+        ],
+        "expected_locators": [
+          "_工具脚本/taspipe/游戏包/热血足球联盟_必杀全清单.md#L251-L259"
+        ],
+        "retrieval": "bm25_only",
+        "index_used": "index.json",
+        "unchanged": true
+      },
+      {
+        "id": "P19",
+        "status": "inconclusive",
+        "expected_status": "inconclusive",
+        "selected_locators": [],
+        "expected_locators": [],
+        "retrieval": "bm25_only",
+        "index_used": "index.json",
+        "unchanged": true
+      },
+      {
+        "id": "P20",
+        "status": "miss",
+        "expected_status": "miss",
+        "selected_locators": [],
+        "expected_locators": [],
+        "retrieval": null,
+        "index_used": "index.json",
+        "unchanged": true
+      },
+      {
+        "id": "P21",
+        "status": "inconclusive",
+        "expected_status": "inconclusive",
+        "selected_locators": [],
+        "expected_locators": [],
+        "retrieval": "bm25_only",
+        "index_used": "index.json",
+        "unchanged": true
+      },
+      {
+        "id": "P22",
+        "status": "pass",
+        "expected_status": "pass",
+        "selected_locators": [
+          "_工具脚本/taspipe/游戏包/来源库/取证/setsumei_热血足球说明书扫描_20261118.md#L327-L341"
+        ],
+        "expected_locators": [
+          "_工具脚本/taspipe/游戏包/来源库/取证/setsumei_热血足球说明书扫描_20261118.md#L327-L341"
+        ],
+        "retrieval": "bm25_only",
+        "index_used": "index.json",
+        "unchanged": true
+      },
+      {
+        "id": "P23",
+        "status": "pass",
+        "expected_status": "pass",
+        "selected_locators": [
+          "_工具脚本/taspipe/游戏包/来源库/取证/setsumei_热血足球说明书扫描_20261118.md#L267-L288"
+        ],
+        "expected_locators": [
+          "_工具脚本/taspipe/游戏包/来源库/取证/setsumei_热血足球说明书扫描_20261118.md#L267-L288"
+        ],
+        "retrieval": "bm25_only",
+        "index_used": "index.json",
+        "unchanged": true
+      },
+      {
+        "id": "P24",
+        "status": "pass",
+        "expected_status": "pass",
+        "selected_locators": [
+          "测试问题与闸门说明书.md#L76-L79"
+        ],
+        "expected_locators": [
+          "测试问题与闸门说明书.md#L76-L79"
+        ],
+        "retrieval": "bm25_only",
+        "index_used": "index.json",
+        "unchanged": true
+      },
+      {
+        "id": "P25",
+        "status": "inconclusive",
+        "expected_status": "inconclusive",
+        "selected_locators": [],
+        "expected_locators": [],
+        "retrieval": "bm25_only",
+        "index_used": "index.json",
+        "unchanged": true
+      },
+      {
+        "id": "P26",
+        "status": "miss",
+        "expected_status": "miss",
+        "selected_locators": [],
+        "expected_locators": [],
+        "retrieval": null,
+        "index_used": "index.json",
+        "unchanged": true
+      },
+      {
+        "id": "X03",
+        "status": "pass",
+        "expected_status": "pass",
+        "selected_locators": [
+          "_工具脚本/taspipe/游戏包/热血足球联盟_必杀全清单.md#L70-L85"
+        ],
+        "expected_locators": [
+          "_工具脚本/taspipe/游戏包/热血足球联盟_必杀全清单.md#L70-L85"
+        ],
+        "retrieval": "bm25_only",
+        "index_used": "index.json",
+        "unchanged": true
+      },
+      {
+        "id": "X04",
+        "status": "pass",
+        "expected_status": "pass",
+        "selected_locators": [
+          "_工具脚本/taspipe/游戏包/热血足球联盟_必杀全清单.md#L36-L49"
+        ],
+        "expected_locators": [
+          "_工具脚本/taspipe/游戏包/热血足球联盟_必杀全清单.md#L36-L49"
+        ],
+        "retrieval": "bm25_only",
+        "index_used": "index.json",
+        "unchanged": true
+      },
+      {
+        "id": "X21",
+        "status": "pass",
+        "expected_status": "pass",
+        "selected_locators": [
+          "_工具脚本/taspipe/游戏包/来源库/取证/setsumei_热血足球说明书扫描_20261118.md#L376-L401"
+        ],
+        "expected_locators": [
+          "_工具脚本/taspipe/游戏包/来源库/取证/setsumei_热血足球说明书扫描_20261118.md#L376-L401"
+        ],
+        "retrieval": "bm25_only",
+        "index_used": "index.json",
+        "unchanged": true
+      },
+      {
+        "id": "X23",
+        "status": "pass",
+        "expected_status": "pass",
+        "selected_locators": [
+          "_工具脚本/taspipe/游戏包/热血足球联盟_必杀全清单.md#L24-L33"
+        ],
+        "expected_locators": [
+          "_工具脚本/taspipe/游戏包/热血足球联盟_必杀全清单.md#L24-L33"
+        ],
+        "retrieval": "bm25_only",
+        "index_used": "index.json",
+        "unchanged": true
+      }
+    ],
+    "base_query_count": 30,
+    "base_queries_unchanged": true,
+    "old_delivery_expected_hashes": {
+      "F:\\开源掌机教程\\知识库改进优化指导_2026-11-24_strict片段修正回填.md": "66c1bdeb0f3cde492751cbfbea237c6ff3083eb4218927481b5a833139635657",
+      "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261124\\final_manifest_after_strict_citation_fix_20261124.json": "7855b800e0862ce551e3aeb211f362c931f27ba067869f4de3b532f30ba2d934",
+      "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261124\\artifact_inventory_after_strict_citation_fix_20261124.json": "e728670c4aea20544a0bc719432435b1d7efc34bbce52e80d88ea99e8ac8b9fd"
+    },
+    "old_delivery_actual_hashes": {
+      "F:\\开源掌机教程\\知识库改进优化指导_2026-11-24_strict片段修正回填.md": "66c1bdeb0f3cde492751cbfbea237c6ff3083eb4218927481b5a833139635657",
+      "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261124\\final_manifest_after_strict_citation_fix_20261124.json": "7855b800e0862ce551e3aeb211f362c931f27ba067869f4de3b532f30ba2d934",
+      "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261124\\artifact_inventory_after_strict_citation_fix_20261124.json": "e728670c4aea20544a0bc719432435b1d7efc34bbce52e80d88ea99e8ac8b9fd"
+    },
+    "old_delivery_hashes_ok": true,
+    "old_delivery_state_changed": [],
+    "all_checks_ok": true
+  },
+  "dense_probe_files": [
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261124_source_inheritance\\dense_probe\\embeddings_15b1e925d098.npz",
+      "bytes": 2997218,
+      "sha256": "6ae6201abc564c8b5c818760bfc93468b09394e4794ed586d84032715812069c"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261124_source_inheritance\\dense_probe\\embeddings_15d243129dc1.npz",
+      "bytes": 2932446,
+      "sha256": "7bd7b99aad3f38d077b39541adcf3ff44fbb96a9bb4325e4f433890b77750b9e"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261124_source_inheritance\\dense_probe\\embeddings_2a93e76d5876.npz",
+      "bytes": 2943957,
+      "sha256": "f445f5897786606282fb7b95d528eef54877ae1663e727661afbac7e505827d1"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261124_source_inheritance\\dense_probe\\embeddings_51dd78c26032.npz",
+      "bytes": 2985757,
+      "sha256": "aac228eab5686d3918d04dd068cc67efe4d8c458e9c8f54667183e3fad8b4a66"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261124_source_inheritance\\dense_probe\\embeddings_5c6fdb832cac.npz",
+      "bytes": 2943948,
+      "sha256": "2fced7e80bf298e422eccd2357dee9d52fc098a4f68597d6b9fd6f9ae468a665"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261124_source_inheritance\\dense_probe\\embeddings_c3db477371d2.npz",
+      "bytes": 2997193,
+      "sha256": "f0ee65e1bd5bd442df7d328b8a0780b138cd8911fe8e634ed351d2b3a781ecfa"
+    }
+  ],
+  "builds": {
+    "base": {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261124_source_inheritance\\build_base_final_20261124.log",
+      "bytes": 7734,
+      "sha256": "91f16de0487d9dd33a99fe454ec5e36ebba19f9d83768dda4af1e478a2b3b01e"
+    },
+    "hybrid": {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261124_source_inheritance\\build_hybrid_final_20261124.log",
+      "bytes": 7075,
+      "sha256": "f4a7bf0eef1e345e36ef19e7db1adadbe03ea43d2bed76f4892584c690bc23b2"
+    },
+    "dense_base": {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261124_source_inheritance\\dense_base_final_20261124.log",
+      "bytes": 3759,
+      "sha256": "2a257dfaaba63b775ad9ed3b34dfbbf55195b5e72ee84c64c9c98e8b5db83fa3"
+    },
+    "dense_hybrid": {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261124_source_inheritance\\dense_hybrid_final_20261124.log",
+      "bytes": 3830,
+      "sha256": "a8ea6a4d7e9c8c8c2060982b53b61dc016c2f4bff130a86ddac78147023c314c"
+    }
+  },
+  "prior_delivery_unchanged": {
+    "ok": true,
+    "artifacts": {
+      "知识库改进优化指导_2026-11-24_strict片段修正回填.md": {
+        "path": "F:\\开源掌机教程\\知识库改进优化指导_2026-11-24_strict片段修正回填.md",
+        "bytes": 37817,
+        "sha256": "66c1bdeb0f3cde492751cbfbea237c6ff3083eb4218927481b5a833139635657",
+        "expected_sha256": "66c1bdeb0f3cde492751cbfbea237c6ff3083eb4218927481b5a833139635657"
+      },
+      "知识库P1_20261118/kb_final_20261124/final_manifest_after_strict_citation_fix_20261124.json": {
+        "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261124\\final_manifest_after_strict_citation_fix_20261124.json",
+        "bytes": 19200,
+        "sha256": "7855b800e0862ce551e3aeb211f362c931f27ba067869f4de3b532f30ba2d934",
+        "expected_sha256": "7855b800e0862ce551e3aeb211f362c931f27ba067869f4de3b532f30ba2d934"
+      },
+      "知识库P1_20261118/kb_final_20261124/artifact_inventory_after_strict_citation_fix_20261124.json": {
+        "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261124\\artifact_inventory_after_strict_citation_fix_20261124.json",
+        "bytes": 29082,
+        "sha256": "e728670c4aea20544a0bc719432435b1d7efc34bbce52e80d88ea99e8ac8b9fd",
+        "expected_sha256": "e728670c4aea20544a0bc719432435b1d7efc34bbce52e80d88ea99e8ac8b9fd"
+      }
+    }
+  },
+  "open_items": {
+    "unverified_versions": 6,
+    "megaman1": "draft_not_frozen",
+    "dynamic_esports_records": 0,
+    "real_user_query_samples": "insufficient",
+    "hybrid_production": "not approved",
+    "strict_production": "not approved",
+    "sources_audit": "fail=1: gba_aria_of_sorrow_souls.showcase.json evidence_report 未登记"
+  },
+  "report_md": {
+    "path": "F:\\开源掌机教程\\知识库改进优化指导_2026-11-24_来源继承修正回填.md",
+    "bytes": 17950,
+    "sha256": "ca1894547caf36f7f53a0c7ee26703823b89e856007d064b4e993806710cf728"
+  },
+  "artifact_inventory": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261124_source_inheritance\\artifact_inventory_source_inheritance_20261124.md",
+  "delivery_dir": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261124_source_inheritance",
+  "git": {
+    "commit_created": false,
+    "push_performed": false
+  }
+}

@@ -1,0 +1,213 @@
+{
+  "schema_version": 1,
+  "kind": "statejump_showcase",
+  "game_id": "super_metroid_snes",
+  "game_title": "Super Metroid / 超级银河战士 (SNES/SFC, 1994 Nintendo)",
+  "platform": "SNES",
+  "core": "BSNES",
+  "system": "SNES",
+  "rom": "F:/taspipe_scratch/snes_metroid/super_metroid.sfc",
+  "bizhawk": "F:/开源掌机教程/02-模拟器库/BizHawk/BizHawk-2.8",
+  "base_state": "F:/taspipe_scratch/snes_metroid/base.state",
+  "fps": 60.0985,
+  "template": "fc_tianma_cover",
+  "catalog": {
+    "status": "complete",
+    "expected_total": 4,
+    "sources": [
+      {
+        "source_id": "wiki_supermetroid_run",
+        "url": "https://wiki.supermetroid.run/RAM_Map",
+        "status": "candidate",
+        "verified_date": null,
+        "element_ids": [
+          "power_beam_burst",
+          "charge_beam_release",
+          "morph_ball_transform",
+          "spin_jump_screw"
+        ],
+        "note": "candidate：本轮未取正文；社区逐地址表，值得优先真读。"
+      },
+      {
+        "source_id": "strategywiki",
+        "url": "https://strategywiki.org/wiki/Super_Metroid/Items",
+        "status": "unreachable",
+        "verified_date": "2026-11-18",
+        "element_ids": [
+          "power_beam_burst",
+          "charge_beam_release",
+          "morph_ball_transform",
+          "spin_jump_screw"
+        ],
+        "note": "本机直连 403，只有搜索快照。"
+      }
+    ],
+    "coverage_note": "SFC/SNES 跨平台要素盘点示范包：超级银河战士核心光束武器、蓄力射击、变形球与炸弹能力展示（通过 taspipe.retro_platforms run-showcase 运行）"
+  },
+  "elements": [
+    {
+      "element_id": "power_beam_burst",
+      "label": "Power / Plasma Beam Shot (能量光束射击)",
+      "kind": "weapon",
+      "base_state": null,
+      "trigger": {
+        "macro": "X,,,,X,,,,X,,,,,,,,,,,,,,,,,,,,",
+        "extra": 25,
+        "patches": []
+      },
+      "detection": {
+        "frame": 10,
+        "success_checks": [
+          {
+            "check_id": "snes_beam_sig",
+            "plugin_id": "frame_region_color_fraction",
+            "params": {
+              "region": [
+                0.2,
+                0.3,
+                0.85,
+                0.7
+              ],
+              "rgb": [
+                248,
+                224,
+                120
+              ],
+              "tol": 28,
+              "min_fraction": 0.008
+            },
+            "required": true
+          }
+        ]
+      },
+      "negative_control": {
+        "macro": null,
+        "patches": []
+      },
+      "note": "SNES 手柄按 X 键发射光束；运行 universal_authoring calibrate 自动实测更新帧与区域。"
+    },
+    {
+      "element_id": "charge_beam_release",
+      "label": "Charge Beam Burst (蓄力光束炮)",
+      "kind": "skill",
+      "base_state": null,
+      "trigger": {
+        "macro": "X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,,,,,,,,,,,,,,,,",
+        "extra": 25,
+        "patches": []
+      },
+      "detection": {
+        "frame": 44,
+        "success_checks": [
+          {
+            "check_id": "snes_charge_flash_sig",
+            "plugin_id": "frame_region_color_fraction",
+            "params": {
+              "region": [
+                0.2,
+                0.25,
+                0.85,
+                0.75
+              ],
+              "rgb": [
+                248,
+                248,
+                200
+              ],
+              "tol": 28,
+              "min_fraction": 0.012
+            },
+            "required": true
+          }
+        ]
+      },
+      "negative_control": {
+        "macro": null,
+        "patches": []
+      },
+      "note": "长按 X 键蓄力后松开释放大型蓄力光束。"
+    },
+    {
+      "element_id": "morph_ball_transform",
+      "label": "Morphing Ball & Bomb (变形球与微型炸弹)",
+      "kind": "transform",
+      "base_state": null,
+      "trigger": {
+        "macro": "Down,Down,Down,Down,Down,Down,,,,Down,Down,Down,Down,Down,Down,,,,X,X,X,,,,,,,,,,,,,,,,",
+        "extra": 35,
+        "patches": []
+      },
+      "detection": {
+        "frame": 28,
+        "success_checks": [
+          {
+            "check_id": "morph_ball_bomb_sig",
+            "plugin_id": "frame_region_color_fraction",
+            "params": {
+              "region": [
+                0.3,
+                0.5,
+                0.7,
+                0.88
+              ],
+              "rgb": [
+                248,
+                200,
+                120
+              ],
+              "tol": 28,
+              "min_fraction": 0.01
+            },
+            "required": true
+          }
+        ]
+      },
+      "negative_control": {
+        "macro": null,
+        "patches": []
+      },
+      "note": "连续两次按住 Down 变成球形态并按 X 埋设炸弹。"
+    },
+    {
+      "element_id": "spin_jump_screw",
+      "label": "Spin Jump / Screw Attack (旋转跳跃攻击)",
+      "kind": "move",
+      "base_state": null,
+      "trigger": {
+        "macro": "Right+A,Right+A,Right+A,Right+A,Right+A,Right+A,Right+A,Right+A,Right+A,Right+A,Right+A,Right+A,,,,,,,,,,,,,,,,",
+        "extra": 25,
+        "patches": []
+      },
+      "detection": {
+        "frame": 16,
+        "success_checks": [
+          {
+            "check_id": "spin_jump_pose_sig",
+            "plugin_id": "frame_region_color_fraction",
+            "params": {
+              "region": [
+                0.25,
+                0.15,
+                0.8,
+                0.7
+              ],
+              "rgb": [
+                248,
+                180,
+                80
+              ],
+              "tol": 28,
+              "min_fraction": 0.01
+            },
+            "required": true
+          }
+        ]
+      },
+      "negative_control": {
+        "macro": null,
+        "patches": []
+      },
+      "note": "萨姆斯前冲旋转跳跃展示。"
+    }
+  ]
+}

@@ -1,0 +1,4041 @@
+{
+  "schema_version": "aria_menu_patch_vs_nav_audit/1.0",
+  "status": "identity_pass_effect_source_rejected",
+  "old_report": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_menu_catalog_full_20261125\\report.json",
+  "nav_report": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_menu_catalog_nav_full_20261125\\report.json",
+  "catalog": "F:\\开源掌机教程\\_工具脚本\\taspipe\\游戏包\\gba_aria_of_sorrow_souls.menu_catalog.json",
+  "identity_regions": {
+    "red": [
+      45,
+      20,
+      135,
+      32
+    ],
+    "blue": [
+      45,
+      38,
+      135,
+      50
+    ],
+    "yellow": [
+      45,
+      50,
+      120,
+      65
+    ]
+  },
+  "effect_region": [
+    45,
+    118,
+    238,
+    153
+  ],
+  "total": 114,
+  "counts": {
+    "identity_exact_same_id": 114,
+    "effect_exact_same_id": 0,
+    "best_identity_match_same_id": 114,
+    "best_identity_match_other_id": 0
+  },
+  "effect_brightness": {
+    "old_unique_values": [
+      62
+    ],
+    "nav_min": 132,
+    "nav_max": 694,
+    "interpretation": "旧写槽位截图效果区只剩固定占位符；真实导航截图才有逐项描述，旧效果区不得作为文本来源。"
+  },
+  "mismatches": [],
+  "rows": [
+    {
+      "group": "red",
+      "id": 1,
+      "expected_name": "大骷髅",
+      "old_shot": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_menu_catalog_full_20261125\\red\\red_001.png",
+      "old_shot_sha256": "0f19da42d1edd07c2cc1a19b04fcc0a0dca7648ec5efde8bf9cb2ce0c6fa53f4",
+      "nav_identity_sha256": "9c76c5b9176696034071ba9545fb480998ef0f2ea0a4c78722a497cb45416346",
+      "identity_vs_same_id": {
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "effect_vs_same_id": {
+        "changed_pixels": 259,
+        "absolute_channel_diff": 191660,
+        "bbox": [
+          11,
+          2,
+          82,
+          13
+        ]
+      },
+      "old_effect_bright_pixels": 62,
+      "nav_effect_bright_pixels": 303,
+      "best_identity_match": {
+        "id": 1,
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "best_match_name": "大骷髅",
+      "identity_exact_same_id": true,
+      "effect_exact_same_id": false,
+      "best_match_is_same_id": true
+    },
+    {
+      "group": "red",
+      "id": 2,
+      "expected_name": "蝙蝠",
+      "old_shot": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_menu_catalog_full_20261125\\red\\red_002.png",
+      "old_shot_sha256": "abd8f2e370981b1c9ec58d544d740f6bc20849109f4103a24a8941be1dd5ced9",
+      "nav_identity_sha256": "0fafa867a9bcf460b39c63336b254e18e81838beeed834dd2cbda24e85803141",
+      "identity_vs_same_id": {
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "effect_vs_same_id": {
+        "changed_pixels": 246,
+        "absolute_channel_diff": 182040,
+        "bbox": [
+          11,
+          2,
+          70,
+          13
+        ]
+      },
+      "old_effect_bright_pixels": 62,
+      "nav_effect_bright_pixels": 284,
+      "best_identity_match": {
+        "id": 2,
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "best_match_name": "蝙蝠",
+      "identity_exact_same_id": true,
+      "effect_exact_same_id": false,
+      "best_match_is_same_id": true
+    },
+    {
+      "group": "red",
+      "id": 3,
+      "expected_name": "骷髅",
+      "old_shot": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_menu_catalog_full_20261125\\red\\red_003.png",
+      "old_shot_sha256": "c92121aa2d44853b76e7a3963987ac9aabffcf055746ea4c529613cdd774c6dc",
+      "nav_identity_sha256": "04e08a4a65773b11b63fd8500a2ef16e0e87364f3f5190218b9614d41160608b",
+      "identity_vs_same_id": {
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "effect_vs_same_id": {
+        "changed_pixels": 111,
+        "absolute_channel_diff": 82140,
+        "bbox": [
+          11,
+          2,
+          43,
+          13
+        ]
+      },
+      "old_effect_bright_pixels": 62,
+      "nav_effect_bright_pixels": 143,
+      "best_identity_match": {
+        "id": 3,
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "best_match_name": "骷髅",
+      "identity_exact_same_id": true,
+      "effect_exact_same_id": false,
+      "best_match_is_same_id": true
+    },
+    {
+      "group": "red",
+      "id": 4,
+      "expected_name": "半鱼人",
+      "old_shot": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_menu_catalog_full_20261125\\red\\red_004.png",
+      "old_shot_sha256": "b12ab4f08a8a6c0be8cd7eab2fa8203135794a73f8e8705f31d1a0109100fd0d",
+      "nav_identity_sha256": "71c9ef81eed91d9d602228674f334077637c307445a2c08aba07904ed5da3ef4",
+      "identity_vs_same_id": {
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "effect_vs_same_id": {
+        "changed_pixels": 174,
+        "absolute_channel_diff": 128760,
+        "bbox": [
+          11,
+          2,
+          58,
+          13
+        ]
+      },
+      "old_effect_bright_pixels": 62,
+      "nav_effect_bright_pixels": 220,
+      "best_identity_match": {
+        "id": 4,
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "best_match_name": "半鱼人",
+      "identity_exact_same_id": true,
+      "effect_exact_same_id": false,
+      "best_match_is_same_id": true
+    },
+    {
+      "group": "red",
+      "id": 5,
+      "expected_name": "斧装甲",
+      "old_shot": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_menu_catalog_full_20261125\\red\\red_005.png",
+      "old_shot_sha256": "27622ca599c5349dd3b9fadd955c389a042ce49fbdd1c73d5e2c1eed1a3633b5",
+      "nav_identity_sha256": "07b12eaccc62f30b9ef8397eae5031a00f1d3cf261a706f0bee05a93855dcf2f",
+      "identity_vs_same_id": {
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "effect_vs_same_id": {
+        "changed_pixels": 90,
+        "absolute_channel_diff": 66600,
+        "bbox": [
+          11,
+          2,
+          43,
+          13
+        ]
+      },
+      "old_effect_bright_pixels": 62,
+      "nav_effect_bright_pixels": 132,
+      "best_identity_match": {
+        "id": 5,
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "best_match_name": "斧装甲",
+      "identity_exact_same_id": true,
+      "effect_exact_same_id": false,
+      "best_match_is_same_id": true
+    },
+    {
+      "group": "red",
+      "id": 6,
+      "expected_name": "骷髅弓手",
+      "old_shot": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_menu_catalog_full_20261125\\red\\red_006.png",
+      "old_shot_sha256": "2deca71aaac81dd6fb7f7066aa635b2af1faeafe3b9a4b9e38cbd680e118bd63",
+      "nav_identity_sha256": "4ca5d00aacc959ca8f244fa95cfd63e3dc2b57e98e956ddd4dfbc66ac8154c7a",
+      "identity_vs_same_id": {
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "effect_vs_same_id": {
+        "changed_pixels": 264,
+        "absolute_channel_diff": 195360,
+        "bbox": [
+          11,
+          2,
+          82,
+          13
+        ]
+      },
+      "old_effect_bright_pixels": 62,
+      "nav_effect_bright_pixels": 308,
+      "best_identity_match": {
+        "id": 6,
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "best_match_name": "骷髅弓手",
+      "identity_exact_same_id": true,
+      "effect_exact_same_id": false,
+      "best_match_is_same_id": true
+    },
+    {
+      "group": "red",
+      "id": 7,
+      "expected_name": "杀人鱼",
+      "old_shot": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_menu_catalog_full_20261125\\red\\red_007.png",
+      "old_shot_sha256": "c9a5126a5377fbfd56a1ca46887ada9aa2e717c0f4a3780a14b8eb3bb8b64ace",
+      "nav_identity_sha256": "a07cddafbf2c720cc30b64a2fabd4dfbba9577513ba7246b337499e31a59d034",
+      "identity_vs_same_id": {
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "effect_vs_same_id": {
+        "changed_pixels": 660,
+        "absolute_channel_diff": 488400,
+        "bbox": [
+          11,
+          2,
+          106,
+          25
+        ]
+      },
+      "old_effect_bright_pixels": 62,
+      "nav_effect_bright_pixels": 694,
+      "best_identity_match": {
+        "id": 7,
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "best_match_name": "杀人鱼",
+      "identity_exact_same_id": true,
+      "effect_exact_same_id": false,
+      "best_match_is_same_id": true
+    },
+    {
+      "group": "red",
+      "id": 8,
+      "expected_name": "蓝乌鸦",
+      "old_shot": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_menu_catalog_full_20261125\\red\\red_008.png",
+      "old_shot_sha256": "2501f81614c2cdd1405785d6ae7e8898654be76cfd482523efa40fa054f30d71",
+      "nav_identity_sha256": "1d771e5aaef90a5a0bdceb6063cdce9a4de5ccc4bbcc672975b38080d4449ca3",
+      "identity_vs_same_id": {
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "effect_vs_same_id": {
+        "changed_pixels": 275,
+        "absolute_channel_diff": 203500,
+        "bbox": [
+          11,
+          2,
+          82,
+          13
+        ]
+      },
+      "old_effect_bright_pixels": 62,
+      "nav_effect_bright_pixels": 305,
+      "best_identity_match": {
+        "id": 8,
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "best_match_name": "蓝乌鸦",
+      "identity_exact_same_id": true,
+      "effect_exact_same_id": false,
+      "best_match_is_same_id": true
+    },
+    {
+      "group": "red",
+      "id": 9,
+      "expected_name": "丧尸士兵",
+      "old_shot": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_menu_catalog_full_20261125\\red\\red_009.png",
+      "old_shot_sha256": "9102149002b0b4a32edb83d14b5ee4001de1bb45efd117a07e27567f257702ec",
+      "nav_identity_sha256": "7e4656c8531d6e2c2b45ddbcd014f5d6bd92d843c355bd4393456be12bb33895",
+      "identity_vs_same_id": {
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "effect_vs_same_id": {
+        "changed_pixels": 253,
+        "absolute_channel_diff": 187220,
+        "bbox": [
+          11,
+          2,
+          70,
+          13
+        ]
+      },
+      "old_effect_bright_pixels": 62,
+      "nav_effect_bright_pixels": 287,
+      "best_identity_match": {
+        "id": 9,
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "best_match_name": "丧尸士兵",
+      "identity_exact_same_id": true,
+      "effect_exact_same_id": false,
+      "best_match_is_same_id": true
+    },
+    {
+      "group": "red",
+      "id": 10,
+      "expected_name": "鬼魂",
+      "old_shot": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_menu_catalog_full_20261125\\red\\red_010.png",
+      "old_shot_sha256": "5ec40ae7a5442d20c0bb988d45703d1574c9b87f4a432568acd58f8a8bc65bf1",
+      "nav_identity_sha256": "7cb2b81c4de570aa572c7aba60270a1df901f27424b1382187ba1a831ae3b574",
+      "identity_vs_same_id": {
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "effect_vs_same_id": {
+        "changed_pixels": 391,
+        "absolute_channel_diff": 289340,
+        "bbox": [
+          11,
+          2,
+          106,
+          13
+        ]
+      },
+      "old_effect_bright_pixels": 62,
+      "nav_effect_bright_pixels": 425,
+      "best_identity_match": {
+        "id": 10,
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "best_match_name": "鬼魂",
+      "identity_exact_same_id": true,
+      "effect_exact_same_id": false,
+      "best_match_is_same_id": true
+    },
+    {
+      "group": "red",
+      "id": 11,
+      "expected_name": "鸟人",
+      "old_shot": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_menu_catalog_full_20261125\\red\\red_011.png",
+      "old_shot_sha256": "2a36b5c964354582ac619f29afa3be6785f33bfdae93c8c8751b0740e4914a68",
+      "nav_identity_sha256": "5972a3b249c1074d0b997910b5b5f0f663fa125582a5b202b953cadb7a43e91b",
+      "identity_vs_same_id": {
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "effect_vs_same_id": {
+        "changed_pixels": 402,
+        "absolute_channel_diff": 297480,
+        "bbox": [
+          11,
+          2,
+          118,
+          13
+        ]
+      },
+      "old_effect_bright_pixels": 62,
+      "nav_effect_bright_pixels": 438,
+      "best_identity_match": {
+        "id": 11,
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "best_match_name": "鸟人",
+      "identity_exact_same_id": true,
+      "effect_exact_same_id": false,
+      "best_match_is_same_id": true
+    },
+    {
+      "group": "red",
+      "id": 12,
+      "expected_name": "小恶魔",
+      "old_shot": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_menu_catalog_full_20261125\\red\\red_012.png",
+      "old_shot_sha256": "afcc7b054a33f412cff1a3e149316b31eee9e90e6e9188bcb76afee670c1e4a7",
+      "nav_identity_sha256": "143e14d5ea5b0b0d39826a84f424f5c55657181492dfe52b85f050348f6952af",
+      "identity_vs_same_id": {
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "effect_vs_same_id": {
+        "changed_pixels": 248,
+        "absolute_channel_diff": 183520,
+        "bbox": [
+          11,
+          2,
+          82,
+          13
+        ]
+      },
+      "old_effect_bright_pixels": 62,
+      "nav_effect_bright_pixels": 284,
+      "best_identity_match": {
+        "id": 12,
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "best_match_name": "小恶魔",
+      "identity_exact_same_id": true,
+      "effect_exact_same_id": false,
+      "best_match_is_same_id": true
+    },
+    {
+      "group": "red",
+      "id": 13,
+      "expected_name": "多尔加",
+      "old_shot": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_menu_catalog_full_20261125\\red\\red_013.png",
+      "old_shot_sha256": "e890d0767cc897615b07ae09c39312b29c841268ee606bdfa668a12508be5a2d",
+      "nav_identity_sha256": "4bc6c549411fa478320bfab578a4c4fa4806e6f346c25a98c1b08fb4e014909b",
+      "identity_vs_same_id": {
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "effect_vs_same_id": {
+        "changed_pixels": 105,
+        "absolute_channel_diff": 77700,
+        "bbox": [
+          11,
+          2,
+          43,
+          13
+        ]
+      },
+      "old_effect_bright_pixels": 62,
+      "nav_effect_bright_pixels": 135,
+      "best_identity_match": {
+        "id": 13,
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "best_match_name": "多尔加",
+      "identity_exact_same_id": true,
+      "effect_exact_same_id": false,
+      "best_match_is_same_id": true
+    },
+    {
+      "group": "red",
+      "id": 14,
+      "expected_name": "投石装甲",
+      "old_shot": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_menu_catalog_full_20261125\\red\\red_014.png",
+      "old_shot_sha256": "e6c21bb01acd8c831becd24943ebfdc5898e41d56a9b62744512a0446e6bd8d8",
+      "nav_identity_sha256": "e3789c6b1575eeabd59ec212f6ac66fd2b1fbb37c7698725cf288a3fad9e6844",
+      "identity_vs_same_id": {
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "effect_vs_same_id": {
+        "changed_pixels": 161,
+        "absolute_channel_diff": 119140,
+        "bbox": [
+          11,
+          2,
+          58,
+          13
+        ]
+      },
+      "old_effect_bright_pixels": 62,
+      "nav_effect_bright_pixels": 205,
+      "best_identity_match": {
+        "id": 14,
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "best_match_name": "投石装甲",
+      "identity_exact_same_id": true,
+      "effect_exact_same_id": false,
+      "best_match_is_same_id": true
+    },
+    {
+      "group": "red",
+      "id": 15,
+      "expected_name": "见习魔女",
+      "old_shot": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_menu_catalog_full_20261125\\red\\red_015.png",
+      "old_shot_sha256": "7524b45a09506d66d70759cf5072b04ca507a576b26f37e17a3bc2002615a24d",
+      "nav_identity_sha256": "be5d5c9abb35a0d29d1cc54b581cfd85acb34677cef43ceb0e15ec578a5470ae",
+      "identity_vs_same_id": {
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "effect_vs_same_id": {
+        "changed_pixels": 320,
+        "absolute_channel_diff": 236800,
+        "bbox": [
+          11,
+          2,
+          82,
+          13
+        ]
+      },
+      "old_effect_bright_pixels": 62,
+      "nav_effect_bright_pixels": 350,
+      "best_identity_match": {
+        "id": 15,
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "best_match_name": "见习魔女",
+      "identity_exact_same_id": true,
+      "effect_exact_same_id": false,
+      "best_match_is_same_id": true
+    },
+    {
+      "group": "red",
+      "id": 16,
+      "expected_name": "阿铭尼",
+      "old_shot": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_menu_catalog_full_20261125\\red\\red_016.png",
+      "old_shot_sha256": "f22cad9b68fc7ea70fa5d5fb57e6111b93026667421dd400e16cc6fe12de01f0",
+      "nav_identity_sha256": "648d810b662c5711b6386dfaedcd4426709333077293f95f6cfbe9fc8266e8fe",
+      "identity_vs_same_id": {
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "effect_vs_same_id": {
+        "changed_pixels": 396,
+        "absolute_channel_diff": 293040,
+        "bbox": [
+          11,
+          2,
+          106,
+          13
+        ]
+      },
+      "old_effect_bright_pixels": 62,
+      "nav_effect_bright_pixels": 430,
+      "best_identity_match": {
+        "id": 16,
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "best_match_name": "阿铭尼",
+      "identity_exact_same_id": true,
+      "effect_exact_same_id": false,
+      "best_match_is_same_id": true
+    },
+    {
+      "group": "red",
+      "id": 17,
+      "expected_name": "跳蚤男",
+      "old_shot": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_menu_catalog_full_20261125\\red\\red_017.png",
+      "old_shot_sha256": "1ab1b07d20a258a2070ad5df8e50e1c7b412e95d2c2425048ce2fa594b70f788",
+      "nav_identity_sha256": "32350e429df433fd13f60e306ea43a3f5d8df7cff57ef4d88cd11cf4846957c5",
+      "identity_vs_same_id": {
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "effect_vs_same_id": {
+        "changed_pixels": 373,
+        "absolute_channel_diff": 276020,
+        "bbox": [
+          11,
+          2,
+          94,
+          13
+        ]
+      },
+      "old_effect_bright_pixels": 62,
+      "nav_effect_bright_pixels": 409,
+      "best_identity_match": {
+        "id": 17,
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "best_match_name": "跳蚤男",
+      "identity_exact_same_id": true,
+      "effect_exact_same_id": false,
+      "best_match_is_same_id": true
+    },
+    {
+      "group": "red",
+      "id": 18,
+      "expected_name": "邪恶屠夫",
+      "old_shot": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_menu_catalog_full_20261125\\red\\red_018.png",
+      "old_shot_sha256": "fd2e79be364ecec91938b21060830ca52f4c366f200313e29a9bde4e257b35a2",
+      "nav_identity_sha256": "42f9bc31fc796b9a35afe422eb0ac67680891c4726e76cf851170e120668db1d",
+      "identity_vs_same_id": {
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "effect_vs_same_id": {
+        "changed_pixels": 150,
+        "absolute_channel_diff": 111000,
+        "bbox": [
+          11,
+          2,
+          58,
+          13
+        ]
+      },
+      "old_effect_bright_pixels": 62,
+      "nav_effect_bright_pixels": 186,
+      "best_identity_match": {
+        "id": 18,
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "best_match_name": "邪恶屠夫",
+      "identity_exact_same_id": true,
+      "effect_exact_same_id": false,
+      "best_match_is_same_id": true
+    },
+    {
+      "group": "red",
+      "id": 19,
+      "expected_name": "骷髅小子",
+      "old_shot": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_menu_catalog_full_20261125\\red\\red_019.png",
+      "old_shot_sha256": "1ece9ec8e261fafd79da153a0d04c4560aaa777e0a900a5a89d99360ab4fff28",
+      "nav_identity_sha256": "c041fecad92f9ca6143aeca820cc5b334d2c76f2b7bf32e7275ca1ca7f3f5227",
+      "identity_vs_same_id": {
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "effect_vs_same_id": {
+        "changed_pixels": 478,
+        "absolute_channel_diff": 353720,
+        "bbox": [
+          11,
+          2,
+          130,
+          13
+        ]
+      },
+      "old_effect_bright_pixels": 62,
+      "nav_effect_bright_pixels": 514,
+      "best_identity_match": {
+        "id": 19,
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "best_match_name": "骷髅小子",
+      "identity_exact_same_id": true,
+      "effect_exact_same_id": false,
+      "best_match_is_same_id": true
+    },
+    {
+      "group": "red",
+      "id": 20,
+      "expected_name": "阿泰尔",
+      "old_shot": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_menu_catalog_full_20261125\\red\\red_020.png",
+      "old_shot_sha256": "7f9a8320f41d8dd7ad1fcfa87532acfa183145e62fb577a7866acbbdfa26a265",
+      "nav_identity_sha256": "0749bf9fb9dfddf31d6318a955ca960e7dfb9cec13f6629bee2538612dc61341",
+      "identity_vs_same_id": {
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "effect_vs_same_id": {
+        "changed_pixels": 198,
+        "absolute_channel_diff": 146520,
+        "bbox": [
+          11,
+          2,
+          58,
+          13
+        ]
+      },
+      "old_effect_bright_pixels": 62,
+      "nav_effect_bright_pixels": 228,
+      "best_identity_match": {
+        "id": 20,
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "best_match_name": "阿泰尔",
+      "identity_exact_same_id": true,
+      "effect_exact_same_id": false,
+      "best_match_is_same_id": true
+    },
+    {
+      "group": "red",
+      "id": 21,
+      "expected_name": "泥人",
+      "old_shot": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_menu_catalog_full_20261125\\red\\red_021.png",
+      "old_shot_sha256": "42ef09fbfd700e657a02fd4c3a56ab0c9f48b42eeba7659e410540b71cec5e5a",
+      "nav_identity_sha256": "f057236c9f205f55cd243064f0c9b19109c45fb4888ab64257662810ef4c40b1",
+      "identity_vs_same_id": {
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "effect_vs_same_id": {
+        "changed_pixels": 104,
+        "absolute_channel_diff": 76960,
+        "bbox": [
+          11,
+          2,
+          43,
+          13
+        ]
+      },
+      "old_effect_bright_pixels": 62,
+      "nav_effect_bright_pixels": 140,
+      "best_identity_match": {
+        "id": 21,
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "best_match_name": "泥人",
+      "identity_exact_same_id": true,
+      "effect_exact_same_id": false,
+      "best_match_is_same_id": true
+    },
+    {
+      "group": "red",
+      "id": 22,
+      "expected_name": "石化鸟",
+      "old_shot": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_menu_catalog_full_20261125\\red\\red_022.png",
+      "old_shot_sha256": "67895a6ec131fd5c7252d5f35630cdd9fc16343575d0bcd4f552f005bcf8fcce",
+      "nav_identity_sha256": "62dd8777639b78658da0b4570c5b65b6e31aa2af54cd86b13b8799ff8eb3e29d",
+      "identity_vs_same_id": {
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "effect_vs_same_id": {
+        "changed_pixels": 378,
+        "absolute_channel_diff": 279720,
+        "bbox": [
+          11,
+          2,
+          118,
+          13
+        ]
+      },
+      "old_effect_bright_pixels": 62,
+      "nav_effect_bright_pixels": 418,
+      "best_identity_match": {
+        "id": 22,
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "best_match_name": "石化鸟",
+      "identity_exact_same_id": true,
+      "effect_exact_same_id": false,
+      "best_match_is_same_id": true
+    },
+    {
+      "group": "red",
+      "id": 23,
+      "expected_name": "狼人",
+      "old_shot": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_menu_catalog_full_20261125\\red\\red_023.png",
+      "old_shot_sha256": "a4ed037c0b490b6286ceaffbfec34179ba80e440ac4398e7723bbe730a00f65c",
+      "nav_identity_sha256": "0fde0a997c71836401ad95340352a4512fa51f743e057e955fde6a70b3b10cf5",
+      "identity_vs_same_id": {
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "effect_vs_same_id": {
+        "changed_pixels": 417,
+        "absolute_channel_diff": 308580,
+        "bbox": [
+          11,
+          2,
+          118,
+          13
+        ]
+      },
+      "old_effect_bright_pixels": 62,
+      "nav_effect_bright_pixels": 459,
+      "best_identity_match": {
+        "id": 23,
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "best_match_name": "狼人",
+      "identity_exact_same_id": true,
+      "effect_exact_same_id": false,
+      "best_match_is_same_id": true
+    },
+    {
+      "group": "red",
+      "id": 24,
+      "expected_name": "魔鸟",
+      "old_shot": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_menu_catalog_full_20261125\\red\\red_024.png",
+      "old_shot_sha256": "2e8e396edd0607851c6d3730662ebd80fa0021a0a15cbd1d0a7a246b1e2e525c",
+      "nav_identity_sha256": "f192a22493121440471e2e9bf87840f5825407622a8333b7b92396cff1e002dd",
+      "identity_vs_same_id": {
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "effect_vs_same_id": {
+        "changed_pixels": 363,
+        "absolute_channel_diff": 268620,
+        "bbox": [
+          11,
+          2,
+          106,
+          13
+        ]
+      },
+      "old_effect_bright_pixels": 62,
+      "nav_effect_bright_pixels": 397,
+      "best_identity_match": {
+        "id": 24,
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "best_match_name": "魔鸟",
+      "identity_exact_same_id": true,
+      "effect_exact_same_id": false,
+      "best_match_is_same_id": true
+    },
+    {
+      "group": "red",
+      "id": 25,
+      "expected_name": "妖草",
+      "old_shot": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_menu_catalog_full_20261125\\red\\red_025.png",
+      "old_shot_sha256": "d7c00b76c5a9454c230d259206e6d7caabddf28a70fad4b43bc9a5a80adadd69",
+      "nav_identity_sha256": "a307e4a8373f990fa5c99a6a4292e87b04ffde6ffdcceda7d2feb8b181896bca",
+      "identity_vs_same_id": {
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "effect_vs_same_id": {
+        "changed_pixels": 383,
+        "absolute_channel_diff": 283420,
+        "bbox": [
+          11,
+          2,
+          94,
+          13
+        ]
+      },
+      "old_effect_bright_pixels": 62,
+      "nav_effect_bright_pixels": 425,
+      "best_identity_match": {
+        "id": 25,
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "best_match_name": "妖草",
+      "identity_exact_same_id": true,
+      "effect_exact_same_id": false,
+      "best_match_is_same_id": true
+    },
+    {
+      "group": "red",
+      "id": 26,
+      "expected_name": "针刺珠",
+      "old_shot": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_menu_catalog_full_20261125\\red\\red_026.png",
+      "old_shot_sha256": "40538101959501bb80a1370e8d70304e7e933cef885c61747c5472b98d537243",
+      "nav_identity_sha256": "7756a3bb9ef2281993dcfc9167f9f1fd2e22ac654550cc534a77ac20dc2500e6",
+      "identity_vs_same_id": {
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "effect_vs_same_id": {
+        "changed_pixels": 427,
+        "absolute_channel_diff": 315980,
+        "bbox": [
+          11,
+          2,
+          118,
+          13
+        ]
+      },
+      "old_effect_bright_pixels": 62,
+      "nav_effect_bright_pixels": 457,
+      "best_identity_match": {
+        "id": 26,
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "best_match_name": "针刺珠",
+      "identity_exact_same_id": true,
+      "effect_exact_same_id": false,
+      "best_match_is_same_id": true
+    },
+    {
+      "group": "red",
+      "id": 27,
+      "expected_name": "食人魔",
+      "old_shot": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_menu_catalog_full_20261125\\red\\red_027.png",
+      "old_shot_sha256": "9ef2d3cfb94a10f27d6327c9483bf31c6cae247699708bb4daa002a63820590f",
+      "nav_identity_sha256": "d29f9c383e1f05893687361c41a6cce3203ade9e22853b38a1f729dd5389f618",
+      "identity_vs_same_id": {
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "effect_vs_same_id": {
+        "changed_pixels": 274,
+        "absolute_channel_diff": 202760,
+        "bbox": [
+          11,
+          2,
+          82,
+          13
+        ]
+      },
+      "old_effect_bright_pixels": 62,
+      "nav_effect_bright_pixels": 316,
+      "best_identity_match": {
+        "id": 27,
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "best_match_name": "食人魔",
+      "identity_exact_same_id": true,
+      "effect_exact_same_id": false,
+      "best_match_is_same_id": true
+    },
+    {
+      "group": "red",
+      "id": 28,
+      "expected_name": "尤克巴克",
+      "old_shot": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_menu_catalog_full_20261125\\red\\red_028.png",
+      "old_shot_sha256": "11e760e68f5360ba2f49aec6fdc8e64443378c88317b8e8b76211f19096300cf",
+      "nav_identity_sha256": "a7fb72910dbcb4167a86391b9c046be6098c93ee2980f8c91e81b9e42683e262",
+      "identity_vs_same_id": {
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "effect_vs_same_id": {
+        "changed_pixels": 309,
+        "absolute_channel_diff": 228660,
+        "bbox": [
+          11,
+          2,
+          94,
+          13
+        ]
+      },
+      "old_effect_bright_pixels": 62,
+      "nav_effect_bright_pixels": 339,
+      "best_identity_match": {
+        "id": 28,
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "best_match_name": "尤克巴克",
+      "identity_exact_same_id": true,
+      "effect_exact_same_id": false,
+      "best_match_is_same_id": true
+    },
+    {
+      "group": "red",
+      "id": 29,
+      "expected_name": "鱼头",
+      "old_shot": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_menu_catalog_full_20261125\\red\\red_029.png",
+      "old_shot_sha256": "f466c61f24efeb2390ccf148ecfcac89216fda4ff7999988fdcc70680f6057f8",
+      "nav_identity_sha256": "bb9256e698d040dcb397a9445257ee6d6e52924ac40f0b0e99330916dd5c9075",
+      "identity_vs_same_id": {
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "effect_vs_same_id": {
+        "changed_pixels": 210,
+        "absolute_channel_diff": 155400,
+        "bbox": [
+          11,
+          2,
+          70,
+          13
+        ]
+      },
+      "old_effect_bright_pixels": 62,
+      "nav_effect_bright_pixels": 244,
+      "best_identity_match": {
+        "id": 29,
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "best_match_name": "鱼头",
+      "identity_exact_same_id": true,
+      "effect_exact_same_id": false,
+      "best_match_is_same_id": true
+    },
+    {
+      "group": "red",
+      "id": 30,
+      "expected_name": "炸弹装甲",
+      "old_shot": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_menu_catalog_full_20261125\\red\\red_030.png",
+      "old_shot_sha256": "609b6d4e2fe90ec76140b689fe1e2ca556cc25b4656cf9e56f525f94ebfbe3ba",
+      "nav_identity_sha256": "ea5dcb74d8d9d71b293bf0dccb85ed4593fb0ed1d7808c81c1bccb4f0e44f077",
+      "identity_vs_same_id": {
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "effect_vs_same_id": {
+        "changed_pixels": 339,
+        "absolute_channel_diff": 250860,
+        "bbox": [
+          11,
+          2,
+          94,
+          13
+        ]
+      },
+      "old_effect_bright_pixels": 62,
+      "nav_effect_bright_pixels": 373,
+      "best_identity_match": {
+        "id": 30,
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "best_match_name": "炸弹装甲",
+      "identity_exact_same_id": true,
+      "effect_exact_same_id": false,
+      "best_match_is_same_id": true
+    },
+    {
+      "group": "red",
+      "id": 31,
+      "expected_name": "噩梦",
+      "old_shot": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_menu_catalog_full_20261125\\red\\red_031.png",
+      "old_shot_sha256": "2f5cad9cd3111766f86a8f84e14a1fa1cdd3b70677d87e6e87ea61cad20371d5",
+      "nav_identity_sha256": "14815fba35263650f85c07848597c4b2df9f12010845099de7fd36492ef9224b",
+      "identity_vs_same_id": {
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "effect_vs_same_id": {
+        "changed_pixels": 354,
+        "absolute_channel_diff": 261960,
+        "bbox": [
+          11,
+          2,
+          94,
+          13
+        ]
+      },
+      "old_effect_bright_pixels": 62,
+      "nav_effect_bright_pixels": 384,
+      "best_identity_match": {
+        "id": 31,
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "best_match_name": "噩梦",
+      "identity_exact_same_id": true,
+      "effect_exact_same_id": false,
+      "best_match_is_same_id": true
+    },
+    {
+      "group": "red",
+      "id": 32,
+      "expected_name": "史莱姆",
+      "old_shot": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_menu_catalog_full_20261125\\red\\red_032.png",
+      "old_shot_sha256": "19071c376160b36985f9b1679a96c4acda6b0f2938e7ead90e34b7cef0fb7dfb",
+      "nav_identity_sha256": "2d276ac8fbbde12a260e45f94201b88acc66d5384793f7cca112f116ca273558",
+      "identity_vs_same_id": {
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "effect_vs_same_id": {
+        "changed_pixels": 238,
+        "absolute_channel_diff": 176120,
+        "bbox": [
+          11,
+          2,
+          70,
+          13
+        ]
+      },
+      "old_effect_bright_pixels": 62,
+      "nav_effect_bright_pixels": 282,
+      "best_identity_match": {
+        "id": 32,
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "best_match_name": "史莱姆",
+      "identity_exact_same_id": true,
+      "effect_exact_same_id": false,
+      "best_match_is_same_id": true
+    },
+    {
+      "group": "red",
+      "id": 33,
+      "expected_name": "卡格布雷巴斯",
+      "old_shot": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_menu_catalog_full_20261125\\red\\red_033.png",
+      "old_shot_sha256": "8026d18b541357e7b1d6b82b1095baaf2e78644f3c309bb2b7233a4ed42af909",
+      "nav_identity_sha256": "82112ed786acadb8eb6b48dd2e47e8aa3cf8d3ae16ce1f5d810057ec1a89f355",
+      "identity_vs_same_id": {
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "effect_vs_same_id": {
+        "changed_pixels": 601,
+        "absolute_channel_diff": 444740,
+        "bbox": [
+          11,
+          2,
+          154,
+          25
+        ]
+      },
+      "old_effect_bright_pixels": 62,
+      "nav_effect_bright_pixels": 635,
+      "best_identity_match": {
+        "id": 33,
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "best_match_name": "卡格布雷巴斯",
+      "identity_exact_same_id": true,
+      "effect_exact_same_id": false,
+      "best_match_is_same_id": true
+    },
+    {
+      "group": "red",
+      "id": 34,
+      "expected_name": "杀人魔",
+      "old_shot": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_menu_catalog_full_20261125\\red\\red_034.png",
+      "old_shot_sha256": "851f3d6165308f51f796dc9a787b046eb4021d24f8d5e0d7c35f84779e8ee6be",
+      "nav_identity_sha256": "95a9837eac5d066d6d132b0d749cdd0f4679ba166c27c8e0fdbd162a5114158b",
+      "identity_vs_same_id": {
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "effect_vs_same_id": {
+        "changed_pixels": 377,
+        "absolute_channel_diff": 278980,
+        "bbox": [
+          11,
+          2,
+          118,
+          13
+        ]
+      },
+      "old_effect_bright_pixels": 62,
+      "nav_effect_bright_pixels": 413,
+      "best_identity_match": {
+        "id": 34,
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "best_match_name": "杀人魔",
+      "identity_exact_same_id": true,
+      "effect_exact_same_id": false,
+      "best_match_is_same_id": true
+    },
+    {
+      "group": "red",
+      "id": 35,
+      "expected_name": "虎人",
+      "old_shot": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_menu_catalog_full_20261125\\red\\red_035.png",
+      "old_shot_sha256": "97f753b4492f24083041c3554066e1e1fc6a97cb09595bec1db0367bd940677f",
+      "nav_identity_sha256": "0fae5ff68368a8ca02fc9510abc40045ef7da32ba3232da79576619f425804cb",
+      "identity_vs_same_id": {
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "effect_vs_same_id": {
+        "changed_pixels": 419,
+        "absolute_channel_diff": 310060,
+        "bbox": [
+          11,
+          2,
+          118,
+          13
+        ]
+      },
+      "old_effect_bright_pixels": 62,
+      "nav_effect_bright_pixels": 457,
+      "best_identity_match": {
+        "id": 35,
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "best_match_name": "虎人",
+      "identity_exact_same_id": true,
+      "effect_exact_same_id": false,
+      "best_match_is_same_id": true
+    },
+    {
+      "group": "red",
+      "id": 36,
+      "expected_name": "豹人",
+      "old_shot": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_menu_catalog_full_20261125\\red\\red_036.png",
+      "old_shot_sha256": "c8dfeebc1df4c15c3e8fadfc518dc113865b2c6f5c6cde4fb2b1e0d8bb58f288",
+      "nav_identity_sha256": "23f864e2e9556bc6737937bafe232677b67b3fba694db8e14931fd499b579870",
+      "identity_vs_same_id": {
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "effect_vs_same_id": {
+        "changed_pixels": 402,
+        "absolute_channel_diff": 297480,
+        "bbox": [
+          11,
+          2,
+          118,
+          13
+        ]
+      },
+      "old_effect_bright_pixels": 62,
+      "nav_effect_bright_pixels": 440,
+      "best_identity_match": {
+        "id": 36,
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "best_match_name": "豹人",
+      "identity_exact_same_id": true,
+      "effect_exact_same_id": false,
+      "best_match_is_same_id": true
+    },
+    {
+      "group": "red",
+      "id": 37,
+      "expected_name": "比夫隆",
+      "old_shot": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_menu_catalog_full_20261125\\red\\red_037.png",
+      "old_shot_sha256": "24b45e16831a66142f4a8879a3d37c1d080041d5a00ec5ad79cc694362275833",
+      "nav_identity_sha256": "3f8374c8c59410e4c9bc0dcefea54385406db0cc1064f7dd346622852a0aa30e",
+      "identity_vs_same_id": {
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "effect_vs_same_id": {
+        "changed_pixels": 188,
+        "absolute_channel_diff": 139120,
+        "bbox": [
+          11,
+          2,
+          58,
+          13
+        ]
+      },
+      "old_effect_bright_pixels": 62,
+      "nav_effect_bright_pixels": 222,
+      "best_identity_match": {
+        "id": 37,
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "best_match_name": "比夫隆",
+      "identity_exact_same_id": true,
+      "effect_exact_same_id": false,
+      "best_match_is_same_id": true
+    },
+    {
+      "group": "red",
+      "id": 38,
+      "expected_name": "曼提柯亚",
+      "old_shot": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_menu_catalog_full_20261125\\red\\red_038.png",
+      "old_shot_sha256": "0e3c07fdbd7e559b8d85bb6ae42bc752ae6303b992cb8d92953c7f3a030a23e4",
+      "nav_identity_sha256": "d424d9d04f46d94725bffc724d9ca096bf4e8f0507d1dad754d4fb0be8b8c5c2",
+      "identity_vs_same_id": {
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "effect_vs_same_id": {
+        "changed_pixels": 172,
+        "absolute_channel_diff": 127280,
+        "bbox": [
+          11,
+          2,
+          57,
+          13
+        ]
+      },
+      "old_effect_bright_pixels": 62,
+      "nav_effect_bright_pixels": 208,
+      "best_identity_match": {
+        "id": 38,
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "best_match_name": "曼提柯亚",
+      "identity_exact_same_id": true,
+      "effect_exact_same_id": false,
+      "best_match_is_same_id": true
+    },
+    {
+      "group": "red",
+      "id": 39,
+      "expected_name": "光柱骷髅",
+      "old_shot": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_menu_catalog_full_20261125\\red\\red_039.png",
+      "old_shot_sha256": "2c062b312560e16cf552c9be8633026f17d762c23cb8ad486b354499f0deef38",
+      "nav_identity_sha256": "789c16094bcb07c3e85bdaae36cb90d10181444858eb4c0a26eee610fd27e0e8",
+      "identity_vs_same_id": {
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "effect_vs_same_id": {
+        "changed_pixels": 211,
+        "absolute_channel_diff": 156140,
+        "bbox": [
+          11,
+          2,
+          70,
+          13
+        ]
+      },
+      "old_effect_bright_pixels": 62,
+      "nav_effect_bright_pixels": 247,
+      "best_identity_match": {
+        "id": 39,
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "best_match_name": "光柱骷髅",
+      "identity_exact_same_id": true,
+      "effect_exact_same_id": false,
+      "best_match_is_same_id": true
+    },
+    {
+      "group": "red",
+      "id": 40,
+      "expected_name": "骷髅飞兵",
+      "old_shot": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_menu_catalog_full_20261125\\red\\red_040.png",
+      "old_shot_sha256": "86b70540ebb964d74ffea45950bacc8845946a4f0f7a33e68b42c05f42bab6c5",
+      "nav_identity_sha256": "c03f0b8690db981ef940c2f1c249375ca7cb3c66005c88e007902dae37f188fc",
+      "identity_vs_same_id": {
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "effect_vs_same_id": {
+        "changed_pixels": 231,
+        "absolute_channel_diff": 170940,
+        "bbox": [
+          11,
+          2,
+          70,
+          13
+        ]
+      },
+      "old_effect_bright_pixels": 62,
+      "nav_effect_bright_pixels": 273,
+      "best_identity_match": {
+        "id": 40,
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "best_match_name": "骷髅飞兵",
+      "identity_exact_same_id": true,
+      "effect_exact_same_id": false,
+      "best_match_is_same_id": true
+    },
+    {
+      "group": "red",
+      "id": 41,
+      "expected_name": "大腹骨",
+      "old_shot": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_menu_catalog_full_20261125\\red\\red_041.png",
+      "old_shot_sha256": "2cd4cf4ff00fab9fdca5de2863f6e88b5b8bd5e7621bad5af98d1bdd5d33e406",
+      "nav_identity_sha256": "49535a1ce349842e9adb68d08e88ec2f6d4979c1563495f9be892ab1a33673f8",
+      "identity_vs_same_id": {
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "effect_vs_same_id": {
+        "changed_pixels": 322,
+        "absolute_channel_diff": 238280,
+        "bbox": [
+          11,
+          2,
+          94,
+          13
+        ]
+      },
+      "old_effect_bright_pixels": 62,
+      "nav_effect_bright_pixels": 356,
+      "best_identity_match": {
+        "id": 41,
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "best_match_name": "大腹骨",
+      "identity_exact_same_id": true,
+      "effect_exact_same_id": false,
+      "best_match_is_same_id": true
+    },
+    {
+      "group": "red",
+      "id": 42,
+      "expected_name": "角斗士",
+      "old_shot": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_menu_catalog_full_20261125\\red\\red_042.png",
+      "old_shot_sha256": "fac9ab6b9d0c7d920ad545e885497b31bdadd1b00425233b19db4698e64ed432",
+      "nav_identity_sha256": "49ee2dd3e6eb4d476aa0999cac0f4d5a6456dc00bcde8a2aeed359a460714fe0",
+      "identity_vs_same_id": {
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "effect_vs_same_id": {
+        "changed_pixels": 174,
+        "absolute_channel_diff": 128760,
+        "bbox": [
+          11,
+          2,
+          58,
+          13
+        ]
+      },
+      "old_effect_bright_pixels": 62,
+      "nav_effect_bright_pixels": 216,
+      "best_identity_match": {
+        "id": 42,
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "best_match_name": "角斗士",
+      "identity_exact_same_id": true,
+      "effect_exact_same_id": false,
+      "best_match_is_same_id": true
+    },
+    {
+      "group": "red",
+      "id": 43,
+      "expected_name": "恶魔领主",
+      "old_shot": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_menu_catalog_full_20261125\\red\\red_043.png",
+      "old_shot_sha256": "7f77145805c5606138baba70823551beef0fd16957f1b1b39588cb33b4a78186",
+      "nav_identity_sha256": "6d9963a38a8a8267025c2d362b2835e18b750afef44658c16b033c9aaaf4cb56",
+      "identity_vs_same_id": {
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "effect_vs_same_id": {
+        "changed_pixels": 308,
+        "absolute_channel_diff": 227920,
+        "bbox": [
+          11,
+          2,
+          94,
+          13
+        ]
+      },
+      "old_effect_bright_pixels": 62,
+      "nav_effect_bright_pixels": 348,
+      "best_identity_match": {
+        "id": 43,
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "best_match_name": "恶魔领主",
+      "identity_exact_same_id": true,
+      "effect_exact_same_id": false,
+      "best_match_is_same_id": true
+    },
+    {
+      "group": "red",
+      "id": 44,
+      "expected_name": "火恶魔",
+      "old_shot": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_menu_catalog_full_20261125\\red\\red_044.png",
+      "old_shot_sha256": "dead6732bae5ff9d26be69159407cda224d174ac839597c38a62d764f06a8871",
+      "nav_identity_sha256": "cc74a686eed8f365e9aba690aac5abdc2937c5f3ffca2a22b59f26ca37ec9059",
+      "identity_vs_same_id": {
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "effect_vs_same_id": {
+        "changed_pixels": 377,
+        "absolute_channel_diff": 278980,
+        "bbox": [
+          11,
+          2,
+          118,
+          13
+        ]
+      },
+      "old_effect_bright_pixels": 62,
+      "nav_effect_bright_pixels": 413,
+      "best_identity_match": {
+        "id": 44,
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "best_match_name": "火恶魔",
+      "identity_exact_same_id": true,
+      "effect_exact_same_id": false,
+      "best_match_is_same_id": true
+    },
+    {
+      "group": "red",
+      "id": 45,
+      "expected_name": "雷人偶",
+      "old_shot": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_menu_catalog_full_20261125\\red\\red_045.png",
+      "old_shot_sha256": "41e3f908f63e593a0c31f38068f5bd142a8fd582573088de785421b8bf6f40b8",
+      "nav_identity_sha256": "c5d2fbb0ab7778dd9af4f048c8af0e16278fa7459fd1c80c22264d9f89c5a9e3",
+      "identity_vs_same_id": {
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "effect_vs_same_id": {
+        "changed_pixels": 376,
+        "absolute_channel_diff": 278240,
+        "bbox": [
+          11,
+          2,
+          106,
+          13
+        ]
+      },
+      "old_effect_bright_pixels": 62,
+      "nav_effect_bright_pixels": 406,
+      "best_identity_match": {
+        "id": 45,
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "best_match_name": "雷人偶",
+      "identity_exact_same_id": true,
+      "effect_exact_same_id": false,
+      "best_match_is_same_id": true
+    },
+    {
+      "group": "red",
+      "id": 46,
+      "expected_name": "瓦尔基里",
+      "old_shot": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_menu_catalog_full_20261125\\red\\red_046.png",
+      "old_shot_sha256": "0b9f0856e74f2b9c89d7acc5598df904d6d0d9028e347f7f8ed33ed1af5b84a4",
+      "nav_identity_sha256": "1f7ba88fb6a5d0124cf5252badc61488bd3e4a8ca5d5bf007e09b32dbb5b5317",
+      "identity_vs_same_id": {
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "effect_vs_same_id": {
+        "changed_pixels": 168,
+        "absolute_channel_diff": 124320,
+        "bbox": [
+          11,
+          2,
+          58,
+          13
+        ]
+      },
+      "old_effect_bright_pixels": 62,
+      "nav_effect_bright_pixels": 202,
+      "best_identity_match": {
+        "id": 46,
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "best_match_name": "瓦尔基里",
+      "identity_exact_same_id": true,
+      "effect_exact_same_id": false,
+      "best_match_is_same_id": true
+    },
+    {
+      "group": "red",
+      "id": 47,
+      "expected_name": "圆盘装甲",
+      "old_shot": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_menu_catalog_full_20261125\\red\\red_047.png",
+      "old_shot_sha256": "f2ca145110f4386395384a748ceda80bb3a39432b4e733d3b82b1776de406cd8",
+      "nav_identity_sha256": "a51e717d4e2fb1061e8008cde95338082518c6cb42814e84af8e7765c080157c",
+      "identity_vs_same_id": {
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "effect_vs_same_id": {
+        "changed_pixels": 400,
+        "absolute_channel_diff": 296000,
+        "bbox": [
+          11,
+          2,
+          106,
+          13
+        ]
+      },
+      "old_effect_bright_pixels": 62,
+      "nav_effect_bright_pixels": 438,
+      "best_identity_match": {
+        "id": 47,
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "best_match_name": "圆盘装甲",
+      "identity_exact_same_id": true,
+      "effect_exact_same_id": false,
+      "best_match_is_same_id": true
+    },
+    {
+      "group": "red",
+      "id": 48,
+      "expected_name": "红色米诺陶斯",
+      "old_shot": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_menu_catalog_full_20261125\\red\\red_048.png",
+      "old_shot_sha256": "9b2f1362a928aa330def95bf7622443aa4f83a49132d1cf4c070397eebe8be9a",
+      "nav_identity_sha256": "b0eb9fac936aeda21e4b07cd73e3c459a57ee9cb53443288bccac5c3443f157f",
+      "identity_vs_same_id": {
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "effect_vs_same_id": {
+        "changed_pixels": 274,
+        "absolute_channel_diff": 202760,
+        "bbox": [
+          11,
+          2,
+          82,
+          13
+        ]
+      },
+      "old_effect_bright_pixels": 62,
+      "nav_effect_bright_pixels": 318,
+      "best_identity_match": {
+        "id": 48,
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "best_match_name": "红色米诺陶斯",
+      "identity_exact_same_id": true,
+      "effect_exact_same_id": false,
+      "best_match_is_same_id": true
+    },
+    {
+      "group": "red",
+      "id": 49,
+      "expected_name": "死人军团",
+      "old_shot": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_menu_catalog_full_20261125\\red\\red_049.png",
+      "old_shot_sha256": "caa08c32c12aca13874d54969123a620b09298bd85457b0561fadeb532962893",
+      "nav_identity_sha256": "c87036cd99108380abb0e9096e97f5f8509235657b799106b502999ee314db28",
+      "identity_vs_same_id": {
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "effect_vs_same_id": {
+        "changed_pixels": 194,
+        "absolute_channel_diff": 143560,
+        "bbox": [
+          11,
+          2,
+          58,
+          13
+        ]
+      },
+      "old_effect_bright_pixels": 62,
+      "nav_effect_bright_pixels": 244,
+      "best_identity_match": {
+        "id": 49,
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "best_match_name": "死人军团",
+      "identity_exact_same_id": true,
+      "effect_exact_same_id": false,
+      "best_match_is_same_id": true
+    },
+    {
+      "group": "red",
+      "id": 50,
+      "expected_name": "巴洛尔",
+      "old_shot": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_menu_catalog_full_20261125\\red\\red_050.png",
+      "old_shot_sha256": "b305f1630ec2e359be11d55fc8afd92bdda605e76d4ac11bbb481630d3d00d0e",
+      "nav_identity_sha256": "ec3b43a50e3553aaf35aab412e6f70f50ec516c6a1a0c5ae747e8d618b7f3a6d",
+      "identity_vs_same_id": {
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "effect_vs_same_id": {
+        "changed_pixels": 130,
+        "absolute_channel_diff": 96200,
+        "bbox": [
+          11,
+          2,
+          46,
+          13
+        ]
+      },
+      "old_effect_bright_pixels": 62,
+      "nav_effect_bright_pixels": 174,
+      "best_identity_match": {
+        "id": 50,
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "best_match_name": "巴洛尔",
+      "identity_exact_same_id": true,
+      "effect_exact_same_id": false,
+      "best_match_is_same_id": true
+    },
+    {
+      "group": "red",
+      "id": 51,
+      "expected_name": "杀人木偶",
+      "old_shot": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_menu_catalog_full_20261125\\red\\red_051.png",
+      "old_shot_sha256": "a5c38cf85ade072878e7d1ef84fd52a8000c47090b26b2a4cea7a867e88ba722",
+      "nav_identity_sha256": "038d777b2304fd0a1c08fc0cecb875a3b3642bb6f16116d41b12e340531de779",
+      "identity_vs_same_id": {
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "effect_vs_same_id": {
+        "changed_pixels": 425,
+        "absolute_channel_diff": 314500,
+        "bbox": [
+          11,
+          2,
+          118,
+          13
+        ]
+      },
+      "old_effect_bright_pixels": 62,
+      "nav_effect_bright_pixels": 457,
+      "best_identity_match": {
+        "id": 51,
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "best_match_name": "杀人木偶",
+      "identity_exact_same_id": true,
+      "effect_exact_same_id": false,
+      "best_match_is_same_id": true
+    },
+    {
+      "group": "red",
+      "id": 52,
+      "expected_name": "尼米西斯",
+      "old_shot": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_menu_catalog_full_20261125\\red\\red_052.png",
+      "old_shot_sha256": "381d8f446e19424b653c66ad4210e8bf79184ea423fa3e8deb5ea8d045161d8b",
+      "nav_identity_sha256": "5b694be32cb40ee09c202cf4bb0711711530796ba58b3e3bd907299ea14a9990",
+      "identity_vs_same_id": {
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "effect_vs_same_id": {
+        "changed_pixels": 357,
+        "absolute_channel_diff": 264180,
+        "bbox": [
+          11,
+          2,
+          106,
+          13
+        ]
+      },
+      "old_effect_bright_pixels": 62,
+      "nav_effect_bright_pixels": 387,
+      "best_identity_match": {
+        "id": 52,
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "best_match_name": "尼米西斯",
+      "identity_exact_same_id": true,
+      "effect_exact_same_id": false,
+      "best_match_is_same_id": true
+    },
+    {
+      "group": "red",
+      "id": 53,
+      "expected_name": "杀人披风",
+      "old_shot": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_menu_catalog_full_20261125\\red\\red_053.png",
+      "old_shot_sha256": "fe2d16aa98fa96cd8efb87498665495870ad20c35663382e798e0c82356addd9",
+      "nav_identity_sha256": "261ea6d5494fda0d664af139d85dada6993862689ecfd15c5598a0a4e3e9dc85",
+      "identity_vs_same_id": {
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "effect_vs_same_id": {
+        "changed_pixels": 419,
+        "absolute_channel_diff": 310060,
+        "bbox": [
+          11,
+          2,
+          127,
+          13
+        ]
+      },
+      "old_effect_bright_pixels": 62,
+      "nav_effect_bright_pixels": 455,
+      "best_identity_match": {
+        "id": 53,
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "best_match_name": "杀人披风",
+      "identity_exact_same_id": true,
+      "effect_exact_same_id": false,
+      "best_match_is_same_id": true
+    },
+    {
+      "group": "red",
+      "id": 54,
+      "expected_name": "多利亚",
+      "old_shot": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_menu_catalog_full_20261125\\red\\red_054.png",
+      "old_shot_sha256": "38a29e3da8b44dbc460e9a6d82124ef96c5576b0592b7a6e3500da09cb5513b1",
+      "nav_identity_sha256": "ac685335d3a918a9fff1dbe598970755e0610c465b0b1425818758792b2337c2",
+      "identity_vs_same_id": {
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "effect_vs_same_id": {
+        "changed_pixels": 279,
+        "absolute_channel_diff": 206460,
+        "bbox": [
+          11,
+          2,
+          94,
+          13
+        ]
+      },
+      "old_effect_bright_pixels": 62,
+      "nav_effect_bright_pixels": 323,
+      "best_identity_match": {
+        "id": 54,
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "best_match_name": "多利亚",
+      "identity_exact_same_id": true,
+      "effect_exact_same_id": false,
+      "best_match_is_same_id": true
+    },
+    {
+      "group": "red",
+      "id": 55,
+      "expected_name": "时之法师",
+      "old_shot": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_menu_catalog_full_20261125\\red\\red_055.png",
+      "old_shot_sha256": "f516c9a49278159b2b4c0d572404bf53c2e8b42a974c5aca259bdb60b135d299",
+      "nav_identity_sha256": "1f40acd637f981a3d42b125190b9b4c0bcb2076c95afc3c12aff28ebb8da918a",
+      "identity_vs_same_id": {
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "effect_vs_same_id": {
+        "changed_pixels": 226,
+        "absolute_channel_diff": 167240,
+        "bbox": [
+          11,
+          2,
+          70,
+          13
+        ]
+      },
+      "old_effect_bright_pixels": 62,
+      "nav_effect_bright_pixels": 270,
+      "best_identity_match": {
+        "id": 55,
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "best_match_name": "时之法师",
+      "identity_exact_same_id": true,
+      "effect_exact_same_id": false,
+      "best_match_is_same_id": true
+    },
+    {
+      "group": "blue",
+      "id": 1,
+      "expected_name": "飞装甲",
+      "old_shot": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_menu_catalog_full_20261125\\blue\\blue_001.png",
+      "old_shot_sha256": "7b4f7145c46d7a0c7b494266920faf11e4a89987b732075f540e70b2d5293e72",
+      "nav_identity_sha256": "265f470ee58a06ab564d9ddcad075c9e38b575118df4d06134d101bc572c2d25",
+      "identity_vs_same_id": {
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "effect_vs_same_id": {
+        "changed_pixels": 643,
+        "absolute_channel_diff": 475820,
+        "bbox": [
+          11,
+          2,
+          94,
+          25
+        ]
+      },
+      "old_effect_bright_pixels": 62,
+      "nav_effect_bright_pixels": 683,
+      "best_identity_match": {
+        "id": 1,
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "best_match_name": "飞装甲",
+      "identity_exact_same_id": true,
+      "effect_exact_same_id": false,
+      "best_match_is_same_id": true
+    },
+    {
+      "group": "blue",
+      "id": 2,
+      "expected_name": "大蝙蝠",
+      "old_shot": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_menu_catalog_full_20261125\\blue\\blue_002.png",
+      "old_shot_sha256": "04fd2ac81160e4387bd92fa26f0d93ce3dc1d82b4b9a203dd22e5d133d9c4923",
+      "nav_identity_sha256": "c74f88477f868345426132a96c75fd397eb96bb778b7ae19b85923f805cedad1",
+      "identity_vs_same_id": {
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "effect_vs_same_id": {
+        "changed_pixels": 327,
+        "absolute_channel_diff": 241980,
+        "bbox": [
+          11,
+          2,
+          94,
+          13
+        ]
+      },
+      "old_effect_bright_pixels": 62,
+      "nav_effect_bright_pixels": 381,
+      "best_identity_match": {
+        "id": 2,
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "best_match_name": "大蝙蝠",
+      "identity_exact_same_id": true,
+      "effect_exact_same_id": false,
+      "best_match_is_same_id": true
+    },
+    {
+      "group": "blue",
+      "id": 3,
+      "expected_name": "恶灵",
+      "old_shot": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_menu_catalog_full_20261125\\blue\\blue_003.png",
+      "old_shot_sha256": "81e472f99f5e59048bc78cc2b31132e45f930132370261c907f598dec6588fb7",
+      "nav_identity_sha256": "34d27220c66182de06a05ca5021f2ac81e1d53aa7c375d70c5ba6b61db696562",
+      "identity_vs_same_id": {
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "effect_vs_same_id": {
+        "changed_pixels": 388,
+        "absolute_channel_diff": 287120,
+        "bbox": [
+          11,
+          2,
+          106,
+          13
+        ]
+      },
+      "old_effect_bright_pixels": 62,
+      "nav_effect_bright_pixels": 430,
+      "best_identity_match": {
+        "id": 3,
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "best_match_name": "恶灵",
+      "identity_exact_same_id": true,
+      "effect_exact_same_id": false,
+      "best_match_is_same_id": true
+    },
+    {
+      "group": "blue",
+      "id": 4,
+      "expected_name": "布艾尔",
+      "old_shot": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_menu_catalog_full_20261125\\blue\\blue_004.png",
+      "old_shot_sha256": "bf581e8aa57736443c631d87d65a9af1ade43ca00bfe540c06dce2353c7f254f",
+      "nav_identity_sha256": "1920713433f5062cc6766e9166a982809ac1e18b4153df0678a90f4728c49e50",
+      "identity_vs_same_id": {
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "effect_vs_same_id": {
+        "changed_pixels": 253,
+        "absolute_channel_diff": 187220,
+        "bbox": [
+          11,
+          2,
+          82,
+          13
+        ]
+      },
+      "old_effect_bright_pixels": 62,
+      "nav_effect_bright_pixels": 291,
+      "best_identity_match": {
+        "id": 4,
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "best_match_name": "布艾尔",
+      "identity_exact_same_id": true,
+      "effect_exact_same_id": false,
+      "best_match_is_same_id": true
+    },
+    {
+      "group": "blue",
+      "id": 5,
+      "expected_name": "魔女",
+      "old_shot": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_menu_catalog_full_20261125\\blue\\blue_005.png",
+      "old_shot_sha256": "f9257f027a14912517f8b88cf5c9a47f3fed9792b696756c69fe4cb26bbacb23",
+      "nav_identity_sha256": "e3847d53ac828a2d441e1ddbb2567e58f00ec9052c15806b4db152d8ca45d096",
+      "identity_vs_same_id": {
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "effect_vs_same_id": {
+        "changed_pixels": 290,
+        "absolute_channel_diff": 214600,
+        "bbox": [
+          11,
+          2,
+          82,
+          13
+        ]
+      },
+      "old_effect_bright_pixels": 62,
+      "nav_effect_bright_pixels": 326,
+      "best_identity_match": {
+        "id": 5,
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "best_match_name": "魔女",
+      "identity_exact_same_id": true,
+      "effect_exact_same_id": false,
+      "best_match_is_same_id": true
+    },
+    {
+      "group": "blue",
+      "id": 6,
+      "expected_name": "大鬼魂",
+      "old_shot": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_menu_catalog_full_20261125\\blue\\blue_006.png",
+      "old_shot_sha256": "c48b4236ce773b5a001127ebdc8d898d17d148ca70b9a4f41cfac435e0ca185b",
+      "nav_identity_sha256": "3c453d09341867afb4f9a124f1e2e427b41613291e9a1db21374166a8a857aef",
+      "identity_vs_same_id": {
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "effect_vs_same_id": {
+        "changed_pixels": 412,
+        "absolute_channel_diff": 304880,
+        "bbox": [
+          11,
+          2,
+          106,
+          13
+        ]
+      },
+      "old_effect_bright_pixels": 62,
+      "nav_effect_bright_pixels": 454,
+      "best_identity_match": {
+        "id": 6,
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "best_match_name": "大鬼魂",
+      "identity_exact_same_id": true,
+      "effect_exact_same_id": false,
+      "best_match_is_same_id": true
+    },
+    {
+      "group": "blue",
+      "id": 7,
+      "expected_name": "火焰卫兵",
+      "old_shot": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_menu_catalog_full_20261125\\blue\\blue_007.png",
+      "old_shot_sha256": "8103a1e4198ced48864ab73d2516de2d37ae201c7013e90997aee843b59cc6f0",
+      "nav_identity_sha256": "5a27567ba301c3d8b0a0c60b587b73db3b081ce0a28166a825cd9b9cd7dd8c5a",
+      "identity_vs_same_id": {
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "effect_vs_same_id": {
+        "changed_pixels": 316,
+        "absolute_channel_diff": 233840,
+        "bbox": [
+          11,
+          2,
+          94,
+          13
+        ]
+      },
+      "old_effect_bright_pixels": 62,
+      "nav_effect_bright_pixels": 352,
+      "best_identity_match": {
+        "id": 7,
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "best_match_name": "火焰卫兵",
+      "identity_exact_same_id": true,
+      "effect_exact_same_id": false,
+      "best_match_is_same_id": true
+    },
+    {
+      "group": "blue",
+      "id": 8,
+      "expected_name": "大装甲",
+      "old_shot": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_menu_catalog_full_20261125\\blue\\blue_008.png",
+      "old_shot_sha256": "55846539867e93c9875a3613f79960db59f02f9e5c72436c30136b74535d145f",
+      "nav_identity_sha256": "d43088ed37dbe0fbeb5b8d6137ebd9b550e25221cba3d024f0f37435d1d7b7c5",
+      "identity_vs_same_id": {
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "effect_vs_same_id": {
+        "changed_pixels": 322,
+        "absolute_channel_diff": 238280,
+        "bbox": [
+          12,
+          2,
+          118,
+          13
+        ]
+      },
+      "old_effect_bright_pixels": 62,
+      "nav_effect_bright_pixels": 362,
+      "best_identity_match": {
+        "id": 8,
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "best_match_name": "大装甲",
+      "identity_exact_same_id": true,
+      "effect_exact_same_id": false,
+      "best_match_is_same_id": true
+    },
+    {
+      "group": "blue",
+      "id": 9,
+      "expected_name": "卡格布雷巴斯",
+      "old_shot": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_menu_catalog_full_20261125\\blue\\blue_009.png",
+      "old_shot_sha256": "b7d2361a8ed1921f72743261d2d257729af55daa58f981a4953f37a34b3bdf92",
+      "nav_identity_sha256": "a76f988a072f9e070a033b9f87bdfd3108774db3f7136b19d797269083efebec",
+      "identity_vs_same_id": {
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "effect_vs_same_id": {
+        "changed_pixels": 388,
+        "absolute_channel_diff": 287120,
+        "bbox": [
+          11,
+          2,
+          118,
+          13
+        ]
+      },
+      "old_effect_bright_pixels": 62,
+      "nav_effect_bright_pixels": 418,
+      "best_identity_match": {
+        "id": 9,
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "best_match_name": "卡格布雷巴斯",
+      "identity_exact_same_id": true,
+      "effect_exact_same_id": false,
+      "best_match_is_same_id": true
+    },
+    {
+      "group": "blue",
+      "id": 10,
+      "expected_name": "骨柱",
+      "old_shot": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_menu_catalog_full_20261125\\blue\\blue_010.png",
+      "old_shot_sha256": "d236edb6a05885f76a3dbe5b20269539852e31b6656b60065fa8ee6f217b984c",
+      "nav_identity_sha256": "330edfbb6f76b095d0bb922118f04a10b7a08c426041d3457a3e59bb0acf7c81",
+      "identity_vs_same_id": {
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "effect_vs_same_id": {
+        "changed_pixels": 157,
+        "absolute_channel_diff": 116180,
+        "bbox": [
+          11,
+          2,
+          58,
+          13
+        ]
+      },
+      "old_effect_bright_pixels": 62,
+      "nav_effect_bright_pixels": 199,
+      "best_identity_match": {
+        "id": 10,
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "best_match_name": "骨柱",
+      "identity_exact_same_id": true,
+      "effect_exact_same_id": false,
+      "best_match_is_same_id": true
+    },
+    {
+      "group": "blue",
+      "id": 11,
+      "expected_name": "骷髅战士",
+      "old_shot": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_menu_catalog_full_20261125\\blue\\blue_011.png",
+      "old_shot_sha256": "e5ab7026ed981844b35cbabca919ec052d0df2a7aa0505da09a8f9b3a21d8bca",
+      "nav_identity_sha256": "f91c8cf4afa04212695772d41d8033e732146ccd90c5c6bcedd80fe2aaeffd97",
+      "identity_vs_same_id": {
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "effect_vs_same_id": {
+        "changed_pixels": 278,
+        "absolute_channel_diff": 205720,
+        "bbox": [
+          11,
+          2,
+          82,
+          13
+        ]
+      },
+      "old_effect_bright_pixels": 62,
+      "nav_effect_bright_pixels": 318,
+      "best_identity_match": {
+        "id": 11,
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "best_match_name": "骷髅战士",
+      "identity_exact_same_id": true,
+      "effect_exact_same_id": false,
+      "best_match_is_same_id": true
+    },
+    {
+      "group": "blue",
+      "id": 12,
+      "expected_name": "巨人",
+      "old_shot": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_menu_catalog_full_20261125\\blue\\blue_012.png",
+      "old_shot_sha256": "536ab226ce8a1539eda087a887584282c3d75a696aee00a8d1cbd8c651d147c8",
+      "nav_identity_sha256": "2c5d1db7a89176b436ee9bd8035e25dace195d2c71971c654e04763c2b4ae735",
+      "identity_vs_same_id": {
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "effect_vs_same_id": {
+        "changed_pixels": 278,
+        "absolute_channel_diff": 205720,
+        "bbox": [
+          11,
+          2,
+          82,
+          13
+        ]
+      },
+      "old_effect_bright_pixels": 62,
+      "nav_effect_bright_pixels": 318,
+      "best_identity_match": {
+        "id": 12,
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "best_match_name": "巨人",
+      "identity_exact_same_id": true,
+      "effect_exact_same_id": false,
+      "best_match_is_same_id": true
+    },
+    {
+      "group": "blue",
+      "id": 13,
+      "expected_name": "大骷髅",
+      "old_shot": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_menu_catalog_full_20261125\\blue\\blue_013.png",
+      "old_shot_sha256": "d588e905c14f5f6f4629eee3ed03ca5a2e117bee6f872ba2fb3856ad6de95752",
+      "nav_identity_sha256": "08c6d9c2265a9bf49b9b7c5ae2703b88b4af836a85587eb8cab265639dd7cb69",
+      "identity_vs_same_id": {
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "effect_vs_same_id": {
+        "changed_pixels": 265,
+        "absolute_channel_diff": 196100,
+        "bbox": [
+          11,
+          2,
+          82,
+          13
+        ]
+      },
+      "old_effect_bright_pixels": 62,
+      "nav_effect_bright_pixels": 305,
+      "best_identity_match": {
+        "id": 13,
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "best_match_name": "大骷髅",
+      "identity_exact_same_id": true,
+      "effect_exact_same_id": false,
+      "best_match_is_same_id": true
+    },
+    {
+      "group": "blue",
+      "id": 14,
+      "expected_name": "美杜沙头",
+      "old_shot": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_menu_catalog_full_20261125\\blue\\blue_014.png",
+      "old_shot_sha256": "c3fb544c6d861fa0fe0127388f76384acc4614346d02715d45125178674f9968",
+      "nav_identity_sha256": "e3383f1cce89ed4b3dc1eddecc37c5ab3ec2b2a600cfe5eb432b54ae624f4d11",
+      "identity_vs_same_id": {
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "effect_vs_same_id": {
+        "changed_pixels": 467,
+        "absolute_channel_diff": 345580,
+        "bbox": [
+          11,
+          2,
+          130,
+          13
+        ]
+      },
+      "old_effect_bright_pixels": 62,
+      "nav_effect_bright_pixels": 505,
+      "best_identity_match": {
+        "id": 14,
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "best_match_name": "美杜沙头",
+      "identity_exact_same_id": true,
+      "effect_exact_same_id": false,
+      "best_match_is_same_id": true
+    },
+    {
+      "group": "blue",
+      "id": 15,
+      "expected_name": "普罗比那",
+      "old_shot": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_menu_catalog_full_20261125\\blue\\blue_015.png",
+      "old_shot_sha256": "0630aa788aab353bdaa06ca195ef1ee2145f91f301c30aa4f14c5c12e5fb920c",
+      "nav_identity_sha256": "a9527a77aeb8258e7343d52ef5a2296ff10c60905facb2f531af8695c6cf143f",
+      "identity_vs_same_id": {
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "effect_vs_same_id": {
+        "changed_pixels": 253,
+        "absolute_channel_diff": 187220,
+        "bbox": [
+          11,
+          2,
+          82,
+          13
+        ]
+      },
+      "old_effect_bright_pixels": 62,
+      "nav_effect_bright_pixels": 283,
+      "best_identity_match": {
+        "id": 15,
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "best_match_name": "普罗比那",
+      "identity_exact_same_id": true,
+      "effect_exact_same_id": false,
+      "best_match_is_same_id": true
+    },
+    {
+      "group": "blue",
+      "id": 16,
+      "expected_name": "亚祖拉",
+      "old_shot": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_menu_catalog_full_20261125\\blue\\blue_016.png",
+      "old_shot_sha256": "47412087711a2d4071b3b02e57192034bf54b1a75b4665e4963c794afacf8682",
+      "nav_identity_sha256": "70dd56bb5233b112021a1540b7107b459958756a991154121822251d17e15d74",
+      "identity_vs_same_id": {
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "effect_vs_same_id": {
+        "changed_pixels": 513,
+        "absolute_channel_diff": 379620,
+        "bbox": [
+          11,
+          2,
+          139,
+          13
+        ]
+      },
+      "old_effect_bright_pixels": 62,
+      "nav_effect_bright_pixels": 559,
+      "best_identity_match": {
+        "id": 16,
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "best_match_name": "亚祖拉",
+      "identity_exact_same_id": true,
+      "effect_exact_same_id": false,
+      "best_match_is_same_id": true
+    },
+    {
+      "group": "blue",
+      "id": 17,
+      "expected_name": "阿尔拉妖草",
+      "old_shot": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_menu_catalog_full_20261125\\blue\\blue_017.png",
+      "old_shot_sha256": "9ac6630f1c5b360f86113b57318f239a6cc2ac86247dd7a40cfc337773d46819",
+      "nav_identity_sha256": "0286ef625911146b980090ebc89d08db7b96c0f8a275ee991b44608c38ba720e",
+      "identity_vs_same_id": {
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "effect_vs_same_id": {
+        "changed_pixels": 177,
+        "absolute_channel_diff": 130980,
+        "bbox": [
+          12,
+          2,
+          58,
+          13
+        ]
+      },
+      "old_effect_bright_pixels": 62,
+      "nav_effect_bright_pixels": 221,
+      "best_identity_match": {
+        "id": 17,
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "best_match_name": "阿尔拉妖草",
+      "identity_exact_same_id": true,
+      "effect_exact_same_id": false,
+      "best_match_is_same_id": true
+    },
+    {
+      "group": "blue",
+      "id": 18,
+      "expected_name": "恶魔",
+      "old_shot": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_menu_catalog_full_20261125\\blue\\blue_018.png",
+      "old_shot_sha256": "11841ef7814bb9f59949422a25cbc64b4c01745d8cfcd81c66d3142b9ba28f64",
+      "nav_identity_sha256": "a970080ebc28e8f8f9cd475316c61f6583afb523aa07d3f1419f2d0c96f46369",
+      "identity_vs_same_id": {
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "effect_vs_same_id": {
+        "changed_pixels": 346,
+        "absolute_channel_diff": 256040,
+        "bbox": [
+          11,
+          2,
+          94,
+          13
+        ]
+      },
+      "old_effect_bright_pixels": 62,
+      "nav_effect_bright_pixels": 400,
+      "best_identity_match": {
+        "id": 18,
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "best_match_name": "恶魔",
+      "identity_exact_same_id": true,
+      "effect_exact_same_id": false,
+      "best_match_is_same_id": true
+    },
+    {
+      "group": "blue",
+      "id": 19,
+      "expected_name": "曼提柯亚",
+      "old_shot": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_menu_catalog_full_20261125\\blue\\blue_019.png",
+      "old_shot_sha256": "62a0836017fee42f02c1fc64673458196a7381b3d7b6372ef097106e0271c941",
+      "nav_identity_sha256": "bc2cfddfbbf42a6f1f8527297c1af63d52a5cedb1ec66dbab9ec3a81a42cef58",
+      "identity_vs_same_id": {
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "effect_vs_same_id": {
+        "changed_pixels": 348,
+        "absolute_channel_diff": 257520,
+        "bbox": [
+          11,
+          2,
+          94,
+          13
+        ]
+      },
+      "old_effect_bright_pixels": 62,
+      "nav_effect_bright_pixels": 402,
+      "best_identity_match": {
+        "id": 19,
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "best_match_name": "曼提柯亚",
+      "identity_exact_same_id": true,
+      "effect_exact_same_id": false,
+      "best_match_is_same_id": true
+    },
+    {
+      "group": "blue",
+      "id": 20,
+      "expected_name": "卡利",
+      "old_shot": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_menu_catalog_full_20261125\\blue\\blue_020.png",
+      "old_shot_sha256": "e9ed66a4a77fa78a12ab3f62c2010858a6090c634b75553b7af443e2f4ae3207",
+      "nav_identity_sha256": "bdaeb6145aa5084e97cda2e8fff7e0d1c27e798a0c36c9a44563839457b0407e",
+      "identity_vs_same_id": {
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "effect_vs_same_id": {
+        "changed_pixels": 342,
+        "absolute_channel_diff": 253080,
+        "bbox": [
+          11,
+          2,
+          94,
+          13
+        ]
+      },
+      "old_effect_bright_pixels": 62,
+      "nav_effect_bright_pixels": 396,
+      "best_identity_match": {
+        "id": 20,
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "best_match_name": "卡利",
+      "identity_exact_same_id": true,
+      "effect_exact_same_id": false,
+      "best_match_is_same_id": true
+    },
+    {
+      "group": "blue",
+      "id": 21,
+      "expected_name": "飞骷髅",
+      "old_shot": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_menu_catalog_full_20261125\\blue\\blue_021.png",
+      "old_shot_sha256": "fe830efe2df6d1430e327cb97001f8a1b6cafe77797bcbe708fde2c72c6c6e40",
+      "nav_identity_sha256": "db46f4e4ae4fcc1fa3e165ac34d0761151bed0c8c15ee26e046c488856f137b2",
+      "identity_vs_same_id": {
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "effect_vs_same_id": {
+        "changed_pixels": 547,
+        "absolute_channel_diff": 404780,
+        "bbox": [
+          11,
+          2,
+          127,
+          25
+        ]
+      },
+      "old_effect_bright_pixels": 62,
+      "nav_effect_bright_pixels": 591,
+      "best_identity_match": {
+        "id": 21,
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "best_match_name": "飞骷髅",
+      "identity_exact_same_id": true,
+      "effect_exact_same_id": false,
+      "best_match_is_same_id": true
+    },
+    {
+      "group": "blue",
+      "id": 22,
+      "expected_name": "子恶魔",
+      "old_shot": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_menu_catalog_full_20261125\\blue\\blue_022.png",
+      "old_shot_sha256": "8f104915a84330d64174dc4ac0b99110d43cd1b847cccd8f28789ccff4a58792",
+      "nav_identity_sha256": "12568f4e7206acac31e4e5113021fcffb27cb9c2c3ade077a4bdb4d23bd0c863",
+      "identity_vs_same_id": {
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "effect_vs_same_id": {
+        "changed_pixels": 405,
+        "absolute_channel_diff": 299700,
+        "bbox": [
+          11,
+          2,
+          111,
+          13
+        ]
+      },
+      "old_effect_bright_pixels": 62,
+      "nav_effect_bright_pixels": 439,
+      "best_identity_match": {
+        "id": 22,
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "best_match_name": "子恶魔",
+      "identity_exact_same_id": true,
+      "effect_exact_same_id": false,
+      "best_match_is_same_id": true
+    },
+    {
+      "group": "blue",
+      "id": 23,
+      "expected_name": "阿拉斯托",
+      "old_shot": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_menu_catalog_full_20261125\\blue\\blue_023.png",
+      "old_shot_sha256": "6cb47ecf56511fa00e7d5d0cc84caec832deeaea5f664a2641a56d08f2538df5",
+      "nav_identity_sha256": "cdc33b258c1eefe08cd3b9dfc2c3ca6dc38ccb83757cdd6ea8ddcf60c2726450",
+      "identity_vs_same_id": {
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "effect_vs_same_id": {
+        "changed_pixels": 449,
+        "absolute_channel_diff": 332260,
+        "bbox": [
+          11,
+          2,
+          123,
+          13
+        ]
+      },
+      "old_effect_bright_pixels": 62,
+      "nav_effect_bright_pixels": 483,
+      "best_identity_match": {
+        "id": 23,
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "best_match_name": "阿拉斯托",
+      "identity_exact_same_id": true,
+      "effect_exact_same_id": false,
+      "best_match_is_same_id": true
+    },
+    {
+      "group": "blue",
+      "id": 24,
+      "expected_name": "死神",
+      "old_shot": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_menu_catalog_full_20261125\\blue\\blue_024.png",
+      "old_shot_sha256": "27783c8affa4891b44173367d8391be48a0a992121ec9c0da43015859aa79e4e",
+      "nav_identity_sha256": "902da4da6dd9b77ea7665cffe23bc9d2d8e53ed42cccc7d56f1816263b49d934",
+      "identity_vs_same_id": {
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "effect_vs_same_id": {
+        "changed_pixels": 278,
+        "absolute_channel_diff": 205720,
+        "bbox": [
+          11,
+          2,
+          82,
+          13
+        ]
+      },
+      "old_effect_bright_pixels": 62,
+      "nav_effect_bright_pixels": 318,
+      "best_identity_match": {
+        "id": 24,
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "best_match_name": "死神",
+      "identity_exact_same_id": true,
+      "effect_exact_same_id": false,
+      "best_match_is_same_id": true
+    },
+    {
+      "group": "yellow",
+      "id": 1,
+      "expected_name": "恶魔",
+      "old_shot": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_menu_catalog_full_20261125\\yellow\\yellow_001.png",
+      "old_shot_sha256": "77995052a2624d7a73f3341844489f54b65ca1323230a6d27c4994aae254b00a",
+      "nav_identity_sha256": "efd5af93f6bab4cd37463c2d2b347e45883a79c4b803ed527eb39fd87bce210b",
+      "identity_vs_same_id": {
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "effect_vs_same_id": {
+        "changed_pixels": 221,
+        "absolute_channel_diff": 163540,
+        "bbox": [
+          11,
+          2,
+          82,
+          13
+        ]
+      },
+      "old_effect_bright_pixels": 62,
+      "nav_effect_bright_pixels": 255,
+      "best_identity_match": {
+        "id": 1,
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "best_match_name": "恶魔",
+      "identity_exact_same_id": true,
+      "effect_exact_same_id": false,
+      "best_match_is_same_id": true
+    },
+    {
+      "group": "yellow",
+      "id": 2,
+      "expected_name": "史莱姆",
+      "old_shot": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_menu_catalog_full_20261125\\yellow\\yellow_002.png",
+      "old_shot_sha256": "5b124eb16091d130d5e5b9d88e5c6be92c38baecc8d8a01702687dbcb461b64c",
+      "nav_identity_sha256": "fdf7f2ed9cdfc4baa912a37976bef9367bf0af87b1a9a7774893c57559e1101f",
+      "identity_vs_same_id": {
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "effect_vs_same_id": {
+        "changed_pixels": 191,
+        "absolute_channel_diff": 141340,
+        "bbox": [
+          11,
+          2,
+          69,
+          13
+        ]
+      },
+      "old_effect_bright_pixels": 62,
+      "nav_effect_bright_pixels": 225,
+      "best_identity_match": {
+        "id": 2,
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "best_match_name": "史莱姆",
+      "identity_exact_same_id": true,
+      "effect_exact_same_id": false,
+      "best_match_is_same_id": true
+    },
+    {
+      "group": "yellow",
+      "id": 3,
+      "expected_name": "丧尸士兵",
+      "old_shot": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_menu_catalog_full_20261125\\yellow\\yellow_003.png",
+      "old_shot_sha256": "d614d0e9c04e1667bb0fd5cbd347de794344c22f822f9ebd46b74f73139bb8b6",
+      "nav_identity_sha256": "79bef8b8541f0095a85f6042830bc25d73fa6247a813b136f4a8f5631866076d",
+      "identity_vs_same_id": {
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "effect_vs_same_id": {
+        "changed_pixels": 522,
+        "absolute_channel_diff": 386280,
+        "bbox": [
+          11,
+          2,
+          118,
+          25
+        ]
+      },
+      "old_effect_bright_pixels": 62,
+      "nav_effect_bright_pixels": 570,
+      "best_identity_match": {
+        "id": 3,
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "best_match_name": "丧尸士兵",
+      "identity_exact_same_id": true,
+      "effect_exact_same_id": false,
+      "best_match_is_same_id": true
+    },
+    {
+      "group": "yellow",
+      "id": 4,
+      "expected_name": "铁巨人",
+      "old_shot": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_menu_catalog_full_20261125\\yellow\\yellow_004.png",
+      "old_shot_sha256": "2326a804ff7e5eace65deab5b5b2bb60349aa5103b8131b5d471dc1e66f1778c",
+      "nav_identity_sha256": "61ac9916f669e5c7f2dd5c3794736db611ef02afbfcf53a684d41f6029eff77f",
+      "identity_vs_same_id": {
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "effect_vs_same_id": {
+        "changed_pixels": 574,
+        "absolute_channel_diff": 424760,
+        "bbox": [
+          11,
+          2,
+          106,
+          25
+        ]
+      },
+      "old_effect_bright_pixels": 62,
+      "nav_effect_bright_pixels": 610,
+      "best_identity_match": {
+        "id": 4,
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "best_match_name": "铁巨人",
+      "identity_exact_same_id": true,
+      "effect_exact_same_id": false,
+      "best_match_is_same_id": true
+    },
+    {
+      "group": "yellow",
+      "id": 5,
+      "expected_name": "死亡十字",
+      "old_shot": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_menu_catalog_full_20261125\\yellow\\yellow_005.png",
+      "old_shot_sha256": "b3032daffbdafdc619e3fe351854d589b7aa1922d43b0cfedb91dc09fbf07a8d",
+      "nav_identity_sha256": "b0d165b90625fd35ae04ff52658df82e152329acd49069697abc4722d5741287",
+      "identity_vs_same_id": {
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "effect_vs_same_id": {
+        "changed_pixels": 515,
+        "absolute_channel_diff": 381100,
+        "bbox": [
+          11,
+          2,
+          142,
+          13
+        ]
+      },
+      "old_effect_bright_pixels": 62,
+      "nav_effect_bright_pixels": 557,
+      "best_identity_match": {
+        "id": 5,
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "best_match_name": "死亡十字",
+      "identity_exact_same_id": true,
+      "effect_exact_same_id": false,
+      "best_match_is_same_id": true
+    },
+    {
+      "group": "yellow",
+      "id": 6,
+      "expected_name": "骷髅眼",
+      "old_shot": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_menu_catalog_full_20261125\\yellow\\yellow_006.png",
+      "old_shot_sha256": "72c865f91e41f56c6877f40e01cb71f0d05250158227d902c357e0719ec795d4",
+      "nav_identity_sha256": "a7838c4094d59ed5d66d41c4ebfde3de0a1126d034554b2012e72f9b8fd93fa2",
+      "identity_vs_same_id": {
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "effect_vs_same_id": {
+        "changed_pixels": 354,
+        "absolute_channel_diff": 261960,
+        "bbox": [
+          11,
+          2,
+          94,
+          13
+        ]
+      },
+      "old_effect_bright_pixels": 62,
+      "nav_effect_bright_pixels": 384,
+      "best_identity_match": {
+        "id": 6,
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "best_match_name": "骷髅眼",
+      "identity_exact_same_id": true,
+      "effect_exact_same_id": false,
+      "best_match_is_same_id": true
+    },
+    {
+      "group": "yellow",
+      "id": 7,
+      "expected_name": "梦魔",
+      "old_shot": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_menu_catalog_full_20261125\\yellow\\yellow_007.png",
+      "old_shot_sha256": "48290f6929fc7e20eb6fabf57666f250f52512b9b616d949acda9d2731fa90c2",
+      "nav_identity_sha256": "bb0645319bf50487bc782778aaf6a0b8e04073d4379e5ab1bdfaf886c8907575",
+      "identity_vs_same_id": {
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "effect_vs_same_id": {
+        "changed_pixels": 479,
+        "absolute_channel_diff": 354460,
+        "bbox": [
+          11,
+          2,
+          139,
+          13
+        ]
+      },
+      "old_effect_bright_pixels": 62,
+      "nav_effect_bright_pixels": 519,
+      "best_identity_match": {
+        "id": 7,
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "best_match_name": "梦魔",
+      "identity_exact_same_id": true,
+      "effect_exact_same_id": false,
+      "best_match_is_same_id": true
+    },
+    {
+      "group": "yellow",
+      "id": 8,
+      "expected_name": "鲜血巨人",
+      "old_shot": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_menu_catalog_full_20261125\\yellow\\yellow_008.png",
+      "old_shot_sha256": "59881b240cb05c110c7501a2126089f7b5f26ee659975cbf3ecc3f7c6e0c3ea0",
+      "nav_identity_sha256": "a4aafa5e065b29ceed5852f95a0d64552444c201322b82472e481e8a7cbede68",
+      "identity_vs_same_id": {
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "effect_vs_same_id": {
+        "changed_pixels": 461,
+        "absolute_channel_diff": 341140,
+        "bbox": [
+          11,
+          2,
+          130,
+          13
+        ]
+      },
+      "old_effect_bright_pixels": 62,
+      "nav_effect_bright_pixels": 501,
+      "best_identity_match": {
+        "id": 8,
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "best_match_name": "鲜血巨人",
+      "identity_exact_same_id": true,
+      "effect_exact_same_id": false,
+      "best_match_is_same_id": true
+    },
+    {
+      "group": "yellow",
+      "id": 9,
+      "expected_name": "小蛇",
+      "old_shot": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_menu_catalog_full_20261125\\yellow\\yellow_009.png",
+      "old_shot_sha256": "b39049e988670ad91a26389b1c4db37a1f189264a79c9d93bf810841e0116e28",
+      "nav_identity_sha256": "f3e209db1d9b4a7f851e71ca27c4de1a5a6064e11ec362105709fcc60882c1de",
+      "identity_vs_same_id": {
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "effect_vs_same_id": {
+        "changed_pixels": 333,
+        "absolute_channel_diff": 246420,
+        "bbox": [
+          11,
+          2,
+          94,
+          13
+        ]
+      },
+      "old_effect_bright_pixels": 62,
+      "nav_effect_bright_pixels": 365,
+      "best_identity_match": {
+        "id": 9,
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "best_match_name": "小蛇",
+      "identity_exact_same_id": true,
+      "effect_exact_same_id": false,
+      "best_match_is_same_id": true
+    },
+    {
+      "group": "yellow",
+      "id": 10,
+      "expected_name": "巨虫",
+      "old_shot": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_menu_catalog_full_20261125\\yellow\\yellow_010.png",
+      "old_shot_sha256": "e740657cfa364d0ece240e19e6dc6c3a531bb2307fe3d5791399610006e5aa1e",
+      "nav_identity_sha256": "a3aed828a2986c37e0c0abb482fedae2ff0e64ba7752444a7f796c691dfb7b0c",
+      "identity_vs_same_id": {
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "effect_vs_same_id": {
+        "changed_pixels": 520,
+        "absolute_channel_diff": 384800,
+        "bbox": [
+          11,
+          2,
+          91,
+          25
+        ]
+      },
+      "old_effect_bright_pixels": 62,
+      "nav_effect_bright_pixels": 562,
+      "best_identity_match": {
+        "id": 10,
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "best_match_name": "巨虫",
+      "identity_exact_same_id": true,
+      "effect_exact_same_id": false,
+      "best_match_is_same_id": true
+    },
+    {
+      "group": "yellow",
+      "id": 11,
+      "expected_name": "木巨人",
+      "old_shot": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_menu_catalog_full_20261125\\yellow\\yellow_011.png",
+      "old_shot_sha256": "02f79ef58b820ab963c6248bae30360f747b848988636d5b08f2bf604d7b8983",
+      "nav_identity_sha256": "60d4a02d1c144b5b6c02d55328d36dfbf3c5154b31bacc66bad473b5f15cd977",
+      "identity_vs_same_id": {
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "effect_vs_same_id": {
+        "changed_pixels": 383,
+        "absolute_channel_diff": 283420,
+        "bbox": [
+          12,
+          2,
+          106,
+          13
+        ]
+      },
+      "old_effect_bright_pixels": 62,
+      "nav_effect_bright_pixels": 429,
+      "best_identity_match": {
+        "id": 11,
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "best_match_name": "木巨人",
+      "identity_exact_same_id": true,
+      "effect_exact_same_id": false,
+      "best_match_is_same_id": true
+    },
+    {
+      "group": "yellow",
+      "id": 12,
+      "expected_name": "丧尸",
+      "old_shot": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_menu_catalog_full_20261125\\yellow\\yellow_012.png",
+      "old_shot_sha256": "0fe364b6f6aaf4a1220dec80d1c49a4305939dec24e51eabb95d9ff8af5a12e0",
+      "nav_identity_sha256": "fbd6736c375564dea4c226cd777bd88afba5c0ea0c9994dc3e8080ab104bd179",
+      "identity_vs_same_id": {
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "effect_vs_same_id": {
+        "changed_pixels": 338,
+        "absolute_channel_diff": 250120,
+        "bbox": [
+          11,
+          2,
+          106,
+          13
+        ]
+      },
+      "old_effect_bright_pixels": 62,
+      "nav_effect_bright_pixels": 382,
+      "best_identity_match": {
+        "id": 12,
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "best_match_name": "丧尸",
+      "identity_exact_same_id": true,
+      "effect_exact_same_id": false,
+      "best_match_is_same_id": true
+    },
+    {
+      "group": "yellow",
+      "id": 13,
+      "expected_name": "鲁比根特",
+      "old_shot": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_menu_catalog_full_20261125\\yellow\\yellow_013.png",
+      "old_shot_sha256": "80d3447507897f9cdb7cef69598a4e849185a498dd0165aaa3a6efff908626a7",
+      "nav_identity_sha256": "0670a620a7241790dd6f56e2c97bb29e456dd85a5f78444ea49c83f03ccc0e04",
+      "identity_vs_same_id": {
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "effect_vs_same_id": {
+        "changed_pixels": 274,
+        "absolute_channel_diff": 202760,
+        "bbox": [
+          12,
+          2,
+          82,
+          13
+        ]
+      },
+      "old_effect_bright_pixels": 62,
+      "nav_effect_bright_pixels": 324,
+      "best_identity_match": {
+        "id": 13,
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "best_match_name": "鲁比根特",
+      "identity_exact_same_id": true,
+      "effect_exact_same_id": false,
+      "best_match_is_same_id": true
+    },
+    {
+      "group": "yellow",
+      "id": 14,
+      "expected_name": "搜集者",
+      "old_shot": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_menu_catalog_full_20261125\\yellow\\yellow_014.png",
+      "old_shot_sha256": "35b90a6f617a0af752f9d94adc342f675893fa238e1157055578c40e31fd7344",
+      "nav_identity_sha256": "f650a88220960a9672598d5a0a17715dce5a655ebfade9aa88b7c73380b6fb63",
+      "identity_vs_same_id": {
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "effect_vs_same_id": {
+        "changed_pixels": 438,
+        "absolute_channel_diff": 324120,
+        "bbox": [
+          11,
+          2,
+          106,
+          13
+        ]
+      },
+      "old_effect_bright_pixels": 62,
+      "nav_effect_bright_pixels": 478,
+      "best_identity_match": {
+        "id": 14,
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "best_match_name": "搜集者",
+      "identity_exact_same_id": true,
+      "effect_exact_same_id": false,
+      "best_match_is_same_id": true
+    },
+    {
+      "group": "yellow",
+      "id": 15,
+      "expected_name": "蛇尾鸟",
+      "old_shot": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_menu_catalog_full_20261125\\yellow\\yellow_015.png",
+      "old_shot_sha256": "a61c5e56d5143c784d35ce2c36ad9192355b56b98f3cbfa1113daed279b325f7",
+      "nav_identity_sha256": "4cb0c31907f63d2d6de3dbb63df187856e8d159a1fd1a72e8b07e3a17bbbcd02",
+      "identity_vs_same_id": {
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "effect_vs_same_id": {
+        "changed_pixels": 405,
+        "absolute_channel_diff": 299700,
+        "bbox": [
+          11,
+          2,
+          130,
+          13
+        ]
+      },
+      "old_effect_bright_pixels": 62,
+      "nav_effect_bright_pixels": 435,
+      "best_identity_match": {
+        "id": 15,
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "best_match_name": "蛇尾鸟",
+      "identity_exact_same_id": true,
+      "effect_exact_same_id": false,
+      "best_match_is_same_id": true
+    },
+    {
+      "group": "yellow",
+      "id": 16,
+      "expected_name": "埃里纽斯",
+      "old_shot": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_menu_catalog_full_20261125\\yellow\\yellow_016.png",
+      "old_shot_sha256": "b148267ffb136cda4498341c7e7e5ad1e3e9fc3f11316f238d3c67eece5afc52",
+      "nav_identity_sha256": "3679f650a78efe069c83bd2af2d3b4d4b6d4651f6342794db0bb3beaae0c8b18",
+      "identity_vs_same_id": {
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "effect_vs_same_id": {
+        "changed_pixels": 478,
+        "absolute_channel_diff": 353720,
+        "bbox": [
+          11,
+          2,
+          142,
+          13
+        ]
+      },
+      "old_effect_bright_pixels": 62,
+      "nav_effect_bright_pixels": 518,
+      "best_identity_match": {
+        "id": 16,
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "best_match_name": "埃里纽斯",
+      "identity_exact_same_id": true,
+      "effect_exact_same_id": false,
+      "best_match_is_same_id": true
+    },
+    {
+      "group": "yellow",
+      "id": 17,
+      "expected_name": "拟态魔",
+      "old_shot": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_menu_catalog_full_20261125\\yellow\\yellow_017.png",
+      "old_shot_sha256": "a6a1401228219ff8b5802919e42c59d184bda7417cb88b09401872be58892f23",
+      "nav_identity_sha256": "355e8fd8d3eb73ab11f3369efd0f76206623cc6ba59234efd16c6513da1a920b",
+      "identity_vs_same_id": {
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "effect_vs_same_id": {
+        "changed_pixels": 457,
+        "absolute_channel_diff": 338180,
+        "bbox": [
+          11,
+          2,
+          94,
+          25
+        ]
+      },
+      "old_effect_bright_pixels": 62,
+      "nav_effect_bright_pixels": 493,
+      "best_identity_match": {
+        "id": 17,
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "best_match_name": "拟态魔",
+      "identity_exact_same_id": true,
+      "effect_exact_same_id": false,
+      "best_match_is_same_id": true
+    },
+    {
+      "group": "yellow",
+      "id": 18,
+      "expected_name": "方舟恶魔",
+      "old_shot": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_menu_catalog_full_20261125\\yellow\\yellow_018.png",
+      "old_shot_sha256": "3fb7da7084b100ba4a666440995bdf030f33f515161f4e7d93316379cc6fb658",
+      "nav_identity_sha256": "bb106dd5bcf22f0647c5e239919ff33ac163a7d5744ae10c2f3ad50c68a9f26e",
+      "identity_vs_same_id": {
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "effect_vs_same_id": {
+        "changed_pixels": 437,
+        "absolute_channel_diff": 323380,
+        "bbox": [
+          11,
+          2,
+          91,
+          25
+        ]
+      },
+      "old_effect_bright_pixels": 62,
+      "nav_effect_bright_pixels": 473,
+      "best_identity_match": {
+        "id": 18,
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "best_match_name": "方舟恶魔",
+      "identity_exact_same_id": true,
+      "effect_exact_same_id": false,
+      "best_match_is_same_id": true
+    },
+    {
+      "group": "yellow",
+      "id": 19,
+      "expected_name": "毒虫",
+      "old_shot": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_menu_catalog_full_20261125\\yellow\\yellow_019.png",
+      "old_shot_sha256": "9ae0306b739df9db14205b520f9700ba2d0b6424ef8ba6dbdc3b8dea943495c3",
+      "nav_identity_sha256": "7a6f816f8c36094fc62ffab88c2627682f235f7172d4b5761147d02eb768a6e4",
+      "identity_vs_same_id": {
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "effect_vs_same_id": {
+        "changed_pixels": 279,
+        "absolute_channel_diff": 206460,
+        "bbox": [
+          11,
+          2,
+          82,
+          13
+        ]
+      },
+      "old_effect_bright_pixels": 62,
+      "nav_effect_bright_pixels": 323,
+      "best_identity_match": {
+        "id": 19,
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "best_match_name": "毒虫",
+      "identity_exact_same_id": true,
+      "effect_exact_same_id": false,
+      "best_match_is_same_id": true
+    },
+    {
+      "group": "yellow",
+      "id": 20,
+      "expected_name": "诅咒魔",
+      "old_shot": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_menu_catalog_full_20261125\\yellow\\yellow_020.png",
+      "old_shot_sha256": "c777535f65785896da2e66d9f1b7524c31d5c71fdc4625fc99559622838da07c",
+      "nav_identity_sha256": "d16a956ccd3fb348e4e93e4b7167e00e8402a161d11ca2d20791302b3cb6096e",
+      "identity_vs_same_id": {
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "effect_vs_same_id": {
+        "changed_pixels": 316,
+        "absolute_channel_diff": 233840,
+        "bbox": [
+          11,
+          2,
+          94,
+          13
+        ]
+      },
+      "old_effect_bright_pixels": 62,
+      "nav_effect_bright_pixels": 356,
+      "best_identity_match": {
+        "id": 20,
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "best_match_name": "诅咒魔",
+      "identity_exact_same_id": true,
+      "effect_exact_same_id": false,
+      "best_match_is_same_id": true
+    },
+    {
+      "group": "yellow",
+      "id": 21,
+      "expected_name": "石化魔",
+      "old_shot": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_menu_catalog_full_20261125\\yellow\\yellow_021.png",
+      "old_shot_sha256": "2654e361cf4ed35976286b9270e5eb6f3e30d6efb3b6a008e59bdc1cf0ab095e",
+      "nav_identity_sha256": "ecfa87270e46f26eb1d0472f45792025ab8c2c122e4179dbcba327d94c07bc0d",
+      "identity_vs_same_id": {
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "effect_vs_same_id": {
+        "changed_pixels": 294,
+        "absolute_channel_diff": 217560,
+        "bbox": [
+          11,
+          2,
+          94,
+          13
+        ]
+      },
+      "old_effect_bright_pixels": 62,
+      "nav_effect_bright_pixels": 338,
+      "best_identity_match": {
+        "id": 21,
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "best_match_name": "石化魔",
+      "identity_exact_same_id": true,
+      "effect_exact_same_id": false,
+      "best_match_is_same_id": true
+    },
+    {
+      "group": "yellow",
+      "id": 22,
+      "expected_name": "骷髅战士",
+      "old_shot": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_menu_catalog_full_20261125\\yellow\\yellow_022.png",
+      "old_shot_sha256": "ba5b58c3ab272c15bb4911f908783b398c67b3f80a2d75b6a5aebc269ec1f1fa",
+      "nav_identity_sha256": "1820b06b51d88f8ecdb33f5e2c1b61599194ad6897edb74b32c5fde240c712a9",
+      "identity_vs_same_id": {
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "effect_vs_same_id": {
+        "changed_pixels": 190,
+        "absolute_channel_diff": 140600,
+        "bbox": [
+          12,
+          2,
+          79,
+          13
+        ]
+      },
+      "old_effect_bright_pixels": 62,
+      "nav_effect_bright_pixels": 230,
+      "best_identity_match": {
+        "id": 22,
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "best_match_name": "骷髅战士",
+      "identity_exact_same_id": true,
+      "effect_exact_same_id": false,
+      "best_match_is_same_id": true
+    },
+    {
+      "group": "yellow",
+      "id": 23,
+      "expected_name": "米诺陶斯",
+      "old_shot": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_menu_catalog_full_20261125\\yellow\\yellow_023.png",
+      "old_shot_sha256": "5dc5b76fde53c5c3fe4c710d8beb1bb68ec0ef05cdf24acac5e830af57b61315",
+      "nav_identity_sha256": "2417c467efcb5c4a90a944b30347474392665870b789a1521a73643633990406",
+      "identity_vs_same_id": {
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "effect_vs_same_id": {
+        "changed_pixels": 195,
+        "absolute_channel_diff": 144300,
+        "bbox": [
+          12,
+          2,
+          79,
+          13
+        ]
+      },
+      "old_effect_bright_pixels": 62,
+      "nav_effect_bright_pixels": 235,
+      "best_identity_match": {
+        "id": 23,
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "best_match_name": "米诺陶斯",
+      "identity_exact_same_id": true,
+      "effect_exact_same_id": false,
+      "best_match_is_same_id": true
+    },
+    {
+      "group": "yellow",
+      "id": 24,
+      "expected_name": "石巨人",
+      "old_shot": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_menu_catalog_full_20261125\\yellow\\yellow_024.png",
+      "old_shot_sha256": "c5b23b2c20915ff9a4deef614c9c6e5c5add91dc5977e99dbe23436f80381056",
+      "nav_identity_sha256": "0ccb14eab3d9c8da1e66a5f2d90e7a9778c2d3ff971a3b15685bf05e8b9eedcd",
+      "identity_vs_same_id": {
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "effect_vs_same_id": {
+        "changed_pixels": 195,
+        "absolute_channel_diff": 144300,
+        "bbox": [
+          12,
+          2,
+          79,
+          13
+        ]
+      },
+      "old_effect_bright_pixels": 62,
+      "nav_effect_bright_pixels": 235,
+      "best_identity_match": {
+        "id": 24,
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "best_match_name": "石巨人",
+      "identity_exact_same_id": true,
+      "effect_exact_same_id": false,
+      "best_match_is_same_id": true
+    },
+    {
+      "group": "yellow",
+      "id": 25,
+      "expected_name": "特里顿",
+      "old_shot": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_menu_catalog_full_20261125\\yellow\\yellow_025.png",
+      "old_shot_sha256": "c2dbdb5a4c6b1ef4b3c860dc0ab8a13d3d09a353edadd625ca117ff592f087a1",
+      "nav_identity_sha256": "0082f9ddbe35899bb502dc956af0ce27d60db61d957f15b2c78c32ac723038b7",
+      "identity_vs_same_id": {
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "effect_vs_same_id": {
+        "changed_pixels": 197,
+        "absolute_channel_diff": 145780,
+        "bbox": [
+          12,
+          2,
+          79,
+          13
+        ]
+      },
+      "old_effect_bright_pixels": 62,
+      "nav_effect_bright_pixels": 237,
+      "best_identity_match": {
+        "id": 25,
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "best_match_name": "特里顿",
+      "identity_exact_same_id": true,
+      "effect_exact_same_id": false,
+      "best_match_is_same_id": true
+    },
+    {
+      "group": "yellow",
+      "id": 26,
+      "expected_name": "白骨龙",
+      "old_shot": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_menu_catalog_full_20261125\\yellow\\yellow_026.png",
+      "old_shot_sha256": "4751577c2c33b363cdeb277df8717de1c8774b78a2f38897833ed2c16afe6f34",
+      "nav_identity_sha256": "c2b431bf7bfe93b6aa6d41acfa82c340d0b510205af1bb6bd4c995aed660c361",
+      "identity_vs_same_id": {
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "effect_vs_same_id": {
+        "changed_pixels": 190,
+        "absolute_channel_diff": 140600,
+        "bbox": [
+          12,
+          2,
+          79,
+          13
+        ]
+      },
+      "old_effect_bright_pixels": 62,
+      "nav_effect_bright_pixels": 234,
+      "best_identity_match": {
+        "id": 26,
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "best_match_name": "白骨龙",
+      "identity_exact_same_id": true,
+      "effect_exact_same_id": false,
+      "best_match_is_same_id": true
+    },
+    {
+      "group": "yellow",
+      "id": 27,
+      "expected_name": "古代龙神",
+      "old_shot": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_menu_catalog_full_20261125\\yellow\\yellow_027.png",
+      "old_shot_sha256": "7064f1a8e246cc25cc4d41b6a4ec976b21e7394d0d036390db90c6c098e30b47",
+      "nav_identity_sha256": "ea8e56d2188f5f02fd54902d7a1149c7803ecc9360402ab7d5e0ac787b7c4bc8",
+      "identity_vs_same_id": {
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "effect_vs_same_id": {
+        "changed_pixels": 195,
+        "absolute_channel_diff": 144300,
+        "bbox": [
+          12,
+          2,
+          79,
+          13
+        ]
+      },
+      "old_effect_bright_pixels": 62,
+      "nav_effect_bright_pixels": 239,
+      "best_identity_match": {
+        "id": 27,
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "best_match_name": "古代龙神",
+      "identity_exact_same_id": true,
+      "effect_exact_same_id": false,
+      "best_match_is_same_id": true
+    },
+    {
+      "group": "yellow",
+      "id": 28,
+      "expected_name": "石化牛",
+      "old_shot": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_menu_catalog_full_20261125\\yellow\\yellow_028.png",
+      "old_shot_sha256": "774571bf4078dd80177bba5049c3e0158faaf5c9fae1c2d9fe1c46fe80550747",
+      "nav_identity_sha256": "6fe626547e4077dec8d3aeb2ee9ff04454480aa95ad0f59882c6b5f2d8b48957",
+      "identity_vs_same_id": {
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "effect_vs_same_id": {
+        "changed_pixels": 195,
+        "absolute_channel_diff": 144300,
+        "bbox": [
+          12,
+          2,
+          79,
+          13
+        ]
+      },
+      "old_effect_bright_pixels": 62,
+      "nav_effect_bright_pixels": 239,
+      "best_identity_match": {
+        "id": 28,
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "best_match_name": "石化牛",
+      "identity_exact_same_id": true,
+      "effect_exact_same_id": false,
+      "best_match_is_same_id": true
+    },
+    {
+      "group": "yellow",
+      "id": 29,
+      "expected_name": "死亡十字军",
+      "old_shot": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_menu_catalog_full_20261125\\yellow\\yellow_029.png",
+      "old_shot_sha256": "00bf3d8526a81ba384cdedd1a0267240ca6b10b99cb5911dcd80d3931ab84d7d",
+      "nav_identity_sha256": "36fb59f187fb71d164c406821eb7ccb7628d99bae173b0b3b158d9587e5850ca",
+      "identity_vs_same_id": {
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "effect_vs_same_id": {
+        "changed_pixels": 197,
+        "absolute_channel_diff": 145780,
+        "bbox": [
+          12,
+          2,
+          79,
+          13
+        ]
+      },
+      "old_effect_bright_pixels": 62,
+      "nav_effect_bright_pixels": 241,
+      "best_identity_match": {
+        "id": 29,
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "best_match_name": "死亡十字军",
+      "identity_exact_same_id": true,
+      "effect_exact_same_id": false,
+      "best_match_is_same_id": true
+    },
+    {
+      "group": "yellow",
+      "id": 30,
+      "expected_name": "红乌鸦",
+      "old_shot": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_menu_catalog_full_20261125\\yellow\\yellow_030.png",
+      "old_shot_sha256": "62b214004d060a0531ae2aafbf2b25a2256f0aeeeb63d7d8a7dfdb396b75d203",
+      "nav_identity_sha256": "dfce8312af6434a978e370300df4f517fa1c5495d9cabf487f30c54d453028cc",
+      "identity_vs_same_id": {
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "effect_vs_same_id": {
+        "changed_pixels": 184,
+        "absolute_channel_diff": 136160,
+        "bbox": [
+          12,
+          2,
+          79,
+          13
+        ]
+      },
+      "old_effect_bright_pixels": 62,
+      "nav_effect_bright_pixels": 224,
+      "best_identity_match": {
+        "id": 30,
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "best_match_name": "红乌鸦",
+      "identity_exact_same_id": true,
+      "effect_exact_same_id": false,
+      "best_match_is_same_id": true
+    },
+    {
+      "group": "yellow",
+      "id": 31,
+      "expected_name": "利利斯",
+      "old_shot": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_menu_catalog_full_20261125\\yellow\\yellow_031.png",
+      "old_shot_sha256": "d70b613a0cea3c54e917440ba1bb9f38b29554fb6c2bc9e91cbeb68deeefbf1f",
+      "nav_identity_sha256": "d2a6803dbad8609a9651707a0bb9f02ce018274ea23ab95d71848627d75f0e70",
+      "identity_vs_same_id": {
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "effect_vs_same_id": {
+        "changed_pixels": 189,
+        "absolute_channel_diff": 139860,
+        "bbox": [
+          12,
+          2,
+          79,
+          13
+        ]
+      },
+      "old_effect_bright_pixels": 62,
+      "nav_effect_bright_pixels": 229,
+      "best_identity_match": {
+        "id": 31,
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "best_match_name": "利利斯",
+      "identity_exact_same_id": true,
+      "effect_exact_same_id": false,
+      "best_match_is_same_id": true
+    },
+    {
+      "group": "yellow",
+      "id": 32,
+      "expected_name": "巴艾尔",
+      "old_shot": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_menu_catalog_full_20261125\\yellow\\yellow_032.png",
+      "old_shot_sha256": "481f3069bac8f31831288cb37039976da57bd228f9ee619c1ade00e9343748fb",
+      "nav_identity_sha256": "b7463582febfd03c724db9f60e1bb6c00c26d9b96806d81d6e44618fcc7fe9c7",
+      "identity_vs_same_id": {
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "effect_vs_same_id": {
+        "changed_pixels": 189,
+        "absolute_channel_diff": 139860,
+        "bbox": [
+          12,
+          2,
+          79,
+          13
+        ]
+      },
+      "old_effect_bright_pixels": 62,
+      "nav_effect_bright_pixels": 229,
+      "best_identity_match": {
+        "id": 32,
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "best_match_name": "巴艾尔",
+      "identity_exact_same_id": true,
+      "effect_exact_same_id": false,
+      "best_match_is_same_id": true
+    },
+    {
+      "group": "yellow",
+      "id": 33,
+      "expected_name": "斯特拉斯",
+      "old_shot": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_menu_catalog_full_20261125\\yellow\\yellow_033.png",
+      "old_shot_sha256": "c10c337422ab8e77674aa67802fbce95d03753b59d19623c77f7dc9bc199c2a5",
+      "nav_identity_sha256": "07c9a5d9f749f01019ae5369dbc54ab13c25b097f9e82cca353201f02c17ab72",
+      "identity_vs_same_id": {
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "effect_vs_same_id": {
+        "changed_pixels": 191,
+        "absolute_channel_diff": 141340,
+        "bbox": [
+          12,
+          2,
+          79,
+          13
+        ]
+      },
+      "old_effect_bright_pixels": 62,
+      "nav_effect_bright_pixels": 231,
+      "best_identity_match": {
+        "id": 33,
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "best_match_name": "斯特拉斯",
+      "identity_exact_same_id": true,
+      "effect_exact_same_id": false,
+      "best_match_is_same_id": true
+    },
+    {
+      "group": "yellow",
+      "id": 34,
+      "expected_name": "鬼魂舞者",
+      "old_shot": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_menu_catalog_full_20261125\\yellow\\yellow_034.png",
+      "old_shot_sha256": "a9b94770cec2b029c5938ac307c1bb8177cf09d07f5541e84bac16c53da4acd6",
+      "nav_identity_sha256": "cea13c8af3d606ab6527fa38d0c3133bf0f7d0d9dbe448160e9bfffe744806b4",
+      "identity_vs_same_id": {
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "effect_vs_same_id": {
+        "changed_pixels": 185,
+        "absolute_channel_diff": 136900,
+        "bbox": [
+          12,
+          2,
+          79,
+          13
+        ]
+      },
+      "old_effect_bright_pixels": 62,
+      "nav_effect_bright_pixels": 221,
+      "best_identity_match": {
+        "id": 34,
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "best_match_name": "鬼魂舞者",
+      "identity_exact_same_id": true,
+      "effect_exact_same_id": false,
+      "best_match_is_same_id": true
+    },
+    {
+      "group": "yellow",
+      "id": 35,
+      "expected_name": "仔恶魔",
+      "old_shot": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_menu_catalog_full_20261125\\yellow\\yellow_035.png",
+      "old_shot_sha256": "bb1c3df72f5689ea0604e095def4263fae449c505e5907e1d4152744fd5cace4",
+      "nav_identity_sha256": "55cbea5bdc71cc315a679ffa26f695424dcc1a0063cb02b96e6a48577182925b",
+      "identity_vs_same_id": {
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "effect_vs_same_id": {
+        "changed_pixels": 190,
+        "absolute_channel_diff": 140600,
+        "bbox": [
+          12,
+          2,
+          79,
+          13
+        ]
+      },
+      "old_effect_bright_pixels": 62,
+      "nav_effect_bright_pixels": 226,
+      "best_identity_match": {
+        "id": 35,
+        "changed_pixels": 0,
+        "absolute_channel_diff": 0,
+        "bbox": null
+      },
+      "best_match_name": "仔恶魔",
+      "identity_exact_same_id": true,
+      "effect_exact_same_id": false,
+      "best_match_is_same_id": true
+    }
+  ]
+}

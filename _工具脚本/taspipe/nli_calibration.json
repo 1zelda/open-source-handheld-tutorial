@@ -1,0 +1,513 @@
+{
+ "schema_version": 1,
+ "status": "failed",
+ "model": {
+  "id": "MoritzLaurer/mDeBERTa-v3-base-mnli-xnli",
+  "revision": "8adb042d524ecd5c26d3e3ba0e3fbcf7e2d0864c"
+ },
+ "calibrated_at": "2026-11-24 04:46:01",
+ "samples": 24,
+ "scope_note": "仅人工影子校准；样本不足，不能据此宣称真实通过率或统计显著性。",
+ "threshold_policy": "取各类正例最低概率；正负区间必须分离；影子判断不改变生产裁决。",
+ "thresholds": null,
+ "separation": {
+  "entailment": {
+   "positive_floor": 0.5,
+   "negative_ceiling": 0.8200936913490295,
+   "separates": false
+  },
+  "contradiction": {
+   "positive_floor": 0.5,
+   "negative_ceiling": 0.9955374002456665,
+   "separates": false
+  }
+ },
+ "failure_reason": "至少一类正负概率区间重叠，禁止发布支持/否决阈值",
+ "metrics": {
+  "confusion_matrix": {
+   "entailment": {
+    "entailment": 7,
+    "neutral": 1,
+    "contradiction": 0
+   },
+   "neutral": {
+    "entailment": 1,
+    "neutral": 4,
+    "contradiction": 3
+   },
+   "contradiction": {
+    "entailment": 0,
+    "neutral": 1,
+    "contradiction": 7
+   }
+  },
+  "accuracy": 0.75,
+  "macro_f1": 0.7414021164021164,
+  "samples": 24
+ },
+ "runtime": {
+  "device": "cuda:0",
+  "dtype": "float32",
+  "initial_load_seconds": 17.3643,
+  "elapsed_seconds": 18.1136
+ },
+ "predictions": [
+  {
+   "id": "Q01_E",
+   "source_chunk": "a3e5a236ca2e",
+   "expected": "entailment",
+   "label": "entailment",
+   "probabilities": {
+    "entailment": 0.9984028935432434,
+    "neutral": 0.0012092760298401117,
+    "contradiction": 0.0003879234427586198
+   },
+   "margin": 0.9971936175134033,
+   "device": "cuda:0",
+   "dtype": "float32",
+   "max_length": 512,
+   "premise_chars": 40,
+   "hypothesis_chars": 17,
+   "seconds": 17.3643,
+   "shadow_decision": "disabled"
+  },
+  {
+   "id": "Q01_C",
+   "source_chunk": "a3e5a236ca2e",
+   "expected": "contradiction",
+   "label": "contradiction",
+   "probabilities": {
+    "entailment": 0.047666795551776886,
+    "neutral": 0.002972204238176346,
+    "contradiction": 0.9493609070777893
+   },
+   "margin": 0.9016941115260124,
+   "device": "cuda:0",
+   "dtype": "float32",
+   "max_length": 512,
+   "premise_chars": 40,
+   "hypothesis_chars": 17,
+   "seconds": 0.128,
+   "shadow_decision": "disabled"
+  },
+  {
+   "id": "Q01_N",
+   "source_chunk": "a3e5a236ca2e",
+   "expected": "neutral",
+   "label": "contradiction",
+   "probabilities": {
+    "entailment": 0.00010867430682992563,
+    "neutral": 0.004353933967649937,
+    "contradiction": 0.9955374002456665
+   },
+   "margin": 0.9911834662780166,
+   "device": "cuda:0",
+   "dtype": "float32",
+   "max_length": 512,
+   "premise_chars": 40,
+   "hypothesis_chars": 20,
+   "seconds": 0.014,
+   "shadow_decision": "disabled"
+  },
+  {
+   "id": "Q02_E",
+   "source_chunk": "f7f8e8316295",
+   "expected": "entailment",
+   "label": "entailment",
+   "probabilities": {
+    "entailment": 0.9984048008918762,
+    "neutral": 0.001307430095039308,
+    "contradiction": 0.00028781831497326493
+   },
+   "margin": 0.9970973707968369,
+   "device": "cuda:0",
+   "dtype": "float32",
+   "max_length": 512,
+   "premise_chars": 58,
+   "hypothesis_chars": 22,
+   "seconds": 0.0124,
+   "shadow_decision": "disabled"
+  },
+  {
+   "id": "Q02_C",
+   "source_chunk": "f7f8e8316295",
+   "expected": "contradiction",
+   "label": "contradiction",
+   "probabilities": {
+    "entailment": 0.29398754239082336,
+    "neutral": 0.016105201095342636,
+    "contradiction": 0.6899071931838989
+   },
+   "margin": 0.39591965079307556,
+   "device": "cuda:0",
+   "dtype": "float32",
+   "max_length": 512,
+   "premise_chars": 58,
+   "hypothesis_chars": 14,
+   "seconds": 0.1029,
+   "shadow_decision": "disabled"
+  },
+  {
+   "id": "Q02_N",
+   "source_chunk": "f7f8e8316295",
+   "expected": "neutral",
+   "label": "contradiction",
+   "probabilities": {
+    "entailment": 0.03801818564534187,
+    "neutral": 0.005370172206312418,
+    "contradiction": 0.9566116333007812
+   },
+   "margin": 0.9185934476554394,
+   "device": "cuda:0",
+   "dtype": "float32",
+   "max_length": 512,
+   "premise_chars": 58,
+   "hypothesis_chars": 18,
+   "seconds": 0.2396,
+   "shadow_decision": "disabled"
+  },
+  {
+   "id": "Q03_E",
+   "source_chunk": "42b773880ef0",
+   "expected": "entailment",
+   "label": "entailment",
+   "probabilities": {
+    "entailment": 0.975071907043457,
+    "neutral": 0.002743113087490201,
+    "contradiction": 0.022184988483786583
+   },
+   "margin": 0.9528869185596704,
+   "device": "cuda:0",
+   "dtype": "float32",
+   "max_length": 512,
+   "premise_chars": 57,
+   "hypothesis_chars": 23,
+   "seconds": 0.011,
+   "shadow_decision": "disabled"
+  },
+  {
+   "id": "Q03_C",
+   "source_chunk": "42b773880ef0",
+   "expected": "contradiction",
+   "label": "contradiction",
+   "probabilities": {
+    "entailment": 0.4767780005931854,
+    "neutral": 0.010968917049467564,
+    "contradiction": 0.5122531056404114
+   },
+   "margin": 0.03547510504722595,
+   "device": "cuda:0",
+   "dtype": "float32",
+   "max_length": 512,
+   "premise_chars": 57,
+   "hypothesis_chars": 23,
+   "seconds": 0.0218,
+   "shadow_decision": "disabled"
+  },
+  {
+   "id": "Q03_N",
+   "source_chunk": "42b773880ef0",
+   "expected": "neutral",
+   "label": "neutral",
+   "probabilities": {
+    "entailment": 0.0010345916962251067,
+    "neutral": 0.9953283071517944,
+    "contradiction": 0.0036371119786053896
+   },
+   "margin": 0.991691195173189,
+   "device": "cuda:0",
+   "dtype": "float32",
+   "max_length": 512,
+   "premise_chars": 57,
+   "hypothesis_chars": 22,
+   "seconds": 0.0141,
+   "shadow_decision": "disabled"
+  },
+  {
+   "id": "Q04_E",
+   "source_chunk": "42b773880ef0",
+   "expected": "entailment",
+   "label": "entailment",
+   "probabilities": {
+    "entailment": 0.9940986633300781,
+    "neutral": 0.0036175972782075405,
+    "contradiction": 0.0022837568540126085
+   },
+   "margin": 0.9904810660518706,
+   "device": "cuda:0",
+   "dtype": "float32",
+   "max_length": 512,
+   "premise_chars": 27,
+   "hypothesis_chars": 26,
+   "seconds": 0.011,
+   "shadow_decision": "disabled"
+  },
+  {
+   "id": "Q04_C",
+   "source_chunk": "42b773880ef0",
+   "expected": "contradiction",
+   "label": "contradiction",
+   "probabilities": {
+    "entailment": 0.031055597588419914,
+    "neutral": 0.04661589488387108,
+    "contradiction": 0.9223284721374512
+   },
+   "margin": 0.8757125772535801,
+   "device": "cuda:0",
+   "dtype": "float32",
+   "max_length": 512,
+   "premise_chars": 27,
+   "hypothesis_chars": 27,
+   "seconds": 0.0138,
+   "shadow_decision": "disabled"
+  },
+  {
+   "id": "Q04_N",
+   "source_chunk": "42b773880ef0",
+   "expected": "neutral",
+   "label": "entailment",
+   "probabilities": {
+    "entailment": 0.8200936913490295,
+    "neutral": 0.17398609220981598,
+    "contradiction": 0.005920225288718939
+   },
+   "margin": 0.6461075991392136,
+   "device": "cuda:0",
+   "dtype": "float32",
+   "max_length": 512,
+   "premise_chars": 27,
+   "hypothesis_chars": 20,
+   "seconds": 0.0139,
+   "shadow_decision": "disabled"
+  },
+  {
+   "id": "Q05_E",
+   "source_chunk": "42b773880ef0",
+   "expected": "entailment",
+   "label": "entailment",
+   "probabilities": {
+    "entailment": 0.9539282917976379,
+    "neutral": 0.04430007189512253,
+    "contradiction": 0.001771627925336361
+   },
+   "margin": 0.9096282199025154,
+   "device": "cuda:0",
+   "dtype": "float32",
+   "max_length": 512,
+   "premise_chars": 52,
+   "hypothesis_chars": 22,
+   "seconds": 0.014,
+   "shadow_decision": "disabled"
+  },
+  {
+   "id": "Q05_C",
+   "source_chunk": "42b773880ef0",
+   "expected": "contradiction",
+   "label": "neutral",
+   "probabilities": {
+    "entailment": 0.002637323224917054,
+    "neutral": 0.9965026378631592,
+    "contradiction": 0.0008599910070188344
+   },
+   "margin": 0.9938653146382421,
+   "device": "cuda:0",
+   "dtype": "float32",
+   "max_length": 512,
+   "premise_chars": 52,
+   "hypothesis_chars": 16,
+   "seconds": 0.0166,
+   "shadow_decision": "disabled"
+  },
+  {
+   "id": "Q05_N",
+   "source_chunk": "42b773880ef0",
+   "expected": "neutral",
+   "label": "contradiction",
+   "probabilities": {
+    "entailment": 0.002519071102142334,
+    "neutral": 0.007907913997769356,
+    "contradiction": 0.989573061466217
+   },
+   "margin": 0.9816651474684477,
+   "device": "cuda:0",
+   "dtype": "float32",
+   "max_length": 512,
+   "premise_chars": 52,
+   "hypothesis_chars": 17,
+   "seconds": 0.0123,
+   "shadow_decision": "disabled"
+  },
+  {
+   "id": "Q10_E",
+   "source_chunk": "51fcabcc7db8",
+   "expected": "entailment",
+   "label": "entailment",
+   "probabilities": {
+    "entailment": 0.9980972409248352,
+    "neutral": 0.0018105499912053347,
+    "contradiction": 9.216427861247212e-05
+   },
+   "margin": 0.9962866909336299,
+   "device": "cuda:0",
+   "dtype": "float32",
+   "max_length": 512,
+   "premise_chars": 46,
+   "hypothesis_chars": 31,
+   "seconds": 0.0109,
+   "shadow_decision": "disabled"
+  },
+  {
+   "id": "Q10_C",
+   "source_chunk": "51fcabcc7db8",
+   "expected": "contradiction",
+   "label": "contradiction",
+   "probabilities": {
+    "entailment": 0.0016734121600165963,
+    "neutral": 0.011364469304680824,
+    "contradiction": 0.9869621992111206
+   },
+   "margin": 0.9755977299064398,
+   "device": "cuda:0",
+   "dtype": "float32",
+   "max_length": 512,
+   "premise_chars": 46,
+   "hypothesis_chars": 20,
+   "seconds": 0.0105,
+   "shadow_decision": "disabled"
+  },
+  {
+   "id": "Q10_N",
+   "source_chunk": "51fcabcc7db8",
+   "expected": "neutral",
+   "label": "neutral",
+   "probabilities": {
+    "entailment": 0.0005179999279789627,
+    "neutral": 0.9992316961288452,
+    "contradiction": 0.0002502698916941881
+   },
+   "margin": 0.9987136962008663,
+   "device": "cuda:0",
+   "dtype": "float32",
+   "max_length": 512,
+   "premise_chars": 46,
+   "hypothesis_chars": 23,
+   "seconds": 0.0106,
+   "shadow_decision": "disabled"
+  },
+  {
+   "id": "NKD_E",
+   "source_chunk": "2af68bb8a7ab",
+   "expected": "entailment",
+   "label": "neutral",
+   "probabilities": {
+    "entailment": 0.002646178938448429,
+    "neutral": 0.997068464756012,
+    "contradiction": 0.0002854362246580422
+   },
+   "margin": 0.9944222858175635,
+   "device": "cuda:0",
+   "dtype": "float32",
+   "max_length": 512,
+   "premise_chars": 21,
+   "hypothesis_chars": 28,
+   "seconds": 0.016,
+   "shadow_decision": "disabled"
+  },
+  {
+   "id": "NKD_C",
+   "source_chunk": "2af68bb8a7ab",
+   "expected": "contradiction",
+   "label": "contradiction",
+   "probabilities": {
+    "entailment": 0.0008969639311544597,
+    "neutral": 0.2199484407901764,
+    "contradiction": 0.7791546583175659
+   },
+   "margin": 0.5592062175273895,
+   "device": "cuda:0",
+   "dtype": "float32",
+   "max_length": 512,
+   "premise_chars": 21,
+   "hypothesis_chars": 29,
+   "seconds": 0.022,
+   "shadow_decision": "disabled"
+  },
+  {
+   "id": "NKD_N",
+   "source_chunk": "2af68bb8a7ab",
+   "expected": "neutral",
+   "label": "neutral",
+   "probabilities": {
+    "entailment": 0.00046895252307876945,
+    "neutral": 0.994835376739502,
+    "contradiction": 0.004695678595453501
+   },
+   "margin": 0.9901396981440485,
+   "device": "cuda:0",
+   "dtype": "float32",
+   "max_length": 512,
+   "premise_chars": 21,
+   "hypothesis_chars": 22,
+   "seconds": 0.0111,
+   "shadow_decision": "disabled"
+  },
+  {
+   "id": "ASW_E",
+   "source_chunk": "15d2dbeae3d6",
+   "expected": "entailment",
+   "label": "entailment",
+   "probabilities": {
+    "entailment": 0.997739315032959,
+    "neutral": 0.0017145152669399977,
+    "contradiction": 0.0005461437976919115
+   },
+   "margin": 0.996024799766019,
+   "device": "cuda:0",
+   "dtype": "float32",
+   "max_length": 512,
+   "premise_chars": 48,
+   "hypothesis_chars": 23,
+   "seconds": 0.0163,
+   "shadow_decision": "disabled"
+  },
+  {
+   "id": "ASW_C",
+   "source_chunk": "15d2dbeae3d6",
+   "expected": "contradiction",
+   "label": "contradiction",
+   "probabilities": {
+    "entailment": 0.0011386938858777285,
+    "neutral": 0.000720976444426924,
+    "contradiction": 0.9981403350830078
+   },
+   "margin": 0.9970016411971301,
+   "device": "cuda:0",
+   "dtype": "float32",
+   "max_length": 512,
+   "premise_chars": 48,
+   "hypothesis_chars": 26,
+   "seconds": 0.013,
+   "shadow_decision": "disabled"
+  },
+  {
+   "id": "ASW_N",
+   "source_chunk": "15d2dbeae3d6",
+   "expected": "neutral",
+   "label": "neutral",
+   "probabilities": {
+    "entailment": 0.0011251328978687525,
+    "neutral": 0.9986395239830017,
+    "contradiction": 0.00023528568272013217
+   },
+   "margin": 0.997514391085133,
+   "device": "cuda:0",
+   "dtype": "float32",
+   "max_length": 512,
+   "premise_chars": 48,
+   "hypothesis_chars": 26,
+   "seconds": 0.0112,
+   "shadow_decision": "disabled"
+  }
+ ],
+ "sha256": "b8823f958b2ee06d6890ead48d959c1ed20a575f4c0c7e598f9d05fcabacb68a"
+}

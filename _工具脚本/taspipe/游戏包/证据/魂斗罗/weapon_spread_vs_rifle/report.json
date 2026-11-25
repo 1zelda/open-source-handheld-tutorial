@@ -1,0 +1,413 @@
+{
+  "schema_version": "ram_calibration/1.0",
+  "mode": "verify",
+  "game_id": "contra_nes_us",
+  "case_id": "spread_vs_rifle",
+  "rom_sha1": "C9EA66BB7CB30AD5343F1721B1D4D3219859319B",
+  "core": "NesHawk",
+  "system": "NES",
+  "domain": "System Bus",
+  "recipe": {
+    "schema_version": "ram_calibration/1.0",
+    "game_id": "contra_nes_us",
+    "profile": {
+      "rom": "F:/开源掌机教程/04-游戏资源库/TAS输入录像库/roms_verify/NES/contra_u.nes",
+      "rom_sha1": "C9EA66BB7CB30AD5343F1721B1D4D3219859319B",
+      "bizhawk": "F:/开源掌机教程/02-模拟器库/BizHawk/BizHawk-2.8",
+      "core": "NesHawk",
+      "system": "NES",
+      "domain": "System Bus",
+      "state_package": {
+        "game_id": "contra_nes_us",
+        "profile_id": "contra_u_c9ea66bb",
+        "revision": "r20261125T020305"
+      },
+      "window": {
+        "start": 0,
+        "length": 2048
+      }
+    },
+    "base_state": "base",
+    "macros": {
+      "fire_probe": "B,,,,B,,,,B,,,,"
+    },
+    "cases": [
+      {
+        "id": "spread_vs_rifle",
+        "kind": "scenario",
+        "arms": [
+          {
+            "name": "spread",
+            "steps": [
+              {
+                "macro": "-",
+                "extra": 0,
+                "patches": [
+                  {
+                    "addr": 170,
+                    "value": 3
+                  }
+                ],
+                "expect": [
+                  {
+                    "addr": 170,
+                    "value": 3
+                  }
+                ],
+                "screen": {
+                  "reference": "$base",
+                  "relation": "near",
+                  "max_changed_fraction": 0.02
+                }
+              },
+              {
+                "state": "$previous",
+                "macro": "@fire_probe",
+                "extra": 17,
+                "capture_frames": 30,
+                "expect": [
+                  {
+                    "addr": 170,
+                    "value": 3
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "rifle",
+            "steps": [
+              {
+                "macro": "-",
+                "extra": 0,
+                "patches": [
+                  {
+                    "addr": 170,
+                    "value": 0
+                  }
+                ],
+                "expect": [
+                  {
+                    "addr": 170,
+                    "value": 0
+                  }
+                ],
+                "screen": {
+                  "reference": "$base",
+                  "relation": "near",
+                  "max_changed_fraction": 0.02
+                }
+              },
+              {
+                "state": "$previous",
+                "macro": "@fire_probe",
+                "extra": 17,
+                "capture_frames": 30,
+                "expect": [
+                  {
+                    "addr": 170,
+                    "value": 0
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "comparisons": [
+          {
+            "left": "spread",
+            "right": "rifle",
+            "left_step": 1,
+            "right_step": 1,
+            "relation": "different",
+            "frames": [
+              6,
+              12,
+              20,
+              "final"
+            ]
+          }
+        ],
+        "claims": [
+          {
+            "name": "current_weapon",
+            "addr": 170,
+            "width": 1,
+            "level": "gameplay",
+            "note": "同状态、同输入，0x00AA=03 散弹与 0x00AA=00 步枪产生真实画面差异；不扩展为完整武器表已验证。"
+          }
+        ]
+      }
+    ]
+  },
+  "cache_key": "e86637002efc7aecc0569e37180b672a4da4ba660a1655221948043c710ab8b7",
+  "arms": {
+    "spread": {
+      "steps": [
+        {
+          "index": 0,
+          "source_state": "F:\\开源掌机教程\\04-游戏资源库\\TAS输入录像库\\状态资产\\contra_nes_us\\contra_u_c9ea66bb\\r20261125T020305\\states\\base.state",
+          "attempt_state": "F:\\taspipe_scratch\\ram_calibration\\contra_weapon_v2\\spread_vs_rifle_spread_s00_input.state",
+          "patches": [
+            {
+              "addr": 170,
+              "value": 3
+            }
+          ],
+          "macro": "-",
+          "frames": 0,
+          "attempt": {
+            "id": 4,
+            "ok": true,
+            "data": "852"
+          },
+          "shot": "F:\\taspipe_scratch\\ram_calibration\\contra_weapon_v2\\spread_vs_rifle_spread_s00.png",
+          "state": "F:\\taspipe_scratch\\ram_calibration\\contra_weapon_v2\\spread_vs_rifle_spread_s00.state",
+          "ram": "F:\\taspipe_scratch\\ram_calibration\\contra_weapon_v2\\spread_vs_rifle_spread_s00.bin",
+          "expect": [
+            {
+              "addr": 170,
+              "width": 1,
+              "op": "==",
+              "want": 3,
+              "got": 3,
+              "pass": true
+            }
+          ],
+          "actual_core": null,
+          "screen": {
+            "reference": "F:\\taspipe_scratch\\ram_calibration\\contra_weapon_v2\\spread_vs_rifle_base_anchor.png",
+            "relation": "near",
+            "max_changed_fraction": 0.02,
+            "pass": true,
+            "changed_pixels": 0,
+            "changed_fraction": 0.0,
+            "total_pixels": 57344,
+            "equal": true,
+            "bbox": null
+          }
+        },
+        {
+          "index": 1,
+          "source_state": "F:\\taspipe_scratch\\ram_calibration\\contra_weapon_v2\\spread_vs_rifle_spread_s00.state",
+          "attempt_state": "F:/taspipe_scratch/ram_calibration/5001def81f28049b/spread_vs_rifle_spread_1.state",
+          "patches": [],
+          "macro": "B,,,,B,,,,B,,,,",
+          "frames": 30,
+          "attempt": {
+            "id": 5,
+            "ok": true,
+            "data": "882"
+          },
+          "shot": "F:\\taspipe_scratch\\ram_calibration\\contra_weapon_v2\\spread_vs_rifle_spread_s01.png",
+          "state": "F:\\taspipe_scratch\\ram_calibration\\contra_weapon_v2\\spread_vs_rifle_spread_s01.state",
+          "ram": "F:\\taspipe_scratch\\ram_calibration\\contra_weapon_v2\\spread_vs_rifle_spread_s01.bin",
+          "expect": [
+            {
+              "addr": 170,
+              "width": 1,
+              "op": "==",
+              "want": 3,
+              "got": 3,
+              "pass": true
+            }
+          ],
+          "actual_core": null,
+          "frames_dir": "F:\\taspipe_scratch\\ram_calibration\\contra_weapon_v2\\spread_vs_rifle_spread_s01_frames",
+          "captured_frames": 30
+        }
+      ]
+    },
+    "rifle": {
+      "steps": [
+        {
+          "index": 0,
+          "source_state": "F:\\开源掌机教程\\04-游戏资源库\\TAS输入录像库\\状态资产\\contra_nes_us\\contra_u_c9ea66bb\\r20261125T020305\\states\\base.state",
+          "attempt_state": "F:\\taspipe_scratch\\ram_calibration\\contra_weapon_v2\\spread_vs_rifle_rifle_s00_input.state",
+          "patches": [
+            {
+              "addr": 170,
+              "value": 0
+            }
+          ],
+          "macro": "-",
+          "frames": 0,
+          "attempt": {
+            "id": 8,
+            "ok": true,
+            "data": "852"
+          },
+          "shot": "F:\\taspipe_scratch\\ram_calibration\\contra_weapon_v2\\spread_vs_rifle_rifle_s00.png",
+          "state": "F:\\taspipe_scratch\\ram_calibration\\contra_weapon_v2\\spread_vs_rifle_rifle_s00.state",
+          "ram": "F:\\taspipe_scratch\\ram_calibration\\contra_weapon_v2\\spread_vs_rifle_rifle_s00.bin",
+          "expect": [
+            {
+              "addr": 170,
+              "width": 1,
+              "op": "==",
+              "want": 0,
+              "got": 0,
+              "pass": true
+            }
+          ],
+          "actual_core": null,
+          "screen": {
+            "reference": "F:\\taspipe_scratch\\ram_calibration\\contra_weapon_v2\\spread_vs_rifle_base_anchor.png",
+            "relation": "near",
+            "max_changed_fraction": 0.02,
+            "pass": true,
+            "changed_pixels": 0,
+            "changed_fraction": 0.0,
+            "total_pixels": 57344,
+            "equal": true,
+            "bbox": null
+          }
+        },
+        {
+          "index": 1,
+          "source_state": "F:\\taspipe_scratch\\ram_calibration\\contra_weapon_v2\\spread_vs_rifle_rifle_s00.state",
+          "attempt_state": "F:/taspipe_scratch/ram_calibration/5001def81f28049b/spread_vs_rifle_rifle_1.state",
+          "patches": [],
+          "macro": "B,,,,B,,,,B,,,,",
+          "frames": 30,
+          "attempt": {
+            "id": 9,
+            "ok": true,
+            "data": "882"
+          },
+          "shot": "F:\\taspipe_scratch\\ram_calibration\\contra_weapon_v2\\spread_vs_rifle_rifle_s01.png",
+          "state": "F:\\taspipe_scratch\\ram_calibration\\contra_weapon_v2\\spread_vs_rifle_rifle_s01.state",
+          "ram": "F:\\taspipe_scratch\\ram_calibration\\contra_weapon_v2\\spread_vs_rifle_rifle_s01.bin",
+          "expect": [
+            {
+              "addr": 170,
+              "width": 1,
+              "op": "==",
+              "want": 0,
+              "got": 0,
+              "pass": true
+            }
+          ],
+          "actual_core": null,
+          "frames_dir": "F:\\taspipe_scratch\\ram_calibration\\contra_weapon_v2\\spread_vs_rifle_rifle_s01_frames",
+          "captured_frames": 30
+        }
+      ]
+    }
+  },
+  "evidence": [
+    "F:\\taspipe_scratch\\ram_calibration\\contra_weapon_v2\\spread_vs_rifle_base_anchor.png",
+    "F:\\taspipe_scratch\\ram_calibration\\contra_weapon_v2\\spread_vs_rifle_rifle_s00.bin",
+    "F:\\taspipe_scratch\\ram_calibration\\contra_weapon_v2\\spread_vs_rifle_rifle_s00.png",
+    "F:\\taspipe_scratch\\ram_calibration\\contra_weapon_v2\\spread_vs_rifle_rifle_s00.state",
+    "F:\\taspipe_scratch\\ram_calibration\\contra_weapon_v2\\spread_vs_rifle_rifle_s00_input.state",
+    "F:\\taspipe_scratch\\ram_calibration\\contra_weapon_v2\\spread_vs_rifle_rifle_s01.bin",
+    "F:\\taspipe_scratch\\ram_calibration\\contra_weapon_v2\\spread_vs_rifle_rifle_s01.png",
+    "F:\\taspipe_scratch\\ram_calibration\\contra_weapon_v2\\spread_vs_rifle_rifle_s01.state",
+    "F:\\taspipe_scratch\\ram_calibration\\contra_weapon_v2\\spread_vs_rifle_rifle_s01_frames\\f0006.png",
+    "F:\\taspipe_scratch\\ram_calibration\\contra_weapon_v2\\spread_vs_rifle_rifle_s01_frames\\f0012.png",
+    "F:\\taspipe_scratch\\ram_calibration\\contra_weapon_v2\\spread_vs_rifle_rifle_s01_frames\\f0020.png",
+    "F:\\taspipe_scratch\\ram_calibration\\contra_weapon_v2\\spread_vs_rifle_spread_s00.bin",
+    "F:\\taspipe_scratch\\ram_calibration\\contra_weapon_v2\\spread_vs_rifle_spread_s00.png",
+    "F:\\taspipe_scratch\\ram_calibration\\contra_weapon_v2\\spread_vs_rifle_spread_s00.state",
+    "F:\\taspipe_scratch\\ram_calibration\\contra_weapon_v2\\spread_vs_rifle_spread_s00_input.state",
+    "F:\\taspipe_scratch\\ram_calibration\\contra_weapon_v2\\spread_vs_rifle_spread_s01.bin",
+    "F:\\taspipe_scratch\\ram_calibration\\contra_weapon_v2\\spread_vs_rifle_spread_s01.png",
+    "F:\\taspipe_scratch\\ram_calibration\\contra_weapon_v2\\spread_vs_rifle_spread_s01.state",
+    "F:\\taspipe_scratch\\ram_calibration\\contra_weapon_v2\\spread_vs_rifle_spread_s01_frames\\f0006.png",
+    "F:\\taspipe_scratch\\ram_calibration\\contra_weapon_v2\\spread_vs_rifle_spread_s01_frames\\f0012.png",
+    "F:\\taspipe_scratch\\ram_calibration\\contra_weapon_v2\\spread_vs_rifle_spread_s01_frames\\f0020.png"
+  ],
+  "comparisons": [
+    {
+      "left": "spread",
+      "right": "rifle",
+      "relation": "different",
+      "frames": [
+        {
+          "frame": 6,
+          "left": "F:\\taspipe_scratch\\ram_calibration\\contra_weapon_v2\\spread_vs_rifle_spread_s01_frames\\f0006.png",
+          "right": "F:\\taspipe_scratch\\ram_calibration\\contra_weapon_v2\\spread_vs_rifle_rifle_s01_frames\\f0006.png",
+          "pass": true,
+          "changed_pixels": 78,
+          "changed_fraction": 0.0013602120535714285,
+          "total_pixels": 57344,
+          "equal": false,
+          "bbox": [
+            53,
+            79,
+            81,
+            92
+          ]
+        },
+        {
+          "frame": 12,
+          "left": "F:\\taspipe_scratch\\ram_calibration\\contra_weapon_v2\\spread_vs_rifle_spread_s01_frames\\f0012.png",
+          "right": "F:\\taspipe_scratch\\ram_calibration\\contra_weapon_v2\\spread_vs_rifle_rifle_s01_frames\\f0012.png",
+          "pass": true,
+          "changed_pixels": 232,
+          "changed_fraction": 0.004045758928571429,
+          "total_pixels": 57344,
+          "equal": false,
+          "bbox": [
+            42,
+            72,
+            99,
+            97
+          ]
+        },
+        {
+          "frame": 20,
+          "left": "F:\\taspipe_scratch\\ram_calibration\\contra_weapon_v2\\spread_vs_rifle_spread_s01_frames\\f0020.png",
+          "right": "F:\\taspipe_scratch\\ram_calibration\\contra_weapon_v2\\spread_vs_rifle_rifle_s01_frames\\f0020.png",
+          "pass": true,
+          "changed_pixels": 144,
+          "changed_fraction": 0.0025111607142857145,
+          "total_pixels": 57344,
+          "equal": false,
+          "bbox": [
+            95,
+            63,
+            123,
+            107
+          ]
+        },
+        {
+          "frame": "final",
+          "left": "F:\\taspipe_scratch\\ram_calibration\\contra_weapon_v2\\spread_vs_rifle_spread_s01.png",
+          "right": "F:\\taspipe_scratch\\ram_calibration\\contra_weapon_v2\\spread_vs_rifle_rifle_s01.png",
+          "pass": true,
+          "changed_pixels": 157,
+          "changed_fraction": 0.0027378627232142855,
+          "total_pixels": 57344,
+          "equal": false,
+          "bbox": [
+            127,
+            57,
+            149,
+            122
+          ]
+        }
+      ],
+      "pass": true
+    }
+  ],
+  "checks": {
+    "expectations": true,
+    "comparisons": true,
+    "frame_counts": true,
+    "screen_anchors": true,
+    "gba_core": true
+  },
+  "status": "pass",
+  "verified_fields": [
+    {
+      "name": "current_weapon",
+      "addr": 170,
+      "width": 1,
+      "level": "gameplay",
+      "note": "同状态、同输入，0x00AA=03 散弹与 0x00AA=00 步枪产生真实画面差异；不扩展为完整武器表已验证。",
+      "case_id": "spread_vs_rifle"
+    }
+  ]
+}

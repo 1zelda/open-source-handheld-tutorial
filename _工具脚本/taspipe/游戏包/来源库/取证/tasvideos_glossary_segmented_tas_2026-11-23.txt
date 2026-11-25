@@ -1,0 +1,573 @@
+来源：https://tasvideos.org/Glossary
+最终 URL：https://tasvideos.org/Glossary
+抓取：2026-11-23
+用途：TASVideos 术语表 Segmented TAS 定义
+sha256=d22d7381a8512b4c
+
+Glossary - TASVideos 
+
+ TASVideos
+
+ Tool-assisted game movies
+
+ When human skills are just not enough
+
+ Home 
+
+ Games 
+ Games List 
+ Game Resources 
+ Platforms 
+
+ Movies 
+ Publications 
+ User Files 
+ Stars 
+ Recommended for Newcomers 
+ Movie Classes 
+
+ Submissions 
+ Submission Workbench 
+ Submit a Movie 
+
+ Tools 
+ BizHawk 
+ libTAS 
+ Emulator List 
+
+ Forum 
+
+ Chat 
+ Discord and IRC 
+ Other TAS Communities 
+
+ Resources 
+ Articles 
+ FAQ 
+ How to TAS 
+
+ About 
+ TASVideos 
+ Site Rules 
+ AI Policy 
+ Staff 
+ How to Help 
+ Site History 
+
+ Dark 
+ Light 
+ Auto 
+
+ Register 
+
+ Log in 
+
+ Glossary
+
+ DE | Deutsch 
+
+ ES | Espa&#xF1;ol 
+
+ RU | &#x420;&#x443;&#x441;&#x441;&#x43A;&#x438;&#x439; 
+
+ Table of contents 
+ Code (modification)
+ 
+ Code (programming)
+ 
+ Desync
+ 
+ Determinism
+ Determinism in emulation
+ 
+ Determinism in console verification
+
+ Emulator
+ 
+ Emulator movie file
+ 
+ FDS
+ 
+ Frame, FPS
+ 
+ Frame advance
+ 
+ Game-play, Gameplay
+ 
+ Glitch
+ 
+ Game-breaking glitch
+ 
+ Hex edit
+ 
+ IL
+ 
+ In-game time
+ 
+ Lag
+ 
+ LOTAD
+ 
+ Luck manipulation
+ 
+ New Game Plus
+ 
+ Nondeterminism
+ 
+ Randomness
+ 
+ Real-time
+ 
+ Replay device
+ 
+ Re-record, re-recording
+ 
+ RNG
+ 
+ ROM
+ ISO
+ 
+ BIN
+ 
+ CUE
+
+ RTA
+ 
+ Save RAM
+ 
+ Savestate
+ 
+ Segmented, Multi-segment
+ 
+ Single-segment, Continuous
+ 
+ Slow motion
+ 
+ Speedrun, Speed run
+ 
+ Sync Verification
+ 
+ TASing, to TAS
+ 
+ Tool-assisted speedrun, TAS
+ 
+ Timeattack, Time attack
+ 
+ Video game
+ 
+ WIP
+
+ Code (modification)
+
+ Also known as a cheat. Something used to change the game, unlock some features, or remove certain limitations. Purposes of those codes greatly vary - from purely cosmetic improvements, through giving the player advantages that make the game easier, to new challenges that make the game much harder.
+
+ In-game codes were added to games by developers. They are considered secret if the game never tells them to the player: neither through official documentation nor during gameplay. They can be entered in a variety of ways:
+
+ Passwords that can be entered in a menu
+
+ Pressing some buttons on the title screen
+ Buttons that start the game are an obvious exception
+
+ Passing execution parameters upon game launch
+
+ Setting game configuration options
+
+ Setting environment variables
+
+ Another variant of codes is external modifications. The game is not aware of them, so they patch the game itself on the fly to add support for a certain feature. There are two types of such modifications:
+
+ Emulated hardware devices (Game Genie, Action Replay)
+
+ Software tools (Gecko OS)
+
+ Code (programming)
+
+ The program in the ROM image of the game.
+
+The makers of speedruns (tool-assisted or not) occasionally analyze the program code of the game to see how exactly the game works.
+
+Among the benefits of code analysis are:
+
+ Learning the exact layout of levels (maps)
+
+ Learning the weaknesses and strengths of items, enemies, skills, etc.
+
+ Learning how the game calculates attacks, movements, bonuses, etc.
+
+ The knowledge gained from the code can be used in the planning and execution of the movie.
+
+ Desync
+
+ When an emulator movie file does not play back correctly and unintended things happen in the game, such as the character dying or not progressing as expected.
+
+ More at Desync Help .
+
+ Determinism
+
+ A system is said to be deterministic (in lay terms, "predictable") if it always produces the same outputs when the same inputs are given.
+
+ "Nondeterminism" is not to be confused with "randomness", which has a specific meaning in the context of retro games.
+
+ Determinism in emulation
+
+ Emulators are just programs, so they'll be as deterministic as the CPUs they run on. Complications arise when the emulator uses multiple threads or multiple processes which need to be synchronised (an enduring problem for software developers— read more on the English Wikipedia).
+Additionally, an emulator may be called "nondeterministic" if movie playback desyncs just by making a savestate and loading it. This is generally the result how savestates are implemented (poorly-structured code, or simple programmer oversight) and not anything to do with the OS or compilation.
+
+ Determinism in console verification
+
+ In the context of hardware, "nondeterministic" can be used to mean "seemingly nondeterministic", or in other words, "having hidden or poorly-understood mechanisms".
+The microcontrollers and surrounding circuitry inside retro consoles are all solid-state with controlled tolerances; they always run deterministically, barring electrical faults or reliance on temperature-sensitive components.
+Optical disc drives are also a source of nondeterminism in modern consoles.
+
+ Emulator
+
+ An emulator, in the most general sense, duplicates (provides an emulation of) the functions of one system with a different system, so that the second system appears to behave like the first system. Unlike a simulation, it does not attempt to precisely model the state of the device being emulated; it only attempts to reproduce its behavior.
+
+ More on Wikipedia .
+
+ Examples of emulators:
+
+ Famtasia
+
+ FCE Ultra (FCEU)
+
+ Gens
+
+ Snes9x
+
+ Visual Boy Advance
+
+ ZSNES
+
+ See the Emulator Homepages page for information regarding how to acquire those emulators.
+
+ Emulator movie file
+
+ An emulator movie file is a file which contains data needed to reconstruct actions in a game. In most emulators, the movie files consist of simply the buttons that were pressed during the game. Because the emulation is completely predictable, it works.
+
+ Unless the movie starts from the console power-on or from reset (as is the case with most movies on the TASVideos website ), the movie file might also contain a savestate that loads the beginning point of the game.
+
+ Although not unheard of, most movie files don’t contain any sound or image data. Such data is not needed, because the emulator can reconstruct it during movie playback.
+
+ See EmulatorResources for information on the emulator movie files for different emulators.
+
+ FDS
+
+ Famicom Disk System. Details at the What is FDS page.
+
+ Frame, FPS
+
+ In animation, a frame is one of the still images composing the animation. The same concept applies to emulation.
+
+Typically, gaming systems update the screen 50 or 60 times per second. The unit of update is called “frame”.
+
+ Almost all console games check their input (which buttons are pressed on the controller) once per each frame.
+
+Therefore the highest reasonable resolution of input in game movie making is frame-by-frame precision.
+
+ See the Platform Framerates page for framerates of all the platforms.
+
+ In a system that updates the screen 60 times per second (or 60 fps (frames per second)), each frame is 16.67 milliseconds long.
+
+ Frame advance
+
+ Frame advance is an emulation feature to single-step the game frame by frame.
+
+It’s analogous to the slow-motion feature of VCR devices.
+
+ The makers of tool-assisted movies use the frame advance feature extensively in order to be able to press buttons at exactly the right time.
+
+ Instructions for using the frame advance feature can be found at the Using Emulator Tools page.
+
+ Game-play, Gameplay
+
+ An in-game task or puzzle that is meant to be accomplished or solved by a human while playing the game, by sending inputs to the game and getting its reaction.
+
+ Glitch
+
+ An unintentional feature in a game ― usually considered an error. Many games contain glitches.
+
+ Glitches are usually result of sloppy programming ― either accidentally, or intentionally. Because the games have to run on a rather slow CPU, perfect programming would often be too slow for them and therefore some shortcuts are taken.
+
+ Makers of tool-assisted movies often abuse those shortcuts, resulting in what appears that the game glitches .
+
+ More on Wikipedia .
+
+ Game-breaking glitch
+
+ A term commonly used to describe some glitch that breaks the game-play logic applied/assumed by the developers, resulting in notable contradictions between how the game is supposed to be played and how it can be played instead .
+
+ Game-breaking glitches often involve read-access memory or save data corruption. They also usually cut down the time of the run dramatically, comparing to the fastest one that avoids the given glitch.
+
+ Hex edit
+
+ The act of editing the raw data that composes a binary file (such as an emulator movie file).
+
+ Although the more proper term is binary editing (named after binary files as opposed to text files ), it is usually called hex editing because it is often done with a tool that displays the file data in hexadecimal numbers.
+
+ The makers of tool-assisted speedruns occasionally hex-edit the input the game receives. Most often, this is done to reorder or to copy and paste sequences of input. Makers of tool-assisted speedruns do not hex-edit the games, the images or the sound.
+
+ Emulator movie files are increasingly becoming text-based rather than raw binary data, but the term may still be used for these cases.
+
+ More at Input File Editing .
+
+ IL
+
+ Individual-level runs. More prevalent in real-time speedruns.
+
+ In-game time
+
+ In-game time, or IGT, is time measured by a timer in the game itself.
+It generally differs from real time
+in that it may not count actions such as startup, cutscenes, level transitions, and menuing.
+Sometimes the precision of an in-game timer is limited;
+only whole seconds, for example.
+
+ The usual convention for tool-assisted speedruns
+is to measure time according to real time (or frames ),
+but in-game time is sometimes preferred.
+See Movies-gametimer , Goal Choice , and Aims for in-game time instead of real-time .
+
+ Lag
+
+ Lag often refers to delays experienced in computing communications. In console games, lag is the effect experienced when the game runs slower than usually. Lag is caused by there being too much action for the CPU to calculate in the time of 1 frame , and thus more what was supposed to take 1 frame, takes 2 or more.
+
+ Often, during lag, the game ignores the player’s input until the next frame. Objects usually also halt during the laggy frames. There might appear graphical anomalies, such as head-up displays appearing in wrong places.
+
+ In the making of speedruns, lag is often highly undesirable. Methods of avoiding lag are explained at the Common Tricks page and at the Rockman Tricks page.
+
+ LOTAD
+
+ Low-optimized tool-assisted demonstration. Basically a proof-of-concept movie aimed to showcase something without too much effort. Not to be confused with a movie that is just sloppy and does not really demonstrate anything new.
+
+ Related terms: TAStest, prelim, WIP , human theory TAS (limiting your techniques with what a human could do in real-time ).
+
+ Luck manipulation
+
+ Luck manipulation is the act of using savestates / calculations to predict how the game would react to different input, and then choose the input that leads to the most desirable result in a particular situation.
+
+ More at Luck Manipulation .
+
+ New Game Plus
+
+ A game mode usually unlocked by having completed the game once, often present in games that can save player progress. Different from starting with a clean save (New Game) in that some unique features can be unlocked in NewGame+, or some achievements can be carried over from prior completion.
+
+ New Game+ and similar are TASable by having a movie start "from SaveRAM ", that is, with an existing saved game embedded in the movie file.
+
+ More on Wikipedia .
+
+ Nondeterminism
+
+ See determinism .
+
+ Randomness
+
+ Computers aren't actually capable of doing things randomly; instead, programs use a "pseudo-random number generator" algorithm (PRNG or just RNG) as a source of numbers which appear random to humans, and use those numbers to make decisions. The PRNG is in turn "seeded" by a clock, user input, or a dedicated hardware component.
+See LuckManipulation for more on how RNG works in games.
+
+ "Randomness" or "RNG" is not to be confused with "nondeterministic behaviour" .
+
+ Real-time
+
+ Displayed the same way as something actually occurred.
+
+ Real-time speed runs (usually called just speedruns or real-time attacks ) are played at normal speed and without save states.
+
+ More on Wikipedia .
+
+ Replay device
+
+ Put simply, replay devices are interfaces between a PC and a console, similar to how you might use a GPU to interface with a monitor or a NIC to interface with a LAN, and it's by playing back a movie over one of these console interfaces that the movie can be console-verified . (Specifically, if it finishes without desyncing then it's considered verified.)
+The replay device simulates a gamepad (or several) for the console to "see", and typically appears as a serial device on the PC. Newer designs have included an SD card to allow running without a PC.
+
+ To do verifications with your own replay device, start here .
+
+ Re-record, re-recording
+
+ Re-recording is the act of replacing an already recorded part (of a movie) with something else.
+
+ Also called: undo
+
+ In the making of emulator movies, re-recording is done by loading a savestate of earlier event in the movie and continuing playing from that point.
+
+ The emulator will update the movie file to undo everything that was cancelled by the savestate loading, and continue recording from that point.
+
+ The makers of tool-assisted speedruns use re-recording very extensively to reach perfection and to avoid mistakes.
+
+ In single-segment non-assisted speedruns, re-recording is starting over from beginning. The recording of the failed playing is usually not preserved.
+
+ In multi-segment non-assisted speedruns, re-recording is starting over from the beginning of current segment. The recording of the failed segment is not preserved.
+
+ In tool-assisted speedruns, re-recording only undoes a small part of playing. The undone part will not be seen in the resulting movie.
+
+ A tool-assisted movie may have been re-recorded anything between 50 and 200000 times, depending on the precision of the movie and the difficulty of the game.
+
+Often, the same small passage of the game (could be as small as fractions of second long) is attempted tens of times before continuing.
+
+ RNG
+
+ See randomness .
+
+ ROM
+
+ ROM is an abbreviation of the words Read-Only Memory .
+
+ In emulation, ROM is a copy of the contents (data) of the program chip inside a game cartridge.
+
+ It is called "ROM" because the console games are stored on an read-only electronics memory chip inside the game cartridge.
+
+ The term "image" can also be used to describe a perfect copy of the game data. An image may be a ROM or a copy of disc/disk contents.
+
+ ISO
+
+ An ISO file is a copy of the contents (data) of an optical disc, which is created by any kind of disc reading system. The name comes from the ISO 9660 standard which codifies the most popular filesystem used on discs (and images of discs).
+
+ These are the ROM file equivalents for disc-based systems such as the PlayStation.
+
+ More on Wikipedia .
+
+ BIN
+
+ Those are binary files. A binary file may contain any type of data. It can contain a ROM, or a disc image (like ISO).
+
+ CUE
+
+ A CUE file is used to describe audio tracks of a CD or DVD. It is often used with ISO and BIN files for a disc's data (like a game's visual content), and with MP3 or WAV files for a disc's audio tracks (like a game's music).
+
+ RTA
+
+ See real-time .
+
+ Save RAM
+
+ Non-volatile memory used to store saved game - in-game save files that preserve player progress.
+
+ Being able to include a SaveRAM state in movies makes it easy to TAS New Game&#x2B; and other unlockable content. When submitting such movies to the site, there's an additional rule : you must link to or create a second movie which can "fill the gap" between a clean save and the one required by your submission.
+
+ Consoles like NES and SNES used battery-backed SRAM to enable this functionality, which is why saved game is sometimes also called SRAM, even though technically, SRAM without a battery is volatile , and can only be used to expand original memory of the device while it's running.
+
+ Savestate
+
+ A snapshot of the system state at given moment.
+
+ Loading the savestate will revert the system (i.e. the emulated game) to the loaded state.
+
+ Segmented, Multi-segment
+
+ Made in parts.
+
+ A segmented movie consists of individual levels or sections of a game which each are played separately.
+
+ Making of segmented movies can be seen as a limited form of re-recording: instead of saving/loading at any point at will, saving/loading is only done at segment borders.
+
+ Single-segment, Continuous
+
+ Done all at once.
+
+ Regular, unassisted speedruns (as opposed to tool-assisted speedruns ) are usually both single-segment and real-time .
+
+ Slow motion
+
+ To slow down the playing speed of a given game, thus increasing reaction time and allowing the author to execute more precise movements.
+
+ The most precise type of slow motion is frame advance .
+
+ Speedrun, Speed run
+
+ A common term for runs through games going as quickly as possible.
+
+ Unless otherwise stated, speedruns are usually not tool-assisted .
+
+They are non-assisted or unassisted .
+
+ Movies at the TASVideos website are tool-assisted.
+
+ More on Wikipedia .
+
+ Sync Verification
+
+ The process of running another user's TAS input file in an emulator to ensure that the input plays through the game as intended for someone other than the TASer. This is an integral part of Judging to help prove a TAS's legitimacy and determinism .
+
+ See also: Desync 
+
+ TASing, to TAS
+
+ Making a tool-assisted speedrun (see below).
+
+ Example: “I have thought about TASing Secret of Mana.”
+
+ Example: “I am going to TAS Secret of Mana.”
+
+ This phrase is an alternative to the clumsy (but grammatically more correct) phrase: “I am going to make a TAS of Secret of Mana.”
+
+ The word TAS is used here exactly like the word “run” is used in the unassisted speedrun community.
+
+ Tool-assisted speedrun, TAS
+
+ A tool-assisted speedrun (short: TAS) is a speedrun that is made with use of tools .
+
+ Tools are features that help the playing that are not available in regular playing.
+
+Common examples of tools:
+
+ Slow motion, pause, and frame advance
+ (Never letting the game to go too fast to handle.)
+
+ Precise timer
+ (A frame-by-frame counter of movie length, that helps comparing different paths.)
+
+ Re-recording
+ (Ability to undo unwanted actions and retry.)
+
+ Hex-editing
+ (Copying and editing of input stream segments.)
+
+ Autofire
+ (Also called “turbo”, as found in some game controllers. Automatically repeating pressing of a button.)
+
+ More on Wikipedia .
+
+ Instructions on using tools are found at the Using Emulator Tools page.
+
+ Use of all of the aforementioned features is not necessary for a movie to be called tool-assisted. If the movie uses even one of these tools (timer excluded, autofire is disputable), it is a tool-assisted movie and not a regular speedrun.
+
+ Timeattack, Time attack
+
+ A time trial or time attack is a mode in some games that keeps track of how fast the gamer can complete levels in the game.
+
+ More on Wikipedia .
+
+ Tool-assisted speedruns used to be referred to as time-attacks, but this usage has fallen out of favor.
+
+ Video game
+
+ An electronic game with certain traits that make it the main TAS target:
+
+ A video game is audio/visual . It presents its content on some electronic device in audio and/or video form.
+
+ A video game is interactive . It requires repeated user input to progress.
+
+ A video game poses a virtual task . It requires the player to accomplish some in-game job.
+
+ User input is transformative . Which set of suggested in-game choices you make determines optimality level of your play.
+
+ A video game is finite . It has an objective end point, or a community vetted one.
+
+ Note that this definition is strictly for TASVideos, and is not meant to objectively define a video game in all contexts.
+
+ WIP
+
+ A word not exclusively used by the tool-assisted speedrun community but often heard at the forums, WIP means “work in progress”. It is often used to describe unfinished movies that are shared with others so that they can try to help the person making the run by spotting mistakes and suggesting different techniques.
+
+ Glossary last edited by Sand on 8/23/2026 5:10 AM 
+
+ Page History 
+ Latest diff 
+ List referrers 
+ View Source 
+
+ &copy; 2026 - TASVideos v2.6-6601994 
+ License 
+ Terms 
+ Privacy 
+ API

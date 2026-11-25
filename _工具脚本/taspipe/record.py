@@ -26,8 +26,51 @@ import sys
 import zipfile
 from pathlib import Path
 
-from .schema import CheckResult, Verdict, Stage, asset, Verification
+from .schema import CheckResult, Verdict, Stage, SchemaError, asset, Verification
 from .backends import _verification, _write_json, _run_id
+
+PICTURE_LUMA_MIN = 8.0   # 平均亮度低于它=这一帧没有可用画面（11-22 MM7 全黑窗实测 luma≈0）
+PICTURE_SAMPLE = 12      # 整窗均匀采样几帧，不逐帧解码（1500 帧窗逐帧看太贵）
+
+
+def picture_content(frames_dir, n_frames, *, sample=PICTURE_SAMPLE,
+                    luma_min=PICTURE_LUMA_MIN):
+    """整窗有没有可看画面（三态）。判据走 detect 的 frame_luma_range，不另写像素码。
+
+    为什么需要这一格：11-22 热门名作矩阵里 Mega Man 7 采了 600 帧全黑，
+    七项检查 6/7 pass（只有 audio_present 不确定）——回放、终点、成片、时长
+    全都对，唯独没人看图。黑场可能是合法淡入，所以判 **inconclusive** 而不是
+    fail；但也绝不允许它继续顶着"跑通"的样子进台账。
+
+    边界：只回答"有没有画面"，不回答"进没进玩法"。DKC2 那种窗口里只有
+    Rareware/Nintendo 厂标、没有玩法，本闸门按设计放行——那是帧预算问题。
+    """
+    from .detect import run_check
+    from .schema import CheckSpec
+    if n_frames <= 0:
+        return Verdict.INCONCLUSIVE, "0 帧，无图可看", []
+    spec = CheckSpec(check_id="frame_luma_range", plugin_id="frame_luma_range",
+                     params={"min": float(luma_min)})
+    idx = sorted({0, n_frames - 1,
+                  *[(n_frames * k) // max(sample, 1) for k in range(sample)]})
+    idx = [i for i in idx if 0 <= i < n_frames]
+    lumas, seen = [], []
+    for i in idx:
+        p = os.path.join(frames_dir, "f%04d.png" % i)
+        if not os.path.isfile(p):
+            continue
+        r = run_check(spec, p)
+        seen.append(i)
+        m = re.search(r"mean_luma=([\d.]+)", r.reason)
+        lumas.append(float(m.group(1)) if m else None)
+        if r.verdict == Verdict.PASS:
+            return Verdict.PASS, (f"第 {i} 帧有画面（mean_luma="
+                                  f"{lumas[-1]:.1f}，min={luma_min}），共采样 {len(seen)} 帧"), seen
+    if not seen:
+        return Verdict.INCONCLUSIVE, f"采样 {len(idx)} 个帧号都没找到 PNG，无图可判", seen
+    return Verdict.INCONCLUSIVE, (f"整窗 {n_frames} 帧采样 {len(seen)} 帧全黑"
+                                  f"（mean_luma 最大 {max(l for l in lumas if l is not None):.1f}"
+                                  f" < min={luma_min}）⇒ 无画面证据，别当跑通"), seen
 
 
 def mux_av(video, wav, out, ffmpeg="ffmpeg"):
@@ -58,6 +101,26 @@ def expected_frames(movie):
         return None
 
 
+def slot_conflict(movie, system):
+    """电影 Header 自述的平台与要用的回放槽位不一致时给出原因；一致/读不到/不认识的名字返回 None。
+
+    这条闸门存在是因为槽位曾在三处 CLI 里写死成 NES：SNES 电影被塞进 NES 槽位跑，
+    结果是 0 帧 stalled_killed，看起来像「电影坏了」，实际是调用方给的槽位错了。
+    只拦「两边都认得且确实不同」，读不到声明就不拦，避免把非 BizHawk 容器误杀。
+    """
+    from .registry import read_bk2_header, BIZHAWK_SYSTEMS
+    hdr = read_bk2_header(movie) or {}
+    declared = BIZHAWK_SYSTEMS.get(str(hdr.get("Platform") or "").strip().upper())
+    wanted = BIZHAWK_SYSTEMS.get(str(system or "").strip().upper())
+    if declared is None or wanted is None:
+        return None
+    if declared == wanted:
+        return None
+    return (f"电影 Header 声明 Platform={hdr.get('Platform')}（归一 {declared}），"
+            f"但回放槽位是 {system}（归一 {wanted}）；槽位应取自台账 platform_code"
+            f"或该 Header，别用默认值")
+
+
 def _probe_video(path, ffprobe="ffprobe"):
     r = subprocess.run([ffprobe, "-v", "error", "-show_entries",
                         "stream=codec_type,nb_frames:format=duration",
@@ -68,22 +131,48 @@ def _probe_video(path, ffprobe="ffprobe"):
     return json.loads(r.stdout or "{}")
 
 
-def nes_audio_gate():
-    """NES 发行版 2.8 音频闸门：实测无头 A/V dump 不可用 => inconclusive（不是通过）。"""
+def headless_audio_gate(system="NES"):
+    """无头 A/V dump 没接通时的音频闸门：一律 inconclusive（不是通过）。
+
+    "实测不可用"是在 NES + BizHawk 2.8 上量的，换一个平台就换一个未实测范围，
+    所以文案点名实测所属平台；SNES 之类的格子必须显式写着"未单独实测"，
+    不能让人以为这条结论对所有平台验过（11-22 record full --pub 7406 见到）。
+    """
+    measured = "NES"
+    note = ("" if str(system or "").upper() == measured
+            else f"（{system} 未单独实测，只作已知缺口参考）")
     return CheckResult(
         "audio_present", Verdict.INCONCLUSIVE,
-        reason="BizHawk 2.8 发行版无头 A/V dump 实测不可用(avi 无产物/ffmpeg 挂起)；"
-               "需 dev build 或 WASAPI loopback 同步采集后再验。截图链路目前无声。")
+        reason=f"BizHawk 2.8 发行版无头 A/V dump 在 {measured} 上实测不可用"
+               f"(avi 无产物/ffmpeg 挂起)；需 dev build 或 WASAPI loopback 同步采集后再验。"
+               f"截图链路目前无声。{note}")
+
+
+def fc_cover_branch(bezel, system):
+    """要不要走天马 FC 封面边框：off 不套；on 强制；auto 只在平台真是 FC 家族时套。
+
+    判定收成一个纯函数，因为这条分支曾按「默认 system=NES」跑：一本 SNES 出版物
+    拿着 SNES ROM 的 sha1 去查 FC 封面缓存（11-22 record full --pub 7406 实测到）。
+    """
+    b = str(bezel or "auto").lower()
+    if b == "off":
+        return False
+    if b == "on":
+        return True
+    return str(system or "").upper() in ("NES", "FC", "FAMICOM")
 
 
 def run_full(backend, profile, movie, rom, out_dir, frames=None, fps=60,
              ffmpeg="ffmpeg", ffprobe="ffprobe", core="NesHawk", system="NES",
-             audio=False, bezel="auto"):
+             audio=False, bezel="auto", work=None):
     out_dir = str(out_dir)
     os.makedirs(out_dir, exist_ok=True)
     exp = frames or expected_frames(movie)
     if not exp:
         raise SystemExit("无法确定电影帧数（非 bk2 且未给 --frames）")
+    conf = slot_conflict(movie, system)
+    if conf:
+        raise SchemaError(conf)
     rid = _run_id()
     import tas_replay
     # audio=True：强制实时回放 + WASAPI loopback 同步录系统原声（不改核心/版本，不破坏确定性）。
@@ -96,7 +185,8 @@ def run_full(backend, profile, movie, rom, out_dir, frames=None, fps=60,
         rec = LoopbackRecorder().start()
         t_rec = time.time()   # 采集起点；帧0截图 mtime 减去它 = 模拟器加载耗时（对齐用）
     res = tas_replay.run_replay(movie, rom, core, system,
-                                backend.bizhawk_dir, exp, realtime=audio)
+                                backend.bizhawk_dir, exp, realtime=audio,
+                                work=Path(work) if work else None)
     if rec is not None:
         rec.stop(wav)   # 回放结束即停采集；起点偏移留 onset 复核
     audio_onset = None
@@ -129,7 +219,7 @@ def run_full(backend, profile, movie, rom, out_dir, frames=None, fps=60,
     desync = res["desync"]
     term = res.get("termination", "unknown")
     wd = res.get("watchdog", {})
-    from .watchdog import replay_verdict, exit_verdict
+    from .watchdog import replay_verdict, exit_verdict, firmware_verdict
     _V = {"pass": Verdict.PASS, "fail": Verdict.FAIL,
           "inconclusive": Verdict.INCONCLUSIVE}
     v_desync = _V[replay_verdict(desync, term)]
@@ -145,6 +235,16 @@ def run_full(backend, profile, movie, rom, out_dir, frames=None, fps=60,
                     Verdict.PASS if res["n_frames"] == exp else Verdict.FAIL,
                     reason=f"{res['n_frames']}/{exp} 帧（须整片到终点）"),
     ]
+    pic_v, pic_why, pic_idx = picture_content(res["frames_dir"], res["n_frames"])
+    checks.append(CheckResult("picture_content", pic_v,
+                              evidence_refs=[res["frames_dir"]], reason=pic_why))
+    # 缺芯片固件时 BizHawk 弹一张原生 Warning 框（正文实测：Couldn't find firmware
+    # SNES+CX4. Will attempt to continue…），点掉就继续跑完，desync 检查看不见这件事
+    # （11-22 洛克人X2 5628 实物 + 11-23 n0_none 现场同框复现）。降级证据来自本跑的
+    # 看门狗记录（框正文）与 stdout（Served libsnes request 那行），两条都是渠道。
+    fw_v, fw_why, fw_specs = firmware_verdict(wd)
+    checks.append(CheckResult("chip_firmware_missing", _V[fw_v],
+                              reason=fw_why + (f" | specs={','.join(fw_specs)}" if fw_specs else "")))
     recording_refs = []
     synced_wav = ref_wav = None
     ref_zero_wall = None
@@ -238,34 +338,32 @@ def run_full(backend, profile, movie, rom, out_dir, frames=None, fps=60,
             checks.append(CheckResult("audio_sync_review", Verdict.INCONCLUSIVE,
                                       reason=align + "无逐帧时钟曲线或 wav，未验"))
     else:
-        checks.append(nes_audio_gate())
+        checks.append(headless_audio_gate(system))
 
     # FC 自动封面边框：auto = NES 且本地缓存了对应 ROM sha1 的天马封面才套；
     # 无封面不臆造、跳过并如实标注（先跑 tianma_fetch 缓存）。on = 强制（无封面退路深色底）。
     deliver = video
-    if bezel != "off" and os.path.isfile(video):
-        is_fc = (system or "").upper() in ("NES", "FC", "FAMICOM")
-        if bezel == "on" or is_fc:
-            import hashlib
-            from . import exporter
-            sha = hashlib.sha1(Path(rom).read_bytes()).hexdigest().upper()
-            cover = exporter.find_cover(rom_sha1=sha)
-            if cover or bezel == "on":
-                bordered = os.path.join(out_dir, f"{rid}_bordered.mp4")
-                br = exporter.compose(video, bordered, rom_sha1=sha,
-                                      ffmpeg=ffmpeg, ffprobe=ffprobe)
-                bv = br["verification"]["verdict"]
-                checks.append(CheckResult(
-                    "bezel_export", _V[bv], evidence_refs=[bordered],
-                    reason=f"FC 封面边框 x{br['layout']['scale']} -> {bordered}；"
-                           f"合成验收={bv}"))
-                recording_refs.append(asset(bordered))
-                deliver = bordered
-            else:
-                checks.append(CheckResult(
-                    "bezel_cover", Verdict.INCONCLUSIVE,
-                    reason=f"FC 自动边框：本地无 sha1={sha} 的天马封面，跳过边框；"
-                           f"先跑 tianma_fetch --game <网盘目录名> --slug <本地slug> --sha1 {sha} 缓存"))
+    if os.path.isfile(video) and fc_cover_branch(bezel, system):
+        from . import exporter
+        from .schema import sha1_resource
+        sha = sha1_resource(rom).upper()
+        cover = exporter.find_cover(rom_sha1=sha)
+        if cover or bezel == "on":
+            bordered = os.path.join(out_dir, f"{rid}_bordered.mp4")
+            br = exporter.compose(video, bordered, rom_sha1=sha,
+                                  ffmpeg=ffmpeg, ffprobe=ffprobe)
+            bv = br["verification"]["verdict"]
+            checks.append(CheckResult(
+                "bezel_export", _V[bv], evidence_refs=[bordered],
+                reason=f"天马封面边框（{system}）x{br['layout']['scale']} -> {bordered}；"
+                       f"合成验收={bv}"))
+            recording_refs.append(asset(bordered))
+            deliver = bordered
+        else:
+            checks.append(CheckResult(
+                "bezel_cover", Verdict.INCONCLUSIVE,
+                reason=f"FC 自动边框：本地无 sha1={sha} 的天马封面，跳过边框；"
+                       f"先跑 tianma_fetch --game <网盘目录名> --slug <本地slug> --sha1 {sha} 缓存"))
 
     frame_map = {"clock_unit": "emu_frame", "fps": fps, "count": res["n_frames"],
                  "expected": exp, "pts_formula": "frame/fps", "lag_adjusted": False,
@@ -279,6 +377,7 @@ def run_full(backend, profile, movie, rom, out_dir, frames=None, fps=60,
     ver = _verification("ver_" + rid, rid, Stage.CAPTURE, checks)
     pid = profile.get("profile_id") if isinstance(profile, dict) else profile.profile_id
     run = {"schema_version": 1, "run_id": rid, "profile_id": pid,
+           "system": system, "core": core,
            "input_ref": str(movie), "state_ref": None, "purpose": "full_replay",
            "events_ref": None, "checkpoints_ref": res["work"] + "/cap.txt",
            "frame_map_ref": fm, "recording_refs": recording_refs,
@@ -431,10 +530,10 @@ def main():
     if not args.out:
         raise SystemExit("full 子命令需要 --out <dir>")
     from .backends import _nes_backend_from_registry
-    be, prof, movie, rom = _nes_backend_from_registry(args.pub)
+    be, prof, movie, rom, system, core = _nes_backend_from_registry(args.pub)
     run = run_full(be, prof, movie, rom, args.out, frames=args.frames,
                    fps=args.fps, ffmpeg=args.ffmpeg, ffprobe=args.ffprobe,
-                   audio=args.audio, bezel=args.border)
+                   core=core, system=system, audio=args.audio, bezel=args.border)
     print(json.dumps(run, ensure_ascii=False, indent=1))
     return 0 if run["verification"]["verdict"] != "fail" else 2
 

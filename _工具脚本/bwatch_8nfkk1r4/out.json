@@ -1,0 +1,175 @@
+{
+ "bw_a9vg": {
+  "ok": true,
+  "name": "A9VG 电玩部落(中文游戏媒体,Discuz 要 auth key)",
+  "url": "https://www.a9vg.com/",
+  "title": "504 Gateway Time-out",
+  "finalUrl": "https://www.a9vg.com/",
+  "items": []
+ },
+ "bw_mydigit": {
+  "ok": true,
+  "name": "MYDIGIT 数码之家论坛-精华区(Discuz,要 auth key)",
+  "url": "https://www.mydigit.cn/forum.php?mod=guide&view=digest",
+  "title": "导读-最新精华 数码之家",
+  "finalUrl": "https://www.mydigit.cn/forum.php?mod=guide&view=digest",
+  "items": [
+   {
+    "title": "好死不如赖活着！联想昭阳E47A独显挂了，一顿操作猛如虎，总算成功改核显",
+    "url": "https://www.mydigit.cn/thread-628167-1-1.html",
+    "date": ""
+   },
+   {
+    "title": "历时多年，终于在AI的辅助下，成功编写制作ESP32-S3音频播放器",
+    "url": "https://www.mydigit.cn/thread-628688-1-1.html",
+    "date": ""
+   },
+   {
+    "title": "DIY磁吸式墨水屏温湿度计：一年续航，30天历史，蓝牙同步",
+    "url": "https://www.mydigit.cn/thread-624292-1-1.html",
+    "date": ""
+   },
+   {
+    "title": "修理咏梅S104袖珍收音机，声音小+调整中频+频率覆盖+统调+制作扬声器网罩",
+    "url": "https://www.mydigit.cn/thread-619724-1-1.html",
+    "date": ""
+   },
+   {
+    "title": "1990年日产带外包装箱的日立HITACHI VT-M747E录像机拆解[高清大图]",
+    "url": "https://www.mydigit.cn/thread-627447-1-1.html",
+    "date": ""
+   },
+   {
+    "title": "深度拆解打理维修AIWA HD-S200，号称变形金刚的DAT磁带随身听",
+    "url": "https://www.mydigit.cn/thread-626068-1-1.html",
+    "date": ""
+   },
+   {
+    "title": "不用热成像找出发财电容：维修DELL 7090mff小主机前置USB口短路/超限电流故障",
+    "url": "https://www.mydigit.cn/thread-627157-1-1.html",
+    "date": ""
+   },
+   {
+    "title": "拆修金灶GA-909电茶壶通病（温度/水位检测GA-OUT/GA-WTV手绘电路图）",
+    "url": "https://www.mydigit.cn/thread-623453-1-1.html",
+    "date": ""
+   },
+   {
+    "title": "维修红灯711-2六灯二波段电子管收音机，调谐指示6E2猫眼闭合度不够并改造",
+    "url": "https://www.mydigit.cn/thread-616685-1-1.html",
+    "date": ""
+   },
+   {
+    "title": "明纬LRS-600-48开关电源提高输出电压给睿登RK6012供电",
+    "url": "https://www.mydigit.cn/thread-627113-1-1.html",
+    "date": ""
+   },
+   {
+    "title": "拆修德生PL660收音机，更换全部电解电容，修复两处设计缺陷",
+    "url": "https://www.mydigit.cn/thread-620965-1-1.html",
+    "date": ""
+   },
+   {
+    "title": "川崎z1000排气管阀门模块拆解+维修经验分享",
+    "url": "https://www.mydigit.cn/thread-623226-1-1.html",
+    "date": ""
+   },
+   {
+    "title": "充实维修台上的维修工具，桌面维修多用仪表制作",
+    "url": "https://www.mydigit.cn/thread-619805-1-1.html",
+    "date": ""
+   },
+   {
+    "title": "iPhone 15用华为充电器充烧多个元件（USB管理IC、充电IC、NOR FLASH）的漫长维修",
+    "url": "https://www.mydigit.cn/thread-622899-1-1.html",
+    "date": ""
+   },
+   {
+    "title": "150W直流恒流数控电子负载PX-100工作原理及电路分析",
+    "url": "https://www.mydigit.cn/thread-622569-1-1.html",
+    "date": ""
+   },
+   {
+    "title": "一张票子搞定猫猫吃喝拉~小佩PetKit自动猫砂盆+自动行星喂食器+定时饮水机",
+    "url": "https://www.mydigit.cn/thread-626516-1-1.html",
+    "date": ""
+   },
+   {
+    "title": "米家洗烘一体机3C故障代码拆修 更换驱动芯片",
+    "url": "https://www.mydigit.cn/thread-623087-1-1.html",
+    "date": ""
+   },
+   {
+    "title": "众仪ZT-DY365数控电源&万用表开箱拆解",
+    "url": "https://www.mydigit.cn/thread-623121-1-1.html",
+    "date": ""
+   },
+   {
+    "title": "读取TF卡S.M.A.R.T.信息第三季：280元的1TB大SD卡，到底是什么来路？",
+    "url": "https://www.mydigit.cn/thread-623900-1-1.html",
+    "date": ""
+   },
+   {
+    "title": "飞腾UP1800-14S植保无人机平衡充维修",
+    "url": "https://www.mydigit.cn/thread-618206-1-1.html",
+    "date": ""
+   },
+   {
+    "title": "拆修上世纪70年代国产海鸥中古对讲机并分析电路",
+    "url": "https://www.mydigit.cn/thread-621487-1-1.html",
+    "date": ""
+   },
+   {
+    "title": "从电蚊拍电路学习自激振荡和倍压电路工作原理",
+    "url": "https://www.mydigit.cn/thread-618285-1-1.html",
+    "date": ""
+   },
+   {
+    "title": "用CW32L012做了个LCR表",
+    "url": "https://www.mydigit.cn/thread-620989-1-1.html",
+    "date": ""
+   },
+   {
+    "title": "齿轮级修复恒洁QE6智能马桶冲洗故障",
+    "url": "https://www.mydigit.cn/thread-620317-1-1.html",
+    "date": ""
+   },
+   {
+    "title": "关于我们",
+    "url": "https://www.mydigit.cn/thread-1-1-1.html",
+    "date": ""
+   }
+  ]
+ },
+ "bw_psxplace": {
+  "ok": true,
+  "name": "PSX-Place(PS Vita/PS3 自制场景,curl 403)",
+  "url": "https://www.psx-place.com/forums/",
+  "title": "Just a moment...",
+  "finalUrl": "https://www.psx-place.com/forums/",
+  "items": []
+ },
+ "bw_pcsx2forum": {
+  "ok": true,
+  "name": "PCSX2 官方论坛(curl 403)",
+  "url": "https://forums.pcsx2.net/",
+  "title": "Just a moment...",
+  "finalUrl": "https://forums.pcsx2.net/",
+  "items": []
+ },
+ "bw_gtforums": {
+  "ok": false,
+  "name": "GTForums(Gran Turismo 论坛,curl 403/直连 RST)",
+  "url": "https://gtforums.net/forum/",
+  "error": "Error: page.goto: net::ERR_CONNECTION_CLOSED at https://gtforums.net/forum/",
+  "items": []
+ },
+ "bw_linuxdo": {
+  "ok": true,
+  "name": "linux.do 中文 Linux 社区(Cloudflare 403)",
+  "url": "https://linux.do/latest",
+  "title": "Just a moment...",
+  "finalUrl": "https://linux.do/latest",
+  "items": []
+ }
+}

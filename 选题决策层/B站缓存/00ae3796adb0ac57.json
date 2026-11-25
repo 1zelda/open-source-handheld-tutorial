@@ -1,0 +1,43 @@
+{
+ "keyword": "龙珠",
+ "status": "ok",
+ "ts": "2026-11-19T05:39:09Z",
+ "ts_epoch": 1795066749.39141,
+ "supply_num_results": 1000,
+ "n_videos": 20,
+ "relevant_count": 18,
+ "core_hit_rate": 0.9,
+ "full_hit_rate": 0.9,
+ "play_median": 10152.0,
+ "relevant_play_median": 5331.5,
+ "play_mean": 33844.3,
+ "play_max": 256715,
+ "play_total": 609197,
+ "engagement_median": 0.0436,
+ "recent_count": 8,
+ "recent_play_median": 3371.5,
+ "top3": [
+  {
+   "bvid": "BV1gEHCz1Eox",
+   "title": "玩了几十款龙珠游戏，这是我的龙珠游戏终极排名。",
+   "author": "罗丁丁Rock",
+   "play": 256715,
+   "pubdate": "2025-09-09"
+  },
+  {
+   "bvid": "BV1xMoRYLEfh",
+   "title": "决战5周年！一番赏龙珠大捡漏【玩大的博物馆】",
+   "author": "玩大的博物馆",
+   "play": 145558,
+   "pubdate": "2025-03-29"
+  },
+  {
+   "bvid": "BV1sGoYBkEjV",
+   "title": "2年前最遗憾的龙珠游戏，如今「听劝」地推出炸裂更新！",
+   "author": "罗丁丁Rock",
+   "play": 87207,
+   "pubdate": "2026-04-23"
+  }
+ ],
+ "cache_hit": false
+}

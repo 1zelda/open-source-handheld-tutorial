@@ -1,0 +1,27 @@
+Q01  OK  strict_pass    status=pass         retrieval=bm25_only      gold_pos=3 cond=Y refusal=-
+Q02  OK  strict_pass    status=pass         retrieval=bm25_only      gold_pos=3 cond=Y refusal=-
+Q03  FAIL strict_pass    status=inconclusive retrieval=bm25_only      gold_pos=None cond=- refusal=-
+Q04  OK  gold_in_topk   status=pass         retrieval=bm25_only      gold_pos=1 cond=- refusal=-
+Q05  OK  strict_pass    status=pass         retrieval=bm25_only      gold_pos=2 cond=Y refusal=-
+Q06  FAIL gold_in_topk   status=inconclusive retrieval=bm25_only      gold_pos=None cond=- refusal=-
+Q07  OK  gold_in_topk   status=pass         retrieval=bm25_only      gold_pos=5 cond=- refusal=-
+Q08  FAIL gold_in_topk   status=pass         retrieval=bm25_only      gold_pos=None cond=- refusal=-
+Q09  OK  refuse         status=inconclusive retrieval=bm25_only      gold_pos=None cond=- refusal=unanswerable
+Q10  OK  strict_pass    status=pass         retrieval=bm25_only      gold_pos=4 cond=- refusal=-
+Q11  OK  version_guard  status=inconclusive retrieval=bm25_only      gold_pos=None cond=- refusal=-
+Q12  OK  refuse         status=miss         retrieval=?              gold_pos=None cond=- refusal=out_of_scope
+Q13  OK  refuse         status=miss         retrieval=?              gold_pos=None cond=- refusal=out_of_scope
+Q14  OK  refuse         status=miss         retrieval=?              gold_pos=None cond=- refusal=out_of_scope
+Q15  OK  refuse         status=inconclusive retrieval=bm25_only      gold_pos=None cond=- refusal=unanswerable
+Q16  OK  gold_in_topk   status=pass         retrieval=bm25_only      gold_pos=5 cond=Y refusal=-
+Q17  OK  gold_in_topk   status=inconclusive retrieval=bm25_only      gold_pos=1 cond=- refusal=-
+Q18  OK  strict_pass    status=pass         retrieval=bm25_only      gold_pos=5 cond=Y refusal=-
+P19  OK  gold_in_topk   status=inconclusive retrieval=bm25_only      gold_pos=1 cond=- refusal=-
+P20  OK  refuse         status=miss         retrieval=?              gold_pos=None cond=- refusal=out_of_scope
+P21  OK  refuse         status=inconclusive retrieval=bm25_only      gold_pos=None cond=- refusal=unanswerable
+P22  OK  gold_in_topk   status=pass         retrieval=bm25_only      gold_pos=1 cond=- refusal=-
+P23  OK  gold_in_topk   status=pass         retrieval=bm25_only      gold_pos=1 cond=- refusal=-
+P24  OK  gold_in_topk   status=pass         retrieval=bm25_only      gold_pos=3 cond=Y refusal=-
+P25  OK  refuse         status=inconclusive retrieval=bm25_only      gold_pos=None cond=- refusal=unanswerable
+P26  OK  refuse         status=miss         retrieval=?              gold_pos=None cond=- refusal=out_of_scope
+{"total": 26, "ok": 23, "by_tier": {"strict_pass": {"total": 6, "ok": 5}, "gold_in_topk": {"total": 10, "ok": 8}, "refuse": {"total": 9, "ok": 9}, "version_guard": {"total": 1, "ok": 1}}, "failed_ids": ["Q03", "Q06", "Q08"]}

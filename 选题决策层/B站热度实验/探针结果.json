@@ -1,0 +1,754 @@
+[
+ {
+  "keyword": "热血足球",
+  "status": "ok",
+  "ts": "2026-11-19T05:38:55Z",
+  "ts_epoch": 1795066735.390349,
+  "supply_num_results": 1000,
+  "n_videos": 20,
+  "relevant_count": 18,
+  "core_hit_rate": 0.9,
+  "full_hit_rate": 0.85,
+  "play_median": 19458.5,
+  "relevant_play_median": 35184.5,
+  "play_mean": 167032.8,
+  "play_max": 1097646,
+  "play_total": 3006590,
+  "engagement_median": 0.0454,
+  "recent_count": 4,
+  "recent_play_median": 365.5,
+  "top3": [
+   {
+    "bvid": "BV1q341187EH",
+    "title": "早以为已经熟练的《热血足球》，其实还隐藏了超多有趣的细节",
+    "author": "玩主小小虫",
+    "play": 1097646,
+    "pubdate": "2021-11-16"
+   },
+   {
+    "bvid": "BV1k4411L75i",
+    "title": "《热血足球》史上最骚的玩法，花式安排意大利队",
+    "author": "我本将心向青丝丶",
+    "play": 616864,
+    "pubdate": "2019-05-24"
+   },
+   {
+    "bvid": "BV1WkmoYtEXq",
+    "title": "『热血足球』全必杀排名，很狂很暴力胆小勿进",
+    "author": "咖咕啦",
+    "play": 510644,
+    "pubdate": "2024-11-15"
+   }
+  ],
+  "cache_hit": true,
+  "source": "入口B/retro_soccer",
+  "granularity": "大盘",
+  "demand_level": "高",
+  "demand_reason": "B站已有视频热度代理，非本选题实测；核心命中率0.90；去污染播放中位35184≥高35000；高命中≠语义相关，歧义词须人工核top3"
+ },
+ {
+  "keyword": "拳皇98",
+  "status": "ok",
+  "ts": "2026-11-19T05:38:57Z",
+  "ts_epoch": 1795066737.7244081,
+  "supply_num_results": 1000,
+  "n_videos": 20,
+  "relevant_count": 20,
+  "core_hit_rate": 1.0,
+  "full_hit_rate": 1.0,
+  "play_median": 5221.0,
+  "relevant_play_median": 5221.0,
+  "play_mean": 31859,
+  "play_max": 285636,
+  "play_total": 637180,
+  "engagement_median": 0.032,
+  "recent_count": 10,
+  "recent_play_median": 596.5,
+  "top3": [
+   {
+    "bvid": "BV1Jh4y1U7mB",
+    "title": "正规渠道下载拳皇全集/Winkawaks模拟器/拳皇97/拳皇98/拳皇2002/官方版",
+    "author": "李知金2001",
+    "play": 285636,
+    "pubdate": "2023-08-24"
+   },
+   {
+    "bvid": "BV1be4y1o759",
+    "title": "拳皇98全人物MAX超必杀（高画质）",
+    "author": "罗刹教主火云邪神",
+    "play": 124387,
+    "pubdate": "2022-09-06"
+   },
+   {
+    "bvid": "BV1vE421A7US",
+    "title": "【街机音乐】拳皇98 OST",
+    "author": "青春狂ACE",
+    "play": 57989,
+    "pubdate": "2024-07-17"
+   }
+  ],
+  "cache_hit": true,
+  "source": "入口B/kof98",
+  "granularity": "大盘",
+  "demand_level": "低",
+  "demand_reason": "B站已有视频热度代理，非本选题实测；核心命中率1.00；去污染播放中位5221<中8000；高命中≠语义相关，歧义词须人工核top3"
+ },
+ {
+  "keyword": "街机改版",
+  "status": "ok",
+  "ts": "2026-11-19T05:38:59Z",
+  "ts_epoch": 1795066739.6836298,
+  "supply_num_results": 1000,
+  "n_videos": 20,
+  "relevant_count": 18,
+  "core_hit_rate": 0.9,
+  "full_hit_rate": 0.05,
+  "play_median": 6596.0,
+  "relevant_play_median": 6210.5,
+  "play_mean": 25244.9,
+  "play_max": 178599,
+  "play_total": 454409,
+  "engagement_median": 0.0316,
+  "recent_count": 9,
+  "recent_play_median": 1203,
+  "top3": [
+   {
+    "bvid": "BV1bT411e74g",
+    "title": "是不是你印象中的《拳皇》？",
+    "author": "卡尔Ka",
+    "play": 729054,
+    "pubdate": "2023-03-06"
+   },
+   {
+    "bvid": "BV1jE411Q7rh",
+    "title": "街机游戏：三国志2 修改版合集",
+    "author": "林小伟哈",
+    "play": 178599,
+    "pubdate": "2019-10-02"
+   },
+   {
+    "bvid": "BV1EW4y1v79g",
+    "title": "经典街机，如今最爽的改版，刀光一出方圆十里再无生机",
+    "author": "回味街机",
+    "play": 102858,
+    "pubdate": "2022-09-22"
+   }
+  ],
+  "cache_hit": true,
+  "source": "入口B/arcade",
+  "granularity": "大盘",
+  "demand_level": "低",
+  "demand_reason": "B站已有视频热度代理，非本选题实测；核心命中率0.90；去污染播放中位6210<中8000；高命中≠语义相关，歧义词须人工核top3"
+ },
+ {
+  "keyword": "星之卡比",
+  "status": "ok",
+  "ts": "2026-11-19T05:39:01Z",
+  "ts_epoch": 1795066741.6337757,
+  "supply_num_results": 1000,
+  "n_videos": 20,
+  "relevant_count": 20,
+  "core_hit_rate": 1.0,
+  "full_hit_rate": 0.9,
+  "play_median": 63136.5,
+  "relevant_play_median": 63136.5,
+  "play_mean": 249537.4,
+  "play_max": 912555,
+  "play_total": 4990748,
+  "engagement_median": 0.0264,
+  "recent_count": 0,
+  "recent_play_median": 0,
+  "top3": [
+   {
+    "bvid": "BV1MF411W7BR",
+    "title": "星之卡比探索发现100%流程（包含星耀世界）",
+    "author": "幸运的eagr",
+    "play": 912555,
+    "pubdate": "2022-03-25"
+   },
+   {
+    "bvid": "BV1UY411E79S",
+    "title": "【全收集】星之卡比：探索发现实况解说全流程100%攻略【完结】",
+    "author": "这里是BO叔叔",
+    "play": 840890,
+    "pubdate": "2022-03-24"
+   },
+   {
+    "bvid": "BV1cD4y1V7Mx",
+    "title": "《星之卡比Wii 豪华版》100%全收集通关攻略~",
+    "author": "卓帅丶",
+    "play": 614108,
+    "pubdate": "2023-02-24"
+   }
+  ],
+  "cache_hit": true,
+  "source": "Kirby",
+  "granularity": "大盘",
+  "demand_level": "高",
+  "demand_reason": "B站已有视频热度代理，非本选题实测；核心命中率1.00；去污染播放中位63136≥高35000；高命中≠语义相关，歧义词须人工核top3"
+ },
+ {
+  "keyword": "皮克敏",
+  "status": "ok",
+  "ts": "2026-11-19T05:39:03Z",
+  "ts_epoch": 1795066743.5570583,
+  "supply_num_results": 1000,
+  "n_videos": 20,
+  "relevant_count": 20,
+  "core_hit_rate": 1.0,
+  "full_hit_rate": 1.0,
+  "play_median": 6124.5,
+  "relevant_play_median": 6124.5,
+  "play_mean": 48634.2,
+  "play_max": 370149,
+  "play_total": 972684,
+  "engagement_median": 0.0283,
+  "recent_count": 5,
+  "recent_play_median": 1485,
+  "top3": [
+   {
+    "bvid": "BV1Uh4y157ey",
+    "title": "全收集|全白金|全支线《皮克敏4》100%全收集实况攻略【完结】",
+    "author": "这里是BO叔叔",
+    "play": 370149,
+    "pubdate": "2023-07-19"
+   },
+   {
+    "bvid": "BV1W8411d72g",
+    "title": "《皮克敏4》评测9分：究极箱庭盛宴",
+    "author": "任评测",
+    "play": 262904,
+    "pubdate": "2023-08-04"
+   },
+   {
+    "bvid": "BV12z4y147CU",
+    "title": "大师宫本茂的“翻车”之作？皮克敏系列回顾【游戏老司机】",
+    "author": "UCG_Official",
+    "play": 80233,
+    "pubdate": "2023-07-21"
+   }
+  ],
+  "cache_hit": true,
+  "source": "Pikmin",
+  "granularity": "大盘",
+  "demand_level": "低",
+  "demand_reason": "B站已有视频热度代理，非本选题实测；核心命中率1.00；去污染播放中位6124<中8000；高命中≠语义相关，歧义词须人工核top3"
+ },
+ {
+  "keyword": "塞尔达传说",
+  "status": "ok",
+  "ts": "2026-11-19T05:39:05Z",
+  "ts_epoch": 1795066745.5130892,
+  "supply_num_results": 1000,
+  "n_videos": 20,
+  "relevant_count": 15,
+  "core_hit_rate": 0.75,
+  "full_hit_rate": 0.5,
+  "play_median": 20871.5,
+  "relevant_play_median": 18212,
+  "play_mean": 160205.9,
+  "play_max": 1467308,
+  "play_total": 2403088,
+  "engagement_median": 0.0275,
+  "recent_count": 12,
+  "recent_play_median": 15308.0,
+  "top3": [
+   {
+    "bvid": "BV18m4y1t7cf",
+    "title": "万字解析！《塞尔达传说》全系列究竟讲了个怎样的故事？",
+    "author": "在下棒球帽",
+    "play": 1467308,
+    "pubdate": "2023-05-21"
+   },
+   {
+    "bvid": "BV1YNWm6mE5p",
+    "title": "《塞尔达传说：时之笛》为什么是神作？",
+    "author": "贪玩歌姬小宁子",
+    "play": 352022,
+    "pubdate": "2026-11-11"
+   },
+   {
+    "bvid": "BV1zHxd6dE1f",
+    "title": "【塞尔达传说：时之笛 重制版】4K 最高画质 全收集 全任务 全剧情流程通关攻略 动作角色扮演游戏 - Zelda：Oc",
+    "author": "11的游戏世界",
+    "play": 322514,
+    "pubdate": "2026-11-04"
+   }
+  ],
+  "cache_hit": true,
+  "source": "Zelda/时之笛",
+  "granularity": "大盘",
+  "demand_level": "中",
+  "demand_reason": "B站已有视频热度代理，非本选题实测；核心命中率0.75；去污染播放中位18212≥中8000；高命中≠语义相关，歧义词须人工核top3"
+ },
+ {
+  "keyword": "异度之刃",
+  "status": "ok",
+  "ts": "2026-11-19T05:39:07Z",
+  "ts_epoch": 1795066747.460853,
+  "supply_num_results": 1000,
+  "n_videos": 20,
+  "relevant_count": 18,
+  "core_hit_rate": 0.9,
+  "full_hit_rate": 0.8,
+  "play_median": 92678.0,
+  "relevant_play_median": 98627.5,
+  "play_mean": 285527.8,
+  "play_max": 1893920,
+  "play_total": 5139500,
+  "engagement_median": 0.0264,
+  "recent_count": 3,
+  "recent_play_median": 9634,
+  "top3": [
+   {
+    "bvid": "BV1qW411a7Z8",
+    "title": "【游番剧】异度之刃2 异度神剑2 番剧向纯剧情剪辑 中文高清合集",
+    "author": "品游君",
+    "play": 1893920,
+    "pubdate": "2017-11-30"
+   },
+   {
+    "bvid": "BV1mt4y1C7JL",
+    "title": "【完结】【异度之刃1/异度神剑1】决定版全流程",
+    "author": "Dell小明",
+    "play": 1134530,
+    "pubdate": "2020-05-29"
+   },
+   {
+    "bvid": "BV1P5411x7mS",
+    "title": "【游番剧】异度之刃/异度神剑 终极版 番剧向纯剧情剪辑（完结）",
+    "author": "品游君",
+    "play": 412686,
+    "pubdate": "2020-05-29"
+   }
+  ],
+  "cache_hit": true,
+  "source": "Xenoblade",
+  "granularity": "大盘",
+  "demand_level": "高",
+  "demand_reason": "B站已有视频热度代理，非本选题实测；核心命中率0.90；去污染播放中位98628≥高35000；高命中≠语义相关，歧义词须人工核top3"
+ },
+ {
+  "keyword": "龙珠",
+  "status": "ok",
+  "ts": "2026-11-19T05:39:09Z",
+  "ts_epoch": 1795066749.39141,
+  "supply_num_results": 1000,
+  "n_videos": 20,
+  "relevant_count": 18,
+  "core_hit_rate": 0.9,
+  "full_hit_rate": 0.9,
+  "play_median": 10152.0,
+  "relevant_play_median": 5331.5,
+  "play_mean": 33844.3,
+  "play_max": 256715,
+  "play_total": 609197,
+  "engagement_median": 0.0436,
+  "recent_count": 8,
+  "recent_play_median": 3371.5,
+  "top3": [
+   {
+    "bvid": "BV1gEHCz1Eox",
+    "title": "玩了几十款龙珠游戏，这是我的龙珠游戏终极排名。",
+    "author": "罗丁丁Rock",
+    "play": 256715,
+    "pubdate": "2025-09-09"
+   },
+   {
+    "bvid": "BV1xMoRYLEfh",
+    "title": "决战5周年！一番赏龙珠大捡漏【玩大的博物馆】",
+    "author": "玩大的博物馆",
+    "play": 145558,
+    "pubdate": "2025-03-29"
+   },
+   {
+    "bvid": "BV1sGoYBkEjV",
+    "title": "2年前最遗憾的龙珠游戏，如今「听劝」地推出炸裂更新！",
+    "author": "罗丁丁Rock",
+    "play": 87207,
+    "pubdate": "2026-04-23"
+   }
+  ],
+  "cache_hit": true,
+  "source": "Dragon Ball",
+  "granularity": "大盘",
+  "demand_level": "低",
+  "demand_reason": "B站已有视频热度代理，非本选题实测；核心命中率0.90；去污染播放中位5332<中8000；高命中≠语义相关，歧义词须人工核top3"
+ },
+ {
+  "keyword": "剑星",
+  "status": "ok",
+  "ts": "2026-11-19T05:39:11Z",
+  "ts_epoch": 1795066751.767906,
+  "supply_num_results": 1000,
+  "n_videos": 20,
+  "relevant_count": 19,
+  "core_hit_rate": 0.95,
+  "full_hit_rate": 0.95,
+  "play_median": 48011.0,
+  "relevant_play_median": 49491,
+  "play_mean": 139060.6,
+  "play_max": 1274810,
+  "play_total": 2642152,
+  "engagement_median": 0.0195,
+  "recent_count": 6,
+  "recent_play_median": 9559.5,
+  "top3": [
+   {
+    "bvid": "BV12NPMzdEFQ",
+    "title": "【剑星】4K一周目、困难难度、无伤、全支线、全收集攻略解说【全集】",
+    "author": "MaDaLaoShi",
+    "play": 1274810,
+    "pubdate": "2026-03-01"
+   },
+   {
+    "bvid": "BV1Q3K9zKEDw",
+    "title": "韩式擦边！若隐若现！吐槽金大师艺术之作《剑星》！",
+    "author": "XDC城北徐公",
+    "play": 318496,
+    "pubdate": "2025-06-26"
+   },
+   {
+    "bvid": "BV1SKMzzcEMq",
+    "title": "【游戏杂谈】扒光伊芙的衣服，《剑星》还剩下什么？",
+    "author": "老猫打游戏",
+    "play": 255878,
+    "pubdate": "2025-06-13"
+   }
+  ],
+  "cache_hit": true,
+  "source": "Stellar Blade",
+  "granularity": "大盘",
+  "demand_level": "高",
+  "demand_reason": "B站已有视频热度代理，非本选题实测；核心命中率0.95；去污染播放中位49491≥高35000；高命中≠语义相关，歧义词须人工核top3"
+ },
+ {
+  "keyword": "Sea of Stars",
+  "status": "ok",
+  "ts": "2026-11-19T05:39:13Z",
+  "ts_epoch": 1795066753.7272162,
+  "supply_num_results": 1000,
+  "n_videos": 20,
+  "relevant_count": 19,
+  "core_hit_rate": 0.95,
+  "full_hit_rate": 0.85,
+  "play_median": 2862.5,
+  "relevant_play_median": 2531,
+  "play_mean": 16695.8,
+  "play_max": 153798,
+  "play_total": 317220,
+  "engagement_median": 0.0764,
+  "recent_count": 3,
+  "recent_play_median": 3264,
+  "top3": [
+   {
+    "bvid": "BV1S14y1C7q8",
+    "title": "【星之海】地毯式 全收集白金攻略解说！「完结」",
+    "author": "Pser_hanser",
+    "play": 406155,
+    "pubdate": "2023-08-29"
+   },
+   {
+    "bvid": "BV1aJ4m1M7UC",
+    "title": "“仅仅向前方看去  一切都会好的吧”！Sea Of Stars",
+    "author": "饿了的白熊",
+    "play": 153798,
+    "pubdate": "2024-07-06"
+   },
+   {
+    "bvid": "BV1s2421Z77H",
+    "title": "“宝藏神仙歌曲！！有生之年一定要听听这首歌！！！”《Sea Of Stars》",
+    "author": "Tki_tri",
+    "play": 100859,
+    "pubdate": "2024-08-05"
+   }
+  ],
+  "cache_hit": true,
+  "source": "Sea of Stars/星之海(消歧)",
+  "granularity": "大盘",
+  "demand_level": "低",
+  "demand_reason": "B站已有视频热度代理，非本选题实测；核心命中率0.95；去污染播放中位2531<中8000；高命中≠语义相关，歧义词须人工核top3"
+ },
+ {
+  "keyword": "Switch2 破解",
+  "status": "ok",
+  "ts": "2026-11-19T05:39:15Z",
+  "ts_epoch": 1795066755.637956,
+  "supply_num_results": 1000,
+  "n_videos": 20,
+  "relevant_count": 15,
+  "core_hit_rate": 0.75,
+  "full_hit_rate": 0.2,
+  "play_median": 8023.0,
+  "relevant_play_median": 8286,
+  "play_mean": 18081.6,
+  "play_max": 57808,
+  "play_total": 271224,
+  "engagement_median": 0.0232,
+  "recent_count": 15,
+  "recent_play_median": 8286,
+  "top3": [
+   {
+    "bvid": "BV1fsxZ68ESk",
+    "title": "上百款Switch游戏原生跑PC，任天堂的墙被AI踹开了，时之笛重制版、王国之泪、火焰纹章等全被搬上PC",
+    "author": "游闻录",
+    "play": 125588,
+    "pubdate": "2026-11-05"
+   },
+   {
+    "bvid": "BV1AU4q6JE11",
+    "title": "switch2破解社区黑客集体哑火，暂停发布switch2破解",
+    "author": "掌机百科",
+    "play": 57808,
+    "pubdate": "2026-11-06"
+   },
+   {
+    "bvid": "BV1gQHA6DEBP",
+    "title": "Switch 2 ns2jb破解实测！折腾两天，终于成功导出主机文件",
+    "author": "宸宸di爸爸",
+    "play": 54015,
+    "pubdate": "2026-10-24"
+   }
+  ],
+  "cache_hit": true,
+  "source": "NS2越狱",
+  "granularity": "角度",
+  "demand_level": "中",
+  "demand_reason": "B站已有视频热度代理，非本选题实测；核心命中率0.75；去污染播放中位8286≥中8000；高命中≠语义相关，歧义词须人工核top3"
+ },
+ {
+  "keyword": "shadPS4",
+  "status": "ok",
+  "ts": "2026-11-19T05:39:17Z",
+  "ts_epoch": 1795066757.680711,
+  "supply_num_results": 1000,
+  "n_videos": 20,
+  "relevant_count": 15,
+  "core_hit_rate": 0.75,
+  "full_hit_rate": 0.75,
+  "play_median": 13940.5,
+  "relevant_play_median": 11409,
+  "play_mean": 22600.3,
+  "play_max": 90512,
+  "play_total": 339005,
+  "engagement_median": 0.0373,
+  "recent_count": 3,
+  "recent_play_median": 1644,
+  "top3": [
+   {
+    "bvid": "BV1j4411g73U",
+    "title": "【大料八角】PS4上只适合成年人的游戏",
+    "author": "大料八角",
+    "play": 729875,
+    "pubdate": "2019-06-24"
+   },
+   {
+    "bvid": "BV11H4e6gEiE",
+    "title": "LUOBU4",
+    "author": "ROBLOX刺氪-官官号",
+    "play": 244741,
+    "pubdate": "2026-11-08"
+   },
+   {
+    "bvid": "BV1PZs769EFb",
+    "title": "4 个月小猫惨遭摔打，妈妈拿出 PS5 让他亲手摔",
+    "author": "拾趣观察员",
+    "play": 164454,
+    "pubdate": "2026-11-15"
+   }
+  ],
+  "cache_hit": true,
+  "source": "PS4模拟器",
+  "granularity": "大盘",
+  "demand_level": "中",
+  "demand_reason": "B站已有视频热度代理，非本选题实测；核心命中率0.75；去污染播放中位11409≥中8000；高命中≠语义相关，歧义词须人工核top3"
+ },
+ {
+  "keyword": "Batocera",
+  "status": "ok",
+  "ts": "2026-11-19T05:39:19Z",
+  "ts_epoch": 1795066759.954382,
+  "supply_num_results": 1000,
+  "n_videos": 20,
+  "relevant_count": 17,
+  "core_hit_rate": 0.85,
+  "full_hit_rate": 0.85,
+  "play_median": 3748.0,
+  "relevant_play_median": 5671,
+  "play_mean": 30973.7,
+  "play_max": 308050,
+  "play_total": 526553,
+  "engagement_median": 0.0627,
+  "recent_count": 6,
+  "recent_play_median": 1153.0,
+  "top3": [
+   {
+    "bvid": "BV1Db4y147eV",
+    "title": "万能游戏机Batocera教程（1）下载安装",
+    "author": "最爱牛夫人",
+    "play": 308050,
+    "pubdate": "2022-02-18"
+   },
+   {
+    "bvid": "BV1kg4y197ts",
+    "title": "怀旧游戏中文懒人包--Batocera V37 64G游戏懒人包(烧录映像档,控制器设定,系统设定)",
+    "author": "老掌櫃",
+    "play": 60781,
+    "pubdate": "2023-11-13"
+   },
+   {
+    "bvid": "BV1Se7C6SEXG",
+    "title": "【老高分享】客厅游戏机Batocera详细教程，适用于迷你电脑/小主机/HTPC/笔记本/台式机",
+    "author": "爱折腾的老高",
+    "play": 36898,
+    "pubdate": "2026-06-05"
+   }
+  ],
+  "cache_hit": true,
+  "source": "今日优先/固件",
+  "granularity": "大盘",
+  "demand_level": "低",
+  "demand_reason": "B站已有视频热度代理，非本选题实测；核心命中率0.85；去污染播放中位5671<中8000；高命中≠语义相关，歧义词须人工核top3"
+ },
+ {
+  "keyword": "Dolphin模拟器",
+  "status": "ok",
+  "ts": "2026-11-19T05:39:21Z",
+  "ts_epoch": 1795066761.9277968,
+  "supply_num_results": 1000,
+  "n_videos": 20,
+  "relevant_count": 20,
+  "core_hit_rate": 1.0,
+  "full_hit_rate": 0.2,
+  "play_median": 4993.5,
+  "relevant_play_median": 4993.5,
+  "play_mean": 12121.4,
+  "play_max": 68639,
+  "play_total": 242427,
+  "engagement_median": 0.0386,
+  "recent_count": 7,
+  "recent_play_median": 3176,
+  "top3": [
+   {
+    "bvid": "BV1CY4y1Y747",
+    "title": "【Wii模拟器完美JIT-iOS海豚】如何释放A系列芯片性能，让iPad不再盖泡面",
+    "author": "荷锄搬砖",
+    "play": 68639,
+    "pubdate": "2022-04-23"
+   },
+   {
+    "bvid": "BV1Seso6kEqi",
+    "title": "渡鸦读博模拟器，点击即玩",
+    "author": "西兰爆米花",
+    "play": 36419,
+    "pubdate": "2026-10-29"
+   },
+   {
+    "bvid": "BV1yQ1jYGEub",
+    "title": "WII NGC模拟器（Dolphin）PC版使用教程",
+    "author": "winzerokyo",
+    "play": 24935,
+    "pubdate": "2024-10-28"
+   }
+  ],
+  "cache_hit": true,
+  "source": "今日优先/dolphin-nx",
+  "granularity": "大盘",
+  "demand_level": "低",
+  "demand_reason": "B站已有视频热度代理，非本选题实测；核心命中率1.00；去污染播放中位4994<中8000；高命中≠语义相关，歧义词须人工核top3"
+ },
+ {
+  "keyword": "开源掌机",
+  "status": "ok",
+  "ts": "2026-11-19T05:39:23Z",
+  "ts_epoch": 1795066763.8705404,
+  "supply_num_results": 1000,
+  "n_videos": 20,
+  "relevant_count": 17,
+  "core_hit_rate": 0.85,
+  "full_hit_rate": 0.5,
+  "play_median": 12703.0,
+  "relevant_play_median": 12595,
+  "play_mean": 24620.2,
+  "play_max": 126019,
+  "play_total": 418544,
+  "engagement_median": 0.053,
+  "recent_count": 15,
+  "recent_play_median": 12811,
+  "top3": [
+   {
+    "bvid": "BV1KVWo6PEhK",
+    "title": "怒烧100亿Token！我为H700打造了安卓系统，我吃定史上唯一便携翻盖安卓小掌机诞生！",
+    "author": "Blood_roc",
+    "play": 126019,
+    "pubdate": "2026-11-12"
+   },
+   {
+    "bvid": "BV1bLpu6YEdc",
+    "title": "盘点2026年适合新手入坑的掌机（个人向）",
+    "author": "无言赤红",
+    "play": 74303,
+    "pubdate": "2026-10-07"
+   },
+   {
+    "bvid": "BV1aY4y1y7kd",
+    "title": "RG353V试玩《星露谷物语》",
+    "author": "麦甜烘焙-",
+    "play": 64016,
+    "pubdate": "2023-03-07"
+   }
+  ],
+  "cache_hit": true,
+  "source": "频道核心",
+  "granularity": "大盘",
+  "demand_level": "中",
+  "demand_reason": "B站已有视频热度代理，非本选题实测；核心命中率0.85；去污染播放中位12595≥中8000；高命中≠语义相关，歧义词须人工核top3"
+ },
+ {
+  "keyword": "toniisound",
+  "status": "ok",
+  "ts": "2026-11-19T05:39:25Z",
+  "ts_epoch": 1795066765.7436895,
+  "supply_num_results": 1000,
+  "n_videos": 20,
+  "relevant_count": 0,
+  "core_hit_rate": 0.0,
+  "full_hit_rate": 0.0,
+  "play_median": 654.5,
+  "relevant_play_median": 0,
+  "play_mean": 0,
+  "play_max": 0,
+  "play_total": 0,
+  "engagement_median": 0,
+  "recent_count": 0,
+  "recent_play_median": 0,
+  "top3": [
+   {
+    "bvid": "BV1Z8FeenERA",
+    "title": "ASMR FINGER - TONGUE FLUTTERING FOR SLEEP❤️💤.mp4  Bunkr",
+    "author": "蜂蜜女孩honey-girl",
+    "play": 83357,
+    "pubdate": "2025-02-01"
+   },
+   {
+    "bvid": "BV1WktCzDEWu",
+    "title": "Watch ASMR OILING myself up and tingly Mouth Sounds Leyna in",
+    "author": "小小怪酱菌爱水饺",
+    "play": 56890,
+    "pubdate": "2025-08-08"
+   },
+   {
+    "bvid": "BV1dVT3zZEnj",
+    "title": "【回响版】《in my feelings》我试着销声匿迹，却发现真的无人问津",
+    "author": "因妳而在的故亊",
+    "play": 46385,
+    "pubdate": "2025-06-06"
+   }
+  ],
+  "cache_hit": true,
+  "source": "生僻反证(应未知/不可靠)",
+  "granularity": "大盘",
+  "demand_level": "未知",
+  "demand_reason": "B站已有视频热度代理，非本选题实测；关键词模糊兜底·不可靠(核心命中率0.00<0.3，B站返回无关内容如model2-nx→NX CAD)，不拿兜底播放冒充需求"
+ }
+]

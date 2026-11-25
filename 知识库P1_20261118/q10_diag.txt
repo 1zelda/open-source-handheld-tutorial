@@ -1,0 +1,185 @@
+==================== Q02 gold: {'path_contains': '必杀全清单', 'line_start': 70, 'line_end': 85, 'anchor_chunk': 'f7f8e8316295'}
+-- union/strict_top1: ok=False status=inconclusive reason=最高分命中 sohu_game 非本版本权威可答件，权威件在低分位
+   1. _工具脚本/taspipe/游戏包/来源库/取证/sohu_必杀最强小辫子_20261118.md#L71-L89 auth=reference_only ans=False
+   2. _工具脚本/taspipe/游戏包/热血足球联盟_必杀全清单.md#L24-L33 auth=authoritative ans=False
+   3. _工具脚本/taspipe/游戏包/来源库/取证/1ang_热血足球联盟图文攻略_20261118.md#L525-L536 auth=reference_only ans=False
+   4. _工具脚本/taspipe/游戏包/热血足球联盟_必杀全清单.md#L137-L158 auth=authoritative ans=True
+   5. _工具脚本/taspipe/游戏包/来源库/取证/1ang_热血足球联盟图文攻略_20261118.md#L739-L756 auth=reference_only ans=False
+   6. _工具脚本/taspipe/游戏包/来源库/取证/sohu_必杀最强小辫子_20261118.md#L91-L106 auth=reference_only ans=False
+   7. _工具脚本/taspipe/游戏包/来源库/取证/1ang_热血足球联盟图文攻略_20261118.md#L337-L359 auth=reference_only ans=False
+   8. _工具脚本/taspipe/游戏包/热血足球联盟_必杀全清单.md#L251-L259 auth=authoritative ans=False
+-- union/top3_conditional: ok=False status=inconclusive reason=top3 内无本版本权威可答件
+   1. _工具脚本/taspipe/游戏包/来源库/取证/sohu_必杀最强小辫子_20261118.md#L71-L89 auth=reference_only ans=False
+   2. _工具脚本/taspipe/游戏包/热血足球联盟_必杀全清单.md#L24-L33 auth=authoritative ans=False
+   3. _工具脚本/taspipe/游戏包/来源库/取证/1ang_热血足球联盟图文攻略_20261118.md#L525-L536 auth=reference_only ans=False
+   4. _工具脚本/taspipe/游戏包/热血足球联盟_必杀全清单.md#L137-L158 auth=authoritative ans=True
+   5. _工具脚本/taspipe/游戏包/来源库/取证/1ang_热血足球联盟图文攻略_20261118.md#L739-L756 auth=reference_only ans=False
+   6. _工具脚本/taspipe/游戏包/来源库/取证/sohu_必杀最强小辫子_20261118.md#L91-L106 auth=reference_only ans=False
+   7. _工具脚本/taspipe/游戏包/来源库/取证/1ang_热血足球联盟图文攻略_20261118.md#L337-L359 auth=reference_only ans=False
+   8. _工具脚本/taspipe/游戏包/热血足球联盟_必杀全清单.md#L251-L259 auth=authoritative ans=False
+-- union12/strict_top1: ok=False status=inconclusive reason=最高分命中 sohu_game 非本版本权威可答件，权威件在低分位
+   1. _工具脚本/taspipe/游戏包/来源库/取证/sohu_必杀最强小辫子_20261118.md#L71-L89 auth=reference_only ans=False
+   2. _工具脚本/taspipe/游戏包/热血足球联盟_必杀全清单.md#L24-L33 auth=authoritative ans=False
+   3. _工具脚本/taspipe/游戏包/来源库/取证/1ang_热血足球联盟图文攻略_20261118.md#L525-L536 auth=reference_only ans=False
+   4. _工具脚本/taspipe/游戏包/热血足球联盟_必杀全清单.md#L70-L85 auth=authoritative ans=True <<GOLD
+   5. _工具脚本/taspipe/游戏包/热血足球联盟_必杀全清单.md#L137-L158 auth=authoritative ans=True
+   6. _工具脚本/taspipe/游戏包/热血足球联盟_必杀全清单.md#L36-L49 auth=authoritative ans=False
+   7. _工具脚本/taspipe/游戏包/来源库/取证/1ang_热血足球联盟图文攻略_20261118.md#L739-L756 auth=reference_only ans=False
+   8. _工具脚本/taspipe/游戏包/来源库/取证/sohu_必杀最强小辫子_20261118.md#L91-L106 auth=reference_only ans=False
+-- union12/top3_conditional: ok=False status=inconclusive reason=top3 内无本版本权威可答件
+   1. _工具脚本/taspipe/游戏包/来源库/取证/sohu_必杀最强小辫子_20261118.md#L71-L89 auth=reference_only ans=False
+   2. _工具脚本/taspipe/游戏包/热血足球联盟_必杀全清单.md#L24-L33 auth=authoritative ans=False
+   3. _工具脚本/taspipe/游戏包/来源库/取证/1ang_热血足球联盟图文攻略_20261118.md#L525-L536 auth=reference_only ans=False
+   4. _工具脚本/taspipe/游戏包/热血足球联盟_必杀全清单.md#L70-L85 auth=authoritative ans=True <<GOLD
+   5. _工具脚本/taspipe/游戏包/热血足球联盟_必杀全清单.md#L137-L158 auth=authoritative ans=True
+   6. _工具脚本/taspipe/游戏包/热血足球联盟_必杀全清单.md#L36-L49 auth=authoritative ans=False
+   7. _工具脚本/taspipe/游戏包/来源库/取证/1ang_热血足球联盟图文攻略_20261118.md#L739-L756 auth=reference_only ans=False
+   8. _工具脚本/taspipe/游戏包/来源库/取证/sohu_必杀最强小辫子_20261118.md#L91-L106 auth=reference_only ans=False
+==================== Q08 gold: {'path_contains': 'setsumei', 'line_start': 47, 'line_end': 47, 'anchor_chunk': '6379cc0c04c3'}
+-- union/strict_top1: ok=False status=inconclusive reason=最高分命中 1ang_com 非本版本权威可答件，权威件在低分位
+   1. _工具脚本/taspipe/游戏包/来源库/取证/1ang_热血足球联盟图文攻略_20261118.md#L161-L164 auth=reference_only ans=True
+   2. _工具脚本/taspipe/游戏包/来源库/取证/1ang_热血足球联盟图文攻略_20261118.md#L601-L602 auth=reference_only ans=True
+   3. _工具脚本/taspipe/游戏包/来源库/取证/1ang_热血足球联盟图文攻略_20261118.md#L759-L774 auth=reference_only ans=True
+   4. _工具脚本/taspipe/游戏包/来源库/取证/1ang_热血足球联盟图文攻略_20261118.md#L167-L180 auth=reference_only ans=False
+   5. _工具脚本/taspipe/游戏包/来源库/取证/1ang_热血足球联盟图文攻略_20261118.md#L777-L814 auth=reference_only ans=True
+   6. _工具脚本/taspipe/游戏包/来源库/取证/tencentcloud_热血足球联盟杂谈_20261118.md#L13-L46 auth=reference_only ans=True
+   7. _工具脚本/taspipe/游戏包/热血足球联盟_必杀全清单.md#L101-L119 auth=authoritative ans=True
+   8. _工具脚本/taspipe/游戏包/热血足球联盟_必杀全清单.md#L51-L66 auth=authoritative ans=True
+-- union/top3_conditional: ok=False status=inconclusive reason=top3 内无本版本权威可答件
+   1. _工具脚本/taspipe/游戏包/来源库/取证/1ang_热血足球联盟图文攻略_20261118.md#L161-L164 auth=reference_only ans=True
+   2. _工具脚本/taspipe/游戏包/来源库/取证/1ang_热血足球联盟图文攻略_20261118.md#L601-L602 auth=reference_only ans=True
+   3. _工具脚本/taspipe/游戏包/来源库/取证/1ang_热血足球联盟图文攻略_20261118.md#L759-L774 auth=reference_only ans=True
+   4. _工具脚本/taspipe/游戏包/来源库/取证/1ang_热血足球联盟图文攻略_20261118.md#L167-L180 auth=reference_only ans=False
+   5. _工具脚本/taspipe/游戏包/来源库/取证/1ang_热血足球联盟图文攻略_20261118.md#L777-L814 auth=reference_only ans=True
+   6. _工具脚本/taspipe/游戏包/来源库/取证/tencentcloud_热血足球联盟杂谈_20261118.md#L13-L46 auth=reference_only ans=True
+   7. _工具脚本/taspipe/游戏包/热血足球联盟_必杀全清单.md#L101-L119 auth=authoritative ans=True
+   8. _工具脚本/taspipe/游戏包/热血足球联盟_必杀全清单.md#L51-L66 auth=authoritative ans=True
+-- union12/strict_top1: ok=False status=inconclusive reason=最高分命中 1ang_com 非本版本权威可答件，权威件在低分位
+   1. _工具脚本/taspipe/游戏包/来源库/取证/1ang_热血足球联盟图文攻略_20261118.md#L161-L164 auth=reference_only ans=True
+   2. _工具脚本/taspipe/游戏包/来源库/取证/1ang_热血足球联盟图文攻略_20261118.md#L601-L602 auth=reference_only ans=True
+   3. _工具脚本/taspipe/游戏包/来源库/取证/1ang_热血足球联盟图文攻略_20261118.md#L759-L774 auth=reference_only ans=True
+   4. _工具脚本/taspipe/游戏包/来源库/取证/1ang_热血足球联盟图文攻略_20261118.md#L167-L180 auth=reference_only ans=False
+   5. _工具脚本/taspipe/游戏包/来源库/取证/1ang_热血足球联盟图文攻略_20261118.md#L373-L374 auth=reference_only ans=True
+   6. _工具脚本/taspipe/游戏包/来源库/取证/1ang_热血足球联盟图文攻略_20261118.md#L777-L814 auth=reference_only ans=True
+   7. _工具脚本/taspipe/游戏包/来源库/取证/tencentcloud_热血足球联盟杂谈_20261118.md#L13-L46 auth=reference_only ans=True
+   8. _工具脚本/taspipe/游戏包/热血足球联盟_必杀全清单.md#L101-L119 auth=authoritative ans=True
+-- union12/top3_conditional: ok=False status=inconclusive reason=top3 内无本版本权威可答件
+   1. _工具脚本/taspipe/游戏包/来源库/取证/1ang_热血足球联盟图文攻略_20261118.md#L161-L164 auth=reference_only ans=True
+   2. _工具脚本/taspipe/游戏包/来源库/取证/1ang_热血足球联盟图文攻略_20261118.md#L601-L602 auth=reference_only ans=True
+   3. _工具脚本/taspipe/游戏包/来源库/取证/1ang_热血足球联盟图文攻略_20261118.md#L759-L774 auth=reference_only ans=True
+   4. _工具脚本/taspipe/游戏包/来源库/取证/1ang_热血足球联盟图文攻略_20261118.md#L167-L180 auth=reference_only ans=False
+   5. _工具脚本/taspipe/游戏包/来源库/取证/1ang_热血足球联盟图文攻略_20261118.md#L373-L374 auth=reference_only ans=True
+   6. _工具脚本/taspipe/游戏包/来源库/取证/1ang_热血足球联盟图文攻略_20261118.md#L777-L814 auth=reference_only ans=True
+   7. _工具脚本/taspipe/游戏包/来源库/取证/tencentcloud_热血足球联盟杂谈_20261118.md#L13-L46 auth=reference_only ans=True
+   8. _工具脚本/taspipe/游戏包/热血足球联盟_必杀全清单.md#L101-L119 auth=authoritative ans=True
+==================== Q10 gold: {'path_contains': '素材生产规范', 'line_start': 185, 'line_end': 190, 'anchor_chunk': '51fcabcc7db8'}
+-- union/strict_top1: ok=True status=pass reason=3 条 verified_read+authoritative 可答命中且最高分即权威
+   1. F:/tas_rig/docs/素材生产规范.md#L18-L31 auth=authoritative ans=True
+   2. F:/工具链/fbneo/nightly/config/games/kof98eck.ini#L1-L32 auth=authoritative ans=False
+   3. F:/tas_rig/docs/素材生产规范.md#L107-L121 auth=authoritative ans=False
+   4. F:/tas_rig/docs/素材生产规范.md#L140-L155 auth=authoritative ans=False
+   5. F:/tas_rig/docs/素材生产规范.md#L34-L59 auth=authoritative ans=True
+   6. _工具脚本/taspipe/游戏包/来源库/取证/gamersky_kof98um全角色出招表_20261118.md#L307-L456 auth=cross_version ans=True
+   7. _工具脚本/taspipe/游戏包/来源库/取证/gamersky_kof98um全角色出招表_20261118.md#L460-L500 auth=cross_version ans=False
+   8. F:/tas_rig/docs/素材生产规范.md#L185-L190 auth=authoritative ans=True <<GOLD
+-- union/top3_conditional: ok=True status=pass reason=top3 附条件：第1位为 verified_read+authoritative 可答件
+   1. F:/tas_rig/docs/素材生产规范.md#L18-L31 auth=authoritative ans=True
+   2. F:/工具链/fbneo/nightly/config/games/kof98eck.ini#L1-L32 auth=authoritative ans=False
+   3. F:/tas_rig/docs/素材生产规范.md#L107-L121 auth=authoritative ans=False
+   4. F:/tas_rig/docs/素材生产规范.md#L140-L155 auth=authoritative ans=False
+   5. F:/tas_rig/docs/素材生产规范.md#L34-L59 auth=authoritative ans=True
+   6. _工具脚本/taspipe/游戏包/来源库/取证/gamersky_kof98um全角色出招表_20261118.md#L307-L456 auth=cross_version ans=True
+   7. _工具脚本/taspipe/游戏包/来源库/取证/gamersky_kof98um全角色出招表_20261118.md#L460-L500 auth=cross_version ans=False
+   8. F:/tas_rig/docs/素材生产规范.md#L185-L190 auth=authoritative ans=True <<GOLD
+-- union12/strict_top1: ok=False status=pass reason=2 条 verified_read+authoritative 可答命中且最高分即权威
+   1. F:/tas_rig/docs/素材生产规范.md#L18-L31 auth=authoritative ans=True
+   2. F:/工具链/fbneo/nightly/config/games/kof98eck.ini#L1-L32 auth=authoritative ans=False
+   3. F:/tas_rig/docs/素材生产规范.md#L107-L121 auth=authoritative ans=False
+   4. F:/tas_rig/docs/素材生产规范.md#L140-L155 auth=authoritative ans=False
+   5. F:/tas_rig/docs/素材生产规范.md#L34-L59 auth=authoritative ans=True
+   6. _工具脚本/taspipe/游戏包/来源库/取证/gamersky_kof98um全角色出招表_20261118.md#L307-L456 auth=cross_version ans=True
+   7. _工具脚本/taspipe/游戏包/来源库/取证/gamersky_kof98um全角色出招表_20261118.md#L601-L625 auth=cross_version ans=False
+   8. _工具脚本/taspipe/游戏包/来源库/取证/gamersky_kof98um全角色出招表_20261118.md#L460-L500 auth=cross_version ans=False
+-- union12/top3_conditional: ok=False status=pass reason=top3 附条件：第1位为 verified_read+authoritative 可答件
+   1. F:/tas_rig/docs/素材生产规范.md#L18-L31 auth=authoritative ans=True
+   2. F:/工具链/fbneo/nightly/config/games/kof98eck.ini#L1-L32 auth=authoritative ans=False
+   3. F:/tas_rig/docs/素材生产规范.md#L107-L121 auth=authoritative ans=False
+   4. F:/tas_rig/docs/素材生产规范.md#L140-L155 auth=authoritative ans=False
+   5. F:/tas_rig/docs/素材生产规范.md#L34-L59 auth=authoritative ans=True
+   6. _工具脚本/taspipe/游戏包/来源库/取证/gamersky_kof98um全角色出招表_20261118.md#L307-L456 auth=cross_version ans=True
+   7. _工具脚本/taspipe/游戏包/来源库/取证/gamersky_kof98um全角色出招表_20261118.md#L601-L625 auth=cross_version ans=False
+   8. _工具脚本/taspipe/游戏包/来源库/取证/gamersky_kof98um全角色出招表_20261118.md#L460-L500 auth=cross_version ans=False
+==================== P22 gold: {'path_contains': 'setsumei', 'line_start': 329, 'line_end': 329, 'anchor_chunk': 'c7e55bfd51e3'}
+-- union/strict_top1: ok=False status=inconclusive reason=可答命中只有快照/二手/跨版本支撑或仅单字噪声
+   1. _工具脚本/taspipe/游戏包/来源库/取证/1ang_热血足球联盟图文攻略_20261118.md#L817-L820 auth=reference_only ans=True
+   2. _工具脚本/taspipe/游戏包/来源库/取证/setsumei_热血足球说明书扫描_20261118.md#L69-L69 auth=authoritative ans=False
+   3. _工具脚本/taspipe/游戏包/来源库/取证/setsumei_热血足球说明书扫描_20261118.md#L71-L72 auth=authoritative ans=False
+   4. _工具脚本/taspipe/游戏包/来源库/取证/1ang_热血足球联盟图文攻略_20261118.md#L167-L180 auth=reference_only ans=True
+   5. _工具脚本/taspipe/游戏包/来源库/取证/setsumei_热血足球说明书扫描_20261118.md#L341-L341 auth=authoritative ans=True
+   6. _工具脚本/taspipe/游戏包/来源库/取证/setsumei_热血足球说明书扫描_20261118.md#L338-L339 auth=authoritative ans=False
+   7. _工具脚本/taspipe/游戏包/来源库/取证/1ang_热血足球联盟图文攻略_20261118.md#L607-L610 auth=reference_only ans=False
+   8. _工具脚本/taspipe/游戏包/来源库/取证/setsumei_热血足球说明书扫描_20261118.md#L335-L335 auth=authoritative ans=False
+-- union/top3_conditional: ok=False status=inconclusive reason=可答命中只有快照/二手/跨版本支撑或仅单字噪声
+   1. _工具脚本/taspipe/游戏包/来源库/取证/1ang_热血足球联盟图文攻略_20261118.md#L817-L820 auth=reference_only ans=True
+   2. _工具脚本/taspipe/游戏包/来源库/取证/setsumei_热血足球说明书扫描_20261118.md#L69-L69 auth=authoritative ans=False
+   3. _工具脚本/taspipe/游戏包/来源库/取证/setsumei_热血足球说明书扫描_20261118.md#L71-L72 auth=authoritative ans=False
+   4. _工具脚本/taspipe/游戏包/来源库/取证/1ang_热血足球联盟图文攻略_20261118.md#L167-L180 auth=reference_only ans=True
+   5. _工具脚本/taspipe/游戏包/来源库/取证/setsumei_热血足球说明书扫描_20261118.md#L341-L341 auth=authoritative ans=True
+   6. _工具脚本/taspipe/游戏包/来源库/取证/setsumei_热血足球说明书扫描_20261118.md#L338-L339 auth=authoritative ans=False
+   7. _工具脚本/taspipe/游戏包/来源库/取证/1ang_热血足球联盟图文攻略_20261118.md#L607-L610 auth=reference_only ans=False
+   8. _工具脚本/taspipe/游戏包/来源库/取证/setsumei_热血足球说明书扫描_20261118.md#L335-L335 auth=authoritative ans=False
+-- union12/strict_top1: ok=True status=inconclusive reason=可答命中只有快照/二手/跨版本支撑或仅单字噪声
+   1. _工具脚本/taspipe/游戏包/来源库/取证/1ang_热血足球联盟图文攻略_20261118.md#L817-L820 auth=reference_only ans=True
+   2. _工具脚本/taspipe/游戏包/来源库/取证/setsumei_热血足球说明书扫描_20261118.md#L69-L69 auth=authoritative ans=False
+   3. _工具脚本/taspipe/游戏包/来源库/取证/setsumei_热血足球说明书扫描_20261118.md#L329-L329 auth=authoritative ans=False <<GOLD
+   4. _工具脚本/taspipe/游戏包/来源库/取证/setsumei_热血足球说明书扫描_20261118.md#L71-L72 auth=authoritative ans=False
+   5. _工具脚本/taspipe/游戏包/来源库/取证/1ang_热血足球联盟图文攻略_20261118.md#L167-L180 auth=reference_only ans=True
+   6. _工具脚本/taspipe/游戏包/来源库/取证/setsumei_热血足球说明书扫描_20261118.md#L341-L341 auth=authoritative ans=True
+   7. _工具脚本/taspipe/游戏包/来源库/取证/setsumei_热血足球说明书扫描_20261118.md#L338-L339 auth=authoritative ans=False
+   8. _工具脚本/taspipe/游戏包/来源库/取证/1ang_热血足球联盟图文攻略_20261118.md#L607-L610 auth=reference_only ans=False
+-- union12/top3_conditional: ok=True status=inconclusive reason=可答命中只有快照/二手/跨版本支撑或仅单字噪声
+   1. _工具脚本/taspipe/游戏包/来源库/取证/1ang_热血足球联盟图文攻略_20261118.md#L817-L820 auth=reference_only ans=True
+   2. _工具脚本/taspipe/游戏包/来源库/取证/setsumei_热血足球说明书扫描_20261118.md#L69-L69 auth=authoritative ans=False
+   3. _工具脚本/taspipe/游戏包/来源库/取证/setsumei_热血足球说明书扫描_20261118.md#L329-L329 auth=authoritative ans=False <<GOLD
+   4. _工具脚本/taspipe/游戏包/来源库/取证/setsumei_热血足球说明书扫描_20261118.md#L71-L72 auth=authoritative ans=False
+   5. _工具脚本/taspipe/游戏包/来源库/取证/1ang_热血足球联盟图文攻略_20261118.md#L167-L180 auth=reference_only ans=True
+   6. _工具脚本/taspipe/游戏包/来源库/取证/setsumei_热血足球说明书扫描_20261118.md#L341-L341 auth=authoritative ans=True
+   7. _工具脚本/taspipe/游戏包/来源库/取证/setsumei_热血足球说明书扫描_20261118.md#L338-L339 auth=authoritative ans=False
+   8. _工具脚本/taspipe/游戏包/来源库/取证/1ang_热血足球联盟图文攻略_20261118.md#L607-L610 auth=reference_only ans=False
+==================== P23 gold: {'path_contains': 'setsumei', 'line_start': 269, 'line_end': 269, 'anchor_chunk': '9e0df7e8e93e'}
+-- union/strict_top1: ok=False status=inconclusive reason=可答命中只有快照/二手/跨版本支撑或仅单字噪声
+   1. _工具脚本/taspipe/游戏包/来源库/取证/1ang_热血足球联盟图文攻略_20261118.md#L553-L599 auth=reference_only ans=True
+   2. _工具脚本/taspipe/游戏包/来源库/取证/setsumei_热血足球说明书扫描_20261118.md#L283-L284 auth=authoritative ans=False
+   3. _工具脚本/taspipe/游戏包/来源库/取证/setsumei_热血足球说明书扫描_20261118.md#L277-L277 auth=authoritative ans=False
+   4. _工具脚本/taspipe/游戏包/来源库/取证/setsumei_热血足球说明书扫描_20261118.md#L28-L33 auth=authoritative ans=False
+   5. _工具脚本/taspipe/游戏包/来源库/取证/csdn_wangsitan_热血足球Bug记录_20261118.md#L276-L292 auth=reference_only ans=True
+   6. _工具脚本/taspipe/游戏包/来源库/取证/csdn_wangsitan_热血足球Bug记录_20261118.md#L206-L222 auth=reference_only ans=True
+   7. _工具脚本/taspipe/游戏包/来源库/取证/csdn_wangsitan_热血足球Bug记录_20261118.md#L312-L342 auth=reference_only ans=True
+   8. _工具脚本/taspipe/游戏包/来源库/取证/1ang_热血足球联盟图文攻略_20261118.md#L289-L335 auth=reference_only ans=True
+-- union/top3_conditional: ok=False status=inconclusive reason=可答命中只有快照/二手/跨版本支撑或仅单字噪声
+   1. _工具脚本/taspipe/游戏包/来源库/取证/1ang_热血足球联盟图文攻略_20261118.md#L553-L599 auth=reference_only ans=True
+   2. _工具脚本/taspipe/游戏包/来源库/取证/setsumei_热血足球说明书扫描_20261118.md#L283-L284 auth=authoritative ans=False
+   3. _工具脚本/taspipe/游戏包/来源库/取证/setsumei_热血足球说明书扫描_20261118.md#L277-L277 auth=authoritative ans=False
+   4. _工具脚本/taspipe/游戏包/来源库/取证/setsumei_热血足球说明书扫描_20261118.md#L28-L33 auth=authoritative ans=False
+   5. _工具脚本/taspipe/游戏包/来源库/取证/csdn_wangsitan_热血足球Bug记录_20261118.md#L276-L292 auth=reference_only ans=True
+   6. _工具脚本/taspipe/游戏包/来源库/取证/csdn_wangsitan_热血足球Bug记录_20261118.md#L206-L222 auth=reference_only ans=True
+   7. _工具脚本/taspipe/游戏包/来源库/取证/csdn_wangsitan_热血足球Bug记录_20261118.md#L312-L342 auth=reference_only ans=True
+   8. _工具脚本/taspipe/游戏包/来源库/取证/1ang_热血足球联盟图文攻略_20261118.md#L289-L335 auth=reference_only ans=True
+-- union12/strict_top1: ok=True status=inconclusive reason=可答命中只有快照/二手/跨版本支撑或仅单字噪声
+   1. _工具脚本/taspipe/游戏包/来源库/取证/1ang_热血足球联盟图文攻略_20261118.md#L553-L599 auth=reference_only ans=True
+   2. _工具脚本/taspipe/游戏包/来源库/取证/setsumei_热血足球说明书扫描_20261118.md#L283-L284 auth=authoritative ans=False
+   3. _工具脚本/taspipe/游戏包/来源库/取证/setsumei_热血足球说明书扫描_20261118.md#L277-L277 auth=authoritative ans=False
+   4. _工具脚本/taspipe/游戏包/来源库/取证/setsumei_热血足球说明书扫描_20261118.md#L269-L269 auth=authoritative ans=False <<GOLD
+   5. _工具脚本/taspipe/游戏包/来源库/取证/setsumei_热血足球说明书扫描_20261118.md#L273-L273 auth=authoritative ans=False
+   6. _工具脚本/taspipe/游戏包/来源库/取证/setsumei_热血足球说明书扫描_20261118.md#L28-L33 auth=authoritative ans=False
+   7. _工具脚本/taspipe/游戏包/来源库/取证/csdn_wangsitan_热血足球Bug记录_20261118.md#L276-L292 auth=reference_only ans=True
+   8. _工具脚本/taspipe/游戏包/来源库/取证/csdn_wangsitan_热血足球Bug记录_20261118.md#L206-L222 auth=reference_only ans=True
+-- union12/top3_conditional: ok=True status=inconclusive reason=可答命中只有快照/二手/跨版本支撑或仅单字噪声
+   1. _工具脚本/taspipe/游戏包/来源库/取证/1ang_热血足球联盟图文攻略_20261118.md#L553-L599 auth=reference_only ans=True
+   2. _工具脚本/taspipe/游戏包/来源库/取证/setsumei_热血足球说明书扫描_20261118.md#L283-L284 auth=authoritative ans=False
+   3. _工具脚本/taspipe/游戏包/来源库/取证/setsumei_热血足球说明书扫描_20261118.md#L277-L277 auth=authoritative ans=False
+   4. _工具脚本/taspipe/游戏包/来源库/取证/setsumei_热血足球说明书扫描_20261118.md#L269-L269 auth=authoritative ans=False <<GOLD
+   5. _工具脚本/taspipe/游戏包/来源库/取证/setsumei_热血足球说明书扫描_20261118.md#L273-L273 auth=authoritative ans=False
+   6. _工具脚本/taspipe/游戏包/来源库/取证/setsumei_热血足球说明书扫描_20261118.md#L28-L33 auth=authoritative ans=False
+   7. _工具脚本/taspipe/游戏包/来源库/取证/csdn_wangsitan_热血足球Bug记录_20261118.md#L276-L292 auth=reference_only ans=True
+   8. _工具脚本/taspipe/游戏包/来源库/取证/csdn_wangsitan_热血足球Bug记录_20261118.md#L206-L222 auth=reference_only ans=True

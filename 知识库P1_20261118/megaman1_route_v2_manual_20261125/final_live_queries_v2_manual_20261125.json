@@ -1,0 +1,362 @@
+{
+  "all_ok": true,
+  "probes": [
+    {
+      "id": "controls",
+      "q": "洛克人1官方说明书里 A 键和 B 键分别控制什么动作？",
+      "ok": true,
+      "result": {
+        "status": "pass",
+        "refusal": null,
+        "reason_code": null,
+        "reason": "5 条 verified_read + authoritative 可答命中，权威件在第 1 位",
+        "backend": "megaman1_candidate",
+        "index_used": "index.json",
+        "index_sha256": "d8de2bcf742e5a7df4df86a29b6162bcc815c1977719009b5cfe3542bc86c6be",
+        "answer_text": "洛克人1 官方说明书：A键 B键 控制动作 跳跃 射击 十字键操作（美国NES手册第8页）\n来源：Capcom 美国 NES 官方说明书扫描件。\n核验：已读扫描页；中文为说明，英文为短引文；未收全本。\nButton A：按 A 键使 MEGA MAN 跳跃。\n> Button A: Press to make MEGA MAN jump.\nButton B：按 B 键射击。\n> Button B: Press to fire.\nControl Pad：左使 MEGA MAN ",
+        "selected_evidence": [
+          {
+            "chunk_id": "03e122ec5180",
+            "score": 10.459,
+            "source_id": "archive_mega_man_nes_us_manual",
+            "status": "verified_read",
+            "authority": "authoritative",
+            "revision": "megaman1_nes_us",
+            "game_id": "megaman1",
+            "platform": "NES",
+            "revision_match": true,
+            "locator": "知识库P1_20261118/megaman1_candidate_v2_manual_20261125/evidence/mm1_manual_controls_20261125.txt#L1-L13",
+            "heading": "",
+            "matched_terms": [
+              "1",
+              "克人",
+              "动作",
+              "官方",
+              "控制",
+              "方说",
+              "明书",
+              "洛克",
+              "洛克人",
+              "说明"
+            ],
+            "snippet": "洛克人1 官方说明书：A键 B键 控制动作 跳跃 射击 十字键操作（美国NES手册第8页）\n来源：Capcom 美国 NES 官方说明书扫描件。\n核验：已读扫描页；中文为说明，英文为短引文；未收全本。\nButton A：按 A 键使 MEGA MAN 跳跃。\n> Button A: Press to make MEGA MAN jump.\nButton B：按 B 键射击。\n> Button B: Press to fire.\nControl Pad：左使 MEGA MAN ",
+            "answerability": {
+              "answerable": true,
+              "intent": "topic",
+              "focus_ok": true,
+              "pattern_ok": true,
+              "intent_ok": true,
+              "focus_hit": [
+                "克人",
+                "动作",
+                "官方",
+                "控制",
+                "方说",
+                "明书"
+              ],
+              "url_list": false,
+              "topic_anchor_ok": true,
+              "exclusive_attribution_ok": true,
+              "position_subject_ok": true,
+              "position_subjects": [],
+              "shot_method_ok": true,
+              "player_role_ok": true,
+              "ending_capability_ok": true,
+              "input_sequence_ok": true,
+              "team_shot_ok": true,
+              "technique_ok": true,
+              "multiplayer_mode_ok": true
+            },
+            "fragment_provenance": {
+              "policy": "strict",
+              "eligible": true,
+              "reason": "eligible_fragment",
+              "relevant_segments": 3,
+              "eligible_segments": 2,
+              "reference_segments": 1,
+              "retracted_segments": 0,
+              "evidence_excerpt": "洛克人1 官方说明书：A键 B键 控制动作 跳跃 射击 十字键操作（美国NES手册第8页）"
+            }
+          }
+        ],
+        "candidate_only": true,
+        "whole_game_knowledge_base": false,
+        "production_route_wired": true
+      }
+    },
+    {
+      "id": "energy",
+      "q": "洛克人1 Energy Meter 监测的能量水平，受击与能量胶囊分别有什么影响？",
+      "ok": true,
+      "result": {
+        "status": "pass",
+        "refusal": null,
+        "reason_code": null,
+        "reason": "5 条 verified_read + authoritative 可答命中，权威件在第 1 位",
+        "backend": "megaman1_candidate",
+        "index_used": "index.json",
+        "index_sha256": "d8de2bcf742e5a7df4df86a29b6162bcc815c1977719009b5cfe3542bc86c6be",
+        "answer_text": "洛克人1 官方说明书：Energy Meter 生命能量 受伤 能量胶囊（美国NES手册第4页）\n来源：Capcom 美国 NES 官方说明书扫描件。\n核验：已读扫描页；中文为说明，英文为短引文；未收全本。\n游戏画面左上方的 Energy Meter 用于监测 MEGA MAN 的能量水平。\n> A thermometer-shaped MEGA MAN \"Energy Meter\" appearing upper left in game-playing scenes se",
+        "selected_evidence": [
+          {
+            "chunk_id": "18a00ca4cb83",
+            "score": 27.333,
+            "source_id": "archive_mega_man_nes_us_manual",
+            "status": "verified_read",
+            "authority": "authoritative",
+            "revision": "megaman1_nes_us",
+            "game_id": "megaman1",
+            "platform": "NES",
+            "revision_match": true,
+            "locator": "知识库P1_20261118/megaman1_candidate_v2_manual_20261125/evidence/mm1_manual_energy_20261125.txt#L1-L10",
+            "heading": "",
+            "matched_terms": [
+              "1",
+              "energy",
+              "meter",
+              "克人",
+              "水平",
+              "洛克",
+              "洛克人",
+              "的能",
+              "监测",
+              "胶囊",
+              "能量",
+              "量水"
+            ],
+            "snippet": "洛克人1 官方说明书：Energy Meter 生命能量 受伤 能量胶囊（美国NES手册第4页）\n来源：Capcom 美国 NES 官方说明书扫描件。\n核验：已读扫描页；中文为说明，英文为短引文；未收全本。\n游戏画面左上方的 Energy Meter 用于监测 MEGA MAN 的能量水平。\n> A thermometer-shaped MEGA MAN \"Energy Meter\" appearing upper left in game-playing scenes se",
+            "answerability": {
+              "answerable": true,
+              "intent": "topic",
+              "focus_ok": true,
+              "pattern_ok": true,
+              "intent_ok": true,
+              "focus_hit": [
+                "energy",
+                "meter",
+                "克人",
+                "水平",
+                "洛克",
+                "洛克人"
+              ],
+              "url_list": false,
+              "topic_anchor_ok": true,
+              "exclusive_attribution_ok": true,
+              "position_subject_ok": true,
+              "position_subjects": [],
+              "shot_method_ok": true,
+              "player_role_ok": true,
+              "ending_capability_ok": true,
+              "input_sequence_ok": true,
+              "team_shot_ok": true,
+              "technique_ok": true,
+              "multiplayer_mode_ok": true
+            },
+            "fragment_provenance": {
+              "policy": "strict",
+              "eligible": true,
+              "reason": "eligible_fragment",
+              "relevant_segments": 6,
+              "eligible_segments": 6,
+              "reference_segments": 0,
+              "retracted_segments": 0,
+              "evidence_excerpt": "洛克人1 官方说明书：Energy Meter 生命能量 受伤 能量胶囊（美国NES手册第4页）"
+            }
+          }
+        ],
+        "candidate_only": true,
+        "whole_game_knowledge_base": false,
+        "production_route_wired": true
+      }
+    },
+    {
+      "id": "magnet_beam",
+      "q": "洛克人1官方说明书里 Magnet Beam 在哪个关卡出现，取得后能做什么？",
+      "ok": true,
+      "result": {
+        "status": "pass",
+        "refusal": null,
+        "reason_code": null,
+        "reason": "5 条 verified_read + authoritative 可答命中，权威件在第 1 位",
+        "backend": "megaman1_candidate",
+        "index_used": "index.json",
+        "index_sha256": "d8de2bcf742e5a7df4df86a29b6162bcc815c1977719009b5cfe3542bc86c6be",
+        "answer_text": "洛克人1 官方说明书：Magnet Beam 出现关卡 制造台阶 向上攀爬（美国NES手册第5及15页）\n来源：Capcom 美国 NES 官方说明书扫描件。\n核验：已读扫描页；中文为说明，英文为短引文；未收全本。\nMagnet Beam 在 Elecman 关卡中途出现。\n> A Magnet Beam will appear at the middle of the Elecman stage. Snare the Magnet Beam to create steps ",
+        "selected_evidence": [
+          {
+            "chunk_id": "7eb5f0df8259",
+            "score": 24.595,
+            "source_id": "archive_mega_man_nes_us_manual",
+            "status": "verified_read",
+            "authority": "authoritative",
+            "revision": "megaman1_nes_us",
+            "game_id": "megaman1",
+            "platform": "NES",
+            "revision_match": true,
+            "locator": "知识库P1_20261118/megaman1_candidate_v2_manual_20261125/evidence/mm1_manual_magnet_beam_20261125.txt#L1-L10",
+            "heading": "",
+            "matched_terms": [
+              "1",
+              "beam",
+              "magnet",
+              "克人",
+              "关卡",
+              "出现",
+              "取得",
+              "官方",
+              "方说",
+              "明书",
+              "洛克",
+              "洛克人"
+            ],
+            "snippet": "洛克人1 官方说明书：Magnet Beam 出现关卡 制造台阶 向上攀爬（美国NES手册第5及15页）\n来源：Capcom 美国 NES 官方说明书扫描件。\n核验：已读扫描页；中文为说明，英文为短引文；未收全本。\nMagnet Beam 在 Elecman 关卡中途出现。\n> A Magnet Beam will appear at the middle of the Elecman stage. Snare the Magnet Beam to create steps ",
+            "answerability": {
+              "answerable": true,
+              "intent": "identity",
+              "focus_ok": true,
+              "pattern_ok": true,
+              "intent_ok": true,
+              "focus_hit": [
+                "beam",
+                "magnet",
+                "克人",
+                "关卡",
+                "出现",
+                "取得"
+              ],
+              "url_list": false,
+              "topic_anchor_ok": true,
+              "exclusive_attribution_ok": true,
+              "position_subject_ok": true,
+              "position_subjects": [],
+              "shot_method_ok": true,
+              "player_role_ok": true,
+              "ending_capability_ok": true,
+              "input_sequence_ok": true,
+              "team_shot_ok": true,
+              "technique_ok": true,
+              "multiplayer_mode_ok": true
+            },
+            "fragment_provenance": {
+              "policy": "strict",
+              "eligible": true,
+              "reason": "eligible_fragment",
+              "relevant_segments": 7,
+              "eligible_segments": 6,
+              "reference_segments": 1,
+              "retracted_segments": 0,
+              "evidence_excerpt": "洛克人1 官方说明书：Magnet Beam 出现关卡 制造台阶 向上攀爬（美国NES手册第5及15页）"
+            }
+          }
+        ],
+        "candidate_only": true,
+        "whole_game_knowledge_base": false,
+        "production_route_wired": true
+      }
+    },
+    {
+      "id": "robot_masters",
+      "q": "洛克人1官方说明书里六名 Robot Master 各自的设计用途或专长是什么？",
+      "ok": true,
+      "result": {
+        "status": "pass",
+        "refusal": null,
+        "reason_code": null,
+        "reason": "5 条 verified_read + authoritative 可答命中，权威件在第 1 位",
+        "backend": "megaman1_candidate",
+        "index_used": "index.json",
+        "index_sha256": "d8de2bcf742e5a7df4df86a29b6162bcc815c1977719009b5cfe3542bc86c6be",
+        "answer_text": "洛克人1 官方说明书：六名 Robot Master 身份 职业 专长（美国NES手册第6至7页）\n来源：Capcom 美国 NES 官方说明书扫描件。\n核验：已读扫描页；中文为说明，英文为短引文；未收全本。\nCutman 设计为 lumberjack，使用强力锯状工具并能穿过巨大森林。\n> Cutman: Designed to function as a lumberjack ... capable of gnawing through giant forest timb",
+        "selected_evidence": [
+          {
+            "chunk_id": "9e1b150976d6",
+            "score": 13.196,
+            "source_id": "archive_mega_man_nes_us_manual",
+            "status": "verified_read",
+            "authority": "authoritative",
+            "revision": "megaman1_nes_us",
+            "game_id": "megaman1",
+            "platform": "NES",
+            "revision_match": true,
+            "locator": "知识库P1_20261118/megaman1_candidate_v2_manual_20261125/evidence/mm1_manual_robot_masters_20261125.txt#L1-L22",
+            "heading": "",
+            "matched_terms": [
+              "1",
+              "master",
+              "robot",
+              "专长",
+              "克人",
+              "六名",
+              "官方",
+              "方说",
+              "明书",
+              "洛克",
+              "洛克人",
+              "设计"
+            ],
+            "snippet": "洛克人1 官方说明书：六名 Robot Master 身份 职业 专长（美国NES手册第6至7页）\n来源：Capcom 美国 NES 官方说明书扫描件。\n核验：已读扫描页；中文为说明，英文为短引文；未收全本。\nCutman 设计为 lumberjack，使用强力锯状工具并能穿过巨大森林。\n> Cutman: Designed to function as a lumberjack ... capable of gnawing through giant forest timb",
+            "answerability": {
+              "answerable": true,
+              "intent": "topic",
+              "focus_ok": true,
+              "pattern_ok": true,
+              "intent_ok": true,
+              "focus_hit": [
+                "master",
+                "robot",
+                "专长",
+                "克人",
+                "六名",
+                "官方"
+              ],
+              "url_list": false,
+              "topic_anchor_ok": true,
+              "exclusive_attribution_ok": true,
+              "position_subject_ok": true,
+              "position_subjects": [],
+              "shot_method_ok": true,
+              "player_role_ok": true,
+              "ending_capability_ok": true,
+              "input_sequence_ok": true,
+              "team_shot_ok": true,
+              "technique_ok": true,
+              "multiplayer_mode_ok": true
+            },
+            "fragment_provenance": {
+              "policy": "strict",
+              "eligible": true,
+              "reason": "eligible_fragment",
+              "relevant_segments": 4,
+              "eligible_segments": 3,
+              "reference_segments": 1,
+              "retracted_segments": 0,
+              "evidence_excerpt": "洛克人1 官方说明书：六名 Robot Master 身份 职业 专长（美国NES手册第6至7页）"
+            }
+          }
+        ],
+        "candidate_only": true,
+        "whole_game_knowledge_base": false,
+        "production_route_wired": true
+      }
+    },
+    {
+      "id": "pal_refused",
+      "q": "洛克人1 PAL-B 版的坐标表是否可以直接当作 NTSC 美版结论？",
+      "ok": true,
+      "result": {
+        "status": "inconclusive",
+        "refusal": "version_not_collected",
+        "reason_code": "version_not_collected",
+        "reason": "候选只覆盖 NTSC 美版；问句点名 PAL-B，不得跨版代答",
+        "backend": "megaman1_candidate",
+        "index_used": null,
+        "index_sha256": null,
+        "answer_text": "",
+        "selected_evidence": [],
+        "candidate_only": true,
+        "whole_game_knowledge_base": false,
+        "production_route_wired": true
+      }
+    }
+  ]
+}

@@ -1,0 +1,87 @@
+cuda True
+Timeout (0:01:10)!
+Thread 0x000066ec (most recent call first):
+  File "F:\kb_pilot_venv\Lib\site-packages\transformers\utils\import_utils.py", line 3244 in create_import_structure_from_path
+  File "F:\kb_pilot_venv\Lib\site-packages\transformers\utils\import_utils.py", line 3227 in create_import_structure_from_path
+  File "F:\kb_pilot_venv\Lib\site-packages\transformers\utils\import_utils.py", line 3510 in define_import_structure
+  File "F:\kb_pilot_venv\Lib\site-packages\transformers\__init__.py", line 775 in <module>
+  File "<frozen importlib._bootstrap>", line 488 in _call_with_frames_removed
+  File "<frozen importlib._bootstrap_external>", line 1026 in exec_module
+  File "<frozen importlib._bootstrap>", line 935 in _load_unlocked
+  File "<frozen importlib._bootstrap>", line 1331 in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 1360 in _find_and_load
+  File "<frozen importlib._bootstrap>", line 488 in _call_with_frames_removed
+  File "<frozen importlib._bootstrap>", line 1310 in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 1360 in _find_and_load
+  File "F:\kb_pilot_venv\Lib\site-packages\sentence_transformers\backend\load.py", line 7 in <module>
+  File "<frozen importlib._bootstrap>", line 488 in _call_with_frames_removed
+  File "<frozen importlib._bootstrap_external>", line 1026 in exec_module
+  File "<frozen importlib._bootstrap>", line 935 in _load_unlocked
+  File "<frozen importlib._bootstrap>", line 1331 in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 1360 in _find_and_load
+  File "F:\kb_pilot_venv\Lib\site-packages\sentence_transformers\backend\__init__.py", line 3 in <module>
+  File "<frozen importlib._bootstrap>", line 488 in _call_with_frames_removed
+  File "<frozen importlib._bootstrap_external>", line 1026 in exec_module
+  File "<frozen importlib._bootstrap>", line 935 in _load_unlocked
+  File "<frozen importlib._bootstrap>", line 1331 in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 1360 in _find_and_load
+  File "F:\kb_pilot_venv\Lib\site-packages\sentence_transformers\__init__.py", line 10 in <module>
+  File "<frozen importlib._bootstrap>", line 488 in _call_with_frames_removed
+  File "<frozen importlib._bootstrap_external>", line 1026 in exec_module
+  File "<frozen importlib._bootstrap>", line 935 in _load_unlocked
+  File "<frozen importlib._bootstrap>", line 1331 in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 1360 in _find_and_load
+  File "F:\\u5f00\u6e90\u638c\u673a\u6559\u7a0b\\u77e5\u8bc6\u5e93P1_20261118\p5_loadprobe.py", line 7 in <module>
+W1119 16:06:42.127000 37904 E:\SHARE\py313-cuda\torch\distributed\elastic\multiprocessing\redirects.py:29] NOTE: Redirects are currently not supported in Windows or MacOs.
+Timeout (0:01:10)!
+Thread 0x000066ec (most recent call first):
+  File "<frozen importlib._bootstrap_external>", line 152 in _path_stat
+  File "<frozen importlib._bootstrap_external>", line 1235 in path_stats
+  File "<frozen importlib._bootstrap_external>", line 1112 in get_code
+  File "<frozen importlib._bootstrap_external>", line 1022 in exec_module
+  File "<frozen importlib._bootstrap>", line 935 in _load_unlocked
+  File "<frozen importlib._bootstrap>", line 1331 in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 1360 in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1387 in _gcd_import
+  File "<frozen importlib._bootstrap>", line 488 in _call_with_frames_removed
+  File "<frozen importlib._bootstrap>", line 1310 in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 1360 in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1387 in _gcd_import
+  File "C:\Python313\Lib\importlib\__init__.py", line 88 in import_module
+  File "F:\kb_pilot_venv\Lib\site-packages\transformers\utils\import_utils.py", line 2933 in _get_module
+  File "F:\kb_pilot_venv\Lib\site-packages\transformers\utils\import_utils.py", line 2704 in __getattr__
+  File "<frozen importlib._bootstrap>", line 1412 in _handle_fromlist
+  File "F:\kb_pilot_venv\Lib\site-packages\sentence_transformers\base\modules\transformer.py", line 103 in <module>
+  File "<frozen importlib._bootstrap>", line 488 in _call_with_frames_removed
+  File "<frozen importlib._bootstrap_external>", line 1026 in exec_module
+  File "<frozen importlib._bootstrap>", line 935 in _load_unlocked
+  File "<frozen importlib._bootstrap>", line 1331 in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 1360 in _find_and_load
+  File "F:\kb_pilot_venv\Lib\site-packages\sentence_transformers\base\modules\__init__.py", line 8 in <module>
+  File "<frozen importlib._bootstrap>", line 488 in _call_with_frames_removed
+  File "<frozen importlib._bootstrap_external>", line 1026 in exec_module
+  File "<frozen importlib._bootstrap>", line 935 in _load_unlocked
+  File "<frozen importlib._bootstrap>", line 1331 in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 1360 in _find_and_load
+  File "F:\kb_pilot_venv\Lib\site-packages\sentence_transformers\base\model.py", line 46 in <module>
+  File "<frozen importlib._bootstrap>", line 488 in _call_with_frames_removed
+  File "<frozen importlib._bootstrap_external>", line 1026 in exec_module
+  File "<frozen importlib._bootstrap>", line 935 in _load_unlocked
+  File "<frozen importlib._bootstrap>", line 1331 in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 1360 in _find_and_load
+  File "F:\kb_pilot_venv\Lib\site-packages\sentence_transformers\base\__init__.py", line 4 in <module>
+  File "<frozen importlib._bootstrap>", line 488 in _call_with_frames_removed
+  File "<frozen importlib._bootstrap_external>", line 1026 in exec_module
+  File "<frozen importlib._bootstrap>", line 935 in _load_unlocked
+  File "<frozen importlib._bootstrap>", line 1331 in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 1360 in _find_and_load
+  File "<frozen importlib._bootstrap>", line 488 in _call_with_frames_removed
+  File "<frozen importlib._bootstrap>", line 1310 in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 1360 in _find_and_load
+  File "F:\kb_pilot_venv\Lib\site-packages\sentence_transformers\__init__.py", line 15 in <module>
+  File "<frozen importlib._bootstrap>", line 488 in _call_with_frames_removed
+  File "<frozen importlib._bootstrap_external>", line 1026 in exec_module
+  File "<frozen importlib._bootstrap>", line 935 in _load_unlocked
+  File "<frozen importlib._bootstrap>", line 1331 in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 1360 in _find_and_load
+  File "F:\\u5f00\u6e90\u638c\u673a\u6559\u7a0b\\u77e5\u8bc6\u5e93P1_20261118\p5_loadprobe.py", line 7 in <module>

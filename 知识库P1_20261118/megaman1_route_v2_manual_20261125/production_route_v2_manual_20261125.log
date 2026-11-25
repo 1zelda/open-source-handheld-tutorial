@@ -1,0 +1,42 @@
+{
+  "all_ok": true,
+  "question_counts": {
+    "total": 23,
+    "strict_pass": 20,
+    "refuse": 3
+  },
+  "summary": {
+    "route_total": 15,
+    "route_ok": 15,
+    "direct_default_ok": 23,
+    "direct_strict_ok": 23,
+    "auto_default_ok": 23,
+    "auto_strict_ok": 23,
+    "failure_close_total": 2,
+    "failure_close_ok": 2,
+    "wrong_candidate_evidence": 0,
+    "blocked_outer_evidence": 0,
+    "direct_log_lines": 46,
+    "auto_log_lines": 46,
+    "consumer_log_lines": 1
+  },
+  "checks": {
+    "all_routes_ok": true,
+    "direct_all_ok": true,
+    "auto_all_ok": true,
+    "failure_close_all_ok": true,
+    "wrong_candidate_evidence_zero": true,
+    "blocked_outer_evidence_zero": true,
+    "manual_probes_pass": true,
+    "manual_probe_sources": true,
+    "series_and_version_refused": true,
+    "mm10_not_candidate": true,
+    "multi_not_merged": true,
+    "non_candidate_no_borrow": true,
+    "consumer_anchored": true,
+    "logs_complete": true,
+    "shared_old_and_candidate_inputs_unchanged": true
+  },
+  "changed_paths": [],
+  "report": "F:\\开源掌机教程\\知识库P1_20261118\\megaman1_route_v2_manual_20261125\\eval_report.json"
+}

@@ -1,0 +1,102 @@
+{
+ "date": "2026-11-19",
+ "generated_at": "2026-11-19T18:23:34Z",
+ "ledger_sha256": "5721b918daad08a6d899c0ad8238d5371304878011b1eb1c6f859a4cf4d5fda0",
+ "ledger_rows": 35026,
+ "events_total": 33729,
+ "candidates_in_window": 11610,
+ "window_days": 14,
+ "kb_limit": 40,
+ "kb": {
+  "mode": "bm25",
+  "downgrade": null,
+  "queried": 40,
+  "unanchored_downgraded": 19,
+  "index_sha256": "09096a016496405ade4f4e181076acaaceedf0af8927b1c1cd66a1f67fb1cfe3",
+  "snapshot": "F:\\开源掌机教程\\选题决策层\\kb快照\\index.json"
+ },
+ "profile_id": "主号_复古掌机与经典游戏",
+ "profile_basis": "初始设定（UP主自述复古游戏区定位），待自家后台数据校准",
+ "rule_version": "rules-2026-11-19-v2",
+ "ip_table_version": "ip-2026-11-19-v4",
+ "series_count": 70,
+ "snapshot": {
+  "ts": "2026-11-19T18:23:34Z",
+  "recorded": 11610
+ },
+ "demand_wired": 502,
+ "entry_b": {
+  "mined": 3,
+  "skipped": 0,
+  "authoritative_chunks": 162,
+  "meta_blocks_excluded": 80,
+  "content_chunks": 82,
+  "groups": 3,
+  "index_path": "F:\\开源掌机教程\\选题决策层\\kb快照\\index.json",
+  "bili_demand_wired": 3,
+  "bili_probe_on": true,
+  "unwired_subslots": [
+   "差异/冲突的语义判定",
+   "观众问题挖题"
+  ]
+ },
+ "body": null,
+ "bili_demand": {
+  "map_version": "bili-map-2026-11-19-v1",
+  "track_version": "bili-track-2026-11-19-v1",
+  "probe_words": 16,
+  "mapped_cards": 502,
+  "reliable_override": 502,
+  "contaminated_fallback": 0,
+  "unmapped_fallback": 11108,
+  "precedence": "B站可靠(高/中/低)>热度时序>未知；不可靠/未映射/未探针退回热度时序",
+  "informational_only": "demand_override仅信息维,不进关注合成/队列(§3,T31h反证)",
+  "count_basis": "候选事件级(系列归并前)；卡片级B站reason数≤此(系列卡取最强成员维,非best映射成员折叠不单独成卡)"
+ },
+ "bili_expansion": {
+  "version": "bili-map-2026-11-19-v1",
+  "track_version": "bili-track-2026-11-19-v1",
+  "candidate_ips": 136,
+  "high_attention_ips": 124,
+  "cards_covered": 985,
+  "basis": "高/中关注且B站未探针的已识别IP；候选词=编辑映射词或recognition组首个中文别名(§11.2)",
+  "informational_only": "扩词表只surface覆盖缺口，不改demand/queue；编辑映射表仍权威",
+  "human_review": "候选词是draft，须人工消歧/粒度/角度核＋批准联网探针后才测；零LLM不做语义消歧/角度词最终选择",
+  "no_network": "本步不联网，只从已scoring卡派生候选；实测须另批探针run",
+  "preflight": {
+   "script_class_counts": {
+    "纯拉丁": 57,
+    "含CJK": 77,
+    "混合": 2
+   },
+   "pure_latin": 57,
+   "cjk_with_sub2": 79,
+   "basis": "复用探针_kw_cores单一权威暴露词元/字符类(§11.12)；结构预检非命中率预测",
+   "honest": "纯拉丁≠必兜底(Batocera/shadPS4反例),2字子词≠必假阳(街机改版反例)；不预测core_hit_rate(须联网),不判语义歧义/不自动改词(须人工)"
+  }
+ },
+ "feedback_rejection": {
+  "rejected_decisions": 34,
+  "cards_demoted": 17,
+  "direct_demoted": 15,
+  "series_fully_rejected": 2,
+  "series_partial_flagged": 7,
+  "axis": "拒绝只改制作动作轴(queue→低优先归档)，关注/证据/八维/需求不动；仅editorial_judgment，没时间永不降"
+ },
+ "unwired_slots": [
+  "语义分析槽位（拆主次/找角度/反差确认，须用户批准外部模型）",
+  "入口B子槽：差异/冲突的语义判定、观众问题挖题",
+  "正文子槽：语义拆主次/找角度（当前只做动词级精修）",
+  "发布效果回流（原P3自家后台performances；B站需求探针回流已接线--bili-demand）",
+  "B站回流子槽：扩词表自动取大盘候选词已接线(§11.11,--bili-demand)；角度词最终选择/语义消歧须人工；候选词实测+card→keyword全自动闭环须批准联网探针run"
+ ],
+ "entry": "A 新闻筛选+B KB挖题",
+ "queue_counts": {
+  "今日优先": 0,
+  "潜力待验证": 1359,
+  "长期选题": 4,
+  "系列跟踪": 68,
+  "低优先归档": 8831
+ },
+ "cards_total": 10262
+}

@@ -5,6 +5,8 @@ CheckSpec.plugin_id 只能命中这里注册的插件；不执行来自网页/�
 每个插件返回 (Verdict, reason)；证据不足 => INCONCLUSIVE，不是通过。
 检测器只判"要素是否出现"，不兼任最终成片验收（那是 M6）。
 """
+from pathlib import Path
+
 import numpy as np
 from PIL import Image
 
@@ -84,6 +86,183 @@ def _region_color_fraction(params, frame_path):
     ok = frac >= minf
     return (Verdict.PASS if ok else Verdict.FAIL), \
         f"region={region} color{tuple(rgb)}±{tol} fraction={frac:.3f} (min={minf})"
+
+
+@register("frame_region_color_fraction_max")
+def _region_color_fraction_max(params, frame_path):
+    """归一化子矩形内目标颜色占比 <= max_fraction => pass（上限型判据）。
+
+    下限判据只能证明「这个特征出现了」；当弹幕互相包含（激光光束里也有白色弹头像素）
+    时，单靠下限说明不了「这一格是它而不是别的枪」。上限判据把「不该出现的特征确实没
+    出现」也变成可复核证据，和下限配对才构成互斥判据。region 必填，缺参数 => inconclusive。
+    """
+    rgb = params.get("rgb")
+    tol = int(params.get("tol", 12))
+    maxf = params.get("max_fraction")
+    region = params.get("region")
+    if not rgb or len(rgb) != 3:
+        return Verdict.INCONCLUSIVE, "params.rgb 缺失/非法"
+    if maxf is None:
+        return Verdict.INCONCLUSIVE, "params.max_fraction 缺失"
+    if not region or len(region) != 4:
+        return Verdict.INCONCLUSIVE, "上限判据必须给 region=[x0,y0,x1,y1]"
+    maxf = float(maxf)
+    x0, y0, x1, y1 = region
+    if not (0 <= x0 < x1 <= 1 and 0 <= y0 < y1 <= 1):
+        return Verdict.INCONCLUSIVE, f"region 越界 {region}"
+    a = _arr(frame_path)
+    h, w = a.shape[:2]
+    sub = a[int(y0 * h):int(y1 * h), int(x0 * w):int(x1 * w)]
+    if sub.size == 0:
+        return Verdict.INCONCLUSIVE, "region 像素为空"
+    diff = np.abs(sub - np.asarray(rgb, dtype=np.int32)).max(axis=2)
+    frac = float((diff <= tol).mean())
+    ok = frac <= maxf
+    return (Verdict.PASS if ok else Verdict.FAIL), \
+        f"region={region} color{tuple(rgb)}±{tol} fraction={frac:.4f} (max={maxf})"
+
+
+@register("frame_region_color_fraction_range")
+def _region_color_fraction_range(params, frame_path):
+    """归一化子矩形内目标颜色占比落在 [min_fraction, max_fraction] => pass。
+
+    「弹幕密度落在某个窗口」本身就是要区分的东西：机枪的暖色弹头占比既不能是 0（那
+    是步枪，纯白弹头），也不能高到激光/散弹的量级。拆成两条同区域判据会把同一块像素
+    量两遍，所以合成一个区间判据。两个边界都必填，缺任一 => inconclusive。
+    """
+    rgb = params.get("rgb")
+    tol = int(params.get("tol", 12))
+    minf, maxf = params.get("min_fraction"), params.get("max_fraction")
+    region = params.get("region")
+    if not rgb or len(rgb) != 3:
+        return Verdict.INCONCLUSIVE, "params.rgb 缺失/非法"
+    if minf is None or maxf is None:
+        return Verdict.INCONCLUSIVE, "区间判据必须同时给 min_fraction 与 max_fraction"
+    if not region or len(region) != 4:
+        return Verdict.INCONCLUSIVE, "区间判据必须给 region=[x0,y0,x1,y1]"
+    minf, maxf = float(minf), float(maxf)
+    if minf > maxf:
+        return Verdict.INCONCLUSIVE, f"min_fraction {minf} > max_fraction {maxf}"
+    x0, y0, x1, y1 = region
+    if not (0 <= x0 < x1 <= 1 and 0 <= y0 < y1 <= 1):
+        return Verdict.INCONCLUSIVE, f"region 越界 {region}"
+    a = _arr(frame_path)
+    h, w = a.shape[:2]
+    sub = a[int(y0 * h):int(y1 * h), int(x0 * w):int(x1 * w)]
+    if sub.size == 0:
+        return Verdict.INCONCLUSIVE, "region 像素为空"
+    diff = np.abs(sub - np.asarray(rgb, dtype=np.int32)).max(axis=2)
+    frac = float((diff <= tol).mean())
+    ok = minf <= frac <= maxf
+    return (Verdict.PASS if ok else Verdict.FAIL), \
+        f"region={region} color{tuple(rgb)}±{tol} fraction={frac:.4f} range=[{minf},{maxf}]"
+
+
+def _pixel_box(region, w, h):
+    if not isinstance(region, (list, tuple)) or len(region) != 4:
+        raise ValueError("region 须为 [x0,y0,x1,y1]")
+    x0, y0, x1, y1 = region
+    if not (0 <= x0 < x1 <= 1 and 0 <= y0 < y1 <= 1):
+        raise ValueError(f"region 越界 {region}")
+    box = int(x0 * w), int(y0 * h), int(x1 * w), int(y1 * h)
+    if box[2] <= box[0] or box[3] <= box[1]:
+        raise ValueError("region 像素为空")
+    return box
+
+
+def _shifted_overlap(current, reference, dx, dy):
+    h, w = current.shape[:2]
+    x0, x1 = max(0, dx), min(w, w + dx)
+    y0, y1 = max(0, dy), min(h, h + dy)
+    if x1 <= x0 or y1 <= y0:
+        raise ValueError("平移后没有重叠区域")
+    return (current[y0:y1, x0:x1],
+            reference[y0 - dy:y1 - dy, x0 - dx:x1 - dx],
+            (x0, y0, x1, y1))
+
+
+def aligned_difference_metrics(current, reference, region, alignment_region,
+                               max_shift=0, max_dy=0, diff_threshold=42):
+    """估计背景平移后在局部区域比较两帧；返回对齐平移、局部/全局变化分数。"""
+    if current.shape != reference.shape:
+        raise ValueError("两帧尺寸不同")
+    h, w = current.shape[:2]
+    rx0, ry0, rx1, ry1 = _pixel_box(region, w, h)
+    ax0, ay0, ax1, ay1 = _pixel_box(alignment_region, w, h)
+    best = None
+    for dy in range(-max_dy, max_dy + 1):
+        for dx in range(-max_shift, max_shift + 1):
+            try:
+                shifted, ref, box = _shifted_overlap(current, reference, dx, dy)
+            except ValueError:
+                continue
+            x0, y0, x1, y1 = box
+            ly0, ly1 = max(y0, ay0), min(y1, ay1)
+            lx0, lx1 = max(x0, ax0), min(x1, ax1)
+            if ly1 <= ly0 or lx1 <= lx0:
+                continue
+            sub_a = shifted[ly0 - y0:ly1 - y0, lx0 - x0:lx1 - x0]
+            sub_b = ref[ly0 - y0:ly1 - y0, lx0 - x0:lx1 - x0]
+            delta = np.abs(sub_a - sub_b)
+            key = (float(delta.mean()), float((delta.sum(2) > diff_threshold).mean()),
+                   abs(dx) + abs(dy))
+            if best is None or key < best[0]:
+                best = (key, dx, dy)
+    if best is None:
+        raise ValueError("对齐区域在搜索平移内没有有效重叠")
+    _, dx, dy = best
+    shifted, ref, box = _shifted_overlap(current, reference, dx, dy)
+    x0, y0, x1, y1 = box
+    lx0, ly0, lx1, ly1 = max(x0, rx0), max(y0, ry0), min(x1, rx1), min(y1, ry1)
+    if lx1 <= lx0 or ly1 <= ly0:
+        raise ValueError("局部区域在对齐后没有有效重叠")
+    local_delta = np.abs(shifted[ly0 - y0:ly1 - y0, lx0 - x0:lx1 - x0]
+                         - ref[ly0 - y0:ly1 - y0, lx0 - x0:lx1 - x0]).sum(2)
+    global_delta = np.abs(shifted - ref).sum(2)
+    return {
+        "dx": dx,
+        "dy": dy,
+        "alignment_mae": best[0][0],
+        "local_changed_fraction": float((local_delta > diff_threshold).mean()),
+        "global_changed_fraction": float((global_delta > diff_threshold).mean()),
+        "local_pixels": int(local_delta.size),
+        "overlap_pixels": int(global_delta.size),
+    }
+
+
+@register("frame_pair_aligned_region_difference")
+def _pair_aligned_region_difference(params, frame_path):
+    """与参考帧对齐后，局部差分须过下限且全局差分不得越过闪白上限。"""
+    reference = params.get("reference_frame")
+    if not isinstance(reference, str) or not Path(reference).is_file():
+        return Verdict.INCONCLUSIVE, "params.reference_frame 缺失/不存在"
+    try:
+        current = _arr(frame_path)
+        ref = _arr(reference)
+        metrics = aligned_difference_metrics(
+            current, ref,
+            region=params["region"],
+            alignment_region=params.get("alignment_region", [0.0, 0.125, 1.0, 0.4875]),
+            max_shift=int(params.get("max_shift", 0)),
+            max_dy=int(params.get("max_dy", 0)),
+            diff_threshold=int(params.get("diff_threshold", 42)),
+        )
+        minf = float(params["min_changed_fraction"])
+        maxg = float(params.get("max_global_changed_fraction", 0.25))
+        if not (0 <= minf <= 1 and 0 <= maxg <= 1):
+            raise ValueError("min/max fraction 须落在 0..1")
+        if not (0 <= int(params.get("max_shift", 0)) <= 64
+                and 0 <= int(params.get("max_dy", 0)) <= 16):
+            raise ValueError("max_shift/max_dy 越界")
+    except (KeyError, TypeError, ValueError, OSError) as exc:
+        return Verdict.INCONCLUSIVE, f"对齐差分参数/帧非法: {exc}"
+    ok = (metrics["local_changed_fraction"] >= minf
+          and metrics["global_changed_fraction"] <= maxg)
+    return (Verdict.PASS if ok else Verdict.FAIL), (
+        f"alignment=({metrics['dx']},{metrics['dy']}) "
+        f"local_fraction={metrics['local_changed_fraction']:.4f} (min={minf}) "
+        f"global_fraction={metrics['global_changed_fraction']:.4f} (max={maxg})"
+    )
 
 
 def run_check(spec, frame_path):

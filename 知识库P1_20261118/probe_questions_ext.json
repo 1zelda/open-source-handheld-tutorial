@@ -1,0 +1,379 @@
+{
+ "note": "窗口扩集新增30探针（2026-11-19，挖矿p5_probe_mine_out.txt实测位次后人工挑格，零LLM）。与probe_questions.json的W01-W30合并成60条扩集。kind=regression基线/rescue真救回候选/trap库内无答案/mechanism机制审计格。",
+ "questions": [
+  {
+   "id": "X01",
+   "q": "热血足球 1P 得分的内存地址是多少？",
+   "filters": {
+    "game": "nekketsu_soccer2"
+   },
+   "kind": "insufficient_source",
+   "mine": "M02 可答权威件第4位(必杀全清单L194-210)",
+   "kind_v1": "rescue",
+   "kind_note": "1P得分=0x52E 仅见必杀全清单L219对S7金手指文的转述；S7金手指原文未入库(只入库Bug记录)，reference_only继承",
+   "evidence": "必杀全清单L219(S7转述);CSDN金手指原文未登记"
+  },
+  {
+   "id": "X02",
+   "q": "热血足球 韩国队赢球后是什么庆祝动作？",
+   "filters": {
+    "game": "nekketsu_soccer2"
+   },
+   "kind": "insufficient_source",
+   "mine": "M04 可答权威件第4位(必杀全清单L262-264)",
+   "kind_v1": "rescue",
+   "kind_note": "韩国庆祝=打灯笼吃泡菜吐火，必杀全清单L263在§8-6(S10逐队)节；1ang L607 reference_only；转述不升格",
+   "evidence": "必杀全清单L263(S10节);1angL607"
+  },
+  {
+   "id": "X03",
+   "q": "热血足球 龙卷拳谁能用？",
+   "filters": {
+    "game": "nekketsu_soccer2"
+   },
+   "kind": "positive_control",
+   "mine": "M07 可答权威件第4位(必杀全清单L51-66)",
+   "kind_v1": "rescue",
+   "kind_note": "官方说明书明写キーパーだけの必殺技トルネード・パンチ，authoritative直接出证；1angL377只有门将才能使用作线索",
+   "evidence": "setsumeiL262(authoritative);1angL377"
+  },
+  {
+   "id": "X04",
+   "q": "热血足球 三倍加速怎么发动？",
+   "filters": {
+    "game": "nekketsu_soccer2"
+   },
+   "kind": "ambiguous",
+   "mine": "M10 可答权威件第4位(必杀全清单L251-259)",
+   "kind_v1": "rescue",
+   "kind_note": "三倍加速发动法S1(连按两次前)vs S8(敌球权A+B同按)跨源冲突，必杀全清单L256冲突表明列无实测；应报冲突不许选边",
+   "evidence": "必杀全清单L256冲突表;1angL389;urawazaL234"
+  },
+  {
+   "id": "X05",
+   "q": "热血足球 选手一闪一闪是故障吗？",
+   "filters": {
+    "game": "nekketsu_soccer2"
+   },
+   "kind": "insufficient_source",
+   "mine": "M11 可答权威件第4位(setsumei L552-560)",
+   "kind_v1": "rescue",
+   "kind_note": "一闪一闪非故障，必杀全清单L245明标S10转官方手册原文→链经reference_only；官方手册扫描本体未见此句",
+   "evidence": "必杀全清单L245(S10转述);1angL773"
+  },
+  {
+   "id": "X06",
+   "q": "热血足球 应援曲一共有几首？",
+   "filters": {
+    "game": "nekketsu_soccer2"
+   },
+   "kind": "insufficient_source",
+   "mine": "M24 可答权威件第5位(必杀全清单L262-264)",
+   "kind_v1": "rescue",
+   "kind_note": "应援曲8首仅S10转述(必杀全清单L223)；setsumeiL143-144应援曲节只说选BGM无数量；authoritative无计数",
+   "evidence": "必杀全清单L223(S10);setsumeiL143-144无数量"
+  },
+  {
+   "id": "X07",
+   "q": "热血足球 海月是什么射门？",
+   "filters": {
+    "game": "nekketsu_soccer2"
+   },
+   "kind": "insufficient_source",
+   "mine": "M27 可答权威件第4位(必杀全清单L229-231)",
+   "kind_v1": "rescue",
+   "kind_note": "海月=土佐鲣射门，仅sohu小辫子L73-80(reference_only)；无authoritative对应",
+   "evidence": "sohu_必杀最强小辫子L73-80"
+  },
+  {
+   "id": "X08",
+   "q": "热血足球 哪个队员体力最高？",
+   "filters": {
+    "game": "nekketsu_soccer2"
+   },
+   "kind": "insufficient_source",
+   "mine": "M05 可答权威件第7位(边界外对照,两窗都够不着)",
+   "kind_v1": "rescue",
+   "kind_note": "体力最高65=津根/卡洛斯，1angL747+sohuL58/69均reference_only；必杀全清单无属性表",
+   "evidence": "1angL747;sohu小辫子L58,L69"
+  },
+  {
+   "id": "X09",
+   "q": "热血足球 香蕉环射门有什么特点？",
+   "filters": {
+    "game": "nekketsu_soccer2"
+   },
+   "kind": "insufficient_source",
+   "mine": "M28 可答权威件第7位(边界外对照)",
+   "kind_v1": "rescue",
+   "kind_note": "香蕉环射门特点仅sohu小辫子L64-71+集锦L87(reference_only)",
+   "evidence": "sohu小辫子L64-71;sohu集锦L87"
+  },
+  {
+   "id": "X10",
+   "q": "热血足球联盟 阵型一共有几种？",
+   "filters": {
+    "game": "nekketsu_soccer2"
+   },
+   "kind": "insufficient_source",
+   "mine": "M01 答案块第8位(边界外对照)",
+   "kind_v1": "rescue",
+   "kind_note": "阵型仅3种(00:2-1-2/01:1-2-2/02:2-2-1)，csdn Bug记录L218数据级但reference_only；必杀全清单L218为S7转述",
+   "evidence": "csdn_Bug记录L218;必杀全清单L218(S7)"
+  },
+  {
+   "id": "X11",
+   "q": "热血足球联盟 能不能联网对战？",
+   "filters": {
+    "game": "nekketsu_soccer2"
+   },
+   "kind": "true_negative",
+   "mine": "M16 FC卡带无联网事实,话题词撞块",
+   "kind_v1": "trap",
+   "kind_note": "联网对战全语料0命中；FC无联网功能",
+   "evidence": "全索引.md扫描0命中"
+  },
+  {
+   "id": "X12",
+   "q": "热血足球联盟 怎么给球员升级加点？",
+   "filters": {
+    "game": "nekketsu_soccer2"
+   },
+   "kind": "true_negative",
+   "mine": "M19 库内无升级加点玩法",
+   "kind_v1": "trap",
+   "kind_note": "升级加点仅9game手游(not_applicable,game过滤排除)；FC无升级系统；跨版本干扰源存在但身份过滤排除",
+   "evidence": "9game手游(排除);FC语料0命中"
+  },
+  {
+   "id": "X13",
+   "q": "热血足球 有没有办法跳过中场休息？",
+   "filters": {
+    "game": "nekketsu_soccer2"
+   },
+   "kind": "true_negative",
+   "mine": "M20 库内无此事实",
+   "kind_v1": "trap",
+   "kind_note": "跳过中场休息全语料0命中",
+   "evidence": "全索引.md扫描0命中"
+  },
+  {
+   "id": "X14",
+   "q": "热血足球 怎么解锁隐藏球队？",
+   "filters": {
+    "game": "nekketsu_soccer2"
+   },
+   "kind": "true_negative",
+   "mine": "M21 库内无解锁隐藏球队事实",
+   "kind_v1": "trap",
+   "kind_note": "隐藏球队全语料0命中",
+   "evidence": "全索引.md扫描0命中"
+  },
+  {
+   "id": "X15",
+   "q": "热血足球联盟 支持几个手柄同时玩？",
+   "filters": {
+    "game": "nekketsu_soccer2"
+   },
+   "kind": "positive_control",
+   "mine": "M23 人数列≠手柄数,无直接事实",
+   "kind_v1": "trap",
+   "kind_note": "手柄数=最多4人：setsumeiL322-323明写3P/4P模式(authoritative官方说明书)；1angL177最多4位玩家作线索；中日词距(手柄↔３Ｐ)是阶段4召回问题",
+   "evidence": "setsumeiL322-323(authoritative);1angL177"
+  },
+  {
+   "id": "X16",
+   "q": "热血足球 打雷会不会把门将击倒？",
+   "filters": {
+    "game": "nekketsu_soccer2"
+   },
+   "kind": "insufficient_source",
+   "mine": "M03 事实只在reference_only,权威窗应拒",
+   "kind_v1": "trap",
+   "kind_note": "雷击倒门将：必杀全清单L246明标S10天气预报节+1angL289均reference_only；旧trap标签撤回(文本存在≠来源资格)",
+   "evidence": "必杀全清单L246(S10);1angL289"
+  },
+  {
+   "id": "X17",
+   "q": "热血足球 全败结局画面显示的密码是什么？",
+   "filters": {
+    "game": "nekketsu_soccer2"
+   },
+   "kind": "insufficient_source",
+   "mine": "M06 密码事实在reference_only+权威转述,审计放行依据",
+   "kind_v1": "trap",
+   "kind_note": "全败密码DD5 9FA A80D：必杀全清单L237转述S9(reference_only+版本未核实,评审§1.8)；旧真阳判定撤回——转述不产生新证据",
+   "evidence": "必杀全清单L237(S9);corpus_mapS9=reference_only"
+  },
+  {
+   "id": "X18",
+   "q": "热血足球 每支球队最多能挑战几次？",
+   "filters": {
+    "game": "nekketsu_soccer2"
+   },
+   "kind": "insufficient_source",
+   "mine": "M13 3次事实在权威L234-239第2位,正对照",
+   "kind_v1": "trap",
+   "kind_note": "挑战3次：必杀全清单L235在§8-3(S9)节+1angL183(reference_only)；两二手源一致但无primary/实测；旧真阳判定撤回同§1.8",
+   "evidence": "必杀全清单L235(S9节);1angL183"
+  },
+  {
+   "id": "X19",
+   "q": "热血足球 美纱子的电话有什么用？",
+   "filters": {
+    "game": "nekketsu_soccer2"
+   },
+   "kind": "insufficient_source",
+   "mine": "M08 第4位权威块是否答电话情报",
+   "kind_v1": "mechanism",
+   "kind_note": "美纱子电话=会面菜单听情报：必杀全清单L264在§8-6(S10)节+1angL271(reference_only)",
+   "evidence": "必杀全清单L264(S10节);1angL271"
+  },
+  {
+   "id": "X20",
+   "q": "热血足球 德国队为什么必杀概率低？",
+   "filters": {
+    "game": "nekketsu_soccer2"
+   },
+   "kind": "insufficient_source",
+   "mine": "M09 top1权威正对照",
+   "kind_v1": "mechanism",
+   "kind_note": "德国不会燕返故必杀概率低：1angL679(reference_only)+必杀全清单§8-6 S10侧写；无authoritative",
+   "evidence": "1angL679;必杀全清单L262(S10节)"
+  },
+  {
+   "id": "X21",
+   "q": "热血足球 元永在队里打什么位置？",
+   "filters": {
+    "game": "nekketsu_soccer2"
+   },
+   "kind": "positive_control",
+   "mine": "M12 门将事实正对照",
+   "kind_v1": "mechanism",
+   "kind_note": "元永=门将：必杀全清单L64-65我方11-14实测更正(probe15/17 HUD3×放大)，authoritative实测；旧1P=元永MF判断已作废",
+   "evidence": "必杀全清单L64-65(实测更正)"
+  },
+  {
+   "id": "X22",
+   "q": "热血足球 意大利门将的弱点在哪里？",
+   "filters": {
+    "game": "nekketsu_soccer2"
+   },
+   "kind": "true_negative",
+   "mine": "M14 禁区上方弱点正对照",
+   "kind_v1": "mechanism",
+   "kind_note": "意大利门将专属弱点语料无实质答案；1angL673-675意大利节只述最强/燕返/胜利姿势；L689禁区上侧盲区是通用攻略非意大利专属且reference_only",
+   "evidence": "1angL671-675无GK弱点;L689通用盲区"
+  },
+  {
+   "id": "X23",
+   "q": "热血足球 倒挂金钩怎么使出来？",
+   "filters": {
+    "game": "nekketsu_soccer2"
+   },
+   "kind": "insufficient_source",
+   "mine": "M15 第6位可答权威件(窗5外沿)",
+   "kind_v1": "mechanism",
+   "kind_note": "倒挂金钩=球附近跳起方向后+B：必杀全清单L32在§1(S1操作表原文)节；S1二手reference_only",
+   "evidence": "必杀全清单L32(S1节)"
+  },
+  {
+   "id": "X24",
+   "q": "热血足球 怎么存档进度？",
+   "filters": {
+    "game": "nekketsu_soccer2"
+   },
+   "kind": "insufficient_source",
+   "mine": "M17 第5位是BizHawk存档技术段,疑假阳性",
+   "kind_v1": "mechanism",
+   "kind_note": "密码续关机制存在：1angL175/L191明写ぱすわーど记录成绩可续流程(reference_only)；问句存档措辞对应密码机制；答案存在但来源不足",
+   "evidence": "1angL175,L191"
+  },
+  {
+   "id": "X25",
+   "q": "热血足球 球员受伤了怎么治疗？",
+   "filters": {
+    "game": "nekketsu_soccer2"
+   },
+   "kind": "true_negative",
+   "mine": "M18 top1=方法学段L137-158,疑假阳性(w3已放行)",
+   "kind_v1": "mechanism",
+   "kind_note": "受伤治疗全语料0命中",
+   "evidence": "全索引.md扫描0命中"
+  },
+  {
+   "id": "X26",
+   "q": "热血足球 雨天场地对射门有什么影响？",
+   "filters": {
+    "game": "nekketsu_soccer2"
+   },
+   "kind": "insufficient_source",
+   "mine": "M22 库内无雨天射门事实,疑假阳性(w3已放行)",
+   "kind_v1": "mechanism",
+   "kind_note": "雨天对射门影响：setsumeiL123只提雨天グランドコンディション无射门影响；语料无答案(P6已堵假阳)",
+   "evidence": "setsumeiL123(仅场地状态)"
+  },
+  {
+   "id": "X27",
+   "q": "热血足球 走力 A 型是什么意思？",
+   "filters": {
+    "game": "nekketsu_soccer2"
+   },
+   "kind": "insufficient_source",
+   "mine": "M25 高速型正对照",
+   "kind_v1": "mechanism",
+   "kind_note": "走力A=高速：1angL129明写走力4种A高速B快速C普通D恶路越野(reference_only)；必杀全清单L264尾S10节",
+   "evidence": "1angL129;必杀全清单L264(S10节)"
+  },
+  {
+   "id": "X28",
+   "q": "拳皇98 ECK 金手指怎么用？",
+   "filters": {
+    "revision": "kof98eck"
+   },
+   "kind": "true_negative",
+   "mine": "M26 库内无ECK金手指,疑假阳性(w3已放行)",
+   "kind_v1": "mechanism",
+   "kind_note": "ECK金手指用法：已索引kof98eck.ini/素材生产规范无用法内容",
+   "evidence": "kof98eck域索引件0命中"
+  },
+  {
+   "id": "X29",
+   "q": "热血足球 秘技效果能持续多久？",
+   "filters": {
+    "game": "nekketsu_soccer2"
+   },
+   "kind": "insufficient_source",
+   "mine": "M29 半场事实正对照",
+   "kind_v1": "mechanism",
+   "kind_note": "秘技持续半场：必杀全清单L28在§1(S1原文)节+S8两源一致；probe18负结果作废(L257)⇒无有效实测，文献待重验",
+   "evidence": "必杀全清单L28(S1节),L257(probe18作废)"
+  },
+  {
+   "id": "X30",
+   "q": "热血足球 合体技有哪些发动方法？",
+   "filters": {
+    "game": "nekketsu_soccer2"
+   },
+   "kind": "insufficient_source",
+   "mine": "M30 语料明说无逐条发动法,疑假阳性(w3已放行)",
+   "kind_v1": "mechanism",
+   "kind_note": "合体技发动法：必杀全清单L230明确撤回逐条发动法表述过强，S10只提及存在⇒文献缺口；撤回段不得出证",
+   "evidence": "必杀全清单L230(撤回)"
+  }
+ ],
+ "kind_taxonomy": {
+  "true_negative": "真负例：语料无答案，必须拒答",
+  "insufficient_source": "来源不足：答案文本存在但仅reference_only/转述/撤回/冲突未决，按事实级资格不得权威出证（生产现行文件级权威仍会放行部分此类=诚实缺口，阶段3强制执行）",
+  "positive_control": "正对照：authoritative证据（官方说明书扫描/我方实测）直接回答，应出证",
+  "ambiguous": "歧义/冲突：跨源冲突未决，应报冲突不许选边",
+  "regression": "基线30条回归档（p23_probe运行时注入，不在本文件）"
+ },
+ "relabel_log_20261120": [
+  "30条逐条文件级证据扫描后重标（评审§1.10）；旧kind保留为kind_v1",
+  "X17/X18旧真阳判定撤回：文本存在≠来源资格，S9转述继承reference_only（评审§1.8）",
+  "X15/X16/X24按证据重标：X15有authoritative答案(正对照)、X16仅S10转述(来源不足)、X24密码续关仅1ang(来源不足)",
+  "X22核实无意大利门将专属弱点→真负例；X04跨源冲突→歧义",
+  "问句文本/filters逐字未动，只改kind+附注"
+ ]
+}

@@ -1,0 +1,427 @@
+{
+  "schema_version": 1,
+  "kind": "statejump_showcase",
+  "game_id": "castlevania_aria_gba",
+  "game_title": "Castlevania: Aria of Sorrow / 恶魔城：晓月圆舞曲 (GBA, 2003 Konami)",
+  "platform": "GBA",
+  "core": "mGBA",
+  "system": "GBA",
+  "rom": "F:/BaiduNetdiskDownload/rom/gba/恶魔城晓月圆舞曲.gba",
+  "rom_sha1": "40aab076a528f52e93260bb98d91a40039e0da02",
+  "bizhawk": "F:/taspipe_scratch/gba_parallel_20261124/production_gameplay1/slots/8506d01381be/slot_0/BizHawk-2.11.1",
+  "base_state": "F:/taspipe_scratch/gba_parallel_20261124/aria_combat_states1/states/base.state",
+  "fps": 59.7275,
+  "template": "none",
+  "verification": {
+    "status": "gameplay_verified_showcase_pass_platform_gate_pending",
+    "verified_on": "2026-11-25",
+    "scope": "稳定战斗初态下主武器挥击、半鱼人红魂水流、魔鸟红魂羽刃、布艾尔蓝魂双火焰的画面检测正反例；魔鸟与飞骷髅黄魂身份已由菜单实物核对，飞冰魂俗称仍未确认",
+    "evidence_report": "F:/taspipe_scratch/gba_parallel_20261124/aria_showcase3/showcase_report.json",
+    "production_gate": "本包生产 4/4 pass；showcase.PLATFORM_PROFILES.GBA.verified 仍为 false（平台总闸门未放行）"
+  },
+  "catalog": {
+    "status": "complete",
+    "expected_total": 4,
+    "sources": [
+      {
+        "source_id": "local_showcase_20261125",
+        "status": "verified_read",
+        "verified_date": "2026-11-25",
+        "evidence_report": "F:/taspipe_scratch/gba_parallel_20261124/aria_showcase3/showcase_report.json",
+        "element_ids": [
+          "primary_weapon_slash",
+          "bullet_soul_cast",
+          "wingcutter_soul_cast",
+          "guardian_soul_activate"
+        ],
+        "note": "稳定战斗初态生产采集 4/4；正例过、反例拒、四个要素对应的三套初态零帧回存一致，最终合辑第 9/138/252/420 帧已抽图核验。"
+      },
+      {
+        "source_id": "local_gameplay_20261124",
+        "status": "candidate",
+        "evidence_report": "F:/taspipe_scratch/gba_parallel_20261124/aria_soul_gameplay4/report.json",
+        "element_ids": [
+          "primary_weapon_slash",
+          "bullet_soul_cast",
+          "guardian_soul_activate"
+        ],
+        "note": "采集任务已完成，但报告顶部及 37/37 case 均为 verified_in_game=false；仅作候选复现材料，不证明真实菜单装备或游戏内机制。"
+      },
+      {
+        "source_id": "datacrystal",
+        "url": "https://datacrystal.tcrf.net/wiki/Castlevania:_Aria_of_Sorrow/RAM_map",
+        "status": "snippet_only",
+        "verified_date": "2026-11-18",
+        "element_ids": [
+          "primary_weapon_slash",
+          "bullet_soul_cast",
+          "guardian_soul_activate"
+        ],
+        "note": "只有搜索快照，未全文核对。"
+      },
+      {
+        "source_id": "strategywiki",
+        "url": "https://strategywiki.org/wiki/Castlevania:_Aria_of_Sorrow/Souls",
+        "status": "unreachable",
+        "verified_date": "2026-11-18",
+        "element_ids": [
+          "primary_weapon_slash",
+          "bullet_soul_cast",
+          "guardian_soul_activate"
+        ],
+        "note": "本机直连 403，只有搜索快照。"
+      }
+    ],
+    "coverage_note": "四项取得稳定战斗初态的画面检测正反例证据；魔鸟菜单名、Up+B 羽刃与 MP 消耗已核验，飞骷髅黄魂伤害差异另有 gameplay 证据但不纳入本动作合集；飞冰魂俗称仍未确认。"
+  },
+  "elements": [
+    {
+      "element_id": "primary_weapon_slash",
+      "label": "Primary Weapon Attack (主武器挥击)",
+      "kind": "weapon",
+      "base_state": null,
+      "trigger": {
+        "macro": "B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B",
+        "extra": 100,
+        "patches": []
+      },
+      "detection": {
+        "frame": 9,
+        "success_checks": [
+          {
+            "check_id": "gba_weapon_arc_sig",
+            "plugin_id": "frame_region_color_fraction",
+            "params": {
+              "region": [
+                0.520833,
+                0.6875,
+                0.616667,
+                0.7625
+              ],
+              "rgb": [
+                255,
+                255,
+                255
+              ],
+              "tol": 4,
+              "min_fraction": 0.02
+            },
+            "required": true
+            },
+            {
+              "check_id": "aria_no_dialogue_portrait",
+              "plugin_id": "frame_region_color_fraction_max",
+              "params": {
+                "region": [
+                  0.58,
+                  0.1,
+                  1.0,
+                  0.7
+                ],
+                "rgb": [
+                  214,
+                  132,
+                  74
+                ],
+                "tol": 4,
+                "max_fraction": 0.005
+              },
+              "required": true
+            },
+            {
+              "check_id": "aria_no_dialogue_box",
+              "plugin_id": "frame_region_color_fraction_max",
+              "params": {
+                "region": [
+                  0.0,
+                  0.6875,
+                  0.75,
+                  0.9875
+                ],
+                "rgb": [
+                  25,
+                  16,
+                  16
+                ],
+                "tol": 3,
+                "max_fraction": 0.01
+              },
+              "required": true
+            }
+          ]
+      },
+      "negative_control": {
+        "macro": null,
+        "patches": []
+      },
+      "note": "GBA 按 B 挥动当前主武器。"
+    },
+    {
+      "element_id": "bullet_soul_cast",
+      "label": "Merman Bullet Soul (半鱼人红魂·Up+B 水流)",
+      "kind": "skill",
+      "base_state": "F:/taspipe_scratch/gba_parallel_20261124/aria_combat_states1/states/merman.state",
+      "trigger": {
+        "macro": "Up+B",
+        "extra": 119,
+        "patches": []
+      },
+      "detection": {
+        "frame": 18,
+        "success_checks": [
+          {
+            "check_id": "bullet_soul_proj_sig",
+            "plugin_id": "frame_region_color_fraction",
+            "params": {
+              "region": [
+                0.541667,
+                0.70625,
+                0.9375,
+                0.75
+              ],
+              "rgb": [
+                222,
+                230,
+                255
+              ],
+              "tol": 10,
+              "min_fraction": 0.02
+            },
+            "required": true
+            },
+            {
+              "check_id": "aria_no_dialogue_portrait",
+              "plugin_id": "frame_region_color_fraction_max",
+              "params": {
+                "region": [
+                  0.58,
+                  0.1,
+                  1.0,
+                  0.7
+                ],
+                "rgb": [
+                  214,
+                  132,
+                  74
+                ],
+                "tol": 4,
+                "max_fraction": 0.005
+              },
+              "required": true
+            },
+            {
+              "check_id": "aria_no_dialogue_box",
+              "plugin_id": "frame_region_color_fraction_max",
+              "params": {
+                "region": [
+                  0.0,
+                  0.6875,
+                  0.75,
+                  0.9875
+                ],
+                "rgb": [
+                  25,
+                  16,
+                  16
+                ],
+                "tol": 3,
+                "max_fraction": 0.01
+              },
+              "required": true
+            }
+          ]
+      },
+      "negative_control": {
+        "macro": null,
+        "patches": [
+          {
+            "addr": 78429,
+            "value": 0,
+            "domain": "EWRAM"
+          }
+        ]
+      },
+      "note": "稳定战斗初态红魂 ID=4 的画面检测正例；原菜单验证未完成，不作为红魂身份认定。EWRAM 0x1325D=0 的空槽反例只作复现补强；此处不把它认定为用户所称的飞冰魂。"
+    },
+    {
+      "element_id": "wingcutter_soul_cast",
+      "label": "Wingcutter Red Soul (魔鸟红魂·Up+B 羽刃)",
+      "kind": "skill",
+      "base_state": null,
+      "trigger": {
+        "macro": "Up+B",
+        "extra": 119,
+        "patches": [
+          {
+            "addr": 78429,
+            "value": 24,
+            "domain": "EWRAM"
+          }
+        ]
+      },
+      "detection": {
+        "frame": 12,
+        "success_checks": [
+          {
+            "check_id": "wingcutter_projectile_sig",
+            "plugin_id": "frame_region_color_fraction",
+            "params": {
+              "region": [
+                0.75,
+                0.7,
+                0.875,
+                0.775
+              ],
+              "rgb": [
+                189,
+                123,
+                74
+              ],
+              "tol": 10,
+              "min_fraction": 0.03
+            },
+            "required": true
+          },
+          {
+            "check_id": "aria_no_dialogue_portrait",
+            "plugin_id": "frame_region_color_fraction_max",
+            "params": {
+              "region": [
+                0.58,
+                0.1,
+                1.0,
+                0.7
+              ],
+              "rgb": [
+                214,
+                132,
+                74
+              ],
+              "tol": 4,
+              "max_fraction": 0.005
+            },
+            "required": true
+          },
+          {
+            "check_id": "aria_no_dialogue_box",
+            "plugin_id": "frame_region_color_fraction_max",
+            "params": {
+              "region": [
+                0.0,
+                0.6875,
+                0.75,
+                0.9875
+              ],
+              "rgb": [
+                25,
+                16,
+                16
+              ],
+              "tol": 3,
+              "max_fraction": 0.01
+            },
+            "required": true
+          }
+        ]
+      },
+      "negative_control": {
+        "macro": null,
+        "patches": [
+          {
+            "addr": 78429,
+            "value": 0,
+            "domain": "EWRAM"
+          }
+        ]
+      },
+      "note": "中文菜单名为魔鸟，描述为投出刀刃般的羽毛；同初态 Up+B 羽刃正例、清空红槽反例，MP 80→59、反例不变。美版对应 Harpy/Wing Cutter；与用户俗称飞冰魂的对应仍未确认，也不等同于黄魂飞骷髅。"
+    },
+    {
+      "element_id": "guardian_soul_activate",
+      "label": "Buer Guardian Soul (布艾尔蓝魂·R 双火焰)",
+      "kind": "transform",
+      "base_state": "F:/taspipe_scratch/gba_parallel_20261124/aria_combat_states1/states/blue_buer.state",
+      "trigger": {
+        "macro": "R",
+        "extra": 119,
+        "patches": []
+      },
+      "detection": {
+        "frame": 60,
+        "success_checks": [
+          {
+            "check_id": "guardian_soul_aura_sig",
+            "plugin_id": "frame_region_color_fraction",
+            "params": {
+              "region": [
+                0.291667,
+                0.375,
+                0.708333,
+                0.90625
+              ],
+              "rgb": [
+                255,
+                49,
+                25
+              ],
+              "tol": 10,
+              "min_fraction": 0.01
+            },
+            "required": true
+            },
+            {
+              "check_id": "aria_no_dialogue_portrait",
+              "plugin_id": "frame_region_color_fraction_max",
+              "params": {
+                "region": [
+                  0.58,
+                  0.1,
+                  1.0,
+                  0.7
+                ],
+                "rgb": [
+                  214,
+                  132,
+                  74
+                ],
+                "tol": 4,
+                "max_fraction": 0.005
+              },
+              "required": true
+            },
+            {
+              "check_id": "aria_no_dialogue_box",
+              "plugin_id": "frame_region_color_fraction_max",
+              "params": {
+                "region": [
+                  0.0,
+                  0.6875,
+                  0.75,
+                  0.9875
+                ],
+                "rgb": [
+                  25,
+                  16,
+                  16
+                ],
+                "tol": 3,
+                "max_fraction": 0.01
+              },
+              "required": true
+            }
+          ]
+      },
+      "negative_control": {
+        "macro": null,
+        "patches": [
+          {
+            "addr": 78430,
+            "value": 0,
+            "domain": "EWRAM"
+          }
+        ]
+      },
+      "note": "稳定战斗初态蓝魂 ID=4 的画面检测正例；原菜单验证未完成，不作为蓝魂身份认定。EWRAM 0x1325E=0 的空槽反例只作复现补强；mGBA 肩键按已校准构建原样透传。"
+    }
+  ]
+}

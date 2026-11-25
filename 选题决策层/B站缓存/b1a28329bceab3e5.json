@@ -1,0 +1,43 @@
+{
+ "keyword": "shadPS4",
+ "status": "ok",
+ "ts": "2026-11-19T05:39:17Z",
+ "ts_epoch": 1795066757.680711,
+ "supply_num_results": 1000,
+ "n_videos": 20,
+ "relevant_count": 15,
+ "core_hit_rate": 0.75,
+ "full_hit_rate": 0.75,
+ "play_median": 13940.5,
+ "relevant_play_median": 11409,
+ "play_mean": 22600.3,
+ "play_max": 90512,
+ "play_total": 339005,
+ "engagement_median": 0.0373,
+ "recent_count": 3,
+ "recent_play_median": 1644,
+ "top3": [
+  {
+   "bvid": "BV1j4411g73U",
+   "title": "【大料八角】PS4上只适合成年人的游戏",
+   "author": "大料八角",
+   "play": 729875,
+   "pubdate": "2019-06-24"
+  },
+  {
+   "bvid": "BV11H4e6gEiE",
+   "title": "LUOBU4",
+   "author": "ROBLOX刺氪-官官号",
+   "play": 244741,
+   "pubdate": "2026-11-08"
+  },
+  {
+   "bvid": "BV1PZs769EFb",
+   "title": "4 个月小猫惨遭摔打，妈妈拿出 PS5 让他亲手摔",
+   "author": "拾趣观察员",
+   "play": 164454,
+   "pubdate": "2026-11-15"
+  }
+ ],
+ "cache_hit": false
+}

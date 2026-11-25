@@ -878,9 +878,15 @@ def close(driver, slot=1):
                            stderr=subprocess.DEVNULL, timeout=10)   # 不带 /T:那是另一个进程的树
         except Exception:
             pass
-    _rm_state(driver, n)
-    return {"ok": not port_alive(port), "slot": n, "port": port,
-            "msg": ("第 %d 槽的窗口关好了" % n if not port_alive(port)
+        for _ in range(20):
+            if not port_alive(port):
+                break
+            time.sleep(0.2)
+    down = not port_alive(port)
+    if down:
+        _rm_state(driver, n)
+    return {"ok": down, "slot": n, "port": port,
+            "msg": ("第 %d 槽的窗口关好了" % n if down
                     else "第 %d 槽的窗口没关掉(端口还在 %d)" % (n, port))}
 
 

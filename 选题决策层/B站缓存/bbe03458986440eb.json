@@ -1,0 +1,43 @@
+{
+ "keyword": "Batocera",
+ "status": "ok",
+ "ts": "2026-11-19T05:39:19Z",
+ "ts_epoch": 1795066759.954382,
+ "supply_num_results": 1000,
+ "n_videos": 20,
+ "relevant_count": 17,
+ "core_hit_rate": 0.85,
+ "full_hit_rate": 0.85,
+ "play_median": 3748.0,
+ "relevant_play_median": 5671,
+ "play_mean": 30973.7,
+ "play_max": 308050,
+ "play_total": 526553,
+ "engagement_median": 0.0627,
+ "recent_count": 6,
+ "recent_play_median": 1153.0,
+ "top3": [
+  {
+   "bvid": "BV1Db4y147eV",
+   "title": "万能游戏机Batocera教程（1）下载安装",
+   "author": "最爱牛夫人",
+   "play": 308050,
+   "pubdate": "2022-02-18"
+  },
+  {
+   "bvid": "BV1kg4y197ts",
+   "title": "怀旧游戏中文懒人包--Batocera V37 64G游戏懒人包(烧录映像档,控制器设定,系统设定)",
+   "author": "老掌櫃",
+   "play": 60781,
+   "pubdate": "2023-11-13"
+  },
+  {
+   "bvid": "BV1Se7C6SEXG",
+   "title": "【老高分享】客厅游戏机Batocera详细教程，适用于迷你电脑/小主机/HTPC/笔记本/台式机",
+   "author": "爱折腾的老高",
+   "play": 36898,
+   "pubdate": "2026-06-05"
+  }
+ ],
+ "cache_hit": false
+}

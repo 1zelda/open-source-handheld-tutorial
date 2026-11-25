@@ -1,0 +1,78 @@
+{
+ "assess": {
+  "id": "5628",
+  "game": "Mega Man X2",
+  "title": "SNES Mega Man X2 by Akiteru in 30:59.022",
+  "platform_code": "SNES",
+  "status": "replayable",
+  "identity_status": "resolved",
+  "movie": "F:\\开源掌机教程\\04-游戏资源库\\TAS输入录像库\\movies\\SNES\\5628.bk2",
+  "movie_note": "",
+  "required_rom_sha1": "637079014421563283CDED6AEAA0604597B2E33C",
+  "hash_source": "bk2 Header",
+  "rom_match": [
+   "F:\\BaiduNetdiskDownload\\rom\\snes\\洛克人 X2.zip!洛克人 X2.sfc"
+  ],
+  "core": "BSNES",
+  "emulator": "BizHawk 2.9.1",
+  "emulator_dir": "F:\\开源掌机教程\\02-模拟器库\\BizHawk\\BizHawk-2.9.1",
+  "arm_inherited_from": null,
+  "blockers": [],
+  "profile": {
+   "profile_id": "tasvideos_5628",
+   "game_revision_id": "129_1522",
+   "backend_id": "bizhawk_snes",
+   "platform": "SNES",
+   "emulator_fingerprint": "Version 2.9.1",
+   "core": "BSNES",
+   "firmware_fingerprints": [],
+   "settings_fingerprint": "",
+   "controller_spec": {},
+   "initial_data_fingerprint": "",
+   "rom_sha1": "637079014421563283CDED6AEAA0604597B2E33C",
+   "capability_report": {
+    "source": "tasvideos",
+    "movie_ext": "bk2",
+    "bizhawk_dir": "F:\\开源掌机教程\\02-模拟器库\\BizHawk\\BizHawk-2.9.1"
+   },
+   "schema_version": 1
+  },
+  "goal": {
+   "classes": [],
+   "completion_claim": "implied",
+   "quoted_goal": [],
+   "tail_restart": false,
+   "starts_from_save": false,
+   "tags": [
+    "Contains speed/entertainment tradeoffs",
+    "Takes intentional damage"
+   ]
+  },
+  "fidelity": {
+   "recorder": "BizHawk 原生 bk2",
+   "completion_verdict": "judgeable_pending_evidence",
+   "why": "BizHawk 原生 bk2，同族核心：时序这一轴不是障碍，但「判得了」只在 NES 上实测过——其余平台还差判据表（看 predicate 那一格），而且仍要 §35 那类截图证词才算 pass",
+   "is_prior_only": true,
+   "overridden_by_measured_pass": true,
+   "known_counterexamples": []
+  },
+  "predicate": {
+   "platform": "SNES",
+   "predicate_verdict": "table_missing",
+   "why": "SNES：本平台没有本机实测过的判据表：地址/域/帧量化沿用 NES 那套映射，换平台读到的不是同一个含义。放片和看图不受影响，写通关判据要么补本平台判据表，要么只交 §35 截图证词；control.plan 用 predicate_platform_unproven 拦在启动前"
+  }
+ },
+ "rom_hits_by_sha1": [
+  "F:\\BaiduNetdiskDownload\\rom\\snes\\洛克人 X2.zip!洛克人 X2.sfc"
+ ],
+ "bizhawk_found": {
+  "2.10": "F:\\开源掌机教程\\02-模拟器库\\BizHawk\\BizHawk-2.10",
+  "2.11": "F:\\开源掌机教程\\02-模拟器库\\BizHawk\\BizHawk-2.11",
+  "2.11.1": "F:\\开源掌机教程\\02-模拟器库\\BizHawk\\BizHawk-2.11.1",
+  "2.3": "F:\\开源掌机教程\\02-模拟器库\\BizHawk\\BizHawk-2.3",
+  "2.3.1": "F:\\开源掌机教程\\02-模拟器库\\BizHawk\\BizHawk-2.3.1",
+  "2.8": "F:\\开源掌机教程\\02-模拟器库\\BizHawk\\BizHawk-2.8",
+  "2.9": "F:\\开源掌机教程\\02-模拟器库\\BizHawk\\BizHawk-2.9",
+  "2.9.1": "F:\\开源掌机教程\\02-模拟器库\\BizHawk\\BizHawk-2.9.1"
+ }
+}

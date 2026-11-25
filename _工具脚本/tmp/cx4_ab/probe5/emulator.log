@@ -1,0 +1,151 @@
+Using DirectInput+XInput for host input (keyboard + gamepads)
+MemoryBlock created for address 36f00000000:36f0a09c000 with mirror 1e560620000:1e56a6bc000
+Mouting `libsnes.wbx` @36f00000000
+  Sections:
+    @0:0     `` 0 bytes
+    @36f000002a8:36f000002eb R   `.interp` 67 bytes
+    @36f000002ec:36f00000304 R   `.note.gnu.build-id` 24 bytes
+    @36f00001000:36f00001003 R X `.init` 3 bytes
+    @36f00001010:36f00140de8 R X `.text` 1310168 bytes
+    @36f00140de8:36f00140deb R X `.fini` 3 bytes
+    @36f00141000:36f00159a08 R   `.rodata` 100872 bytes
+    @36f00159a08:36f0015f134 R   `.eh_frame_hdr` 22316 bytes
+    @36f0015f138:36f00181334 R   `.eh_frame` 139772 bytes
+    @36f00181334:36f001833cc R   `.gcc_except_table` 8344 bytes
+    @36f00184000:36f00184130 RW  `.init_array` 304 bytes
+    @36f00185000:36f00185080 RW  `.invis` 128 bytes
+    @36f00186000:36f00186248 RW  `.data` 584 bytes
+    @36f00186250:36f0029ac70 RW  `.bss` 1133088 bytes
+    @36f0029bc70:36f0029bc70 RW  `.ldata` 0 bytes
+    @0:6f     `.comment` 111 bytes
+    @0:18918     `.symtab` 100632 bytes
+    @0:a8     `.shstrtab` 168 bytes
+    @0:23e16     `.strtab` 146966 bytes
+  Segments:
+    %36f00000040:36f000002a8 R   616 bytes
+    %36f000002a8:36f000002eb R   67 bytes
+    %36f00000000:36f00000304 R   772 bytes
+    %36f00001000:36f00140deb R X 1310187 bytes
+    %36f00141000:36f001833cc R   271308 bytes
+    %36f00184000:36f00184130 RW  304 bytes
+    %36f00185000:36f0029bc70 RW  1141872 bytes
+    %36f00184000:36f00185000 R   4096 bytes
+    %36f00159a08:36f0015f134 R   22316 bytes
+    %36f000002ec:36f00000304 R   24 bytes
+Calling _start()
+Initializing heap sbrk at 36f0049c000:36f0089c000
+Allocated 4096 bytes on sbrk heap, usage 4096/4194304
+Allocated 135168 bytes on sbrk heap, usage 139264/4194304
+Allocated 167936 bytes on sbrk heap, usage 307200/4194304
+Allocated 20480 bytes on sbrk heap, usage 327680/4194304
+Initializing heap sealed at 0x36f0089c000:0x36f0589c000
+Allocated 16777216 bytes on sealed heap, usage 16777216/83886080
+Allocated 67108864 bytes on sealed heap, usage 83886080/83886080
+Initializing heap invisible at 0x36f0589c000:0x36f0609c000
+Allocated 16 bytes on invisible heap, usage 16/8388608
+Allocated 524288 bytes on invisible heap, usage 524304/8388608
+Allocated 524288 bytes on invisible heap, usage 1048592/8388608
+Allocated 16 bytes on invisible heap, usage 1048608/8388608
+Allocated 524288 bytes on invisible heap, usage 1572896/8388608
+Allocated 524288 bytes on invisible heap, usage 2097184/8388608
+Allocated 983040 bytes on invisible heap, usage 3080224/8388608
+Allocated 2097152 bytes on invisible heap, usage 5177376/8388608
+Initializing heap plain at 0x36f0609c000:0x36f0809c000
+Allocated 20 bytes on plain heap, usage 32/33554432
+Allocated 20 bytes on plain heap, usage 64/33554432
+Allocated 131072 bytes on plain heap, usage 131136/33554432
+Allocated 65536 bytes on plain heap, usage 196672/33554432
+Allocated 131072 bytes on plain heap, usage 327744/33554432
+Allocated 544 bytes on plain heap, usage 328288/33554432
+Allocated 512 bytes on plain heap, usage 328800/33554432
+Allocated 1048576 bytes on invisible heap, usage 6225952/8388608
+Allocated 262144 bytes on invisible heap, usage 6488096/8388608
+Allocated 131072 bytes on invisible heap, usage 6619168/8388608
+Allocated 65536 bytes on invisible heap, usage 6684704/8388608
+Allocated 4096 bytes on invisible heap, usage 6688800/8388608
+Allocated 2048 bytes on invisible heap, usage 6690848/8388608
+Allocated 1024 bytes on invisible heap, usage 6691872/8388608
+Allocated 32768 bytes on plain heap, usage 361568/33554432
+Allocated 8192 bytes on plain heap, usage 369760/33554432
+Allocated 1572864 bytes on plain heap, usage 1942624/33554432
+Served libsnes request for firmware "cx4.rom"
+Allocated 8192 bytes on sbrk heap, usage 335872/4194304
+Calling co_clean()
+Calling ecl_seal()
+WaterboxHost Sealed!
+Read a zipstate of version 1.0.2
+MemoryBlock created for address 36f00000000:36f0a09c000 with mirror 1e56ce80000:1e576f1c000
+Mouting `libsnes.wbx` @36f00000000
+  Sections:
+    @0:0     `` 0 bytes
+    @36f000002a8:36f000002eb R   `.interp` 67 bytes
+    @36f000002ec:36f00000304 R   `.note.gnu.build-id` 24 bytes
+    @36f00001000:36f00001003 R X `.init` 3 bytes
+    @36f00001010:36f00140de8 R X `.text` 1310168 bytes
+    @36f00140de8:36f00140deb R X `.fini` 3 bytes
+    @36f00141000:36f00159a08 R   `.rodata` 100872 bytes
+    @36f00159a08:36f0015f134 R   `.eh_frame_hdr` 22316 bytes
+    @36f0015f138:36f00181334 R   `.eh_frame` 139772 bytes
+    @36f00181334:36f001833cc R   `.gcc_except_table` 8344 bytes
+    @36f00184000:36f00184130 RW  `.init_array` 304 bytes
+    @36f00185000:36f00185080 RW  `.invis` 128 bytes
+    @36f00186000:36f00186248 RW  `.data` 584 bytes
+    @36f00186250:36f0029ac70 RW  `.bss` 1133088 bytes
+    @36f0029bc70:36f0029bc70 RW  `.ldata` 0 bytes
+    @0:6f     `.comment` 111 bytes
+    @0:18918     `.symtab` 100632 bytes
+    @0:a8     `.shstrtab` 168 bytes
+    @0:23e16     `.strtab` 146966 bytes
+  Segments:
+    %36f00000040:36f000002a8 R   616 bytes
+    %36f000002a8:36f000002eb R   67 bytes
+    %36f00000000:36f00000304 R   772 bytes
+    %36f00001000:36f00140deb R X 1310187 bytes
+    %36f00141000:36f001833cc R   271308 bytes
+    %36f00184000:36f00184130 RW  304 bytes
+    %36f00185000:36f0029bc70 RW  1141872 bytes
+    %36f00184000:36f00185000 R   4096 bytes
+    %36f00159a08:36f0015f134 R   22316 bytes
+    %36f000002ec:36f00000304 R   24 bytes
+Calling _start()
+Initializing heap sbrk at 36f0049c000:36f0089c000
+Allocated 4096 bytes on sbrk heap, usage 4096/4194304
+Allocated 135168 bytes on sbrk heap, usage 139264/4194304
+Allocated 167936 bytes on sbrk heap, usage 307200/4194304
+Allocated 20480 bytes on sbrk heap, usage 327680/4194304
+Initializing heap sealed at 0x36f0089c000:0x36f0589c000
+Allocated 16777216 bytes on sealed heap, usage 16777216/83886080
+Allocated 67108864 bytes on sealed heap, usage 83886080/83886080
+Initializing heap invisible at 0x36f0589c000:0x36f0609c000
+Allocated 16 bytes on invisible heap, usage 16/8388608
+Allocated 524288 bytes on invisible heap, usage 524304/8388608
+Allocated 524288 bytes on invisible heap, usage 1048592/8388608
+Allocated 16 bytes on invisible heap, usage 1048608/8388608
+Allocated 524288 bytes on invisible heap, usage 1572896/8388608
+Allocated 524288 bytes on invisible heap, usage 2097184/8388608
+Allocated 983040 bytes on invisible heap, usage 3080224/8388608
+Allocated 2097152 bytes on invisible heap, usage 5177376/8388608
+Initializing heap plain at 0x36f0609c000:0x36f0809c000
+Allocated 20 bytes on plain heap, usage 32/33554432
+Allocated 20 bytes on plain heap, usage 64/33554432
+Allocated 131072 bytes on plain heap, usage 131136/33554432
+Allocated 65536 bytes on plain heap, usage 196672/33554432
+Allocated 131072 bytes on plain heap, usage 327744/33554432
+Allocated 544 bytes on plain heap, usage 328288/33554432
+Allocated 512 bytes on plain heap, usage 328800/33554432
+Allocated 1048576 bytes on invisible heap, usage 6225952/8388608
+Allocated 262144 bytes on invisible heap, usage 6488096/8388608
+Allocated 131072 bytes on invisible heap, usage 6619168/8388608
+Allocated 65536 bytes on invisible heap, usage 6684704/8388608
+Allocated 4096 bytes on invisible heap, usage 6688800/8388608
+Allocated 2048 bytes on invisible heap, usage 6690848/8388608
+Allocated 1024 bytes on invisible heap, usage 6691872/8388608
+Allocated 32768 bytes on plain heap, usage 361568/33554432
+Allocated 8192 bytes on plain heap, usage 369760/33554432
+Allocated 1572864 bytes on plain heap, usage 1942624/33554432
+Served libsnes request for firmware "cx4.rom"
+Allocated 8192 bytes on sbrk heap, usage 335872/4194304
+Calling co_clean()
+Calling ecl_seal()
+WaterboxHost Sealed!
+NLua.Exceptions.LuaScriptException: [string "main"]:12: attempt to index a nil value (local 'hb')

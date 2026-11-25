@@ -1,0 +1,39 @@
+OK  route+ 热血足球世界杯怎么触发 | got=retro_soccer avail=True
+OK  route+ 燕返是谁的必杀 | got=retro_soccer avail=True
+OK  route+ 草薙京的出招表在哪 | got=kof98 avail=True
+OK  route+ 98UM 和 ECK 什么区别 | got=kof98 avail=True
+OK  route+ 街机改版整合包里有多少游戏 | got=arcade_hacks avail=True
+OK  route+ 素材生产规范对掉帧怎么规定 | got=project_docs avail=True
+OK  route+ kb.py 的候选过滤在哪 | got=tooling avail=True
+OK  route- 英雄联盟全球总决赛冠军是哪支战队 | got=esports_lol avail=False
+OK  route- DOTA2 TI14 奖金池多少 | got=esports_dota avail=False
+OK  route- 原神纳西妲圣遗物怎么配 | got=modern_games avail=False
+OK  route-unrouted 天气
+OK  route-strong优先 拳皇98射门 | got=kof98
+OK  intent 这张 ECK 卡带的 ROM S | got=value_lookup
+OK  intent 热血足球联盟一共有多少种必杀射门 | got=count
+OK  intent 说明书里每队上场几名球员 | got=count
+OK  intent 联赛模式一共要打多少场比赛 | got=count
+OK  intent 燕返原生只有哪个角色会使 | got=identity
+OK  intent GK・キャラ是什么位置 | got=identity
+OK  intent 能不能关掉队友改成 1v1 | got=yesno
+OK  intent 一直输球会不会触发隐藏结局 | got=yesno
+OK  intent 我想控制队长以外的队员，该怎么换 | got=howto
+OK  intent 有没有转会市场可以买卖队员 | got=existence
+OK  ans+ 热血足球联盟一共有多少种必杀射门 | intent=count f=True p=True i=True
+OK  ans+ 说明书里每队上场几名球员 | intent=count f=False p=True i=True
+OK  ans+ 联赛模式一共要打多少场比赛 | intent=count f=False p=True i=True
+OK  ans+ 燕返原生只有哪个角色会使 | intent=identity f=True p=True i=True
+OK  ans+ 这张 ECK 卡带的 ROM S | intent=value_lookup f=True p=True i=True
+OK  ans+ 能不能关掉队友改成 1v1 | intent=yesno f=False p=True i=True
+OK  ans+ GK・キャラ是什么位置 | intent=identity f=True p=True i=True
+OK  ans- 这张 ECK 卡带的 ROM S | intent=value_lookup f=True p=True i=False
+OK  ans- 燕返原生只有哪个角色会使 | intent=identity f=True p=False i=True
+OK  ans- 燕返原生只有哪个角色会使 | intent=identity f=True p=False i=True
+OK  ans- 有没有转会市场可以买卖队员 | intent=existence f=False p=False i=False
+OK  ans- 能不能关掉队友改成 1v1 | intent=yesno f=True p=True i=False
+OK  ans- 说明书里每队上场几名球员 | intent=count f=False p=True i=False
+OK  ans- 联赛模式一共要打多少场比赛 | intent=count f=False p=True i=False
+OK  empty-q topic兜底
+
+SELFTEST 37/37

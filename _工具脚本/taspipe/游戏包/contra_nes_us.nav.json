@@ -1,0 +1,69 @@
+{
+  "schema_version": 1,
+  "kind": "nav_recipe",
+  "game_id": "contra_nes_us",
+  "note": "魂斗罗美版：从本 revision 随包 boot_root 冷启动 -> PLAY SELECT 选 1 PLAYER -> STAGE 1 JUNGLE 卡 -> 过场自动走 -> 实机平地态。旧 r20261114T043740/base.state 已实测推进即重置，不再作为校准输入。",
+  "state_name": "base",
+  "save_name": "base_stage1",
+  "root_state": "F:/开源掌机教程/04-游戏资源库/TAS输入录像库/状态资产/contra_nes_us/contra_u_c9ea66bb/r20261125T020305/states/boot_root.state",
+  "fps": 60.0988,
+  "profile": {
+    "profile_id": "contra_u_c9ea66bb",
+    "rom": "F:/开源掌机教程/04-游戏资源库/TAS输入录像库/roms_verify/NES/contra_u.nes",
+    "rom_sha1": "C9EA66BB7CB30AD5343F1721B1D4D3219859319B",
+    "core": "NesHawk",
+    "system": "NES",
+    "bizhawk": "F:/开源掌机教程/02-模拟器库/BizHawk/BizHawk-2.8"
+  },
+  "steps": [
+    {
+      "label": "boot_to_select",
+      "run": 70
+    },
+    {
+      "label": "cursor_to_1p",
+      "macro": "Up,U,U,U,U,U,U,U,U",
+      "extra": 40
+    },
+    {
+      "label": "start_1p",
+      "macro": "Start,,,,",
+      "extra": 60
+    },
+    {
+      "label": "start_launch",
+      "macro": "Start,,,,",
+      "extra": 120
+    },
+    {
+      "label": "wait_card",
+      "run": 150
+    },
+    {
+      "label": "wait_intro",
+      "run": 360
+    },
+    {
+      "label": "neutral",
+      "run": 30
+    }
+  ],
+  "expect": [
+    {
+      "addr": 172,
+      "op": "==",
+      "value": 7,
+      "why": "0x00AC 场景模式 = 7（实机）；实测 fc 704 由 0 翻成 7 并一直保持，卡面是 0"
+    },
+    {
+      "addr": 170,
+      "op": "==",
+      "value": 0,
+      "why": "0x00AA P1 武器寄存器 = 默认步枪（要素展示的起点）"
+    }
+  ],
+  "drift_probe_frames": 240,
+  "ramdump": 2048,
+  "reload_check": true,
+  "control_check": true
+}

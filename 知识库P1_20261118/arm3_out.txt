@@ -1,0 +1,39 @@
+W1119 01:28:56.714000 45172 E:\SHARE\py313-cuda\torch\distributed\elastic\multiprocessing\redirects.py:29] NOTE: Redirects are currently not supported in Windows or MacOs.
+问句向量缓存命中 qvecs_ext.npz
+嵌入缓存命中 embeddings_v3_fd04e8b915a9.npz
+阶段A完成
+The CrossEncoder `automodel_args` argument was renamed and is now deprecated. Please use `model_kwargs` instead.
+Loading weights:   0%|          | 0/393 [00:00<?, ?it/s]Loading weights:   0%|          | 1/393 [00:00<01:26,  4.51it/s]Loading weights:   1%|          | 2/393 [00:00<02:15,  2.89it/s]Loading weights:   1%|          | 3/393 [00:02<06:33,  1.01s/it]Loading weights:   1%|          | 4/393 [00:03<05:35,  1.16it/s]Loading weights:   1%|▏         | 5/393 [00:03<04:24,  1.47it/s]Loading weights:   2%|▏         | 6/393 [00:03<04:05,  1.57it/s]Loading weights:   2%|▏         | 7/393 [00:04<03:41,  1.74it/s]Loading weights:   2%|▏         | 8/393 [00:04<03:29,  1.84it/s]Loading weights:   2%|▏         | 9/393 [00:05<02:47,  2.29it/s]Loading weights:   3%|▎         | 10/393 [00:05<03:05,  2.06it/s]Loading weights:   3%|▎         | 12/393 [00:06<02:34,  2.47it/s]Loading weights:   4%|▎         | 14/393 [00:06<01:58,  3.19it/s]Loading weights:   4%|▍         | 16/393 [00:06<01:26,  4.36it/s]Loading weights:   4%|▍         | 17/393 [00:07<01:36,  3.90it/s]Loading weights:   5%|▍         | 18/393 [00:07<01:30,  4.12it/s]Loading weights:   5%|▍         | 19/393 [00:07<02:00,  3.11it/s]Loading weights:   5%|▌         | 20/393 [00:08<02:20,  2.66it/s]Loading weights:   5%|▌         | 21/393 [00:08<02:25,  2.55it/s]Loading weights:   6%|▌         | 22/393 [00:09<02:08,  2.89it/s]Loading weights:   6%|▌         | 23/393 [00:09<01:46,  3.47it/s]Loading weights:   6%|▌         | 24/393 [00:09<01:37,  3.77it/s]Loading weights:   6%|▋         | 25/393 [00:09<01:47,  3.43it/s]Loading weights:   7%|▋         | 26/393 [00:10<02:23,  2.56it/s]Loading weights:   7%|▋         | 27/393 [00:10<02:05,  2.91it/s]Loading weights:   7%|▋         | 28/393 [00:11<02:15,  2.70it/s]Loading weights:   7%|▋         | 29/393 [00:11<01:54,  3.17it/s]Loading weights:   8%|▊         | 30/393 [00:11<02:07,  2.85it/s]Loading weights:   8%|▊         | 31/393 [00:12<01:58,  3.04it/s]Loading weights:   8%|▊         | 32/393 [00:12<01:48,  3.34it/s]Loading weights:   8%|▊         | 33/393 [00:12<01:41,  3.54it/s]Loading weights:   9%|▊         | 34/393 [00:13<02:19,  2.58it/s]Loading weights:   9%|▉         | 35/393 [00:13<01:48,  3.31it/s]Loading weights:   9%|▉         | 36/393 [00:13<02:12,  2.68it/s]Loading weights:   9%|▉         | 37/393 [00:14<02:56,  2.02it/s]Loading weights:  10%|▉         | 39/393 [00:14<01:49,  3.23it/s]Loading weights:  10%|█         | 40/393 [00:15<02:32,  2.31it/s]Loading weights:  10%|█         | 41/393 [00:16<02:32,  2.31it/s]Loading weights: 100%|██████████| 393/393 [00:16<00:00, 24.50it/s]
+阶段B：重排器就绪
+Q01 retro_soccer pool=15 FAIL/inconclusive OK/pass FAIL/inconclusive OK/pass FAIL/inconclusive OK/pass
+Q02 retro_soccer pool=14 FAIL/inconclusive FAIL/inconclusive FAIL/inconclusive FAIL/inconclusive FAIL/inconclusive FAIL/inconclusive
+Q03 retro_soccer pool=15 FAIL/inconclusive OK/pass FAIL/inconclusive OK/pass FAIL/inconclusive OK/pass
+Q04 retro_soccer pool=14 OK/pass OK/pass OK/pass OK/pass OK/pass OK/pass
+Q05 unrouted pool=18 OK/pass OK/pass OK/pass OK/pass OK/pass OK/pass
+Q06 retro_soccer pool=16 FAIL/inconclusive FAIL/inconclusive OK/inconclusive OK/inconclusive OK/inconclusive OK/inconclusive
+Q07 retro_soccer pool=14 FAIL/inconclusive FAIL/inconclusive OK/inconclusive OK/inconclusive OK/inconclusive OK/inconclusive
+Q08 unrouted pool=17 FAIL/inconclusive FAIL/inconclusive FAIL/inconclusive FAIL/inconclusive FAIL/inconclusive FAIL/inconclusive
+Q09 kof98 pool=14 OK/insufficient_evidence OK/insufficient_evidence OK/insufficient_evidence OK/insufficient_evidence OK/insufficient_evidence OK/insufficient_evidence
+Q10 kof98 pool=13 OK/pass OK/pass OK/pass OK/pass FAIL/pass FAIL/pass
+Q11 kof98 pool=13 OK/pass OK/pass OK/pass OK/pass OK/pass OK/pass
+Q12 NOT_FOUND esports_lol
+Q13 NOT_FOUND esports_dota
+Q14 NOT_FOUND modern_games
+Q15 retro_soccer pool=17 OK/insufficient_evidence OK/insufficient_evidence OK/insufficient_evidence OK/insufficient_evidence OK/insufficient_evidence OK/insufficient_evidence
+Q16 retro_soccer pool=14 OK/inconclusive OK/inconclusive OK/inconclusive OK/inconclusive OK/inconclusive OK/inconclusive
+Q17 retro_soccer pool=14 OK/inconclusive OK/pass OK/inconclusive OK/inconclusive OK/inconclusive OK/inconclusive
+Q18 unrouted pool=17 FAIL/inconclusive OK/pass FAIL/inconclusive OK/pass FAIL/inconclusive OK/pass
+P19 retro_soccer pool=15 OK/inconclusive OK/inconclusive OK/inconclusive OK/pass OK/inconclusive OK/pass
+P20 NOT_FOUND esports_lol
+P21 retro_soccer pool=15 OK/insufficient_evidence OK/insufficient_evidence OK/insufficient_evidence OK/insufficient_evidence OK/insufficient_evidence OK/insufficient_evidence
+P22 project_docs pool=21 FAIL/inconclusive FAIL/inconclusive FAIL/inconclusive FAIL/inconclusive OK/inconclusive OK/inconclusive
+P23 project_docs pool=20 FAIL/inconclusive FAIL/inconclusive FAIL/inconclusive FAIL/inconclusive OK/inconclusive OK/inconclusive
+P24 project_docs pool=14 OK/pass OK/pass OK/pass OK/pass OK/pass OK/pass
+P25 retro_soccer pool=14 OK/insufficient_evidence OK/insufficient_evidence OK/insufficient_evidence OK/insufficient_evidence OK/insufficient_evidence OK/insufficient_evidence
+P26 NOT_FOUND esports_dota
+fused8/strict_top1 {"total": 26, "ok": 17, "by_tier": {"strict_pass": {"total": 6, "ok": 2}, "gold_in_topk": {"total": 10, "ok": 5}, "refuse": {"total": 9, "ok": 9}, "version_guard": {"total": 1, "ok": 1}}, "failed_ids": ["Q01", "Q02", "Q03", "Q06", "Q07", "Q08", "Q18", "P22", "P23"]}
+fused8/top3_conditional {"total": 26, "ok": 20, "by_tier": {"strict_pass": {"total": 6, "ok": 5}, "gold_in_topk": {"total": 10, "ok": 5}, "refuse": {"total": 9, "ok": 9}, "version_guard": {"total": 1, "ok": 1}}, "failed_ids": ["Q02", "Q06", "Q07", "Q08", "P22", "P23"]}
+union/strict_top1 {"total": 26, "ok": 19, "by_tier": {"strict_pass": {"total": 6, "ok": 2}, "gold_in_topk": {"total": 10, "ok": 7}, "refuse": {"total": 9, "ok": 9}, "version_guard": {"total": 1, "ok": 1}}, "failed_ids": ["Q01", "Q02", "Q03", "Q08", "Q18", "P22", "P23"]}
+union/top3_conditional {"total": 26, "ok": 22, "by_tier": {"strict_pass": {"total": 6, "ok": 5}, "gold_in_topk": {"total": 10, "ok": 7}, "refuse": {"total": 9, "ok": 9}, "version_guard": {"total": 1, "ok": 1}}, "failed_ids": ["Q02", "Q08", "P22", "P23"]}
+union12/strict_top1 {"total": 26, "ok": 20, "by_tier": {"strict_pass": {"total": 6, "ok": 1}, "gold_in_topk": {"total": 10, "ok": 9}, "refuse": {"total": 9, "ok": 9}, "version_guard": {"total": 1, "ok": 1}}, "failed_ids": ["Q01", "Q02", "Q03", "Q08", "Q10", "Q18"]}
+union12/top3_conditional {"total": 26, "ok": 23, "by_tier": {"strict_pass": {"total": 6, "ok": 4}, "gold_in_topk": {"total": 10, "ok": 9}, "refuse": {"total": 9, "ok": 9}, "version_guard": {"total": 1, "ok": 1}}, "failed_ids": ["Q02", "Q08", "Q10"]}

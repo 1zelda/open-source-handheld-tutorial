@@ -1,0 +1,19 @@
+洛克人2 官方说明书：Energy Meter life energy pellet ball crystal 武器能量 1UP（美国NES手册第6至7页）
+
+来源：Capcom《MEGA MAN 2》美国 NES 官方说明书，任天堂官方数字复刻。
+核验：已读扫描页；中文为说明，英文为短引文；未收全本。
+
+左上角Energy Meter显示还能承受多少伤害，归零时失去一条Mega Man生命。
+> When the meter reaches zero points, one Mega Man life will be lost.
+
+energy pellet和energy ball补充少量生命能量；energy crystal是满能量，可在电量低时使用。
+> There is also an energy crystal. This is a full load of energy that Mega Man can carry around with him.
+
+按START选择Energy crystal，再按START将能量补满，然后重新选武器并按START。
+> Push the START button again to fill your energy back up to maximum.
+
+选择标准Mega Man以外的武器时会出现第二能量表，表示当前武器剩余能量。
+> This tells how much charge remains in the current weapon.
+
+1 UP增加一名玩家。
+> 1 UP. Adds One Player.

@@ -19,3 +19,110 @@ cookie 未续期：quark-rccretut（夸克下载态 ≈18h，不重扫一次建 
 ----- run at 2026-11-11 20:30:01 -----
 保活跳过：登录失败：URLError: <urlopen error [WinError 10061] 由于目标计算机积极拒绝，无法连接。>（密码不对就在 F:\OpenList 里跑 openlist.exe admin set 新密码）
 （计划任务里这属正常：设了 OPENLIST_ADMIN_PASSWORD 才会真探；本轮不写报告）
+----- run at 2026-11-12 20:30:01 -----
+保活跳过：登录失败：URLError: <urlopen error [WinError 10061] 由于目标计算机积极拒绝，无法连接。>（密码不对就在 F:\OpenList 里跑 openlist.exe admin set 新密码）
+（计划任务里这属正常：设了 OPENLIST_ADMIN_PASSWORD 才会真探；本轮不写报告）
+----- run at 2026-11-13 20:30:01 -----
+[20:31:03] 已登录（token 只在内存里，不落盘）
+[20:31:05] 开浏览器 第1槽:msedge.exe profile=F:\OpenList\扫码登录\profile-Quark(独立窗口,不碰你日常浏览器的 cookie)
+[20:31:32] 开浏览器 第2槽:msedge.exe profile=F:\OpenList\扫码登录\profile-Quark-02(独立窗口,不碰你日常浏览器的 cookie)
+[20:31:50] 开浏览器 第3槽:msedge.exe profile=F:\OpenList\扫码登录\profile-Quark-03(独立窗口,不碰你日常浏览器的 cookie)
+[20:32:20] 开浏览器 第5槽:msedge.exe profile=F:\OpenList\扫码登录\profile-Quark-05(独立窗口,不碰你日常浏览器的 cookie)
+[20:42:22] 开浏览器 第8槽:msedge.exe profile=F:\OpenList\扫码登录\profile-Quark-08(独立窗口,不碰你日常浏览器的 cookie)
+保活 5 个（节流跳过 0）：有效 4 / 预警 1 / 失效 0
+  quark-rccretut warn  failed get objs: failed to list objs: Get "https://drive.qua
+cookie 未续期：quark-rccretut、quark-a3ytd720（夸克下载态 ≈18h，不重扫一次建 profile 就续不了）
+报告：F:\开源掌机教程\06-资讯监控\网盘保活\保活报告.json
+----- run at 2026-11-14 20:30:01 -----
+[20:30:04] 已登录（token 只在内存里，不落盘）
+[20:30:06] 开浏览器 第1槽:msedge.exe profile=F:\OpenList\扫码登录\profile-Quark(独立窗口,不碰你日常浏览器的 cookie)
+[20:30:28] 开浏览器 第2槽:msedge.exe profile=F:\OpenList\扫码登录\profile-Quark-02(独立窗口,不碰你日常浏览器的 cookie)
+[20:30:46] 开浏览器 第3槽:msedge.exe profile=F:\OpenList\扫码登录\profile-Quark-03(独立窗口,不碰你日常浏览器的 cookie)
+[20:31:04] 开浏览器 第5槽:msedge.exe profile=F:\OpenList\扫码登录\profile-Quark-05(独立窗口,不碰你日常浏览器的 cookie)
+[20:31:20] 开浏览器 第8槽:msedge.exe profile=F:\OpenList\扫码登录\profile-Quark-08(独立窗口,不碰你日常浏览器的 cookie)
+保活 5 个（节流跳过 0）：有效 5 / 预警 0 / 失效 0
+报告：F:\开源掌机教程\06-资讯监控\网盘保活\保活报告.json
+----- run at 2026-11-16 20:30:04 -----
+[20:30:21] 已登录（token 只在内存里，不落盘）
+[20:30:23] 开浏览器 第1槽:msedge.exe profile=F:\OpenList\扫码登录\profile-Quark(独立窗口,不碰你日常浏览器的 cookie)
+[20:30:54] 开浏览器 第2槽:msedge.exe profile=F:\OpenList\扫码登录\profile-Quark-02(独立窗口,不碰你日常浏览器的 cookie)
+[20:31:14] 开浏览器 第3槽:msedge.exe profile=F:\OpenList\扫码登录\profile-Quark-03(独立窗口,不碰你日常浏览器的 cookie)
+[20:31:32] 开浏览器 第5槽:msedge.exe profile=F:\OpenList\扫码登录\profile-Quark-05(独立窗口,不碰你日常浏览器的 cookie)
+[20:31:51] 开浏览器 第8槽:msedge.exe profile=F:\OpenList\扫码登录\profile-Quark-08(独立窗口,不碰你日常浏览器的 cookie)
+保活 5 个（节流跳过 0）：有效 5 / 预警 0 / 失效 0
+报告：F:\开源掌机教程\06-资讯监控\网盘保活\保活报告.json
+----- run at 2026-11-17 20:30:01 -----
+[20:30:04] 已登录（token 只在内存里，不落盘）
+[20:30:06] 开浏览器 第1槽:msedge.exe profile=F:\OpenList\扫码登录\profile-Quark(独立窗口,不碰你日常浏览器的 cookie)
+[20:30:29] 开浏览器 第2槽:msedge.exe profile=F:\OpenList\扫码登录\profile-Quark-02(独立窗口,不碰你日常浏览器的 cookie)
+[20:30:47] 开浏览器 第3槽:msedge.exe profile=F:\OpenList\扫码登录\profile-Quark-03(独立窗口,不碰你日常浏览器的 cookie)
+[20:31:05] 开浏览器 第5槽:msedge.exe profile=F:\OpenList\扫码登录\profile-Quark-05(独立窗口,不碰你日常浏览器的 cookie)
+[20:31:22] 开浏览器 第8槽:msedge.exe profile=F:\OpenList\扫码登录\profile-Quark-08(独立窗口,不碰你日常浏览器的 cookie)
+保活 5 个（节流跳过 0）：有效 5 / 预警 0 / 失效 0
+报告：F:\开源掌机教程\06-资讯监控\网盘保活\保活报告.json
+----- run at 2026-11-18 20:30:02 -----
+[20:30:08] 已登录（token 只在内存里，不落盘）
+[20:30:10] 开浏览器 第1槽:msedge.exe profile=F:\OpenList\扫码登录\profile-Quark(独立窗口,不碰你日常浏览器的 cookie)
+[20:30:59] 开浏览器 第2槽:msedge.exe profile=F:\OpenList\扫码登录\profile-Quark-02(独立窗口,不碰你日常浏览器的 cookie)
+[20:32:11] 开浏览器 第3槽:msedge.exe profile=F:\OpenList\扫码登录\profile-Quark-03(独立窗口,不碰你日常浏览器的 cookie)
+[20:32:35] 开浏览器 第5槽:msedge.exe profile=F:\OpenList\扫码登录\profile-Quark-05(独立窗口,不碰你日常浏览器的 cookie)
+[20:33:06] 开浏览器 第8槽:msedge.exe profile=F:\OpenList\扫码登录\profile-Quark-08(独立窗口,不碰你日常浏览器的 cookie)
+保活 5 个（节流跳过 0）：有效 5 / 预警 0 / 失效 0
+cookie 未续期：quark-bbzwry88、quark-rccretut、quark-a3ytd720（夸克下载态 ≈18h，不重扫一次建 profile 就续不了）
+报告：F:\开源掌机教程\06-资讯监控\网盘保活\保活报告.json
+----- run at 2026-11-19 20:30:03 -----
+[20:30:04] 已登录（token 只在内存里，不落盘）
+[20:30:06] 开浏览器 第1槽:msedge.exe profile=F:\OpenList\扫码登录\profile-Quark(独立窗口,不碰你日常浏览器的 cookie)
+[20:30:46] 开浏览器 第2槽:msedge.exe profile=F:\OpenList\扫码登录\profile-Quark-02(独立窗口,不碰你日常浏览器的 cookie)
+[20:31:13] 开浏览器 第3槽:msedge.exe profile=F:\OpenList\扫码登录\profile-Quark-03(独立窗口,不碰你日常浏览器的 cookie)
+[20:31:33] 开浏览器 第5槽:msedge.exe profile=F:\OpenList\扫码登录\profile-Quark-05(独立窗口,不碰你日常浏览器的 cookie)
+[20:31:51] 开浏览器 第8槽:msedge.exe profile=F:\OpenList\扫码登录\profile-Quark-08(独立窗口,不碰你日常浏览器的 cookie)
+保活 5 个（节流跳过 0）：有效 5 / 预警 0 / 失效 0
+cookie 未续期：quark-tuiuw33s（夸克下载态 ≈18h，不重扫一次建 profile 就续不了）
+报告：F:\开源掌机教程\06-资讯监控\网盘保活\保活报告.json
+----- run at 2026-11-20 20:30:01 -----
+[20:30:05] 已登录（token 只在内存里，不落盘）
+[20:31:23] 开浏览器 第3槽:msedge.exe profile=F:\OpenList\扫码登录\profile-Quark-03(独立窗口,不碰你日常浏览器的 cookie)
+[20:31:45] 开浏览器 第5槽:msedge.exe profile=F:\OpenList\扫码登录\profile-Quark-05(独立窗口,不碰你日常浏览器的 cookie)
+[20:32:05] 开浏览器 第8槽:msedge.exe profile=F:\OpenList\扫码登录\profile-Quark-08(独立窗口,不碰你日常浏览器的 cookie)
+保活 5 个（节流跳过 0）：有效 5 / 预警 0 / 失效 0
+cookie 未续期：quark-tuiuw33s、quark-wbrmupaj（夸克下载态 ≈18h，不重扫一次建 profile 就续不了）
+报告：F:\开源掌机教程\06-资讯监控\网盘保活\保活报告.json
+----- run at 2026-11-21 20:30:02 -----
+[20:41:07] 已登录（token 只在内存里，不落盘）
+[20:44:24] 开浏览器 第3槽:msedge.exe profile=F:\OpenList\扫码登录\profile-Quark-03(独立窗口,不碰你日常浏览器的 cookie)
+[20:45:00] 开浏览器 第5槽:msedge.exe profile=F:\OpenList\扫码登录\profile-Quark-05(独立窗口,不碰你日常浏览器的 cookie)
+[20:45:20] 开浏览器 第8槽:msedge.exe profile=F:\OpenList\扫码登录\profile-Quark-08(独立窗口,不碰你日常浏览器的 cookie)
+保活 5 个（节流跳过 0）：有效 5 / 预警 0 / 失效 0
+cookie 未续期：quark-tuiuw33s、quark-wbrmupaj、quark-bbzwry88（夸克下载态 ≈18h，不重扫一次建 profile 就续不了）
+报告：F:\开源掌机教程\06-资讯监控\网盘保活\保活报告.json
+----- run at 2026-11-22 20:30:04 -----
+[20:31:19] 已登录（token 只在内存里，不落盘）
+[20:44:49] 开浏览器 第5槽:msedge.exe profile=F:\OpenList\扫码登录\profile-Quark-05(独立窗口,不碰你日常浏览器的 cookie)
+[20:45:16] 开浏览器 第8槽:msedge.exe profile=F:\OpenList\扫码登录\profile-Quark-08(独立窗口,不碰你日常浏览器的 cookie)
+保活 5 个（节流跳过 0）：有效 4 / 预警 1 / 失效 0
+  quark-wbrmupaj warn  failed get objs: failed to list objs: Get "https://drive.qua
+cookie 未续期：quark-tuiuw33s、quark-wbrmupaj、quark-bbzwry88、quark-rccretut、quark-a3ytd720（夸克下载态 ≈18h，不重扫一次建 profile 就续不了）
+报告：F:\开源掌机教程\06-资讯监控\网盘保活\保活报告.json
+----- run at 2026-11-23 20:30:55 -----
+[20:44:59] 已登录（token 只在内存里，不落盘）
+[20:51:32] 开浏览器 第5槽:msedge.exe profile=F:\OpenList\扫码登录\profile-Quark-05(独立窗口,不碰你日常浏览器的 cookie)
+保活 5 个（节流跳过 0）：有效 4 / 预警 1 / 失效 0
+  quark-tuiuw33s warn  failed get objs: failed to list objs: Get "https://drive.qua
+cookie 未续期：quark-tuiuw33s、quark-wbrmupaj、quark-bbzwry88、quark-a3ytd720（夸克下载态 ≈18h，不重扫一次建 profile 就续不了）
+报告：F:\开源掌机教程\06-资讯监控\网盘保活\保活报告.json
+----- run at 2026-11-24 20:30:08 -----
+[20:30:31] 已登录（token 只在内存里，不落盘）
+[20:30:33] 开浏览器 第1槽:msedge.exe profile=F:\OpenList\扫码登录\profile-Quark(独立窗口,不碰你日常浏览器的 cookie)
+[20:30:58] 开浏览器 第2槽:msedge.exe profile=F:\OpenList\扫码登录\profile-Quark-02(独立窗口,不碰你日常浏览器的 cookie)
+[20:31:19] 开浏览器 第3槽:msedge.exe profile=F:\OpenList\扫码登录\profile-Quark-03(独立窗口,不碰你日常浏览器的 cookie)
+[20:31:41] 开浏览器 第5槽:msedge.exe profile=F:\OpenList\扫码登录\profile-Quark-05(独立窗口,不碰你日常浏览器的 cookie)
+[20:32:02] 开浏览器 第8槽:msedge.exe profile=F:\OpenList\扫码登录\profile-Quark-08(独立窗口,不碰你日常浏览器的 cookie)
+保活 5 个（节流跳过 0）：有效 5 / 预警 0 / 失效 0
+cookie 未续期：quark-tuiuw33s、quark-wbrmupaj、quark-bbzwry88、quark-rccretut、quark-a3ytd720（夸克下载态 ≈18h，不重扫一次建 profile 就续不了）
+报告：F:\开源掌机教程\06-资讯监控\网盘保活\保活报告.json
+----- run at 2026-11-25 20:30:01 -----
+[20:30:04] 已登录（token 只在内存里，不落盘）
+保活 5 个（节流跳过 0）：有效 5 / 预警 0 / 失效 0
+cookie 未续期：quark-tuiuw33s、quark-wbrmupaj、quark-bbzwry88、quark-rccretut、quark-a3ytd720（夸克下载态 ≈18h，不重扫一次建 profile 就续不了）
+报告：F:\开源掌机教程\06-资讯监控\网盘保活\保活报告.json

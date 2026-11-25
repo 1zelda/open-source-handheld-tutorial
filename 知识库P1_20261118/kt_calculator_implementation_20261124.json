@@ -1,0 +1,113 @@
+{
+  "status": "completed_reference_only",
+  "completed_at": "2026-11-24",
+  "game": "熱血格闘伝説",
+  "revision": "nekketsu_kakutou_densetsu_fc_jp",
+  "formula": "KT# = (出生月 + 出生日 - 1) mod 20",
+  "production_command": "PYTHONUTF8=1 py -3 -m taspipe.kb kt-candidates --month 1 --day 1 --json",
+  "output_contract": {
+    "status": "reference_only",
+    "authority": "reference_only",
+    "rom_recomputed": false,
+    "hard_evidence_eligible": false,
+    "selected_evidence_present": false
+  },
+  "source_chain": [
+    {
+      "source_id": "dammit9x_nkd_faq",
+      "role": "secondary_faq",
+      "url": "https://raw.githubusercontent.com/dammit9x/vgr/master/faqs/nekketsu_kakutou_densetsu_a.txt"
+    },
+    {
+      "role": "archived_fan_guide",
+      "url": "https://web.archive.org/web/20010819104652id_/http://www.rahga.com/nkd/",
+      "snapshot_date": "2001-08-19",
+      "verified": "20 patterns and birthday cycle present; numbering 1-20 is equivalent to local 0-19"
+    },
+    {
+      "role": "earlier_archived_fan_page",
+      "url": "https://web.archive.org/web/20010215090626id_/http://yokohama.cool.ne.jp/tyaf/Games/kak.html",
+      "snapshot_date": "2001-02-15",
+      "verified": "Shift-JIS decoded locally; 20 patterns and month cycle present"
+    }
+  ],
+  "tests": {
+    "kb_selftest": {
+      "result": "269/269",
+      "scope": "historical source snapshot; KT gates passed",
+      "log": "知识库P1_20261118/kt_calculator_kb_selftest_20261124.log",
+      "log_bytes": 64299,
+      "log_sha256": "188c8a72c3d3d44577779497f62bce9c3fa6ef9f3558660b111db410d219cbb5"
+    },
+    "tas_selftest": {
+      "result": "1359/1359",
+      "scope": "historical source snapshot; not current after parallel updates",
+      "log": "知识库P1_20261118/kt_calculator_selftest_20261124.log",
+      "log_bytes": 141876,
+      "log_sha256": "72823ac56bf222d6d792bfce3e4614b5aa696ce436b3ea94399ec31663d7138c"
+    },
+    "current_kt_targeted": {
+      "result": "3/3 function gates; CLI valid=0 invalid=2",
+      "log": "知识库P1_20261118/kt_targeted_current_20261124.log",
+      "log_bytes": 2311,
+      "log_sha256": "22316105e10f5bb78b09c6c08af5700ee1b12778e6bad5d4fff85bffc6d2441a",
+      "source_hashes_stable_before_after": true
+    },
+    "current_shared_source_rerun": {
+      "result": "stopped_at_gate_199",
+      "exit_code": 1,
+      "failure_scope": "Q06 old assertion expects inconclusive; production now correctly passes with gold evidence; unrelated to KT calculator",
+      "log": "知识库P1_20261118/kt_calculator_selftest_20261124_current2.log",
+      "log_bytes": 91687,
+      "log_sha256": "421b12105a032063d92d2c10738432d0ea146fc2923c2719931680c91b4b163e",
+      "source_hashes_stable_before_after": true
+    },
+    "cli_smoke": [
+      {"input": "1/1", "exit_code": 0, "candidate_kt_number": 1},
+      {"input": "2/30", "exit_code": 2, "rejected": true}
+    ],
+    "source_hashes_stable_before_after": true,
+    "source_sha256": {
+      "_工具脚本/taspipe/kb.py": "104c29c06a985254f7d21cf61361dfd3cee8f12af2a99ad7c1198f36ceba2a41",
+      "_工具脚本/taspipe/kb_selftest_gates.py": "dfed2190e39cc0007fe754a665fe847d852833d0e4f337b0766cbd4953f54d2e",
+      "_工具脚本/taspipe/kb_blind_eval.py": "2f061b9a6957137599c68b98cd511f846532c0b79d04ab696fdb88f842a52c6d",
+      "_工具脚本/taspipe/selftest.py": "786774e931ee118413164b996226bb41b2725c78f9148ce052cd0932e9b9571c",
+      "_工具脚本/taspipe/nkd_kt.py": "aadb1d76045826e26a9d8f6b0b9702c84dfa9975a772b4974742e70edbe45d06"
+    },
+    "historical_source_sha256": {
+      "_工具脚本/taspipe/kb.py": "ca8a88d71bd14412e047f5fdfb8c2a52d77bb271dcfdfceac27492734efa5cb9",
+      "_工具脚本/taspipe/kb_selftest_gates.py": "3247062191d5ba256247979387fcd907d532745b24e88e6f7a7e44dc3af78b3a",
+      "_工具脚本/taspipe/kb_blind_eval.py": "2f061b9a6957137599c68b98cd511f846532c0b79d04ab696fdb88f842a52c6d",
+      "_工具脚本/taspipe/selftest.py": "126fcfc111d4b913cc59b4510a525e4ee3eba397c27bacaca2c55e66ee38a479",
+      "_工具脚本/taspipe/nkd_kt.py": "aadb1d76045826e26a9d8f6b0b9702c84dfa9975a772b4974742e70edbe45d06"
+    }
+  },
+  "artifacts": {
+    "markdown": {
+      "path": "热血格斗传说_KT候选计算器与出处复核_2026-11-24.md",
+      "bytes": 6023,
+      "sha256": "59700e32f8dc872c92c9b03df1f7a668a6a97db46d117937dad12ce66513b8c4"
+    },
+    "html": {
+      "path": "热血格斗传说_KT候选计算器与出处复核_2026-11-24.html",
+      "bytes": 9158,
+      "sha256": "ec3f1f5a02bb1ed19370b025df6e92d144c3806d5cf0c980c44c3a7e9bfe63d1"
+    },
+    "pdf": {
+      "path": "热血格斗传说_KT候选计算器与出处复核_2026-11-24.pdf",
+      "bytes": 343040,
+      "sha256": "1b91b4a8567f757d0ac8d4d8870452762c626c84da83996a23ad9a1b351864c1",
+      "pages": 2,
+      "text_overflow_pages": 0,
+      "visual_review": "passed"
+    }
+  },
+  "remaining_blockers": [
+    "合法原版 TJC-NA ROM 未在项目资源库按文件名找到，KT 表尚未由 ROM 逐例复算",
+    "名字到能力/格斗类型公式未解",
+    "血型到具体能力值公式未解",
+    "当前共享源码全量自检停在 [199]：旧断言仍要求 Q06 inconclusive，生产现已正确 pass；需并行集成线更新预期",
+    "A1 授权邮件待真实发件账号",
+    "A2 生产语义层与 A3 付费 API 待单独批准"
+  ]
+}

@@ -1,0 +1,2602 @@
+{
+ "variant": "rrf_rerank_pool30",
+ "index_sha256": "b6485738ec90e389ce453c20c6e9f1b2d6688e88fc478901ff38df334fc4ff81",
+ "summary": {
+  "total": 18,
+  "ok": 9,
+  "by_tier": {
+   "strict_pass": {
+    "total": 6,
+    "ok": 1
+   },
+   "gold_in_topk": {
+    "total": 6,
+    "ok": 3
+   },
+   "refuse": {
+    "total": 5,
+    "ok": 4
+   },
+   "version_guard": {
+    "total": 1,
+    "ok": 1
+   }
+  },
+  "failed_ids": [
+   "Q01",
+   "Q02",
+   "Q03",
+   "Q06",
+   "Q07",
+   "Q08",
+   "Q10",
+   "Q15",
+   "Q18"
+  ]
+ },
+ "grades": [
+  {
+   "id": "Q01",
+   "tier": "strict_pass",
+   "ok": false,
+   "why": "status=inconclusive, gold_overlap=True",
+   "status": "inconclusive",
+   "n_hits": 8,
+   "top1": "_工具脚本/taspipe/游戏包/来源库/取证/sohu_必杀最强小辫子_20261118.md#L1-L69"
+  },
+  {
+   "id": "Q02",
+   "tier": "strict_pass",
+   "ok": false,
+   "why": "status=inconclusive, gold_overlap=True",
+   "status": "inconclusive",
+   "n_hits": 8,
+   "top1": "_工具脚本/taspipe/游戏包/来源库/取证/sohu_必杀最强小辫子_20261118.md#L71-L89"
+  },
+  {
+   "id": "Q03",
+   "tier": "strict_pass",
+   "ok": false,
+   "why": "status=inconclusive, gold_overlap=True",
+   "status": "inconclusive",
+   "n_hits": 8,
+   "top1": "_工具脚本/taspipe/游戏包/来源库/取证/1ang_热血足球联盟图文攻略_20261118.md#L823-L839"
+  },
+  {
+   "id": "Q04",
+   "tier": "gold_in_topk",
+   "ok": true,
+   "why": "status=pass, gold_in_top8=True",
+   "status": "pass",
+   "n_hits": 8,
+   "top1": "_工具脚本/taspipe/游戏包/热血足球联盟_必杀全清单.md#L24-L33"
+  },
+  {
+   "id": "Q05",
+   "tier": "strict_pass",
+   "ok": true,
+   "why": "status=pass, gold_overlap=True",
+   "status": "pass",
+   "n_hits": 8,
+   "top1": "_工具脚本/taspipe/游戏包/热血足球联盟_必杀全清单.md#L24-L33"
+  },
+  {
+   "id": "Q06",
+   "tier": "gold_in_topk",
+   "ok": false,
+   "why": "status=inconclusive, gold_in_top8=False",
+   "status": "inconclusive",
+   "n_hits": 8,
+   "top1": "_工具脚本/taspipe/游戏包/来源库/取证/1ang_热血足球联盟图文攻略_20261118.md#L161-L164"
+  },
+  {
+   "id": "Q07",
+   "tier": "gold_in_topk",
+   "ok": false,
+   "why": "status=inconclusive, gold_in_top8=False",
+   "status": "inconclusive",
+   "n_hits": 8,
+   "top1": "_工具脚本/taspipe/游戏包/来源库/取证/1ang_热血足球联盟图文攻略_20261118.md#L183-L192"
+  },
+  {
+   "id": "Q08",
+   "tier": "gold_in_topk",
+   "ok": false,
+   "why": "status=inconclusive, gold_in_top8=False",
+   "status": "inconclusive",
+   "n_hits": 8,
+   "top1": "_工具脚本/taspipe/游戏包/来源库/取证/1ang_热血足球联盟图文攻略_20261118.md#L161-L164"
+  },
+  {
+   "id": "Q09",
+   "tier": "refuse",
+   "ok": true,
+   "why": "status=inconclusive（pass 即失败：缺证据不许冒充事实）",
+   "status": "inconclusive",
+   "n_hits": 8,
+   "top1": "F:/工具链/fbneo/nightly/config/games/kof98eck.ini#L1-L32"
+  },
+  {
+   "id": "Q10",
+   "tier": "strict_pass",
+   "ok": false,
+   "why": "status=pass, gold_overlap=False",
+   "status": "pass",
+   "n_hits": 8,
+   "top1": "F:/tas_rig/docs/素材生产规范.md#L18-L31"
+  },
+  {
+   "id": "Q11",
+   "tier": "version_guard",
+   "ok": true,
+   "why": "status=pass, um_hits=1, top1_um=False, warned=True",
+   "status": "pass",
+   "n_hits": 8,
+   "top1": "F:/tas_rig/docs/素材生产规范.md#L140-L155"
+  },
+  {
+   "id": "Q12",
+   "tier": "refuse",
+   "ok": true,
+   "why": "status=inconclusive（pass 即失败：缺证据不许冒充事实）",
+   "status": "inconclusive",
+   "n_hits": 8,
+   "top1": "_工具脚本/taspipe/游戏包/来源库/取证/1ang_热血足球联盟图文攻略_20261118.md#L183-L192"
+  },
+  {
+   "id": "Q13",
+   "tier": "refuse",
+   "ok": true,
+   "why": "status=inconclusive（pass 即失败：缺证据不许冒充事实）",
+   "status": "inconclusive",
+   "n_hits": 8,
+   "top1": "_工具脚本/taspipe/游戏包/来源库/取证/quanjizhong_thread677_街机改版整合_20261118.md#L4716-L4740"
+  },
+  {
+   "id": "Q14",
+   "tier": "refuse",
+   "ok": true,
+   "why": "status=inconclusive（pass 即失败：缺证据不许冒充事实）",
+   "status": "inconclusive",
+   "n_hits": 8,
+   "top1": "_工具脚本/taspipe/游戏包/来源库/取证/quanjizhong_thread677_街机改版整合_20261118.md#L1916-L1940"
+  },
+  {
+   "id": "Q15",
+   "tier": "refuse",
+   "ok": false,
+   "why": "status=pass（pass 即失败：缺证据不许冒充事实）",
+   "status": "pass",
+   "n_hits": 8,
+   "top1": "_工具脚本/taspipe/游戏包/热血足球联盟_必杀全清单.md#L137-L158"
+  },
+  {
+   "id": "Q16",
+   "tier": "gold_in_topk",
+   "ok": true,
+   "why": "status=inconclusive, gold_in_top8=True",
+   "status": "inconclusive",
+   "n_hits": 8,
+   "top1": "_工具脚本/taspipe/游戏包/来源库/取证/sohu_必杀最强小辫子_20261118.md#L71-L89"
+  },
+  {
+   "id": "Q17",
+   "tier": "gold_in_topk",
+   "ok": true,
+   "why": "status=inconclusive, gold_in_top8=True",
+   "status": "inconclusive",
+   "n_hits": 8,
+   "top1": "_工具脚本/taspipe/游戏包/来源库/取证/sohu_一直输球隐藏大结局_20261118.md#L1-L63"
+  },
+  {
+   "id": "Q18",
+   "tier": "strict_pass",
+   "ok": false,
+   "why": "status=inconclusive, gold_overlap=True",
+   "status": "inconclusive",
+   "n_hits": 8,
+   "top1": "_工具脚本/taspipe/游戏包/来源库/取证/1ang_热血足球联盟图文攻略_20261118.md#L823-L839"
+  }
+ ],
+ "results": [
+  {
+   "id": "Q01",
+   "result": {
+    "q": "热血足球联盟一共有多少种必杀射门？",
+    "counts": {
+     "candidates": 123,
+     "hits": 8,
+     "strong": 5
+    },
+    "authority_warnings": [
+     "sohu_game 是二手件（reference_only），须交叉核对",
+     "sohu_game 是二手件（reference_only），须交叉核对",
+     "sohu_game 是二手件（reference_only），须交叉核对"
+    ],
+    "status": "inconclusive",
+    "hits": [
+     {
+      "chunk_id": "141a669374a9",
+      "score": 0.0323,
+      "source_id": "sohu_game",
+      "status": "verified_read",
+      "authority": "reference_only",
+      "revision": "nekketsu_soccer2_fc_unspecified",
+      "game_id": "nekketsu_soccer2",
+      "platform": "NES",
+      "locator": "_工具脚本/taspipe/游戏包/来源库/取证/sohu_必杀最强小辫子_20261118.md#L1-L69",
+      "heading": "No.2 香蕉环射门——津根",
+      "snippet": "*   文章\n*   总阅读\n*   游戏领域优质创作者\n2023-02-17 00:41\n发布于：辽宁省\n这是老男孩游戏盒的第535篇原创，作者@怀旧淼哥\n最近有FC游戏水友给淼哥留言说，希望讲一期《热血足球》里的必杀射门盘点——《热血足球》的射门技能实在太多了，光是日本队就有12名球员，每位必杀技都各不相同，再加上总共存在的11个队的对手，总共23种必杀实在是盘点不过来啊！要么今天就先来给大家盘点一下淼哥心目中的《热血足球》日本队最实用必杀技以及球员的排名吧！\n《热血足球",
+      "revision_match": true
+     },
+     {
+      "chunk_id": "2c9b59c2df7a",
+      "score": 0.0313,
+      "source_id": "local_soccer2_super_list",
+      "status": "verified_read",
+      "authority": "authoritative",
+      "revision": "nekketsu_soccer2_multi",
+      "game_id": "nekketsu_soccer2",
+      "platform": "NES",
+      "locator": "_工具脚本/taspipe/游戏包/热血足球联盟_honest_gap_manifest.md#L8-L20",
+      "heading": "1. 覆盖反查（declared vs delivered）",
+      "snippet": "- declared（《热血足球联盟_必杀全清单.md》）：23 必杀射门（12 角色 + 11 对手）+ 13 一般技 = **36**。\n- delivered（CN/hack 四变体 jf/wl/hack_jump/hack_se 实测可复现的**必杀**）：**0**。\n- 差集 = 36，全部进 gaps（§3）。**无一项必杀在本地 CN/hack 上复现**，不交付任何必杀正例。\n可复现的**非必杀**动作（探针级证据，非 calibrated bundle）：",
+      "revision_match": true
+     },
+     {
+      "chunk_id": "a3e5a236ca2e",
+      "score": 0.0306,
+      "source_id": "local_soccer2_super_list",
+      "status": "verified_read",
+      "authority": "authoritative",
+      "revision": "nekketsu_soccer2_multi",
+      "game_id": "nekketsu_soccer2",
+      "platform": "NES",
+      "locator": "_工具脚本/taspipe/游戏包/热血足球联盟_必杀全清单.md#L3-L7",
+      "heading": "热血足球联盟（FC 1993 Technos）必杀技全清单 · 证据级",
+      "snippet": "> 任务口径：用户 2026-11-14「再继续测试热血足球 这次的必杀技更多 一定要全」。\n> 总量口径（搜狐·雷凌老男孩）：日本队 12 人每人必杀各不相同 + 11 支对手队 = **23 种必杀射门**；\n> 另有一般个人技/合体技（天幻网攻略转载逐条列发动法）。本清单 = 23 射门 + 一般技 + Hyper Shoot。\n> 规则：名称/效果/发动法只认下列来源原文；实测未复现的标 `待实测`，不冒充已验证。",
+      "revision_match": true
+     },
+     {
+      "chunk_id": "0faf32bd68c9",
+      "score": 0.031,
+      "source_id": "sohu_game",
+      "status": "verified_read",
+      "authority": "reference_only",
+      "revision": "nekketsu_soccer2_fc_unspecified",
+      "game_id": "nekketsu_soccer2",
+      "platform": "NES",
+      "locator": "_工具脚本/taspipe/游戏包/来源库/取证/sohu_热血队队员必杀集锦_20261118.md#L1-L75",
+      "heading": "FC《热血足球联盟》热血队队员必杀技集锦，当年你最喜欢谁",
+      "snippet": "FC《热血足球联盟》热血队队员必杀技集锦，当年你最喜欢谁\\_总体\n2019-08-29 12:35\nFC的热血足球在80和90的游戏玩家中，已经深入人心，不在介绍了，我们直接进入主题。\n首先是主角国夫的必杀技，坚果射门，球踢出去像一颗坚果，飞行速度一般，力量一般，技能特效一般，总体一般，没有特别出彩的地方。\n坚果射门\n赖常的必杀技，忍者射门，球踢出去变成一颗飞镖飞行一段距离消失，再出现时球弹地飞奔球门而去，飞行速度快，力量较强，技能特效炫，总体很强。\n忍者射门\n卡洛斯的必杀技",
+      "revision_match": true
+     },
+     {
+      "chunk_id": "8996c7a159ef",
+      "score": 0.0272,
+      "source_id": "local_soccer2_super_list",
+      "status": "verified_read",
+      "authority": "authoritative",
+      "revision": "nekketsu_soccer2_multi",
+      "game_id": "nekketsu_soccer2",
+      "platform": "NES",
+      "locator": "_工具脚本/taspipe/游戏包/热血足球联盟_必杀全清单.md#L137-L158",
+      "heading": "5. 生产接线（11-14 实测更新）",
+      "snippet": "⇒ 现状改成 **untested（未在任何有效条件下测过）**，不是\"不可触发\"。用户 11-14 亲口\"其实打出过好多次必杀了\"，\n有效条件下的真阳性一定存在，责任在我的测量方式，不在 ROM。\n真采 23 必杀仍需正对照：先在**当前 jf ROM** 上按 §6 的三条铁律重跑触发链，仍全负再谈日版原版 ROM（网盘仅两 hack 无日版；外部=门控待批）。\n本清单 23+13 项在 CN/hack 上全部标 **honest gap（不可复现，证据见下）**，不冒充",
+      "revision_match": true
+     },
+     {
+      "chunk_id": "19e0ef066b52",
+      "score": 0.0268,
+      "source_id": "local_soccer2_super_list",
+      "status": "verified_read",
+      "authority": "authoritative",
+      "revision": "nekketsu_soccer2_multi",
+      "game_id": "nekketsu_soccer2",
+      "platform": "NES",
+      "locator": "_工具脚本/taspipe/游戏包/热血足球联盟_必杀全清单.md#L88-L98",
+      "heading": "4. 对手队 11 种必杀射门（每队一种；名称已知 3，其余待实测命名）",
+      "snippet": "| 队 | 名称 | 视觉/强度线索 | 来源 |\n|---|---|---|---|\n| 巴西 | 食人鱼射门 | 抛物线鱼形球(与土佐鲣同类) | S3 |\n| 阿根廷 | 香蕉射门 | 香蕉形(与香蕉环不同、无停顿) | S3 |\n| 塞内加尔 | 白鸟图像射门(名称待实测) | 必杀显现白鸟/白鸽图像、破坏力低 | S1 |\n| 喀麦隆 | 待实测 | 必杀强、命中强；前锋 Dakosuta 可吹飞强豪门将 | S1 |\n| 韩国/泰国/蒙古/几内亚/墨西哥/英格兰/",
+      "revision_match": true
+     },
+     {
+      "chunk_id": "3199edbfee3a",
+      "score": 0.0229,
+      "source_id": "sohu_game",
+      "status": "verified_read",
+      "authority": "reference_only",
+      "revision": "nekketsu_soccer2_fc_unspecified",
+      "game_id": "nekketsu_soccer2",
+      "platform": "NES",
+      "locator": "_工具脚本/taspipe/游戏包/来源库/取证/sohu_热血队队员必杀集锦_20261118.md#L77-L100",
+      "heading": "FC《热血足球联盟》热血队队员必杀技集锦，当年你最喜欢谁",
+      "snippet": "精准射门\n九门的必杀技，书呆子射门，球踢出去变成一支铅笔旋转着向球门飞去，球速一般，力量较差，技能特效较好，总体一般。\n书呆子射门\n海月的必杀技，土佐鲣射门，球踢出去变成一条鱼上下游动，球速很慢，力量较差，技能特效优秀，总体一般。\n土佐鲣射门\n津根的必杀技，香蕉环射门，球踢出去在球和香蕉之间不停的切换，在切换时会停顿在空中，从而影响到守门员的判断，球速很慢，力量较差，技能特效优秀，总体一般。\n香蕉环射门\n那么当年你喜欢谁的必杀呢，欢迎留言讨论！[返回搜狐，查看更多](<//w",
+      "revision_match": true
+     },
+     {
+      "chunk_id": "de8504fe7e4d",
+      "score": 0.0274,
+      "source_id": "local_soccer2_super_list",
+      "status": "verified_read",
+      "authority": "authoritative",
+      "revision": "nekketsu_soccer2_multi",
+      "game_id": "nekketsu_soccer2",
+      "platform": "NES",
+      "locator": "_工具脚本/taspipe/游戏包/热血足球联盟_必杀全清单.md#L10-L21",
+      "heading": "0. 来源（引用即出处，正文不臆造）",
+      "snippet": "- S1 天幻网《FC热血足球联盟困难模式全胜夺冠》转载（乐米网一昂，2022-04-05）：\n（原站 http://1lifeclear.ffsky.cn/56.htm 本机直连失败，用转载副本；逐选手日文原名+发动法+秘技+难度规则）\n- S2 搜狐《FC〈热血足球联盟〉热血队队员必杀技集锦》（踏破仙阙，2019-08-29）：\nhttps://www.sohu.com/a/337254221_120099888 （12 人中文译名+球变形效果逐条）\n- S3 搜狐《〈F",
+      "revision_match": true
+     }
+    ],
+    "reason": "最高分命中 sohu_game 非本版本权威，权威件在低分位"
+   }
+  },
+  {
+   "id": "Q02",
+   "result": {
+    "q": "燕返原生只有哪个角色会使？",
+    "counts": {
+     "candidates": 123,
+     "hits": 8,
+     "strong": 4
+    },
+    "authority_warnings": [
+     "sohu_game 是二手件（reference_only），须交叉核对",
+     "1ang_com 是二手件（reference_only），须交叉核对",
+     "1ang_com 是二手件（reference_only），须交叉核对",
+     "1ang_com 是二手件（reference_only），须交叉核对"
+    ],
+    "status": "inconclusive",
+    "hits": [
+     {
+      "chunk_id": "2e4c8ac797cf",
+      "score": 0.0308,
+      "source_id": "sohu_game",
+      "status": "verified_read",
+      "authority": "reference_only",
+      "revision": "nekketsu_soccer2_fc_unspecified",
+      "game_id": "nekketsu_soccer2",
+      "platform": "NES",
+      "locator": "_工具脚本/taspipe/游戏包/来源库/取证/sohu_必杀最强小辫子_20261118.md#L71-L89",
+      "heading": "No.0 忍者射门——赖常",
+      "snippet": "他的射门必杀“香蕉环射门”堪称简单粗暴，似乎有隐藏属性加持，连德国队的门将都有一定几率能踢飞。而且津根的香蕉射门跟阿根廷队的不同，他的射门会在飞行一段距离后变成香蕉原地停留一会儿，这就让他的射门同样具备骗出对方CPU守门员假动作的功能，计算好球的飞行距离后还是蛮实用的。\n《热血足球》传说中的卡密萨马，日本队唯一隐藏基佬——海月，无论数值还是技能都十分一般的选手，但在一些大神玩家的手中出神入化如同神一般的存在。\n海月的必杀射门与巴西队的十分相似，都是踢出一只自带抛物线的鱼，虽说",
+      "revision_match": true
+     },
+     {
+      "chunk_id": "42b773880ef0",
+      "score": 0.0313,
+      "source_id": "local_soccer2_super_list",
+      "status": "verified_read",
+      "authority": "authoritative",
+      "revision": "nekketsu_soccer2_multi",
+      "game_id": "nekketsu_soccer2",
+      "platform": "NES",
+      "locator": "_工具脚本/taspipe/游戏包/热血足球联盟_必杀全清单.md#L24-L33",
+      "heading": "1. 发动与状态规则（S1 原文，生产闸门依据）",
+      "snippet": "- 必杀踢射：持球跳（A+B）到**最高点按 B**；**发动时不能按方向键**，否则变成挑球不是人球同跳。\n- 难度：`やさしい` 容易 = 敌我**都不能**发动必杀射门；`ふつう` 普通 = 次次发动；`むずかしい` 困难 = 仅会燕返者 100%。\n⇒ 采集必须在普通难度（导航默认值待实测确认；若必杀不触发先查难度）。\n- 秘技：比赛中 Start 暂停 → A×3 B×1 A×3 B×1 A×7 → Start 解除，听到必杀音效=成功；全员获得全部**技能**（燕",
+      "revision_match": true
+     },
+     {
+      "chunk_id": "3f1cfd48b780",
+      "score": 0.0309,
+      "source_id": "1ang_com",
+      "status": "verified_read",
+      "authority": "reference_only",
+      "revision": "nekketsu_soccer2_fc_jp",
+      "game_id": "nekketsu_soccer2",
+      "platform": "NES",
+      "locator": "_工具脚本/taspipe/游戏包/来源库/取证/1ang_热血足球联盟图文攻略_20261118.md#L525-L536",
+      "heading": "よりつね(Yoritsune)",
+      "snippet": "体力50，踢射力24，防御力20，走力类型A\n必杀技：『にんじゃしゅーと(Ninja Shoot)』（忍者踢射）、『つばめがえし(Tsubamegaeshi)』（燕返）\n性格：难以捉摸\n喜好：梅干\n厌恶：偶像歌手\n简介：『服部学園』所属（与服部有关的，十之八九与忍者、功夫高手有关，「服部半蔵」扬名后世）。他的移动能力很高，贵重的万能型球员，会用燕返（这里的「燕返し」，与「佐々木小次郎」得意技能同名），也就是空中翻跟头。担当前锋时，连续使用必杀踢射。缺点是命中率低，要想提升命中",
+      "revision_match": true
+     },
+     {
+      "chunk_id": "f7f8e8316295",
+      "score": 0.0274,
+      "source_id": "local_soccer2_super_list",
+      "status": "verified_read",
+      "authority": "authoritative",
+      "revision": "nekketsu_soccer2_multi",
+      "game_id": "nekketsu_soccer2",
+      "platform": "NES",
+      "locator": "_工具脚本/taspipe/游戏包/热血足球联盟_必杀全清单.md#L70-L85",
+      "heading": "3. 一般个人技/必杀技（S1 发动法原文）",
+      "snippet": "| 技 | 日文 | 发动 | 备注 |\n|---|---|---|---|\n| 爆裂攻击(铁膝盖) | ばくれつあたっく | 跳跃**落地时按 B**，可连按连发 | 着地技；≥4 人会 |\n| 燕返 | つばめがえし | 带球跳跃立即出现(空中翻跟头) | 仅 Yoritsune 原生；秘技后全员 |\n| 必杀运球(旋风撞人) | ひっさつどりぶる | 带球中连按两次上 或 两次下 | 撞倒对方含门将(概率) |\n| 龙卷拳(升龙拳) | とるねーどぱんち | 方向左/右",
+      "revision_match": true
+     },
+     {
+      "chunk_id": "8996c7a159ef",
+      "score": 0.0304,
+      "source_id": "local_soccer2_super_list",
+      "status": "verified_read",
+      "authority": "authoritative",
+      "revision": "nekketsu_soccer2_multi",
+      "game_id": "nekketsu_soccer2",
+      "platform": "NES",
+      "locator": "_工具脚本/taspipe/游戏包/热血足球联盟_必杀全清单.md#L137-L158",
+      "heading": "5. 生产接线（11-14 实测更新）",
+      "snippet": "⇒ 现状改成 **untested（未在任何有效条件下测过）**，不是\"不可触发\"。用户 11-14 亲口\"其实打出过好多次必杀了\"，\n有效条件下的真阳性一定存在，责任在我的测量方式，不在 ROM。\n真采 23 必杀仍需正对照：先在**当前 jf ROM** 上按 §6 的三条铁律重跑触发链，仍全负再谈日版原版 ROM（网盘仅两 hack 无日版；外部=门控待批）。\n本清单 23+13 项在 CN/hack 上全部标 **honest gap（不可复现，证据见下）**，不冒充",
+      "revision_match": true
+     },
+     {
+      "chunk_id": "8e34d9a96bc7",
+      "score": 0.0278,
+      "source_id": "1ang_com",
+      "status": "verified_read",
+      "authority": "reference_only",
+      "revision": "nekketsu_soccer2_fc_jp",
+      "game_id": "nekketsu_soccer2",
+      "platform": "NES",
+      "locator": "_工具脚本/taspipe/游戏包/来源库/取证/1ang_热血足球联盟图文攻略_20261118.md#L679-L691",
+      "heading": "どいつ | Duits | 德国",
+      "snippet": "强豪球队。命中很强，善用必杀运球技能，只是，因为不会燕返技能，降低了发动必杀踢射的概率。即便如此，球门前普通踢射的威力，仍然对门将造成很大威胁。阵型2-2-1。胜利姿势为中场球员『えっけると(Ekkeruto)』连续不断吃香肠。热血队如果选择球员错误，上场球员命中不行，则败北的可能性极大。门将『ぶれーめ(Burême)』腿脚快，与巴西队门将一样，是最强级别的。\n官方说明书上说，全都是如同Cyborg一样的选手，球队非常坚固。队伍力量为5。\n全胜夺冠心得\n首先，说明一下如何选择",
+      "revision_match": true
+     },
+     {
+      "chunk_id": "0793dce04d1b",
+      "score": 0.0147,
+      "source_id": "1ang_com",
+      "status": "verified_read",
+      "authority": "reference_only",
+      "revision": "nekketsu_soccer2_fc_jp",
+      "game_id": "nekketsu_soccer2",
+      "platform": "NES",
+      "locator": "_工具脚本/taspipe/游戏包/来源库/取证/1ang_热血足球联盟图文攻略_20261118.md#L709-L718",
+      "heading": "どいつ | Duits | 德国",
+      "snippet": "临近锦标赛前，也就是接近16连胜的时候，『めきしこ』（墨西哥）、『もんごる』（外蒙古）、『いんぐらんど』（英格兰)，这三支球队最适合在决赛前热身，太弱的球队不必理睬，没必要与他们浪费时间，太强的球队也不要去挑衅，万一输了，会导致全胜夺冠前功尽弃，太划不来。\n决赛里的意大利队，要比平时的意大利队厉害的多，不可等闲视之。\n面对意大利这样的强大对手，如何取胜？意大利可以说是天矛地盾，射门如同天矛无坚不摧，门将如同地盾无物不克。我方必须选择最好的门将，最好的后卫来防守，火光操纵的中场",
+      "revision_match": true
+     },
+     {
+      "chunk_id": "84195609bde8",
+      "score": 0.0268,
+      "source_id": "local_soccer2_super_list",
+      "status": "verified_read",
+      "authority": "authoritative",
+      "revision": "nekketsu_soccer2_multi",
+      "game_id": "nekketsu_soccer2",
+      "platform": "NES",
+      "locator": "_工具脚本/taspipe/游戏包/热血足球联盟_必杀全清单.md#L36-L49",
+      "heading": "2. 热血队 12 人必杀射门（S1 日文原名 + S2 中文译名与效果）",
+      "snippet": "| # | 角色(罗马音) | 日文原名 | 中文译名(S2) | 球变形/效果（S2/S3，检测器正例依据） | 其他技能(S1) |\n|---|---|---|---|---|---|\n| 1 | Kunio くにお | なっつしゅーと Nuts Shoot | 坚果射门 | 球变坚果椭圆直线飞 | 爆裂攻击 |\n| 2 | Yoritsune よりつね | にんじゃしゅーと Ninja Shoot | 忍者射门 | 球变飞镖飞一段消失→再现弹地飞奔；禁区内自动隐身 | ",
+      "revision_match": true
+     }
+    ],
+    "reason": "最高分命中 sohu_game 非本版本权威，权威件在低分位"
+   }
+  },
+  {
+   "id": "Q03",
+   "result": {
+    "q": "热血足球2 暂停秘技的按键输入是什么？",
+    "counts": {
+     "candidates": 123,
+     "hits": 8,
+     "strong": 7
+    },
+    "authority_warnings": [
+     "1ang_com 是二手件（reference_only），须交叉核对"
+    ],
+    "status": "inconclusive",
+    "hits": [
+     {
+      "chunk_id": "3548208d0a2d",
+      "score": 0.0328,
+      "source_id": "1ang_com",
+      "status": "verified_read",
+      "authority": "reference_only",
+      "revision": "nekketsu_soccer2_fc_jp",
+      "game_id": "nekketsu_soccer2",
+      "platform": "NES",
+      "locator": "_工具脚本/taspipe/游戏包/来源库/取证/1ang_热血足球联盟图文攻略_20261118.md#L823-L839",
+      "heading": "秘技",
+      "snippet": "比赛中按START键暂停，{A键按３次＋B键按１次＋A键按３次＋B键按１次＋A键按７次}，再按START键解除暂停，听到必杀踢射的发动音效，就成功了。这样就能使全部球员拥有全部必杀技，比如平时不会燕返的球员也会用燕返了，平时不会用爆裂攻击的球员也会用铁膝盖顶人了。\n缺点是效果只能持续半场比赛，另外半场比赛需要重新使用秘技。这就意味着，每次进行比赛都要使用一次秘技。\n更多热血足球3攻略-FC热血足球3(热血足球联盟)游戏图文攻略相关问题\n问题：《都市天际线》独特建筑和地标建筑有",
+      "revision_match": true
+     },
+     {
+      "chunk_id": "42b773880ef0",
+      "score": 0.0299,
+      "source_id": "local_soccer2_super_list",
+      "status": "verified_read",
+      "authority": "authoritative",
+      "revision": "nekketsu_soccer2_multi",
+      "game_id": "nekketsu_soccer2",
+      "platform": "NES",
+      "locator": "_工具脚本/taspipe/游戏包/热血足球联盟_必杀全清单.md#L24-L33",
+      "heading": "1. 发动与状态规则（S1 原文，生产闸门依据）",
+      "snippet": "- 必杀踢射：持球跳（A+B）到**最高点按 B**；**发动时不能按方向键**，否则变成挑球不是人球同跳。\n- 难度：`やさしい` 容易 = 敌我**都不能**发动必杀射门；`ふつう` 普通 = 次次发动；`むずかしい` 困难 = 仅会燕返者 100%。\n⇒ 采集必须在普通难度（导航默认值待实测确认；若必杀不触发先查难度）。\n- 秘技：比赛中 Start 暂停 → A×3 B×1 A×3 B×1 A×7 → Start 解除，听到必杀音效=成功；全员获得全部**技能**（燕",
+      "revision_match": true
+     },
+     {
+      "chunk_id": "9cb009510e7a",
+      "score": 0.0294,
+      "source_id": "local_soccer2_super_list",
+      "status": "verified_read",
+      "authority": "authoritative",
+      "revision": "nekketsu_soccer2_multi",
+      "game_id": "nekketsu_soccer2",
+      "platform": "NES",
+      "locator": "_工具脚本/taspipe/游戏包/热血足球联盟_必杀全清单.md#L120-L136",
+      "heading": "5. 生产接线（11-14 实测更新）",
+      "snippet": "- **难度（11-14 终版实证：锁定不可达）**：mode 屏同屏带难度行（CN「简单/普通/困难」、hack「やさしい/ふつう/むずかしい」），\n但**有字无光标**：Down×6 光标在模式行（热血联盟/密码/对战/点球）回绕、←→ 只动人数列（1P/2P/3P/4P），\n难度行永远拿不到光标（`soccer2_difficulty_row.py`、`soccer2_diff_ram.py`，jf+jump 双证）。\nRAM：Down 只改 $005D(93)=模式光",
+      "revision_match": true
+     },
+     {
+      "chunk_id": "8996c7a159ef",
+      "score": 0.0261,
+      "source_id": "local_soccer2_super_list",
+      "status": "verified_read",
+      "authority": "authoritative",
+      "revision": "nekketsu_soccer2_multi",
+      "game_id": "nekketsu_soccer2",
+      "platform": "NES",
+      "locator": "_工具脚本/taspipe/游戏包/热血足球联盟_必杀全清单.md#L137-L158",
+      "heading": "5. 生产接线（11-14 实测更新）",
+      "snippet": "⇒ 现状改成 **untested（未在任何有效条件下测过）**，不是\"不可触发\"。用户 11-14 亲口\"其实打出过好多次必杀了\"，\n有效条件下的真阳性一定存在，责任在我的测量方式，不在 ROM。\n真采 23 必杀仍需正对照：先在**当前 jf ROM** 上按 §6 的三条铁律重跑触发链，仍全负再谈日版原版 ROM（网盘仅两 hack 无日版；外部=门控待批）。\n本清单 23+13 项在 CN/hack 上全部标 **honest gap（不可复现，证据见下）**，不冒充",
+      "revision_match": true
+     },
+     {
+      "chunk_id": "79a492f92079",
+      "score": 0.028,
+      "source_id": "local_soccer2_super_list",
+      "status": "verified_read",
+      "authority": "authoritative",
+      "revision": "nekketsu_soccer2_multi",
+      "game_id": "nekketsu_soccer2",
+      "platform": "NES",
+      "locator": "_工具脚本/taspipe/游戏包/热血足球联盟_必杀全清单.md#L164-L181",
+      "heading": "6. 11-15 三条机制铁律（本轮实测，全部推翻 11-14 的负结论）",
+      "snippet": "> 产物：`F:/taspipe_scratch/soccer2_unlock_1115/`、`soccer2_ballpix_1115/`、`soccer2_track3_1115/`、\n> `soccer2_pksuper_1115/`、`soccer2_lgb_1115/`、`soccer2_dir_1115/`。ROM=`nekketsu_soccer_league_cn_jf.nes`\n> （393 232 B，sha256 前缀 `ce60abe6bc48d0b3",
+      "revision_match": true
+     },
+     {
+      "chunk_id": "4a5009ef52a7",
+      "score": 0.0255,
+      "source_id": "local_soccer2_super_list",
+      "status": "verified_read",
+      "authority": "authoritative",
+      "revision": "nekketsu_soccer2_multi",
+      "game_id": "nekketsu_soccer2",
+      "platform": "NES",
+      "locator": "_工具脚本/taspipe/游戏包/热血足球联盟_必杀全清单.md#L182-L191",
+      "heading": "6. 11-15 三条机制铁律（本轮实测，全部推翻 11-14 的负结论）",
+      "snippet": "任何\"看画面判断我的动作有没有生效\"的判据都失效，只有球团块追踪扛得住滚动。\n- **6-5 点球 base 是死场景**：`soccer2_pk_super.py` 在 `soccer2_pk_nuts_1115/pk_base.state` 上扫\nA+B×4 + 延迟 D∈{0..20} + B×6 共 12 变体，再加 `plain_B`、`heel_R` 两对照：\n球团块 **全程钉在 (115,100) 一动不动**（含 plain_B），只有球员白团块从 (74,",
+      "revision_match": true
+     },
+     {
+      "chunk_id": "807f0d3c6fa3",
+      "score": 0.0281,
+      "source_id": "local_soccer2_super_list",
+      "status": "verified_read",
+      "authority": "authoritative",
+      "revision": "nekketsu_soccer2_multi",
+      "game_id": "nekketsu_soccer2",
+      "platform": "NES",
+      "locator": "_工具脚本/taspipe/游戏包/热血足球联盟_必杀全清单.md#L216-L225",
+      "heading": "8-1 新增来源",
+      "snippet": "- S7 CSDN wangsitan 系列（同作者连发四篇，数据级）：\n- Bug 记录 https://blog.csdn.net/wangsitan/article/details/7669725 （两条 Bug，见 8-4）\n- 数据记录 https://blog.csdn.net/wenzhang.../7669353 （$BD18=策略、$BD19=阵型，阵型仅 3 种 00:2-1-2 / 01:1-2-2 / 02:2-2-1，各队默认值逐队列出）\n- 金手指",
+      "revision_match": true
+     },
+     {
+      "chunk_id": "0c728e701059",
+      "score": 0.0247,
+      "source_id": "local_soccer2_super_list",
+      "status": "verified_read",
+      "authority": "authoritative",
+      "revision": "nekketsu_soccer2_multi",
+      "game_id": "nekketsu_soccer2",
+      "platform": "NES",
+      "locator": "_工具脚本/taspipe/游戏包/热血足球联盟_必杀全清单.md#L251-L259",
+      "heading": "8-5 跨来源冲突表（不许悄悄选边）",
+      "snippet": "| 争议点 | 来源甲 | 来源乙 | 我方实测 | 现状 |\n|---|---|---|---|---|\n| 难度档位效果 | S1：困难=敌强我弱，仅燕返者 100% 必杀 | S9：困难=敌我 AI 同涨（废选项） | 无 | 文献冲突，待实测 |\n| 龙卷踢触发 | S1：无球接近球时 跳跃+B | S8：敌球权时 超常冲刺中 十字+A | 无 | 冲突，采集时两法都试 |\n| 钻子攻击触发 | S1：无球接近球时 冲刺+B 或 跳跃+B | S8：敌球权时 超常冲刺",
+      "revision_match": true
+     }
+    ],
+    "reason": "最高分命中 1ang_com 非本版本权威，权威件在低分位"
+   }
+  },
+  {
+   "id": "Q04",
+   "result": {
+    "q": "容易难度下对手能不能发动必杀射门？",
+    "counts": {
+     "candidates": 123,
+     "hits": 8,
+     "strong": 5
+    },
+    "authority_warnings": [
+     "1ang_com 是二手件（reference_only），须交叉核对",
+     "1ang_com 是二手件（reference_only），须交叉核对",
+     "1ang_com 是二手件（reference_only），须交叉核对"
+    ],
+    "status": "pass",
+    "hits": [
+     {
+      "chunk_id": "42b773880ef0",
+      "score": 0.0312,
+      "source_id": "local_soccer2_super_list",
+      "status": "verified_read",
+      "authority": "authoritative",
+      "revision": "nekketsu_soccer2_multi",
+      "game_id": "nekketsu_soccer2",
+      "platform": "NES",
+      "locator": "_工具脚本/taspipe/游戏包/热血足球联盟_必杀全清单.md#L24-L33",
+      "heading": "1. 发动与状态规则（S1 原文，生产闸门依据）",
+      "snippet": "- 必杀踢射：持球跳（A+B）到**最高点按 B**；**发动时不能按方向键**，否则变成挑球不是人球同跳。\n- 难度：`やさしい` 容易 = 敌我**都不能**发动必杀射门；`ふつう` 普通 = 次次发动；`むずかしい` 困难 = 仅会燕返者 100%。\n⇒ 采集必须在普通难度（导航默认值待实测确认；若必杀不触发先查难度）。\n- 秘技：比赛中 Start 暂停 → A×3 B×1 A×3 B×1 A×7 → Start 解除，听到必杀音效=成功；全员获得全部**技能**（燕",
+      "revision_match": true
+     },
+     {
+      "chunk_id": "8e34d9a96bc7",
+      "score": 0.0318,
+      "source_id": "1ang_com",
+      "status": "verified_read",
+      "authority": "reference_only",
+      "revision": "nekketsu_soccer2_fc_jp",
+      "game_id": "nekketsu_soccer2",
+      "platform": "NES",
+      "locator": "_工具脚本/taspipe/游戏包/来源库/取证/1ang_热血足球联盟图文攻略_20261118.md#L679-L691",
+      "heading": "どいつ | Duits | 德国",
+      "snippet": "强豪球队。命中很强，善用必杀运球技能，只是，因为不会燕返技能，降低了发动必杀踢射的概率。即便如此，球门前普通踢射的威力，仍然对门将造成很大威胁。阵型2-2-1。胜利姿势为中场球员『えっけると(Ekkeruto)』连续不断吃香肠。热血队如果选择球员错误，上场球员命中不行，则败北的可能性极大。门将『ぶれーめ(Burême)』腿脚快，与巴西队门将一样，是最强级别的。\n官方说明书上说，全都是如同Cyborg一样的选手，球队非常坚固。队伍力量为5。\n全胜夺冠心得\n首先，说明一下如何选择",
+      "revision_match": true
+     },
+     {
+      "chunk_id": "0c01ae8b35f4",
+      "score": 0.0325,
+      "source_id": "1ang_com",
+      "status": "verified_read",
+      "authority": "reference_only",
+      "revision": "nekketsu_soccer2_fc_jp",
+      "game_id": "nekketsu_soccer2",
+      "platform": "NES",
+      "locator": "_工具脚本/taspipe/游戏包/来源库/取证/1ang_热血足球联盟图文攻略_20261118.md#L693-L707",
+      "heading": "どいつ | Duits | 德国",
+      "snippet": "『かいずき(Kaizuki)』的飞鱼必杀射门，适合对付巴西门将。但困难模式下基本没戏。\n『よりつね(Yoritsune)』禁区内忍者踢射发动手裏剑射门，对绝大多数球队门将有效。个别球队门将有弱点位置，一定要记牢，倘若射门位置不对，几乎无法进球，比如巴西队门将的弱点在禁区下方，意大利队门将的弱点在禁区上方，即便如此，意大利门将没收足球的概率仍然很高。『よりつね(Yoritsune)』发动忍者踢射后，在手裏剑出现前，可以做动作引诱门将，让门将只顾看他，不顾看球，例如纵向跳跃引诱门",
+      "revision_match": true
+     },
+     {
+      "chunk_id": "0cbfe31bd687",
+      "score": 0.0308,
+      "source_id": "1ang_com",
+      "status": "verified_read",
+      "authority": "reference_only",
+      "revision": "nekketsu_soccer2_fc_jp",
+      "game_id": "nekketsu_soccer2",
+      "platform": "NES",
+      "locator": "_工具脚本/taspipe/游戏包/来源库/取证/1ang_热血足球联盟图文攻略_20261118.md#L337-L359",
+      "heading": "热血FC等候室",
+      "snippet": "『ハイパー・ダッシュ(Hyper Dash)』，超常冲刺。冲刺中朝进行方向连按两次方向键。普通冲刺基础上发动更快速的冲刺。\n『ヒール・リフティング(Heel Lifting)』，脚跟挑球。拿球时，无论面朝哪个方向，{←AB}同时按或者{→AB}同时按全都可以发动。\n『フェイント・アタック(Feint Attack)』，虚攻，做假动作。冲刺运球过程中，方向键上或下连续按2次。\n『ダイビング・ヘッド(Diving Head)』，鱼跃头球。在足球附近时，{←B}或者{→B}同时按。",
+      "revision_match": true
+     },
+     {
+      "chunk_id": "9cb009510e7a",
+      "score": 0.0303,
+      "source_id": "local_soccer2_super_list",
+      "status": "verified_read",
+      "authority": "authoritative",
+      "revision": "nekketsu_soccer2_multi",
+      "game_id": "nekketsu_soccer2",
+      "platform": "NES",
+      "locator": "_工具脚本/taspipe/游戏包/热血足球联盟_必杀全清单.md#L120-L136",
+      "heading": "5. 生产接线（11-14 实测更新）",
+      "snippet": "- **难度（11-14 终版实证：锁定不可达）**：mode 屏同屏带难度行（CN「简单/普通/困难」、hack「やさしい/ふつう/むずかしい」），\n但**有字无光标**：Down×6 光标在模式行（热血联盟/密码/对战/点球）回绕、←→ 只动人数列（1P/2P/3P/4P），\n难度行永远拿不到光标（`soccer2_difficulty_row.py`、`soccer2_diff_ram.py`，jf+jump 双证）。\nRAM：Down 只改 $005D(93)=模式光",
+      "revision_match": true
+     },
+     {
+      "chunk_id": "0c728e701059",
+      "score": 0.03,
+      "source_id": "local_soccer2_super_list",
+      "status": "verified_read",
+      "authority": "authoritative",
+      "revision": "nekketsu_soccer2_multi",
+      "game_id": "nekketsu_soccer2",
+      "platform": "NES",
+      "locator": "_工具脚本/taspipe/游戏包/热血足球联盟_必杀全清单.md#L251-L259",
+      "heading": "8-5 跨来源冲突表（不许悄悄选边）",
+      "snippet": "| 争议点 | 来源甲 | 来源乙 | 我方实测 | 现状 |\n|---|---|---|---|---|\n| 难度档位效果 | S1：困难=敌强我弱，仅燕返者 100% 必杀 | S9：困难=敌我 AI 同涨（废选项） | 无 | 文献冲突，待实测 |\n| 龙卷踢触发 | S1：无球接近球时 跳跃+B | S8：敌球权时 超常冲刺中 十字+A | 无 | 冲突，采集时两法都试 |\n| 钻子攻击触发 | S1：无球接近球时 冲刺+B 或 跳跃+B | S8：敌球权时 超常冲刺",
+      "revision_match": true
+     },
+     {
+      "chunk_id": "8996c7a159ef",
+      "score": 0.0256,
+      "source_id": "local_soccer2_super_list",
+      "status": "verified_read",
+      "authority": "authoritative",
+      "revision": "nekketsu_soccer2_multi",
+      "game_id": "nekketsu_soccer2",
+      "platform": "NES",
+      "locator": "_工具脚本/taspipe/游戏包/热血足球联盟_必杀全清单.md#L137-L158",
+      "heading": "5. 生产接线（11-14 实测更新）",
+      "snippet": "⇒ 现状改成 **untested（未在任何有效条件下测过）**，不是\"不可触发\"。用户 11-14 亲口\"其实打出过好多次必杀了\"，\n有效条件下的真阳性一定存在，责任在我的测量方式，不在 ROM。\n真采 23 必杀仍需正对照：先在**当前 jf ROM** 上按 §6 的三条铁律重跑触发链，仍全负再谈日版原版 ROM（网盘仅两 hack 无日版；外部=门控待批）。\n本清单 23+13 项在 CN/hack 上全部标 **honest gap（不可复现，证据见下）**，不冒充",
+      "revision_match": true
+     },
+     {
+      "chunk_id": "0a8c31260aa7",
+      "score": 0.0282,
+      "source_id": "local_soccer2_super_list",
+      "status": "verified_read",
+      "authority": "authoritative",
+      "revision": "nekketsu_soccer2_multi",
+      "game_id": "nekketsu_soccer2",
+      "platform": "NES",
+      "locator": "_工具脚本/taspipe/游戏包/热血足球联盟_honest_gap_manifest.md#L23-L27",
+      "heading": "2. 为什么必杀全灭（三杠杆实证堵死，详见说明书 §26）",
+      "snippet": "1. **难度锁定**：mode 屏难度行有字无光标；Down×6 模式行回绕、←→ 只动人数列 ⇒ 难度不可设，默认疑容易（S1：容易敌我都不能必杀）。\n2. **无人球同跳**：hack 方向+AB=纯挑球、静止 AB=人跳球不动 ⇒ 文献\"持球跳最高点 B\"无法执行。\n3. **秘技无效**：AAABAAABAAAAAAA 三段对照无燕返翻转（probe18），疑前作《世界杯》码。\n约 60 触发链跨四变体全负（无全屏闪/球变形/电光）。",
+      "revision_match": true
+     }
+    ],
+    "reason": "5 条 verified_read+authoritative 内容词命中且最高分即权威"
+   }
+  },
+  {
+   "id": "Q05",
+   "result": {
+    "q": "我想控制队长以外的队员，该怎么换人？",
+    "counts": {
+     "candidates": 123,
+     "hits": 8,
+     "strong": 5
+    },
+    "authority_warnings": [
+     "1ang_com 是二手件（reference_only），须交叉核对",
+     "csdn_wangsitan_bug 是二手件（reference_only），须交叉核对",
+     "sohu_game 是二手件（reference_only），须交叉核对"
+    ],
+    "status": "pass",
+    "hits": [
+     {
+      "chunk_id": "42b773880ef0",
+      "score": 0.0297,
+      "source_id": "local_soccer2_super_list",
+      "status": "verified_read",
+      "authority": "authoritative",
+      "revision": "nekketsu_soccer2_multi",
+      "game_id": "nekketsu_soccer2",
+      "platform": "NES",
+      "locator": "_工具脚本/taspipe/游戏包/热血足球联盟_必杀全清单.md#L24-L33",
+      "heading": "1. 发动与状态规则（S1 原文，生产闸门依据）",
+      "snippet": "- 必杀踢射：持球跳（A+B）到**最高点按 B**；**发动时不能按方向键**，否则变成挑球不是人球同跳。\n- 难度：`やさしい` 容易 = 敌我**都不能**发动必杀射门；`ふつう` 普通 = 次次发动；`むずかしい` 困难 = 仅会燕返者 100%。\n⇒ 采集必须在普通难度（导航默认值待实测确认；若必杀不触发先查难度）。\n- 秘技：比赛中 Start 暂停 → A×3 B×1 A×3 B×1 A×7 → Start 解除，听到必杀音效=成功；全员获得全部**技能**（燕",
+      "revision_match": true
+     },
+     {
+      "chunk_id": "260acff3342a",
+      "score": 0.0311,
+      "source_id": "1ang_com",
+      "status": "verified_read",
+      "authority": "reference_only",
+      "revision": "nekketsu_soccer2_fc_jp",
+      "game_id": "nekketsu_soccer2",
+      "platform": "NES",
+      "locator": "_工具脚本/taspipe/游戏包/来源库/取证/1ang_热血足球联盟图文攻略_20261118.md#L195-L243",
+      "heading": "热血FC等候室",
+      "snippet": "右侧截图是热血FC等候室画面，下面开始对截图中的日本语进行讲解。\n『さくせん　かいぎ』，作战会议。调整阵型、变更球员、作战设定。FC手柄1P固定控制中场球员，队长由中场球员担任。\n『みーてぃんぐ(Meeting)』，会面。球员们在比赛后会产生感情变化，会面的作用是观看与调整球员们的情绪。\n『きっく　おふ(Kick Off)』，中线开球。进入比赛进行中线开球。\n『てんき　よほう』，天气预报。各国天候不同，通过天气预报了解比赛中的天气变化，制订作战。\n『せいせき　ひょう』，成绩表",
+      "revision_match": true
+     },
+     {
+      "chunk_id": "6987e0e1ca84",
+      "score": 0.0294,
+      "source_id": "local_soccer2_super_list",
+      "status": "verified_read",
+      "authority": "authoritative",
+      "revision": "nekketsu_soccer2_multi",
+      "game_id": "nekketsu_soccer2",
+      "platform": "NES",
+      "locator": "_工具脚本/taspipe/游戏包/热血足球联盟_必杀全清单.md#L101-L119",
+      "heading": "5. 生产接线（11-14 实测更新）",
+      "snippet": "- base：`验证/t3_soccer2_moves/probe9_cn/kickoff.state`（真·场地 KICK OFF 冻结；休息室「开球」须 **A 确认**；\n横幅保留到首个有效输入；**场地/天气每场随机**：土场/绿茵/雪面三种均实测，场地判据别写死颜色）。\n- **★11-15 更正（存档载入保真实测，`soccer2_load_fidelity.py`）**：BizHawk 只在 ROM 哈希相符时载入存档，\n且**拒绝是静默的**——probe9_",
+      "revision_match": true
+     },
+     {
+      "chunk_id": "8996c7a159ef",
+      "score": 0.0296,
+      "source_id": "local_soccer2_super_list",
+      "status": "verified_read",
+      "authority": "authoritative",
+      "revision": "nekketsu_soccer2_multi",
+      "game_id": "nekketsu_soccer2",
+      "platform": "NES",
+      "locator": "_工具脚本/taspipe/游戏包/热血足球联盟_必杀全清单.md#L137-L158",
+      "heading": "5. 生产接线（11-14 实测更新）",
+      "snippet": "⇒ 现状改成 **untested（未在任何有效条件下测过）**，不是\"不可触发\"。用户 11-14 亲口\"其实打出过好多次必杀了\"，\n有效条件下的真阳性一定存在，责任在我的测量方式，不在 ROM。\n真采 23 必杀仍需正对照：先在**当前 jf ROM** 上按 §6 的三条铁律重跑触发链，仍全负再谈日版原版 ROM（网盘仅两 hack 无日版；外部=门控待批）。\n本清单 23+13 项在 CN/hack 上全部标 **honest gap（不可复现，证据见下）**，不冒充",
+      "revision_match": true
+     },
+     {
+      "chunk_id": "ae478886e098",
+      "score": 0.0242,
+      "source_id": "csdn_wangsitan_bug",
+      "status": "verified_read",
+      "authority": "reference_only",
+      "revision": "nekketsu_soccer2_fc_unspecified",
+      "game_id": "nekketsu_soccer2",
+      "platform": "NES",
+      "locator": "_工具脚本/taspipe/游戏包/来源库/取证/csdn_wangsitan_热血足球Bug记录_20261118.md#L188-L203",
+      "heading": "【FC】热血足球联盟 Bug记录",
+      "snippet": "热血队以外的球队，自定义的阵型、战术可能无效\n打平后的点球，轮到左方门将守门时，空中动作的朝向是向右的，包括直跳接球和升龙拳\n关注博主即可阅读全文\n·\n收录于\n当前文章被以下社区和专栏收录：\n版权声明：本文为博主原创文章，遵循 [CC 4.0 BY-SA](http://creativecommons.org/licenses/by-sa/4.0/) 版权协议，转载请附上原文出处链接和本声明。",
+      "revision_match": true
+     },
+     {
+      "chunk_id": "79a492f92079",
+      "score": 0.0205,
+      "source_id": "local_soccer2_super_list",
+      "status": "verified_read",
+      "authority": "authoritative",
+      "revision": "nekketsu_soccer2_multi",
+      "game_id": "nekketsu_soccer2",
+      "platform": "NES",
+      "locator": "_工具脚本/taspipe/游戏包/热血足球联盟_必杀全清单.md#L164-L181",
+      "heading": "6. 11-15 三条机制铁律（本轮实测，全部推翻 11-14 的负结论）",
+      "snippet": "> 产物：`F:/taspipe_scratch/soccer2_unlock_1115/`、`soccer2_ballpix_1115/`、`soccer2_track3_1115/`、\n> `soccer2_pksuper_1115/`、`soccer2_lgb_1115/`、`soccer2_dir_1115/`。ROM=`nekketsu_soccer_league_cn_jf.nes`\n> （393 232 B，sha256 前缀 `ce60abe6bc48d0b3",
+      "revision_match": true
+     },
+     {
+      "chunk_id": "1384afe69aff",
+      "score": 0.0268,
+      "source_id": "local_soccer2_super_list",
+      "status": "verified_read",
+      "authority": "authoritative",
+      "revision": "nekketsu_soccer2_multi",
+      "game_id": "nekketsu_soccer2",
+      "platform": "NES",
+      "locator": "_工具脚本/taspipe/游戏包/热血足球联盟_必杀全清单.md#L51-L66",
+      "heading": "2. 热血队 12 人必杀射门（S1 日文原名 + S2 中文译名与效果）",
+      "snippet": "**名单对齐缺口（诚实）**：S2 的\"堀瑞/岩壁/元永/宇贺神/鬼武/九门/海月/津根/佐治/赖常\"是中文音译；\nS1 罗马音 ほりばた=堀端(≠堀瑞)、げんえい(Gen'ei)=幻影/源永?  S2\"元永\"疑对应 S1 げんえい(Gen'ei，めがどらいぶしゅーと Mega Drive Shoot 百万旋转球)，\n而 S2\"超旋转射门\"效果(原地旋转上升)与 S1 Gen'ei 的\"旋转球\"吻合 ⇒ **暂对齐 元永=Gen'ei，待实测选手数据屏核对**。\nS1 げんえ",
+      "revision_match": true
+     },
+     {
+      "chunk_id": "2e4c8ac797cf",
+      "score": 0.0145,
+      "source_id": "sohu_game",
+      "status": "verified_read",
+      "authority": "reference_only",
+      "revision": "nekketsu_soccer2_fc_unspecified",
+      "game_id": "nekketsu_soccer2",
+      "platform": "NES",
+      "locator": "_工具脚本/taspipe/游戏包/来源库/取证/sohu_必杀最强小辫子_20261118.md#L71-L89",
+      "heading": "No.0 忍者射门——赖常",
+      "snippet": "他的射门必杀“香蕉环射门”堪称简单粗暴，似乎有隐藏属性加持，连德国队的门将都有一定几率能踢飞。而且津根的香蕉射门跟阿根廷队的不同，他的射门会在飞行一段距离后变成香蕉原地停留一会儿，这就让他的射门同样具备骗出对方CPU守门员假动作的功能，计算好球的飞行距离后还是蛮实用的。\n《热血足球》传说中的卡密萨马，日本队唯一隐藏基佬——海月，无论数值还是技能都十分一般的选手，但在一些大神玩家的手中出神入化如同神一般的存在。\n海月的必杀射门与巴西队的十分相似，都是踢出一只自带抛物线的鱼，虽说",
+      "revision_match": true
+     }
+    ],
+    "reason": "5 条 verified_read+authoritative 内容词命中且最高分即权威"
+   }
+  },
+  {
+   "id": "Q06",
+   "result": {
+    "q": "热血足球联盟每队上场几名球员？",
+    "counts": {
+     "candidates": 123,
+     "hits": 8,
+     "strong": 1
+    },
+    "authority_warnings": [
+     "1ang_com 是二手件（reference_only），须交叉核对",
+     "sohu_game 属 nekketsu_soccer2_fc_unspecified，与所问 nekketsu_soccer2_fc_jp 不是同一版本",
+     "csdn_wangsitan_bug 属 nekketsu_soccer2_fc_unspecified，与所问 nekketsu_soccer2_fc_jp 不是同一版本",
+     "1ang_com 是二手件（reference_only），须交叉核对",
+     "csdn_wangsitan_bug 属 nekketsu_soccer2_fc_unspecified，与所问 nekketsu_soccer2_fc_jp 不是同一版本",
+     "1ang_com 是二手件（reference_only），须交叉核对",
+     "1ang_com 是二手件（reference_only），须交叉核对"
+    ],
+    "status": "inconclusive",
+    "hits": [
+     {
+      "chunk_id": "9fd3ea997341",
+      "score": 0.0295,
+      "source_id": "1ang_com",
+      "status": "verified_read",
+      "authority": "reference_only",
+      "revision": "nekketsu_soccer2_fc_jp",
+      "game_id": "nekketsu_soccer2",
+      "platform": "NES",
+      "locator": "_工具脚本/taspipe/游戏包/来源库/取证/1ang_热血足球联盟图文攻略_20261118.md#L161-L164",
+      "heading": "游戏规则",
+      "snippet": "首先，说明一下热血足球联盟的比赛规则。足球联盟乃是6人制足球，一定时间内得分较多的球队胜出！如果分数相同，比赛结束后立即进入PK战（点球大战）决胜败！比赛中有时候还会出现犯规、任意球的判罚。\n玩家使用1P手柄控制的人物是作为中场(MF)的队长，一边操作他行动，一边让他向队友发送指示。玩家双人配合时，1P操作中场(MF)，2P操作门将(GK)。门将是左右胜败的关键岗位，要托付给值得依赖的玩友哦。",
+      "revision_match": true
+     },
+     {
+      "chunk_id": "141a669374a9",
+      "score": 0.0315,
+      "source_id": "sohu_game",
+      "status": "verified_read",
+      "authority": "reference_only",
+      "revision": "nekketsu_soccer2_fc_unspecified",
+      "game_id": "nekketsu_soccer2",
+      "platform": "NES",
+      "locator": "_工具脚本/taspipe/游戏包/来源库/取证/sohu_必杀最强小辫子_20261118.md#L1-L69",
+      "heading": "No.2 香蕉环射门——津根",
+      "snippet": "*   文章\n*   总阅读\n*   游戏领域优质创作者\n2023-02-17 00:41\n发布于：辽宁省\n这是老男孩游戏盒的第535篇原创，作者@怀旧淼哥\n最近有FC游戏水友给淼哥留言说，希望讲一期《热血足球》里的必杀射门盘点——《热血足球》的射门技能实在太多了，光是日本队就有12名球员，每位必杀技都各不相同，再加上总共存在的11个队的对手，总共23种必杀实在是盘点不过来啊！要么今天就先来给大家盘点一下淼哥心目中的《热血足球》日本队最实用必杀技以及球员的排名吧！\n《热血足球",
+      "revision_match": false
+     },
+     {
+      "chunk_id": "e2045199c848",
+      "score": 0.025,
+      "source_id": "csdn_wangsitan_bug",
+      "status": "verified_read",
+      "authority": "reference_only",
+      "revision": "nekketsu_soccer2_fc_unspecified",
+      "game_id": "nekketsu_soccer2",
+      "platform": "NES",
+      "locator": "_工具脚本/taspipe/游戏包/来源库/取证/csdn_wangsitan_热血足球Bug记录_20261118.md#L250-L274",
+      "heading": "相关推荐",
+      "snippet": "【_FC_】_热血__足球__联盟_ 内存使用_记录_\npid(player\\_id): 玩家编号，00--03。 rid(role\\_id): 角色编号，00--0B，有时0C对应球。 tid(team\\_id): 队伍编号，00/01。 一般方向：上为00，顺时针每45度加20。 0004,pid: key A B Select Start U D L R 0008,pid: changed\\_key\nwangsitan的专栏 2299\n](https://blog.cs",
+      "revision_match": false
+     },
+     {
+      "chunk_id": "9265c746273b",
+      "score": 0.0318,
+      "source_id": "1ang_com",
+      "status": "verified_read",
+      "authority": "reference_only",
+      "revision": "nekketsu_soccer2_fc_jp",
+      "game_id": "nekketsu_soccer2",
+      "platform": "NES",
+      "locator": "_工具脚本/taspipe/游戏包/来源库/取证/1ang_热血足球联盟图文攻略_20261118.md#L1-L129",
+      "heading": "热血足球3攻略-FC热血足球3(热血足球联盟)游戏图文攻略",
+      "snippet": "热血足球3攻略-FC热血足球3(热血足球联盟)游戏图文攻略 - 乐米网一昂\nfunction doFav(u, t) { }\n日版名：くにおくんの熱血サッカーリーグ\n罗马音：Kunio Kun No Nekketsu Soccer League\n汉语名：库尼奥君的热血足球联盟\n简称：热血足球联盟\n海贼商命名：热血足球3\n类型：体育运动(Sports)\n对应机种：FC\n游戏设计：甲斐浩二\n开发与发售：Technos Japan\n发售日期：1993年4月23日\n本作是FC版『熱血",
+      "revision_match": true
+     },
+     {
+      "chunk_id": "1a2a8c24efc3",
+      "score": 0.0235,
+      "source_id": "csdn_wangsitan_bug",
+      "status": "verified_read",
+      "authority": "reference_only",
+      "revision": "nekketsu_soccer2_fc_unspecified",
+      "game_id": "nekketsu_soccer2",
+      "platform": "NES",
+      "locator": "_工具脚本/taspipe/游戏包/来源库/取证/csdn_wangsitan_热血足球Bug记录_20261118.md#L344-L378",
+      "heading": "相关推荐",
+      "snippet": "[\n//球队阵型与策略 \\[BD18, Y\\]: 策略 \\[BD19, Y\\]: 阵型 00:2-1-2 01:1-2-2 02:2-2-1   各队对应的Y： 亚：02 06 04 非：0E 0A 0C 美：1C 1A 1E 欧：14 16 12   策略: 进攻风格（传/突）：00 01 02 队友射门（射/不）：00 04 08 防守风格（咣/逼）：00 10 20\n](https://blog.csdn.net/wangsitan/article/details/76",
+      "revision_match": false
+     },
+     {
+      "chunk_id": "807f0d3c6fa3",
+      "score": 0.0247,
+      "source_id": "local_soccer2_super_list",
+      "status": "verified_read",
+      "authority": "authoritative",
+      "revision": "nekketsu_soccer2_multi",
+      "game_id": "nekketsu_soccer2",
+      "platform": "NES",
+      "locator": "_工具脚本/taspipe/游戏包/热血足球联盟_必杀全清单.md#L216-L225",
+      "heading": "8-1 新增来源",
+      "snippet": "- S7 CSDN wangsitan 系列（同作者连发四篇，数据级）：\n- Bug 记录 https://blog.csdn.net/wangsitan/article/details/7669725 （两条 Bug，见 8-4）\n- 数据记录 https://blog.csdn.net/wenzhang.../7669353 （$BD18=策略、$BD19=阵型，阵型仅 3 种 00:2-1-2 / 01:1-2-2 / 02:2-2-1，各队默认值逐队列出）\n- 金手指",
+      "revision_match": true
+     },
+     {
+      "chunk_id": "b146ec96724d",
+      "score": 0.0325,
+      "source_id": "1ang_com",
+      "status": "verified_read",
+      "authority": "reference_only",
+      "revision": "nekketsu_soccer2_fc_jp",
+      "game_id": "nekketsu_soccer2",
+      "platform": "NES",
+      "locator": "_工具脚本/taspipe/游戏包/来源库/取证/1ang_热血足球联盟图文攻略_20261118.md#L183-L192",
+      "heading": "热血联盟模式",
+      "snippet": "世界各国共有4个联盟12支球队，选择好要挑战的球队，就可以进行远征比赛了，有时坐车，有时乘船，有时飞机。每支球队最多可以挑战3次，胜利1次获得1颗白星，失败1次获得1颗黑星。\n全世界12支球队，最可以比赛36次，过程中根据胜率取得一定数量的胜点『ポイント(Point)』，就可以获得出场权，进入锦标赛形式的Technos Japan怀争夺战。\n第一行是亚洲联盟，3支球队从左到右分别是韩国、泰国、蒙古；第二行是非洲联盟，3支球队分别是喀麦隆、几内亚、塞内伽尔；第三行是美洲联盟，3",
+      "revision_match": true
+     },
+     {
+      "chunk_id": "8e34d9a96bc7",
+      "score": 0.0224,
+      "source_id": "1ang_com",
+      "status": "verified_read",
+      "authority": "reference_only",
+      "revision": "nekketsu_soccer2_fc_jp",
+      "game_id": "nekketsu_soccer2",
+      "platform": "NES",
+      "locator": "_工具脚本/taspipe/游戏包/来源库/取证/1ang_热血足球联盟图文攻略_20261118.md#L679-L691",
+      "heading": "どいつ | Duits | 德国",
+      "snippet": "强豪球队。命中很强，善用必杀运球技能，只是，因为不会燕返技能，降低了发动必杀踢射的概率。即便如此，球门前普通踢射的威力，仍然对门将造成很大威胁。阵型2-2-1。胜利姿势为中场球员『えっけると(Ekkeruto)』连续不断吃香肠。热血队如果选择球员错误，上场球员命中不行，则败北的可能性极大。门将『ぶれーめ(Burême)』腿脚快，与巴西队门将一样，是最强级别的。\n官方说明书上说，全都是如同Cyborg一样的选手，球队非常坚固。队伍力量为5。\n全胜夺冠心得\n首先，说明一下如何选择",
+      "revision_match": true
+     }
+    ],
+    "reason": "最高分命中 1ang_com 非本版本权威，权威件在低分位"
+   }
+  },
+  {
+   "id": "Q07",
+   "result": {
+    "q": "热血联赛模式一共有多少场比赛？",
+    "counts": {
+     "candidates": 123,
+     "hits": 8,
+     "strong": 1
+    },
+    "authority_warnings": [
+     "1ang_com 是二手件（reference_only），须交叉核对",
+     "sohu_game 属 nekketsu_soccer2_fc_unspecified，与所问 nekketsu_soccer2_fc_jp 不是同一版本",
+     "1ang_com 是二手件（reference_only），须交叉核对",
+     "1ang_com 是二手件（reference_only），须交叉核对",
+     "sohu_game 属 nekketsu_soccer2_fc_unspecified，与所问 nekketsu_soccer2_fc_jp 不是同一版本",
+     "1ang_com 是二手件（reference_only），须交叉核对",
+     "1ang_com 是二手件（reference_only），须交叉核对"
+    ],
+    "status": "inconclusive",
+    "hits": [
+     {
+      "chunk_id": "b146ec96724d",
+      "score": 0.0325,
+      "source_id": "1ang_com",
+      "status": "verified_read",
+      "authority": "reference_only",
+      "revision": "nekketsu_soccer2_fc_jp",
+      "game_id": "nekketsu_soccer2",
+      "platform": "NES",
+      "locator": "_工具脚本/taspipe/游戏包/来源库/取证/1ang_热血足球联盟图文攻略_20261118.md#L183-L192",
+      "heading": "热血联盟模式",
+      "snippet": "世界各国共有4个联盟12支球队，选择好要挑战的球队，就可以进行远征比赛了，有时坐车，有时乘船，有时飞机。每支球队最多可以挑战3次，胜利1次获得1颗白星，失败1次获得1颗黑星。\n全世界12支球队，最可以比赛36次，过程中根据胜率取得一定数量的胜点『ポイント(Point)』，就可以获得出场权，进入锦标赛形式的Technos Japan怀争夺战。\n第一行是亚洲联盟，3支球队从左到右分别是韩国、泰国、蒙古；第二行是非洲联盟，3支球队分别是喀麦隆、几内亚、塞内伽尔；第三行是美洲联盟，3",
+      "revision_match": true
+     },
+     {
+      "chunk_id": "79daaa4d521a",
+      "score": 0.032,
+      "source_id": "sohu_game",
+      "status": "verified_read",
+      "authority": "reference_only",
+      "revision": "nekketsu_soccer2_fc_unspecified",
+      "game_id": "nekketsu_soccer2",
+      "platform": "NES",
+      "locator": "_工具脚本/taspipe/游戏包/来源库/取证/sohu_一直输球隐藏大结局_20261118.md#L65-L81",
+      "heading": "原创 FC热血足球，一直输球就能触发隐藏大结局？玩了20多年都不知道",
+      "snippet": "这种情况下就需要适当进行放水，比如把一些强力的同伴从场上换掉，把一些数值较低的替补放到重要位置。再比如让队长跑到自家门前，靠传乌龙球的方式射门给对方送分之类的。\n亚洲、非洲、南美、欧洲四个联盟一共12个队，总共36场比赛，说实话全踢败还真挺难做到的。如果你不幸达到了此战绩，你会发现《热血足球》这个游戏突然就此卡住，既无法跟任何队进行对战也无法退出比赛，什么A键、B键、Select键、Start键全按一遍也无济于事，自然也不会有什么特殊的战败动画或者剧情，只能记下这个“DD5 ",
+      "revision_match": false
+     },
+     {
+      "chunk_id": "9265c746273b",
+      "score": 0.0308,
+      "source_id": "1ang_com",
+      "status": "verified_read",
+      "authority": "reference_only",
+      "revision": "nekketsu_soccer2_fc_jp",
+      "game_id": "nekketsu_soccer2",
+      "platform": "NES",
+      "locator": "_工具脚本/taspipe/游戏包/来源库/取证/1ang_热血足球联盟图文攻略_20261118.md#L1-L129",
+      "heading": "热血足球3攻略-FC热血足球3(热血足球联盟)游戏图文攻略",
+      "snippet": "热血足球3攻略-FC热血足球3(热血足球联盟)游戏图文攻略 - 乐米网一昂\nfunction doFav(u, t) { }\n日版名：くにおくんの熱血サッカーリーグ\n罗马音：Kunio Kun No Nekketsu Soccer League\n汉语名：库尼奥君的热血足球联盟\n简称：热血足球联盟\n海贼商命名：热血足球3\n类型：体育运动(Sports)\n对应机种：FC\n游戏设计：甲斐浩二\n开发与发售：Technos Japan\n发售日期：1993年4月23日\n本作是FC版『熱血",
+      "revision_match": true
+     },
+     {
+      "chunk_id": "84ac286f9122",
+      "score": 0.024,
+      "source_id": "1ang_com",
+      "status": "verified_read",
+      "authority": "reference_only",
+      "revision": "nekketsu_soccer2_fc_jp",
+      "game_id": "nekketsu_soccer2",
+      "platform": "NES",
+      "locator": "_工具脚本/taspipe/游戏包/来源库/取证/1ang_热血足球联盟图文攻略_20261118.md#L817-L820",
+      "heading": "PK战模式说明",
+      "snippet": "PK战（点球大战）模式的设定过程与对战模式相似，只能选择6个球队（热血FC与5强豪），1P与2P可以选择完全相同的球队进行PK战。\nPK战模式里：1P模式意味着1P玩家与电脑对战，这种情况下要操作所有选手射门，还要操作门将守门。2P模式意味着PK合战，1P对2P，轮流攻守，直到分出胜负。",
+      "revision_match": true
+     },
+     {
+      "chunk_id": "ecc1c751f7a2",
+      "score": 0.0299,
+      "source_id": "sohu_game",
+      "status": "verified_read",
+      "authority": "reference_only",
+      "revision": "nekketsu_soccer2_fc_unspecified",
+      "game_id": "nekketsu_soccer2",
+      "platform": "NES",
+      "locator": "_工具脚本/taspipe/游戏包/来源库/取证/sohu_一直输球隐藏大结局_20261118.md#L1-L63",
+      "heading": "原创 FC热血足球，一直输球就能触发隐藏大结局？玩了20多年都不知道",
+      "snippet": "*   文章\n*   总阅读\n*   游戏领域优质创作者\n2023-01-04 22:36\n发布于：辽宁省\n这是老男孩游戏盒的第501篇原创，作者@怀旧淼哥\n很多80后、90后老男孩都在怀念当年的红白机时光，其实当年大家打游戏很多时候都在傻玩和瞎玩，许多游戏的细节都搞得不甚清楚，就比如30年后你问一些朋友《热血足球》的世界杯模式如何触发啊？问10个人保准9个人都回答不上来！\n《热血足球》故事模式触发世界杯的条件是——无论输了或赢了多少场，只要保证16场内总积分达到70分，就能",
+      "revision_match": false
+     },
+     {
+      "chunk_id": "d394a4c3412d",
+      "score": 0.0292,
+      "source_id": "1ang_com",
+      "status": "verified_read",
+      "authority": "reference_only",
+      "revision": "nekketsu_soccer2_fc_jp",
+      "game_id": "nekketsu_soccer2",
+      "platform": "NES",
+      "locator": "_工具脚本/taspipe/游戏包/来源库/取证/1ang_热血足球联盟图文攻略_20261118.md#L131-L158",
+      "heading": "热血足球3攻略-FC热血足球3(热血足球联盟)游戏图文攻略",
+      "snippet": "热血联盟模式里，选手们的状态是可变的，选手们存在情绪设定。在『みーてぃんぐ(Meeting)』会面选项里，与选手对话或者使用物品，就会引起情绪变化。而且，可以看到选手数据资料，得知选手的性格与嗜好。\n开场白\n\\[1\\]こんにちは、熱血高校サッカー部・マネージャーの「みさこ」です。\n\\[2\\]ついに「熱血サッカーリーグ」の世界１をきめる　「テクノスジャパン・カップ」がひらかれることになりました。\n\\[3\\]世界１のサッカー・チームを目指して「熱血ＦＣ」が結成され　「くにお」くん",
+      "revision_match": true
+     },
+     {
+      "chunk_id": "ec3707ada6de",
+      "score": 0.0274,
+      "source_id": "1ang_com",
+      "status": "verified_read",
+      "authority": "reference_only",
+      "revision": "nekketsu_soccer2_fc_jp",
+      "game_id": "nekketsu_soccer2",
+      "platform": "NES",
+      "locator": "_工具脚本/taspipe/游戏包/来源库/取证/1ang_热血足球联盟图文攻略_20261118.md#L167-L180",
+      "heading": "游戏模式说明",
+      "snippet": "下文中的A键与B键指的是FC手柄按键，不是计算机键盘。\n本作的游戏模式有3个，按方向键选择，A键决定，B键取消。难度模式也有3个，操作同上。\n上面截图是游戏模式与难度模式画面，下面开始对截图中的日本语进行讲解。\n『ねっけつ　りーぐ(Nekketsu League)』，意思是热血联盟模式，热血联盟以世界第一足球队为目标，为了取得Technos Japan怀争夺战出场权，远征世界4个足球联盟（对应四大洲）多个国家的球队。本模式有1P单人游戏与2P双人配合两个选项。\n『ぱすわーど(",
+      "revision_match": true
+     },
+     {
+      "chunk_id": "19e0ef066b52",
+      "score": 0.0227,
+      "source_id": "local_soccer2_super_list",
+      "status": "verified_read",
+      "authority": "authoritative",
+      "revision": "nekketsu_soccer2_multi",
+      "game_id": "nekketsu_soccer2",
+      "platform": "NES",
+      "locator": "_工具脚本/taspipe/游戏包/热血足球联盟_必杀全清单.md#L88-L98",
+      "heading": "4. 对手队 11 种必杀射门（每队一种；名称已知 3，其余待实测命名）",
+      "snippet": "| 队 | 名称 | 视觉/强度线索 | 来源 |\n|---|---|---|---|\n| 巴西 | 食人鱼射门 | 抛物线鱼形球(与土佐鲣同类) | S3 |\n| 阿根廷 | 香蕉射门 | 香蕉形(与香蕉环不同、无停顿) | S3 |\n| 塞内加尔 | 白鸟图像射门(名称待实测) | 必杀显现白鸟/白鸽图像、破坏力低 | S1 |\n| 喀麦隆 | 待实测 | 必杀强、命中强；前锋 Dakosuta 可吹飞强豪门将 | S1 |\n| 韩国/泰国/蒙古/几内亚/墨西哥/英格兰/",
+      "revision_match": true
+     }
+    ],
+    "reason": "最高分命中 1ang_com 非本版本权威，权威件在低分位"
+   }
+  },
+  {
+   "id": "Q08",
+   "result": {
+    "q": "双人合作模式下二号玩家操作什么位置？",
+    "counts": {
+     "candidates": 123,
+     "hits": 8,
+     "strong": 1
+    },
+    "authority_warnings": [
+     "1ang_com 是二手件（reference_only），须交叉核对",
+     "1ang_com 是二手件（reference_only），须交叉核对",
+     "1ang_com 是二手件（reference_only），须交叉核对",
+     "1ang_com 是二手件（reference_only），须交叉核对",
+     "1ang_com 是二手件（reference_only），须交叉核对",
+     "1ang_com 是二手件（reference_only），须交叉核对",
+     "1ang_com 是二手件（reference_only），须交叉核对"
+    ],
+    "status": "inconclusive",
+    "hits": [
+     {
+      "chunk_id": "9fd3ea997341",
+      "score": 0.0303,
+      "source_id": "1ang_com",
+      "status": "verified_read",
+      "authority": "reference_only",
+      "revision": "nekketsu_soccer2_fc_jp",
+      "game_id": "nekketsu_soccer2",
+      "platform": "NES",
+      "locator": "_工具脚本/taspipe/游戏包/来源库/取证/1ang_热血足球联盟图文攻略_20261118.md#L161-L164",
+      "heading": "游戏规则",
+      "snippet": "首先，说明一下热血足球联盟的比赛规则。足球联盟乃是6人制足球，一定时间内得分较多的球队胜出！如果分数相同，比赛结束后立即进入PK战（点球大战）决胜败！比赛中有时候还会出现犯规、任意球的判罚。\n玩家使用1P手柄控制的人物是作为中场(MF)的队长，一边操作他行动，一边让他向队友发送指示。玩家双人配合时，1P操作中场(MF)，2P操作门将(GK)。门将是左右胜败的关键岗位，要托付给值得依赖的玩友哦。",
+      "revision_match": true
+     },
+     {
+      "chunk_id": "f59c5847f1de",
+      "score": 0.0159,
+      "source_id": "1ang_com",
+      "status": "verified_read",
+      "authority": "reference_only",
+      "revision": "nekketsu_soccer2_fc_jp",
+      "game_id": "nekketsu_soccer2",
+      "platform": "NES",
+      "locator": "_工具脚本/taspipe/游戏包/来源库/取证/1ang_热血足球联盟图文攻略_20261118.md#L601-L602",
+      "heading": "かるろす(Karurosu)",
+      "snippet": "FW为前锋、MF为中场、DF为后卫、GK为门将。",
+      "revision_match": true
+     },
+     {
+      "chunk_id": "d4ffa0766967",
+      "score": 0.0328,
+      "source_id": "1ang_com",
+      "status": "verified_read",
+      "authority": "reference_only",
+      "revision": "nekketsu_soccer2_fc_jp",
+      "game_id": "nekketsu_soccer2",
+      "platform": "NES",
+      "locator": "_工具脚本/taspipe/游戏包/来源库/取证/1ang_热血足球联盟图文攻略_20261118.md#L759-L774",
+      "heading": "来自Misako的建议",
+      "snippet": "操作门将的时候\n只有在门将位置时，才能挥拳与抱球，离开球门区，就只能采取和普通选手相同的行动。门将在球门区，只要用方向键移动门将，让门将身体正面接触足球，就能自动抱住足球，也就是说，不用按A键或B键就能抱住足球。门将站在球门区时，玩家按方向键、A键、B键，能使出各种挥拳动作，试试看吧。最初操作门将会觉得有点难哦。\n再少来点建议\n通常球队大多好对付，必杀踢射一发破门，遇到世界强豪球队，事情就没有这么简单了。我方需要更强力的超常踢射，以及球门前基本的传球配合。努力制造机会，不要放",
+      "revision_match": true
+     },
+     {
+      "chunk_id": "ec3707ada6de",
+      "score": 0.03,
+      "source_id": "1ang_com",
+      "status": "verified_read",
+      "authority": "reference_only",
+      "revision": "nekketsu_soccer2_fc_jp",
+      "game_id": "nekketsu_soccer2",
+      "platform": "NES",
+      "locator": "_工具脚本/taspipe/游戏包/来源库/取证/1ang_热血足球联盟图文攻略_20261118.md#L167-L180",
+      "heading": "游戏模式说明",
+      "snippet": "下文中的A键与B键指的是FC手柄按键，不是计算机键盘。\n本作的游戏模式有3个，按方向键选择，A键决定，B键取消。难度模式也有3个，操作同上。\n上面截图是游戏模式与难度模式画面，下面开始对截图中的日本语进行讲解。\n『ねっけつ　りーぐ(Nekketsu League)』，意思是热血联盟模式，热血联盟以世界第一足球队为目标，为了取得Technos Japan怀争夺战出场权，远征世界4个足球联盟（对应四大洲）多个国家的球队。本模式有1P单人游戏与2P双人配合两个选项。\n『ぱすわーど(",
+      "revision_match": true
+     },
+     {
+      "chunk_id": "9a67103731c0",
+      "score": 0.0202,
+      "source_id": "1ang_com",
+      "status": "verified_read",
+      "authority": "reference_only",
+      "revision": "nekketsu_soccer2_fc_jp",
+      "game_id": "nekketsu_soccer2",
+      "platform": "NES",
+      "locator": "_工具脚本/taspipe/游戏包/来源库/取证/1ang_热血足球联盟图文攻略_20261118.md#L553-L599",
+      "heading": "かるろす(Karurosu)",
+      "snippet": "体力65，踢射力24，防御力25，走力类型D\n必杀技：おめがどらいぶしゅーと(Ω旋转球踢射）、とるねーどぱんち(龙卷拳）、とりぷるあくせる(三倍加速)\n性格：爱出风头\n喜好：泰迪熊\n厌恶：和食\n简介：『サンポウロ　Ｊｒ．ハイスクール(São Paulo Jr. High School)』所属（依据是官方说明书）。前作未出场的神秘男。尽管是替补球员，却拥有很强的实力，据说仅是作为门将，就比『げんえい(Gen'ei)』还要优秀（需要在菜单里设置一下，才能防止他拿到球就离开球门自己",
+      "revision_match": true
+     },
+     {
+      "chunk_id": "84ac286f9122",
+      "score": 0.0244,
+      "source_id": "1ang_com",
+      "status": "verified_read",
+      "authority": "reference_only",
+      "revision": "nekketsu_soccer2_fc_jp",
+      "game_id": "nekketsu_soccer2",
+      "platform": "NES",
+      "locator": "_工具脚本/taspipe/游戏包/来源库/取证/1ang_热血足球联盟图文攻略_20261118.md#L817-L820",
+      "heading": "PK战模式说明",
+      "snippet": "PK战（点球大战）模式的设定过程与对战模式相似，只能选择6个球队（热血FC与5强豪），1P与2P可以选择完全相同的球队进行PK战。\nPK战模式里：1P模式意味着1P玩家与电脑对战，这种情况下要操作所有选手射门，还要操作门将守门。2P模式意味着PK合战，1P对2P，轮流攻守，直到分出胜负。",
+      "revision_match": true
+     },
+     {
+      "chunk_id": "9265c746273b",
+      "score": 0.0231,
+      "source_id": "1ang_com",
+      "status": "verified_read",
+      "authority": "reference_only",
+      "revision": "nekketsu_soccer2_fc_jp",
+      "game_id": "nekketsu_soccer2",
+      "platform": "NES",
+      "locator": "_工具脚本/taspipe/游戏包/来源库/取证/1ang_热血足球联盟图文攻略_20261118.md#L1-L129",
+      "heading": "热血足球3攻略-FC热血足球3(热血足球联盟)游戏图文攻略",
+      "snippet": "热血足球3攻略-FC热血足球3(热血足球联盟)游戏图文攻略 - 乐米网一昂\nfunction doFav(u, t) { }\n日版名：くにおくんの熱血サッカーリーグ\n罗马音：Kunio Kun No Nekketsu Soccer League\n汉语名：库尼奥君的热血足球联盟\n简称：热血足球联盟\n海贼商命名：热血足球3\n类型：体育运动(Sports)\n对应机种：FC\n游戏设计：甲斐浩二\n开发与发售：Technos Japan\n发售日期：1993年4月23日\n本作是FC版『熱血",
+      "revision_match": true
+     },
+     {
+      "chunk_id": "b0120d799bc9",
+      "score": 0.0197,
+      "source_id": "setsumei_cloudfree",
+      "status": "verified_read",
+      "authority": "authoritative",
+      "revision": "nekketsu_soccer2_fc_jp",
+      "game_id": "nekketsu_soccer2",
+      "platform": "NES",
+      "locator": "_工具脚本/taspipe/游戏包/来源库/取证/setsumei_热血足球说明书扫描_20261118.md#L104-L171",
+      "heading": "",
+      "snippet": "★「ポジション」\n試合に出場する選手と、そのポジションを選ぶのよ。選手には得意なポジションがあったりするから、その辺もよ～く考えて決めてね。\n★「作戦・設定画面」\n画面の指示に従ってチームメイトの攻撃スタイルと守備スタイルを決めるのよ。選手の中には試合の展開によって不機嫌になったりして、作戦どおりのプレイをしてくれない時もあるから気をつけてね。\n**ミーティング**\n各選手には性格と感情があって、試合を進めるうちに機嫌が良くなったり悪くなったりするのよ。機嫌によってチームワー",
+      "revision_match": true
+     }
+    ],
+    "reason": "最高分命中 1ang_com 非本版本权威，权威件在低分位"
+   }
+  },
+  {
+   "id": "Q09",
+   "result": {
+    "q": "KOF98 ECK 这张卡 ROM 的 SHA1 指纹是多少？",
+    "counts": {
+     "candidates": 25,
+     "hits": 8,
+     "strong": 7
+    },
+    "authority_warnings": [],
+    "status": "inconclusive",
+    "hits": [
+     {
+      "chunk_id": "6dcfa1167d08",
+      "score": 0.0164,
+      "source_id": "local_fbneo_setlist",
+      "status": "verified_read",
+      "authority": "authoritative",
+      "revision": "kof98eck",
+      "game_id": "kof98",
+      "platform": "ARCADE",
+      "locator": "F:/工具链/fbneo/nightly/config/games/kof98eck.ini#L1-L32",
+      "heading": "",
+      "snippet": "// FinalBurn Neo v1.0.0.03 --- Config File for kof98eck (The King of Fighters '98 - The Slugfest / King of Fighters '98 - Dream Match Never Ends (Easy Combo Edition, Hack))\n// --- Miscellaneous ----------------------------------------------",
+      "revision_match": true
+     },
+     {
+      "chunk_id": "d679c6319f0d",
+      "score": 0.0306,
+      "source_id": "local_fbneo_rig",
+      "status": "verified_read",
+      "authority": "authoritative",
+      "revision": "kof98eck",
+      "game_id": "kof98",
+      "platform": "ARCADE",
+      "locator": "F:/tas_rig/docs/素材生产规范.md#L180-L182",
+      "heading": "一句话版",
+      "snippet": "**能读的读回来（+0xba、HUD、血条、帧数），不能证明的写死在闸门里（站位杠杆=空集），\n被拦的按原因码记账（rom/cmd/歧义），要不要重录只看指纹。**",
+      "revision_match": true
+     },
+     {
+      "chunk_id": "9d91c6922d9d",
+      "score": 0.0313,
+      "source_id": "local_fbneo_rig",
+      "status": "verified_read",
+      "authority": "authoritative",
+      "revision": "kof98eck",
+      "game_id": "kof98",
+      "platform": "ARCADE",
+      "locator": "F:/tas_rig/docs/素材生产规范.md#L140-L155",
+      "heading": "L6 失败分类层：拦下来之后归到哪一格",
+      "snippet": "**规矩**：被拦的条目必须带**原因码**进 manifest，不许静默跳过。当前的账：\n- `rom` 334 条 —— 角色不在这版 ROM 的 36 格里（16 个里/boss 版：`geese`、`orochi`、`rugal`…，\n名单见 `build_plans().stats.chars_not_in_rom`）。这一类**不是我们的 bug**，要另找选人入口。\n- `cmd` 62 条 —— 记法编不出来（歧义、位置指代、简化输入未定）。要人工定招表。\n-",
+      "revision_match": true
+     },
+     {
+      "chunk_id": "8c20fcc4311e",
+      "score": 0.0301,
+      "source_id": "local_fbneo_rig",
+      "status": "verified_read",
+      "authority": "authoritative",
+      "revision": "kof98eck",
+      "game_id": "kof98",
+      "platform": "ARCADE",
+      "locator": "F:/tas_rig/docs/素材生产规范.md#L18-L31",
+      "heading": "L1 记法层：招表原文 → 内部指令（IR）",
+      "snippet": "**规矩**：招表里的每一行先归一化成 `cmd`（编译后的记法）+ `name` + `slug` + `char_id`，\n归一化只允许发生在这一层；模拟器那一侧永远只吃 `cmd`。看不懂、有歧义、指向别的地方的记法\n**必须炸**，不许\"挑一个最像的\"。\n- **数**：底账 `data/kof98eck_moves.json` 605 行记法 → 展开 **1079 条**可录单元（拆「A或C」\n这类并列、拆「二式/三式」）；其中 **683 条现在就能录**，39",
+      "revision_match": true
+     },
+     {
+      "chunk_id": "f3d69d1a3153",
+      "score": 0.0306,
+      "source_id": "local_fbneo_rig",
+      "status": "verified_read",
+      "authority": "authoritative",
+      "revision": "kof98eck",
+      "game_id": "kof98",
+      "platform": "ARCADE",
+      "locator": "F:/tas_rig/docs/素材生产规范.md#L124-L137",
+      "heading": "L5 台账层：不重录的机制",
+      "snippet": "**规矩**：要不要重录只看**指纹**，不看文件时间。指纹 = 记法 + 起手状态 + 时序参数；\n任何一个变了才重录，都没变就复用，换输出目录也认。\n- **闸门**：`plan_cache_key()`（把起手状态算进去了：贴脸格重做过，旧片必须作废）+\n跨批指纹账 `runs/clip_ledger.json`（只有 `batch` 写它）+ `reel_is_fresh()`（展示片按**内容**\n比对段，不按 mtime —— 以前 manifest 整本重写导致",
+      "revision_match": true
+     },
+     {
+      "chunk_id": "0aa3c82e9a3a",
+      "score": 0.0291,
+      "source_id": "local_fbneo_rig",
+      "status": "verified_read",
+      "authority": "authoritative",
+      "revision": "kof98eck",
+      "game_id": "kof98",
+      "platform": "ARCADE",
+      "locator": "F:/tas_rig/docs/素材生产规范.md#L83-L106",
+      "heading": "L4 验收层：片子出来算不算合格",
+      "snippet": "**规矩**：合格只认**产物**上的数，不认代码跑成功。每条片子落盘时把这些读回台账：\n| 判据 | 从哪读 | 过线条件 |\n|---|---|---|\n| 真打中人 | 成片首/末帧血条（HUD 数绿列） | `damage > 0`，且掉的是**被打那一侧**（P2） |\n| 开场就在打 | 第 0 帧亮度 + HUD 已画（`clip_head_is_fight`） | 不许是 VS 卡/选人画面 |\n| 起手间距 | `state_gap()` 读 `+0xba`",
+      "revision_match": true
+     },
+     {
+      "chunk_id": "e19e64bf7a6d",
+      "score": 0.0294,
+      "source_id": "local_fbneo_rig",
+      "status": "verified_read",
+      "authority": "authoritative",
+      "revision": "kof98eck",
+      "game_id": "kof98",
+      "platform": "ARCADE",
+      "locator": "F:/tas_rig/docs/素材生产规范.md#L107-L121",
+      "heading": "L4 验收层：片子出来算不算合格",
+      "snippet": "补偿本身还有一道代数闸门：`avi 帧数 − head_cut = 电影帧数 − 垫帧 + 起手留帧`，与 lost 取值无关\n（`selftest` 对 lost 11/13/19/25/27/31/36 逐格验），所以\"起步多丢几帧\"永远只是多切几帧垫帧，\n不会改成片长度、也不会挪动招式第一帧。\n- **数**：HUD 气槽/血条的行列坐标都是从原生 304×224 逐列扫出来的（`GAUGE_BAR_X`、`HP_BAR_X` 等）。\n- **闸门**：`capture",
+      "revision_match": true
+     },
+     {
+      "chunk_id": "51fcabcc7db8",
+      "score": 0.0308,
+      "source_id": "local_fbneo_rig",
+      "status": "verified_read",
+      "authority": "authoritative",
+      "revision": "kof98eck",
+      "game_id": "kof98",
+      "platform": "ARCADE",
+      "locator": "F:/tas_rig/docs/素材生产规范.md#L185-L190",
+      "heading": "这份规范现在还不能保证的事（诚实清单）",
+      "snippet": "1. 空中招（46 条）、连锁取消（53 条填不出前置）、简化输入指代不明 —— 这三类现在**录不出合格片**；\n2. VS 卡名字 → char_id 这一步还靠人眼，没有 OCR/模板比对闸门；\n3. `+0x18` 那格到底是什么还没查（能改打斗、但 P1/P2 同值，所以不是坐标）；\n4. 「打中人」的判据还没按招式类别分档，远程技在贴脸距离会被误判成不合格；\n5. 整批 683 条（按实测 49~60 s/条 ≈ 11~12 小时、约 1.4~1.8 GB）还没跑",
+      "revision_match": true
+     }
+    ],
+    "reason": "最高分命中 local_fbneo_setlist 非本版本权威，权威件在低分位"
+   }
+  },
+  {
+   "id": "Q10",
+   "result": {
+    "q": "KOF98 ECK 能不能关掉队友改成 1v1？",
+    "counts": {
+     "candidates": 25,
+     "hits": 8,
+     "strong": 4
+    },
+    "authority_warnings": [
+     "gamersky_handbook 是 kof98um 的跨版本参考件，不得当权威依据",
+     "gamersky_handbook 是 kof98um 的跨版本参考件，不得当权威依据",
+     "gamersky_handbook 是 kof98um 的跨版本参考件，不得当权威依据"
+    ],
+    "status": "pass",
+    "hits": [
+     {
+      "chunk_id": "8c20fcc4311e",
+      "score": 0.0315,
+      "source_id": "local_fbneo_rig",
+      "status": "verified_read",
+      "authority": "authoritative",
+      "revision": "kof98eck",
+      "game_id": "kof98",
+      "platform": "ARCADE",
+      "locator": "F:/tas_rig/docs/素材生产规范.md#L18-L31",
+      "heading": "L1 记法层：招表原文 → 内部指令（IR）",
+      "snippet": "**规矩**：招表里的每一行先归一化成 `cmd`（编译后的记法）+ `name` + `slug` + `char_id`，\n归一化只允许发生在这一层；模拟器那一侧永远只吃 `cmd`。看不懂、有歧义、指向别的地方的记法\n**必须炸**，不许\"挑一个最像的\"。\n- **数**：底账 `data/kof98eck_moves.json` 605 行记法 → 展开 **1079 条**可录单元（拆「A或C」\n这类并列、拆「二式/三式」）；其中 **683 条现在就能录**，39",
+      "revision_match": true
+     },
+     {
+      "chunk_id": "6dcfa1167d08",
+      "score": 0.0293,
+      "source_id": "local_fbneo_setlist",
+      "status": "verified_read",
+      "authority": "authoritative",
+      "revision": "kof98eck",
+      "game_id": "kof98",
+      "platform": "ARCADE",
+      "locator": "F:/工具链/fbneo/nightly/config/games/kof98eck.ini#L1-L32",
+      "heading": "",
+      "snippet": "// FinalBurn Neo v1.0.0.03 --- Config File for kof98eck (The King of Fighters '98 - The Slugfest / King of Fighters '98 - Dream Match Never Ends (Easy Combo Edition, Hack))\n// --- Miscellaneous ----------------------------------------------",
+      "revision_match": true
+     },
+     {
+      "chunk_id": "e19e64bf7a6d",
+      "score": 0.0303,
+      "source_id": "local_fbneo_rig",
+      "status": "verified_read",
+      "authority": "authoritative",
+      "revision": "kof98eck",
+      "game_id": "kof98",
+      "platform": "ARCADE",
+      "locator": "F:/tas_rig/docs/素材生产规范.md#L107-L121",
+      "heading": "L4 验收层：片子出来算不算合格",
+      "snippet": "补偿本身还有一道代数闸门：`avi 帧数 − head_cut = 电影帧数 − 垫帧 + 起手留帧`，与 lost 取值无关\n（`selftest` 对 lost 11/13/19/25/27/31/36 逐格验），所以\"起步多丢几帧\"永远只是多切几帧垫帧，\n不会改成片长度、也不会挪动招式第一帧。\n- **数**：HUD 气槽/血条的行列坐标都是从原生 304×224 逐列扫出来的（`GAUGE_BAR_X`、`HP_BAR_X` 等）。\n- **闸门**：`capture",
+      "revision_match": true
+     },
+     {
+      "chunk_id": "9d91c6922d9d",
+      "score": 0.0296,
+      "source_id": "local_fbneo_rig",
+      "status": "verified_read",
+      "authority": "authoritative",
+      "revision": "kof98eck",
+      "game_id": "kof98",
+      "platform": "ARCADE",
+      "locator": "F:/tas_rig/docs/素材生产规范.md#L140-L155",
+      "heading": "L6 失败分类层：拦下来之后归到哪一格",
+      "snippet": "**规矩**：被拦的条目必须带**原因码**进 manifest，不许静默跳过。当前的账：\n- `rom` 334 条 —— 角色不在这版 ROM 的 36 格里（16 个里/boss 版：`geese`、`orochi`、`rugal`…，\n名单见 `build_plans().stats.chars_not_in_rom`）。这一类**不是我们的 bug**，要另找选人入口。\n- `cmd` 62 条 —— 记法编不出来（歧义、位置指代、简化输入未定）。要人工定招表。\n-",
+      "revision_match": true
+     },
+     {
+      "chunk_id": "fe7b48638b5b",
+      "score": 0.0132,
+      "source_id": "gamersky_handbook",
+      "status": "verified_read",
+      "authority": "cross_version",
+      "revision": "kof98um",
+      "game_id": "kof98",
+      "platform": "ARCADE",
+      "locator": "_工具脚本/taspipe/游戏包/来源库/取证/gamersky_kof98um全角色出招表_20261118.md#L503-L571",
+      "heading": "拳皇98:终极对决 全角色出招表一览",
+      "snippet": "*   游戏制作：SNK CORPORATION,Code Mystics\n*   游戏发行：SNK CORPORATION\n*   游戏平台：PC/PS4\n*   上市时间：2014-12-16\n*   游戏标签：\n[\n\\--\n](https://ku.gamersky.com/2008/The-King-of-Fighters-98-Ultimate-Match/)\n[![](https://imgs.gamersky.com/ku/2014/ku_thekingoffi",
+      "revision_match": false
+     },
+     {
+      "chunk_id": "4b994348f8ca",
+      "score": 0.0315,
+      "source_id": "local_fbneo_rig",
+      "status": "verified_read",
+      "authority": "authoritative",
+      "revision": "kof98eck",
+      "game_id": "kof98",
+      "platform": "ARCADE",
+      "locator": "F:/tas_rig/docs/素材生产规范.md#L34-L59",
+      "heading": "L2 起手状态层：这一招在谁的身体里、站在哪、有几格气",
+      "snippet": "**规矩**：一条片子要能被复算，必须钉住三样东西，而且每样都有机器可查的证据：\n**身体**（哪个角色的存档）/ **站位**（离对手几像素）/ **气**（0 还是满）。\n这三样一律不许\"看着像\"，只许读回来对上。\n- **数**（全部实测，36 个角色 × 5 份状态 = `states/` 里 180 份 .fs，台账 `states.json`：\n开场 / 贴脸 / 走路前那一格（只当父本）/ 满气 / 贴脸满气）：\n- 站位权威值 = P1 结构 `+0xba`（",
+      "revision_match": true
+     },
+     {
+      "chunk_id": "7079444f69cb",
+      "score": 0.0299,
+      "source_id": "gamersky_handbook",
+      "status": "verified_read",
+      "authority": "cross_version",
+      "revision": "kof98um",
+      "game_id": "kof98",
+      "platform": "ARCADE",
+      "locator": "_工具脚本/taspipe/游戏包/来源库/取证/gamersky_kof98um全角色出招表_20261118.md#L307-L456",
+      "heading": "拳皇98:终极对决 全角色出招表一览",
+      "snippet": "俱乐部飞标 指天回旋脚击中后↓↘→+B或D\n追击踩踏 ↓↓+B\n真正反击 ↓↙←+A或C\n回身真落 真正反击中←↙↓↘→+A或C\n油锤冠顶 真正反击中←↙↓↘→+B或D\n垂直之箭 →↓↘+B或D\n玛丽掠夺 垂直之箭击中后→↓↘+B或D\n超必杀技\n玛丽特殊打击 ↓↘→↓↘→+A或C\n旋转下落 玛丽特殊打击发动后↓↘→+B或D\n玛丽蜘蛛固 旋转下落中↓↘→+A或C\n俱乐部飞标 玛丽特殊打击发动后 指天回旋脚中↓↘→+B或D\n双重掠夺 玛丽特殊打击发动后 玛丽掠夺中→↓↘+B或D\n",
+      "revision_match": false
+     },
+     {
+      "chunk_id": "40c6dc60925d",
+      "score": 0.0141,
+      "source_id": "gamersky_handbook",
+      "status": "verified_read",
+      "authority": "cross_version",
+      "revision": "kof98um",
+      "game_id": "kof98",
+      "platform": "ARCADE",
+      "locator": "_工具脚本/taspipe/游戏包/来源库/取证/gamersky_kof98um全角色出招表_20261118.md#L601-L625",
+      "heading": "拳皇98:终极对决 全角色出招表一览",
+      "snippet": "超爽单职业\n](http://web-cps.gamersky.com/InstPage/index.html?key=zssj9gg261103)\n神兵奇迹\n](http://web-cps.gamersky.com/InstPage/index.html?key=sbqj9gg251231)[![](https://image.gamersky.com/webimg13/webgame_oss/ae77a775-ed04-4896-9344-3097c2cef336.jp",
+      "revision_match": false
+     }
+    ],
+    "reason": "4 条 verified_read+authoritative 内容词命中且最高分即权威"
+   }
+  },
+  {
+   "id": "Q11",
+   "result": {
+    "q": "草薙京的出招表指令",
+    "counts": {
+     "candidates": 25,
+     "hits": 8,
+     "strong": 4
+    },
+    "authority_warnings": [
+     "gamersky_handbook 是 kof98um 的跨版本参考件，不得当权威依据"
+    ],
+    "status": "pass",
+    "hits": [
+     {
+      "chunk_id": "9d91c6922d9d",
+      "score": 0.0325,
+      "source_id": "local_fbneo_rig",
+      "status": "verified_read",
+      "authority": "authoritative",
+      "revision": "kof98eck",
+      "game_id": "kof98",
+      "platform": "ARCADE",
+      "locator": "F:/tas_rig/docs/素材生产规范.md#L140-L155",
+      "heading": "L6 失败分类层：拦下来之后归到哪一格",
+      "snippet": "**规矩**：被拦的条目必须带**原因码**进 manifest，不许静默跳过。当前的账：\n- `rom` 334 条 —— 角色不在这版 ROM 的 36 格里（16 个里/boss 版：`geese`、`orochi`、`rugal`…，\n名单见 `build_plans().stats.chars_not_in_rom`）。这一类**不是我们的 bug**，要另找选人入口。\n- `cmd` 62 条 —— 记法编不出来（歧义、位置指代、简化输入未定）。要人工定招表。\n-",
+      "revision_match": true
+     },
+     {
+      "chunk_id": "5c4e57e18025",
+      "score": 0.0323,
+      "source_id": "gamersky_handbook",
+      "status": "verified_read",
+      "authority": "cross_version",
+      "revision": "kof98um",
+      "game_id": "kof98",
+      "platform": "ARCADE",
+      "locator": "_工具脚本/taspipe/游戏包/来源库/取证/gamersky_kof98um全角色出招表_20261118.md#L3-L305",
+      "heading": "拳皇98:终极对决 全角色出招表一览",
+      "snippet": "﻿\n本站\n2014-12-17 15:57:01 来源：游侠论坛 作者：kuangjian 编辑：Shy夏夏　[我要投稿](http://bbs.gamersky.com/thread-348492-1-1.html)\n随着拳皇98:终极对决的推出，很多新玩家还不是很熟悉出招表，下面小编带给大家全角色的出招表\n[![游民星空](http://img1.gamersky.com/image2014/12/20141217xdj_11/image001_S.jpg)](http:",
+      "revision_match": false
+     },
+     {
+      "chunk_id": "0aa3c82e9a3a",
+      "score": 0.0292,
+      "source_id": "local_fbneo_rig",
+      "status": "verified_read",
+      "authority": "authoritative",
+      "revision": "kof98eck",
+      "game_id": "kof98",
+      "platform": "ARCADE",
+      "locator": "F:/tas_rig/docs/素材生产规范.md#L83-L106",
+      "heading": "L4 验收层：片子出来算不算合格",
+      "snippet": "**规矩**：合格只认**产物**上的数，不认代码跑成功。每条片子落盘时把这些读回台账：\n| 判据 | 从哪读 | 过线条件 |\n|---|---|---|\n| 真打中人 | 成片首/末帧血条（HUD 数绿列） | `damage > 0`，且掉的是**被打那一侧**（P2） |\n| 开场就在打 | 第 0 帧亮度 + HUD 已画（`clip_head_is_fight`） | 不许是 VS 卡/选人画面 |\n| 起手间距 | `state_gap()` 读 `+0xba`",
+      "revision_match": true
+     },
+     {
+      "chunk_id": "82a8dd031067",
+      "score": 0.0299,
+      "source_id": "local_fbneo_rig",
+      "status": "verified_read",
+      "authority": "authoritative",
+      "revision": "kof98eck",
+      "game_id": "kof98",
+      "platform": "ARCADE",
+      "locator": "F:/tas_rig/docs/素材生产规范.md#L3-L15",
+      "heading": "凡是没量出来的数，写「推算」；凡是拦不住的，写在缺口里，不假装成立。",
+      "snippet": "写这份是为了回答一个问题：**怎么保证「拿到招表 → 一次性录出全部干净素材」这条路走得通，\n而不是靠反复试**。要消灭的三种浪费，按用户原话：\n1. 「出招都没有打到人」——片子能出、画面会动，但那一招没落在对手身上，素材没法用；\n2. 「不停地重复同一个片段」——同一招同一距离录第二遍，或者改一个数就把整批重跑；\n3. 「每次都重头开始」——上一轮量出来的偏移、距离、时序，下一轮又从零试一遍。\n下面每一层都是同一个格式：**规矩**（一句话，可执行）/ **数**（实测常",
+      "revision_match": true
+     },
+     {
+      "chunk_id": "8c20fcc4311e",
+      "score": 0.032,
+      "source_id": "local_fbneo_rig",
+      "status": "verified_read",
+      "authority": "authoritative",
+      "revision": "kof98eck",
+      "game_id": "kof98",
+      "platform": "ARCADE",
+      "locator": "F:/tas_rig/docs/素材生产规范.md#L18-L31",
+      "heading": "L1 记法层：招表原文 → 内部指令（IR）",
+      "snippet": "**规矩**：招表里的每一行先归一化成 `cmd`（编译后的记法）+ `name` + `slug` + `char_id`，\n归一化只允许发生在这一层；模拟器那一侧永远只吃 `cmd`。看不懂、有歧义、指向别的地方的记法\n**必须炸**，不许\"挑一个最像的\"。\n- **数**：底账 `data/kof98eck_moves.json` 605 行记法 → 展开 **1079 条**可录单元（拆「A或C」\n这类并列、拆「二式/三式」）；其中 **683 条现在就能录**，39",
+      "revision_match": true
+     },
+     {
+      "chunk_id": "af77c161cc5a",
+      "score": 0.0299,
+      "source_id": "local_fbneo_rig",
+      "status": "verified_read",
+      "authority": "authoritative",
+      "revision": "kof98eck",
+      "game_id": "kof98",
+      "platform": "ARCADE",
+      "locator": "F:/tas_rig/docs/素材生产规范.md#L60-L65",
+      "heading": "L2 起手状态层：这一招在谁的身体里、站在哪、有几格气",
+      "snippet": "- **现状**：✅ 36 人四格齐、贴脸间距 32/33 全绿（自检直接读盘上 36 份复算）。\n- ⚠️ 缺口 1：VS 卡上印的名字和 `char_id` **没有机器比对**——现在是人看图（`rig.py roster-sheet`\n把名字带拼成联络表）+ 工具查文件在不在。HUD 头顶那两行不能当身份，实测会把\nBENIMARU/DAIMON 印在京的格子上。\n- ⚠️ 缺口 2：空中起手还没有状态格（任务 #22，46 条 `need_air` 卡在这）。",
+      "revision_match": true
+     },
+     {
+      "chunk_id": "9c7bda8f56c9",
+      "score": 0.0132,
+      "source_id": "local_fbneo_rig",
+      "status": "verified_read",
+      "authority": "authoritative",
+      "revision": "kof98eck",
+      "game_id": "kof98",
+      "platform": "ARCADE",
+      "locator": "F:/tas_rig/docs/素材生产规范.md#L157-L158",
+      "heading": "L6 失败分类层：拦下来之后归到哪一格",
+      "snippet": "**规矩**：报\"缺多少\"要按状态逐格数，不许拿总数减一下倒推。",
+      "revision_match": true
+     },
+     {
+      "chunk_id": "e19e64bf7a6d",
+      "score": 0.0294,
+      "source_id": "local_fbneo_rig",
+      "status": "verified_read",
+      "authority": "authoritative",
+      "revision": "kof98eck",
+      "game_id": "kof98",
+      "platform": "ARCADE",
+      "locator": "F:/tas_rig/docs/素材生产规范.md#L107-L121",
+      "heading": "L4 验收层：片子出来算不算合格",
+      "snippet": "补偿本身还有一道代数闸门：`avi 帧数 − head_cut = 电影帧数 − 垫帧 + 起手留帧`，与 lost 取值无关\n（`selftest` 对 lost 11/13/19/25/27/31/36 逐格验），所以\"起步多丢几帧\"永远只是多切几帧垫帧，\n不会改成片长度、也不会挪动招式第一帧。\n- **数**：HUD 气槽/血条的行列坐标都是从原生 304×224 逐列扫出来的（`GAUGE_BAR_X`、`HP_BAR_X` 等）。\n- **闸门**：`capture",
+      "revision_match": true
+     }
+    ],
+    "reason": "4 条 verified_read+authoritative 内容词命中且最高分即权威"
+   }
+  },
+  {
+   "id": "Q12",
+   "result": {
+    "q": "2025年英雄联盟全球总决赛冠军是哪支战队？",
+    "counts": {
+     "candidates": 562,
+     "hits": 8,
+     "strong": 0
+    },
+    "authority_warnings": [
+     "1ang_com 是二手件（reference_only），须交叉核对",
+     "quanjizhong_top 是二手件（reference_only），须交叉核对",
+     "quanjizhong_top 是二手件（reference_only），须交叉核对",
+     "quanjizhong_top 是二手件（reference_only），须交叉核对",
+     "quanjizhong_top 是二手件（reference_only），须交叉核对",
+     "quanjizhong_top 是二手件（reference_only），须交叉核对",
+     "1ang_com 是二手件（reference_only），须交叉核对"
+    ],
+    "status": "inconclusive",
+    "hits": [
+     {
+      "chunk_id": "b146ec96724d",
+      "score": 0.032,
+      "source_id": "1ang_com",
+      "status": "verified_read",
+      "authority": "reference_only",
+      "revision": "nekketsu_soccer2_fc_jp",
+      "game_id": "nekketsu_soccer2",
+      "platform": "NES",
+      "locator": "_工具脚本/taspipe/游戏包/来源库/取证/1ang_热血足球联盟图文攻略_20261118.md#L183-L192",
+      "heading": "热血联盟模式",
+      "snippet": "世界各国共有4个联盟12支球队，选择好要挑战的球队，就可以进行远征比赛了，有时坐车，有时乘船，有时飞机。每支球队最多可以挑战3次，胜利1次获得1颗白星，失败1次获得1颗黑星。\n全世界12支球队，最可以比赛36次，过程中根据胜率取得一定数量的胜点『ポイント(Point)』，就可以获得出场权，进入锦标赛形式的Technos Japan怀争夺战。\n第一行是亚洲联盟，3支球队从左到右分别是韩国、泰国、蒙古；第二行是非洲联盟，3支球队分别是喀麦隆、几内亚、塞内伽尔；第三行是美洲联盟，3",
+      "revision_match": true
+     },
+     {
+      "chunk_id": "b93e1dc11abe",
+      "score": 0.0152,
+      "source_id": "quanjizhong_top",
+      "status": "verified_read",
+      "authority": "reference_only",
+      "revision": "arcade_hack_multi",
+      "game_id": "multi",
+      "platform": "ARCADE",
+      "locator": "_工具脚本/taspipe/游戏包/来源库/取证/quanjizhong_thread677_街机改版整合_20261118.md#L1891-L1915",
+      "heading": "",
+      "snippet": "kf2k5unis12        拳皇 - 十周年纪念版 2005 Unique (血量表半透明化)        拳皇 - 十周年纪念版 2005 Unique (血量表半透明化)\nkf2k5unis15        拳皇 - 十周年纪念版 2005 Unique (Alpha Unique 2020-01-23)        拳皇 - 十周年纪念版 2005 Unique (Alpha Unique 2020-01-23)\nkf2k5unis16        拳",
+      "revision_match": true
+     },
+     {
+      "chunk_id": "b5a2c9ad96c4",
+      "score": 0.0135,
+      "source_id": "local_soccer2_super_list",
+      "status": "verified_read",
+      "authority": "authoritative",
+      "revision": "nekketsu_soccer2_multi",
+      "game_id": "nekketsu_soccer2",
+      "platform": "NES",
+      "locator": "_工具脚本/taspipe/游戏包/热血足球联盟_必杀全清单.md#L262-L264",
+      "heading": "8-6 对手 11 队补强（S10 逐队 + S3 名称）",
+      "snippet": "名称已知仍仅 3：巴西食人鱼（S3）/阿根廷香蕉（S3）/塞内加尔白鸟（S1/S10）。S10 给了其余各队的**行为侧写**（喀麦隆 Dakosuta 必杀可吹飞强豪门将；巴西 Bûnyo 速度快+燕返、Santosu 命中强、门将 Rodorigesu 与德国 Burême 同级最强；意大利连续必杀+门将弱点在禁区上方、巴西门将弱点在禁区下方；德国不会燕返故必杀概率低；墨西哥全员面具）。**结论维持：8 队必杀名称文献确无，只能实测看球变形再命名。**\n胜利姿势全 11 ",
+      "revision_match": true
+     },
+     {
+      "chunk_id": "f1a8eff85335",
+      "score": 0.0154,
+      "source_id": "quanjizhong_top",
+      "status": "verified_read",
+      "authority": "reference_only",
+      "revision": "arcade_hack_multi",
+      "game_id": "multi",
+      "platform": "ARCADE",
+      "locator": "_工具脚本/taspipe/游戏包/来源库/取证/quanjizhong_thread677_街机改版整合_20261118.md#L8316-L8340",
+      "heading": "",
+      "snippet": "umk3uc20201201        终极真人快打 3 (终极杯版, 2020-12-01)        终极真人快打 3 (终极杯版, 2020-12-01)\numk3uc20201204        终极真人快打 3 (终极杯版, 2020-12-04)        终极真人快打 3 (终极杯版, 2020-12-04)\numk3uc20201226        终极真人快打 3 (终极杯版, 2020-12-26)        终极真人快打 3 (终极杯",
+      "revision_match": true
+     },
+     {
+      "chunk_id": "2005a2517b6c",
+      "score": 0.0149,
+      "source_id": "quanjizhong_top",
+      "status": "verified_read",
+      "authority": "reference_only",
+      "revision": "arcade_hack_multi",
+      "game_id": "multi",
+      "platform": "ARCADE",
+      "locator": "_工具脚本/taspipe/游戏包/来源库/取证/quanjizhong_thread677_街机改版整合_20261118.md#L4591-L4615",
+      "heading": "",
+      "snippet": "lnc        追捕吃豆人         追捕吃豆人\nlooptris        俄罗斯方块(圆柱) (2021-12-26)        俄罗斯方块(圆柱) (2021-12-26)\nlooptrsp        俄罗斯方块(圆柱) Plus (2022-12-24)        俄罗斯方块(圆柱) Plus (2022-12-24)\nlresort        终极任务         终极任务\nlresortd        终极任务 (MGD2) ",
+      "revision_match": true
+     },
+     {
+      "chunk_id": "f8ae5485ef69",
+      "score": 0.0161,
+      "source_id": "quanjizhong_top",
+      "status": "verified_read",
+      "authority": "reference_only",
+      "revision": "arcade_hack_multi",
+      "game_id": "multi",
+      "platform": "ARCADE",
+      "locator": "_工具脚本/taspipe/游戏包/来源库/取证/quanjizhong_thread677_街机改版整合_20261118.md#L8291-L8315",
+      "heading": "",
+      "snippet": "umk3r13bf        终极真人快打 3 (修订版 1.3 beta final)        终极真人快打 3 (修订版 1.3 beta final)\numk3te        终极真人快打 3 (比赛版)(2.0.032b8)        终极真人快打 3 (比赛版)(2.0.032b8)\numk3te2        终极真人快打 3 (比赛版)(2.0.035)        终极真人快打 3 (比赛版)(2.0.035)\numk3te42     ",
+      "revision_match": true
+     },
+     {
+      "chunk_id": "303f9d55145c",
+      "score": 0.0141,
+      "source_id": "quanjizhong_top",
+      "status": "verified_read",
+      "authority": "reference_only",
+      "revision": "arcade_hack_multi",
+      "game_id": "multi",
+      "platform": "ARCADE",
+      "locator": "_工具脚本/taspipe/游戏包/来源库/取证/quanjizhong_thread677_街机改版整合_20261118.md#L7991-L8015",
+      "heading": "",
+      "snippet": "teot\\_5        极超豪拳编 (海啸版, 测试版 2, 2022-01-29)        极超豪拳编 (海啸版, 测试版 2, 2022-01-29)\nteot\\_6        极超豪拳编 (海啸版, 测试版 3, 2022-03-12)        极超豪拳编 (海啸版, 测试版 3, 2022-03-12)\nteot\\_7        极超豪拳编 (海啸版, 测试版 4, 2022-05-07)        极超豪拳编 (海啸版, 测试版 4, ",
+      "revision_match": true
+     },
+     {
+      "chunk_id": "1e229724610c",
+      "score": 0.0137,
+      "source_id": "1ang_com",
+      "status": "verified_read",
+      "authority": "reference_only",
+      "revision": "nekketsu_soccer2_fc_jp",
+      "game_id": "nekketsu_soccer2",
+      "platform": "NES",
+      "locator": "_工具脚本/taspipe/游戏包/来源库/取证/1ang_热血足球联盟图文攻略_20261118.md#L1041-L1091",
+      "heading": "秘技",
+      "snippet": "热血篮球游戏攻略-热血篮球详细操作技巧及球员技能攻略\nyouyou2026-09-06\n](https://www.1ang.com/wenzhang/be0b4000-b474-11ec-bb4a-27df360ccb26)\n[\nFC特救指令游戏攻略-特救指令详细图文攻略\nyouyou2026-09-04\n](https://www.1ang.com/wenzhang/5e8daab0-b473-11ec-bc11-ab9d1d467503)\n[\nFC大坦克攻略-大坦克游戏",
+      "revision_match": true
+     }
+    ],
+    "reason": "命中只有快照/二手/跨版本支撑或仅单字噪声"
+   }
+  },
+  {
+   "id": "Q13",
+   "result": {
+    "q": "DOTA2 TI14 国际邀请赛赛程和奖金池",
+    "counts": {
+     "candidates": 562,
+     "hits": 8,
+     "strong": 0
+    },
+    "authority_warnings": [
+     "quanjizhong_top 是二手件（reference_only），须交叉核对",
+     "quanjizhong_top 是二手件（reference_only），须交叉核对",
+     "quanjizhong_top 是二手件（reference_only），须交叉核对",
+     "quanjizhong_top 是二手件（reference_only），须交叉核对",
+     "1ang_com 是二手件（reference_only），须交叉核对",
+     "quanjizhong_top 是二手件（reference_only），须交叉核对"
+    ],
+    "status": "inconclusive",
+    "hits": [
+     {
+      "chunk_id": "58665c62f7ca",
+      "score": 0.0281,
+      "source_id": "quanjizhong_top",
+      "status": "verified_read",
+      "authority": "reference_only",
+      "revision": "arcade_hack_multi",
+      "game_id": "multi",
+      "platform": "ARCADE",
+      "locator": "_工具脚本/taspipe/游戏包/来源库/取证/quanjizhong_thread677_街机改版整合_20261118.md#L4716-L4740",
+      "heading": "",
+      "snippet": "mk2s04        真人快打 II (2.8.5 plus beta 2, 2018-12-23)        真人快打 II (2.8.5 plus beta 2, 2018-12-23)\nmk2s05        真人快打 II (3.3 工程版)        真人快打 II (3.3 工程版)\nmk2s06        真人快打 II (SP4K, 2021-08-05)        真人快打 II (SP4K, 2021-08-05)\nmk3    ",
+      "revision_match": true
+     },
+     {
+      "chunk_id": "2005a2517b6c",
+      "score": 0.0147,
+      "source_id": "quanjizhong_top",
+      "status": "verified_read",
+      "authority": "reference_only",
+      "revision": "arcade_hack_multi",
+      "game_id": "multi",
+      "platform": "ARCADE",
+      "locator": "_工具脚本/taspipe/游戏包/来源库/取证/quanjizhong_thread677_街机改版整合_20261118.md#L4591-L4615",
+      "heading": "",
+      "snippet": "lnc        追捕吃豆人         追捕吃豆人\nlooptris        俄罗斯方块(圆柱) (2021-12-26)        俄罗斯方块(圆柱) (2021-12-26)\nlooptrsp        俄罗斯方块(圆柱) Plus (2022-12-24)        俄罗斯方块(圆柱) Plus (2022-12-24)\nlresort        终极任务         终极任务\nlresortd        终极任务 (MGD2) ",
+      "revision_match": true
+     },
+     {
+      "chunk_id": "56a5fb2f1b39",
+      "score": 0.0143,
+      "source_id": "quanjizhong_top",
+      "status": "verified_read",
+      "authority": "reference_only",
+      "revision": "arcade_hack_multi",
+      "game_id": "multi",
+      "platform": "ARCADE",
+      "locator": "_工具脚本/taspipe/游戏包/来源库/取证/quanjizhong_thread677_街机改版整合_20261118.md#L1316-L1340",
+      "heading": "",
+      "snippet": "ffeastd        青蛙享宴 演示        青蛙享宴 演示\nffight        快打旋风 (世界版, 第一套)        快打旋风 (世界版, 第一套)\nffight01        快打旋风 (Change Fighter)        快打旋风 (Change Fighter)\nffight02        快打旋风 (1VS2 Enhanced Version, 2016-08-17)        快打旋风 (1VS2 Enhance",
+      "revision_match": true
+     },
+     {
+      "chunk_id": "1664b147bb33",
+      "score": 0.0154,
+      "source_id": "quanjizhong_top",
+      "status": "verified_read",
+      "authority": "reference_only",
+      "revision": "arcade_hack_multi",
+      "game_id": "multi",
+      "platform": "ARCADE",
+      "locator": "_工具脚本/taspipe/游戏包/来源库/取证/quanjizhong_thread677_街机改版整合_20261118.md#L1566-L1590",
+      "heading": "",
+      "snippet": "hook14        铁钩船长 (Swan version, 2022-01-11)        铁钩船长 (Swan version, 2022-01-11)\nhook15        铁钩船长 (XX version, 2022-01-13)        铁钩船长 (XX version, 2022-01-13)\nhorekidb3        太空宝宝大作战 (Neo-Geo port)        太空宝宝大作战 (Neo-Geo port)\nhori",
+      "revision_match": true
+     },
+     {
+      "chunk_id": "b146ec96724d",
+      "score": 0.0277,
+      "source_id": "1ang_com",
+      "status": "verified_read",
+      "authority": "reference_only",
+      "revision": "nekketsu_soccer2_fc_jp",
+      "game_id": "nekketsu_soccer2",
+      "platform": "NES",
+      "locator": "_工具脚本/taspipe/游戏包/来源库/取证/1ang_热血足球联盟图文攻略_20261118.md#L183-L192",
+      "heading": "热血联盟模式",
+      "snippet": "世界各国共有4个联盟12支球队，选择好要挑战的球队，就可以进行远征比赛了，有时坐车，有时乘船，有时飞机。每支球队最多可以挑战3次，胜利1次获得1颗白星，失败1次获得1颗黑星。\n全世界12支球队，最可以比赛36次，过程中根据胜率取得一定数量的胜点『ポイント(Point)』，就可以获得出场权，进入锦标赛形式的Technos Japan怀争夺战。\n第一行是亚洲联盟，3支球队从左到右分别是韩国、泰国、蒙古；第二行是非洲联盟，3支球队分别是喀麦隆、几内亚、塞内伽尔；第三行是美洲联盟，3",
+      "revision_match": true
+     },
+     {
+      "chunk_id": "c2df48c58fb5",
+      "score": 0.0159,
+      "source_id": "9game",
+      "status": "verified_read",
+      "authority": "not_applicable",
+      "revision": "nekketsu_soccer_mobile",
+      "game_id": "nekketsu_soccer_mobile",
+      "platform": "MOBILE",
+      "locator": "_工具脚本/taspipe/游戏包/来源库/取证/9game_热血足球技能攻略_20261118.md#L185-L326",
+      "heading": "最新专题",
+      "snippet": "t14\\_10-t14\\_9:1.0\n[![王者征途](https://media.9game.cn/gamebase/2024/10/24/c8a6017f315aa456d4da060e6eb587de.gif?x-oss-process=image/resize,w_120,m_lfit)](https://www.9game.cn/wangzhezhengtu/)[王者征途](https://www.9game.cn/wangzhezhengtu/)\nt14\\_10-",
+      "revision_match": true
+     },
+     {
+      "chunk_id": "8e97f000b03d",
+      "score": 0.0161,
+      "source_id": "local_soccer2_super_list",
+      "status": "verified_read",
+      "authority": "authoritative",
+      "revision": "nekketsu_soccer2_multi",
+      "game_id": "nekketsu_soccer2",
+      "platform": "NES",
+      "locator": "_工具脚本/taspipe/游戏包/热血足球联盟_必杀全清单.md#L234-L239",
+      "heading": "8-3 世界杯与结局（S9，此前知识包未收录）",
+      "snippet": "- 世界杯触发：CN 汉化版自述\"踢 16 场、总积分 ≥70\"晋级锦标赛式 Technos Japan Cup（S1 口径=16 连胜；S9=16 场 70 分，两口径并存待实测）；参赛队=喀/阿/巴/意/德中 3-4 支。\n- 联盟结构：4 大洲 12 队，每队最多挑战 3 次（胜=白星/败=黑星），上限 36 场；进世界杯则踢不满 36 场。\n- 三结局：获胜（国夫举大力神杯+美纱子来电）、败北、准获胜（决赛负意大利得亚军，水友订正）；**任一结局后 Technos 挥",
+      "revision_match": true
+     },
+     {
+      "chunk_id": "f0d6e56ef338",
+      "score": 0.0186,
+      "source_id": "quanjizhong_top",
+      "status": "verified_read",
+      "authority": "reference_only",
+      "revision": "arcade_hack_multi",
+      "game_id": "multi",
+      "platform": "ARCADE",
+      "locator": "_工具脚本/taspipe/游戏包/来源库/取证/quanjizhong_thread677_街机改版整合_20261118.md#L7941-L7965",
+      "heading": "",
+      "snippet": "svcsplus12        SNK 对 卡普空 - 混沌 超级 加强版 (Black Background)        SNK 对 卡普空 - 混沌 超级 加强版 (Black Background)\nsvcsplus13        SNK 对 卡普空 - 混沌 超级 加强版 (Black Background 2)        SNK 对 卡普空 - 混沌 超级 加强版 (Black Background 2)\nsvcsplus14        SNK ",
+      "revision_match": true
+     }
+    ],
+    "reason": "命中只有快照/二手/跨版本支撑或仅单字噪声"
+   }
+  },
+  {
+   "id": "Q14",
+   "result": {
+    "q": "原神纳西妲圣遗物搭配推荐",
+    "counts": {
+     "candidates": 562,
+     "hits": 8,
+     "strong": 0
+    },
+    "authority_warnings": [
+     "quanjizhong_top 是二手件（reference_only），须交叉核对",
+     "quanjizhong_top 是二手件（reference_only），须交叉核对",
+     "quanjizhong_top 是二手件（reference_only），须交叉核对",
+     "quanjizhong_top 是二手件（reference_only），须交叉核对",
+     "quanjizhong_top 是二手件（reference_only），须交叉核对",
+     "quanjizhong_top 是二手件（reference_only），须交叉核对",
+     "quanjizhong_top 是二手件（reference_only），须交叉核对",
+     "quanjizhong_top 是二手件（reference_only），须交叉核对"
+    ],
+    "status": "inconclusive",
+    "hits": [
+     {
+      "chunk_id": "dc60c034fff3",
+      "score": 0.0161,
+      "source_id": "quanjizhong_top",
+      "status": "verified_read",
+      "authority": "reference_only",
+      "revision": "arcade_hack_multi",
+      "game_id": "multi",
+      "platform": "ARCADE",
+      "locator": "_工具脚本/taspipe/游戏包/来源库/取证/quanjizhong_thread677_街机改版整合_20261118.md#L1916-L1940",
+      "heading": "",
+      "snippet": "kizuna03        风云默示录 (Unlimited Power v3)        风云默示录 (Unlimited Power v3)\nkizuna04        风云默示录 (Super Kill Unified)        风云默示录 (Super Kill Unified)\nkizuna05        风云默示录 (Super Remix Edition 1.0)        风云默示录 (Super Remix Edition 1.0)",
+      "revision_match": true
+     },
+     {
+      "chunk_id": "9d5bf2a69ee1",
+      "score": 0.0211,
+      "source_id": "quanjizhong_top",
+      "status": "verified_read",
+      "authority": "reference_only",
+      "revision": "arcade_hack_multi",
+      "game_id": "multi",
+      "platform": "ARCADE",
+      "locator": "_工具脚本/taspipe/游戏包/来源库/取证/quanjizhong_thread677_街机改版整合_20261118.md#L6816-L6840",
+      "heading": "",
+      "snippet": "pnyaad        宠物方块 (decrypted C 第一套)        宠物方块 (decrypted C 第一套)\npnyaadd        宠物方块 (decrypted C 第二套)        宠物方块 (decrypted C 第二套)\npoknight        扑克之夜        扑克之夜\npoknightcd        扑克之夜 (CD)        扑克之夜 (CD)\npoknightfr        扑克之夜 (法国版",
+      "revision_match": true
+     },
+     {
+      "chunk_id": "bdc9ab9d27a2",
+      "score": 0.0141,
+      "source_id": "quanjizhong_top",
+      "status": "verified_read",
+      "authority": "reference_only",
+      "revision": "arcade_hack_multi",
+      "game_id": "multi",
+      "platform": "ARCADE",
+      "locator": "_工具脚本/taspipe/游戏包/来源库/取证/quanjizhong_thread677_街机改版整合_20261118.md#L7891-L7915",
+      "heading": "",
+      "snippet": "svcplusb        SNK 对 卡普空 - 混沌 加强版 (Bootleg, 第一套)        SNK 对 卡普空 - 混沌 加强版 (Bootleg, 第一套)\nsvcplusd        SNK 对 卡普空 - 混沌 加强版 (盗版, fully decrypted)        SNK 对 卡普空 - 混沌 加强版 (盗版, fully decrypted)\nsvcplusg        SNK 对 卡普空 - 混沌 (Plus Special",
+      "revision_match": true
+     },
+     {
+      "chunk_id": "fe24a186d640",
+      "score": 0.0159,
+      "source_id": "quanjizhong_top",
+      "status": "verified_read",
+      "authority": "reference_only",
+      "revision": "arcade_hack_multi",
+      "game_id": "multi",
+      "platform": "ARCADE",
+      "locator": "_工具脚本/taspipe/游戏包/来源库/取证/quanjizhong_thread677_街机改版整合_20261118.md#L816-L840",
+      "heading": "",
+      "snippet": "dankuga02        断仇牙 (Enable Hidden Characters)        断仇牙 (Enable Hidden Characters)\ndaraku        堕落天使 (世界版) / 堕落天使 (日本版)        堕落天使 (世界版) / 堕落天使 (日本版)\ndaraku01        堕落天使 (可选隐藏角色)        堕落天使 (可选隐藏角色)\ndariusg        宇宙巡航舰外传 - 银鹰战机 (版本 ",
+      "revision_match": true
+     },
+     {
+      "chunk_id": "311b48da4304",
+      "score": 0.0149,
+      "source_id": "quanjizhong_top",
+      "status": "verified_read",
+      "authority": "reference_only",
+      "revision": "arcade_hack_multi",
+      "game_id": "multi",
+      "platform": "ARCADE",
+      "locator": "_工具脚本/taspipe/游戏包/来源库/取证/quanjizhong_thread677_街机改版整合_20261118.md#L6141-L6165",
+      "heading": "",
+      "snippet": "ngmvs        机皇.MultiMVS支持        机皇.MultiMVS支持\nngneo        机皇.Neo支持        机皇.Neo支持\nngtd2        Neo Geo 技术演示 2        Neo Geo 技术演示 2\nngtetris        Neo Geo 2人俄罗斯方块        Neo Geo 2人俄罗斯方块\nngym2610        机皇 YM2610 测试        机皇 YM2610 测试\n",
+      "revision_match": true
+     },
+     {
+      "chunk_id": "ec4ad7de7882",
+      "score": 0.0145,
+      "source_id": "quanjizhong_top",
+      "status": "verified_read",
+      "authority": "reference_only",
+      "revision": "arcade_hack_multi",
+      "game_id": "multi",
+      "platform": "ARCADE",
+      "locator": "_工具脚本/taspipe/游戏包/来源库/取证/quanjizhong_thread677_街机改版整合_20261118.md#L8516-L8585",
+      "heading": "",
+      "snippet": "zolaad        超级佐拉吃豆小姐 After Dark        超级佐拉吃豆小姐 After Dark\nzolaatk        超级佐拉吃豆小姐 Attack        超级佐拉吃豆小姐 Attack\nzolamaze        吃豆小姐 无退出        吃豆小姐 无退出\nzolapac        超级佐拉吃豆小姐        超级佐拉吃豆小姐\nzolaslow        超级佐拉吃豆小姐 (Slow)        超级佐拉吃",
+      "revision_match": true
+     },
+     {
+      "chunk_id": "6665c8502bab",
+      "score": 0.0164,
+      "source_id": "quanjizhong_top",
+      "status": "verified_read",
+      "authority": "reference_only",
+      "revision": "arcade_hack_multi",
+      "game_id": "multi",
+      "platform": "ARCADE",
+      "locator": "_工具脚本/taspipe/游戏包/来源库/取证/quanjizhong_thread677_街机改版整合_20261118.md#L6166-L6190",
+      "heading": "",
+      "snippet": "nitd06        黑暗守墓者 / 暗黑恶梦 (Plus Max)        黑暗守墓者 / 暗黑恶梦 (Plus Max)\nnitd07        黑暗守墓者 / 暗黑恶梦 (Spanish V2)        黑暗守墓者 / 暗黑恶梦 (Spanish V2)\nnrallyv        新迷魂车 X (竖式屏幕)        新迷魂车 X (竖式屏幕)\nnsmb        新超级马里奥兄弟        新超级马里奥兄弟\nnsmbd      ",
+      "revision_match": true
+     },
+     {
+      "chunk_id": "dc63f6643d43",
+      "score": 0.0248,
+      "source_id": "quanjizhong_top",
+      "status": "verified_read",
+      "authority": "reference_only",
+      "revision": "arcade_hack_multi",
+      "game_id": "multi",
+      "platform": "ARCADE",
+      "locator": "_工具脚本/taspipe/游戏包/来源库/取证/quanjizhong_thread677_街机改版整合_20261118.md#L7316-L7340",
+      "heading": "",
+      "snippet": "sengoku3s08        战国传承 3 (颜色修改)(敌方)        战国传承 3 (颜色修改)(敌方)\nsengoku3s09        战国传承 3 (青版 2017-04-02)        战国传承 3 (青版 2017-04-02)\nsengoku3s10        战国传承 3 (总可以使用大招)        战国传承 3 (总可以使用大招)\nsengoku3s11        战国传承 3 (简化出招)        战国传承 3",
+      "revision_match": true
+     }
+    ],
+    "reason": "命中只有快照/二手/跨版本支撑或仅单字噪声"
+   }
+  },
+  {
+   "id": "Q15",
+   "result": {
+    "q": "热血足球联盟的转会市场怎么买卖球员？",
+    "counts": {
+     "candidates": 123,
+     "hits": 8,
+     "strong": 2
+    },
+    "authority_warnings": [
+     "csdn_wangsitan_bug 是二手件（reference_only），须交叉核对",
+     "1ang_com 是二手件（reference_only），须交叉核对",
+     "1ang_com 是二手件（reference_only），须交叉核对",
+     "1ang_com 是二手件（reference_only），须交叉核对",
+     "sohu_game 是二手件（reference_only），须交叉核对",
+     "1ang_com 是二手件（reference_only），须交叉核对"
+    ],
+    "status": "pass",
+    "hits": [
+     {
+      "chunk_id": "8996c7a159ef",
+      "score": 0.0237,
+      "source_id": "local_soccer2_super_list",
+      "status": "verified_read",
+      "authority": "authoritative",
+      "revision": "nekketsu_soccer2_multi",
+      "game_id": "nekketsu_soccer2",
+      "platform": "NES",
+      "locator": "_工具脚本/taspipe/游戏包/热血足球联盟_必杀全清单.md#L137-L158",
+      "heading": "5. 生产接线（11-14 实测更新）",
+      "snippet": "⇒ 现状改成 **untested（未在任何有效条件下测过）**，不是\"不可触发\"。用户 11-14 亲口\"其实打出过好多次必杀了\"，\n有效条件下的真阳性一定存在，责任在我的测量方式，不在 ROM。\n真采 23 必杀仍需正对照：先在**当前 jf ROM** 上按 §6 的三条铁律重跑触发链，仍全负再谈日版原版 ROM（网盘仅两 hack 无日版；外部=门控待批）。\n本清单 23+13 项在 CN/hack 上全部标 **honest gap（不可复现，证据见下）**，不冒充",
+      "revision_match": true
+     },
+     {
+      "chunk_id": "e2045199c848",
+      "score": 0.0267,
+      "source_id": "csdn_wangsitan_bug",
+      "status": "verified_read",
+      "authority": "reference_only",
+      "revision": "nekketsu_soccer2_fc_unspecified",
+      "game_id": "nekketsu_soccer2",
+      "platform": "NES",
+      "locator": "_工具脚本/taspipe/游戏包/来源库/取证/csdn_wangsitan_热血足球Bug记录_20261118.md#L250-L274",
+      "heading": "相关推荐",
+      "snippet": "【_FC_】_热血__足球__联盟_ 内存使用_记录_\npid(player\\_id): 玩家编号，00--03。 rid(role\\_id): 角色编号，00--0B，有时0C对应球。 tid(team\\_id): 队伍编号，00/01。 一般方向：上为00，顺时针每45度加20。 0004,pid: key A B Select Start U D L R 0008,pid: changed\\_key\nwangsitan的专栏 2299\n](https://blog.cs",
+      "revision_match": true
+     },
+     {
+      "chunk_id": "807f0d3c6fa3",
+      "score": 0.0247,
+      "source_id": "local_soccer2_super_list",
+      "status": "verified_read",
+      "authority": "authoritative",
+      "revision": "nekketsu_soccer2_multi",
+      "game_id": "nekketsu_soccer2",
+      "platform": "NES",
+      "locator": "_工具脚本/taspipe/游戏包/热血足球联盟_必杀全清单.md#L216-L225",
+      "heading": "8-1 新增来源",
+      "snippet": "- S7 CSDN wangsitan 系列（同作者连发四篇，数据级）：\n- Bug 记录 https://blog.csdn.net/wangsitan/article/details/7669725 （两条 Bug，见 8-4）\n- 数据记录 https://blog.csdn.net/wenzhang.../7669353 （$BD18=策略、$BD19=阵型，阵型仅 3 种 00:2-1-2 / 01:1-2-2 / 02:2-2-1，各队默认值逐队列出）\n- 金手指",
+      "revision_match": true
+     },
+     {
+      "chunk_id": "9265c746273b",
+      "score": 0.0323,
+      "source_id": "1ang_com",
+      "status": "verified_read",
+      "authority": "reference_only",
+      "revision": "nekketsu_soccer2_fc_jp",
+      "game_id": "nekketsu_soccer2",
+      "platform": "NES",
+      "locator": "_工具脚本/taspipe/游戏包/来源库/取证/1ang_热血足球联盟图文攻略_20261118.md#L1-L129",
+      "heading": "热血足球3攻略-FC热血足球3(热血足球联盟)游戏图文攻略",
+      "snippet": "热血足球3攻略-FC热血足球3(热血足球联盟)游戏图文攻略 - 乐米网一昂\nfunction doFav(u, t) { }\n日版名：くにおくんの熱血サッカーリーグ\n罗马音：Kunio Kun No Nekketsu Soccer League\n汉语名：库尼奥君的热血足球联盟\n简称：热血足球联盟\n海贼商命名：热血足球3\n类型：体育运动(Sports)\n对应机种：FC\n游戏设计：甲斐浩二\n开发与发售：Technos Japan\n发售日期：1993年4月23日\n本作是FC版『熱血",
+      "revision_match": true
+     },
+     {
+      "chunk_id": "9fd3ea997341",
+      "score": 0.0313,
+      "source_id": "1ang_com",
+      "status": "verified_read",
+      "authority": "reference_only",
+      "revision": "nekketsu_soccer2_fc_jp",
+      "game_id": "nekketsu_soccer2",
+      "platform": "NES",
+      "locator": "_工具脚本/taspipe/游戏包/来源库/取证/1ang_热血足球联盟图文攻略_20261118.md#L161-L164",
+      "heading": "游戏规则",
+      "snippet": "首先，说明一下热血足球联盟的比赛规则。足球联盟乃是6人制足球，一定时间内得分较多的球队胜出！如果分数相同，比赛结束后立即进入PK战（点球大战）决胜败！比赛中有时候还会出现犯规、任意球的判罚。\n玩家使用1P手柄控制的人物是作为中场(MF)的队长，一边操作他行动，一边让他向队友发送指示。玩家双人配合时，1P操作中场(MF)，2P操作门将(GK)。门将是左右胜败的关键岗位，要托付给值得依赖的玩友哦。",
+      "revision_match": true
+     },
+     {
+      "chunk_id": "d394a4c3412d",
+      "score": 0.0308,
+      "source_id": "1ang_com",
+      "status": "verified_read",
+      "authority": "reference_only",
+      "revision": "nekketsu_soccer2_fc_jp",
+      "game_id": "nekketsu_soccer2",
+      "platform": "NES",
+      "locator": "_工具脚本/taspipe/游戏包/来源库/取证/1ang_热血足球联盟图文攻略_20261118.md#L131-L158",
+      "heading": "热血足球3攻略-FC热血足球3(热血足球联盟)游戏图文攻略",
+      "snippet": "热血联盟模式里，选手们的状态是可变的，选手们存在情绪设定。在『みーてぃんぐ(Meeting)』会面选项里，与选手对话或者使用物品，就会引起情绪变化。而且，可以看到选手数据资料，得知选手的性格与嗜好。\n开场白\n\\[1\\]こんにちは、熱血高校サッカー部・マネージャーの「みさこ」です。\n\\[2\\]ついに「熱血サッカーリーグ」の世界１をきめる　「テクノスジャパン・カップ」がひらかれることになりました。\n\\[3\\]世界１のサッカー・チームを目指して「熱血ＦＣ」が結成され　「くにお」くん",
+      "revision_match": true
+     },
+     {
+      "chunk_id": "79daaa4d521a",
+      "score": 0.0278,
+      "source_id": "sohu_game",
+      "status": "verified_read",
+      "authority": "reference_only",
+      "revision": "nekketsu_soccer2_fc_unspecified",
+      "game_id": "nekketsu_soccer2",
+      "platform": "NES",
+      "locator": "_工具脚本/taspipe/游戏包/来源库/取证/sohu_一直输球隐藏大结局_20261118.md#L65-L81",
+      "heading": "原创 FC热血足球，一直输球就能触发隐藏大结局？玩了20多年都不知道",
+      "snippet": "这种情况下就需要适当进行放水，比如把一些强力的同伴从场上换掉，把一些数值较低的替补放到重要位置。再比如让队长跑到自家门前，靠传乌龙球的方式射门给对方送分之类的。\n亚洲、非洲、南美、欧洲四个联盟一共12个队，总共36场比赛，说实话全踢败还真挺难做到的。如果你不幸达到了此战绩，你会发现《热血足球》这个游戏突然就此卡住，既无法跟任何队进行对战也无法退出比赛，什么A键、B键、Select键、Start键全按一遍也无济于事，自然也不会有什么特殊的战败动画或者剧情，只能记下这个“DD5 ",
+      "revision_match": true
+     },
+     {
+      "chunk_id": "3548208d0a2d",
+      "score": 0.0284,
+      "source_id": "1ang_com",
+      "status": "verified_read",
+      "authority": "reference_only",
+      "revision": "nekketsu_soccer2_fc_jp",
+      "game_id": "nekketsu_soccer2",
+      "platform": "NES",
+      "locator": "_工具脚本/taspipe/游戏包/来源库/取证/1ang_热血足球联盟图文攻略_20261118.md#L823-L839",
+      "heading": "秘技",
+      "snippet": "比赛中按START键暂停，{A键按３次＋B键按１次＋A键按３次＋B键按１次＋A键按７次}，再按START键解除暂停，听到必杀踢射的发动音效，就成功了。这样就能使全部球员拥有全部必杀技，比如平时不会燕返的球员也会用燕返了，平时不会用爆裂攻击的球员也会用铁膝盖顶人了。\n缺点是效果只能持续半场比赛，另外半场比赛需要重新使用秘技。这就意味着，每次进行比赛都要使用一次秘技。\n更多热血足球3攻略-FC热血足球3(热血足球联盟)游戏图文攻略相关问题\n问题：《都市天际线》独特建筑和地标建筑有",
+      "revision_match": true
+     }
+    ],
+    "reason": "2 条 verified_read+authoritative 内容词命中且最高分即权威"
+   }
+  },
+  {
+   "id": "Q16",
+   "result": {
+    "q": "怎么射门才能让守门员扑不到？",
+    "counts": {
+     "candidates": 123,
+     "hits": 8,
+     "strong": 0
+    },
+    "authority_warnings": [
+     "sohu_game 是二手件（reference_only），须交叉核对",
+     "sohu_game 是二手件（reference_only），须交叉核对",
+     "sohu_game 是二手件（reference_only），须交叉核对",
+     "sohu_game 是二手件（reference_only），须交叉核对",
+     "1ang_com 是二手件（reference_only），须交叉核对",
+     "tencent_cloud_dev 是二手件（reference_only），须交叉核对",
+     "1ang_com 是二手件（reference_only），须交叉核对",
+     "csdn_wangsitan_bug 是二手件（reference_only），须交叉核对"
+    ],
+    "status": "inconclusive",
+    "hits": [
+     {
+      "chunk_id": "2e4c8ac797cf",
+      "score": 0.0308,
+      "source_id": "sohu_game",
+      "status": "verified_read",
+      "authority": "reference_only",
+      "revision": "nekketsu_soccer2_fc_unspecified",
+      "game_id": "nekketsu_soccer2",
+      "platform": "NES",
+      "locator": "_工具脚本/taspipe/游戏包/来源库/取证/sohu_必杀最强小辫子_20261118.md#L71-L89",
+      "heading": "No.0 忍者射门——赖常",
+      "snippet": "他的射门必杀“香蕉环射门”堪称简单粗暴，似乎有隐藏属性加持，连德国队的门将都有一定几率能踢飞。而且津根的香蕉射门跟阿根廷队的不同，他的射门会在飞行一段距离后变成香蕉原地停留一会儿，这就让他的射门同样具备骗出对方CPU守门员假动作的功能，计算好球的飞行距离后还是蛮实用的。\n《热血足球》传说中的卡密萨马，日本队唯一隐藏基佬——海月，无论数值还是技能都十分一般的选手，但在一些大神玩家的手中出神入化如同神一般的存在。\n海月的必杀射门与巴西队的十分相似，都是踢出一只自带抛物线的鱼，虽说",
+      "revision_match": true
+     },
+     {
+      "chunk_id": "3199edbfee3a",
+      "score": 0.0301,
+      "source_id": "sohu_game",
+      "status": "verified_read",
+      "authority": "reference_only",
+      "revision": "nekketsu_soccer2_fc_unspecified",
+      "game_id": "nekketsu_soccer2",
+      "platform": "NES",
+      "locator": "_工具脚本/taspipe/游戏包/来源库/取证/sohu_热血队队员必杀集锦_20261118.md#L77-L100",
+      "heading": "FC《热血足球联盟》热血队队员必杀技集锦，当年你最喜欢谁",
+      "snippet": "精准射门\n九门的必杀技，书呆子射门，球踢出去变成一支铅笔旋转着向球门飞去，球速一般，力量较差，技能特效较好，总体一般。\n书呆子射门\n海月的必杀技，土佐鲣射门，球踢出去变成一条鱼上下游动，球速很慢，力量较差，技能特效优秀，总体一般。\n土佐鲣射门\n津根的必杀技，香蕉环射门，球踢出去在球和香蕉之间不停的切换，在切换时会停顿在空中，从而影响到守门员的判断，球速很慢，力量较差，技能特效优秀，总体一般。\n香蕉环射门\n那么当年你喜欢谁的必杀呢，欢迎留言讨论！[返回搜狐，查看更多](<//w",
+      "revision_match": true
+     },
+     {
+      "chunk_id": "141a669374a9",
+      "score": 0.0297,
+      "source_id": "sohu_game",
+      "status": "verified_read",
+      "authority": "reference_only",
+      "revision": "nekketsu_soccer2_fc_unspecified",
+      "game_id": "nekketsu_soccer2",
+      "platform": "NES",
+      "locator": "_工具脚本/taspipe/游戏包/来源库/取证/sohu_必杀最强小辫子_20261118.md#L1-L69",
+      "heading": "No.2 香蕉环射门——津根",
+      "snippet": "*   文章\n*   总阅读\n*   游戏领域优质创作者\n2023-02-17 00:41\n发布于：辽宁省\n这是老男孩游戏盒的第535篇原创，作者@怀旧淼哥\n最近有FC游戏水友给淼哥留言说，希望讲一期《热血足球》里的必杀射门盘点——《热血足球》的射门技能实在太多了，光是日本队就有12名球员，每位必杀技都各不相同，再加上总共存在的11个队的对手，总共23种必杀实在是盘点不过来啊！要么今天就先来给大家盘点一下淼哥心目中的《热血足球》日本队最实用必杀技以及球员的排名吧！\n《热血足球",
+      "revision_match": true
+     },
+     {
+      "chunk_id": "0faf32bd68c9",
+      "score": 0.0269,
+      "source_id": "sohu_game",
+      "status": "verified_read",
+      "authority": "reference_only",
+      "revision": "nekketsu_soccer2_fc_unspecified",
+      "game_id": "nekketsu_soccer2",
+      "platform": "NES",
+      "locator": "_工具脚本/taspipe/游戏包/来源库/取证/sohu_热血队队员必杀集锦_20261118.md#L1-L75",
+      "heading": "FC《热血足球联盟》热血队队员必杀技集锦，当年你最喜欢谁",
+      "snippet": "FC《热血足球联盟》热血队队员必杀技集锦，当年你最喜欢谁\\_总体\n2019-08-29 12:35\nFC的热血足球在80和90的游戏玩家中，已经深入人心，不在介绍了，我们直接进入主题。\n首先是主角国夫的必杀技，坚果射门，球踢出去像一颗坚果，飞行速度一般，力量一般，技能特效一般，总体一般，没有特别出彩的地方。\n坚果射门\n赖常的必杀技，忍者射门，球踢出去变成一颗飞镖飞行一段距离消失，再出现时球弹地飞奔球门而去，飞行速度快，力量较强，技能特效炫，总体很强。\n忍者射门\n卡洛斯的必杀技",
+      "revision_match": true
+     },
+     {
+      "chunk_id": "0c01ae8b35f4",
+      "score": 0.0325,
+      "source_id": "1ang_com",
+      "status": "verified_read",
+      "authority": "reference_only",
+      "revision": "nekketsu_soccer2_fc_jp",
+      "game_id": "nekketsu_soccer2",
+      "platform": "NES",
+      "locator": "_工具脚本/taspipe/游戏包/来源库/取证/1ang_热血足球联盟图文攻略_20261118.md#L693-L707",
+      "heading": "どいつ | Duits | 德国",
+      "snippet": "『かいずき(Kaizuki)』的飞鱼必杀射门，适合对付巴西门将。但困难模式下基本没戏。\n『よりつね(Yoritsune)』禁区内忍者踢射发动手裏剑射门，对绝大多数球队门将有效。个别球队门将有弱点位置，一定要记牢，倘若射门位置不对，几乎无法进球，比如巴西队门将的弱点在禁区下方，意大利队门将的弱点在禁区上方，即便如此，意大利门将没收足球的概率仍然很高。『よりつね(Yoritsune)』发动忍者踢射后，在手裏剑出现前，可以做动作引诱门将，让门将只顾看他，不顾看球，例如纵向跳跃引诱门",
+      "revision_match": true
+     },
+     {
+      "chunk_id": "5e3d5b9ea915",
+      "score": 0.0273,
+      "source_id": "tencent_cloud_dev",
+      "status": "verified_read",
+      "authority": "reference_only",
+      "revision": "nekketsu_soccer2_fc_unspecified",
+      "game_id": "nekketsu_soccer2",
+      "platform": "NES",
+      "locator": "_工具脚本/taspipe/游戏包/来源库/取证/tencentcloud_热血足球联盟杂谈_20261118.md#L13-L46",
+      "heading": "《热血足球联盟》FC时期最好足球游戏，必杀层出不穷，一玩就是一天",
+      "snippet": "学习\n活动\n专区\n圈层\n工具\n[MCP广场![](https://qccommunity.qcloudimg.com/image/new.png)](https://cloud.tencent.com/developer/mcp)\n文章/答案/技术大牛搜索\n搜索关闭\n发布\n文章来源：企鹅号 - 玲珑心游戏\n热血系列的经典游戏总是给我们留下深刻的印象。每一款游戏都是一个类型游戏中最顶尖的。从格斗到物语，在从躲避球到篮球。每款游戏都是可以让我们和小伙伴儿疯狂的玩上一整天。但是小时",
+      "revision_match": true
+     },
+     {
+      "chunk_id": "0793dce04d1b",
+      "score": 0.0282,
+      "source_id": "1ang_com",
+      "status": "verified_read",
+      "authority": "reference_only",
+      "revision": "nekketsu_soccer2_fc_jp",
+      "game_id": "nekketsu_soccer2",
+      "platform": "NES",
+      "locator": "_工具脚本/taspipe/游戏包/来源库/取证/1ang_热血足球联盟图文攻略_20261118.md#L709-L718",
+      "heading": "どいつ | Duits | 德国",
+      "snippet": "临近锦标赛前，也就是接近16连胜的时候，『めきしこ』（墨西哥）、『もんごる』（外蒙古）、『いんぐらんど』（英格兰)，这三支球队最适合在决赛前热身，太弱的球队不必理睬，没必要与他们浪费时间，太强的球队也不要去挑衅，万一输了，会导致全胜夺冠前功尽弃，太划不来。\n决赛里的意大利队，要比平时的意大利队厉害的多，不可等闲视之。\n面对意大利这样的强大对手，如何取胜？意大利可以说是天矛地盾，射门如同天矛无坚不摧，门将如同地盾无物不克。我方必须选择最好的门将，最好的后卫来防守，火光操纵的中场",
+      "revision_match": true
+     },
+     {
+      "chunk_id": "ae478886e098",
+      "score": 0.0256,
+      "source_id": "csdn_wangsitan_bug",
+      "status": "verified_read",
+      "authority": "reference_only",
+      "revision": "nekketsu_soccer2_fc_unspecified",
+      "game_id": "nekketsu_soccer2",
+      "platform": "NES",
+      "locator": "_工具脚本/taspipe/游戏包/来源库/取证/csdn_wangsitan_热血足球Bug记录_20261118.md#L188-L203",
+      "heading": "【FC】热血足球联盟 Bug记录",
+      "snippet": "热血队以外的球队，自定义的阵型、战术可能无效\n打平后的点球，轮到左方门将守门时，空中动作的朝向是向右的，包括直跳接球和升龙拳\n关注博主即可阅读全文\n·\n收录于\n当前文章被以下社区和专栏收录：\n版权声明：本文为博主原创文章，遵循 [CC 4.0 BY-SA](http://creativecommons.org/licenses/by-sa/4.0/) 版权协议，转载请附上原文出处链接和本声明。",
+      "revision_match": true
+     }
+    ],
+    "reason": "命中只有快照/二手/跨版本支撑或仅单字噪声"
+   }
+  },
+  {
+   "id": "Q17",
+   "result": {
+    "q": "一直输球会不会触发隐藏结局？",
+    "counts": {
+     "candidates": 123,
+     "hits": 8,
+     "strong": 4
+    },
+    "authority_warnings": [
+     "sohu_game 是二手件（reference_only），须交叉核对",
+     "sohu_game 是二手件（reference_only），须交叉核对",
+     "sohu_game 是二手件（reference_only），须交叉核对"
+    ],
+    "status": "inconclusive",
+    "hits": [
+     {
+      "chunk_id": "ecc1c751f7a2",
+      "score": 0.0323,
+      "source_id": "sohu_game",
+      "status": "verified_read",
+      "authority": "reference_only",
+      "revision": "nekketsu_soccer2_fc_unspecified",
+      "game_id": "nekketsu_soccer2",
+      "platform": "NES",
+      "locator": "_工具脚本/taspipe/游戏包/来源库/取证/sohu_一直输球隐藏大结局_20261118.md#L1-L63",
+      "heading": "原创 FC热血足球，一直输球就能触发隐藏大结局？玩了20多年都不知道",
+      "snippet": "*   文章\n*   总阅读\n*   游戏领域优质创作者\n2023-01-04 22:36\n发布于：辽宁省\n这是老男孩游戏盒的第501篇原创，作者@怀旧淼哥\n很多80后、90后老男孩都在怀念当年的红白机时光，其实当年大家打游戏很多时候都在傻玩和瞎玩，许多游戏的细节都搞得不甚清楚，就比如30年后你问一些朋友《热血足球》的世界杯模式如何触发啊？问10个人保准9个人都回答不上来！\n《热血足球》故事模式触发世界杯的条件是——无论输了或赢了多少场，只要保证16场内总积分达到70分，就能",
+      "revision_match": true
+     },
+     {
+      "chunk_id": "79daaa4d521a",
+      "score": 0.0325,
+      "source_id": "sohu_game",
+      "status": "verified_read",
+      "authority": "reference_only",
+      "revision": "nekketsu_soccer2_fc_unspecified",
+      "game_id": "nekketsu_soccer2",
+      "platform": "NES",
+      "locator": "_工具脚本/taspipe/游戏包/来源库/取证/sohu_一直输球隐藏大结局_20261118.md#L65-L81",
+      "heading": "原创 FC热血足球，一直输球就能触发隐藏大结局？玩了20多年都不知道",
+      "snippet": "这种情况下就需要适当进行放水，比如把一些强力的同伴从场上换掉，把一些数值较低的替补放到重要位置。再比如让队长跑到自家门前，靠传乌龙球的方式射门给对方送分之类的。\n亚洲、非洲、南美、欧洲四个联盟一共12个队，总共36场比赛，说实话全踢败还真挺难做到的。如果你不幸达到了此战绩，你会发现《热血足球》这个游戏突然就此卡住，既无法跟任何队进行对战也无法退出比赛，什么A键、B键、Select键、Start键全按一遍也无济于事，自然也不会有什么特殊的战败动画或者剧情，只能记下这个“DD5 ",
+      "revision_match": true
+     },
+     {
+      "chunk_id": "807f0d3c6fa3",
+      "score": 0.0271,
+      "source_id": "local_soccer2_super_list",
+      "status": "verified_read",
+      "authority": "authoritative",
+      "revision": "nekketsu_soccer2_multi",
+      "game_id": "nekketsu_soccer2",
+      "platform": "NES",
+      "locator": "_工具脚本/taspipe/游戏包/热血足球联盟_必杀全清单.md#L216-L225",
+      "heading": "8-1 新增来源",
+      "snippet": "- S7 CSDN wangsitan 系列（同作者连发四篇，数据级）：\n- Bug 记录 https://blog.csdn.net/wangsitan/article/details/7669725 （两条 Bug，见 8-4）\n- 数据记录 https://blog.csdn.net/wenzhang.../7669353 （$BD18=策略、$BD19=阵型，阵型仅 3 种 00:2-1-2 / 01:1-2-2 / 02:2-2-1，各队默认值逐队列出）\n- 金手指",
+      "revision_match": true
+     },
+     {
+      "chunk_id": "6987e0e1ca84",
+      "score": 0.0248,
+      "source_id": "local_soccer2_super_list",
+      "status": "verified_read",
+      "authority": "authoritative",
+      "revision": "nekketsu_soccer2_multi",
+      "game_id": "nekketsu_soccer2",
+      "platform": "NES",
+      "locator": "_工具脚本/taspipe/游戏包/热血足球联盟_必杀全清单.md#L101-L119",
+      "heading": "5. 生产接线（11-14 实测更新）",
+      "snippet": "- base：`验证/t3_soccer2_moves/probe9_cn/kickoff.state`（真·场地 KICK OFF 冻结；休息室「开球」须 **A 确认**；\n横幅保留到首个有效输入；**场地/天气每场随机**：土场/绿茵/雪面三种均实测，场地判据别写死颜色）。\n- **★11-15 更正（存档载入保真实测，`soccer2_load_fidelity.py`）**：BizHawk 只在 ROM 哈希相符时载入存档，\n且**拒绝是静默的**——probe9_",
+      "revision_match": true
+     },
+     {
+      "chunk_id": "8996c7a159ef",
+      "score": 0.0283,
+      "source_id": "local_soccer2_super_list",
+      "status": "verified_read",
+      "authority": "authoritative",
+      "revision": "nekketsu_soccer2_multi",
+      "game_id": "nekketsu_soccer2",
+      "platform": "NES",
+      "locator": "_工具脚本/taspipe/游戏包/热血足球联盟_必杀全清单.md#L137-L158",
+      "heading": "5. 生产接线（11-14 实测更新）",
+      "snippet": "⇒ 现状改成 **untested（未在任何有效条件下测过）**，不是\"不可触发\"。用户 11-14 亲口\"其实打出过好多次必杀了\"，\n有效条件下的真阳性一定存在，责任在我的测量方式，不在 ROM。\n真采 23 必杀仍需正对照：先在**当前 jf ROM** 上按 §6 的三条铁律重跑触发链，仍全负再谈日版原版 ROM（网盘仅两 hack 无日版；外部=门控待批）。\n本清单 23+13 项在 CN/hack 上全部标 **honest gap（不可复现，证据见下）**，不冒充",
+      "revision_match": true
+     },
+     {
+      "chunk_id": "9cb009510e7a",
+      "score": 0.0303,
+      "source_id": "local_soccer2_super_list",
+      "status": "verified_read",
+      "authority": "authoritative",
+      "revision": "nekketsu_soccer2_multi",
+      "game_id": "nekketsu_soccer2",
+      "platform": "NES",
+      "locator": "_工具脚本/taspipe/游戏包/热血足球联盟_必杀全清单.md#L120-L136",
+      "heading": "5. 生产接线（11-14 实测更新）",
+      "snippet": "- **难度（11-14 终版实证：锁定不可达）**：mode 屏同屏带难度行（CN「简单/普通/困难」、hack「やさしい/ふつう/むずかしい」），\n但**有字无光标**：Down×6 光标在模式行（热血联盟/密码/对战/点球）回绕、←→ 只动人数列（1P/2P/3P/4P），\n难度行永远拿不到光标（`soccer2_difficulty_row.py`、`soccer2_diff_ram.py`，jf+jump 双证）。\nRAM：Down 只改 $005D(93)=模式光",
+      "revision_match": true
+     },
+     {
+      "chunk_id": "141a669374a9",
+      "score": 0.0216,
+      "source_id": "sohu_game",
+      "status": "verified_read",
+      "authority": "reference_only",
+      "revision": "nekketsu_soccer2_fc_unspecified",
+      "game_id": "nekketsu_soccer2",
+      "platform": "NES",
+      "locator": "_工具脚本/taspipe/游戏包/来源库/取证/sohu_必杀最强小辫子_20261118.md#L1-L69",
+      "heading": "No.2 香蕉环射门——津根",
+      "snippet": "*   文章\n*   总阅读\n*   游戏领域优质创作者\n2023-02-17 00:41\n发布于：辽宁省\n这是老男孩游戏盒的第535篇原创，作者@怀旧淼哥\n最近有FC游戏水友给淼哥留言说，希望讲一期《热血足球》里的必杀射门盘点——《热血足球》的射门技能实在太多了，光是日本队就有12名球员，每位必杀技都各不相同，再加上总共存在的11个队的对手，总共23种必杀实在是盘点不过来啊！要么今天就先来给大家盘点一下淼哥心目中的《热血足球》日本队最实用必杀技以及球员的排名吧！\n《热血足球",
+      "revision_match": true
+     },
+     {
+      "chunk_id": "79a492f92079",
+      "score": 0.0249,
+      "source_id": "local_soccer2_super_list",
+      "status": "verified_read",
+      "authority": "authoritative",
+      "revision": "nekketsu_soccer2_multi",
+      "game_id": "nekketsu_soccer2",
+      "platform": "NES",
+      "locator": "_工具脚本/taspipe/游戏包/热血足球联盟_必杀全清单.md#L164-L181",
+      "heading": "6. 11-15 三条机制铁律（本轮实测，全部推翻 11-14 的负结论）",
+      "snippet": "> 产物：`F:/taspipe_scratch/soccer2_unlock_1115/`、`soccer2_ballpix_1115/`、`soccer2_track3_1115/`、\n> `soccer2_pksuper_1115/`、`soccer2_lgb_1115/`、`soccer2_dir_1115/`。ROM=`nekketsu_soccer_league_cn_jf.nes`\n> （393 232 B，sha256 前缀 `ce60abe6bc48d0b3",
+      "revision_match": true
+     }
+    ],
+    "reason": "最高分命中 sohu_game 非本版本权威，权威件在低分位"
+   }
+  },
+  {
+   "id": "Q18",
+   "result": {
+    "q": "暂停秘技成功的判定签名是什么？",
+    "counts": {
+     "candidates": 123,
+     "hits": 8,
+     "strong": 6
+    },
+    "authority_warnings": [
+     "1ang_com 是二手件（reference_only），须交叉核对"
+    ],
+    "status": "inconclusive",
+    "hits": [
+     {
+      "chunk_id": "3548208d0a2d",
+      "score": 0.0323,
+      "source_id": "1ang_com",
+      "status": "verified_read",
+      "authority": "reference_only",
+      "revision": "nekketsu_soccer2_fc_jp",
+      "game_id": "nekketsu_soccer2",
+      "platform": "NES",
+      "locator": "_工具脚本/taspipe/游戏包/来源库/取证/1ang_热血足球联盟图文攻略_20261118.md#L823-L839",
+      "heading": "秘技",
+      "snippet": "比赛中按START键暂停，{A键按３次＋B键按１次＋A键按３次＋B键按１次＋A键按７次}，再按START键解除暂停，听到必杀踢射的发动音效，就成功了。这样就能使全部球员拥有全部必杀技，比如平时不会燕返的球员也会用燕返了，平时不会用爆裂攻击的球员也会用铁膝盖顶人了。\n缺点是效果只能持续半场比赛，另外半场比赛需要重新使用秘技。这就意味着，每次进行比赛都要使用一次秘技。\n更多热血足球3攻略-FC热血足球3(热血足球联盟)游戏图文攻略相关问题\n问题：《都市天际线》独特建筑和地标建筑有",
+      "revision_match": true
+     },
+     {
+      "chunk_id": "8996c7a159ef",
+      "score": 0.0323,
+      "source_id": "local_soccer2_super_list",
+      "status": "verified_read",
+      "authority": "authoritative",
+      "revision": "nekketsu_soccer2_multi",
+      "game_id": "nekketsu_soccer2",
+      "platform": "NES",
+      "locator": "_工具脚本/taspipe/游戏包/热血足球联盟_必杀全清单.md#L137-L158",
+      "heading": "5. 生产接线（11-14 实测更新）",
+      "snippet": "⇒ 现状改成 **untested（未在任何有效条件下测过）**，不是\"不可触发\"。用户 11-14 亲口\"其实打出过好多次必杀了\"，\n有效条件下的真阳性一定存在，责任在我的测量方式，不在 ROM。\n真采 23 必杀仍需正对照：先在**当前 jf ROM** 上按 §6 的三条铁律重跑触发链，仍全负再谈日版原版 ROM（网盘仅两 hack 无日版；外部=门控待批）。\n本清单 23+13 项在 CN/hack 上全部标 **honest gap（不可复现，证据见下）**，不冒充",
+      "revision_match": true
+     },
+     {
+      "chunk_id": "0c728e701059",
+      "score": 0.0312,
+      "source_id": "local_soccer2_super_list",
+      "status": "verified_read",
+      "authority": "authoritative",
+      "revision": "nekketsu_soccer2_multi",
+      "game_id": "nekketsu_soccer2",
+      "platform": "NES",
+      "locator": "_工具脚本/taspipe/游戏包/热血足球联盟_必杀全清单.md#L251-L259",
+      "heading": "8-5 跨来源冲突表（不许悄悄选边）",
+      "snippet": "| 争议点 | 来源甲 | 来源乙 | 我方实测 | 现状 |\n|---|---|---|---|---|\n| 难度档位效果 | S1：困难=敌强我弱，仅燕返者 100% 必杀 | S9：困难=敌我 AI 同涨（废选项） | 无 | 文献冲突，待实测 |\n| 龙卷踢触发 | S1：无球接近球时 跳跃+B | S8：敌球权时 超常冲刺中 十字+A | 无 | 冲突，采集时两法都试 |\n| 钻子攻击触发 | S1：无球接近球时 冲刺+B 或 跳跃+B | S8：敌球权时 超常冲刺",
+      "revision_match": true
+     },
+     {
+      "chunk_id": "42b773880ef0",
+      "score": 0.0302,
+      "source_id": "local_soccer2_super_list",
+      "status": "verified_read",
+      "authority": "authoritative",
+      "revision": "nekketsu_soccer2_multi",
+      "game_id": "nekketsu_soccer2",
+      "platform": "NES",
+      "locator": "_工具脚本/taspipe/游戏包/热血足球联盟_必杀全清单.md#L24-L33",
+      "heading": "1. 发动与状态规则（S1 原文，生产闸门依据）",
+      "snippet": "- 必杀踢射：持球跳（A+B）到**最高点按 B**；**发动时不能按方向键**，否则变成挑球不是人球同跳。\n- 难度：`やさしい` 容易 = 敌我**都不能**发动必杀射门；`ふつう` 普通 = 次次发动；`むずかしい` 困难 = 仅会燕返者 100%。\n⇒ 采集必须在普通难度（导航默认值待实测确认；若必杀不触发先查难度）。\n- 秘技：比赛中 Start 暂停 → A×3 B×1 A×3 B×1 A×7 → Start 解除，听到必杀音效=成功；全员获得全部**技能**（燕",
+      "revision_match": true
+     },
+     {
+      "chunk_id": "807f0d3c6fa3",
+      "score": 0.02,
+      "source_id": "local_soccer2_super_list",
+      "status": "verified_read",
+      "authority": "authoritative",
+      "revision": "nekketsu_soccer2_multi",
+      "game_id": "nekketsu_soccer2",
+      "platform": "NES",
+      "locator": "_工具脚本/taspipe/游戏包/热血足球联盟_必杀全清单.md#L216-L225",
+      "heading": "8-1 新增来源",
+      "snippet": "- S7 CSDN wangsitan 系列（同作者连发四篇，数据级）：\n- Bug 记录 https://blog.csdn.net/wangsitan/article/details/7669725 （两条 Bug，见 8-4）\n- 数据记录 https://blog.csdn.net/wenzhang.../7669353 （$BD18=策略、$BD19=阵型，阵型仅 3 种 00:2-1-2 / 01:1-2-2 / 02:2-2-1，各队默认值逐队列出）\n- 金手指",
+      "revision_match": true
+     },
+     {
+      "chunk_id": "4a5009ef52a7",
+      "score": 0.0278,
+      "source_id": "local_soccer2_super_list",
+      "status": "verified_read",
+      "authority": "authoritative",
+      "revision": "nekketsu_soccer2_multi",
+      "game_id": "nekketsu_soccer2",
+      "platform": "NES",
+      "locator": "_工具脚本/taspipe/游戏包/热血足球联盟_必杀全清单.md#L182-L191",
+      "heading": "6. 11-15 三条机制铁律（本轮实测，全部推翻 11-14 的负结论）",
+      "snippet": "任何\"看画面判断我的动作有没有生效\"的判据都失效，只有球团块追踪扛得住滚动。\n- **6-5 点球 base 是死场景**：`soccer2_pk_super.py` 在 `soccer2_pk_nuts_1115/pk_base.state` 上扫\nA+B×4 + 延迟 D∈{0..20} + B×6 共 12 变体，再加 `plain_B`、`heel_R` 两对照：\n球团块 **全程钉在 (115,100) 一动不动**（含 plain_B），只有球员白团块从 (74,",
+      "revision_match": true
+     },
+     {
+      "chunk_id": "f7f8e8316295",
+      "score": 0.0259,
+      "source_id": "local_soccer2_super_list",
+      "status": "verified_read",
+      "authority": "authoritative",
+      "revision": "nekketsu_soccer2_multi",
+      "game_id": "nekketsu_soccer2",
+      "platform": "NES",
+      "locator": "_工具脚本/taspipe/游戏包/热血足球联盟_必杀全清单.md#L70-L85",
+      "heading": "3. 一般个人技/必杀技（S1 发动法原文）",
+      "snippet": "| 技 | 日文 | 发动 | 备注 |\n|---|---|---|---|\n| 爆裂攻击(铁膝盖) | ばくれつあたっく | 跳跃**落地时按 B**，可连按连发 | 着地技；≥4 人会 |\n| 燕返 | つばめがえし | 带球跳跃立即出现(空中翻跟头) | 仅 Yoritsune 原生；秘技后全员 |\n| 必杀运球(旋风撞人) | ひっさつどりぶる | 带球中连按两次上 或 两次下 | 撞倒对方含门将(概率) |\n| 龙卷拳(升龙拳) | とるねーどぱんち | 方向左/右",
+      "revision_match": true
+     },
+     {
+      "chunk_id": "6987e0e1ca84",
+      "score": 0.0248,
+      "source_id": "local_soccer2_super_list",
+      "status": "verified_read",
+      "authority": "authoritative",
+      "revision": "nekketsu_soccer2_multi",
+      "game_id": "nekketsu_soccer2",
+      "platform": "NES",
+      "locator": "_工具脚本/taspipe/游戏包/热血足球联盟_必杀全清单.md#L101-L119",
+      "heading": "5. 生产接线（11-14 实测更新）",
+      "snippet": "- base：`验证/t3_soccer2_moves/probe9_cn/kickoff.state`（真·场地 KICK OFF 冻结；休息室「开球」须 **A 确认**；\n横幅保留到首个有效输入；**场地/天气每场随机**：土场/绿茵/雪面三种均实测，场地判据别写死颜色）。\n- **★11-15 更正（存档载入保真实测，`soccer2_load_fidelity.py`）**：BizHawk 只在 ROM 哈希相符时载入存档，\n且**拒绝是静默的**——probe9_",
+      "revision_match": true
+     }
+    ],
+    "reason": "最高分命中 1ang_com 非本版本权威，权威件在低分位"
+   }
+  }
+ ]
+}

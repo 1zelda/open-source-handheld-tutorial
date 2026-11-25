@@ -1,0 +1,275 @@
+{
+  "schema_version": "detector_calibration/2.0",
+  "kind": "visual_detector_candidate_calibration",
+  "game_id": "castlevania_aria_gba",
+  "rom_sha1": "40aab076a528f52e93260bb98d91a40039e0da02",
+  "cases": [
+    {
+      "case_id": "red_soul_35_camera_aligned",
+      "method": "aligned_difference",
+      "calibration_sample_set_id": "red_soul_35_camera_aligned_calibration_frames",
+      "acceptance_sample_set_id": "red_soul_35_camera_aligned_acceptance_frames",
+      "separation_method": "disjoint_frame_partition",
+      "calib_pos_dir": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_soul_detector_separated_v4_20261125\\red_soul_35_camera_aligned\\calib_pos",
+      "calib_neg_dir": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_soul_detector_separated_v4_20261125\\red_soul_35_camera_aligned\\calib_neg",
+      "accept_pos_dir": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_soul_detector_separated_v4_20261125\\red_soul_35_camera_aligned\\accept_pos",
+      "accept_neg_dir": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_soul_detector_separated_v4_20261125\\red_soul_35_camera_aligned\\accept_neg",
+      "region": [
+        0.229167,
+        0.46875,
+        0.5,
+        0.9375
+      ],
+      "frame_range": [
+        0,
+        28
+      ],
+      "primary_frame": 11,
+      "controls": [
+        {
+          "label": "initial_frame",
+          "side": "positive",
+          "expect": "fail",
+          "frame": 0,
+          "reference_frame": 0
+        },
+        {
+          "label": "later_attack_frame",
+          "side": "positive",
+          "expect": "pass",
+          "frame": 11,
+          "reference_frame": 11
+        },
+        {
+          "label": "empty_soul_same_frame",
+          "side": "negative",
+          "expect": "fail",
+          "frame": 11,
+          "reference_frame": 11
+        }
+      ],
+      "timeline": {
+        "negative_all_fail": true,
+        "expectations": [
+          {
+            "label": "before_paired_attack",
+            "side": "positive",
+            "expect": "all_fail",
+            "start": 0,
+            "end": 1
+          },
+          {
+            "label": "paired_attack_window",
+            "side": "positive",
+            "expect": "all_pass",
+            "start": 2,
+            "end": 60
+          }
+        ]
+      },
+      "alignment_region": [
+        0.0,
+        0.125,
+        1.0,
+        0.4875
+      ],
+      "max_shift": 24,
+      "max_dy": 4,
+      "max_global_changed_fraction": 0.25
+    },
+    {
+      "case_id": "red_soul_47_local_attack",
+      "method": "aligned_difference",
+      "calibration_sample_set_id": "red_soul_47_local_attack_calibration_frames",
+      "acceptance_sample_set_id": "red_soul_47_local_attack_acceptance_frames",
+      "separation_method": "disjoint_frame_partition",
+      "calib_pos_dir": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_soul_detector_separated_v4_20261125\\red_soul_47_local_attack\\calib_pos",
+      "calib_neg_dir": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_soul_detector_separated_v4_20261125\\red_soul_47_local_attack\\calib_neg",
+      "accept_pos_dir": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_soul_detector_separated_v4_20261125\\red_soul_47_local_attack\\accept_pos",
+      "accept_neg_dir": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_soul_detector_separated_v4_20261125\\red_soul_47_local_attack\\accept_neg",
+      "region": [
+        0.25,
+        0.46875,
+        0.645833,
+        0.9375
+      ],
+      "frame_range": [
+        0,
+        17
+      ],
+      "primary_frame": 21,
+      "controls": [
+        {
+          "label": "early_pair_below_threshold",
+          "side": "positive",
+          "expect": "fail",
+          "frame": 0,
+          "reference_frame": 0
+        },
+        {
+          "label": "local_attack_frame",
+          "side": "positive",
+          "expect": "pass",
+          "frame": 21,
+          "reference_frame": 21
+        },
+        {
+          "label": "fullscreen_flash_rejected",
+          "side": "positive",
+          "expect": "fail",
+          "frame": 70,
+          "reference_frame": 70
+        },
+        {
+          "label": "empty_soul_same_frame",
+          "side": "negative",
+          "expect": "fail",
+          "frame": 21,
+          "reference_frame": 21
+        }
+      ],
+      "timeline": {
+        "negative_all_fail": true,
+        "expectations": [
+          {
+            "label": "before_local_attack",
+            "side": "positive",
+            "expect": "all_fail",
+            "start": 0,
+            "end": 1
+          },
+          {
+            "label": "local_attack_window",
+            "side": "positive",
+            "expect": "all_pass",
+            "start": 2,
+            "end": 32
+          },
+          {
+            "label": "after_local_attack",
+            "side": "positive",
+            "expect": "all_fail",
+            "start": 33,
+            "end": 62
+          },
+          {
+            "label": "fullscreen_flash_window_rejected",
+            "side": "positive",
+            "expect": "all_fail",
+            "start": 63,
+            "end": 71
+          }
+        ]
+      },
+      "alignment_region": [
+        0.0,
+        0.125,
+        1.0,
+        0.4875
+      ],
+      "max_shift": 0,
+      "max_dy": 0,
+      "max_global_changed_fraction": 0.25
+    },
+    {
+      "case_id": "yellow_soul_10_healing_popup",
+      "method": "color_region",
+      "calibration_sample_set_id": "yellow_soul_10_healing_popup_calibration_frames",
+      "acceptance_sample_set_id": "yellow_soul_10_healing_popup_acceptance_frames",
+      "separation_method": "disjoint_frame_partition",
+      "calib_pos_dir": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_soul_detector_separated_v4_20261125\\yellow_soul_10_healing_popup\\calib_pos",
+      "calib_neg_dir": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_soul_detector_separated_v4_20261125\\yellow_soul_10_healing_popup\\calib_neg",
+      "accept_pos_dir": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_soul_detector_separated_v4_20261125\\yellow_soul_10_healing_popup\\accept_pos",
+      "accept_neg_dir": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_soul_detector_separated_v4_20261125\\yellow_soul_10_healing_popup\\accept_neg",
+      "region": [
+        0.4,
+        0.6125,
+        0.5,
+        0.725
+      ],
+      "frame_range": [
+        0,
+        56
+      ],
+      "primary_frame": 139,
+      "controls": [
+        {
+          "label": "before_popup",
+          "side": "positive",
+          "expect": "fail",
+          "frame": 50
+        },
+        {
+          "label": "second_popup_start",
+          "side": "positive",
+          "expect": "pass",
+          "frame": 132
+        },
+        {
+          "label": "second_popup_observed",
+          "side": "positive",
+          "expect": "pass",
+          "frame": 139
+        },
+        {
+          "label": "empty_soul_start",
+          "side": "negative",
+          "expect": "fail",
+          "frame": 0
+        },
+        {
+          "label": "empty_soul_same_frame",
+          "side": "negative",
+          "expect": "fail",
+          "frame": 139
+        },
+        {
+          "label": "empty_soul_final",
+          "side": "negative",
+          "expect": "fail",
+          "frame": 167
+        }
+      ],
+      "timeline": {
+        "negative_all_fail": true,
+        "expectations": [
+          {
+            "label": "before_first_popup",
+            "side": "positive",
+            "expect": "all_fail",
+            "start": 0,
+            "end": 99
+          },
+          {
+            "label": "first_popup_visible_window",
+            "side": "positive",
+            "expect": "all_pass",
+            "start": 100,
+            "end": 120
+          },
+          {
+            "label": "between_popups",
+            "side": "positive",
+            "expect": "all_fail",
+            "start": 121,
+            "end": 131
+          },
+          {
+            "label": "second_popup_visible_window",
+            "side": "positive",
+            "expect": "all_pass",
+            "start": 132,
+            "end": 152
+          },
+          {
+            "label": "after_second_popup",
+            "side": "positive",
+            "expect": "all_fail",
+            "start": 153,
+            "end": 167
+          }
+        ]
+      }
+    }
+  ]
+}

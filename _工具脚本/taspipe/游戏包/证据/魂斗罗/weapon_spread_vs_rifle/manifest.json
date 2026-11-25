@@ -1,0 +1,149 @@
+{
+  "schema_version": "ram_calibration/1.0",
+  "report": "F:\\taspipe_scratch\\ram_calibration\\contra_weapon_v2\\report.json",
+  "report_sha256": "b69edf4145f1804ade21d8e69edd44ad3b409b38ef2895281ee0a04943ca0837",
+  "status": "pass",
+  "mode": "verify",
+  "game_id": "contra_nes_us",
+  "case_id": "spread_vs_rifle",
+  "cache_key": "e86637002efc7aecc0569e37180b672a4da4ba660a1655221948043c710ab8b7",
+  "recipe_sha256": "006fdb02c811c3e44432be3cfe556a76fa84bd0c67f1c60b3099d3b4627c5e3c",
+  "verified_fields": [
+    {
+      "name": "current_weapon",
+      "addr": 170,
+      "width": 1,
+      "level": "gameplay",
+      "note": "同状态、同输入，0x00AA=03 散弹与 0x00AA=00 步枪产生真实画面差异；不扩展为完整武器表已验证。",
+      "case_id": "spread_vs_rifle"
+    }
+  ],
+  "evidence": [
+    {
+      "source": "F:\\taspipe_scratch\\ram_calibration\\contra_weapon_v2\\spread_vs_rifle_base_anchor.png",
+      "path": "evidence/000_spread_vs_rifle_base_anchor.png",
+      "sha256": "b25dac038941983b94f2e25e4e14b28ad102900545393bbb197f117b34c904b6",
+      "bytes": 8536
+    },
+    {
+      "source": "F:\\taspipe_scratch\\ram_calibration\\contra_weapon_v2\\spread_vs_rifle_rifle_s00.bin",
+      "path": "evidence/001_spread_vs_rifle_rifle_s00.bin",
+      "sha256": "588ce5f7339bca6a24d64336897f0a39fd6a80e9012e0b579124a762da7afbee",
+      "bytes": 2048
+    },
+    {
+      "source": "F:\\taspipe_scratch\\ram_calibration\\contra_weapon_v2\\spread_vs_rifle_rifle_s00.png",
+      "path": "evidence/002_spread_vs_rifle_rifle_s00.png",
+      "sha256": "b25dac038941983b94f2e25e4e14b28ad102900545393bbb197f117b34c904b6",
+      "bytes": 8536
+    },
+    {
+      "source": "F:\\taspipe_scratch\\ram_calibration\\contra_weapon_v2\\spread_vs_rifle_rifle_s00.state",
+      "path": "evidence/003_spread_vs_rifle_rifle_s00.state",
+      "sha256": "f4945792595c7575da4d8d651fc008e53dee7f03872ae87640c7ee349d8d2b45",
+      "bytes": 19069
+    },
+    {
+      "source": "F:\\taspipe_scratch\\ram_calibration\\contra_weapon_v2\\spread_vs_rifle_rifle_s00_input.state",
+      "path": "evidence/004_spread_vs_rifle_rifle_s00_input.state",
+      "sha256": "f4945792595c7575da4d8d651fc008e53dee7f03872ae87640c7ee349d8d2b45",
+      "bytes": 19069
+    },
+    {
+      "source": "F:\\taspipe_scratch\\ram_calibration\\contra_weapon_v2\\spread_vs_rifle_rifle_s01.bin",
+      "path": "evidence/005_spread_vs_rifle_rifle_s01.bin",
+      "sha256": "0147d5443344b0cd895e539c2cdb69fd4ddcaf489cb7b36e407be6b1b35eedd9",
+      "bytes": 2048
+    },
+    {
+      "source": "F:\\taspipe_scratch\\ram_calibration\\contra_weapon_v2\\spread_vs_rifle_rifle_s01.png",
+      "path": "evidence/006_spread_vs_rifle_rifle_s01.png",
+      "sha256": "190d971a25775c47f404ac061e001192c0a4244f1dac466504b8bf15b1eb0f81",
+      "bytes": 8572
+    },
+    {
+      "source": "F:\\taspipe_scratch\\ram_calibration\\contra_weapon_v2\\spread_vs_rifle_rifle_s01.state",
+      "path": "evidence/007_spread_vs_rifle_rifle_s01.state",
+      "sha256": "81d6e022fc1f77f8d150dd1ae23677edd5c5f88481e5695f8abb13d7578664aa",
+      "bytes": 19326
+    },
+    {
+      "source": "F:\\taspipe_scratch\\ram_calibration\\contra_weapon_v2\\spread_vs_rifle_rifle_s01_frames\\f0006.png",
+      "path": "evidence/008_f0006.png",
+      "sha256": "740ebe0b38ab9de5a6735ba4e632901e1e0174014d00162934eeb18413b6cfe5",
+      "bytes": 8544
+    },
+    {
+      "source": "F:\\taspipe_scratch\\ram_calibration\\contra_weapon_v2\\spread_vs_rifle_rifle_s01_frames\\f0012.png",
+      "path": "evidence/009_f0012.png",
+      "sha256": "606653d8d1ccc5db009c9b5757911569f167539d6d9c1d6d8bf43841d70d0067",
+      "bytes": 8548
+    },
+    {
+      "source": "F:\\taspipe_scratch\\ram_calibration\\contra_weapon_v2\\spread_vs_rifle_rifle_s01_frames\\f0020.png",
+      "path": "evidence/010_f0020.png",
+      "sha256": "40479dffb53a55d1a453090d3b18907773b0814283f22e603e83b43221e7de48",
+      "bytes": 8557
+    },
+    {
+      "source": "F:\\taspipe_scratch\\ram_calibration\\contra_weapon_v2\\spread_vs_rifle_spread_s00.bin",
+      "path": "evidence/011_spread_vs_rifle_spread_s00.bin",
+      "sha256": "2f854a166c2e4fdbb553ef5c8d6029d1eb12cfaae3291a247e944348ecb2b69f",
+      "bytes": 2048
+    },
+    {
+      "source": "F:\\taspipe_scratch\\ram_calibration\\contra_weapon_v2\\spread_vs_rifle_spread_s00.png",
+      "path": "evidence/012_spread_vs_rifle_spread_s00.png",
+      "sha256": "b25dac038941983b94f2e25e4e14b28ad102900545393bbb197f117b34c904b6",
+      "bytes": 8536
+    },
+    {
+      "source": "F:\\taspipe_scratch\\ram_calibration\\contra_weapon_v2\\spread_vs_rifle_spread_s00.state",
+      "path": "evidence/013_spread_vs_rifle_spread_s00.state",
+      "sha256": "2e2a6390f39f30f70158af012b93d56c40bb001fb5acc034021cbbe26bd7179c",
+      "bytes": 19071
+    },
+    {
+      "source": "F:\\taspipe_scratch\\ram_calibration\\contra_weapon_v2\\spread_vs_rifle_spread_s00_input.state",
+      "path": "evidence/014_spread_vs_rifle_spread_s00_input.state",
+      "sha256": "2e2a6390f39f30f70158af012b93d56c40bb001fb5acc034021cbbe26bd7179c",
+      "bytes": 19071
+    },
+    {
+      "source": "F:\\taspipe_scratch\\ram_calibration\\contra_weapon_v2\\spread_vs_rifle_spread_s01.bin",
+      "path": "evidence/015_spread_vs_rifle_spread_s01.bin",
+      "sha256": "7d12c02bc0b01ff829f43fc6117faea0f2c856babca1b4152ff3f5ffeba82746",
+      "bytes": 2048
+    },
+    {
+      "source": "F:\\taspipe_scratch\\ram_calibration\\contra_weapon_v2\\spread_vs_rifle_spread_s01.png",
+      "path": "evidence/016_spread_vs_rifle_spread_s01.png",
+      "sha256": "7009b0c821d1362979d8f60e8c51e886d89551bc47bc3fd672c543390286b304",
+      "bytes": 8741
+    },
+    {
+      "source": "F:\\taspipe_scratch\\ram_calibration\\contra_weapon_v2\\spread_vs_rifle_spread_s01.state",
+      "path": "evidence/017_spread_vs_rifle_spread_s01.state",
+      "sha256": "a3f4aa687338ea8f72e47edfece73d2ff98c6f7d47664c6643409a7da07b0034",
+      "bytes": 19709
+    },
+    {
+      "source": "F:\\taspipe_scratch\\ram_calibration\\contra_weapon_v2\\spread_vs_rifle_spread_s01_frames\\f0006.png",
+      "path": "evidence/018_f0006.png",
+      "sha256": "f3a5a88ebb51f590aba1c5b954c73242c8a42cdf36d104e6898f5eb9805602a1",
+      "bytes": 8650
+    },
+    {
+      "source": "F:\\taspipe_scratch\\ram_calibration\\contra_weapon_v2\\spread_vs_rifle_spread_s01_frames\\f0012.png",
+      "path": "evidence/019_f0012.png",
+      "sha256": "4e587c810607a25e1d707b1b63ec603460d213e24c76f558b9d599b8ee5548d2",
+      "bytes": 8690
+    },
+    {
+      "source": "F:\\taspipe_scratch\\ram_calibration\\contra_weapon_v2\\spread_vs_rifle_spread_s01_frames\\f0020.png",
+      "path": "evidence/020_f0020.png",
+      "sha256": "2afa03c8013614c986a81908553c6a64a25d82314486952522ea610da2e94e9f",
+      "bytes": 8708
+    }
+  ]
+}

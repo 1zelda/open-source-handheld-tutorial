@@ -1,0 +1,5 @@
+hybrid评测grades逐字段: 0 差异
+  零差异 OK
+  summary: {'total': 26, 'ok': 24, 'by_tier': {'strict_pass': {'total': 6, 'ok': 5}, 'gold_in_topk': {'total': 10, 'ok': 9}, 'refuse': {'total': 9, 'ok': 9}, 'version_guard': {'total': 1, 'ok': 1}}, 'failed_ids': ['Q02', 'Q08']}
+hybrid探针逐格(状态+hits排序): 0 差异
+  零差异 OK

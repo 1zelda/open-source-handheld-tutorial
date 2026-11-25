@@ -1,0 +1,332 @@
+{
+  "root": "tech-wiki",
+  "file_count": 65,
+  "total_bytes": 119044,
+  "files": [
+    {
+      "path": ".gitattributes",
+      "size": 82,
+      "sha256": "e04129d56a3f93f4be9e60c4c741efa3842c221baeb13058ea7568c29a17cda4"
+    },
+    {
+      "path": ".gitignore",
+      "size": 80,
+      "sha256": "af1f31e4088912fdc84c7d02c0fcbbaec823021877d5df28d81db74f4a3ffc45"
+    },
+    {
+      "path": "AGENTS.md",
+      "size": 1633,
+      "sha256": "793e671e6674fcd77c9a13a46c1ab80d85d7ef3473e992fc7b7cc3dd9c3aca8f"
+    },
+    {
+      "path": "README.md",
+      "size": 3071,
+      "sha256": "4f5ba7267f2d02ed6babf29e123d507999f56b8a8c0714988b0ba75bfeaadb32"
+    },
+    {
+      "path": "requirements.txt",
+      "size": 14,
+      "sha256": "0969da99a0bc2a1b71ed50584560f4588a37567ac63af3ddbaf3c4617ca5621a"
+    },
+    {
+      "path": "eval/backup-restore.md",
+      "size": 2872,
+      "sha256": "e75add6ae9fdc9fd36047e449afe0cee3d905d7582b550661a6aa18b7fc919d6"
+    },
+    {
+      "path": "eval/implementation-check.md",
+      "size": 3601,
+      "sha256": "c387c332bd772e1ab4cb4a060cb20bf0cf4db71e0716cfaed5f902912d0b97b0"
+    },
+    {
+      "path": "eval/m3-batch2.md",
+      "size": 6819,
+      "sha256": "dcf18cea0933e01833eadf7293999da89eea9b249b53a3e1b3119e4d017f6ba7"
+    },
+    {
+      "path": "eval/m3-batch3.md",
+      "size": 5941,
+      "sha256": "496784d2cabea9f30b574334872c33d8a2b10addddc8a9f88b0a656500919db9"
+    },
+    {
+      "path": "eval/m3-pilot.md",
+      "size": 4300,
+      "sha256": "f60dd91949f1f0578ea3cc2465d3589953c7793001b3b47a9e73171fc6e5ecc7"
+    },
+    {
+      "path": "eval/qa-results.md",
+      "size": 10001,
+      "sha256": "151a61f6e9f356c63cd51a1f49fb6194dcd94bc7080e34b12a8ce18c11872acd"
+    },
+    {
+      "path": "eval/questions.md",
+      "size": 4361,
+      "sha256": "b623a315a25971cc22dbecaa72255b19e936fddfc887e9f94c3757b47221e77b"
+    },
+    {
+      "path": "inbox/src-anthropic-building-evals.yml",
+      "size": 395,
+      "sha256": "01913016d5802561074a0e45de326245f9790c2a8d78f3a2534d41c08ffeb8ad"
+    },
+    {
+      "path": "inbox/src-anthropic-contextual-embeddings.yml",
+      "size": 462,
+      "sha256": "739037ca3264d0357d61ce1fa4762d973d6863fddaa2beca99d601ed86bd1b68"
+    },
+    {
+      "path": "inbox/src-anthropic-json-mode.yml",
+      "size": 429,
+      "sha256": "d444633bb845b08a612308c222b64e7eddd72b9233f68dde2acc001dbf10f177"
+    },
+    {
+      "path": "inbox/src-anthropic-pydantic-tool.yml",
+      "size": 458,
+      "sha256": "01f94f2c42ec9c4f6aa43af6edeee4bdcd205f4265062f651d25e0eaf55e3d03"
+    },
+    {
+      "path": "inbox/src-anthropic-rag-guide.yml",
+      "size": 471,
+      "sha256": "0d9d90dd12c71ec4995fb8bb5e2cc03f2708a4f851e90abe1da860fe19a816b1"
+    },
+    {
+      "path": "inbox/src-anthropic-structured-json-new.yml",
+      "size": 496,
+      "sha256": "a46860a620a5eae4f38c0b52a6d8bbb6c1717712cb7b4231a0cfd9854d6fd785"
+    },
+    {
+      "path": "inbox/src-anthropic-structured-json-old.yml",
+      "size": 484,
+      "sha256": "84bc2a7fc849ca2ef14f8a590a721df7c21e22e8a17f5c1c685f4fb6253fbfb3"
+    },
+    {
+      "path": "inbox/src-anthropic-tool-choice.yml",
+      "size": 315,
+      "sha256": "2a3bf2b21a8e8de2c273724047ed9029d7ee4517bc950676cf3deba0b019b83e"
+    },
+    {
+      "path": "inbox/src-google-forced-function.yml",
+      "size": 506,
+      "sha256": "59f1504ad7582f3943d775f14c699eb03a57432f2d73d8732933bd65cf792cfc"
+    },
+    {
+      "path": "inbox/src-google-function-calling.yml",
+      "size": 395,
+      "sha256": "319b6c769324f56eca7c86f91fbd574c368c80e378bef5ac837062a770b0aba3"
+    },
+    {
+      "path": "inbox/src-google-grounding-intro.yml",
+      "size": 462,
+      "sha256": "423a5328a1723409883b0ff8804b814702e0032ba131383d9b74edec9da77544"
+    },
+    {
+      "path": "inbox/src-google-parallel-function-calling.yml",
+      "size": 549,
+      "sha256": "bee1763af021175f3ab10b5c37804cf21fa1efd4d404f8c7d0ecb951bd4fc600"
+    },
+    {
+      "path": "inbox/src-google-structured-output-eval.yml",
+      "size": 489,
+      "sha256": "d89b276ba72d80d018b4b4a34a61c08f6efe98808cf90a04efe69cccd753e25c"
+    },
+    {
+      "path": "inbox/src-openai-embeddings-qa.yml",
+      "size": 462,
+      "sha256": "654162121d4ae19c397a5eb51a26d351e8a13e29a3587d950cc8bf5cba7d2fa5"
+    },
+    {
+      "path": "inbox/src-openai-eval-flywheel.yml",
+      "size": 525,
+      "sha256": "1118b80cde11a3db9cd1e38cbaa783f24cab68d05f533a8e6071d6263155b5c6"
+    },
+    {
+      "path": "inbox/src-openai-evals-intro.yml",
+      "size": 465,
+      "sha256": "0876426e0eb2d064c93c2e98ae1f4d49da81df4d4d8fc7d524e0c2587ba58d94"
+    },
+    {
+      "path": "inbox/src-openai-functions-chat.yml",
+      "size": 458,
+      "sha256": "91412b16e5bca60ee241f865f49b9ba7ca04c49869aa638ff87ee2e55d9187f3"
+    },
+    {
+      "path": "inbox/src-openai-multi-agent.yml",
+      "size": 465,
+      "sha256": "536307d2d9afdda12899e9f2198aa0ea8f3431242abfbc763966290d79defeac"
+    },
+    {
+      "path": "inbox/src-openai-required-tool.yml",
+      "size": 464,
+      "sha256": "b2de112689e5b075bd1355142e2c76815005eb2ca1d99fbab5b85c91ee83e2b6"
+    },
+    {
+      "path": "inbox/src-openai-structured-outputs.yml",
+      "size": 341,
+      "sha256": "801b6fce94e046879315f8b407000eeda2f3680a4296cf5d6ea048c7c5352cb4"
+    },
+    {
+      "path": "raw/catalog/src-069d3262ba38.yml",
+      "size": 562,
+      "sha256": "2a36b7d673b86b39c70cd9507e32cba37e9332ca07787387361ea36c08986dc8"
+    },
+    {
+      "path": "raw/catalog/src-32f1dae15b13.yml",
+      "size": 562,
+      "sha256": "e873d4f044e0fb8c1259d62404446cd5f565f5cbf57b23218ca3038ef49b9bcd"
+    },
+    {
+      "path": "raw/catalog/src-3ee9708e6b9f.yml",
+      "size": 577,
+      "sha256": "398d88c92ccd028d4757896016053657350cb1ba5f1c30657d3bf678050655dd"
+    },
+    {
+      "path": "raw/catalog/src-41e6f94ade42.yml",
+      "size": 589,
+      "sha256": "0008ba4eb44bee7ed01b64d6831e04b1768e75fb0caeacb6ed38b89e43b0f113"
+    },
+    {
+      "path": "raw/catalog/src-543ebe01b0b6.yml",
+      "size": 530,
+      "sha256": "d1e1de403ae55bbf2c71b15b3cc8e5729f1e9ca91bd9064062b3e307f8d47b2c"
+    },
+    {
+      "path": "raw/catalog/src-6ffb7205f02c.yml",
+      "size": 529,
+      "sha256": "511a6f30c26c89f8bb7e4bb6573bb212a7c66290460b8c2b7fc8dda0adec88d8"
+    },
+    {
+      "path": "raw/catalog/src-7667917a0683.yml",
+      "size": 564,
+      "sha256": "58d0ab51d22fc76b9784f74be3ab61703f6290b163f81591ec93d31b2b18ec85"
+    },
+    {
+      "path": "raw/catalog/src-7b9e3deae953.yml",
+      "size": 571,
+      "sha256": "47afefdfa49dd0ebe4d70fd325fc8d2d6f880599695d455a839e9f133d3219db"
+    },
+    {
+      "path": "raw/catalog/src-8cb08e01ef59.yml",
+      "size": 606,
+      "sha256": "a55bfdcecee806d95eb45ac9b04f9e5cae14fb4b515a9b3f17efd94a0ad0cadb"
+    },
+    {
+      "path": "raw/catalog/src-8e1ca8281233.yml",
+      "size": 562,
+      "sha256": "658b668b33e66e25ca46223ca0da1c260b71c729e5f8d94989bd5ba5d47f36fe"
+    },
+    {
+      "path": "raw/catalog/src-a403dde97674.yml",
+      "size": 558,
+      "sha256": "d1c63f4a78a551821ed9bd4d6eabc1845b6343629de31b8975fb0a15ad78b632"
+    },
+    {
+      "path": "raw/catalog/src-ac9941325f62.yml",
+      "size": 562,
+      "sha256": "611700f0bd78136c537b6d60996c834ba41bb7232e77c508265aa5c82413150e"
+    },
+    {
+      "path": "raw/catalog/src-c7639abd53a1.yml",
+      "size": 640,
+      "sha256": "b6e9fdaff5065d5e3ba109737b6dfc365b97eac2afda848738d2279eccd01937"
+    },
+    {
+      "path": "raw/catalog/src-cd3e1fd79d89.yml",
+      "size": 558,
+      "sha256": "f7c2e888f28cf9bffe5b38eda62883ee02ee615dfaefa274cf2d47b913d45c0e"
+    },
+    {
+      "path": "raw/catalog/src-d98c9cc1c885.yml",
+      "size": 495,
+      "sha256": "2bddece3b8add71c5a2f7cda9b2f62101dccd0760a5730b097be3290d7784306"
+    },
+    {
+      "path": "raw/catalog/src-e0d653cccec7.yml",
+      "size": 565,
+      "sha256": "f8205bea6f98a41d3e2d6834eaef5334710dbc1f0c24b301a33bb5ea6de75d64"
+    },
+    {
+      "path": "raw/catalog/src-e65bcc751638.yml",
+      "size": 546,
+      "sha256": "6a70cacec512e7572d81ddf8044562e3e4a31d6bd76099b5c5c9f9b9bb809746"
+    },
+    {
+      "path": "raw/catalog/src-ed62a8d6cf31.yml",
+      "size": 565,
+      "sha256": "631f19c5bdac55bc52ca9c1a8e472eddb34fa1d093124d197291868ed09a882e"
+    },
+    {
+      "path": "raw/catalog/src-f41da1ddf6cd.yml",
+      "size": 625,
+      "sha256": "3faf37f89478e05729973f729da8207139329468faca3564a659f606655805b4"
+    },
+    {
+      "path": "raw/catalog/src-feff61a8bf6a.yml",
+      "size": 630,
+      "sha256": "8d5b13baf383f19ed3fa6b5356449e26309d88f6f98fad9020cf1e03eb28f279"
+    },
+    {
+      "path": "scripts/kb.py",
+      "size": 22767,
+      "sha256": "b3d41d7f04305c085e36ff89a833829746d824ec90e3c731a4a8fa973d3a610f"
+    },
+    {
+      "path": "tests/test_kb.py",
+      "size": 8963,
+      "sha256": "44def24207d0175bcb1110f2979de10ede11064801b5cfcc1b65738274b366e5"
+    },
+    {
+      "path": "wiki/index.md",
+      "size": 649,
+      "sha256": "575333b3307d9e140634d5491e9390322cb767744aeb2550a4a2d48eac6b6f82"
+    },
+    {
+      "path": "wiki/log.md",
+      "size": 2399,
+      "sha256": "3f76628f7068676b86019bd42f7bebb17cfc8663d799dd4d0f56973083b6f4bd"
+    },
+    {
+      "path": "wiki/domains/ai.md",
+      "size": 525,
+      "sha256": "544243ca5d7f8c44ac1fef6a22f8bee07395d9a7f2eaee308c875bb07c6fe2f4"
+    },
+    {
+      "path": "wiki/domains/games.md",
+      "size": 70,
+      "sha256": "e08fb7b8e3cf8cf7f21a62c52d16ab3256f116e725c88909e0a202b6153479cd"
+    },
+    {
+      "path": "wiki/domains/security.md",
+      "size": 76,
+      "sha256": "1d5b7b58e9022e2408af5bbb10d4c1c2abc9845eeac71c68bc7f920b85934bde"
+    },
+    {
+      "path": "wiki/domains/web.md",
+      "size": 537,
+      "sha256": "5a98d674ae66bc84648a352822f6996f49e35fa00dfbd79e7b5a9daf0d762dc4"
+    },
+    {
+      "path": "wiki/pages/llm-function-calling-modes-and-validation.md",
+      "size": 4138,
+      "sha256": "8fee153db0c3fc82dc99ff55a8e86be463d8ca22c020994b556fbf9788c9467d"
+    },
+    {
+      "path": "wiki/pages/llm-json-output-and-evaluation-loop.md",
+      "size": 4612,
+      "sha256": "d420dfb67632a0c8d6a470808805fed9443e111c9077b29dad9c6b4f82e7e9f9"
+    },
+    {
+      "path": "wiki/pages/llm-retrieval-augmentation-and-grounding.md",
+      "size": 4387,
+      "sha256": "f2656332d686d9139529090cee9acec60a2451785d40da4f036a72b3c2203517"
+    },
+    {
+      "path": "wiki/pages/llm-structured-outputs-and-tool-calling.md",
+      "size": 3326,
+      "sha256": "79edcf76958a37f45a6e0dd2d0d5e3d8def398e41365bc7332a4b4f7b764bf45"
+    },
+    {
+      "path": "wiki/pages/llm-tool-calling-parallel-and-versioning.md",
+      "size": 3333,
+      "sha256": "e7d0914a5c84f17be0a93d8c1344be7f69e55f02a7737d07e769560443f047d2"
+    }
+  ]
+}

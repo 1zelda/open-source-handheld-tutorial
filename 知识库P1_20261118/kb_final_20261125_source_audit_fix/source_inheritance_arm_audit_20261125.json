@@ -1,0 +1,1099 @@
+{
+  "schema": "kb_source_inheritance_arm_audit_v1",
+  "production_defaults": {
+    "top_window": 3,
+    "fragment_policy": null,
+    "fact_selector": null
+  },
+  "summaries": {
+    "base_default": {
+      "status_pass": 13,
+      "status_inconclusive": 8,
+      "status_miss": 5,
+      "v2_ok": 26,
+      "v2_failed_ids": [],
+      "wrong_evidence_ids": [],
+      "missed_answer_ids": [
+        "Q16",
+        "Q17",
+        "P19"
+      ]
+    },
+    "base_strict": {
+      "status_pass": 7,
+      "status_inconclusive": 14,
+      "status_miss": 5,
+      "v2_ok": 21,
+      "v2_failed_ids": [
+        "Q01",
+        "Q02",
+        "Q03",
+        "Q05",
+        "Q18"
+      ],
+      "wrong_evidence_ids": [],
+      "missed_answer_ids": [
+        "Q01",
+        "Q02",
+        "Q03",
+        "Q04",
+        "Q05",
+        "Q16",
+        "Q17",
+        "Q18",
+        "P19"
+      ]
+    },
+    "hybrid_default": {
+      "status_pass": 14,
+      "status_inconclusive": 7,
+      "status_miss": 5,
+      "v2_ok": 22,
+      "v2_failed_ids": [
+        "Q02",
+        "Q08",
+        "Q10",
+        "Q18"
+      ],
+      "wrong_evidence_ids": [
+        "Q06",
+        "Q08",
+        "Q10",
+        "Q16",
+        "Q18",
+        "P22",
+        "P23",
+        "P24"
+      ],
+      "missed_answer_ids": [
+        "Q02",
+        "Q17",
+        "P19"
+      ]
+    },
+    "hybrid_strict": {
+      "status_pass": 10,
+      "status_inconclusive": 11,
+      "status_miss": 5,
+      "v2_ok": 19,
+      "v2_failed_ids": [
+        "Q01",
+        "Q02",
+        "Q03",
+        "Q05",
+        "Q08",
+        "Q10",
+        "Q18"
+      ],
+      "wrong_evidence_ids": [
+        "Q05",
+        "Q06",
+        "Q08",
+        "Q10",
+        "Q16",
+        "P22",
+        "P23"
+      ],
+      "missed_answer_ids": [
+        "Q01",
+        "Q02",
+        "Q03",
+        "Q04",
+        "Q17",
+        "Q18",
+        "P19"
+      ]
+    }
+  },
+  "details": [
+    {
+      "id": "Q01",
+      "arm": "base_strict",
+      "question": "热血足球联盟一共有多少种必杀射门？",
+      "frozen_tier": "strict_pass",
+      "status": "inconclusive",
+      "v2_ok": false,
+      "correct_evidence": false,
+      "wrong_evidence": false,
+      "missed_answer": true,
+      "selected": [],
+      "condition": null
+    },
+    {
+      "id": "Q01",
+      "arm": "hybrid_strict",
+      "question": "热血足球联盟一共有多少种必杀射门？",
+      "frozen_tier": "strict_pass",
+      "status": "inconclusive",
+      "v2_ok": false,
+      "correct_evidence": false,
+      "wrong_evidence": false,
+      "missed_answer": true,
+      "selected": [],
+      "condition": null
+    },
+    {
+      "id": "Q02",
+      "arm": "base_strict",
+      "question": "热血队内，燕返原生只有哪个角色会使？",
+      "frozen_tier": "strict_pass",
+      "status": "inconclusive",
+      "v2_ok": false,
+      "correct_evidence": false,
+      "wrong_evidence": false,
+      "missed_answer": true,
+      "selected": [],
+      "condition": null
+    },
+    {
+      "id": "Q02",
+      "arm": "hybrid_default",
+      "question": "热血队内，燕返原生只有哪个角色会使？",
+      "frozen_tier": "strict_pass",
+      "status": "inconclusive",
+      "v2_ok": false,
+      "correct_evidence": false,
+      "wrong_evidence": false,
+      "missed_answer": true,
+      "selected": [],
+      "condition": null
+    },
+    {
+      "id": "Q02",
+      "arm": "hybrid_strict",
+      "question": "热血队内，燕返原生只有哪个角色会使？",
+      "frozen_tier": "strict_pass",
+      "status": "inconclusive",
+      "v2_ok": false,
+      "correct_evidence": false,
+      "wrong_evidence": false,
+      "missed_answer": true,
+      "selected": [],
+      "condition": null
+    },
+    {
+      "id": "Q03",
+      "arm": "base_strict",
+      "question": "热血足球2 暂停秘技的按键输入是什么？",
+      "frozen_tier": "strict_pass",
+      "status": "inconclusive",
+      "v2_ok": false,
+      "correct_evidence": false,
+      "wrong_evidence": false,
+      "missed_answer": true,
+      "selected": [],
+      "condition": null
+    },
+    {
+      "id": "Q03",
+      "arm": "hybrid_strict",
+      "question": "热血足球2 暂停秘技的按键输入是什么？",
+      "frozen_tier": "strict_pass",
+      "status": "inconclusive",
+      "v2_ok": false,
+      "correct_evidence": false,
+      "wrong_evidence": false,
+      "missed_answer": true,
+      "selected": [],
+      "condition": null
+    },
+    {
+      "id": "Q04",
+      "arm": "base_strict",
+      "question": "容易难度下对手能不能发动必杀射门？",
+      "frozen_tier": "gold_in_topk",
+      "status": "inconclusive",
+      "v2_ok": true,
+      "correct_evidence": false,
+      "wrong_evidence": false,
+      "missed_answer": true,
+      "selected": [],
+      "condition": null
+    },
+    {
+      "id": "Q04",
+      "arm": "hybrid_strict",
+      "question": "容易难度下对手能不能发动必杀射门？",
+      "frozen_tier": "gold_in_topk",
+      "status": "inconclusive",
+      "v2_ok": true,
+      "correct_evidence": false,
+      "wrong_evidence": false,
+      "missed_answer": true,
+      "selected": [],
+      "condition": null
+    },
+    {
+      "id": "Q05",
+      "arm": "base_strict",
+      "question": "我想控制队长以外的队员，该怎么换人？",
+      "frozen_tier": "strict_pass",
+      "status": "inconclusive",
+      "v2_ok": false,
+      "correct_evidence": false,
+      "wrong_evidence": false,
+      "missed_answer": true,
+      "selected": [],
+      "condition": null
+    },
+    {
+      "id": "Q05",
+      "arm": "hybrid_strict",
+      "question": "我想控制队长以外的队员，该怎么换人？",
+      "frozen_tier": "strict_pass",
+      "status": "pass",
+      "v2_ok": false,
+      "correct_evidence": false,
+      "wrong_evidence": true,
+      "missed_answer": false,
+      "selected": [
+        {
+          "chunk_id": "6987e0e1ca84",
+          "locator": "_工具脚本/taspipe/游戏包/热血足球联盟_必杀全清单.md#L101-L119",
+          "source_id": "local_soccer2_super_list",
+          "authority": "authoritative",
+          "excerpt": "1P 固定控制 MF 队长 = 国夫（背号 9）**（11-14 HUD 实测",
+          "provenance": {
+            "policy": "strict",
+            "eligible": true,
+            "reason": "eligible_fragment",
+            "relevant_segments": 5,
+            "eligible_segments": 3,
+            "reference_segments": 2,
+            "retracted_segments": 0,
+            "evidence_excerpt": "1P 固定控制 MF 队长 = 国夫（背号 9）**（11-14 HUD 实测"
+          }
+        }
+      ],
+      "condition": "权威可答件在第3位，非最高分；出证须附此条件"
+    },
+    {
+      "id": "Q06",
+      "arm": "hybrid_default",
+      "question": "热血足球联盟每队上场几名球员？",
+      "frozen_tier": "gold_in_topk",
+      "status": "pass",
+      "v2_ok": true,
+      "correct_evidence": false,
+      "wrong_evidence": true,
+      "missed_answer": false,
+      "selected": [
+        {
+          "chunk_id": "2e317b9f1bbf",
+          "locator": "_工具脚本/taspipe/游戏包/来源库/取证/setsumei_热血足球说明书_编者中文对照_20261119.md#L7-L10",
+          "source_id": "setsumei_cloudfree",
+          "authority": "authoritative",
+          "excerpt": null,
+          "provenance": null
+        }
+      ],
+      "condition": null
+    },
+    {
+      "id": "Q06",
+      "arm": "hybrid_strict",
+      "question": "热血足球联盟每队上场几名球员？",
+      "frozen_tier": "gold_in_topk",
+      "status": "pass",
+      "v2_ok": true,
+      "correct_evidence": false,
+      "wrong_evidence": true,
+      "missed_answer": false,
+      "selected": [
+        {
+          "chunk_id": "2e317b9f1bbf",
+          "locator": "_工具脚本/taspipe/游戏包/来源库/取证/setsumei_热血足球说明书_编者中文对照_20261119.md#L7-L10",
+          "source_id": "setsumei_cloudfree",
+          "authority": "authoritative",
+          "excerpt": "1P 单人游玩**时，操作 MF 队长角色一人，同时向队友发送指示",
+          "provenance": {
+            "policy": "strict",
+            "eligible": true,
+            "reason": "eligible_fragment",
+            "relevant_segments": 0,
+            "eligible_segments": 7,
+            "reference_segments": 0,
+            "retracted_segments": 0,
+            "evidence_excerpt": "1P 单人游玩**时，操作 MF 队长角色一人，同时向队友发送指示"
+          }
+        }
+      ],
+      "condition": null
+    },
+    {
+      "id": "Q08",
+      "arm": "hybrid_default",
+      "question": "双人合作模式下二号玩家操作什么位置？",
+      "frozen_tier": "gold_in_topk",
+      "status": "pass",
+      "v2_ok": false,
+      "correct_evidence": false,
+      "wrong_evidence": true,
+      "missed_answer": false,
+      "selected": [
+        {
+          "chunk_id": "2e317b9f1bbf",
+          "locator": "_工具脚本/taspipe/游戏包/来源库/取证/setsumei_热血足球说明书_编者中文对照_20261119.md#L7-L10",
+          "source_id": "setsumei_cloudfree",
+          "authority": "authoritative",
+          "excerpt": null,
+          "provenance": null
+        }
+      ],
+      "condition": "权威可答件在第2位，非最高分；出证须附此条件"
+    },
+    {
+      "id": "Q08",
+      "arm": "hybrid_strict",
+      "question": "双人合作模式下二号玩家操作什么位置？",
+      "frozen_tier": "gold_in_topk",
+      "status": "pass",
+      "v2_ok": false,
+      "correct_evidence": false,
+      "wrong_evidence": true,
+      "missed_answer": false,
+      "selected": [
+        {
+          "chunk_id": "2e317b9f1bbf",
+          "locator": "_工具脚本/taspipe/游戏包/来源库/取证/setsumei_热血足球说明书_编者中文对照_20261119.md#L7-L10",
+          "source_id": "setsumei_cloudfree",
+          "authority": "authoritative",
+          "excerpt": "2P 双人合作游玩**时，**1P 操作 MF（中场）角色，2P 操作 GK（守门员）角色",
+          "provenance": {
+            "policy": "strict",
+            "eligible": true,
+            "reason": "eligible_fragment",
+            "relevant_segments": 3,
+            "eligible_segments": 3,
+            "reference_segments": 0,
+            "retracted_segments": 0,
+            "evidence_excerpt": "2P 双人合作游玩**时，**1P 操作 MF（中场）角色，2P 操作 GK（守门员）角色"
+          }
+        }
+      ],
+      "condition": "权威可答件在第2位，非最高分；出证须附此条件"
+    },
+    {
+      "id": "Q10",
+      "arm": "hybrid_default",
+      "question": "KOF98 ECK 能不能关掉队友改成 1v1？",
+      "frozen_tier": "strict_pass",
+      "status": "pass",
+      "v2_ok": false,
+      "correct_evidence": false,
+      "wrong_evidence": true,
+      "missed_answer": false,
+      "selected": [
+        {
+          "chunk_id": "8c20fcc4311e",
+          "locator": "F:/tas_rig/docs/素材生产规范.md#L18-L31",
+          "source_id": "local_fbneo_rig",
+          "authority": "authoritative",
+          "excerpt": null,
+          "provenance": null
+        }
+      ],
+      "condition": null
+    },
+    {
+      "id": "Q10",
+      "arm": "hybrid_strict",
+      "question": "KOF98 ECK 能不能关掉队友改成 1v1？",
+      "frozen_tier": "strict_pass",
+      "status": "pass",
+      "v2_ok": false,
+      "correct_evidence": false,
+      "wrong_evidence": true,
+      "missed_answer": false,
+      "selected": [
+        {
+          "chunk_id": "8c20fcc4311e",
+          "locator": "F:/tas_rig/docs/素材生产规范.md#L18-L31",
+          "source_id": "local_fbneo_rig",
+          "authority": "authoritative",
+          "excerpt": "⚠️ 缺口：**简化输入**（ECK 自带的 `check1/check2` 那一类）录出来的到底是哪一招没验过",
+          "provenance": {
+            "policy": "strict",
+            "eligible": true,
+            "reason": "eligible_fragment",
+            "relevant_segments": 1,
+            "eligible_segments": 1,
+            "reference_segments": 0,
+            "retracted_segments": 0,
+            "evidence_excerpt": "⚠️ 缺口：**简化输入**（ECK 自带的 `check1/check2` 那一类）录出来的到底是哪一招没验过"
+          }
+        }
+      ],
+      "condition": null
+    },
+    {
+      "id": "Q16",
+      "arm": "base_default",
+      "question": "怎么射门才能让守门员扑不到？",
+      "frozen_tier": "gold_in_topk",
+      "status": "inconclusive",
+      "v2_ok": true,
+      "correct_evidence": false,
+      "wrong_evidence": false,
+      "missed_answer": true,
+      "selected": [],
+      "condition": null
+    },
+    {
+      "id": "Q16",
+      "arm": "base_strict",
+      "question": "怎么射门才能让守门员扑不到？",
+      "frozen_tier": "gold_in_topk",
+      "status": "inconclusive",
+      "v2_ok": true,
+      "correct_evidence": false,
+      "wrong_evidence": false,
+      "missed_answer": true,
+      "selected": [],
+      "condition": null
+    },
+    {
+      "id": "Q16",
+      "arm": "hybrid_default",
+      "question": "怎么射门才能让守门员扑不到？",
+      "frozen_tier": "gold_in_topk",
+      "status": "pass",
+      "v2_ok": true,
+      "correct_evidence": false,
+      "wrong_evidence": true,
+      "missed_answer": false,
+      "selected": [
+        {
+          "chunk_id": "cca1975a46e1",
+          "locator": "_工具脚本/taspipe/游戏包/来源库/取证/setsumei_热血足球说明书_编者中文对照_20261119.md#L54-L57",
+          "source_id": "setsumei_cloudfree",
+          "authority": "authoritative",
+          "excerpt": null,
+          "provenance": null
+        }
+      ],
+      "condition": null
+    },
+    {
+      "id": "Q16",
+      "arm": "hybrid_strict",
+      "question": "怎么射门才能让守门员扑不到？",
+      "frozen_tier": "gold_in_topk",
+      "status": "pass",
+      "v2_ok": true,
+      "correct_evidence": false,
+      "wrong_evidence": true,
+      "missed_answer": false,
+      "selected": [
+        {
+          "chunk_id": "cca1975a46e1",
+          "locator": "_工具脚本/taspipe/游戏包/来源库/取证/setsumei_热血足球说明书_编者中文对照_20261119.md#L54-L57",
+          "source_id": "setsumei_cloudfree",
+          "authority": "authoritative",
+          "excerpt": "守门员专用必杀技为「龙卷风拳（トルネード・パンチ）」",
+          "provenance": {
+            "policy": "strict",
+            "eligible": true,
+            "reason": "eligible_fragment",
+            "relevant_segments": 3,
+            "eligible_segments": 3,
+            "reference_segments": 0,
+            "retracted_segments": 0,
+            "evidence_excerpt": "守门员专用必杀技为「龙卷风拳（トルネード・パンチ）」"
+          }
+        }
+      ],
+      "condition": null
+    },
+    {
+      "id": "Q17",
+      "arm": "base_default",
+      "question": "一直输球会不会触发隐藏结局？",
+      "frozen_tier": "gold_in_topk",
+      "status": "inconclusive",
+      "v2_ok": true,
+      "correct_evidence": false,
+      "wrong_evidence": false,
+      "missed_answer": true,
+      "selected": [],
+      "condition": null
+    },
+    {
+      "id": "Q17",
+      "arm": "base_strict",
+      "question": "一直输球会不会触发隐藏结局？",
+      "frozen_tier": "gold_in_topk",
+      "status": "inconclusive",
+      "v2_ok": true,
+      "correct_evidence": false,
+      "wrong_evidence": false,
+      "missed_answer": true,
+      "selected": [],
+      "condition": null
+    },
+    {
+      "id": "Q17",
+      "arm": "hybrid_default",
+      "question": "一直输球会不会触发隐藏结局？",
+      "frozen_tier": "gold_in_topk",
+      "status": "inconclusive",
+      "v2_ok": true,
+      "correct_evidence": false,
+      "wrong_evidence": false,
+      "missed_answer": true,
+      "selected": [],
+      "condition": null
+    },
+    {
+      "id": "Q17",
+      "arm": "hybrid_strict",
+      "question": "一直输球会不会触发隐藏结局？",
+      "frozen_tier": "gold_in_topk",
+      "status": "inconclusive",
+      "v2_ok": true,
+      "correct_evidence": false,
+      "wrong_evidence": false,
+      "missed_answer": true,
+      "selected": [],
+      "condition": null
+    },
+    {
+      "id": "Q18",
+      "arm": "base_strict",
+      "question": "暂停秘技成功的判定签名是什么？",
+      "frozen_tier": "strict_pass",
+      "status": "inconclusive",
+      "v2_ok": false,
+      "correct_evidence": false,
+      "wrong_evidence": false,
+      "missed_answer": true,
+      "selected": [],
+      "condition": null
+    },
+    {
+      "id": "Q18",
+      "arm": "hybrid_default",
+      "question": "暂停秘技成功的判定签名是什么？",
+      "frozen_tier": "strict_pass",
+      "status": "pass",
+      "v2_ok": false,
+      "correct_evidence": false,
+      "wrong_evidence": true,
+      "missed_answer": false,
+      "selected": [
+        {
+          "chunk_id": "8996c7a159ef",
+          "locator": "_工具脚本/taspipe/游戏包/热血足球联盟_必杀全清单.md#L137-L158",
+          "source_id": "local_soccer2_super_list",
+          "authority": "authoritative",
+          "excerpt": null,
+          "provenance": null
+        }
+      ],
+      "condition": "权威可答件在第2位，非最高分；出证须附此条件"
+    },
+    {
+      "id": "Q18",
+      "arm": "hybrid_strict",
+      "question": "暂停秘技成功的判定签名是什么？",
+      "frozen_tier": "strict_pass",
+      "status": "inconclusive",
+      "v2_ok": false,
+      "correct_evidence": false,
+      "wrong_evidence": false,
+      "missed_answer": true,
+      "selected": [],
+      "condition": null
+    },
+    {
+      "id": "P19",
+      "arm": "base_default",
+      "question": "热血足球的世界杯模式怎么触发？",
+      "frozen_tier": "gold_in_topk",
+      "status": "inconclusive",
+      "v2_ok": true,
+      "correct_evidence": false,
+      "wrong_evidence": false,
+      "missed_answer": true,
+      "selected": [],
+      "condition": null
+    },
+    {
+      "id": "P19",
+      "arm": "base_strict",
+      "question": "热血足球的世界杯模式怎么触发？",
+      "frozen_tier": "gold_in_topk",
+      "status": "inconclusive",
+      "v2_ok": true,
+      "correct_evidence": false,
+      "wrong_evidence": false,
+      "missed_answer": true,
+      "selected": [],
+      "condition": null
+    },
+    {
+      "id": "P19",
+      "arm": "hybrid_default",
+      "question": "热血足球的世界杯模式怎么触发？",
+      "frozen_tier": "gold_in_topk",
+      "status": "inconclusive",
+      "v2_ok": true,
+      "correct_evidence": false,
+      "wrong_evidence": false,
+      "missed_answer": true,
+      "selected": [],
+      "condition": null
+    },
+    {
+      "id": "P19",
+      "arm": "hybrid_strict",
+      "question": "热血足球的世界杯模式怎么触发？",
+      "frozen_tier": "gold_in_topk",
+      "status": "inconclusive",
+      "v2_ok": true,
+      "correct_evidence": false,
+      "wrong_evidence": false,
+      "missed_answer": true,
+      "selected": [],
+      "condition": null
+    },
+    {
+      "id": "P22",
+      "arm": "hybrid_default",
+      "question": "说明书里的 PK 战模式怎么玩？",
+      "frozen_tier": "gold_in_topk",
+      "status": "pass",
+      "v2_ok": true,
+      "correct_evidence": false,
+      "wrong_evidence": true,
+      "missed_answer": false,
+      "selected": [
+        {
+          "chunk_id": "56d5dc782bb8",
+          "locator": "_工具脚本/taspipe/游戏包/来源库/取证/setsumei_热血足球说明书_编者中文对照_20261119.md#L73-L74",
+          "source_id": "setsumei_cloudfree",
+          "authority": "authoritative",
+          "excerpt": null,
+          "provenance": null
+        }
+      ],
+      "condition": "权威可答件在第2位，非最高分；出证须附此条件"
+    },
+    {
+      "id": "P22",
+      "arm": "hybrid_strict",
+      "question": "说明书里的 PK 战模式怎么玩？",
+      "frozen_tier": "gold_in_topk",
+      "status": "pass",
+      "v2_ok": true,
+      "correct_evidence": false,
+      "wrong_evidence": true,
+      "missed_answer": false,
+      "selected": [
+        {
+          "chunk_id": "56d5dc782bb8",
+          "locator": "_工具脚本/taspipe/游戏包/来源库/取证/setsumei_热血足球说明书_编者中文对照_20261119.md#L73-L74",
+          "source_id": "setsumei_cloudfree",
+          "authority": "authoritative",
+          "excerpt": "2P 模式为 1P vs 2P 的 PK 合战",
+          "provenance": {
+            "policy": "strict",
+            "eligible": true,
+            "reason": "eligible_fragment",
+            "relevant_segments": 2,
+            "eligible_segments": 2,
+            "reference_segments": 0,
+            "retracted_segments": 0,
+            "evidence_excerpt": "2P 模式为 1P vs 2P 的 PK 合战"
+          }
+        }
+      ],
+      "condition": "权威可答件在第2位，非最高分；出证须附此条件"
+    },
+    {
+      "id": "P23",
+      "arm": "hybrid_default",
+      "question": "说明书里状态（ステータス）一节讲了哪些参数？",
+      "frozen_tier": "gold_in_topk",
+      "status": "pass",
+      "v2_ok": true,
+      "correct_evidence": false,
+      "wrong_evidence": true,
+      "missed_answer": false,
+      "selected": [
+        {
+          "chunk_id": "33f93afd849f",
+          "locator": "_工具脚本/taspipe/游戏包/来源库/取证/setsumei_热血足球说明书_编者中文对照_20261119.md#L3-L4",
+          "source_id": "setsumei_cloudfree",
+          "authority": "authoritative",
+          "excerpt": null,
+          "provenance": null
+        }
+      ],
+      "condition": "权威可答件在第3位，非最高分；出证须附此条件"
+    },
+    {
+      "id": "P23",
+      "arm": "hybrid_strict",
+      "question": "说明书里状态（ステータス）一节讲了哪些参数？",
+      "frozen_tier": "gold_in_topk",
+      "status": "pass",
+      "v2_ok": true,
+      "correct_evidence": false,
+      "wrong_evidence": true,
+      "missed_answer": false,
+      "selected": [
+        {
+          "chunk_id": "33f93afd849f",
+          "locator": "_工具脚本/taspipe/游戏包/来源库/取证/setsumei_热血足球说明书_编者中文对照_20261119.md#L3-L4",
+          "source_id": "setsumei_cloudfree",
+          "authority": "authoritative",
+          "excerpt": "本对照忠实译自官方说明书，权威性与原文同源",
+          "provenance": {
+            "policy": "strict",
+            "eligible": true,
+            "reason": "eligible_fragment",
+            "relevant_segments": 3,
+            "eligible_segments": 3,
+            "reference_segments": 0,
+            "retracted_segments": 0,
+            "evidence_excerpt": "本对照忠实译自官方说明书，权威性与原文同源"
+          }
+        }
+      ],
+      "condition": "权威可答件在第3位，非最高分；出证须附此条件"
+    },
+    {
+      "id": "P24",
+      "arm": "hybrid_default",
+      "question": "测试问题与闸门说明书里，ROM 修订版对不上该怎么办？",
+      "frozen_tier": "gold_in_topk",
+      "status": "pass",
+      "v2_ok": true,
+      "correct_evidence": false,
+      "wrong_evidence": true,
+      "missed_answer": false,
+      "selected": [
+        {
+          "chunk_id": "7f149cf985cf",
+          "locator": "测试问题与闸门说明书.md#L925-L940",
+          "source_id": "local_project_manual",
+          "authority": "authoritative",
+          "excerpt": null,
+          "provenance": null
+        }
+      ],
+      "condition": null
+    }
+  ],
+  "probes": [
+    {
+      "id": "X03",
+      "question": "热血足球 龙卷拳谁能用？",
+      "frozen_tier": null,
+      "frozen_kind": "positive_control",
+      "arms": {
+        "base_default": {
+          "status": "pass",
+          "selected": [
+            {
+              "chunk_id": "f7f8e8316295",
+              "locator": "_工具脚本/taspipe/游戏包/热血足球联盟_必杀全清单.md#L70-L85",
+              "source_id": "local_soccer2_super_list",
+              "authority": "authoritative",
+              "excerpt": null,
+              "provenance": null
+            }
+          ],
+          "grade": null
+        },
+        "base_strict": {
+          "status": "inconclusive",
+          "selected": [],
+          "grade": null
+        },
+        "hybrid_default": {
+          "status": "pass",
+          "selected": [
+            {
+              "chunk_id": "1384afe69aff",
+              "locator": "_工具脚本/taspipe/游戏包/热血足球联盟_必杀全清单.md#L51-L66",
+              "source_id": "local_soccer2_super_list",
+              "authority": "authoritative",
+              "excerpt": null,
+              "provenance": null
+            }
+          ],
+          "grade": null
+        },
+        "hybrid_strict": {
+          "status": "inconclusive",
+          "selected": [],
+          "grade": null
+        }
+      }
+    },
+    {
+      "id": "X04",
+      "question": "热血足球 三倍加速怎么发动？",
+      "frozen_tier": null,
+      "frozen_kind": "ambiguous",
+      "arms": {
+        "base_default": {
+          "status": "pass",
+          "selected": [
+            {
+              "chunk_id": "84195609bde8",
+              "locator": "_工具脚本/taspipe/游戏包/热血足球联盟_必杀全清单.md#L36-L49",
+              "source_id": "local_soccer2_super_list",
+              "authority": "authoritative",
+              "excerpt": null,
+              "provenance": null
+            }
+          ],
+          "grade": null
+        },
+        "base_strict": {
+          "status": "inconclusive",
+          "selected": [],
+          "grade": null
+        },
+        "hybrid_default": {
+          "status": "pass",
+          "selected": [
+            {
+              "chunk_id": "0c728e701059",
+              "locator": "_工具脚本/taspipe/游戏包/热血足球联盟_必杀全清单.md#L251-L259",
+              "source_id": "local_soccer2_super_list",
+              "authority": "authoritative",
+              "excerpt": null,
+              "provenance": null
+            }
+          ],
+          "grade": null
+        },
+        "hybrid_strict": {
+          "status": "inconclusive",
+          "selected": [],
+          "grade": null
+        }
+      }
+    },
+    {
+      "id": "X21",
+      "question": "热血足球 元永在队里打什么位置？",
+      "frozen_tier": null,
+      "frozen_kind": "positive_control",
+      "arms": {
+        "base_default": {
+          "status": "pass",
+          "selected": [
+            {
+              "chunk_id": "1439bdc2bb1f",
+              "locator": "_工具脚本/taspipe/游戏包/来源库/取证/setsumei_热血足球说明书扫描_20261118.md#L376-L401",
+              "source_id": "setsumei_cloudfree",
+              "authority": "authoritative",
+              "excerpt": null,
+              "provenance": null
+            }
+          ],
+          "grade": null
+        },
+        "base_strict": {
+          "status": "pass",
+          "selected": [
+            {
+              "chunk_id": "1439bdc2bb1f",
+              "locator": "_工具脚本/taspipe/游戏包/来源库/取证/setsumei_热血足球说明书扫描_20261118.md#L376-L401",
+              "source_id": "setsumei_cloudfree",
+              "authority": "authoritative",
+              "excerpt": "げんえい\nポジション ： ＧＫ",
+              "provenance": {
+                "policy": "strict",
+                "eligible": true,
+                "reason": "eligible_fragment",
+                "relevant_segments": 3,
+                "eligible_segments": 3,
+                "reference_segments": 0,
+                "retracted_segments": 0,
+                "evidence_excerpt": "げんえい\nポジション ： ＧＫ"
+              }
+            }
+          ],
+          "grade": null
+        },
+        "hybrid_default": {
+          "status": "pass",
+          "selected": [
+            {
+              "chunk_id": "1384afe69aff",
+              "locator": "_工具脚本/taspipe/游戏包/热血足球联盟_必杀全清单.md#L51-L66",
+              "source_id": "local_soccer2_super_list",
+              "authority": "authoritative",
+              "excerpt": null,
+              "provenance": null
+            }
+          ],
+          "grade": null
+        },
+        "hybrid_strict": {
+          "status": "pass",
+          "selected": [
+            {
+              "chunk_id": "1384afe69aff",
+              "locator": "_工具脚本/taspipe/游戏包/热血足球联盟_必杀全清单.md#L51-L66",
+              "source_id": "local_soccer2_super_list",
+              "authority": "authoritative",
+              "excerpt": "11-14 游戏内实测名单（probe11_menu/roster_zoom.png，CN jf 版战术策略→改变位置屏，权威）**：",
+              "provenance": {
+                "policy": "strict",
+                "eligible": true,
+                "reason": "eligible_fragment",
+                "relevant_segments": 9,
+                "eligible_segments": 1,
+                "reference_segments": 7,
+                "retracted_segments": 1,
+                "evidence_excerpt": "11-14 游戏内实测名单（probe11_menu/roster_zoom.png，CN jf 版战术策略→改变位置屏，权威）**："
+              }
+            }
+          ],
+          "grade": null
+        }
+      }
+    },
+    {
+      "id": "X23",
+      "question": "热血足球 倒挂金钩怎么使出来？",
+      "frozen_tier": null,
+      "frozen_kind": "insufficient_source",
+      "arms": {
+        "base_default": {
+          "status": "pass",
+          "selected": [
+            {
+              "chunk_id": "42b773880ef0",
+              "locator": "_工具脚本/taspipe/游戏包/热血足球联盟_必杀全清单.md#L24-L33",
+              "source_id": "local_soccer2_super_list",
+              "authority": "authoritative",
+              "excerpt": null,
+              "provenance": null
+            }
+          ],
+          "grade": null
+        },
+        "base_strict": {
+          "status": "inconclusive",
+          "selected": [],
+          "grade": null
+        },
+        "hybrid_default": {
+          "status": "pass",
+          "selected": [
+            {
+              "chunk_id": "42b773880ef0",
+              "locator": "_工具脚本/taspipe/游戏包/热血足球联盟_必杀全清单.md#L24-L33",
+              "source_id": "local_soccer2_super_list",
+              "authority": "authoritative",
+              "excerpt": null,
+              "provenance": null
+            }
+          ],
+          "grade": null
+        },
+        "hybrid_strict": {
+          "status": "inconclusive",
+          "selected": [],
+          "grade": null
+        }
+      }
+    }
+  ],
+  "source_audit": {
+    "entry_authority": "authoritative",
+    "aliases": {
+      "S1": {
+        "path": "_工具脚本/taspipe/游戏包/来源库/取证/1ang_热血足球联盟图文攻略_20261118.md",
+        "source_id": "1ang_com",
+        "authority": "reference_only",
+        "revision": "nekketsu_soccer2_fc_jp",
+        "game_id": "nekketsu_soccer2",
+        "status": "verified_read"
+      },
+      "S2": {
+        "path": "_工具脚本/taspipe/游戏包/来源库/取证/sohu_热血队队员必杀集锦_20261118.md",
+        "source_id": "sohu_game",
+        "authority": "reference_only",
+        "revision": "nekketsu_soccer2_fc_unspecified",
+        "game_id": "nekketsu_soccer2",
+        "status": "verified_read"
+      },
+      "S3": {
+        "path": "_工具脚本/taspipe/游戏包/来源库/取证/sohu_必杀最强小辫子_20261118.md",
+        "source_id": "sohu_game",
+        "authority": "reference_only",
+        "revision": "nekketsu_soccer2_fc_unspecified",
+        "game_id": "nekketsu_soccer2",
+        "status": "verified_read"
+      },
+      "S4": {
+        "path": "_工具脚本/taspipe/游戏包/来源库/取证/tencentcloud_热血足球联盟杂谈_20261118.md",
+        "source_id": "tencent_cloud_dev",
+        "authority": "reference_only",
+        "revision": "nekketsu_soccer2_fc_unspecified",
+        "game_id": "nekketsu_soccer2",
+        "status": "verified_read"
+      },
+      "S7": {
+        "path": "_工具脚本/taspipe/游戏包/来源库/取证/csdn_wangsitan_热血足球Bug记录_20261118.md",
+        "source_id": "csdn_wangsitan_bug",
+        "authority": "reference_only",
+        "revision": "nekketsu_soccer2_fc_unspecified",
+        "game_id": "nekketsu_soccer2",
+        "status": "verified_read"
+      },
+      "S8": {
+        "path": "_工具脚本/taspipe/游戏包/来源库/取证/urawaza_FC热血足球_20261118.md",
+        "source_id": "game_urawaza",
+        "authority": "reference_only",
+        "revision": "nekketsu_soccer2_fc_jp",
+        "game_id": "nekketsu_soccer2",
+        "status": "verified_read"
+      },
+      "S9": {
+        "path": "_工具脚本/taspipe/游戏包/来源库/取证/sohu_一直输球隐藏大结局_20261118.md",
+        "source_id": "sohu_game",
+        "authority": "reference_only",
+        "revision": "nekketsu_soccer2_fc_unspecified",
+        "game_id": "nekketsu_soccer2",
+        "status": "verified_read"
+      },
+      "S10": {
+        "path": "_工具脚本/taspipe/游戏包/来源库/取证/1ang_热血足球联盟图文攻略_20261118.md",
+        "source_id": "1ang_com",
+        "authority": "reference_only",
+        "revision": "nekketsu_soccer2_fc_jp",
+        "game_id": "nekketsu_soccer2",
+        "status": "verified_read"
+      }
+    },
+    "S1_has_23_total": false,
+    "S3_has_23_total": true,
+    "S1_has_hissatsu_ok": false,
+    "S8_has_hissatsu_ok": true,
+    "super_list_line257": "| 秘技 AAABAAABAAAAAAA | S1：听到发动音效；S8：得点表现「ひっさつOK」、全员全技能、半场失效 | probe18 联盟实测无燕返翻转 | **probe18 负结果作废**（6-1 三铁律之前测的，单帧按键+锁定窗吞输入，证据不可信） | 状态改\"文献分别记载，待按 6-1 重测\"；S8 签名判据=得点表「ひっさつOK」 |"
+  },
+  "historical_annotation_conflicts": {
+    "Q01": "冻结 strict_pass 与来源资格冲突：23 种仅见搜狐 S3，S1 无可核验总量。",
+    "Q02": "冻结 strict_pass 与来源资格冲突：金表 L70-L85 属 S1 二手操作表。",
+    "Q03": "冻结 strict_pass 与来源资格冲突：按键序列属 S1 二手操作表。",
+    "Q04": "冻结 strict_pass 与来源资格冲突：难度句属 S1 二手操作表。",
+    "Q05": "冻结 strict_pass 与来源资格冲突：换人规则属 S1 二手操作表。",
+    "Q18": "新发现历史标注冲突：S1 只写发动音效，S8 才写ひっさつＯＫ且为二手件。",
+    "X03": "冻结 positive_control 与当前严格出证冲突：默认选中 S1 汇总表，官方件未进窗口。",
+    "X04": "冻结 ambiguous 与 legacy pass 冲突：S1/S8 发动法相反且无本地实测裁决。",
+    "X23": "按用户要求保留 insufficient_source 冻结标签；legacy pass 是文件级权威洗白。"
+  },
+  "x23_frozen_label_preserved": true,
+  "old_default_unchanged": true,
+  "dense_isolation_ok": true
+}

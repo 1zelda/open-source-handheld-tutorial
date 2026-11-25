@@ -1,0 +1,23 @@
+{
+ "F:\\开源掌机教程\\_工具脚本\\taspipe\\游戏包\\知识库\\index.json": {
+  "mtime_ns": 1795079752995148800,
+  "sha256": "09096a016496405ade4f4e181076acaaceedf0af8927b1c1cd66a1f67fb1cfe3",
+  "bytes": 2916773
+ },
+ "F:\\开源掌机教程\\_工具脚本\\taspipe\\游戏包\\知识库\\corpus_map.json": {
+  "mtime_ns": 1795079742114290200,
+  "sha256": "9a5edc0a272046842c654843b811c53e5ed98316f99ca0ada91a66281810f147",
+  "bytes": 14821
+ },
+ "F:\\开源掌机教程\\_工具脚本\\taspipe\\游戏包\\来源库\\sources.json": {
+  "mtime_ns": 1795010875846915100,
+  "sha256": "3be6e9374f6d234f367897e046ad7b9d2848022b006b1017b7e7313e458df10a",
+  "bytes": 48257
+ },
+ "F:\\开源掌机教程\\_工具脚本\\taspipe\\游戏包\\来源库\\检索台账.json": null,
+ "F:\\开源掌机教程\\_工具脚本\\taspipe\\游戏包\\知识库\\embeddings_09096a016496.npz": {
+  "mtime_ns": 1795080360790959600,
+  "sha256": "598ddb02e9972adbef0dfde3fce310c29914954b8948dd6003e082cbdeadf54e",
+  "bytes": 2380461
+ }
+}

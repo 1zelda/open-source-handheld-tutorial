@@ -1,0 +1,286 @@
+来源：https://tasvideos.org/Forum/Topics/19912
+抓取：2026-11-23（最终 URL https://tasvideos.org/Forum/Topics/19912）
+用途：BizHawk 论坛：如何导入 FCEUX .fm2 输入档（拖拽 / File>Movie>Import）
+sha256=629017402e662f14
+
+FCEUX .fm2 conversion to BIZHAWK (v1.13.1) .tasproj - Topic 19912 - TASVideos 
+
+ TASVideos
+
+ Tool-assisted game movies
+
+ When human skills are just not enough
+
+ Home 
+
+ Games 
+ Games List 
+ Game Resources 
+ Platforms 
+
+ Movies 
+ Publications 
+ User Files 
+ Stars 
+ Recommended for Newcomers 
+ Movie Classes 
+
+ Submissions 
+ Submission Workbench 
+ Submit a Movie 
+
+ Tools 
+ BizHawk 
+ libTAS 
+ Emulator List 
+
+ Forum 
+
+ Chat 
+ Discord and IRC 
+ Other TAS Communities 
+
+ Resources 
+ Articles 
+ FAQ 
+ How to TAS 
+
+ About 
+ TASVideos 
+ Site Rules 
+ AI Policy 
+ Staff 
+ How to Help 
+ Site History 
+
+ Dark 
+ Light 
+ Auto 
+
+ Register 
+
+ Log in 
+
+ Forum 
+
+ General 
+
+ FCEUX .fm2 conversion to BIZHAWK (v1.13.1) .tasproj
+
+ Welcome, this is the discussion board of TASVideos.
+
+ If you have a question, please read the Site FAQ first to see if your question has already been answered.
+
+Be sure your posts conform to Site Rules 
+
+ We also have a Discord server and an IRC channel #tasvideos at irc.libera.chat... 
+
+ Showing items [1 - 5] of 5 
+
+ Posted: 2/11/2018 4:16 AM 
+ 
+(Edited: 2/11/2018 6:51 PM ) 
+
+ Post subject: FCEUX .fm2 conversion to BIZHAWK (v1.13.1) .tasproj
+
+ DrD2k9 
+
+ He/Him 
+
+ Editor, Expert&#xA0;player
+ (2575) 
+ 
+ Location: US
+
+ Joined: 8/21/2016 
+
+ Posts: 1195
+
+Location: US
+
+ For anyone interested. I can fairly quickly convert the input information from FCEUX .fm2 and .fm3 files into BizHawk 1.13.1 .tasproj files.
+
+This is primarily for inputs. With a bit of extra work, I could do the frame markers as well (I'm unsure but doubtful on branches at this point). 
+
+EDIT: In light of the information provided below, my offer isn't needed.
+
+ &#x1F44D; 
+ &#x1F44E; 
+ &#x1F604; 
+ &#x1F389; 
+ &#x1F615; 
+ &#x2764;&#xFE0F; 
+ &#x1F680; 
+ &#x1F440; 
+
+ Posted: 2/11/2018 5:10 AM 
+
+ Spikestuff 
+
+ They/Them 
+
+ Editor, Expert&#xA0;player
+ (3724) 
+ 
+ Location: The land down under.
+
+ Joined: 10/12/2011 
+
+ Posts: 6747
+
+Location: The land down under.
+
+ Useless topic is useless.
+
+If your file is in the fm3 format (TAS Editor)
+File > Export to FM2
+(You know the thing you should do before submitting, instead of submitting an evil fm3 file, which is possible.)
+
+Now within BizHawk.
+
+Run NES Game.
+Drag & Drop the FM2 into Hawk.
+Congrats, your movie is converted.
+
+---
+
+If those simple 3 steps didn't work here's the other way:
+
+Run NES Game.
+File > Movie > Import Movies...
+Find the FM2 file you wished to convert.
+
+ &#x1F44D; 
+ &#x1F44E; 
+ &#x1F604; 
+ &#x1F389; 
+ &#x1F615; 
+ &#x2764;&#xFE0F; 
+ &#x1F680; 
+ &#x1F440; 
+
+ WebNations/Sabih wrote: +fsvgm777 never censoring anything. Disables Comments and Ratings for the YouTube account. 
+
+ Strong for yourself and also others. 
+
+ Posted: 2/11/2018 9:36 AM 
+
+ feos 
+
+ Emulator&#xA0;Coder, Site&#xA0;Admin, Skilled&#xA0;player
+ (1198) 
+
+ Joined: 4/17/2010 
+
+ Posts: 12020
+
+ Except fm3 support is there for a reason. It's possible to save it without greenzone, but with branches and markers, which can be later used to present additional info to a new taser of that game.
+
+ &#x1F44D; 
+ &#x1F44E; 
+ &#x1F604; 
+ &#x1F389; 
+ &#x1F615; 
+ &#x2764;&#xFE0F; 
+ &#x1F680; 
+ &#x1F440; 
+
+ Warning: When making decisions, I try to collect as much data as possible before actually deciding. I try to abstract away and see the principles behind real world events and people's opinions. I try to generalize them and turn into something clear and reusable. I hate depending on unpredictable and having to make lottery guesses. Any problem can be solved by systems thinking and acting. 
+
+ Posted: 2/11/2018 6:50 PM 
+
+ DrD2k9 
+
+ He/Him 
+
+ Editor, Expert&#xA0;player
+ (2575) 
+ 
+ Location: US
+
+ Joined: 8/21/2016 
+
+ Posts: 1195
+
+Location: US
+
+ Spikestuff wrote: Useless topic is useless. 
+Why must you be so rude with your responses? 
+
+Had your response been identical except without this sentence, I would have simply said 'thank you for the information' and appreciated the learning opportunity. However...
+
+While, I can understand voicing disdain toward those who have consistently shown that they are unteachable, it's just plain rude to react in such ways toward those who are willing to learn (or, God forbid, actually want to ADD value to the site).
+
+Forgive me if I'm too noob or so ignorant in your eyes that I didn't realize the 'Import Movie' option was to import movies of OTHER emulators. I was under the impression is was to import them from folders other than the default.
+
+Furthermore, the fact that BizHawk can auto-convert the .fm2 input files INTO a tasproj file is not obvious. Especially from a drag/drop approach. There's nothing in the menus that suggests this. There's nothing in the documentation (that I could easily find)
+ here that suggests this. TAStudio doesn't give the option to open .fm2 files in the dropdown box.
+
+Even if someone knew that the 'import movie' option could open the movie files of other emulators, they may not realize you can then open TAStudio and get a new .tasproj file with the inputs already populated. Some things aren't as intuitive as you seem to think they should be.
+
+Some of us simply don't have the Godlike knowledge/understanding of all things TAS related that you seem to want everyone to have before doing something as simple as even saying 'hello' on the forums let alone attempting to offer anything of value.
+
+PEOPLE MAKE HONEST MISTAKES! 
+
+The rest of us aren't all idiots. Some of us WANT to learn. Some of us WANT to improve. Some of us WANT to add value to the site. But your responses rarely foster those desires. And they even more rarely encourage people to look to you as a mentor in the field.
+
+ As far as the 'uselessness' of this topic. 
+
+It was something I perceived as being a method of personally imparting some value to the site. 
+
+To believe that I'm the only one who has ever wanted to be able to do this and not known about the already available option, is naive.
+
+So while what I was offering may indeed be useless, the topic isn't. Especially if it gets someone else the information more readily than I was able to learn it myself.
+
+ &#x1F44D; 
+ &#x1F44E; 
+ &#x1F604; 
+ &#x1F389; 
+ &#x1F615; 
+ &#x2764;&#xFE0F; 
+ &#x1F680; 
+ &#x1F440; 
+
+ Posted: 2/11/2018 6:52 PM 
+
+ DrD2k9 
+
+ He/Him 
+
+ Editor, Expert&#xA0;player
+ (2575) 
+ 
+ Location: US
+
+ Joined: 8/21/2016 
+
+ Posts: 1195
+
+Location: US
+
+ Spikestuff wrote: ...instead of submitting an evil fm3 file 
+What's so evil about submitting .fm3 files?
+
+ &#x1F44D; 
+ &#x1F44E; 
+ &#x1F604; 
+ &#x1F389; 
+ &#x1F615; 
+ &#x2764;&#xFE0F; 
+ &#x1F680; 
+ &#x1F440; 
+
+ Showing items [1 - 5] of 5 
+
+ Forum 
+
+ General 
+
+ FCEUX .fm2 conversion to BIZHAWK (v1.13.1) .tasproj
+
+ &copy; 2026 - TASVideos v2.6-6601994 
+ License 
+ Terms 
+ Privacy 
+ API 
+ List referrers

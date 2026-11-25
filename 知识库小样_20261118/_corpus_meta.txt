@@ -1,0 +1,21 @@
+('verified_read', 'authoritative', 'nekketsu_soccer2_fc_jp') _工具脚本/taspipe/游戏包/来源库/取证/setsumei_热血足球说明书扫描_20261118.md
+('verified_read', 'reference_only', 'nekketsu_soccer2_fc_jp') _工具脚本/taspipe/游戏包/来源库/取证/urawaza_FC热血足球_20261118.md
+('verified_read', 'reference_only', 'nekketsu_soccer2_fc_jp') _工具脚本/taspipe/游戏包/来源库/取证/1ang_热血足球联盟图文攻略_20261118.md
+('verified_read', 'reference_only', 'nekketsu_soccer2_fc_unspecified') _工具脚本/taspipe/游戏包/来源库/取证/csdn_wangsitan_热血足球Bug记录_20261118.md
+('verified_read', 'reference_only', 'nekketsu_soccer2_fc_unspecified') _工具脚本/taspipe/游戏包/来源库/取证/sohu_必杀最强小辫子_20261118.md
+('verified_read', 'reference_only', 'nekketsu_soccer2_fc_unspecified') _工具脚本/taspipe/游戏包/来源库/取证/sohu_热血队队员必杀集锦_20261118.md
+('verified_read', 'reference_only', 'nekketsu_soccer2_fc_unspecified') _工具脚本/taspipe/游戏包/来源库/取证/sohu_一直输球隐藏大结局_20261118.md
+('verified_read', 'reference_only', 'nekketsu_soccer2_fc_unspecified') _工具脚本/taspipe/游戏包/来源库/取证/tencentcloud_热血足球联盟杂谈_20261118.md
+('verified_read', 'reference_only', 'nekketsu_soccer2_fc_cn_hack') _工具脚本/taspipe/游戏包/来源库/取证/xiaoji001_热血足球hack汉化版_20261118.md
+('verified_read', 'not_applicable', 'nekketsu_soccer_mobile') _工具脚本/taspipe/游戏包/来源库/取证/9game_热血足球技能攻略_20261118.md
+('verified_read', 'cross_version', 'kof98um') _工具脚本/taspipe/游戏包/来源库/取证/gamersky_kof98um全角色出招表_20261118.md
+('verified_read', 'reference_only', 'arcade_hack_multi') _工具脚本/taspipe/游戏包/来源库/取证/quanjizhong_thread677_街机改版整合_20261118.md
+('verified_read', 'authoritative', 'kof98eck') F:/tas_rig/docs/素材生产规范.md
+('verified_read', 'authoritative', 'kof98eck') F:/工具链/fbneo/nightly/config/games/kof98eck.ini
+('verified_read', 'authoritative', 'project_docs') 测试问题与闸门说明书.md
+('verified_read', 'authoritative', 'project_docs') _工具脚本/taspipe/要素盘点路线模板.md
+('verified_read', 'authoritative', 'project_docs') _工具脚本/taspipe/目标与实施路线.md
+('verified_read', 'authoritative', 'nekketsu_soccer2_multi') _工具脚本/taspipe/游戏包/热血足球联盟_必杀全清单.md
+('verified_read', 'authoritative', 'nekketsu_soccer2_multi') _工具脚本/taspipe/游戏包/热血足球联盟_honest_gap_manifest.md
+stats {'N': 562, 'avgdl': 489.7135231316726, 'terms': 36329} built_at 2026-11-18 pipeline clean2|tok2|chunk2|max700|hard1200|rows25
+index sha256 b0f4cef21c0bdb7c92d1b27c108d1bd242a7085c78f36610cd34626e7dc26307

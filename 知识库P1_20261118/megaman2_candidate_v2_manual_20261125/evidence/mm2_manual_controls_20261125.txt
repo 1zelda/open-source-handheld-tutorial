@@ -1,0 +1,19 @@
+洛克人2 官方说明书：A键 B键 跳跃 射击 爬梯 START 暂停 无敌（美国NES手册第4至5页）
+
+来源：Capcom《MEGA MAN 2》美国 NES 官方说明书，任天堂官方数字复刻。
+核验：已读扫描页；中文为说明，英文为短引文；未收全本。
+
+左和右用于移动，跳跃或下落时仍可移动；上和下用于上下爬梯。
+> Pushing RIGHT and LEFT on the controller moves Mega Man right and left. This works even when he is jumping or falling.
+
+A键用于跳跃，按住越久跳得越高；在梯顶按上起跳会跌下梯子。
+> The A button is used for jumping. The longer you hold the button down, the higher Mega Man will jump.
+
+B键用于射击，跳跃或下落时也能射击。
+> The B button is used for shooting. ... Mega Man can shoot while he is jumping or falling.
+
+START用于切换武器、使用能量晶体、查看生命并暂停游戏。
+> The START button is used for changing weapons, using energy crystals, ... It is also a convenient way to pause the game.
+
+Mega Man受击后约有一到两秒无敌。
+> When Mega Man is damaged, he is invulnerable for a second or two.

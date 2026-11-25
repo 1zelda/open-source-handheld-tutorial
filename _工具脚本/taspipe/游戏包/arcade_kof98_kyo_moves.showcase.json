@@ -1,0 +1,247 @@
+{
+  "schema_version": 1,
+  "kind": "statejump_showcase",
+  "game_id": "kof98_arcade_kyo",
+  "game_title": "The King of Fighters '98 / 拳皇98：草薙京核心必杀与超必杀盘点 (Arcade/NeoGeo)",
+  "platform": "ARCADE_FBNEO",
+  "core": "FBNeo",
+  "system": "ARCADE",
+  "rom": "F:/tas_rig/roms/kof98.zip",
+  "bizhawk": "F:/开源掌机教程/02-模拟器库/BizHawk/BizHawk-2.8",
+  "base_state": "F:/tas_rig/states/base_kyo_close.fs",
+  "fps": 59.18,
+  "template": "arcade_tianma_cover",
+  "catalog": {
+    "status": "complete",
+    "expected_total": 4,
+    "sources": [
+      {
+        "source_id": "local_fbneo_setlist",
+        "url": null,
+        "status": "verified_read",
+        "verified_date": "2026-11-18",
+        "element_ids": [],
+        "note": "身份层：本包 rom=F:/tas_rig/roms/kof98.zip（原版 kof98），与已实测的 kof98eck 不是同一 set；开搜前先定身份。"
+      },
+      {
+        "source_id": "local_fbneo_rig",
+        "url": null,
+        "status": "verified_read",
+        "verified_date": "2026-11-18",
+        "element_ids": [
+          "oniyaki_dp_a",
+          "yamibarai_qcf_a",
+          "orochinagi_super",
+          "mu_shiki_final"
+        ],
+        "note": "rig.py 实测=指令真值兜底权威。⚠️ 已实测卡是 kof98eck（Easy Combo Edition, Hack，sha1 c5947d19…），本包指原版，指令须按原版重核。"
+      },
+      {
+        "source_id": "local_project_manual",
+        "url": null,
+        "status": "verified_read",
+        "verified_date": "2026-11-18",
+        "element_ids": [
+          "oniyaki_dp_a",
+          "yamibarai_qcf_a",
+          "orochinagi_super",
+          "mu_shiki_final"
+        ],
+        "note": "§2 招式谱面排版符号编译闸门（谱面符号写错会浪费整轮采集）。"
+      },
+      {
+        "source_id": "gamersky_handbook",
+        "url": "https://www.gamersky.com/handbook/201412/499871.shtml",
+        "status": "verified_read",
+        "verified_date": "2026-11-18",
+        "element_ids": [
+          "oniyaki_dp_a",
+          "yamibarai_qcf_a",
+          "orochinagi_super",
+          "mu_shiki_final"
+        ],
+        "note": "98UM 全角色出招表 53 页=名录级参考，不是这张卡的指令权威（版本不同）。"
+      },
+      {
+        "source_id": "strategywiki",
+        "url": "https://strategywiki.org/wiki/The_King_of_Fighters_%2798/Kyo_Kusanagi",
+        "status": "unreachable",
+        "verified_date": "2026-11-18",
+        "element_ids": [
+          "oniyaki_dp_a",
+          "yamibarai_qcf_a",
+          "orochinagi_super",
+          "mu_shiki_final"
+        ],
+        "note": "本机直连 403，只有搜索快照，未全文核对。"
+      }
+    ],
+    "coverage_note": "街机 KOF98 草薙京 4 大代表性必杀/超必杀（百式·鬼烧、百八式·暗拂、里百八式·大蛇薙、最终决战奥义·无式）正反例双闸盘点"
+  },
+  "elements": [
+    {
+      "element_id": "oniyaki_dp_a",
+      "label": "100 Shiki: Oniyaki (→↓↘+A 百式·鬼烧)",
+      "kind": "move",
+      "base_state": null,
+      "trigger": {
+        "macro": "Right,Right,Down,Down,Down+Right,Down+Right,Down+Right+A,Down+Right+A,,,,,,,,,,,,,,,,,,,,,,,,",
+        "extra": 45,
+        "patches": []
+      },
+      "detection": {
+        "frame": 16,
+        "success_checks": [
+          {
+            "check_id": "kyo_oniyaki_flame_pillar",
+            "plugin_id": "frame_region_color_fraction",
+            "params": {
+              "region": [
+                0.25,
+                0.18,
+                0.72,
+                0.82
+              ],
+              "rgb": [
+                248,
+                136,
+                48
+              ],
+              "tol": 28,
+              "min_fraction": 0.015
+            },
+            "required": true
+          }
+        ]
+      },
+      "negative_control": {
+        "macro": null,
+        "patches": []
+      },
+      "note": "升龙指令触发螺旋火焰升空；中立反例同帧数站立不动，无橙红火焰柱。"
+    },
+    {
+      "element_id": "yamibarai_qcf_a",
+      "label": "108 Shiki: Yami Barai (↓↘→+A 百八式·暗拂)",
+      "kind": "move",
+      "base_state": null,
+      "trigger": {
+        "macro": "Down,Down,Down+Right,Down+Right,Right,Right,Right+A,Right+A,,,,,,,,,,,,,,,,,,,,,,,,",
+        "extra": 45,
+        "patches": []
+      },
+      "detection": {
+        "frame": 20,
+        "success_checks": [
+          {
+            "check_id": "kyo_yamibarai_ground_wave",
+            "plugin_id": "frame_region_color_fraction",
+            "params": {
+              "region": [
+                0.3,
+                0.55,
+                0.85,
+                0.9
+              ],
+              "rgb": [
+                248,
+                152,
+                56
+              ],
+              "tol": 28,
+              "min_fraction": 0.012
+            },
+            "required": true
+          }
+        ]
+      },
+      "negative_control": {
+        "macro": null,
+        "patches": []
+      },
+      "note": "贴地推进火焰波。"
+    },
+    {
+      "element_id": "orochinagi_super",
+      "label": "Ura 108 Shiki: Orochinagi (↓↙←↙↓↘→+C 里百八式·大蛇薙)",
+      "kind": "skill",
+      "base_state": null,
+      "trigger": {
+        "macro": "Down,Down,Down+Left,Down+Left,Left,Left,Down+Left,Down+Left,Down,Down,Down+Right,Down+Right,Right,Right,Right+C,Right+C,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,",
+        "extra": 65,
+        "patches": []
+      },
+      "detection": {
+        "frame": 38,
+        "success_checks": [
+          {
+            "check_id": "kyo_orochinagi_flash_wave",
+            "plugin_id": "frame_region_color_fraction",
+            "params": {
+              "region": [
+                0.2,
+                0.15,
+                0.88,
+                0.85
+              ],
+              "rgb": [
+                248,
+                168,
+                72
+              ],
+              "tol": 28,
+              "min_fraction": 0.035
+            },
+            "required": true
+          }
+        ]
+      },
+      "negative_control": {
+        "macro": null,
+        "patches": []
+      },
+      "note": "超必杀技暗转闪光与大范围前方赤炎席卷。"
+    },
+    {
+      "element_id": "mu_shiki_final",
+      "label": "Final Showdown: Mu Shiki (↓↘→↓↘→+A 三神技之壹·无式)",
+      "kind": "skill",
+      "base_state": null,
+      "trigger": {
+        "macro": "Down,Down,Down+Right,Down+Right,Right,Right,Down,Down,Down+Right,Down+Right,Right,Right,Right+A,Right+A,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,",
+        "extra": 80,
+        "patches": []
+      },
+      "detection": {
+        "frame": 42,
+        "success_checks": [
+          {
+            "check_id": "kyo_mushiki_pillar_burst",
+            "plugin_id": "frame_region_color_fraction",
+            "params": {
+              "region": [
+                0.25,
+                0.1,
+                0.85,
+                0.88
+              ],
+              "rgb": [
+                248,
+                180,
+                88
+              ],
+              "tol": 28,
+              "min_fraction": 0.04
+            },
+            "required": true
+          }
+        ]
+      },
+      "negative_control": {
+        "macro": null,
+        "patches": []
+      },
+      "note": "连续两次 236+A 触发无式火柱连击。"
+    }
+  ]
+}

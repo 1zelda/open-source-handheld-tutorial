@@ -1,0 +1,17 @@
+{
+  "manifest": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261124_source_inheritance\\final_manifest_source_inheritance_20261124.json",
+  "base_chunks": 773,
+  "base_sha256": "5c6fdb832cac502845d2e9dce269f25023dd435af42a5f59c772efbe9169596b",
+  "hybrid_chunks": 787,
+  "hybrid_sha256": "c3db477371d2eb5f00a63f5678f04d3b4caabe778a693ce57c83d65c39845ee3",
+  "gates": {
+    "project_selftest": 1462,
+    "kb_selftest": 302,
+    "cross_platform_selftest": 33,
+    "topic_selftest": 166
+  },
+  "blind": 26,
+  "heldout": 16,
+  "full_domain": 16,
+  "all_checks_ok": true
+}

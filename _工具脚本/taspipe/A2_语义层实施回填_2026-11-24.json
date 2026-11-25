@@ -1,0 +1,71 @@
+{
+  "schema_version": 1,
+  "recorded_at": "2026-11-24",
+  "item": "A2 语义层 mDeBERTa NLI 引入",
+  "status": "implemented_shadow_only_calibration_failed_production_off",
+  "model": {
+    "id": "MoritzLaurer/mDeBERTa-v3-base-mnli-xnli",
+    "revision": "8adb042d524ecd5c26d3e3ba0e3fbcf7e2d0864c",
+    "license": "MIT",
+    "runtime": "transformers + torch 2.8.0+cu128",
+    "device": "cuda:0",
+    "dtype": "float32",
+    "cpu_fallback": false,
+    "local_path": "F:/HuggingFaceCache/huggingface/hub/models--MoritzLaurer--mDeBERTa-v3-base-mnli-xnli/snapshots/8adb042d524ecd5c26d3e3ba0e3fbcf7e2d0864c"
+  },
+  "calibration": {
+    "samples": 24,
+    "status": "failed",
+    "thresholds": null,
+    "accuracy": 0.75,
+    "macro_f1": 0.7414021164021164,
+    "confusion_matrix": {
+      "entailment": {"entailment": 7, "neutral": 1, "contradiction": 0},
+      "neutral": {"entailment": 1, "neutral": 4, "contradiction": 3},
+      "contradiction": {"entailment": 0, "neutral": 1, "contradiction": 7}
+    },
+    "reason": "entailment 与 contradiction 两类正负概率区间均重叠；禁止发布支持/否决阈值。",
+    "failure_examples": [
+      "Q04_N 中性主张被判 entailment=0.8201，构成假支持风险。",
+      "Q01_N/Q02_N/Q05_N 中性主张被判 contradiction=0.9955/0.9566/0.9896，构成假否决风险。",
+      "Q05_C 矛盾主张被判 neutral=0.9965，说明模型也会漏掉真矛盾。"
+    ],
+    "scope_note": "24 例仅用于影子校准，不代表真实通过率，也不具统计显著性。"
+  },
+  "production_contract": {
+    "default_enabled": false,
+    "input": "candidate evidence premise + complete atomic claim hypothesis",
+    "hard_gates_first": true,
+    "structured_facts_delegated": false,
+    "can_create_pass": false,
+    "can_revoke_pass": false,
+    "allowed_decisions": ["supports_shadow", "veto_candidate", "uncertain", "not_applicable", "not_run"],
+    "calibration_failed_behavior": "not_run；不加载模型硬跑",
+    "logging": "只存标签、概率、margin、阈值、设备、revision 与字符数；不存 claim/premise 正文"
+  },
+  "wiring": {
+    "query": "kb.query(..., nli_shadow=False, nli_claim=None, nli_device=None)",
+    "query_auto": "参数透传全部命中域；多域不合并裁决",
+    "cli": ["--nli-shadow", "--nli-claim", "--nli-device"],
+    "query_log": "append_query_log 增加脱敏 nli_shadow 摘要"
+  },
+  "verification": {
+    "kb_selftest": "252/252",
+    "sweep_rows": 86,
+    "production_status_and_evidence_unchanged": 86,
+    "manual_atomic_claims": 8,
+    "raw_predictions": 5,
+    "raw_labels": {"entailment": 3, "contradiction": 1, "neutral": 1},
+    "raw_skip_reasons": {"no_atomic_claim": 78, "no_production_pass": 3},
+    "observed_risk": "Q04 真证据被低置信判 contradiction(0.5292)；X21 真主张被高置信判 neutral(0.9115)，证明不能据单模型分数改判。"
+  },
+  "artifacts": {
+    "module": "_工具脚本/taspipe/kb_nli.py",
+    "calibrator": "_工具脚本/taspipe/kb_nli_calibrate.py",
+    "cases": "_工具脚本/taspipe/nli_calibration_cases.json",
+    "calibration_report": "_工具脚本/taspipe/nli_calibration.json",
+    "sweep_script": "知识库P1_20261118/kb_nli_sweep.py",
+    "sweep_report": "知识库P1_20261118/nli_shadow_sweep.json"
+  },
+  "next_action": "保留生产关闭。若仍要推进，先扩充并人工复核跨语言校准集，证明正负概率可分离且中性误判可控，再另批阈值与影子启用；不得用当前 24 例直接开启自动否决。"
+}

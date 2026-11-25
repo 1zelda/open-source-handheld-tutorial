@@ -1,0 +1,52 @@
+{
+  "pages": 8,
+  "source_section_page": 1,
+  "snapshot_pages": [
+    1,
+    7,
+    8
+  ],
+  "check_count": 26,
+  "checks": {
+    "pages_positive": true,
+    "source_section_present": true,
+    "four_arm_section_present": true,
+    "dense_section_present": true,
+    "final_fingerprint_section_present": true,
+    "base_sha_present": true,
+    "hybrid_sha_present": true,
+    "code_sha_present": true,
+    "gates_sha_present": true,
+    "sources_code_sha_present": true,
+    "sources_gates_sha_present": true,
+    "project_gate_present": true,
+    "kb_gate_present": true,
+    "cross_gate_present": true,
+    "sources_gate_present": true,
+    "topic_gate_present": true,
+    "strict_grade_present": true,
+    "x23_conflict_present": true,
+    "q18_separated": true,
+    "sources_audit_disclosed": true,
+    "manifest_matches_index": true,
+    "manifest_matches_hybrid": true,
+    "no_replacement_char": true,
+    "no_blank_pages": true,
+    "no_outside_blocks": true,
+    "no_dom_overflow": true
+  },
+  "dom_overflow": [],
+  "outside_blocks": [],
+  "page_text_lengths": [
+    1510,
+    1541,
+    1420,
+    1153,
+    1296,
+    1716,
+    1625,
+    404
+  ],
+  "pdf_bytes": 630950,
+  "pdf_sha256": "7ebb18b529b21f930aca6a11df1580c01dcd6a0396beff6c6466792fae9d4bea"
+}

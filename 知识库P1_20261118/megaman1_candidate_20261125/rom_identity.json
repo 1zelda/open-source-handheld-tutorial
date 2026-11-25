@@ -1,0 +1,23 @@
+{
+  "status": "metadata_only_not_indexed",
+  "candidate_revision": "megaman1_nes_us",
+  "rom_identity": {
+    "path": "04-游戏资源库/TAS输入录像库/roms_verify/NES/megamanhd.nes",
+    "sha1": "2F88381557339A14C20428455F6991C1EB902C99",
+    "bytes": 131088,
+    "identity_basis": "生产 catalog + NesCartDB NTSC 判定；文件名 hd 不是版本身份"
+  },
+  "excluded_candidates": [
+    {
+      "path": "F:/BaiduNetdiskDownload/rom/nes/洛克人1.nes",
+      "sha1": "0fe255649359ece8cb64b6f24acaf09f17af746c",
+      "reason": "PAL-B身份与NTSC美版不同，未验证跨版等价"
+    },
+    {
+      "path": "mega_man_usa.nes",
+      "sha1": "d8b8c5e2ee76f2ec1820123bb9f8c70f5e603923",
+      "reason": "身份未核"
+    }
+  ],
+  "source_draft": "知识库P1_20261118/megaman1_questions_draft_20261124.json"
+}

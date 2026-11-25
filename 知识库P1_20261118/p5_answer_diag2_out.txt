@@ -1,0 +1,86 @@
+=== 嫌疑块（疑假阳性：放行但不答问句）===
+== X01 热血足球 1P 得分的内存地址是多少？
+  X01 L194-210 lang=zh ans=True intent=value_lookup
+    focus_ok=True pattern_ok=True intent_ok=True url_list=False anchor_ok=True
+    focus=['内存', '分的', '地址', '址是', '存地', '得分', '是多', '的内']
+    focus_hit=['地址'] anchor_hit=['地址']
+    focus_pattern=None
+
+== X06 热血足球 应援曲一共有几首？
+  X06 L262-264 lang=zh ans=True intent=count
+    focus_ok=False pattern_ok=True intent_ok=True url_list=False anchor_ok=False
+    focus=['共有', '几首', '应援', '援曲', '曲一', '有几']
+    focus_hit=[] anchor_hit=[]
+    focus_pattern=None
+
+== X07 热血足球 海月是什么射门？
+  X07 L229-231 lang=zh ans=True intent=topic
+    focus_ok=True pattern_ok=True intent_ok=True url_list=False anchor_ok=True
+    focus=['么射', '射门', '是什', '月是', '海月']
+    focus_hit=['海月'] anchor_hit=['海月']
+    focus_pattern=None
+
+== X24 热血足球 怎么存档进度？
+  X24 L101-119 lang=zh ans=True intent=howto
+    focus_ok=True pattern_ok=True intent_ok=True url_list=False anchor_ok=True
+    focus=['么存', '存档', '怎么存档进度', '档进', '进度']
+    focus_hit=['存档'] anchor_hit=['存档']
+    focus_pattern=None
+
+== X25 热血足球 球员受伤了怎么治疗？
+  X25 L137-158 lang=zh ans=True intent=howto
+    focus_ok=True pattern_ok=True intent_ok=True url_list=False anchor_ok=True
+    focus=['么治', '了怎', '伤了', '受伤', '员受', '治疗', '球员']
+    focus_hit=['球员'] anchor_hit=['球员']
+    focus_pattern=None
+
+== X26 热血足球 雨天场地对射门有什么影响？
+  X26 L137-158 lang=zh ans=True intent=topic
+    focus_ok=True pattern_ok=True intent_ok=True url_list=False anchor_ok=True
+    focus=['么影', '地对', '场地', '天场', '对射', '射门', '影响', '有什', '门有', '雨天']
+    focus_hit=['射门'] anchor_hit=['射门']
+    focus_pattern=None
+
+== X28 拳皇98 ECK 金手指怎么用？
+  X28 L18-31 lang=zh ans=True intent=howto
+    focus_ok=True pattern_ok=True intent_ok=True url_list=False anchor_ok=True
+    focus=['98', 'eck', '么用', '手指', '指怎', '金手', '金手指怎么用']
+    focus_hit=['eck'] anchor_hit=['eck']
+    focus_pattern=None
+
+== X30 热血足球 合体技有哪些发动方法？
+  X30 L3-7 lang=zh ans=True intent=topic
+    focus_ok=True pattern_ok=True intent_ok=True url_list=False anchor_ok=True
+    focus=['些发', '体技', '动方', '发动', '合体', '技有', '方法', '有哪']
+    focus_hit=['体技', '发动', '合体'] anchor_hit=['体技', '发动', '合体']
+    focus_pattern=None
+
+=== 真答案块对照（必须仍可答）===
+== X01真 热血足球 1P 得分的内存地址是多少？
+  X01真 L216-225 lang=zh ans=False intent=value_lookup
+    focus_ok=True pattern_ok=True intent_ok=True url_list=True anchor_ok=True
+    focus=['内存', '分的', '地址', '址是', '存地', '得分', '是多', '的内']
+    focus_hit=['内存', '得分'] anchor_hit=['内存', '得分']
+    focus_pattern=None
+
+== X06真 热血足球 应援曲一共有几首？
+  X06真 L216-225 lang=zh ans=False intent=count
+    focus_ok=True pattern_ok=True intent_ok=True url_list=True anchor_ok=True
+    focus=['共有', '几首', '应援', '援曲', '曲一', '有几']
+    focus_hit=['应援', '援曲'] anchor_hit=['应援', '援曲']
+    focus_pattern=None
+
+== X07真 热血足球 海月是什么射门？
+  X07真 L36-49 lang=zh ans=True intent=topic
+    focus_ok=True pattern_ok=True intent_ok=True url_list=False anchor_ok=True
+    focus=['么射', '射门', '是什', '月是', '海月']
+    focus_hit=['射门'] anchor_hit=['射门']
+    focus_pattern=None
+
+== X24真 热血足球 怎么存档进度？
+  X24真 L234-239 lang=zh ans=False intent=howto
+    focus_ok=False pattern_ok=True intent_ok=False url_list=False anchor_ok=False
+    focus=['么存', '存档', '怎么存档进度', '档进', '进度']
+    focus_hit=[] anchor_hit=[]
+    focus_pattern=None
+

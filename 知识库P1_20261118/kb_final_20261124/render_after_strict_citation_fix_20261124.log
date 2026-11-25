@@ -1,0 +1,584 @@
+{
+  "pages": 17,
+  "section15_page": 15,
+  "snapshot_pages": [
+    1,
+    15,
+    16,
+    17
+  ],
+  "check_count": 23,
+  "manifest": {
+    "schema": "kb_final_manifest_after_strict_citation_fix_v1",
+    "generated_at": "2026-11-24T13:46:55Z",
+    "scope": "BM25 base only; hybrid/dense excluded; strict fragments shadow-only; X23 frozen annotation conflict retained; zero external generative model or paid API",
+    "production_unchanged": {
+      "top_window": 3,
+      "fragment_policy": null,
+      "fact_selector": null,
+      "megaman_route_enabled": false,
+      "megaman_entries_indexed": 0,
+      "commercial_rom_or_bios_ingested": false
+    },
+    "index": {
+      "path": "F:\\\u5f00\u6e90\u638c\u673a\u6559\u7a0b\\_\u5de5\u5177\u811a\u672c\\taspipe\\\u6e38\u620f\u5305\\\u77e5\u8bc6\u5e93\\index.json",
+      "bytes": 3532204,
+      "sha256": "01ba5d9cd9e0e5c18d47531d81bdee09d3fa027da021c67173e9465222de9d47",
+      "chunks": 770,
+      "built_at": "2026-11-24",
+      "token_version": null,
+      "pipeline": "clean2|tok4|chunk4|max700|hard1200|rows25|ja300"
+    },
+    "news_snapshot": {
+      "path": "F:\\\u5f00\u6e90\u638c\u673a\u6559\u7a0b\\\u9009\u9898\u51b3\u7b56\u5c42\\kb\u5feb\u7167\\index.json",
+      "bytes": 3532204,
+      "sha256": "01ba5d9cd9e0e5c18d47531d81bdee09d3fa027da021c67173e9465222de9d47",
+      "chunks": 770,
+      "synced": true
+    },
+    "hybrid_excluded": {
+      "path": "F:\\\u5f00\u6e90\u638c\u673a\u6559\u7a0b\\_\u5de5\u5177\u811a\u672c\\taspipe\\\u6e38\u620f\u5305\\\u77e5\u8bc6\u5e93\\index_hybrid.json",
+      "bytes": 3504932,
+      "sha256": "7a9162a33ead77de19308e64ee9685f4f23d1e5a5acadc8a841582b255f58ca3",
+      "chunks": 767,
+      "reason": "stale dense arm; not used for final claims"
+    },
+    "corpus_map": {
+      "path": "F:\\\u5f00\u6e90\u638c\u673a\u6559\u7a0b\\_\u5de5\u5177\u811a\u672c\\taspipe\\\u6e38\u620f\u5305\\\u77e5\u8bc6\u5e93\\corpus_map.json",
+      "bytes": 22537,
+      "sha256": "0a1590e5fada5e4d7afd26dd9928b873e45de1bebb9c94f74e3bfb97b4a0c49b"
+    },
+    "sources": {
+      "path": "F:\\\u5f00\u6e90\u638c\u673a\u6559\u7a0b\\_\u5de5\u5177\u811a\u672c\\taspipe\\\u6e38\u620f\u5305\\\u6765\u6e90\u5e93\\sources.json",
+      "bytes": 57733,
+      "sha256": "177d14bc9a7a95cade7790c06b6c061834b16167454e28dd30679682a3117667"
+    },
+    "esports_db": {
+      "path": "F:\\\u5f00\u6e90\u638c\u673a\u6559\u7a0b\\_\u5de5\u5177\u811a\u672c\\taspipe\\\u6e38\u620f\u5305\\\u7535\u7ade\u4e8b\u5b9e\u5e93\\facts_v1.db",
+      "bytes": 2056192,
+      "sha256": "32f029f41629cb3774e701a705d521aa49550c76deabbc0affc760bec264d5c1",
+      "schema": "v3"
+    },
+    "code": {
+      "kb": "6ee930803ab891535351c0a77c97b4bb8f6950364e9c1a9af66d5101f77ca4ad",
+      "kb_answer": "da05727ede62ffb3",
+      "kb_route": "a22fe95be89c1c57",
+      "kb_selector": "5843b007d66e88e2d6ac2d6d7fd3a62249d80308d6f153879739227af358be71",
+      "kb_esports": "581dc5a328e4abab77c563b419faa4d2f65c2301379cce791a1b5c0aeabbc9db",
+      "grader": "461aad1af957eaccc8124efafb375e44812255af34e91faaddbd7362b6ef57a8",
+      "producer": "7c044bdfe0aaa193eaf7f6f814e2a4d56fb9742f383ed61854ac1a0c0a4dc839",
+      "kb_dense": "76ae1934b59d798b",
+      "kb_provenance": "12babf001ddb13543a987f962139eb79688bc5e89f4128b71a0682e720ddbc83",
+      "eval_common": "461aad1af957eacc",
+      "kb_blind_eval": "d7f4debf10c8c3aefaa4d3fcd0f4de58458a77d44b6fa698220c866709b758ad",
+      "sources": "21d26ebf3265a422fe7eea949e18babb3f4aa51664bb40e5f55f1f47ae8c6d43"
+    },
+    "delivery_code": {
+      "kb_provenance": {
+        "path": "F:\\\u5f00\u6e90\u638c\u673a\u6559\u7a0b\\_\u5de5\u5177\u811a\u672c\\taspipe\\kb_provenance.py",
+        "bytes": 7315,
+        "sha256": "12babf001ddb13543a987f962139eb79688bc5e89f4128b71a0682e720ddbc83"
+      },
+      "kb_selftest_gates": {
+        "path": "F:\\\u5f00\u6e90\u638c\u673a\u6559\u7a0b\\_\u5de5\u5177\u811a\u672c\\taspipe\\kb_selftest_gates.py",
+        "bytes": 168605,
+        "sha256": "691c0354f3f33fa2722dfc349e501ae11150f8591dbaeb6410644c86c0366f16"
+      }
+    },
+    "evaluations": {
+      "blind": {
+        "passed": 26,
+        "total": 26,
+        "errors": 0,
+        "wrong_evidence_ids": [],
+        "isolation_ok": true,
+        "rerun_after_strict_fix": true,
+        "artifact": {
+          "path": "F:\\\u5f00\u6e90\u638c\u673a\u6559\u7a0b\\\u77e5\u8bc6\u5e93P1_20261118\\kb_final_20261124\\blind_eval_after_strict_citation_fix_20261124.json",
+          "bytes": 536208,
+          "sha256": "1a29f4f6c7e6d3d7bbd58c76986b5f39af7dbe21fe867c007d9135c037715932"
+        }
+      },
+      "heldout_blind": {
+        "passed": 16,
+        "total": 16,
+        "by_tier": {
+          "strict_pass": {
+            "total": 12,
+            "ok": 12
+          },
+          "refuse": {
+            "total": 3,
+            "ok": 3
+          },
+          "version_guard": {
+            "total": 1,
+            "ok": 1
+          }
+        },
+        "errors": 0,
+        "wrong_evidence_ids": [],
+        "isolation_ok": true,
+        "rerun_after_strict_fix": false,
+        "reuse_basis": "production default fragment_policy=None unchanged",
+        "artifact": {
+          "path": "F:\\\u5f00\u6e90\u638c\u673a\u6559\u7a0b\\\u77e5\u8bc6\u5e93P1_20261118\\kb_final_20261124\\heldout_eval_post_provenance_20261124.json",
+          "bytes": 125219,
+          "sha256": "bdea2c55525f292045045adba4a3d23537f60d9448b01319510f0329b5ea3316"
+        }
+      },
+      "selector": {
+        "base_passed": 26,
+        "total": 26,
+        "modes": {
+          "scoped": {
+            "passed": 26,
+            "wrong_evidence": [],
+            "intercepted": [],
+            "newly_passed": []
+          },
+          "scoped_beyond": {
+            "passed": 26,
+            "wrong_evidence": [],
+            "intercepted": [],
+            "newly_passed": [
+              "X11"
+            ]
+          },
+          "replace": {
+            "passed": 23,
+            "wrong_evidence": [],
+            "intercepted": [
+              "X03",
+              "X04",
+              "X05",
+              "X17",
+              "X19",
+              "X20",
+              "X21",
+              "X22",
+              "X23",
+              "X30"
+            ],
+            "newly_passed": []
+          },
+          "strict_fragments": {
+            "passed": 25,
+            "wrong_evidence": [],
+            "intercepted": [
+              "X05",
+              "X17",
+              "X19",
+              "X20",
+              "X22",
+              "X30"
+            ],
+            "newly_passed": []
+          }
+        },
+        "strict_shadow_only": true,
+        "artifact": {
+          "path": "F:\\\u5f00\u6e90\u638c\u673a\u6559\u7a0b\\\u77e5\u8bc6\u5e93P1_20261118\\kb_final_20261124\\selector_sweep_after_strict_citation_fix_20261124.json",
+          "bytes": 284221,
+          "sha256": "80da0a3bdda2b91607cbfbc156634aa1d05874ba008ec15dbf9828cd3e892903"
+        }
+      },
+      "strict_status_comparison": {
+        "base_status_pass": 13,
+        "strict_status_pass": 12,
+        "intercepted_ids": [
+          "Q01"
+        ],
+        "newly_passed_ids": [],
+        "artifact": {
+          "path": "F:\\\u5f00\u6e90\u638c\u673a\u6559\u7a0b\\\u77e5\u8bc6\u5e93P1_20261118\\kb_final_20261124\\regression_after_strict_citation_fix_20261124.json",
+          "bytes": 7749,
+          "sha256": "2d6636aaf8a9cc791979ba1f51b45742742f9c1f726fd759a1a66435b19ecc2b"
+        }
+      },
+      "strict_probe_change_audit": {
+        "old_strict_v2_ok": 22,
+        "current_strict_v2_ok": 25,
+        "restored_vs_old_strict": [
+          "X03",
+          "X04",
+          "X23"
+        ],
+        "newly_passed_vs_current_base": [],
+        "x23_disposition": {
+          "classification": "frozen_annotation_conflict",
+          "decision": "retain_frozen_label_and_keep_strict_shadow_only",
+          "reason": "\u51bb\u7ed3\u8bf4\u660e\u628a S1 \u76f4\u63a5\u89c6\u4e3a\u4e8c\u624b reference_only\uff1b\u4fee\u6b63\u540e\u7684\u89c4\u5219\u53ea\u628a\u663e\u5f0f\u8f6c\u8ff0\u3001\u53c2\u8003\u6bb5\u3001\u5f85\u6838\u6bb5\u4e0e\u64a4\u56de\u6bb5\u964d\u7ea7\uff0c\u88f8\u6765\u6e90\u7f16\u53f7\u672c\u8eab\u4e0d\u6784\u6210\u4e8c\u624b\u8bc1\u636e\u3002X23 \u4e0e Q02-Q05 \u540c\u5c5e\u8be5\u89c4\u5219\u53d8\u5316\uff0c\u4e0d\u80fd\u5355\u72ec\u6539\u6807\u7b7e\u51d1\u6ee1\u5206\u3002",
+          "production_impact": "none; fragment_policy=None remains the production default",
+          "follow_up": "\u5982\u9700\u91cd\u5ba1 S1 \u6587\u4ef6\u7ea7\u6743\u5a01\uff0c\u5e94\u7edf\u4e00\u5ba1\u8ba1 corpus_map \u4e0e\u6765\u6e90\u8d44\u683c\uff0c\u4e0d\u5f97\u53ea\u9488\u5bf9 X23 \u52a0\u7279\u4f8b\u3002"
+        },
+        "frozen_labels_modified": false,
+        "artifact": {
+          "path": "F:\\\u5f00\u6e90\u638c\u673a\u6559\u7a0b\\\u77e5\u8bc6\u5e93P1_20261118\\kb_final_20261124\\strict_probe_change_audit_after_citation_fix_20261124.json",
+          "bytes": 7313,
+          "sha256": "cdfe527f9feb622d8497b43f32af6f082bbb1a45759b7b15aa6e4d2e9b40390e"
+        }
+      },
+      "full_domain": {
+        "passed": 16,
+        "total": 16,
+        "by_category": {
+          "esports_static": {
+            "ok": 4,
+            "total": 4
+          },
+          "time_trap": {
+            "ok": 4,
+            "total": 4
+          },
+          "esports_dynamic": {
+            "ok": 2,
+            "total": 2
+          },
+          "esports_other": {
+            "ok": 2,
+            "total": 2
+          },
+          "modern_games": {
+            "ok": 1,
+            "total": 1
+          },
+          "cross_domain": {
+            "ok": 1,
+            "total": 1
+          },
+          "retro_regression": {
+            "ok": 2,
+            "total": 2
+          }
+        },
+        "rerun_after_strict_fix": false,
+        "reuse_basis": "production default fragment_policy=None unchanged",
+        "artifact": {
+          "path": "F:\\\u5f00\u6e90\u638c\u673a\u6559\u7a0b\\\u77e5\u8bc6\u5e93P1_20261118\\kb_final_20261124\\full_domain_eval_post_provenance_20261124.json",
+          "bytes": 12977,
+          "sha256": "001311219f96dd34f34a6bfbbd44587e2a40b468ff4cc28758d22264e56f8ff7"
+        }
+      }
+    },
+    "gates": {
+      "project_selftest": {
+        "passed": 1447,
+        "total": 1447,
+        "ok": true,
+        "log": {
+          "path": "F:\\\u5f00\u6e90\u638c\u673a\u6559\u7a0b\\\u77e5\u8bc6\u5e93P1_20261118\\kb_final_20261124\\selftest_after_strict_citation_fix_20261124.log",
+          "bytes": 151004,
+          "sha256": "75ba7ee76379b69c8c162659c3f729675c409f8da3bbfe6079c3614af210d76e"
+        }
+      },
+      "kb_selftest": {
+        "passed": 292,
+        "total": 292,
+        "ok": true,
+        "log": {
+          "path": "F:\\\u5f00\u6e90\u638c\u673a\u6559\u7a0b\\\u77e5\u8bc6\u5e93P1_20261118\\kb_final_20261124\\kb_selftest_after_strict_citation_fix_20261124.log",
+          "bytes": 68729,
+          "sha256": "954063a91913ec57f7da3138a10b5e982a594893690a133ec07061fbbe501409"
+        }
+      },
+      "cross_platform_selftest": {
+        "passed": 33,
+        "total": 33,
+        "ok": true,
+        "log": {
+          "path": "F:\\\u5f00\u6e90\u638c\u673a\u6559\u7a0b\\\u77e5\u8bc6\u5e93P1_20261118\\kb_final_20261124\\cross_platform_after_strict_citation_fix_20261124.log",
+          "bytes": 2685,
+          "sha256": "df44e52548c3d65bdd7bb22274f9e7a8cf50556a2270c8c4cc95bb9acf921ca6"
+        }
+      },
+      "topic_selftest": {
+        "passed": 166,
+        "total": 166,
+        "ok": true,
+        "log": {
+          "path": "F:\\\u5f00\u6e90\u638c\u673a\u6559\u7a0b\\\u77e5\u8bc6\u5e93P1_20261118\\kb_final_20261124\\topic_selftest_after_strict_citation_fix_20261124.log",
+          "bytes": 10576,
+          "sha256": "aed86117fa44632b158eac0767d0e6fbcc1d62535d26bab9d32f3e54b83636a9"
+        }
+      }
+    },
+    "audits": {
+      "kb": {
+        "status": "inconclusive",
+        "counts": {
+          "pass": 6,
+          "fail": 0,
+          "inconclusive": 3,
+          "entries": 35,
+          "revisions": 13,
+          "chunks": 770
+        },
+        "artifact": {
+          "path": "F:\\\u5f00\u6e90\u638c\u673a\u6559\u7a0b\\\u77e5\u8bc6\u5e93P1_20261118\\kb_final_20261124\\audit_post_provenance_20261124.json",
+          "bytes": 21834,
+          "sha256": "08eddbad0933fde5a4cc01c9a344e3ecb6cceb9dbb56b5a9a050eeda7701a776"
+        }
+      },
+      "sources": {
+        "status": "inconclusive",
+        "counts": {
+          "pass": 8,
+          "fail": 0,
+          "inconclusive": 1,
+          "sources": 90,
+          "packs": 23,
+          "elements_checked": 87,
+          "elements_supported": 87
+        },
+        "artifact": {
+          "path": "F:\\\u5f00\u6e90\u638c\u673a\u6559\u7a0b\\\u77e5\u8bc6\u5e93P1_20261118\\kb_final_20261124\\sources_audit_final.json",
+          "bytes": 6123,
+          "sha256": "060549866a06b4449dc2c719ec5a0fa362a09b48eb2bcba5b5c634a34ba5e17c"
+        }
+      }
+    },
+    "identity_audit": {
+      "retained_unverified": 6,
+      "promoted": 0,
+      "identity_status_counts": {
+        "aggregate_not_single_identity": 1,
+        "unresolved_local_set": 1,
+        "documented_patch_boundary": 1,
+        "unresolved_exact_rom": 1,
+        "intentionally_unspecified": 1,
+        "separate_mobile_title": 1
+      },
+      "exact_rom_hash_hits": {
+        "nekketsu_soccer2_fc_jp": [
+          "F:\\\u5f00\u6e90\u638c\u673a\u6559\u7a0b\\04-\u6e38\u620f\u8d44\u6e90\u5e93\\TAS\u8f93\u5165\u5f55\u50cf\u5e93\\roms_verify\\NES\\nekketsu_soccer_league_cn_jf.nes"
+        ],
+        "megaman1_nes_us": [
+          "F:\\\u5f00\u6e90\u638c\u673a\u6559\u7a0b\\04-\u6e38\u620f\u8d44\u6e90\u5e93\\TAS\u8f93\u5165\u5f55\u50cf\u5e93\\roms_verify\\NES\\megamanhd.nes"
+        ]
+      },
+      "artifact": {
+        "path": "F:\\\u5f00\u6e90\u638c\u673a\u6559\u7a0b\\\u77e5\u8bc6\u5e93P1_20261118\\kb_final_20261124\\version_identity_audit_20261124.json",
+        "bytes": 12106,
+        "sha256": "8dae55e831beb3a1d58a83fe67faef0752e0d173e530ec5a95e458238950bbfb"
+      }
+    },
+    "megaman1": {
+      "draft_status": "draft_not_frozen",
+      "questions": 12,
+      "candidate_revision": "megaman1_nes_us",
+      "rom_sha1": "2F88381557339A14C20428455F6991C1EB902C99",
+      "production_activated": false,
+      "draft": {
+        "path": "F:\\\u5f00\u6e90\u638c\u673a\u6559\u7a0b\\\u77e5\u8bc6\u5e93P1_20261118\\megaman1_questions_draft_20261124.json",
+        "bytes": 6090,
+        "sha256": "30f8d1d88485311c06f1786be92c18b0ab6fe2a3c6486a875c8c9b25ef70009a"
+      },
+      "readiness": {
+        "path": "F:\\\u5f00\u6e90\u638c\u673a\u6559\u7a0b\\\u77e5\u8bc6\u5e93P1_20261118\\megaman1_corpus_readiness_20261124.md",
+        "bytes": 5370,
+        "sha256": "4af3ef0cc30d2c6c5aa308a6ef6eb2a1055666cf71ff6ebb859185db84e408e8"
+      }
+    },
+    "coverage": {
+      "state_counts": {
+        "verified": 9,
+        "partial": 0,
+        "present_unverified": 6,
+        "registered_empty": 8,
+        "not_registered": 0,
+        "stale": 0,
+        "unknown": 0
+      },
+      "registered_domains": 11,
+      "query_log_summary": {
+        "total_rows": 26,
+        "status_counts": {
+          "pass": 13,
+          "inconclusive": 8,
+          "miss": 5
+        },
+        "selected_evidence_rows": 13,
+        "malformed_rows": 0,
+        "empty_questions": 0,
+        "missing_index_fingerprints": 0,
+        "missing_status": 0,
+        "pass_without_evidence": 0,
+        "nonpass_with_evidence": 0,
+        "fragment_policies": {
+          "unspecified": 26
+        },
+        "latest_ts": "2026-11-24T10:45:22Z",
+        "diagnostic_rows": 26,
+        "multi_domain_rows": 0,
+        "domain_evidence_rows": 1,
+        "route_modes": {
+          "explicit": 20,
+          "single": 6
+        },
+        "entry_points": {
+          "blind_eval": 26
+        },
+        "elapsed_ms_total": 3385.2970000000005,
+        "elapsed_samples": 26,
+        "elapsed_ms_max": 221.421,
+        "unique_questions": 26,
+        "evidence_selection_rate": 0.5,
+        "elapsed_ms_avg": 130.204
+      },
+      "esports": {
+        "schema": "v3",
+        "entities": 1066,
+        "evidence": 1066,
+        "snapshots": 3,
+        "dynamic_tables": {
+          "series": 0,
+          "membership": 0,
+          "transfer_event": 0,
+          "patch_deployment": 0
+        },
+        "foreign_key_violations": 0
+      },
+      "errors": [],
+      "artifact": {
+        "path": "F:\\\u5f00\u6e90\u638c\u673a\u6559\u7a0b\\\u77e5\u8bc6\u5e93P1_20261118\\kb_final_20261124\\kb_coverage_final.json",
+        "bytes": 53041,
+        "sha256": "44d0ea73f8ae8a927a723340783279ef22ec4f2bc608a93e5f8ab2626d9631e7"
+      }
+    },
+    "news_consumer_smoke": {
+      "ok": true,
+      "logged_queries": 7,
+      "golden_path_passes": [
+        "smoke-soccer-role",
+        "smoke-soccer-count",
+        "smoke-fighting",
+        "smoke-kof98"
+      ],
+      "statuses": {
+        "smoke-soccer-broad": "inconclusive",
+        "smoke-soccer-role": "pass",
+        "smoke-soccer-count": "pass",
+        "smoke-fighting": "pass",
+        "smoke-kof98": "pass",
+        "smoke-unrouted": "inconclusive",
+        "smoke-multi": "miss"
+      },
+      "real_query_log_unchanged": true,
+      "artifact": {
+        "path": "F:\\\u5f00\u6e90\u638c\u673a\u6559\u7a0b\\\u77e5\u8bc6\u5e93P1_20261118\\kb_final_20261124\\news_snapshot_crosscheck.json",
+        "bytes": 35191,
+        "sha256": "375fe074e249e9c46886a6b3f9270072f964a4201bdb8e9b53567fc892bbd5b9"
+      }
+    },
+    "state_isolation": {
+      "ok": true,
+      "blind_changed_paths": [],
+      "heldout_changed_paths": [],
+      "strict_comparison_changed_paths": [],
+      "strict_probe_audit_changed_paths": [],
+      "topic_real_state_checks": "T15a-T15h all PASS",
+      "esports_db_unchanged_vs_prior_full_domain": true
+    },
+    "operational_note": "\u9996\u4e2a\u5e76\u884c\u56de\u5f52\u6279\u56e0 F \u76d8\u4e34\u65f6\u5199\u5165\u9ad8\u5cf0 Errno 28 \u5931\u8d25\uff1b\u5931\u8d25\u4e34\u65f6\u8f93\u51fa\u5df2\u6e05\u7406\uff0c\u6700\u7ec8\u6570\u5b57\u53ea\u53d6\u4e32\u884c\u91cd\u8dd1\u3002",
+    "prior_delivery_unchanged": {
+      "ok": true,
+      "artifacts": {
+        "\u77e5\u8bc6\u5e93\u6539\u8fdb\u4f18\u5316\u6307\u5bfc_2026-11-24_\u5b9e\u65bd\u56de\u586b.md": {
+          "path": "F:\\\u5f00\u6e90\u638c\u673a\u6559\u7a0b\\\u77e5\u8bc6\u5e93\u6539\u8fdb\u4f18\u5316\u6307\u5bfc_2026-11-24_\u5b9e\u65bd\u56de\u586b.md",
+          "bytes": 25565,
+          "sha256": "f2c18269c68daa1bcd4c9d5b6c2d8c7ad16c1372e9d6eb2f04d3cd1a06468d94",
+          "expected_sha256": "f2c18269c68daa1bcd4c9d5b6c2d8c7ad16c1372e9d6eb2f04d3cd1a06468d94"
+        },
+        "\u77e5\u8bc6\u5e93\u6539\u8fdb\u4f18\u5316\u6307\u5bfc_2026-11-24_\u5b9e\u65bd\u56de\u586b.pdf": {
+          "path": "F:\\\u5f00\u6e90\u638c\u673a\u6559\u7a0b\\\u77e5\u8bc6\u5e93\u6539\u8fdb\u4f18\u5316\u6307\u5bfc_2026-11-24_\u5b9e\u65bd\u56de\u586b.pdf",
+          "bytes": 834027,
+          "sha256": "b3e6c2c427517ef5c77b2f991c8a8d994820fc56c764993e1268253d805e5a50",
+          "expected_sha256": "b3e6c2c427517ef5c77b2f991c8a8d994820fc56c764993e1268253d805e5a50"
+        },
+        "\u77e5\u8bc6\u5e93\u6539\u8fdb\u4f18\u5316\u6307\u5bfc_2026-11-24_\u6700\u7ec8\u52a0\u56fa\u56de\u586b.md": {
+          "path": "F:\\\u5f00\u6e90\u638c\u673a\u6559\u7a0b\\\u77e5\u8bc6\u5e93\u6539\u8fdb\u4f18\u5316\u6307\u5bfc_2026-11-24_\u6700\u7ec8\u52a0\u56fa\u56de\u586b.md",
+          "bytes": 31586,
+          "sha256": "c8b1b08e912e1d5cf760bde0a56cdb3544f371d70396ae0d166adcc7e9a5b098",
+          "expected_sha256": "c8b1b08e912e1d5cf760bde0a56cdb3544f371d70396ae0d166adcc7e9a5b098"
+        },
+        "\u77e5\u8bc6\u5e93\u6539\u8fdb\u4f18\u5316\u6307\u5bfc_2026-11-24_\u6700\u7ec8\u52a0\u56fa\u56de\u586b.pdf": {
+          "path": "F:\\\u5f00\u6e90\u638c\u673a\u6559\u7a0b\\\u77e5\u8bc6\u5e93\u6539\u8fdb\u4f18\u5316\u6307\u5bfc_2026-11-24_\u6700\u7ec8\u52a0\u56fa\u56de\u586b.pdf",
+          "bytes": 906531,
+          "sha256": "53b3ab92b9a5fd9806e4fabccbd0165369e8baa187fcb546fde2fe20464ce061",
+          "expected_sha256": "53b3ab92b9a5fd9806e4fabccbd0165369e8baa187fcb546fde2fe20464ce061"
+        },
+        "\u77e5\u8bc6\u5e93P1_20261118/kb_final_20261124/final_manifest.json": {
+          "path": "F:\\\u5f00\u6e90\u638c\u673a\u6559\u7a0b\\\u77e5\u8bc6\u5e93P1_20261118\\kb_final_20261124\\final_manifest.json",
+          "bytes": 11032,
+          "sha256": "2fd67d2dc5f771312b5f9eb95f7c497cf1fe89d74f29b1ab3114d3278405b630",
+          "expected_sha256": "2fd67d2dc5f771312b5f9eb95f7c497cf1fe89d74f29b1ab3114d3278405b630"
+        },
+        "\u77e5\u8bc6\u5e93P1_20261118/kb_final_20261124/final_manifest_post_provenance_20261124.json": {
+          "path": "F:\\\u5f00\u6e90\u638c\u673a\u6559\u7a0b\\\u77e5\u8bc6\u5e93P1_20261118\\kb_final_20261124\\final_manifest_post_provenance_20261124.json",
+          "bytes": 14673,
+          "sha256": "a4ce75fca15bf82c6e7f244327618544036fd364757f25c1040d431898383745",
+          "expected_sha256": "a4ce75fca15bf82c6e7f244327618544036fd364757f25c1040d431898383745"
+        }
+      }
+    },
+    "report_md": {
+      "path": "F:\\\u5f00\u6e90\u638c\u673a\u6559\u7a0b\\\u77e5\u8bc6\u5e93\u6539\u8fdb\u4f18\u5316\u6307\u5bfc_2026-11-24_strict\u7247\u6bb5\u4fee\u6b63\u56de\u586b.md",
+      "bytes": 37817,
+      "sha256": "66c1bdeb0f3cde492751cbfbea237c6ff3083eb4218927481b5a833139635657"
+    },
+    "artifact_inventory": "F:\\\u5f00\u6e90\u638c\u673a\u6559\u7a0b\\\u77e5\u8bc6\u5e93P1_20261118\\kb_final_20261124\\artifact_inventory_after_strict_citation_fix_20261124.md",
+    "delivery_dir": "F:\\\u5f00\u6e90\u638c\u673a\u6559\u7a0b\\\u77e5\u8bc6\u5e93P1_20261118\\kb_final_20261124",
+    "git": {
+      "commit_created": false,
+      "push_performed": false
+    }
+  },
+  "checks": {
+    "pages_positive": true,
+    "final_section_present": true,
+    "hardening_section_present": true,
+    "strict_fix_section_present": true,
+    "final_sha_present": true,
+    "provenance_sha_present": true,
+    "gates_sha_present": true,
+    "manifest_matches_index": true,
+    "manifest_matches_snapshot": true,
+    "selftest_present": true,
+    "kb_gates_present": true,
+    "cross_gates_present": true,
+    "topic_gates_present": true,
+    "strict_grade_present": true,
+    "x23_conflict_present": true,
+    "heldout_present": true,
+    "identity_zero_promoted": true,
+    "megaman_draft_present": true,
+    "news_snapshot_synced": true,
+    "no_replacement_char": true,
+    "no_blank_pages": true,
+    "no_outside_blocks": true,
+    "no_dom_overflow": true
+  },
+  "dom_overflow": [],
+  "outside_blocks": [],
+  "page_text_lengths": [
+    1066,
+    1018,
+    1100,
+    1100,
+    573,
+    735,
+    871,
+    997,
+    701,
+    1056,
+    1194,
+    1456,
+    1435,
+    1390,
+    1302,
+    1354,
+    640
+  ],
+  "pdf_bytes": 963423
+}

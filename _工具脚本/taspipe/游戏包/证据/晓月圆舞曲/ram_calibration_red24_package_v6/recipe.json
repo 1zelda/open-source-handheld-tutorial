@@ -1,0 +1,213 @@
+{
+  "schema_version": "ram_calibration/1.0",
+  "game_id": "castlevania_aria_cn",
+  "profile": {
+    "rom": "F:/BaiduNetdiskDownload/rom/gba/恶魔城晓月圆舞曲.gba",
+    "rom_sha1": "40aab076a528f52e93260bb98d91a40039e0da02",
+    "bizhawk": "F:/开源掌机教程/02-模拟器库/BizHawk/BizHawk-2.11.1",
+    "core": "mGBA",
+    "system": "GBA",
+    "domain": "EWRAM",
+    "isolated_slot": true,
+    "state_package": {
+      "game_id": "castlevania_aria_gba",
+      "profile_id": "aria_us_40aab076",
+      "revision": "r20261125T025337"
+    },
+    "window": {
+      "start": 78336,
+      "length": 512
+    }
+  },
+  "base_state": "clean_gameplay",
+  "macros": {
+    "red24_menu": ",,,,,,,,,,,,,,,,,Start,,,,,,,,,,,,,,,,,A,,,,,,,,,,,,,,,,,A,,,,,,,,,,,,,,,,,Down,,,,,,,,,,,,,,,,,Down,,,,,,,,,,,,,,,,,Down,,,,,,,,,,,,,,,,,Down,,,,,,,,,,,,,,,,,Down,,,,,,,,,,,,,,,,,Down,,,,,,,,,,,,,,,,,Down,,,,,,,,,,,,,,,,,Down,,,,,,,,,,,,,,,,,Down,,,,,,,,,,,,,,,,,Down,,,,,,,,,,,,,,,,,Down,,,,,,,,,,,,,,,,,Down,,,,,,,,,,,,,,,,,A,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,",
+    "close_menu": ",,,,,,,,,,,,,,,,,B,,,,,,,,,,,,,,,,,B,,,,,,,,,,,,,,,,,B,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,",
+    "reopen_red_menu": ",,,,,,,,,,,,,,,,,Start,,,,,,,,,,,,,,,,,A,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,",
+    "up_b_hold": "Up+B,,,,,,,,,,,,,,,,,,,,,,,,,,,,,"
+  },
+  "prepare": [
+    {
+      "id": "red24_menu",
+      "macro": "@red24_menu",
+      "expect": [
+        {
+          "addr": 78429,
+          "value": 24
+        }
+      ],
+      "screen": {
+        "reference": "$base",
+        "relation": "different"
+      },
+      "extra": 1
+    },
+    {
+      "id": "red24_game",
+      "macro": "@close_menu",
+      "expect": [
+        {
+          "addr": 78429,
+          "value": 24
+        },
+        {
+          "addr": 78446,
+          "width": 2,
+          "value": 320
+        },
+        {
+          "addr": 78448,
+          "width": 2,
+          "value": 80
+        }
+      ],
+      "screen": {
+        "reference": "$base",
+        "relation": "near",
+        "max_changed_fraction": 0.02
+      },
+      "extra": 1
+    },
+    {
+      "id": "red24_reopen",
+      "macro": "@reopen_red_menu",
+      "expect": [
+        {
+          "addr": 78429,
+          "value": 24
+        }
+      ],
+      "screen": {
+        "reference": "$base",
+        "relation": "different"
+      },
+      "extra": 1
+    }
+  ],
+  "cases": [
+    {
+      "id": "red24_vs_empty",
+      "kind": "scenario",
+      "base_state": "red24_game",
+      "arms": [
+        {
+          "name": "red24",
+          "steps": [
+            {
+              "macro": "-",
+              "extra": 0,
+              "expect": [
+                {
+                  "addr": 78429,
+                  "value": 24
+                },
+                {
+                  "addr": 78448,
+                  "width": 2,
+                  "value": 80
+                }
+              ],
+              "screen": {
+                "reference": "$base",
+                "relation": "equal"
+              }
+            },
+            {
+              "state": "$previous",
+              "macro": "@up_b_hold",
+              "capture_frames": 30,
+              "expect": [
+                {
+                  "addr": 78429,
+                  "value": 24
+                },
+                {
+                  "addr": 78448,
+                  "width": 2,
+                  "op": "<",
+                  "value": 80
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "empty",
+          "steps": [
+            {
+              "macro": "-",
+              "extra": 0,
+              "patches": [
+                {
+                  "addr": 78429,
+                  "value": 0
+                }
+              ],
+              "expect": [
+                {
+                  "addr": 78429,
+                  "value": 0
+                },
+                {
+                  "addr": 78448,
+                  "width": 2,
+                  "value": 80
+                }
+              ],
+              "screen": {
+                "reference": "$base",
+                "relation": "equal"
+              }
+            },
+            {
+              "state": "$previous",
+              "macro": "@up_b_hold",
+              "capture_frames": 30,
+              "expect": [
+                {
+                  "addr": 78429,
+                  "value": 0
+                },
+                {
+                  "addr": 78448,
+                  "width": 2,
+                  "value": 80
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "comparisons": [
+        {
+          "left": "red24",
+          "right": "empty",
+          "left_step": 1,
+          "right_step": 1,
+          "relation": "different",
+          "frames": [
+            12,
+            20,
+            "final"
+          ]
+        }
+      ],
+      "claims": [
+        {
+          "name": "red_soul_equipped_id",
+          "addr": 78429,
+          "width": 1,
+          "level": "gameplay",
+          "note": "真实菜单装备 ID=24、关闭回游戏、重开确认持久化后，同状态 Up+B 正反例；仅验收该 ID，不外推全部红魂，也不确认飞冰魂别名。"
+        },
+        {
+          "name": "current_mp",
+          "addr": 78448,
+          "width": 2,
+          "level": "consumption",
+          "note": "同一菜单持久化状态下，ID=24 的 Up+B 使 MP 低于 80，空槽保持 80；不把菜单 USE 25 当作实际消耗。"
+        }
+      ]
+    }
+  ]
+}

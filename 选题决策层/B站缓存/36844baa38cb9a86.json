@@ -1,0 +1,43 @@
+{
+ "keyword": "塞尔达传说",
+ "status": "ok",
+ "ts": "2026-11-19T05:39:05Z",
+ "ts_epoch": 1795066745.5130892,
+ "supply_num_results": 1000,
+ "n_videos": 20,
+ "relevant_count": 15,
+ "core_hit_rate": 0.75,
+ "full_hit_rate": 0.5,
+ "play_median": 20871.5,
+ "relevant_play_median": 18212,
+ "play_mean": 160205.9,
+ "play_max": 1467308,
+ "play_total": 2403088,
+ "engagement_median": 0.0275,
+ "recent_count": 12,
+ "recent_play_median": 15308.0,
+ "top3": [
+  {
+   "bvid": "BV18m4y1t7cf",
+   "title": "万字解析！《塞尔达传说》全系列究竟讲了个怎样的故事？",
+   "author": "在下棒球帽",
+   "play": 1467308,
+   "pubdate": "2023-05-21"
+  },
+  {
+   "bvid": "BV1YNWm6mE5p",
+   "title": "《塞尔达传说：时之笛》为什么是神作？",
+   "author": "贪玩歌姬小宁子",
+   "play": 352022,
+   "pubdate": "2026-11-11"
+  },
+  {
+   "bvid": "BV1zHxd6dE1f",
+   "title": "【塞尔达传说：时之笛 重制版】4K 最高画质 全收集 全任务 全剧情流程通关攻略 动作角色扮演游戏 - Zelda：Oc",
+   "author": "11的游戏世界",
+   "play": 322514,
+   "pubdate": "2026-11-04"
+  }
+ ],
+ "cache_hit": false
+}

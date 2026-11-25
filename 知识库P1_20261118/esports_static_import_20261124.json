@@ -1,0 +1,117 @@
+{
+  "schema_before": "v2",
+  "schema_after": "v3",
+  "backup": "F:\\开源掌机教程\\_工具脚本\\taspipe\\游戏包\\电竞事实库\\facts_v1.db.bak-1124-pre-v3",
+  "backup_sha256": "d09ae801b4085087a3fb41257236f1f4ddd1dfa12f7cf8b9295087478945a1a1",
+  "before_counts": {
+    "entity": 173,
+    "entity_alias": 346,
+    "external_id": 173,
+    "source_snapshot": 1,
+    "evidence_block": 173,
+    "fact_support": 173,
+    "series": 0,
+    "membership": 0,
+    "transfer_event": 0
+  },
+  "after_counts": {
+    "entity": 1066,
+    "entity_alias": 380,
+    "external_id": 1066,
+    "source_snapshot": 3,
+    "evidence_block": 1066,
+    "fact_support": 1066,
+    "series": 0,
+    "membership": 0,
+    "transfer_event": 0
+  },
+  "entity_types": {
+    "game_character": 173,
+    "game_item": 859,
+    "game_spell": 34
+  },
+  "foreign_key_violations": 0,
+  "missing_entity_bindings": 0,
+  "snapshot_hash_errors": [],
+  "pointer_roundtrip_errors": [],
+  "repeat_import": {
+    "item": {
+      "source_id": "E02",
+      "version": "16.23.1",
+      "lang": "zh_CN",
+      "skipped": [
+        "item/2008: 缺 name，不造空实体",
+        "item/226660: 缺 name，不造空实体",
+        "item/772139: 缺 name，不造空实体",
+        "item/772140: 缺 name，不造空实体"
+      ],
+      "snapshots_new": 0,
+      "entities_new": 0,
+      "evidence_new": 0,
+      "aliases_new": 0
+    },
+    "summoner": {
+      "source_id": "E02",
+      "version": "16.23.1",
+      "lang": "zh_CN",
+      "skipped": [],
+      "snapshots_new": 0,
+      "entities_new": 0,
+      "evidence_new": 0,
+      "aliases_new": 0
+    }
+  },
+  "samples": {
+    "summoner": {
+      "status": "pass",
+      "reason_code": "evidence_bound",
+      "evidence_id": "2e12116b4728fb8f",
+      "locator": "/data/SummonerFlash",
+      "snapshot_sha_ok": true,
+      "answer_text": "截至补丁 16.23.1（Data Dragon zh_CN）：闪现。使你朝着你的指针位置瞬间传送一小段距离。 冷却 300。 范围 425。",
+      "value": {
+        "name": "闪现",
+        "description": "使你朝着你的指针位置瞬间传送一小段距离。",
+        "cooldown": "300",
+        "range": "425",
+        "summonerLevel": 7
+      }
+    },
+    "item": {
+      "status": "pass",
+      "reason_code": "evidence_bound",
+      "evidence_id": "6eab3085e78f664c",
+      "locator": "/data/1001",
+      "snapshot_sha_ok": true,
+      "answer_text": "截至补丁 16.23.1（Data Dragon zh_CN）：鞋子。略微提升移动速度 售价 300 金币。",
+      "value": {
+        "name": "鞋子",
+        "description": "<mainText><stats><attention>25</attention>移动速度</stats><br><br></mainText>",
+        "plaintext": "略微提升移动速度",
+        "tags": [
+          "Boots"
+        ],
+        "gold": {
+          "base": 300,
+          "purchasable": true,
+          "sell": 210,
+          "total": 300
+        }
+      }
+    }
+  },
+  "initial_import_observed": {
+    "item": {
+      "entities_new": 859,
+      "evidence_new": 859,
+      "snapshots_new": 1,
+      "aliases_new": 0
+    },
+    "summoner": {
+      "entities_new": 34,
+      "evidence_new": 34,
+      "snapshots_new": 1,
+      "aliases_new": 34
+    }
+  }
+}

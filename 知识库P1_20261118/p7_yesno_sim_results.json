@@ -1,0 +1,45 @@
+{
+  "E1_专用": {
+    "skill_answerable": true,
+    "new_true": 0,
+    "new_false": 0,
+    "new_true_detail": []
+  },
+  "E2_专用必杀技": {
+    "skill_answerable": true,
+    "new_true": 0,
+    "new_false": 0,
+    "new_true_detail": []
+  },
+  "E3_持有": {
+    "skill_answerable": true,
+    "new_true": 0,
+    "new_false": 0,
+    "new_true_detail": []
+  },
+  "E4_才能": {
+    "skill_answerable": true,
+    "new_true": 2,
+    "new_false": 0,
+    "new_true_detail": [
+      [
+        "X16",
+        "w3",
+        8,
+        "_工具脚本/taspipe/游戏包/来源库/取证/1ang_热血足球联盟图文攻略_20261118.md#L553-L599"
+      ],
+      [
+        "X16",
+        "w5",
+        8,
+        "_工具脚本/taspipe/游戏包/来源库/取证/1ang_热血足球联盟图文攻略_20261118.md#L553-L599"
+      ]
+    ]
+  },
+  "E5_专用为": {
+    "skill_answerable": true,
+    "new_true": 0,
+    "new_false": 0,
+    "new_true_detail": []
+  }
+}

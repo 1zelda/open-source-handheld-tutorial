@@ -1,0 +1,395 @@
+{
+  "status": "finalized_isolated_candidate",
+  "date": "2026-11-25",
+  "scope": "NTSC US Mega Man 1 RAM/tooling subdomain only",
+  "candidate_index": "知识库P1_20261118/megaman1_candidate_20261125/index.json",
+  "candidate_index_sha256": "5e126eddf0eae98e6b8a446cd54f37400b861d5e93ecf89d3004f16d3a252581",
+  "evaluation": {
+    "default": "12/12",
+    "strict": "12/12",
+    "wrong_evidence_default": 0,
+    "wrong_evidence_strict": 0
+  },
+  "pdf_qc": {
+    "pages": 3,
+    "checks": 19,
+    "all_green": true,
+    "visual_review": "contact sheet and all snapshot pages inspected"
+  },
+  "checks": {
+    "candidate_index_hash_consistent": true,
+    "candidate_chunk_count_consistent": true,
+    "candidate_term_count_consistent": true,
+    "candidate_file_count_consistent": true,
+    "candidate_revision_single": true,
+    "frozen_question_ids_match_results": true,
+    "frozen_question_count_matches_log": true,
+    "selected_anchors_and_refusals_valid": true,
+    "evaluation_all_ok": true,
+    "evaluation_wrong_evidence_zero": true,
+    "evaluation_missed_answer_zero": true,
+    "evaluation_summaries_complete": true,
+    "log_modes_complete": true,
+    "log_index_hash_consistent": true,
+    "build_isolation_declared": true,
+    "eval_isolation_declared": true,
+    "production_not_promoted": true,
+    "production_not_wired": true,
+    "render_qc_all_green": true,
+    "pdf_links_resolve": true,
+    "visual_review_completed": true,
+    "all_manifest_artifacts_present": true
+  },
+  "ledger_index_hashes": {
+    "build": "5e126eddf0eae98e6b8a446cd54f37400b861d5e93ecf89d3004f16d3a252581",
+    "frozen": "5e126eddf0eae98e6b8a446cd54f37400b861d5e93ecf89d3004f16d3a252581",
+    "evaluation": "5e126eddf0eae98e6b8a446cd54f37400b861d5e93ecf89d3004f16d3a252581",
+    "readiness": "5e126eddf0eae98e6b8a446cd54f37400b861d5e93ecf89d3004f16d3a252581",
+    "render_qc": "5e126eddf0eae98e6b8a446cd54f37400b861d5e93ecf89d3004f16d3a252581"
+  },
+  "selected_anchor_errors": [],
+  "query_log_modes": {
+    "mm1-eval-default": 12,
+    "mm1-eval-strict": 12
+  },
+  "shared_state_at_final_validation": {
+    "_工具脚本/taspipe/游戏包/知识库/index.json": {
+      "present": true,
+      "bytes": 3608260,
+      "mtime_ns": 1795536695274513300,
+      "sha256": "5c6fdb832cac502845d2e9dce269f25023dd435af42a5f59c772efbe9169596b"
+    },
+    "_工具脚本/taspipe/游戏包/知识库/corpus_map.json": {
+      "present": true,
+      "bytes": 23464,
+      "mtime_ns": 1795529628746809500,
+      "sha256": "907d4c719a9e93e2ad62c9c21d5e1aac916c5d7a0fea759818cd5c6414d8f19e"
+    },
+    "_工具脚本/taspipe/游戏包/来源库/sources.json": {
+      "present": true,
+      "bytes": 57733,
+      "mtime_ns": 1795464127056654400,
+      "sha256": "177d14bc9a7a95cade7790c06b6c061834b16167454e28dd30679682a3117667"
+    },
+    "_工具脚本/taspipe/游戏包/知识库/query_log.jsonl": {
+      "present": true,
+      "bytes": 1044,
+      "mtime_ns": 1795463914085772600,
+      "sha256": "f73c57ae2080d8f525bdd5cdfb52b0a50f1cc5cf0cca5b89c4003b803602a91d"
+    },
+    "_工具脚本/taspipe/游戏包/电竞事实库/facts_v1.db": {
+      "present": true,
+      "bytes": 2056192,
+      "mtime_ns": 1795464415053952300,
+      "sha256": "32f029f41629cb3774e701a705d521aa49550c76deabbc0affc760bec264d5c1"
+    },
+    "选题决策层/kb快照/index.json": {
+      "present": true,
+      "bytes": 3607419,
+      "mtime_ns": 1795533626202927000,
+      "sha256": "2a93e76d5876c1181e7784a20eca0f4d84888d0292d281fc6eea3564090b9260"
+    }
+  },
+  "shared_state_drift_since_eval": [],
+  "shared_state_note": "Any drift is recorded separately; this manifest does not attribute parallel-session changes to the candidate task.",
+  "artifact_count": 42,
+  "total_artifact_bytes": 1644682,
+  "delivery_fingerprint_sha256": "f8d5e072bd51ec115386e249f90a51fbe6fd0e835976d8db85318f955eb5fe98",
+  "fingerprint_rule": "SHA-256 over UTF-8 lines: relative_path NUL sha256 NUL bytes, sorted by relative_path; manifest excludes itself to avoid circular hashing.",
+  "artifacts": [
+    {
+      "path": "洛克人1隔离候选子域交付_2026-11-25.md",
+      "absolute_path": "F:\\开源掌机教程\\洛克人1隔离候选子域交付_2026-11-25.md",
+      "role": "delivery_record",
+      "bytes": 5737,
+      "sha256": "5f05699fa89738200edff50f15042562219817d555062ef2a5c5ec18c48fada4"
+    },
+    {
+      "path": "洛克人1隔离候选子域交付_2026-11-25.pdf",
+      "absolute_path": "F:\\开源掌机教程\\洛克人1隔离候选子域交付_2026-11-25.pdf",
+      "role": "rendered_delivery",
+      "bytes": 309149,
+      "sha256": "0c0814fcae32a7ea2c63062369e9651fb28f342a26c662856fc2380d848fb60b"
+    },
+    {
+      "path": "知识库P1_20261118/build_megaman1_candidate_20261125.py",
+      "absolute_path": "F:\\开源掌机教程\\知识库P1_20261118\\build_megaman1_candidate_20261125.py",
+      "role": "reproduction_script",
+      "bytes": 12944,
+      "sha256": "a41e8c85a9a2cc43e4a8b7917eab9ffc0a55f144ae62c09f66684eb229734bfb"
+    },
+    {
+      "path": "知识库P1_20261118/eval_megaman1_candidate_20261125.py",
+      "absolute_path": "F:\\开源掌机教程\\知识库P1_20261118\\eval_megaman1_candidate_20261125.py",
+      "role": "reproduction_script",
+      "bytes": 9588,
+      "sha256": "bf16a99b0f2b6c1122bc9fba3bf79e1de39e4b5c8d6e901563973fc727319b31"
+    },
+    {
+      "path": "知识库P1_20261118/finalize_megaman1_delivery_20261125.py",
+      "absolute_path": "F:\\开源掌机教程\\知识库P1_20261118\\finalize_megaman1_delivery_20261125.py",
+      "role": "reproduction_script",
+      "bytes": 10893,
+      "sha256": "84963251ac97adbc4c239860d2d1ae2db40d0230737d19d621cdf3b779c95fc6"
+    },
+    {
+      "path": "知识库P1_20261118/megaman1_candidate_20261125/corpus_map.json",
+      "absolute_path": "F:\\开源掌机教程\\知识库P1_20261118\\megaman1_candidate_20261125\\corpus_map.json",
+      "role": "candidate_evidence",
+      "bytes": 4329,
+      "sha256": "70e9c692f64bc6e0a2d4422a59896a538c34956f1045ccf7792da5ad24f3a2fc"
+    },
+    {
+      "path": "知识库P1_20261118/megaman1_candidate_20261125/eval_query_log.jsonl",
+      "absolute_path": "F:\\开源掌机教程\\知识库P1_20261118\\megaman1_candidate_20261125\\eval_query_log.jsonl",
+      "role": "audit_log",
+      "bytes": 35153,
+      "sha256": "8201f51af6d5d403ee15d2b6f4015de500de7625129f4c60b84b0aa380183034"
+    },
+    {
+      "path": "知识库P1_20261118/megaman1_candidate_20261125/evidence/mm1_bizhawk_faq_source_20261125.txt",
+      "absolute_path": "F:\\开源掌机教程\\知识库P1_20261118\\megaman1_candidate_20261125\\evidence\\mm1_bizhawk_faq_source_20261125.txt",
+      "role": "candidate_evidence",
+      "bytes": 7800,
+      "sha256": "071c944aa4e06395e02203c24402e59912bed3e93c256354118940dffae0c6d7"
+    },
+    {
+      "path": "知识库P1_20261118/megaman1_candidate_20261125/evidence/mm1_bizhawk_memory_write_fact_20261125.txt",
+      "absolute_path": "F:\\开源掌机教程\\知识库P1_20261118\\megaman1_candidate_20261125\\evidence\\mm1_bizhawk_memory_write_fact_20261125.txt",
+      "role": "candidate_evidence",
+      "bytes": 693,
+      "sha256": "96b5e708fa790d861630aa0050f72c7cdc2dd8fcd071b135560d949236e72367"
+    },
+    {
+      "path": "知识库P1_20261118/megaman1_candidate_20261125/evidence/mm1_coordinate_facts_20261125.txt",
+      "absolute_path": "F:\\开源掌机教程\\知识库P1_20261118\\megaman1_candidate_20261125\\evidence\\mm1_coordinate_facts_20261125.txt",
+      "role": "candidate_evidence",
+      "bytes": 851,
+      "sha256": "04a167859b19efe702f983a2058fb9322ab6a38f3fee70137134989e390b29f2"
+    },
+    {
+      "path": "知识库P1_20261118/megaman1_candidate_20261125/evidence/mm1_fm2_import_reference_20261125.txt",
+      "absolute_path": "F:\\开源掌机教程\\知识库P1_20261118\\megaman1_candidate_20261125\\evidence\\mm1_fm2_import_reference_20261125.txt",
+      "role": "candidate_evidence",
+      "bytes": 7298,
+      "sha256": "9c99e7106eba2f54b538148d72cd527fa64ed5e25778b1658f5b9e6eef8215e9"
+    },
+    {
+      "path": "知识库P1_20261118/megaman1_candidate_20261125/evidence/mm1_fm2_import_reference_fact_20261125.txt",
+      "absolute_path": "F:\\开源掌机教程\\知识库P1_20261118\\megaman1_candidate_20261125\\evidence\\mm1_fm2_import_reference_fact_20261125.txt",
+      "role": "candidate_evidence",
+      "bytes": 373,
+      "sha256": "3c4e65858c7acfa0498ac528aa12d3d42e20f1ee0d92b8859fb07436594337e1"
+    },
+    {
+      "path": "知识库P1_20261118/megaman1_candidate_20261125/evidence/mm1_local_position_probe_excerpt_20261125.txt",
+      "absolute_path": "F:\\开源掌机教程\\知识库P1_20261118\\megaman1_candidate_20261125\\evidence\\mm1_local_position_probe_excerpt_20261125.txt",
+      "role": "candidate_evidence",
+      "bytes": 1302,
+      "sha256": "2d1e8eb38c77cdb640597d42957cbeb38262e32afb17c16ae7031b38f37ad2f8"
+    },
+    {
+      "path": "知识库P1_20261118/megaman1_candidate_20261125/evidence/mm1_local_weapon_ram_excerpt_20261125.txt",
+      "absolute_path": "F:\\开源掌机教程\\知识库P1_20261118\\megaman1_candidate_20261125\\evidence\\mm1_local_weapon_ram_excerpt_20261125.txt",
+      "role": "candidate_evidence",
+      "bytes": 692,
+      "sha256": "f92bbce0ded4f040f34a635c5ee5c6e91400f2ccd67777942de6aba92ced565d"
+    },
+    {
+      "path": "知识库P1_20261118/megaman1_candidate_20261125/evidence/mm1_object_ram_source_20261125.txt",
+      "absolute_path": "F:\\开源掌机教程\\知识库P1_20261118\\megaman1_candidate_20261125\\evidence\\mm1_object_ram_source_20261125.txt",
+      "role": "candidate_evidence",
+      "bytes": 12762,
+      "sha256": "1869f8c514a534592be6f5c588f94aaca82ea42b0317324ec6a6fd8c5bb06c91"
+    },
+    {
+      "path": "知识库P1_20261118/megaman1_candidate_20261125/evidence/mm1_object_ram_table_20261125.txt",
+      "absolute_path": "F:\\开源掌机教程\\知识库P1_20261118\\megaman1_candidate_20261125\\evidence\\mm1_object_ram_table_20261125.txt",
+      "role": "candidate_evidence",
+      "bytes": 540,
+      "sha256": "e1038244daadc47ff325a09c88deee1ead76d4ae306d8b58e63123f6eb0cc013"
+    },
+    {
+      "path": "知识库P1_20261118/megaman1_candidate_20261125/evidence/mm1_segmented_tas_reference_20261125.txt",
+      "absolute_path": "F:\\开源掌机教程\\知识库P1_20261118\\megaman1_candidate_20261125\\evidence\\mm1_segmented_tas_reference_20261125.txt",
+      "role": "candidate_evidence",
+      "bytes": 21046,
+      "sha256": "3c6619e5037c095478f1206c03a274dc8fbdddfc77fc32ebff78a62d0e1f1937"
+    },
+    {
+      "path": "知识库P1_20261118/megaman1_candidate_20261125/evidence/mm1_segmented_tas_reference_fact_20261125.txt",
+      "absolute_path": "F:\\开源掌机教程\\知识库P1_20261118\\megaman1_candidate_20261125\\evidence\\mm1_segmented_tas_reference_fact_20261125.txt",
+      "role": "candidate_evidence",
+      "bytes": 409,
+      "sha256": "ae787c14d1cd0588bba5cc465fa0bafa0aa2ea5b1beb46465113dd7c74d121a3"
+    },
+    {
+      "path": "知识库P1_20261118/megaman1_candidate_20261125/index.json",
+      "absolute_path": "F:\\开源掌机教程\\知识库P1_20261118\\megaman1_candidate_20261125\\index.json",
+      "role": "candidate_evidence",
+      "bytes": 21057,
+      "sha256": "5e126eddf0eae98e6b8a446cd54f37400b861d5e93ecf89d3004f16d3a252581"
+    },
+    {
+      "path": "知识库P1_20261118/megaman1_candidate_20261125/qc/contact_sheet.png",
+      "absolute_path": "F:\\开源掌机教程\\知识库P1_20261118\\megaman1_candidate_20261125\\qc\\contact_sheet.png",
+      "role": "rendered_delivery",
+      "bytes": 240201,
+      "sha256": "b8f802fb922e8e35f2becf35c0af69b0a0bfbf4049e22a46173b3c5fafd70d98"
+    },
+    {
+      "path": "知识库P1_20261118/megaman1_candidate_20261125/qc/page_01.png",
+      "absolute_path": "F:\\开源掌机教程\\知识库P1_20261118\\megaman1_candidate_20261125\\qc\\page_01.png",
+      "role": "rendered_delivery",
+      "bytes": 187056,
+      "sha256": "f11b20df1d2fee9a68578b8ef8c02f62beb74b427f1233ecc645c3c247ff829c"
+    },
+    {
+      "path": "知识库P1_20261118/megaman1_candidate_20261125/qc/page_02.png",
+      "absolute_path": "F:\\开源掌机教程\\知识库P1_20261118\\megaman1_candidate_20261125\\qc\\page_02.png",
+      "role": "rendered_delivery",
+      "bytes": 131006,
+      "sha256": "e2ac780124d2d07a314202aaa97e470b1f0d8c1aeaedb4f30341ac5a89d5a79c"
+    },
+    {
+      "path": "知识库P1_20261118/megaman1_candidate_20261125/qc/page_03.png",
+      "absolute_path": "F:\\开源掌机教程\\知识库P1_20261118\\megaman1_candidate_20261125\\qc\\page_03.png",
+      "role": "rendered_delivery",
+      "bytes": 131988,
+      "sha256": "5d9779d98f3f6def8caa1e1138d4f596d89ec164c405e0dad60ff606879b30ca"
+    },
+    {
+      "path": "知识库P1_20261118/megaman1_candidate_20261125/qc/render_qa.json",
+      "absolute_path": "F:\\开源掌机教程\\知识库P1_20261118\\megaman1_candidate_20261125\\qc\\render_qa.json",
+      "role": "rendered_delivery",
+      "bytes": 1982,
+      "sha256": "99ac90ace1414fca81a9d98359dd252bee104844cb5da1c4d2440f27ddce0841"
+    },
+    {
+      "path": "知识库P1_20261118/megaman1_candidate_20261125/qc/report.html",
+      "absolute_path": "F:\\开源掌机教程\\知识库P1_20261118\\megaman1_candidate_20261125\\qc\\report.html",
+      "role": "rendered_delivery",
+      "bytes": 10380,
+      "sha256": "e2086c3bebdf7bea71982ef36c5aa368657f7e37da9eb4439e19d6adb75335bb"
+    },
+    {
+      "path": "知识库P1_20261118/megaman1_candidate_20261125/query_log.jsonl",
+      "absolute_path": "F:\\开源掌机教程\\知识库P1_20261118\\megaman1_candidate_20261125\\query_log.jsonl",
+      "role": "audit_log",
+      "bytes": 36062,
+      "sha256": "15496c0b142f7108130e1407c194556bdeba6b330955af4d3e117382a44bad00"
+    },
+    {
+      "path": "知识库P1_20261118/megaman1_candidate_20261125/rom_identity.json",
+      "absolute_path": "F:\\开源掌机教程\\知识库P1_20261118\\megaman1_candidate_20261125\\rom_identity.json",
+      "role": "candidate_evidence",
+      "bytes": 848,
+      "sha256": "8abbc9b3a17b01b4ebb02e55a4b2471c740e4e80de3ef6e4fd3a042a2b9eab82"
+    },
+    {
+      "path": "知识库P1_20261118/megaman1_candidate_20261125/scope.json",
+      "absolute_path": "F:\\开源掌机教程\\知识库P1_20261118\\megaman1_candidate_20261125\\scope.json",
+      "role": "candidate_evidence",
+      "bytes": 575,
+      "sha256": "1932617a022e2c61cea311691144070556d23dbd55e56285c17b71a6904e94e4"
+    },
+    {
+      "path": "知识库P1_20261118/megaman1_candidate_20261125/sources.json",
+      "absolute_path": "F:\\开源掌机教程\\知识库P1_20261118\\megaman1_candidate_20261125\\sources.json",
+      "role": "candidate_evidence",
+      "bytes": 65156,
+      "sha256": "3871d67329bd8169e27206afc323a6a974f658b02468ba03c6852fefd74b2db9"
+    },
+    {
+      "path": "知识库P1_20261118/megaman1_candidate_build_20261125.json",
+      "absolute_path": "F:\\开源掌机教程\\知识库P1_20261118\\megaman1_candidate_build_20261125.json",
+      "role": "delivery_record",
+      "bytes": 17822,
+      "sha256": "6631785c3cae35fddf67e1d6859bb1559396bde95b9af3e99425919c19f307c7"
+    },
+    {
+      "path": "知识库P1_20261118/megaman1_candidate_build_20261125.log",
+      "absolute_path": "F:\\开源掌机教程\\知识库P1_20261118\\megaman1_candidate_build_20261125.log",
+      "role": "delivery_record",
+      "bytes": 208,
+      "sha256": "c2815a42bf14065eb40d2934eb27e9219061c648b45740c0db465212f993a7d0"
+    },
+    {
+      "path": "知识库P1_20261118/megaman1_candidate_eval_20261125.json",
+      "absolute_path": "F:\\开源掌机教程\\知识库P1_20261118\\megaman1_candidate_eval_20261125.json",
+      "role": "delivery_record",
+      "bytes": 122246,
+      "sha256": "30a5b718562301a88d95464e22131a312a15948f3264c802b5580fd229b34b61"
+    },
+    {
+      "path": "知识库P1_20261118/megaman1_candidate_eval_20261125.log",
+      "absolute_path": "F:\\开源掌机教程\\知识库P1_20261118\\megaman1_candidate_eval_20261125.log",
+      "role": "delivery_record",
+      "bytes": 244,
+      "sha256": "0bee2df8711f69969ede476d712e24f7144487cc8db154f1e9f9cb2e8be77807"
+    },
+    {
+      "path": "知识库P1_20261118/megaman1_candidate_eval_20261125.md",
+      "absolute_path": "F:\\开源掌机教程\\知识库P1_20261118\\megaman1_candidate_eval_20261125.md",
+      "role": "delivery_record",
+      "bytes": 3884,
+      "sha256": "7424bd4feb8a7096ea8203e501ac2882a20fca4caf3f6588bd59ab7c5a5684db"
+    },
+    {
+      "path": "知识库P1_20261118/megaman1_candidate_readiness_20261125.json",
+      "absolute_path": "F:\\开源掌机教程\\知识库P1_20261118\\megaman1_candidate_readiness_20261125.json",
+      "role": "delivery_record",
+      "bytes": 1769,
+      "sha256": "b36213861530eddd180b37b6902456c56d861b64252fdf4694424222fd4873e4"
+    },
+    {
+      "path": "知识库P1_20261118/megaman1_corpus_readiness_20261124.md",
+      "absolute_path": "F:\\开源掌机教程\\知识库P1_20261118\\megaman1_corpus_readiness_20261124.md",
+      "role": "historical_support",
+      "bytes": 5370,
+      "sha256": "4af3ef0cc30d2c6c5aa308a6ef6eb2a1055666cf71ff6ebb859185db84e408e8"
+    },
+    {
+      "path": "知识库P1_20261118/megaman1_corpus_readiness_20261125.md",
+      "absolute_path": "F:\\开源掌机教程\\知识库P1_20261118\\megaman1_corpus_readiness_20261125.md",
+      "role": "delivery_record",
+      "bytes": 2882,
+      "sha256": "1718efe432ceef5d281164a4bfa9387b35b23dc28927990b39da12479522bfb9"
+    },
+    {
+      "path": "知识库P1_20261118/megaman1_question_probe_20261125.json",
+      "absolute_path": "F:\\开源掌机教程\\知识库P1_20261118\\megaman1_question_probe_20261125.json",
+      "role": "historical_support",
+      "bytes": 196124,
+      "sha256": "67bb3a6e41321f5cc473f85a64d5562916986474b4add72d915916b542cb840f"
+    },
+    {
+      "path": "知识库P1_20261118/megaman1_question_probe_20261125.log",
+      "absolute_path": "F:\\开源掌机教程\\知识库P1_20261118\\megaman1_question_probe_20261125.log",
+      "role": "historical_support",
+      "bytes": 131,
+      "sha256": "635ef3209224572e831c63cc5832ea30c3ce733c15ba23c634ca950b246a09b7"
+    },
+    {
+      "path": "知识库P1_20261118/megaman1_questions_draft_20261124.json",
+      "absolute_path": "F:\\开源掌机教程\\知识库P1_20261118\\megaman1_questions_draft_20261124.json",
+      "role": "historical_support",
+      "bytes": 6090,
+      "sha256": "30f8d1d88485311c06f1786be92c18b0ab6fe2a3c6486a875c8c9b25ef70009a"
+    },
+    {
+      "path": "知识库P1_20261118/megaman1_questions_frozen_20261125.json",
+      "absolute_path": "F:\\开源掌机教程\\知识库P1_20261118\\megaman1_questions_frozen_20261125.json",
+      "role": "delivery_record",
+      "bytes": 7531,
+      "sha256": "164bbc9b7aa58ac7f8fdadd8541a8cec718ffc746487091e022af24a34741db9"
+    },
+    {
+      "path": "知识库P1_20261118/render_qc_megaman1_candidate_20261125.py",
+      "absolute_path": "F:\\开源掌机教程\\知识库P1_20261118\\render_qc_megaman1_candidate_20261125.py",
+      "role": "reproduction_script",
+      "bytes": 12511,
+      "sha256": "d6b6917379cb98403c5d1df285f9960155e555d87dbbbe6f28a372052f960d43"
+    }
+  ]
+}

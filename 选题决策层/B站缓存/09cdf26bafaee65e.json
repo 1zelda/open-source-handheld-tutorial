@@ -1,0 +1,39 @@
+{
+ "keyword": "model2-nx",
+ "status": "ok",
+ "ts": "2026-11-19T05:23:55Z",
+ "ts_epoch": 1795065835.2760634,
+ "supply_num_results": 1000,
+ "n_videos": 20,
+ "play_median": 14587.0,
+ "play_mean": 26152.2,
+ "play_max": 160938,
+ "play_total": 523045,
+ "engagement_median": 0.037,
+ "recent_count": 7,
+ "recent_play_median": 2583,
+ "top3": [
+  {
+   "bvid": "BV1m64y197TW",
+   "title": "【UG】UG-NX10.0软件安装教程（安装包评论区置顶）",
+   "author": "UG四郎",
+   "play": 160938,
+   "pubdate": "2021-06-23"
+  },
+  {
+   "bvid": "BV1qM4y1k7j9",
+   "title": "NX12.0软件零件3D转2D出图技巧",
+   "author": "月明工作室",
+   "play": 65392,
+   "pubdate": "2023-03-10"
+  },
+  {
+   "bvid": "BV1hB9wYPEMK",
+   "title": "UG (NX) 全面接入DeepSeek，二维图纸自动生成三维模型",
+   "author": "机械菌-",
+   "play": 48636,
+   "pubdate": "2025-02-27"
+  }
+ ],
+ "cache_hit": false
+}

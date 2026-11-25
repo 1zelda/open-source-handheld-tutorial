@@ -1,0 +1,28 @@
+Q01  OK  strict_pass    status=pass         retrieval=bm25_only      gold_pos=3 v2=OK  sel_gold=True refusal=-
+Q02  FAIL strict_pass    status=inconclusive retrieval=bm25_only      gold_pos=None v2=FAIL sel_gold=False refusal=-
+Q03  FAIL strict_pass    status=inconclusive retrieval=bm25_only      gold_pos=None v2=FAIL sel_gold=False refusal=unanswerable
+Q04  OK  gold_in_topk   status=pass         retrieval=bm25_only      gold_pos=1 v2=OK  sel_gold=True refusal=-
+Q05  OK  strict_pass    status=pass         retrieval=bm25_only      gold_pos=2 v2=OK  sel_gold=True refusal=-
+Q06  FAIL gold_in_topk   status=inconclusive retrieval=bm25_only      gold_pos=None v2=FAIL sel_gold=False refusal=-
+Q07  OK  gold_in_topk   status=pass         retrieval=bm25_only      gold_pos=3 v2=OK  sel_gold=True refusal=-
+Q08  FAIL gold_in_topk   status=pass         retrieval=bm25_only      gold_pos=None v2=FAIL sel_gold=False refusal=-
+Q09  OK  refuse         status=inconclusive retrieval=bm25_only      gold_pos=None v2=OK  sel_gold=False refusal=unanswerable
+Q10  OK  strict_pass    status=pass         retrieval=bm25_only      gold_pos=1 v2=OK  sel_gold=True refusal=-
+Q11  OK  version_guard  status=inconclusive retrieval=bm25_only      gold_pos=None v2=OK  sel_gold=False refusal=-
+Q12  OK  refuse         status=miss         retrieval=?              gold_pos=None v2=OK  sel_gold=False refusal=out_of_scope
+Q13  OK  refuse         status=miss         retrieval=?              gold_pos=None v2=OK  sel_gold=False refusal=out_of_scope
+Q14  OK  refuse         status=miss         retrieval=?              gold_pos=None v2=OK  sel_gold=False refusal=out_of_scope
+Q15  OK  refuse         status=inconclusive retrieval=bm25_only      gold_pos=None v2=OK  sel_gold=False refusal=unanswerable
+Q16  OK  gold_in_topk   status=pass         retrieval=bm25_only      gold_pos=1 v2=OK  sel_gold=False refusal=-
+Q17  OK  gold_in_topk   status=inconclusive retrieval=bm25_only      gold_pos=1 v2=OK  sel_gold=False refusal=-
+Q18  OK  strict_pass    status=pass         retrieval=bm25_only      gold_pos=5 v2=FAIL sel_gold=False refusal=-
+P19  OK  gold_in_topk   status=inconclusive retrieval=bm25_only      gold_pos=1 v2=OK  sel_gold=False refusal=-
+P20  OK  refuse         status=miss         retrieval=?              gold_pos=None v2=OK  sel_gold=False refusal=out_of_scope
+P21  OK  refuse         status=inconclusive retrieval=bm25_only      gold_pos=None v2=OK  sel_gold=False refusal=unanswerable
+P22  OK  gold_in_topk   status=pass         retrieval=bm25_only      gold_pos=1 v2=OK  sel_gold=True refusal=-
+P23  OK  gold_in_topk   status=pass         retrieval=bm25_only      gold_pos=1 v2=OK  sel_gold=True refusal=-
+P24  OK  gold_in_topk   status=pass         retrieval=bm25_only      gold_pos=3 v2=OK  sel_gold=False refusal=-
+P25  OK  refuse         status=inconclusive retrieval=bm25_only      gold_pos=None v2=OK  sel_gold=False refusal=unanswerable
+P26  OK  refuse         status=miss         retrieval=?              gold_pos=None v2=OK  sel_gold=False refusal=out_of_scope
+v1: {"total": 26, "ok": 22, "by_tier": {"strict_pass": {"total": 6, "ok": 4}, "gold_in_topk": {"total": 10, "ok": 8}, "refuse": {"total": 9, "ok": 9}, "version_guard": {"total": 1, "ok": 1}}, "failed_ids": ["Q02", "Q03", "Q06", "Q08"]}
+v2: {"total": 26, "ok": 21, "by_tier": {"strict_pass": {"total": 6, "ok": 3}, "gold_in_topk": {"total": 10, "ok": 8}, "refuse": {"total": 9, "ok": 9}, "version_guard": {"total": 1, "ok": 1}}, "failed_ids": ["Q02", "Q03", "Q06", "Q08", "Q18"], "split_table": {"direct_recall": 12, "correct_evidence": 16, "wrong_evidence": 4, "missed_answer": 2, "citation_valid": 26, "version_condition_error": 0, "equivalent_recall": "reserved_phase4"}, "wrong_evidence_ids": ["Q08", "Q16", "Q18", "P24"], "missed_answer_ids": ["Q17", "P19"]}

@@ -1,0 +1,30 @@
+W1119 03:01:02.959000 45188 E:\SHARE\py313-cuda\torch\distributed\elastic\multiprocessing\redirects.py:29] NOTE: Redirects are currently not supported in Windows or MacOs.
+Loading weights:   0%|          | 0/391 [00:00<?, ?it/s]Loading weights: 100%|██████████| 391/391 [00:00<00:00, 56063.61it/s]
+Loading weights:   0%|          | 0/393 [00:00<?, ?it/s]Loading weights:   1%|          | 2/393 [00:00<00:49,  7.97it/s]Loading weights:   1%|          | 3/393 [00:00<01:46,  3.67it/s]Loading weights:   1%|          | 4/393 [00:01<02:40,  2.43it/s]Loading weights:   1%|▏         | 5/393 [00:02<03:47,  1.70it/s]Loading weights:   2%|▏         | 6/393 [00:02<02:50,  2.27it/s]Loading weights:   2%|▏         | 9/393 [00:02<01:44,  3.68it/s]Loading weights:   3%|▎         | 10/393 [00:03<01:41,  3.78it/s]Loading weights:   3%|▎         | 11/393 [00:03<02:02,  3.13it/s]Loading weights:   3%|▎         | 12/393 [00:03<01:48,  3.53it/s]Loading weights:   3%|▎         | 13/393 [00:04<01:53,  3.35it/s]Loading weights:   4%|▎         | 14/393 [00:04<01:46,  3.54it/s]Loading weights:   4%|▍         | 15/393 [00:04<01:33,  4.03it/s]Loading weights:   4%|▍         | 16/393 [00:05<02:16,  2.77it/s]Loading weights:   4%|▍         | 17/393 [00:05<02:32,  2.46it/s]Loading weights:   5%|▍         | 18/393 [00:05<02:07,  2.95it/s]Loading weights:   6%|▌         | 23/393 [00:06<00:58,  6.28it/s]Loading weights:   6%|▌         | 24/393 [00:06<01:06,  5.58it/s]Loading weights:   6%|▋         | 25/393 [00:06<01:17,  4.75it/s]Loading weights:   7%|▋         | 26/393 [00:07<01:30,  4.06it/s]Loading weights:   7%|▋         | 27/393 [00:07<02:11,  2.78it/s]Loading weights:   7%|▋         | 28/393 [00:08<02:18,  2.63it/s]Loading weights:   7%|▋         | 29/393 [00:08<02:00,  3.01it/s]Loading weights:   8%|▊         | 30/393 [00:09<02:06,  2.87it/s]Loading weights:   8%|▊         | 31/393 [00:09<02:25,  2.49it/s]Loading weights:   8%|▊         | 32/393 [00:10<02:36,  2.31it/s]Loading weights:   9%|▊         | 34/393 [00:10<01:34,  3.80it/s]Loading weights:   9%|▉         | 35/393 [00:10<01:39,  3.60it/s]Loading weights:   9%|▉         | 36/393 [00:10<01:33,  3.81it/s]Loading weights:   9%|▉         | 37/393 [00:10<01:20,  4.42it/s]Loading weights:  10%|▉         | 38/393 [00:11<01:36,  3.70it/s]Loading weights:  10%|▉         | 39/393 [00:11<01:27,  4.05it/s]Loading weights:  10%|█         | 40/393 [00:11<01:21,  4.34it/s]Loading weights:  10%|█         | 41/393 [00:11<01:11,  4.91it/s]Loading weights:  11%|█         | 42/393 [00:12<01:42,  3.44it/s]Loading weights:  11%|█         | 43/393 [00:12<01:31,  3.83it/s]Loading weights:  11%|█         | 44/393 [00:13<02:11,  2.65it/s]Loading weights:  11%|█▏        | 45/393 [00:13<02:06,  2.74it/s]Loading weights:  12%|█▏        | 46/393 [00:14<03:11,  1.81it/s]Loading weights:  12%|█▏        | 48/393 [00:14<01:51,  3.08it/s]Loading weights:  12%|█▏        | 49/393 [00:14<01:36,  3.56it/s]Loading weights:  13%|█▎        | 50/393 [00:15<01:57,  2.93it/s]Loading weights:  13%|█▎        | 51/393 [00:15<01:58,  2.90it/s]Loading weights:  13%|█▎        | 52/393 [00:15<01:41,  3.35it/s]Loading weights: 100%|██████████| 393/393 [00:15<00:00, 24.96it/s]
+Q01  OK  strict_pass    status=pass         retrieval=hybrid_union12 gold_pos=3 cond=Y refusal=-
+Q02  FAIL strict_pass    status=inconclusive retrieval=hybrid_union12 gold_pos=4 cond=- refusal=-
+Q03  OK  strict_pass    status=pass         retrieval=hybrid_union12 gold_pos=2 cond=Y refusal=-
+Q04  OK  gold_in_topk   status=pass         retrieval=hybrid_union12 gold_pos=1 cond=- refusal=-
+Q05  OK  strict_pass    status=pass         retrieval=hybrid_union12 gold_pos=1 cond=- refusal=-
+Q06  OK  gold_in_topk   status=inconclusive retrieval=hybrid_union12 gold_pos=6 cond=- refusal=-
+Q07  OK  gold_in_topk   status=pass         retrieval=hybrid_union12 gold_pos=1 cond=- refusal=-
+Q08  FAIL gold_in_topk   status=inconclusive retrieval=hybrid_union12 gold_pos=None cond=- refusal=-
+Q09  OK  refuse         status=inconclusive retrieval=hybrid_union12 gold_pos=None cond=- refusal=unanswerable
+Q10  FAIL strict_pass    status=pass         retrieval=hybrid_union12 gold_pos=None cond=- refusal=-
+Q11  OK  version_guard  status=pass         retrieval=hybrid_union12 gold_pos=None cond=- refusal=-
+Q12  OK  refuse         status=miss         retrieval=?              gold_pos=None cond=- refusal=out_of_scope
+Q13  OK  refuse         status=miss         retrieval=?              gold_pos=None cond=- refusal=out_of_scope
+Q14  OK  refuse         status=miss         retrieval=?              gold_pos=None cond=- refusal=out_of_scope
+Q15  OK  refuse         status=inconclusive retrieval=hybrid_union12 gold_pos=None cond=- refusal=unanswerable
+Q16  OK  gold_in_topk   status=inconclusive retrieval=hybrid_union12 gold_pos=1 cond=- refusal=-
+Q17  OK  gold_in_topk   status=inconclusive retrieval=hybrid_union12 gold_pos=1 cond=- refusal=-
+Q18  OK  strict_pass    status=pass         retrieval=hybrid_union12 gold_pos=3 cond=Y refusal=-
+P19  OK  gold_in_topk   status=pass         retrieval=hybrid_union12 gold_pos=1 cond=Y refusal=-
+P20  OK  refuse         status=miss         retrieval=?              gold_pos=None cond=- refusal=out_of_scope
+P21  OK  refuse         status=inconclusive retrieval=hybrid_union12 gold_pos=None cond=- refusal=unanswerable
+P22  OK  gold_in_topk   status=pass         retrieval=hybrid_union12 gold_pos=2 cond=Y refusal=-
+P23  OK  gold_in_topk   status=inconclusive retrieval=hybrid_union12 gold_pos=6 cond=- refusal=-
+P24  OK  gold_in_topk   status=pass         retrieval=hybrid_union12 gold_pos=1 cond=- refusal=-
+P25  OK  refuse         status=inconclusive retrieval=hybrid_union12 gold_pos=None cond=- refusal=unanswerable
+P26  OK  refuse         status=miss         retrieval=?              gold_pos=None cond=- refusal=out_of_scope
+{"total": 26, "ok": 23, "by_tier": {"strict_pass": {"total": 6, "ok": 4}, "gold_in_topk": {"total": 10, "ok": 9}, "refuse": {"total": 9, "ok": 9}, "version_guard": {"total": 1, "ok": 1}}, "failed_ids": ["Q02", "Q08", "Q10"]}

@@ -1,0 +1,1049 @@
+一、你提到的问题（归成三层）
+知识层
+
+模型不懂游戏机制：热血足球一角色一必杀（23 个 = 日本队 12 + 对手 11），头球/倒钩全员通用，滑铲/跳跃属性逐人不同。让一个角色反复试，试到死也凑不齐全盘点——必须换人。这条记忆里已有攻略+官方说明书双证，但采集脚本没按这个知识设计。
+时机问题：你的判断对——这个可以靠"多变体测试 + 记录"穷举解决（暂停秘技的按压节奏就是这类），它和机制问题是两种病，不该混在一起盲扫。
+环境层
+
+缺"训练场"：拳皇有 training mode、2v2 不管 2P 就能随便试；热血足球没有现成训练模式，就得靠金手指/存档造一个：冻结对手、固定球位、进禁区、把球传到目标角色脚下。现在没有这层，试错全程被比赛干扰。
+换角色、选场景这些前置操作不会做：这是机制知识的另一半——不光知道"小辫子才有燕返"，还得知道"怎么把控制权交到小辫子脚下"。
+覆盖层
+
+"无法用 TAS 操控"报错 = 配套件缺失：每个游戏需要四件套——TAS 回放/输入代码、宏指令、金手指表、对应版本的 ROM。缺任何一件就报"不支持"，所以支持的游戏少。
+金手指没被代码自动调用：零件其实存在（statebuild.py、retro\_cheat\_runner.py、statejump.py），但按你的实际体验，采集流程里没有自动调起来，人工成本高。
+二、你没提、但我认为同样致命的
+缺"成功签名"判定：打完一套输入，怎么知道必杀真的出来了？现在靠人看画面。每个要素需要一个机器可验的签名（画面特征或内存值——比如暂停秘技的签名是得分框"必杀技OK"文字）。没有它，"跑完了"≠"采到了"，自动化就是空转。
+缺状态读取（内存地图）：要自动换人、判断"当前控的是谁、球在不在禁区"，得能读游戏内存。游戏数据字典/expanded\_50\_games\_memory\_maps.json 有雏形，但没覆盖/没验证的地址等于盲打。宏 + 金手指是"手"，内存读取是"眼"，现在只有手没有眼。
+版本身份没有先行绑定：金手指地址、内存地图、指令表全都随 ROM 版本变。KOF98 ECK 那次就吃过亏——拿 98UM 官方指令表当 ECK 卡的权威，全错。正确顺序是：先验 ROM 指纹（sha1/set）→ 再查对应版本的三张表，查不到就报"需补"，而不是拿错表硬跑。
+失败归因缺失：开不出必杀时，分不清是输入错/时机错/角色错/场景错/版本错/后端不支持。热血足球"版本删了必杀"的误判（后来撤回）就是这个病的代价——没有归因决策树，只能盲扫烧轮次。
+模拟器后端能力不齐：BizHawk / FCEUX / RetroArch 对金手指、存档、逐帧、内存读写、Lua 脚本的支持各不相同。很多"游戏不支持 TAS"其实是后端没暴露接口，换后端或换加载方式就能解。需要一张"后端×能力"矩阵，报错时先查这张表而不是判游戏死刑。
+知识包没有"入包前验证"工序：现在设计是 LLM 离线写逐游戏知识包、运行时零 LLM——方向对，但写进包里的机制知识本身没被探针验证过，错知识会被流水线批量复制（版本论就是例子）。应该是：攻略/官方来源 → 写成候选知识 → 探针实测确认 → 才进包。
+采集台账与续跑：全必杀盘点 = 23+ 条 × 各自的成功签名，需要台账记"谁/哪招/已验证/对应片段"，补缺式续跑，采过的不重采。不然每次失败都从头来。
+半自动的人工介入点没有显式设计：哪些环节必须人点头（机制确认、签名确认），哪些全自动，应该明说。现在的体验是"要么全自动、要么报错甩给人"，中间没有"系统把候选方案摆好、人只选一下"这档。
+一句话方向
+把管线从"输入序列回放器"升级成"知识驱动的状态构造采集器"：版本指纹定身份 → 验证过的知识包定"谁/在哪/按什么" → 金手指+存档造无干扰实验环境 → 内存读取当眼睛 → 成功签名当验收 → 台账续跑。金手指自动调用（第 6 条）只是其中一环，单独修它治不了热血足球这种病。
+这个是我总结的问题 拿热血足球举例 但其实针对每个机型游戏 尤其是 街机 FC SFC GBA这类之后可能盘点制作视频比较频繁 有望制作出好作品的视频 我希望能够攻坚 能够攻克以上提到的这些问题 ，你觉得问题还有哪些 应该怎么解决 有没有现成的资源和项目 帮我穷尽搜罗齐全不要漏网 然后该怎么优化升级
+
+
+
+2026-11-20 04:48
+
+
+
+我会先核对现有管线和资料库，再按街机、FC、SFC、GBA 系统搜罗可复用项目，给出缺口、资源清单和升级路线，并区分已验证与待验证项。
+
+
+
+核对代码后，问题比“零件缺失”更准确地说是“已有零件没有统一接通”：台账、正反例检测、版本校验和状态构造都已存在，但热血足球知识包仍把 6 类动作标成“完整盘点”，与按角色收齐必杀的目标不一致。
+
+
+
+又发现两处会制造“看起来支持很多游戏”的假象：所谓“50+ 游戏、9 平台”内存表实际只有 26 款、6 平台；自动标定器找的是“画面与中立状态不同”，这不能证明指定必杀成功，必须增加普通射门、错误角色等容易混淆的反例。
+
+
+
+现成项目能省掉不少工作，而且本地已经有训练脚本和 1,835 个 stable-retro 状态文件；但不能直接都接进出片链，例如 DIAMBRA 的本地许可证明确限制可商业化内容创作，我会把它与可优先采用的底座分开列。
+
+
+
+升级顺序已经比较清楚：先修“清单是否真全、判据是否认对、资源是否真接线”，再扩平台；否则即使自动换人和金手指都能跑，也可能批量产出动作认错或没有原声的素材。
+
+
+
+已压缩上下文
+
+
+
+资源调研已汇总：训练脚本、练习补丁、成就条件和逐游戏内存表都能省工作，但各自绑定版本；我会据此建议复用现有 FC／街机链，逐步接入 SFC／GBA，而不是重写整套系统。
+
+
+
+**值得攻坚，而且不用推倒重来。最合适的方向是：保留现有采集管线，补成“通用执行底座＋游戏类型模板＋逐游戏验证包”，而不是继续堆一个什么游戏都靠盲按的万能脚本。**
+
+
+
+这轮核对了本地代码和资源，也分路查了模拟器、训练模式、内存资料、金手指、中日攻略与纸媒。结论是：**现成零件相当多，主要困难已经不是“找不到工具”，而是身份、知识、执行、验收之间没有形成可靠闭环。**
+
+
+
+以下区分“已有”“建议升级”“尚未验证”；本轮没有改生产代码，也没有把资料研究冒充模拟器实测。
+
+
+
+---
+
+
+
+## 一、先纠正现状：不是全缺，而是有几处会制造“假支持、假完整、假成功”
+
+
+
+### 1. 你总结里，有两点需要调整
+
+
+
+**第一，不是所有路线都必须有“现成 TAS＋宏＋金手指＋ROM”四件套。**
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+| 采集路线 | 真正需要什么 | 不一定需要什么 |
+| --- | --- | --- |
+| 现成 TAS 回放截取 | 匹配的游戏版本、输入电影、模拟器环境、录制能力 | 金手指、额外宏 |
+| 存档起步展示要素 | 游戏版本、可复现初态、动作配方、成功判据 | 现成 TAS |
+| 训练脚本／练习补丁 | 对应版本、训练工具、动作与判定 | 通关录像 |
+| 人工示教后自动复现 | 一次正确示教、输入记录、初态、验证 | 事先写好的复杂宏 |
+
+
+
+**不能因为没有 TASVideos 上的电影，就判这个游戏不能自动采集。**
+
+
+
+**第二，现有项目不是没有状态读取、成功检测、台账。**
+
+
+
+这些能力已经存在，应该复用；真正的问题是部分路径未接通、部分声明超过证据、部分判据认不准。
+
+
+
+### 2. 本轮确认的关键缺口
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+| 实际发现 | 为什么影响你的目标 |
+| --- | --- |
+| 热血足球包把 **6 类动作**标成完整，来源说明里却写着 **23 种逐角色必杀** | “触发方式有几类”和“必杀收齐多少种”被混成一个分母。[知识包:14](<F:/开源掌机教程/_工具脚本/taspipe/游戏包/nekketsu_soccer2_shots.showcase.json>) |
+| `showcase` 已经能执行手写补丁，但 `source=cheat` 主路在资源检查后又进入电影回放 | 所以“金手指完全没实现”不准确，**获取→执行之间有断点**才准确。[auto.py:486](<F:/开源掌机教程/_工具脚本/taspipe/auto.py>) |
+| 金手指解析器有统一截成单字节的处理 | 我用内存内合成样例调用真实解析器，**999 被解析成 231**；这不能通吃不同位宽、条件码和冻结语义。[retro\_cheat\_runner.py:78](<F:/开源掌机教程/_工具脚本/taspipe/retro_cheat_runner.py>) |
+| “50+ 游戏、9 平台”内存表实际是 **26 款、6 平台**，且本次未找到它的显式生产消费路径 | 有一份地址表，不等于这些游戏已可自动操控；其中还有 GBA 地址超过所标 IWRAM 域范围的问题。[内存表:3](<F:/开源掌机教程/_工具脚本/taspipe/游戏数据字典/expanded_50_games_memory_maps.json>) |
+| 自动标定器寻找“输入后画面与中立状态不同”的区域 | 普通射门、跳跃、背景变化也可能满足；**找到差异不等于认出指定必杀**。[universal\_authoring.py:695](<F:/开源掌机教程/_工具脚本/taspipe/universal_authoring.py>) |
+| 当前逐帧截图的展示链明确阻止带原声任务 | 即使动作识别成功，也还不能直接等同于你要的有声正式素材。[showcase.py:441](<F:/开源掌机教程/_工具脚本/taspipe/showcase.py>) |
+
+
+
+另外，本地 stable-retro 已有 **1,072 个包含集成数据的目录、1,835 个状态文件**，但脚本引用的汇总索引文件不存在。这里应先修资源登记和引用，**不是再下载一遍，更不能把这些数量宣传成已支持的全要素游戏数。**
+
+
+
+---
+
+
+
+## 二、在你列出的问题之外，还必须补这些制度
+
+
+
+### 1. “完整盘点”必须先有可核对的名单
+
+
+
+每个格子要明确：
+
+
+
+> 哪个版本 → 哪个角色／形态 → 哪个要素 → 哪种必要变体。
+
+
+
+例如热血足球：
+
+
+
+- 逐角色射门必杀是一张表。
+- 通用头球、倒钩等动作是另一张表。
+- 守门扑救技另列。
+- 不同输入能触发同一招，不自动算两个要素。
+
+
+
+**完整度来自权威名单逐格对账，不来自把 `expected_total` 写成多少。**
+
+
+
+### 2. 知识不能只有一个“已验证”标签
+
+
+
+至少分清四种事实：
+
+
+
+1. 文献记载存在。
+2. 适用于当前游戏版本。
+3. 当前采集方法可以复现。
+4. 已有合格视频素材。
+
+
+
+“有攻略但没复现”不等于攻略错；“脚本没打出来”更不等于游戏删了这招。
+
+
+
+### 3. 金手指不是统一的“地址＝数值”
+
+
+
+需要区分：
+
+
+
+- CPU 总线地址与模拟器内存域偏移；
+- 8／16／32 位、大小端、位掩码；
+- 一次写入、每帧冻结、条件写入；
+- RAM 修改、ROM 读取替换；
+- 多行指令、指针、不同码制。
+
+
+
+**优先让对应模拟器解释原生作弊码；只有确认支持的码型，才转换成统一补丁。**不能先压扁成字节，再希望各游戏自己适应。
+
+
+
+### 4. 训练环境不能把要展示的机制一起破坏
+
+
+
+“冻结对手”不是通用答案。
+
+
+
+- 展示守门扑救，需要正常来球和碰撞。
+- 展示反击，需要对手按预定方式攻击。
+- 展示掉落，需要保留击杀和掉落流程。
+- 设置持球者，可能还要同步球的位置、速度和角色动作状态。
+
+
+
+正确方式更接近：
+
+
+
+> 设置必要条件 → 核对条件 → 释放影响机制的修改 → 让游戏自然触发 → 验证。
+
+
+
+**准备阶段直接写出的“成功标志”，不能再拿来证明动作成功。**
+
+
+
+### 5. 固定帧宏应升级为“观察后行动”
+
+
+
+不是：
+
+
+
+> 跑 30 帧 → 跳 14 帧 → 射门。
+
+
+
+而是：
+
+
+
+> 确认角色 → 确认持球 → 到达区域 → 等待所需高度／动作阶段 → 输入 → 检查结果。
+
+
+
+时机搜索仍然有用，但应只搜索有意义的参数：提前几帧、按多久、间隔多久、站多远，而不是把角色、场景、版本错误一起丢进暴力穷举。
+
+
+
+### 6. 验收必须分成三个结果
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+| 结果 | 回答的问题 |
+| --- | --- |
+| 动作成立 | 发出来的是不是指定招式？ |
+| 效果成立 | 命中、破防、反射、变身、获得物品等是否发生？ |
+| 拍摄合格 | 画面是否清楚、过程是否完整、声音是否同步？ |
+
+
+
+**掉血不等于指定必杀；空放也不一定是失败。**纯展示动作和展示伤害效果，本来就是不同拍摄任务。
+
+
+
+判据除了正例，还应有：
+
+
+
+- 普通攻击；
+- 错误角色；
+- 相似但不同招式；
+- 资源不足；
+- 被防御／未命中；
+- 菜单、读档、回合切换。
+
+
+
+而且**标定用的样本与最终验收样本要分开**，不能用同一对截图既造尺子又证明尺子准。
+
+
+
+### 7. 同样的存档名，不代表同样的环境
+
+
+
+除了 ROM，还要绑定核心、模拟器构建、BIOS、区域、DIP、控制器、SRAM／NVRAM、补丁、初始随机状态。
+
+
+
+- 不同核心的存档一般不能直接交换。
+- 原版与练习 hack 的存档不能默认互通。
+- 同为 BK2，也不自动表示跨工具兼容。
+- 换了核心，旧“后端通过”报告不能无条件继续算数。
+
+
+
+### 8. 模拟帧、输入帧、录像时间不是一条轴
+
+
+
+街机不能统一写死 60fps；画面重绘一次，也不一定等于游戏逻辑前进一次。
+
+
+
+建议分成两段：
+
+
+
+- **探索段：**快速试验，保存输入、状态和观察结果。
+- **正式录制段：**在相同验证环境中重放成功路径，录同步原声、干净画面。
+
+
+
+不要用桌面等待时间拼出“看似正确”的录像时长。
+
+
+
+### 9. 台账必须保存证据，不能只保存“绿灯”
+
+
+
+现有台账已有指纹、产物校验和续跑，不用重造。但建议补上：
+
+
+
+- 每次尝试使用不可覆盖的证据目录；
+- 台账原子写入，避免并发互相覆盖；
+- 采集、判定、导出分别缓存；
+- 改判据优先重验旧素材，不必全部重录；
+- 判定不明确的产物可以留存，但不能计入通过数。
+
+
+
+### 10. “能自动采到”与“值得做成视频”要分开
+
+
+
+你的目标不是机器人跑分。因此还要有一份**拍摄要求**：
+
+
+
+- 观众需要看清什么差别；
+- 动作之前需要多少交代；
+- 是否需要普通版／特殊版对比；
+- 哪一帧支撑解说中的哪句话；
+- 是否残留调试字、训练菜单、遮挡；
+- 这一组素材能否组成有节奏的完整盘点。
+
+
+
+**技术通过只是素材入库条件，不是作品质量证明。**
+
+
+
+---
+
+
+
+## 三、建议的系统结构：保留现有底座，补成闭环
+
+
+
+```
+版本身份
+   ↓
+要素名单与来源
+   ↓
+选择采集路线
+   ├─ 现成输入回放
+   ├─ 验证存档＋动作配方
+   ├─ 训练脚本／练习补丁
+   └─ 人工示教一次
+   ↓
+构造前置状态 → 观察确认 → 执行动作
+   ↓
+动作判定＋效果判定＋困难反例
+   ↓
+正式有声录制＋画面验收
+   ↓
+逐要素台账 → 只补缺项
+```
+
+
+
+### 通用化应放在哪里？
+
+
+
+**第一层：平台适配。**统一推进、按键、读写、存档、录音录像和能力报告。
+
+
+
+**第二层：游戏类型模板。**
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+| 类型 | 应复用的能力 |
+| --- | --- |
+| 格斗 | 朝向、距离、资源、硬直、木偶防御／反击、动作与连接事件 |
+| 球类／多人控制 | 角色身份、控制权、球权、区域、球高、交接 |
+| 横版动作／射击 | 武器、弹药、敌人、检查点、投射物、命中 |
+| 变身／能力展示 | 形态、能力解锁、环境条件、持续状态 |
+| RPG／收集 | 队伍、装备、事件旗标、掉落与实际获得、分支条件 |
+
+
+
+**第三层：逐游戏包。**只保存这个游戏的角色表、地址、配方、判据和来源。
+
+
+
+新游戏尽量只增加第三层；反复遇到的机制再抽进第二层。不要为了某一招在通用代码里不断加游戏名判断。
+
+
+
+### 暂时不建议走的重路线
+
+
+
+- 不把逐帧调用视觉大模型作为默认眼睛。
+- 不把强化学习训练当普通招式采集的前置条件。
+- 不要求先完整反编译整个游戏。
+- 不同时维护所有模拟器为正式生产后端。
+
+
+
+**有限搜索、可靠状态观察、现成训练脚本、一次示教，通常更便宜也更容易验收。**
+
+
+
+---
+
+
+
+## 四、街机、FC、SFC、GBA 应怎样选后端？
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+| 平台 | 近期推荐 | 辅助工具 | 必须注意 |
+| --- | --- | --- | --- |
+| **FC** | 继续复用现有 BizHawk 路径 | FCEUX；Mesen 系用于调试 | 旧 Lua、输入电影和地址语义不能直接跨工具套用 |
+| **SFC** | 优先把 BizHawk 接入同一契约 | Mesen 系、lsnes；Snes9x 按历史资产选择 | 肩键、内存域、子帧输入、存档与影音需要单独验证 |
+| **GBA** | BizHawk 统一入口，mGBA 做专项补充 | TASVideos 脚本、逐游戏逆向资料 | 总线地址与 EWRAM／IWRAM 偏移必须明确；持久化存档恢复也要验 |
+| **街机** | **先保留现有 FBNeo 产线**；MAME 作为新增覆盖与调试候选 | 专用训练 Lua、MAME debugger／宏 | FBNeo 独立版 Lua 与 libretro 核心不是同一接口；MAME 驱动存档能力也不齐 |
+
+
+
+这里有几个容易踩的坑：
+
+
+
+- 本项目目前展示平台配置中只有 NES 标为已验证；**上游支持 SFC／GBA，不等于本项目已经接通。**
+- MAME 的存档操作是异步排程，不能调用后立刻假设加载完成。
+- RetroArch 不会自动获得独立 FBNeo 的 Lua 训练脚本能力。
+- stable-retro 很适合借鉴数据组织和已有初态，但随机动作示例不是要素采集器。
+- SourMesen/Mesen2 已归档，README 指向 **MesenCE**；不能继续把旧仓当当前维护主线。
+
+
+
+**不建议现在为追求“统一”先迁移整个街机产线。先让现有成功路径继续生产，再让新后端经过准入测试。**
+
+
+
+---
+
+
+
+## 五、优化升级顺序与验收口径
+
+
+
+### 第一阶段：先消除假完整、假支持、假成功
+
+
+
+优先处理：
+
+
+
+1. 按权威名单重建要素分母。
+2. 纠正资源目录、数量、平台标签和失效索引。
+3. 修金手指语义及主执行路径断点。
+4. 自动标定只能生成候选判据，不能自动升级为已验证。
+5. 强制区分动作成立、效果成立和拍摄合格。
+
+
+
+**验收：**普通射门不能冒充必杀；错误版本不能套地址；只有候选资料不能显示“已支持”。
+
+
+
+### 第二阶段：接通训练状态与闭环操作
+
+
+
+复用现有状态构造和会话接口，补上：
+
+
+
+- 角色／装备／场景选择；
+- 前置条件观察；
+- 准备、释放、动作、复位；
+- 可复用的人工示教资产。
+
+
+
+**验收：**从新进程加载初态，仍能确认正确角色与条件；修改之后游戏能正常演化，而不是只改了显示。
+
+
+
+### 第三阶段：把“成功动作”变成“正式素材”
+
+
+
+接同步原声、干净画面、动作始末窗口、字幕与解说证据对应，保留不可变尝试记录。
+
+
+
+**验收：**看真正导出的片段，不能只看日志或单张证据图；中断后只补缺项。
+
+
+
+### 第四阶段：用不同机制证明可泛化
+
+
+
+建议的验证组合是：
+
+
+
+- FC 热血足球：角色与球权。
+- 街机现有明确版本的拳皇：格斗动作与效果。
+- 街机横版射击：武器／投射物。
+- SFC 洛克人X或超级银河战士：能力／装备。
+- GBA 晓月圆舞曲：魂／装备／事件。
+
+
+
+这是**建议验证矩阵，不是已跑通名单**。已经通过且指纹未变的格不重复跑；每类成熟后，再接一个未参与设计的游戏，检查是否只增加知识包就能工作。
+
+
+
+---
+
+
+
+## 六、Sources：可复用资源分层清单
+
+
+
+下面不是“全部都要装”，而是按缺口选择的资源目录。**本地有源码、文档有接口、当前环境实测通过，是三个不同等级。**
+
+
+
+### A. 模拟器控制与录制
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+| 资源 | 主要用途与边界 |
+| --- | --- |
+| [![](https://www.google.com/s2/favicons?domain=tasvideos.org&sz=32)BizHawk Lua API](<https://tasvideos.org/Bizhawk/LuaFunctions>)／[![](https://www.google.com/s2/favicons?domain=github.com&sz=32)ExternalTool 示例](<https://github.com/TASEmulators/BizHawk/blob/master/ExternalToolProjects/HelloWorld/CustomMainForm.cs>) | 家用机统一控制起点；具体核心服务仍需验证 |
+| [FCEUX Lua](<https://fceux.com/web/help/LuaFunctionsList.html>) | FC 逐帧、内存、钩子、输入与历史脚本 |
+| [![](https://www.google.com/s2/favicons?domain=github.com&sz=32)Mesen2 归档说明](<https://github.com/SourMesen/Mesen2>)／[![](https://www.google.com/s2/favicons?domain=github.com&sz=32)MesenCE](<https://github.com/nesdev-org/MesenCE>) | 多平台调试；后者是旧仓指向的继任入口，本轮未完成其本机验收 |
+| [MAME Lua](<https://docs.mamedev.org/luascript/index.html>)／[会话与影音接口](<https://docs.mamedev.org/luascript/ref-core.html>) | 街机设备、地址空间、存档和录制 |
+| [![](https://www.google.com/s2/favicons?domain=docs.libretro.com&sz=32)FBNeo libretro 文档](<https://docs.libretro.com/library/fbneo/>) | 核心能力、作弊、BIOS／DIP；不要混同独立版 Lua |
+| [![](https://www.google.com/s2/favicons?domain=mgba.io&sz=32)mGBA scripting](<https://mgba.io/docs/scripting.html>) | GBA 帧推进、输入、内存、状态 |
+| [![](https://www.google.com/s2/favicons?domain=tasvideos.org&sz=32)lsnes Lua](<https://tasvideos.org/EmulatorResources/Lsnes/LuaFunctions>) | SFC 历史 TAS、子帧输入与精细实验 |
+| [![](https://www.google.com/s2/favicons?domain=docs.libretro.com&sz=32)libretro 接口](<https://docs.libretro.com/development/cores/developing-cores/>)／[![](https://www.google.com/s2/favicons?domain=stable-retro.farama.org&sz=32)stable-retro 集成格式](<https://stable-retro.farama.org/integration/>) | 统一宿主和语义变量组织参考；不是现成全游戏采集器 |
+
+
+
+### B. 训练模式、宏与练习补丁
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+| 资源 | 可以直接省掉什么 | 限制 |
+| --- | --- | --- |
+| [![](https://www.google.com/s2/favicons?domain=github.com&sz=32)peon2/fbneo-training-mode](<https://github.com/peon2/fbneo-training-mode>) | 多游戏生命、能量、时间、朝向及训练框架 | 本地已有；逐 set 适配，整库许可尚未核清 |
+| [![](https://www.google.com/s2/favicons?domain=github.com&sz=32)Grouflon/3rd\_training\_lua](<https://github.com/Grouflon/3rd_training_lua>) | 木偶、防御、反击、录放、碰撞框、帧差 | 本地已有；README明确指定三街 Japan 990512 与对应 Fightcade 环境 |
+| [![](https://www.google.com/s2/favicons?domain=github.com&sz=32)KOF96 训练 Lua](<https://github.com/dev-dem/kof-training-mode-FBNeo>) | 拳皇专项训练线索 | 本轮仅摘要确认，不能扩称全系列 |
+| [![](https://www.google.com/s2/favicons?domain=github.com&sz=32)KOF2002 Combo Trials](<https://github.com/PainPekooo/kof2002-combo-trials>) | 连招试炼、序列与中断检查 | BETA；自报条目数不等于全部已验证，资料还混有 UM 来源 |
+| [MAME Input Macro](<https://docs.mamedev.org/plugins/inputmacro.html>)／[![](https://code.google.com/archive/img/project-hosting.ico)MacroLua 文档](<https://code.google.com/archive/p/macrolua/wikis/MacroLuaDocumentation.wiki>) | 输入时序表达、持续、延迟与循环 | 宏不负责确认指定招式成功 |
+| [![](https://www.google.com/s2/favicons?domain=github.com&sz=32)超级银河战士练习补丁](<https://github.com/tewtal/sm_practice_hack>)／[![](https://www.google.com/s2/favicons?domain=smpractice.speedga.me&sz=32)功能手册](<https://smpractice.speedga.me/help>) | 装备、资源、跳转、状态、RNG、内存观察 | 已读上游文档；有些选项会改机制和 lag，必须与原版区分 |
+| [![](https://www.google.com/s2/favicons?domain=isofrieze.com&sz=32)SMW Practice Cart](<https://isofrieze.com/romhacks/smwpractice/>)／[![](https://www.google.com/s2/favicons?domain=github.com&sz=32)源码](<https://github.com/IsoFrieze/SMWPracticeCart>) | 开关卡、形态、复位、内存观察、录放 | U／J版本不同；采用补丁路线，不把页面上的完整ROM当开放素材 |
+| [![](https://www.google.com/s2/favicons?domain=github.com&sz=32)洛克人3练习补丁](<https://github.com/helgefmi/mm3hack>)／[![](https://www.google.com/s2/favicons?domain=github.com&sz=32)洛克人X练习工程](<https://github.com/Myriachan/RockmanXPractice>) | 选关、武器与练习入口候选 | 前者较老且许可未核清；后者仅确认用途，不能承诺具体覆盖 |
+
+
+
+还有两个本地资源的名字必须纠正：
+
+
+
+- `sftm-training-lua` 是 **《Street Fighter: The Movie》电影版**训练脚本，不是 CPS 街霸全集。
+- `NDS-GBA-Cheat-Databases` 的 README 实际介绍 **NDS Action Replay** 数据，不能当作 GBA 全集。
+
+
+
+### C. 成功判据、内存地图和机制研究
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+| 资源 | 应怎样使用 |
+| --- | --- |
+| [![](https://www.google.com/s2/favicons?domain=tasvideos.org&sz=32)TASVideos LuaScripting](<https://tasvideos.org/LuaScripting>) | 找观察脚本、RNG、碰撞、输入与实验方法；不同模拟器 API 要适配 |
+| [![](https://www.google.com/s2/favicons?domain=tasvideos.org&sz=32)FC 忍者龙剑传](<https://tasvideos.org/GameResources/NES/NinjaGaiden>) | RAM、符号与脚本；能避免把“显示用血量”误认成真实敌人状态 |
+| [![](https://www.google.com/s2/favicons?domain=tasvideos.org&sz=32)SFC 超级马力欧世界](<https://tasvideos.org/GameResources/SNES/SuperMarioWorld>)／[![](https://www.google.com/s2/favicons?domain=www.smwcentral.net&sz=32)SMWCentral RAM 表](<https://www.smwcentral.net/?p=memorymap&game=smw&region=ram>) | 角色、形态、精灵等成熟研究；只对应这个游戏 |
+| [![](https://www.google.com/s2/favicons?domain=tasvideos.org&sz=32)GBA 晓月圆舞曲](<https://tasvideos.org/GameResources/GBA/CastlevaniaAriaOfSorrow>)／[![](https://www.google.com/s2/favicons?domain=tasvideos.org&sz=32)宝可梦三代](<https://tasvideos.org/GameResources/GBA/PokemonGen3>) | 掉魂、RNG、战斗与脚本入口；事件“出现／掉落／获得”要分开 |
+| [![](https://www.google.com/s2/favicons?domain=datacrystal.tcrf.net&sz=32)Data Crystal RAM maps](<https://datacrystal.tcrf.net/wiki/Category:RAM_maps>) | 跨平台逐游戏地图入口；本轮正文403，属于待全文复核 |
+| [![](https://www.google.com/s2/favicons?domain=docs.retroachievements.org&sz=32)RA Code Notes](<https://docs.retroachievements.org/guidelines/content/code-notes.html>) | 地址、类型、枚举与指针研究 |
+| [![](https://www.google.com/s2/favicons?domain=github.com&sz=32)rcheevos](<https://github.com/RetroAchievements/rcheevos>)／[![](https://www.google.com/s2/favicons?domain=github.com&sz=32)RAIntegration](<https://github.com/RetroAchievements/RAIntegration>)／[![](https://www.google.com/s2/favicons?domain=github.com&sz=32)个人 RAScripts 集合](<https://github.com/miagui/RAScripts>) | 条件求值、开发工具、候选逻辑；不是统一的全招式数据库 |
+| [![](https://www.google.com/s2/favicons?domain=docs.retroachievements.org&sz=32)RA Hit Counts](<https://docs.retroachievements.org/developer-docs/hit-counts.html>)／[![](https://www.google.com/s2/favicons?domain=docs.retroachievements.org&sz=32)Delta 条件实例](<https://docs.retroachievements.org/developer-docs/real-examples/using-delta-values-and-hit-counts-to-detect-an-increment.html>) | 学习边沿与累计条件；Hit Count 不自动等于游戏里的命中次数 |
+| [![](https://www.google.com/s2/favicons?domain=gbadev.net&sz=32)GBA 内存布局](<https://gbadev.net/gbadoc/memory.html>) | 核对总线地址、EWRAM、IWRAM和镜像，不替错误地址猜解释 |
+
+
+
+**RA 特别值得挖，但不能按成就名称直接拿来当签名。**本轮看到名叫 Hadouken 的成就，实际条件可能是角色通关，而不是发动波动拳；必须读原始条件。
+
+
+
+### D. 反编译与反汇编：按需深入，不作为所有游戏门槛
+
+
+
+- [![](https://www.google.com/s2/favicons?domain=github.com&sz=32)pret/pokeemerald](<https://github.com/pret/pokeemerald>)、[![](https://www.google.com/s2/favicons?domain=github.com&sz=32)pokefirered](<https://github.com/pret/pokefirered>)：招式、道具、地图和事件状态机。
+- [![](https://www.google.com/s2/favicons?domain=github.com&sz=32)ALTTP RAM log](<https://github.com/walkingeyerobot/alttp-disassembly/blob/master/Zelda_3_RAM.log>)、[![](https://www.google.com/s2/favicons?domain=github.com&sz=32)日版反汇编](<https://github.com/spannerisms/jpdasm>)、[![](https://www.google.com/s2/favicons?domain=github.com&sz=32)美版反汇编](<https://github.com/spannerisms/usdasm>)：变量和版本差异。
+- [![](https://www.google.com/s2/favicons?domain=github.com&sz=32)snesrev/zelda3](<https://github.com/snesrev/zelda3>)：机制阅读参考；重实现程序的本机地址不是 SNES RAM 地址。
+
+
+
+这些是高价值候选，但本轮没有逐仓完成权利与版本审计。**公开可读不等于原游戏代码、素材或ROM被统一重新授权。**
+
+
+
+### E. 版本身份与金手指
+
+
+
+- [No-Intro](<https://no-intro.org/>)：卡带版本元数据与校验。
+- [![](https://www.google.com/s2/favicons?domain=nescartdb.com&sz=32)NesCartDB](<https://nescartdb.com/>)：FC／NES板型、芯片和实体版本线索；本轮主要为摘要。
+- [MAME 命令行与列表导出](<https://docs.mamedev.org/commandline/commandline-all.html>)、[Software Lists](<https://docs.mamedev.org/contributing/softlist.html>)：机器、软件及介质身份。
+- [![](https://www.google.com/s2/favicons?domain=hbmame.1emulation.com&sz=32)HBMAME](<https://hbmame.1emulation.com/>)：hack／homebrew 谱系补充，不自动与 FBNeo 同名 set 等价。
+- [![](https://www.google.com/s2/favicons?domain=github.com&sz=32)FBNeo-cheats](<https://github.com/finalburnneo/FBNeo-cheats>)：街机作弊候选，上游存在已确认，整库许可未核清。
+- [![](https://www.google.com/s2/favicons?domain=www.mamecheat.co.uk&sz=32)Pugsy’s Cheats](<https://www.mamecheat.co.uk/>)、[![](https://www.google.com/s2/favicons?domain=gamehacking.org&sz=32)GameHacking.org](<https://gamehacking.org/>)：重要入口，但本轮直连403，不能称已读取完整数据库。
+
+
+
+街机建议以**模拟器版本＋set＋parent／BIOS＋内部文件长度及CRC／SHA1**识别，不能只看 ZIP 名字或外层 ZIP 哈希。
+
+
+
+另外，当前本地金手指查询存在“前10个文件、每文件前40条”的截断。若要做全面盘点，必须显示遗漏数并支持翻页／全量导出，否则资源就在本地也会漏。
+
+
+
+### F. 中文、日文攻略与原始说明书
+
+
+
+这层对你的选题尤其重要，不能只依赖英文 GitHub。
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+| 来源 | 优先用途 |
+| --- | --- |
+| [![](https://www.google.com/s2/favicons?domain=www.1ang.com&sz=32)1ang 火光资料示例](<https://www.1ang.com/wenzhang/b7d4db50-b605-11ec-b9d3-6baf0aa5b502>)／[![](https://www.google.com/s2/favicons?domain=www.squarecn.com&sz=32)天幻攻略示例](<https://www.squarecn.com/article/bc0_a7555.aspx>) | 中文机制、攻略与数据；不局限于FC |
+| [![](https://www.google.com/s2/favicons?domain=blog.csdn.net&sz=32)CSDN wangsitan 示例](<https://blog.csdn.net/wangsitan/article/details/7669725>) | Technos等专题资料；注意正文权限，不能把推荐区混进证据 |
+| [![](https://www.google.com/s2/favicons?domain=www.fireemblem.net&sz=32)火花天龙剑](<http://www.fireemblem.net/fe/fe6/index.htm>)／[![](https://www.google.com/s2/favicons?domain=bbs.newwise.com&sz=32)NewWise 原帖示例](<https://bbs.newwise.com/thread-68695-1-1.html>) | GBA专题、原稿与刊期线索 |
+| [hackrom.cn 示例](<http://www.hackrom.cn/html/3/2106.html>)／[![](https://www.google.com/s2/favicons?domain=www.mamecn.com&sz=32)街机中国示例](<https://www.mamecn.com/wz/340231.html>)／[游聚技能表](<http://wof.gotvg.com/skilllist/>) | 街机改版、招式与玩法线索；先确认具体set |
+| [![](https://www.google.com/s2/favicons?domain=www.quanjizhong.top&sz=32)街机改版目录线索](<https://www.quanjizhong.top/thread-677-1-1.html>) | 扩展候选名单，不把目录收录等同于机制正确 |
+| [![](https://www.google.com/s2/favicons?domain=www.nintendo.co.jp&sz=32)任天堂说明书示例](<https://www.nintendo.co.jp/clv/manuals/ja/pdf/CLV-P-HABBJ.pdf>) | 原厂名称、操作与机制的一手证据 |
+| [setsumei](<https://setsumei.cloudfree.jp/>)／[![](https://www.google.com/s2/favicons?domain=www.replacementdocs.com&sz=32)ReplacementDocs](<https://www.replacementdocs.com/>) | 说明书扫描；前者是第三方托管，不是原厂官网 |
+| [![](https://www.google.com/s2/favicons?domain=gcgx.games&sz=32)GameCenter GX／MOTHER2](<https://gcgx.games/mother2/>)／[![](https://www.google.com/s2/favicons?domain=game-urawaza.com&sz=32)日文SFC秘籍目录](<https://game-urawaza.com/SFC/se.html>) | 日文攻略、参数、隐藏条件与秘籍 |
+| [![](https://www.google.com/s2/favicons?domain=gamefaqs.gamespot.com&sz=32)GameFAQs 示例](<https://gamefaqs.gamespot.com/gba/468480-fire-emblem/faqs>)／[![](https://www.google.com/s2/favicons?domain=strategywiki.org&sz=32)StrategyWiki 许可页](<https://strategywiki.org/wiki/StrategyWiki:License>) | 补足逐作攻略；内容授权分别核对 |
+
+
+
+B站也不能只搜“通关视频”：应包含**专栏、合集、简介中的补充资料、杂志翻页、训练模式演示**。这些适合发现线索，最终机制仍应回到可引用的原文或可复现实验。
+
+
+
+### G. 纸媒与历史档案
+
+
+
+- [![](https://www.google.com/s2/favicons?domain=archive.org&sz=32)Internet Archive《电子游戏软件》示例](<https://archive.org/details/game-software-93-02>)。
+- [![](https://www.google.com/s2/favicons?domain=archive.org&sz=32)GBA说明书集合](<https://archive.org/details/NintendoGameBoyAdvanceManuals>)。
+- [![](https://www.google.com/s2/favicons?domain=www.ppxclub.com&sz=32)琵琶行纸媒线索](<https://www.ppxclub.com/736472-1-1>)、[![](https://www.google.com/s2/favicons?domain=www.retrowan.com&sz=32)Retrowan《大众软件》目录](<https://www.retrowan.com/popsoft-magazine-download/>)。
+- [![](https://www.google.com/s2/favicons?domain=www.gamingalexandria.com&sz=32)Gaming Alexandria 扫描库](<https://www.gamingalexandria.com/wp/scans/>)。
+- [![](https://www.google.com/s2/favicons?domain=archive.gamehistory.org&sz=32)Video Game History Foundation 数字档案](<https://archive.gamehistory.org/>)。
+- [![](https://www.google.com/s2/favicons?domain=www.retromags.com&sz=32)Retromags《The Super Famicom》目录](<https://www.retromags.com/magazines/jpn/the-super-famicom/>)。
+
+
+
+这类资料应记录到**刊名、期号、页码、文章标题**，不是只存一个网盘链接。部分集合本轮只确认了入口，未取得全部文件清单。
+
+
+
+### H. 许可上的两项明确提醒
+
+
+
+- [![](https://www.google.com/s2/favicons?domain=github.com&sz=32)DIAMBRA LICENSE](<https://github.com/diambra/arena/blob/main/LICENSE.txt>) 明确限制未经书面许可的商业使用，**包括通过它创作可商业化内容**。因此不适合作为你这条视频产线的无条件默认底座。
+- [![](https://www.google.com/s2/favicons?domain=github.com&sz=32)FBNeo LICENSE](<https://github.com/finalburnneo/FBNeo/blob/master/src/license.txt>) 含自定义非商业限制，不能称作 MIT 式无约束商用；但也不能据此未经进一步判断就断言所有录制视频都被禁止。
+- [![](https://www.google.com/s2/favicons?domain=github.com&sz=32)超级银河战士练习补丁 LICENSE](<https://github.com/tewtal/sm_practice_hack/blob/master/LICENSE>) 为 Unlicense，允许商业使用项目代码；这**不扩展为原版ROM的授权**。
+
+
+
+工具代码、作弊数据库、说明书扫描、游戏素材、他人的TAS输入与成片，必须分别判断，不能互相继承许可。
+
+
+
+---
+
+
+
+**本轮已覆盖后端、训练／宏、练习补丁、作弊、版本身份、内存／成就、逆向资料和中日纸媒这些主要渠道；不可达、仅摘要、私域资料仍留有缺口，不能承诺“全网零漏网”。我的建议是先落实“纠正名单与判据→接通训练状态→正式有声录制”这条主线，再用四平台不同类型游戏检验复用能力，不继续只围着热血足球逐招打补丁。**

@@ -1,0 +1,8 @@
+TASVideos Glossary：segmented movie 通用术语（参考性，逐字摘录）
+ Segmented, Multi-segment
+
+ Made in parts.
+
+ A segmented movie consists of individual levels or sections of a game which each are played separately.
+
+ Making of segmented movies can be seen as a limited form of re-recording: instead of saving/loading at any point at will, saving/loading is only done at segment borders.

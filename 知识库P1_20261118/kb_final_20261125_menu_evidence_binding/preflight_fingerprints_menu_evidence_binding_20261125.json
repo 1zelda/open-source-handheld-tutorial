@@ -1,0 +1,124 @@
+{
+  "schema": "menu_evidence_delivery_preflight_v1",
+  "generated_on": "2026-11-25",
+  "source_audit": {
+    "pass": 8,
+    "fail": 0,
+    "inconclusive": 1,
+    "sources": 102,
+    "packs": 24,
+    "elements_checked": 202,
+    "elements_supported": 202
+  },
+  "weak_elements": 154,
+  "menu_weak_elements": 114,
+  "legacy_weak_elements": 40,
+  "coverage": {
+    "present_unverified": 6,
+    "registered_empty": 9,
+    "verified": 11
+  },
+  "coverage_rows": 26,
+  "menu": {
+    "source_report": {
+      "path": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/source_capture_report.json",
+      "sha256": "fba4a630fef8f35a9adffb3734816b7603e554d8b0456c7b8551e2662bb665e9"
+    },
+    "source_config": {
+      "path": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_catalog_nav_full.json",
+      "sha256": "93d3a7a10230b86b45338a3677e3c355baf46c8eee26e85eab815ac26047d64d"
+    },
+    "name_observation": {
+      "path": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_names_observed.json",
+      "sha256": "ad2f9ec2aee31c976095707669946b17ad4478bb5e6fd180619a1996e123c922"
+    },
+    "effect_observation": {
+      "path": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_effects_observed.json",
+      "sha256": "3ad433fb21d3b5ddddeded6a2d9ee5fc5c45334af6bfbec6c4cdc7bbaca8e67f",
+      "region": [
+        45,
+        118,
+        238,
+        153
+      ]
+    }
+  },
+  "menu_evidence_binding": {
+    "source_id": "local_aria_menu_catalog_20261125",
+    "report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_catalog_report.json",
+    "report_sha256": "384c0a8a184985625689059e0501765f1a94c185a041cf717790fd8722e6b010",
+    "stable_element_ids": 114,
+    "media_files_verified": 342
+  },
+  "code": {
+    "sources_audit": {
+      "path": "F:\\开源掌机教程\\_工具脚本\\taspipe\\sources.py",
+      "bytes": 47214,
+      "sha256": "fc47682d686f7c04b7fcb5c74d46a0760da4c5a7e4258358442dbd4958e2704c"
+    },
+    "sources_selftest_gates": {
+      "path": "F:\\开源掌机教程\\_工具脚本\\taspipe\\sources_selftest_gates.py",
+      "bytes": 30271,
+      "sha256": "c5532152b62c66a4d3bad5582ec5efd4374203b58a8c906bba9b5691e8bc693a"
+    },
+    "kb": {
+      "path": "F:\\开源掌机教程\\_工具脚本\\taspipe\\kb.py",
+      "bytes": 102100,
+      "sha256": "cf9d69aa40329b9e1ff4b2d086abbddf54de9ea89ab581c093c3df1ab8463264"
+    },
+    "kb_selftest_gates": {
+      "path": "F:\\开源掌机教程\\_工具脚本\\taspipe\\kb_selftest_gates.py",
+      "bytes": 220892,
+      "sha256": "df2f2ef03ae3aa86aea1656ea604caf3e1116211b87fcb3e1b5ab077e22c5512"
+    }
+  },
+  "data": {
+    "source_registry": {
+      "path": "F:\\开源掌机教程\\_工具脚本\\taspipe\\游戏包\\来源库\\sources.json",
+      "bytes": 69563,
+      "sha256": "8f1b9b6e0beb08aa1eeed20c12770a673dce830d4543201b0f8a8bbfe4ea2680"
+    },
+    "menu_catalog": {
+      "path": "F:\\开源掌机教程\\_工具脚本\\taspipe\\游戏包\\gba_aria_of_sorrow_souls.menu_catalog.json",
+      "bytes": 252190,
+      "sha256": "09ccf152482b4f044b5a39fe82b9cb1a99135892c88c8da8687cbebb6f8b3354"
+    },
+    "corpus_map": {
+      "path": "F:\\开源掌机教程\\_工具脚本\\taspipe\\游戏包\\知识库\\corpus_map.json",
+      "bytes": 34439,
+      "sha256": "e49bb480ad4aa58d0ce97a47af7fabe49a7453fde90d01631350b3bf662342df"
+    },
+    "index": {
+      "path": "F:\\开源掌机教程\\_工具脚本\\taspipe\\游戏包\\知识库\\index.json",
+      "bytes": 3766455,
+      "sha256": "05907ec85146f386325285ccd4d2008d8bc28d50d8ec4e2461c14a9351f03f7d"
+    },
+    "menu_evidence_report": {
+      "path": "F:\\开源掌机教程\\_工具脚本\\taspipe\\游戏包\\证据\\晓月圆舞曲\\menu_catalog_nav_full_20261125\\menu_catalog_report.json",
+      "bytes": 109914,
+      "sha256": "384c0a8a184985625689059e0501765f1a94c185a041cf717790fd8722e6b010"
+    }
+  },
+  "gates": {
+    "project_selftest": [
+      1534,
+      1534
+    ],
+    "kb_selftest": [
+      333,
+      333
+    ],
+    "cross_platform_selftest": [
+      33,
+      33
+    ],
+    "sources_selftest": [
+      74,
+      74
+    ],
+    "topic_selftest": [
+      166,
+      166
+    ]
+  }
+}

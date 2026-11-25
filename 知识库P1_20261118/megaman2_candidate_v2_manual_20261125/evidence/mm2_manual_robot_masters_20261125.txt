@@ -1,0 +1,10 @@
+洛克人2 官方说明书：八名 Robot Master Wood Clash Quick Heat Metal Air Flash Bubble（美国NES手册第14至15页）
+
+来源：Capcom《MEGA MAN 2》美国 NES 官方说明书，任天堂官方数字复刻。
+核验：已读扫描页；中文为说明，英文为短引文；未收全本。
+
+说明书的Weapons页列出八名Robot Master：Wood Man、Clash Man、Quick Man、Heat Man、Metal Man、Air Man、Flash Man、Bubble Man。
+> Wood Man Clash Man Quick Man Heat Man Metal Man Air Man Flash Man Bubble Man
+
+Mega Man每击败一个敌人就取得对方的力量。
+> As Mega Man defeats each enemy, he acquires their powers.

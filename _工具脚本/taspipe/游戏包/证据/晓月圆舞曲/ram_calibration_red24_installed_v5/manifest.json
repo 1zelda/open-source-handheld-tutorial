@@ -1,0 +1,205 @@
+{
+  "schema_version": "ram_calibration/1.0",
+  "report": "F:\\taspipe_scratch\\ram_calibration\\aria_red24_installed_v5\\report.json",
+  "report_sha256": "094b4d9928f5ac46cdcd29f720ce0976b9cc22ce5f96ac7d866231a6e438550b",
+  "status": "pass",
+  "mode": "verify",
+  "game_id": "castlevania_aria_cn",
+  "case_id": "red24_vs_empty",
+  "cache_key": "13f31a713436a7c266c7f9f2a9e928ea2bf7e8c4fc4aabec378c844bf67720aa",
+  "recipe_sha256": "8c0b1ef2e9860d05885e539adb39624db502df94d747f0260c3aad372d2b32b8",
+  "verified_fields": [
+    {
+      "name": "red_soul_equipped_id",
+      "addr": 78429,
+      "width": 1,
+      "level": "gameplay",
+      "note": "真实菜单装备 ID=24、关闭回游戏、重开确认持久化后，同状态 Up+B 正反例；仅验收该 ID，不外推全部红魂，也不确认飞冰魂别名。",
+      "case_id": "red24_vs_empty"
+    },
+    {
+      "name": "current_mp",
+      "addr": 78448,
+      "width": 2,
+      "level": "consumption",
+      "note": "同一菜单持久化状态下，ID=24 的 Up+B 使 MP 低于 80，空槽保持 80；不把菜单 USE 25 当作实际消耗。",
+      "case_id": "red24_vs_empty"
+    }
+  ],
+  "evidence": [
+    {
+      "source": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_clean_gameplay1\\base.state",
+      "path": "evidence/000_base.state",
+      "sha256": "093fad7e3c4f095ea18a86b10a0ab65191ea0f45a9babc3907fd4baf6ac2fab4",
+      "bytes": 73424
+    },
+    {
+      "source": "F:\\taspipe_scratch\\ram_calibration\\aria_red24_installed_v5\\red24_vs_empty_base_anchor.png",
+      "path": "evidence/001_red24_vs_empty_base_anchor.png",
+      "sha256": "b163028806b24b045c934abfd0d22f67b6ce7424422d17b6f51827d55369e8b2",
+      "bytes": 18811
+    },
+    {
+      "source": "F:\\taspipe_scratch\\ram_calibration\\aria_red24_installed_v5\\red24_vs_empty_empty_s00.bin",
+      "path": "evidence/002_red24_vs_empty_empty_s00.bin",
+      "sha256": "5074ef0ea4e30b3e95a823c1731dbe4d923da5c93237b59b63c2ee8dd6db9fd3",
+      "bytes": 512
+    },
+    {
+      "source": "F:\\taspipe_scratch\\ram_calibration\\aria_red24_installed_v5\\red24_vs_empty_empty_s00.png",
+      "path": "evidence/003_red24_vs_empty_empty_s00.png",
+      "sha256": "b163028806b24b045c934abfd0d22f67b6ce7424422d17b6f51827d55369e8b2",
+      "bytes": 18811
+    },
+    {
+      "source": "F:\\taspipe_scratch\\ram_calibration\\aria_red24_installed_v5\\red24_vs_empty_empty_s00.state",
+      "path": "evidence/004_red24_vs_empty_empty_s00.state",
+      "sha256": "52e427ad9ee9b72a17210630737beee95de62c770ee2e5d0c41ba2269e60667b",
+      "bytes": 73260
+    },
+    {
+      "source": "F:\\taspipe_scratch\\ram_calibration\\aria_red24_installed_v5\\red24_vs_empty_empty_s00_input.state",
+      "path": "evidence/005_red24_vs_empty_empty_s00_input.state",
+      "sha256": "52e427ad9ee9b72a17210630737beee95de62c770ee2e5d0c41ba2269e60667b",
+      "bytes": 73260
+    },
+    {
+      "source": "F:\\taspipe_scratch\\ram_calibration\\aria_red24_installed_v5\\red24_vs_empty_empty_s01.bin",
+      "path": "evidence/006_red24_vs_empty_empty_s01.bin",
+      "sha256": "5074ef0ea4e30b3e95a823c1731dbe4d923da5c93237b59b63c2ee8dd6db9fd3",
+      "bytes": 512
+    },
+    {
+      "source": "F:\\taspipe_scratch\\ram_calibration\\aria_red24_installed_v5\\red24_vs_empty_empty_s01.png",
+      "path": "evidence/007_red24_vs_empty_empty_s01.png",
+      "sha256": "c4cc17a0a32c598a2dc8b1c934bcc3b29010edc3ad0cbd9bd201d97023c94433",
+      "bytes": 21292
+    },
+    {
+      "source": "F:\\taspipe_scratch\\ram_calibration\\aria_red24_installed_v5\\red24_vs_empty_empty_s01.state",
+      "path": "evidence/008_red24_vs_empty_empty_s01.state",
+      "sha256": "5003e176cff16dcaf4ee649eafd59c6ce22d4f7a5c5398ca305585c0ed578fc3",
+      "bytes": 78030
+    },
+    {
+      "source": "F:\\taspipe_scratch\\ram_calibration\\aria_red24_installed_v5\\red24_vs_empty_empty_s01_frames\\f0012.png",
+      "path": "evidence/009_f0012.png",
+      "sha256": "d656e2fee01b699665ac612bc891960991cbabb54782b3b637ee124720ed1842",
+      "bytes": 18890
+    },
+    {
+      "source": "F:\\taspipe_scratch\\ram_calibration\\aria_red24_installed_v5\\red24_vs_empty_empty_s01_frames\\f0020.png",
+      "path": "evidence/010_f0020.png",
+      "sha256": "7958ea393bf53bdcb1863447eeae5d09d68f27381d823ad0c293824c71a84596",
+      "bytes": 21303
+    },
+    {
+      "source": "F:\\taspipe_scratch\\ram_calibration\\aria_red24_installed_v5\\red24_vs_empty_prepare_base.png",
+      "path": "evidence/011_red24_vs_empty_prepare_base.png",
+      "sha256": "98c209cf79ef1485c854264657e57620c803ba6552ecc6175d0dc0e0ca07f66c",
+      "bytes": 18783
+    },
+    {
+      "source": "F:\\taspipe_scratch\\ram_calibration\\aria_red24_installed_v5\\red24_vs_empty_prepare_red24_game.bin",
+      "path": "evidence/012_red24_vs_empty_prepare_red24_game.bin",
+      "sha256": "9a669b9c8b9f1099c33ca1fce9ed1008fa259409f8f9871faf1277f126ae29df",
+      "bytes": 512
+    },
+    {
+      "source": "F:\\taspipe_scratch\\ram_calibration\\aria_red24_installed_v5\\red24_vs_empty_prepare_red24_game.png",
+      "path": "evidence/013_red24_vs_empty_prepare_red24_game.png",
+      "sha256": "b163028806b24b045c934abfd0d22f67b6ce7424422d17b6f51827d55369e8b2",
+      "bytes": 18811
+    },
+    {
+      "source": "F:\\taspipe_scratch\\ram_calibration\\aria_red24_installed_v5\\red24_vs_empty_prepare_red24_game.state",
+      "path": "evidence/014_red24_vs_empty_prepare_red24_game.state",
+      "sha256": "a95fe4f82f84a769e2f14a2cb3cdb6e56afcc048f43ad7cbc285c52d12cc349f",
+      "bytes": 73265
+    },
+    {
+      "source": "F:\\taspipe_scratch\\ram_calibration\\aria_red24_installed_v5\\red24_vs_empty_prepare_red24_menu.bin",
+      "path": "evidence/015_red24_vs_empty_prepare_red24_menu.bin",
+      "sha256": "9a669b9c8b9f1099c33ca1fce9ed1008fa259409f8f9871faf1277f126ae29df",
+      "bytes": 512
+    },
+    {
+      "source": "F:\\taspipe_scratch\\ram_calibration\\aria_red24_installed_v5\\red24_vs_empty_prepare_red24_menu.png",
+      "path": "evidence/016_red24_vs_empty_prepare_red24_menu.png",
+      "sha256": "d2d41fb7a39ffb2980db2234ff3c5ca6a252aae40bcecb00ec29e4c06662dcb1",
+      "bytes": 6291
+    },
+    {
+      "source": "F:\\taspipe_scratch\\ram_calibration\\aria_red24_installed_v5\\red24_vs_empty_prepare_red24_menu.state",
+      "path": "evidence/017_red24_vs_empty_prepare_red24_menu.state",
+      "sha256": "9bd0c71dd5ed220dcea9b0c55943698f4230bd5df72e741a742be03980ae5c1d",
+      "bytes": 53697
+    },
+    {
+      "source": "F:\\taspipe_scratch\\ram_calibration\\aria_red24_installed_v5\\red24_vs_empty_prepare_red24_reopen.bin",
+      "path": "evidence/018_red24_vs_empty_prepare_red24_reopen.bin",
+      "sha256": "9a669b9c8b9f1099c33ca1fce9ed1008fa259409f8f9871faf1277f126ae29df",
+      "bytes": 512
+    },
+    {
+      "source": "F:\\taspipe_scratch\\ram_calibration\\aria_red24_installed_v5\\red24_vs_empty_prepare_red24_reopen.png",
+      "path": "evidence/019_red24_vs_empty_prepare_red24_reopen.png",
+      "sha256": "56c43f8e61066b124a40892d5e09d5b75789deabf0e49240cf8605378172a4fd",
+      "bytes": 6161
+    },
+    {
+      "source": "F:\\taspipe_scratch\\ram_calibration\\aria_red24_installed_v5\\red24_vs_empty_prepare_red24_reopen.state",
+      "path": "evidence/020_red24_vs_empty_prepare_red24_reopen.state",
+      "sha256": "374b0a9cd9757491f9f084ceafcd99e5361999d35f23c87806ee141f0c93082b",
+      "bytes": 53571
+    },
+    {
+      "source": "F:\\taspipe_scratch\\ram_calibration\\aria_red24_installed_v5\\red24_vs_empty_red24_s00.bin",
+      "path": "evidence/021_red24_vs_empty_red24_s00.bin",
+      "sha256": "9a669b9c8b9f1099c33ca1fce9ed1008fa259409f8f9871faf1277f126ae29df",
+      "bytes": 512
+    },
+    {
+      "source": "F:\\taspipe_scratch\\ram_calibration\\aria_red24_installed_v5\\red24_vs_empty_red24_s00.png",
+      "path": "evidence/022_red24_vs_empty_red24_s00.png",
+      "sha256": "b163028806b24b045c934abfd0d22f67b6ce7424422d17b6f51827d55369e8b2",
+      "bytes": 18811
+    },
+    {
+      "source": "F:\\taspipe_scratch\\ram_calibration\\aria_red24_installed_v5\\red24_vs_empty_red24_s00.state",
+      "path": "evidence/023_red24_vs_empty_red24_s00.state",
+      "sha256": "e5ef883550a841db8448e37fe776ecb7692352e3f978dd4fd5b81c9925194ae5",
+      "bytes": 73263
+    },
+    {
+      "source": "F:\\taspipe_scratch\\ram_calibration\\aria_red24_installed_v5\\red24_vs_empty_red24_s01.bin",
+      "path": "evidence/024_red24_vs_empty_red24_s01.bin",
+      "sha256": "703d589d0acba4f3717f321e897826746bf62aa40b5ea188a4616799b36b6be2",
+      "bytes": 512
+    },
+    {
+      "source": "F:\\taspipe_scratch\\ram_calibration\\aria_red24_installed_v5\\red24_vs_empty_red24_s01.png",
+      "path": "evidence/025_red24_vs_empty_red24_s01.png",
+      "sha256": "3e9232dbe72e1dba4c1cd7cac692528521c720923b818865a29a285e6e7d2653",
+      "bytes": 21347
+    },
+    {
+      "source": "F:\\taspipe_scratch\\ram_calibration\\aria_red24_installed_v5\\red24_vs_empty_red24_s01.state",
+      "path": "evidence/026_red24_vs_empty_red24_s01.state",
+      "sha256": "75e88858e51e6c41467bacb85816bf4e6033c9f0efc6a640ea4804c3f0fae141",
+      "bytes": 79117
+    },
+    {
+      "source": "F:\\taspipe_scratch\\ram_calibration\\aria_red24_installed_v5\\red24_vs_empty_red24_s01_frames\\f0012.png",
+      "path": "evidence/027_f0012.png",
+      "sha256": "dc77d08a1f47f6ad4e3af8dd14ba39af5403a12d8c70cc2b1ae4315bdda91ae5",
+      "bytes": 18833
+    },
+    {
+      "source": "F:\\taspipe_scratch\\ram_calibration\\aria_red24_installed_v5\\red24_vs_empty_red24_s01_frames\\f0020.png",
+      "path": "evidence/028_f0020.png",
+      "sha256": "13bbcb48267bb91dbaa1c374a86a52a473d5c108a1d786698a69c9d70a7c7410",
+      "bytes": 21239
+    }
+  ]
+}

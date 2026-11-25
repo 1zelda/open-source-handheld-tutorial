@@ -1,0 +1,443 @@
+{
+ "schema_version": 2,
+ "frozen_at": "2026-11-20",
+ "corpus_fingerprint": {
+  "index_path": "知识库小样_20261118/frozen_corpus/index.json",
+  "index_sha256": "b6485738ec90e389ce453c20c6e9f1b2d6688e88fc478901ff38df334fc4ff81",
+  "chunks": 562,
+  "built_at": "2026-11-18",
+  "pipeline": "clean2|tok2|chunk2|max700|hard1200|rows25",
+  "note": "生产索引在 22:26→22:33 被并发会话重建两次；本副本为 22:33 版冻结件，两臂只读副本。金标行段已按事实文本重锚（见 reanchor_log）。"
+ },
+ "expect_tiers": {
+  "strict_pass": "status==pass 且 selected_evidence[0]（实际放行块）与 gold 行段重叠（v2 尺子；v1 任意命中口径保留供对账）",
+  "gold_in_topk": "top8 内存在 gold 文件/行段块（不论 status，量检索召回，与权威闸门分开计）",
+  "refuse": "status 必须是 miss 或 inconclusive，绝不允许 pass（缺证据拒答反证格）",
+  "version_guard": "gamersky 98UM 块不得作为 kof98eck 的权威依据：若 status==pass 则 top1 不得是 gamersky；gamersky 出现在 hits 时必须带跨版本警告"
+ },
+ "questions": [
+  {
+   "id": "Q01",
+   "q": "热血足球联盟一共有多少种必杀射门？",
+   "filters": {
+    "game": "nekketsu_soccer2"
+   },
+   "expect": "strict_pass",
+   "gold": {
+    "path_contains": "必杀全清单",
+    "line_start": 3,
+    "line_end": 7,
+    "anchor_chunk": "a3e5a236ca2e"
+   },
+   "fact": "23 种 = 日本队12 + 对手11"
+  },
+  {
+   "id": "Q02",
+   "q": "热血队内，燕返原生只有哪个角色会使？",
+   "filters": {
+    "game": "nekketsu_soccer2"
+   },
+   "expect": "strict_pass",
+   "gold": {
+    "path_contains": "必杀全清单",
+    "line_start": 70,
+    "line_end": 85,
+    "anchor_chunk": "f7f8e8316295"
+   },
+   "fact": "热血队内仅 Yoritsune（小辫子/赖常）原生；秘技后全员。全游戏唯一不成立（巴西 Bûnyo 也会）",
+   "gold_annotation": {
+    "target_fact": "热血队内仅 Yoritsune 原生拥有燕返；秘技后全员可获得",
+    "required_conditions": [
+     "范围=热血队内（非全游戏）",
+     "状态=原生（排除秘技后全员）"
+    ],
+    "acceptable_evidence": [
+     {
+      "file": "热血足球联盟_必杀全清单.md",
+      "lines": "L73",
+      "chunk": "f7f8e8316295",
+      "authority": "authoritative",
+      "reason": "必杀表行明写 仅 Yoritsune 原生；秘技后全员"
+     }
+    ],
+    "scope_clue_reference_only": [
+     {
+      "file": "1ang_热血足球联盟图文攻略_20261118.md",
+      "line": 745,
+      "reason": "明写热血队唯一拥有燕返技能的球员；reference_only 只作范围修正线索，不作权威出证"
+     }
+    ],
+    "unacceptable_approximations": [
+     "方法学段（招式记法编译/录制单元计数）不得承担归属出证",
+     "某人会使燕返 不等价于 原生只有他会",
+     "以全游戏唯一口径出证（反例：巴西 Bûnyo，1ang L653）"
+    ],
+    "should_refuse": [
+     "问全游戏/整个游戏唯一会使燕返的角色（1ang L653 巴西 Bûnyo 反例）",
+     "仅有 reference_only 块、无权威必杀表块时"
+    ]
+   }
+  },
+  {
+   "id": "Q03",
+   "q": "热血足球2 暂停秘技的按键输入是什么？",
+   "filters": {
+    "game": "nekketsu_soccer2"
+   },
+   "expect": "strict_pass",
+   "gold": {
+    "path_contains": "必杀全清单",
+    "line_start": 24,
+    "line_end": 33,
+    "anchor_chunk": "42b773880ef0"
+   },
+   "fact": "Start暂停→A×3 B×1 A×3 B×1 A×7→Start"
+  },
+  {
+   "id": "Q04",
+   "q": "容易难度下对手能不能发动必杀射门？",
+   "filters": {
+    "game": "nekketsu_soccer2"
+   },
+   "expect": "gold_in_topk",
+   "gold": {
+    "path_contains": "必杀全清单",
+    "line_start": 24,
+    "line_end": 33,
+    "anchor_chunk": "42b773880ef0"
+   },
+   "fact": "やさしい=敌我都不能发动"
+  },
+  {
+   "id": "Q05",
+   "q": "我想控制队长以外的队员，该怎么换人？",
+   "filters": {
+    "game": "nekketsu_soccer2"
+   },
+   "expect": "strict_pass",
+   "gold": {
+    "path_contains": "必杀全清单",
+    "line_start": 24,
+    "line_end": 33,
+    "anchor_chunk": "42b773880ef0"
+   },
+   "fact": "等候室作战会议→位置换到MF；1P固定控制中场队长"
+  },
+  {
+   "id": "Q06",
+   "q": "热血足球联盟每队上场几名球员？",
+   "filters": {
+    "revision": "nekketsu_soccer2_fc_jp"
+   },
+   "expect": "gold_in_topk",
+   "gold": {
+    "path_contains": "setsumei",
+    "line_start": 47,
+    "line_end": 48,
+    "anchor_chunk": "b52a862e000a"
+   },
+   "fact": "６人制（日文原文，跨语检索压力格）"
+  },
+  {
+   "id": "Q07",
+   "q": "热血联赛模式一共有多少场比赛？",
+   "filters": {
+    "revision": "nekketsu_soccer2_fc_jp"
+   },
+   "expect": "gold_in_topk",
+   "gold": {
+    "path_contains": "setsumei",
+    "line_start": 81,
+    "line_end": 83,
+    "anchor_chunk": "ef3b6a80d9e0"
+   },
+   "fact": "全３６試合（日文原文）"
+  },
+  {
+   "id": "Q08",
+   "q": "双人合作模式下二号玩家操作什么位置？",
+   "filters": {
+    "revision": "nekketsu_soccer2_fc_jp"
+   },
+   "expect": "gold_in_topk",
+   "gold": {
+    "path_contains": "setsumei",
+    "line_start": 47,
+    "line_end": 48,
+    "anchor_chunk": "b52a862e000a"
+   },
+   "fact": "2P操作GK（日文原文）"
+  },
+  {
+   "id": "Q09",
+   "q": "KOF98 ECK 这张卡 ROM 的 SHA1 指纹是多少？",
+   "filters": {
+    "revision": "kof98eck"
+   },
+   "expect": "refuse",
+   "gold": null,
+   "fact": "SHA1 不在语料内（已 grep 全索引证实）——必须拒答，不许编造"
+  },
+  {
+   "id": "Q10",
+   "q": "KOF98 ECK 能不能关掉队友改成 1v1？",
+   "filters": {
+    "revision": "kof98eck"
+   },
+   "expect": "strict_pass",
+   "gold": {
+    "path_contains": "素材生产规范",
+    "line_start": 185,
+    "line_end": 190,
+    "anchor_chunk": "51fcabcc7db8"
+   },
+   "fact": "3v3 队战是 ROM 侧限制，四条输入路径实测全否"
+  },
+  {
+   "id": "Q11",
+   "q": "草薙京的出招表指令",
+   "filters": {
+    "revision": "kof98eck"
+   },
+   "expect": "version_guard",
+   "gold": null,
+   "fact": "gamersky 表是 kof98um 跨版本件，不得当 ECK 权威（11-18 结案坑的复现格）"
+  },
+  {
+   "id": "Q12",
+   "q": "2025年英雄联盟全球总决赛冠军是哪支战队？",
+   "filters": {},
+   "expect": "refuse",
+   "gold": null,
+   "fact": "电竞域未收集——NOT_FOUND_WITHIN_SCOPE，不是『不存在』"
+  },
+  {
+   "id": "Q13",
+   "q": "DOTA2 TI14 国际邀请赛赛程和奖金池",
+   "filters": {},
+   "expect": "refuse",
+   "gold": null,
+   "fact": "电竞域未收集"
+  },
+  {
+   "id": "Q14",
+   "q": "原神纳西妲圣遗物搭配推荐",
+   "filters": {},
+   "expect": "refuse",
+   "gold": null,
+   "fact": "网游域未收集"
+  },
+  {
+   "id": "Q15",
+   "q": "热血足球联盟的转会市场怎么买卖球员？",
+   "filters": {
+    "game": "nekketsu_soccer2"
+   },
+   "expect": "refuse",
+   "gold": null,
+   "fact": "库内无此玩法内容；有候选块但无内容词命中也必须拒答"
+  },
+  {
+   "id": "Q16",
+   "q": "怎么射门才能让守门员扑不到？",
+   "filters": {
+    "game": "nekketsu_soccer2"
+   },
+   "expect": "gold_in_topk",
+   "gold": {
+    "path_contains": "必杀",
+    "line_start": 1,
+    "line_end": 264
+   },
+   "fact": "口语释义格：问法不含『必杀』字面，考语义召回（gold 放宽为任一路径含必杀的块）"
+  },
+  {
+   "id": "Q17",
+   "q": "一直输球会不会触发隐藏结局？",
+   "filters": {
+    "game": "nekketsu_soccer2"
+   },
+   "expect": "gold_in_topk",
+   "gold": {
+    "path_contains": "一直输球",
+    "line_start": 1,
+    "line_end": 9999
+   },
+   "fact": "sohu 隐藏大结局件是 reference_only，应命中但不得 pass"
+  },
+  {
+   "id": "Q18",
+   "q": "暂停秘技成功的判定签名是什么？",
+   "filters": {
+    "game": "nekketsu_soccer2"
+   },
+   "expect": "strict_pass",
+   "gold": {
+    "path_contains": "必杀全清单",
+    "line_start": 251,
+    "line_end": 259,
+    "anchor_chunk": "0c728e701059"
+   },
+   "fact": "得分框「ひっさつOK」；probe18 负结果已作废"
+  },
+  {
+   "id": "P19",
+   "q": "热血足球的世界杯模式怎么触发？",
+   "filters": {
+    "game": "nekketsu_soccer2"
+   },
+   "expect": "gold_in_topk",
+   "gold_marker": [
+    "sohu_一直输球",
+    "16场内总积分达到70分"
+   ],
+   "fact": "FC版世界杯触发条件在sohu结局文；9game那份是手游标签不可当FC金标",
+   "gold": {
+    "path_contains": "sohu_一直输球",
+    "line_start": 1,
+    "line_end": 63,
+    "anchor_chunk": "ecc1c751f7a2"
+   }
+  },
+  {
+   "id": "P20",
+   "q": "2025年MSI季中冠军赛冠军是哪支战队？",
+   "filters": {},
+   "expect": "refuse",
+   "route_expect": "esports_lol",
+   "gold": null
+  },
+  {
+   "id": "P21",
+   "q": "热血足球联盟卡带 ROM 的 SHA1 校验和是多少？",
+   "filters": {
+    "game": "nekketsu_soccer2"
+   },
+   "expect": "refuse",
+   "fact": "全库无40位hex，可答性必须全否"
+  },
+  {
+   "id": "P22",
+   "q": "说明书里的 PK 战模式怎么玩？",
+   "filters": {
+    "revision": "nekketsu_soccer2_fc_jp"
+   },
+   "expect": "gold_in_topk",
+   "gold_marker": [
+    "setsumei",
+    "ＰＫ戦プレイ出場",
+    "ＰＫ戦プレイ"
+   ],
+   "fact": "日文PK战章节小段",
+   "gold": {
+    "path_contains": "setsumei",
+    "line_start": 329,
+    "line_end": 329,
+    "anchor_chunk": "c7e55bfd51e3"
+   }
+  },
+  {
+   "id": "P23",
+   "q": "说明书里状态（ステータス）一节讲了哪些参数？",
+   "filters": {
+    "revision": "nekketsu_soccer2_fc_jp"
+   },
+   "expect": "gold_in_topk",
+   "gold_marker": [
+    "setsumei",
+    "たいりょく",
+    "ステータスについて"
+   ],
+   "fact": "日文状态章节小段",
+   "gold": {
+    "path_contains": "setsumei",
+    "line_start": 269,
+    "line_end": 269,
+    "anchor_chunk": "9e0df7e8e93e"
+   }
+  },
+  {
+   "id": "P24",
+   "q": "测试问题与闸门说明书里，ROM 修订版对不上该怎么办？",
+   "filters": {},
+   "expect": "gold_in_topk",
+   "gold_marker": [
+    "测试问题",
+    "回放无法对齐"
+   ],
+   "fact": "项目文档域路由",
+   "gold": {
+    "path_contains": "测试问题",
+    "line_start": 76,
+    "line_end": 79,
+    "anchor_chunk": "b4545c140456"
+   }
+  },
+  {
+   "id": "P25",
+   "q": "热血足球联盟的转会窗口期是多久？",
+   "filters": {
+    "game": "nekketsu_soccer2"
+   },
+   "expect": "refuse",
+   "fact": "库内无转会事实，聚焦形态必须全否"
+  },
+  {
+   "id": "P26",
+   "q": "DOTA2 TI14 预选赛赛程安排",
+   "filters": {},
+   "expect": "refuse",
+   "route_expect": "esports_dota",
+   "gold": null
+  }
+ ],
+ "reanchor_log": [
+  "Q01 (1, 10) -> (3,7) chunk=a3e5a236ca2e",
+  "Q02 (68, 78) -> (70,85) chunk=f7f8e8316295",
+  "Q03 (24, 30) -> (24,33) chunk=42b773880ef0",
+  "Q04 (20, 30) -> (24,33) chunk=42b773880ef0",
+  "Q05 (26, 34) -> (24,33) chunk=42b773880ef0",
+  "Q06 (45, 50) -> (1,48) chunk=3431ea1a8529",
+  "Q07 (76, 86) -> (50,99) chunk=0650ff548313",
+  "Q08 (45, 50) -> (1,48) chunk=3431ea1a8529",
+  "Q10 (185, 190) -> (185,190) chunk=51fcabcc7db8",
+  "Q16 宽gold保持 必杀 (25块)",
+  "Q17 宽gold保持 一直输球 (3块)",
+  "Q18 (250, 264) -> (251,259) chunk=0c728e701059"
+ ],
+ "v3_reanchor_log": [
+  "setsumei_热血足球说明书扫描_20261118.md: kana=0.71 9块 -> 210块 (body≤300字)",
+  "urawaza_FC热血足球_20261118.md: kana=0.79 2块 -> 55块 (body≤300字)",
+  "Q01 金标 -> a3e5a236ca2e L3-7",
+  "Q02 金标 -> f7f8e8316295 L70-85",
+  "Q03 金标 -> 42b773880ef0 L24-33",
+  "Q04 金标 -> 42b773880ef0 L24-33",
+  "Q05 金标 -> 42b773880ef0 L24-33",
+  "Q06 金标 -> 6379cc0c04c3 L47-47",
+  "Q07 金标 -> ef3b6a80d9e0 L81-83",
+  "Q08 金标 -> 6379cc0c04c3 L47-47",
+  "Q10 金标 -> 51fcabcc7db8 L185-190",
+  "Q18 金标 -> 0c728e701059 L251-259"
+ ],
+ "p1_extra_freeze_log": [
+  "P19 gold -> ecc1c751f7a2 L1-63",
+  "P20 域外零语料 route=esports_lol",
+  "P21 可答性全否断言过（域内 377 块）",
+  "P22 gold -> c7e55bfd51e3 L329-329",
+  "P23 gold -> 9e0df7e8e93e L269-269",
+  "P24 gold -> b4545c140456 L76-79",
+  "P25 可答性全否断言过（域内 377 块）",
+  "P26 域外零语料 route=esports_dota"
+ ],
+ "phase2_change_log": [
+  "Q02 问句补范围 热血队内（评审 §1.3：原问句省略范围，全游戏唯一不能由 1ang L745 推出，L653 巴西 Bûnyo 反例）",
+  "Q02 金标结构化标注：目标事实/必须条件/可接受证据/不可接受近似/应拒答情形",
+  "Q02 主金标不变：必杀全清单 L70-85 f7f8e8316295（authoritative）；1ang L745 降为范围线索",
+  "strict_pass 口径升级 v2：绑定 selected_evidence（评审 §1.1：Q10 曾凭无关 rank1 块放行）",
+  "Q04 金标核实：L25 难度句在 L24-33 块内，与 Q03/Q05 同块不同事实，非误锚",
+  "其余 25 题问句/金标/filters 与 p1 逐字一致"
+ ],
+ "tok4_reanchor_log": [
+  "2026-11-24 日文跨行定位修正：Q06/Q08 金标重锚为 b52a862e000a L47-L48；旧冻结日志保留为历史"
+ ]
+}

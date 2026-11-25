@@ -1,0 +1,13 @@
+洛克人2 官方说明书：Heat Man Air Man Flash Man 特殊交通工具 飞行平台 喷气雪橇 电梯（美国NES手册第8页）
+
+来源：Capcom《MEGA MAN 2》美国 NES 官方说明书，任天堂官方数字复刻。
+核验：已读扫描页；中文为说明，英文为短引文；未收全本。
+
+击败Heat Man后取得悬浮平台，最多可同时发射三个。
+> Acquired when Heat Man is defeated. This is a levitation platform. Up to three may be launched at a time.
+
+击败Air Man后取得喷气雪橇，可飞越困难区域。
+> Acquired when Air Man is defeated. This is a jet sled. Use it to fly over difficult areas.
+
+击败Flash Man后取得电梯，只能贴着墙使用，且能到达比悬浮平台更高的位置。
+> Acquired when Flash Man is defeated. This is an elevator and may only be used against a wall.

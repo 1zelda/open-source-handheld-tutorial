@@ -1,0 +1,26 @@
+{
+  "status": "isolated_candidate_not_production",
+  "domain": "megaman2_candidate",
+  "authoritative_scope": [
+    "TASVideos 原文明确记载的 Rockman 2 坐标/运动/对象 RAM 技术事实"
+  ],
+  "reference_only_scope": [
+    "本地二手内存字典",
+    "本地标题目录",
+    "本地 TAS 出版物元数据"
+  ],
+  "not_covered": [
+    "洛克人2出招表",
+    "官方说明书级玩法",
+    "整款游戏知识库",
+    "PAL/欧版与美版等价",
+    "美版/日版 ROM SHA1 绑定",
+    "生产路由接线"
+  ],
+  "production_route_wired": false,
+  "whole_game_knowledge_base": false,
+  "external_generative_model_calls": 0,
+  "paid_api_calls": 0,
+  "commercial_rom_downloads": 0,
+  "restricted_fetch_bypasses": 0
+}

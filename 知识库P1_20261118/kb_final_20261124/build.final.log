@@ -1,0 +1,36 @@
+     3 块  丢噪声     0 行  复用  nekketsu_kakutou_densetsu_fc_jp  _工具脚本/taspipe/游戏包/来源库/取证/asw_熱血格闘伝説_官方页摘录_20261124.md
+     5 块  丢噪声     0 行  复用  nekketsu_kakutou_densetsu_fc_jp  _工具脚本/taspipe/游戏包/来源库/取证/manual_熱血格闘伝説_TJC-NA_说明书摘录_20261124.md
+     4 块  丢噪声     0 行  复用  nekketsu_kakutou_densetsu_fc_jp  _工具脚本/taspipe/游戏包/来源库/取证/dammit9x_熱血格闘伝説_角色公式参考_20261124.md
+     3 块  丢噪声     0 行  复用  nekketsu_kakutou_densetsu_fc_revB_patch _工具脚本/taspipe/游戏包/来源库/取证/dvd_熱血格闘伝説_RevB版本边界_20261124.md
+    38 块  丢噪声     0 行  复用  nekketsu_soccer2_fc_jp           _工具脚本/taspipe/游戏包/来源库/取证/setsumei_热血足球说明书扫描_20261118.md
+  排除  _工具脚本/taspipe/游戏包/来源库/取证/setsumei_热血足球说明书_编者中文对照_20261119.md  理由: 中文对照译文保留作参考，但撤回索引（#23 实测裁定）：作为高位 authoritative 中文块进 BM25 后，w3 默认引入假阳回归 X16（打雷门将，yesno 空焦点绕过）/X26（雨天射门，回退 P5 已堵成果），违反回归零容忍；而 Q08 指标仍 FAIL（中文真答案块 rank8 属排序层缺口，金标锚日文原件 L47 与对照 L7-10 不重叠）。语料层治不动 Q08，待排序层 P6 修好再评估启用。译文文件字节不动。
+    28 块  丢噪声     0 行  复用  nekketsu_soccer2_fc_jp           _工具脚本/taspipe/游戏包/来源库/取证/urawaza_FC热血足球_20261118.md
+  排除  _工具脚本/taspipe/游戏包/来源库/取证/urawaza_FC热血足球_编者中文对照_20261119.md  理由: 中文对照译文保留作参考，但随 setsumei 对照一并撤回索引（#23 实测裁定，见该条 reason）：高位中文块进 BM25 引入 w3 假阳回归且 Q08 指标仍 FAIL，按回归零容忍撤回，待排序层 P6 再评估。译文文件字节不动。
+    56 块  丢噪声   119 行  复用  nekketsu_soccer2_fc_jp           _工具脚本/taspipe/游戏包/来源库/取证/1ang_热血足球联盟图文攻略_20261118.md
+    17 块  丢噪声    65 行  复用  nekketsu_soccer2_fc_unspecified  _工具脚本/taspipe/游戏包/来源库/取证/csdn_wangsitan_热血足球Bug记录_20261118.md
+     3 块  丢噪声    17 行  复用  nekketsu_soccer2_fc_unspecified  _工具脚本/taspipe/游戏包/来源库/取证/sohu_必杀最强小辫子_20261118.md
+     2 块  丢噪声    16 行  复用  nekketsu_soccer2_fc_unspecified  _工具脚本/taspipe/游戏包/来源库/取证/sohu_热血队队员必杀集锦_20261118.md
+     3 块  丢噪声    17 行  复用  nekketsu_soccer2_fc_unspecified  _工具脚本/taspipe/游戏包/来源库/取证/sohu_一直输球隐藏大结局_20261118.md
+     4 块  丢噪声    84 行  复用  nekketsu_soccer2_fc_unspecified  _工具脚本/taspipe/游戏包/来源库/取证/tencentcloud_热血足球联盟杂谈_20261118.md
+     1 块  丢噪声    58 行  复用  nekketsu_soccer2_fc_cn_hack      _工具脚本/taspipe/游戏包/来源库/取证/xiaoji001_热血足球hack汉化版_20261118.md
+     6 块  丢噪声   124 行  复用  nekketsu_soccer_mobile           _工具脚本/taspipe/游戏包/来源库/取证/9game_热血足球技能攻略_20261118.md
+     7 块  丢噪声   267 行  复用  kof98um                          _工具脚本/taspipe/游戏包/来源库/取证/gamersky_kof98um全角色出招表_20261118.md
+   336 块  丢噪声   174 行  复用  arcade_hack_multi                _工具脚本/taspipe/游戏包/来源库/取证/quanjizhong_thread677_街机改版整合_20261118.md
+    13 块  丢噪声     1 行  复用  kof98eck                         F:/tas_rig/docs/素材生产规范.md
+     5 块  丢噪声     0 行  复用  kof98eck                         F:/工具链/fbneo/nightly/config/games/kof98eck.ini
+  排除  F:/工具链/fbneo/nightly/config/fbneo64.roms.dat  理由: 450KB 全量 setlist 由 sources.resolve_identity 按 ^<set>\s*\+ 精确查；切块进 BM25 只会稀释召回，身份查询走 identity 层不走知识库
+   193 块  丢噪声     7 行  重建  project_docs                     测试问题与闸门说明书.md
+     9 块  丢噪声     1 行  复用  project_docs                     _工具脚本/taspipe/要素盘点路线模板.md
+     8 块  丢噪声     0 行  复用  project_docs                     _工具脚本/taspipe/目标与实施路线.md
+    20 块  丢噪声     1 行  复用  nekketsu_soccer2_multi           _工具脚本/taspipe/游戏包/热血足球联盟_必杀全清单.md
+     6 块  丢噪声     1 行  复用  nekketsu_soccer2_multi           _工具脚本/taspipe/游戏包/热血足球联盟_honest_gap_manifest.md
+  排除  _工具脚本/taspipe/registry.py  理由: 代码不是文献正文；本地 ROM sha1 索引由 registry.index_roms 直接消费
+  排除  _工具脚本/taspipe/acquire.py  理由: 代码不是文献正文；三级 resolver（网盘→本地→外部门控）由生产路径直接调用
+  排除  _工具脚本/taspipe/retro_cheat_runner.py  理由: 代码入口；.cht 金手指库本体在 libretro-database，按游戏精确查，不进 BM25
+  排除  _工具脚本/已验证代码库/nekketsu_soccer/soccer2_live_capture.py  理由: 真人操作捕获通路是代码不是机制正文；键位与 Lua 口径已写进说明书 §26
+  排除  F:/tas_rig/rig.py  理由: 代码入口；ECK 实测结论已在同来源的 素材生产规范.md 里入索引
+  排除  F:/开源掌机教程/_工具脚本/taspipe/游戏包/来源库/取证/tasvideos_gameresources_rockman_data_2026-11-23.txt  理由: 方法学/内存取证件，在册备查但不进 BM25 检索：MM1 走 taspipe 知识包路线，kb_route 没有 megaman 域、没有生产问答消费方；翻 index 会改动共享索引块基数与选题层快照对账（这两处由 KB 线统一 build+dense 重建时才算数），入不入索引须由该线决定，不由采集侧单方面翻。
+  排除  F:/开源掌机教程/_工具脚本/taspipe/游戏包/来源库/取证/tasvideos_bizhawk_faq_refresh_2026-11-23.txt  理由: 方法学/内存取证件，在册备查但不进 BM25 检索：MM1 走 taspipe 知识包路线，kb_route 没有 megaman 域、没有生产问答消费方；翻 index 会改动共享索引块基数与选题层快照对账（这两处由 KB 线统一 build+dense 重建时才算数），入不入索引须由该线决定，不由采集侧单方面翻。
+  排除  F:/开源掌机教程/_工具脚本/taspipe/游戏包/来源库/取证/tasvideos_forum_19912_bizhawk_import_fm2_2026-11-23.txt  理由: 方法学/内存取证件，在册备查但不进 BM25 检索：MM1 走 taspipe 知识包路线，kb_route 没有 megaman 域、没有生产问答消费方；翻 index 会改动共享索引块基数与选题层快照对账（这两处由 KB 线统一 build+dense 重建时才算数），入不入索引须由该线决定，不由采集侧单方面翻。
+  排除  F:/开源掌机教程/_工具脚本/taspipe/游戏包/来源库/取证/tasvideos_glossary_segmented_tas_2026-11-23.txt  理由: 方法学/内存取证件，在册备查但不进 BM25 检索：MM1 走 taspipe 知识包路线，kb_route 没有 megaman 域、没有生产问答消费方；翻 index 会改动共享索引块基数与选题层快照对账（这两处由 KB 线统一 build+dense 重建时才算数），入不入索引须由该线决定，不由采集侧单方面翻。
+KB BUILD OK chunks=770 terms=50521 indexed=23 excluded=12 bytes=3532204

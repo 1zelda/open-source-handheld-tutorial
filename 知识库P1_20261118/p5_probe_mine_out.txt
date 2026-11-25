@@ -1,0 +1,273 @@
+W1119 14:08:43.012000 42652 E:\SHARE\py313-cuda\torch\distributed\elastic\multiprocessing\redirects.py:29] NOTE: Redirects are currently not supported in Windows or MacOs.
+Loading weights:   0%|          | 0/391 [00:00<?, ?it/s]Loading weights: 100%|██████████| 391/391 [00:00<00:00, 50700.95it/s]
+Loading weights:   0%|          | 0/393 [00:00<?, ?it/s]Loading weights:   1%|          | 2/393 [00:00<00:22, 17.41it/s]Loading weights:   1%|          | 4/393 [00:00<01:12,  5.38it/s]Loading weights:   1%|▏         | 5/393 [00:01<01:57,  3.31it/s]Loading weights:   2%|▏         | 6/393 [00:02<03:46,  1.71it/s]Loading weights:   2%|▏         | 7/393 [00:03<04:55,  1.31it/s]Loading weights:   2%|▏         | 8/393 [00:04<04:20,  1.48it/s]Loading weights:   2%|▏         | 9/393 [00:05<05:01,  1.27it/s]Loading weights:   3%|▎         | 10/393 [00:05<03:55,  1.63it/s]Loading weights:   3%|▎         | 11/393 [00:05<03:02,  2.10it/s]Loading weights:   3%|▎         | 12/393 [00:06<04:31,  1.40it/s]Loading weights:   3%|▎         | 13/393 [00:08<07:07,  1.12s/it]Loading weights:   4%|▎         | 14/393 [00:09<05:50,  1.08it/s]Loading weights:   4%|▍         | 15/393 [00:09<04:57,  1.27it/s]Loading weights:   4%|▍         | 16/393 [00:11<05:51,  1.07it/s]Loading weights:   4%|▍         | 17/393 [00:11<04:58,  1.26it/s]Loading weights:   5%|▍         | 19/393 [00:11<02:54,  2.14it/s]Loading weights:   5%|▌         | 20/393 [00:12<02:49,  2.20it/s]Loading weights:   5%|▌         | 21/393 [00:12<02:23,  2.58it/s]Loading weights:   6%|▌         | 22/393 [00:12<02:05,  2.95it/s]Loading weights:   6%|▌         | 23/393 [00:12<02:03,  3.00it/s]Loading weights:   6%|▌         | 24/393 [00:13<01:45,  3.49it/s]Loading weights:   6%|▋         | 25/393 [00:14<03:53,  1.58it/s]Loading weights:   7%|▋         | 26/393 [00:15<04:04,  1.50it/s]Loading weights:   7%|▋         | 27/393 [00:16<04:12,  1.45it/s]Loading weights:   7%|▋         | 28/393 [00:16<03:12,  1.89it/s]Loading weights:   7%|▋         | 29/393 [00:17<03:45,  1.62it/s]Loading weights:   8%|▊         | 30/393 [00:17<04:01,  1.51it/s]Loading weights:   8%|▊         | 31/393 [00:18<04:48,  1.26it/s]Loading weights:   8%|▊         | 32/393 [00:20<06:33,  1.09s/it]Loading weights:   8%|▊         | 33/393 [00:21<06:49,  1.14s/it]Loading weights:   9%|▊         | 34/393 [00:22<05:49,  1.03it/s]Loading weights:   9%|▉         | 35/393 [00:23<06:07,  1.03s/it]Loading weights:   9%|▉         | 36/393 [00:25<06:57,  1.17s/it]Loading weights:  10%|▉         | 38/393 [00:25<04:13,  1.40it/s]Loading weights: 100%|██████████| 393/393 [00:25<00:00, 15.39it/s]
+== M01 热血足球联盟 阵型一共有几种？  status=inconclusive
+  1 reference_on ans=False csdn_wangsitan_热血足球Bug记录_20261118.md#L344-L378
+  2 authoritativ ans=False 热血足球联盟_必杀全清单.md#L216-L225
+  3 reference_on ans=False 1ang_热血足球联盟图文攻略_20261118.md#L667-L670
+  4 reference_on ans=False 1ang_热血足球联盟图文攻略_20261118.md#L739-L756
+  5 reference_on ans=False csdn_wangsitan_热血足球Bug记录_20261118.md#L206-L222
+  6 reference_on ans=False csdn_wangsitan_热血足球Bug记录_20261118.md#L188-L203
+  7 reference_on ans=False 1ang_热血足球联盟图文攻略_20261118.md#L647-L650
+  8 reference_on ans=True  1ang_热血足球联盟图文攻略_20261118.md#L1-L129
+== M02 热血足球 1P 得分的内存地址是多少？  status=pass
+  1 reference_on ans=False csdn_wangsitan_热血足球Bug记录_20261118.md#L344-L378
+  2 reference_on ans=False csdn_wangsitan_热血足球Bug记录_20261118.md#L224-L248
+  3 authoritativ ans=False 热血足球联盟_必杀全清单.md#L216-L225
+  4 authoritativ ans=True  热血足球联盟_必杀全清单.md#L194-L210
+  5 reference_on ans=False csdn_wangsitan_热血足球Bug记录_20261118.md#L250-L274
+  6 reference_on ans=False tencentcloud_热血足球联盟杂谈_20261118.md#L13-L46
+  7 authoritativ ans=True  热血足球联盟_必杀全清单.md#L120-L136
+  8 authoritativ ans=True  热血足球联盟_必杀全清单.md#L164-L181
+== M03 热血足球 打雷会不会把门将击倒？  status=inconclusive
+  1 reference_on ans=True  1ang_热血足球联盟图文攻略_20261118.md#L289-L335
+  2 authoritativ ans=False 热血足球联盟_必杀全清单.md#L242-L248
+  3 reference_on ans=True  1ang_热血足球联盟图文攻略_20261118.md#L373-L374
+  4 authoritativ ans=False 热血足球联盟_必杀全清单.md#L216-L225
+  5 reference_on ans=False 1ang_热血足球联盟图文攻略_20261118.md#L667-L670
+  6 reference_on ans=False csdn_wangsitan_热血足球Bug记录_20261118.md#L188-L203
+  7 reference_on ans=False 1ang_热血足球联盟图文攻略_20261118.md#L161-L164
+  8 reference_on ans=False 1ang_热血足球联盟图文攻略_20261118.md#L553-L599
+== M04 热血足球 韩国队赢球后是什么庆祝动作？  status=pass
+  1 reference_on ans=True  1ang_热血足球联盟图文攻略_20261118.md#L607-L610
+  2 reference_on ans=False 1ang_热血足球联盟图文攻略_20261118.md#L639-L642
+  3 reference_on ans=True  csdn_wangsitan_热血足球Bug记录_20261118.md#L188-L203
+  4 authoritativ ans=True  热血足球联盟_必杀全清单.md#L262-L264
+  5 reference_on ans=False 1ang_热血足球联盟图文攻略_20261118.md#L659-L662
+  6 reference_on ans=False 1ang_热血足球联盟图文攻略_20261118.md#L667-L670
+  7 reference_on ans=True  sohu_一直输球隐藏大结局_20261118.md#L1-L63
+  8 reference_on ans=True  1ang_热血足球联盟图文攻略_20261118.md#L653-L656
+== M05 热血足球 哪个队员体力最高？  status=inconclusive
+  1 reference_on ans=True  1ang_热血足球联盟图文攻略_20261118.md#L739-L756
+  2 reference_on ans=True  sohu_必杀最强小辫子_20261118.md#L1-L69
+  3 reference_on ans=True  1ang_热血足球联盟图文攻略_20261118.md#L539-L550
+  4 reference_on ans=False sohu_热血队队员必杀集锦_20261118.md#L1-L75
+  5 reference_on ans=False 1ang_热血足球联盟图文攻略_20261118.md#L653-L656
+  6 reference_on ans=False sohu_必杀最强小辫子_20261118.md#L71-L89
+  7 authoritativ ans=True  热血足球联盟_必杀全清单.md#L229-L231
+  8 reference_on ans=False sohu_必杀最强小辫子_20261118.md#L91-L106
+== M06 热血足球 全败结局画面显示的密码是什么？  status=pass
+  1 reference_on ans=True  sohu_一直输球隐藏大结局_20261118.md#L65-L81
+  2 authoritativ ans=True  热血足球联盟_必杀全清单.md#L234-L239
+  3 reference_on ans=True  sohu_一直输球隐藏大结局_20261118.md#L1-L63
+  4 authoritativ ans=False 热血足球联盟_必杀全清单.md#L216-L225
+  5 reference_on ans=False tencentcloud_热血足球联盟杂谈_20261118.md#L13-L46
+  6 reference_on ans=True  1ang_热血足球联盟图文攻略_20261118.md#L679-L691
+  7 reference_on ans=True  1ang_热血足球联盟图文攻略_20261118.md#L183-L192
+  8 authoritativ ans=True  热血足球联盟_必杀全清单.md#L137-L158
+== M07 热血足球 龙卷拳谁能用？  status=pass
+  1 reference_on ans=True  sohu_必杀最强小辫子_20261118.md#L1-L69
+  2 reference_on ans=False 1ang_热血足球联盟图文攻略_20261118.md#L377-L378
+  3 reference_on ans=False csdn_wangsitan_热血足球Bug记录_20261118.md#L188-L203
+  4 authoritativ ans=True  热血足球联盟_必杀全清单.md#L51-L66
+  5 reference_on ans=True  1ang_热血足球联盟图文攻略_20261118.md#L413-L424
+  6 authoritativ ans=False 热血足球联盟_必杀全清单.md#L216-L225
+  7 reference_on ans=True  1ang_热血足球联盟图文攻略_20261118.md#L553-L599
+  8 reference_on ans=False 1ang_热血足球联盟图文攻略_20261118.md#L131-L158
+== M08 热血足球 美纱子的电话有什么用？  status=pass
+  1 reference_on ans=True  sohu_一直输球隐藏大结局_20261118.md#L65-L81
+  2 authoritativ ans=True  热血足球联盟_必杀全清单.md#L262-L264
+  3 reference_on ans=True  1ang_热血足球联盟图文攻略_20261118.md#L131-L158
+  4 authoritativ ans=True  热血足球联盟_必杀全清单.md#L234-L239
+  5 reference_on ans=True  1ang_热血足球联盟图文攻略_20261118.md#L245-L287
+  6 reference_on ans=False tencentcloud_热血足球联盟杂谈_20261118.md#L13-L46
+  7 authoritativ ans=False setsumei_热血足球说明书扫描_20261118.md#L37-L41
+  8 authoritativ ans=False 热血足球联盟_必杀全清单.md#L137-L158
+== M09 热血足球 德国队为什么必杀概率低？  status=pass
+  1 authoritativ ans=True  热血足球联盟_必杀全清单.md#L262-L264
+  2 reference_on ans=True  sohu_必杀最强小辫子_20261118.md#L1-L69
+  3 reference_on ans=True  1ang_热血足球联盟图文攻略_20261118.md#L679-L691
+  4 reference_on ans=True  sohu_一直输球隐藏大结局_20261118.md#L1-L63
+  5 reference_on ans=True  sohu_必杀最强小辫子_20261118.md#L71-L89
+  6 reference_on ans=True  1ang_热血足球联盟图文攻略_20261118.md#L647-L650
+  7 reference_on ans=False tencentcloud_热血足球联盟杂谈_20261118.md#L13-L46
+  8 reference_on ans=True  1ang_热血足球联盟图文攻略_20261118.md#L667-L670
+== M10 热血足球 三倍加速怎么发动？  status=pass
+  1 reference_on ans=True  1ang_热血足球联盟图文攻略_20261118.md#L389-L396
+  2 reference_on ans=False 1ang_热血足球联盟图文攻略_20261118.md#L823-L839
+  3 authoritativ ans=False 热血足球联盟_必杀全清单.md#L216-L225
+  4 authoritativ ans=True  热血足球联盟_必杀全清单.md#L251-L259
+  5 reference_on ans=True  1ang_热血足球联盟图文攻略_20261118.md#L385-L386
+  6 reference_on ans=False 1ang_热血足球联盟图文攻略_20261118.md#L739-L756
+  7 reference_on ans=True  1ang_热血足球联盟图文攻略_20261118.md#L369-L370
+  8 reference_on ans=True  1ang_热血足球联盟图文攻略_20261118.md#L373-L374
+== M11 热血足球 选手一闪一闪是故障吗？  status=pass
+  1 reference_on ans=True  1ang_热血足球联盟图文攻略_20261118.md#L759-L774
+  2 authoritativ ans=True  热血足球联盟_必杀全清单.md#L242-L248
+  3 authoritativ ans=False 热血足球联盟_必杀全清单.md#L216-L225
+  4 authoritativ ans=True  setsumei_热血足球说明书扫描_20261118.md#L552-L560
+  5 authoritativ ans=False 热血足球联盟_必杀全清单.md#L137-L158
+  6 reference_on ans=False csdn_wangsitan_热血足球Bug记录_20261118.md#L380-L424
+  7 authoritativ ans=False 热血足球联盟_必杀全清单.md#L120-L136
+  8 reference_on ans=True  1ang_热血足球联盟图文攻略_20261118.md#L289-L335
+== M12 热血足球 元永在队里打什么位置？  status=pass
+  1 authoritativ ans=True  热血足球联盟_必杀全清单.md#L51-L66
+  2 authoritativ ans=True  热血足球联盟_必杀全清单.md#L229-L231
+  3 reference_on ans=True  sohu_热血队队员必杀集锦_20261118.md#L1-L75
+  4 authoritativ ans=False 热血足球联盟_必杀全清单.md#L36-L49
+  5 reference_on ans=True  1ang_热血足球联盟图文攻略_20261118.md#L161-L164
+  6 reference_on ans=False tencentcloud_热血足球联盟杂谈_20261118.md#L13-L46
+  7 authoritativ ans=True  setsumei_热血足球说明书扫描_20261118.md#L345-L374
+  8 authoritativ ans=True  setsumei_热血足球说明书扫描_20261118.md#L430-L453
+== M13 热血足球 每支球队最多能挑战几次？  status=pass
+  1 reference_on ans=True  1ang_热血足球联盟图文攻略_20261118.md#L183-L192
+  2 authoritativ ans=True  热血足球联盟_必杀全清单.md#L234-L239
+  3 reference_on ans=True  sohu_一直输球隐藏大结局_20261118.md#L65-L81
+  4 authoritativ ans=False 热血足球联盟_必杀全清单.md#L137-L158
+  5 authoritativ ans=False 热血足球联盟_必杀全清单.md#L216-L225
+  6 reference_on ans=False tencentcloud_热血足球联盟杂谈_20261118.md#L13-L46
+  7 reference_on ans=False sohu_一直输球隐藏大结局_20261118.md#L1-L63
+  8 reference_on ans=True  1ang_热血足球联盟图文攻略_20261118.md#L1-L129
+== M14 热血足球 意大利门将的弱点在哪里？  status=pass
+  1 reference_on ans=True  1ang_热血足球联盟图文攻略_20261118.md#L709-L718
+  2 reference_on ans=True  1ang_热血足球联盟图文攻略_20261118.md#L693-L707
+  3 authoritativ ans=True  热血足球联盟_必杀全清单.md#L262-L264
+  4 reference_on ans=True  1ang_热血足球联盟图文攻略_20261118.md#L679-L691
+  5 reference_on ans=True  1ang_热血足球联盟图文攻略_20261118.md#L739-L756
+  6 reference_on ans=True  1ang_热血足球联盟图文攻略_20261118.md#L667-L670
+  7 reference_on ans=True  1ang_热血足球联盟图文攻略_20261118.md#L653-L656
+  8 reference_on ans=True  1ang_热血足球联盟图文攻略_20261118.md#L647-L650
+== M15 热血足球 倒挂金钩怎么使出来？  status=pass
+  1 reference_on ans=True  1ang_热血足球联盟图文攻略_20261118.md#L337-L359
+  2 authoritativ ans=True  热血足球联盟_必杀全清单.md#L24-L33
+  3 reference_on ans=False tencentcloud_热血足球联盟杂谈_20261118.md#L13-L46
+  4 reference_on ans=False csdn_wangsitan_热血足球Bug记录_20261118.md#L250-L274
+  5 authoritativ ans=False 热血足球联盟_必杀全清单.md#L137-L158
+  6 authoritativ ans=True  热血足球联盟_必杀全清单.md#L70-L85
+  7 reference_on ans=False 1ang_热血足球联盟图文攻略_20261118.md#L131-L158
+  8 reference_on ans=True  sohu_一直输球隐藏大结局_20261118.md#L83-L98
+== M16 热血足球联盟 能不能联网对战？  status=inconclusive
+  1 authoritativ ans=False 热血足球联盟_必杀全清单.md#L216-L225
+  2 reference_on ans=False tencentcloud_热血足球联盟杂谈_20261118.md#L13-L46
+  3 reference_on ans=True  1ang_热血足球联盟图文攻略_20261118.md#L1-L129
+  4 reference_on ans=True  1ang_热血足球联盟图文攻略_20261118.md#L167-L180
+  5 reference_on ans=False 1ang_热血足球联盟图文攻略_20261118.md#L161-L164
+  6 reference_on ans=True  1ang_热血足球联盟图文攻略_20261118.md#L817-L820
+  7 reference_on ans=False csdn_wangsitan_热血足球Bug记录_20261118.md#L188-L203
+  8 reference_on ans=True  1ang_热血足球联盟图文攻略_20261118.md#L777-L814
+== M17 热血足球 怎么存档进度？  status=pass
+  1 reference_on ans=False csdn_wangsitan_热血足球Bug记录_20261118.md#L250-L274
+  2 reference_on ans=False 1ang_热血足球联盟图文攻略_20261118.md#L183-L192
+  3 reference_on ans=False tencentcloud_热血足球联盟杂谈_20261118.md#L13-L46
+  4 authoritativ ans=False 热血足球联盟_必杀全清单.md#L137-L158
+  5 authoritativ ans=True  热血足球联盟_必杀全清单.md#L101-L119
+  6 authoritativ ans=False 热血足球联盟_必杀全清单.md#L216-L225
+  7 reference_on ans=False sohu_一直输球隐藏大结局_20261118.md#L1-L63
+  8 reference_on ans=False sohu_一直输球隐藏大结局_20261118.md#L65-L81
+== M18 热血足球 球员受伤了怎么治疗？  status=pass
+  1 authoritativ ans=True  热血足球联盟_必杀全清单.md#L137-L158
+  2 authoritativ ans=False 热血足球联盟_必杀全清单.md#L216-L225
+  3 reference_on ans=True  1ang_热血足球联盟图文攻略_20261118.md#L389-L396
+  4 reference_on ans=False tencentcloud_热血足球联盟杂谈_20261118.md#L13-L46
+  5 reference_on ans=False sohu_一直输球隐藏大结局_20261118.md#L1-L63
+  6 reference_on ans=True  1ang_热血足球联盟图文攻略_20261118.md#L679-L691
+  7 reference_on ans=False sohu_一直输球隐藏大结局_20261118.md#L65-L81
+  8 reference_on ans=False sohu_必杀最强小辫子_20261118.md#L1-L69
+== M19 热血足球联盟 怎么给球员升级加点？  status=inconclusive
+  1 reference_on ans=False csdn_wangsitan_热血足球Bug记录_20261118.md#L250-L274
+  2 reference_on ans=True  1ang_热血足球联盟图文攻略_20261118.md#L389-L396
+  3 reference_on ans=False 1ang_热血足球联盟图文攻略_20261118.md#L131-L158
+  4 reference_on ans=False 1ang_热血足球联盟图文攻略_20261118.md#L161-L164
+  5 authoritativ ans=False 热血足球联盟_必杀全清单.md#L216-L225
+  6 reference_on ans=False csdn_wangsitan_热血足球Bug记录_20261118.md#L188-L203
+  7 authoritativ ans=True  热血足球联盟_必杀全清单.md#L137-L158
+  8 reference_on ans=True  1ang_热血足球联盟图文攻略_20261118.md#L1-L129
+== M20 热血足球 有没有办法跳过中场休息？  status=inconclusive
+  1 reference_on ans=False 1ang_热血足球联盟图文攻略_20261118.md#L823-L839
+  2 reference_on ans=True  sohu_必杀最强小辫子_20261118.md#L71-L89
+  3 reference_on ans=False 1ang_热血足球联盟图文攻略_20261118.md#L679-L691
+  4 reference_on ans=False tencentcloud_热血足球联盟杂谈_20261118.md#L13-L46
+  5 reference_on ans=False sohu_一直输球隐藏大结局_20261118.md#L65-L81
+  6 reference_on ans=False csdn_wangsitan_热血足球Bug记录_20261118.md#L188-L203
+  7 reference_on ans=False 1ang_热血足球联盟图文攻略_20261118.md#L389-L396
+  8 reference_on ans=False 1ang_热血足球联盟图文攻略_20261118.md#L161-L164
+== M21 热血足球 怎么解锁隐藏球队？  status=inconclusive
+  1 reference_on ans=False 1ang_热血足球联盟图文攻略_20261118.md#L659-L662
+  2 reference_on ans=False sohu_必杀最强小辫子_20261118.md#L71-L89
+  3 reference_on ans=False csdn_wangsitan_热血足球Bug记录_20261118.md#L188-L203
+  4 reference_on ans=True  sohu_一直输球隐藏大结局_20261118.md#L1-L63
+  5 reference_on ans=False sohu_必杀最强小辫子_20261118.md#L1-L69
+  6 reference_on ans=False tencentcloud_热血足球联盟杂谈_20261118.md#L13-L46
+  7 authoritativ ans=True  热血足球联盟_必杀全清单.md#L164-L181
+  8 authoritativ ans=False 热血足球联盟_必杀全清单.md#L137-L158
+== M22 热血足球 雨天场地对射门有什么影响？  status=pass
+  1 reference_on ans=False tencentcloud_热血足球联盟杂谈_20261118.md#L13-L46
+  2 reference_on ans=True  sohu_必杀最强小辫子_20261118.md#L1-L69
+  3 authoritativ ans=True  热血足球联盟_必杀全清单.md#L137-L158
+  4 authoritativ ans=True  热血足球联盟_honest_gap_manifest.md#L37-L41
+  5 reference_on ans=True  1ang_热血足球联盟图文攻略_20261118.md#L679-L691
+  6 reference_on ans=False 1ang_热血足球联盟图文攻略_20261118.md#L739-L756
+  7 authoritativ ans=False 热血足球联盟_必杀全清单.md#L216-L225
+  8 reference_on ans=True  sohu_一直输球隐藏大结局_20261118.md#L65-L81
+== M23 热血足球联盟 支持几个手柄同时玩？  status=inconclusive
+  1 reference_on ans=True  1ang_热血足球联盟图文攻略_20261118.md#L167-L180
+  2 reference_on ans=True  1ang_热血足球联盟图文攻略_20261118.md#L759-L774
+  3 reference_on ans=False 1ang_热血足球联盟图文攻略_20261118.md#L161-L164
+  4 reference_on ans=False 1ang_热血足球联盟图文攻略_20261118.md#L1-L129
+  5 reference_on ans=False csdn_wangsitan_热血足球Bug记录_20261118.md#L250-L274
+  6 authoritativ ans=False 热血足球联盟_必杀全清单.md#L216-L225
+  7 reference_on ans=False csdn_wangsitan_热血足球Bug记录_20261118.md#L344-L378
+  8 authoritativ ans=False 热血足球联盟_必杀全清单.md#L137-L158
+== M24 热血足球 应援曲一共有几首？  status=pass
+  1 authoritativ ans=False 热血足球联盟_必杀全清单.md#L216-L225
+  2 reference_on ans=False 1ang_热血足球联盟图文攻略_20261118.md#L195-L243
+  3 reference_on ans=False 1ang_热血足球联盟图文攻略_20261118.md#L289-L335
+  4 reference_on ans=False tencentcloud_热血足球联盟杂谈_20261118.md#L13-L46
+  5 authoritativ ans=True  热血足球联盟_必杀全清单.md#L262-L264
+  6 reference_on ans=True  sohu_一直输球隐藏大结局_20261118.md#L1-L63
+  7 reference_on ans=False csdn_wangsitan_热血足球Bug记录_20261118.md#L250-L274
+  8 reference_on ans=True  sohu_一直输球隐藏大结局_20261118.md#L65-L81
+== M25 热血足球 走力 A 型是什么意思？  status=pass
+  1 reference_on ans=True  1ang_热血足球联盟图文攻略_20261118.md#L739-L756
+  2 authoritativ ans=True  热血足球联盟_必杀全清单.md#L229-L231
+  3 reference_on ans=True  1ang_热血足球联盟图文攻略_20261118.md#L1-L129
+  4 reference_on ans=True  1ang_热血足球联盟图文攻略_20261118.md#L525-L536
+  5 authoritativ ans=True  热血足球联盟_必杀全清单.md#L262-L264
+  6 reference_on ans=False csdn_wangsitan_热血足球Bug记录_20261118.md#L250-L274
+  7 reference_on ans=True  1ang_热血足球联盟图文攻略_20261118.md#L553-L599
+  8 reference_on ans=False sohu_一直输球隐藏大结局_20261118.md#L65-L81
+== M26 拳皇98 ECK 金手指怎么用？  status=pass
+  1 authoritativ ans=True  素材生产规范.md#L18-L31
+  2 cross_versio ans=False gamersky_kof98um全角色出招表_20261118.md#L3-L305
+  3 authoritativ ans=True  kof98eck.ini#L1-L32
+  4 authoritativ ans=True  素材生产规范.md#L140-L155
+  5 cross_versio ans=False gamersky_kof98um全角色出招表_20261118.md#L307-L456
+  6 authoritativ ans=False 素材生产规范.md#L180-L182
+  7 authoritativ ans=False 素材生产规范.md#L34-L59
+  8 cross_versio ans=False gamersky_kof98um全角色出招表_20261118.md#L460-L500
+== M27 热血足球 海月是什么射门？  status=pass
+  1 reference_on ans=True  sohu_必杀最强小辫子_20261118.md#L71-L89
+  2 reference_on ans=True  sohu_热血队队员必杀集锦_20261118.md#L77-L100
+  3 reference_on ans=True  sohu_必杀最强小辫子_20261118.md#L91-L106
+  4 authoritativ ans=True  热血足球联盟_必杀全清单.md#L229-L231
+  5 authoritativ ans=True  热血足球联盟_必杀全清单.md#L51-L66
+  6 reference_on ans=True  sohu_必杀最强小辫子_20261118.md#L1-L69
+  7 reference_on ans=True  sohu_热血队队员必杀集锦_20261118.md#L1-L75
+  8 reference_on ans=False tencentcloud_热血足球联盟杂谈_20261118.md#L13-L46
+== M28 热血足球 香蕉环射门有什么特点？  status=inconclusive
+  1 reference_on ans=True  sohu_必杀最强小辫子_20261118.md#L71-L89
+  2 reference_on ans=True  sohu_热血队队员必杀集锦_20261118.md#L77-L100
+  3 authoritativ ans=False 热血足球联盟_必杀全清单.md#L10-L21
+  4 reference_on ans=False tencentcloud_热血足球联盟杂谈_20261118.md#L13-L46
+  5 reference_on ans=True  1ang_热血足球联盟图文攻略_20261118.md#L539-L550
+  6 reference_on ans=True  1ang_热血足球联盟图文攻略_20261118.md#L647-L650
+  7 authoritativ ans=True  热血足球联盟_必杀全清单.md#L88-L98
+  8 reference_on ans=True  sohu_一直输球隐藏大结局_20261118.md#L65-L81
+== M29 热血足球 秘技效果能持续多久？  status=pass
+  1 reference_on ans=False 1ang_热血足球联盟图文攻略_20261118.md#L823-L839
+  2 authoritativ ans=True  热血足球联盟_必杀全清单.md#L24-L33
+  3 authoritativ ans=True  热血足球联盟_必杀全清单.md#L159-L161
+  4 authoritativ ans=True  热血足球联盟_必杀全清单.md#L137-L158
+  5 authoritativ ans=False 热血足球联盟_必杀全清单.md#L216-L225
+  6 reference_on ans=False tencentcloud_热血足球联盟杂谈_20261118.md#L13-L46
+  7 reference_on ans=False csdn_wangsitan_热血足球Bug记录_20261118.md#L188-L203
+  8 reference_on ans=False sohu_一直输球隐藏大结局_20261118.md#L1-L63
+== M30 热血足球 合体技有哪些发动方法？  status=pass
+  1 authoritativ ans=True  热血足球联盟_必杀全清单.md#L3-L7
+  2 authoritativ ans=True  热血足球联盟_必杀全清单.md#L229-L231
+  3 reference_on ans=True  1ang_热血足球联盟图文攻略_20261118.md#L337-L359
+  4 reference_on ans=True  1ang_热血足球联盟图文攻略_20261118.md#L389-L396
+  5 reference_on ans=True  1ang_热血足球联盟图文攻略_20261118.md#L373-L374
+  6 reference_on ans=True  1ang_热血足球联盟图文攻略_20261118.md#L369-L370
+  7 reference_on ans=True  1ang_热血足球联盟图文攻略_20261118.md#L377-L378
+  8 reference_on ans=True  1ang_热血足球联盟图文攻略_20261118.md#L385-L386

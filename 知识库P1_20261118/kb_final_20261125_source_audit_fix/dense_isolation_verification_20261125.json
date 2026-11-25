@@ -1,0 +1,419 @@
+{
+  "schema": "kb_dense_isolation_verification_v1",
+  "production_dense_present": {
+    "base": false,
+    "hybrid": false
+  },
+  "dense_ready": {
+    "base": [
+      false,
+      "稠密指纹件未建（py -3 -m taspipe.kb dense）"
+    ],
+    "hybrid": [
+      false,
+      "稠密指纹件未建（py -3 -m taspipe.kb dense）"
+    ]
+  },
+  "auto_index": "F:\\开源掌机教程\\_工具脚本\\taspipe\\游戏包\\知识库\\index.json",
+  "auto_domain_local": false,
+  "auto_index_is_base": true,
+  "probe_files": [
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_source_audit_fix\\dense_probe\\embeddings_fe56dc542741.npz",
+      "exists": true,
+      "size": 3054271,
+      "sha256": "887e75623662c8c3d90b6bfbb6d70c7b119254e69e29f191208cf6c6c8c0f69c"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_source_audit_fix\\dense_probe\\embeddings_fa3c4bfe7788.npz",
+      "exists": true,
+      "size": 3107540,
+      "sha256": "faf874ec71c00979975483ded68cf0adba3cacda800e9b820a2fe581a452b189"
+    }
+  ],
+  "base_rows": [
+    {
+      "id": "Q01",
+      "status": "pass",
+      "expected_status": "pass",
+      "selected_locators": [
+        "_工具脚本/taspipe/游戏包/热血足球联盟_必杀全清单.md#L3-L7"
+      ],
+      "expected_locators": [
+        "_工具脚本/taspipe/游戏包/热血足球联盟_必杀全清单.md#L3-L7"
+      ],
+      "retrieval": "bm25_only",
+      "index_used": "index.json",
+      "unchanged": true
+    },
+    {
+      "id": "Q02",
+      "status": "pass",
+      "expected_status": "pass",
+      "selected_locators": [
+        "_工具脚本/taspipe/游戏包/热血足球联盟_必杀全清单.md#L70-L85"
+      ],
+      "expected_locators": [
+        "_工具脚本/taspipe/游戏包/热血足球联盟_必杀全清单.md#L70-L85"
+      ],
+      "retrieval": "bm25_only",
+      "index_used": "index.json",
+      "unchanged": true
+    },
+    {
+      "id": "Q03",
+      "status": "pass",
+      "expected_status": "pass",
+      "selected_locators": [
+        "_工具脚本/taspipe/游戏包/热血足球联盟_必杀全清单.md#L24-L33"
+      ],
+      "expected_locators": [
+        "_工具脚本/taspipe/游戏包/热血足球联盟_必杀全清单.md#L24-L33"
+      ],
+      "retrieval": "bm25_only",
+      "index_used": "index.json",
+      "unchanged": true
+    },
+    {
+      "id": "Q04",
+      "status": "pass",
+      "expected_status": "pass",
+      "selected_locators": [
+        "_工具脚本/taspipe/游戏包/热血足球联盟_必杀全清单.md#L24-L33"
+      ],
+      "expected_locators": [
+        "_工具脚本/taspipe/游戏包/热血足球联盟_必杀全清单.md#L24-L33"
+      ],
+      "retrieval": "bm25_only",
+      "index_used": "index.json",
+      "unchanged": true
+    },
+    {
+      "id": "Q05",
+      "status": "pass",
+      "expected_status": "pass",
+      "selected_locators": [
+        "_工具脚本/taspipe/游戏包/热血足球联盟_必杀全清单.md#L24-L33"
+      ],
+      "expected_locators": [
+        "_工具脚本/taspipe/游戏包/热血足球联盟_必杀全清单.md#L24-L33"
+      ],
+      "retrieval": "bm25_only",
+      "index_used": "index.json",
+      "unchanged": true
+    },
+    {
+      "id": "Q06",
+      "status": "pass",
+      "expected_status": "pass",
+      "selected_locators": [
+        "_工具脚本/taspipe/游戏包/来源库/取证/setsumei_热血足球说明书扫描_20261118.md#L47-L48"
+      ],
+      "expected_locators": [
+        "_工具脚本/taspipe/游戏包/来源库/取证/setsumei_热血足球说明书扫描_20261118.md#L47-L48"
+      ],
+      "retrieval": "bm25_only",
+      "index_used": "index.json",
+      "unchanged": true
+    },
+    {
+      "id": "Q07",
+      "status": "pass",
+      "expected_status": "pass",
+      "selected_locators": [
+        "_工具脚本/taspipe/游戏包/来源库/取证/setsumei_热血足球说明书扫描_20261118.md#L76-L85"
+      ],
+      "expected_locators": [
+        "_工具脚本/taspipe/游戏包/来源库/取证/setsumei_热血足球说明书扫描_20261118.md#L76-L85"
+      ],
+      "retrieval": "bm25_only",
+      "index_used": "index.json",
+      "unchanged": true
+    },
+    {
+      "id": "Q08",
+      "status": "pass",
+      "expected_status": "pass",
+      "selected_locators": [
+        "_工具脚本/taspipe/游戏包/来源库/取证/setsumei_热血足球说明书扫描_20261118.md#L47-L48"
+      ],
+      "expected_locators": [
+        "_工具脚本/taspipe/游戏包/来源库/取证/setsumei_热血足球说明书扫描_20261118.md#L47-L48"
+      ],
+      "retrieval": "bm25_only",
+      "index_used": "index.json",
+      "unchanged": true
+    },
+    {
+      "id": "Q09",
+      "status": "inconclusive",
+      "expected_status": "inconclusive",
+      "selected_locators": [],
+      "expected_locators": [],
+      "retrieval": "bm25_only",
+      "index_used": "index.json",
+      "unchanged": true
+    },
+    {
+      "id": "Q10",
+      "status": "pass",
+      "expected_status": "pass",
+      "selected_locators": [
+        "F:/tas_rig/docs/素材生产规范.md#L185-L190"
+      ],
+      "expected_locators": [
+        "F:/tas_rig/docs/素材生产规范.md#L185-L190"
+      ],
+      "retrieval": "bm25_only",
+      "index_used": "index.json",
+      "unchanged": true
+    },
+    {
+      "id": "Q11",
+      "status": "inconclusive",
+      "expected_status": "inconclusive",
+      "selected_locators": [],
+      "expected_locators": [],
+      "retrieval": "bm25_only",
+      "index_used": "index.json",
+      "unchanged": true
+    },
+    {
+      "id": "Q12",
+      "status": "miss",
+      "expected_status": "miss",
+      "selected_locators": [],
+      "expected_locators": [],
+      "retrieval": null,
+      "index_used": "index.json",
+      "unchanged": true
+    },
+    {
+      "id": "Q13",
+      "status": "miss",
+      "expected_status": "miss",
+      "selected_locators": [],
+      "expected_locators": [],
+      "retrieval": null,
+      "index_used": "index.json",
+      "unchanged": true
+    },
+    {
+      "id": "Q14",
+      "status": "miss",
+      "expected_status": "miss",
+      "selected_locators": [],
+      "expected_locators": [],
+      "retrieval": null,
+      "index_used": "index.json",
+      "unchanged": true
+    },
+    {
+      "id": "Q15",
+      "status": "inconclusive",
+      "expected_status": "inconclusive",
+      "selected_locators": [],
+      "expected_locators": [],
+      "retrieval": "bm25_only",
+      "index_used": "index.json",
+      "unchanged": true
+    },
+    {
+      "id": "Q16",
+      "status": "inconclusive",
+      "expected_status": "inconclusive",
+      "selected_locators": [],
+      "expected_locators": [],
+      "retrieval": "bm25_only",
+      "index_used": "index.json",
+      "unchanged": true
+    },
+    {
+      "id": "Q17",
+      "status": "inconclusive",
+      "expected_status": "inconclusive",
+      "selected_locators": [],
+      "expected_locators": [],
+      "retrieval": "bm25_only",
+      "index_used": "index.json",
+      "unchanged": true
+    },
+    {
+      "id": "Q18",
+      "status": "pass",
+      "expected_status": "pass",
+      "selected_locators": [
+        "_工具脚本/taspipe/游戏包/热血足球联盟_必杀全清单.md#L251-L259"
+      ],
+      "expected_locators": [
+        "_工具脚本/taspipe/游戏包/热血足球联盟_必杀全清单.md#L251-L259"
+      ],
+      "retrieval": "bm25_only",
+      "index_used": "index.json",
+      "unchanged": true
+    },
+    {
+      "id": "P19",
+      "status": "inconclusive",
+      "expected_status": "inconclusive",
+      "selected_locators": [],
+      "expected_locators": [],
+      "retrieval": "bm25_only",
+      "index_used": "index.json",
+      "unchanged": true
+    },
+    {
+      "id": "P20",
+      "status": "miss",
+      "expected_status": "miss",
+      "selected_locators": [],
+      "expected_locators": [],
+      "retrieval": null,
+      "index_used": "index.json",
+      "unchanged": true
+    },
+    {
+      "id": "P21",
+      "status": "inconclusive",
+      "expected_status": "inconclusive",
+      "selected_locators": [],
+      "expected_locators": [],
+      "retrieval": "bm25_only",
+      "index_used": "index.json",
+      "unchanged": true
+    },
+    {
+      "id": "P22",
+      "status": "pass",
+      "expected_status": "pass",
+      "selected_locators": [
+        "_工具脚本/taspipe/游戏包/来源库/取证/setsumei_热血足球说明书扫描_20261118.md#L327-L341"
+      ],
+      "expected_locators": [
+        "_工具脚本/taspipe/游戏包/来源库/取证/setsumei_热血足球说明书扫描_20261118.md#L327-L341"
+      ],
+      "retrieval": "bm25_only",
+      "index_used": "index.json",
+      "unchanged": true
+    },
+    {
+      "id": "P23",
+      "status": "pass",
+      "expected_status": "pass",
+      "selected_locators": [
+        "_工具脚本/taspipe/游戏包/来源库/取证/setsumei_热血足球说明书扫描_20261118.md#L267-L288"
+      ],
+      "expected_locators": [
+        "_工具脚本/taspipe/游戏包/来源库/取证/setsumei_热血足球说明书扫描_20261118.md#L267-L288"
+      ],
+      "retrieval": "bm25_only",
+      "index_used": "index.json",
+      "unchanged": true
+    },
+    {
+      "id": "P24",
+      "status": "pass",
+      "expected_status": "pass",
+      "selected_locators": [
+        "测试问题与闸门说明书.md#L76-L79"
+      ],
+      "expected_locators": [
+        "测试问题与闸门说明书.md#L76-L79"
+      ],
+      "retrieval": "bm25_only",
+      "index_used": "index.json",
+      "unchanged": true
+    },
+    {
+      "id": "P25",
+      "status": "inconclusive",
+      "expected_status": "inconclusive",
+      "selected_locators": [],
+      "expected_locators": [],
+      "retrieval": "bm25_only",
+      "index_used": "index.json",
+      "unchanged": true
+    },
+    {
+      "id": "P26",
+      "status": "miss",
+      "expected_status": "miss",
+      "selected_locators": [],
+      "expected_locators": [],
+      "retrieval": null,
+      "index_used": "index.json",
+      "unchanged": true
+    },
+    {
+      "id": "X03",
+      "status": "pass",
+      "expected_status": "pass",
+      "selected_locators": [
+        "_工具脚本/taspipe/游戏包/热血足球联盟_必杀全清单.md#L70-L85"
+      ],
+      "expected_locators": [
+        "_工具脚本/taspipe/游戏包/热血足球联盟_必杀全清单.md#L70-L85"
+      ],
+      "retrieval": "bm25_only",
+      "index_used": "index.json",
+      "unchanged": true
+    },
+    {
+      "id": "X04",
+      "status": "pass",
+      "expected_status": "pass",
+      "selected_locators": [
+        "_工具脚本/taspipe/游戏包/热血足球联盟_必杀全清单.md#L36-L49"
+      ],
+      "expected_locators": [
+        "_工具脚本/taspipe/游戏包/热血足球联盟_必杀全清单.md#L36-L49"
+      ],
+      "retrieval": "bm25_only",
+      "index_used": "index.json",
+      "unchanged": true
+    },
+    {
+      "id": "X21",
+      "status": "pass",
+      "expected_status": "pass",
+      "selected_locators": [
+        "_工具脚本/taspipe/游戏包/来源库/取证/setsumei_热血足球说明书扫描_20261118.md#L376-L401"
+      ],
+      "expected_locators": [
+        "_工具脚本/taspipe/游戏包/来源库/取证/setsumei_热血足球说明书扫描_20261118.md#L376-L401"
+      ],
+      "retrieval": "bm25_only",
+      "index_used": "index.json",
+      "unchanged": true
+    },
+    {
+      "id": "X23",
+      "status": "pass",
+      "expected_status": "pass",
+      "selected_locators": [
+        "_工具脚本/taspipe/游戏包/热血足球联盟_必杀全清单.md#L24-L33"
+      ],
+      "expected_locators": [
+        "_工具脚本/taspipe/游戏包/热血足球联盟_必杀全清单.md#L24-L33"
+      ],
+      "retrieval": "bm25_only",
+      "index_used": "index.json",
+      "unchanged": true
+    }
+  ],
+  "base_query_count": 30,
+  "base_queries_unchanged": true,
+  "old_delivery_expected_hashes": {
+    "F:\\开源掌机教程\\知识库改进优化指导_2026-11-24_strict片段修正回填.md": "66c1bdeb0f3cde492751cbfbea237c6ff3083eb4218927481b5a833139635657",
+    "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261124\\final_manifest_after_strict_citation_fix_20261124.json": "7855b800e0862ce551e3aeb211f362c931f27ba067869f4de3b532f30ba2d934",
+    "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261124\\artifact_inventory_after_strict_citation_fix_20261124.json": "e728670c4aea20544a0bc719432435b1d7efc34bbce52e80d88ea99e8ac8b9fd"
+  },
+  "old_delivery_actual_hashes": {
+    "F:\\开源掌机教程\\知识库改进优化指导_2026-11-24_strict片段修正回填.md": "66c1bdeb0f3cde492751cbfbea237c6ff3083eb4218927481b5a833139635657",
+    "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261124\\final_manifest_after_strict_citation_fix_20261124.json": "7855b800e0862ce551e3aeb211f362c931f27ba067869f4de3b532f30ba2d934",
+    "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261124\\artifact_inventory_after_strict_citation_fix_20261124.json": "e728670c4aea20544a0bc719432435b1d7efc34bbce52e80d88ea99e8ac8b9fd"
+  },
+  "old_delivery_hashes_ok": true,
+  "old_delivery_state_changed": [],
+  "all_checks_ok": true
+}

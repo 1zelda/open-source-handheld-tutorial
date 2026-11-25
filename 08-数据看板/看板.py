@@ -1318,7 +1318,7 @@ def api_netdisk():
         warn.append("账号库文件不存在(%s)。" % ACCOUNT_DB)
     elif store["total"] == 0:
         warn.append("账号库里 0 个账号 —— 一次网盘都没登录过。夸克直接按下面那张卡里的"
-                    "『① 打开扫码窗口』,手机扫一下就自动抓取、自动起名,不用手填任何东西。")
+                    "『① 扫码登录』,手机扫一下就自动抓取、自动起名,不用手填任何东西。")
     off = [s["name"] for s in scopes if s["enable"] != "1"]
     if off:
         warn.append("这 %d 档 enable 不是 1,跑上传会被跳过:%s。" % (len(off), "、".join(off)))
@@ -1407,6 +1407,7 @@ def api_netdisk_fields(q):
     res = mod.form_schema(driver)
     res.setdefault("driver", driver)
     res.setdefault("fields", [])
+    res.update(live)
     if res.get("ok"):
         _nd_fields_cache[driver] = {k: v for k, v in res.items() if k not in QR_LIVE_KEYS}
     return res
@@ -1488,7 +1489,7 @@ def qr_watch_loop():
                 except BaseException:
                     pass
             # 顺手扫空壳格：扫一次码就留一个 profile 目录，不扫会越用越少（用户 11-08 撞上的
-            # 「只登了 4 个号却说十格满」就是空壳堆出来的）。只清「库里没号 + 窗口没开」的格。
+            # 「只登了 4 个号却说登录位满」就是空壳堆出来的）。只清「库里没号 + 窗口没开」的格。
             if _watch["cycle"] % 20 == 5 and hasattr(mod, "_reap_orphan_profiles"):
                 try:
                     db = mod.load_db()

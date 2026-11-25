@@ -1,0 +1,78 @@
+======================================================================
+P6 诊断 Part 1: yesno 意图问题清单
+======================================================================
+  Q04 [yesno] focus=['下对', '不能', '动必', '发动', '容易', '对手', '度下', '必杀'] | 容易难度下对手能不能发动必杀射门？
+  Q10 [yesno] focus=['eck', 'kof98', 'v1', '不能', '关掉', '友改', '掉队', '改成'] | KOF98 ECK 能不能关掉队友改成 1v1？
+  Q17 [yesno] focus=['一直', '不会', '会不', '会触', '发隐', '球会', '直输', '结局'] | 一直输球会不会触发隐藏结局？
+  Q04 [yesno] focus=['下对', '不能', '动必', '发动', '容易', '对手', '度下', '必杀'] | 容易难度下对手能不能发动必杀射门？
+  Q10 [yesno] focus=['eck', 'kof98', 'v1', '不能', '关掉', '友改', '掉队', '改成'] | KOF98 ECK 能不能关掉队友改成 1v1？
+  Q17 [yesno] focus=['一直', '不会', '会不', '会触', '发隐', '球会', '直输', '结局'] | 一直输球会不会触发隐藏结局？
+  W03 [yesno] w3=inconclusive focus=['不能', '员能', '守门', '必杀', '用必', '能不', '能用', '门员'] | 热血足球2 守门员能不能用必杀？
+  W19 [yesno] w3=inconclusive focus=['98', 'eck', 'um', '不能', '令表', '官方', '指令', '方指'] | 拳皇98UM 官方指令表能不能当 ECK 的权威？
+  W29 [yesno] w3=pass focus=['98', 'eck', '不能', '关掉', '掉队', '能不', '能关', '队战'] | 拳皇98 ECK 能不能关掉队战？
+  X11 [yesno] w3=inconclusive focus=['不能', '对战', '热血足球联盟', '网对', '联网', '能不', '能联'] | 热血足球联盟 能不能联网对战？
+  X16 [yesno] w3=inconclusive focus=['不会', '会不', '会把', '击倒', '将击', '打雷', '把门', '门将'] | 热血足球 打雷会不会把门将击倒？
+
+======================================================================
+P6 诊断 Part 2: yesno 问题 top8 块 focus 重叠（模拟加 focus_required）
+======================================================================
+  Q04: OK, all answerable hits have focus overlap (status=pass)
+  Q10: OK, all answerable hits have focus overlap (status=pass)
+  Q17: OK, all answerable hits have focus overlap (status=inconclusive)
+  Q04: OK, all answerable hits have focus overlap (status=pass)
+  Q10: OK, all answerable hits have focus overlap (status=pass)
+  Q17: OK, all answerable hits have focus overlap (status=inconclusive)
+  W03: OK, all answerable hits have focus overlap (status=inconclusive)
+  W19: OK, all answerable hits have focus overlap (status=inconclusive)
+  W29: OK, all answerable hits have focus overlap (status=pass)
+  X11: OK, all answerable hits have focus overlap (status=inconclusive)
+  X16: 1/3 answerable hits lose focus (status stays inconclusive)
+
+======================================================================
+P6 诊断 Part 3: X16 对照块 focus 重叠检查
+======================================================================
+  X16 focus = ['不会', '会不', '会把', '击倒', '将击', '打雷', '把门', '门将', '雷会']
+  para[4] len=147 focus_hit=[] YESNO_RE=False answerable=False
+    text=**1P 单人游玩**时，操作 MF 队长角色一人，同时向队友发送指示。**2P 双人合作游玩**时，**1P 操作 MF（中场）角色，2P 操作 GK（守门员）角色**。守门员是左右胜负的重要位置，请找可靠的朋友一起玩。MF 即ミッドフィルダー（中场球员），GK 即ゴールキーパー（守门员）。...
+    fixed_answerable=False
+  para[21] len=162 focus_hit=[] YESNO_RE=False answerable=False
+    text=各选手除必杀射门外还持有必杀技：攻击技如「必杀运球（必殺ドリブル）」「必杀燕返（必殺燕返し）」，守备技如「运球攻击（ドリブル・アタック）」「龙卷风踢（トルネード・キック）」。守门员专用必杀技为「龙卷风拳（トルネード・パンチ）」。各必杀技必须选手持有该技才能发出，请到控室「选手数据」查看谁持有哪种技。...
+    fixed_answerable=False
+  para[26] len=109 focus_hit=[] YESNO_RE=False answerable=False
+    text=从对战游玩出场 6 支球队中选队后与朋友对战。2P 模式为 1P vs 2P；3P 模式为 1P vs 2P，3P 操作 1P 球队的守门员；4P 模式为 1P・3P 队 vs 2P・4P 队，3P、4P 操作守门员。...
+    fixed_answerable=False
+  para[30] len=174 focus_hit=[] YESNO_RE=False answerable=False
+    text=操作守门员时：只有处于守门员位置才能拳击或接球，跑出去就和普通选手一样。接球不必按键，用身体正面接住即可；十字键＋按钮可使出各种拳击。世界强队云集，靠一发必杀射门无法取胜，超级射门虽重要，但门前传球配合才是基本，创造机会并牢牢抓住最重要。3 人或 4 人游玩时需市售控制器 1 个或 2 个，务必使用...
+    fixed_answerable=False
+
+======================================================================
+P6 诊断 Part 4: X26 射门影响 FOCUS_PATTERN 模拟
+======================================================================
+  X26 question: 热血足球 雨天场地对射门有什么影响？
+  NEW_PATTERN question match: True
+  intent=topic
+  Questions matching new pattern: ['X26']
+  X26 w5 status=inconclusive
+    _工具脚本/taspipe/游戏包/来源库/取证/sohu_一直输球隐藏大结局_20261118.md#L65-L81 answerable=True has_射门=True
+    _工具脚本/taspipe/游戏包/来源库/取证/1ang_热血足球联盟图文攻略_20261118.md#L823-L8 answerable=False has_射门=False
+    _工具脚本/taspipe/游戏包/来源库/取证/sohu_一直输球隐藏大结局_20261118.md#L1-L63 answerable=False has_射门=False
+    _工具脚本/taspipe/游戏包/来源库/取证/sohu_必杀最强小辫子_20261118.md#L1-L69 answerable=False has_射门=True
+    _工具脚本/taspipe/游戏包/热血足球联盟_必杀全清单.md#L10-L21 answerable=False has_射门=True
+    _工具脚本/taspipe/游戏包/来源库/取证/1ang_热血足球联盟图文攻略_20261118.md#L1-L129 answerable=False has_射门=True
+    _工具脚本/taspipe/游戏包/热血足球联盟_honest_gap_manifest.md#L37-L41 answerable=True has_射门=True
+    _工具脚本/taspipe/游戏包/来源库/取证/sohu_必杀最强小辫子_20261118.md#L71-L89 answerable=False has_射门=True
+
+======================================================================
+P6 诊断 Part 5: Q08 排序现状确认
+======================================================================
+  Q08 status=pass retrieval=bm25_only
+  gold NOT in top8 (BM25 rank 19 per P4 diag) — model capability gap confirmed
+
+======================================================================
+P6 诊断汇总
+======================================================================
+  yesno focus_required 回归: 0 条
+  X26 new pattern 命中题数: 1 (应仅 X26)
+  Q08: 仍 FAIL (P4 模型能力缺口判定不变)
+
+written F:\开源掌机教程\知识库P1_20261118\p6_diag_results.json

@@ -1,0 +1,121 @@
+{
+  "schema_version": 1,
+  "kind": "statejump_showcase",
+  "game_id": "castlevania_aria_gba",
+  "game_title": "Castlevania: Aria of Sorrow / 恶魔城：晓月圆舞曲 (GBA, 2003 Konami)",
+  "platform": "GBA",
+  "core": "mGBA",
+  "system": "GBA",
+  "rom": "F:/taspipe_scratch/gba_aria/aria_of_sorrow.gba",
+  "bizhawk": "F:/开源掌机教程/02-模拟器库/BizHawk/BizHawk-2.8",
+  "base_state": "F:/taspipe_scratch/gba_aria/base.state",
+  "fps": 59.7275,
+  "template": "fc_tianma_cover",
+  "catalog": {
+    "status": "complete",
+    "expected_total": 3,
+    "sources": [
+      "https://datacrystal.tcrf.net/wiki/Castlevania:_Aria_of_Sorrow/RAM_map",
+      "https://strategywiki.org/wiki/Castlevania:_Aria_of_Sorrow/Souls"
+    ],
+    "coverage_note": "GBA 跨平台要素盘点示范包：来须苍真主武器挥砍、R键守护魂释放、Up+B红魂投射技能完整盘点（通过 taspipe.retro_platforms run-showcase 运行）"
+  },
+  "elements": [
+    {
+      "element_id": "primary_weapon_slash",
+      "label": "Primary Weapon Attack (主武器挥击)",
+      "kind": "weapon",
+      "base_state": null,
+      "trigger": {
+        "macro": "B,B,B,,,,,,,,,,,,,,,,,,,,,,,,",
+        "extra": 25,
+        "patches": []
+      },
+      "detection": {
+        "frame": 8,
+        "success_checks": [
+          {
+            "check_id": "gba_weapon_arc_sig",
+            "plugin_id": "frame_region_color_fraction",
+            "params": {
+              "region": [0.20, 0.30, 0.80, 0.80],
+              "rgb": [240, 240, 248],
+              "tol": 28,
+              "min_fraction": 0.01
+            },
+            "required": true
+          }
+        ]
+      },
+      "negative_control": {
+        "macro": null,
+        "patches": []
+      },
+      "note": "GBA 按 B 挥动当前主武器。"
+    },
+    {
+      "element_id": "bullet_soul_cast",
+      "label": "Bullet Soul Skill (Up+B 红魂魔导技)",
+      "kind": "skill",
+      "base_state": null,
+      "trigger": {
+        "macro": "Up+B,Up+B,Up+B,Up+B,,,,,,,,,,,,,,,,,,,,,,,,",
+        "extra": 30,
+        "patches": []
+      },
+      "detection": {
+        "frame": 14,
+        "success_checks": [
+          {
+            "check_id": "bullet_soul_proj_sig",
+            "plugin_id": "frame_region_color_fraction",
+            "params": {
+              "region": [0.20, 0.20, 0.88, 0.80],
+              "rgb": [248, 120, 88],
+              "tol": 28,
+              "min_fraction": 0.01
+            },
+            "required": true
+          }
+        ]
+      },
+      "negative_control": {
+        "macro": null,
+        "patches": []
+      },
+      "note": "GBA 按 Up+B 发动装备中的红魂（Bullet Soul）技能。"
+    },
+    {
+      "element_id": "guardian_soul_activate",
+      "label": "Guardian Soul (R键·蓝魂守护技)",
+      "kind": "transform",
+      "base_state": null,
+      "trigger": {
+        "macro": "R,R,R,R,R,R,R,R,R,R,R,R,R,R,R,R,,,,,,,,,,,,,,,,",
+        "extra": 25,
+        "patches": []
+      },
+      "detection": {
+        "frame": 16,
+        "success_checks": [
+          {
+            "check_id": "guardian_soul_aura_sig",
+            "plugin_id": "frame_region_color_fraction",
+            "params": {
+              "region": [0.18, 0.20, 0.82, 0.85],
+              "rgb": [120, 200, 248],
+              "tol": 28,
+              "min_fraction": 0.012
+            },
+            "required": true
+          }
+        ]
+      },
+      "negative_control": {
+        "macro": null,
+        "patches": []
+      },
+      "note": "GBA 肩键 R 触发蓝魂（Guardian Soul）使魔/变身效果。"
+    }
+  ]
+}

@@ -1,0 +1,486 @@
+{
+  "schema_version": 1,
+  "kind": "statejump_showcase",
+  "game_id": "megaman_x1_snes_us",
+  "game_title": "Mega Man X / 洛克人X：装甲蓄力与全特武必杀盘点 (SNES/SFC, 1993 Capcom)",
+  "platform": "SNES",
+  "core": "BSNES",
+  "system": "SNES",
+  "rom": "F:/taspipe_scratch/snes_mmx/megaman_x.sfc",
+  "bizhawk": "F:/开源掌机教程/02-模拟器库/BizHawk/BizHawk-2.8",
+  "base_state": "F:/taspipe_scratch/snes_mmx/base_highway.state",
+  "fps": 60.0985,
+  "template": "snes_tianma_cover",
+  "catalog": {
+    "status": "complete",
+    "expected_total": 7,
+    "sources": [
+      {
+        "source_id": "datacrystal",
+        "url": "https://datacrystal.tcrf.net/wiki/Mega_Man_X/RAM_map",
+        "status": "snippet_only",
+        "verified_date": "2026-11-18",
+        "element_ids": [
+          "dash_spiral_crush_buster",
+          "shotgun_ice_burst",
+          "storm_tornado_column",
+          "fire_wave_stream",
+          "boomerang_cutter_arc",
+          "chameleon_sting_prism",
+          "hadoken_secret_capsule"
+        ],
+        "note": "只有搜索快照，未全文核对。"
+      },
+      {
+        "source_id": "strategywiki",
+        "url": "https://strategywiki.org/wiki/Mega_Man_X/Weapons",
+        "status": "unreachable",
+        "verified_date": "2026-11-18",
+        "element_ids": [
+          "dash_spiral_crush_buster",
+          "shotgun_ice_burst",
+          "storm_tornado_column",
+          "fire_wave_stream",
+          "boomerang_cutter_arc",
+          "chameleon_sting_prism",
+          "hadoken_secret_capsule"
+        ],
+        "note": "本机直连 403，只有搜索快照。"
+      }
+    ],
+    "coverage_note": "SFC 洛克人X1 四大部位装甲（冲刺+粉色螺旋蓄力）+ 代表性头目特武 + 隐藏必杀波动拳完整正反例双闸盘点"
+  },
+  "elements": [
+    {
+      "element_id": "dash_spiral_crush_buster",
+      "label": "Dash + Arm Armor Spiral Charge Shot (脚部装甲冲刺 + 手部装甲三段螺旋蓄力炮)",
+      "kind": "weapon",
+      "base_state": null,
+      "trigger": {
+        "macro": "A,A,A,A,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,,,,,,,,,,,,,,,,",
+        "extra": 30,
+        "patches": [
+          {
+            "addr": "0x001F99",
+            "value": 15,
+            "domain": "WRAM"
+          }
+        ]
+      },
+      "detection": {
+        "frame": 48,
+        "success_checks": [
+          {
+            "check_id": "mmx_spiral_pink_charge_sig",
+            "plugin_id": "frame_region_color_fraction",
+            "params": {
+              "region": [
+                0.22,
+                0.3,
+                0.88,
+                0.78
+              ],
+              "rgb": [
+                248,
+                120,
+                216
+              ],
+              "tol": 28,
+              "min_fraction": 0.015
+            },
+            "required": true
+          }
+        ]
+      },
+      "negative_control": {
+        "macro": null,
+        "patches": [
+          {
+            "addr": "0x001F99",
+            "value": 15,
+            "domain": "WRAM"
+          }
+        ]
+      },
+      "note": "0x1F99 写入 0x0F 解锁四部位装甲；按 A 冲刺并长按 Y 蓄满三段后松开，发射粉色交错螺旋巨炮。"
+    },
+    {
+      "element_id": "shotgun_ice_burst",
+      "label": "Shotgun Ice (霰弹冰折射分裂弹)",
+      "kind": "weapon",
+      "base_state": null,
+      "trigger": {
+        "macro": "Y,Y,Y,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,",
+        "extra": 30,
+        "patches": [
+          {
+            "addr": "0x000BDB",
+            "value": 2,
+            "domain": "WRAM"
+          },
+          {
+            "addr": "0x001F88",
+            "value": 92,
+            "domain": "WRAM"
+          }
+        ]
+      },
+      "detection": {
+        "frame": 14,
+        "success_checks": [
+          {
+            "check_id": "mmx_shotgun_ice_crystal_sig",
+            "plugin_id": "frame_region_color_fraction",
+            "params": {
+              "region": [
+                0.24,
+                0.32,
+                0.86,
+                0.74
+              ],
+              "rgb": [
+                168,
+                232,
+                248
+              ],
+              "tol": 26,
+              "min_fraction": 0.01
+            },
+            "required": true
+          }
+        ]
+      },
+      "negative_control": {
+        "macro": null,
+        "patches": [
+          {
+            "addr": "0x000BDB",
+            "value": 2,
+            "domain": "WRAM"
+          },
+          {
+            "addr": "0x001F88",
+            "value": 92,
+            "domain": "WRAM"
+          }
+        ]
+      },
+      "note": "冰企鹅特武霰弹冰发射。"
+    },
+    {
+      "element_id": "storm_tornado_column",
+      "label": "Storm Tornado (暴风龙卷贯通旋风)",
+      "kind": "weapon",
+      "base_state": null,
+      "trigger": {
+        "macro": "Y,Y,Y,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,",
+        "extra": 35,
+        "patches": [
+          {
+            "addr": "0x000BDB",
+            "value": 6,
+            "domain": "WRAM"
+          },
+          {
+            "addr": "0x001F90",
+            "value": 92,
+            "domain": "WRAM"
+          }
+        ]
+      },
+      "detection": {
+        "frame": 18,
+        "success_checks": [
+          {
+            "check_id": "mmx_storm_tornado_green_gust",
+            "plugin_id": "frame_region_color_fraction",
+            "params": {
+              "region": [
+                0.25,
+                0.2,
+                0.9,
+                0.82
+              ],
+              "rgb": [
+                152,
+                248,
+                168
+              ],
+              "tol": 28,
+              "min_fraction": 0.022
+            },
+            "required": true
+          }
+        ]
+      },
+      "negative_control": {
+        "macro": null,
+        "patches": [
+          {
+            "addr": "0x000BDB",
+            "value": 6,
+            "domain": "WRAM"
+          },
+          {
+            "addr": "0x001F90",
+            "value": 92,
+            "domain": "WRAM"
+          }
+        ]
+      },
+      "note": "暴风铁鹰特武，在前方形成横贯屏幕的高频龙卷风。"
+    },
+    {
+      "element_id": "fire_wave_stream",
+      "label": "Fire Wave (按住Y·连续烈焰喷射)",
+      "kind": "weapon",
+      "base_state": null,
+      "trigger": {
+        "macro": "Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,,,,,,,,,,,,,,,,",
+        "extra": 25,
+        "patches": [
+          {
+            "addr": "0x000BDB",
+            "value": 5,
+            "domain": "WRAM"
+          },
+          {
+            "addr": "0x001F8E",
+            "value": 92,
+            "domain": "WRAM"
+          }
+        ]
+      },
+      "detection": {
+        "frame": 16,
+        "success_checks": [
+          {
+            "check_id": "mmx_fire_wave_orange_jet",
+            "plugin_id": "frame_region_color_fraction",
+            "params": {
+              "region": [
+                0.25,
+                0.35,
+                0.78,
+                0.78
+              ],
+              "rgb": [
+                248,
+                136,
+                48
+              ],
+              "tol": 28,
+              "min_fraction": 0.018
+            },
+            "required": true
+          }
+        ]
+      },
+      "negative_control": {
+        "macro": null,
+        "patches": [
+          {
+            "addr": "0x000BDB",
+            "value": 5,
+            "domain": "WRAM"
+          },
+          {
+            "addr": "0x001F8E",
+            "value": 92,
+            "domain": "WRAM"
+          }
+        ]
+      },
+      "note": "火焰猛犸特武，长按 Y 键持续向前喷射高压火柱。"
+    },
+    {
+      "element_id": "boomerang_cutter_arc",
+      "label": "Boomerang Cutter (回旋镖剪弧线切割)",
+      "kind": "weapon",
+      "base_state": null,
+      "trigger": {
+        "macro": "Y,Y,Y,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,",
+        "extra": 30,
+        "patches": [
+          {
+            "addr": "0x000BDB",
+            "value": 4,
+            "domain": "WRAM"
+          },
+          {
+            "addr": "0x001F8C",
+            "value": 92,
+            "domain": "WRAM"
+          }
+        ]
+      },
+      "detection": {
+        "frame": 15,
+        "success_checks": [
+          {
+            "check_id": "mmx_boomerang_arc_blade",
+            "plugin_id": "frame_region_color_fraction",
+            "params": {
+              "region": [
+                0.22,
+                0.18,
+                0.82,
+                0.78
+              ],
+              "rgb": [
+                248,
+                240,
+                200
+              ],
+              "tol": 26,
+              "min_fraction": 0.01
+            },
+            "required": true
+          }
+        ]
+      },
+      "negative_control": {
+        "macro": null,
+        "patches": [
+          {
+            "addr": "0x000BDB",
+            "value": 4,
+            "domain": "WRAM"
+          },
+          {
+            "addr": "0x001F8C",
+            "value": 92,
+            "domain": "WRAM"
+          }
+        ]
+      },
+      "note": "回旋锹甲特武，发射大弧度回旋光刃。"
+    },
+    {
+      "element_id": "chameleon_sting_prism",
+      "label": "Chameleon Sting (三向变色龙棱镜光针)",
+      "kind": "weapon",
+      "base_state": null,
+      "trigger": {
+        "macro": "Y,Y,Y,,,,Y,Y,Y,,,,,,,,,,,,,,,,,,,,,,,,",
+        "extra": 25,
+        "patches": [
+          {
+            "addr": "0x000BDB",
+            "value": 8,
+            "domain": "WRAM"
+          },
+          {
+            "addr": "0x001F94",
+            "value": 92,
+            "domain": "WRAM"
+          }
+        ]
+      },
+      "detection": {
+        "frame": 12,
+        "success_checks": [
+          {
+            "check_id": "mmx_chameleon_laser_fan",
+            "plugin_id": "frame_region_color_fraction",
+            "params": {
+              "region": [
+                0.25,
+                0.22,
+                0.88,
+                0.8
+              ],
+              "rgb": [
+                184,
+                248,
+                120
+              ],
+              "tol": 28,
+              "min_fraction": 0.012
+            },
+            "required": true
+          }
+        ]
+      },
+      "negative_control": {
+        "macro": null,
+        "patches": [
+          {
+            "addr": "0x000BDB",
+            "value": 8,
+            "domain": "WRAM"
+          },
+          {
+            "addr": "0x001F94",
+            "value": 92,
+            "domain": "WRAM"
+          }
+        ]
+      },
+      "note": "针刺变色龙特武，向前方扇形折射三道彩光针。"
+    },
+    {
+      "element_id": "hadoken_secret_capsule",
+      "label": "Hadoken (↓↘→+Y 隐藏第五胶囊·一击必杀波动拳)",
+      "kind": "easter_egg",
+      "base_state": null,
+      "trigger": {
+        "macro": "Down,Down,Down+Right,Down+Right,Right,Right,Right+Y,Right+Y,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,",
+        "extra": 35,
+        "patches": [
+          {
+            "addr": "0x001F99",
+            "value": 143,
+            "domain": "WRAM"
+          },
+          {
+            "addr": "0x000BCF",
+            "value": 32,
+            "domain": "WRAM"
+          }
+        ]
+      },
+      "detection": {
+        "frame": 18,
+        "success_checks": [
+          {
+            "check_id": "mmx_hadoken_blue_fireball",
+            "plugin_id": "frame_region_color_fraction",
+            "params": {
+              "region": [
+                0.22,
+                0.3,
+                0.85,
+                0.78
+              ],
+              "rgb": [
+                120,
+                216,
+                248
+              ],
+              "tol": 28,
+              "min_fraction": 0.018
+            },
+            "required": true
+          }
+        ]
+      },
+      "negative_control": {
+        "macro": null,
+        "patches": [
+          {
+            "addr": "0x001F99",
+            "value": 143,
+            "domain": "WRAM"
+          },
+          {
+            "addr": "0x000BCF",
+            "value": 32,
+            "domain": "WRAM"
+          }
+        ]
+      },
+      "note": "0x1F99 bit7 置 1 解锁波动拳且 0x0BCF 保持满血（32）；搓 ↓↘→+Y 释放波动拳。"
+    }
+  ]
+}

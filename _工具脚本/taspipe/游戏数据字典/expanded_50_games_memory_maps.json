@@ -1,0 +1,254 @@
+{
+  "schema_version": 2,
+  "description": "跨 9 大怀旧平台 50+ 款核心名作现成内存地址、武器/技能/形态切换寄存器与全要素解锁字典（整合自 stable-retro data.json、libretro-database/cht、DataCrystal 与 Pugsy MAME Cheat DB）",
+  "platforms_covered": ["NES", "SNES", "GBA", "GB", "MD", "PCE", "PS1", "ARCADE_FBNEO", "PSP"],
+  "games": {
+    "MegaMan1_NES": {
+      "platform": "NES",
+      "stable_retro_id": "MegaMan-Nes",
+      "domain": "RAM",
+      "hp": {"addr": "0x006A", "max": 28},
+      "weapon_select": {"addr": "0x005F", "values": {"Buster": 0, "Cut": 1, "Ice": 2, "Bomb": 3, "Fire": 4, "Elec": 5, "Guts": 6, "Magnet": 7}},
+      "energy_addrs": ["0x006B", "0x006C", "0x006D", "0x006E", "0x006F", "0x0070", "0x0071"],
+      "energy_max": 28
+    },
+    "MegaMan2_NES": {
+      "platform": "NES",
+      "stable_retro_id": "MegaMan2-Nes",
+      "domain": "RAM",
+      "hp": {"addr": "0x06C0", "max": 28},
+      "weapons_owned_bitmask_1": {"addr": "0x009A", "max": 255, "note": "AtomicFire/AirShooter/LeafShield/BubbleLead/QuickBoomerang/TimeStopper/MetalBlade/ClashBomber"},
+      "weapons_owned_bitmask_2": {"addr": "0x009B", "max": 7, "note": "Item-1 / Item-2 / Item-3"},
+      "weapon_select": {"addr": "0x00A9", "values": {"Buster": 0, "AtomicFire": 1, "AirShooter": 2, "LeafShield": 3, "BubbleLead": 4, "QuickBoomerang": 5, "TimeStopper": 6, "MetalBlade": 7, "ClashBomber": 8, "Item1": 9, "Item2": 10, "Item3": 11}},
+      "energy_range": {"start": "0x009C", "end": "0x00A6", "max": 28}
+    },
+    "MegaMan3_NES": {
+      "platform": "NES",
+      "stable_retro_id": "MegaMan3-Nes",
+      "domain": "RAM",
+      "hp": {"addr": "0x00A2", "max": 156},
+      "weapon_select": {"addr": "0x00A0", "values": {"Buster": 0, "GeminiLaser": 1, "NeedleCannon": 2, "HardKnuckle": 3, "MagnetMissile": 4, "TopSpin": 5, "SearchSnake": 6, "RushCoil": 7, "SparkShock": 8, "RushMarine": 9, "ShadowBlade": 10, "RushJet": 11}},
+      "energy_range": {"start": "0x00A3", "end": "0x00AD", "max": 156}
+    },
+    "MegaMan4_NES": {
+      "platform": "NES",
+      "stable_retro_id": "MegaMan4-Nes",
+      "domain": "RAM",
+      "hp": {"addr": "0x00B0", "max": 156},
+      "weapons_unlock_range": {"start": "0x00B1", "end": "0x00BD", "max": 220, "note": "Bit7=已解锁标志, 低位=剩余能量 (FlashStopper/RainFlush/DrillBomb/PharaohShot/RingBoomerang/DustCrusher/DiveMissile/SkullBarrier/Rush/Wire/Balloon)"}
+    },
+    "MegaMan5_NES": {
+      "platform": "NES",
+      "stable_retro_id": "MegaMan5-Nes",
+      "domain": "RAM",
+      "hp": {"addr": "0x00B0", "max": 156},
+      "weapons_unlock_range": {"start": "0x00B1", "end": "0x00BC", "max": 220, "note": "WaterWave/GyroAttack/CrystalEye/NapalmBomb/SuperArrow/PowerStone/GravityHold/ChargeKick/StarCrash/RushCoil/RushJet/Beat"}
+    },
+    "MegaMan6_NES": {
+      "platform": "NES",
+      "stable_retro_id": "MegaMan6-Nes",
+      "domain": "RAM",
+      "hp": {"addr": "0x03E5", "max": 28},
+      "weapons_owned_range": {"start": "0x0689", "end": "0x0693", "max": 28, "note": "BlizzardAttack/WindStorm/FlameBlast/PlantBarrier/Tomahawk/YamatoSpear/KnightCrush/CentaurFlash/JetAdaptor/PowerAdaptor/Beat"}
+    },
+    "Contra_NES": {
+      "platform": "NES",
+      "stable_retro_id": "Contra-Nes",
+      "domain": "RAM",
+      "lives": {"addr": "0x0032", "max": 99},
+      "invincibility_timer": {"addr": "0x00AE", "max": 255},
+      "weapon_select": {"addr": "0x00AA", "values": {"Rifle": 0, "MachineGun_M": 17, "FireBall_F": 18, "Spread_S": 19, "Laser_L": 20}}
+    },
+    "SuperC_NES": {
+      "platform": "NES",
+      "stable_retro_id": "SuperC-Nes",
+      "domain": "RAM",
+      "lives": {"addr": "0x0057", "max": 99},
+      "weapon_select": {"addr": "0x007E", "values": {"Rifle": 0, "MachineGun_M": 1, "Spread_S": 2, "Laser_L": 3, "FireBomb_F": 4}}
+    },
+    "NinjaGaiden1_NES": {
+      "platform": "NES",
+      "stable_retro_id": "NinjaGaiden-Nes",
+      "domain": "RAM",
+      "hp": {"addr": "0x0065", "max": 16},
+      "ninpo_spirit": {"addr": "0x0064", "max": 99},
+      "sub_weapon": {"addr": "0x00C5", "values": {"Shuriken": 128, "WindmillShuriken": 130, "FireWheel": 132, "JumpAndSlash": 134, "InvincibleFireWheel": 136}}
+    },
+    "Castlevania1_NES": {
+      "platform": "NES",
+      "stable_retro_id": "Castlevania-Nes",
+      "domain": "RAM",
+      "hp": {"addr": "0x0045", "max": 64},
+      "hearts": {"addr": "0x0071", "max": 99},
+      "whip_level": {"addr": "0x0070", "max": 2},
+      "sub_weapon": {"addr": "0x015B", "values": {"Dagger": 8, "BoomerangCross": 9, "HolyWater": 11, "Axe": 13, "Stopwatch": 15}},
+      "triple_shot": {"addr": "0x0064", "max": 2}
+    },
+    "NekketsuSoccer2_KunioKun_NES": {
+      "platform": "NES",
+      "domain": "RAM",
+      "all_super_shots_cheat": "PAUSE_INPUT:A,A,A,B,A,A,A,B,A,A,A,A,A,A,A",
+      "ball_owner_slot": {"addr": "0x0498"}
+    },
+    "KyattoNindenTeyandee_NinjaCats_NES": {
+      "platform": "NES",
+      "domain": "RAM",
+      "hp": {"addr": "0x04A3", "max": 16},
+      "ninpo_power": {"addr": "0x04A5", "max": 32},
+      "active_cat_helper": {"addr": "0x0052", "values": {"Yattaro_Speedy": 0, "Sukashii_Guido": 1, "Pururun_Polly": 2, "Gotton_WallBreaker": 3, "Rikkinoshin_HeavyCannon": 4, "Mietoru_Flight": 5, "Nekki_Drill": 6}}
+    },
+    "MegaManX1_SNES": {
+      "platform": "SNES",
+      "stable_retro_id": "MegaManX-Snes",
+      "domain": "WRAM",
+      "hp": {"addr": "0x000BCF", "max": 32},
+      "armor_and_hadoken": {"addr": "0x001F99", "max": 143, "note": "0x0F=全四件装甲, 0x8F=全装甲+波动拳"},
+      "weapon_select": {"addr": "0x000BDB", "values": {"XBuster": 0, "HomingTorpedo": 1, "ChameleonSting": 2, "RollingShield": 3, "FireWave": 4, "StormTornado": 5, "ElectricSpark": 6, "BoomerangCutter": 7, "ShotgunIce": 8}},
+      "ammo_range": {"start": "0x001F86", "end": "0x001F95", "max": 92}
+    },
+    "MegaManX2_SNES": {
+      "platform": "SNES",
+      "stable_retro_id": "MegaManX2-Snes",
+      "domain": "WRAM",
+      "hp": {"addr": "0x0009FF", "max": 32},
+      "armor_and_shoryuken": {"addr": "0x001FA1", "max": 255, "note": "全装甲+GigaCrush+升龙拳胶囊解锁"}
+    },
+    "SuperMetroid_SNES": {
+      "platform": "SNES",
+      "stable_retro_id": "SuperMetroid-Snes",
+      "domain": "WRAM",
+      "energy": {"addr": "0x0009C2", "max": 1499},
+      "missiles": {"addr": "0x0009C6", "max": 230},
+      "super_missiles": {"addr": "0x0009CA", "max": 50},
+      "power_bombs": {"addr": "0x0009CE", "max": 50},
+      "equipped_items_bitmask": {"addr": "0x0009A2", "max": 65535, "note": "Varia/SpringBall/MorphBall/ScrewAttack/Gravity/HiJump/SpaceJump/SpeedBooster"},
+      "equipped_beams_bitmask": {"addr": "0x0009A6", "max": 4111, "note": "Wave/Ice/Spazer/Plasma/Charge"}
+    },
+    "Contra3AlienWars_SNES": {
+      "platform": "SNES",
+      "stable_retro_id": "ContraIIITheAlienWars-Snes",
+      "domain": "WRAM",
+      "lives": {"addr": "0x001F8A", "max": 99},
+      "bombs": {"addr": "0x001F8E", "max": 99},
+      "weapon_slot_1": {"addr": "0x001F84", "values": {"Normal": 0, "Spread_S": 1, "Laser_L": 2, "Homing_H": 3, "Crush_C": 4, "Flame_F": 5}}
+    },
+    "CastlevaniaAriaOfSorrow_GBA": {
+      "platform": "GBA",
+      "stable_retro_id": "CastlevaniaAriaOfSorrow-Gba",
+      "domain": "EWRAM",
+      "rom_sha1": "40aab076a528f52e93260bb98d91a40039e0da02",
+      "verification": {
+        "status": "partially_gameplay_verified",
+        "verified_on": "2026-11-25",
+        "verified_fields": ["bullet_soul_id", "guardian_soul_id", "enchant_soul_id", "soul_id_24_up_b_effect", "soul_id_22_melee_effect", "item_id_1_potion_use"],
+        "menu_verified_fields": ["level", "current_hp", "current_mp", "max_hp", "max_mp", "str", "def", "int", "lck", "exp", "money"],
+        "gameplay_evidence_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/wingcutter_combat_report.json",
+        "yellow_gameplay_evidence_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/yellow_gameplay_report.json",
+        "item_use_evidence_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/item_use_report.json",
+        "menu_evidence_report": "F:/taspipe_scratch/gba_parallel_20261124/aria_cheat_validation1/report.json",
+        "scope": "中文版已装备红/蓝/黄魂 ID；红魂 ID=24 的真实菜单、关闭重开、Up+B 与 MP 正反例已验收；黄魂 ID=22 对同一僵尸的近战伤害 22、空槽 17 已验收；回复药 ID=1 在受伤时使用后 HP 100→200、数量 1→0，满 HP 不消耗；统计字段仅完成 STATUS 菜单显示验收，数值上限未验收",
+        "use_policy": "仅 verified=true 且具备对应层级证据的字段可用于该层级；GBA 平台 verified=false 的生产闸门保持关闭"
+      },
+      "level": {"addr": "0x01326D", "width": 1, "max": 99, "max_verified": false, "verified": true, "verification_level": "menu", "note": "STATUS 菜单直写显示 LV.99；99 是社区示例值，不是实测游戏上限"},
+      "current_hp": {"addr": "0x01326E", "width": 2, "endian": "little", "max": 999, "max_verified": false, "verified": true, "verification_level": "menu", "note": "STATUS 菜单显示 HP 1234/2345；HUD 随写入变化；999 只是社区示例值"},
+      "current_mp": {"addr": "0x013270", "width": 2, "endian": "little", "max": 999, "max_verified": false, "verified": true, "verification_level": "menu", "note": "STATUS 菜单显示 MP 60/678；红魂施法消耗正反例另已验证"},
+      "max_hp": {"addr": "0x013272", "width": 2, "endian": "little", "max": 999, "max_verified": false, "verified": true, "verification_level": "menu"},
+      "max_mp": {"addr": "0x013274", "width": 2, "endian": "little", "max": 999, "max_verified": false, "verified": true, "verification_level": "menu"},
+      "str": {"addr": "0x013276", "width": 2, "endian": "little", "max": 999, "max_verified": false, "verified": true, "verification_level": "menu", "note": "基础 STR，不是 STATUS 菜单实时总 STR；黄魂被动不会直接改写此字段"},
+      "def": {"addr": "0x013278", "width": 2, "endian": "little", "max": 999, "max_verified": false, "verified": true, "verification_level": "menu", "note": "游戏 STATUS 菜单标签为 CON"},
+      "int": {"addr": "0x01327A", "width": 2, "endian": "little", "max": 999, "max_verified": false, "verified": true, "verification_level": "menu", "note": "旧字典误标为 HP；菜单直写显示 INT 333"},
+      "lck": {"addr": "0x01327C", "width": 2, "endian": "little", "max": 999, "max_verified": false, "verified": true, "verification_level": "menu", "note": "游戏 STATUS 菜单标签为 LCK"},
+      "exp": {"addr": "0x013280", "width": 4, "endian": "little", "max": 9999999, "max_verified": false, "verified": true, "verification_level": "menu", "note": "STATUS 菜单直写显示 EXP 123456；宽度来自社区表，尚未逐字节验收"},
+      "money": {"addr": "0x013284", "width": 4, "endian": "little", "max_verified": false, "verified": true, "verification_level": "menu", "note": "STATUS 菜单直写显示 GOLD 654321；宽度来自社区表，尚未逐字节验收"},
+      "bullet_soul_id": {"addr": "0x01325D", "width": 1, "max": 255, "verified": true, "values": {"None": 0, "Merman": 4, "WingCutter_Harpy": 24}, "note": "真实菜单装备、关闭重开与 Up+B/R 画面正反例验收；ID=4 为半鱼人，ID=24 中文名魔鸟"},
+      "guardian_soul_id": {"addr": "0x01325E", "width": 1, "max": 255, "verified": true, "values": {"None": 0, "Buer": 4}, "note": "真实菜单装备与 R 画面正反例验收；直写 ID=4/0 与菜单装备逐帧一致"},
+      "enchant_soul_id": {"addr": "0x01325F", "width": 1, "max": 255, "verified": true, "values": {"None": 0, "SkeletonWarrior": 22}, "note": "真实菜单装备与关闭重开持久化；同一僵尸近战伤害 ID=22 为 22、空槽为 17"},
+      "soul_inventory": {
+        "verified": false,
+        "encoding": "1-based soul ID; each byte packs two quantities in low/high nibbles",
+        "groups": [
+          {"type": "bullet", "start": "0x013310", "end": "0x01332B", "count": 55},
+          {"type": "guardian", "start": "0x013348", "end": "0x013353", "count": 24},
+          {"type": "enchant", "start": "0x013362", "end": "0x013373", "count": 35}
+        ],
+        "note": "中文社区表与 USA matching decomp 末项索引交叉推得；当前中文版尚未逐项验收，不能当作连续 0x13300–0x13375 可用区"
+      },
+      "item_inventory": {
+        "verified": false,
+        "candidate_start": "0x013288",
+        "candidate_count": 32,
+        "verified_samples": [
+          {"item_id": 1, "name": "回复药", "count_addr": "0x013288", "width": 1, "verified": true, "verification_level": "menu_use", "evidence": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/item_use_report.json", "note": "人工置入数量1；HP100时真实使用后HP200、数量0；满HP320时拒绝使用且数量保持1"}
+        ],
+        "note": "只验收回复药的数量消费；32项边界、其余物品编码、真实拾取/删除/装备函数仍未验收"
+      },
+      "harpy_wing_cutter": {"soul_id": 24, "type": "bullet", "inventory_addr": "0x01331B", "nibble": "high", "inventory_verified": false, "gameplay_verified": true, "trigger": "Up+B", "observed_mp_cost": 21, "menu_mp_display": 25, "alias_status": "中文名魔鸟、美版英文名 Harpy/Wing Cutter；与用户俗称飞冰魂的对应未确认，也不等同于飞骷髅", "evidence": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/wingcutter_combat_report.json", "note": "真实菜单选中、关闭回 gameplay、重开仍为 ID=24；同状态 Up+B 出现翅膀状刀刃，清空槽后消失；MP 80→59，清空保持 80；库存字节地址仍为候选"}
+    },
+    "MetroidFusion_GBA": {
+      "platform": "GBA",
+      "domain": "IWRAM",
+      "energy": {"addr": "0x001310", "max": 2099},
+      "missiles": {"addr": "0x001314", "max": 250},
+      "beam_upgrades": {"addr": "0x00131A", "max": 31, "note": "Charge/Wide/Plasma/Wave/Ice"},
+      "suit_upgrades": {"addr": "0x00131C", "max": 255, "note": "MorphBall/HiJump/SpeedBooster/SpaceJump/ScrewAttack/Varia/Gravity"}
+    },
+    "MegaManZero1_GBA": {
+      "platform": "GBA",
+      "domain": "IWRAM",
+      "hp": {"addr": "0x02B5A8", "max": 32},
+      "element_chip": {"addr": "0x02B62B", "values": {"None": 0, "Thunder": 1, "Flame": 2, "Ice": 3}},
+      "all_weapons_max_skill": {"start": "0x02B610", "end": "0x02B61F", "max": 255}
+    },
+    "YuYuHakushoMakyoToitsusen_MD": {
+      "platform": "MD",
+      "domain": "68K RAM",
+      "p1_hp": {"addr": "0xFF2245", "max": 192},
+      "p1_spirit_mp": {"addr": "0xFF2249", "max": 192}
+    },
+    "ContraHardCorps_MD": {
+      "platform": "MD",
+      "stable_retro_id": "ContraHardCorps-Genesis",
+      "domain": "68K RAM",
+      "p1_lives": {"addr": "0xFFBC7B", "max": 99},
+      "p1_bombs": {"addr": "0xFFBC8D", "max": 99},
+      "p1_weapon_slot": {"addr": "0xFFBC7F", "values": {"SlotA": 0, "SlotB": 1, "SlotC": 2, "SlotD": 3, "Bomb": 4}}
+    },
+    "StreetsOfRage2_MD": {
+      "platform": "MD",
+      "stable_retro_id": "StreetsOfRage2-Genesis",
+      "domain": "68K RAM",
+      "p1_hp": {"addr": "0xFFEF81", "max": 104},
+      "p1_lives": {"addr": "0xFFEF83", "max": 9}
+    },
+    "CastlevaniaSotN_PS1": {
+      "platform": "PS1",
+      "domain": "MainRAM",
+      "hp": {"addr": "0x097BA0", "max": 999},
+      "mp": {"addr": "0x097BB0", "max": 999},
+      "hearts": {"addr": "0x097BA8", "max": 999},
+      "all_relics_range": {"start": "0x097964", "end": "0x097981", "value": 3, "note": "全 30 件魔导器（蝙蝠/狼/雾/二段跳/高跳/使魔全开启）"}
+    },
+    "MegaManX4_PS1": {
+      "platform": "PS1",
+      "domain": "MainRAM",
+      "hp": {"addr": "0x141924", "max": 32},
+      "ultimate_armor_flag": {"addr": "0x172206", "value": 15, "note": "X 终极装甲无限 Nova Strike"}
+    },
+    "KOF98_Arcade": {
+      "platform": "ARCADE_FBNEO",
+      "stable_retro_id": "KingOfFighters98-Arcade",
+      "domain": "m68K RAM",
+      "p1_hp": {"addr": "0x108239", "max": 103},
+      "p2_hp": {"addr": "0x108439", "max": 103},
+      "p1_power_stocks": {"addr": "0x1081E8", "max": 3},
+      "p1_max_mode": {"addr": "0x10825E", "value": 128}
+    },
+    "MetalSlug1_Arcade": {
+      "platform": "ARCADE_FBNEO",
+      "domain": "m68K RAM",
+      "p1_weapon_id": {"addr": "0x10808A", "values": {"Handgun": 0, "HeavyMachineGun_H": 1, "RocketLauncher_R": 2, "FlameShot_F": 3, "Shotgun_S": 4}},
+      "p1_ammo": {"addr": "0x10808C", "max": 200},
+      "p1_bombs": {"addr": "0x10808E", "max": 99}
+    }
+  }
+}

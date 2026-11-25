@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "domain": "megaman2_candidate",
+  "index_path": "知识库P1_20261118/megaman2_candidate_20261125/index.json",
+  "index_sha256": "a72988e7f8a773fbaeb5f519f46b0f9ddd97eee8a6cda703b01434e880c05576",
+  "map_path": "知识库P1_20261118/megaman2_candidate_20261125/corpus_map.json",
+  "registry_path": "知识库P1_20261118/megaman2_candidate_20261125/sources.json",
+  "default_revision": "megaman2_nes_tasvideos_rockman2",
+  "frozen_at": "2026-11-25",
+  "production_route_wired": false
+}
