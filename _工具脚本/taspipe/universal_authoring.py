@@ -946,6 +946,8 @@ def calibrate_showcase_pack(pack_path: Path, work_dir: Path, only_ids=None) -> d
             eid = el["element_id"]
             if only_ids and eid not in only_ids:
                 continue
+            if any(key in el for key in showcase.ACCEPTANCE_FIELDS):
+                raise RuntimeError(f"{eid}: 已有正式三类验收声明，拒绝自动标定覆盖")
             trig = el["trigger"]
             ctrl = el.get("negative_control") or {}
             macro = trig.get("macro") or ""
@@ -968,6 +970,7 @@ def calibrate_showcase_pack(pack_path: Path, work_dir: Path, only_ids=None) -> d
             cal = calibrate_element_detector(pos_dir, neg_dir)
             el["detection"] = {
                 "frame": cal["frame"],
+                "candidate_only": True,
                 "success_checks": [
                     {
                         "check_id": f"{eid}_visual_sig",
@@ -994,7 +997,9 @@ def calibrate_showcase_pack(pack_path: Path, work_dir: Path, only_ids=None) -> d
             tmp.write_text(json.dumps(doc, ensure_ascii=False, indent=2), encoding="utf-8")
             os.replace(tmp, pack_path)
 
-    return {"pack": str(pack_path), "calibrated": summary}
+    return {"pack": str(pack_path), "calibrated": summary,
+            "acceptance_status": "candidate_only",
+            "note": "自动视觉差分只生成 detection.success_checks 候选；action/effect/capture 必须另行显式声明并复验"}
 
 
 # ---------------------------------------------------------------------------

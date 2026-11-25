@@ -1,0 +1,664 @@
+{
+  "schema_version": 1,
+  "kind": "statejump_showcase",
+  "game_id": "castlevania_aria_gba",
+  "game_title": "Castlevania: Aria of Sorrow / 恶魔城：晓月圆舞曲 (GBA, 2003 Konami)",
+  "platform": "GBA",
+  "core": "mGBA",
+  "system": "GBA",
+  "rom": "F:/BaiduNetdiskDownload/rom/gba/恶魔城晓月圆舞曲.gba",
+  "rom_sha1": "40aab076a528f52e93260bb98d91a40039e0da02",
+  "bizhawk": "F:\\开源掌机教程\\02-模拟器库\\BizHawk\\BizHawk-2.11.1",
+  "base_state": "F:\\开源掌机教程\\04-游戏资源库\\TAS输入录像库\\状态资产\\castlevania_aria_gba\\aria_us_40aab076\\r20261125T145623\\states\\base.state",
+  "fps": 59.7275,
+  "template": "none",
+  "verification": {
+    "status": "detector_verified_showcase_pending_platform_gate",
+    "verified_on": "2026-11-25",
+    "scope": "三个候选检测器已通过互不重叠的标定/验收帧分区、控制帧、全时间轴负例审计与各自正式采集窗口的正反例复验；红魂47只交付42帧炸弹出现动作，保留90帧侦察记录，不把爆炸闪白纳入本素材；不等于114项玩法或GBA平台准入",
+    "evidence_report": "F:/taspipe_scratch/gba_parallel_20261124/aria_soul_detector_separated_v4_20261125/report.json",
+    "production_gate": "showcase.PLATFORM_PROFILES.GBA.verified 仍为 false，正式 run 必须保持 blocked"
+  },
+  "catalog": {
+    "status": "complete",
+    "expected_total": 3,
+    "sources": [
+      {
+        "source_id": "local_aria_menu_catalog_20261125",
+        "status": "candidate",
+        "verified_date": null,
+        "evidence_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_patch_vs_nav_audit.json",
+        "element_ids": [
+          "red_soul_35_camera_aligned",
+          "red_soul_47_local_attack",
+          "yellow_soul_10_healing_popup"
+        ],
+        "note": "中文魂名与效果文本来自真实菜单导航目录；身份观察不替代玩法验收，资格保持 candidate。"
+      },
+      {
+        "source_id": "aria_detector_separated_acceptance_20261125",
+        "status": "candidate",
+        "verified_date": null,
+        "evidence_report": "F:/taspipe_scratch/gba_parallel_20261124/aria_soul_detector_separated_v4_20261125/report.json",
+        "element_ids": [
+          "red_soul_35_camera_aligned",
+          "red_soul_47_local_attack",
+          "yellow_soul_10_healing_popup"
+        ],
+        "note": "detector_calibration/2.0 分离样本集验收；标定与验收源帧重叠均为0，但 gameplay_verified=false、semantic_identity_verified=false、platform_verified=false，资格保持 candidate。"
+      }
+    ],
+    "coverage_note": "本包只收录红魂35、红魂47、黄魂10三个已固化检测器；不是全部红黄魂或完整技能表。"
+  },
+  "elements": [
+    {
+      "element_id": "red_soul_35_camera_aligned",
+      "label": "红魂35 虎人（Up+B 直拳）",
+      "kind": "skill",
+      "base_state": "F:\\开源掌机教程\\04-游戏资源库\\TAS输入录像库\\状态资产\\castlevania_aria_gba\\aria_us_40aab076\\r20261125T145623\\states\\base.state",
+      "trigger": {
+        "macro": "Up+B",
+        "extra": 89,
+        "patches": [
+          {
+            "addr": 78429,
+            "value": 35,
+            "domain": "EWRAM"
+          }
+        ]
+      },
+      "detection": {
+        "frame": 40,
+        "success_checks": [
+          {
+            "check_id": "red_soul_35_camera_aligned_visual",
+            "plugin_id": "frame_pair_aligned_region_difference",
+            "params": {
+              "reference_frame": "F:\\开源掌机教程\\_工具脚本\\taspipe\\游戏包\\gba_aria_of_sorrow_souls.tri_acceptance_assets\\red_soul_35_negative_f0040.png",
+              "region": [
+                0.229167,
+                0.46875,
+                0.5,
+                0.9375
+              ],
+              "alignment_region": [
+                0.0,
+                0.125,
+                1.0,
+                0.4875
+              ],
+              "max_shift": 24,
+              "max_dy": 4,
+              "diff_threshold": 42,
+              "min_changed_fraction": 0.069,
+              "max_global_changed_fraction": 0.25
+            },
+            "required": true
+          }
+        ]
+      },
+      "negative_control": {
+        "macro": "Up+B",
+        "patches": [
+          {
+            "addr": 78429,
+            "value": 0,
+            "domain": "EWRAM"
+          }
+        ]
+      },
+      "identity": {
+        "menu_catalog": "F:/开源掌机教程/_工具脚本/taspipe/游戏包/gba_aria_of_sorrow_souls.menu_catalog.json",
+        "group": "red",
+        "id": 35,
+        "name_zh": "虎人",
+        "effect_text": "蕴含浑身之力的直拳"
+      },
+      "action_checks": [
+        {
+          "check_id": "red_soul_35_camera_aligned_action",
+          "plugin_id": "frame_pair_aligned_region_difference",
+          "params": {
+            "reference_frame": "F:\\开源掌机教程\\_工具脚本\\taspipe\\游戏包\\gba_aria_of_sorrow_souls.tri_acceptance_assets\\red_soul_35_negative_f0040.png",
+            "region": [
+              0.229167,
+              0.46875,
+              0.5,
+              0.9375
+            ],
+            "alignment_region": [
+              0.0,
+              0.125,
+              1.0,
+              0.4875
+            ],
+            "max_shift": 24,
+            "max_dy": 4,
+            "diff_threshold": 42,
+            "min_changed_fraction": 0.069,
+            "max_global_changed_fraction": 0.25
+          },
+          "required": true
+        }
+      ],
+      "effect_requirement": "not_applicable",
+      "effect_checks": [],
+      "capture_checks": [
+        {
+          "check_id": "red_soul_35_camera_aligned_capture",
+          "plugin_id": "frame_luma_range",
+          "params": {
+            "min": 95,
+            "max": 135
+          },
+          "required": true
+        }
+      ],
+      "detector_provenance": {
+        "calibration_report": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_soul_detector_separated_v4_20261125\\report.json",
+        "calibration_report_sha256": "1a609b2f40f3bf194aa4f4ddd632aa0ef095a28c9debbef382a3e1619c7157ff",
+        "case_id": "red_soul_35_camera_aligned",
+        "sample_isolation": {
+          "method": "disjoint_frame_partition",
+          "calibration_sample_set_id": "red_soul_35_camera_aligned_calibration_frames",
+          "acceptance_sample_set_id": "red_soul_35_camera_aligned_acceptance_frames",
+          "calibration_fingerprint": "523281dc1666edc0f3693d88c45e8f7a3aec2d6c1e71a67479a8163b7434f3c5",
+          "acceptance_fingerprint": "8d6b9ff35e195a44ae50bbcf151a50fa9923dff5c42ed1e7a2dc5fb787faa5e9",
+          "source_partition": {
+            "pos": {
+              "calibration_count": 29,
+              "acceptance_count": 61,
+              "overlap": [],
+              "mapping_sha256": {
+                "calib_pos_dir": "7dc1db6201cfbd62553a3c684f2aae53b1388c53d5e27ceec64a1e9709f71b3a",
+                "accept_pos_dir": "2ba8772d79d87e1cbc44427f639d964ac7ebca48c163dd9adb98a1e51fc68c99"
+              }
+            },
+            "neg": {
+              "calibration_count": 29,
+              "acceptance_count": 61,
+              "overlap": [],
+              "mapping_sha256": {
+                "calib_neg_dir": "5dd613bb095a8aacf3b86a1b0e35b39e23f9067b3d7de99b3bbe0abf50004bba",
+                "accept_neg_dir": "e92ff155cfea72b4d9f5a842e2ff30f3d202b40863ef8cbad6a7469e665463e4"
+              }
+            }
+          },
+          "directories": {
+            "calib_pos_dir": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_soul_detector_separated_v4_20261125\\red_soul_35_camera_aligned\\calib_pos",
+            "calib_neg_dir": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_soul_detector_separated_v4_20261125\\red_soul_35_camera_aligned\\calib_neg",
+            "accept_pos_dir": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_soul_detector_separated_v4_20261125\\red_soul_35_camera_aligned\\accept_pos",
+            "accept_neg_dir": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_soul_detector_separated_v4_20261125\\red_soul_35_camera_aligned\\accept_neg"
+          }
+        },
+        "timeline_audit": {
+          "scope": "all_available_acceptance_dump_frames",
+          "paired_frames": 61,
+          "positive_counts": {
+            "fail": 2,
+            "pass": 59
+          },
+          "negative_counts": {
+            "fail": 61
+          },
+          "negative_all_fail": true,
+          "negative_control_kind": "same_empty_frame_self_difference",
+          "expectations": [
+            {
+              "label": "before_paired_attack",
+              "side": "positive",
+              "start": 0,
+              "end": 1,
+              "expect": "all_fail",
+              "counts": {
+                "fail": 2
+              },
+              "pass": true
+            },
+            {
+              "label": "paired_attack_window",
+              "side": "positive",
+              "start": 2,
+              "end": 60,
+              "expect": "all_pass",
+              "counts": {
+                "pass": 59
+              },
+              "pass": true
+            }
+          ]
+        },
+        "capture_frame": 40,
+        "capture_total_frames": 90,
+        "capture_window": [
+          0,
+          89
+        ],
+        "source_frame_count": 90,
+        "reference_asset_sha256": "ee2f667bba54a43319a63d93702759929b7a83998492da9b2113f5338187a7e7"
+      },
+      "note": "检测器只证明镜头平移补偿后的局部攻击差异；资源消耗正例另见红魂资源验证，不把局部差分外推为完整技能机制。action_checks只验攻击姿态，effect_requirement=not_applicable，完整伤害/消耗不在本检测器包内。"
+    },
+    {
+      "element_id": "red_soul_47_local_attack",
+      "label": "红魂47 圆盘装甲（Up+B 炸弹）",
+      "kind": "skill",
+      "base_state": "F:\\开源掌机教程\\04-游戏资源库\\TAS输入录像库\\状态资产\\castlevania_aria_gba\\aria_us_40aab076\\r20261125T145623\\states\\base.state",
+      "trigger": {
+        "macro": "Up+B",
+        "extra": 41,
+        "patches": [
+          {
+            "addr": 78429,
+            "value": 47,
+            "domain": "EWRAM"
+          }
+        ]
+      },
+      "detection": {
+        "frame": 30,
+        "success_checks": [
+          {
+            "check_id": "red_soul_47_local_attack_visual",
+            "plugin_id": "frame_pair_aligned_region_difference",
+            "params": {
+              "reference_frame": "F:\\开源掌机教程\\_工具脚本\\taspipe\\游戏包\\gba_aria_of_sorrow_souls.tri_acceptance_assets\\red_soul_47_negative_f0030.png",
+              "region": [
+                0.25,
+                0.46875,
+                0.645833,
+                0.9375
+              ],
+              "alignment_region": [
+                0.0,
+                0.125,
+                1.0,
+                0.4875
+              ],
+              "max_shift": 0,
+              "max_dy": 0,
+              "diff_threshold": 42,
+              "min_changed_fraction": 0.044,
+              "max_global_changed_fraction": 0.25
+            },
+            "required": true
+          }
+        ]
+      },
+      "negative_control": {
+        "macro": "Up+B",
+        "patches": [
+          {
+            "addr": 78429,
+            "value": 0,
+            "domain": "EWRAM"
+          }
+        ]
+      },
+      "identity": {
+        "menu_catalog": "F:/开源掌机教程/_工具脚本/taspipe/游戏包/gba_aria_of_sorrow_souls.menu_catalog.json",
+        "group": "red",
+        "id": 47,
+        "name_zh": "圆盘装甲",
+        "effect_text": "破坏力超群的炸弹"
+      },
+      "action_checks": [
+        {
+          "check_id": "red_soul_47_local_attack_action",
+          "plugin_id": "frame_pair_aligned_region_difference",
+          "params": {
+            "reference_frame": "F:\\开源掌机教程\\_工具脚本\\taspipe\\游戏包\\gba_aria_of_sorrow_souls.tri_acceptance_assets\\red_soul_47_negative_f0030.png",
+            "region": [
+              0.25,
+              0.46875,
+              0.645833,
+              0.9375
+            ],
+            "alignment_region": [
+              0.0,
+              0.125,
+              1.0,
+              0.4875
+            ],
+            "max_shift": 0,
+            "max_dy": 0,
+            "diff_threshold": 42,
+            "min_changed_fraction": 0.044,
+            "max_global_changed_fraction": 0.25
+          },
+          "required": true
+        }
+      ],
+      "effect_requirement": "not_applicable",
+      "effect_checks": [],
+      "capture_checks": [
+        {
+          "check_id": "red_soul_47_local_attack_capture",
+          "plugin_id": "frame_luma_range",
+          "params": {
+            "min": 95,
+            "max": 135
+          },
+          "required": true
+        }
+      ],
+      "detector_provenance": {
+        "calibration_report": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_soul_detector_separated_v4_20261125\\report.json",
+        "calibration_report_sha256": "1a609b2f40f3bf194aa4f4ddd632aa0ef095a28c9debbef382a3e1619c7157ff",
+        "case_id": "red_soul_47_local_attack",
+        "sample_isolation": {
+          "method": "disjoint_frame_partition",
+          "calibration_sample_set_id": "red_soul_47_local_attack_calibration_frames",
+          "acceptance_sample_set_id": "red_soul_47_local_attack_acceptance_frames",
+          "calibration_fingerprint": "5b28ee7cfdb55b5b849d0111ce26b99a9a03dcd0e08a903ba9437122d37fb0af",
+          "acceptance_fingerprint": "fcacf3434eddc9046f7742e70754bd069d2fb2891ae2da598e584675182fccbd",
+          "source_partition": {
+            "pos": {
+              "calibration_count": 18,
+              "acceptance_count": 72,
+              "overlap": [],
+              "mapping_sha256": {
+                "calib_pos_dir": "4d6fb303047364f0f07cd93c56012bbc61833a2cdd521a7d276f904011d8403e",
+                "accept_pos_dir": "82fb31f18312208bad64be2450ebea56dbe3111771d1cfe3cec2a4c18c445971"
+              }
+            },
+            "neg": {
+              "calibration_count": 18,
+              "acceptance_count": 72,
+              "overlap": [],
+              "mapping_sha256": {
+                "calib_neg_dir": "eff59ef437c18be846dd8ef2d619351011aa57c83014b7c150d92218a5c4b195",
+                "accept_neg_dir": "b64959a914fd44a1b999af2d4161cb33c221876161c36729303bed3b5dc69659"
+              }
+            }
+          },
+          "directories": {
+            "calib_pos_dir": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_soul_detector_separated_v4_20261125\\red_soul_47_local_attack\\calib_pos",
+            "calib_neg_dir": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_soul_detector_separated_v4_20261125\\red_soul_47_local_attack\\calib_neg",
+            "accept_pos_dir": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_soul_detector_separated_v4_20261125\\red_soul_47_local_attack\\accept_pos",
+            "accept_neg_dir": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_soul_detector_separated_v4_20261125\\red_soul_47_local_attack\\accept_neg"
+          }
+        },
+        "timeline_audit": {
+          "scope": "all_available_acceptance_dump_frames",
+          "paired_frames": 72,
+          "positive_counts": {
+            "fail": 41,
+            "pass": 31
+          },
+          "negative_counts": {
+            "fail": 72
+          },
+          "negative_all_fail": true,
+          "negative_control_kind": "same_empty_frame_self_difference",
+          "expectations": [
+            {
+              "label": "before_local_attack",
+              "side": "positive",
+              "start": 0,
+              "end": 1,
+              "expect": "all_fail",
+              "counts": {
+                "fail": 2
+              },
+              "pass": true
+            },
+            {
+              "label": "local_attack_window",
+              "side": "positive",
+              "start": 2,
+              "end": 32,
+              "expect": "all_pass",
+              "counts": {
+                "pass": 31
+              },
+              "pass": true
+            },
+            {
+              "label": "after_local_attack",
+              "side": "positive",
+              "start": 33,
+              "end": 62,
+              "expect": "all_fail",
+              "counts": {
+                "fail": 30
+              },
+              "pass": true
+            },
+            {
+              "label": "fullscreen_flash_window_rejected",
+              "side": "positive",
+              "start": 63,
+              "end": 71,
+              "expect": "all_fail",
+              "counts": {
+                "fail": 9
+              },
+              "pass": true
+            }
+          ]
+        },
+        "capture_frame": 30,
+        "capture_total_frames": 42,
+        "capture_window": [
+          0,
+          41
+        ],
+        "source_frame_count": 90,
+        "reference_asset_sha256": "23a0714db0fd380fbf6c96bca400e139fedff36e09838ab622eaf79eee2158f6"
+      },
+      "note": "本素材是动作专用：Up+B宏1帧加extra=41，正式交付窗口为f0000—f0041，主验收帧f0030。原始90帧侦察证据完整保留，f0042—f0089的爆炸闪白不属于本动作素材窗口，未放宽拍摄阈值。action_checks只验炸弹出现，effect_requirement=not_applicable，不证明爆炸伤害、完整效果或资源消耗。"
+    },
+    {
+      "element_id": "yellow_soul_10_healing_popup",
+      "label": "黄魂10 巨虫（静止回血 +5）",
+      "kind": "passive",
+      "base_state": "F:\\开源掌机教程\\04-游戏资源库\\TAS输入录像库\\状态资产\\castlevania_aria_gba\\aria_us_40aab076\\r20261125T145623\\states\\yellow_damage_route.state",
+      "trigger": {
+        "macro": "Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,B,B,B,B,B,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,",
+        "extra": 88,
+        "patches": [
+          {
+            "addr": 78431,
+            "value": 10,
+            "domain": "EWRAM"
+          }
+        ]
+      },
+      "detection": {
+        "frame": 185,
+        "success_checks": [
+          {
+            "check_id": "yellow_soul_10_healing_popup_visual",
+            "plugin_id": "frame_region_color_fraction",
+            "params": {
+              "region": [
+                0.408,
+                0.588,
+                0.492,
+                0.681
+              ],
+              "rgb": [
+                49,
+                107,
+                255
+              ],
+              "tol": 26,
+              "min_fraction": 0.061
+            },
+            "required": true
+          }
+        ]
+      },
+      "negative_control": {
+        "macro": "Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,B,B,B,B,B,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,",
+        "patches": [
+          {
+            "addr": 78431,
+            "value": 0,
+            "domain": "EWRAM"
+          }
+        ]
+      },
+      "identity": {
+        "menu_catalog": "F:/开源掌机教程/_工具脚本/taspipe/游戏包/gba_aria_of_sorrow_souls.menu_catalog.json",
+        "group": "yellow",
+        "id": 10,
+        "name_zh": "巨虫",
+        "effect_text": "静止不动时HP\n缓慢回复"
+      },
+      "action_checks": [
+        {
+          "check_id": "yellow_soul_10_healing_popup_action",
+          "plugin_id": "frame_region_color_fraction",
+          "params": {
+            "region": [
+              0.408,
+              0.588,
+              0.492,
+              0.681
+            ],
+            "rgb": [
+              49,
+              107,
+              255
+            ],
+            "tol": 26,
+            "min_fraction": 0.061
+          },
+          "required": true
+        }
+      ],
+      "effect_requirement": "not_applicable",
+      "effect_checks": [],
+      "capture_checks": [
+        {
+          "check_id": "yellow_soul_10_healing_popup_capture",
+          "plugin_id": "frame_luma_range",
+          "params": {
+            "min": 95,
+            "max": 135
+          },
+          "required": true
+        }
+      ],
+      "detector_provenance": {
+        "calibration_report": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_soul_detector_separated_v4_20261125\\report.json",
+        "calibration_report_sha256": "1a609b2f40f3bf194aa4f4ddd632aa0ef095a28c9debbef382a3e1619c7157ff",
+        "case_id": "yellow_soul_10_healing_popup",
+        "sample_isolation": {
+          "method": "disjoint_frame_partition",
+          "calibration_sample_set_id": "yellow_soul_10_healing_popup_calibration_frames",
+          "acceptance_sample_set_id": "yellow_soul_10_healing_popup_acceptance_frames",
+          "calibration_fingerprint": "3b05f0efa2f6107e8a090a3bd6276d40b475af3ba8ebc1e913089cd26bc713ac",
+          "acceptance_fingerprint": "83f75f64e167db999e033fd082a67247e52e1780b273097d9a4ad3b3c80ee3ba",
+          "source_partition": {
+            "pos": {
+              "calibration_count": 57,
+              "acceptance_count": 168,
+              "overlap": [],
+              "mapping_sha256": {
+                "calib_pos_dir": "7f7abcbd30e5ec121814abf0ecdbc1e8461e613439b0da61e0cb2544e04ab7f4",
+                "accept_pos_dir": "7604c8bac6c95c7647388ed36c23ae9d3b7c170de10c093da74e034a05563e46"
+              }
+            },
+            "neg": {
+              "calibration_count": 57,
+              "acceptance_count": 168,
+              "overlap": [],
+              "mapping_sha256": {
+                "calib_neg_dir": "fde2a06db634d920ad8e0c5a0949842294cfc3a21a3f405f887458e2f90bfa97",
+                "accept_neg_dir": "8278c634dc89e40fb6288715f5d181021e35ae542a935d5f0620fe6b2afd6253"
+              }
+            }
+          },
+          "directories": {
+            "calib_pos_dir": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_soul_detector_separated_v4_20261125\\yellow_soul_10_healing_popup\\calib_pos",
+            "calib_neg_dir": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_soul_detector_separated_v4_20261125\\yellow_soul_10_healing_popup\\calib_neg",
+            "accept_pos_dir": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_soul_detector_separated_v4_20261125\\yellow_soul_10_healing_popup\\accept_pos",
+            "accept_neg_dir": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_soul_detector_separated_v4_20261125\\yellow_soul_10_healing_popup\\accept_neg"
+          }
+        },
+        "timeline_audit": {
+          "scope": "all_available_acceptance_dump_frames",
+          "paired_frames": 168,
+          "positive_counts": {
+            "fail": 126,
+            "pass": 42
+          },
+          "negative_counts": {
+            "fail": 168
+          },
+          "negative_all_fail": true,
+          "negative_control_kind": "empty_soul_frame_color_absence",
+          "expectations": [
+            {
+              "label": "before_first_popup",
+              "side": "positive",
+              "start": 0,
+              "end": 99,
+              "expect": "all_fail",
+              "counts": {
+                "fail": 100
+              },
+              "pass": true
+            },
+            {
+              "label": "first_popup_visible_window",
+              "side": "positive",
+              "start": 100,
+              "end": 120,
+              "expect": "all_pass",
+              "counts": {
+                "pass": 21
+              },
+              "pass": true
+            },
+            {
+              "label": "between_popups",
+              "side": "positive",
+              "start": 121,
+              "end": 131,
+              "expect": "all_fail",
+              "counts": {
+                "fail": 11
+              },
+              "pass": true
+            },
+            {
+              "label": "second_popup_visible_window",
+              "side": "positive",
+              "start": 132,
+              "end": 152,
+              "expect": "all_pass",
+              "counts": {
+                "pass": 21
+              },
+              "pass": true
+            },
+            {
+              "label": "after_second_popup",
+              "side": "positive",
+              "start": 153,
+              "end": 167,
+              "expect": "all_fail",
+              "counts": {
+                "fail": 15
+              },
+              "pass": true
+            }
+          ]
+        },
+        "capture_frame": 185,
+        "capture_total_frames": 226,
+        "capture_window": [
+          0,
+          225
+        ],
+        "source_frame_count": 226,
+        "reference_asset_sha256": null
+      },
+      "note": "检测器只证明固定受击路线中的两段+5提示；HP优势另有独立路线证据，不把提示像素外推为完整回血机制。action_checks只验+5提示，effect_requirement=not_applicable，完整HP回复机制由独立verify证据负责。"
+    }
+  ]
+}

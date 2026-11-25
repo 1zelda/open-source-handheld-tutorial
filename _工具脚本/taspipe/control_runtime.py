@@ -17,7 +17,7 @@ import uuid
 import zipfile
 
 from . import statejump, watchdog
-from .schema import (adopt_state_sync_settings, sha256_file, split_rom_spec,
+from .schema import (adopt_state_sync_settings, apply_movie_sync_settings, sha256_file, split_rom_spec,
                      state_sync_settings, verify_core_identity)
 
 
@@ -175,21 +175,36 @@ def _configure(source: Path, clone: Path, program: dict, sound=False, start_paus
 
     sync = program.get("sync_settings") or {}
     if sync:
-        # The public contract currently permits NES Controls, not arbitrary CLR types.
-        if program["system"] != "NES" or program["core"] != "NesHawk":
-            raise RuntimeBlocked("nonempty sync_settings currently requires NES/NesHawk Controls")
-        controls = sync.get("Controls", sync)
-        if not isinstance(controls, dict) or any(type(v) not in (str, bool) for v in controls.values()):
-            raise RuntimeBlocked("sync_settings must contain NES Controls string/bool values")
-        key = "BizHawk.Emulation.Cores.Nintendo.NES.NES"
-        settings = cfg.setdefault("CoreSyncSettings", {}).setdefault(key, {})
-        settings.setdefault("$type", key + "+NESSyncSettings, BizHawk.Emulation.Cores")
-        settings.setdefault("Controls", {}).update(controls)
+        if program["system"] == "NES" and program["core"] == "NesHawk":
+            controls = sync.get("Controls", sync)
+            if not isinstance(controls, dict) or any(type(v) not in (str, bool) for v in controls.values()):
+                raise RuntimeBlocked("sync_settings must contain NES Controls string/bool values")
+            key = "BizHawk.Emulation.Cores.Nintendo.NES.NES"
+            settings = cfg.setdefault("CoreSyncSettings", {}).setdefault(key, {})
+            settings.setdefault("$type", key + "+NESSyncSettings, BizHawk.Emulation.Cores")
+            settings.setdefault("Controls", {}).update(controls)
+        else:
+            identity = program.get("core_identity") or {}
+            deterministic = identity.get("deterministic_setting")
+            if program["system"] != "SNES" or not identity.get("sync_type") or not deterministic:
+                raise RuntimeBlocked("nonempty sync_settings requires NES/NesHawk or deterministic SNES BSNES")
+            key, value = deterministic["key"], deterministic["value"]
+            if type(sync.get(key)) is not type(value) or sync.get(key) != value:
+                raise RuntimeBlocked(f"deterministic core setting {key}={value!r} is required")
+            settings = cfg.setdefault("CoreSyncSettings", {}).setdefault(identity["sync_type"].split("+", 1)[0], {})
+            settings.update(sync)
+            settings["$type"] = identity["sync_type"]
     if state_sync is not None:
         expectation = program.get("core_identity") or {}
         if state_sync["o"].get("$type") != expectation.get("sync_type"):
             raise RuntimeBlocked("state CLR sync type does not match requested core")
         key, adopted = adopt_state_sync_settings(state_sync)
+        deterministic = expectation.get("deterministic_setting")
+        if deterministic:
+            actual = adopted.get(deterministic["key"])
+            expected = deterministic["value"]
+            if type(actual) is not type(expected) or actual != expected:
+                raise RuntimeBlocked("state does not contain the required deterministic BSNES startup setting")
         cfg.setdefault("CoreSyncSettings", {})[key] = adopted
     _json(config, cfg)
 
@@ -495,6 +510,11 @@ def execute(program: dict, out_dir: str, work_root: str, timeout: float = 300) -
             if sha256_file(source_movie) != start["sha256"]:
                 raise RuntimeBlocked("movie SHA-256 changed before runtime launch")
             tas_replay.materialize_movie(str(source_movie), str(initial))
+            movie_sync = None
+            if program.get("sync_settings"):
+                movie_sync = apply_movie_sync_settings(initial, program.get("core_identity") or {},
+                                                       program["sync_settings"])
+                report["movie_sync_settings"] = movie_sync
             count = _movie_inputs(initial)
             if start.get("movie_input_lines") is not None and start["movie_input_lines"] != count:
                 raise RuntimeBlocked(f"movie_input_lines {start['movie_input_lines']} 与素材里的输入行 {count} 不一致")

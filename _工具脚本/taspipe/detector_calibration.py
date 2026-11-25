@@ -173,7 +173,7 @@ def _sample_isolation(case):
 
     calibration_fp = fingerprint("calib_pos_dir", "calib_neg_dir")
     acceptance_fp = fingerprint("accept_pos_dir", "accept_neg_dir")
-    if calibration_fp == acceptance_fp:
+    if case["separation_method"] == "disjoint_frame_partition" and calibration_fp == acceptance_fp:
         raise ValueError(f"{case['case_id']}: 标定与验收帧目录内容完全相同，不能作为分离样本")
     source_partition = None
     if case["separation_method"] == "disjoint_frame_partition":
@@ -532,7 +532,8 @@ def run_recipe(recipe_path, out_path):
         "detector_impl_sha256": showcase._detector_impl_sha(),
         "gameplay_verified": False,
         "semantic_identity_verified": False,
-        "detector_scope": "separated_acceptance_dump_frames_with_explicit_expectations",
+        "detector_scope": "separated_acceptance_frames_with_explicit_expectations",
+        "sample_separation_methods": sorted({case["separation_method"] for case in recipe["cases"]}),
         "calibration_acceptance_separated": True,
         "full_game_timeline_verified": False,
         "platform_verified": False,
@@ -542,7 +543,7 @@ def run_recipe(recipe_path, out_path):
     lines = [
         "# 视觉检测器候选标定",
         "",
-        "> 标定与验收使用不同样本集；验收覆盖验收 dump 的全部正反例帧和显式时间窗，不等于技能身份、整套玩法、平台准入或未采集时间轴。",
+        "> 标定与验收使用不同样本集；independent_capture 必须绑定不同进程的强制运行、源报告与逐帧 SHA256。确定性回放允许不同进程采集到逐帧相同的画面，但不得复用同一运行或源报告。验收覆盖验收采集的全部正反例帧和显式时间窗，不等于技能身份、整套玩法、平台准入或未采集时间轴。",
         "",
         f"- 配方：`{recipe_path}`",
         f"- 配方 SHA256：`{report['recipe_sha256']}`",
@@ -580,6 +581,14 @@ def run_recipe(recipe_path, out_path):
         )
         lines.append(f"- 正例逐格计数：`{timeline['positive_counts']}`；反例逐格计数：`{timeline['negative_counts']}`")
         lines.append(f"- 反例控制：`{timeline['negative_control_kind']}`；全负例拒绝：`{timeline['negative_all_fail']}`")
+        if isolation["independent_runs"]:
+            lines.append(f"- 帧内容指纹：标定 `{isolation['calibration_fingerprint']}`；验收 `{isolation['acceptance_fingerprint']}`")
+            for role, label in (("calibration", "标定"), ("acceptance", "验收")):
+                run = isolation["independent_runs"][role]["pos"]
+                lines.append(
+                    f"- 独立{label}采集：进程 `{run['process_id']}`；运行 `{run['run_id']}`；"
+                    f"源报告 `{run['source_report']}`；报告 SHA256 `{run['source_report_sha256']}`"
+                )
         for item in timeline["expectations"]:
             lines.append(
                 f"- {item['label']}：{item['side']} {item['start']}..{item['end']} "

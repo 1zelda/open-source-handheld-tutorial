@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-25",
+  "covered": [
+    "TASVideos GameResources 原文明确记载的 Rockman 2 坐标轴方向",
+    "Rockman 2 跳跃 Y 轴初速度",
+    "Rockman 2 攀爬速度",
+    "Rockman 2 跳跃/下落横向速度",
+    "Rockman 2 步行速度",
+    "Rockman 2 从非全速加速到全速所需帧数",
+    "Rockman 2 从全速减速到停止所需帧数",
+    "Rockman 2 对象表 Xspd 内存地址范围"
+  ],
+  "not_covered": [
+    "PAL、美版、日版 ROM 哈希身份及跨地区等价",
+    "全部武器、敌人、关卡、道具和结局",
+    "洛克人2出招表",
+    "内存字典、标题目录与 TAS 出版物元数据的生产权威升级",
+    "官方说明书候选索引的生产权威升级",
+    "完整游戏时间轴或实机玩法验证",
+    "任何游戏、任何问题的完整准确或绝对零幻觉保证"
+  ],
+  "evidence_rule": "authoritative 只限 TASVideos 原文明确记载的技术事实；候选、参考、跨版本和检测器标定材料不得顶包",
+  "open_world_limit": "冻结样本零错误不代表开放世界永远零错误，仍需持续抽查与真实查询回流",
+  "backend_restart_required": false
+}

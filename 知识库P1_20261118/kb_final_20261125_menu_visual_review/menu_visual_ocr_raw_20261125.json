@@ -1,0 +1,1142 @@
+﻿[
+    {
+        "file":  "blue_001_effect.png",
+        "text":  "落 下 速 度 减 惺 可 以 跳 到 更 远 处",
+        "status":  "ok"
+    },
+    {
+        "file":  "blue_001_name.png",
+        "text":  "",
+        "status":  "ok"
+    },
+    {
+        "file":  "blue_002_effect.png",
+        "text":  "变 身 成 蝙 蝠 飞 行",
+        "status":  "ok"
+    },
+    {
+        "file":  "blue_002_name.png",
+        "text":  "",
+        "status":  "ok"
+    },
+    {
+        "file":  "blue_003_effect.png",
+        "text":  "带 着 冲 击 波 的 冲 刺",
+        "status":  "ok"
+    },
+    {
+        "file":  "blue_003_name.png",
+        "text":  "",
+        "status":  "ok"
+    },
+    {
+        "file":  "blue_004_effect.png",
+        "text":  "发 出 回 转 之 炎",
+        "status":  "ok"
+    },
+    {
+        "file":  "blue_004_name.png",
+        "text":  "",
+        "status":  "ok"
+    },
+    {
+        "file":  "blue_005_effect.png",
+        "text":  "抵 挡 弹 丸 之 盾",
+        "status":  "ok"
+    },
+    {
+        "file":  "blue_005_name.png",
+        "text":  "",
+        "status":  "ok"
+    },
+    {
+        "file":  "blue_006_effect.png",
+        "text":  "覆 盖 全 身 的 保 护 层",
+        "status":  "ok"
+    },
+    {
+        "file":  "blue_006_name.png",
+        "text":  "",
+        "status":  "ok"
+    },
+    {
+        "file":  "blue_007_effect.png",
+        "text":  "抵 挡 敌 人 的 欢 击",
+        "status":  "ok"
+    },
+    {
+        "file":  "blue_007_name.png",
+        "text":  "",
+        "status":  "ok"
+    },
+    {
+        "file":  "blue_008_effect.png",
+        "text":  "8 T R 增 至 1 ． 2 倍",
+        "status":  "ok"
+    },
+    {
+        "file":  "blue_008_name.png",
+        "text":  "大 甲",
+        "status":  "ok"
+    },
+    {
+        "file":  "blue_009_effect.png",
+        "text":  "在 空 中 放 出 石 化 吐 息",
+        "status":  "ok"
+    },
+    {
+        "file":  "blue_009_name.png",
+        "text":  "",
+        "status":  "ok"
+    },
+    {
+        "file":  "blue_010_effect.png",
+        "text":  "放 射 火 炎",
+        "status":  "ok"
+    },
+    {
+        "file":  "blue_010_name.png",
+        "text":  "",
+        "status":  "ok"
+    },
+    {
+        "file":  "blue_011_effect.png",
+        "text":  "发 拳 协 助 战 斗",
+        "status":  "ok"
+    },
+    {
+        "file":  "blue_011_name.png",
+        "text":  "",
+        "status":  "ok"
+    },
+    {
+        "file":  "blue_012_effect.png",
+        "text":  "发 拳 协 助 战 斗",
+        "status":  "ok"
+    },
+    {
+        "file":  "blue_012_name.png",
+        "text":  "",
+        "status":  "ok"
+    },
+    {
+        "file":  "blue_013_effect.png",
+        "text":  "影 子 协 助 欢 击",
+        "status":  "ok"
+    },
+    {
+        "file":  "blue_013_name.png",
+        "text":  "",
+        "status":  "ok"
+    },
+    {
+        "file":  "blue_014_effect.png",
+        "text":  "大 懿 髅 从 后 面 协 助 战 斗",
+        "status":  "ok"
+    },
+    {
+        "file":  "blue_014_name.png",
+        "text":  "",
+        "status":  "ok"
+    },
+    {
+        "file":  "blue_015_effect.png",
+        "text":  "可 在 空 中 停 止",
+        "status":  "ok"
+    },
+    {
+        "file":  "blue_015_name.png",
+        "text":  "",
+        "status":  "ok"
+    },
+    {
+        "file":  "blue_016_effect.png",
+        "text":  "用 魔 导 器 吸 收 敌 人 的 H P",
+        "status":  "ok"
+    },
+    {
+        "file":  "blue_016_name.png",
+        "text":  "",
+        "status":  "ok"
+    },
+    {
+        "file":  "blue_017_effect.png",
+        "text":  "回 复 体 力",
+        "status":  "ok"
+    },
+    {
+        "file":  "blue_017_name.png",
+        "text":  "",
+        "status":  "ok"
+    },
+    {
+        "file":  "blue_018_effect.png",
+        "text":  "变 身 成 恶 魔 突 进",
+        "status":  "ok"
+    },
+    {
+        "file":  "blue_018_name.png",
+        "text":  "",
+        "status":  "ok"
+    },
+    {
+        "file":  "blue_019_effect.png",
+        "text":  "变 身 成 魔 兽 突 进",
+        "status":  "ok"
+    },
+    {
+        "file":  "blue_019_name.png",
+        "text":  "",
+        "status":  "ok"
+    },
+    {
+        "file":  "blue_020_effect.png",
+        "text":  "变 身 成 魔 神 突 进",
+        "status":  "ok"
+    },
+    {
+        "file":  "blue_020_name.png",
+        "text":  "",
+        "status":  "ok"
+    },
+    {
+        "file":  "blue_021_effect.png",
+        "text":  "祈 祷 后 L C 与 T R 瞬 间 上 升",
+        "status":  "ok"
+    },
+    {
+        "file":  "blue_021_name.png",
+        "text":  "",
+        "status":  "ok"
+    },
+    {
+        "file":  "blue_022_effect.png",
+        "text":  "召 唤 使 魔 「 子 恶 魔 」",
+        "status":  "ok"
+    },
+    {
+        "file":  "blue_022_name.png",
+        "text":  "",
+        "status":  "ok"
+    },
+    {
+        "file":  "blue_023_effect.png",
+        "text":  "召 唤 使 魔 「 阿 拉 斯 托 」",
+        "status":  "ok"
+    },
+    {
+        "file":  "blue_023_name.png",
+        "text":  "",
+        "status":  "ok"
+    },
+    {
+        "file":  "blue_024_effect.png",
+        "text":  "发 出 死 神 之",
+        "status":  "ok"
+    },
+    {
+        "file":  "blue_024_name.png",
+        "text":  "",
+        "status":  "ok"
+    },
+    {
+        "file":  "red_001_effect.png",
+        "text":  "投 出 魔 力 之 枪",
+        "status":  "ok"
+    },
+    {
+        "file":  "red_001_name.png",
+        "text":  "",
+        "status":  "ok"
+    },
+    {
+        "file":  "red_002_effect.png",
+        "text":  "发 出 超 音 波",
+        "status":  "ok"
+    },
+    {
+        "file":  "red_002_name.png",
+        "text":  "",
+        "status":  "ok"
+    },
+    {
+        "file":  "red_003_effect.png",
+        "text":  "投 骨",
+        "status":  "ok"
+    },
+    {
+        "file":  "red_003_name.png",
+        "text":  "",
+        "status":  "ok"
+    },
+    {
+        "file":  "red_004_effect.png",
+        "text":  "发 射 水 炮",
+        "status":  "ok"
+    },
+    {
+        "file":  "red_004_name.png",
+        "text":  "",
+        "status":  "ok"
+    },
+    {
+        "file":  "red_005_effect.png",
+        "text":  "投 斧",
+        "status":  "ok"
+    },
+    {
+        "file":  "red_005_name.png",
+        "text":  "",
+        "status":  "ok"
+    },
+    {
+        "file":  "red_006_effect.png",
+        "text":  "射 出 魔 法 之 矢",
+        "status":  "ok"
+    },
+    {
+        "file":  "red_006_name.png",
+        "text":  "",
+        "status":  "ok"
+    },
+    {
+        "file":  "red_007_effect.png",
+        "text":  "在 水 中 会 欢 击 敌 人 在 陆 地 上 不 能 存 活",
+        "status":  "ok"
+    },
+    {
+        "file":  "red_007_name.png",
+        "text":  "",
+        "status":  "ok"
+    },
+    {
+        "file":  "red_008_effect.png",
+        "text":  "放 出 乌 鸦 欢 击",
+        "status":  "ok"
+    },
+    {
+        "file":  "red_008_name.png",
+        "text":  "",
+        "status":  "ok"
+    },
+    {
+        "file":  "red_009_effect.png",
+        "text":  "投 出 手 榴 弹",
+        "status":  "ok"
+    },
+    {
+        "file":  "red_009_name.png",
+        "text":  "",
+        "status":  "ok"
+    },
+    {
+        "file":  "red_010_effect.png",
+        "text":  "召 唤 打 破 邪 恶 之 魂",
+        "status":  "ok"
+    },
+    {
+        "file":  "red_010_name.png",
+        "text":  "",
+        "status":  "ok"
+    },
+    {
+        "file":  "red_011_effect.png",
+        "text":  "发 出 诅 咒 敌 人 的 歌 声",
+        "status":  "ok"
+    },
+    {
+        "file":  "red_011_name.png",
+        "text":  "",
+        "status":  "ok"
+    },
+    {
+        "file":  "red_012_effect.png",
+        "text":  "发 出 真 空 之 刃",
+        "status":  "ok"
+    },
+    {
+        "file":  "red_012_name.png",
+        "text":  "",
+        "status":  "ok"
+    },
+    {
+        "file":  "red_013_effect.png",
+        "text":  "投 剑",
+        "status":  "ok"
+    },
+    {
+        "file":  "red_013_name.png",
+        "text":  "",
+        "status":  "ok"
+    },
+    {
+        "file":  "red_014_effect.png",
+        "text":  "投 出 石 头",
+        "status":  "ok"
+    },
+    {
+        "file":  "red_014_name.png",
+        "text":  "",
+        "status":  "ok"
+    },
+    {
+        "file":  "red_015_effect.png",
+        "text":  "放 出 奔 跑 的 猫",
+        "status":  "ok"
+    },
+    {
+        "file":  "red_015_name.png",
+        "text":  "",
+        "status":  "ok"
+    },
+    {
+        "file":  "red_016_effect.png",
+        "text":  "住 敌 人 的 蜘 蛛 丝",
+        "status":  "ok"
+    },
+    {
+        "file":  "red_016_name.png",
+        "text":  "",
+        "status":  "ok"
+    },
+    {
+        "file":  "red_017_effect.png",
+        "text":  "跳 蚤 男 跳 来 跳 去",
+        "status":  "ok"
+    },
+    {
+        "file":  "red_017_name.png",
+        "text":  "",
+        "status":  "ok"
+    },
+    {
+        "file":  "red_018_effect.png",
+        "text":  "投 出 小 刀",
+        "status":  "ok"
+    },
+    {
+        "file":  "red_018_name.png",
+        "text":  "",
+        "status":  "ok"
+    },
+    {
+        "file":  "red_019_effect.png",
+        "text":  "投 出 吸 引 敌 人 的 咖 喱 饭",
+        "status":  "ok"
+    },
+    {
+        "file":  "red_019_name.png",
+        "text":  "",
+        "status":  "ok"
+    },
+    {
+        "file":  "red_020_effect.png",
+        "text":  "召 唤 大",
+        "status":  "ok"
+    },
+    {
+        "file":  "red_020_name.png",
+        "text":  "",
+        "status":  "ok"
+    },
+    {
+        "file":  "red_021_effect.png",
+        "text":  "投 泥",
+        "status":  "ok"
+    },
+    {
+        "file":  "red_021_name.png",
+        "text":  "",
+        "status":  "ok"
+    },
+    {
+        "file":  "red_022_effect.png",
+        "text":  "放 出 石 化 敌 人 的 光 线",
+        "status":  "ok"
+    },
+    {
+        "file":  "red_022_name.png",
+        "text":  "",
+        "status":  "ok"
+    },
+    {
+        "file":  "red_023_effect.png",
+        "text":  "放 出 充 满 魔 力 的 火 焰",
+        "status":  "ok"
+    },
+    {
+        "file":  "red_023_name.png",
+        "text":  "",
+        "status":  "ok"
+    },
+    {
+        "file":  "red_024_effect.png",
+        "text":  "投 出 刀 刃 般 的 羽 毛",
+        "status":  "ok"
+    },
+    {
+        "file":  "red_024_name.png",
+        "text":  "",
+        "status":  "ok"
+    },
+    {
+        "file":  "red_025_effect.png",
+        "text":  "在 地 面 放 置 地 雷",
+        "status":  "ok"
+    },
+    {
+        "file":  "red_025_name.png",
+        "text":  "",
+        "status":  "ok"
+    },
+    {
+        "file":  "red_026_effect.png",
+        "text":  "在 空 中 设 置 定 时 炸 弹",
+        "status":  "ok"
+    },
+    {
+        "file":  "red_026_name.png",
+        "text":  "",
+        "status":  "ok"
+    },
+    {
+        "file":  "red_027_effect.png",
+        "text":  "发 出 波 彤 激 光",
+        "status":  "ok"
+    },
+    {
+        "file":  "red_027_name.png",
+        "text":  "",
+        "status":  "ok"
+    },
+    {
+        "file":  "red_028_effect.png",
+        "text":  "在 空 中 设 置 火 焰",
+        "status":  "ok"
+    },
+    {
+        "file":  "red_028_name.png",
+        "text":  "",
+        "status":  "ok"
+    },
+    {
+        "file":  "red_029_effect.png",
+        "text":  "放 出 火 炎 弹",
+        "status":  "ok"
+    },
+    {
+        "file":  "red_029_name.png",
+        "text":  "",
+        "status":  "ok"
+    },
+    {
+        "file":  "red_030_effect.png",
+        "text":  "切 向 敌 人 的 圆 盘",
+        "status":  "ok"
+    },
+    {
+        "file":  "red_030_name.png",
+        "text":  "",
+        "status":  "ok"
+    },
+    {
+        "file":  "red_031_effect.png",
+        "text":  "召 唤 出 噩 梦 欢 击",
+        "status":  "ok"
+    },
+    {
+        "file":  "red_031_name.png",
+        "text":  "",
+        "status":  "ok"
+    },
+    {
+        "file":  "red_032_effect.png",
+        "text":  "投 出 史 莱 姆",
+        "status":  "ok"
+    },
+    {
+        "file":  "red_032_name.png",
+        "text":  "",
+        "status":  "ok"
+    },
+    {
+        "file":  "red_033_effect.png",
+        "text":  "打 中 敌 人 时 出 现 回 复 H P 的 种 子",
+        "status":  "ok"
+    },
+    {
+        "file":  "red_033_name.png",
+        "text":  "",
+        "status":  "ok"
+    },
+    {
+        "file":  "red_034_effect.png",
+        "text":  "刺 向 敌 人 的 涂 血 小 刀",
+        "status":  "ok"
+    },
+    {
+        "file":  "red_034_name.png",
+        "text":  "",
+        "status":  "ok"
+    },
+    {
+        "file":  "red_035_effect.png",
+        "text":  "藴 含 浑 身 之 力 的 直 拳",
+        "status":  "ok"
+    },
+    {
+        "file":  "red_035_name.png",
+        "text":  "",
+        "status":  "ok"
+    },
+    {
+        "file":  "red_036_effect.png",
+        "text":  "藴 含 浑 身 之 力 的 勾 拳",
+        "status":  "ok"
+    },
+    {
+        "file":  "red_036_name.png",
+        "text":  "",
+        "status":  "ok"
+    },
+    {
+        "file":  "red_037_effect.png",
+        "text":  "地 之 爆 炎",
+        "status":  "ok"
+    },
+    {
+        "file":  "red_037_name.png",
+        "text":  "",
+        "status":  "ok"
+    },
+    {
+        "file":  "red_038_effect.png",
+        "text":  "死 之 叫",
+        "status":  "ok"
+    },
+    {
+        "file":  "red_038_name.png",
+        "text":  "",
+        "status":  "ok"
+    },
+    {
+        "file":  "red_039_effect.png",
+        "text":  "发 出 粒 子 光",
+        "status":  "ok"
+    },
+    {
+        "file":  "red_039_name.png",
+        "text":  "",
+        "status":  "ok"
+    },
+    {
+        "file":  "red_040_effect.png",
+        "text":  "用 垂 爪 欢 击",
+        "status":  "ok"
+    },
+    {
+        "file":  "red_040_name.png",
+        "text":  "",
+        "status":  "ok"
+    },
+    {
+        "file":  "red_041_effect.png",
+        "text":  "投 出 巨 大 头 盖 骨",
+        "status":  "ok"
+    },
+    {
+        "file":  "red_041_name.png",
+        "text":  "",
+        "status":  "ok"
+    },
+    {
+        "file":  "red_042_effect.png",
+        "text":  "放 出 车 轮",
+        "status":  "ok"
+    },
+    {
+        "file":  "red_042_name.png",
+        "text":  "",
+        "status":  "ok"
+    },
+    {
+        "file":  "red_043_effect.png",
+        "text":  "放 出 迸 发 之 魔 力",
+        "status":  "ok"
+    },
+    {
+        "file":  "red_043_name.png",
+        "text":  "",
+        "status":  "ok"
+    },
+    {
+        "file":  "red_044_effect.png",
+        "text":  "燃 烧 敌 人 的 灼 热 之 炎",
+        "status":  "ok"
+    },
+    {
+        "file":  "red_044_name.png",
+        "text":  "",
+        "status":  "ok"
+    },
+    {
+        "file":  "red_045_effect.png",
+        "text":  "从 手 指 尖 发 射 雷 电",
+        "status":  "ok"
+    },
+    {
+        "file":  "red_045_name.png",
+        "text":  "",
+        "status":  "ok"
+    },
+    {
+        "file":  "red_046_effect.png",
+        "text":  "斜 上 剑 击",
+        "status":  "ok"
+    },
+    {
+        "file":  "red_046_name.png",
+        "text":  "",
+        "status":  "ok"
+    },
+    {
+        "file":  "red_047_effect.png",
+        "text":  "破 坏 力 超 群 的 炸 弹",
+        "status":  "ok"
+    },
+    {
+        "file":  "red_047_name.png",
+        "text":  "",
+        "status":  "ok"
+    },
+    {
+        "file":  "red_048_effect.png",
+        "text":  "挥 舞 巨 大 斧 头",
+        "status":  "ok"
+    },
+    {
+        "file":  "red_048_name.png",
+        "text":  "",
+        "status":  "ok"
+    },
+    {
+        "file":  "red_049_effect.png",
+        "text":  "照 射 光",
+        "status":  "ok"
+    },
+    {
+        "file":  "red_049_name.png",
+        "text":  "",
+        "status":  "ok"
+    },
+    {
+        "file":  "red_050_effect.png",
+        "text":  "必 杀 拳",
+        "status":  "ok"
+    },
+    {
+        "file":  "red_050_name.png",
+        "text":  "",
+        "status":  "ok"
+    },
+    {
+        "file":  "red_051_effect.png",
+        "text":  "在 敌 人 面 前 放 置 人 偶",
+        "status":  "ok"
+    },
+    {
+        "file":  "red_051_name.png",
+        "text":  "",
+        "status":  "ok"
+    },
+    {
+        "file":  "red_052_effect.png",
+        "text":  "敌 人 看 不 见 游 戏 者",
+        "status":  "ok"
+    },
+    {
+        "file":  "red_052_name.png",
+        "text":  "",
+        "status":  "ok"
+    },
+    {
+        "file":  "red_053_effect.png",
+        "text":  "变 换 敌 人 的 H P 和 P",
+        "status":  "ok"
+    },
+    {
+        "file":  "red_053_name.png",
+        "text":  "",
+        "status":  "ok"
+    },
+    {
+        "file":  "red_054_effect.png",
+        "text":  "一 定 时 间 内 无 敌",
+        "status":  "ok"
+    },
+    {
+        "file":  "red_054_name.png",
+        "text":  "",
+        "status":  "ok"
+    },
+    {
+        "file":  "red_055_effect.png",
+        "text":  "使 时 间 停 止",
+        "status":  "ok"
+    },
+    {
+        "file":  "red_055_name.png",
+        "text":  "",
+        "status":  "ok"
+    },
+    {
+        "file":  "yellow_001_effect.png",
+        "text":  "可 在 水 上 步 行",
+        "status":  "ok"
+    },
+    {
+        "file":  "yellow_001_name.png",
+        "text":  "",
+        "status":  "ok"
+    },
+    {
+        "file":  "yellow_002_effect.png",
+        "text":  "可 潜 人 水 中",
+        "status":  "ok"
+    },
+    {
+        "file":  "yellow_002_name.png",
+        "text":  "",
+        "status":  "ok"
+    },
+    {
+        "file":  "yellow_003_effect.png",
+        "text":  "被 击 飞 时 可 通 过 跳 跃 复 原",
+        "status":  "ok"
+    },
+    {
+        "file":  "yellow_003_name.png",
+        "text":  "",
+        "status":  "ok"
+    },
+    {
+        "file":  "yellow_004_effect.png",
+        "text":  "受 到 伤 害 后 也 不 会 轻 易 麻 痹",
+        "status":  "ok"
+    },
+    {
+        "file":  "yellow_004_name.png",
+        "text":  "",
+        "status":  "ok"
+    },
+    {
+        "file":  "yellow_005_effect.png",
+        "text":  "用 子 弹 格 挡 站 立 通 常 欢 击",
+        "status":  "ok"
+    },
+    {
+        "file":  "yellow_005_name.png",
+        "text":  "",
+        "status":  "ok"
+    },
+    {
+        "file":  "yellow_006_effect.png",
+        "text":  "看 见 可 破 坏 的 墙",
+        "status":  "ok"
+    },
+    {
+        "file":  "yellow_006_name.png",
+        "text":  "",
+        "status":  "ok"
+    },
+    {
+        "file":  "yellow_007_effect.png",
+        "text":  "通 常 欢 击 命 中 时 吸 收 H P",
+        "status":  "ok"
+    },
+    {
+        "file":  "yellow_007_name.png",
+        "text":  "",
+        "status":  "ok"
+    },
+    {
+        "file":  "yellow_008_effect.png",
+        "text":  "变 质 的 东 西 也 会 变 好 吃",
+        "status":  "ok"
+    },
+    {
+        "file":  "yellow_008_name.png",
+        "text":  "",
+        "status":  "ok"
+    },
+    {
+        "file":  "yellow_009_effect.png",
+        "text":  "在 商 店 可 获 折 扣",
+        "status":  "ok"
+    },
+    {
+        "file":  "yellow_009_name.png",
+        "text":  "",
+        "status":  "ok"
+    },
+    {
+        "file":  "yellow_010_effect.png",
+        "text":  "静 止 不 动 时 H P 惺 回 复",
+        "status":  "ok"
+    },
+    {
+        "file":  "yellow_010_name.png",
+        "text":  "",
+        "status":  "ok"
+    },
+    {
+        "file":  "yellow_011_effect.png",
+        "text":  "P 回 复 速 度 加 快",
+        "status":  "ok"
+    },
+    {
+        "file":  "yellow_011_name.png",
+        "text":  "",
+        "status":  "ok"
+    },
+    {
+        "file":  "yellow_012_effect.png",
+        "text":  "垂 状 态 时 能 力 上 升",
+        "status":  "ok"
+    },
+    {
+        "file":  "yellow_012_name.png",
+        "text":  "",
+        "status":  "ok"
+    },
+    {
+        "file":  "yellow_013_effect.png",
+        "text":  "H P 越 少 越 强",
+        "status":  "ok"
+    },
+    {
+        "file":  "yellow_013_name.png",
+        "text":  "",
+        "status":  "ok"
+    },
+    {
+        "file":  "yellow_014_effect.png",
+        "text":  "收 集 的 魂 越 多 越 强",
+        "status":  "ok"
+    },
+    {
+        "file":  "yellow_014_name.png",
+        "text":  "",
+        "status":  "ok"
+    },
+    {
+        "file":  "yellow_015_effect.png",
+        "text":  "防 御 力 上 升 欢 击 力 下 降",
+        "status":  "ok"
+    },
+    {
+        "file":  "yellow_015_name.png",
+        "text":  "",
+        "status":  "ok"
+    },
+    {
+        "file":  "yellow_016_effect.png",
+        "text":  "获 悍 经 验 值 增 至 1 。 2 倍",
+        "status":  "ok"
+    },
+    {
+        "file":  "yellow_016_name.png",
+        "text":  "",
+        "status":  "ok"
+    },
+    {
+        "file":  "yellow_017_effect.png",
+        "text":  "受 到 伤 害 时 金 钱 增 加",
+        "status":  "ok"
+    },
+    {
+        "file":  "yellow_017_name.png",
+        "text":  "",
+        "status":  "ok"
+    },
+    {
+        "file":  "yellow_018_effect.png",
+        "text":  "受 到 伤 害 时 P 增 加",
+        "status":  "ok"
+    },
+    {
+        "file":  "yellow_018_name.png",
+        "text":  "",
+        "status":  "ok"
+    },
+    {
+        "file":  "yellow_019_effect.png",
+        "text":  "使 垂 欢 击 无 效",
+        "status":  "ok"
+    },
+    {
+        "file":  "yellow_019_name.png",
+        "text":  "",
+        "status":  "ok"
+    },
+    {
+        "file":  "yellow_020_effect.png",
+        "text":  "使 诅 咒 欢 击 无 效",
+        "status":  "ok"
+    },
+    {
+        "file":  "yellow_020_name.png",
+        "text":  "",
+        "status":  "ok"
+    },
+    {
+        "file":  "yellow_021_effect.png",
+        "text":  "使 石 化 欢 击 无 效",
+        "status":  "ok"
+    },
+    {
+        "file":  "yellow_021_name.png",
+        "text":  "",
+        "status":  "ok"
+    },
+    {
+        "file":  "yellow_022_effect.png",
+        "text":  "8 T R 上 升 1",
+        "status":  "ok"
+    },
+    {
+        "file":  "yellow_022_name.png",
+        "text":  "",
+        "status":  "ok"
+    },
+    {
+        "file":  "yellow_023_effect.png",
+        "text":  "8 T R 上 升 2",
+        "status":  "ok"
+    },
+    {
+        "file":  "yellow_023_name.png",
+        "text":  "",
+        "status":  "ok"
+    },
+    {
+        "file":  "yellow_024_effect.png",
+        "text":  "8 T R 上 升 3",
+        "status":  "ok"
+    },
+    {
+        "file":  "yellow_024_name.png",
+        "text":  "",
+        "status":  "ok"
+    },
+    {
+        "file":  "yellow_025_effect.png",
+        "text":  "8 T R 上 升 4",
+        "status":  "ok"
+    },
+    {
+        "file":  "yellow_025_name.png",
+        "text":  "",
+        "status":  "ok"
+    },
+    {
+        "file":  "yellow_026_effect.png",
+        "text":  "C 0 N 上 升 1",
+        "status":  "ok"
+    },
+    {
+        "file":  "yellow_026_name.png",
+        "text":  "白 肯",
+        "status":  "ok"
+    },
+    {
+        "file":  "yellow_027_effect.png",
+        "text":  "C 0 N 上 升 2",
+        "status":  "ok"
+    },
+    {
+        "file":  "yellow_027_name.png",
+        "text":  "",
+        "status":  "ok"
+    },
+    {
+        "file":  "yellow_028_effect.png",
+        "text":  "C 0 N 上 升 3",
+        "status":  "ok"
+    },
+    {
+        "file":  "yellow_028_name.png",
+        "text":  "",
+        "status":  "ok"
+    },
+    {
+        "file":  "yellow_029_effect.png",
+        "text":  "C 0 N 上 升 4",
+        "status":  "ok"
+    },
+    {
+        "file":  "yellow_029_name.png",
+        "text":  "亡 十 字",
+        "status":  "ok"
+    },
+    {
+        "file":  "yellow_030_effect.png",
+        "text":  "I N T 上 升 1",
+        "status":  "ok"
+    },
+    {
+        "file":  "yellow_030_name.png",
+        "text":  "",
+        "status":  "ok"
+    },
+    {
+        "file":  "yellow_031_effect.png",
+        "text":  "I N T 上 升 2",
+        "status":  "ok"
+    },
+    {
+        "file":  "yellow_031_name.png",
+        "text":  "",
+        "status":  "ok"
+    },
+    {
+        "file":  "yellow_032_effect.png",
+        "text":  "I N T 上 升 3",
+        "status":  "ok"
+    },
+    {
+        "file":  "yellow_032_name.png",
+        "text":  "",
+        "status":  "ok"
+    },
+    {
+        "file":  "yellow_033_effect.png",
+        "text":  "I N T 上 升 4",
+        "status":  "ok"
+    },
+    {
+        "file":  "yellow_033_name.png",
+        "text":  "",
+        "status":  "ok"
+    },
+    {
+        "file":  "yellow_034_effect.png",
+        "text":  "L C 上 升 1",
+        "status":  "ok"
+    },
+    {
+        "file":  "yellow_034_name.png",
+        "text":  "",
+        "status":  "ok"
+    },
+    {
+        "file":  "yellow_035_effect.png",
+        "text":  "L C 上 升 2",
+        "status":  "ok"
+    },
+    {
+        "file":  "yellow_035_name.png",
+        "text":  "",
+        "status":  "ok"
+    }
+]

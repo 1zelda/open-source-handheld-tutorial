@@ -1,0 +1,39 @@
+{
+  "all_ok": true,
+  "summary": {
+    "default": {
+      "total": 18,
+      "ok": 18,
+      "strict_pass": {
+        "total": 15,
+        "ok": 15
+      },
+      "weak": {
+        "total": 3,
+        "ok": 3
+      },
+      "failed_ids": []
+    },
+    "strict": {
+      "total": 18,
+      "ok": 18,
+      "strict_pass": {
+        "total": 15,
+        "ok": 15
+      },
+      "weak": {
+        "total": 3,
+        "ok": 3
+      },
+      "failed_ids": []
+    }
+  },
+  "question_counts": {
+    "total": 25,
+    "strict_pass": 15,
+    "weak": 3,
+    "refuse": 7
+  },
+  "changed_paths": [],
+  "report": "F:\\开源掌机教程\\知识库P1_20261118\\megaman2_candidate_v2_manual_eval_20261125.json"
+}

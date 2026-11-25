@@ -1,0 +1,285 @@
+{
+  "schema_version": "detector_promotion/1.0",
+  "kind": "visual_detector_promotion",
+  "rom_sha1": "40aab076a528f52e93260bb98d91a40039e0da02",
+  "source_report": "F:/taspipe_scratch/gba_parallel_20261124/aria_soul_detector_separated_v4_20261125/report.json",
+  "base_pack": "F:/开源掌机教程/_工具脚本/taspipe/游戏包/gba_aria_of_sorrow_souls.showcase.json",
+  "bizhawk": "F:/开源掌机教程/02-模拟器库/BizHawk/BizHawk-2.11.1",
+  "base_state": "F:/开源掌机教程/04-游戏资源库/TAS输入录像库/状态资产/castlevania_aria_gba/aria_us_40aab076/r20261125T145623/states/base.state",
+  "output_pack": "F:\\开源掌机教程\\_工具脚本\\taspipe\\游戏包\\证据\\晓月圆舞曲\\detector_promotion.r20261125T223657\\gba_aria_of_sorrow_souls.detectors.showcase.json",
+  "output_report": "F:\\开源掌机教程\\_工具脚本\\taspipe\\游戏包\\证据\\晓月圆舞曲\\detector_promotion.r20261125T223657\\detector_promotion_report.json",
+  "verification": {
+    "status": "detector_verified_showcase_pending_platform_gate",
+    "verified_on": "2026-11-25",
+    "scope": "三个候选检测器已通过互不重叠的标定/验收帧分区、控制帧、全时间轴负例审计与正式采集帧正反例复验；不等于114项玩法或GBA平台准入",
+    "evidence_report": "F:/taspipe_scratch/gba_parallel_20261124/aria_soul_detector_separated_v4_20261125/report.json",
+    "production_gate": "showcase.PLATFORM_PROFILES.GBA.verified 仍为 false，正式 run 必须保持 blocked"
+  },
+  "catalog": {
+    "status": "complete",
+    "expected_total": 3,
+    "sources": [
+      {
+        "source_id": "aria_menu_catalog_20261125",
+        "status": "verified_read",
+        "verified_date": "2026-11-25",
+        "evidence_report": "F:/开源掌机教程/_工具脚本/taspipe/游戏包/gba_aria_of_sorrow_souls.menu_catalog.json",
+        "element_ids": [
+          "red_soul_35_camera_aligned",
+          "red_soul_47_local_attack",
+          "yellow_soul_10_healing_popup"
+        ],
+        "note": "中文魂名与效果文本来自真实菜单导航目录；身份观察不替代玩法验收。"
+      },
+      {
+        "source_id": "aria_detector_separated_acceptance_20261125",
+        "status": "verified_read",
+        "verified_date": "2026-11-25",
+        "evidence_report": "F:/taspipe_scratch/gba_parallel_20261124/aria_soul_detector_separated_v4_20261125/report.json",
+        "element_ids": [
+          "red_soul_35_camera_aligned",
+          "red_soul_47_local_attack",
+          "yellow_soul_10_healing_popup"
+        ],
+        "note": "detector_calibration/2.0 分离样本集验收；标定与验收源帧重叠均为0。"
+      }
+    ],
+    "coverage_note": "本包只收录红魂35、红魂47、黄魂10三个已固化检测器；不是全部红黄魂或完整技能表。"
+  },
+  "elements": [
+    {
+      "case_id": "red_soul_35_camera_aligned",
+      "element_id": "red_soul_35_camera_aligned",
+      "label": "红魂35 虎人（Up+B 直拳）",
+      "kind": "skill",
+      "base_state": "F:/开源掌机教程/04-游戏资源库/TAS输入录像库/状态资产/castlevania_aria_gba/aria_us_40aab076/r20261125T145623/states/base.state",
+      "trigger": {
+        "macro": "Up+B",
+        "extra": 89,
+        "patches": [
+          {
+            "addr": 78429,
+            "value": 35,
+            "domain": "EWRAM"
+          }
+        ]
+      },
+      "negative_control": {
+        "macro": "Up+B",
+        "patches": [
+          {
+            "addr": 78429,
+            "value": 0,
+            "domain": "EWRAM"
+          }
+        ]
+      },
+      "capture_frame": 40,
+      "action_checks": [
+        {
+          "check_id": "red_soul_35_camera_aligned_action",
+          "plugin_id": "frame_pair_aligned_region_difference",
+          "params": {
+            "reference_frame": "F:\\开源掌机教程\\_工具脚本\\taspipe\\游戏包\\证据\\晓月圆舞曲\\detector_promotion.r20261125T223657\\red_soul_35_negative_f0040.png",
+            "region": [
+              0.229167,
+              0.46875,
+              0.5,
+              0.9375
+            ],
+            "alignment_region": [
+              0.0,
+              0.125,
+              1.0,
+              0.4875
+            ],
+            "max_shift": 24,
+            "max_dy": 4,
+            "diff_threshold": 42,
+            "min_changed_fraction": 0.069,
+            "max_global_changed_fraction": 0.25
+          },
+          "required": true
+        }
+      ],
+      "effect_requirement": "not_applicable",
+      "effect_checks": [],
+      "capture_checks": [
+        {
+          "check_id": "red_soul_35_camera_aligned_capture",
+          "plugin_id": "frame_luma_range",
+          "params": {
+            "min": 90,
+            "max": 230
+          },
+          "required": true
+        }
+      ],
+      "positive_source_dir": "F:/taspipe_scratch/gba_parallel_20261124/aria_red_soul_scout_full_20261125/red_soul_35_vs_empty/red_soul_35_vs_empty_red_35_s01_frames",
+      "negative_source_dir": "F:/taspipe_scratch/gba_parallel_20261124/aria_red_soul_scout_full_20261125/red_soul_35_vs_empty/red_soul_35_vs_empty_red0_s01_frames",
+      "reference_asset": "F:\\开源掌机教程\\_工具脚本\\taspipe\\游戏包\\证据\\晓月圆舞曲\\detector_promotion.r20261125T223657\\red_soul_35_negative_f0040.png",
+      "identity": {
+        "menu_catalog": "F:/开源掌机教程/_工具脚本/taspipe/游戏包/gba_aria_of_sorrow_souls.menu_catalog.json",
+        "group": "red",
+        "id": 35,
+        "name_zh": "虎人",
+        "effect_text": "蕴含浑身之力的直拳"
+      },
+      "note": "检测器只证明镜头平移补偿后的局部攻击差异；资源消耗正例另见红魂资源验证，不把局部差分外推为完整技能机制。action_checks只验攻击姿态，effect_requirement=not_applicable，完整伤害/消耗不在本检测器包内。"
+    },
+    {
+      "case_id": "red_soul_47_local_attack",
+      "element_id": "red_soul_47_local_attack",
+      "label": "红魂47 圆盘装甲（Up+B 炸弹）",
+      "kind": "skill",
+      "base_state": "F:/开源掌机教程/04-游戏资源库/TAS输入录像库/状态资产/castlevania_aria_gba/aria_us_40aab076/r20261125T145623/states/base.state",
+      "trigger": {
+        "macro": "Up+B",
+        "extra": 89,
+        "patches": [
+          {
+            "addr": 78429,
+            "value": 47,
+            "domain": "EWRAM"
+          }
+        ]
+      },
+      "negative_control": {
+        "macro": "Up+B",
+        "patches": [
+          {
+            "addr": 78429,
+            "value": 0,
+            "domain": "EWRAM"
+          }
+        ]
+      },
+      "capture_frame": 30,
+      "action_checks": [
+        {
+          "check_id": "red_soul_47_local_attack_action",
+          "plugin_id": "frame_pair_aligned_region_difference",
+          "params": {
+            "reference_frame": "F:\\开源掌机教程\\_工具脚本\\taspipe\\游戏包\\证据\\晓月圆舞曲\\detector_promotion.r20261125T223657\\red_soul_47_negative_f0030.png",
+            "region": [
+              0.25,
+              0.46875,
+              0.645833,
+              0.9375
+            ],
+            "alignment_region": [
+              0.0,
+              0.125,
+              1.0,
+              0.4875
+            ],
+            "max_shift": 0,
+            "max_dy": 0,
+            "diff_threshold": 42,
+            "min_changed_fraction": 0.044,
+            "max_global_changed_fraction": 0.25
+          },
+          "required": true
+        }
+      ],
+      "effect_requirement": "not_applicable",
+      "effect_checks": [],
+      "capture_checks": [
+        {
+          "check_id": "red_soul_47_local_attack_capture",
+          "plugin_id": "frame_luma_range",
+          "params": {
+            "min": 90,
+            "max": 230
+          },
+          "required": true
+        }
+      ],
+      "positive_source_dir": "F:/taspipe_scratch/gba_parallel_20261124/aria_red_soul_scout_full_20261125/red_soul_47_vs_empty/red_soul_47_vs_empty_red_47_s01_frames",
+      "negative_source_dir": "F:/taspipe_scratch/gba_parallel_20261124/aria_red_soul_scout_full_20261125/red_soul_47_vs_empty/red_soul_47_vs_empty_red0_s01_frames",
+      "reference_asset": "F:\\开源掌机教程\\_工具脚本\\taspipe\\游戏包\\证据\\晓月圆舞曲\\detector_promotion.r20261125T223657\\red_soul_47_negative_f0030.png",
+      "identity": {
+        "menu_catalog": "F:/开源掌机教程/_工具脚本/taspipe/游戏包/gba_aria_of_sorrow_souls.menu_catalog.json",
+        "group": "red",
+        "id": 47,
+        "name_zh": "圆盘装甲",
+        "effect_text": "破坏力超群的炸弹"
+      },
+      "note": "正式帧取爆炸前局部攻击；81–89帧全屏闪白在分离验收中被全局上限拒绝，不能把闪白当技能指纹。action_checks只验炸弹出现，effect_requirement=not_applicable，完整伤害/消耗不在本检测器包内。"
+    },
+    {
+      "case_id": "yellow_soul_10_healing_popup",
+      "element_id": "yellow_soul_10_healing_popup",
+      "label": "黄魂10 巨虫（静止回血 +5）",
+      "kind": "passive",
+      "base_state": "F:/开源掌机教程/04-游戏资源库/TAS输入录像库/状态资产/castlevania_aria_gba/aria_us_40aab076/r20261125T145623/states/yellow_damage_route.state",
+      "trigger": {
+        "macro": "Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,B,B,B,B,B,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,",
+        "extra": 88,
+        "patches": [
+          {
+            "addr": 78431,
+            "value": 10,
+            "domain": "EWRAM"
+          }
+        ]
+      },
+      "negative_control": {
+        "macro": "Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,B,B,B,B,B,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,",
+        "patches": [
+          {
+            "addr": 78431,
+            "value": 0,
+            "domain": "EWRAM"
+          }
+        ]
+      },
+      "capture_frame": 185,
+      "action_checks": [
+        {
+          "check_id": "yellow_soul_10_healing_popup_action",
+          "plugin_id": "frame_region_color_fraction",
+          "params": {
+            "region": [
+              0.408,
+              0.588,
+              0.492,
+              0.681
+            ],
+            "rgb": [
+              49,
+              107,
+              255
+            ],
+            "tol": 26,
+            "min_fraction": 0.061
+          },
+          "required": true
+        }
+      ],
+      "effect_requirement": "not_applicable",
+      "effect_checks": [],
+      "capture_checks": [
+        {
+          "check_id": "yellow_soul_10_healing_popup_capture",
+          "plugin_id": "frame_luma_range",
+          "params": {
+            "min": 90,
+            "max": 230
+          },
+          "required": true
+        }
+      ],
+      "positive_source_dir": "F:/taspipe_scratch/gba_parallel_20261124/aria_yellow_hp_advantage_verify2_20261125/yellow_soul_10_hp_advantage/yellow_soul_10_hp_advantage_yellow_10_s01_frames",
+      "negative_source_dir": "F:/taspipe_scratch/gba_parallel_20261124/aria_yellow_hp_advantage_verify2_20261125/yellow_soul_10_hp_advantage/yellow_soul_10_hp_advantage_yellow0_s01_frames",
+      "identity": {
+        "menu_catalog": "F:/开源掌机教程/_工具脚本/taspipe/游戏包/gba_aria_of_sorrow_souls.menu_catalog.json",
+        "group": "yellow",
+        "id": 10,
+        "name_zh": "巨虫",
+        "effect_text": "静止不动时HP\n缓慢回复"
+      },
+      "note": "检测器只证明固定受击路线中的两段+5提示；HP优势另有独立路线证据，不把提示像素外推为完整回血机制。action_checks只验+5提示，effect_requirement=not_applicable，完整HP回复机制由独立verify证据负责。"
+    }
+  ]
+}

@@ -1,0 +1,943 @@
+[
+  {
+    "core_hook": "洛克人2坐标轴方向",
+    "event_id": "MM2T01",
+    "profile_id": "retro_tech",
+    "attention": "中",
+    "evidence_status": "pass",
+    "queue": "技术验收",
+    "sources": [
+      "TASVideos GameResources NES/Rockman/Data — Rockman 2 技术条目"
+    ],
+    "source_count": 1,
+    "item_count": 1,
+    "evidence_note": "TASVideos 原文技术条目；来源范围内可答，不证明地区 ROM 等价",
+    "first_seen": "2026-11-25",
+    "pub_latest": "",
+    "title_only_note": "本题用真实生产 query_auto 出证",
+    "core_hook_note": "只覆盖已登记技术事实，不扩展为整款游戏结论",
+    "dims": {},
+    "must_mention": "必须同时交代来源范围与 PAL/美版/日版 ROM 等价未验证",
+    "urls": [
+      "https://tasvideos.org/GameResources/NES/Rockman/Data"
+    ],
+    "judged_at": "2026-11-25",
+    "rule_version": "mm2-production-technical-v1",
+    "kb": {
+      "mode": "bm25",
+      "status": "pass",
+      "retrieval": "bm25_only",
+      "backend": "megaman2",
+      "answer_text": "X position (00.00―FF.FF), it tells where in the screen the object is in.\nY position (00.00―FF.FF), it tells where in the screen the object is in.\nX speed (−80.00―7F.FF).\nY speed (−80.00―7F.FF).\nThe position of the object has 8 bits of decimal part,\nbut only the integer part can be observed on the screen.\nY coordinates increase towards the bottom of the screen\nX coordinates increase towards the right\nNegative Y speed means falling, positive Y speed means ascending\nX speed is always positive. It is subtracted or added depending on Rockman’s facing.",
+      "claim": null,
+      "dataset_revision": null,
+      "reason_code": null,
+      "query_conditions": null,
+      "static_entity": null,
+      "retrieval_note": "",
+      "reason": "1 条 verified_read + authoritative 可答命中，权威件在第 1 位",
+      "refusal": null,
+      "selected_evidence": [
+        {
+          "chunk_id": "830f8aca2680",
+          "score": 11.924,
+          "source_id": "tasvideos_rockman_data_mm2_extract",
+          "status": "verified_read",
+          "authority": "authoritative",
+          "revision": "megaman2_nes_tasvideos_rockman2",
+          "game_id": "megaman2",
+          "platform": "NES",
+          "revision_match": true,
+          "locator": "_工具脚本/taspipe/游戏包/来源库/取证/mm2_tasvideos_coordinates_20261125.txt#L24-L41",
+          "heading": "Rockman 2 coordinate system — verbatim extract",
+          "matched_terms": [
+            "coordinates"
+          ],
+          "snippet": "X position (00.00―FF.FF), it tells where in the screen the object is in.\nY position (00.00―FF.FF), it tells where in the screen the object is in.\nX speed (−80.00―7F.FF).\nY speed (−80.00―7F.FF).\nThe position of the object has 8 bits of decim",
+          "answerability": {
+            "answerable": true,
+            "intent": "identity",
+            "focus_ok": true,
+            "pattern_ok": true,
+            "intent_ok": true,
+            "focus_hit": [
+              "coordinates"
+            ],
+            "url_list": false,
+            "topic_anchor_ok": true,
+            "exclusive_attribution_ok": true,
+            "position_subject_ok": true,
+            "position_subjects": [],
+            "shot_method_ok": true,
+            "player_role_ok": true,
+            "ending_capability_ok": true,
+            "input_sequence_ok": true,
+            "team_shot_ok": true,
+            "technique_ok": true,
+            "multiplayer_mode_ok": true
+          }
+        }
+      ],
+      "index_used": "index.json",
+      "index_sha256": "05907ec85146f386325285ccd4d2008d8bc28d50d8ec4e2461c14a9351f03f7d",
+      "version_hints": [],
+      "auto_routing": {
+        "mode": "single",
+        "domains": [
+          {
+            "domain": "megaman2",
+            "game_ids": [],
+            "revisions": [
+              "megaman2_nes_tasvideos_rockman2",
+              "megaman2_nes_us_manual"
+            ],
+            "corpus_available": true,
+            "matched": [
+              "洛克人2"
+            ],
+            "tier": "strong"
+          }
+        ]
+      },
+      "domain_results": [],
+      "hits": [
+        {
+          "locator": "_工具脚本/taspipe/游戏包/来源库/取证/mm2_tasvideos_coordinates_20261125.txt#L24-L41",
+          "snippet": "X position (00.00―FF.FF), it tells where in the screen the object is in.\nY position (00.00―FF.FF), it tells where in the screen the object is in.\nX speed (−80.00―7F.FF).\nY speed (−80.00―7F.FF).\nThe position of the object has 8 bits of decim",
+          "authority": "authoritative",
+          "status": "verified_read",
+          "answerable": true
+        }
+      ]
+    }
+  },
+  {
+    "core_hook": "洛克人2跳跃Y轴初速度",
+    "event_id": "MM2T02",
+    "profile_id": "retro_tech",
+    "attention": "中",
+    "evidence_status": "pass",
+    "queue": "技术验收",
+    "sources": [
+      "TASVideos GameResources NES/Rockman/Data — Rockman 2 技术条目"
+    ],
+    "source_count": 1,
+    "item_count": 1,
+    "evidence_note": "TASVideos 原文技术条目；来源范围内可答，不证明地区 ROM 等价",
+    "first_seen": "2026-11-25",
+    "pub_latest": "",
+    "title_only_note": "本题用真实生产 query_auto 出证",
+    "core_hook_note": "只覆盖已登记技术事实，不扩展为整款游戏结论",
+    "dims": {},
+    "must_mention": "必须同时交代来源范围与 PAL/美版/日版 ROM 等价未验证",
+    "urls": [
+      "https://tasvideos.org/GameResources/NES/Rockman/Data"
+    ],
+    "judged_at": "2026-11-25",
+    "rule_version": "mm2-production-technical-v1",
+    "kb": {
+      "mode": "bm25",
+      "status": "pass",
+      "retrieval": "bm25_only",
+      "backend": "megaman2",
+      "answer_text": "> Origin: _工具脚本/taspipe/游戏包/来源库/取证/tasvideos_gameresources_rockman_data_2026-11-23.txt\n> Original line ranges: 196-208\n> Qualification: Source-scoped technical evidence; no PAL/US regional equivalence is asserted.\nIn Rockman 1 and 2, when Rockman jumps, his Y speed is set to 04.DF.\nIn Rockman 3, when Rockman jumps, his Y speed is set to 04.A5.\nIn Rockman 4, when Rockman jumps, his Y speed is set to 04.C0.\nEvery frame, 00.40 is subtracted from his Y speed (0.25 in decimal).\nIn Rockman 1 and 2, if the Y speed grows smaller than −0C.00 (−12 in decimal), it is set to −0C.00.\nIn Rockman 3 and 4, if the Y speed grows smaller than −07.00, it is set to −07.00.\nIn Rockman 1 and 2, if the Y speed is larger than 02.1F and the player is not holding the A button, the speed is immediately set to 01.00.",
+      "claim": null,
+      "dataset_revision": null,
+      "reason_code": null,
+      "query_conditions": null,
+      "static_entity": null,
+      "retrieval_note": "",
+      "reason": "3 条 verified_read + authoritative 可答命中，权威件在第 1 位",
+      "refusal": null,
+      "selected_evidence": [
+        {
+          "chunk_id": "5951fb88d20d",
+          "score": 22.066,
+          "source_id": "tasvideos_rockman_data_mm2_extract",
+          "status": "verified_read",
+          "authority": "authoritative",
+          "revision": "megaman2_nes_tasvideos_rockman2",
+          "game_id": "megaman2",
+          "platform": "NES",
+          "revision_match": true,
+          "locator": "_工具脚本/taspipe/游戏包/来源库/取证/mm2_tasvideos_jump_20261125.txt#L2-L18",
+          "heading": "Rockman 2 jump curve — verbatim extract",
+          "matched_terms": [
+            "jumps",
+            "speed"
+          ],
+          "snippet": "> Origin: _工具脚本/taspipe/游戏包/来源库/取证/tasvideos_gameresources_rockman_data_2026-11-23.txt\n> Original line ranges: 196-208\n> Qualification: Source-scoped technical evidence; no PAL/US regional equivalence is asserted.\nIn Rockman 1 and 2, when R",
+          "answerability": {
+            "answerable": true,
+            "intent": "topic",
+            "focus_ok": true,
+            "pattern_ok": true,
+            "intent_ok": true,
+            "focus_hit": [
+              "jumps",
+              "speed"
+            ],
+            "url_list": false,
+            "topic_anchor_ok": true,
+            "exclusive_attribution_ok": true,
+            "position_subject_ok": true,
+            "position_subjects": [],
+            "shot_method_ok": true,
+            "player_role_ok": true,
+            "ending_capability_ok": true,
+            "input_sequence_ok": true,
+            "team_shot_ok": true,
+            "technique_ok": true,
+            "multiplayer_mode_ok": true
+          }
+        }
+      ],
+      "index_used": "index.json",
+      "index_sha256": "05907ec85146f386325285ccd4d2008d8bc28d50d8ec4e2461c14a9351f03f7d",
+      "version_hints": [],
+      "auto_routing": {
+        "mode": "single",
+        "domains": [
+          {
+            "domain": "megaman2",
+            "game_ids": [],
+            "revisions": [
+              "megaman2_nes_tasvideos_rockman2",
+              "megaman2_nes_us_manual"
+            ],
+            "corpus_available": true,
+            "matched": [
+              "洛克人2"
+            ],
+            "tier": "strong"
+          }
+        ]
+      },
+      "domain_results": [],
+      "hits": [
+        {
+          "locator": "_工具脚本/taspipe/游戏包/来源库/取证/mm2_tasvideos_jump_20261125.txt#L2-L18",
+          "snippet": "> Origin: _工具脚本/taspipe/游戏包/来源库/取证/tasvideos_gameresources_rockman_data_2026-11-23.txt\n> Original line ranges: 196-208\n> Qualification: Source-scoped technical evidence; no PAL/US regional equivalence is asserted.\nIn Rockman 1 and 2, when R",
+          "authority": "authoritative",
+          "status": "verified_read",
+          "answerable": true
+        },
+        {
+          "locator": "_工具脚本/taspipe/游戏包/来源库/取证/mm2_tasvideos_acceleration_20261125.txt#L2-L16",
+          "snippet": "> Origin: _工具脚本/taspipe/游戏包/来源库/取证/tasvideos_gameresources_rockman_data_2026-11-23.txt\n> Original line ranges: 289-305\n> Qualification: Source-scoped technical evidence; no PAL/US regional equivalence is asserted.\nSliding speed\nIn Rockman 3",
+          "authority": "authoritative",
+          "status": "verified_read",
+          "answerable": true
+        },
+        {
+          "locator": "_工具脚本/taspipe/游戏包/来源库/取证/mm2_tasvideos_acceleration_20261125.txt#L18-L22",
+          "snippet": "Deceleration\nIn Rockman 1, when Rockman decelerates from full speed (not from acceleration), his X speed is 00.80 for 13 (decimal) frames before halting completely.\nIn Rockman 2, when Rockman decelerates from full speed (not from accelerati",
+          "authority": "authoritative",
+          "status": "verified_read",
+          "answerable": true
+        }
+      ]
+    }
+  },
+  {
+    "core_hook": "洛克人2攀爬速度",
+    "event_id": "MM2T03",
+    "profile_id": "retro_tech",
+    "attention": "中",
+    "evidence_status": "pass",
+    "queue": "技术验收",
+    "sources": [
+      "TASVideos GameResources NES/Rockman/Data — Rockman 2 技术条目"
+    ],
+    "source_count": 1,
+    "item_count": 1,
+    "evidence_note": "TASVideos 原文技术条目；来源范围内可答，不证明地区 ROM 等价",
+    "first_seen": "2026-11-25",
+    "pub_latest": "",
+    "title_only_note": "本题用真实生产 query_auto 出证",
+    "core_hook_note": "只覆盖已登记技术事实，不扩展为整款游戏结论",
+    "dims": {},
+    "must_mention": "必须同时交代来源范围与 PAL/美版/日版 ROM 等价未验证",
+    "urls": [
+      "https://tasvideos.org/GameResources/NES/Rockman/Data"
+    ],
+    "judged_at": "2026-11-25",
+    "rule_version": "mm2-production-technical-v1",
+    "kb": {
+      "mode": "bm25",
+      "status": "pass",
+      "retrieval": "bm25_only",
+      "backend": "megaman2",
+      "answer_text": "> Origin: _工具脚本/taspipe/游戏包/来源库/取证/tasvideos_gameresources_rockman_data_2026-11-23.txt\n> Original line ranges: 253-261\n> Qualification: Source-scoped technical evidence; no PAL/US regional equivalence is asserted.\nIn Rockman 1 and 2, Rockman climbs at speed of 00.C0.\nIn Rockman 3, Rockman climbs at speed of 01.4C.\nTransforming\nIn Rockman 1, Rockman’s Y speed and position are accumulated even during transforming. (Which allows him to pass through enemies without hurting himself.)\nIn Rockman 2, Y speed is reset when pausing. During transforming, enemies move. (Which allows them to pass through Rockman without hurting him.)",
+      "claim": null,
+      "dataset_revision": null,
+      "reason_code": null,
+      "query_conditions": null,
+      "static_entity": null,
+      "retrieval_note": "",
+      "reason": "1 条 verified_read + authoritative 可答命中，权威件在第 1 位",
+      "refusal": null,
+      "selected_evidence": [
+        {
+          "chunk_id": "5f42477ad0db",
+          "score": 11.848,
+          "source_id": "tasvideos_rockman_data_mm2_extract",
+          "status": "verified_read",
+          "authority": "authoritative",
+          "revision": "megaman2_nes_tasvideos_rockman2",
+          "game_id": "megaman2",
+          "platform": "NES",
+          "revision_match": true,
+          "locator": "_工具脚本/taspipe/游戏包/来源库/取证/mm2_tasvideos_climb_transform_20261125.txt#L2-L14",
+          "heading": "Rockman 2 climbing and transforming — verbatim extract",
+          "matched_terms": [
+            "climbs"
+          ],
+          "snippet": "> Origin: _工具脚本/taspipe/游戏包/来源库/取证/tasvideos_gameresources_rockman_data_2026-11-23.txt\n> Original line ranges: 253-261\n> Qualification: Source-scoped technical evidence; no PAL/US regional equivalence is asserted.\nIn Rockman 1 and 2, Rockma",
+          "answerability": {
+            "answerable": true,
+            "intent": "value_lookup",
+            "focus_ok": true,
+            "pattern_ok": true,
+            "intent_ok": true,
+            "focus_hit": [
+              "climbs"
+            ],
+            "url_list": false,
+            "topic_anchor_ok": true,
+            "exclusive_attribution_ok": true,
+            "position_subject_ok": true,
+            "position_subjects": [],
+            "shot_method_ok": true,
+            "player_role_ok": true,
+            "ending_capability_ok": true,
+            "input_sequence_ok": true,
+            "team_shot_ok": true,
+            "technique_ok": true,
+            "multiplayer_mode_ok": true
+          }
+        }
+      ],
+      "index_used": "index.json",
+      "index_sha256": "05907ec85146f386325285ccd4d2008d8bc28d50d8ec4e2461c14a9351f03f7d",
+      "version_hints": [],
+      "auto_routing": {
+        "mode": "single",
+        "domains": [
+          {
+            "domain": "megaman2",
+            "game_ids": [],
+            "revisions": [
+              "megaman2_nes_tasvideos_rockman2",
+              "megaman2_nes_us_manual"
+            ],
+            "corpus_available": true,
+            "matched": [
+              "洛克人2"
+            ],
+            "tier": "strong"
+          }
+        ]
+      },
+      "domain_results": [],
+      "hits": [
+        {
+          "locator": "_工具脚本/taspipe/游戏包/来源库/取证/mm2_tasvideos_climb_transform_20261125.txt#L2-L14",
+          "snippet": "> Origin: _工具脚本/taspipe/游戏包/来源库/取证/tasvideos_gameresources_rockman_data_2026-11-23.txt\n> Original line ranges: 253-261\n> Qualification: Source-scoped technical evidence; no PAL/US regional equivalence is asserted.\nIn Rockman 1 and 2, Rockma",
+          "authority": "authoritative",
+          "status": "verified_read",
+          "answerable": true
+        }
+      ]
+    }
+  },
+  {
+    "core_hook": "洛克人2跳跃横向速度",
+    "event_id": "MM2T04",
+    "profile_id": "retro_tech",
+    "attention": "中",
+    "evidence_status": "pass",
+    "queue": "技术验收",
+    "sources": [
+      "TASVideos GameResources NES/Rockman/Data — Rockman 2 技术条目"
+    ],
+    "source_count": 1,
+    "item_count": 1,
+    "evidence_note": "TASVideos 原文技术条目；来源范围内可答，不证明地区 ROM 等价",
+    "first_seen": "2026-11-25",
+    "pub_latest": "",
+    "title_only_note": "本题用真实生产 query_auto 出证",
+    "core_hook_note": "只覆盖已登记技术事实，不扩展为整款游戏结论",
+    "dims": {},
+    "must_mention": "必须同时交代来源范围与 PAL/美版/日版 ROM 等价未验证",
+    "urls": [
+      "https://tasvideos.org/GameResources/NES/Rockman/Data"
+    ],
+    "judged_at": "2026-11-25",
+    "rule_version": "mm2-production-technical-v1",
+    "kb": {
+      "mode": "bm25",
+      "status": "pass",
+      "retrieval": "bm25_only",
+      "backend": "megaman2",
+      "answer_text": "> Origin: _工具脚本/taspipe/游戏包/来源库/取证/tasvideos_gameresources_rockman_data_2026-11-23.txt\n> Original line ranges: 271-279\n> Qualification: Source-scoped technical evidence; no PAL/US regional equivalence is asserted.\nIn Rockman 1 and 2, during jumping/falling into some direction, Rockman’s X speed is 01.50.\nIn Rockman 3 and 4, during jumping/falling, Rockman’s X speed is the same as when walking.\nIf the player stops pressing the directional button, the speed falls immediately into 00.00.\nIn Rockman 1, if Rockman starts moving after not moving, his X speed first goes to 00.20, then back to 01.50.\nIn Rockman 2, if Rockman starts moving after not moving, his X speed goes immediately back to 01.50.",
+      "claim": null,
+      "dataset_revision": null,
+      "reason_code": null,
+      "query_conditions": null,
+      "static_entity": null,
+      "retrieval_note": "",
+      "reason": "3 条 verified_read + authoritative 可答命中，权威件在第 1 位",
+      "refusal": null,
+      "selected_evidence": [
+        {
+          "chunk_id": "0941c8166057",
+          "score": 29.431,
+          "source_id": "tasvideos_rockman_data_mm2_extract",
+          "status": "verified_read",
+          "authority": "authoritative",
+          "revision": "megaman2_nes_tasvideos_rockman2",
+          "game_id": "megaman2",
+          "platform": "NES",
+          "revision_match": true,
+          "locator": "_工具脚本/taspipe/游戏包/来源库/取证/mm2_tasvideos_jump_horizontal_20261125.txt#L2-L14",
+          "heading": "Rockman 2 horizontal motion while jumping — verbatim extract",
+          "matched_terms": [
+            "falling",
+            "jumping",
+            "speed"
+          ],
+          "snippet": "> Origin: _工具脚本/taspipe/游戏包/来源库/取证/tasvideos_gameresources_rockman_data_2026-11-23.txt\n> Original line ranges: 271-279\n> Qualification: Source-scoped technical evidence; no PAL/US regional equivalence is asserted.\nIn Rockman 1 and 2, during",
+          "answerability": {
+            "answerable": true,
+            "intent": "topic",
+            "focus_ok": true,
+            "pattern_ok": true,
+            "intent_ok": true,
+            "focus_hit": [
+              "falling",
+              "jumping",
+              "speed"
+            ],
+            "url_list": false,
+            "topic_anchor_ok": true,
+            "exclusive_attribution_ok": true,
+            "position_subject_ok": true,
+            "position_subjects": [],
+            "shot_method_ok": true,
+            "player_role_ok": true,
+            "ending_capability_ok": true,
+            "input_sequence_ok": true,
+            "team_shot_ok": true,
+            "technique_ok": true,
+            "multiplayer_mode_ok": true
+          }
+        }
+      ],
+      "index_used": "index.json",
+      "index_sha256": "05907ec85146f386325285ccd4d2008d8bc28d50d8ec4e2461c14a9351f03f7d",
+      "version_hints": [],
+      "auto_routing": {
+        "mode": "single",
+        "domains": [
+          {
+            "domain": "megaman2",
+            "game_ids": [],
+            "revisions": [
+              "megaman2_nes_tasvideos_rockman2",
+              "megaman2_nes_us_manual"
+            ],
+            "corpus_available": true,
+            "matched": [
+              "洛克人2"
+            ],
+            "tier": "strong"
+          }
+        ]
+      },
+      "domain_results": [],
+      "hits": [
+        {
+          "locator": "_工具脚本/taspipe/游戏包/来源库/取证/mm2_tasvideos_jump_horizontal_20261125.txt#L2-L14",
+          "snippet": "> Origin: _工具脚本/taspipe/游戏包/来源库/取证/tasvideos_gameresources_rockman_data_2026-11-23.txt\n> Original line ranges: 271-279\n> Qualification: Source-scoped technical evidence; no PAL/US regional equivalence is asserted.\nIn Rockman 1 and 2, during",
+          "authority": "authoritative",
+          "status": "verified_read",
+          "answerable": true
+        },
+        {
+          "locator": "_工具脚本/taspipe/游戏包/来源库/取证/mm2_tasvideos_coordinates_20261125.txt#L24-L41",
+          "snippet": "X position (00.00―FF.FF), it tells where in the screen the object is in.\nY position (00.00―FF.FF), it tells where in the screen the object is in.\nX speed (−80.00―7F.FF).\nY speed (−80.00―7F.FF).\nThe position of the object has 8 bits of decim",
+          "authority": "authoritative",
+          "status": "verified_read",
+          "answerable": true
+        },
+        {
+          "locator": "_工具脚本/taspipe/游戏包/来源库/取证/mm2_tasvideos_acceleration_20261125.txt#L2-L16",
+          "snippet": "> Origin: _工具脚本/taspipe/游戏包/来源库/取证/tasvideos_gameresources_rockman_data_2026-11-23.txt\n> Original line ranges: 289-305\n> Qualification: Source-scoped technical evidence; no PAL/US regional equivalence is asserted.\nSliding speed\nIn Rockman 3",
+          "authority": "authoritative",
+          "status": "verified_read",
+          "answerable": true
+        }
+      ]
+    }
+  },
+  {
+    "core_hook": "洛克人2步行速度",
+    "event_id": "MM2T05",
+    "profile_id": "retro_tech",
+    "attention": "中",
+    "evidence_status": "pass",
+    "queue": "技术验收",
+    "sources": [
+      "TASVideos GameResources NES/Rockman/Data — Rockman 2 技术条目"
+    ],
+    "source_count": 1,
+    "item_count": 1,
+    "evidence_note": "TASVideos 原文技术条目；来源范围内可答，不证明地区 ROM 等价",
+    "first_seen": "2026-11-25",
+    "pub_latest": "",
+    "title_only_note": "本题用真实生产 query_auto 出证",
+    "core_hook_note": "只覆盖已登记技术事实，不扩展为整款游戏结论",
+    "dims": {},
+    "must_mention": "必须同时交代来源范围与 PAL/美版/日版 ROM 等价未验证",
+    "urls": [
+      "https://tasvideos.org/GameResources/NES/Rockman/Data"
+    ],
+    "judged_at": "2026-11-25",
+    "rule_version": "mm2-production-technical-v1",
+    "kb": {
+      "mode": "bm25",
+      "status": "pass",
+      "retrieval": "bm25_only",
+      "backend": "megaman2",
+      "answer_text": "> Origin: _工具脚本/taspipe/游戏包/来源库/取证/tasvideos_gameresources_rockman_data_2026-11-23.txt\n> Original line ranges: 281-287\n> Qualification: Source-scoped technical evidence; no PAL/US regional equivalence is asserted.\nWalking\nWalking speed\nIn Rockman 1 and 2, during walking, Rockman’s X speed is 01.60.\nIn Rockman 3 and 4, during walking, Rockman’s X speed is 01.4C.",
+      "claim": null,
+      "dataset_revision": null,
+      "reason_code": null,
+      "query_conditions": null,
+      "static_entity": null,
+      "retrieval_note": "",
+      "reason": "2 条 verified_read + authoritative 可答命中，权威件在第 1 位",
+      "refusal": null,
+      "selected_evidence": [
+        {
+          "chunk_id": "b7dbf0bfc214",
+          "score": 12.749,
+          "source_id": "tasvideos_rockman_data_mm2_extract",
+          "status": "verified_read",
+          "authority": "authoritative",
+          "revision": "megaman2_nes_tasvideos_rockman2",
+          "game_id": "megaman2",
+          "platform": "NES",
+          "revision_match": true,
+          "locator": "_工具脚本/taspipe/游戏包/来源库/取证/mm2_tasvideos_walking_20261125.txt#L2-L12",
+          "heading": "Rockman 2 walking speed — verbatim extract",
+          "matched_terms": [
+            "walking"
+          ],
+          "snippet": "> Origin: _工具脚本/taspipe/游戏包/来源库/取证/tasvideos_gameresources_rockman_data_2026-11-23.txt\n> Original line ranges: 281-287\n> Qualification: Source-scoped technical evidence; no PAL/US regional equivalence is asserted.\nWalking\nWalking speed\nIn R",
+          "answerability": {
+            "answerable": true,
+            "intent": "value_lookup",
+            "focus_ok": true,
+            "pattern_ok": true,
+            "intent_ok": true,
+            "focus_hit": [
+              "walking"
+            ],
+            "url_list": false,
+            "topic_anchor_ok": true,
+            "exclusive_attribution_ok": true,
+            "position_subject_ok": true,
+            "position_subjects": [],
+            "shot_method_ok": true,
+            "player_role_ok": true,
+            "ending_capability_ok": true,
+            "input_sequence_ok": true,
+            "team_shot_ok": true,
+            "technique_ok": true,
+            "multiplayer_mode_ok": true
+          }
+        }
+      ],
+      "index_used": "index.json",
+      "index_sha256": "05907ec85146f386325285ccd4d2008d8bc28d50d8ec4e2461c14a9351f03f7d",
+      "version_hints": [],
+      "auto_routing": {
+        "mode": "single",
+        "domains": [
+          {
+            "domain": "megaman2",
+            "game_ids": [],
+            "revisions": [
+              "megaman2_nes_tasvideos_rockman2",
+              "megaman2_nes_us_manual"
+            ],
+            "corpus_available": true,
+            "matched": [
+              "洛克人2"
+            ],
+            "tier": "strong"
+          }
+        ]
+      },
+      "domain_results": [],
+      "hits": [
+        {
+          "locator": "_工具脚本/taspipe/游戏包/来源库/取证/mm2_tasvideos_walking_20261125.txt#L2-L12",
+          "snippet": "> Origin: _工具脚本/taspipe/游戏包/来源库/取证/tasvideos_gameresources_rockman_data_2026-11-23.txt\n> Original line ranges: 281-287\n> Qualification: Source-scoped technical evidence; no PAL/US regional equivalence is asserted.\nWalking\nWalking speed\nIn R",
+          "authority": "authoritative",
+          "status": "verified_read",
+          "answerable": true
+        },
+        {
+          "locator": "_工具脚本/taspipe/游戏包/来源库/取证/mm2_tasvideos_jump_horizontal_20261125.txt#L2-L14",
+          "snippet": "> Origin: _工具脚本/taspipe/游戏包/来源库/取证/tasvideos_gameresources_rockman_data_2026-11-23.txt\n> Original line ranges: 271-279\n> Qualification: Source-scoped technical evidence; no PAL/US regional equivalence is asserted.\nIn Rockman 1 and 2, during",
+          "authority": "authoritative",
+          "status": "verified_read",
+          "answerable": true
+        }
+      ]
+    }
+  },
+  {
+    "core_hook": "洛克人2加速帧数",
+    "event_id": "MM2T06",
+    "profile_id": "retro_tech",
+    "attention": "中",
+    "evidence_status": "pass",
+    "queue": "技术验收",
+    "sources": [
+      "TASVideos GameResources NES/Rockman/Data — Rockman 2 技术条目"
+    ],
+    "source_count": 1,
+    "item_count": 1,
+    "evidence_note": "TASVideos 原文技术条目；来源范围内可答，不证明地区 ROM 等价",
+    "first_seen": "2026-11-25",
+    "pub_latest": "",
+    "title_only_note": "本题用真实生产 query_auto 出证",
+    "core_hook_note": "只覆盖已登记技术事实，不扩展为整款游戏结论",
+    "dims": {},
+    "must_mention": "必须同时交代来源范围与 PAL/美版/日版 ROM 等价未验证",
+    "urls": [
+      "https://tasvideos.org/GameResources/NES/Rockman/Data"
+    ],
+    "judged_at": "2026-11-25",
+    "rule_version": "mm2-production-technical-v1",
+    "kb": {
+      "mode": "bm25",
+      "status": "pass",
+      "retrieval": "bm25_only",
+      "backend": "megaman2",
+      "answer_text": "> Origin: _工具脚本/taspipe/游戏包/来源库/取证/tasvideos_gameresources_rockman_data_2026-11-23.txt\n> Original line ranges: 289-305\n> Qualification: Source-scoped technical evidence; no PAL/US regional equivalence is asserted.\nSliding speed\nIn Rockman 3 and 4, during sliding, Rockman’s X speed is 02.80.\nAcceleration\nIn Rockman 1, when Rockman accelerates from non-full speed (full halt or deacceleration), his X speed is 00.20 for 9 frames before gaining full speed.\nIn Rockman 2, when Rockman accelerates from non-full speed (full halt or deacceleration, item-throwing halt excluded), his X speed is 00.20 for 7 frames before gaining full speed.\nIn Rockman 3, when Rockman accelerates from non-full speed, he walks normally the first frame (as far as speed is concerned), then is completely in stall for 8 frames, after which he has the full speed again.",
+      "claim": null,
+      "dataset_revision": null,
+      "reason_code": null,
+      "query_conditions": null,
+      "static_entity": null,
+      "retrieval_note": "",
+      "reason": "1 条 verified_read + authoritative 可答命中，权威件在第 1 位",
+      "refusal": null,
+      "selected_evidence": [
+        {
+          "chunk_id": "1d57e537a55a",
+          "score": 12.515,
+          "source_id": "tasvideos_rockman_data_mm2_extract",
+          "status": "verified_read",
+          "authority": "authoritative",
+          "revision": "megaman2_nes_tasvideos_rockman2",
+          "game_id": "megaman2",
+          "platform": "NES",
+          "revision_match": true,
+          "locator": "_工具脚本/taspipe/游戏包/来源库/取证/mm2_tasvideos_acceleration_20261125.txt#L2-L16",
+          "heading": "Rockman 2 acceleration and deceleration — verbatim extract",
+          "matched_terms": [
+            "accelerates"
+          ],
+          "snippet": "> Origin: _工具脚本/taspipe/游戏包/来源库/取证/tasvideos_gameresources_rockman_data_2026-11-23.txt\n> Original line ranges: 289-305\n> Qualification: Source-scoped technical evidence; no PAL/US regional equivalence is asserted.\nSliding speed\nIn Rockman 3",
+          "answerability": {
+            "answerable": true,
+            "intent": "count",
+            "focus_ok": true,
+            "pattern_ok": true,
+            "intent_ok": true,
+            "focus_hit": [
+              "accelerates"
+            ],
+            "url_list": false,
+            "topic_anchor_ok": true,
+            "exclusive_attribution_ok": true,
+            "position_subject_ok": true,
+            "position_subjects": [],
+            "shot_method_ok": true,
+            "player_role_ok": true,
+            "ending_capability_ok": true,
+            "input_sequence_ok": true,
+            "team_shot_ok": true,
+            "technique_ok": true,
+            "multiplayer_mode_ok": true
+          }
+        }
+      ],
+      "index_used": "index.json",
+      "index_sha256": "05907ec85146f386325285ccd4d2008d8bc28d50d8ec4e2461c14a9351f03f7d",
+      "version_hints": [],
+      "auto_routing": {
+        "mode": "single",
+        "domains": [
+          {
+            "domain": "megaman2",
+            "game_ids": [],
+            "revisions": [
+              "megaman2_nes_tasvideos_rockman2",
+              "megaman2_nes_us_manual"
+            ],
+            "corpus_available": true,
+            "matched": [
+              "洛克人2"
+            ],
+            "tier": "strong"
+          }
+        ]
+      },
+      "domain_results": [],
+      "hits": [
+        {
+          "locator": "_工具脚本/taspipe/游戏包/来源库/取证/mm2_tasvideos_acceleration_20261125.txt#L2-L16",
+          "snippet": "> Origin: _工具脚本/taspipe/游戏包/来源库/取证/tasvideos_gameresources_rockman_data_2026-11-23.txt\n> Original line ranges: 289-305\n> Qualification: Source-scoped technical evidence; no PAL/US regional equivalence is asserted.\nSliding speed\nIn Rockman 3",
+          "authority": "authoritative",
+          "status": "verified_read",
+          "answerable": true
+        }
+      ]
+    }
+  },
+  {
+    "core_hook": "洛克人2减速停止帧数",
+    "event_id": "MM2T07",
+    "profile_id": "retro_tech",
+    "attention": "中",
+    "evidence_status": "pass",
+    "queue": "技术验收",
+    "sources": [
+      "TASVideos GameResources NES/Rockman/Data — Rockman 2 技术条目"
+    ],
+    "source_count": 1,
+    "item_count": 1,
+    "evidence_note": "TASVideos 原文技术条目；来源范围内可答，不证明地区 ROM 等价",
+    "first_seen": "2026-11-25",
+    "pub_latest": "",
+    "title_only_note": "本题用真实生产 query_auto 出证",
+    "core_hook_note": "只覆盖已登记技术事实，不扩展为整款游戏结论",
+    "dims": {},
+    "must_mention": "必须同时交代来源范围与 PAL/美版/日版 ROM 等价未验证",
+    "urls": [
+      "https://tasvideos.org/GameResources/NES/Rockman/Data"
+    ],
+    "judged_at": "2026-11-25",
+    "rule_version": "mm2-production-technical-v1",
+    "kb": {
+      "mode": "bm25",
+      "status": "pass",
+      "retrieval": "bm25_only",
+      "backend": "megaman2",
+      "answer_text": "Deceleration\nIn Rockman 1, when Rockman decelerates from full speed (not from acceleration), his X speed is 00.80 for 13 (decimal) frames before halting completely.\nIn Rockman 2, when Rockman decelerates from full speed (not from acceleration), his X speed is 00.80 for 8 (decimal) frames before halting completely.",
+      "claim": null,
+      "dataset_revision": null,
+      "reason_code": null,
+      "query_conditions": null,
+      "static_entity": null,
+      "retrieval_note": "",
+      "reason": "1 条 verified_read + authoritative 可答命中，权威件在第 1 位",
+      "refusal": null,
+      "selected_evidence": [
+        {
+          "chunk_id": "cd01fc4ceca6",
+          "score": 12.556,
+          "source_id": "tasvideos_rockman_data_mm2_extract",
+          "status": "verified_read",
+          "authority": "authoritative",
+          "revision": "megaman2_nes_tasvideos_rockman2",
+          "game_id": "megaman2",
+          "platform": "NES",
+          "revision_match": true,
+          "locator": "_工具脚本/taspipe/游戏包/来源库/取证/mm2_tasvideos_acceleration_20261125.txt#L18-L22",
+          "heading": "Rockman 2 acceleration and deceleration — verbatim extract",
+          "matched_terms": [
+            "decelerates"
+          ],
+          "snippet": "Deceleration\nIn Rockman 1, when Rockman decelerates from full speed (not from acceleration), his X speed is 00.80 for 13 (decimal) frames before halting completely.\nIn Rockman 2, when Rockman decelerates from full speed (not from accelerati",
+          "answerability": {
+            "answerable": true,
+            "intent": "count",
+            "focus_ok": true,
+            "pattern_ok": true,
+            "intent_ok": true,
+            "focus_hit": [
+              "decelerates"
+            ],
+            "url_list": false,
+            "topic_anchor_ok": true,
+            "exclusive_attribution_ok": true,
+            "position_subject_ok": true,
+            "position_subjects": [],
+            "shot_method_ok": true,
+            "player_role_ok": true,
+            "ending_capability_ok": true,
+            "input_sequence_ok": true,
+            "team_shot_ok": true,
+            "technique_ok": true,
+            "multiplayer_mode_ok": true
+          }
+        }
+      ],
+      "index_used": "index.json",
+      "index_sha256": "05907ec85146f386325285ccd4d2008d8bc28d50d8ec4e2461c14a9351f03f7d",
+      "version_hints": [],
+      "auto_routing": {
+        "mode": "single",
+        "domains": [
+          {
+            "domain": "megaman2",
+            "game_ids": [],
+            "revisions": [
+              "megaman2_nes_tasvideos_rockman2",
+              "megaman2_nes_us_manual"
+            ],
+            "corpus_available": true,
+            "matched": [
+              "洛克人2"
+            ],
+            "tier": "strong"
+          }
+        ]
+      },
+      "domain_results": [],
+      "hits": [
+        {
+          "locator": "_工具脚本/taspipe/游戏包/来源库/取证/mm2_tasvideos_acceleration_20261125.txt#L18-L22",
+          "snippet": "Deceleration\nIn Rockman 1, when Rockman decelerates from full speed (not from acceleration), his X speed is 00.80 for 13 (decimal) frames before halting completely.\nIn Rockman 2, when Rockman decelerates from full speed (not from accelerati",
+          "authority": "authoritative",
+          "status": "verified_read",
+          "answerable": true
+        }
+      ]
+    }
+  },
+  {
+    "core_hook": "洛克人2对象表Xspd地址",
+    "event_id": "MM2T08",
+    "profile_id": "retro_tech",
+    "attention": "中",
+    "evidence_status": "pass",
+    "queue": "技术验收",
+    "sources": [
+      "TASVideos GameResources NES/Rockman/Data — Rockman 2 技术条目"
+    ],
+    "source_count": 1,
+    "item_count": 1,
+    "evidence_note": "TASVideos 原文技术条目；来源范围内可答，不证明地区 ROM 等价",
+    "first_seen": "2026-11-25",
+    "pub_latest": "",
+    "title_only_note": "本题用真实生产 query_auto 出证",
+    "core_hook_note": "只覆盖已登记技术事实，不扩展为整款游戏结论",
+    "dims": {},
+    "must_mention": "必须同时交代来源范围与 PAL/美版/日版 ROM 等价未验证",
+    "urls": [
+      "https://tasvideos.org/GameResources/NES/Rockman/Data"
+    ],
+    "judged_at": "2026-11-25",
+    "rule_version": "mm2-production-technical-v1",
+    "kb": {
+      "mode": "bm25",
+      "status": "pass",
+      "retrieval": "bm25_only",
+      "backend": "megaman2",
+      "answer_text": "# Rockman 2 object RAM table — verbatim extract\n> Origin: _工具脚本/taspipe/游戏包/来源库/取证/tasvideos_gameresources_rockman_data_2026-11-23.txt\n> Original line ranges: 424-432; 441-443\n> Qualification: Source-scoped technical evidence; no PAL/US regional equivalence is asserted.\nMemory addresses\nRead from the disassembly .\nGame Screen# X (hi,lo) Xspd (hi,lo) Y (hi,lo) Yspd (hi,lo)\nRockman 1 $460 $480:$4A0 $4C0:$4E0 $600:$620 $660:$680\nRockman 2 $440 $460:$480 $600:$620 $4A0:$4C0 $640:$660\nThe variables for object # n can be found by adding n to each address.\nBoss has n =1 in RM1/2, Rockman always has n =0.",
+      "claim": null,
+      "dataset_revision": null,
+      "reason_code": null,
+      "query_conditions": null,
+      "static_entity": null,
+      "retrieval_note": "",
+      "reason": "1 条 verified_read + authoritative 可答命中，权威件在第 1 位",
+      "refusal": null,
+      "selected_evidence": [
+        {
+          "chunk_id": "dafedd6df882",
+          "score": 25.096,
+          "source_id": "tasvideos_rockman_data_mm2_extract",
+          "status": "verified_read",
+          "authority": "authoritative",
+          "revision": "megaman2_nes_tasvideos_rockman2",
+          "game_id": "megaman2",
+          "platform": "NES",
+          "revision_match": true,
+          "locator": "_工具脚本/taspipe/游戏包/来源库/取证/mm2_tasvideos_object_table_20261125.txt#L1-L18",
+          "heading": "",
+          "matched_terms": [
+            "addresses",
+            "memory",
+            "xspd"
+          ],
+          "snippet": "# Rockman 2 object RAM table — verbatim extract\n> Origin: _工具脚本/taspipe/游戏包/来源库/取证/tasvideos_gameresources_rockman_data_2026-11-23.txt\n> Original line ranges: 424-432; 441-443\n> Qualification: Source-scoped technical evidence; no PAL/US reg",
+          "answerability": {
+            "answerable": true,
+            "intent": "value_lookup",
+            "focus_ok": true,
+            "pattern_ok": true,
+            "intent_ok": true,
+            "focus_hit": [
+              "addresses",
+              "memory",
+              "xspd"
+            ],
+            "url_list": false,
+            "topic_anchor_ok": true,
+            "exclusive_attribution_ok": true,
+            "position_subject_ok": true,
+            "position_subjects": [],
+            "shot_method_ok": true,
+            "player_role_ok": true,
+            "ending_capability_ok": true,
+            "input_sequence_ok": true,
+            "team_shot_ok": true,
+            "technique_ok": true,
+            "multiplayer_mode_ok": true
+          }
+        }
+      ],
+      "index_used": "index.json",
+      "index_sha256": "05907ec85146f386325285ccd4d2008d8bc28d50d8ec4e2461c14a9351f03f7d",
+      "version_hints": [],
+      "auto_routing": {
+        "mode": "single",
+        "domains": [
+          {
+            "domain": "megaman2",
+            "game_ids": [],
+            "revisions": [
+              "megaman2_nes_tasvideos_rockman2",
+              "megaman2_nes_us_manual"
+            ],
+            "corpus_available": true,
+            "matched": [
+              "洛克人2"
+            ],
+            "tier": "strong"
+          }
+        ]
+      },
+      "domain_results": [],
+      "hits": [
+        {
+          "locator": "_工具脚本/taspipe/游戏包/来源库/取证/mm2_tasvideos_object_table_20261125.txt#L1-L18",
+          "snippet": "# Rockman 2 object RAM table — verbatim extract\n> Origin: _工具脚本/taspipe/游戏包/来源库/取证/tasvideos_gameresources_rockman_data_2026-11-23.txt\n> Original line ranges: 424-432; 441-443\n> Qualification: Source-scoped technical evidence; no PAL/US reg",
+          "authority": "authoritative",
+          "status": "verified_read",
+          "answerable": true
+        }
+      ]
+    }
+  }
+]

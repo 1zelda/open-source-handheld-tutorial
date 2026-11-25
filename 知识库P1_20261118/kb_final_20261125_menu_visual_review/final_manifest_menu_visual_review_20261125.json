@@ -1,0 +1,2101 @@
+{
+  "schema": "kb_final_manifest_menu_visual_review_v1",
+  "generated_at": "2026-11-25T13:52:36.113773+00:00",
+  "scope": "晓月圆舞曲114项冻结菜单截图的名称与效果文本二次视觉复核、两处名称修正、串行回归与旧交付保护；资格不变。",
+  "all_checks_ok": true,
+  "production_defaults": {
+    "top_window": 3,
+    "fragment_policy": null,
+    "fact_selector": null,
+    "strict_production_default": false,
+    "dense_production_default": false,
+    "gba_platform_gate": false,
+    "commercial_rom_or_bios_ingested": false
+  },
+  "preflight": {
+    "schema": "menu_visual_review_delivery_preflight_v1",
+    "generated_at": "2026-11-25T13:43:42.982517+00:00",
+    "generated_on": "2026-11-25",
+    "source_audit": {
+      "pass": 8,
+      "fail": 0,
+      "inconclusive": 1,
+      "sources": 103,
+      "packs": 25,
+      "elements_checked": 205,
+      "elements_supported": 205
+    },
+    "weak_elements": 157,
+    "menu_weak_elements": 114,
+    "legacy_weak_elements": 43,
+    "coverage": {
+      "present_unverified": 6,
+      "registered_empty": 9,
+      "verified": 11
+    },
+    "coverage_rows": 26,
+    "menu_visual_review": {
+      "elements": 114,
+      "preparation_pass": 114,
+      "initial_name_matches": 112,
+      "name_corrections": 2,
+      "final_name_matches": 114,
+      "effect_matches": 114,
+      "effect_ocr_exact": 69,
+      "effect_ocr_visual_only": 45,
+      "unresolved": 0
+    },
+    "menu": {
+      "source_status": "candidate",
+      "last_verified": null,
+      "human_visual_review": false,
+      "gameplay_verified": false,
+      "detector_verified": false,
+      "platform_gate_verified": false,
+      "name_corrections": [
+        {
+          "element_id": "aria_red_001",
+          "group": "red",
+          "id": 1,
+          "from": "大骷髅",
+          "to": "飞骷髅",
+          "basis": "冻结截图red_001.png名称区与8x复核板"
+        },
+        {
+          "element_id": "aria_blue_013",
+          "group": "blue",
+          "id": 13,
+          "from": "大骷髅",
+          "to": "幻魔士",
+          "basis": "冻结截图blue_013.png名称区与8x复核板"
+        }
+      ],
+      "media_files_verified": 342
+    },
+    "code": {
+      "sources_audit": {
+        "path": "F:\\开源掌机教程\\_工具脚本\\taspipe\\sources.py",
+        "bytes": 47214,
+        "sha256": "fc47682d686f7c04b7fcb5c74d46a0760da4c5a7e4258358442dbd4958e2704c"
+      },
+      "sources_selftest_gates": {
+        "path": "F:\\开源掌机教程\\_工具脚本\\taspipe\\sources_selftest_gates.py",
+        "bytes": 30271,
+        "sha256": "c5532152b62c66a4d3bad5582ec5efd4374203b58a8c906bba9b5691e8bc693a"
+      },
+      "kb": {
+        "path": "F:\\开源掌机教程\\_工具脚本\\taspipe\\kb.py",
+        "bytes": 102100,
+        "sha256": "cf9d69aa40329b9e1ff4b2d086abbddf54de9ea89ab581c093c3df1ab8463264"
+      },
+      "kb_selftest_gates": {
+        "path": "F:\\开源掌机教程\\_工具脚本\\taspipe\\kb_selftest_gates.py",
+        "bytes": 225465,
+        "sha256": "b06212a5bd704a779a946eef578661fab3843f78c130aac57e5a0d3874656d28"
+      }
+    },
+    "data": {
+      "source_registry": {
+        "path": "F:\\开源掌机教程\\_工具脚本\\taspipe\\游戏包\\来源库\\sources.json",
+        "bytes": 78163,
+        "sha256": "456576759073e46fb303a02538e6769f9837d883b633b9c4a1cc8781fc87285f"
+      },
+      "menu_catalog": {
+        "path": "F:\\开源掌机教程\\_工具脚本\\taspipe\\游戏包\\gba_aria_of_sorrow_souls.menu_catalog.json",
+        "bytes": 332229,
+        "sha256": "fc3a258a9c6b245a31b159bffc7a4d141a3ef31cf46b6bc6c74afa95c414bc3e"
+      },
+      "corpus_map": {
+        "path": "F:\\开源掌机教程\\_工具脚本\\taspipe\\游戏包\\知识库\\corpus_map.json",
+        "bytes": 34439,
+        "sha256": "e49bb480ad4aa58d0ce97a47af7fabe49a7453fde90d01631350b3bf662342df"
+      },
+      "index": {
+        "path": "F:\\开源掌机教程\\_工具脚本\\taspipe\\游戏包\\知识库\\index.json",
+        "bytes": 3766455,
+        "sha256": "05907ec85146f386325285ccd4d2008d8bc28d50d8ec4e2461c14a9351f03f7d"
+      },
+      "menu_evidence_report": {
+        "path": "F:\\开源掌机教程\\_工具脚本\\taspipe\\游戏包\\证据\\晓月圆舞曲\\menu_catalog_nav_full_20261125\\menu_catalog_report.json",
+        "bytes": 109914,
+        "sha256": "384c0a8a184985625689059e0501765f1a94c185a041cf717790fd8722e6b010"
+      },
+      "menu_name_observation": {
+        "path": "F:\\开源掌机教程\\_工具脚本\\taspipe\\游戏包\\证据\\晓月圆舞曲\\menu_catalog_nav_full_20261125\\menu_names_observed.json",
+        "bytes": 3322,
+        "sha256": "dca7ce9f5e814231030777ee1aa97821092ce90bfc1d37b1fbc0a1051aa17506"
+      },
+      "menu_effect_observation": {
+        "path": "F:\\开源掌机教程\\_工具脚本\\taspipe\\游戏包\\证据\\晓月圆舞曲\\menu_catalog_nav_full_20261125\\menu_effects_observed.json",
+        "bytes": 3748,
+        "sha256": "3ad433fb21d3b5ddddeded6a2d9ee5fc5c45334af6bfbec6c4cdc7bbaca8e67f"
+      },
+      "menu_visual_review_report": {
+        "path": "F:\\开源掌机教程\\_工具脚本\\taspipe\\游戏包\\证据\\晓月圆舞曲\\menu_catalog_nav_full_20261125\\menu_visual_review_20261125.json",
+        "bytes": 156559,
+        "sha256": "3a01172b11ad89adc20c572c35c344bca88e4579a0e3e4c6497025428ea52237"
+      }
+    },
+    "gates": {
+      "project_selftest": [
+        1538,
+        1538
+      ],
+      "kb_selftest": [
+        336,
+        336
+      ],
+      "cross_platform_selftest": [
+        33,
+        33
+      ],
+      "sources_selftest": [
+        74,
+        74
+      ],
+      "topic_selftest": [
+        166,
+        166
+      ]
+    },
+    "protected_delivery": {
+      "status": "pass",
+      "checked": 34,
+      "artifact": {
+        "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\protected_delivery_hashes_menu_visual_review_20261125.json",
+        "bytes": 11436,
+        "sha256": "8b7986d41225c0b6a448b9410807c63966ab850403dfb9bb80071b58b33244e2"
+      }
+    },
+    "checks": {
+      "source_audit_fail_zero": true,
+      "source_coverage_complete": true,
+      "kb_audit_fail_zero": true,
+      "index_chunks_826": true,
+      "coverage_states": true,
+      "review_preparation_114": true,
+      "ocr_228": true,
+      "review_rows_114": true,
+      "review_sheets_19": true,
+      "menu_114_unique_ids": true,
+      "menu_second_review": true,
+      "menu_names_match": true,
+      "menu_342_media_hashes": true,
+      "menu_source_candidate": true,
+      "menu_last_verified_null": true,
+      "menu_gameplay_detector_false": true,
+      "review_human_boundary": true,
+      "review_hash_match": true,
+      "gba_platform_gate_false": true,
+      "old_deliveries_unchanged": true
+    }
+  },
+  "gates": {
+    "project_selftest": {
+      "passed": 1538,
+      "total": 1538,
+      "ok": true,
+      "log": {
+        "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\selftest_menu_visual_review_20261125.log",
+        "bytes": 165791,
+        "sha256": "9a3ab66024322578295d7c1c4592b72e87fb293dbb26606b8bd5c08ea6381213",
+        "role": "闸门日志"
+      }
+    },
+    "kb_selftest": {
+      "passed": 336,
+      "total": 336,
+      "ok": true,
+      "log": {
+        "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\kb_selftest_menu_visual_review_20261125.log",
+        "bytes": 74821,
+        "sha256": "c545b054c57d162c016c9271542c03de6af1a368bca737abbba7225943ab68a5",
+        "role": "闸门日志"
+      }
+    },
+    "cross_platform_selftest": {
+      "passed": 33,
+      "total": 33,
+      "ok": true,
+      "log": {
+        "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\cross_platform_selftest_menu_visual_review_20261125.log",
+        "bytes": 2685,
+        "sha256": "df44e52548c3d65bdd7bb22274f9e7a8cf50556a2270c8c4cc95bb9acf921ca6",
+        "role": "闸门日志"
+      }
+    },
+    "sources_selftest": {
+      "passed": 74,
+      "total": 74,
+      "ok": true,
+      "log": {
+        "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\sources_selftest_menu_visual_review_20261125.log",
+        "bytes": 6013,
+        "sha256": "e79cfc2ad2150cd9f56fe7893e544d677f6479c51ceb85a149e53415b32be6b2",
+        "role": "闸门日志"
+      }
+    },
+    "topic_selftest": {
+      "passed": 166,
+      "total": 166,
+      "ok": true,
+      "log": {
+        "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\topic_selftest_menu_visual_review_20261125.log",
+        "bytes": 10576,
+        "sha256": "aed86117fa44632b158eac0767d0e6fbcc1d62535d26bab9d32f3e54b83636a9",
+        "role": "闸门日志"
+      }
+    }
+  },
+  "audits": {
+    "sources": {
+      "status": "inconclusive",
+      "counts": {
+        "pass": 8,
+        "fail": 0,
+        "inconclusive": 1,
+        "sources": 103,
+        "packs": 25,
+        "elements_checked": 205,
+        "elements_supported": 205
+      },
+      "artifact": {
+        "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\source_audit_menu_visual_review_20261125.json",
+        "bytes": 16438,
+        "sha256": "aafb49335a45fd1a4e6f908357729ae9531d992d7d5882b0f2286498b2cf2631",
+        "role": "来源审计"
+      }
+    },
+    "kb": {
+      "status": "inconclusive",
+      "counts": {
+        "pass": 6,
+        "fail": 0,
+        "inconclusive": 3,
+        "entries": 55,
+        "revisions": 15,
+        "chunks": 826
+      },
+      "artifact": {
+        "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\kb_audit_menu_visual_review_20261125.json",
+        "bytes": 21848,
+        "sha256": "4d85f8727d562445e9d1a8dfff87082cf89e08a920cf309b5ad44e89174f2229",
+        "role": "知识库审计"
+      }
+    }
+  },
+  "menu_evidence": {
+    "elements": 114,
+    "media_files": 342,
+    "media_bytes": 6874438,
+    "missing_files": 0,
+    "hash_mismatches": 0,
+    "source_status": "candidate",
+    "human_visual_review": false,
+    "gameplay_verified": false,
+    "detector_verified": false,
+    "platform_gate_verified": false,
+    "initial_name_matches": 112,
+    "name_corrections": 2,
+    "final_name_matches": 114,
+    "effect_matches": 114,
+    "effect_ocr_exact": 69,
+    "effect_ocr_visual_only": 45
+  },
+  "pdf_qc": {
+    "pages": 4,
+    "checks": 35,
+    "artifact": {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\report_qc_menu_visual_review_20261125\\render_qa.json",
+      "bytes": 1648,
+      "sha256": "682228b8e0f5d39b89bf12e222b15141e4ee8ad9767e74181a0cfe5f600c292c",
+      "role": "PDF质检"
+    },
+    "pdf": {
+      "path": "F:\\开源掌机教程\\知识库改进优化指导_2026-11-25_晓月菜单114项二次视觉复核.pdf",
+      "bytes": 418916,
+      "sha256": "a310f0c45828ac6cfa622aa9568850d3d49df705b309274d021623ae9b80a66a",
+      "role": "报告PDF"
+    }
+  },
+  "protected_delivery": {
+    "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\protected_delivery_hashes_menu_visual_review_20261125.json",
+    "bytes": 11436,
+    "sha256": "8b7986d41225c0b6a448b9410807c63966ab850403dfb9bb80071b58b33244e2",
+    "role": "旧交付保护"
+  },
+  "checks": {
+    "code:sources_audit": true,
+    "code:sources_selftest_gates": true,
+    "code:kb": true,
+    "code:kb_selftest_gates": true,
+    "data:source_registry": true,
+    "data:menu_catalog": true,
+    "data:corpus_map": true,
+    "data:index": true,
+    "data:menu_evidence_report": true,
+    "data:menu_name_observation": true,
+    "data:menu_effect_observation": true,
+    "data:menu_visual_review_report": true,
+    "source_audit_fail_zero": true,
+    "source_coverage_205_of_205": true,
+    "kb_audit_fail_zero": true,
+    "index_chunks_826": true,
+    "weak_elements_157": true,
+    "menu_weak_elements_114": true,
+    "legacy_weak_elements_43": true,
+    "coverage_counts": true,
+    "menu_114_unique_stable_ids": true,
+    "menu_source_candidate": true,
+    "menu_all_gameplay_false": true,
+    "menu_all_detector_false": true,
+    "menu_all_second_review": true,
+    "menu_all_human_review_false": true,
+    "menu_names_match_observations": true,
+    "menu_review_report_hash": true,
+    "menu_review_human_false": true,
+    "menu_342_media_hashes": true,
+    "menu_ref:source_report": true,
+    "menu_ref:source_config": true,
+    "menu_ref:name_observation": true,
+    "menu_ref:effect_observation": true,
+    "menu_ref:legacy_patch_audit": true,
+    "registry_menu_source_candidate": true,
+    "registry_pack_status_match": true,
+    "old_deliveries_unchanged": true,
+    "pdf_qc_all_true": true,
+    "pdf_hash_match": true,
+    "pdf_pages_positive": true,
+    "gba_platform_gate_false": true
+  },
+  "files": [
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\batch_windows_ocr_20261125.ps1",
+      "bytes": 2838,
+      "sha256": "bbb1c714086e01bf3320bdad63834ae247fe1f73473a8ae655eaccf37083256e",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\coverage_menu_visual_review_20261125.log",
+      "bytes": 44357,
+      "sha256": "f51b950f776c82ce60a0af2f8dbbd77c761a94c8468101262da809333c47bfeb",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\cross_platform_selftest_menu_visual_review_20261125.log",
+      "bytes": 2685,
+      "sha256": "df44e52548c3d65bdd7bb22274f9e7a8cf50556a2270c8c4cc95bb9acf921ca6",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\finalize_menu_visual_review_20261125.py",
+      "bytes": 10615,
+      "sha256": "1f2fc3e2ed17a962e9d755efce2e561e493a879665f75887a528b5764d0dc3f8",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\finalize_menu_visual_review_delivery_20261125.py",
+      "bytes": 17610,
+      "sha256": "410514a16e40ad0132e9941873254e7e615127a0e04b72f12a41650ba5b58fb5",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\kb_audit_menu_visual_review_20261125.json",
+      "bytes": 21848,
+      "sha256": "4d85f8727d562445e9d1a8dfff87082cf89e08a920cf309b5ad44e89174f2229",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\kb_selftest_menu_visual_review_20261125.log",
+      "bytes": 74821,
+      "sha256": "c545b054c57d162c016c9271542c03de6af1a368bca737abbba7225943ab68a5",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\menu_visual_ocr_raw_20261125.json",
+      "bytes": 26229,
+      "sha256": "dfa5fcff9a3506b8c9b03ce50ce20f92fe5750c156c7b91c296d835116fdfae5",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\pdf_qc_menu_visual_review_20261125.log",
+      "bytes": 1650,
+      "sha256": "f3524af58d500d6d78b9aeb5be93ce783390651303d6b6e1350dc2686954e4b0",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\preflight_fingerprints_menu_visual_review_20261125.json",
+      "bytes": 6099,
+      "sha256": "852cfae101e550e2a81356550cb3e9d06b3c93b8624a237e54114bdbfe5f3fc0",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\prepare_menu_visual_review_20261125.py",
+      "bytes": 7282,
+      "sha256": "f7aae95545591c5bed624fa75ac3c800ae02ce5c5e5c24ebf4e83cc5b4e4b64e",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\prepare_menu_visual_review_baseline_20261125.py",
+      "bytes": 9634,
+      "sha256": "9691475aa2760fe61b4f04c42001366db7589d797f49490adda61a3e8d398b55",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\protected_delivery_hashes_menu_visual_review_20261125.json",
+      "bytes": 11436,
+      "sha256": "8b7986d41225c0b6a448b9410807c63966ab850403dfb9bb80071b58b33244e2",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\render_qc_menu_visual_review_20261125.py",
+      "bytes": 14405,
+      "sha256": "87094ae6d7a2c482a58d27fab0b5bcd409a79913660c93643c0d13df2676725c",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\report_qc_menu_visual_review_20261125\\contact_sheet.png",
+      "bytes": 339847,
+      "sha256": "bf1c55437c482933d5bc5c63bacd18659337edd71365f53aed11bdc2c524f121",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\report_qc_menu_visual_review_20261125\\page_01.png",
+      "bytes": 206806,
+      "sha256": "4b849152c904ba3673575ca8ed03bf81dda792fcac0df27360c6809c2e6a0487",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\report_qc_menu_visual_review_20261125\\page_03.png",
+      "bytes": 196982,
+      "sha256": "cc600e803bc0ac740907801a70c1b5fef91b3e42f455faf2e7a23c99c28b296f",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\report_qc_menu_visual_review_20261125\\page_04.png",
+      "bytes": 95160,
+      "sha256": "a22a220131d10219ae345502a28cf8a248c1c32c361fbbb2f0cdfd115f6a57bf",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\report_qc_menu_visual_review_20261125\\render_qa.json",
+      "bytes": 1648,
+      "sha256": "682228b8e0f5d39b89bf12e222b15141e4ee8ad9767e74181a0cfe5f600c292c",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\report_qc_menu_visual_review_20261125\\report.html",
+      "bytes": 15658,
+      "sha256": "62a4b7ef6e02251fc25c0a77f48f8c13a951bf7fe56233197575ee1297892219",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\blue_001_effect.png",
+      "bytes": 1265,
+      "sha256": "9c58ea7117b9b8f4c1e54dfd270efe079bdf14ded5df9bba6fd8642cdf15cc1e",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\blue_001_name.png",
+      "bytes": 627,
+      "sha256": "aa18facffcdf5b344ecccc2b0ccacbf2c122e9bc34de3684a6c33e334f092089",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\blue_002_effect.png",
+      "bytes": 977,
+      "sha256": "4a4b50841a16d02ef033cc5ffdb93b4ab7ad5253dd9809f5819cba8a52dcd831",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\blue_002_name.png",
+      "bytes": 632,
+      "sha256": "61b7211894a163e5a3c3aa18cbdb470be646894ff6da4b83d60e1aa438a3f661",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\blue_003_effect.png",
+      "bytes": 989,
+      "sha256": "e0bed418c7867fa3ce8775d920b074b9ac69bb035530fb3dac479d051a795ebd",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\blue_003_name.png",
+      "bytes": 613,
+      "sha256": "0555f692b26c46cc93fec13383f5d44c67b843bd26a70c76393929e8eaa5599d",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\blue_004_effect.png",
+      "bytes": 935,
+      "sha256": "bcccd2c7a813d79d82256792b35ea3871229e5edc9a3ce426894b6421ff772dc",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\blue_004_name.png",
+      "bytes": 628,
+      "sha256": "9824be0e3a18b6a6344cad98b77409b0dd3ff2b731f67de2dcc00c7a6ec04f18",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\blue_005_effect.png",
+      "bytes": 938,
+      "sha256": "52977f09786c2105386e120d2c9ab7fd4a9e0489b1ab136d2959eaf099938f91",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\blue_005_name.png",
+      "bytes": 595,
+      "sha256": "007d6743d7ab59ef07ac60f984f2436462281389f10e480f503453ca72814663",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\blue_006_effect.png",
+      "bytes": 1041,
+      "sha256": "64a6cba5a51368009318bb99c32b2fd0a0163c537882368b2112efb8b580e9ca",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\blue_006_name.png",
+      "bytes": 637,
+      "sha256": "ff2f7713314af3891bfd972f92c46e14bab84c048900407eb1feeeaa86403291",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\blue_007_effect.png",
+      "bytes": 968,
+      "sha256": "d8cc8d6bdef75bbc3223be7632caa4df32ae3220509fdf85d9e0a074f4ffb54e",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\blue_007_name.png",
+      "bytes": 666,
+      "sha256": "2a235c608bd2c5871831e55c260183c4c7ce91cf1a1e6905cbdbad171ac4f651",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\blue_008_effect.png",
+      "bytes": 966,
+      "sha256": "0c00146bc3a3033bef1e6b7c627c42298061cfe93980080c0198aa279bbfeef9",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\blue_008_name.png",
+      "bytes": 637,
+      "sha256": "6510076aa8344179c83a352f6129fd4c25c23258320c072653bf842b7eaf188b",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\blue_009_effect.png",
+      "bytes": 999,
+      "sha256": "1cc0b5a3768ee2659dff68db03b7ca3bd97d0c093069c68dca0d953391dec203",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\blue_009_name.png",
+      "bytes": 690,
+      "sha256": "8999cb372c7b73698ca642b9c68c751112f73d53851943827843aa9a6eed521a",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\blue_010_effect.png",
+      "bytes": 853,
+      "sha256": "f8c0ed2ccdd26bd7bc925a799080080f544e1f78f80e1d72bf8b585f0f59c742",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\blue_010_name.png",
+      "bytes": 608,
+      "sha256": "41d83621531b724071c60f6f661586179d42dd8528fa9162b054b1c48b7d418c",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\blue_011_effect.png",
+      "bytes": 921,
+      "sha256": "d60cd0bad4675662346c09978ab0816ebb7d4ff7d6bc8580ddd843d1e0df4c45",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\blue_011_name.png",
+      "bytes": 634,
+      "sha256": "3758af38d0c44e7e670e1dbbd88083e809d170986f4a3cde43d333f17f6c99a3",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\blue_012_effect.png",
+      "bytes": 921,
+      "sha256": "d60cd0bad4675662346c09978ab0816ebb7d4ff7d6bc8580ddd843d1e0df4c45",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\blue_012_name.png",
+      "bytes": 580,
+      "sha256": "9be9654c46ccb37ae87d68006392871b20915bc9787661e98033bf46b2bbf947",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\blue_013_effect.png",
+      "bytes": 905,
+      "sha256": "8e9d81736495362126f0f48807e9045414f177764563e6f8136357c9823f2083",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\blue_013_name.png",
+      "bytes": 658,
+      "sha256": "618908d4a072ab795ff2e53c92a97123ceaf010af41779fd23fa489806358b00",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\blue_014_effect.png",
+      "bytes": 1068,
+      "sha256": "41933947f05990adcb5445826b960fd8e6bf20bf5cc9ae22c0f5a40475e71c8c",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\blue_014_name.png",
+      "bytes": 627,
+      "sha256": "9e2c48e26230867ad56d49f85c921f4507bfaaa65c3f00013580f81232452009",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\blue_015_effect.png",
+      "bytes": 856,
+      "sha256": "a2b0aa2fae3ac2ca8ead20b81d9c44126c8720c9f173841912a12c69d129dcc4",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\blue_015_name.png",
+      "bytes": 656,
+      "sha256": "cbab04415aefe56b3964314578a68e3cfc8034b1cd9e97c72b0967a68fee40b6",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\blue_016_effect.png",
+      "bytes": 1094,
+      "sha256": "242b7355e9bd8017e6f3a036cc5bebc95e95c2b9753e5b74e07f41e6badd564f",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\blue_016_name.png",
+      "bytes": 695,
+      "sha256": "db8e275750ecd22d3985c0015860f77ba0677939ba3d01b97e1c3c19f4890c14",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\blue_017_effect.png",
+      "bytes": 825,
+      "sha256": "8067aa254a5bb0ef9d5fd4a2d12053f17e309eee68f55cc7245088cc4b31790d",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\blue_017_name.png",
+      "bytes": 696,
+      "sha256": "71842d3045d5a36b37a1196580fe1c0945841ccdb783484f3ae08af6b77df202",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\blue_018_effect.png",
+      "bytes": 1000,
+      "sha256": "94216ec0e19b5310bf115d97c5517ca820dc673ccc3cd52942cf03ef0f64c883",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\blue_018_name.png",
+      "bytes": 614,
+      "sha256": "bffbe7952934ec25f4f2dd3d32e78e66951c891142d0bb6a598a7df1b14c73da",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\blue_019_effect.png",
+      "bytes": 1005,
+      "sha256": "be2ebea12a0b07414de55061de917574f59cb5e513ea42d4ace9f6d3810c20fe",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\blue_019_name.png",
+      "bytes": 652,
+      "sha256": "14663af97251a623f51c3b527cbb4bcccbec0b0d74d280271e78f9540c13c3d4",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\blue_020_effect.png",
+      "bytes": 1008,
+      "sha256": "4c55038bdc9cc207d1833d827fcb62497dfb5efef4e2bcf9b633dc0845b2b4b5",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\blue_020_name.png",
+      "bytes": 591,
+      "sha256": "453d3bc6f9a58af6ca74c8c969fa6aedf59d7524a86d3735d87ab5fe300a270b",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\blue_021_effect.png",
+      "bytes": 1177,
+      "sha256": "b49eae984a618e3962bf75cb427566e2f25da1fc4eccf843d63f44d4cb699d3a",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\blue_021_name.png",
+      "bytes": 634,
+      "sha256": "56f82f479093d68f422fd70da62415c53d9a9193dbd0e63c11cd0b8c9cd8700e",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\blue_022_effect.png",
+      "bytes": 1003,
+      "sha256": "1303384f80cb20c12dd53386312495c67a54d25db6fea845a6a69980781cf3c0",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\blue_022_name.png",
+      "bytes": 628,
+      "sha256": "1ebc2eecf8ea6d54d63dcdd849112d65b85f2c867a57f66800b35bb8223f8263",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\blue_023_effect.png",
+      "bytes": 1057,
+      "sha256": "23d0cc6338c71307f97e65ede43dc9059b075a0e63dd18976821556ffcb3e1b5",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\blue_023_name.png",
+      "bytes": 673,
+      "sha256": "18b275762c1c59c355a4f7d7722848d423b197e6dd6736f41d9be27eb3bbfeb1",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\blue_024_effect.png",
+      "bytes": 940,
+      "sha256": "3a4689ef285a86b62dcf85898347c9b5c9c16653aa5927939de768bffb278756",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\blue_024_name.png",
+      "bytes": 615,
+      "sha256": "bb8666654e98d66e0c180816c6309231602e02d4bab90e5ec39b85a0ed8b7b31",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\red_001_effect.png",
+      "bytes": 931,
+      "sha256": "375c6e6825536c41a6df4cd177f792950742c92da0d64e08f3c347a48c03ac93",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\red_001_name.png",
+      "bytes": 595,
+      "sha256": "21b1c691e1473109050d8e2d3865c8ef3d515ae5712cf8e28a4d9dd68dc7d9bc",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\red_002_effect.png",
+      "bytes": 903,
+      "sha256": "69bdd3b73822e642eddfde60b1bfb954066f22410175c95446a1eb5ca6200244",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\red_002_name.png",
+      "bytes": 594,
+      "sha256": "e92b8d75a62869deb7e82c315651f532a21344b664d68ff5faa42157de4f2ca4",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\red_003_effect.png",
+      "bytes": 770,
+      "sha256": "d18d493e864f00cb5352f903dc8a117d67578cf61d87b73ce8e48b66c9aad252",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\red_003_name.png",
+      "bytes": 588,
+      "sha256": "8216f64ab63268fe8abaa4513a2e2b17b9a4ee9edc5d5c6f1730cdedf9cb720f",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\red_004_effect.png",
+      "bytes": 860,
+      "sha256": "4f5ab954667ca34206ae36093501b6a4b464e0a17161ca056433c270e2248c30",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\red_004_name.png",
+      "bytes": 609,
+      "sha256": "5324d37d9ee37c5f2a2e8e2aeb10e58738ca6626488e67f2690d26287b62952b",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\red_005_effect.png",
+      "bytes": 787,
+      "sha256": "d049d3f30f3e8bd0d2114ad3f818d94993434a5336c985c37b87dc3089dc44a5",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\red_005_name.png",
+      "bytes": 625,
+      "sha256": "8294d0d8251827eba178c3a9246d8e2abe5fd40c639d3801394a356da6e64f1a",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\red_006_effect.png",
+      "bytes": 934,
+      "sha256": "ceef8e2b63aac70978c14180b473a7413ad53c9de673ab179b58325751dc8541",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\red_006_name.png",
+      "bytes": 633,
+      "sha256": "db0631b5e9f2be44279fb2b80eb05847c6b7972a2f2f276058bdd295428e767c",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\red_007_effect.png",
+      "bytes": 1283,
+      "sha256": "6485a8ea5c234a997518ecba1a38ac21d40471d284ffb72bc28ccc0888eaf467",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\red_007_name.png",
+      "bytes": 616,
+      "sha256": "85b0aff1d5100222715bf2953ccbfb650e4ddefff7c2d178ec324212ac80c99b",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\red_008_effect.png",
+      "bytes": 908,
+      "sha256": "5f849bb9b3b820d38857fb9c6e4074e2da232d090202c4aaf467bba0c26677f7",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\red_008_name.png",
+      "bytes": 644,
+      "sha256": "89a2356e6f6573bfbcbc13dfa76727891f417706f1cff454b062a1abfdf5c8e3",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\red_009_effect.png",
+      "bytes": 889,
+      "sha256": "5b7aff6e222b45fb3b32f302cdb31b0077906fcc46bcdbbcf3afe7d1f7f7def5",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\red_009_name.png",
+      "bytes": 610,
+      "sha256": "07bbea198e492071ce38b7e15dac5ab05095261b98fb77654040cbfd5f54f8e2",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\red_010_effect.png",
+      "bytes": 1016,
+      "sha256": "38fd30d2d0d9d95b8c9bd236a0d4e48182e0182666d0e1919feeda351c15f111",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\red_010_name.png",
+      "bytes": 592,
+      "sha256": "606a8ed46dfabfe599f7ebf10072fbb169d343cda065de8c9d8c8f8eb618cdc8",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\red_011_effect.png",
+      "bytes": 1035,
+      "sha256": "4573be1cda903569d098f9bae4f9e079a7401dc63eca8f1a4f731ac23ef64a78",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\red_011_name.png",
+      "bytes": 588,
+      "sha256": "2208035bc04c7e8866de66d6bc4ff1f13bcb8e01ce68f38d39daf455c81e5c74",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\red_012_effect.png",
+      "bytes": 897,
+      "sha256": "23c193640e2784a2854086010cc162cf847ea1c183a10b6489be079ba60201ff",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\red_012_name.png",
+      "bytes": 621,
+      "sha256": "db3706146bdb75e05792675571ff6c9c3c72f2bda7480c144298535aa1f40dc3",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\red_013_effect.png",
+      "bytes": 775,
+      "sha256": "1afa4d5676ee23e051b47bb2c265ce234100eae778eacec110c6e748ccd0025e",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\red_013_name.png",
+      "bytes": 606,
+      "sha256": "6a92eb01585b04a7a955de22684958c7bf094b2d1e5bd52e52e3b6360ac7fdba",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\red_014_effect.png",
+      "bytes": 835,
+      "sha256": "e168b95a4e5a2ea54b3adf350e6f30807e1360e5405f2c3fb7a19a98b74a5845",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\red_014_name.png",
+      "bytes": 670,
+      "sha256": "410ac44912800029becfc54fe246d30d679cbcebfdf56286ad5c8bc2bb957009",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\red_015_effect.png",
+      "bytes": 945,
+      "sha256": "8466d82773bd67777c8207431a97a2741d600baa9947077a67dc89d24642ccd7",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\red_015_name.png",
+      "bytes": 626,
+      "sha256": "c85a0377173f6be3f3850caa2a2cfeadcae230aa8bdd9aa00eaf413746d97c45",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\red_016_effect.png",
+      "bytes": 1014,
+      "sha256": "9abdd548d15c6171a98c37b02e7e5e36f7e3d04b7c98e6578f78cdd32c4d8652",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\red_016_name.png",
+      "bytes": 625,
+      "sha256": "8dc85ea2a6587c39cab52abda7a741df3f86d0d5aa88b017f00392043fd77fb3",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\red_017_effect.png",
+      "bytes": 976,
+      "sha256": "989423234667bc17735ef4a4e344af416bfe9b4a2c66c93721571ea3da90826e",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\red_017_name.png",
+      "bytes": 628,
+      "sha256": "e1869efd26d38457f29c686f1a3ae0718d53841bc0106be47fdf6d55592c92c3",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\red_018_effect.png",
+      "bytes": 810,
+      "sha256": "ec1fc5f8cee7c9af4097c44f2495bad85b676ea1718c38fbeb246543370d70cf",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\red_018_name.png",
+      "bytes": 644,
+      "sha256": "30ba8e752b9640458368aea6cce2070cee2f26ed8455dcd88193aace4bb27f1f",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\red_019_effect.png",
+      "bytes": 1091,
+      "sha256": "af083f8981150fbf9049349139ea8ccdea29d98cb2170075114384bd827b55cd",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\red_019_name.png",
+      "bytes": 614,
+      "sha256": "a702090cdf06302e53344ce7c08893c0684fc0474954e4d71993f89050c7135e",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\red_020_effect.png",
+      "bytes": 863,
+      "sha256": "58c32029d25da4ef70fbb4b39f49eebba0052785768220f7b7b9d34685123dfb",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\red_020_name.png",
+      "bytes": 620,
+      "sha256": "631df9d0e08a517204ddd41d43454156ce57176c93b6be89d21731d39b69a700",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\red_021_effect.png",
+      "bytes": 785,
+      "sha256": "d856687b33c92b80bd1ee0e1e741caef23f4b218cac081d25515eede77e96f90",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\red_021_name.png",
+      "bytes": 584,
+      "sha256": "c5350807fa7c21ca7bc124fafa853389ae1a391975060a2e72e4555bd47447ec",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\red_022_effect.png",
+      "bytes": 1014,
+      "sha256": "846af0b1de7290c573df02bb9ec8c87c5606840a2d9221b46026149fa5003f85",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\red_022_name.png",
+      "bytes": 605,
+      "sha256": "75a944e52542bde3dde7321a343fd9d864371f559b5b526679a8a9a054b3dbc7",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\red_023_effect.png",
+      "bytes": 1026,
+      "sha256": "f6f2e1fa379e81f5bd8fb39e039394e4ffd14ecd4047efc572425ce43b145345",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\red_023_name.png",
+      "bytes": 578,
+      "sha256": "370fac675e9552d228eefc9139ae78fb8d07b75d7c1021d20a6a4b568bc3ef01",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\red_024_effect.png",
+      "bytes": 1000,
+      "sha256": "cc2e24d7720fc5ad3ca46a3a83789d699fc188ad20d3f91217e83155f2e36b44",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\red_024_name.png",
+      "bytes": 583,
+      "sha256": "d5bf3d33e44e86f95549a8f7658aa2c9326cf0d450e546b4ae357db6f6b782cc",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\red_025_effect.png",
+      "bytes": 959,
+      "sha256": "907f79bfd3f50e000479b0fe6cfea720fa63cb7ab4d746ee47be06bfff668917",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\red_025_name.png",
+      "bytes": 593,
+      "sha256": "846c1c6cce0096ebf50e601108fe35797881a893d4abd2f980129a7cf0b2d193",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\red_026_effect.png",
+      "bytes": 1055,
+      "sha256": "4a89bd6d4d60daaa9f0152939f6d4f0d1ee7c393154f9d7e15aab53be7ea22b0",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\red_026_name.png",
+      "bytes": 625,
+      "sha256": "1e69695f445f620c4912eafe219813b851b52d00cfc28bb21e87d6c798d06b4b",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\red_027_effect.png",
+      "bytes": 943,
+      "sha256": "96369740cefac65a58624e4c761e491320bd2c34682a7ac8fe88a4f9a52d29ed",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\red_027_name.png",
+      "bytes": 629,
+      "sha256": "d968a1cb5b0a2e59ddf832d90134333d26368f22b8d64eabc491e78b82fb5b77",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\red_028_effect.png",
+      "bytes": 973,
+      "sha256": "dafe1f1981abb374258e7cf475d6a6cbc7ab1c6da8d52a5098823975c5d5590a",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\red_028_name.png",
+      "bytes": 619,
+      "sha256": "5b0ff104705fa70468a6e164b1885c2a219a3f99b60517b2d8fbd906a8b9d584",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\red_029_effect.png",
+      "bytes": 881,
+      "sha256": "45c25b336cfab7c02f25fcab80592b4705c9bab72f054b1ef56b8b06d1b04797",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\red_029_name.png",
+      "bytes": 582,
+      "sha256": "0242e1039e292be1141a60b81aa92347e6665bb7a67f02d0671a1a469310edc2",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\red_030_effect.png",
+      "bytes": 960,
+      "sha256": "599184634a822fdb8f388a61d7903761c6dc6fcf3544ffce61d5cbcd316ddfac",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\red_030_name.png",
+      "bytes": 619,
+      "sha256": "1d59cbe91033f7788b4e7b58339afde284afd407d79354cd28f37e538316fd3b",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\red_031_effect.png",
+      "bytes": 967,
+      "sha256": "6ca4c54c4626512f0f267042ea0c9cc33e1e516fd8f660dfbfba1c05c1a854e3",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\red_031_name.png",
+      "bytes": 597,
+      "sha256": "0cb9203e5b8f0d8f478840cfea212844e9053c9e0e94b46bcfd8efbf19e162ca",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\red_032_effect.png",
+      "bytes": 890,
+      "sha256": "2b5ded04892f5f1d645d7af2e5b174104259ba003d6e22446839330071bd1093",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\red_032_name.png",
+      "bytes": 641,
+      "sha256": "8fe88fdb48084e93b5c3770a5af16d193d7f578dc7fec781d41af9ba150ad3cc",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\red_033_effect.png",
+      "bytes": 1180,
+      "sha256": "18fe6863474584670e532c0261235b88499573ec2897bbbb37ce894d0aa02c86",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\red_033_name.png",
+      "bytes": 637,
+      "sha256": "cfe77d614901e24f9b49c8cebbe2173ee70b5cc7fd19f4c9763fae09901ac89c",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\red_034_effect.png",
+      "bytes": 1006,
+      "sha256": "0264c62cea841f81cea4f77e89f264158ad4fa068771b64d21fd45103d22bbda",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\red_034_name.png",
+      "bytes": 616,
+      "sha256": "a0053c7f49ade0c11a83d15f6e46ee5c0b875fac9f711d93446c35bdfa4d5c0f",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\red_035_effect.png",
+      "bytes": 1048,
+      "sha256": "df70310e9d50d58ee7711263bbffa758c7a71253a3144a05d1a9ff2e71ec9c49",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\red_035_name.png",
+      "bytes": 592,
+      "sha256": "ed8a1b55ca6640078ecc9422321f64302dfc9ae6c43b404422387e0ae251a531",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\red_036_effect.png",
+      "bytes": 1058,
+      "sha256": "aed88bb676aa9b3500c0d0602bb6040285520d01556570ffe330ba34548f4f6e",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\red_036_name.png",
+      "bytes": 571,
+      "sha256": "3007faae9efbd5c110bdbeb17bec83c1d2000223547127aaa732a2bbbd840b06",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\red_037_effect.png",
+      "bytes": 870,
+      "sha256": "5284d500742eb690480649457d895612f3a25403198fab3a578ce6560350e999",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\red_037_name.png",
+      "bytes": 613,
+      "sha256": "7a1dc2d4ce6e097f3aaa0934f4d0b94772fafa0eea37316eff580ae5702e2778",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\red_038_effect.png",
+      "bytes": 845,
+      "sha256": "a7c2a1f5a517e6651c4c7cb6b78ee77505a8d52300de16dfe79ddc82bd8077ac",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\red_038_name.png",
+      "bytes": 659,
+      "sha256": "b248858be36677f6e6303ef72996d69143999fac2865136290f032e2139b69d4",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\red_039_effect.png",
+      "bytes": 877,
+      "sha256": "47d7592a7da621a9f8046ca620e868410374a6ff0db51cc0de76f497a212d9ce",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\red_039_name.png",
+      "bytes": 641,
+      "sha256": "10edb79fb1d4688728f9da808d009e05ff28f72bb1b593d2ebc163dcd2cd5b5c",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\red_040_effect.png",
+      "bytes": 845,
+      "sha256": "2bbf219529a4a39a2405d5d121524b0f7c590306f445baa79932aabc11c18ff8",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\red_040_name.png",
+      "bytes": 629,
+      "sha256": "665095bb39f0d853d0277f5e5764bbb3c90e1899f6d5179928a9ebebfd88ca43",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\red_041_effect.png",
+      "bytes": 961,
+      "sha256": "490c236f63ef0873947f51198205910bf723c8ec6f1e355ef6b6d72ee717de88",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\red_041_name.png",
+      "bytes": 620,
+      "sha256": "ae1d79b391567753257fbc786e0c1ff107a6c66b51cf41973a5ce8545bf0ac6c",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\red_042_effect.png",
+      "bytes": 837,
+      "sha256": "bd8324ef47438ca729ab7dccbe4b95bf7e5d0ed03dc4c2e62426e29ab2aaa558",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\red_042_name.png",
+      "bytes": 596,
+      "sha256": "fbaadf29ef7a38b313e985498ab6a83832be08a11bbb251119b153736659aeef",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\red_043_effect.png",
+      "bytes": 965,
+      "sha256": "24ae1b537f3d89cd4e1d534c0eb30a28468416be0cf1b178dc91cd5a23c2fbb8",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\red_043_name.png",
+      "bytes": 660,
+      "sha256": "318da56151fc9f84f7591f70c5ea5e843ee72cadc59aaf5dcaee1937d4792eae",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\red_044_effect.png",
+      "bytes": 1070,
+      "sha256": "59ae5f49ab1f44024e861a19a8335d489af1f195222c4640207dadb312c0ad82",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\red_044_name.png",
+      "bytes": 620,
+      "sha256": "1f80f348c8c0cb69f6fe77509ebe7e962cca1f2f28e85638cc502a044aab1671",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\red_045_effect.png",
+      "bytes": 1003,
+      "sha256": "365a0bf440faae2728bb95184eaddca807a44271955a16b341cb2d2e14c93dd5",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\red_045_name.png",
+      "bytes": 589,
+      "sha256": "9ed47a5f2821f5bad06ab84ab6a60191b55da088c29f2776ce294d142d036590",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\red_046_effect.png",
+      "bytes": 812,
+      "sha256": "31263fdbdb895ca005b9d23cb15e9387421d4f1a25ef02940c78dd990411bf58",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\red_046_name.png",
+      "bytes": 644,
+      "sha256": "2e4d93896a23036eee21b96e84225ac1cbcfbfde0ea5407f580bd4722cbae425",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\red_047_effect.png",
+      "bytes": 1041,
+      "sha256": "f53395a0279dbe8113803ef051f67cc53cd2ec205d234bbcc063b1e342aca5fe",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\red_047_name.png",
+      "bytes": 635,
+      "sha256": "7623c8495f5313bc5a01ecca0b0a52e2624eff87267f0d10b634ad6952cc2dcb",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\red_048_effect.png",
+      "bytes": 935,
+      "sha256": "90596a4ae385024db8a437db6d3cb0a054f9d07ddeac8a1dd05c612e92dbec58",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\red_048_name.png",
+      "bytes": 704,
+      "sha256": "6b9ca5a20d7e43be08d3d664496e55bc11c85cbf4ac1594bc2bbaf87c442891a",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\red_049_effect.png",
+      "bytes": 873,
+      "sha256": "8645dcb23e712e2ba7ee64ddfb8a03dfee81681b16d9cda00e0023e8a7e88409",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\red_049_name.png",
+      "bytes": 653,
+      "sha256": "f493188e482bf2c2f7d0dddf61c4cb50c076795798224401033d20946080d94b",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\red_050_effect.png",
+      "bytes": 824,
+      "sha256": "31d7f0faacdf066936746bf59c6ea6a4ecf976f410d27fa039b902bed0353636",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\red_050_name.png",
+      "bytes": 607,
+      "sha256": "b66da3a024718a4b173599469fb657c6fdfa40b0126d1252c0b2f7bef5bb9f59",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\red_051_effect.png",
+      "bytes": 1037,
+      "sha256": "d8d09cfa130b552be8149152b50fa333ce4cad6df8ff8fda1653757356debb08",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\red_051_name.png",
+      "bytes": 630,
+      "sha256": "ab8d9101c5d386b473d861dff9fc6f44a9eded9b1f715d5fe450b02c9b850c2d",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\red_052_effect.png",
+      "bytes": 1013,
+      "sha256": "760b75f3ffe6aa42d11afe076293511db5bc25a997d54af29b90bef3b273f7a0",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\red_052_name.png",
+      "bytes": 655,
+      "sha256": "da291396964593e5659c2a6ddc19f66b4f35ed09dbe8f4d4ea501bc5fc6c1902",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\red_053_effect.png",
+      "bytes": 1015,
+      "sha256": "fd3c449ea21eb3539655f5b8075b3724eb6710103096901651ff4a02d1514bee",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\red_053_name.png",
+      "bytes": 658,
+      "sha256": "7c83a7daa5201342aee3188b8a8146db8b899167e82c2f235957f0ca3b12daf2",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\red_054_effect.png",
+      "bytes": 928,
+      "sha256": "33e0e4b654226c5cb2c0d5f3a477b4a34a18a66fa90196e3464615bde85f90ee",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\red_054_name.png",
+      "bytes": 586,
+      "sha256": "6515546d92e2567d63c79ff7eda987f92aa7f76837618547e7ebbcd49da8e73b",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\red_055_effect.png",
+      "bytes": 869,
+      "sha256": "7f2052577851bffd94b5deacadfebe31b0a3d14f48263255dd2013fdd27c72a3",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\red_055_name.png",
+      "bytes": 644,
+      "sha256": "59c0a872f0a44fc9e6f5bc808d2eae857718b4a722cb2f77198f2f7d7057a823",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\yellow_001_effect.png",
+      "bytes": 879,
+      "sha256": "78e704a61fcb94fb015bdd3a49e9cb58283f7046bf47d93e228f91cb293e18d4",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\yellow_001_name.png",
+      "bytes": 663,
+      "sha256": "020766d0725ae8ad510be6a77176e5e7d46d8b36f73ecb3dd23e80d0ec3187d9",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\yellow_002_effect.png",
+      "bytes": 860,
+      "sha256": "396228e3608dc0730847442d151a7b8ca0cf8d364288bd586125a33fb168f910",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\yellow_002_name.png",
+      "bytes": 661,
+      "sha256": "3a7f0d9cf01bf1ef36db4278be450dd6c500345311e89614be04b6171c391361",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\yellow_003_effect.png",
+      "bytes": 1186,
+      "sha256": "7bfc4ad38ca9bba3bfb3d485baf55b89b12199b0b226b4ff684e56618897b8bc",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\yellow_003_name.png",
+      "bytes": 681,
+      "sha256": "39bacfca382413522efed43ebf3e8fb5ff01edc571b05b5165dc1fee723157e0",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\yellow_004_effect.png",
+      "bytes": 1226,
+      "sha256": "52686acda68b05b31e1e97e72b91737611394b396b3ff58b9279353832831051",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\yellow_004_name.png",
+      "bytes": 642,
+      "sha256": "b6a31460fec58bc05173aa19f62d62301bfaa3d989f87c7d1c40ffe631c1d2a5",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\yellow_005_effect.png",
+      "bytes": 1111,
+      "sha256": "cc0f75f1914351660364a622cc4682da6125b595b9e356c4107bc68a862e5820",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\yellow_005_name.png",
+      "bytes": 694,
+      "sha256": "165bb383d5f8a89bc47ee2be5b154ca6cc57b09a1af31db659b04478fe96eebf",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\yellow_006_effect.png",
+      "bytes": 976,
+      "sha256": "c260603671efc1e298440558749dae35ec83efe7ed383c686495b6a1c02542e5",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\yellow_006_name.png",
+      "bytes": 667,
+      "sha256": "aa98e51a71a5f464b17aecb22ce67c003c946300e826971419fa2aebf6343ba8",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\yellow_007_effect.png",
+      "bytes": 1099,
+      "sha256": "d0eb0a5a0b05794eb7d2c3f840b77b47190529f3f9104ec65df67bd2ded21310",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\yellow_007_name.png",
+      "bytes": 638,
+      "sha256": "b964b65d9d12e69153b4ea36d60475280e862c149d8935f28bdb77b91c94dc3f",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\yellow_008_effect.png",
+      "bytes": 1078,
+      "sha256": "1f9285973b79cbd31df005e16358133754c852a97b5d9340cd94791d2db8cec5",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\yellow_008_name.png",
+      "bytes": 657,
+      "sha256": "c7527add530943b8e6bb1b8c8396e39ca3dbba24fb20a3ccdd8f178520fc4799",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\yellow_009_effect.png",
+      "bytes": 956,
+      "sha256": "92320edb58c6285c80745caf7083e6c056adcc591695944335059dbc577e4200",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\yellow_009_name.png",
+      "bytes": 632,
+      "sha256": "e48d502ecdec86af72fe984c10ecf8135c4271d867e53245ac5eb3e91f060db0",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\yellow_010_effect.png",
+      "bytes": 1131,
+      "sha256": "b1311c34ba0b5bf7d458024029c8cb04df46ece955762f8aa7b6c1049b8bbe48",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\yellow_010_name.png",
+      "bytes": 629,
+      "sha256": "466c5ed06412535efe8f30600025d3a645dd30b69f0b6014b51f562bc2a1abf9",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\yellow_011_effect.png",
+      "bytes": 990,
+      "sha256": "09ac132d4de41676c618b8c308396e1468d83fc141ba4e8582c6961968322081",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\yellow_011_name.png",
+      "bytes": 645,
+      "sha256": "f1b2250135478d3f3493caa2207a13c87248f64188b74a7c05b75f5a82fcca60",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\yellow_012_effect.png",
+      "bytes": 976,
+      "sha256": "65d368dca23021e8ea06e7a96f20589a9a1d72768caccee4b55f544b8388db9e",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\yellow_012_name.png",
+      "bytes": 627,
+      "sha256": "72d457f31e4286648bb4e8ecfdc881228053bda4c13b44d51b43924ed1cd3562",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\yellow_013_effect.png",
+      "bytes": 908,
+      "sha256": "247221d2353078c13c2e117d1e56e62f33a645dc0382b83f81a4f05a0696723e",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\yellow_013_name.png",
+      "bytes": 680,
+      "sha256": "07f26d5f80e7e616ee3c90513eceb6c04af03119c4b85249d8061f52450df2ff",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\yellow_014_effect.png",
+      "bytes": 1056,
+      "sha256": "8431bd4fca55356e95e43cbbca40fac6152d4c43bb8c5c9452fe183453f21d83",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\yellow_014_name.png",
+      "bytes": 653,
+      "sha256": "a156ec2e46a43bfd8a965bfeeb9fb2cb45cc8a7cfc1e30d30ee2899dc61b9302",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\yellow_015_effect.png",
+      "bytes": 1028,
+      "sha256": "686aa175758d1d0fdc63045f5ea69ff6f08415183d84915e0802fafbcd19b7be",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\yellow_015_name.png",
+      "bytes": 686,
+      "sha256": "656b3438e79b7eb1a43e6ff7c0448b1799ea66ba953440d01c133b2e86d4048c",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\yellow_016_effect.png",
+      "bytes": 1134,
+      "sha256": "38e066f65a3941762688cc0c4c2f0c472e2e8534de4ec55ade16b6cc266281c1",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\yellow_016_name.png",
+      "bytes": 700,
+      "sha256": "621cc441393761194f201d5258c173a7dde1a36a77cb8875e0017a831544e2c4",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\yellow_017_effect.png",
+      "bytes": 1126,
+      "sha256": "300d64f9dc7cec210495be81d66f6f1883bed728f28c95156e78a67dff63e495",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\yellow_017_name.png",
+      "bytes": 667,
+      "sha256": "f4008e477f433172dd6d93e6fcfa30676af7942908729f84cddd2813a4bd107a",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\yellow_018_effect.png",
+      "bytes": 1066,
+      "sha256": "49261476719ef32e4f7f3bffbaf356ac7d871d74742bd4036c56faf59d5f4d19",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\yellow_018_name.png",
+      "bytes": 681,
+      "sha256": "424d9f49fedc16a7017ab081b403d29d933423cd040d2db7579521b7443bd6d7",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\yellow_019_effect.png",
+      "bytes": 941,
+      "sha256": "82168bee2078a0490a0994ff62c61b03cdf1d311e0691af3fade95d106b3689f",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\yellow_019_name.png",
+      "bytes": 633,
+      "sha256": "d8a2a3a91610a82b56078a2846302f9ad6aa2af50a2ae3d610d00c975551ca5a",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\yellow_020_effect.png",
+      "bytes": 975,
+      "sha256": "e9f967825ac76e3af9bc42fa46ea1e0b1266ae286905acd6fb8de839f314d6d2",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\yellow_020_name.png",
+      "bytes": 657,
+      "sha256": "128be5175de0bc9e0d1a028bbbc305e83a828edbca589db60654e86e3ff1b65f",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\yellow_021_effect.png",
+      "bytes": 958,
+      "sha256": "928aae13b0bbf97ce040240d53384977b610d8c52ffe0b94368b40475b48d4e6",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\yellow_021_name.png",
+      "bytes": 647,
+      "sha256": "ae9e6b471d077d34aa7b1bdc978321c022c20499025f9c6c594d0fa2bac15e05",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\yellow_022_effect.png",
+      "bytes": 820,
+      "sha256": "77a59026cd587a3e5ff0e857ac4f0d2347d66c1339b2372c485cf2b245e9f686",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\yellow_022_name.png",
+      "bytes": 690,
+      "sha256": "30677e7fae0381784a0072fffc19cb7d2c826bd798217fbd67c47673a17e1c25",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\yellow_023_effect.png",
+      "bytes": 842,
+      "sha256": "bd6a7673551d6172d3f409b1400807bc69bdbfaa3728293ddb8146ac94647f43",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\yellow_023_name.png",
+      "bytes": 690,
+      "sha256": "25fe22a53ded05db946b9b7d5073031f363137fcecd195295a768f33d47438d7",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\yellow_024_effect.png",
+      "bytes": 833,
+      "sha256": "8afc268e3d76b09af9bd64816a7130c26574de01e9ea997509243de6f8253bd3",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\yellow_024_name.png",
+      "bytes": 633,
+      "sha256": "fae9786db9d216da0c99463f512db763dbb0fa55b499a617516b4e79b302cbb5",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\yellow_025_effect.png",
+      "bytes": 838,
+      "sha256": "a1f7c2b9a2a5b04b34c5516936e701d84e75086a5ec14025edfc3f5fb4acef7c",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\yellow_025_name.png",
+      "bytes": 670,
+      "sha256": "54e4c058bd7de0e7f3435a6b7056885e1d4c16b01cd4c21277cbac8bb976a29a",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\yellow_026_effect.png",
+      "bytes": 824,
+      "sha256": "c0c0fc628619680c9868f77ffb372d8ecd37b220f0733e95cdd6477d9fe0ce60",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\yellow_026_name.png",
+      "bytes": 654,
+      "sha256": "b46373435f7202132c3e459c59444f7dcc7596e0a73e5e70d4b4c77b22b0abe0",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\yellow_027_effect.png",
+      "bytes": 839,
+      "sha256": "2d954f77f31423bb226b8186ba5afe55ea7484412ca63d087d97ebe6e3421c4f",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\yellow_027_name.png",
+      "bytes": 704,
+      "sha256": "ed453b7c34796e5285879208b8476eebe9bab37dfe743aebc31786304557179c",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\yellow_028_effect.png",
+      "bytes": 834,
+      "sha256": "38c646b9812c4d3fb12163c3553fb0490e3b6c66762d09a60f43d2c6f37652f3",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\yellow_028_name.png",
+      "bytes": 643,
+      "sha256": "b187aa7e2edca8dcb96e9a4ba2106b23204f1a2b365bafca128ade2988204076",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\yellow_029_effect.png",
+      "bytes": 833,
+      "sha256": "1f863915055e9f95a8567e7b7aaf339a64fe675d3b324871323f8f26e7ae843e",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\yellow_029_name.png",
+      "bytes": 680,
+      "sha256": "33a3c925e51b944270d73609c1265a3d3fdb07b028b5b1dbd3492ee5abf21a55",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\yellow_030_effect.png",
+      "bytes": 790,
+      "sha256": "bbede9d27685a63891872c42d792f09356b3123f048a5d2c8c41516e23d7655b",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\yellow_030_name.png",
+      "bytes": 665,
+      "sha256": "bad77b0ccd3e7cc772078a00dcb3368c4f3fc8f7acc1d7baaeb616cf54948253",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\yellow_031_effect.png",
+      "bytes": 814,
+      "sha256": "934314034ddefa74d2d2582185af111bacfe8ea84331a9fe2718e6a229179b0e",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\yellow_031_name.png",
+      "bytes": 643,
+      "sha256": "6c4222f6c2f78d70d39f3d1dff1a3a09759d1b2eacc4663cbc7dbc8e6661a4e5",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\yellow_032_effect.png",
+      "bytes": 808,
+      "sha256": "5e76f432a5f8abc10ed7ff10fcc5809425931a19abc2296992ff10a96675918a",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\yellow_032_name.png",
+      "bytes": 654,
+      "sha256": "d31ac6890d71e429db345457a401cbc8c2515d07250cbeab9a8d55275e4b54d1",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\yellow_033_effect.png",
+      "bytes": 807,
+      "sha256": "55c5d3ba10ac0f761153450b0d6d0734cba19aa3fdcdeace111f8352177b60af",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\yellow_033_name.png",
+      "bytes": 684,
+      "sha256": "c70533169461fd070c41a305147f8f4625ea0abdbf1f0aa0c08622125922af53",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\yellow_034_effect.png",
+      "bytes": 812,
+      "sha256": "ca16fb549f482d46317f0f9b89ae9a34c452c4aae07008b124e74324a570928c",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\yellow_034_name.png",
+      "bytes": 686,
+      "sha256": "d31bbe4dd5a5bcc16f1ae63501eda05026d0a79a33f52466b74f9189c1c1687b",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\yellow_035_effect.png",
+      "bytes": 829,
+      "sha256": "ecaf8fa5ca1e2ace17a05d51d13d48c54eda14100c04d18b634f66af21a4f483",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr\\yellow_035_name.png",
+      "bytes": 652,
+      "sha256": "82ac2665a806bfd1be1cf80cafddb6e108e1baaf01499ac7d7ffd8936699404a",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\ocr_test.png",
+      "bytes": 11806,
+      "sha256": "9550373ac9a848031a91f69f5d3b599fc0b0e7d0d6cae0852372a8e4a1d1cd65",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\sheets\\menu_review_sheet_01.png",
+      "bytes": 183963,
+      "sha256": "d067de51991f63bd4f6505305585a30f7db3c9ac953cc1a92f8a16f6b1500bea",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\sheets\\menu_review_sheet_02.png",
+      "bytes": 196117,
+      "sha256": "c7980bc43fbb5b053424756530d130f86cea7944effb5a3a19ebd53a229ec497",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\sheets\\menu_review_sheet_03.png",
+      "bytes": 191946,
+      "sha256": "d6b794701c3a277142b130de3b8b1a21c857bbeea528caa9ca3a5f4b39434791",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\sheets\\menu_review_sheet_04.png",
+      "bytes": 197587,
+      "sha256": "35570e2f8d971966abde4c6b912cdad62b5efe706110c6bd9ec82a8f3748ad83",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\sheets\\menu_review_sheet_05.png",
+      "bytes": 196054,
+      "sha256": "abbe310f27c66507ea82468f591ff61d49d345b9ac1cdcae5f9939b7bfe0222b",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\sheets\\menu_review_sheet_06.png",
+      "bytes": 195252,
+      "sha256": "35dfd28e186f113ba9fe0938388a0c73b5f73c81c61a51d9dfbf7ab64db8cabe",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\sheets\\menu_review_sheet_07.png",
+      "bytes": 189369,
+      "sha256": "a13182a58f35414d77a61a4fffed27da21083d931ebebf269027bba33fa72395",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\sheets\\menu_review_sheet_08.png",
+      "bytes": 202349,
+      "sha256": "f5d068dcd5a1503db8c3eba5f4faa1422efafaff0cad230df8cd958abaed0d50",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\sheets\\menu_review_sheet_09.png",
+      "bytes": 198106,
+      "sha256": "2d5282fe6528ce27dac530530cf0b14248fc97ad5d74c3f81e9991643de0aab2",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\sheets\\menu_review_sheet_10.png",
+      "bytes": 197561,
+      "sha256": "8fa23d6d5a621e876bfa727d4dd982b6255e4b1e7beabef20361e9783d648331",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\sheets\\menu_review_sheet_11.png",
+      "bytes": 194628,
+      "sha256": "fdb049b40dce4fc0744589f443805d115605e02b33fd1cb614bd0467909e919e",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\sheets\\menu_review_sheet_12.png",
+      "bytes": 195185,
+      "sha256": "150076c0e91168f8bf45016e9684bc6ff8dba02d2a11b083be021b82226b57bc",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\sheets\\menu_review_sheet_13.png",
+      "bytes": 195780,
+      "sha256": "294015ea62d85a155baba629a6a26f3e60180ac65e910dc790a405604526ec7f",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\sheets\\menu_review_sheet_14.png",
+      "bytes": 203566,
+      "sha256": "4467053761d2445747ce52ed657b9be4eaa9d5c5e0fb61b0b26b930a6e53875f",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\sheets\\menu_review_sheet_15.png",
+      "bytes": 198843,
+      "sha256": "83ded89d72f85895c36caae4af4995c6e96f8c53e923d89e4ce8caae94f8a968",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\sheets\\menu_review_sheet_16.png",
+      "bytes": 203268,
+      "sha256": "76fa1542394b11b4399524cefc1334de36ef0873a2087e3b4e7a2c4e320cd0a3",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\sheets\\menu_review_sheet_17.png",
+      "bytes": 189946,
+      "sha256": "3cffd022fdc85abf7bd1879775dcd319dd869b3786debb612ec33ce298f56523",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\sheets\\menu_review_sheet_18.png",
+      "bytes": 182204,
+      "sha256": "6233f027b517ba438c9d6da34d5d96ba9c0ef8520f85f4f373974bcdbd2b9f3e",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\review_assets\\sheets\\menu_review_sheet_19.png",
+      "bytes": 181713,
+      "sha256": "d3f3f35e80d0d5ef9c38d77b14fbdd5842174e9b036a3fd32a6c601c8150e468",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\selftest_menu_visual_review_20261125.log",
+      "bytes": 165791,
+      "sha256": "9a3ab66024322578295d7c1c4592b72e87fb293dbb26606b8bd5c08ea6381213",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\source_audit_menu_visual_review_20261125.json",
+      "bytes": 16438,
+      "sha256": "aafb49335a45fd1a4e6f908357729ae9531d992d7d5882b0f2286498b2cf2631",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\sources_render_menu_visual_review_20261125.log",
+      "bytes": 143,
+      "sha256": "f489f65fd6c7f15d84fbc5886e2a1e2f56305709d71e76f2458bb5d316f51027",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\sources_selftest_menu_visual_review_20261125.log",
+      "bytes": 6013,
+      "sha256": "e79cfc2ad2150cd9f56fe7893e544d677f6479c51ceb85a149e53415b32be6b2",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\topic_selftest_menu_visual_review_20261125.log",
+      "bytes": 10576,
+      "sha256": "aed86117fa44632b158eac0767d0e6fbcc1d62535d26bab9d32f3e54b83636a9",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_visual_review\\visual_review_preparation_20261125.json",
+      "bytes": 155532,
+      "sha256": "aa2faf6ba13af5d35734f1e53d878c3d7bcd60768d82370f118760d8c4c6c2c8",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\_工具脚本\\taspipe\\sources.py",
+      "bytes": 47214,
+      "sha256": "fc47682d686f7c04b7fcb5c74d46a0760da4c5a7e4258358442dbd4958e2704c",
+      "role": "生产修正或报告"
+    },
+    {
+      "path": "F:\\开源掌机教程\\_工具脚本\\taspipe\\sources_selftest_gates.py",
+      "bytes": 30271,
+      "sha256": "c5532152b62c66a4d3bad5582ec5efd4374203b58a8c906bba9b5691e8bc693a",
+      "role": "生产修正或报告"
+    },
+    {
+      "path": "F:\\开源掌机教程\\_工具脚本\\taspipe\\游戏包\\来源库\\sources.json",
+      "bytes": 78163,
+      "sha256": "456576759073e46fb303a02538e6769f9837d883b633b9c4a1cc8781fc87285f",
+      "role": "生产修正或报告"
+    },
+    {
+      "path": "F:\\开源掌机教程\\_工具脚本\\taspipe\\游戏包\\复古游戏文献来源库.md",
+      "bytes": 64539,
+      "sha256": "71ef50cde1fb78259c3f05695d7f2739548dde989e0a11dfeedd903985685324",
+      "role": "生产修正或报告"
+    },
+    {
+      "path": "F:\\开源掌机教程\\_工具脚本\\taspipe\\游戏包\\gba_aria_of_sorrow_souls.menu_catalog.json",
+      "bytes": 332229,
+      "sha256": "fc3a258a9c6b245a31b159bffc7a4d141a3ef31cf46b6bc6c74afa95c414bc3e",
+      "role": "生产修正或报告"
+    },
+    {
+      "path": "F:\\开源掌机教程\\_工具脚本\\taspipe\\游戏包\\证据\\晓月圆舞曲\\menu_catalog_nav_full_20261125\\menu_catalog_report.json",
+      "bytes": 109914,
+      "sha256": "384c0a8a184985625689059e0501765f1a94c185a041cf717790fd8722e6b010",
+      "role": "生产修正或报告"
+    },
+    {
+      "path": "F:\\开源掌机教程\\_工具脚本\\taspipe\\游戏包\\证据\\晓月圆舞曲\\menu_catalog_nav_full_20261125\\source_capture_report.json",
+      "bytes": 103263,
+      "sha256": "fba4a630fef8f35a9adffb3734816b7603e554d8b0456c7b8551e2662bb665e9",
+      "role": "生产修正或报告"
+    },
+    {
+      "path": "F:\\开源掌机教程\\_工具脚本\\taspipe\\游戏包\\证据\\晓月圆舞曲\\menu_catalog_nav_full_20261125\\menu_catalog_nav_full.json",
+      "bytes": 1912,
+      "sha256": "93d3a7a10230b86b45338a3677e3c355baf46c8eee26e85eab815ac26047d64d",
+      "role": "生产修正或报告"
+    },
+    {
+      "path": "F:\\开源掌机教程\\_工具脚本\\taspipe\\游戏包\\证据\\晓月圆舞曲\\menu_catalog_nav_full_20261125\\menu_names_observed.json",
+      "bytes": 3322,
+      "sha256": "dca7ce9f5e814231030777ee1aa97821092ce90bfc1d37b1fbc0a1051aa17506",
+      "role": "生产修正或报告"
+    },
+    {
+      "path": "F:\\开源掌机教程\\_工具脚本\\taspipe\\游戏包\\证据\\晓月圆舞曲\\menu_catalog_nav_full_20261125\\menu_effects_observed.json",
+      "bytes": 3748,
+      "sha256": "3ad433fb21d3b5ddddeded6a2d9ee5fc5c45334af6bfbec6c4cdc7bbaca8e67f",
+      "role": "生产修正或报告"
+    },
+    {
+      "path": "F:\\开源掌机教程\\_工具脚本\\taspipe\\游戏包\\证据\\晓月圆舞曲\\menu_catalog_nav_full_20261125\\menu_patch_vs_nav_audit.json",
+      "bytes": 128873,
+      "sha256": "6b81e8596353c22574a3417abea62b0b4c04d77b40ce3127297db2083aef5b4b",
+      "role": "生产修正或报告"
+    },
+    {
+      "path": "F:\\开源掌机教程\\_工具脚本\\taspipe\\游戏包\\证据\\晓月圆舞曲\\menu_catalog_nav_full_20261125\\menu_visual_review_20261125.json",
+      "bytes": 156559,
+      "sha256": "3a01172b11ad89adc20c572c35c344bca88e4579a0e3e4c6497025428ea52237",
+      "role": "生产修正或报告"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库改进优化指导_2026-11-25_晓月菜单114项二次视觉复核.md",
+      "bytes": 11214,
+      "sha256": "94fbe61fb2fe4c7c6f67a2937e048bfc9745376220605fe2eaa73dbb521aac5d",
+      "role": "生产修正或报告"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库改进优化指导_2026-11-25_晓月菜单114项二次视觉复核.pdf",
+      "bytes": 418916,
+      "sha256": "a310f0c45828ac6cfa622aa9568850d3d49df705b309274d021623ae9b80a66a",
+      "role": "生产修正或报告"
+    }
+  ]
+}

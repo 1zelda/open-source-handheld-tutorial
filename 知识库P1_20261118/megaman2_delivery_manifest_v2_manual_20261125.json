@@ -1,0 +1,4396 @@
+{
+  "schema_version": 2,
+  "finished_at": "2026-11-25T14:24:51Z",
+  "task": "megaman2_official_manual_candidate_v2",
+  "status": "pass",
+  "all_ok": true,
+  "checks": {
+    "candidate_hash_matches": true,
+    "frozen_counts_match": true,
+    "frozen_gold_chunks_valid": true,
+    "manual_gold_chunks_valid": true,
+    "manual_metadata_valid": true,
+    "manual_excerpt_hashes_valid": true,
+    "no_full_manual_in_candidate": true,
+    "candidate_counts_match_build": true,
+    "candidate_scope_is_not_whole_game": true,
+    "candidate_audit_no_fail": true,
+    "base_audit_no_fail": true,
+    "hybrid_audit_no_fail": true,
+    "all_regression_gates_green": true,
+    "new_visible_gates_present": true,
+    "locked_regression_code_stable": true,
+    "isolated_evaluation_all_ok": true,
+    "production_evaluation_all_ok": true,
+    "evaluation_used_no_external_model": true,
+    "live_manual_controls": true,
+    "live_manual_energy": true,
+    "live_manual_metal_blade": true,
+    "live_manual_crash_bomber": true,
+    "live_technical_production": true,
+    "live_jp_manual_refused": true,
+    "live_multi_domain_not_merged": true,
+    "shared_state_unchanged_since_production_eval": true,
+    "shared_state_unchanged_during_finalization": true,
+    "code_unchanged_during_finalization": true,
+    "temporary_manual_removed": true,
+    "code_still_unchanged_after_cleanup": true
+  },
+  "candidate_only": true,
+  "whole_game_knowledge_base": false,
+  "candidate": {
+    "domain": "megaman2_candidate",
+    "production_domain": "megaman2",
+    "backend": "megaman2",
+    "revision": "megaman2_nes_us_manual",
+    "index": "F:\\开源掌机教程\\知识库P1_20261118\\megaman2_candidate_v2_manual_20261125\\index.json",
+    "index_sha256": "864ce8e3724414a95f851fac669ac2fddaa0e8f4fe37e8116ab1f707247a3225",
+    "chunks": 24,
+    "indexed_files": 18,
+    "manual_excerpt_files": 8,
+    "manual_chunks": 9,
+    "frozen_questions": "F:\\开源掌机教程\\知识库P1_20261118\\megaman2_questions_frozen_v2_manual_20261125.json",
+    "frozen_questions_sha256": "b824e990ec2aae82166c50570acbea0b3998e8fd533eb6c6c1fdb3b897520110",
+    "question_counts": {
+      "total": 25,
+      "strict_pass": 15,
+      "weak": 3,
+      "refuse": 7
+    }
+  },
+  "manual_provenance": {
+    "source_id": "nintendo_mega_man_2_nes_us_manual",
+    "official_pdf": "https://www.nintendo.co.jp/clv/manuals/en/pdf/CLV-P-NABBE.pdf",
+    "archive_item": "https://archive.org/details/mega-man-2-nes-manual",
+    "archive_pdf": "https://archive.org/download/mega-man-2-nes-manual/Mega-Man-2-Game-Manual.pdf",
+    "official_pdf_sha1": "0909b493a1a2092d7258eef952a8d4b461e5c781",
+    "downloaded_pdf_sha256": "d3c7acf731d551dc6e1cb755b7f0d83289508598bd6d368620e950fbc373599d",
+    "downloaded_pdf_bytes": 1554314,
+    "archive_pdf_sha256": "268d08002ab673b2ff70a277ac532f376e6809fe6d1978ae5760c473dcd802ad",
+    "archive_pdf_bytes": 1063374,
+    "pdf_pages": 20,
+    "short_excerpts": 8,
+    "full_manual_stored_in_candidate": false,
+    "verification": "All 20 official PDF pages were rendered. Selected passages on pages 2-15 were visually read from the page images; the PDF has no text layer.",
+    "typed_transcription_role": "not_used_image_only_pdf"
+  },
+  "isolated_evaluation": {
+    "all_ok": true,
+    "summary": {
+      "default": {
+        "total": 18,
+        "ok": 18,
+        "strict_pass": {
+          "total": 15,
+          "ok": 15
+        },
+        "weak": {
+          "total": 3,
+          "ok": 3
+        },
+        "failed_ids": []
+      },
+      "strict": {
+        "total": 18,
+        "ok": 18,
+        "strict_pass": {
+          "total": 15,
+          "ok": 15
+        },
+        "weak": {
+          "total": 3,
+          "ok": 3
+        },
+        "failed_ids": []
+      }
+    },
+    "query_count": 36,
+    "report": "F:\\开源掌机教程\\知识库P1_20261118\\megaman2_candidate_v2_manual_eval_20261125.json",
+    "isolation": {
+      "ok": true,
+      "changed_paths": [],
+      "real_state_unchanged": true,
+      "candidate_inputs_unchanged": true
+    }
+  },
+  "production_evaluation": {
+    "all_ok": true,
+    "summary": {
+      "direct_default": {
+        "total": 29,
+        "ok": 29,
+        "strict_pass": {
+          "total": 16,
+          "ok": 16
+        },
+        "weak": {
+          "total": 3,
+          "ok": 3
+        },
+        "refuse": {
+          "total": 10,
+          "ok": 10
+        },
+        "failed_ids": []
+      },
+      "direct_strict": {
+        "total": 29,
+        "ok": 29,
+        "strict_pass": {
+          "total": 16,
+          "ok": 16
+        },
+        "weak": {
+          "total": 3,
+          "ok": 3
+        },
+        "refuse": {
+          "total": 10,
+          "ok": 10
+        },
+        "failed_ids": []
+      },
+      "auto_default": {
+        "total": 29,
+        "ok": 29,
+        "strict_pass": {
+          "total": 16,
+          "ok": 16
+        },
+        "weak": {
+          "total": 3,
+          "ok": 3
+        },
+        "refuse": {
+          "total": 10,
+          "ok": 10
+        },
+        "failed_ids": []
+      },
+      "auto_strict": {
+        "total": 29,
+        "ok": 29,
+        "strict_pass": {
+          "total": 16,
+          "ok": 16
+        },
+        "weak": {
+          "total": 3,
+          "ok": 3
+        },
+        "refuse": {
+          "total": 10,
+          "ok": 10
+        },
+        "failed_ids": []
+      }
+    },
+    "production_query_count": 116,
+    "failure_close_query_count": 8,
+    "failure_close_all_ok": true,
+    "legacy_candidate_regression": {
+      "ok": true,
+      "summary": {
+        "route_total": 20,
+        "route_ok": 20,
+        "default_total": 23,
+        "default_ok": 23,
+        "strict_total": 23,
+        "strict_ok": 23,
+        "positive_default": 5,
+        "positive_strict": 5,
+        "negative_default": 18,
+        "negative_strict": 18,
+        "wrong_evidence_default": 0,
+        "wrong_evidence_strict": 0,
+        "failure_close_total": 5,
+        "failure_close_ok": 5
+      },
+      "route_cases": [
+        {
+          "id": "R01",
+          "q": "洛克人2 的 walking speed 是什么？",
+          "expected": "candidate",
+          "actual": "candidate",
+          "domain": "megaman2_candidate",
+          "revision": "megaman2_nes_tasvideos_rockman2",
+          "ok": true
+        },
+        {
+          "id": "R02",
+          "q": "洛克人 ２ 的 walking speed 是什么？",
+          "expected": "candidate",
+          "actual": "candidate",
+          "domain": "megaman2_candidate",
+          "revision": "megaman2_nes_tasvideos_rockman2",
+          "ok": true
+        },
+        {
+          "id": "R03",
+          "q": "Ｍｅｇａ　Ｍａｎ　２ 的 walking speed 是什么？",
+          "expected": "candidate",
+          "actual": "candidate",
+          "domain": "megaman2_candidate",
+          "revision": "megaman2_nes_tasvideos_rockman2",
+          "ok": true
+        },
+        {
+          "id": "R04",
+          "q": "Rockman 2 的 climbing speed 是什么？",
+          "expected": "candidate",
+          "actual": "candidate",
+          "domain": "megaman2_candidate",
+          "revision": "megaman2_nes_tasvideos_rockman2",
+          "ok": true
+        },
+        {
+          "id": "R05",
+          "q": "mm2 的 jump Y speed 初始值是什么？",
+          "expected": "candidate",
+          "actual": "candidate",
+          "domain": "megaman2_candidate",
+          "revision": "megaman2_nes_tasvideos_rockman2",
+          "ok": true
+        },
+        {
+          "id": "R06",
+          "q": "MM2 的 walking speed 是什么？",
+          "expected": "candidate",
+          "actual": "candidate",
+          "domain": "megaman2_candidate",
+          "revision": "megaman2_nes_tasvideos_rockman2",
+          "ok": true
+        },
+        {
+          "id": "R07",
+          "q": "洛克人 的 walking speed 是什么？",
+          "expected": "ambiguous_series",
+          "actual": "ambiguous_series",
+          "domain": "megaman2_candidate",
+          "revision": null,
+          "ok": true
+        },
+        {
+          "id": "R08",
+          "q": "Mega Man 的 walking speed 是什么？",
+          "expected": "ambiguous_series",
+          "actual": "ambiguous_series",
+          "domain": "megaman2_candidate",
+          "revision": null,
+          "ok": true
+        },
+        {
+          "id": "R09",
+          "q": "Mega Man 2: The Power Fighters 出招表",
+          "expected": "ambiguous_series",
+          "actual": "ambiguous_series",
+          "domain": "megaman2_candidate",
+          "revision": null,
+          "ok": true
+        },
+        {
+          "id": "R10",
+          "q": "Rockman 2 Claw 的 walking speed 是什么？",
+          "expected": "ambiguous_series",
+          "actual": "ambiguous_series",
+          "domain": "megaman2_candidate",
+          "revision": null,
+          "ok": true
+        },
+        {
+          "id": "R11",
+          "q": "MM20 的 walking speed 是什么？",
+          "expected": "not_matched",
+          "actual": "not_matched",
+          "domain": "unrouted",
+          "revision": null,
+          "ok": true
+        },
+        {
+          "id": "R12",
+          "q": "洛克人2 PAL 出招表",
+          "expected": "version_not_collected",
+          "actual": "version_not_collected",
+          "domain": "megaman2_candidate",
+          "revision": null,
+          "ok": true
+        },
+        {
+          "id": "R13",
+          "q": "洛克人2 欧版ROM 的 walking speed 是什么？",
+          "expected": "version_not_collected",
+          "actual": "version_not_collected",
+          "domain": "megaman2_candidate",
+          "revision": null,
+          "ok": true
+        },
+        {
+          "id": "R14",
+          "q": "MM2 美版ROM 的 walking speed 是什么？",
+          "expected": "version_not_collected",
+          "actual": "version_not_collected",
+          "domain": "megaman2_candidate",
+          "revision": null,
+          "ok": true
+        },
+        {
+          "id": "R15",
+          "q": "洛克人2 和拳皇98 的 walking speed 分别是什么？",
+          "expected": "multi_domain_needs_split",
+          "actual": "multi_domain_needs_split",
+          "domain": "megaman2_candidate",
+          "revision": null,
+          "ok": true
+        },
+        {
+          "id": "R16",
+          "q": "洛克人2 和洛克人3 的 walking speed 分别是什么？",
+          "expected": "multi_domain_needs_split",
+          "actual": "multi_domain_needs_split",
+          "domain": "megaman2_candidate",
+          "revision": null,
+          "ok": true
+        },
+        {
+          "id": "R17",
+          "q": "拳皇98 出招表",
+          "expected": "not_matched",
+          "actual": "not_matched",
+          "domain": "unrouted",
+          "revision": null,
+          "ok": true
+        },
+        {
+          "id": "R18",
+          "q": "出招表",
+          "expected": "not_matched",
+          "actual": "not_matched",
+          "domain": "unrouted",
+          "revision": null,
+          "ok": true
+        },
+        {
+          "id": "R19",
+          "q": "洛克人2 的 HP 内存地址是什么？",
+          "expected": "candidate",
+          "actual": "candidate",
+          "domain": "megaman2_candidate",
+          "revision": "megaman2_nes_memory_dictionary_unverified",
+          "ok": true
+        },
+        {
+          "id": "R20",
+          "q": "洛克人2 的 TAS 4057 用哪个版本？",
+          "expected": "candidate",
+          "actual": "candidate",
+          "domain": "megaman2_candidate",
+          "revision": "megaman2_nes_tas_publications",
+          "ok": true
+        }
+      ],
+      "ask_cases": [
+        {
+          "id": "P01",
+          "q": "洛克人2 的 walking speed 是什么？",
+          "kind": "positive",
+          "mode": "default",
+          "ok": true,
+          "checks": [
+            {
+              "name": "route_domain",
+              "ok": true
+            },
+            {
+              "name": "no_kof_source",
+              "ok": true
+            },
+            {
+              "name": "status_pass",
+              "ok": true
+            },
+            {
+              "name": "one_selected",
+              "ok": true
+            },
+            {
+              "name": "candidate_index",
+              "ok": true
+            },
+            {
+              "name": "revision",
+              "ok": true
+            },
+            {
+              "name": "source",
+              "ok": true
+            },
+            {
+              "name": "authority",
+              "ok": true
+            },
+            {
+              "name": "locator",
+              "ok": true
+            },
+            {
+              "name": "fact_text",
+              "ok": true
+            },
+            {
+              "name": "answer_excerpt",
+              "ok": true
+            }
+          ],
+          "status": "pass",
+          "refusal": null,
+          "reason": "7 条 verified_read + authoritative 可答命中，权威件在第 1 位",
+          "route": {
+            "domain": "megaman2_candidate",
+            "disposition": "candidate",
+            "matched": [
+              "洛克人2"
+            ],
+            "revision": "megaman2_nes_tasvideos_rockman2",
+            "evidence_scope": "TASVideos GameResources 的 Rockman 2 技术条目；不主张地区 ROM 等价",
+            "reason": "显式洛克人2别名；只查指定候选 revision，不借生产文本域"
+          },
+          "index_used": "index.json",
+          "selected_locator": "知识库P1_20261118/megaman2_candidate_20261125/evidence/mm2_tasvideos_walking_20261125.txt#L2-L12",
+          "hit_sources": [
+            "tasvideos_rockman_data_mm2_extract"
+          ]
+        },
+        {
+          "id": "P01",
+          "q": "洛克人2 的 walking speed 是什么？",
+          "kind": "positive",
+          "mode": "strict",
+          "ok": true,
+          "checks": [
+            {
+              "name": "route_domain",
+              "ok": true
+            },
+            {
+              "name": "no_kof_source",
+              "ok": true
+            },
+            {
+              "name": "status_pass",
+              "ok": true
+            },
+            {
+              "name": "one_selected",
+              "ok": true
+            },
+            {
+              "name": "candidate_index",
+              "ok": true
+            },
+            {
+              "name": "revision",
+              "ok": true
+            },
+            {
+              "name": "source",
+              "ok": true
+            },
+            {
+              "name": "authority",
+              "ok": true
+            },
+            {
+              "name": "locator",
+              "ok": true
+            },
+            {
+              "name": "fact_text",
+              "ok": true
+            },
+            {
+              "name": "answer_excerpt",
+              "ok": true
+            },
+            {
+              "name": "strict_fragment",
+              "ok": true
+            }
+          ],
+          "status": "pass",
+          "refusal": null,
+          "reason": "7 条 verified_read + authoritative 可答命中，权威件在第 1 位",
+          "route": {
+            "domain": "megaman2_candidate",
+            "disposition": "candidate",
+            "matched": [
+              "洛克人2"
+            ],
+            "revision": "megaman2_nes_tasvideos_rockman2",
+            "evidence_scope": "TASVideos GameResources 的 Rockman 2 技术条目；不主张地区 ROM 等价",
+            "reason": "显式洛克人2别名；只查指定候选 revision，不借生产文本域"
+          },
+          "index_used": "index.json",
+          "selected_locator": "知识库P1_20261118/megaman2_candidate_20261125/evidence/mm2_tasvideos_walking_20261125.txt#L2-L12",
+          "hit_sources": [
+            "tasvideos_rockman_data_mm2_extract"
+          ]
+        },
+        {
+          "id": "P02",
+          "q": "Rockman 2 的 X speed 内存地址是什么？",
+          "kind": "positive",
+          "mode": "default",
+          "ok": true,
+          "checks": [
+            {
+              "name": "route_domain",
+              "ok": true
+            },
+            {
+              "name": "no_kof_source",
+              "ok": true
+            },
+            {
+              "name": "status_pass",
+              "ok": true
+            },
+            {
+              "name": "one_selected",
+              "ok": true
+            },
+            {
+              "name": "candidate_index",
+              "ok": true
+            },
+            {
+              "name": "revision",
+              "ok": true
+            },
+            {
+              "name": "source",
+              "ok": true
+            },
+            {
+              "name": "authority",
+              "ok": true
+            },
+            {
+              "name": "locator",
+              "ok": true
+            },
+            {
+              "name": "fact_text",
+              "ok": true
+            },
+            {
+              "name": "answer_excerpt",
+              "ok": true
+            }
+          ],
+          "status": "pass",
+          "refusal": null,
+          "reason": "1 条 verified_read + authoritative 可答命中，权威件在第 1 位",
+          "route": {
+            "domain": "megaman2_candidate",
+            "disposition": "candidate",
+            "matched": [
+              "Rockman 2"
+            ],
+            "revision": "megaman2_nes_tasvideos_rockman2",
+            "evidence_scope": "TASVideos GameResources 的 Rockman 2 技术条目；不主张地区 ROM 等价",
+            "reason": "显式洛克人2别名；只查指定候选 revision，不借生产文本域"
+          },
+          "index_used": "index.json",
+          "selected_locator": "知识库P1_20261118/megaman2_candidate_20261125/evidence/mm2_tasvideos_object_table_20261125.txt#L1-L18",
+          "hit_sources": [
+            "local_megaman2_memory_dictionary",
+            "tasvideos_rockman_data_mm2_extract"
+          ]
+        },
+        {
+          "id": "P02",
+          "q": "Rockman 2 的 X speed 内存地址是什么？",
+          "kind": "positive",
+          "mode": "strict",
+          "ok": true,
+          "checks": [
+            {
+              "name": "route_domain",
+              "ok": true
+            },
+            {
+              "name": "no_kof_source",
+              "ok": true
+            },
+            {
+              "name": "status_pass",
+              "ok": true
+            },
+            {
+              "name": "one_selected",
+              "ok": true
+            },
+            {
+              "name": "candidate_index",
+              "ok": true
+            },
+            {
+              "name": "revision",
+              "ok": true
+            },
+            {
+              "name": "source",
+              "ok": true
+            },
+            {
+              "name": "authority",
+              "ok": true
+            },
+            {
+              "name": "locator",
+              "ok": true
+            },
+            {
+              "name": "fact_text",
+              "ok": true
+            },
+            {
+              "name": "answer_excerpt",
+              "ok": true
+            },
+            {
+              "name": "strict_fragment",
+              "ok": true
+            }
+          ],
+          "status": "pass",
+          "refusal": null,
+          "reason": "1 条 verified_read + authoritative 可答命中，权威件在第 1 位",
+          "route": {
+            "domain": "megaman2_candidate",
+            "disposition": "candidate",
+            "matched": [
+              "Rockman 2"
+            ],
+            "revision": "megaman2_nes_tasvideos_rockman2",
+            "evidence_scope": "TASVideos GameResources 的 Rockman 2 技术条目；不主张地区 ROM 等价",
+            "reason": "显式洛克人2别名；只查指定候选 revision，不借生产文本域"
+          },
+          "index_used": "index.json",
+          "selected_locator": "知识库P1_20261118/megaman2_candidate_20261125/evidence/mm2_tasvideos_object_table_20261125.txt#L1-L18",
+          "hit_sources": [
+            "local_megaman2_memory_dictionary",
+            "tasvideos_rockman_data_mm2_extract"
+          ]
+        },
+        {
+          "id": "P03",
+          "q": "MM2 的 jump Y speed 初始值是什么？",
+          "kind": "positive",
+          "mode": "default",
+          "ok": true,
+          "checks": [
+            {
+              "name": "route_domain",
+              "ok": true
+            },
+            {
+              "name": "no_kof_source",
+              "ok": true
+            },
+            {
+              "name": "status_pass",
+              "ok": true
+            },
+            {
+              "name": "one_selected",
+              "ok": true
+            },
+            {
+              "name": "candidate_index",
+              "ok": true
+            },
+            {
+              "name": "revision",
+              "ok": true
+            },
+            {
+              "name": "source",
+              "ok": true
+            },
+            {
+              "name": "authority",
+              "ok": true
+            },
+            {
+              "name": "locator",
+              "ok": true
+            },
+            {
+              "name": "fact_text",
+              "ok": true
+            },
+            {
+              "name": "answer_excerpt",
+              "ok": true
+            }
+          ],
+          "status": "pass",
+          "refusal": null,
+          "reason": "7 条 verified_read + authoritative 可答命中，权威件在第 1 位",
+          "route": {
+            "domain": "megaman2_candidate",
+            "disposition": "candidate",
+            "matched": [
+              "MM2"
+            ],
+            "revision": "megaman2_nes_tasvideos_rockman2",
+            "evidence_scope": "TASVideos GameResources 的 Rockman 2 技术条目；不主张地区 ROM 等价",
+            "reason": "显式洛克人2别名；只查指定候选 revision，不借生产文本域"
+          },
+          "index_used": "index.json",
+          "selected_locator": "知识库P1_20261118/megaman2_candidate_20261125/evidence/mm2_tasvideos_jump_20261125.txt#L2-L18",
+          "hit_sources": [
+            "tasvideos_rockman_data_mm2_extract"
+          ]
+        },
+        {
+          "id": "P03",
+          "q": "MM2 的 jump Y speed 初始值是什么？",
+          "kind": "positive",
+          "mode": "strict",
+          "ok": true,
+          "checks": [
+            {
+              "name": "route_domain",
+              "ok": true
+            },
+            {
+              "name": "no_kof_source",
+              "ok": true
+            },
+            {
+              "name": "status_pass",
+              "ok": true
+            },
+            {
+              "name": "one_selected",
+              "ok": true
+            },
+            {
+              "name": "candidate_index",
+              "ok": true
+            },
+            {
+              "name": "revision",
+              "ok": true
+            },
+            {
+              "name": "source",
+              "ok": true
+            },
+            {
+              "name": "authority",
+              "ok": true
+            },
+            {
+              "name": "locator",
+              "ok": true
+            },
+            {
+              "name": "fact_text",
+              "ok": true
+            },
+            {
+              "name": "answer_excerpt",
+              "ok": true
+            },
+            {
+              "name": "strict_fragment",
+              "ok": true
+            }
+          ],
+          "status": "pass",
+          "refusal": null,
+          "reason": "7 条 verified_read + authoritative 可答命中，权威件在第 1 位",
+          "route": {
+            "domain": "megaman2_candidate",
+            "disposition": "candidate",
+            "matched": [
+              "MM2"
+            ],
+            "revision": "megaman2_nes_tasvideos_rockman2",
+            "evidence_scope": "TASVideos GameResources 的 Rockman 2 技术条目；不主张地区 ROM 等价",
+            "reason": "显式洛克人2别名；只查指定候选 revision，不借生产文本域"
+          },
+          "index_used": "index.json",
+          "selected_locator": "知识库P1_20261118/megaman2_candidate_20261125/evidence/mm2_tasvideos_jump_20261125.txt#L2-L18",
+          "hit_sources": [
+            "tasvideos_rockman_data_mm2_extract"
+          ]
+        },
+        {
+          "id": "P04",
+          "q": "Mega Man 2 的 climbing speed 是什么？",
+          "kind": "positive",
+          "mode": "default",
+          "ok": true,
+          "checks": [
+            {
+              "name": "route_domain",
+              "ok": true
+            },
+            {
+              "name": "no_kof_source",
+              "ok": true
+            },
+            {
+              "name": "status_pass",
+              "ok": true
+            },
+            {
+              "name": "one_selected",
+              "ok": true
+            },
+            {
+              "name": "candidate_index",
+              "ok": true
+            },
+            {
+              "name": "revision",
+              "ok": true
+            },
+            {
+              "name": "source",
+              "ok": true
+            },
+            {
+              "name": "authority",
+              "ok": true
+            },
+            {
+              "name": "locator",
+              "ok": true
+            },
+            {
+              "name": "fact_text",
+              "ok": true
+            },
+            {
+              "name": "answer_excerpt",
+              "ok": true
+            }
+          ],
+          "status": "pass",
+          "refusal": null,
+          "reason": "7 条 verified_read + authoritative 可答命中，权威件在第 1 位",
+          "route": {
+            "domain": "megaman2_candidate",
+            "disposition": "candidate",
+            "matched": [
+              "Mega Man 2"
+            ],
+            "revision": "megaman2_nes_tasvideos_rockman2",
+            "evidence_scope": "TASVideos GameResources 的 Rockman 2 技术条目；不主张地区 ROM 等价",
+            "reason": "显式洛克人2别名；只查指定候选 revision，不借生产文本域"
+          },
+          "index_used": "index.json",
+          "selected_locator": "知识库P1_20261118/megaman2_candidate_20261125/evidence/mm2_tasvideos_climb_transform_20261125.txt#L2-L14",
+          "hit_sources": [
+            "tasvideos_rockman_data_mm2_extract"
+          ]
+        },
+        {
+          "id": "P04",
+          "q": "Mega Man 2 的 climbing speed 是什么？",
+          "kind": "positive",
+          "mode": "strict",
+          "ok": true,
+          "checks": [
+            {
+              "name": "route_domain",
+              "ok": true
+            },
+            {
+              "name": "no_kof_source",
+              "ok": true
+            },
+            {
+              "name": "status_pass",
+              "ok": true
+            },
+            {
+              "name": "one_selected",
+              "ok": true
+            },
+            {
+              "name": "candidate_index",
+              "ok": true
+            },
+            {
+              "name": "revision",
+              "ok": true
+            },
+            {
+              "name": "source",
+              "ok": true
+            },
+            {
+              "name": "authority",
+              "ok": true
+            },
+            {
+              "name": "locator",
+              "ok": true
+            },
+            {
+              "name": "fact_text",
+              "ok": true
+            },
+            {
+              "name": "answer_excerpt",
+              "ok": true
+            },
+            {
+              "name": "strict_fragment",
+              "ok": true
+            }
+          ],
+          "status": "pass",
+          "refusal": null,
+          "reason": "7 条 verified_read + authoritative 可答命中，权威件在第 1 位",
+          "route": {
+            "domain": "megaman2_candidate",
+            "disposition": "candidate",
+            "matched": [
+              "Mega Man 2"
+            ],
+            "revision": "megaman2_nes_tasvideos_rockman2",
+            "evidence_scope": "TASVideos GameResources 的 Rockman 2 技术条目；不主张地区 ROM 等价",
+            "reason": "显式洛克人2别名；只查指定候选 revision，不借生产文本域"
+          },
+          "index_used": "index.json",
+          "selected_locator": "知识库P1_20261118/megaman2_candidate_20261125/evidence/mm2_tasvideos_climb_transform_20261125.txt#L2-L14",
+          "hit_sources": [
+            "tasvideos_rockman_data_mm2_extract"
+          ]
+        },
+        {
+          "id": "P05",
+          "q": "Ｍｅｇａ　Ｍａｎ　２ 的 walking speed 是什么？",
+          "kind": "positive",
+          "mode": "default",
+          "ok": true,
+          "checks": [
+            {
+              "name": "route_domain",
+              "ok": true
+            },
+            {
+              "name": "no_kof_source",
+              "ok": true
+            },
+            {
+              "name": "status_pass",
+              "ok": true
+            },
+            {
+              "name": "one_selected",
+              "ok": true
+            },
+            {
+              "name": "candidate_index",
+              "ok": true
+            },
+            {
+              "name": "revision",
+              "ok": true
+            },
+            {
+              "name": "source",
+              "ok": true
+            },
+            {
+              "name": "authority",
+              "ok": true
+            },
+            {
+              "name": "locator",
+              "ok": true
+            },
+            {
+              "name": "fact_text",
+              "ok": true
+            },
+            {
+              "name": "answer_excerpt",
+              "ok": true
+            }
+          ],
+          "status": "pass",
+          "refusal": null,
+          "reason": "7 条 verified_read + authoritative 可答命中，权威件在第 1 位",
+          "route": {
+            "domain": "megaman2_candidate",
+            "disposition": "candidate",
+            "matched": [
+              "Mega Man 2"
+            ],
+            "revision": "megaman2_nes_tasvideos_rockman2",
+            "evidence_scope": "TASVideos GameResources 的 Rockman 2 技术条目；不主张地区 ROM 等价",
+            "reason": "显式洛克人2别名；只查指定候选 revision，不借生产文本域"
+          },
+          "index_used": "index.json",
+          "selected_locator": "知识库P1_20261118/megaman2_candidate_20261125/evidence/mm2_tasvideos_walking_20261125.txt#L2-L12",
+          "hit_sources": [
+            "tasvideos_rockman_data_mm2_extract"
+          ]
+        },
+        {
+          "id": "P05",
+          "q": "Ｍｅｇａ　Ｍａｎ　２ 的 walking speed 是什么？",
+          "kind": "positive",
+          "mode": "strict",
+          "ok": true,
+          "checks": [
+            {
+              "name": "route_domain",
+              "ok": true
+            },
+            {
+              "name": "no_kof_source",
+              "ok": true
+            },
+            {
+              "name": "status_pass",
+              "ok": true
+            },
+            {
+              "name": "one_selected",
+              "ok": true
+            },
+            {
+              "name": "candidate_index",
+              "ok": true
+            },
+            {
+              "name": "revision",
+              "ok": true
+            },
+            {
+              "name": "source",
+              "ok": true
+            },
+            {
+              "name": "authority",
+              "ok": true
+            },
+            {
+              "name": "locator",
+              "ok": true
+            },
+            {
+              "name": "fact_text",
+              "ok": true
+            },
+            {
+              "name": "answer_excerpt",
+              "ok": true
+            },
+            {
+              "name": "strict_fragment",
+              "ok": true
+            }
+          ],
+          "status": "pass",
+          "refusal": null,
+          "reason": "7 条 verified_read + authoritative 可答命中，权威件在第 1 位",
+          "route": {
+            "domain": "megaman2_candidate",
+            "disposition": "candidate",
+            "matched": [
+              "Mega Man 2"
+            ],
+            "revision": "megaman2_nes_tasvideos_rockman2",
+            "evidence_scope": "TASVideos GameResources 的 Rockman 2 技术条目；不主张地区 ROM 等价",
+            "reason": "显式洛克人2别名；只查指定候选 revision，不借生产文本域"
+          },
+          "index_used": "index.json",
+          "selected_locator": "知识库P1_20261118/megaman2_candidate_20261125/evidence/mm2_tasvideos_walking_20261125.txt#L2-L12",
+          "hit_sources": [
+            "tasvideos_rockman_data_mm2_extract"
+          ]
+        },
+        {
+          "id": "N01",
+          "q": "洛克人2 出招表",
+          "kind": "movelist",
+          "mode": "default",
+          "ok": true,
+          "checks": [
+            {
+              "name": "route_domain",
+              "ok": true
+            },
+            {
+              "name": "route_disposition",
+              "ok": true
+            },
+            {
+              "name": "no_kof_source",
+              "ok": true
+            },
+            {
+              "name": "status",
+              "ok": true
+            },
+            {
+              "name": "refusal",
+              "ok": true
+            },
+            {
+              "name": "candidate_index",
+              "ok": true
+            },
+            {
+              "name": "no_evidence",
+              "ok": true
+            },
+            {
+              "name": "no_kof_hits",
+              "ok": true
+            }
+          ],
+          "status": "miss",
+          "refusal": "move_list_not_collected",
+          "reason": "候选已收技术条目与美国 NES 官方说明书短摘录，但未收洛克人2出招表；不会借 kb_route 的 KOF98 弱词或生产文本域回答。有 15 个候选块但无一词命中（换术语或扩大要素类型）",
+          "route": {
+            "domain": "megaman2_candidate",
+            "disposition": "candidate",
+            "matched": [
+              "洛克人2"
+            ],
+            "revision": "megaman2_nes_tasvideos_rockman2",
+            "evidence_scope": "TASVideos GameResources 的 Rockman 2 技术条目；不主张地区 ROM 等价",
+            "reason": "显式洛克人2别名；只查指定候选 revision，不借生产文本域"
+          },
+          "index_used": "index.json",
+          "selected_locator": null,
+          "hit_sources": []
+        },
+        {
+          "id": "N01",
+          "q": "洛克人2 出招表",
+          "kind": "movelist",
+          "mode": "strict",
+          "ok": true,
+          "checks": [
+            {
+              "name": "route_domain",
+              "ok": true
+            },
+            {
+              "name": "route_disposition",
+              "ok": true
+            },
+            {
+              "name": "no_kof_source",
+              "ok": true
+            },
+            {
+              "name": "status",
+              "ok": true
+            },
+            {
+              "name": "refusal",
+              "ok": true
+            },
+            {
+              "name": "candidate_index",
+              "ok": true
+            },
+            {
+              "name": "no_evidence",
+              "ok": true
+            },
+            {
+              "name": "no_kof_hits",
+              "ok": true
+            }
+          ],
+          "status": "miss",
+          "refusal": "move_list_not_collected",
+          "reason": "候选已收技术条目与美国 NES 官方说明书短摘录，但未收洛克人2出招表；不会借 kb_route 的 KOF98 弱词或生产文本域回答。有 15 个候选块但无一词命中（换术语或扩大要素类型）",
+          "route": {
+            "domain": "megaman2_candidate",
+            "disposition": "candidate",
+            "matched": [
+              "洛克人2"
+            ],
+            "revision": "megaman2_nes_tasvideos_rockman2",
+            "evidence_scope": "TASVideos GameResources 的 Rockman 2 技术条目；不主张地区 ROM 等价",
+            "reason": "显式洛克人2别名；只查指定候选 revision，不借生产文本域"
+          },
+          "index_used": "index.json",
+          "selected_locator": null,
+          "hit_sources": []
+        },
+        {
+          "id": "N02",
+          "q": "洛克人2 PAL 的 walking speed 是什么？",
+          "kind": "blocked",
+          "mode": "default",
+          "ok": true,
+          "checks": [
+            {
+              "name": "route_domain",
+              "ok": true
+            },
+            {
+              "name": "route_disposition",
+              "ok": true
+            },
+            {
+              "name": "no_kof_source",
+              "ok": true
+            },
+            {
+              "name": "status",
+              "ok": true
+            },
+            {
+              "name": "refusal",
+              "ok": true
+            },
+            {
+              "name": "no_retrieval",
+              "ok": true
+            },
+            {
+              "name": "no_evidence",
+              "ok": true
+            }
+          ],
+          "status": "inconclusive",
+          "refusal": "version_not_collected",
+          "reason": "候选只核验美国 NES 官方说明书；问句点名 PAL，未建立该地区 ROM 身份或跨版等价证据，不得用技术条目顶包",
+          "route": {
+            "domain": "megaman2_candidate",
+            "disposition": "version_not_collected",
+            "matched": [
+              "洛克人2"
+            ],
+            "revision": null,
+            "reason": "候选只核验美国 NES 官方说明书；问句点名 PAL，未建立该地区 ROM 身份或跨版等价证据，不得用技术条目顶包"
+          },
+          "index_used": null,
+          "selected_locator": null,
+          "hit_sources": []
+        },
+        {
+          "id": "N02",
+          "q": "洛克人2 PAL 的 walking speed 是什么？",
+          "kind": "blocked",
+          "mode": "strict",
+          "ok": true,
+          "checks": [
+            {
+              "name": "route_domain",
+              "ok": true
+            },
+            {
+              "name": "route_disposition",
+              "ok": true
+            },
+            {
+              "name": "no_kof_source",
+              "ok": true
+            },
+            {
+              "name": "status",
+              "ok": true
+            },
+            {
+              "name": "refusal",
+              "ok": true
+            },
+            {
+              "name": "no_retrieval",
+              "ok": true
+            },
+            {
+              "name": "no_evidence",
+              "ok": true
+            }
+          ],
+          "status": "inconclusive",
+          "refusal": "version_not_collected",
+          "reason": "候选只核验美国 NES 官方说明书；问句点名 PAL，未建立该地区 ROM 身份或跨版等价证据，不得用技术条目顶包",
+          "route": {
+            "domain": "megaman2_candidate",
+            "disposition": "version_not_collected",
+            "matched": [
+              "洛克人2"
+            ],
+            "revision": null,
+            "reason": "候选只核验美国 NES 官方说明书；问句点名 PAL，未建立该地区 ROM 身份或跨版等价证据，不得用技术条目顶包"
+          },
+          "index_used": null,
+          "selected_locator": null,
+          "hit_sources": []
+        },
+        {
+          "id": "N03",
+          "q": "洛克人2 欧版ROM 的 walking speed 是什么？",
+          "kind": "blocked",
+          "mode": "default",
+          "ok": true,
+          "checks": [
+            {
+              "name": "route_domain",
+              "ok": true
+            },
+            {
+              "name": "route_disposition",
+              "ok": true
+            },
+            {
+              "name": "no_kof_source",
+              "ok": true
+            },
+            {
+              "name": "status",
+              "ok": true
+            },
+            {
+              "name": "refusal",
+              "ok": true
+            },
+            {
+              "name": "no_retrieval",
+              "ok": true
+            },
+            {
+              "name": "no_evidence",
+              "ok": true
+            }
+          ],
+          "status": "inconclusive",
+          "refusal": "version_not_collected",
+          "reason": "候选只核验美国 NES 官方说明书；问句点名 欧版，未建立该地区 ROM 身份或跨版等价证据，不得用技术条目顶包",
+          "route": {
+            "domain": "megaman2_candidate",
+            "disposition": "version_not_collected",
+            "matched": [
+              "洛克人2"
+            ],
+            "revision": null,
+            "reason": "候选只核验美国 NES 官方说明书；问句点名 欧版，未建立该地区 ROM 身份或跨版等价证据，不得用技术条目顶包"
+          },
+          "index_used": null,
+          "selected_locator": null,
+          "hit_sources": []
+        },
+        {
+          "id": "N03",
+          "q": "洛克人2 欧版ROM 的 walking speed 是什么？",
+          "kind": "blocked",
+          "mode": "strict",
+          "ok": true,
+          "checks": [
+            {
+              "name": "route_domain",
+              "ok": true
+            },
+            {
+              "name": "route_disposition",
+              "ok": true
+            },
+            {
+              "name": "no_kof_source",
+              "ok": true
+            },
+            {
+              "name": "status",
+              "ok": true
+            },
+            {
+              "name": "refusal",
+              "ok": true
+            },
+            {
+              "name": "no_retrieval",
+              "ok": true
+            },
+            {
+              "name": "no_evidence",
+              "ok": true
+            }
+          ],
+          "status": "inconclusive",
+          "refusal": "version_not_collected",
+          "reason": "候选只核验美国 NES 官方说明书；问句点名 欧版，未建立该地区 ROM 身份或跨版等价证据，不得用技术条目顶包",
+          "route": {
+            "domain": "megaman2_candidate",
+            "disposition": "version_not_collected",
+            "matched": [
+              "洛克人2"
+            ],
+            "revision": null,
+            "reason": "候选只核验美国 NES 官方说明书；问句点名 欧版，未建立该地区 ROM 身份或跨版等价证据，不得用技术条目顶包"
+          },
+          "index_used": null,
+          "selected_locator": null,
+          "hit_sources": []
+        },
+        {
+          "id": "N04",
+          "q": "MM2 美版ROM 的 walking speed 是什么？",
+          "kind": "blocked",
+          "mode": "default",
+          "ok": true,
+          "checks": [
+            {
+              "name": "route_domain",
+              "ok": true
+            },
+            {
+              "name": "route_disposition",
+              "ok": true
+            },
+            {
+              "name": "no_kof_source",
+              "ok": true
+            },
+            {
+              "name": "status",
+              "ok": true
+            },
+            {
+              "name": "refusal",
+              "ok": true
+            },
+            {
+              "name": "no_retrieval",
+              "ok": true
+            },
+            {
+              "name": "no_evidence",
+              "ok": true
+            }
+          ],
+          "status": "inconclusive",
+          "refusal": "version_not_collected",
+          "reason": "候选只核验美国 NES 官方说明书；问句点名 美版，未建立该地区 ROM 身份或跨版等价证据，不得用技术条目顶包",
+          "route": {
+            "domain": "megaman2_candidate",
+            "disposition": "version_not_collected",
+            "matched": [
+              "MM2"
+            ],
+            "revision": null,
+            "reason": "候选只核验美国 NES 官方说明书；问句点名 美版，未建立该地区 ROM 身份或跨版等价证据，不得用技术条目顶包"
+          },
+          "index_used": null,
+          "selected_locator": null,
+          "hit_sources": []
+        },
+        {
+          "id": "N04",
+          "q": "MM2 美版ROM 的 walking speed 是什么？",
+          "kind": "blocked",
+          "mode": "strict",
+          "ok": true,
+          "checks": [
+            {
+              "name": "route_domain",
+              "ok": true
+            },
+            {
+              "name": "route_disposition",
+              "ok": true
+            },
+            {
+              "name": "no_kof_source",
+              "ok": true
+            },
+            {
+              "name": "status",
+              "ok": true
+            },
+            {
+              "name": "refusal",
+              "ok": true
+            },
+            {
+              "name": "no_retrieval",
+              "ok": true
+            },
+            {
+              "name": "no_evidence",
+              "ok": true
+            }
+          ],
+          "status": "inconclusive",
+          "refusal": "version_not_collected",
+          "reason": "候选只核验美国 NES 官方说明书；问句点名 美版，未建立该地区 ROM 身份或跨版等价证据，不得用技术条目顶包",
+          "route": {
+            "domain": "megaman2_candidate",
+            "disposition": "version_not_collected",
+            "matched": [
+              "MM2"
+            ],
+            "revision": null,
+            "reason": "候选只核验美国 NES 官方说明书；问句点名 美版，未建立该地区 ROM 身份或跨版等价证据，不得用技术条目顶包"
+          },
+          "index_used": null,
+          "selected_locator": null,
+          "hit_sources": []
+        },
+        {
+          "id": "N05",
+          "q": "洛克人2 和拳皇98 的 walking speed 分别是什么？",
+          "kind": "blocked",
+          "mode": "default",
+          "ok": true,
+          "checks": [
+            {
+              "name": "route_domain",
+              "ok": true
+            },
+            {
+              "name": "route_disposition",
+              "ok": true
+            },
+            {
+              "name": "no_kof_source",
+              "ok": true
+            },
+            {
+              "name": "status",
+              "ok": true
+            },
+            {
+              "name": "refusal",
+              "ok": true
+            },
+            {
+              "name": "no_retrieval",
+              "ok": true
+            },
+            {
+              "name": "no_evidence",
+              "ok": true
+            }
+          ],
+          "status": "inconclusive",
+          "refusal": "multi_domain_needs_split",
+          "reason": "问句同时点名其他游戏/代次内容域，候选消费方不合并放行",
+          "route": {
+            "domain": "megaman2_candidate",
+            "disposition": "multi_domain_needs_split",
+            "matched": [
+              "洛克人2"
+            ],
+            "revision": null,
+            "reason": "问句同时点名其他游戏/代次内容域，候选消费方不合并放行"
+          },
+          "index_used": null,
+          "selected_locator": null,
+          "hit_sources": []
+        },
+        {
+          "id": "N05",
+          "q": "洛克人2 和拳皇98 的 walking speed 分别是什么？",
+          "kind": "blocked",
+          "mode": "strict",
+          "ok": true,
+          "checks": [
+            {
+              "name": "route_domain",
+              "ok": true
+            },
+            {
+              "name": "route_disposition",
+              "ok": true
+            },
+            {
+              "name": "no_kof_source",
+              "ok": true
+            },
+            {
+              "name": "status",
+              "ok": true
+            },
+            {
+              "name": "refusal",
+              "ok": true
+            },
+            {
+              "name": "no_retrieval",
+              "ok": true
+            },
+            {
+              "name": "no_evidence",
+              "ok": true
+            }
+          ],
+          "status": "inconclusive",
+          "refusal": "multi_domain_needs_split",
+          "reason": "问句同时点名其他游戏/代次内容域，候选消费方不合并放行",
+          "route": {
+            "domain": "megaman2_candidate",
+            "disposition": "multi_domain_needs_split",
+            "matched": [
+              "洛克人2"
+            ],
+            "revision": null,
+            "reason": "问句同时点名其他游戏/代次内容域，候选消费方不合并放行"
+          },
+          "index_used": null,
+          "selected_locator": null,
+          "hit_sources": []
+        },
+        {
+          "id": "N06",
+          "q": "洛克人2 和洛克人3 的 walking speed 分别是什么？",
+          "kind": "blocked",
+          "mode": "default",
+          "ok": true,
+          "checks": [
+            {
+              "name": "route_domain",
+              "ok": true
+            },
+            {
+              "name": "route_disposition",
+              "ok": true
+            },
+            {
+              "name": "no_kof_source",
+              "ok": true
+            },
+            {
+              "name": "status",
+              "ok": true
+            },
+            {
+              "name": "refusal",
+              "ok": true
+            },
+            {
+              "name": "no_retrieval",
+              "ok": true
+            },
+            {
+              "name": "no_evidence",
+              "ok": true
+            }
+          ],
+          "status": "inconclusive",
+          "refusal": "multi_domain_needs_split",
+          "reason": "问句同时点名其他游戏/代次内容域，候选消费方不合并放行",
+          "route": {
+            "domain": "megaman2_candidate",
+            "disposition": "multi_domain_needs_split",
+            "matched": [
+              "洛克人2"
+            ],
+            "revision": null,
+            "reason": "问句同时点名其他游戏/代次内容域，候选消费方不合并放行"
+          },
+          "index_used": null,
+          "selected_locator": null,
+          "hit_sources": []
+        },
+        {
+          "id": "N06",
+          "q": "洛克人2 和洛克人3 的 walking speed 分别是什么？",
+          "kind": "blocked",
+          "mode": "strict",
+          "ok": true,
+          "checks": [
+            {
+              "name": "route_domain",
+              "ok": true
+            },
+            {
+              "name": "route_disposition",
+              "ok": true
+            },
+            {
+              "name": "no_kof_source",
+              "ok": true
+            },
+            {
+              "name": "status",
+              "ok": true
+            },
+            {
+              "name": "refusal",
+              "ok": true
+            },
+            {
+              "name": "no_retrieval",
+              "ok": true
+            },
+            {
+              "name": "no_evidence",
+              "ok": true
+            }
+          ],
+          "status": "inconclusive",
+          "refusal": "multi_domain_needs_split",
+          "reason": "问句同时点名其他游戏/代次内容域，候选消费方不合并放行",
+          "route": {
+            "domain": "megaman2_candidate",
+            "disposition": "multi_domain_needs_split",
+            "matched": [
+              "洛克人2"
+            ],
+            "revision": null,
+            "reason": "问句同时点名其他游戏/代次内容域，候选消费方不合并放行"
+          },
+          "index_used": null,
+          "selected_locator": null,
+          "hit_sources": []
+        },
+        {
+          "id": "N07",
+          "q": "洛克人 的 walking speed 是什么？",
+          "kind": "blocked",
+          "mode": "default",
+          "ok": true,
+          "checks": [
+            {
+              "name": "route_domain",
+              "ok": true
+            },
+            {
+              "name": "route_disposition",
+              "ok": true
+            },
+            {
+              "name": "no_kof_source",
+              "ok": true
+            },
+            {
+              "name": "status",
+              "ok": true
+            },
+            {
+              "name": "refusal",
+              "ok": true
+            },
+            {
+              "name": "no_retrieval",
+              "ok": true
+            },
+            {
+              "name": "no_evidence",
+              "ok": true
+            }
+          ],
+          "status": "miss",
+          "refusal": "ambiguous_series",
+          "reason": "只有系列名、MM泛词或近名作品，不能认定是 NES 洛克人2；请补作品代次/版本",
+          "route": {
+            "domain": "megaman2_candidate",
+            "disposition": "ambiguous_series",
+            "matched": [],
+            "revision": null,
+            "reason": "只有系列名、MM泛词或近名作品，不能认定是 NES 洛克人2；请补作品代次/版本"
+          },
+          "index_used": null,
+          "selected_locator": null,
+          "hit_sources": []
+        },
+        {
+          "id": "N07",
+          "q": "洛克人 的 walking speed 是什么？",
+          "kind": "blocked",
+          "mode": "strict",
+          "ok": true,
+          "checks": [
+            {
+              "name": "route_domain",
+              "ok": true
+            },
+            {
+              "name": "route_disposition",
+              "ok": true
+            },
+            {
+              "name": "no_kof_source",
+              "ok": true
+            },
+            {
+              "name": "status",
+              "ok": true
+            },
+            {
+              "name": "refusal",
+              "ok": true
+            },
+            {
+              "name": "no_retrieval",
+              "ok": true
+            },
+            {
+              "name": "no_evidence",
+              "ok": true
+            }
+          ],
+          "status": "miss",
+          "refusal": "ambiguous_series",
+          "reason": "只有系列名、MM泛词或近名作品，不能认定是 NES 洛克人2；请补作品代次/版本",
+          "route": {
+            "domain": "megaman2_candidate",
+            "disposition": "ambiguous_series",
+            "matched": [],
+            "revision": null,
+            "reason": "只有系列名、MM泛词或近名作品，不能认定是 NES 洛克人2；请补作品代次/版本"
+          },
+          "index_used": null,
+          "selected_locator": null,
+          "hit_sources": []
+        },
+        {
+          "id": "N08",
+          "q": "Mega Man 2: The Power Fighters 出招表",
+          "kind": "blocked",
+          "mode": "default",
+          "ok": true,
+          "checks": [
+            {
+              "name": "route_domain",
+              "ok": true
+            },
+            {
+              "name": "route_disposition",
+              "ok": true
+            },
+            {
+              "name": "no_kof_source",
+              "ok": true
+            },
+            {
+              "name": "status",
+              "ok": true
+            },
+            {
+              "name": "refusal",
+              "ok": true
+            },
+            {
+              "name": "no_retrieval",
+              "ok": true
+            },
+            {
+              "name": "no_evidence",
+              "ok": true
+            }
+          ],
+          "status": "miss",
+          "refusal": "ambiguous_series",
+          "reason": "问句指向力量对决/改版/洛克人X等同名或近名作品，不是本候选的 NES Rockman 2 技术范围",
+          "route": {
+            "domain": "megaman2_candidate",
+            "disposition": "ambiguous_series",
+            "matched": [
+              "Mega Man 2"
+            ],
+            "revision": null,
+            "reason": "问句指向力量对决/改版/洛克人X等同名或近名作品，不是本候选的 NES Rockman 2 技术范围"
+          },
+          "index_used": null,
+          "selected_locator": null,
+          "hit_sources": []
+        },
+        {
+          "id": "N08",
+          "q": "Mega Man 2: The Power Fighters 出招表",
+          "kind": "blocked",
+          "mode": "strict",
+          "ok": true,
+          "checks": [
+            {
+              "name": "route_domain",
+              "ok": true
+            },
+            {
+              "name": "route_disposition",
+              "ok": true
+            },
+            {
+              "name": "no_kof_source",
+              "ok": true
+            },
+            {
+              "name": "status",
+              "ok": true
+            },
+            {
+              "name": "refusal",
+              "ok": true
+            },
+            {
+              "name": "no_retrieval",
+              "ok": true
+            },
+            {
+              "name": "no_evidence",
+              "ok": true
+            }
+          ],
+          "status": "miss",
+          "refusal": "ambiguous_series",
+          "reason": "问句指向力量对决/改版/洛克人X等同名或近名作品，不是本候选的 NES Rockman 2 技术范围",
+          "route": {
+            "domain": "megaman2_candidate",
+            "disposition": "ambiguous_series",
+            "matched": [
+              "Mega Man 2"
+            ],
+            "revision": null,
+            "reason": "问句指向力量对决/改版/洛克人X等同名或近名作品，不是本候选的 NES Rockman 2 技术范围"
+          },
+          "index_used": null,
+          "selected_locator": null,
+          "hit_sources": []
+        },
+        {
+          "id": "N09",
+          "q": "洛克人2 的作曲家是谁？",
+          "kind": "unsupported",
+          "mode": "default",
+          "ok": true,
+          "checks": [
+            {
+              "name": "route_domain",
+              "ok": true
+            },
+            {
+              "name": "route_disposition",
+              "ok": true
+            },
+            {
+              "name": "no_kof_source",
+              "ok": true
+            },
+            {
+              "name": "status",
+              "ok": true
+            },
+            {
+              "name": "no_evidence",
+              "ok": true
+            }
+          ],
+          "status": "miss",
+          "refusal": "candidate_evidence_insufficient",
+          "reason": "有 15 个候选块但无一词命中（换术语或扩大要素类型）",
+          "route": {
+            "domain": "megaman2_candidate",
+            "disposition": "candidate",
+            "matched": [
+              "洛克人2"
+            ],
+            "revision": "megaman2_nes_tasvideos_rockman2",
+            "evidence_scope": "TASVideos GameResources 的 Rockman 2 技术条目；不主张地区 ROM 等价",
+            "reason": "显式洛克人2别名；只查指定候选 revision，不借生产文本域"
+          },
+          "index_used": "index.json",
+          "selected_locator": null,
+          "hit_sources": []
+        },
+        {
+          "id": "N09",
+          "q": "洛克人2 的作曲家是谁？",
+          "kind": "unsupported",
+          "mode": "strict",
+          "ok": true,
+          "checks": [
+            {
+              "name": "route_domain",
+              "ok": true
+            },
+            {
+              "name": "route_disposition",
+              "ok": true
+            },
+            {
+              "name": "no_kof_source",
+              "ok": true
+            },
+            {
+              "name": "status",
+              "ok": true
+            },
+            {
+              "name": "no_evidence",
+              "ok": true
+            }
+          ],
+          "status": "miss",
+          "refusal": "candidate_evidence_insufficient",
+          "reason": "有 15 个候选块但无一词命中（换术语或扩大要素类型）",
+          "route": {
+            "domain": "megaman2_candidate",
+            "disposition": "candidate",
+            "matched": [
+              "洛克人2"
+            ],
+            "revision": "megaman2_nes_tasvideos_rockman2",
+            "evidence_scope": "TASVideos GameResources 的 Rockman 2 技术条目；不主张地区 ROM 等价",
+            "reason": "显式洛克人2别名；只查指定候选 revision，不借生产文本域"
+          },
+          "index_used": "index.json",
+          "selected_locator": null,
+          "hit_sources": []
+        },
+        {
+          "id": "N10",
+          "q": "洛克人2 的 HP 内存地址是什么？",
+          "kind": "weak",
+          "mode": "default",
+          "ok": true,
+          "checks": [
+            {
+              "name": "route_domain",
+              "ok": true
+            },
+            {
+              "name": "route_disposition",
+              "ok": true
+            },
+            {
+              "name": "no_kof_source",
+              "ok": true
+            },
+            {
+              "name": "status_inconclusive",
+              "ok": true
+            },
+            {
+              "name": "candidate_index",
+              "ok": true
+            },
+            {
+              "name": "revision",
+              "ok": true
+            },
+            {
+              "name": "reference_hit",
+              "ok": true
+            },
+            {
+              "name": "no_evidence",
+              "ok": true
+            }
+          ],
+          "status": "inconclusive",
+          "refusal": "candidate_evidence_insufficient",
+          "reason": "require_verified 下无 verified_read+authoritative 的可答内容词命中",
+          "route": {
+            "domain": "megaman2_candidate",
+            "disposition": "candidate",
+            "matched": [
+              "洛克人2"
+            ],
+            "revision": "megaman2_nes_memory_dictionary_unverified",
+            "evidence_scope": "本地二手内存字典；逐字段来源与 ROM 身份未核，只作线索",
+            "reason": "显式洛克人2别名；只查指定候选 revision，不借生产文本域"
+          },
+          "index_used": "index.json",
+          "selected_locator": null,
+          "hit_sources": [
+            "local_megaman2_memory_dictionary"
+          ]
+        },
+        {
+          "id": "N10",
+          "q": "洛克人2 的 HP 内存地址是什么？",
+          "kind": "weak",
+          "mode": "strict",
+          "ok": true,
+          "checks": [
+            {
+              "name": "route_domain",
+              "ok": true
+            },
+            {
+              "name": "route_disposition",
+              "ok": true
+            },
+            {
+              "name": "no_kof_source",
+              "ok": true
+            },
+            {
+              "name": "status_inconclusive",
+              "ok": true
+            },
+            {
+              "name": "candidate_index",
+              "ok": true
+            },
+            {
+              "name": "revision",
+              "ok": true
+            },
+            {
+              "name": "reference_hit",
+              "ok": true
+            },
+            {
+              "name": "no_evidence",
+              "ok": true
+            }
+          ],
+          "status": "inconclusive",
+          "refusal": "candidate_evidence_insufficient",
+          "reason": "require_verified 下无 verified_read+authoritative 的可答内容词命中；strict 片段资格下无合格证据（二手转述/撤回段不继承整件权威）",
+          "route": {
+            "domain": "megaman2_candidate",
+            "disposition": "candidate",
+            "matched": [
+              "洛克人2"
+            ],
+            "revision": "megaman2_nes_memory_dictionary_unverified",
+            "evidence_scope": "本地二手内存字典；逐字段来源与 ROM 身份未核，只作线索",
+            "reason": "显式洛克人2别名；只查指定候选 revision，不借生产文本域"
+          },
+          "index_used": "index.json",
+          "selected_locator": null,
+          "hit_sources": [
+            "local_megaman2_memory_dictionary"
+          ]
+        },
+        {
+          "id": "N11",
+          "q": "洛克人2 的 weapon_select 地址是什么？",
+          "kind": "weak",
+          "mode": "default",
+          "ok": true,
+          "checks": [
+            {
+              "name": "route_domain",
+              "ok": true
+            },
+            {
+              "name": "route_disposition",
+              "ok": true
+            },
+            {
+              "name": "no_kof_source",
+              "ok": true
+            },
+            {
+              "name": "status_inconclusive",
+              "ok": true
+            },
+            {
+              "name": "candidate_index",
+              "ok": true
+            },
+            {
+              "name": "revision",
+              "ok": true
+            },
+            {
+              "name": "reference_hit",
+              "ok": true
+            },
+            {
+              "name": "no_evidence",
+              "ok": true
+            }
+          ],
+          "status": "inconclusive",
+          "refusal": "candidate_evidence_insufficient",
+          "reason": "require_verified 下无 verified_read+authoritative 的可答内容词命中",
+          "route": {
+            "domain": "megaman2_candidate",
+            "disposition": "candidate",
+            "matched": [
+              "洛克人2"
+            ],
+            "revision": "megaman2_nes_memory_dictionary_unverified",
+            "evidence_scope": "本地二手内存字典；逐字段来源与 ROM 身份未核，只作线索",
+            "reason": "显式洛克人2别名；只查指定候选 revision，不借生产文本域"
+          },
+          "index_used": "index.json",
+          "selected_locator": null,
+          "hit_sources": [
+            "local_megaman2_memory_dictionary"
+          ]
+        },
+        {
+          "id": "N11",
+          "q": "洛克人2 的 weapon_select 地址是什么？",
+          "kind": "weak",
+          "mode": "strict",
+          "ok": true,
+          "checks": [
+            {
+              "name": "route_domain",
+              "ok": true
+            },
+            {
+              "name": "route_disposition",
+              "ok": true
+            },
+            {
+              "name": "no_kof_source",
+              "ok": true
+            },
+            {
+              "name": "status_inconclusive",
+              "ok": true
+            },
+            {
+              "name": "candidate_index",
+              "ok": true
+            },
+            {
+              "name": "revision",
+              "ok": true
+            },
+            {
+              "name": "reference_hit",
+              "ok": true
+            },
+            {
+              "name": "no_evidence",
+              "ok": true
+            }
+          ],
+          "status": "inconclusive",
+          "refusal": "candidate_evidence_insufficient",
+          "reason": "require_verified 下无 verified_read+authoritative 的可答内容词命中；strict 片段资格下无合格证据（二手转述/撤回段不继承整件权威）",
+          "route": {
+            "domain": "megaman2_candidate",
+            "disposition": "candidate",
+            "matched": [
+              "洛克人2"
+            ],
+            "revision": "megaman2_nes_memory_dictionary_unverified",
+            "evidence_scope": "本地二手内存字典；逐字段来源与 ROM 身份未核，只作线索",
+            "reason": "显式洛克人2别名；只查指定候选 revision，不借生产文本域"
+          },
+          "index_used": "index.json",
+          "selected_locator": null,
+          "hit_sources": [
+            "local_megaman2_memory_dictionary"
+          ]
+        },
+        {
+          "id": "N12",
+          "q": "洛克人2 的 platform 是什么？",
+          "kind": "weak",
+          "mode": "default",
+          "ok": true,
+          "checks": [
+            {
+              "name": "route_domain",
+              "ok": true
+            },
+            {
+              "name": "route_disposition",
+              "ok": true
+            },
+            {
+              "name": "no_kof_source",
+              "ok": true
+            },
+            {
+              "name": "status_inconclusive",
+              "ok": true
+            },
+            {
+              "name": "candidate_index",
+              "ok": true
+            },
+            {
+              "name": "revision",
+              "ok": true
+            },
+            {
+              "name": "reference_hit",
+              "ok": true
+            },
+            {
+              "name": "no_evidence",
+              "ok": true
+            }
+          ],
+          "status": "inconclusive",
+          "refusal": "candidate_evidence_insufficient",
+          "reason": "require_verified 下无 verified_read+authoritative 的可答内容词命中",
+          "route": {
+            "domain": "megaman2_candidate",
+            "disposition": "candidate",
+            "matched": [
+              "洛克人2"
+            ],
+            "revision": "megaman2_nes_title_catalog",
+            "evidence_scope": "本地标题目录；平台与别名为二手目录口径",
+            "reason": "显式洛克人2别名；只查指定候选 revision，不借生产文本域"
+          },
+          "index_used": "index.json",
+          "selected_locator": null,
+          "hit_sources": [
+            "local_megaman2_memory_dictionary",
+            "local_megaman2_tas_publications",
+            "local_megaman2_title_catalog"
+          ]
+        },
+        {
+          "id": "N12",
+          "q": "洛克人2 的 platform 是什么？",
+          "kind": "weak",
+          "mode": "strict",
+          "ok": true,
+          "checks": [
+            {
+              "name": "route_domain",
+              "ok": true
+            },
+            {
+              "name": "route_disposition",
+              "ok": true
+            },
+            {
+              "name": "no_kof_source",
+              "ok": true
+            },
+            {
+              "name": "status_inconclusive",
+              "ok": true
+            },
+            {
+              "name": "candidate_index",
+              "ok": true
+            },
+            {
+              "name": "revision",
+              "ok": true
+            },
+            {
+              "name": "reference_hit",
+              "ok": true
+            },
+            {
+              "name": "no_evidence",
+              "ok": true
+            }
+          ],
+          "status": "inconclusive",
+          "refusal": "candidate_evidence_insufficient",
+          "reason": "require_verified 下无 verified_read+authoritative 的可答内容词命中；strict 片段资格下无合格证据（二手转述/撤回段不继承整件权威）",
+          "route": {
+            "domain": "megaman2_candidate",
+            "disposition": "candidate",
+            "matched": [
+              "洛克人2"
+            ],
+            "revision": "megaman2_nes_title_catalog",
+            "evidence_scope": "本地标题目录；平台与别名为二手目录口径",
+            "reason": "显式洛克人2别名；只查指定候选 revision，不借生产文本域"
+          },
+          "index_used": "index.json",
+          "selected_locator": null,
+          "hit_sources": [
+            "local_megaman2_memory_dictionary",
+            "local_megaman2_tas_publications",
+            "local_megaman2_title_catalog"
+          ]
+        },
+        {
+          "id": "N13",
+          "q": "洛克人2 的 TAS 4057 用哪个版本？",
+          "kind": "weak",
+          "mode": "default",
+          "ok": true,
+          "checks": [
+            {
+              "name": "route_domain",
+              "ok": true
+            },
+            {
+              "name": "route_disposition",
+              "ok": true
+            },
+            {
+              "name": "no_kof_source",
+              "ok": true
+            },
+            {
+              "name": "status_inconclusive",
+              "ok": true
+            },
+            {
+              "name": "candidate_index",
+              "ok": true
+            },
+            {
+              "name": "revision",
+              "ok": true
+            },
+            {
+              "name": "reference_hit",
+              "ok": true
+            },
+            {
+              "name": "no_evidence",
+              "ok": true
+            }
+          ],
+          "status": "inconclusive",
+          "refusal": "candidate_evidence_insufficient",
+          "reason": "require_verified 下无 verified_read+authoritative 的可答内容词命中",
+          "route": {
+            "domain": "megaman2_candidate",
+            "disposition": "candidate",
+            "matched": [
+              "洛克人2"
+            ],
+            "revision": "megaman2_nes_tas_publications",
+            "evidence_scope": "本地 TAS 出版物元数据；不证明 ROM 可用或玩法已验证",
+            "reason": "显式洛克人2别名；只查指定候选 revision，不借生产文本域"
+          },
+          "index_used": "index.json",
+          "selected_locator": null,
+          "hit_sources": [
+            "local_megaman2_tas_publications"
+          ]
+        },
+        {
+          "id": "N13",
+          "q": "洛克人2 的 TAS 4057 用哪个版本？",
+          "kind": "weak",
+          "mode": "strict",
+          "ok": true,
+          "checks": [
+            {
+              "name": "route_domain",
+              "ok": true
+            },
+            {
+              "name": "route_disposition",
+              "ok": true
+            },
+            {
+              "name": "no_kof_source",
+              "ok": true
+            },
+            {
+              "name": "status_inconclusive",
+              "ok": true
+            },
+            {
+              "name": "candidate_index",
+              "ok": true
+            },
+            {
+              "name": "revision",
+              "ok": true
+            },
+            {
+              "name": "reference_hit",
+              "ok": true
+            },
+            {
+              "name": "no_evidence",
+              "ok": true
+            }
+          ],
+          "status": "inconclusive",
+          "refusal": "candidate_evidence_insufficient",
+          "reason": "require_verified 下无 verified_read+authoritative 的可答内容词命中；strict 片段资格下无合格证据（二手转述/撤回段不继承整件权威）",
+          "route": {
+            "domain": "megaman2_candidate",
+            "disposition": "candidate",
+            "matched": [
+              "洛克人2"
+            ],
+            "revision": "megaman2_nes_tas_publications",
+            "evidence_scope": "本地 TAS 出版物元数据；不证明 ROM 可用或玩法已验证",
+            "reason": "显式洛克人2别名；只查指定候选 revision，不借生产文本域"
+          },
+          "index_used": "index.json",
+          "selected_locator": null,
+          "hit_sources": [
+            "local_megaman2_tas_publications"
+          ]
+        },
+        {
+          "id": "N14",
+          "q": "出招表",
+          "kind": "blocked",
+          "mode": "default",
+          "ok": true,
+          "checks": [
+            {
+              "name": "route_domain",
+              "ok": true
+            },
+            {
+              "name": "route_disposition",
+              "ok": true
+            },
+            {
+              "name": "no_kof_source",
+              "ok": true
+            },
+            {
+              "name": "status",
+              "ok": true
+            },
+            {
+              "name": "refusal",
+              "ok": true
+            },
+            {
+              "name": "no_retrieval",
+              "ok": true
+            },
+            {
+              "name": "no_evidence",
+              "ok": true
+            }
+          ],
+          "status": "miss",
+          "refusal": "candidate_domain_not_matched",
+          "reason": "未命中洛克人2显式别名；候选消费方不借其他库顶包",
+          "route": {
+            "domain": "unrouted",
+            "disposition": "not_matched",
+            "matched": [],
+            "revision": null,
+            "reason": "未命中洛克人2显式别名；候选消费方不借其他库顶包"
+          },
+          "index_used": null,
+          "selected_locator": null,
+          "hit_sources": []
+        },
+        {
+          "id": "N14",
+          "q": "出招表",
+          "kind": "blocked",
+          "mode": "strict",
+          "ok": true,
+          "checks": [
+            {
+              "name": "route_domain",
+              "ok": true
+            },
+            {
+              "name": "route_disposition",
+              "ok": true
+            },
+            {
+              "name": "no_kof_source",
+              "ok": true
+            },
+            {
+              "name": "status",
+              "ok": true
+            },
+            {
+              "name": "refusal",
+              "ok": true
+            },
+            {
+              "name": "no_retrieval",
+              "ok": true
+            },
+            {
+              "name": "no_evidence",
+              "ok": true
+            }
+          ],
+          "status": "miss",
+          "refusal": "candidate_domain_not_matched",
+          "reason": "未命中洛克人2显式别名；候选消费方不借其他库顶包",
+          "route": {
+            "domain": "unrouted",
+            "disposition": "not_matched",
+            "matched": [],
+            "revision": null,
+            "reason": "未命中洛克人2显式别名；候选消费方不借其他库顶包"
+          },
+          "index_used": null,
+          "selected_locator": null,
+          "hit_sources": []
+        },
+        {
+          "id": "N15",
+          "q": "walking speed 是什么？",
+          "kind": "blocked",
+          "mode": "default",
+          "ok": true,
+          "checks": [
+            {
+              "name": "route_domain",
+              "ok": true
+            },
+            {
+              "name": "route_disposition",
+              "ok": true
+            },
+            {
+              "name": "no_kof_source",
+              "ok": true
+            },
+            {
+              "name": "status",
+              "ok": true
+            },
+            {
+              "name": "refusal",
+              "ok": true
+            },
+            {
+              "name": "no_retrieval",
+              "ok": true
+            },
+            {
+              "name": "no_evidence",
+              "ok": true
+            }
+          ],
+          "status": "miss",
+          "refusal": "candidate_domain_not_matched",
+          "reason": "未命中洛克人2显式别名；候选消费方不借其他库顶包",
+          "route": {
+            "domain": "unrouted",
+            "disposition": "not_matched",
+            "matched": [],
+            "revision": null,
+            "reason": "未命中洛克人2显式别名；候选消费方不借其他库顶包"
+          },
+          "index_used": null,
+          "selected_locator": null,
+          "hit_sources": []
+        },
+        {
+          "id": "N15",
+          "q": "walking speed 是什么？",
+          "kind": "blocked",
+          "mode": "strict",
+          "ok": true,
+          "checks": [
+            {
+              "name": "route_domain",
+              "ok": true
+            },
+            {
+              "name": "route_disposition",
+              "ok": true
+            },
+            {
+              "name": "no_kof_source",
+              "ok": true
+            },
+            {
+              "name": "status",
+              "ok": true
+            },
+            {
+              "name": "refusal",
+              "ok": true
+            },
+            {
+              "name": "no_retrieval",
+              "ok": true
+            },
+            {
+              "name": "no_evidence",
+              "ok": true
+            }
+          ],
+          "status": "miss",
+          "refusal": "candidate_domain_not_matched",
+          "reason": "未命中洛克人2显式别名；候选消费方不借其他库顶包",
+          "route": {
+            "domain": "unrouted",
+            "disposition": "not_matched",
+            "matched": [],
+            "revision": null,
+            "reason": "未命中洛克人2显式别名；候选消费方不借其他库顶包"
+          },
+          "index_used": null,
+          "selected_locator": null,
+          "hit_sources": []
+        },
+        {
+          "id": "N16",
+          "q": "Rockman 2 Claw 的 walking speed 是什么？",
+          "kind": "blocked",
+          "mode": "default",
+          "ok": true,
+          "checks": [
+            {
+              "name": "route_domain",
+              "ok": true
+            },
+            {
+              "name": "route_disposition",
+              "ok": true
+            },
+            {
+              "name": "no_kof_source",
+              "ok": true
+            },
+            {
+              "name": "status",
+              "ok": true
+            },
+            {
+              "name": "refusal",
+              "ok": true
+            },
+            {
+              "name": "no_retrieval",
+              "ok": true
+            },
+            {
+              "name": "no_evidence",
+              "ok": true
+            }
+          ],
+          "status": "miss",
+          "refusal": "ambiguous_series",
+          "reason": "问句指向力量对决/改版/洛克人X等同名或近名作品，不是本候选的 NES Rockman 2 技术范围",
+          "route": {
+            "domain": "megaman2_candidate",
+            "disposition": "ambiguous_series",
+            "matched": [
+              "Rockman 2"
+            ],
+            "revision": null,
+            "reason": "问句指向力量对决/改版/洛克人X等同名或近名作品，不是本候选的 NES Rockman 2 技术范围"
+          },
+          "index_used": null,
+          "selected_locator": null,
+          "hit_sources": []
+        },
+        {
+          "id": "N16",
+          "q": "Rockman 2 Claw 的 walking speed 是什么？",
+          "kind": "blocked",
+          "mode": "strict",
+          "ok": true,
+          "checks": [
+            {
+              "name": "route_domain",
+              "ok": true
+            },
+            {
+              "name": "route_disposition",
+              "ok": true
+            },
+            {
+              "name": "no_kof_source",
+              "ok": true
+            },
+            {
+              "name": "status",
+              "ok": true
+            },
+            {
+              "name": "refusal",
+              "ok": true
+            },
+            {
+              "name": "no_retrieval",
+              "ok": true
+            },
+            {
+              "name": "no_evidence",
+              "ok": true
+            }
+          ],
+          "status": "miss",
+          "refusal": "ambiguous_series",
+          "reason": "问句指向力量对决/改版/洛克人X等同名或近名作品，不是本候选的 NES Rockman 2 技术范围",
+          "route": {
+            "domain": "megaman2_candidate",
+            "disposition": "ambiguous_series",
+            "matched": [
+              "Rockman 2"
+            ],
+            "revision": null,
+            "reason": "问句指向力量对决/改版/洛克人X等同名或近名作品，不是本候选的 NES Rockman 2 技术范围"
+          },
+          "index_used": null,
+          "selected_locator": null,
+          "hit_sources": []
+        },
+        {
+          "id": "N17",
+          "q": "洛克人2 PAL-B 的 X speed 内存地址是什么？",
+          "kind": "blocked",
+          "mode": "default",
+          "ok": true,
+          "checks": [
+            {
+              "name": "route_domain",
+              "ok": true
+            },
+            {
+              "name": "route_disposition",
+              "ok": true
+            },
+            {
+              "name": "no_kof_source",
+              "ok": true
+            },
+            {
+              "name": "status",
+              "ok": true
+            },
+            {
+              "name": "refusal",
+              "ok": true
+            },
+            {
+              "name": "no_retrieval",
+              "ok": true
+            },
+            {
+              "name": "no_evidence",
+              "ok": true
+            }
+          ],
+          "status": "inconclusive",
+          "refusal": "version_not_collected",
+          "reason": "候选只核验美国 NES 官方说明书；问句点名 PAL-B，未建立该地区 ROM 身份或跨版等价证据，不得用技术条目顶包",
+          "route": {
+            "domain": "megaman2_candidate",
+            "disposition": "version_not_collected",
+            "matched": [
+              "洛克人2"
+            ],
+            "revision": null,
+            "reason": "候选只核验美国 NES 官方说明书；问句点名 PAL-B，未建立该地区 ROM 身份或跨版等价证据，不得用技术条目顶包"
+          },
+          "index_used": null,
+          "selected_locator": null,
+          "hit_sources": []
+        },
+        {
+          "id": "N17",
+          "q": "洛克人2 PAL-B 的 X speed 内存地址是什么？",
+          "kind": "blocked",
+          "mode": "strict",
+          "ok": true,
+          "checks": [
+            {
+              "name": "route_domain",
+              "ok": true
+            },
+            {
+              "name": "route_disposition",
+              "ok": true
+            },
+            {
+              "name": "no_kof_source",
+              "ok": true
+            },
+            {
+              "name": "status",
+              "ok": true
+            },
+            {
+              "name": "refusal",
+              "ok": true
+            },
+            {
+              "name": "no_retrieval",
+              "ok": true
+            },
+            {
+              "name": "no_evidence",
+              "ok": true
+            }
+          ],
+          "status": "inconclusive",
+          "refusal": "version_not_collected",
+          "reason": "候选只核验美国 NES 官方说明书；问句点名 PAL-B，未建立该地区 ROM 身份或跨版等价证据，不得用技术条目顶包",
+          "route": {
+            "domain": "megaman2_candidate",
+            "disposition": "version_not_collected",
+            "matched": [
+              "洛克人2"
+            ],
+            "revision": null,
+            "reason": "候选只核验美国 NES 官方说明书；问句点名 PAL-B，未建立该地区 ROM 身份或跨版等价证据，不得用技术条目顶包"
+          },
+          "index_used": null,
+          "selected_locator": null,
+          "hit_sources": []
+        },
+        {
+          "id": "N18",
+          "q": "MM20 的 walking speed 是什么？",
+          "kind": "blocked",
+          "mode": "default",
+          "ok": true,
+          "checks": [
+            {
+              "name": "route_domain",
+              "ok": true
+            },
+            {
+              "name": "route_disposition",
+              "ok": true
+            },
+            {
+              "name": "no_kof_source",
+              "ok": true
+            },
+            {
+              "name": "status",
+              "ok": true
+            },
+            {
+              "name": "refusal",
+              "ok": true
+            },
+            {
+              "name": "no_retrieval",
+              "ok": true
+            },
+            {
+              "name": "no_evidence",
+              "ok": true
+            }
+          ],
+          "status": "miss",
+          "refusal": "candidate_domain_not_matched",
+          "reason": "未命中洛克人2显式别名；候选消费方不借其他库顶包",
+          "route": {
+            "domain": "unrouted",
+            "disposition": "not_matched",
+            "matched": [],
+            "revision": null,
+            "reason": "未命中洛克人2显式别名；候选消费方不借其他库顶包"
+          },
+          "index_used": null,
+          "selected_locator": null,
+          "hit_sources": []
+        },
+        {
+          "id": "N18",
+          "q": "MM20 的 walking speed 是什么？",
+          "kind": "blocked",
+          "mode": "strict",
+          "ok": true,
+          "checks": [
+            {
+              "name": "route_domain",
+              "ok": true
+            },
+            {
+              "name": "route_disposition",
+              "ok": true
+            },
+            {
+              "name": "no_kof_source",
+              "ok": true
+            },
+            {
+              "name": "status",
+              "ok": true
+            },
+            {
+              "name": "refusal",
+              "ok": true
+            },
+            {
+              "name": "no_retrieval",
+              "ok": true
+            },
+            {
+              "name": "no_evidence",
+              "ok": true
+            }
+          ],
+          "status": "miss",
+          "refusal": "candidate_domain_not_matched",
+          "reason": "未命中洛克人2显式别名；候选消费方不借其他库顶包",
+          "route": {
+            "domain": "unrouted",
+            "disposition": "not_matched",
+            "matched": [],
+            "revision": null,
+            "reason": "未命中洛克人2显式别名；候选消费方不借其他库顶包"
+          },
+          "index_used": null,
+          "selected_locator": null,
+          "hit_sources": []
+        }
+      ],
+      "failure_close": [
+        {
+          "id": "FC01",
+          "ok": true
+        },
+        {
+          "id": "FC02",
+          "ok": true
+        },
+        {
+          "id": "FC03",
+          "ok": true
+        },
+        {
+          "id": "FC04",
+          "ok": true
+        },
+        {
+          "id": "FC05",
+          "ok": true
+        }
+      ],
+      "evidence_validation": {
+        "binding_problems": [],
+        "provenance_problems": [],
+        "index_problems": [],
+        "ok": true
+      },
+      "audit_required_ok": true,
+      "obsolete_production_assertions_not_used": [
+        "lm2_domain_absent",
+        "megaman2_in_domains"
+      ],
+      "query_log": {
+        "path": "F:\\开源掌机教程\\知识库P1_20261118\\megaman2_candidate_v2_manual_20261125\\qc\\legacy_candidate_regression_query_log_20261125.jsonl",
+        "lines": 46,
+        "sha256": "3be6d43caf24678b8c192af112baa7257fb3187887f9aa95ddfa5c0dc1c6ba10"
+      }
+    },
+    "report": "F:\\开源掌机教程\\知识库P1_20261118\\megaman2_production_manual_eval_20261125.json",
+    "query_logs": {
+      "production_route": {
+        "path": "F:\\开源掌机教程\\知识库P1_20261118\\megaman2_candidate_v2_manual_20261125\\qc\\production_route_query_log_20261125.jsonl",
+        "lines": 124,
+        "sha256": "654817b9d210d66591371fc1d56bc240dc22a6682f9a814926f8ec6eb451ec42"
+      },
+      "legacy_candidate": {
+        "path": "F:\\开源掌机教程\\知识库P1_20261118\\megaman2_candidate_v2_manual_20261125\\qc\\legacy_candidate_regression_query_log_20261125.jsonl",
+        "lines": 46,
+        "sha256": "3be6d43caf24678b8c192af112baa7257fb3187887f9aa95ddfa5c0dc1c6ba10"
+      }
+    }
+  },
+  "regression": {
+    "gates": {
+      "project": {
+        "pass": 1551,
+        "total": 1551
+      },
+      "kb": {
+        "pass": 336,
+        "total": 336
+      },
+      "sources": {
+        "pass": 74,
+        "total": 74
+      },
+      "cross_platform": {
+        "pass": 33,
+        "total": 33
+      }
+    },
+    "locked_code_hash_stable": true,
+    "new_visible_gates": [
+      290,
+      291,
+      292
+    ]
+  },
+  "audits": {
+    "candidate": {
+      "status": "inconclusive",
+      "counts": {
+        "pass": 8,
+        "fail": 0,
+        "inconclusive": 1,
+        "entries": 18,
+        "revisions": 5,
+        "chunks": 24
+      },
+      "checks": [
+        {
+          "check_id": "map_schema",
+          "verdict": "pass",
+          "reason": "18 份语料 / 5 个版本分区全部通过 schema",
+          "detail_count": 0
+        },
+        {
+          "check_id": "evidence_coverage",
+          "verdict": "pass",
+          "reason": "verified_read 的每份取证正文都在册（或显式排除并给理由）",
+          "detail_count": 0
+        },
+        {
+          "check_id": "source_binding",
+          "verdict": "pass",
+          "reason": "每份语料都绑定库内来源且在该来源 evidence 列表内",
+          "detail_count": 0
+        },
+        {
+          "check_id": "identity_conflict",
+          "verdict": "pass",
+          "reason": "语料版本分区与来源 games_hit 一致",
+          "detail_count": 0
+        },
+        {
+          "check_id": "index_sync",
+          "verdict": "pass",
+          "reason": "索引与源文件 sha256、块正文 sha1 一致",
+          "detail_count": 0
+        },
+        {
+          "check_id": "chunk_provenance",
+          "verdict": "pass",
+          "reason": "每块都带库内 source_id + 已定义 revision + 当期 status",
+          "detail_count": 0
+        },
+        {
+          "check_id": "authoritative_ready",
+          "verdict": "inconclusive",
+          "reason": "以下版本没有 verified_read+authoritative 正文，只能给线索不能给定论",
+          "detail_count": 3
+        },
+        {
+          "check_id": "authority_inheritance",
+          "verdict": "pass",
+          "reason": "authoritative 件无明标二手转述段",
+          "detail_count": 0
+        },
+        {
+          "check_id": "retraction_markers",
+          "verdict": "pass",
+          "reason": "无撤回/作废段",
+          "detail_count": 0
+        }
+      ]
+    },
+    "base": {
+      "status": "inconclusive",
+      "counts": {
+        "pass": 6,
+        "fail": 0,
+        "inconclusive": 3,
+        "entries": 55,
+        "revisions": 15,
+        "chunks": 826
+      },
+      "checks": [
+        {
+          "check_id": "map_schema",
+          "verdict": "pass",
+          "reason": "55 份语料 / 15 个版本分区全部通过 schema",
+          "detail_count": 0
+        },
+        {
+          "check_id": "evidence_coverage",
+          "verdict": "pass",
+          "reason": "verified_read 的每份取证正文都在册（或显式排除并给理由）",
+          "detail_count": 0
+        },
+        {
+          "check_id": "source_binding",
+          "verdict": "pass",
+          "reason": "每份语料都绑定库内来源且在该来源 evidence 列表内",
+          "detail_count": 0
+        },
+        {
+          "check_id": "identity_conflict",
+          "verdict": "pass",
+          "reason": "语料版本分区与来源 games_hit 一致",
+          "detail_count": 0
+        },
+        {
+          "check_id": "index_sync",
+          "verdict": "pass",
+          "reason": "索引与源文件 sha256、块正文 sha1 一致",
+          "detail_count": 0
+        },
+        {
+          "check_id": "chunk_provenance",
+          "verdict": "pass",
+          "reason": "每块都带库内 source_id + 已定义 revision + 当期 status",
+          "detail_count": 0
+        },
+        {
+          "check_id": "authoritative_ready",
+          "verdict": "inconclusive",
+          "reason": "以下版本没有 verified_read+authoritative 正文，只能给线索不能给定论",
+          "detail_count": 6
+        },
+        {
+          "check_id": "authority_inheritance",
+          "verdict": "inconclusive",
+          "reason": "authoritative 总结含明标二手来源段落（转述不升格；事实级出证资格待阶段3强制）",
+          "detail_count": 46
+        },
+        {
+          "check_id": "retraction_markers",
+          "verdict": "inconclusive",
+          "reason": "撤回段已定位（撤回结论不得出证，排除接线在阶段3）",
+          "detail_count": 58
+        }
+      ]
+    },
+    "hybrid": {
+      "status": "inconclusive",
+      "counts": {
+        "pass": 6,
+        "fail": 0,
+        "inconclusive": 3,
+        "entries": 55,
+        "revisions": 15,
+        "chunks": 840
+      },
+      "checks": [
+        {
+          "check_id": "map_schema",
+          "verdict": "pass",
+          "reason": "55 份语料 / 15 个版本分区全部通过 schema",
+          "detail_count": 0
+        },
+        {
+          "check_id": "evidence_coverage",
+          "verdict": "pass",
+          "reason": "verified_read 的每份取证正文都在册（或显式排除并给理由）",
+          "detail_count": 0
+        },
+        {
+          "check_id": "source_binding",
+          "verdict": "pass",
+          "reason": "每份语料都绑定库内来源且在该来源 evidence 列表内",
+          "detail_count": 0
+        },
+        {
+          "check_id": "identity_conflict",
+          "verdict": "pass",
+          "reason": "语料版本分区与来源 games_hit 一致",
+          "detail_count": 0
+        },
+        {
+          "check_id": "index_sync",
+          "verdict": "pass",
+          "reason": "索引与源文件 sha256、块正文 sha1 一致",
+          "detail_count": 0
+        },
+        {
+          "check_id": "chunk_provenance",
+          "verdict": "pass",
+          "reason": "每块都带库内 source_id + 已定义 revision + 当期 status",
+          "detail_count": 0
+        },
+        {
+          "check_id": "authoritative_ready",
+          "verdict": "inconclusive",
+          "reason": "以下版本没有 verified_read+authoritative 正文，只能给线索不能给定论",
+          "detail_count": 6
+        },
+        {
+          "check_id": "authority_inheritance",
+          "verdict": "inconclusive",
+          "reason": "authoritative 总结含明标二手来源段落（转述不升格；事实级出证资格待阶段3强制）",
+          "detail_count": 46
+        },
+        {
+          "check_id": "retraction_markers",
+          "verdict": "inconclusive",
+          "reason": "撤回段已定位（撤回结论不得出证，排除接线在阶段3）",
+          "detail_count": 58
+        }
+      ]
+    },
+    "note": "0 fail；inconclusive 是未覆盖版本、二手继承、撤回片段或 reference-only 分区没有权威正文，不冒充权威全覆盖。"
+  },
+  "shared_state_after_all_regressions": {
+    "unchanged_since_production_eval": true,
+    "unchanged_during_finalization": true,
+    "changed_paths": [],
+    "snapshots": {
+      "F:\\开源掌机教程\\_工具脚本\\taspipe\\游戏包\\知识库\\index.json": {
+        "present": true,
+        "bytes": 3766455,
+        "mtime_ns": 1795595717772747200,
+        "sha256": "05907ec85146f386325285ccd4d2008d8bc28d50d8ec4e2461c14a9351f03f7d"
+      },
+      "F:\\开源掌机教程\\_工具脚本\\taspipe\\游戏包\\知识库\\corpus_map.json": {
+        "present": true,
+        "bytes": 34439,
+        "mtime_ns": 1795594994860859500,
+        "sha256": "e49bb480ad4aa58d0ce97a47af7fabe49a7453fde90d01631350b3bf662342df"
+      },
+      "F:\\开源掌机教程\\_工具脚本\\taspipe\\游戏包\\来源库\\sources.json": {
+        "present": true,
+        "bytes": 78163,
+        "mtime_ns": 1795614011492637800,
+        "sha256": "456576759073e46fb303a02538e6769f9837d883b633b9c4a1cc8781fc87285f"
+      },
+      "F:\\开源掌机教程\\_工具脚本\\taspipe\\游戏包\\知识库\\query_log.jsonl": {
+        "present": true,
+        "bytes": 1044,
+        "mtime_ns": 1795463914085772600,
+        "sha256": "f73c57ae2080d8f525bdd5cdfb52b0a50f1cc5cf0cca5b89c4003b803602a91d"
+      },
+      "F:\\开源掌机教程\\_工具脚本\\taspipe\\游戏包\\知识库\\index_hybrid.json": {
+        "present": true,
+        "bytes": 3803917,
+        "mtime_ns": 1795595718719399200,
+        "sha256": "c478a8d3e830530f56882e8d9a0b3c7adae6521c897f7b03bfb9c84c95a40fb8"
+      },
+      "F:\\开源掌机教程\\_工具脚本\\taspipe\\游戏包\\电竞事实库\\facts_v1.db": {
+        "present": true,
+        "bytes": 2056192,
+        "mtime_ns": 1795464415053952300,
+        "sha256": "32f029f41629cb3774e701a705d521aa49550c76deabbc0affc760bec264d5c1"
+      },
+      "F:\\开源掌机教程\\选题决策层\\kb快照\\index.json": {
+        "present": true,
+        "bytes": 3723668,
+        "mtime_ns": 1795548337618108300,
+        "sha256": "24873c80464624968281f2edb85dbc00c277eae8ab702e0398b9987817e82787"
+      },
+      "F:\\开源掌机教程\\知识库P1_20261118\\megaman2_candidate_v2_manual_20261125\\index.json": {
+        "present": true,
+        "bytes": 67126,
+        "mtime_ns": 1795608062286043900,
+        "sha256": "864ce8e3724414a95f851fac669ac2fddaa0e8f4fe37e8116ab1f707247a3225"
+      },
+      "F:\\开源掌机教程\\知识库P1_20261118\\megaman2_candidate_v2_manual_20261125\\corpus_map.json": {
+        "present": true,
+        "bytes": 11261,
+        "mtime_ns": 1795608062266042900,
+        "sha256": "98986ab36835fbcd160b8cacb89287ca6f7f6366ca6fa7f2e43dc3e86a630cf6"
+      },
+      "F:\\开源掌机教程\\知识库P1_20261118\\megaman2_candidate_v2_manual_20261125\\sources.json": {
+        "present": true,
+        "bytes": 5974,
+        "mtime_ns": 1795608062265049500,
+        "sha256": "cd882095b72c114217ca2fa33fa7647fb8a7e2aa48240ad7656f05188e69b73f"
+      },
+      "F:\\开源掌机教程\\知识库P1_20261118\\megaman2_candidate_v2_manual_20261125\\contract.json": {
+        "present": true,
+        "bytes": 697,
+        "mtime_ns": 1795608317027720500,
+        "sha256": "6240131d6f7ada4f9c307beaba87d95a63a81f90161fca62fdf8a5caed0ed39b"
+      },
+      "F:\\开源掌机教程\\知识库P1_20261118\\megaman2_candidate_v2_manual_20261125\\provenance.json": {
+        "present": false
+      },
+      "F:\\开源掌机教程\\知识库P1_20261118\\megaman2_candidate_v2_manual_20261125\\scope.json": {
+        "present": true,
+        "bytes": 716,
+        "mtime_ns": 1795608317552378800,
+        "sha256": "66c82413642d0c86ab62b10a344d307cf5fe993b43b12bcac7a73f52b65cd149"
+      },
+      "F:\\开源掌机教程\\知识库P1_20261118\\megaman2_candidate_v2_manual_20261125\\manual_source.json": {
+        "present": true,
+        "bytes": 8080,
+        "mtime_ns": 1795608062267042200,
+        "sha256": "fc6365dd0ab4b69b9442e8cb90e2dfff43dbf5558ad4199cd3c867f1c20438e3"
+      },
+      "F:\\开源掌机教程\\知识库P1_20261118\\megaman2_candidate_v2_manual_20261125\\evidence\\mm2_tasvideos_coordinates_20261125.txt": {
+        "present": true,
+        "bytes": 1446,
+        "mtime_ns": 1795608061718842900,
+        "sha256": "932fd37ed4b9d9e3ac5161317d3e069ec8d53cbcabb89b0baee15b03f5010fc9"
+      },
+      "F:\\开源掌机教程\\知识库P1_20261118\\megaman2_candidate_v2_manual_20261125\\evidence\\mm2_tasvideos_jump_20261125.txt": {
+        "present": true,
+        "bytes": 910,
+        "mtime_ns": 1795608061757426800,
+        "sha256": "2f8b6d41ce8f6cc0833ff92ef97a02ff70c06d71e3396843d9ed57851aab988c"
+      },
+      "F:\\开源掌机教程\\知识库P1_20261118\\megaman2_candidate_v2_manual_20261125\\evidence\\mm2_tasvideos_climb_transform_20261125.txt": {
+        "present": true,
+        "bytes": 738,
+        "mtime_ns": 1795608061964939000,
+        "sha256": "3acb7987e6d9f373c90433a93fe320f79b5ca0da04cfb57bd7306119db414f9a"
+      },
+      "F:\\开源掌机教程\\知识库P1_20261118\\megaman2_candidate_v2_manual_20261125\\evidence\\mm2_tasvideos_jump_horizontal_20261125.txt": {
+        "present": true,
+        "bytes": 818,
+        "mtime_ns": 1795608062028554800,
+        "sha256": "8f2f36609458b26044441323d2306c687d435c2cfa9f03526191ef667318127a"
+      },
+      "F:\\开源掌机教程\\知识库P1_20261118\\megaman2_candidate_v2_manual_20261125\\evidence\\mm2_tasvideos_walking_20261125.txt": {
+        "present": true,
+        "bytes": 460,
+        "mtime_ns": 1795608062029554700,
+        "sha256": "5e58f52be5cdeaf0430aabc5c84ced0f87ba23ea4377eca56e4670bf95743220"
+      },
+      "F:\\开源掌机教程\\知识库P1_20261118\\megaman2_candidate_v2_manual_20261125\\evidence\\mm2_tasvideos_acceleration_20261125.txt": {
+        "present": true,
+        "bytes": 1293,
+        "mtime_ns": 1795608062122241900,
+        "sha256": "2eeb193eafbce3fdaeddca59a32459098ae4d152191680ae4fe91c3687362831"
+      },
+      "F:\\开源掌机教程\\知识库P1_20261118\\megaman2_candidate_v2_manual_20261125\\evidence\\mm2_tasvideos_object_table_20261125.txt": {
+        "present": true,
+        "bytes": 664,
+        "mtime_ns": 1795608062153757100,
+        "sha256": "792c65e4d14ef07711429b09c0a6fd881caab39dbacce72c8f3fa97c2a4d882e"
+      },
+      "F:\\开源掌机教程\\知识库P1_20261118\\megaman2_candidate_v2_manual_20261125\\evidence\\mm2_local_memory_dictionary_20261125.txt": {
+        "present": true,
+        "bytes": 1035,
+        "mtime_ns": 1795608062223974400,
+        "sha256": "2b3397d00e1cafa421d99bc66d116b2d10159beccd0123e7084e208a46bbd539"
+      },
+      "F:\\开源掌机教程\\知识库P1_20261118\\megaman2_candidate_v2_manual_20261125\\evidence\\mm2_local_title_catalog_20261125.txt": {
+        "present": true,
+        "bytes": 498,
+        "mtime_ns": 1795608062225008800,
+        "sha256": "9365bd8c757e5907895d5ecd1aa11df6de46d929da4f6ae605448df32cc583d3"
+      },
+      "F:\\开源掌机教程\\知识库P1_20261118\\megaman2_candidate_v2_manual_20261125\\evidence\\mm2_local_tas_publications_20261125.txt": {
+        "present": true,
+        "bytes": 2981,
+        "mtime_ns": 1795608062260012500,
+        "sha256": "d5cfd8f5152d1bda1135e3d265c0b7e27c936f1016eddbdea9927c56298e9cbf"
+      },
+      "F:\\开源掌机教程\\知识库P1_20261118\\megaman2_candidate_v2_manual_20261125\\evidence\\mm2_manual_controls_20261125.txt": {
+        "present": true,
+        "bytes": 1168,
+        "mtime_ns": 1795608062261013800,
+        "sha256": "76935cbf5a218f388015d82c8e6c1e32f3ba94745099191e2995699541e8a184"
+      },
+      "F:\\开源掌机教程\\知识库P1_20261118\\megaman2_candidate_v2_manual_20261125\\evidence\\mm2_manual_stage_select_20261125.txt": {
+        "present": true,
+        "bytes": 992,
+        "mtime_ns": 1795608062261013800,
+        "sha256": "a1cd6232aba5db6b45ef1e0d3ea0645252244c423c26b0900295d28be8d43b80"
+      },
+      "F:\\开源掌机教程\\知识库P1_20261118\\megaman2_candidate_v2_manual_20261125\\evidence\\mm2_manual_energy_20261125.txt": {
+        "present": true,
+        "bytes": 1077,
+        "mtime_ns": 1795608062262013200,
+        "sha256": "af7740b2a5f9f761ef8adab42f884944631d03d2c11157bac7242dd4e680d0af"
+      },
+      "F:\\开源掌机教程\\知识库P1_20261118\\megaman2_candidate_v2_manual_20261125\\evidence\\mm2_manual_special_items_20261125.txt": {
+        "present": true,
+        "bytes": 857,
+        "mtime_ns": 1795608062262013200,
+        "sha256": "b12fff9d052c66504ab81dacb67fd295972b54b94d0e924ccf2dd1a841cdab44"
+      },
+      "F:\\开源掌机教程\\知识库P1_20261118\\megaman2_candidate_v2_manual_20261125\\evidence\\mm2_manual_passwords_20261125.txt": {
+        "present": true,
+        "bytes": 863,
+        "mtime_ns": 1795608062263014200,
+        "sha256": "9642405c433aaf86ddd8fbc8182c3b0b65ce3ac55150884f55e0cd71211fda94"
+      },
+      "F:\\开源掌机教程\\知识库P1_20261118\\megaman2_candidate_v2_manual_20261125\\evidence\\mm2_manual_airman_20261125.txt": {
+        "present": true,
+        "bytes": 1061,
+        "mtime_ns": 1795608062263014200,
+        "sha256": "d9f8f1b1492e7d9c8f70e8358b40fd63779159d8fe7a7c0c50a220f5e6eaa130"
+      },
+      "F:\\开源掌机教程\\知识库P1_20261118\\megaman2_candidate_v2_manual_20261125\\evidence\\mm2_manual_robot_masters_20261125.txt": {
+        "present": true,
+        "bytes": 653,
+        "mtime_ns": 1795608062263014200,
+        "sha256": "f3aa25b64b4787f92d8f7529faf038334fb9d10d255c5aa5d16c8b111d8a6c39"
+      },
+      "F:\\开源掌机教程\\知识库P1_20261118\\megaman2_candidate_v2_manual_20261125\\evidence\\mm2_manual_weapons_20261125.txt": {
+        "present": true,
+        "bytes": 1488,
+        "mtime_ns": 1795608062264012000,
+        "sha256": "1cb02571cca7b67ac866ba1939785953681c252118c5c0777cd3834146daa38c"
+      },
+      "F:\\开源掌机教程\\知识库P1_20261118\\megaman2_questions_frozen_v2_manual_20261125.json": {
+        "present": true,
+        "bytes": 13673,
+        "mtime_ns": 1795608062300090000,
+        "sha256": "b824e990ec2aae82166c50570acbea0b3998e8fd533eb6c6c1fdb3b897520110"
+      },
+      "F:\\开源掌机教程\\知识库P1_20261118\\megaman2_candidate_20261125\\index.json": {
+        "present": true,
+        "bytes": 34088,
+        "mtime_ns": 1795548973949734600,
+        "sha256": "a72988e7f8a773fbaeb5f519f46b0f9ddd97eee8a6cda703b01434e880c05576"
+      },
+      "F:\\开源掌机教程\\知识库P1_20261118\\megaman2_candidate_20261125\\corpus_map.json": {
+        "present": true,
+        "bytes": 6516,
+        "mtime_ns": 1795548973939736700,
+        "sha256": "a3f33a3ae4b0d4654e13355b94c8d6c433d9ebbca94045306e7da51115b55521"
+      },
+      "F:\\开源掌机教程\\知识库P1_20261118\\megaman2_candidate_20261125\\sources.json": {
+        "present": true,
+        "bytes": 4109,
+        "mtime_ns": 1795548973938733500,
+        "sha256": "8f60601110f0e759a341831b90426a1b44b94167eaa4d7450ae8d79c606ba1e9"
+      },
+      "F:\\开源掌机教程\\知识库P1_20261118\\megaman2_candidate_20261125\\contract.json": {
+        "present": true,
+        "bytes": 523,
+        "mtime_ns": 1795548973952743800,
+        "sha256": "d33d28aa54e7e830670abaa11596aeb34029a906e4057245d916631f2263e43a"
+      },
+      "F:\\开源掌机教程\\知识库P1_20261118\\megaman2_candidate_20261125\\provenance.json": {
+        "present": true,
+        "bytes": 11127,
+        "mtime_ns": 1795548973940734100,
+        "sha256": "d65f8ea2dc1d2f42d5b90dc27bb532080899f7f1caad2860f1c881d478bbac25"
+      },
+      "F:\\开源掌机教程\\知识库P1_20261118\\megaman2_candidate_20261125\\scope.json": {
+        "present": true,
+        "bytes": 767,
+        "mtime_ns": 1795548973941736200,
+        "sha256": "03d074e6372b24e2781138cae617205d81e5a1100fe43f508f9e84d5a46a6ae6"
+      },
+      "F:\\开源掌机教程\\知识库P1_20261118\\megaman2_candidate_20261125\\manual_source.json": {
+        "present": false
+      },
+      "F:\\开源掌机教程\\知识库P1_20261118\\megaman2_candidate_20261125\\evidence\\mm2_tasvideos_coordinates_20261125.txt": {
+        "present": true,
+        "bytes": 1446,
+        "mtime_ns": 1795548973851551000,
+        "sha256": "932fd37ed4b9d9e3ac5161317d3e069ec8d53cbcabb89b0baee15b03f5010fc9"
+      },
+      "F:\\开源掌机教程\\知识库P1_20261118\\megaman2_candidate_20261125\\evidence\\mm2_tasvideos_jump_20261125.txt": {
+        "present": true,
+        "bytes": 910,
+        "mtime_ns": 1795548973869474100,
+        "sha256": "2f8b6d41ce8f6cc0833ff92ef97a02ff70c06d71e3396843d9ed57851aab988c"
+      },
+      "F:\\开源掌机教程\\知识库P1_20261118\\megaman2_candidate_20261125\\evidence\\mm2_tasvideos_climb_transform_20261125.txt": {
+        "present": true,
+        "bytes": 738,
+        "mtime_ns": 1795548973872474900,
+        "sha256": "3acb7987e6d9f373c90433a93fe320f79b5ca0da04cfb57bd7306119db414f9a"
+      },
+      "F:\\开源掌机教程\\知识库P1_20261118\\megaman2_candidate_20261125\\evidence\\mm2_tasvideos_jump_horizontal_20261125.txt": {
+        "present": true,
+        "bytes": 818,
+        "mtime_ns": 1795548973875474800,
+        "sha256": "8f2f36609458b26044441323d2306c687d435c2cfa9f03526191ef667318127a"
+      },
+      "F:\\开源掌机教程\\知识库P1_20261118\\megaman2_candidate_20261125\\evidence\\mm2_tasvideos_walking_20261125.txt": {
+        "present": true,
+        "bytes": 460,
+        "mtime_ns": 1795548973878480000,
+        "sha256": "5e58f52be5cdeaf0430aabc5c84ced0f87ba23ea4377eca56e4670bf95743220"
+      },
+      "F:\\开源掌机教程\\知识库P1_20261118\\megaman2_candidate_20261125\\evidence\\mm2_tasvideos_acceleration_20261125.txt": {
+        "present": true,
+        "bytes": 1293,
+        "mtime_ns": 1795548973880479000,
+        "sha256": "2eeb193eafbce3fdaeddca59a32459098ae4d152191680ae4fe91c3687362831"
+      },
+      "F:\\开源掌机教程\\知识库P1_20261118\\megaman2_candidate_20261125\\evidence\\mm2_tasvideos_object_table_20261125.txt": {
+        "present": true,
+        "bytes": 664,
+        "mtime_ns": 1795548973882483300,
+        "sha256": "792c65e4d14ef07711429b09c0a6fd881caab39dbacce72c8f3fa97c2a4d882e"
+      },
+      "F:\\开源掌机教程\\知识库P1_20261118\\megaman2_candidate_20261125\\evidence\\mm2_local_memory_dictionary_20261125.txt": {
+        "present": true,
+        "bytes": 1035,
+        "mtime_ns": 1795548973883486300,
+        "sha256": "2b3397d00e1cafa421d99bc66d116b2d10159beccd0123e7084e208a46bbd539"
+      },
+      "F:\\开源掌机教程\\知识库P1_20261118\\megaman2_candidate_20261125\\evidence\\mm2_local_title_catalog_20261125.txt": {
+        "present": true,
+        "bytes": 498,
+        "mtime_ns": 1795548973885480300,
+        "sha256": "9365bd8c757e5907895d5ecd1aa11df6de46d929da4f6ae605448df32cc583d3"
+      },
+      "F:\\开源掌机教程\\知识库P1_20261118\\megaman2_candidate_20261125\\evidence\\mm2_local_tas_publications_20261125.txt": {
+        "present": true,
+        "bytes": 2981,
+        "mtime_ns": 1795548973927569700,
+        "sha256": "d5cfd8f5152d1bda1135e3d265c0b7e27c936f1016eddbdea9927c56298e9cbf"
+      }
+    }
+  },
+  "final_live_queries": {
+    "all_ok": true,
+    "json": "F:\\开源掌机教程\\知识库P1_20261118\\megaman2_final_live_queries_v2_manual_20261125.json",
+    "log": "F:\\开源掌机教程\\知识库P1_20261118\\megaman2_candidate_v2_manual_20261125\\qc\\final_live_queries_v2_manual_20261125.jsonl",
+    "log_lines": 7,
+    "probes": [
+      {
+        "id": "manual_controls",
+        "q": "洛克人2美版官方说明书里跳跃和射击：A 键和 B 键分别控制什么？",
+        "ok": true,
+        "result": {
+          "status": "pass",
+          "refusal": null,
+          "reason_code": null,
+          "backend": "megaman2",
+          "index_used": "index.json",
+          "index_sha256": "864ce8e3724414a95f851fac669ac2fddaa0e8f4fe37e8116ab1f707247a3225",
+          "answer_text": "洛克人2 官方说明书：A键 B键 跳跃 射击 爬梯 START 暂停 无敌（美国NES手册第4至5页）\n来源：Capcom《MEGA MAN 2》美国 NES 官方说明书，任天堂官方数字复刻。\n核验：已读扫描页；中文为说明，英文为短引文；未收全本。\n左和右用于移动，跳跃或下落时仍可移动；上和下用于上下爬梯。\n> Pushing RIGHT and LEFT on the controller moves Mega Man right and left. This works even when he is jumping or falling.\nA键用于跳跃，按住越久跳得越高；在梯顶按上起跳会跌下梯子。\n> The A button is used for jumping. The longer you hold the button down, the higher Mega Man will jump.\nB键用于射击，跳跃或下落时也能射击。\n> The B button is used for shooting. ... Mega Man can shoot while he is jumping or falling.\nSTART用于切换武器、使用能量晶体、查看生命并暂停游戏。\n> The START button is used for changing weapons, using energy crystals, ... It is also a convenient way to pause the game.\nMega Man受击后约有一到两秒无敌。\n> When Mega Man is damaged, he is invulnerable for a second or two.",
+          "selected_evidence": [
+            {
+              "chunk_id": "66705aa313c7",
+              "score": 13.357,
+              "source_id": "nintendo_mega_man_2_nes_us_manual",
+              "status": "verified_read",
+              "authority": "authoritative",
+              "revision": "megaman2_nes_us_manual",
+              "game_id": "megaman2",
+              "platform": "NES",
+              "revision_match": true,
+              "locator": "知识库P1_20261118/megaman2_candidate_v2_manual_20261125/evidence/mm2_manual_controls_20261125.txt#L1-L19",
+              "heading": "",
+              "matched_terms": [
+                "官方",
+                "射击",
+                "方说",
+                "明书",
+                "说明",
+                "跳跃"
+              ],
+              "snippet": "洛克人2 官方说明书：A键 B键 跳跃 射击 爬梯 START 暂停 无敌（美国NES手册第4至5页）\n来源：Capcom《MEGA MAN 2》美国 NES 官方说明书，任天堂官方数字复刻。\n核验：已读扫描页；中文为说明，英文为短引文；未收全本。\n左和右用于移动，跳跃或下落时仍可移动；上和下用于上下爬梯。\n> Pushing RIGHT and LEFT on the controller moves Mega Man right and left. This works ",
+              "answerability": {
+                "answerable": true,
+                "intent": "topic",
+                "focus_ok": true,
+                "pattern_ok": true,
+                "intent_ok": true,
+                "focus_hit": [
+                  "官方",
+                  "射击",
+                  "方说",
+                  "明书",
+                  "说明",
+                  "跳跃"
+                ],
+                "url_list": false,
+                "topic_anchor_ok": true,
+                "exclusive_attribution_ok": true,
+                "position_subject_ok": true,
+                "position_subjects": [],
+                "shot_method_ok": true,
+                "player_role_ok": true,
+                "ending_capability_ok": true,
+                "input_sequence_ok": true,
+                "team_shot_ok": true,
+                "technique_ok": true,
+                "multiplayer_mode_ok": true
+              },
+              "fragment_provenance": {
+                "policy": "strict",
+                "eligible": true,
+                "reason": "eligible_fragment",
+                "relevant_segments": 6,
+                "eligible_segments": 5,
+                "reference_segments": 1,
+                "retracted_segments": 0,
+                "evidence_excerpt": "洛克人2 官方说明书：A键 B键 跳跃 射击 爬梯 START 暂停 无敌（美国NES手册第4至5页）"
+              }
+            }
+          ],
+          "candidate_only": true,
+          "whole_game_knowledge_base": false,
+          "production_route_wired": true
+        }
+      },
+      {
+        "id": "manual_energy",
+        "q": "洛克人2官方说明书里 energy crystal 有什么作用，怎么使用？",
+        "ok": true,
+        "result": {
+          "status": "pass",
+          "refusal": null,
+          "reason_code": null,
+          "backend": "megaman2",
+          "index_used": "index.json",
+          "index_sha256": "864ce8e3724414a95f851fac669ac2fddaa0e8f4fe37e8116ab1f707247a3225",
+          "answer_text": "洛克人2 官方说明书：Energy Meter life energy pellet ball crystal 武器能量 1UP（美国NES手册第6至7页）\n来源：Capcom《MEGA MAN 2》美国 NES 官方说明书，任天堂官方数字复刻。\n核验：已读扫描页；中文为说明，英文为短引文；未收全本。\n左上角Energy Meter显示还能承受多少伤害，归零时失去一条Mega Man生命。\n> When the meter reaches zero points, one Mega Man life will be lost.\nenergy pellet和energy ball补充少量生命能量；energy crystal是满能量，可在电量低时使用。\n> There is also an energy crystal. This is a full load of energy that Mega Man can carry around with him.\n按START选择Energy crystal，再按START将能量补满，然后重新选武器并按START。\n> Push the START button again to fill your energy back up to maximum.\n选择标准Mega Man以外的武器时会出现第二能量表，表示当前武器剩余能量。\n> This tells how much charge remains in the current weapon.\n1 UP增加一名玩家。\n> 1 UP. Adds One Player.",
+          "selected_evidence": [
+            {
+              "chunk_id": "a953e342d9a0",
+              "score": 15.078,
+              "source_id": "nintendo_mega_man_2_nes_us_manual",
+              "status": "verified_read",
+              "authority": "authoritative",
+              "revision": "megaman2_nes_us_manual",
+              "game_id": "megaman2",
+              "platform": "NES",
+              "revision_match": true,
+              "locator": "知识库P1_20261118/megaman2_candidate_v2_manual_20261125/evidence/mm2_manual_energy_20261125.txt#L1-L19",
+              "heading": "",
+              "matched_terms": [
+                "crystal",
+                "energy",
+                "使用",
+                "官方",
+                "方说",
+                "明书",
+                "说明"
+              ],
+              "snippet": "洛克人2 官方说明书：Energy Meter life energy pellet ball crystal 武器能量 1UP（美国NES手册第6至7页）\n来源：Capcom《MEGA MAN 2》美国 NES 官方说明书，任天堂官方数字复刻。\n核验：已读扫描页；中文为说明，英文为短引文；未收全本。\n左上角Energy Meter显示还能承受多少伤害，归零时失去一条Mega Man生命。\n> When the meter reaches zero points, one M",
+              "answerability": {
+                "answerable": true,
+                "intent": "howto",
+                "focus_ok": true,
+                "pattern_ok": true,
+                "intent_ok": true,
+                "focus_hit": [
+                  "crystal",
+                  "energy",
+                  "使用",
+                  "官方",
+                  "方说",
+                  "明书"
+                ],
+                "url_list": false,
+                "topic_anchor_ok": true,
+                "exclusive_attribution_ok": true,
+                "position_subject_ok": true,
+                "position_subjects": [],
+                "shot_method_ok": true,
+                "player_role_ok": true,
+                "ending_capability_ok": true,
+                "input_sequence_ok": true,
+                "team_shot_ok": true,
+                "technique_ok": true,
+                "multiplayer_mode_ok": true
+              },
+              "fragment_provenance": {
+                "policy": "strict",
+                "eligible": true,
+                "reason": "eligible_fragment",
+                "relevant_segments": 9,
+                "eligible_segments": 8,
+                "reference_segments": 1,
+                "retracted_segments": 0,
+                "evidence_excerpt": "洛克人2 官方说明书：Energy Meter life energy pellet ball crystal 武器能量 1UP（美国NES手册第6至7页）"
+              }
+            }
+          ],
+          "candidate_only": true,
+          "whole_game_knowledge_base": false,
+          "production_route_wired": true
+        }
+      },
+      {
+        "id": "manual_metal_blade",
+        "q": "洛克人2官方说明书里 Metal Blade 的投掷方向、数量和用途是什么？",
+        "ok": true,
+        "result": {
+          "status": "pass",
+          "refusal": null,
+          "reason_code": null,
+          "backend": "megaman2",
+          "index_used": "index.json",
+          "index_sha256": "864ce8e3724414a95f851fac669ac2fddaa0e8f4fe37e8116ab1f707247a3225",
+          "answer_text": "Metal Man的Metal Blade最多向任意方向投掷三枚，被说明书称为最佳通用武器且持续时间长。\n> This is probably the best general purpose weapon and the energy lasts a long time.\nCrash Man的Crash Bomber可掷向墙壁，短暂延迟后爆炸，可用于穿过某些墙壁。\n> Crash Bomber can be thrown at walls and will detonate after a short delay.",
+          "selected_evidence": [
+            {
+              "chunk_id": "e5dd353e2356",
+              "score": 13.598,
+              "source_id": "nintendo_mega_man_2_nes_us_manual",
+              "status": "verified_read",
+              "authority": "authoritative",
+              "revision": "megaman2_nes_us_manual",
+              "game_id": "megaman2",
+              "platform": "NES",
+              "revision_match": true,
+              "locator": "知识库P1_20261118/megaman2_candidate_v2_manual_20261125/evidence/mm2_manual_weapons_20261125.txt#L24-L28",
+              "heading": "",
+              "matched_terms": [
+                "blade",
+                "metal",
+                "投掷",
+                "方向",
+                "明书",
+                "说明"
+              ],
+              "snippet": "Metal Man的Metal Blade最多向任意方向投掷三枚，被说明书称为最佳通用武器且持续时间长。\n> This is probably the best general purpose weapon and the energy lasts a long time.\nCrash Man的Crash Bomber可掷向墙壁，短暂延迟后爆炸，可用于穿过某些墙壁。\n> Crash Bomber can be thrown at walls and will detonate",
+              "answerability": {
+                "answerable": true,
+                "intent": "topic",
+                "focus_ok": true,
+                "pattern_ok": true,
+                "intent_ok": true,
+                "focus_hit": [
+                  "blade",
+                  "metal",
+                  "投掷",
+                  "方向",
+                  "明书",
+                  "说明"
+                ],
+                "url_list": false,
+                "topic_anchor_ok": true,
+                "exclusive_attribution_ok": true,
+                "position_subject_ok": true,
+                "position_subjects": [],
+                "shot_method_ok": true,
+                "player_role_ok": true,
+                "ending_capability_ok": true,
+                "input_sequence_ok": true,
+                "team_shot_ok": true,
+                "technique_ok": true,
+                "multiplayer_mode_ok": true
+              },
+              "fragment_provenance": {
+                "policy": "strict",
+                "eligible": true,
+                "reason": "eligible_fragment",
+                "relevant_segments": 1,
+                "eligible_segments": 1,
+                "reference_segments": 0,
+                "retracted_segments": 0,
+                "evidence_excerpt": "Metal Man的Metal Blade最多向任意方向投掷三枚，被说明书称为最佳通用武器且持续时间长"
+              }
+            }
+          ],
+          "candidate_only": true,
+          "whole_game_knowledge_base": false,
+          "production_route_wired": true
+        }
+      },
+      {
+        "id": "manual_crash_bomber",
+        "q": "洛克人2官方说明书里 Crash Bomber 有什么用途？",
+        "ok": true,
+        "result": {
+          "status": "pass",
+          "refusal": null,
+          "reason_code": null,
+          "backend": "megaman2",
+          "index_used": "index.json",
+          "index_sha256": "864ce8e3724414a95f851fac669ac2fddaa0e8f4fe37e8116ab1f707247a3225",
+          "answer_text": "Metal Man的Metal Blade最多向任意方向投掷三枚，被说明书称为最佳通用武器且持续时间长。\n> This is probably the best general purpose weapon and the energy lasts a long time.\nCrash Man的Crash Bomber可掷向墙壁，短暂延迟后爆炸，可用于穿过某些墙壁。\n> Crash Bomber can be thrown at walls and will detonate after a short delay.",
+          "selected_evidence": [
+            {
+              "chunk_id": "e5dd353e2356",
+              "score": 10.4,
+              "source_id": "nintendo_mega_man_2_nes_us_manual",
+              "status": "verified_read",
+              "authority": "authoritative",
+              "revision": "megaman2_nes_us_manual",
+              "game_id": "megaman2",
+              "platform": "NES",
+              "revision_match": true,
+              "locator": "知识库P1_20261118/megaman2_candidate_v2_manual_20261125/evidence/mm2_manual_weapons_20261125.txt#L24-L28",
+              "heading": "",
+              "matched_terms": [
+                "bomber",
+                "crash",
+                "明书",
+                "说明"
+              ],
+              "snippet": "Metal Man的Metal Blade最多向任意方向投掷三枚，被说明书称为最佳通用武器且持续时间长。\n> This is probably the best general purpose weapon and the energy lasts a long time.\nCrash Man的Crash Bomber可掷向墙壁，短暂延迟后爆炸，可用于穿过某些墙壁。\n> Crash Bomber can be thrown at walls and will detonate",
+              "answerability": {
+                "answerable": true,
+                "intent": "topic",
+                "focus_ok": true,
+                "pattern_ok": true,
+                "intent_ok": true,
+                "focus_hit": [
+                  "bomber",
+                  "crash",
+                  "明书",
+                  "说明"
+                ],
+                "url_list": false,
+                "topic_anchor_ok": true,
+                "exclusive_attribution_ok": true,
+                "position_subject_ok": true,
+                "position_subjects": [],
+                "shot_method_ok": true,
+                "player_role_ok": true,
+                "ending_capability_ok": true,
+                "input_sequence_ok": true,
+                "team_shot_ok": true,
+                "technique_ok": true,
+                "multiplayer_mode_ok": true
+              },
+              "fragment_provenance": {
+                "policy": "strict",
+                "eligible": true,
+                "reason": "eligible_fragment",
+                "relevant_segments": 3,
+                "eligible_segments": 3,
+                "reference_segments": 0,
+                "retracted_segments": 0,
+                "evidence_excerpt": "Crash Bomber can be thrown at walls and will detonate after a short delay."
+              }
+            }
+          ],
+          "candidate_only": true,
+          "whole_game_knowledge_base": false,
+          "production_route_wired": true
+        }
+      },
+      {
+        "id": "technical_production",
+        "q": "洛克人2 的 walking speed 是什么？",
+        "ok": true,
+        "result": {
+          "status": "pass",
+          "refusal": null,
+          "reason_code": null,
+          "backend": "megaman2",
+          "index_used": "index.json",
+          "index_sha256": "05907ec85146f386325285ccd4d2008d8bc28d50d8ec4e2461c14a9351f03f7d",
+          "answer_text": "> Origin: _工具脚本/taspipe/游戏包/来源库/取证/tasvideos_gameresources_rockman_data_2026-11-23.txt\n> Original line ranges: 281-287\n> Qualification: Source-scoped technical evidence; no PAL/US regional equivalence is asserted.\nWalking\nWalking speed\nIn Rockman 1 and 2, during walking, Rockman’s X speed is 01.60.\nIn Rockman 3 and 4, during walking, Rockman’s X speed is 01.4C.",
+          "selected_evidence": [
+            {
+              "chunk_id": "b7dbf0bfc214",
+              "score": 21.78,
+              "source_id": "tasvideos_rockman_data_mm2_extract",
+              "status": "verified_read",
+              "authority": "authoritative",
+              "revision": "megaman2_nes_tasvideos_rockman2",
+              "game_id": "megaman2",
+              "platform": "NES",
+              "revision_match": true,
+              "locator": "_工具脚本/taspipe/游戏包/来源库/取证/mm2_tasvideos_walking_20261125.txt#L2-L12",
+              "heading": "Rockman 2 walking speed — verbatim extract",
+              "matched_terms": [
+                "speed",
+                "walking"
+              ],
+              "snippet": "> Origin: _工具脚本/taspipe/游戏包/来源库/取证/tasvideos_gameresources_rockman_data_2026-11-23.txt\n> Original line ranges: 281-287\n> Qualification: Source-scoped technical evidence; no PAL/US regional equivalence is asserted.\nWalking\nWalking speed\nIn R",
+              "answerability": {
+                "answerable": true,
+                "intent": "topic",
+                "focus_ok": true,
+                "pattern_ok": true,
+                "intent_ok": true,
+                "focus_hit": [
+                  "speed",
+                  "walking"
+                ],
+                "url_list": false,
+                "topic_anchor_ok": true,
+                "exclusive_attribution_ok": true,
+                "position_subject_ok": true,
+                "position_subjects": [],
+                "shot_method_ok": true,
+                "player_role_ok": true,
+                "ending_capability_ok": true,
+                "input_sequence_ok": true,
+                "team_shot_ok": true,
+                "technique_ok": true,
+                "multiplayer_mode_ok": true
+              },
+              "fragment_provenance": {
+                "policy": "strict",
+                "eligible": true,
+                "reason": "eligible_fragment",
+                "relevant_segments": 4,
+                "eligible_segments": 4,
+                "reference_segments": 0,
+                "retracted_segments": 0,
+                "evidence_excerpt": "In Rockman 1 and 2, during walking, Rockman’s X speed is 01.60."
+              }
+            }
+          ],
+          "candidate_only": false,
+          "whole_game_knowledge_base": false,
+          "production_route_wired": true
+        }
+      },
+      {
+        "id": "jp_manual_refused",
+        "q": "洛克人2 日版官方说明书里 Crash Bomber 有什么用途？",
+        "ok": true,
+        "result": {
+          "status": "inconclusive",
+          "refusal": "version_not_collected",
+          "reason_code": "version_not_collected",
+          "backend": "megaman2",
+          "index_used": null,
+          "index_sha256": null,
+          "answer_text": "",
+          "selected_evidence": [],
+          "candidate_only": false,
+          "whole_game_knowledge_base": false,
+          "production_route_wired": true
+        }
+      },
+      {
+        "id": "multi_domain_not_merged",
+        "q": "洛克人2 的 walking speed 和拳皇98 的必杀射门分别是什么？",
+        "ok": true,
+        "result": {
+          "status": "inconclusive",
+          "refusal": "multi_domain_needs_split",
+          "reason_code": null,
+          "backend": null,
+          "index_used": "index.json",
+          "index_sha256": "05907ec85146f386325285ccd4d2008d8bc28d50d8ec4e2461c14a9351f03f7d",
+          "answer_text": "",
+          "selected_evidence": [],
+          "candidate_only": null,
+          "whole_game_knowledge_base": null,
+          "production_route_wired": null
+        },
+        "megaman2_domain": {
+          "status": "pass",
+          "refusal": null,
+          "reason_code": null,
+          "backend": "megaman2",
+          "index_used": "index.json",
+          "index_sha256": "05907ec85146f386325285ccd4d2008d8bc28d50d8ec4e2461c14a9351f03f7d",
+          "answer_text": "> Origin: _工具脚本/taspipe/游戏包/来源库/取证/tasvideos_gameresources_rockman_data_2026-11-23.txt\n> Original line ranges: 281-287\n> Qualification: Source-scoped technical evidence; no PAL/US regional equivalence is asserted.\nWalking\nWalking speed\nIn Rockman 1 and 2, during walking, Rockman’s X speed is 01.60.\nIn Rockman 3 and 4, during walking, Rockman’s X speed is 01.4C.",
+          "selected_evidence": [
+            {
+              "chunk_id": "b7dbf0bfc214",
+              "score": 21.78,
+              "source_id": "tasvideos_rockman_data_mm2_extract",
+              "status": "verified_read",
+              "authority": "authoritative",
+              "revision": "megaman2_nes_tasvideos_rockman2",
+              "game_id": "megaman2",
+              "platform": "NES",
+              "revision_match": true,
+              "locator": "_工具脚本/taspipe/游戏包/来源库/取证/mm2_tasvideos_walking_20261125.txt#L2-L12",
+              "heading": "Rockman 2 walking speed — verbatim extract",
+              "matched_terms": [
+                "speed",
+                "walking"
+              ],
+              "snippet": "> Origin: _工具脚本/taspipe/游戏包/来源库/取证/tasvideos_gameresources_rockman_data_2026-11-23.txt\n> Original line ranges: 281-287\n> Qualification: Source-scoped technical evidence; no PAL/US regional equivalence is asserted.\nWalking\nWalking speed\nIn R",
+              "answerability": {
+                "answerable": true,
+                "intent": "topic",
+                "focus_ok": true,
+                "pattern_ok": true,
+                "intent_ok": true,
+                "focus_hit": [
+                  "speed",
+                  "walking"
+                ],
+                "url_list": false,
+                "topic_anchor_ok": true,
+                "exclusive_attribution_ok": true,
+                "position_subject_ok": true,
+                "position_subjects": [],
+                "shot_method_ok": true,
+                "player_role_ok": true,
+                "ending_capability_ok": true,
+                "input_sequence_ok": true,
+                "team_shot_ok": true,
+                "technique_ok": true,
+                "multiplayer_mode_ok": true
+              },
+              "fragment_provenance": {
+                "policy": "strict",
+                "eligible": true,
+                "reason": "eligible_fragment",
+                "relevant_segments": 4,
+                "eligible_segments": 4,
+                "reference_segments": 0,
+                "retracted_segments": 0,
+                "evidence_excerpt": "In Rockman 1 and 2, during walking, Rockman’s X speed is 01.60."
+              }
+            }
+          ],
+          "candidate_only": false,
+          "whole_game_knowledge_base": false,
+          "production_route_wired": true
+        }
+      }
+    ]
+  },
+  "temporary_research_cleanup": {
+    "removed": false,
+    "already_absent": true,
+    "path": "C:\\Users\\Administrator\\.qoder\\tmp\\megaman2_manual_20261125",
+    "file_count": 0,
+    "total_bytes": 0,
+    "exists_after": false
+  },
+  "code_sha256": {
+    "kb": "cf9d69aa40329b9e1ff4b2d086abbddf54de9ea89ab581c093c3df1ab8463264",
+    "kb_route": "566e96b2ea4b7f26858250f5d1e434c2a92671b7345486d12c2ffae6837eb6ee",
+    "kb_megaman2": "ae3050cc729cbe407330f2b16b59459186781aad338e2e97f6422df6ab9a4347",
+    "kb_answer": "6a75e63b0e77c3e560ea8373c695e15a85076ce4444ebfe0005207d0ddec6f05",
+    "schema": "8ec94a658132cf92bfae84ca2cc1da7f53960c831c07024dfbfa97cf463e7b8a",
+    "kb_selftest_gates": "b06212a5bd704a779a946eef578661fab3843f78c130aac57e5a0d3874656d28",
+    "sources_selftest_gates": "c5532152b62c66a4d3bad5582ec5efd4374203b58a8c906bba9b5691e8bc693a",
+    "cross_platform_selftest_gates": "887dfe6631c5860c1e68a148d4f060c67f909708157e1847e8c6a4e232cb31bc",
+    "selftest": "591915c94bd184f448b8c3155e2ebf8ac3b24bc5086265fed1a056fa97fa0cc8",
+    "finalizer": "87c118b4d41558884510492b3961fd8d5820bc0a567182e665722d64a352ec97"
+  },
+  "artifacts": {
+    "_工具脚本/_task_logs/mm2_manual_code_after_final_regression_20261125.sha256": {
+      "path": "F:\\开源掌机教程\\_工具脚本\\_task_logs\\mm2_manual_code_after_final_regression_20261125.sha256",
+      "bytes": 6320,
+      "sha256": "1566ee98758a07949caf8972a8946fb42264cd831d0c73033b84c021d34bfad3"
+    },
+    "_工具脚本/_task_logs/mm2_manual_code_before_final_regression_20261125.sha256": {
+      "path": "F:\\开源掌机教程\\_工具脚本\\_task_logs\\mm2_manual_code_before_final_regression_20261125.sha256",
+      "bytes": 6320,
+      "sha256": "1566ee98758a07949caf8972a8946fb42264cd831d0c73033b84c021d34bfad3"
+    },
+    "_工具脚本/_task_logs/mm2_manual_cross_platform_selftest_20261125_final.txt": {
+      "path": "F:\\开源掌机教程\\_工具脚本\\_task_logs\\mm2_manual_cross_platform_selftest_20261125_final.txt",
+      "bytes": 2685,
+      "sha256": "df44e52548c3d65bdd7bb22274f9e7a8cf50556a2270c8c4cc95bb9acf921ca6"
+    },
+    "_工具脚本/_task_logs/mm2_manual_full_selftest_20261125_locked.txt": {
+      "path": "F:\\开源掌机教程\\_工具脚本\\_task_logs\\mm2_manual_full_selftest_20261125_locked.txt",
+      "bytes": 166905,
+      "sha256": "174fc48de9eba689fd957c6ac49c35c8203c98b022925f912d96f9bc4cd544ee"
+    },
+    "_工具脚本/_task_logs/mm2_manual_kb_audit_base_20261125_locked.json": {
+      "path": "F:\\开源掌机教程\\_工具脚本\\_task_logs\\mm2_manual_kb_audit_base_20261125_locked.json",
+      "bytes": 21848,
+      "sha256": "4d85f8727d562445e9d1a8dfff87082cf89e08a920cf309b5ad44e89174f2229"
+    },
+    "_工具脚本/_task_logs/mm2_manual_kb_audit_hybrid_20261125_locked.json": {
+      "path": "F:\\开源掌机教程\\_工具脚本\\_task_logs\\mm2_manual_kb_audit_hybrid_20261125_locked.json",
+      "bytes": 21848,
+      "sha256": "5c81396f4507f54a6c0a91c5687cd8ad687ea497b5332005cc23db0fdae85584"
+    },
+    "_工具脚本/_task_logs/mm2_manual_kb_selftest_20261125_final.txt": {
+      "path": "F:\\开源掌机教程\\_工具脚本\\_task_logs\\mm2_manual_kb_selftest_20261125_final.txt",
+      "bytes": 74821,
+      "sha256": "00ff31a671206a2ecc61f9dd0bb2ff8c0025bbc8d800d051617a0dca6b73481c"
+    },
+    "_工具脚本/_task_logs/mm2_manual_sources_selftest_20261125_final.txt": {
+      "path": "F:\\开源掌机教程\\_工具脚本\\_task_logs\\mm2_manual_sources_selftest_20261125_final.txt",
+      "bytes": 6013,
+      "sha256": "e79cfc2ad2150cd9f56fe7893e544d677f6479c51ceb85a149e53415b32be6b2"
+    },
+    "知识库P1_20261118/eval_megaman2_candidate_v2_manual_20261125.py": {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\eval_megaman2_candidate_v2_manual_20261125.py",
+      "bytes": 10626,
+      "sha256": "27c59b13b461ff5f4a28d370bb82927c3f63d810f2c57ea4262a557ca3978319"
+    },
+    "知识库P1_20261118/eval_megaman2_production_manual_20261125.py": {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\eval_megaman2_production_manual_20261125.py",
+      "bytes": 18098,
+      "sha256": "1c65604a55d9a12a3b1f01948c7fe0e8f7c199ac2e4c5352f8bce202552d7b31"
+    },
+    "知识库P1_20261118/finalize_megaman2_v2_manual_20261125.py": {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\finalize_megaman2_v2_manual_20261125.py",
+      "bytes": 25841,
+      "sha256": "87c118b4d41558884510492b3961fd8d5820bc0a567182e665722d64a352ec97"
+    },
+    "知识库P1_20261118/megaman2_candidate_20261125/contract.json": {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\megaman2_candidate_20261125\\contract.json",
+      "bytes": 523,
+      "sha256": "d33d28aa54e7e830670abaa11596aeb34029a906e4057245d916631f2263e43a"
+    },
+    "知识库P1_20261118/megaman2_candidate_20261125/corpus_map.json": {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\megaman2_candidate_20261125\\corpus_map.json",
+      "bytes": 6516,
+      "sha256": "a3f33a3ae4b0d4654e13355b94c8d6c433d9ebbca94045306e7da51115b55521"
+    },
+    "知识库P1_20261118/megaman2_candidate_20261125/index.json": {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\megaman2_candidate_20261125\\index.json",
+      "bytes": 34088,
+      "sha256": "a72988e7f8a773fbaeb5f519f46b0f9ddd97eee8a6cda703b01434e880c05576"
+    },
+    "知识库P1_20261118/megaman2_candidate_20261125/selftest_eval_megaman2_20261125.py": {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\megaman2_candidate_20261125\\selftest_eval_megaman2_20261125.py",
+      "bytes": 40237,
+      "sha256": "b523d4c0375e74305d14845a0e55e50680aaac9918e2c5c45734fdfc6cd6c8d7"
+    },
+    "知识库P1_20261118/megaman2_candidate_20261125/sources.json": {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\megaman2_candidate_20261125\\sources.json",
+      "bytes": 4109,
+      "sha256": "8f60601110f0e759a341831b90426a1b44b94167eaa4d7450ae8d79c606ba1e9"
+    },
+    "知识库P1_20261118/megaman2_candidate_v2_manual_20261125/contract.json": {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\megaman2_candidate_v2_manual_20261125\\contract.json",
+      "bytes": 697,
+      "sha256": "6240131d6f7ada4f9c307beaba87d95a63a81f90161fca62fdf8a5caed0ed39b"
+    },
+    "知识库P1_20261118/megaman2_candidate_v2_manual_20261125/corpus_map.json": {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\megaman2_candidate_v2_manual_20261125\\corpus_map.json",
+      "bytes": 11261,
+      "sha256": "98986ab36835fbcd160b8cacb89287ca6f7f6366ca6fa7f2e43dc3e86a630cf6"
+    },
+    "知识库P1_20261118/megaman2_candidate_v2_manual_20261125/evidence/mm2_local_memory_dictionary_20261125.txt": {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\megaman2_candidate_v2_manual_20261125\\evidence\\mm2_local_memory_dictionary_20261125.txt",
+      "bytes": 1035,
+      "sha256": "2b3397d00e1cafa421d99bc66d116b2d10159beccd0123e7084e208a46bbd539"
+    },
+    "知识库P1_20261118/megaman2_candidate_v2_manual_20261125/evidence/mm2_local_tas_publications_20261125.txt": {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\megaman2_candidate_v2_manual_20261125\\evidence\\mm2_local_tas_publications_20261125.txt",
+      "bytes": 2981,
+      "sha256": "d5cfd8f5152d1bda1135e3d265c0b7e27c936f1016eddbdea9927c56298e9cbf"
+    },
+    "知识库P1_20261118/megaman2_candidate_v2_manual_20261125/evidence/mm2_local_title_catalog_20261125.txt": {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\megaman2_candidate_v2_manual_20261125\\evidence\\mm2_local_title_catalog_20261125.txt",
+      "bytes": 498,
+      "sha256": "9365bd8c757e5907895d5ecd1aa11df6de46d929da4f6ae605448df32cc583d3"
+    },
+    "知识库P1_20261118/megaman2_candidate_v2_manual_20261125/evidence/mm2_manual_airman_20261125.txt": {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\megaman2_candidate_v2_manual_20261125\\evidence\\mm2_manual_airman_20261125.txt",
+      "bytes": 1061,
+      "sha256": "d9f8f1b1492e7d9c8f70e8358b40fd63779159d8fe7a7c0c50a220f5e6eaa130"
+    },
+    "知识库P1_20261118/megaman2_candidate_v2_manual_20261125/evidence/mm2_manual_controls_20261125.txt": {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\megaman2_candidate_v2_manual_20261125\\evidence\\mm2_manual_controls_20261125.txt",
+      "bytes": 1168,
+      "sha256": "76935cbf5a218f388015d82c8e6c1e32f3ba94745099191e2995699541e8a184"
+    },
+    "知识库P1_20261118/megaman2_candidate_v2_manual_20261125/evidence/mm2_manual_energy_20261125.txt": {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\megaman2_candidate_v2_manual_20261125\\evidence\\mm2_manual_energy_20261125.txt",
+      "bytes": 1077,
+      "sha256": "af7740b2a5f9f761ef8adab42f884944631d03d2c11157bac7242dd4e680d0af"
+    },
+    "知识库P1_20261118/megaman2_candidate_v2_manual_20261125/evidence/mm2_manual_passwords_20261125.txt": {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\megaman2_candidate_v2_manual_20261125\\evidence\\mm2_manual_passwords_20261125.txt",
+      "bytes": 863,
+      "sha256": "9642405c433aaf86ddd8fbc8182c3b0b65ce3ac55150884f55e0cd71211fda94"
+    },
+    "知识库P1_20261118/megaman2_candidate_v2_manual_20261125/evidence/mm2_manual_robot_masters_20261125.txt": {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\megaman2_candidate_v2_manual_20261125\\evidence\\mm2_manual_robot_masters_20261125.txt",
+      "bytes": 653,
+      "sha256": "f3aa25b64b4787f92d8f7529faf038334fb9d10d255c5aa5d16c8b111d8a6c39"
+    },
+    "知识库P1_20261118/megaman2_candidate_v2_manual_20261125/evidence/mm2_manual_special_items_20261125.txt": {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\megaman2_candidate_v2_manual_20261125\\evidence\\mm2_manual_special_items_20261125.txt",
+      "bytes": 857,
+      "sha256": "b12fff9d052c66504ab81dacb67fd295972b54b94d0e924ccf2dd1a841cdab44"
+    },
+    "知识库P1_20261118/megaman2_candidate_v2_manual_20261125/evidence/mm2_manual_stage_select_20261125.txt": {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\megaman2_candidate_v2_manual_20261125\\evidence\\mm2_manual_stage_select_20261125.txt",
+      "bytes": 992,
+      "sha256": "a1cd6232aba5db6b45ef1e0d3ea0645252244c423c26b0900295d28be8d43b80"
+    },
+    "知识库P1_20261118/megaman2_candidate_v2_manual_20261125/evidence/mm2_manual_weapons_20261125.txt": {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\megaman2_candidate_v2_manual_20261125\\evidence\\mm2_manual_weapons_20261125.txt",
+      "bytes": 1488,
+      "sha256": "1cb02571cca7b67ac866ba1939785953681c252118c5c0777cd3834146daa38c"
+    },
+    "知识库P1_20261118/megaman2_candidate_v2_manual_20261125/evidence/mm2_tasvideos_acceleration_20261125.txt": {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\megaman2_candidate_v2_manual_20261125\\evidence\\mm2_tasvideos_acceleration_20261125.txt",
+      "bytes": 1293,
+      "sha256": "2eeb193eafbce3fdaeddca59a32459098ae4d152191680ae4fe91c3687362831"
+    },
+    "知识库P1_20261118/megaman2_candidate_v2_manual_20261125/evidence/mm2_tasvideos_climb_transform_20261125.txt": {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\megaman2_candidate_v2_manual_20261125\\evidence\\mm2_tasvideos_climb_transform_20261125.txt",
+      "bytes": 738,
+      "sha256": "3acb7987e6d9f373c90433a93fe320f79b5ca0da04cfb57bd7306119db414f9a"
+    },
+    "知识库P1_20261118/megaman2_candidate_v2_manual_20261125/evidence/mm2_tasvideos_coordinates_20261125.txt": {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\megaman2_candidate_v2_manual_20261125\\evidence\\mm2_tasvideos_coordinates_20261125.txt",
+      "bytes": 1446,
+      "sha256": "932fd37ed4b9d9e3ac5161317d3e069ec8d53cbcabb89b0baee15b03f5010fc9"
+    },
+    "知识库P1_20261118/megaman2_candidate_v2_manual_20261125/evidence/mm2_tasvideos_jump_20261125.txt": {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\megaman2_candidate_v2_manual_20261125\\evidence\\mm2_tasvideos_jump_20261125.txt",
+      "bytes": 910,
+      "sha256": "2f8b6d41ce8f6cc0833ff92ef97a02ff70c06d71e3396843d9ed57851aab988c"
+    },
+    "知识库P1_20261118/megaman2_candidate_v2_manual_20261125/evidence/mm2_tasvideos_jump_horizontal_20261125.txt": {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\megaman2_candidate_v2_manual_20261125\\evidence\\mm2_tasvideos_jump_horizontal_20261125.txt",
+      "bytes": 818,
+      "sha256": "8f2f36609458b26044441323d2306c687d435c2cfa9f03526191ef667318127a"
+    },
+    "知识库P1_20261118/megaman2_candidate_v2_manual_20261125/evidence/mm2_tasvideos_object_table_20261125.txt": {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\megaman2_candidate_v2_manual_20261125\\evidence\\mm2_tasvideos_object_table_20261125.txt",
+      "bytes": 664,
+      "sha256": "792c65e4d14ef07711429b09c0a6fd881caab39dbacce72c8f3fa97c2a4d882e"
+    },
+    "知识库P1_20261118/megaman2_candidate_v2_manual_20261125/evidence/mm2_tasvideos_walking_20261125.txt": {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\megaman2_candidate_v2_manual_20261125\\evidence\\mm2_tasvideos_walking_20261125.txt",
+      "bytes": 460,
+      "sha256": "5e58f52be5cdeaf0430aabc5c84ced0f87ba23ea4377eca56e4670bf95743220"
+    },
+    "知识库P1_20261118/megaman2_candidate_v2_manual_20261125/index.json": {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\megaman2_candidate_v2_manual_20261125\\index.json",
+      "bytes": 67126,
+      "sha256": "864ce8e3724414a95f851fac669ac2fddaa0e8f4fe37e8116ab1f707247a3225"
+    },
+    "知识库P1_20261118/megaman2_candidate_v2_manual_20261125/manual_source.json": {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\megaman2_candidate_v2_manual_20261125\\manual_source.json",
+      "bytes": 8080,
+      "sha256": "fc6365dd0ab4b69b9442e8cb90e2dfff43dbf5558ad4199cd3c867f1c20438e3"
+    },
+    "知识库P1_20261118/megaman2_candidate_v2_manual_20261125/qc/candidate_audit_v2_manual_20261125.json": {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\megaman2_candidate_v2_manual_20261125\\qc\\candidate_audit_v2_manual_20261125.json",
+      "bytes": 2031,
+      "sha256": "c7afd492d4e18a91c5eee76a1c101b0e5db717d3bc80d20e0fcef348acd50968"
+    },
+    "知识库P1_20261118/megaman2_candidate_v2_manual_20261125/qc/final_live_queries_v2_manual_20261125.jsonl": {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\megaman2_candidate_v2_manual_20261125\\qc\\final_live_queries_v2_manual_20261125.jsonl",
+      "bytes": 15229,
+      "sha256": "e98293a9b1dc42386e2a4f3c71cec7589709451a8664a488476fa0dd6cb73a4b"
+    },
+    "知识库P1_20261118/megaman2_candidate_v2_manual_20261125/qc/isolated_eval_query_log_20261125.jsonl": {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\megaman2_candidate_v2_manual_20261125\\qc\\isolated_eval_query_log_20261125.jsonl",
+      "bytes": 57784,
+      "sha256": "a4952ee2c5e538d4821d385634ef007532e666752efd4a2ff8124f491676faeb"
+    },
+    "知识库P1_20261118/megaman2_candidate_v2_manual_20261125/qc/legacy_candidate_regression_query_log_20261125.jsonl": {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\megaman2_candidate_v2_manual_20261125\\qc\\legacy_candidate_regression_query_log_20261125.jsonl",
+      "bytes": 53568,
+      "sha256": "3be6d43caf24678b8c192af112baa7257fb3187887f9aa95ddfa5c0dc1c6ba10"
+    },
+    "知识库P1_20261118/megaman2_candidate_v2_manual_20261125/qc/production_route_query_log_20261125.jsonl": {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\megaman2_candidate_v2_manual_20261125\\qc\\production_route_query_log_20261125.jsonl",
+      "bytes": 202297,
+      "sha256": "654817b9d210d66591371fc1d56bc240dc22a6682f9a814926f8ec6eb451ec42"
+    },
+    "知识库P1_20261118/megaman2_candidate_v2_manual_20261125/scope.json": {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\megaman2_candidate_v2_manual_20261125\\scope.json",
+      "bytes": 716,
+      "sha256": "66c82413642d0c86ab62b10a344d307cf5fe993b43b12bcac7a73f52b65cd149"
+    },
+    "知识库P1_20261118/megaman2_candidate_v2_manual_20261125/sources.json": {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\megaman2_candidate_v2_manual_20261125\\sources.json",
+      "bytes": 5974,
+      "sha256": "cd882095b72c114217ca2fa33fa7647fb8a7e2aa48240ad7656f05188e69b73f"
+    },
+    "知识库P1_20261118/megaman2_candidate_v2_manual_build_20261125.json": {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\megaman2_candidate_v2_manual_build_20261125.json",
+      "bytes": 20338,
+      "sha256": "edadc2986770878895e8598c0328ff67fe7122e9fb06afaff08869d57549ccaf"
+    },
+    "知识库P1_20261118/megaman2_candidate_v2_manual_eval_20261125.json": {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\megaman2_candidate_v2_manual_eval_20261125.json",
+      "bytes": 693288,
+      "sha256": "c8272ead121a070b82687af69be6963e7fe5c4f10f14718dd2aab77977322aca"
+    },
+    "知识库P1_20261118/megaman2_candidate_v2_manual_eval_20261125.md": {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\megaman2_candidate_v2_manual_eval_20261125.md",
+      "bytes": 567,
+      "sha256": "a0e4968139e1877ac42017a9c260698f13c645ae69630a3fc155566eba5a0852"
+    },
+    "知识库P1_20261118/megaman2_final_live_queries_v2_manual_20261125.json": {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\megaman2_final_live_queries_v2_manual_20261125.json",
+      "bytes": 23264,
+      "sha256": "62cbee9de27c72c1df6482a4f1d8320ebaf7ea15b7b7ebd82c0bd4e371c9fead"
+    },
+    "知识库P1_20261118/megaman2_production_manual_eval_20261125.json": {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\megaman2_production_manual_eval_20261125.json",
+      "bytes": 328269,
+      "sha256": "11e0f35197102dee540e855b32c427c8456b89d8c66f644640684ec8be6534ec"
+    },
+    "知识库P1_20261118/megaman2_questions_frozen_v2_manual_20261125.json": {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\megaman2_questions_frozen_v2_manual_20261125.json",
+      "bytes": 13673,
+      "sha256": "b824e990ec2aae82166c50570acbea0b3998e8fd533eb6c6c1fdb3b897520110"
+    }
+  },
+  "remaining": [
+    "这只是洛克人2候选子域，不是整款游戏知识库",
+    "官方说明书只保存8个带页码短摘录，完整手册未进入候选或交付目录",
+    "PAL、日版、韩版及JP版本未验证，不能跨版照用",
+    "美版ROM技术题仍走生产索引；说明书证据不能冒充ROM身份证明",
+    "全部敌人、关卡、隐藏要素与出招表尚未完整覆盖",
+    "本地内存字典、标题目录和TAS出版物仍是reference_only"
+  ],
+  "external_generative_model_calls": 0,
+  "paid_api_calls": 0
+}

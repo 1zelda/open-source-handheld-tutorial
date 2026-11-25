@@ -1,0 +1,110 @@
+{
+  "root": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_soul_detector_independent_v1_20261125",
+  "cases": [
+    {
+      "case_id": "red_soul_35_camera_aligned",
+      "calibration": {
+        "calib_pos_dir": {
+          "run_id": "71391fa86ebf4082855a7b703c39018a",
+          "process_id": 51252,
+          "source_report": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_soul_detector_independent_v1_20261125\\calibration\\red_soul_35_resource_verify\\report.json",
+          "source_report_sha256": "245dcc9eb3e6c10ede8b657b49bd2ae0bd6872cdca9c8673946d4b5bf5a31d49",
+          "frames": 90
+        },
+        "calib_neg_dir": {
+          "run_id": "71391fa86ebf4082855a7b703c39018a",
+          "process_id": 51252,
+          "source_report": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_soul_detector_independent_v1_20261125\\calibration\\red_soul_35_resource_verify\\report.json",
+          "source_report_sha256": "245dcc9eb3e6c10ede8b657b49bd2ae0bd6872cdca9c8673946d4b5bf5a31d49",
+          "frames": 90
+        }
+      },
+      "acceptance": {
+        "accept_pos_dir": {
+          "run_id": "314cc3a6e4884cad8cabd2d71e6cf3fa",
+          "process_id": 52564,
+          "source_report": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_soul_detector_independent_v1_20261125\\acceptance\\red_soul_35_resource_verify\\report.json",
+          "source_report_sha256": "aef30e2395dd025c920d5eb44a95bf1ced5ece6f035938f477d672e4d79e0e4b",
+          "frames": 90
+        },
+        "accept_neg_dir": {
+          "run_id": "314cc3a6e4884cad8cabd2d71e6cf3fa",
+          "process_id": 52564,
+          "source_report": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_soul_detector_independent_v1_20261125\\acceptance\\red_soul_35_resource_verify\\report.json",
+          "source_report_sha256": "aef30e2395dd025c920d5eb44a95bf1ced5ece6f035938f477d672e4d79e0e4b",
+          "frames": 90
+        }
+      }
+    },
+    {
+      "case_id": "red_soul_47_local_attack",
+      "calibration": {
+        "calib_pos_dir": {
+          "run_id": "60d412d0ca9647bbafa7cbcc2563f7e8",
+          "process_id": 51252,
+          "source_report": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_soul_detector_independent_v1_20261125\\calibration\\red_soul_47_resource_verify\\report.json",
+          "source_report_sha256": "42eb55fabeda9829da2c67d3fb03febce29ae8a4189aa5e8e517aec1b22eff63",
+          "frames": 90
+        },
+        "calib_neg_dir": {
+          "run_id": "60d412d0ca9647bbafa7cbcc2563f7e8",
+          "process_id": 51252,
+          "source_report": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_soul_detector_independent_v1_20261125\\calibration\\red_soul_47_resource_verify\\report.json",
+          "source_report_sha256": "42eb55fabeda9829da2c67d3fb03febce29ae8a4189aa5e8e517aec1b22eff63",
+          "frames": 90
+        }
+      },
+      "acceptance": {
+        "accept_pos_dir": {
+          "run_id": "d7aa9b04099641e8a049e57690027b5a",
+          "process_id": 52564,
+          "source_report": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_soul_detector_independent_v1_20261125\\acceptance\\red_soul_47_resource_verify\\report.json",
+          "source_report_sha256": "03bd9e946fb7b0486e7e5d1dd1b4c42eef377c4a016a4d680faea4cd62c98856",
+          "frames": 90
+        },
+        "accept_neg_dir": {
+          "run_id": "d7aa9b04099641e8a049e57690027b5a",
+          "process_id": 52564,
+          "source_report": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_soul_detector_independent_v1_20261125\\acceptance\\red_soul_47_resource_verify\\report.json",
+          "source_report_sha256": "03bd9e946fb7b0486e7e5d1dd1b4c42eef377c4a016a4d680faea4cd62c98856",
+          "frames": 90
+        }
+      }
+    },
+    {
+      "case_id": "yellow_soul_10_healing_popup",
+      "calibration": {
+        "calib_pos_dir": {
+          "run_id": "22f1f2b4ffbd444f8a859378217ae5b5",
+          "process_id": 32148,
+          "source_report": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_soul_detector_independent_v1_20261125\\calibration\\yellow_soul_10_hp_advantage\\report.json",
+          "source_report_sha256": "11a4bff3cd2a7acbbb7f0b952553f12ea74fa770d16aa230d6fdf41e191864d4",
+          "frames": 226
+        },
+        "calib_neg_dir": {
+          "run_id": "22f1f2b4ffbd444f8a859378217ae5b5",
+          "process_id": 32148,
+          "source_report": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_soul_detector_independent_v1_20261125\\calibration\\yellow_soul_10_hp_advantage\\report.json",
+          "source_report_sha256": "11a4bff3cd2a7acbbb7f0b952553f12ea74fa770d16aa230d6fdf41e191864d4",
+          "frames": 226
+        }
+      },
+      "acceptance": {
+        "accept_pos_dir": {
+          "run_id": "7f8f22dc52074a12a2cecf00e0664f39",
+          "process_id": 18764,
+          "source_report": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_soul_detector_independent_v1_20261125\\acceptance\\yellow_soul_10_hp_advantage\\report.json",
+          "source_report_sha256": "566c132f9469e7c291a076a3d090db0ff673f2553dbdd29fa167324e4ec5fb90",
+          "frames": 226
+        },
+        "accept_neg_dir": {
+          "run_id": "7f8f22dc52074a12a2cecf00e0664f39",
+          "process_id": 18764,
+          "source_report": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_soul_detector_independent_v1_20261125\\acceptance\\yellow_soul_10_hp_advantage\\report.json",
+          "source_report_sha256": "566c132f9469e7c291a076a3d090db0ff673f2553dbdd29fa167324e4ec5fb90",
+          "frames": 226
+        }
+      }
+    }
+  ]
+}

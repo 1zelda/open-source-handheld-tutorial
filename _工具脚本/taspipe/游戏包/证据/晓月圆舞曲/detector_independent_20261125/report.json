@@ -1,0 +1,3647 @@
+{
+  "schema_version": "detector_calibration/2.0",
+  "kind": "visual_detector_candidate_calibration",
+  "recipe": "F:\\开源掌机教程\\_工具脚本\\taspipe\\校准配方\\castlevania_aria_gba.soul_detector_candidates_independent_20261125.json",
+  "recipe_sha256": "6b2e9ff41d17415e70f2a86987034e550a1adee5a49694ae5df45a9aaa943edd",
+  "out": "F:/taspipe_scratch/gba_parallel_20261124/aria_soul_detector_independent_v1_20261125/report.json",
+  "status": "pass",
+  "total": 3,
+  "counts": {
+    "pass": 3
+  },
+  "detector_impl_sha256": "c23390172ebb298e1cc49bc77b70b8c8fbabeb48c4351cf06fc6410c06737977",
+  "gameplay_verified": false,
+  "semantic_identity_verified": false,
+  "detector_scope": "separated_acceptance_frames_with_explicit_expectations",
+  "sample_separation_methods": [
+    "independent_capture"
+  ],
+  "calibration_acceptance_separated": true,
+  "full_game_timeline_verified": false,
+  "platform_verified": false,
+  "cases": [
+    {
+      "case_id": "red_soul_35_camera_aligned",
+      "method": "aligned_difference",
+      "status": "pass",
+      "sample_isolation": {
+        "method": "independent_capture",
+        "calibration_sample_set_id": "red_soul_35_camera_aligned_independent_calibration",
+        "acceptance_sample_set_id": "red_soul_35_camera_aligned_independent_acceptance",
+        "calibration_fingerprint": "90dcc2ea477e07722101016d7a823e4a9ce24d7aea31eb271a52372efff044f2",
+        "acceptance_fingerprint": "90dcc2ea477e07722101016d7a823e4a9ce24d7aea31eb271a52372efff044f2",
+        "source_partition": null,
+        "independent_runs": {
+          "calibration": {
+            "pos": {
+              "capture_id": "red_soul_35_resource_verify:red_35:1",
+              "run_id": "71391fa86ebf4082855a7b703c39018a",
+              "process_id": 51252,
+              "source_report": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_soul_detector_independent_v1_20261125\\calibration\\red_soul_35_resource_verify\\report.json",
+              "source_report_sha256": "245dcc9eb3e6c10ede8b657b49bd2ae0bd6872cdca9c8673946d4b5bf5a31d49",
+              "manifest_sha256": "d2d094310de8ecd629589f57bcf2b9c61bbf431ced144b62a9f55366b11f5976",
+              "frames": 90
+            },
+            "neg": {
+              "capture_id": "red_soul_35_resource_verify:red0:1",
+              "run_id": "71391fa86ebf4082855a7b703c39018a",
+              "process_id": 51252,
+              "source_report": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_soul_detector_independent_v1_20261125\\calibration\\red_soul_35_resource_verify\\report.json",
+              "source_report_sha256": "245dcc9eb3e6c10ede8b657b49bd2ae0bd6872cdca9c8673946d4b5bf5a31d49",
+              "manifest_sha256": "1f1ddf66dc9e912dd3233dfe029b94ecd4229e9d568b8d5d22e86aa1b079efad",
+              "frames": 90
+            }
+          },
+          "acceptance": {
+            "pos": {
+              "capture_id": "red_soul_35_resource_verify:red_35:1",
+              "run_id": "314cc3a6e4884cad8cabd2d71e6cf3fa",
+              "process_id": 52564,
+              "source_report": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_soul_detector_independent_v1_20261125\\acceptance\\red_soul_35_resource_verify\\report.json",
+              "source_report_sha256": "aef30e2395dd025c920d5eb44a95bf1ced5ece6f035938f477d672e4d79e0e4b",
+              "manifest_sha256": "835ebe5679b09ac9d4cee32643a8b41474f4c29dfd4b0dc417ea3027f4939636",
+              "frames": 90
+            },
+            "neg": {
+              "capture_id": "red_soul_35_resource_verify:red0:1",
+              "run_id": "314cc3a6e4884cad8cabd2d71e6cf3fa",
+              "process_id": 52564,
+              "source_report": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_soul_detector_independent_v1_20261125\\acceptance\\red_soul_35_resource_verify\\report.json",
+              "source_report_sha256": "aef30e2395dd025c920d5eb44a95bf1ced5ece6f035938f477d672e4d79e0e4b",
+              "manifest_sha256": "a195e43466b8ccb82f111b57b6495310a59e682626d58117f94d294df1991e75",
+              "frames": 90
+            }
+          }
+        },
+        "directories": {
+          "calib_pos_dir": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_soul_detector_independent_v1_20261125\\calibration\\red_soul_35_resource_verify\\red_soul_35_resource_verify_red_35_s01_frames",
+          "calib_neg_dir": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_soul_detector_independent_v1_20261125\\calibration\\red_soul_35_resource_verify\\red_soul_35_resource_verify_red0_s01_frames",
+          "accept_pos_dir": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_soul_detector_independent_v1_20261125\\acceptance\\red_soul_35_resource_verify\\red_soul_35_resource_verify_red_35_s01_frames",
+          "accept_neg_dir": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_soul_detector_independent_v1_20261125\\acceptance\\red_soul_35_resource_verify\\red_soul_35_resource_verify_red0_s01_frames"
+        }
+      },
+      "calibration": {
+        "frame": 11,
+        "region": [
+          0.229167,
+          0.46875,
+          0.5,
+          0.9375
+        ],
+        "alignment_region": [
+          0.0,
+          0.125,
+          1.0,
+          0.4875
+        ],
+        "max_shift": 24,
+        "max_dy": 4,
+        "diff_threshold": 42,
+        "min_changed_fraction": 0.069,
+        "max_global_changed_fraction": 0.25,
+        "pos_fraction": 0.1526,
+        "neg_fraction": 0.0,
+        "margin": 0.1526,
+        "shift": [
+          -19,
+          0
+        ],
+        "reference_frame": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_soul_detector_independent_v1_20261125\\calibration\\red_soul_35_resource_verify\\red_soul_35_resource_verify_red0_s01_frames\\f0011.png",
+        "plugin_id": "frame_pair_aligned_region_difference"
+      },
+      "detection": {
+        "frame": 40,
+        "success_checks": [
+          {
+            "check_id": "red_soul_35_camera_aligned_visual",
+            "plugin_id": "frame_pair_aligned_region_difference",
+            "params": {
+              "reference_frame": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_soul_detector_independent_v1_20261125\\acceptance\\red_soul_35_resource_verify\\red_soul_35_resource_verify_red0_s01_frames\\f0040.png",
+              "region": [
+                0.229167,
+                0.46875,
+                0.5,
+                0.9375
+              ],
+              "alignment_region": [
+                0.0,
+                0.125,
+                1.0,
+                0.4875
+              ],
+              "max_shift": 24,
+              "max_dy": 4,
+              "diff_threshold": 42,
+              "min_changed_fraction": 0.069,
+              "max_global_changed_fraction": 0.25
+            },
+            "required": true
+          }
+        ]
+      },
+      "verification": {
+        "primary": {
+          "verdict": "pass",
+          "positive": {
+            "frame": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_soul_detector_independent_v1_20261125\\acceptance\\red_soul_35_resource_verify\\red_soul_35_resource_verify_red_35_s01_frames\\f0040.png",
+            "verdict": "pass",
+            "checks": [
+              {
+                "check_id": "red_soul_35_camera_aligned_visual",
+                "verdict": "pass",
+                "evidence_refs": [
+                  "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_soul_detector_independent_v1_20261125\\acceptance\\red_soul_35_resource_verify\\red_soul_35_resource_verify_red_35_s01_frames\\f0040.png"
+                ],
+                "event_position": null,
+                "reason": "alignment=(-19,0) local_fraction=0.1218 (min=0.069) global_fraction=0.0563 (max=0.25)",
+                "schema_version": 1
+              }
+            ]
+          },
+          "negative": {
+            "frame": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_soul_detector_independent_v1_20261125\\acceptance\\red_soul_35_resource_verify\\red_soul_35_resource_verify_red0_s01_frames\\f0040.png",
+            "verdict": "fail",
+            "rejected": true,
+            "checks": [
+              {
+                "check_id": "red_soul_35_camera_aligned_visual",
+                "verdict": "fail",
+                "evidence_refs": [
+                  "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_soul_detector_independent_v1_20261125\\acceptance\\red_soul_35_resource_verify\\red_soul_35_resource_verify_red0_s01_frames\\f0040.png"
+                ],
+                "event_position": null,
+                "reason": "alignment=(0,0) local_fraction=0.0000 (min=0.069) global_fraction=0.0000 (max=0.25)",
+                "schema_version": 1
+              }
+            ]
+          }
+        },
+        "controls": [
+          {
+            "label": "initial_frame",
+            "side": "positive",
+            "frame": 0,
+            "reference_frame": 0,
+            "expected": "fail",
+            "verdict": "fail",
+            "pass": true,
+            "reason": "alignment=(0,0) local_fraction=0.0000 (min=0.069) global_fraction=0.0001 (max=0.25)"
+          },
+          {
+            "label": "later_attack_frame",
+            "side": "positive",
+            "frame": 40,
+            "reference_frame": 40,
+            "expected": "pass",
+            "verdict": "pass",
+            "pass": true,
+            "reason": "alignment=(-19,0) local_fraction=0.1218 (min=0.069) global_fraction=0.0563 (max=0.25)"
+          },
+          {
+            "label": "empty_soul_same_frame",
+            "side": "negative",
+            "frame": 12,
+            "reference_frame": 12,
+            "expected": "fail",
+            "verdict": "fail",
+            "pass": true,
+            "reason": "alignment=(0,0) local_fraction=0.0000 (min=0.069) global_fraction=0.0000 (max=0.25)"
+          }
+        ],
+        "pass": true
+      },
+      "timeline_audit": {
+        "scope": "all_available_acceptance_dump_frames",
+        "paired_frames": 90,
+        "positive_frames": 90,
+        "negative_frames": 90,
+        "positive_counts": {
+          "fail": 2,
+          "pass": 88
+        },
+        "negative_counts": {
+          "fail": 90
+        },
+        "negative_all_fail": true,
+        "negative_control_kind": "same_empty_frame_self_difference",
+        "expectations": [
+          {
+            "label": "before_paired_attack",
+            "side": "positive",
+            "start": 0,
+            "end": 1,
+            "expect": "all_fail",
+            "counts": {
+              "fail": 2
+            },
+            "pass": true
+          },
+          {
+            "label": "paired_attack_window",
+            "side": "positive",
+            "start": 2,
+            "end": 89,
+            "expect": "all_pass",
+            "counts": {
+              "pass": 88
+            },
+            "pass": true
+          }
+        ],
+        "frames": [
+          {
+            "frame": 0,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "alignment=(0,0) local_fraction=0.0000 (min=0.069) global_fraction=0.0001 (max=0.25)",
+            "negative_reason": "alignment=(0,0) local_fraction=0.0000 (min=0.069) global_fraction=0.0000 (max=0.25)"
+          },
+          {
+            "frame": 1,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "alignment=(0,0) local_fraction=0.0275 (min=0.069) global_fraction=0.0048 (max=0.25)",
+            "negative_reason": "alignment=(0,0) local_fraction=0.0000 (min=0.069) global_fraction=0.0000 (max=0.25)"
+          },
+          {
+            "frame": 2,
+            "positive": "pass",
+            "negative": "fail",
+            "positive_reason": "alignment=(-3,0) local_fraction=0.0808 (min=0.069) global_fraction=0.0366 (max=0.25)",
+            "negative_reason": "alignment=(0,0) local_fraction=0.0000 (min=0.069) global_fraction=0.0000 (max=0.25)"
+          },
+          {
+            "frame": 3,
+            "positive": "pass",
+            "negative": "fail",
+            "positive_reason": "alignment=(-6,0) local_fraction=0.1042 (min=0.069) global_fraction=0.0431 (max=0.25)",
+            "negative_reason": "alignment=(0,0) local_fraction=0.0000 (min=0.069) global_fraction=0.0000 (max=0.25)"
+          },
+          {
+            "frame": 4,
+            "positive": "pass",
+            "negative": "fail",
+            "positive_reason": "alignment=(-8,0) local_fraction=0.1165 (min=0.069) global_fraction=0.0446 (max=0.25)",
+            "negative_reason": "alignment=(0,0) local_fraction=0.0000 (min=0.069) global_fraction=0.0000 (max=0.25)"
+          },
+          {
+            "frame": 5,
+            "positive": "pass",
+            "negative": "fail",
+            "positive_reason": "alignment=(-10,0) local_fraction=0.1239 (min=0.069) global_fraction=0.0483 (max=0.25)",
+            "negative_reason": "alignment=(0,0) local_fraction=0.0000 (min=0.069) global_fraction=0.0000 (max=0.25)"
+          },
+          {
+            "frame": 6,
+            "positive": "pass",
+            "negative": "fail",
+            "positive_reason": "alignment=(-12,0) local_fraction=0.1208 (min=0.069) global_fraction=0.0505 (max=0.25)",
+            "negative_reason": "alignment=(0,0) local_fraction=0.0000 (min=0.069) global_fraction=0.0000 (max=0.25)"
+          },
+          {
+            "frame": 7,
+            "positive": "pass",
+            "negative": "fail",
+            "positive_reason": "alignment=(-14,0) local_fraction=0.1280 (min=0.069) global_fraction=0.0548 (max=0.25)",
+            "negative_reason": "alignment=(0,0) local_fraction=0.0000 (min=0.069) global_fraction=0.0000 (max=0.25)"
+          },
+          {
+            "frame": 8,
+            "positive": "pass",
+            "negative": "fail",
+            "positive_reason": "alignment=(-16,0) local_fraction=0.1397 (min=0.069) global_fraction=0.0556 (max=0.25)",
+            "negative_reason": "alignment=(0,0) local_fraction=0.0000 (min=0.069) global_fraction=0.0000 (max=0.25)"
+          },
+          {
+            "frame": 9,
+            "positive": "pass",
+            "negative": "fail",
+            "positive_reason": "alignment=(-17,0) local_fraction=0.1448 (min=0.069) global_fraction=0.0600 (max=0.25)",
+            "negative_reason": "alignment=(0,0) local_fraction=0.0000 (min=0.069) global_fraction=0.0000 (max=0.25)"
+          },
+          {
+            "frame": 10,
+            "positive": "pass",
+            "negative": "fail",
+            "positive_reason": "alignment=(-18,0) local_fraction=0.1487 (min=0.069) global_fraction=0.0600 (max=0.25)",
+            "negative_reason": "alignment=(0,0) local_fraction=0.0000 (min=0.069) global_fraction=0.0000 (max=0.25)"
+          },
+          {
+            "frame": 11,
+            "positive": "pass",
+            "negative": "fail",
+            "positive_reason": "alignment=(-19,0) local_fraction=0.1526 (min=0.069) global_fraction=0.0626 (max=0.25)",
+            "negative_reason": "alignment=(0,0) local_fraction=0.0000 (min=0.069) global_fraction=0.0000 (max=0.25)"
+          },
+          {
+            "frame": 12,
+            "positive": "pass",
+            "negative": "fail",
+            "positive_reason": "alignment=(-19,0) local_fraction=0.1526 (min=0.069) global_fraction=0.0628 (max=0.25)",
+            "negative_reason": "alignment=(0,0) local_fraction=0.0000 (min=0.069) global_fraction=0.0000 (max=0.25)"
+          },
+          {
+            "frame": 13,
+            "positive": "pass",
+            "negative": "fail",
+            "positive_reason": "alignment=(-19,0) local_fraction=0.1526 (min=0.069) global_fraction=0.0640 (max=0.25)",
+            "negative_reason": "alignment=(0,0) local_fraction=0.0000 (min=0.069) global_fraction=0.0000 (max=0.25)"
+          },
+          {
+            "frame": 14,
+            "positive": "pass",
+            "negative": "fail",
+            "positive_reason": "alignment=(-19,0) local_fraction=0.1526 (min=0.069) global_fraction=0.0642 (max=0.25)",
+            "negative_reason": "alignment=(0,0) local_fraction=0.0000 (min=0.069) global_fraction=0.0000 (max=0.25)"
+          },
+          {
+            "frame": 15,
+            "positive": "pass",
+            "negative": "fail",
+            "positive_reason": "alignment=(-19,0) local_fraction=0.1397 (min=0.069) global_fraction=0.0671 (max=0.25)",
+            "negative_reason": "alignment=(0,0) local_fraction=0.0000 (min=0.069) global_fraction=0.0000 (max=0.25)"
+          },
+          {
+            "frame": 16,
+            "positive": "pass",
+            "negative": "fail",
+            "positive_reason": "alignment=(-19,0) local_fraction=0.1397 (min=0.069) global_fraction=0.0672 (max=0.25)",
+            "negative_reason": "alignment=(0,0) local_fraction=0.0000 (min=0.069) global_fraction=0.0000 (max=0.25)"
+          },
+          {
+            "frame": 17,
+            "positive": "pass",
+            "negative": "fail",
+            "positive_reason": "alignment=(-19,0) local_fraction=0.1424 (min=0.069) global_fraction=0.0677 (max=0.25)",
+            "negative_reason": "alignment=(0,0) local_fraction=0.0000 (min=0.069) global_fraction=0.0000 (max=0.25)"
+          },
+          {
+            "frame": 18,
+            "positive": "pass",
+            "negative": "fail",
+            "positive_reason": "alignment=(-19,0) local_fraction=0.1424 (min=0.069) global_fraction=0.0678 (max=0.25)",
+            "negative_reason": "alignment=(0,0) local_fraction=0.0000 (min=0.069) global_fraction=0.0000 (max=0.25)"
+          },
+          {
+            "frame": 19,
+            "positive": "pass",
+            "negative": "fail",
+            "positive_reason": "alignment=(-19,0) local_fraction=0.1424 (min=0.069) global_fraction=0.0679 (max=0.25)",
+            "negative_reason": "alignment=(0,0) local_fraction=0.0000 (min=0.069) global_fraction=0.0000 (max=0.25)"
+          },
+          {
+            "frame": 20,
+            "positive": "pass",
+            "negative": "fail",
+            "positive_reason": "alignment=(-19,0) local_fraction=0.1346 (min=0.069) global_fraction=0.0620 (max=0.25)",
+            "negative_reason": "alignment=(0,0) local_fraction=0.0000 (min=0.069) global_fraction=0.0000 (max=0.25)"
+          },
+          {
+            "frame": 21,
+            "positive": "pass",
+            "negative": "fail",
+            "positive_reason": "alignment=(-19,0) local_fraction=0.1346 (min=0.069) global_fraction=0.0620 (max=0.25)",
+            "negative_reason": "alignment=(0,0) local_fraction=0.0000 (min=0.069) global_fraction=0.0000 (max=0.25)"
+          },
+          {
+            "frame": 22,
+            "positive": "pass",
+            "negative": "fail",
+            "positive_reason": "alignment=(-19,0) local_fraction=0.1346 (min=0.069) global_fraction=0.0579 (max=0.25)",
+            "negative_reason": "alignment=(0,0) local_fraction=0.0000 (min=0.069) global_fraction=0.0000 (max=0.25)"
+          },
+          {
+            "frame": 23,
+            "positive": "pass",
+            "negative": "fail",
+            "positive_reason": "alignment=(-19,0) local_fraction=0.1317 (min=0.069) global_fraction=0.0575 (max=0.25)",
+            "negative_reason": "alignment=(0,0) local_fraction=0.0000 (min=0.069) global_fraction=0.0000 (max=0.25)"
+          },
+          {
+            "frame": 24,
+            "positive": "pass",
+            "negative": "fail",
+            "positive_reason": "alignment=(-19,0) local_fraction=0.1317 (min=0.069) global_fraction=0.0575 (max=0.25)",
+            "negative_reason": "alignment=(0,0) local_fraction=0.0000 (min=0.069) global_fraction=0.0000 (max=0.25)"
+          },
+          {
+            "frame": 25,
+            "positive": "pass",
+            "negative": "fail",
+            "positive_reason": "alignment=(-19,0) local_fraction=0.1344 (min=0.069) global_fraction=0.0572 (max=0.25)",
+            "negative_reason": "alignment=(0,0) local_fraction=0.0000 (min=0.069) global_fraction=0.0000 (max=0.25)"
+          },
+          {
+            "frame": 26,
+            "positive": "pass",
+            "negative": "fail",
+            "positive_reason": "alignment=(-19,0) local_fraction=0.1344 (min=0.069) global_fraction=0.0572 (max=0.25)",
+            "negative_reason": "alignment=(0,0) local_fraction=0.0000 (min=0.069) global_fraction=0.0000 (max=0.25)"
+          },
+          {
+            "frame": 27,
+            "positive": "pass",
+            "negative": "fail",
+            "positive_reason": "alignment=(-19,0) local_fraction=0.1403 (min=0.069) global_fraction=0.0580 (max=0.25)",
+            "negative_reason": "alignment=(0,0) local_fraction=0.0000 (min=0.069) global_fraction=0.0000 (max=0.25)"
+          },
+          {
+            "frame": 28,
+            "positive": "pass",
+            "negative": "fail",
+            "positive_reason": "alignment=(-19,0) local_fraction=0.1274 (min=0.069) global_fraction=0.0563 (max=0.25)",
+            "negative_reason": "alignment=(0,0) local_fraction=0.0000 (min=0.069) global_fraction=0.0000 (max=0.25)"
+          },
+          {
+            "frame": 29,
+            "positive": "pass",
+            "negative": "fail",
+            "positive_reason": "alignment=(-19,0) local_fraction=0.1259 (min=0.069) global_fraction=0.0568 (max=0.25)",
+            "negative_reason": "alignment=(0,0) local_fraction=0.0000 (min=0.069) global_fraction=0.0000 (max=0.25)"
+          },
+          {
+            "frame": 30,
+            "positive": "pass",
+            "negative": "fail",
+            "positive_reason": "alignment=(-19,0) local_fraction=0.1259 (min=0.069) global_fraction=0.0568 (max=0.25)",
+            "negative_reason": "alignment=(0,0) local_fraction=0.0000 (min=0.069) global_fraction=0.0000 (max=0.25)"
+          },
+          {
+            "frame": 31,
+            "positive": "pass",
+            "negative": "fail",
+            "positive_reason": "alignment=(-19,0) local_fraction=0.1221 (min=0.069) global_fraction=0.0566 (max=0.25)",
+            "negative_reason": "alignment=(0,0) local_fraction=0.0000 (min=0.069) global_fraction=0.0000 (max=0.25)"
+          },
+          {
+            "frame": 32,
+            "positive": "pass",
+            "negative": "fail",
+            "positive_reason": "alignment=(-19,0) local_fraction=0.1221 (min=0.069) global_fraction=0.0566 (max=0.25)",
+            "negative_reason": "alignment=(0,0) local_fraction=0.0000 (min=0.069) global_fraction=0.0000 (max=0.25)"
+          },
+          {
+            "frame": 33,
+            "positive": "pass",
+            "negative": "fail",
+            "positive_reason": "alignment=(-19,0) local_fraction=0.1223 (min=0.069) global_fraction=0.0563 (max=0.25)",
+            "negative_reason": "alignment=(0,0) local_fraction=0.0000 (min=0.069) global_fraction=0.0000 (max=0.25)"
+          },
+          {
+            "frame": 34,
+            "positive": "pass",
+            "negative": "fail",
+            "positive_reason": "alignment=(-19,0) local_fraction=0.1223 (min=0.069) global_fraction=0.0563 (max=0.25)",
+            "negative_reason": "alignment=(0,0) local_fraction=0.0000 (min=0.069) global_fraction=0.0000 (max=0.25)"
+          },
+          {
+            "frame": 35,
+            "positive": "pass",
+            "negative": "fail",
+            "positive_reason": "alignment=(-19,0) local_fraction=0.1247 (min=0.069) global_fraction=0.0564 (max=0.25)",
+            "negative_reason": "alignment=(0,0) local_fraction=0.0000 (min=0.069) global_fraction=0.0000 (max=0.25)"
+          },
+          {
+            "frame": 36,
+            "positive": "pass",
+            "negative": "fail",
+            "positive_reason": "alignment=(-19,0) local_fraction=0.1247 (min=0.069) global_fraction=0.0564 (max=0.25)",
+            "negative_reason": "alignment=(0,0) local_fraction=0.0000 (min=0.069) global_fraction=0.0000 (max=0.25)"
+          },
+          {
+            "frame": 37,
+            "positive": "pass",
+            "negative": "fail",
+            "positive_reason": "alignment=(-19,0) local_fraction=0.1247 (min=0.069) global_fraction=0.0564 (max=0.25)",
+            "negative_reason": "alignment=(0,0) local_fraction=0.0000 (min=0.069) global_fraction=0.0000 (max=0.25)"
+          },
+          {
+            "frame": 38,
+            "positive": "pass",
+            "negative": "fail",
+            "positive_reason": "alignment=(-19,0) local_fraction=0.1218 (min=0.069) global_fraction=0.0563 (max=0.25)",
+            "negative_reason": "alignment=(0,0) local_fraction=0.0000 (min=0.069) global_fraction=0.0000 (max=0.25)"
+          },
+          {
+            "frame": 39,
+            "positive": "pass",
+            "negative": "fail",
+            "positive_reason": "alignment=(-19,0) local_fraction=0.1218 (min=0.069) global_fraction=0.0563 (max=0.25)",
+            "negative_reason": "alignment=(0,0) local_fraction=0.0000 (min=0.069) global_fraction=0.0000 (max=0.25)"
+          },
+          {
+            "frame": 40,
+            "positive": "pass",
+            "negative": "fail",
+            "positive_reason": "alignment=(-19,0) local_fraction=0.1218 (min=0.069) global_fraction=0.0563 (max=0.25)",
+            "negative_reason": "alignment=(0,0) local_fraction=0.0000 (min=0.069) global_fraction=0.0000 (max=0.25)"
+          },
+          {
+            "frame": 41,
+            "positive": "pass",
+            "negative": "fail",
+            "positive_reason": "alignment=(-19,0) local_fraction=0.1218 (min=0.069) global_fraction=0.0563 (max=0.25)",
+            "negative_reason": "alignment=(0,0) local_fraction=0.0000 (min=0.069) global_fraction=0.0000 (max=0.25)"
+          },
+          {
+            "frame": 42,
+            "positive": "pass",
+            "negative": "fail",
+            "positive_reason": "alignment=(-19,0) local_fraction=0.1227 (min=0.069) global_fraction=0.0564 (max=0.25)",
+            "negative_reason": "alignment=(0,0) local_fraction=0.0000 (min=0.069) global_fraction=0.0000 (max=0.25)"
+          },
+          {
+            "frame": 43,
+            "positive": "pass",
+            "negative": "fail",
+            "positive_reason": "alignment=(-19,0) local_fraction=0.1227 (min=0.069) global_fraction=0.0564 (max=0.25)",
+            "negative_reason": "alignment=(0,0) local_fraction=0.0000 (min=0.069) global_fraction=0.0000 (max=0.25)"
+          },
+          {
+            "frame": 44,
+            "positive": "pass",
+            "negative": "fail",
+            "positive_reason": "alignment=(-19,0) local_fraction=0.1227 (min=0.069) global_fraction=0.0564 (max=0.25)",
+            "negative_reason": "alignment=(0,0) local_fraction=0.0000 (min=0.069) global_fraction=0.0000 (max=0.25)"
+          },
+          {
+            "frame": 45,
+            "positive": "pass",
+            "negative": "fail",
+            "positive_reason": "alignment=(-19,0) local_fraction=0.1227 (min=0.069) global_fraction=0.0564 (max=0.25)",
+            "negative_reason": "alignment=(0,0) local_fraction=0.0000 (min=0.069) global_fraction=0.0000 (max=0.25)"
+          },
+          {
+            "frame": 46,
+            "positive": "pass",
+            "negative": "fail",
+            "positive_reason": "alignment=(-19,0) local_fraction=0.1227 (min=0.069) global_fraction=0.0564 (max=0.25)",
+            "negative_reason": "alignment=(0,0) local_fraction=0.0000 (min=0.069) global_fraction=0.0000 (max=0.25)"
+          },
+          {
+            "frame": 47,
+            "positive": "pass",
+            "negative": "fail",
+            "positive_reason": "alignment=(-19,0) local_fraction=0.1227 (min=0.069) global_fraction=0.0564 (max=0.25)",
+            "negative_reason": "alignment=(0,0) local_fraction=0.0000 (min=0.069) global_fraction=0.0000 (max=0.25)"
+          },
+          {
+            "frame": 48,
+            "positive": "pass",
+            "negative": "fail",
+            "positive_reason": "alignment=(-19,0) local_fraction=0.1227 (min=0.069) global_fraction=0.0564 (max=0.25)",
+            "negative_reason": "alignment=(0,0) local_fraction=0.0000 (min=0.069) global_fraction=0.0000 (max=0.25)"
+          },
+          {
+            "frame": 49,
+            "positive": "pass",
+            "negative": "fail",
+            "positive_reason": "alignment=(-19,0) local_fraction=0.1227 (min=0.069) global_fraction=0.0564 (max=0.25)",
+            "negative_reason": "alignment=(0,0) local_fraction=0.0000 (min=0.069) global_fraction=0.0000 (max=0.25)"
+          },
+          {
+            "frame": 50,
+            "positive": "pass",
+            "negative": "fail",
+            "positive_reason": "alignment=(-19,0) local_fraction=0.1223 (min=0.069) global_fraction=0.0563 (max=0.25)",
+            "negative_reason": "alignment=(0,0) local_fraction=0.0000 (min=0.069) global_fraction=0.0000 (max=0.25)"
+          },
+          {
+            "frame": 51,
+            "positive": "pass",
+            "negative": "fail",
+            "positive_reason": "alignment=(-19,0) local_fraction=0.1223 (min=0.069) global_fraction=0.0563 (max=0.25)",
+            "negative_reason": "alignment=(0,0) local_fraction=0.0000 (min=0.069) global_fraction=0.0000 (max=0.25)"
+          },
+          {
+            "frame": 52,
+            "positive": "pass",
+            "negative": "fail",
+            "positive_reason": "alignment=(-19,0) local_fraction=0.1223 (min=0.069) global_fraction=0.0563 (max=0.25)",
+            "negative_reason": "alignment=(0,0) local_fraction=0.0000 (min=0.069) global_fraction=0.0000 (max=0.25)"
+          },
+          {
+            "frame": 53,
+            "positive": "pass",
+            "negative": "fail",
+            "positive_reason": "alignment=(-19,0) local_fraction=0.1223 (min=0.069) global_fraction=0.0563 (max=0.25)",
+            "negative_reason": "alignment=(0,0) local_fraction=0.0000 (min=0.069) global_fraction=0.0000 (max=0.25)"
+          },
+          {
+            "frame": 54,
+            "positive": "pass",
+            "negative": "fail",
+            "positive_reason": "alignment=(-19,0) local_fraction=0.1223 (min=0.069) global_fraction=0.0563 (max=0.25)",
+            "negative_reason": "alignment=(0,0) local_fraction=0.0000 (min=0.069) global_fraction=0.0000 (max=0.25)"
+          },
+          {
+            "frame": 55,
+            "positive": "pass",
+            "negative": "fail",
+            "positive_reason": "alignment=(-19,0) local_fraction=0.1223 (min=0.069) global_fraction=0.0563 (max=0.25)",
+            "negative_reason": "alignment=(0,0) local_fraction=0.0000 (min=0.069) global_fraction=0.0000 (max=0.25)"
+          },
+          {
+            "frame": 56,
+            "positive": "pass",
+            "negative": "fail",
+            "positive_reason": "alignment=(-19,0) local_fraction=0.1223 (min=0.069) global_fraction=0.0563 (max=0.25)",
+            "negative_reason": "alignment=(0,0) local_fraction=0.0000 (min=0.069) global_fraction=0.0000 (max=0.25)"
+          },
+          {
+            "frame": 57,
+            "positive": "pass",
+            "negative": "fail",
+            "positive_reason": "alignment=(-19,0) local_fraction=0.1223 (min=0.069) global_fraction=0.0563 (max=0.25)",
+            "negative_reason": "alignment=(0,0) local_fraction=0.0000 (min=0.069) global_fraction=0.0000 (max=0.25)"
+          },
+          {
+            "frame": 58,
+            "positive": "pass",
+            "negative": "fail",
+            "positive_reason": "alignment=(-19,0) local_fraction=0.1223 (min=0.069) global_fraction=0.0563 (max=0.25)",
+            "negative_reason": "alignment=(0,0) local_fraction=0.0000 (min=0.069) global_fraction=0.0000 (max=0.25)"
+          },
+          {
+            "frame": 59,
+            "positive": "pass",
+            "negative": "fail",
+            "positive_reason": "alignment=(-19,0) local_fraction=0.1223 (min=0.069) global_fraction=0.0563 (max=0.25)",
+            "negative_reason": "alignment=(0,0) local_fraction=0.0000 (min=0.069) global_fraction=0.0000 (max=0.25)"
+          },
+          {
+            "frame": 60,
+            "positive": "pass",
+            "negative": "fail",
+            "positive_reason": "alignment=(-19,0) local_fraction=0.1223 (min=0.069) global_fraction=0.0563 (max=0.25)",
+            "negative_reason": "alignment=(0,0) local_fraction=0.0000 (min=0.069) global_fraction=0.0000 (max=0.25)"
+          },
+          {
+            "frame": 61,
+            "positive": "pass",
+            "negative": "fail",
+            "positive_reason": "alignment=(-19,0) local_fraction=0.1223 (min=0.069) global_fraction=0.0563 (max=0.25)",
+            "negative_reason": "alignment=(0,0) local_fraction=0.0000 (min=0.069) global_fraction=0.0000 (max=0.25)"
+          },
+          {
+            "frame": 62,
+            "positive": "pass",
+            "negative": "fail",
+            "positive_reason": "alignment=(-19,0) local_fraction=0.1223 (min=0.069) global_fraction=0.0563 (max=0.25)",
+            "negative_reason": "alignment=(0,0) local_fraction=0.0000 (min=0.069) global_fraction=0.0000 (max=0.25)"
+          },
+          {
+            "frame": 63,
+            "positive": "pass",
+            "negative": "fail",
+            "positive_reason": "alignment=(-19,0) local_fraction=0.1223 (min=0.069) global_fraction=0.0563 (max=0.25)",
+            "negative_reason": "alignment=(0,0) local_fraction=0.0000 (min=0.069) global_fraction=0.0000 (max=0.25)"
+          },
+          {
+            "frame": 64,
+            "positive": "pass",
+            "negative": "fail",
+            "positive_reason": "alignment=(-19,0) local_fraction=0.1223 (min=0.069) global_fraction=0.0563 (max=0.25)",
+            "negative_reason": "alignment=(0,0) local_fraction=0.0000 (min=0.069) global_fraction=0.0000 (max=0.25)"
+          },
+          {
+            "frame": 65,
+            "positive": "pass",
+            "negative": "fail",
+            "positive_reason": "alignment=(-19,0) local_fraction=0.1223 (min=0.069) global_fraction=0.0563 (max=0.25)",
+            "negative_reason": "alignment=(0,0) local_fraction=0.0000 (min=0.069) global_fraction=0.0000 (max=0.25)"
+          },
+          {
+            "frame": 66,
+            "positive": "pass",
+            "negative": "fail",
+            "positive_reason": "alignment=(-19,0) local_fraction=0.1223 (min=0.069) global_fraction=0.0563 (max=0.25)",
+            "negative_reason": "alignment=(0,0) local_fraction=0.0000 (min=0.069) global_fraction=0.0000 (max=0.25)"
+          },
+          {
+            "frame": 67,
+            "positive": "pass",
+            "negative": "fail",
+            "positive_reason": "alignment=(-19,0) local_fraction=0.1223 (min=0.069) global_fraction=0.0563 (max=0.25)",
+            "negative_reason": "alignment=(0,0) local_fraction=0.0000 (min=0.069) global_fraction=0.0000 (max=0.25)"
+          },
+          {
+            "frame": 68,
+            "positive": "pass",
+            "negative": "fail",
+            "positive_reason": "alignment=(-19,0) local_fraction=0.1221 (min=0.069) global_fraction=0.0563 (max=0.25)",
+            "negative_reason": "alignment=(0,0) local_fraction=0.0000 (min=0.069) global_fraction=0.0000 (max=0.25)"
+          },
+          {
+            "frame": 69,
+            "positive": "pass",
+            "negative": "fail",
+            "positive_reason": "alignment=(-19,0) local_fraction=0.1221 (min=0.069) global_fraction=0.0563 (max=0.25)",
+            "negative_reason": "alignment=(0,0) local_fraction=0.0000 (min=0.069) global_fraction=0.0000 (max=0.25)"
+          },
+          {
+            "frame": 70,
+            "positive": "pass",
+            "negative": "fail",
+            "positive_reason": "alignment=(-19,0) local_fraction=0.1221 (min=0.069) global_fraction=0.0563 (max=0.25)",
+            "negative_reason": "alignment=(0,0) local_fraction=0.0000 (min=0.069) global_fraction=0.0000 (max=0.25)"
+          },
+          {
+            "frame": 71,
+            "positive": "pass",
+            "negative": "fail",
+            "positive_reason": "alignment=(-19,0) local_fraction=0.1221 (min=0.069) global_fraction=0.0563 (max=0.25)",
+            "negative_reason": "alignment=(0,0) local_fraction=0.0000 (min=0.069) global_fraction=0.0000 (max=0.25)"
+          },
+          {
+            "frame": 72,
+            "positive": "pass",
+            "negative": "fail",
+            "positive_reason": "alignment=(-19,0) local_fraction=0.1221 (min=0.069) global_fraction=0.0563 (max=0.25)",
+            "negative_reason": "alignment=(0,0) local_fraction=0.0000 (min=0.069) global_fraction=0.0000 (max=0.25)"
+          },
+          {
+            "frame": 73,
+            "positive": "pass",
+            "negative": "fail",
+            "positive_reason": "alignment=(-19,0) local_fraction=0.1221 (min=0.069) global_fraction=0.0563 (max=0.25)",
+            "negative_reason": "alignment=(0,0) local_fraction=0.0000 (min=0.069) global_fraction=0.0000 (max=0.25)"
+          },
+          {
+            "frame": 74,
+            "positive": "pass",
+            "negative": "fail",
+            "positive_reason": "alignment=(-19,0) local_fraction=0.1221 (min=0.069) global_fraction=0.0563 (max=0.25)",
+            "negative_reason": "alignment=(0,0) local_fraction=0.0000 (min=0.069) global_fraction=0.0000 (max=0.25)"
+          },
+          {
+            "frame": 75,
+            "positive": "pass",
+            "negative": "fail",
+            "positive_reason": "alignment=(-19,0) local_fraction=0.1221 (min=0.069) global_fraction=0.0563 (max=0.25)",
+            "negative_reason": "alignment=(0,0) local_fraction=0.0000 (min=0.069) global_fraction=0.0000 (max=0.25)"
+          },
+          {
+            "frame": 76,
+            "positive": "pass",
+            "negative": "fail",
+            "positive_reason": "alignment=(-19,0) local_fraction=0.1221 (min=0.069) global_fraction=0.0563 (max=0.25)",
+            "negative_reason": "alignment=(0,0) local_fraction=0.0000 (min=0.069) global_fraction=0.0000 (max=0.25)"
+          },
+          {
+            "frame": 77,
+            "positive": "pass",
+            "negative": "fail",
+            "positive_reason": "alignment=(-19,0) local_fraction=0.1221 (min=0.069) global_fraction=0.0563 (max=0.25)",
+            "negative_reason": "alignment=(0,0) local_fraction=0.0000 (min=0.069) global_fraction=0.0000 (max=0.25)"
+          },
+          {
+            "frame": 78,
+            "positive": "pass",
+            "negative": "fail",
+            "positive_reason": "alignment=(-19,0) local_fraction=0.1221 (min=0.069) global_fraction=0.0563 (max=0.25)",
+            "negative_reason": "alignment=(0,0) local_fraction=0.0000 (min=0.069) global_fraction=0.0000 (max=0.25)"
+          },
+          {
+            "frame": 79,
+            "positive": "pass",
+            "negative": "fail",
+            "positive_reason": "alignment=(-19,0) local_fraction=0.1221 (min=0.069) global_fraction=0.0564 (max=0.25)",
+            "negative_reason": "alignment=(0,0) local_fraction=0.0000 (min=0.069) global_fraction=0.0000 (max=0.25)"
+          },
+          {
+            "frame": 80,
+            "positive": "pass",
+            "negative": "fail",
+            "positive_reason": "alignment=(-19,0) local_fraction=0.1221 (min=0.069) global_fraction=0.0564 (max=0.25)",
+            "negative_reason": "alignment=(0,0) local_fraction=0.0000 (min=0.069) global_fraction=0.0000 (max=0.25)"
+          },
+          {
+            "frame": 81,
+            "positive": "pass",
+            "negative": "fail",
+            "positive_reason": "alignment=(-19,0) local_fraction=0.1221 (min=0.069) global_fraction=0.0564 (max=0.25)",
+            "negative_reason": "alignment=(0,0) local_fraction=0.0000 (min=0.069) global_fraction=0.0000 (max=0.25)"
+          },
+          {
+            "frame": 82,
+            "positive": "pass",
+            "negative": "fail",
+            "positive_reason": "alignment=(-19,0) local_fraction=0.1221 (min=0.069) global_fraction=0.0564 (max=0.25)",
+            "negative_reason": "alignment=(0,0) local_fraction=0.0000 (min=0.069) global_fraction=0.0000 (max=0.25)"
+          },
+          {
+            "frame": 83,
+            "positive": "pass",
+            "negative": "fail",
+            "positive_reason": "alignment=(-19,0) local_fraction=0.1221 (min=0.069) global_fraction=0.0564 (max=0.25)",
+            "negative_reason": "alignment=(0,0) local_fraction=0.0000 (min=0.069) global_fraction=0.0000 (max=0.25)"
+          },
+          {
+            "frame": 84,
+            "positive": "pass",
+            "negative": "fail",
+            "positive_reason": "alignment=(-19,0) local_fraction=0.1221 (min=0.069) global_fraction=0.0564 (max=0.25)",
+            "negative_reason": "alignment=(0,0) local_fraction=0.0000 (min=0.069) global_fraction=0.0000 (max=0.25)"
+          },
+          {
+            "frame": 85,
+            "positive": "pass",
+            "negative": "fail",
+            "positive_reason": "alignment=(-19,0) local_fraction=0.1221 (min=0.069) global_fraction=0.0564 (max=0.25)",
+            "negative_reason": "alignment=(0,0) local_fraction=0.0000 (min=0.069) global_fraction=0.0000 (max=0.25)"
+          },
+          {
+            "frame": 86,
+            "positive": "pass",
+            "negative": "fail",
+            "positive_reason": "alignment=(-19,0) local_fraction=0.1221 (min=0.069) global_fraction=0.0564 (max=0.25)",
+            "negative_reason": "alignment=(0,0) local_fraction=0.0000 (min=0.069) global_fraction=0.0000 (max=0.25)"
+          },
+          {
+            "frame": 87,
+            "positive": "pass",
+            "negative": "fail",
+            "positive_reason": "alignment=(-19,0) local_fraction=0.1221 (min=0.069) global_fraction=0.0564 (max=0.25)",
+            "negative_reason": "alignment=(0,0) local_fraction=0.0000 (min=0.069) global_fraction=0.0000 (max=0.25)"
+          },
+          {
+            "frame": 88,
+            "positive": "pass",
+            "negative": "fail",
+            "positive_reason": "alignment=(-19,0) local_fraction=0.1221 (min=0.069) global_fraction=0.0564 (max=0.25)",
+            "negative_reason": "alignment=(0,0) local_fraction=0.0000 (min=0.069) global_fraction=0.0000 (max=0.25)"
+          },
+          {
+            "frame": 89,
+            "positive": "pass",
+            "negative": "fail",
+            "positive_reason": "alignment=(-19,0) local_fraction=0.1221 (min=0.069) global_fraction=0.0564 (max=0.25)",
+            "negative_reason": "alignment=(0,0) local_fraction=0.0000 (min=0.069) global_fraction=0.0000 (max=0.25)"
+          }
+        ],
+        "pass": true
+      }
+    },
+    {
+      "case_id": "red_soul_47_local_attack",
+      "method": "aligned_difference",
+      "status": "pass",
+      "sample_isolation": {
+        "method": "independent_capture",
+        "calibration_sample_set_id": "red_soul_47_local_attack_independent_calibration",
+        "acceptance_sample_set_id": "red_soul_47_local_attack_independent_acceptance",
+        "calibration_fingerprint": "8b6d14ac53bb7787db9fff152cdcba8f45d857d89f1a3034f23760b66172d151",
+        "acceptance_fingerprint": "8b6d14ac53bb7787db9fff152cdcba8f45d857d89f1a3034f23760b66172d151",
+        "source_partition": null,
+        "independent_runs": {
+          "calibration": {
+            "pos": {
+              "capture_id": "red_soul_47_resource_verify:red_47:1",
+              "run_id": "60d412d0ca9647bbafa7cbcc2563f7e8",
+              "process_id": 51252,
+              "source_report": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_soul_detector_independent_v1_20261125\\calibration\\red_soul_47_resource_verify\\report.json",
+              "source_report_sha256": "42eb55fabeda9829da2c67d3fb03febce29ae8a4189aa5e8e517aec1b22eff63",
+              "manifest_sha256": "ab0b3855f6e280c372d2ceb60e45a9dc7ff67b22c807a2bb08e8659f69153483",
+              "frames": 90
+            },
+            "neg": {
+              "capture_id": "red_soul_47_resource_verify:red0:1",
+              "run_id": "60d412d0ca9647bbafa7cbcc2563f7e8",
+              "process_id": 51252,
+              "source_report": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_soul_detector_independent_v1_20261125\\calibration\\red_soul_47_resource_verify\\report.json",
+              "source_report_sha256": "42eb55fabeda9829da2c67d3fb03febce29ae8a4189aa5e8e517aec1b22eff63",
+              "manifest_sha256": "6db5ed9687befa2723e6029ddaefb941c2a0dcbd3a4ad676f9308cd6c2df4151",
+              "frames": 90
+            }
+          },
+          "acceptance": {
+            "pos": {
+              "capture_id": "red_soul_47_resource_verify:red_47:1",
+              "run_id": "d7aa9b04099641e8a049e57690027b5a",
+              "process_id": 52564,
+              "source_report": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_soul_detector_independent_v1_20261125\\acceptance\\red_soul_47_resource_verify\\report.json",
+              "source_report_sha256": "03bd9e946fb7b0486e7e5d1dd1b4c42eef377c4a016a4d680faea4cd62c98856",
+              "manifest_sha256": "55969f4cfd3dc80cf27ec8c030b5d404f7701e92dab8780b72764cd2eea3612d",
+              "frames": 90
+            },
+            "neg": {
+              "capture_id": "red_soul_47_resource_verify:red0:1",
+              "run_id": "d7aa9b04099641e8a049e57690027b5a",
+              "process_id": 52564,
+              "source_report": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_soul_detector_independent_v1_20261125\\acceptance\\red_soul_47_resource_verify\\report.json",
+              "source_report_sha256": "03bd9e946fb7b0486e7e5d1dd1b4c42eef377c4a016a4d680faea4cd62c98856",
+              "manifest_sha256": "24379ac3a73f84fb225552cc8e4d123214c904de76c89ef9ee5085c8267b31d0",
+              "frames": 90
+            }
+          }
+        },
+        "directories": {
+          "calib_pos_dir": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_soul_detector_independent_v1_20261125\\calibration\\red_soul_47_resource_verify\\red_soul_47_resource_verify_red_47_s01_frames",
+          "calib_neg_dir": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_soul_detector_independent_v1_20261125\\calibration\\red_soul_47_resource_verify\\red_soul_47_resource_verify_red0_s01_frames",
+          "accept_pos_dir": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_soul_detector_independent_v1_20261125\\acceptance\\red_soul_47_resource_verify\\red_soul_47_resource_verify_red_47_s01_frames",
+          "accept_neg_dir": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_soul_detector_independent_v1_20261125\\acceptance\\red_soul_47_resource_verify\\red_soul_47_resource_verify_red0_s01_frames"
+        }
+      },
+      "calibration": {
+        "frame": 18,
+        "region": [
+          0.25,
+          0.46875,
+          0.645833,
+          0.9375
+        ],
+        "alignment_region": [
+          0.0,
+          0.125,
+          1.0,
+          0.4875
+        ],
+        "max_shift": 0,
+        "max_dy": 0,
+        "diff_threshold": 42,
+        "min_changed_fraction": 0.045,
+        "max_global_changed_fraction": 0.25,
+        "pos_fraction": 0.0991,
+        "neg_fraction": 0.0,
+        "margin": 0.0991,
+        "shift": [
+          0,
+          0
+        ],
+        "reference_frame": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_soul_detector_independent_v1_20261125\\calibration\\red_soul_47_resource_verify\\red_soul_47_resource_verify_red0_s01_frames\\f0018.png",
+        "plugin_id": "frame_pair_aligned_region_difference"
+      },
+      "detection": {
+        "frame": 30,
+        "success_checks": [
+          {
+            "check_id": "red_soul_47_local_attack_visual",
+            "plugin_id": "frame_pair_aligned_region_difference",
+            "params": {
+              "reference_frame": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_soul_detector_independent_v1_20261125\\acceptance\\red_soul_47_resource_verify\\red_soul_47_resource_verify_red0_s01_frames\\f0030.png",
+              "region": [
+                0.25,
+                0.46875,
+                0.645833,
+                0.9375
+              ],
+              "alignment_region": [
+                0.0,
+                0.125,
+                1.0,
+                0.4875
+              ],
+              "max_shift": 0,
+              "max_dy": 0,
+              "diff_threshold": 42,
+              "min_changed_fraction": 0.045,
+              "max_global_changed_fraction": 0.25
+            },
+            "required": true
+          }
+        ]
+      },
+      "verification": {
+        "primary": {
+          "verdict": "pass",
+          "positive": {
+            "frame": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_soul_detector_independent_v1_20261125\\acceptance\\red_soul_47_resource_verify\\red_soul_47_resource_verify_red_47_s01_frames\\f0030.png",
+            "verdict": "pass",
+            "checks": [
+              {
+                "check_id": "red_soul_47_local_attack_visual",
+                "verdict": "pass",
+                "evidence_refs": [
+                  "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_soul_detector_independent_v1_20261125\\acceptance\\red_soul_47_resource_verify\\red_soul_47_resource_verify_red_47_s01_frames\\f0030.png"
+                ],
+                "event_position": null,
+                "reason": "alignment=(0,0) local_fraction=0.0583 (min=0.045) global_fraction=0.0179 (max=0.25)",
+                "schema_version": 1
+              }
+            ]
+          },
+          "negative": {
+            "frame": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_soul_detector_independent_v1_20261125\\acceptance\\red_soul_47_resource_verify\\red_soul_47_resource_verify_red0_s01_frames\\f0030.png",
+            "verdict": "fail",
+            "rejected": true,
+            "checks": [
+              {
+                "check_id": "red_soul_47_local_attack_visual",
+                "verdict": "fail",
+                "evidence_refs": [
+                  "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_soul_detector_independent_v1_20261125\\acceptance\\red_soul_47_resource_verify\\red_soul_47_resource_verify_red0_s01_frames\\f0030.png"
+                ],
+                "event_position": null,
+                "reason": "alignment=(0,0) local_fraction=0.0000 (min=0.045) global_fraction=0.0000 (max=0.25)",
+                "schema_version": 1
+              }
+            ]
+          }
+        },
+        "controls": [
+          {
+            "label": "early_pair_below_threshold",
+            "side": "positive",
+            "frame": 0,
+            "reference_frame": 0,
+            "expected": "fail",
+            "verdict": "fail",
+            "pass": true,
+            "reason": "alignment=(0,0) local_fraction=0.0000 (min=0.045) global_fraction=0.0001 (max=0.25)"
+          },
+          {
+            "label": "local_attack_frame",
+            "side": "positive",
+            "frame": 30,
+            "reference_frame": 30,
+            "expected": "pass",
+            "verdict": "pass",
+            "pass": true,
+            "reason": "alignment=(0,0) local_fraction=0.0583 (min=0.045) global_fraction=0.0179 (max=0.25)"
+          },
+          {
+            "label": "fullscreen_flash_rejected",
+            "side": "positive",
+            "frame": 88,
+            "reference_frame": 88,
+            "expected": "fail",
+            "verdict": "fail",
+            "pass": true,
+            "reason": "alignment=(0,0) local_fraction=0.9116 (min=0.045) global_fraction=0.9577 (max=0.25)"
+          },
+          {
+            "label": "empty_soul_same_frame",
+            "side": "negative",
+            "frame": 18,
+            "reference_frame": 18,
+            "expected": "fail",
+            "verdict": "fail",
+            "pass": true,
+            "reason": "alignment=(0,0) local_fraction=0.0000 (min=0.045) global_fraction=0.0000 (max=0.25)"
+          }
+        ],
+        "pass": true
+      },
+      "timeline_audit": {
+        "scope": "all_available_acceptance_dump_frames",
+        "paired_frames": 90,
+        "positive_frames": 90,
+        "negative_frames": 90,
+        "positive_counts": {
+          "fail": 50,
+          "pass": 40
+        },
+        "negative_counts": {
+          "fail": 90
+        },
+        "negative_all_fail": true,
+        "negative_control_kind": "same_empty_frame_self_difference",
+        "expectations": [
+          {
+            "label": "before_local_attack",
+            "side": "positive",
+            "start": 0,
+            "end": 1,
+            "expect": "all_fail",
+            "counts": {
+              "fail": 2
+            },
+            "pass": true
+          },
+          {
+            "label": "local_attack_window",
+            "side": "positive",
+            "start": 2,
+            "end": 41,
+            "expect": "all_pass",
+            "counts": {
+              "pass": 40
+            },
+            "pass": true
+          },
+          {
+            "label": "after_local_attack",
+            "side": "positive",
+            "start": 42,
+            "end": 80,
+            "expect": "all_fail",
+            "counts": {
+              "fail": 39
+            },
+            "pass": true
+          },
+          {
+            "label": "fullscreen_flash_window_rejected",
+            "side": "positive",
+            "start": 81,
+            "end": 89,
+            "expect": "all_fail",
+            "counts": {
+              "fail": 9
+            },
+            "pass": true
+          }
+        ],
+        "frames": [
+          {
+            "frame": 0,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "alignment=(0,0) local_fraction=0.0000 (min=0.045) global_fraction=0.0001 (max=0.25)",
+            "negative_reason": "alignment=(0,0) local_fraction=0.0000 (min=0.045) global_fraction=0.0000 (max=0.25)"
+          },
+          {
+            "frame": 1,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "alignment=(0,0) local_fraction=0.0216 (min=0.045) global_fraction=0.0041 (max=0.25)",
+            "negative_reason": "alignment=(0,0) local_fraction=0.0000 (min=0.045) global_fraction=0.0000 (max=0.25)"
+          },
+          {
+            "frame": 2,
+            "positive": "pass",
+            "negative": "fail",
+            "positive_reason": "alignment=(0,0) local_fraction=0.0753 (min=0.045) global_fraction=0.0143 (max=0.25)",
+            "negative_reason": "alignment=(0,0) local_fraction=0.0000 (min=0.045) global_fraction=0.0000 (max=0.25)"
+          },
+          {
+            "frame": 3,
+            "positive": "pass",
+            "negative": "fail",
+            "positive_reason": "alignment=(0,0) local_fraction=0.0756 (min=0.045) global_fraction=0.0144 (max=0.25)",
+            "negative_reason": "alignment=(0,0) local_fraction=0.0000 (min=0.045) global_fraction=0.0000 (max=0.25)"
+          },
+          {
+            "frame": 4,
+            "positive": "pass",
+            "negative": "fail",
+            "positive_reason": "alignment=(0,0) local_fraction=0.0831 (min=0.045) global_fraction=0.0158 (max=0.25)",
+            "negative_reason": "alignment=(0,0) local_fraction=0.0000 (min=0.045) global_fraction=0.0000 (max=0.25)"
+          },
+          {
+            "frame": 5,
+            "positive": "pass",
+            "negative": "fail",
+            "positive_reason": "alignment=(0,0) local_fraction=0.0843 (min=0.045) global_fraction=0.0163 (max=0.25)",
+            "negative_reason": "alignment=(0,0) local_fraction=0.0000 (min=0.045) global_fraction=0.0000 (max=0.25)"
+          },
+          {
+            "frame": 6,
+            "positive": "pass",
+            "negative": "fail",
+            "positive_reason": "alignment=(0,0) local_fraction=0.0976 (min=0.045) global_fraction=0.0189 (max=0.25)",
+            "negative_reason": "alignment=(0,0) local_fraction=0.0000 (min=0.045) global_fraction=0.0000 (max=0.25)"
+          },
+          {
+            "frame": 7,
+            "positive": "pass",
+            "negative": "fail",
+            "positive_reason": "alignment=(0,0) local_fraction=0.0960 (min=0.045) global_fraction=0.0186 (max=0.25)",
+            "negative_reason": "alignment=(0,0) local_fraction=0.0000 (min=0.045) global_fraction=0.0000 (max=0.25)"
+          },
+          {
+            "frame": 8,
+            "positive": "pass",
+            "negative": "fail",
+            "positive_reason": "alignment=(0,0) local_fraction=0.0956 (min=0.045) global_fraction=0.0187 (max=0.25)",
+            "negative_reason": "alignment=(0,0) local_fraction=0.0000 (min=0.045) global_fraction=0.0000 (max=0.25)"
+          },
+          {
+            "frame": 9,
+            "positive": "pass",
+            "negative": "fail",
+            "positive_reason": "alignment=(0,0) local_fraction=0.0970 (min=0.045) global_fraction=0.0191 (max=0.25)",
+            "negative_reason": "alignment=(0,0) local_fraction=0.0000 (min=0.045) global_fraction=0.0000 (max=0.25)"
+          },
+          {
+            "frame": 10,
+            "positive": "pass",
+            "negative": "fail",
+            "positive_reason": "alignment=(0,0) local_fraction=0.0976 (min=0.045) global_fraction=0.0193 (max=0.25)",
+            "negative_reason": "alignment=(0,0) local_fraction=0.0000 (min=0.045) global_fraction=0.0000 (max=0.25)"
+          },
+          {
+            "frame": 11,
+            "positive": "pass",
+            "negative": "fail",
+            "positive_reason": "alignment=(0,0) local_fraction=0.0972 (min=0.045) global_fraction=0.0194 (max=0.25)",
+            "negative_reason": "alignment=(0,0) local_fraction=0.0000 (min=0.045) global_fraction=0.0000 (max=0.25)"
+          },
+          {
+            "frame": 12,
+            "positive": "pass",
+            "negative": "fail",
+            "positive_reason": "alignment=(0,0) local_fraction=0.0967 (min=0.045) global_fraction=0.0194 (max=0.25)",
+            "negative_reason": "alignment=(0,0) local_fraction=0.0000 (min=0.045) global_fraction=0.0000 (max=0.25)"
+          },
+          {
+            "frame": 13,
+            "positive": "pass",
+            "negative": "fail",
+            "positive_reason": "alignment=(0,0) local_fraction=0.0977 (min=0.045) global_fraction=0.0197 (max=0.25)",
+            "negative_reason": "alignment=(0,0) local_fraction=0.0000 (min=0.045) global_fraction=0.0000 (max=0.25)"
+          },
+          {
+            "frame": 14,
+            "positive": "pass",
+            "negative": "fail",
+            "positive_reason": "alignment=(0,0) local_fraction=0.0982 (min=0.045) global_fraction=0.0200 (max=0.25)",
+            "negative_reason": "alignment=(0,0) local_fraction=0.0000 (min=0.045) global_fraction=0.0000 (max=0.25)"
+          },
+          {
+            "frame": 15,
+            "positive": "pass",
+            "negative": "fail",
+            "positive_reason": "alignment=(0,0) local_fraction=0.0960 (min=0.045) global_fraction=0.0197 (max=0.25)",
+            "negative_reason": "alignment=(0,0) local_fraction=0.0000 (min=0.045) global_fraction=0.0000 (max=0.25)"
+          },
+          {
+            "frame": 16,
+            "positive": "pass",
+            "negative": "fail",
+            "positive_reason": "alignment=(0,0) local_fraction=0.0959 (min=0.045) global_fraction=0.0196 (max=0.25)",
+            "negative_reason": "alignment=(0,0) local_fraction=0.0000 (min=0.045) global_fraction=0.0000 (max=0.25)"
+          },
+          {
+            "frame": 17,
+            "positive": "pass",
+            "negative": "fail",
+            "positive_reason": "alignment=(0,0) local_fraction=0.0986 (min=0.045) global_fraction=0.0203 (max=0.25)",
+            "negative_reason": "alignment=(0,0) local_fraction=0.0000 (min=0.045) global_fraction=0.0000 (max=0.25)"
+          },
+          {
+            "frame": 18,
+            "positive": "pass",
+            "negative": "fail",
+            "positive_reason": "alignment=(0,0) local_fraction=0.0991 (min=0.045) global_fraction=0.0206 (max=0.25)",
+            "negative_reason": "alignment=(0,0) local_fraction=0.0000 (min=0.045) global_fraction=0.0000 (max=0.25)"
+          },
+          {
+            "frame": 19,
+            "positive": "pass",
+            "negative": "fail",
+            "positive_reason": "alignment=(0,0) local_fraction=0.0926 (min=0.045) global_fraction=0.0195 (max=0.25)",
+            "negative_reason": "alignment=(0,0) local_fraction=0.0000 (min=0.045) global_fraction=0.0000 (max=0.25)"
+          },
+          {
+            "frame": 20,
+            "positive": "pass",
+            "negative": "fail",
+            "positive_reason": "alignment=(0,0) local_fraction=0.0818 (min=0.045) global_fraction=0.0177 (max=0.25)",
+            "negative_reason": "alignment=(0,0) local_fraction=0.0000 (min=0.045) global_fraction=0.0000 (max=0.25)"
+          },
+          {
+            "frame": 21,
+            "positive": "pass",
+            "negative": "fail",
+            "positive_reason": "alignment=(0,0) local_fraction=0.0830 (min=0.045) global_fraction=0.0181 (max=0.25)",
+            "negative_reason": "alignment=(0,0) local_fraction=0.0000 (min=0.045) global_fraction=0.0000 (max=0.25)"
+          },
+          {
+            "frame": 22,
+            "positive": "pass",
+            "negative": "fail",
+            "positive_reason": "alignment=(0,0) local_fraction=0.0817 (min=0.045) global_fraction=0.0182 (max=0.25)",
+            "negative_reason": "alignment=(0,0) local_fraction=0.0000 (min=0.045) global_fraction=0.0000 (max=0.25)"
+          },
+          {
+            "frame": 23,
+            "positive": "pass",
+            "negative": "fail",
+            "positive_reason": "alignment=(0,0) local_fraction=0.0769 (min=0.045) global_fraction=0.0176 (max=0.25)",
+            "negative_reason": "alignment=(0,0) local_fraction=0.0000 (min=0.045) global_fraction=0.0000 (max=0.25)"
+          },
+          {
+            "frame": 24,
+            "positive": "pass",
+            "negative": "fail",
+            "positive_reason": "alignment=(0,0) local_fraction=0.0745 (min=0.045) global_fraction=0.0175 (max=0.25)",
+            "negative_reason": "alignment=(0,0) local_fraction=0.0000 (min=0.045) global_fraction=0.0000 (max=0.25)"
+          },
+          {
+            "frame": 25,
+            "positive": "pass",
+            "negative": "fail",
+            "positive_reason": "alignment=(0,0) local_fraction=0.0711 (min=0.045) global_fraction=0.0176 (max=0.25)",
+            "negative_reason": "alignment=(0,0) local_fraction=0.0000 (min=0.045) global_fraction=0.0000 (max=0.25)"
+          },
+          {
+            "frame": 26,
+            "positive": "pass",
+            "negative": "fail",
+            "positive_reason": "alignment=(0,0) local_fraction=0.0687 (min=0.045) global_fraction=0.0178 (max=0.25)",
+            "negative_reason": "alignment=(0,0) local_fraction=0.0000 (min=0.045) global_fraction=0.0000 (max=0.25)"
+          },
+          {
+            "frame": 27,
+            "positive": "pass",
+            "negative": "fail",
+            "positive_reason": "alignment=(0,0) local_fraction=0.0662 (min=0.045) global_fraction=0.0177 (max=0.25)",
+            "negative_reason": "alignment=(0,0) local_fraction=0.0000 (min=0.045) global_fraction=0.0000 (max=0.25)"
+          },
+          {
+            "frame": 28,
+            "positive": "pass",
+            "negative": "fail",
+            "positive_reason": "alignment=(0,0) local_fraction=0.0624 (min=0.045) global_fraction=0.0174 (max=0.25)",
+            "negative_reason": "alignment=(0,0) local_fraction=0.0000 (min=0.045) global_fraction=0.0000 (max=0.25)"
+          },
+          {
+            "frame": 29,
+            "positive": "pass",
+            "negative": "fail",
+            "positive_reason": "alignment=(0,0) local_fraction=0.0603 (min=0.045) global_fraction=0.0177 (max=0.25)",
+            "negative_reason": "alignment=(0,0) local_fraction=0.0000 (min=0.045) global_fraction=0.0000 (max=0.25)"
+          },
+          {
+            "frame": 30,
+            "positive": "pass",
+            "negative": "fail",
+            "positive_reason": "alignment=(0,0) local_fraction=0.0583 (min=0.045) global_fraction=0.0179 (max=0.25)",
+            "negative_reason": "alignment=(0,0) local_fraction=0.0000 (min=0.045) global_fraction=0.0000 (max=0.25)"
+          },
+          {
+            "frame": 31,
+            "positive": "pass",
+            "negative": "fail",
+            "positive_reason": "alignment=(0,0) local_fraction=0.0570 (min=0.045) global_fraction=0.0181 (max=0.25)",
+            "negative_reason": "alignment=(0,0) local_fraction=0.0000 (min=0.045) global_fraction=0.0000 (max=0.25)"
+          },
+          {
+            "frame": 32,
+            "positive": "pass",
+            "negative": "fail",
+            "positive_reason": "alignment=(0,0) local_fraction=0.0555 (min=0.045) global_fraction=0.0180 (max=0.25)",
+            "negative_reason": "alignment=(0,0) local_fraction=0.0000 (min=0.045) global_fraction=0.0000 (max=0.25)"
+          },
+          {
+            "frame": 33,
+            "positive": "pass",
+            "negative": "fail",
+            "positive_reason": "alignment=(0,0) local_fraction=0.0546 (min=0.045) global_fraction=0.0183 (max=0.25)",
+            "negative_reason": "alignment=(0,0) local_fraction=0.0000 (min=0.045) global_fraction=0.0000 (max=0.25)"
+          },
+          {
+            "frame": 34,
+            "positive": "pass",
+            "negative": "fail",
+            "positive_reason": "alignment=(0,0) local_fraction=0.0543 (min=0.045) global_fraction=0.0184 (max=0.25)",
+            "negative_reason": "alignment=(0,0) local_fraction=0.0000 (min=0.045) global_fraction=0.0000 (max=0.25)"
+          },
+          {
+            "frame": 35,
+            "positive": "pass",
+            "negative": "fail",
+            "positive_reason": "alignment=(0,0) local_fraction=0.0489 (min=0.045) global_fraction=0.0175 (max=0.25)",
+            "negative_reason": "alignment=(0,0) local_fraction=0.0000 (min=0.045) global_fraction=0.0000 (max=0.25)"
+          },
+          {
+            "frame": 36,
+            "positive": "pass",
+            "negative": "fail",
+            "positive_reason": "alignment=(0,0) local_fraction=0.0489 (min=0.045) global_fraction=0.0174 (max=0.25)",
+            "negative_reason": "alignment=(0,0) local_fraction=0.0000 (min=0.045) global_fraction=0.0000 (max=0.25)"
+          },
+          {
+            "frame": 37,
+            "positive": "pass",
+            "negative": "fail",
+            "positive_reason": "alignment=(0,0) local_fraction=0.0489 (min=0.045) global_fraction=0.0176 (max=0.25)",
+            "negative_reason": "alignment=(0,0) local_fraction=0.0000 (min=0.045) global_fraction=0.0000 (max=0.25)"
+          },
+          {
+            "frame": 38,
+            "positive": "pass",
+            "negative": "fail",
+            "positive_reason": "alignment=(0,0) local_fraction=0.0489 (min=0.045) global_fraction=0.0178 (max=0.25)",
+            "negative_reason": "alignment=(0,0) local_fraction=0.0000 (min=0.045) global_fraction=0.0000 (max=0.25)"
+          },
+          {
+            "frame": 39,
+            "positive": "pass",
+            "negative": "fail",
+            "positive_reason": "alignment=(0,0) local_fraction=0.0489 (min=0.045) global_fraction=0.0178 (max=0.25)",
+            "negative_reason": "alignment=(0,0) local_fraction=0.0000 (min=0.045) global_fraction=0.0000 (max=0.25)"
+          },
+          {
+            "frame": 40,
+            "positive": "pass",
+            "negative": "fail",
+            "positive_reason": "alignment=(0,0) local_fraction=0.0489 (min=0.045) global_fraction=0.0175 (max=0.25)",
+            "negative_reason": "alignment=(0,0) local_fraction=0.0000 (min=0.045) global_fraction=0.0000 (max=0.25)"
+          },
+          {
+            "frame": 41,
+            "positive": "pass",
+            "negative": "fail",
+            "positive_reason": "alignment=(0,0) local_fraction=0.0489 (min=0.045) global_fraction=0.0177 (max=0.25)",
+            "negative_reason": "alignment=(0,0) local_fraction=0.0000 (min=0.045) global_fraction=0.0000 (max=0.25)"
+          },
+          {
+            "frame": 42,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "alignment=(0,0) local_fraction=0.0311 (min=0.045) global_fraction=0.0144 (max=0.25)",
+            "negative_reason": "alignment=(0,0) local_fraction=0.0000 (min=0.045) global_fraction=0.0000 (max=0.25)"
+          },
+          {
+            "frame": 43,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "alignment=(0,0) local_fraction=0.0311 (min=0.045) global_fraction=0.0142 (max=0.25)",
+            "negative_reason": "alignment=(0,0) local_fraction=0.0000 (min=0.045) global_fraction=0.0000 (max=0.25)"
+          },
+          {
+            "frame": 44,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "alignment=(0,0) local_fraction=0.0311 (min=0.045) global_fraction=0.0137 (max=0.25)",
+            "negative_reason": "alignment=(0,0) local_fraction=0.0000 (min=0.045) global_fraction=0.0000 (max=0.25)"
+          },
+          {
+            "frame": 45,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "alignment=(0,0) local_fraction=0.0311 (min=0.045) global_fraction=0.0143 (max=0.25)",
+            "negative_reason": "alignment=(0,0) local_fraction=0.0000 (min=0.045) global_fraction=0.0000 (max=0.25)"
+          },
+          {
+            "frame": 46,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "alignment=(0,0) local_fraction=0.0311 (min=0.045) global_fraction=0.0144 (max=0.25)",
+            "negative_reason": "alignment=(0,0) local_fraction=0.0000 (min=0.045) global_fraction=0.0000 (max=0.25)"
+          },
+          {
+            "frame": 47,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "alignment=(0,0) local_fraction=0.0311 (min=0.045) global_fraction=0.0146 (max=0.25)",
+            "negative_reason": "alignment=(0,0) local_fraction=0.0000 (min=0.045) global_fraction=0.0000 (max=0.25)"
+          },
+          {
+            "frame": 48,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "alignment=(0,0) local_fraction=0.0311 (min=0.045) global_fraction=0.0140 (max=0.25)",
+            "negative_reason": "alignment=(0,0) local_fraction=0.0000 (min=0.045) global_fraction=0.0000 (max=0.25)"
+          },
+          {
+            "frame": 49,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "alignment=(0,0) local_fraction=0.0311 (min=0.045) global_fraction=0.0142 (max=0.25)",
+            "negative_reason": "alignment=(0,0) local_fraction=0.0000 (min=0.045) global_fraction=0.0000 (max=0.25)"
+          },
+          {
+            "frame": 50,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "alignment=(0,0) local_fraction=0.0000 (min=0.045) global_fraction=0.0086 (max=0.25)",
+            "negative_reason": "alignment=(0,0) local_fraction=0.0000 (min=0.045) global_fraction=0.0000 (max=0.25)"
+          },
+          {
+            "frame": 51,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "alignment=(0,0) local_fraction=0.0000 (min=0.045) global_fraction=0.0084 (max=0.25)",
+            "negative_reason": "alignment=(0,0) local_fraction=0.0000 (min=0.045) global_fraction=0.0000 (max=0.25)"
+          },
+          {
+            "frame": 52,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "alignment=(0,0) local_fraction=0.0000 (min=0.045) global_fraction=0.0082 (max=0.25)",
+            "negative_reason": "alignment=(0,0) local_fraction=0.0000 (min=0.045) global_fraction=0.0000 (max=0.25)"
+          },
+          {
+            "frame": 53,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "alignment=(0,0) local_fraction=0.0000 (min=0.045) global_fraction=0.0084 (max=0.25)",
+            "negative_reason": "alignment=(0,0) local_fraction=0.0000 (min=0.045) global_fraction=0.0000 (max=0.25)"
+          },
+          {
+            "frame": 54,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "alignment=(0,0) local_fraction=0.0000 (min=0.045) global_fraction=0.0082 (max=0.25)",
+            "negative_reason": "alignment=(0,0) local_fraction=0.0000 (min=0.045) global_fraction=0.0000 (max=0.25)"
+          },
+          {
+            "frame": 55,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "alignment=(0,0) local_fraction=0.0037 (min=0.045) global_fraction=0.0087 (max=0.25)",
+            "negative_reason": "alignment=(0,0) local_fraction=0.0000 (min=0.045) global_fraction=0.0000 (max=0.25)"
+          },
+          {
+            "frame": 56,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "alignment=(0,0) local_fraction=0.0037 (min=0.045) global_fraction=0.0087 (max=0.25)",
+            "negative_reason": "alignment=(0,0) local_fraction=0.0000 (min=0.045) global_fraction=0.0000 (max=0.25)"
+          },
+          {
+            "frame": 57,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "alignment=(0,0) local_fraction=0.0037 (min=0.045) global_fraction=0.0088 (max=0.25)",
+            "negative_reason": "alignment=(0,0) local_fraction=0.0000 (min=0.045) global_fraction=0.0000 (max=0.25)"
+          },
+          {
+            "frame": 58,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "alignment=(0,0) local_fraction=0.0037 (min=0.045) global_fraction=0.0088 (max=0.25)",
+            "negative_reason": "alignment=(0,0) local_fraction=0.0000 (min=0.045) global_fraction=0.0000 (max=0.25)"
+          },
+          {
+            "frame": 59,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "alignment=(0,0) local_fraction=0.0037 (min=0.045) global_fraction=0.0087 (max=0.25)",
+            "negative_reason": "alignment=(0,0) local_fraction=0.0000 (min=0.045) global_fraction=0.0000 (max=0.25)"
+          },
+          {
+            "frame": 60,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "alignment=(0,0) local_fraction=0.0037 (min=0.045) global_fraction=0.0087 (max=0.25)",
+            "negative_reason": "alignment=(0,0) local_fraction=0.0000 (min=0.045) global_fraction=0.0000 (max=0.25)"
+          },
+          {
+            "frame": 61,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "alignment=(0,0) local_fraction=0.0037 (min=0.045) global_fraction=0.0088 (max=0.25)",
+            "negative_reason": "alignment=(0,0) local_fraction=0.0000 (min=0.045) global_fraction=0.0000 (max=0.25)"
+          },
+          {
+            "frame": 62,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "alignment=(0,0) local_fraction=0.0037 (min=0.045) global_fraction=0.0088 (max=0.25)",
+            "negative_reason": "alignment=(0,0) local_fraction=0.0000 (min=0.045) global_fraction=0.0000 (max=0.25)"
+          },
+          {
+            "frame": 63,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "alignment=(0,0) local_fraction=0.0037 (min=0.045) global_fraction=0.0087 (max=0.25)",
+            "negative_reason": "alignment=(0,0) local_fraction=0.0000 (min=0.045) global_fraction=0.0000 (max=0.25)"
+          },
+          {
+            "frame": 64,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "alignment=(0,0) local_fraction=0.0037 (min=0.045) global_fraction=0.0087 (max=0.25)",
+            "negative_reason": "alignment=(0,0) local_fraction=0.0000 (min=0.045) global_fraction=0.0000 (max=0.25)"
+          },
+          {
+            "frame": 65,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "alignment=(0,0) local_fraction=0.0037 (min=0.045) global_fraction=0.0088 (max=0.25)",
+            "negative_reason": "alignment=(0,0) local_fraction=0.0000 (min=0.045) global_fraction=0.0000 (max=0.25)"
+          },
+          {
+            "frame": 66,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "alignment=(0,0) local_fraction=0.0095 (min=0.045) global_fraction=0.0099 (max=0.25)",
+            "negative_reason": "alignment=(0,0) local_fraction=0.0000 (min=0.045) global_fraction=0.0000 (max=0.25)"
+          },
+          {
+            "frame": 67,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "alignment=(0,0) local_fraction=0.0095 (min=0.045) global_fraction=0.0098 (max=0.25)",
+            "negative_reason": "alignment=(0,0) local_fraction=0.0000 (min=0.045) global_fraction=0.0000 (max=0.25)"
+          },
+          {
+            "frame": 68,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "alignment=(0,0) local_fraction=0.0095 (min=0.045) global_fraction=0.0098 (max=0.25)",
+            "negative_reason": "alignment=(0,0) local_fraction=0.0000 (min=0.045) global_fraction=0.0000 (max=0.25)"
+          },
+          {
+            "frame": 69,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "alignment=(0,0) local_fraction=0.0095 (min=0.045) global_fraction=0.0099 (max=0.25)",
+            "negative_reason": "alignment=(0,0) local_fraction=0.0000 (min=0.045) global_fraction=0.0000 (max=0.25)"
+          },
+          {
+            "frame": 70,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "alignment=(0,0) local_fraction=0.0095 (min=0.045) global_fraction=0.0099 (max=0.25)",
+            "negative_reason": "alignment=(0,0) local_fraction=0.0000 (min=0.045) global_fraction=0.0000 (max=0.25)"
+          },
+          {
+            "frame": 71,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "alignment=(0,0) local_fraction=0.0095 (min=0.045) global_fraction=0.0098 (max=0.25)",
+            "negative_reason": "alignment=(0,0) local_fraction=0.0000 (min=0.045) global_fraction=0.0000 (max=0.25)"
+          },
+          {
+            "frame": 72,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "alignment=(0,0) local_fraction=0.0095 (min=0.045) global_fraction=0.0098 (max=0.25)",
+            "negative_reason": "alignment=(0,0) local_fraction=0.0000 (min=0.045) global_fraction=0.0000 (max=0.25)"
+          },
+          {
+            "frame": 73,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "alignment=(0,0) local_fraction=0.0095 (min=0.045) global_fraction=0.0099 (max=0.25)",
+            "negative_reason": "alignment=(0,0) local_fraction=0.0000 (min=0.045) global_fraction=0.0000 (max=0.25)"
+          },
+          {
+            "frame": 74,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "alignment=(0,0) local_fraction=0.0095 (min=0.045) global_fraction=0.0099 (max=0.25)",
+            "negative_reason": "alignment=(0,0) local_fraction=0.0000 (min=0.045) global_fraction=0.0000 (max=0.25)"
+          },
+          {
+            "frame": 75,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "alignment=(0,0) local_fraction=0.0095 (min=0.045) global_fraction=0.0098 (max=0.25)",
+            "negative_reason": "alignment=(0,0) local_fraction=0.0000 (min=0.045) global_fraction=0.0000 (max=0.25)"
+          },
+          {
+            "frame": 76,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "alignment=(0,0) local_fraction=0.0095 (min=0.045) global_fraction=0.0098 (max=0.25)",
+            "negative_reason": "alignment=(0,0) local_fraction=0.0000 (min=0.045) global_fraction=0.0000 (max=0.25)"
+          },
+          {
+            "frame": 77,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "alignment=(0,0) local_fraction=0.0037 (min=0.045) global_fraction=0.0088 (max=0.25)",
+            "negative_reason": "alignment=(0,0) local_fraction=0.0000 (min=0.045) global_fraction=0.0000 (max=0.25)"
+          },
+          {
+            "frame": 78,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "alignment=(0,0) local_fraction=0.0037 (min=0.045) global_fraction=0.0088 (max=0.25)",
+            "negative_reason": "alignment=(0,0) local_fraction=0.0000 (min=0.045) global_fraction=0.0000 (max=0.25)"
+          },
+          {
+            "frame": 79,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "alignment=(0,0) local_fraction=0.0037 (min=0.045) global_fraction=0.0087 (max=0.25)",
+            "negative_reason": "alignment=(0,0) local_fraction=0.0000 (min=0.045) global_fraction=0.0000 (max=0.25)"
+          },
+          {
+            "frame": 80,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "alignment=(0,0) local_fraction=0.0000 (min=0.045) global_fraction=0.0080 (max=0.25)",
+            "negative_reason": "alignment=(0,0) local_fraction=0.0000 (min=0.045) global_fraction=0.0000 (max=0.25)"
+          },
+          {
+            "frame": 81,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "alignment=(0,0) local_fraction=0.8895 (min=0.045) global_fraction=0.9413 (max=0.25)",
+            "negative_reason": "alignment=(0,0) local_fraction=0.0000 (min=0.045) global_fraction=0.0000 (max=0.25)"
+          },
+          {
+            "frame": 82,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "alignment=(0,0) local_fraction=0.9082 (min=0.045) global_fraction=0.9567 (max=0.25)",
+            "negative_reason": "alignment=(0,0) local_fraction=0.0000 (min=0.045) global_fraction=0.0000 (max=0.25)"
+          },
+          {
+            "frame": 83,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "alignment=(0,0) local_fraction=0.9082 (min=0.045) global_fraction=0.9567 (max=0.25)",
+            "negative_reason": "alignment=(0,0) local_fraction=0.0000 (min=0.045) global_fraction=0.0000 (max=0.25)"
+          },
+          {
+            "frame": 84,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "alignment=(0,0) local_fraction=0.9082 (min=0.045) global_fraction=0.9567 (max=0.25)",
+            "negative_reason": "alignment=(0,0) local_fraction=0.0000 (min=0.045) global_fraction=0.0000 (max=0.25)"
+          },
+          {
+            "frame": 85,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "alignment=(0,0) local_fraction=0.9082 (min=0.045) global_fraction=0.9567 (max=0.25)",
+            "negative_reason": "alignment=(0,0) local_fraction=0.0000 (min=0.045) global_fraction=0.0000 (max=0.25)"
+          },
+          {
+            "frame": 86,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "alignment=(0,0) local_fraction=0.9082 (min=0.045) global_fraction=0.9569 (max=0.25)",
+            "negative_reason": "alignment=(0,0) local_fraction=0.0000 (min=0.045) global_fraction=0.0000 (max=0.25)"
+          },
+          {
+            "frame": 87,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "alignment=(0,0) local_fraction=0.9082 (min=0.045) global_fraction=0.9568 (max=0.25)",
+            "negative_reason": "alignment=(0,0) local_fraction=0.0000 (min=0.045) global_fraction=0.0000 (max=0.25)"
+          },
+          {
+            "frame": 88,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "alignment=(0,0) local_fraction=0.9116 (min=0.045) global_fraction=0.9577 (max=0.25)",
+            "negative_reason": "alignment=(0,0) local_fraction=0.0000 (min=0.045) global_fraction=0.0000 (max=0.25)"
+          },
+          {
+            "frame": 89,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "alignment=(0,0) local_fraction=0.9081 (min=0.045) global_fraction=0.9570 (max=0.25)",
+            "negative_reason": "alignment=(0,0) local_fraction=0.0000 (min=0.045) global_fraction=0.0000 (max=0.25)"
+          }
+        ],
+        "pass": true
+      }
+    },
+    {
+      "case_id": "yellow_soul_10_healing_popup",
+      "method": "color_region",
+      "status": "pass",
+      "sample_isolation": {
+        "method": "independent_capture",
+        "calibration_sample_set_id": "yellow_soul_10_healing_popup_independent_calibration",
+        "acceptance_sample_set_id": "yellow_soul_10_healing_popup_independent_acceptance",
+        "calibration_fingerprint": "88b46e538530feec120498a28f2e133ff78d1879c9804e057a6f78b0caf8651c",
+        "acceptance_fingerprint": "88b46e538530feec120498a28f2e133ff78d1879c9804e057a6f78b0caf8651c",
+        "source_partition": null,
+        "independent_runs": {
+          "calibration": {
+            "pos": {
+              "capture_id": "yellow_soul_10_hp_advantage:yellow_10:1",
+              "run_id": "22f1f2b4ffbd444f8a859378217ae5b5",
+              "process_id": 32148,
+              "source_report": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_soul_detector_independent_v1_20261125\\calibration\\yellow_soul_10_hp_advantage\\report.json",
+              "source_report_sha256": "11a4bff3cd2a7acbbb7f0b952553f12ea74fa770d16aa230d6fdf41e191864d4",
+              "manifest_sha256": "da33b8ac7a9cb0c2fbdf45b874fe9d8b2bc38aac490e8f872df21287816e31d7",
+              "frames": 226
+            },
+            "neg": {
+              "capture_id": "yellow_soul_10_hp_advantage:yellow0:1",
+              "run_id": "22f1f2b4ffbd444f8a859378217ae5b5",
+              "process_id": 32148,
+              "source_report": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_soul_detector_independent_v1_20261125\\calibration\\yellow_soul_10_hp_advantage\\report.json",
+              "source_report_sha256": "11a4bff3cd2a7acbbb7f0b952553f12ea74fa770d16aa230d6fdf41e191864d4",
+              "manifest_sha256": "f3e45b29066117f850f3782bf63fc618615b37c9c3fe6e225a369b942a126034",
+              "frames": 226
+            }
+          },
+          "acceptance": {
+            "pos": {
+              "capture_id": "yellow_soul_10_hp_advantage:yellow_10:1",
+              "run_id": "7f8f22dc52074a12a2cecf00e0664f39",
+              "process_id": 18764,
+              "source_report": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_soul_detector_independent_v1_20261125\\acceptance\\yellow_soul_10_hp_advantage\\report.json",
+              "source_report_sha256": "566c132f9469e7c291a076a3d090db0ff673f2553dbdd29fa167324e4ec5fb90",
+              "manifest_sha256": "3f2ba9a2ad360a7aa6a583cd2432ab665896a070d8f11f8f9bb09849a94bf2e0",
+              "frames": 226
+            },
+            "neg": {
+              "capture_id": "yellow_soul_10_hp_advantage:yellow0:1",
+              "run_id": "7f8f22dc52074a12a2cecf00e0664f39",
+              "process_id": 18764,
+              "source_report": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_soul_detector_independent_v1_20261125\\acceptance\\yellow_soul_10_hp_advantage\\report.json",
+              "source_report_sha256": "566c132f9469e7c291a076a3d090db0ff673f2553dbdd29fa167324e4ec5fb90",
+              "manifest_sha256": "5833d39b48ea323f6328f1c3dbb721a2a7cac985fa41755abbb3338bc1cced00",
+              "frames": 226
+            }
+          }
+        },
+        "directories": {
+          "calib_pos_dir": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_soul_detector_independent_v1_20261125\\calibration\\yellow_soul_10_hp_advantage\\yellow_soul_10_hp_advantage_yellow_10_s01_frames",
+          "calib_neg_dir": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_soul_detector_independent_v1_20261125\\calibration\\yellow_soul_10_hp_advantage\\yellow_soul_10_hp_advantage_yellow0_s01_frames",
+          "accept_pos_dir": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_soul_detector_independent_v1_20261125\\acceptance\\yellow_soul_10_hp_advantage\\yellow_soul_10_hp_advantage_yellow_10_s01_frames",
+          "accept_neg_dir": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_soul_detector_independent_v1_20261125\\acceptance\\yellow_soul_10_hp_advantage\\yellow_soul_10_hp_advantage_yellow0_s01_frames"
+        }
+      },
+      "calibration": {
+        "cluster_size": 40,
+        "region": [
+          0.408,
+          0.625,
+          0.492,
+          0.725
+        ],
+        "rgb": [
+          49,
+          107,
+          255
+        ],
+        "tol": 26,
+        "min_fraction": 0.055,
+        "pos_fraction": 0.122,
+        "neg_fraction": 0.003,
+        "margin": 0.119,
+        "frame": 109,
+        "plugin_id": "frame_region_color_fraction"
+      },
+      "detection": {
+        "frame": 185,
+        "success_checks": [
+          {
+            "check_id": "yellow_soul_10_healing_popup_visual",
+            "plugin_id": "frame_region_color_fraction",
+            "params": {
+              "region": [
+                0.408,
+                0.625,
+                0.492,
+                0.725
+              ],
+              "rgb": [
+                49,
+                107,
+                255
+              ],
+              "tol": 26,
+              "min_fraction": 0.055
+            },
+            "required": true
+          }
+        ]
+      },
+      "verification": {
+        "primary": {
+          "verdict": "pass",
+          "positive": {
+            "frame": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_soul_detector_independent_v1_20261125\\acceptance\\yellow_soul_10_hp_advantage\\yellow_soul_10_hp_advantage_yellow_10_s01_frames\\f0185.png",
+            "verdict": "pass",
+            "checks": [
+              {
+                "check_id": "yellow_soul_10_healing_popup_visual",
+                "verdict": "pass",
+                "evidence_refs": [
+                  "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_soul_detector_independent_v1_20261125\\acceptance\\yellow_soul_10_hp_advantage\\yellow_soul_10_hp_advantage_yellow_10_s01_frames\\f0185.png"
+                ],
+                "event_position": null,
+                "reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.068 (min=0.055)",
+                "schema_version": 1
+              }
+            ]
+          },
+          "negative": {
+            "frame": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_soul_detector_independent_v1_20261125\\acceptance\\yellow_soul_10_hp_advantage\\yellow_soul_10_hp_advantage_yellow0_s01_frames\\f0185.png",
+            "verdict": "fail",
+            "rejected": true,
+            "checks": [
+              {
+                "check_id": "yellow_soul_10_healing_popup_visual",
+                "verdict": "fail",
+                "evidence_refs": [
+                  "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_soul_detector_independent_v1_20261125\\acceptance\\yellow_soul_10_hp_advantage\\yellow_soul_10_hp_advantage_yellow0_s01_frames\\f0185.png"
+                ],
+                "event_position": null,
+                "reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.000 (min=0.055)",
+                "schema_version": 1
+              }
+            ]
+          }
+        },
+        "controls": [
+          {
+            "label": "before_popup",
+            "side": "positive",
+            "frame": 100,
+            "reference_frame": null,
+            "expected": "fail",
+            "verdict": "fail",
+            "pass": true,
+            "reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.000 (min=0.055)"
+          },
+          {
+            "label": "popup_start",
+            "side": "positive",
+            "frame": 109,
+            "reference_frame": null,
+            "expected": "pass",
+            "verdict": "pass",
+            "pass": true,
+            "reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.122 (min=0.055)"
+          },
+          {
+            "label": "popup_observed",
+            "side": "positive",
+            "frame": 112,
+            "reference_frame": null,
+            "expected": "pass",
+            "verdict": "pass",
+            "pass": true,
+            "reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.122 (min=0.055)"
+          },
+          {
+            "label": "empty_soul_start",
+            "side": "negative",
+            "frame": 0,
+            "reference_frame": null,
+            "expected": "fail",
+            "verdict": "fail",
+            "pass": true,
+            "reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.000 (min=0.055)"
+          },
+          {
+            "label": "empty_soul_same_frame",
+            "side": "negative",
+            "frame": 112,
+            "reference_frame": null,
+            "expected": "fail",
+            "verdict": "fail",
+            "pass": true,
+            "reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.003 (min=0.055)"
+          },
+          {
+            "label": "empty_soul_final",
+            "side": "negative",
+            "frame": 225,
+            "reference_frame": null,
+            "expected": "fail",
+            "verdict": "fail",
+            "pass": true,
+            "reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.000 (min=0.055)"
+          }
+        ],
+        "pass": true
+      },
+      "timeline_audit": {
+        "scope": "all_available_acceptance_dump_frames",
+        "paired_frames": 226,
+        "positive_frames": 226,
+        "negative_frames": 226,
+        "positive_counts": {
+          "fail": 190,
+          "pass": 36
+        },
+        "negative_counts": {
+          "fail": 226
+        },
+        "negative_all_fail": true,
+        "negative_control_kind": "empty_soul_frame_color_absence",
+        "expectations": [
+          {
+            "label": "before_first_popup",
+            "side": "positive",
+            "start": 0,
+            "end": 108,
+            "expect": "all_fail",
+            "counts": {
+              "fail": 109
+            },
+            "pass": true
+          },
+          {
+            "label": "first_popup_window",
+            "side": "positive",
+            "start": 109,
+            "end": 126,
+            "expect": "all_pass",
+            "counts": {
+              "pass": 18
+            },
+            "pass": true
+          },
+          {
+            "label": "between_popups",
+            "side": "positive",
+            "start": 127,
+            "end": 169,
+            "expect": "all_fail",
+            "counts": {
+              "fail": 43
+            },
+            "pass": true
+          },
+          {
+            "label": "second_popup_window",
+            "side": "positive",
+            "start": 170,
+            "end": 187,
+            "expect": "all_pass",
+            "counts": {
+              "pass": 18
+            },
+            "pass": true
+          },
+          {
+            "label": "after_second_popup",
+            "side": "positive",
+            "start": 188,
+            "end": 225,
+            "expect": "all_fail",
+            "counts": {
+              "fail": 38
+            },
+            "pass": true
+          }
+        ],
+        "frames": [
+          {
+            "frame": 0,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.000 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.000 (min=0.055)"
+          },
+          {
+            "frame": 1,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.000 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.000 (min=0.055)"
+          },
+          {
+            "frame": 2,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.000 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.000 (min=0.055)"
+          },
+          {
+            "frame": 3,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.000 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.000 (min=0.055)"
+          },
+          {
+            "frame": 4,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.000 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.000 (min=0.055)"
+          },
+          {
+            "frame": 5,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.000 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.000 (min=0.055)"
+          },
+          {
+            "frame": 6,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.000 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.000 (min=0.055)"
+          },
+          {
+            "frame": 7,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.000 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.000 (min=0.055)"
+          },
+          {
+            "frame": 8,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.000 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.000 (min=0.055)"
+          },
+          {
+            "frame": 9,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.000 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.000 (min=0.055)"
+          },
+          {
+            "frame": 10,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.000 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.000 (min=0.055)"
+          },
+          {
+            "frame": 11,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.000 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.000 (min=0.055)"
+          },
+          {
+            "frame": 12,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.000 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.000 (min=0.055)"
+          },
+          {
+            "frame": 13,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.000 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.000 (min=0.055)"
+          },
+          {
+            "frame": 14,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.000 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.000 (min=0.055)"
+          },
+          {
+            "frame": 15,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.000 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.000 (min=0.055)"
+          },
+          {
+            "frame": 16,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.000 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.000 (min=0.055)"
+          },
+          {
+            "frame": 17,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.000 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.000 (min=0.055)"
+          },
+          {
+            "frame": 18,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.000 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.000 (min=0.055)"
+          },
+          {
+            "frame": 19,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.000 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.000 (min=0.055)"
+          },
+          {
+            "frame": 20,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.000 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.000 (min=0.055)"
+          },
+          {
+            "frame": 21,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.000 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.000 (min=0.055)"
+          },
+          {
+            "frame": 22,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.000 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.000 (min=0.055)"
+          },
+          {
+            "frame": 23,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.000 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.000 (min=0.055)"
+          },
+          {
+            "frame": 24,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.000 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.000 (min=0.055)"
+          },
+          {
+            "frame": 25,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.000 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.000 (min=0.055)"
+          },
+          {
+            "frame": 26,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.000 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.000 (min=0.055)"
+          },
+          {
+            "frame": 27,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.000 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.000 (min=0.055)"
+          },
+          {
+            "frame": 28,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.000 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.000 (min=0.055)"
+          },
+          {
+            "frame": 29,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.000 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.000 (min=0.055)"
+          },
+          {
+            "frame": 30,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.000 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.000 (min=0.055)"
+          },
+          {
+            "frame": 31,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.000 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.000 (min=0.055)"
+          },
+          {
+            "frame": 32,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.000 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.000 (min=0.055)"
+          },
+          {
+            "frame": 33,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.000 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.000 (min=0.055)"
+          },
+          {
+            "frame": 34,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.000 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.000 (min=0.055)"
+          },
+          {
+            "frame": 35,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.000 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.000 (min=0.055)"
+          },
+          {
+            "frame": 36,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.000 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.000 (min=0.055)"
+          },
+          {
+            "frame": 37,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.000 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.000 (min=0.055)"
+          },
+          {
+            "frame": 38,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.000 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.000 (min=0.055)"
+          },
+          {
+            "frame": 39,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.000 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.000 (min=0.055)"
+          },
+          {
+            "frame": 40,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.003 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.003 (min=0.055)"
+          },
+          {
+            "frame": 41,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.006 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.006 (min=0.055)"
+          },
+          {
+            "frame": 42,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.009 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.009 (min=0.055)"
+          },
+          {
+            "frame": 43,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.012 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.012 (min=0.055)"
+          },
+          {
+            "frame": 44,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.012 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.012 (min=0.055)"
+          },
+          {
+            "frame": 45,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.012 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.012 (min=0.055)"
+          },
+          {
+            "frame": 46,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.003 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.003 (min=0.055)"
+          },
+          {
+            "frame": 47,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.003 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.003 (min=0.055)"
+          },
+          {
+            "frame": 48,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.000 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.000 (min=0.055)"
+          },
+          {
+            "frame": 49,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.000 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.000 (min=0.055)"
+          },
+          {
+            "frame": 50,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.000 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.000 (min=0.055)"
+          },
+          {
+            "frame": 51,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.000 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.000 (min=0.055)"
+          },
+          {
+            "frame": 52,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.000 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.000 (min=0.055)"
+          },
+          {
+            "frame": 53,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.000 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.000 (min=0.055)"
+          },
+          {
+            "frame": 54,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.000 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.000 (min=0.055)"
+          },
+          {
+            "frame": 55,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.000 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.000 (min=0.055)"
+          },
+          {
+            "frame": 56,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.000 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.000 (min=0.055)"
+          },
+          {
+            "frame": 57,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.000 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.000 (min=0.055)"
+          },
+          {
+            "frame": 58,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.000 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.000 (min=0.055)"
+          },
+          {
+            "frame": 59,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.000 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.000 (min=0.055)"
+          },
+          {
+            "frame": 60,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.000 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.000 (min=0.055)"
+          },
+          {
+            "frame": 61,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.000 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.000 (min=0.055)"
+          },
+          {
+            "frame": 62,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.000 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.000 (min=0.055)"
+          },
+          {
+            "frame": 63,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.000 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.000 (min=0.055)"
+          },
+          {
+            "frame": 64,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.000 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.000 (min=0.055)"
+          },
+          {
+            "frame": 65,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.000 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.000 (min=0.055)"
+          },
+          {
+            "frame": 66,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.000 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.000 (min=0.055)"
+          },
+          {
+            "frame": 67,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.000 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.000 (min=0.055)"
+          },
+          {
+            "frame": 68,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.000 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.000 (min=0.055)"
+          },
+          {
+            "frame": 69,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.000 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.000 (min=0.055)"
+          },
+          {
+            "frame": 70,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.000 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.000 (min=0.055)"
+          },
+          {
+            "frame": 71,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.018 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.018 (min=0.055)"
+          },
+          {
+            "frame": 72,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.018 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.018 (min=0.055)"
+          },
+          {
+            "frame": 73,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.018 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.018 (min=0.055)"
+          },
+          {
+            "frame": 74,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.018 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.018 (min=0.055)"
+          },
+          {
+            "frame": 75,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.018 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.018 (min=0.055)"
+          },
+          {
+            "frame": 76,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.018 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.018 (min=0.055)"
+          },
+          {
+            "frame": 77,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.018 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.018 (min=0.055)"
+          },
+          {
+            "frame": 78,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.018 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.018 (min=0.055)"
+          },
+          {
+            "frame": 79,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.018 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.018 (min=0.055)"
+          },
+          {
+            "frame": 80,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.018 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.018 (min=0.055)"
+          },
+          {
+            "frame": 81,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.018 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.018 (min=0.055)"
+          },
+          {
+            "frame": 82,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.018 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.018 (min=0.055)"
+          },
+          {
+            "frame": 83,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.018 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.018 (min=0.055)"
+          },
+          {
+            "frame": 84,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.018 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.018 (min=0.055)"
+          },
+          {
+            "frame": 85,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.018 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.018 (min=0.055)"
+          },
+          {
+            "frame": 86,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.018 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.018 (min=0.055)"
+          },
+          {
+            "frame": 87,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.018 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.018 (min=0.055)"
+          },
+          {
+            "frame": 88,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.018 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.018 (min=0.055)"
+          },
+          {
+            "frame": 89,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.018 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.018 (min=0.055)"
+          },
+          {
+            "frame": 90,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.018 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.018 (min=0.055)"
+          },
+          {
+            "frame": 91,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.018 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.018 (min=0.055)"
+          },
+          {
+            "frame": 92,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.018 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.018 (min=0.055)"
+          },
+          {
+            "frame": 93,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.018 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.018 (min=0.055)"
+          },
+          {
+            "frame": 94,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.018 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.018 (min=0.055)"
+          },
+          {
+            "frame": 95,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.018 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.018 (min=0.055)"
+          },
+          {
+            "frame": 96,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.018 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.018 (min=0.055)"
+          },
+          {
+            "frame": 97,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.009 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.009 (min=0.055)"
+          },
+          {
+            "frame": 98,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.000 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.000 (min=0.055)"
+          },
+          {
+            "frame": 99,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.000 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.000 (min=0.055)"
+          },
+          {
+            "frame": 100,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.000 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.000 (min=0.055)"
+          },
+          {
+            "frame": 101,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.000 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.000 (min=0.055)"
+          },
+          {
+            "frame": 102,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.000 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.000 (min=0.055)"
+          },
+          {
+            "frame": 103,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.000 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.000 (min=0.055)"
+          },
+          {
+            "frame": 104,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.000 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.000 (min=0.055)"
+          },
+          {
+            "frame": 105,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.000 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.000 (min=0.055)"
+          },
+          {
+            "frame": 106,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.000 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.000 (min=0.055)"
+          },
+          {
+            "frame": 107,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.000 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.000 (min=0.055)"
+          },
+          {
+            "frame": 108,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.000 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.000 (min=0.055)"
+          },
+          {
+            "frame": 109,
+            "positive": "pass",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.122 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.003 (min=0.055)"
+          },
+          {
+            "frame": 110,
+            "positive": "pass",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.122 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.003 (min=0.055)"
+          },
+          {
+            "frame": 111,
+            "positive": "pass",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.122 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.003 (min=0.055)"
+          },
+          {
+            "frame": 112,
+            "positive": "pass",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.122 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.003 (min=0.055)"
+          },
+          {
+            "frame": 113,
+            "positive": "pass",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.119 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.000 (min=0.055)"
+          },
+          {
+            "frame": 114,
+            "positive": "pass",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.119 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.000 (min=0.055)"
+          },
+          {
+            "frame": 115,
+            "positive": "pass",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.122 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.003 (min=0.055)"
+          },
+          {
+            "frame": 116,
+            "positive": "pass",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.122 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.003 (min=0.055)"
+          },
+          {
+            "frame": 117,
+            "positive": "pass",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.122 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.003 (min=0.055)"
+          },
+          {
+            "frame": 118,
+            "positive": "pass",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.122 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.003 (min=0.055)"
+          },
+          {
+            "frame": 119,
+            "positive": "pass",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.113 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.009 (min=0.055)"
+          },
+          {
+            "frame": 120,
+            "positive": "pass",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.113 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.009 (min=0.055)"
+          },
+          {
+            "frame": 121,
+            "positive": "pass",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.104 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.012 (min=0.055)"
+          },
+          {
+            "frame": 122,
+            "positive": "pass",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.110 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.018 (min=0.055)"
+          },
+          {
+            "frame": 123,
+            "positive": "pass",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.086 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.018 (min=0.055)"
+          },
+          {
+            "frame": 124,
+            "positive": "pass",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.086 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.018 (min=0.055)"
+          },
+          {
+            "frame": 125,
+            "positive": "pass",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.077 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.018 (min=0.055)"
+          },
+          {
+            "frame": 126,
+            "positive": "pass",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.077 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.018 (min=0.055)"
+          },
+          {
+            "frame": 127,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.054 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.018 (min=0.055)"
+          },
+          {
+            "frame": 128,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.054 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.018 (min=0.055)"
+          },
+          {
+            "frame": 129,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.036 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.018 (min=0.055)"
+          },
+          {
+            "frame": 130,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.036 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.018 (min=0.055)"
+          },
+          {
+            "frame": 131,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.027 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.018 (min=0.055)"
+          },
+          {
+            "frame": 132,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.027 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.018 (min=0.055)"
+          },
+          {
+            "frame": 133,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.018 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.018 (min=0.055)"
+          },
+          {
+            "frame": 134,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.018 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.018 (min=0.055)"
+          },
+          {
+            "frame": 135,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.018 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.018 (min=0.055)"
+          },
+          {
+            "frame": 136,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.018 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.018 (min=0.055)"
+          },
+          {
+            "frame": 137,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.018 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.018 (min=0.055)"
+          },
+          {
+            "frame": 138,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.018 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.018 (min=0.055)"
+          },
+          {
+            "frame": 139,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.018 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.018 (min=0.055)"
+          },
+          {
+            "frame": 140,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.018 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.018 (min=0.055)"
+          },
+          {
+            "frame": 141,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.018 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.018 (min=0.055)"
+          },
+          {
+            "frame": 142,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.018 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.018 (min=0.055)"
+          },
+          {
+            "frame": 143,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.018 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.018 (min=0.055)"
+          },
+          {
+            "frame": 144,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.018 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.018 (min=0.055)"
+          },
+          {
+            "frame": 145,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.018 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.018 (min=0.055)"
+          },
+          {
+            "frame": 146,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.018 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.018 (min=0.055)"
+          },
+          {
+            "frame": 147,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.018 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.018 (min=0.055)"
+          },
+          {
+            "frame": 148,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.018 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.018 (min=0.055)"
+          },
+          {
+            "frame": 149,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.018 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.018 (min=0.055)"
+          },
+          {
+            "frame": 150,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.018 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.018 (min=0.055)"
+          },
+          {
+            "frame": 151,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.018 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.018 (min=0.055)"
+          },
+          {
+            "frame": 152,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.018 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.018 (min=0.055)"
+          },
+          {
+            "frame": 153,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.018 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.018 (min=0.055)"
+          },
+          {
+            "frame": 154,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.018 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.018 (min=0.055)"
+          },
+          {
+            "frame": 155,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.018 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.018 (min=0.055)"
+          },
+          {
+            "frame": 156,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.018 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.018 (min=0.055)"
+          },
+          {
+            "frame": 157,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.018 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.018 (min=0.055)"
+          },
+          {
+            "frame": 158,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.018 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.018 (min=0.055)"
+          },
+          {
+            "frame": 159,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.018 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.018 (min=0.055)"
+          },
+          {
+            "frame": 160,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.018 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.018 (min=0.055)"
+          },
+          {
+            "frame": 161,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.018 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.018 (min=0.055)"
+          },
+          {
+            "frame": 162,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.021 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.021 (min=0.055)"
+          },
+          {
+            "frame": 163,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.021 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.021 (min=0.055)"
+          },
+          {
+            "frame": 164,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.021 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.021 (min=0.055)"
+          },
+          {
+            "frame": 165,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.021 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.021 (min=0.055)"
+          },
+          {
+            "frame": 166,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.021 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.021 (min=0.055)"
+          },
+          {
+            "frame": 167,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.021 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.021 (min=0.055)"
+          },
+          {
+            "frame": 168,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.021 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.021 (min=0.055)"
+          },
+          {
+            "frame": 169,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.021 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.021 (min=0.055)"
+          },
+          {
+            "frame": 170,
+            "positive": "pass",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.131 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.012 (min=0.055)"
+          },
+          {
+            "frame": 171,
+            "positive": "pass",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.119 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.000 (min=0.055)"
+          },
+          {
+            "frame": 172,
+            "positive": "pass",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.119 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.000 (min=0.055)"
+          },
+          {
+            "frame": 173,
+            "positive": "pass",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.119 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.000 (min=0.055)"
+          },
+          {
+            "frame": 174,
+            "positive": "pass",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.119 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.000 (min=0.055)"
+          },
+          {
+            "frame": 175,
+            "positive": "pass",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.119 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.000 (min=0.055)"
+          },
+          {
+            "frame": 176,
+            "positive": "pass",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.119 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.000 (min=0.055)"
+          },
+          {
+            "frame": 177,
+            "positive": "pass",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.119 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.000 (min=0.055)"
+          },
+          {
+            "frame": 178,
+            "positive": "pass",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.119 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.000 (min=0.055)"
+          },
+          {
+            "frame": 179,
+            "positive": "pass",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.119 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.000 (min=0.055)"
+          },
+          {
+            "frame": 180,
+            "positive": "pass",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.104 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.000 (min=0.055)"
+          },
+          {
+            "frame": 181,
+            "positive": "pass",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.104 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.000 (min=0.055)"
+          },
+          {
+            "frame": 182,
+            "positive": "pass",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.092 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.000 (min=0.055)"
+          },
+          {
+            "frame": 183,
+            "positive": "pass",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.092 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.000 (min=0.055)"
+          },
+          {
+            "frame": 184,
+            "positive": "pass",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.068 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.000 (min=0.055)"
+          },
+          {
+            "frame": 185,
+            "positive": "pass",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.068 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.000 (min=0.055)"
+          },
+          {
+            "frame": 186,
+            "positive": "pass",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.060 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.000 (min=0.055)"
+          },
+          {
+            "frame": 187,
+            "positive": "pass",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.060 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.000 (min=0.055)"
+          },
+          {
+            "frame": 188,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.036 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.000 (min=0.055)"
+          },
+          {
+            "frame": 189,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.036 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.000 (min=0.055)"
+          },
+          {
+            "frame": 190,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.018 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.000 (min=0.055)"
+          },
+          {
+            "frame": 191,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.018 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.000 (min=0.055)"
+          },
+          {
+            "frame": 192,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.009 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.000 (min=0.055)"
+          },
+          {
+            "frame": 193,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.009 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.000 (min=0.055)"
+          },
+          {
+            "frame": 194,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.018 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.018 (min=0.055)"
+          },
+          {
+            "frame": 195,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.018 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.018 (min=0.055)"
+          },
+          {
+            "frame": 196,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.018 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.018 (min=0.055)"
+          },
+          {
+            "frame": 197,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.018 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.018 (min=0.055)"
+          },
+          {
+            "frame": 198,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.018 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.018 (min=0.055)"
+          },
+          {
+            "frame": 199,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.018 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.018 (min=0.055)"
+          },
+          {
+            "frame": 200,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.018 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.018 (min=0.055)"
+          },
+          {
+            "frame": 201,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.018 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.018 (min=0.055)"
+          },
+          {
+            "frame": 202,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.018 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.018 (min=0.055)"
+          },
+          {
+            "frame": 203,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.018 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.018 (min=0.055)"
+          },
+          {
+            "frame": 204,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.018 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.018 (min=0.055)"
+          },
+          {
+            "frame": 205,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.018 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.018 (min=0.055)"
+          },
+          {
+            "frame": 206,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.018 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.018 (min=0.055)"
+          },
+          {
+            "frame": 207,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.018 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.018 (min=0.055)"
+          },
+          {
+            "frame": 208,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.018 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.018 (min=0.055)"
+          },
+          {
+            "frame": 209,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.018 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.018 (min=0.055)"
+          },
+          {
+            "frame": 210,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.018 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.018 (min=0.055)"
+          },
+          {
+            "frame": 211,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.018 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.018 (min=0.055)"
+          },
+          {
+            "frame": 212,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.018 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.018 (min=0.055)"
+          },
+          {
+            "frame": 213,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.018 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.018 (min=0.055)"
+          },
+          {
+            "frame": 214,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.018 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.018 (min=0.055)"
+          },
+          {
+            "frame": 215,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.018 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.018 (min=0.055)"
+          },
+          {
+            "frame": 216,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.018 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.018 (min=0.055)"
+          },
+          {
+            "frame": 217,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.018 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.018 (min=0.055)"
+          },
+          {
+            "frame": 218,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.018 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.018 (min=0.055)"
+          },
+          {
+            "frame": 219,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.018 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.018 (min=0.055)"
+          },
+          {
+            "frame": 220,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.009 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.009 (min=0.055)"
+          },
+          {
+            "frame": 221,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.000 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.000 (min=0.055)"
+          },
+          {
+            "frame": 222,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.000 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.000 (min=0.055)"
+          },
+          {
+            "frame": 223,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.000 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.000 (min=0.055)"
+          },
+          {
+            "frame": 224,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.000 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.000 (min=0.055)"
+          },
+          {
+            "frame": 225,
+            "positive": "fail",
+            "negative": "fail",
+            "positive_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.000 (min=0.055)",
+            "negative_reason": "region=[0.408, 0.625, 0.492, 0.725] color(49, 107, 255)±26 fraction=0.000 (min=0.055)"
+          }
+        ],
+        "pass": true
+      }
+    }
+  ]
+}

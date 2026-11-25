@@ -1,0 +1,25 @@
+{
+  "schema_version": "ram_calibration/1.0",
+  "mode": "verify",
+  "recipe": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_soul_detector_independent_v1_20261125\\red_capture_recipe.json",
+  "out": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_soul_detector_independent_v1_20261125\\acceptance",
+  "workers": 2,
+  "total": 2,
+  "counts": {
+    "pass": 2
+  },
+  "cases": [
+    {
+      "case_id": "red_soul_35_resource_verify",
+      "status": "pass",
+      "reused": false,
+      "report": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_soul_detector_independent_v1_20261125\\acceptance\\red_soul_35_resource_verify\\report.json"
+    },
+    {
+      "case_id": "red_soul_47_resource_verify",
+      "status": "pass",
+      "reused": false,
+      "report": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_soul_detector_independent_v1_20261125\\acceptance\\red_soul_47_resource_verify\\report.json"
+    }
+  ]
+}

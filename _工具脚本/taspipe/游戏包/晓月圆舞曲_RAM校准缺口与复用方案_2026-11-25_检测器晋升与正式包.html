@@ -1,0 +1,464 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><title>晓月圆舞曲_RAM校准缺口与复用方案_2026-11-25_检测器晋升与正式包</title><style>
+    @page { size: A4; margin: 17mm 16mm 18mm 16mm; }
+    * { box-sizing: border-box; }
+    body { font-family: "Microsoft YaHei", "SimSun", sans-serif; color: #1f2937; font-size: 10.5pt; line-height: 1.65; }
+    h1, h2, h3, h4 { color: #111827; line-height: 1.35; page-break-after: avoid; }
+    h1 { font-size: 20pt; border-bottom: 2px solid #2563eb; padding-bottom: 8px; }
+    h2 { font-size: 15pt; margin-top: 1.4em; border-bottom: 1px solid #d1d5db; padding-bottom: 4px; }
+    h3 { font-size: 12.5pt; margin-top: 1.2em; }
+    p { margin: 0.55em 0; orphans: 3; widows: 3; }
+    ul, ol { margin: 0.45em 0 0.7em 1.4em; padding: 0; }
+    li { margin: 0.2em 0; }
+    code { font-family: Consolas, "Microsoft YaHei", monospace; font-size: 9pt; background: #f3f4f6; padding: 1px 3px; border-radius: 3px; overflow-wrap: anywhere; }
+    pre { white-space: pre-wrap; background: #f3f4f6; padding: 10px; border-radius: 4px; page-break-inside: avoid; }
+    table { width: 100%; border-collapse: collapse; margin: 0.8em 0; font-size: 8.6pt; line-height: 1.45; }
+    th, td { border: 1px solid #cbd5e1; padding: 5px 6px; vertical-align: top; overflow-wrap: anywhere; }
+    th { background: #eef2ff; text-align: left; }
+    tr { page-break-inside: avoid; }
+    a { color: #1d4ed8; text-decoration: none; overflow-wrap: anywhere; }
+    blockquote { border-left: 3px solid #93c5fd; margin: 0.8em 0; padding: 0.2em 0.8em; color: #374151; background: #f8fafc; }
+    hr { border: 0; border-top: 1px solid #d1d5db; margin: 1.2em 0; }
+    </style></head><body><h1>《恶魔城：晓月圆舞曲》中文版 RAM 校准：缺口与复用方案</h1>
+<p>更新：2026-11-25<br>适用 ROM：<code>F:/BaiduNetdiskDownload/rom/gba/恶魔城晓月圆舞曲.gba</code><br>ROM SHA1：<code>40aab076a528f52e93260bb98d91a40039e0da02</code><br>实测核心：BizHawk 2.11.1 / <code>BizHawk.Emulation.Cores.Nintendo.GBA.MGBAHawk</code></p>
+<h2>1. 当前结论</h2>
+<p>已从“候选地址可写”推进到三条真实 gameplay 正反例，以及一条真实物品消费正反例：</p>
+<ol>
+<li>红魂 ID=4 半鱼人：Up+B 水流；空红魂无水流，MP 80→69 / 80→80。</li>
+<li>红魂 ID=24 魔鸟：真实菜单装备、关闭回游戏、重开持久化；Up+B 出现翅膀状刀刃，同状态清空槽后消失；当前规范配方实跑为 MP 80→56 / 80→80，历史战斗样本为 80→59 / 80→80，早期菜单配方样本为 80→57 / 80→80。不同样本不固定化为统一消耗常量。</li>
+<li>黄魂 ID=22 骷髅战士：真实菜单装备、关闭回游戏、重开持久化；同一僵尸、同一帧、同一武器，近战伤害 22；空槽伤害 17。</li>
+<li>物品 ID=1 回复药：人工置入数量 1 后从真实 ITEM USE 菜单使用；HP 100→200、<code>0x13288</code> 数量 1→0；满 HP 320 时拒绝使用且数量保持 1。只证明该物品的消费点，不证明真实拾取或整段物品数组。</li>
+</ol>
+<p>GBA 平台生产闸门仍为 <code>showcase.PLATFORM_PROFILES[&quot;GBA&quot;][&quot;verified&quot;] = False</code>。上述字段不能自动解锁整个平台或未验收字段。</p>
+<h2>2. 地址与验收层级</h2>
+<p>地址均为 mGBA <code>EWRAM</code> 域内偏移；不要把 <code>0x01325D</code> 再写成 <code>0x0201325D</code> 传给 EWRAM 域。</p>
+<table><thead><tr><th>红魂装备 ID</th><th><code>0x1325D</code></th><th>1</th><th>gameplay</th><th>0=空；ID=4、24 已做真实输入正反例</th></tr></thead><tbody>
+<tr><td>蓝魂装备 ID</td><td><code>0x1325E</code></td><td>1</td><td>gameplay</td><td>0=空；ID=4 布艾尔 R 双火焰</td></tr>
+<tr><td>黄魂装备 ID</td><td><code>0x1325F</code></td><td>1</td><td>gameplay</td><td>0=空；ID=22 对僵尸伤害 22，空槽 17</td></tr>
+<tr><td>Lv</td><td><code>0x1326D</code></td><td>1</td><td>menu</td><td>STATUS 直写显示；99 是示例，不是实测上限</td></tr>
+<tr><td>当前 HP</td><td><code>0x1326E</code></td><td>2 LE</td><td>menu</td><td>STATUS/HUD 显示变化；上限未验</td></tr>
+<tr><td>当前 MP</td><td><code>0x13270</code></td><td>2 LE</td><td>menu + 消耗</td><td>菜单显示；半鱼人、魔鸟消耗正反例</td></tr>
+<tr><td>最大 HP</td><td><code>0x13272</code></td><td>2 LE</td><td>menu</td><td>上限未验</td></tr>
+<tr><td>最大 MP</td><td><code>0x13274</code></td><td>2 LE</td><td>menu</td><td>上限未验</td></tr>
+<tr><td>基础 STR</td><td><code>0x13276</code></td><td>2 LE</td><td>menu</td><td>不是 STATUS 实时总 STR；黄魂不会直接改写它</td></tr>
+<tr><td>CON/DEF</td><td><code>0x13278</code></td><td>2 LE</td><td>menu</td><td>游戏标签为 CON；上限未验</td></tr>
+<tr><td>INT</td><td><code>0x1327A</code></td><td>2 LE</td><td>menu</td><td>旧字典误标为 HP，已纠正</td></tr>
+<tr><td>LCK</td><td><code>0x1327C</code></td><td>2 LE</td><td>menu</td><td>上限未验</td></tr>
+<tr><td>EXP</td><td><code>0x13280</code></td><td>4 LE</td><td>menu</td><td>社区宽度；仅显示验收，未逐字节验收</td></tr>
+<tr><td>GOLD</td><td><code>0x13284</code></td><td>4 LE</td><td>menu</td><td>社区宽度；仅显示验收，未逐字节验收</td></tr>
+</tbody></table>
+<p><code>verified=true</code> 只表示该地址在标明的层级成立，不表示所有写法、上限或玩法用途都已验证。</p>
+<h3>已废弃/不得继续使用的外推</h3>
+<ul>
+<li>装备槽相对 USA 的 <code>-0x0C</code> 不能外推到 HP、MP、统计区或魂库存。</li>
+<li>旧 <code>hp=0x1327A</code> 实际是 INT；旧 <code>mp=0x1327E</code> 无证据。</li>
+<li>不能把 <code>0x13286/0x13287</code> 当已装备魂寄存器；真实 Up+B/R 已反证。</li>
+<li>RAM 可写、菜单变化、装备持久化、玩法触发是四层不同证据。</li>
+</ul>
+<h2>3. 已验收的菜单序列</h2>
+<p>从干净 gameplay 状态开始，宏 token 用逗号分隔，每个 token 一帧。</p>
+<ul>
+<li>红魂预览：<code>Start, A, A</code>；预览态每次单帧 Down 使 ID 增加 2；12 次 Down 后 A 确认为 ID=24 魔鸟。</li>
+<li>黄魂预览：<code>Start, A, Down, Down, A</code>；预览态 11 次 Down 后 A 确认为 ID=22 骷髅战士。</li>
+<li>普通列表 <code>B,B</code> 回游戏；预览页 <code>B,B,B</code> 回游戏。</li>
+<li>基态库存已为全魂；不要再补写 <code>0x1336C=1</code>，选择性库存会改变候选起点，曾使 11 次 Down 错选 ID=23。</li>
+</ul>
+<p>标定报告：<code>证据/晓月圆舞曲/menu_steps_report.json</code>。</p>
+<h2>4. 魔鸟、飞骷髅、飞冰魂的身份边界</h2>
+<ul>
+<li>中文菜单 ID=24 名“魔鸟”，描述“投出刀刃般的羽毛”。</li>
+<li>美版 matching decomp 对应英文名 Harpy / Wing Cutter，默认 Up+B 触发。</li>
+<li>社区同字节还列出“狼人”；它与“飞骷髅”不是同一个中文名。</li>
+<li>“飞冰魂”是用户俗称，目前没有可靠来源证明它就是 ID=24 魔鸟，更不能与“飞骷髅”混用。</li>
+<li>因此项目记录为“魔鸟/Wing Cutter 的玩法已验收；飞冰魂别名未确认”。</li>
+</ul>
+<p>ID=24 菜单 USE 显示 25；历史战斗样本实测 MP 80→59（消耗 21），早期菜单配方为 80→57（消耗 23），当前规范配方为 80→56（消耗 24）。差异尚未解释，不能把菜单 USE 或某一次实测值直接写成固定实际 MP 消耗。</p>
+<h2>5. 黄魂 ID=22 的验收与纠错</h2>
+<ul>
+<li>ID=21 是石像魔，社区描述为石化攻击无效，不是 STR+1。</li>
+<li>ID=22 是骷髅战士，社区描述为 STR+1。</li>
+<li>ID=22 装备后 <code>0x13276</code> 基础 STR 仍为 10；STATUS 菜单实时显示 STR 14。两者不矛盾，不能用基础字段不变判黄魂无效。</li>
+<li>有效 gameplay 验收位于“荒城回廊”：从同一稳定状态只改黄槽，向右 80 帧后 B 攻击 5 帧。第 90 帧伤害数字 ID=22 为 22、空槽为 17；攻击前画面完全一致。</li>
+<li>早期近战探针的“正例”漏写 ID=22，且误打 Graham 剧情 NPC，故全零差分不能作为黄魂无效证据。该错误已纠正，不作验收依据。</li>
+</ul>
+<p>gameplay 报告：<code>证据/晓月圆舞曲/yellow_gameplay_report.json</code>。</p>
+<h2>6. 社区与 GitHub 复用成果</h2>
+<h3>百度社区金手指表</h3>
+<p>来源：<code>https://zhidao.baidu.com/question/266472901.html</code></p>
+<p>复用价值：</p>
+<ul>
+<li>统计字段地址与当前菜单实测一致。</li>
+<li>给出红、蓝、黄魂库存分组起点。</li>
+<li>给出魔鸟、石像魔、骷髅战士的中文名称与效果描述。</li>
+</ul>
+<p>限制：页面没有 ROM SHA1、汉化版标识或内核信息；所有地址仍须按当前 ROM 重验。完整取证见 <code>来源库/取证/castlevania_aria_gba_baidu_cheats_20261125.md</code>。</p>
+<h3>GitHub <code>testyourmine/cvaos</code></h3>
+<p>来源：<code>https://github.com/testyourmine/cvaos</code></p>
+<p>复用价值：</p>
+<ul>
+<li>USA matching decomp，不是当前中文版，但提供结构关系与算法。</li>
+<li>魂库存低/高 nibble 解码。</li>
+<li>已装备魂在菜单计数中额外加 1。</li>
+<li>红/蓝/黄/能力魂数量 <code>55/24/35/8</code>；<code>0x8</code> 是能力魂循环上界，不是末项索引。</li>
+<li>红魂触发流程及“当前 MP 必须严格大于消耗值”的规则。</li>
+<li>可继续复用的库存、转移、施法函数，不必从零重写解码器。</li>
+</ul>
+<p>限制：USA ROM SHA1 为 <code>abd71fe01ebb201bcc133074db1dd8c5253776c7</code>，与当前中文版不同；绝对地址不可直接搬。完整取证见 <code>来源库/取证/castlevania_aria_gba_cvaos_20261125.md</code>。</p>
+<h3>通用工具</h3>
+<p>优先复用 BizHawk RAM Search / Watch / Lua、ScriptHawk、Libretro mGBA 内存监控与 cheats。本次按“可直接调用 / 仅候选或辅助 / 不可直接调用”完成分级取证，见 <code>来源库/取证/ram_calibration_community_tooling_20261125.md</code>。</p>
+<ul>
+<li>可直接使用：BizHawk <code>memory/mainmemory</code> 分域读写、<code>joypad</code> 逐帧输入、TAStudio 输入提交接口、核心已支持的 <code>addcheat/removecheat</code>。</li>
+<li>仅候选或辅助：mGBA-http（第三方、网络延迟，不适合逐帧唯一执行器）、ScriptHawk（游戏专用模块集合，本次未命中本作）、RAM Watch GUI。</li>
+<li>不可直接调用：<code>openramsearch/openhexeditor</code> 只开 GUI；RAM Search 没有完整稳定条件/结果 Lua API；mGBA Qt 搜索/金手指完整操作仅 GUI；mGBA 官方 Lua 无搜索筛选或金手指管理 API。</li>
+<li>本作绑定中文 SHA1 <code>40aab076…</code> 与 USA SHA1 <code>abd71fe0…</code> 的现成自动菜单 Lua/宏，本次 GitHub 代码检索未命中。受登录与索引限制，不能声称不存在；项目当前宏为自有并已固化到规范配方。</li>
+<li>金手指边界：Code Breaker 仅未加密写与 4 型半字滑动写候选，条件码等阻塞；Game Genie 只分类未解码；IPS/BPS 尚未接入。不得把这些候选当作 gameplay 证据。</li>
+</ul>
+<h2>7. 精确缺口</h2>
+<h3>P0：身份与证据归档</h3>
+<ul>
+<li>“飞冰魂”是否指 ID=24 魔鸟：缺可靠中文俗称到 ID 的直接来源。</li>
+<li>ID=24 菜单 USE 25 与不同样本消耗 21/23/24：缺当前版本函数或受击/计时条件解释。</li>
+<li>将红魂、黄魂报告与关键截图固化到项目；已完成，见 <code>证据/晓月圆舞曲/</code>。</li>
+</ul>
+<h3>P1：魂库存</h3>
+<p>候选范围：</p>
+<ul>
+<li>红魂 <code>0x13310–0x1332B</code>，55 项。</li>
+<li>蓝魂 <code>0x13348–0x13353</code>，24 项。</li>
+<li>黄魂 <code>0x13362–0x13373</code>，35 项。</li>
+<li>能力魂候选 <code>0x13386–0x13389</code>，8 项；来自 USA 结构 <code>0x13392</code> 减已命中的 <code>0x0C</code> 位移，尚未经中文版消费点或玩法验收。</li>
+</ul>
+<p>缺口不是“能否写入”，而是：</p>
+<ol>
+<li>中文版对应消费函数在哪里。</li>
+<li>每组首地址、末项和间隔是否与 USA 一致。</li>
+<li>拾取、消耗、删除、转移时各 nibble 如何变化。</li>
+<li>已装备魂是否只在菜单计数时额外加 1，还是也参与其他逻辑。</li>
+<li>能力魂候选 <code>0x13386–0x13389</code> 的逐 nibble 消费点与真实被动效果；旧候选 <code>0x133D3/0x133D7/0x133DB</code> 无证据，已废弃。</li>
+</ol>
+<h3>P1：物品清单与背包消费</h3>
+<p>已收敛一个真实消费样本：</p>
+<ul>
+<li>物品 ID=1 是回复药，数量字节 <code>0x13288</code>。</li>
+<li>HP 100 时从 ITEM USE 菜单按 A：HP 100→200，数量 1→0。</li>
+<li>满 HP 320 时同样输入：HP 320→320，数量保持 1；这是合法规则，不是补丁失败。</li>
+<li>证据：<code>证据/晓月圆舞曲/item_use_report.json</code>。</li>
+</ul>
+<p>剩余缺口：</p>
+<ul>
+<li>ITEM/EQUIP/SOUL 菜单清单已定位到 USA 地址减 <code>0x0C</code> 的显示层；这不等于背包数组或消费函数。</li>
+<li><code>0x13288</code> 起 32 项的完整边界、其余物品编码、真实拾取/删除/装备状态仍未验收。</li>
+<li>缺中文版新增、删除、使用、装备函数的对应地址。</li>
+<li>下一步应复用 <code>cvaos</code> 相关函数，先找中文版消费点，再做菜单与 gameplay 双层验收。</li>
+</ul>
+<h3>P2：源码与外部交叉核验</h3>
+<ul>
+<li>补全 <code>cvaos</code> 玩家结构、魂结构、物品结构定义。</li>
+<li>核验 <code>sub_08021344</code>、<code>sub_08032D58</code>、<code>sub_08034624</code> 的完整汇编与调用关系。</li>
+<li>DataCrystal、Fandom、StrategyWiki 尚未形成本作可用 RAM 表；保留为候选，不把“未找到”写成“不存在”。</li>
+<li>统计字段 <code>max=99/999/9999999</code> 目前是示例值，不是游戏真实上限；需要真实升级/成长或溢出测试。</li>
+</ul>
+<h2>8. 下一步复用顺序</h2>
+<ol>
+<li>从 <code>cvaos</code> 的库存函数建立测试预言机，先只做解码与数量正反例，不直接改连续内存。</li>
+<li>用菜单真实拾取/使用动作前后 EWRAM 差分定位中文版消费区，并以等级地址作正控制。</li>
+<li>先验收一个物品的数量增减，再扩展装备数组；拒绝用“RAM 可写”替代消费证据。</li>
+<li>补齐能力魂绝对地址后，单独验收每个被动；不借黄魂 ID=22 的通过外推其他黄魂。</li>
+<li>只有当前 ROM、当前核心、真实画面正反例全部通过的字段才晋升；GBA 平台闸门另行评估。</li>
+</ol>
+<h2>9. 关键证据文件</h2>
+<ul>
+<li><code>证据/晓月圆舞曲/menu_steps_report.json</code></li>
+<li><code>证据/晓月圆舞曲/wingcutter_combat_report.json</code></li>
+<li><code>证据/晓月圆舞曲/wingcutter_combat_diff_sheet.png</code></li>
+<li><code>证据/晓月圆舞曲/aria_showcase3_report.json</code></li>
+<li><code>证据/晓月圆舞曲/aria_showcase3_reel_event_01.png</code></li>
+<li><code>证据/晓月圆舞曲/aria_showcase3_reel_event_02.png</code></li>
+<li><code>证据/晓月圆舞曲/aria_showcase3_reel_event_03.png</code></li>
+<li><code>证据/晓月圆舞曲/aria_showcase3_reel_event_04.png</code></li>
+<li><code>证据/晓月圆舞曲/wingcutter_mp_report.json</code>（历史报告；其中黄魂基础 STR 判据无效，不作为拒绝黄魂 ID=22 的依据）</li>
+<li><code>证据/晓月圆舞曲/yellow_gameplay_report.json</code></li>
+<li><code>证据/晓月圆舞曲/item_use_report.json</code></li>
+<li><code>F:/开源掌机教程/04-游戏资源库/TAS输入录像库/状态资产/castlevania_aria_gba/aria_us_40aab076/r20261125T120000/evidence/state_gate_empty_red.json</code></li>
+<li><code>F:/开源掌机教程/04-游戏资源库/TAS输入录像库/状态资产/castlevania_aria_gba/aria_us_40aab076/r20261125T120000/evidence/state_gate_yellow_damage_route.json</code></li>
+<li><code>证据/晓月圆舞曲/potion_full_hp_rejected.png</code></li>
+<li><code>证据/晓月圆舞曲/potion_damaged_hp_menu.png</code></li>
+<li><code>证据/晓月圆舞曲/potion_damaged_hp_consumed.png</code></li>
+<li><code>证据/晓月圆舞曲/red24_menu.png</code></li>
+<li><code>证据/晓月圆舞曲/yellow22_menu.png</code></li>
+<li><code>证据/晓月圆舞曲/red24_up_b_f0012.png</code></li>
+<li><code>证据/晓月圆舞曲/red24_clear_up_b_f0012.png</code></li>
+<li><code>证据/晓月圆舞曲/yellow22_damage22.png</code></li>
+<li><code>证据/晓月圆舞曲/yellow0_damage17.png</code></li>
+<li><code>证据/晓月圆舞曲/ram_calibration_red24_installed_v5/report.json</code></li>
+<li><code>证据/晓月圆舞曲/ram_calibration_red24_package_v6/report.json</code></li>
+<li><code>来源库/取证/ram_calibration_community_tooling_20261125.md</code></li>
+</ul>
+<h2>11. 通用流水线、v5/v6 与第二游戏验收</h2>
+<h3>当前规范配方与证据</h3>
+<p>规范配方：<code>F:/开源掌机教程/_工具脚本/taspipe/校准配方/castlevania_aria_cn.red24.json</code>。宏链已固化：真实菜单装备 ID=24（353 帧）→ 关闭回 gameplay（112 帧）→ 重开菜单确认持久化（95 帧）。<code>prepare</code> 每步同时有 RAM 断言和画面锚点，禁止用补丁冒充装备。</p>
+<p>正式 case <code>red24_vs_empty</code> 从 <code>red24_game</code> 分叉：正例保持 ID=24，负例在同一基态一次性清空红槽；两者都执行 <code>Up+B</code> 30 帧。RAM 断言为正例 ID=24、MP&lt;80，负例 ID=0、MP=80；第 12、20、final 帧必须出现真实画面差异。</p>
+<table><thead><tr><th>installed_v5</th><th>项目根态经真实菜单链形成</th><th>pass</th><th>正例 MP 80→56，负例 80→80；第 12/20/final 帧差 752/743/419 像素；正例有两组羽刃，负例只有基础攻击对应效果，不能表述为空槽完全无动作</th></tr></thead><tbody>
+<tr><td>package_v6</td><td>新 revision 的 <code>clean_gameplay</code> 经同一菜单链形成</td><td>pass</td><td>与 v5 读数、像素差完全一致；9 张关键 PNG 的 SHA256 相同，v5 人工验收覆盖 v6；再次运行同一命令 <code>reused=true</code></td></tr>
+</tbody></table>
+<p>v6 缓存键：<code>3ba70299f3d615044454a720de621c9bd769b72af3194c1f736668e2dc10d6b2</code>。<code>verified_fields</code> 仅含 <code>red_soul_equipped_id=0x1325D</code> 与 <code>current_mp=0x13270</code>；不外推全部红魂，不确认“飞冰魂”别名。</p>
+<p>正式归档：</p>
+<ul>
+<li><code>F:/开源掌机教程/_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/ram_calibration_red24_installed_v5/</code></li>
+<li><code>F:/开源掌机教程/_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/ram_calibration_red24_package_v6/</code></li>
+</ul>
+<p>各含 report、完整 recipe、manifest 与 29 份 evidence，SHA256 可复核；旧归档未覆盖。</p>
+<h3>新状态包 revision</h3>
+<p><code>F:/开源掌机教程/04-游戏资源库/TAS输入录像库/状态资产/castlevania_aria_gba/aria_us_40aab076/r20261125T025337/</code></p>
+<p>从旧 revision 复制后新增 <code>clean_gameplay</code>、<code>red24_menu</code>、<code>red24_game</code>、<code>red24_reopen</code>，每套状态登记 ZIP 条目 CRC 内容指纹；收入 v5 配方、报告、manifest 和关键截图，并记录 <code>calibration:red24_clean_gameplay_installed_v5=pass</code>。旧 revision 保持原样。</p>
+<p>该新包目前是 <code>resources_ready</code>，不是 <code>state_verified</code>：根态和菜单中间态尚未完成独立跨进程状态验收，且 GBA 平台总闸门仍关闭。v6 运行后没有继续改写此包，避免状态包内容变化反过来使 v6 缓存键失效。revision 字符串 <code>r20261125T025337</code> 在字典序上小于历史 <code>r20261125T120000</code>，当前规范配方用精确 revision，不受影响；未来依赖 <code>latest()</code> 的新 revision 应使用更大的时间戳。</p>
+<h3>缓存与验证边界</h3>
+<p>缓存键覆盖 <code>ram_calibration.py</code>、<code>statejump.py</code>、<code>tas_replay.py</code>、完整配方、ROM SHA1、EmuHawk、根态/case 独立基态、GBA <code>mgba.dll</code> 与状态包 JSON。协议或状态变化会使旧通过报告失效。RAM-only <code>attempt</code> 现在也传递 <code>probe_domain</code> 到 p10；否则 GBA dump 会误用默认域，该缺陷曾使 EWRAM 红魂 ID 读错。</p>
+<p>离线自检 36/36 通过，并已接入共享 <code>python -m taspipe.selftest</code>。关键回归覆盖：准备阶段禁止补丁、claim 不得外推断言地址、逐帧补丁拒绝、零长度 RAM 拒绝、内存域传递、独立基态、隔离槽、协议源码缓存失效、证据 SHA256 与非空归档拒绝覆盖。</p>
+<h3>第二游戏复用结果</h3>
+<p>同一配方协议已用于 NES《魂斗罗》，不是为每个游戏重写执行器：</p>
+<ul>
+<li><code>weapon_spread_vs_rifle_final_v3</code>：pass，<code>current_weapon=0xAA</code>；同基态散弹与步枪真实弹道不同。</li>
+<li><code>movement_right_vs_neutral_final_v2</code>：pass，故意 <code>verified_fields=[]</code>；只证明持续 Right 与中立产生真实位移，不把场景状态寄存器误命名为移动寄存器。</li>
+</ul>
+<p>正式归档位于 <code>证据/魂斗罗/weapon_spread_vs_rifle_final_v3/</code> 与 <code>证据/魂斗罗/movement_right_vs_neutral_final_v2/</code>，各含完整配方、报告、manifest 和逐帧 evidence。换游戏仍需提供 ROM/核心身份、稳定根态、真实菜单/导航宏、地址断言与画面预言机；执行、正反例、缓存和归档机制可直接复用。</p>
+<h3>仍未完成</h3>
+<ul>
+<li>中文版魂库存、能力魂、完整物品数组与真实拾取/删除函数的逐项玩法验收。</li>
+<li>新 Aria revision 根态与中间态的独立跨进程状态验收；通过前不得标为 <code>state_verified</code>。</li>
+<li>Game Genie 解码、IPS/BPS 生产解析与应用、Code Breaker 条件码等格式。</li>
+<li>魔鸟不同样本 MP 消耗差异的规则解释，以及“飞冰魂”别名的可靠来源。</li>
+<li>GBA 平台总闸门保持 <code>verified=False</code>；上述单游戏与字段结论不自动放行平台生产。</li>
+</ul>
+<h2>12. 收尾验证（2026-11-25）</h2>
+<ul>
+<li>完整共享回归：<code>SELFTEST OK 1489/1489</code>；其中包含 RAM 校准 36/36。</li>
+<li>来源库独立闸门：<code>SOURCES_SELFTEST OK 71/71</code>。<code>absence_claims</code> 现区分“不存在声称”（game/want/date/support，必须有过 miss 台账）与“取回限制”（claim/checked_on/method/result/not_a_claim_of）；旧记录不再被静默跳过，混合或缺失字段拒绝入库。</li>
+<li>跨平台闸门：33/33；金手指候选：56 PASS / 0 FAIL。</li>
+<li>来源审计：8 pass / 0 fail / 1 inconclusive；唯一 inconclusive 是其他既有知识包仍只有 candidate/snippet/unreachable 支撑。</li>
+<li>知识库审计：6 pass / 0 fail / 3 inconclusive。inconclusive 仍为既有权威就绪、二手继承与撤回片段；Aria 的 evidence coverage、source binding、identity、index sync、chunk provenance 均通过。重建结果为 811 块、26 份入索引、22 份显式排除。</li>
+<li>四份正式归档（Aria v5/v6、魂斗罗武器/移动）的 report、recipe 与逐份 evidence SHA256 全部复算通过；新状态包 9 套状态与 44 份登记实物的 SHA256 全部通过，状态保持 <code>resources_ready</code>。</li>
+<li>已跟踪的本次改动文件 <code>git diff --check</code> 通过；新增文本文件另做逐行空白与 EOF 检查。全仓检查另发现 <code>测试问题与闸门说明书.md:2227</code> 的既有 EOF 空行，不属于本次 RAM 校准改动，未改写该文件。</li>
+</ul>
+<h2>10. 可复用状态包与校准配方（2026-11-25 实跑）</h2>
+<p>正式状态包：</p>
+<p><code>F:/开源掌机教程/04-游戏资源库/TAS输入录像库/状态资产/castlevania_aria_gba/aria_us_40aab076/r20261125T120000/</code></p>
+<p>包内冻结 <code>base</code>、<code>empty_red</code>、<code>merman</code>、<code>blue_buer</code>、<code>yellow_damage_route</code> 五套状态，以及菜单装备导航输入、历史证据和本轮校准证据。包状态已升为 <code>state_verified</code>：五套状态均通过独立零帧回存 profile gate；GBA 平台总闸门仍未放行。</p>
+<ul>
+<li>本轮补齐 <code>empty_red</code> 与 <code>yellow_damage_route</code> 的 gate，证据分别为包内 <code>evidence/state_gate_empty_red.json</code>、<code>evidence/state_gate_yellow_damage_route.json</code>。</li>
+<li>两套都在全新 GBA/mGBA 隔离槽中通过 memory domains、framebuffer、SyncSettings、BizVersion 身份检查。<code>yellow_damage_route</code> 的序列化 <code>Core.bin.zst</code> 首差异偏移为 8225，但上述语义判据全部一致；生产 gate 的通过依据是语义一致性，不把 ZIP 内核心序列化字节相等当作唯一标准。</li>
+<li><code>state_verified</code> 只表示这五套状态可加载、回存复现；不代表完整技能表、库存/物品系统或 GBA 平台已验收。</li>
+</ul>
+<p>可复用配方：</p>
+<ul>
+<li><code>F:/开源掌机教程/_工具脚本/taspipe/校准配方/castlevania_aria_gba.red24_menu.json</code></li>
+<li><code>F:/开源掌机教程/_工具脚本/taspipe/校准配方/castlevania_aria_gba.soul_effects.json</code></li>
+</ul>
+<p>两份配方只描述源 BizHawk 安装、ROM/状态包、宏、正反例和断言；<code>isolated_slot=true</code> 让 <code>ram_calibration</code> 按 <code>GBA/mGBA</code> 现场创建隔离副本，不再引用某次并行任务遗留的临时槽路径。无 <code>prepare</code> 的 case 可分别引用独立场景状态，缓存键会纳入这些额外状态。</p>
+<table><thead><tr><th><code>red24_vs_empty</code></th><th>pass</th><th>真实菜单选中红魂 24，关闭回游戏、重开仍为 24；Up+B 后 MP 80→57，空槽 80→80</th></tr></thead><tbody>
+<tr><td><code>wingcutter_same_state</code></td><td>pass</td><td>同一 <code>base</code> 只改红槽 24/0；羽刃正反例画面在 8/12/20/60/final 均不同，MP 80→57 / 80→80</td></tr>
+<tr><td><code>guardian_same_state</code></td><td>pass</td><td>同一 <code>blue_buer</code> 只改蓝槽 4/0；R 键正反例在 12/60/final 分别相差 280/291/250 像素</td></tr>
+<tr><td><code>yellow_damage_same_state</code></td><td>pass</td><td>同一路线只改黄槽 22/0；80/85 帧完全相同，86 帧起分离；伤害 22 / 17</td></tr>
+</tbody></table>
+<p>完整报告、配方副本、证据清单和 SHA256 归档在：</p>
+<p><code>F:/开源掌机教程/04-游戏资源库/TAS输入录像库/状态资产/castlevania_aria_gba/aria_us_40aab076/r20261125T120000/calibration/</code></p>
+<p>本轮只验证上述 ID 与场景，不代表 55 个红魂、24 个蓝魂、35 个黄魂或完整技能表已验收；自动检测器候选生成仍须保留正例通过与负例失败两道闸门。</p>
+<h2>13. 配置驱动批量候选扫描（2026-11-25）</h2>
+<p><code>ram_calibration</code> 已从逐 case 执行扩展为可复用批跑入口，游戏特定信息仍只放在配方中：</p>
+<ul>
+<li><code>matrix.case_id/values/template</code> 用 <code>{value}</code> 一次展开 ID、分支名、补丁值与断言值；<code>values</code> 只允许唯一 0..255 整数，展开后仍走原有 validate/compile/生产执行路径。</li>
+<li><code>scout</code> 与 <code>verify</code> 共用逐帧像素比较；scout 只写 <code>candidate_comparisons</code>、RAM diff 和 <code>verified_fields=[]</code>，不会把候选升级成字段验收。</li>
+<li><code>run_many()</code> 用线程池并行运行全部 case；单 case 异常记录为 <code>error</code>，不中断其余 case。CLI 为 <code>--all --workers N</code>。</li>
+<li>复用要求同时匹配 cache key、目标状态且 evidence 文件齐全；scout 缺证据时拒绝复用并重跑。</li>
+<li>targeted 自检 <code>ram_calibration_selftest</code> 43/43，通过生产函数入口覆盖 matrix 展开、重复值拒绝、scout 视觉候选、全量批跑、失败隔离、幂等复用与缺证据重跑。</li>
+</ul>
+<p>第一份批量配方为 <code>F:/开源掌机教程/_工具脚本/taspipe/校准配方/castlevania_aria_gba.red_soul_sweep.json</code>，展开红魂 ID 1–55，共 55 个 case；每个 case 只比较同一战斗初态下的目标红魂与空红槽。扫描命中仅代表候选，后续仍须抽真实帧、核对菜单身份、补 verify 正反例，再进入 detector 标定与 showcase catalog。</p>
+<h2>14. 全量魂菜单目录（2026-11-25）</h2>
+<p>生产采集模块 <code>menu_catalog/1.1</code> 已完成红魂 55、蓝魂 24、黄魂 35 的全量真实菜单导航。三项均从同一已验证 <code>base</code> 出发，以两列网格真实按键选择，不写装备槽；每项同时保存整图、状态和名称身份区，并回读目标槽位。</p>
+<table><thead><tr><th>红魂</th><th>55</th><th><code>0x1325D</code></th><th><code>[45,20,135,32]</code></th><th>55/55 captured，readback 全对，identity 全唯一</th></tr></thead><tbody>
+<tr><td>蓝魂</td><td>24</td><td><code>0x1325E</code></td><td><code>[45,38,135,50]</code></td><td>24/24 captured，readback 全对，identity 全唯一</td></tr>
+<tr><td>黄魂</td><td>35</td><td><code>0x1325F</code></td><td><code>[45,50,120,65]</code></td><td>35/35 captured，readback 全对，identity 全唯一</td></tr>
+</tbody></table>
+<p>合计 114/114：整图 114 唯一、identity 114 唯一，实际核心全部为 <code>BizHawk.Emulation.Cores.Nintendo.GBA.MGBAHawk</code>，无缺文件。导航宏由生产函数 <code>selection_macro()</code> 生成，所有条目 <code>patches=[]</code>。</p>
+<h3>名称与效果观察</h3>
+<ul>
+<li>114 个中文名从真实 identity crop 逐项人工读出；蓝魂 16“亚祖拉”、黄魂 21“石化魔”、红魂 33 与蓝魂 9 的“卡格布雷巴斯”做了第二遍 16 倍放大复核。</li>
+<li>114 条效果文本从同一批真实菜单截图逐项读出。效果区是两行排版，正确裁切为 <code>[45,118,238,153]</code>；早期只取 <code>y=118..134</code> 会漏掉第二行，不能作为正式文本来源。</li>
+<li>菜单中文名是 8 像素高、宽度可变的比例字体。旧 <code>build_menu_glyph_inventory.py</code> 按固定 8 像素 cell 切分得到的 179 个 bitmap cluster 不是 179 个汉字；<code>glyph_labels_draft.json</code>、<code>name_solver_result.json</code> 和旧 fixed-cell glyph detail 均不得作为正式名称映射。</li>
+<li>外部 NewWise 与 Castlevania Dungeon 只用于交叉核名和效果候选；目录正文以当前 ROM 的真实菜单观察为准。</li>
+</ul>
+<h3>正式产物</h3>
+<p>可检索目录：<code>F:/开源掌机教程/_工具脚本/taspipe/游戏包/gba_aria_of_sorrow_souls.menu_catalog.json</code></p>
+<p>每条包含：组、ID、槽位地址、中文魂名、效果文本、真实导航宏、readback、整图/状态/identity SHA256，以及名称和效果的观察方法。<code>gameplay_verified</code> 与 <code>detector_verified</code> 全部显式为 <code>false</code>。</p>
+<p>新状态 revision：</p>
+<p><code>F:/开源掌机教程/04-游戏资源库/TAS输入录像库/状态资产/castlevania_aria_gba/aria_us_40aab076/r20261125T145623/</code></p>
+<p>该包从 <code>r20261125T120000</code> 完整复制后新增目录、报告、观察 JSON、10 页效果联系表、4 张名称复核图及 342 份逐项菜单证据；旧 revision 未改写。413 个登记文件 SHA256 复算通过，五套状态仍可解析，<code>latest()</code> 现返回新 revision。</p>
+<h3>旧写槽位目录差集审计</h3>
+<p>旧 <code>menu_catalog/1.0</code> 写槽位采集与真实导航目录按相同 identity region 逐像素比较：114/114 身份区完全相同，最佳匹配全部是同 ID，没有选错魂。但旧截图效果区 0/114 与真实导航相同；三项旧效果区都只剩固定占位符，真实导航截图才有逐项描述。也就是说，旧目录可复用身份，不可复用效果文本，也不能用旧截图证明描述刷新。</p>
+<p>审计报告：<code>F:/开源掌机教程/_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_patch_vs_nav_audit.json</code></p>
+<p>真实对照图：<code>F:/开源掌机教程/_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_patch_nav_effect_compare_red001.png</code></p>
+<h3>边界</h3>
+<ul>
+<li>新包保持 <code>state_verified</code>，含义仍只是五套状态可加载、回存复现。</li>
+<li>114 项目录只完成“真实菜单身份 + RAM 回读 + 名称/效果观察”，不代表 114 项玩法、消耗、伤害或 detector 已验收。</li>
+<li>能力魂 8 项不在这份目录中，中文版绝对地址仍是候选。</li>
+<li><code>showcase.PLATFORM_PROFILES[&quot;GBA&quot;][&quot;verified&quot;]</code> 仍为 <code>False</code>，正式 showcase 不得因此直接放行。</li>
+</ul>
+<h2>15. 红黄短名单正式验证与 scout 汇总修正（2026-11-25）</h2>
+<h3>8 个新正式 verify case</h3>
+<p>在新状态 <code>r20261125T145623</code> 上新增两份 matrix 配方，仍走 <code>ram_calibration</code> 的生产 validate、并行执行、正反例、逐帧比较和归档路径：</p>
+<ul>
+<li>红魂 35、47：验证同一战斗初态下目标红魂确实装备并发生资源消耗。正例末帧 MP 分别为 41、1，空魂对照保持 80；两项均 pass。</li>
+<li>黄魂 10、15、26、27、28、29：验证固定受击路线末帧 HP 优势。正例末帧 HP 依次为 302、300、300、308、316、316，空黄槽对照均为 292；六项均 pass。</li>
+<li>黄魂配方的存储宏加 88 帧空白尾段后，已程序化确认与 canonical 226 帧序列逐 token 完全等价；第一次因宏少 3 个 Right 而失败的证据保留，没有覆盖。</li>
+</ul>
+<p>这 8 项与 <code>r20261125T040115</code> 的 11 项合计为 19 个跨 revision 正式 verify case。<code>r20261125T153709</code> 从 <code>r20261125T145623</code> 完整复制，新增 8 个 case 的完整 calibration 归档和视觉语义审计；旧 revision 未改写。</p>
+<h3>真实帧语义审计</h3>
+<ul>
+<li>红魂 35 的大差分不是随机渲染错误：背景树模板匹配稳定为整体左移 19 像素，匹配分 1.0。镜头对齐后，frame 12/40/89 的重叠区变化像素由 25722/25714/25461 降至 2225/1998/2002，仍能看到近战攻击。</li>
+<li>红魂 47 在 81 帧起出现真实全屏爆炸/闪白，88 帧峰值约 97.5%。后续 detector 必须使用局部区域或爆炸前帧，不能把全屏闪白当技能指纹。</li>
+<li>黄魂 10 出现真实蓝色 <code>+5</code> 回血提示，并与正式 HP 302 对 292 相互印证。</li>
+<li>黄魂 15、26 在当前路线结果相同；黄魂 28、29 在当前敌人攻击下最终 HP 都是 316。这些结果不能区分各自机制。</li>
+<li>黄魂 4 在旧相等基线之前已改变行动/受击节奏，旧 80/85 帧相等判据失效，应改用单次受击或麻痹状态实验。</li>
+</ul>
+<h3><code>scout_summary/1.1</code> 分类修正</h3>
+<p>旧汇总把“至少一个采样帧不同”压成了“全部比较通过”，导致部分帧被动效果被误报为纯 RAM 变化。生产模块 <code>F:/开源掌机教程/_工具脚本/taspipe/scout_summary.py</code> 现分别统计：</p>
+<ul>
+<li><code>visual_candidate</code>：全部比较通过。</li>
+<li><code>partial_visual_candidate</code>：至少一个 different 帧通过，但不是全部比较通过。</li>
+<li><code>equal_baseline_fail</code>：相等基线出现失败。</li>
+<li><code>no_visual_change</code>：有比较帧但没有任何像素变化。</li>
+<li><code>ram_only</code>：RAM 有变化且所有比较帧都无视觉变化。</li>
+</ul>
+<p>红魂 55 项逐格分类为 51 个 <code>visual_candidate</code>、4 个 <code>no_visual_change</code>。黄魂 35 项逐格分类为 28 个 <code>no_visual_change</code>、7 个 <code>partial_visual_candidate</code>，不再把 35 项整体称为纯 RAM。</p>
+<p>黄魂 7 个部分帧视觉候选：</p>
+<p><code>yellow_soul_4_vs_empty</code>、<code>yellow_soul_10_vs_empty</code>、<code>yellow_soul_15_vs_empty</code>、<code>yellow_soul_26_vs_empty</code>、<code>yellow_soul_27_vs_empty</code>、<code>yellow_soul_28_vs_empty</code>、<code>yellow_soul_29_vs_empty</code>。</p>
+<p>其中 6 个相等基线失败：</p>
+<p><code>yellow_soul_4_vs_empty</code>、<code>yellow_soul_15_vs_empty</code>、<code>yellow_soul_26_vs_empty</code>、<code>yellow_soul_27_vs_empty</code>、<code>yellow_soul_28_vs_empty</code>、<code>yellow_soul_29_vs_empty</code>。</p>
+<p>两份汇总均无完整性异常、无跨 case 负例指纹不一致。新产物：</p>
+<ul>
+<li><code>F:/taspipe_scratch/gba_parallel_20261124/aria_red_soul_scout_full_20261125/summary_partial_v1_1.json</code></li>
+<li><code>F:/taspipe_scratch/gba_parallel_20261124/aria_yellow_soul_scout_full_20261125/summary_partial_v1_1.json</code></li>
+</ul>
+<h3>自检、归档与边界</h3>
+<ul>
+<li><code>python -m taspipe.scout_summary_selftest</code>：8/8 pass。</li>
+<li>从主 <code>selftest.test_scout_summary()</code> 真实调用：通过计数 0→1，证明新测试已接入入口；本轮没有重跑全量 selftest。</li>
+<li>新 revision <code>r20261125T160034</code> 从 <code>r20261125T153709</code> 完整复制，新增汇总器、targeted selftest、主入口接线审计、两份 JSON/Markdown/运行日志及 3 条审计记录。</li>
+<li>435 个登记文件 SHA256 全部复算通过；五套状态仍可被 <code>resolve_state()</code> 解析。新包路径：</li>
+</ul>
+<p><code>F:/开源掌机教程/04-游戏资源库/TAS输入录像库/状态资产/castlevania_aria_gba/aria_us_40aab076/r20261125T160034/</code></p>
+<ul>
+<li>上述结论仍只覆盖状态回存、候选审计与已点名 case 的正式 verify。red35/red47/yellow10 的 detector、能力魂 8 项、武器数组、114 项逐项 gameplay 和 GBA 平台准入均未因此放行。</li>
+</ul>
+<h2>16. 三个视觉检测器候选固化与全时间轴审计（2026-11-25）</h2>
+<h3>可复用生产代码</h3>
+<ul>
+<li><code>F:/开源掌机教程/_工具脚本/taspipe/detect.py</code> 新增 <code>frame_pair_aligned_region_difference</code>：先在上方背景区域估计镜头平移，再只在局部区域计算差分；局部变化必须超过下限，同时全局变化不得超过闪白上限。</li>
+<li><code>F:/开源掌机教程/_工具脚本/taspipe/universal_authoring.py</code> 新增 <code>calibrate_aligned_element_detector()</code> 与 <code>calibrate_region_color_detector()</code>，分别标定镜头补偿后的局部差分和 HUD/提示类稀疏颜色签名。</li>
+<li><code>F:/开源掌机教程/_工具脚本/taspipe/detector_calibration.py</code> 新增配置驱动入口 <code>detector_calibration/1.0</code>，统一执行标定、正反例、控制帧、加载期校验、逐案例失败隔离、JSON/Markdown 输出和全时间轴审计。</li>
+<li>配方：<code>F:/开源掌机教程/_工具脚本/taspipe/校准配方/castlevania_aria_gba.soul_detector_candidates.json</code>。新游戏只补帧目录、区域、方法、控制帧和时间窗，不重复写执行器。</li>
+</ul>
+<h3>三个候选检测器</h3>
+<table><thead><tr><th><code>red_soul_35_camera_aligned</code></th><th>11</th><th>平移上限 24，局部下限 0.069，全局上限 0.25</th><th>0.1526</th><th>0</th><th>3/3</th><th>90 对帧；0..1 拒绝、2..89 通过；反例 90/90 拒绝</th></tr></thead><tbody>
+<tr><td><code>red_soul_47_local_attack</code></td><td>18</td><td>不平移，局部下限 0.045，全局上限 0.25</td><td>0.0991</td><td>0</td><td>3/3</td><td>90 对帧；2..41 通过、42..89 拒绝；反例 90/90 拒绝</td></tr>
+<tr><td><code>yellow_soul_10_healing_popup</code></td><td>109</td><td>蓝色 <code>[49,107,255]</code>±26，局部下限 0.055</td><td>0.122</td><td>0.003</td><td>6/6</td><td>226 对帧；109..126 与 170..187 通过，其余拒绝；反例 226/226 拒绝</td></tr>
+</tbody></table>
+<p>red35 的标定平移为 <code>dx=-19, dy=0</code>，对齐后局部最大变化约 0.1526、全局约 0.0679。red47 第 88 帧局部变化约 0.9116，但全局约 0.9577，因此被 0.25 的全局上限明确拒绝。yellow10 的两段亮起均为真实蓝色 <code>+5</code> 提示，空魂对照同帧不出现该颜色签名。</p>
+<h3>真实帧验收图</h3>
+<ul>
+<li><code>F:/开源掌机教程/04-游戏资源库/TAS输入录像库/状态资产/castlevania_aria_gba/aria_us_40aab076/r20261125T194821/evidence/detector_red35_sheet.png</code></li>
+<li><code>F:/开源掌机教程/04-游戏资源库/TAS输入录像库/状态资产/castlevania_aria_gba/aria_us_40aab076/r20261125T194821/evidence/detector_red47_sheet.png</code></li>
+<li><code>F:/开源掌机教程/04-游戏资源库/TAS输入录像库/状态资产/castlevania_aria_gba/aria_us_40aab076/r20261125T194821/evidence/detector_yellow10_sheet.png</code></li>
+<li><code>F:/开源掌机教程/04-游戏资源库/TAS输入录像库/状态资产/castlevania_aria_gba/aria_us_40aab076/r20261125T194821/evidence/detector_yellow10_zoom.png</code></li>
+</ul>
+<p>三组联系表已逐张查看，不是只读报告字段。red35 可见原始镜头位移与对齐后的近战局部差异；red47 可见爆炸前局部攻击及全屏闪白反证；yellow10 可见两段 <code>+5</code> 与空魂对照，四倍放大图用于确认提示文字。</p>
+<h3>自检、归档与边界</h3>
+<ul>
+<li><code>python -m taspipe.detector_calibration_selftest</code>：14/14 pass，覆盖平移背景下局部效果、纯镜头平移拒绝、相同正反例拒绝、全屏闪白拒绝、局部颜色标定、非法参数、时间窗越界、配置入口真实写盘和单案例失败隔离。</li>
+<li>从主 <code>selftest.test_detector_calibration()</code> 真实调用：通过计数 0→1；另用 AST 核验 <code>main()</code> 已调用该函数。修改模块通过 <code>py_compile</code>。本轮没有重跑全量 selftest。</li>
+<li>新 revision <code>r20261125T194821</code> 从已冻结的 <code>r20261125T160034</code> 完整复制，新增 7 个输入、9 份证据和 6 条验收/边界记录；旧 revision 未改写。</li>
+<li>451 个登记文件 SHA256 全部复算通过，五套状态仍可被 <code>resolve_state()</code> 解析。新包路径：</li>
+</ul>
+<p><code>F:/开源掌机教程/04-游戏资源库/TAS输入录像库/状态资产/castlevania_aria_gba/aria_us_40aab076/r20261125T194821/</code></p>
+<ul>
+<li>报告固定写入 <code>gameplay_verified=false</code>、<code>semantic_identity_verified=false</code>、<code>full_game_timeline_verified=false</code>、<code>platform_verified=false</code>。</li>
+<li>red35/red47 本质是“有魂攻击帧相对空魂帧的局部画面差”，能拒绝镜头平移和闪白，但不能单独证明红魂身份或技能机制。对齐类反例使用空魂帧自比较，属于完整性控制，不是独立中立基线实验。</li>
+<li>yellow10 目前只证明蓝色 <code>+5</code> 提示出现，不替代 HP 正式 verify，也不证明回血机制。三个检测器仍是可用候选，接入正式 showcase catalog 前还需补齐 element identity、trigger、独立 negative control 与平台边界。</li>
+<li>能力魂 8 项、武器数组、114 项逐项 gameplay、yellow4 单次受击/麻痹实验、yellow15/26 与 yellow28/29 的消费点区分仍未完成；GBA 平台闸门继续保持关闭。</li>
+</ul>
+<h2>17. 标定与验收样本分离（2026-11-25）</h2>
+<h3>生产代码与旧配方处理</h3>
+<ul>
+<li><code>detector_calibration.py</code> 配方版本升级为 <code>detector_calibration/2.0</code>。1.0 配方直接拒绝，不再输出通过报告，消除“同一批帧既选阈值又证明阈值正确”的假验收。</li>
+<li>每个 case 必须分别声明 <code>calib_pos_dir</code>、<code>calib_neg_dir</code>、<code>accept_pos_dir</code>、<code>accept_neg_dir</code>、不同的 <code>calibration_sample_set_id</code> / <code>acceptance_sample_set_id</code>、<code>separation_method</code> 和验收主帧 <code>primary_frame</code>。</li>
+<li><code>frame_range</code> 只约束标定集；<code>controls</code>、<code>timeline</code> 和主验收帧只作用于验收集。对齐差分的参考帧也改为验收集负例帧，不再读取标定帧作为验收基准。</li>
+<li>四个帧目录必须互不相同。<code>disjoint_frame_partition</code> 的标定/验收整组内容指纹不得相同；<code>independent_capture</code> 允许确定性回放产生逐帧相同画面，但必须由不同进程、不同运行、不同源报告和逐帧 SHA256 证明实际重新采集，不能只复制帧目录。</li>
+<li><code>disjoint_frame_partition</code> 必须提供四个 <code>source_mapping.json</code>。加载期逐帧复算 SHA256，检查目标帧连续、源帧不重复，并拒绝标定/验收任一侧源帧重叠。</li>
+<li>报告新增配方 SHA256、样本集编号、目录指纹、分区来源映射指纹和 <code>source_partition</code>，固定本次验收输入，避免配方在运行期间漂移。</li>
+</ul>
+<h3>真实帧固定划分结果</h3>
+<ul>
+<li>冻结配方：<code>F:/开源掌机教程/_工具脚本/taspipe/校准配方/castlevania_aria_gba.soul_detector_candidates_v2_frozen_20261125.json</code></li>
+<li>冻结配方 SHA256：<code>6bb15abf0c7574fab90d139c2fbecd6127bb6855b68ede43f1b9138ed18b47fb</code></li>
+<li>报告：<code>F:/taspipe_scratch/gba_parallel_20261124/aria_soul_detector_separated_v4_20261125/report_frozen.json</code> 与同名 Markdown。</li>
+<li>固定划分复跑：3/3 pass。red35 验收 61 对帧、red47 72 对帧、yellow10 168 对帧；全部负例拒绝，显式时间窗均通过。</li>
+<li>该结果是 <code>disjoint_frame_partition</code>：同一真实 dump 的互斥帧子集，不是另开进程的 <code>independent_capture</code>。冻结前较粗划分曾出现 red47 标定变化不足和 yellow10 时间窗误检，说明旧同集通过不能代表泛化；最终固定划分通过也不证明分区选择无偏。正式验收仍需另采独立运行样本。</li>
+</ul>
+<h3>真实独立进程采集结果</h3>
+<ul>
+<li>新增 <code>ram_calibration/1.0</code> 报告的 <code>capture_provenance</code>：记录 <code>run_id</code>、<code>process_id</code>、带时区起止时间、<code>force</code>、输出目录和实现 SHA256。每个采集帧目录自动写 <code>detector_capture/1.0</code> 清单，绑定源报告 SHA256、ROM、基态、模拟器身份、arm/step 与逐帧 SHA256。</li>
+<li><code>detector_calibration/2.0</code> 加载期复算源报告和逐帧指纹，并核对源报告中的帧目录、帧数、<code>attempt.ok</code> 与状态。标定与验收必须来自不同 <code>run_id</code>、不同 <code>process_id</code>、不同源报告；非 <code>--force</code> 缓存、同进程、缺清单、报告漂移和换帧均拒绝。</li>
+<li>独立配方：<code>F:/开源掌机教程/_工具脚本/taspipe/校准配方/castlevania_aria_gba.soul_detector_candidates_independent_20261125.json</code>；SHA256 <code>6b2e9ff41d17415e70f2a86987034e550a1adee5a49694ae5df45a9aaa943edd</code>。</li>
+<li>报告：<code>F:/taspipe_scratch/gba_parallel_20261124/aria_soul_detector_independent_v1_20261125/report.json</code>；SHA256 <code>18084b48ecc5f6287ad648ea107b3a614f53bfec5fd2c29d678921c8ce541929</code>。结果 3/3 pass。</li>
+<li>red35：标定进程 51252、验收进程 52564；90 对验收帧，正例 <code>fail=2/pass=88</code>，负例 <code>fail=90</code>，控制 3/3、时间窗 2/2。</li>
+<li>red47：标定进程 51252、验收进程 52564；90 对验收帧，正例 <code>fail=50/pass=40</code>，负例 <code>fail=90</code>，控制 4/4、时间窗 4/4。</li>
+<li>yellow10：标定进程 32148、验收进程 18764；226 对验收帧，正例 <code>fail=190/pass=36</code>，负例 <code>fail=226</code>，控制 6/6、时间窗 5/5。</li>
+<li>三个 case 的独立标定/验收帧内容指纹均相同，原因是相同状态与输入的确定性回放；这不是目录复用。报告分别保留了不同进程、运行和源报告，以及每个目录的逐帧指纹。首轮曾误把“内容相同”判为样本复用，已修正契约并新增 D26 回归。</li>
+<li>完整归档：<code>F:/开源掌机教程/_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/detector_independent_20261125/</code>。<code>archive_manifest.json</code> 覆盖 1743 份文件、30.67 MiB，逐份复算通过；含四次采集报告、全部正反例帧、capture manifests、配方、日志和配方生成脚本。旧冻结分区与旧配方未改写。</li>
+<li>本次结果仍固定 <code>gameplay_verified=false</code>、<code>semantic_identity_verified=false</code>、<code>full_game_timeline_verified=false</code>、<code>platform_verified=false</code>；通过的是独立采集的视觉候选标定/验收，不是技能语义、完整玩法或平台准入。</li>
+</ul>
+<h3>回归与仍未完成项</h3>
+<ul>
+<li><code>python -m taspipe.detector_calibration_selftest</code>：26/26 pass，覆盖独立采集清单、不同进程、强制运行、源报告/逐帧漂移，以及不同进程确定性回放的相同帧验收。</li>
+<li><code>python -m taspipe.ram_calibration_selftest</code>：44/44 pass，R44 验证强制运行的进程/run_id 和逐帧 capture manifest。</li>
+<li><code>python -m taspipe.selftest</code>：<code>SELFTEST OK 1534/1534</code>；完整日志位于 <code>F:/taspipe_scratch/gba_parallel_20261124/taspipe_selftest_independent_capture_20261125.log</code>。</li>
+<li>三个检测器的独立运行验收样本已补齐；仍需补 element identity、trigger、独立 negative control 与平台边界。独立重跑同一固定路线提高采集可信度，但不自动证明跨场景泛化。</li>
+<li>权威来源名单入包、内存表生产消费、正式拍摄的“动作成立/效果成立/拍摄合格”三项判定仍未完成。</li>
+<li>能力魂 8 项、武器数组、114 项逐项 gameplay、yellow4 单次受击/麻痹实验、yellow15/26 与 yellow28/29 的消费点区分仍未完成；GBA 平台生产闸门继续关闭。</li>
+</ul>
+<h2>18. 三个检测器晋升正式 catalog 与三类验收（2026-11-25）</h2>
+<h3>正式晋升输入与输出</h3>
+<ul>
+<li>晋升源仍为 <code>detector_calibration/2.0</code> 的 v4 分离验收报告：<code>F:/taspipe_scratch/gba_parallel_20261124/aria_soul_detector_separated_v4_20261125/report.json</code>，SHA256 <code>1a609b2f40f3bf194aa4f4ddd632aa0ef095a28c9debbef382a3e1619c7157ff</code>。三个 case 均为 <code>disjoint_frame_partition</code>，正负来源帧重叠为 0。</li>
+<li>新正式包固定收录 red35 虎人近战、red47 圆盘装甲炸弹、yellow10 蓝色 <code>+5</code> 提示三个要素；原四要素包未改写。</li>
+<li>为避免共享路径被并发进程反复改写，本轮成品使用独立版本目录：</li>
+</ul>
+<p><code>F:/开源掌机教程/_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/detector_promotion.r20261125T223657/</code></p>
+<ul>
+<li>正式包：<code>gba_aria_of_sorrow_souls.detectors.showcase.json</code>，SHA256 <code>5105c8508b94cc6a6a5d6ab47d539f2522d174f7f7c7cf6806932be50a31e2b5</code>。</li>
+<li>正式报告：<code>detector_promotion_report.json</code>，SHA256 <code>ebd18940d10400a26e1e1ea0290b9b67566ad20029c609aadc906e6509620592</code>；报告内 <code>output_pack_sha256</code> 与正式包逐字节一致。</li>
+<li>BizHawk、顶层 base_state 与三个要素 base_state 均为项目内固定路径，不依赖 <code>taspipe_scratch</code>；两张 aligned 负例参考帧已冻结在本版本目录并核对 SHA256。</li>
+</ul>
+<h3>动作、效果、拍摄三类声明</h3>
+<ul>
+<li>每个正式要素必须显式提供 <code>action_checks</code>、<code>effect_requirement</code>、<code>effect_checks</code>、<code>capture_checks</code>。缺项、未注册插件、重复 check_id 或未标 <code>required=true</code> 均拒绝晋升。</li>
+<li><code>action_checks</code> 复用对应候选检测器：red35/red47 使用对齐局部差分，yellow10 使用局部蓝色比例。red47 动作区已纠正为标定器的 <code>[0.25, 0.46875, 0.645833, 0.9375]</code>，不再使用手写窄区。</li>
+<li>三个要素均显式声明 <code>effect_requirement=&quot;not_applicable&quot;</code>、<code>effect_checks=[]</code>：本包只证明攻击姿态、炸弹或 <code>+5</code> 提示出现，不把视觉检测外推为完整伤害、消耗或 HP 回复机制。</li>
+<li><code>capture_checks</code> 使用 <code>frame_luma_range [90,230]</code>，并覆盖全部正例帧。该范围来自真实帧实测：red35 为 120.3115–121.7850，red47 为 120.0822–215.7523，yellow10 为 104.5471–105.7241；上限保留爆炸亮帧，同时仍拒绝黑帧/白帧。</li>
+<li>新增 P14 回归：主验收帧拍摄合格但其他正例帧拍摄失败时，仍必须拒绝写包。</li>
+</ul>
+<h3>实测结果与真实帧复核</h3>
+<ul>
+<li><code>python -m taspipe.detector_promotion_selftest</code>：<code>DETECTOR PROMOTION SELFTEST 14/14</code>。</li>
+<li><code>python -m taspipe.detector_calibration_selftest</code>：<code>DETECTOR CALIBRATION SELFTEST 26/26</code>。</li>
+<li>三个正式采集帧候选检测 3/3 pass，动作/效果/拍摄验收 3/3 pass；拍摄检查逐帧覆盖 red35 90 张、red47 90 张、yellow10 226 张，共 406 张正例帧。</li>
+<li>已人工查看 <code>detector_promotion_frames.png</code>：red35 正例有近战姿态、red47 正例有炸弹、yellow10 正例有蓝色 <code>+5</code>；同帧空魂负例均无对应视觉要素。复核结论写入 <code>detector_promotion_frame_review.json</code>，状态 <code>pass</code>。</li>
+<li>最终 verifier 输出 <code>fixed_paths_verified=true</code>、<code>visual_review=pass</code>、<code>acceptance_verdicts</code> 三项均 <code>pass</code>、<code>platform_verified=false</code>。</li>
+</ul>
+<h3>新 revision 与旧失效产物</h3>
+<ul>
+<li>新 revision：<code>F:/开源掌机教程/04-游戏资源库/TAS输入录像库/状态资产/castlevania_aria_gba/aria_us_40aab076/r20261125T224904/</code>，从冻结的 <code>r20261125T194821</code> 完整复制。</li>
+<li>归档复算通过：476 个登记文件 SHA256 全部一致；states 5、inputs 27、evidence 444、verification 37；五套状态均可 <code>resolve_state()</code>。</li>
+<li><code>r20261125T215413</code> 因共享正式包在归档期间被改写、包与报告哈希不一致，已标记 <code>stale</code> 并写明 blockers；目录保留，不删除。旧冻结 <code>r20261125T194821</code> 未改写。</li>
+<li>本轮完成的是三个视觉检测器的正式固化与三类验收接线，不等于 114 项 gameplay、技能语义、未采集完整时间轴或 GBA 平台生产放行；<code>showcase.plan</code> 仍为 <code>blocked</code>，四个边界字段均为 <code>false</code>。本轮未 commit、未 push、未重启录制后端。</li>
+</ul></body></html>

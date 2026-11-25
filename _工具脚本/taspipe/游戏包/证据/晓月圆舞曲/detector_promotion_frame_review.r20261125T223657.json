@@ -1,0 +1,36 @@
+{
+  "status": "pass",
+  "checked_on": "2026-11-25",
+  "report_sha256": "6880259783ba61647956cf31b6b6e6409e80bd116d48aac382bf842bc7d99452",
+  "elements": [
+    {
+      "element_id": "red_soul_35_camera_aligned",
+      "positive_frame": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_red_soul_scout_full_20261125\\red_soul_35_vs_empty\\red_soul_35_vs_empty_red_35_s01_frames\\f0040.png",
+      "positive_sha256": "9d1764196c81a553162e170bfc1d638fb4f439fbf9840eb071fa7530cdac54bb",
+      "negative_frame": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_red_soul_scout_full_20261125\\red_soul_35_vs_empty\\red_soul_35_vs_empty_red0_s01_frames\\f0040.png",
+      "negative_sha256": "ee2f667bba54a43319a63d93702759929b7a83998492da9b2113f5338187a7e7",
+      "frame_verification": "pass"
+    },
+    {
+      "element_id": "red_soul_47_local_attack",
+      "positive_frame": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_red_soul_scout_full_20261125\\red_soul_47_vs_empty\\red_soul_47_vs_empty_red_47_s01_frames\\f0030.png",
+      "positive_sha256": "122de550a18b9589549bc3dc680723d17ad9313c1bafc407269f6ed3effb1af4",
+      "negative_frame": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_red_soul_scout_full_20261125\\red_soul_47_vs_empty\\red_soul_47_vs_empty_red0_s01_frames\\f0030.png",
+      "negative_sha256": "23a0714db0fd380fbf6c96bca400e139fedff36e09838ab622eaf79eee2158f6",
+      "frame_verification": "pass"
+    },
+    {
+      "element_id": "yellow_soul_10_healing_popup",
+      "positive_frame": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_yellow_hp_advantage_verify2_20261125\\yellow_soul_10_hp_advantage\\yellow_soul_10_hp_advantage_yellow_10_s01_frames\\f0185.png",
+      "positive_sha256": "9c8123d5af07a6040a570c048b0212b699c4343f0e91866c3084e485125c1200",
+      "negative_frame": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_yellow_hp_advantage_verify2_20261125\\yellow_soul_10_hp_advantage\\yellow_soul_10_hp_advantage_yellow0_s01_frames\\f0185.png",
+      "negative_sha256": "ff352a831e5fc7e74b665acd67e7cab1fd00d3821ab605fbc64a0c841e5b6a2d",
+      "frame_verification": "pass"
+    }
+  ],
+  "observations": {
+    "red_soul_35_camera_aligned": "正例可见虎人近战攻击姿态；同帧空魂负例无该攻击。只核对视觉要素，不外推伤害或资源消耗。",
+    "red_soul_47_local_attack": "正例可见圆盘装甲炸弹；同帧空魂负例无炸弹。动作区与标定检测器一致。",
+    "yellow_soul_10_healing_popup": "正例可见蓝色 +5 回血提示；同帧空魂负例无 +5。完整HP回复机制由独立验证证据负责。"
+  }
+}

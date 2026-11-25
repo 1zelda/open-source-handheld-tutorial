@@ -1,0 +1,28 @@
+{
+  "status": "pass",
+  "summary": {
+    "positive_total": 32,
+    "positive_ok": 32,
+    "negative_total": 14,
+    "negative_ok": 14,
+    "crosscheck_ok": 8,
+    "cards_ok": 8,
+    "query_log_lines": 46
+  },
+  "checks": {
+    "positive_all_ok": true,
+    "negative_all_ok": true,
+    "seven_file_coverage_complete": true,
+    "single_registered_source": true,
+    "base_audit_no_fail": true,
+    "hybrid_audit_no_fail": true,
+    "source_audit_no_fail": true,
+    "crosscheck_all_pass": true,
+    "cards_all_have_evidence": true,
+    "shared_state_unchanged": true,
+    "historical_candidate_not_rewritten": true,
+    "production_defaults_unchanged": true
+  },
+  "changed_paths": [],
+  "report": "F:\\\u5f00\u6e90\u638c\u673a\u6559\u7a0b\\\u77e5\u8bc6\u5e93P1_20261118\\megaman2_production_technical_20261125\\eval_report.json"
+}

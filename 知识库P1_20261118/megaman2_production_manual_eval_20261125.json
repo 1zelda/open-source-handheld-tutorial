@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "status": "pass",
-  "taken_at": "2026-11-25T12:48:56Z",
+  "taken_at": "2026-11-25T14:24:42Z",
   "scope": "洛克人2候选子域；不是整款游戏知识库",
   "candidate_index_sha256": "864ce8e3724414a95f851fac669ac2fddaa0e8f4fe37e8116ab1f707247a3225",
   "production_index_sha256": "05907ec85146f386325285ccd4d2008d8bc28d50d8ec4e2461c14a9351f03f7d",
@@ -11137,7 +11137,7 @@
     "query_log": {
       "path": "F:\\开源掌机教程\\知识库P1_20261118\\megaman2_candidate_v2_manual_20261125\\qc\\legacy_candidate_regression_query_log_20261125.jsonl",
       "lines": 46,
-      "sha256": "189895bbdd8933a1d640ef9f7edaa180dfe683ed14da5dac652d43742af036ea"
+      "sha256": "3be6d43caf24678b8c192af112baa7257fb3187887f9aa95ddfa5c0dc1c6ba10"
     }
   },
   "isolation": {
@@ -11161,9 +11161,9 @@
       },
       "F:\\开源掌机教程\\_工具脚本\\taspipe\\游戏包\\来源库\\sources.json": {
         "present": true,
-        "bytes": 69563,
-        "mtime_ns": 1795610500508306900,
-        "sha256": "8f1b9b6e0beb08aa1eeed20c12770a673dce830d4543201b0f8a8bbfe4ea2680"
+        "bytes": 78163,
+        "mtime_ns": 1795614011492637800,
+        "sha256": "456576759073e46fb303a02538e6769f9837d883b633b9c4a1cc8781fc87285f"
       },
       "F:\\开源掌机教程\\_工具脚本\\taspipe\\游戏包\\知识库\\query_log.jsonl": {
         "present": true,
@@ -11457,9 +11457,9 @@
       },
       "F:\\开源掌机教程\\_工具脚本\\taspipe\\游戏包\\来源库\\sources.json": {
         "present": true,
-        "bytes": 69563,
-        "mtime_ns": 1795610500508306900,
-        "sha256": "8f1b9b6e0beb08aa1eeed20c12770a673dce830d4543201b0f8a8bbfe4ea2680"
+        "bytes": 78163,
+        "mtime_ns": 1795614011492637800,
+        "sha256": "456576759073e46fb303a02538e6769f9837d883b633b9c4a1cc8781fc87285f"
       },
       "F:\\开源掌机教程\\_工具脚本\\taspipe\\游戏包\\知识库\\query_log.jsonl": {
         "present": true,
@@ -11743,12 +11743,12 @@
     "production_route": {
       "path": "F:\\开源掌机教程\\知识库P1_20261118\\megaman2_candidate_v2_manual_20261125\\qc\\production_route_query_log_20261125.jsonl",
       "lines": 124,
-      "sha256": "95f9c1053fd1bac758b3aecc3bed6a78103e877ee7db03faba0f18253dbec779"
+      "sha256": "654817b9d210d66591371fc1d56bc240dc22a6682f9a814926f8ec6eb451ec42"
     },
     "legacy_candidate": {
       "path": "F:\\开源掌机教程\\知识库P1_20261118\\megaman2_candidate_v2_manual_20261125\\qc\\legacy_candidate_regression_query_log_20261125.jsonl",
       "lines": 46,
-      "sha256": "189895bbdd8933a1d640ef9f7edaa180dfe683ed14da5dac652d43742af036ea"
+      "sha256": "3be6d43caf24678b8c192af112baa7257fb3187887f9aa95ddfa5c0dc1c6ba10"
     }
   },
   "external_generative_model_calls": 0,

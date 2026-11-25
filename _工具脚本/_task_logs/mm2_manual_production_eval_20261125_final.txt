@@ -1,0 +1,93 @@
+{
+  "status": "pass",
+  "summary": {
+    "direct_default": {
+      "total": 29,
+      "ok": 29,
+      "strict_pass": {
+        "total": 16,
+        "ok": 16
+      },
+      "weak": {
+        "total": 3,
+        "ok": 3
+      },
+      "refuse": {
+        "total": 10,
+        "ok": 10
+      },
+      "failed_ids": []
+    },
+    "direct_strict": {
+      "total": 29,
+      "ok": 29,
+      "strict_pass": {
+        "total": 16,
+        "ok": 16
+      },
+      "weak": {
+        "total": 3,
+        "ok": 3
+      },
+      "refuse": {
+        "total": 10,
+        "ok": 10
+      },
+      "failed_ids": []
+    },
+    "auto_default": {
+      "total": 29,
+      "ok": 29,
+      "strict_pass": {
+        "total": 16,
+        "ok": 16
+      },
+      "weak": {
+        "total": 3,
+        "ok": 3
+      },
+      "refuse": {
+        "total": 10,
+        "ok": 10
+      },
+      "failed_ids": []
+    },
+    "auto_strict": {
+      "total": 29,
+      "ok": 29,
+      "strict_pass": {
+        "total": 16,
+        "ok": 16
+      },
+      "weak": {
+        "total": 3,
+        "ok": 3
+      },
+      "refuse": {
+        "total": 10,
+        "ok": 10
+      },
+      "failed_ids": []
+    }
+  },
+  "failure_close_all_ok": true,
+  "legacy_all_ok": true,
+  "legacy_summary": {
+    "route_total": 20,
+    "route_ok": 20,
+    "default_total": 23,
+    "default_ok": 23,
+    "strict_total": 23,
+    "strict_ok": 23,
+    "positive_default": 5,
+    "positive_strict": 5,
+    "negative_default": 18,
+    "negative_strict": 18,
+    "wrong_evidence_default": 0,
+    "wrong_evidence_strict": 0,
+    "failure_close_total": 5,
+    "failure_close_ok": 5
+  },
+  "changed_paths": [],
+  "report": "F:\\开源掌机教程\\知识库P1_20261118\\megaman2_production_manual_eval_20261125.json"
+}

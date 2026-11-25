@@ -45,6 +45,13 @@ def main():
         2: ["Start", "A", "A", "Down", "A"],
         3: ["Start", "A", "A", "Down", "Right", "A"],
     } and MC.selection_macro(nav_group, 3, "EWRAM")[1] == [])
+    first_group = {"id": "ability", "slot_addr": None, "slot_readback": False,
+                   "menu_steps": ["Start", "A"],
+                   "navigate": {"columns": 2, "start_id": 1, "row_step": "Down",
+                                "column_step": "Right", "confirm": "A"}}
+    first_tokens = [token for token in MC.selection_macro(first_group, 1, "EWRAM")[0].split(",") if token]
+    ok("导航可从 start_id 本身开始", first_tokens == ["Start", "A", "A"]
+       and MC.selection_macro(first_group, 1, "EWRAM")[1] == [])
 
     config_path = Path(__file__).resolve().parent / "校准配方" / "castlevania_aria_gba.menu_catalog_nav_probe.json"
     config = MC.load_config(config_path)
@@ -87,6 +94,38 @@ def main():
         except SchemaError:
             rejected = True
         ok("加载期拒绝非法身份区域", rejected)
+        ability_doc = json.loads(config_path.read_text(encoding="utf-8"))
+        ability_doc["groups"] = [{
+            "id": "ability", "slot_addr": None, "slot_readback": False, "count": 8,
+            "menu_steps": ["Start", "Down", "Down", "Down", "Down", "A"],
+            "identity_region": [8, 80, 232, 130],
+            "base_patches": [{"addr": 78726 + index, "value": 255} for index in range(4)],
+            "navigate": {"columns": 2, "start_id": 1, "row_step": "Down",
+                         "column_step": "Right", "confirm": "A"},
+        }]
+        ability_config = root / "ability_config.json"
+        ability_config.write_text(json.dumps(ability_doc, ensure_ascii=False), encoding="utf-8")
+        loaded = MC.load_config(ability_config)
+        ok("无装备槽菜单允许显式关闭回读", loaded["groups"][0]["slot_addr"] is None
+           and loaded["groups"][0]["slot_readback"] is False
+           and len(loaded["groups"][0]["base_patches"]) == 4)
+        ability_doc["groups"][0]["slot_readback"] = True
+        ability_config.write_text(json.dumps(ability_doc, ensure_ascii=False), encoding="utf-8")
+        try:
+            MC.load_config(ability_config)
+            rejected = False
+        except SchemaError:
+            rejected = True
+        ok("开启回读时拒绝缺失槽位", rejected)
+        ability_doc["groups"][0]["slot_readback"] = False
+        ability_doc["groups"][0]["base_patches"][0]["value"] = 256
+        ability_config.write_text(json.dumps(ability_doc, ensure_ascii=False), encoding="utf-8")
+        try:
+            MC.load_config(ability_config)
+            rejected = False
+        except SchemaError:
+            rejected = True
+        ok("拒绝越界开荒补丁", rejected)
 
     failed = [row["name"] for row in checks if not row["pass"]]
     report = {"status": "pass" if not failed else "failed", "checks": len(checks), "failed": failed,

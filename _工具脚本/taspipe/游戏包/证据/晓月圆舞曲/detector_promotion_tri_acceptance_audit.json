@@ -1,0 +1,105 @@
+{
+  "schema_version": "detector_tri_acceptance_audit/1.0",
+  "kind": "real_frame_acceptance_audit",
+  "status": "fail",
+  "checked_on": "2026-11-25",
+  "recipe": "F:/开源掌机教程/_工具脚本/taspipe/校准配方/castlevania_aria_gba.soul_detector_promotion_tri_acceptance_20261125.json",
+  "recipe_sha256": "8ffc0dc36d08ce52bf643d468f6bfaeee8f3211eca8283c139e6d302537fb472",
+  "source_report": "F:/taspipe_scratch/gba_parallel_20261124/aria_soul_detector_separated_v4_20261125/report.json",
+  "source_report_sha256": "1a609b2f40f3bf194aa4f4ddd632aa0ef095a28c9debbef382a3e1619c7157ff",
+  "output_pack_written": false,
+  "gameplay_verified": false,
+  "semantic_identity_verified": false,
+  "full_game_timeline_verified": false,
+  "platform_verified": false,
+  "elements": [
+    {
+      "element_id": "red_soul_35_camera_aligned",
+      "candidate": "pass",
+      "action": "pass",
+      "effect": "pass",
+      "effect_requirement": "not_applicable",
+      "capture": "pass",
+      "capture_scope": "all_positive_frames",
+      "checked_frames": 90,
+      "failed_frames": 0
+    },
+    {
+      "element_id": "red_soul_47_local_attack",
+      "candidate": "pass",
+      "action": "pass",
+      "effect": "pass",
+      "effect_requirement": "not_applicable",
+      "capture": "fail",
+      "capture_scope": "all_positive_frames",
+      "checked_frames": 90,
+      "failed_frames": 9,
+      "capture_check": {
+        "plugin_id": "frame_luma_range",
+        "params": {
+          "min": 95,
+          "max": 135
+        }
+      },
+      "rejections": [
+        {
+          "frame": 81,
+          "sha256": "07c7cd5361d0059838a6633f0d73f043c1da0e225fe9fec7572cd79b2e7e9c5b",
+          "reason": "mean_luma=167.0 range=[95.0,135.0]"
+        },
+        {
+          "frame": 82,
+          "sha256": "98e721aa6350b6cd049bdb68f9789c025fc9079d35edb1637e2e474483367494",
+          "reason": "mean_luma=215.8 range=[95.0,135.0]"
+        },
+        {
+          "frame": 83,
+          "sha256": "db3c495256a2e046dbf0c89be6733b62d992a94e5411941555a752dc368f1384",
+          "reason": "mean_luma=215.7 range=[95.0,135.0]"
+        },
+        {
+          "frame": 84,
+          "sha256": "80b9b8d6e1b401d6fa83be0c55c8208953bbe6a76233fde88ad1292771590e62",
+          "reason": "mean_luma=208.3 range=[95.0,135.0]"
+        },
+        {
+          "frame": 85,
+          "sha256": "15433b195808cff6abbefe3ec3ad1e323e9f2151a6ac547d1d25e6ad1f1f4fc0",
+          "reason": "mean_luma=202.6 range=[95.0,135.0]"
+        },
+        {
+          "frame": 86,
+          "sha256": "e5ad8a75d37c7f2a744c51a9988665c9e4a166f4738ed48f7a4a74456253dac3",
+          "reason": "mean_luma=195.2 range=[95.0,135.0]"
+        },
+        {
+          "frame": 87,
+          "sha256": "4c19848a8bbfbf03c2842558d30d169151375bd11727a9431f00d29fa1e00f22",
+          "reason": "mean_luma=190.8 range=[95.0,135.0]"
+        },
+        {
+          "frame": 88,
+          "sha256": "6b8617a9c076ea70ff5b16105dfa267d9fbe031d07bb762f83883c988caa826a",
+          "reason": "mean_luma=183.9 range=[95.0,135.0]"
+        },
+        {
+          "frame": 89,
+          "sha256": "e7641b5622880d0b9ee5f98915c11351a6dd6fca59f143d1714af5797842f683",
+          "reason": "mean_luma=177.5 range=[95.0,135.0]"
+        }
+      ]
+    },
+    {
+      "element_id": "yellow_soul_10_healing_popup",
+      "candidate": "pass",
+      "action": "pass",
+      "effect": "pass",
+      "effect_requirement": "not_applicable",
+      "capture": "pass",
+      "capture_scope": "all_positive_frames",
+      "checked_frames": 226,
+      "failed_frames": 0
+    }
+  ],
+  "note": "旧晋升报告只复验主验收帧，因此未发现红魂47第81—89帧的拍摄亮度失败。新审计检查全部正例帧并拒绝写包；不通过放宽亮度上限掩盖真实爆炸闪白。是否将这段闪白作为可接受爆炸效果需要独立的拍摄规范，当前判定保持失败。"
+}

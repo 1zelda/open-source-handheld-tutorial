@@ -33,16 +33,71 @@ SNES_CORE_IDENTITIES = {
     "BSNES": {
         "sync_type": "BizHawk.Emulation.Cores.Nintendo.SNES.LibsnesCore+SnesSyncSettings, BizHawk.Emulation.Cores",
         "waterbox": "libsnes.wbx",
+        "deterministic_setting": {"key": "RandomizedInitialState", "value": False},
     },
     "BSNESv115+": {
         "sync_type": "BizHawk.Emulation.Cores.Nintendo.BSNES.BsnesCore+SnesSyncSettings, BizHawk.Emulation.Cores",
         "waterbox": "bsnes.wbx",
+        "deterministic_setting": {"key": "Entropy", "value": 0},
     },
     "Snes9x": {
         "sync_type": "BizHawk.Emulation.Cores.Nintendo.SNES9X.Snes9x+SyncSettings, BizHawk.Emulation.Cores",
         "waterbox": "snes9x.wbx",
     },
 }
+
+
+def apply_movie_sync_settings(path, expectation, requested):
+    if not isinstance(requested, dict) or not requested:
+        raise SchemaError("movie sync_settings override must be a nonempty object")
+    expected_type = expectation.get("sync_type")
+    if not isinstance(expected_type, str) or not expected_type:
+        raise SchemaError("movie sync_settings override has no exact core identity")
+    path = Path(path)
+    with zipfile.ZipFile(path) as state:
+        infos = state.infolist()
+        names = [item.filename for item in infos]
+        if len(names) != len(set(names)):
+            raise SchemaError("movie contains duplicate ZIP member names")
+        if "Header.txt" not in names or "Input Log.txt" not in names:
+            raise SchemaError("movie is not a BK2 with Header/Input Log")
+        members = {name: state.read(name) for name in names}
+    sync_name = next((name for name in names if name.lower() == "syncsettings.json"), "SyncSettings.json")
+    if sync_name in members:
+        try:
+            sync = json.loads(members[sync_name])
+        except (ValueError, UnicodeError) as exc:
+            raise SchemaError(f"movie SyncSettings.json is invalid: {exc}") from exc
+    else:
+        sync = {"o": {}}
+    if not isinstance(sync, dict) or not isinstance(sync.get("o"), dict):
+        raise SchemaError("movie SyncSettings.json must contain an object under o")
+    actual_type = sync["o"].get("$type")
+    if actual_type is not None and actual_type != expected_type:
+        raise SchemaError("movie CLR sync type does not match requested core")
+    sync["o"].update(requested)
+    sync["o"]["$type"] = expected_type
+    deterministic = expectation.get("deterministic_setting")
+    if deterministic:
+        actual = sync["o"].get(deterministic["key"])
+        expected = deterministic["value"]
+        if type(actual) is not type(expected) or actual != expected:
+            raise SchemaError("movie override does not establish deterministic startup")
+    members[sync_name] = json.dumps(sync, ensure_ascii=True, separators=(",", ":"), allow_nan=False).encode("utf-8")
+    temp = path.with_name(path.name + ".sync.tmp")
+    try:
+        with zipfile.ZipFile(temp, "w") as output:
+            written = set()
+            for info in infos:
+                output.writestr(info, members[info.filename])
+                written.add(info.filename)
+            if sync_name not in written:
+                output.writestr(sync_name, members[sync_name], compress_type=zipfile.ZIP_DEFLATED)
+        os.replace(temp, path)
+    finally:
+        if temp.exists():
+            temp.unlink()
+    return sync
 
 
 def core_identity_expectation(system, core):
@@ -81,6 +136,14 @@ def verify_core_identity(expectation, sync, log_text):
     if actual_type is not None and actual_type != expected_type:
         return {"verdict": "fail", "expected": expectation, "actual_sync_type": actual_type,
                 "reason": "zero-frame state CLR type does not match requested core"}
+    deterministic = expectation.get("deterministic_setting")
+    if deterministic:
+        key = deterministic["key"]
+        expected_value = deterministic["value"]
+        actual_value = (sync or {}).get("o", {}).get(key)
+        if type(actual_value) is not type(expected_value) or actual_value != expected_value:
+            return {"verdict": "fail", "expected": expectation, "actual_sync_type": actual_type,
+                    "reason": f"zero-frame state does not prove deterministic {key}={expected_value!r}"}
     waterbox = expectation.get("waterbox")
     mounts = re.findall(r"(?im)^\s*Mouting\s+`([^`]+\.wbx)`", log_text or "")
     if waterbox and waterbox not in mounts:
@@ -92,9 +155,12 @@ def verify_core_identity(expectation, sync, log_text):
                 "waterbox_mounts": mounts, "reason": "runtime log contains a different Waterbox core mount"}
     if actual_type is None and not waterbox:
         return {"verdict": "fail", "expected": expectation, "reason": "zero-frame state has no CLR identity"}
+    evidence = "state CLR type and runtime Waterbox mount"
+    if deterministic:
+        evidence += f"; deterministic {deterministic['key']}={deterministic['value']!r}"
     return {"verdict": "pass", "expected": expectation, "actual_sync_type": actual_type,
-            "waterbox_mounts": mounts, "evidence": "state CLR type and runtime Waterbox mount",
-            "reason": "zero-frame CLR type and runtime Waterbox mount match the requested core"}
+            "waterbox_mounts": mounts, "evidence": evidence,
+            "reason": "zero-frame CLR type, deterministic startup setting and runtime Waterbox mount match the requested core"}
 
 
 class SchemaError(ValueError):
@@ -279,12 +345,21 @@ class Element:
     state_recipe_ref: str = ""
     action_recipe_ref: str = ""
     success_checks: list = field(default_factory=list)  # CheckSpec
+    action_checks: list = field(default_factory=list)    # CheckSpec：指定动作是否成立
+    effect_checks: list = field(default_factory=list)    # CheckSpec：玩法效果是否成立
+    capture_checks: list = field(default_factory=list)   # CheckSpec：取证画面是否合格
+    effect_requirement: str = ""                        # required / not_applicable
     negative_cases: list = field(default_factory=list)
 
     def validate(self):
         _req(vars(self), ["element_id", "game_revision_id", "kind"], "Element")
-        for c in self.preconditions + self.success_checks:
+        groups = self.preconditions + self.success_checks + self.action_checks + self.effect_checks + self.capture_checks
+        for c in groups:
             c.validate()
+        if self.effect_requirement not in ("", "required", "not_applicable"):
+            raise SchemaError(f"Element.effect_requirement 非法: {self.effect_requirement!r}")
+        if self.effect_requirement == "not_applicable" and self.effect_checks:
+            raise SchemaError("Element.effect_requirement=not_applicable 时不得同时给 effect_checks")
         for nc in self.negative_cases:
             if not isinstance(nc, dict) or not nc.get("case_id"):
                 raise SchemaError("Element.negative_cases 每项须为含 case_id 的 fixture")

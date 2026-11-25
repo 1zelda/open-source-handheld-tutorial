@@ -314,19 +314,32 @@ def t_case_base_execution():
 
         with patch.object(RC.SJ, "StateSession", return_value=Session()), \
              patch.object(RC.SJ, "saved_core_type", return_value="NesHawk"):
-            report = RC._execute(doc, case, profile, root / "out", root / "work", "scout")
+            report = RC._execute(doc, case, profile, root / "out", root / "work", "scout", force=True)
             first_used = list(used)
             scout_doc = recipe()
             scout_doc["cases"][0]["arms"][1]["steps"][1]["capture_frames"] = 5
             scout_report = RC._execute(scout_doc, scout_doc["cases"][0],
                                        {**profile, "window_start": 170},
-                                       root / "scout_out", root / "scout_work", "scout")
+                                       root / "scout_out", root / "scout_work", "scout", force=True)
         check("R30 生产执行按 case 独立基态加载并生成画面锚点",
               first_used == [base, alternate, alternate] and report["base_state"]["path"] == str(alternate)
               and report["status"] == "candidates_only", str(first_used))
         check("R40 scout 输出逐帧视觉候选但不产生已验证字段",
               scout_report["candidate_comparisons"][0]["frames"][0]["pass"]
               and scout_report["verified_fields"] == [], str(scout_report.get("candidate_comparisons")))
+        capture_steps = [step for arm in scout_report["arms"].values()
+                         for step in arm["steps"] if step.get("frames_dir")]
+        provenance = scout_report["capture_provenance"]
+        manifests = [RC._json(Path(step["frames_dir"]) / "capture_manifest.json")
+                     for step in capture_steps]
+        check("R44 强制运行记录进程/run_id并生成逐帧 capture manifest",
+              provenance["force"] is True and provenance["process_id"] == RC.os.getpid()
+              and provenance["run_id"] and len(capture_steps) == 2 and len(manifests) == 2
+              and all(item["run_id"] == provenance["run_id"]
+                      and item["source_report_sha256"] == RC.sha256_file(
+                          str(root / "scout_out" / "report.json"))
+                      and len(item["frames"]) == item["captured_frames"] for item in manifests),
+              str(provenance))
 
 
 def t_isolated_slot_session():

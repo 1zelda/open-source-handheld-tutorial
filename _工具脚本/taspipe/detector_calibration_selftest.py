@@ -336,6 +336,34 @@ def t_recipe(root):
         rejected = True
     check("D16 复制标定帧目录不能冒充独立验收集", rejected)
 
+    replay_calib_pos, replay_calib_neg = root / "replay_calib_pos", root / "replay_calib_neg"
+    replay_accept_pos, replay_accept_neg = root / "replay_accept_pos", root / "replay_accept_neg"
+    for directory in (replay_calib_pos, replay_calib_neg, replay_accept_pos, replay_accept_neg):
+        directory.mkdir()
+    for source, target in ((calib_pos, replay_calib_pos), (calib_neg, replay_calib_neg),
+                           (calib_pos, replay_accept_pos), (calib_neg, replay_accept_neg)):
+        for path in source.glob("f*.png"):
+            Image.open(path).save(target / path.name)
+    _capture_pair(root, "replay_calibration", replay_calib_pos, replay_calib_neg, process_id=505)
+    _capture_pair(root, "replay_acceptance", replay_accept_pos, replay_accept_neg,
+                  process_id=606, acceptance=True)
+    replay_recipe = {"schema_version": DC.SCHEMA_VERSION, "game_id": "synthetic", "cases": [
+        _color_case(replay_calib_pos, replay_calib_neg, "deterministic_replay",
+                    accept_pos_dir=replay_accept_pos, accept_neg_dir=replay_accept_neg)
+    ]}
+    try:
+        replay_validated = DC.validate_recipe(replay_recipe)
+        accepted = True
+    except ValueError as exc:
+        accepted = False
+        replay_validated = str(exc)
+    isolation = replay_validated["cases"][0]["_sample_isolation"] if accepted else None
+    check("D26 不同进程确定性回放帧相同仍可按独立采集验收",
+          accepted and isolation["calibration_fingerprint"] == isolation["acceptance_fingerprint"]
+          and isolation["independent_runs"]["calibration"]["pos"]["process_id"] == 505
+          and isolation["independent_runs"]["acceptance"]["pos"]["process_id"] == 606,
+          str(replay_validated))
+
     legacy = json.loads(json.dumps(recipe))
     legacy["schema_version"] = "detector_calibration/1.0"
     try:

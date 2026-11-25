@@ -41,6 +41,7 @@
       },
       "detection": {
         "frame": 10,
+        "candidate_only": true,
         "success_checks": [
           {
             "check_id": "replace_visual_signature",
@@ -64,11 +65,46 @@
           }
         ]
       },
+      "action_checks": [
+        {
+          "check_id": "replace_action_evidence",
+          "plugin_id": "frame_region_color_fraction",
+          "params": {
+            "region": [0.25, 0.25, 0.75, 0.75],
+            "rgb": [255, 255, 255],
+            "tol": 12,
+            "min_fraction": 0.1
+          },
+          "required": true
+        }
+      ],
+      "effect_requirement": "required",
+      "effect_checks": [
+        {
+          "check_id": "replace_effect_evidence",
+          "plugin_id": "frame_region_color_fraction",
+          "params": {
+            "region": [0.25, 0.25, 0.75, 0.75],
+            "rgb": [255, 255, 255],
+            "tol": 12,
+            "min_fraction": 0.1
+          },
+          "required": true
+        }
+      ],
+      "capture_checks": [
+        {
+          "check_id": "replace_capture_frame_evidence",
+          "plugin_id": "frame_luma_range",
+          "params": {"min": 0, "max": 255},
+          "required": true
+        }
+      ],
       "negative_control": {
         "macro": null,
         "patches": []
       },
-      "note": "Neutral control uses the same base, patches and total frames unless patches are explicitly overridden"
+      "note": "All acceptance values are placeholders: replace them with independently verified evidence. Candidate pixel difference does not establish move identity. For a display-only move set effect_requirement to not_applicable and effect_checks to []. Capture checks cover only their declared frame and do not prove full-sequence or audio synchronization."
     }
   ]
 }

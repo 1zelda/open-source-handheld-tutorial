@@ -1,0 +1,491 @@
+{
+  "schema_version": 1,
+  "finished_at": "2026-11-25T14:34:28Z",
+  "task": "megaman2_production_technical_subdomain",
+  "status": "fail",
+  "all_ok": false,
+  "checks": {
+    "evaluation_all_green": true,
+    "production_contract_boundaries": true,
+    "all_audits_no_fail": true,
+    "all_supported_elements_counted": true,
+    "all_regression_gates_green": true,
+    "production_eval_log_reports_pass": true,
+    "core_code_matches_evaluation": true,
+    "single_production_source_registered": true,
+    "production_evidence_hashes_match": true,
+    "index_hashes_match_evaluation": true,
+    "aria_shared_pack_still_candidate_only": false,
+    "shared_state_unchanged_since_evaluation": false,
+    "human_delivery_exists": true,
+    "pdf_visual_qc_all_green": true,
+    "pdf_and_markdown_hashes_match_qc": true,
+    "no_external_generation_or_restart": true
+  },
+  "production": {
+    "domain": "megaman2",
+    "revision": "megaman2_nes_tasvideos_rockman2",
+    "source_id": "tasvideos_rockman_data_mm2_extract",
+    "candidate_only": false,
+    "whole_game_knowledge_base": false,
+    "production_route_wired": true,
+    "production_consumer_wired": true,
+    "selected_evidence_rule": "每个 pass 必须恰好有一条 selected_evidence，且来源、revision、资格与取证路径全部通过生产复核",
+    "regional_rom_equivalence_verified": false,
+    "retrieval_defaults": {
+      "backend": "bm25",
+      "fragment_policy": null,
+      "dense_default": false,
+      "nli_default": false,
+      "strict_is_explicit_shadow_arm": true
+    }
+  },
+  "evaluation": {
+    "report": "F:\\开源掌机教程\\知识库P1_20261118\\megaman2_production_technical_20261125\\eval_report.json",
+    "summary": {
+      "positive_total": 32,
+      "positive_ok": 32,
+      "negative_total": 14,
+      "negative_ok": 14,
+      "crosscheck_ok": 8,
+      "cards_ok": 8,
+      "query_log_lines": 46
+    },
+    "seven_file_coverage": 7,
+    "query_log_lines": 46,
+    "crosscheck_unanchored_downgraded": 0
+  },
+  "regression": {
+    "gates": {
+      "project": {
+        "pass": 1551,
+        "total": 1551
+      },
+      "kb": {
+        "pass": 336,
+        "total": 336
+      },
+      "sources": {
+        "pass": 74,
+        "total": 74
+      }
+    },
+    "logs": {
+      "project": "F:\\开源掌机教程\\_工具脚本\\_task_logs\\mm2_production_technical_full_selftest_20261125_final.txt",
+      "kb": "F:\\开源掌机教程\\_工具脚本\\_task_logs\\mm2_production_technical_kb_selftest_20261125_final.txt",
+      "sources": "F:\\开源掌机教程\\_工具脚本\\_task_logs\\mm2_production_technical_sources_selftest_20261125_final.txt",
+      "evaluation": "F:\\开源掌机教程\\_工具脚本\\_task_logs\\mm2_production_technical_eval_20261125_final.txt"
+    }
+  },
+  "audits": {
+    "base": {
+      "status": "inconclusive",
+      "counts": {
+        "pass": 6,
+        "fail": 0,
+        "inconclusive": 3,
+        "entries": 55,
+        "revisions": 15,
+        "chunks": 826
+      }
+    },
+    "hybrid": {
+      "status": "inconclusive",
+      "counts": {
+        "pass": 6,
+        "fail": 0,
+        "inconclusive": 3,
+        "entries": 55,
+        "revisions": 15,
+        "chunks": 840
+      }
+    },
+    "sources": {
+      "status": "inconclusive",
+      "counts": {
+        "pass": 8,
+        "fail": 0,
+        "inconclusive": 1,
+        "sources": 103,
+        "packs": 25,
+        "elements_checked": 205,
+        "elements_supported": 205
+      }
+    }
+  },
+  "audit_interpretation": "fail=0 只表示已登记文本与来源关系未触发失败；inconclusive 仍是未覆盖、候选、继承或参考材料，不等于权威全覆盖。",
+  "indexes": {
+    "base": {
+      "path": "_工具脚本\\taspipe\\游戏包\\知识库\\index.json",
+      "bytes": 3766455,
+      "mtime_ns": 1795595717772747200,
+      "sha256": "05907ec85146f386325285ccd4d2008d8bc28d50d8ec4e2461c14a9351f03f7d",
+      "chunks": 826,
+      "files": 55,
+      "pipeline": "clean2|tok4|chunk5|max700|hard1200|rows25|ja300"
+    },
+    "hybrid": {
+      "path": "_工具脚本\\taspipe\\游戏包\\知识库\\index_hybrid.json",
+      "bytes": 3803917,
+      "mtime_ns": 1795595718719399200,
+      "sha256": "c478a8d3e830530f56882e8d9a0b3c7adae6521c897f7b03bfb9c84c95a40fb8",
+      "chunks": 840,
+      "files": 55,
+      "pipeline": "clean2|tok4|chunk5|max700|hard1200|rows25|ja300"
+    }
+  },
+  "shared_state": {
+    "unchanged_since_evaluation": false,
+    "changed_paths": [
+      "F:\\开源掌机教程\\_工具脚本\\taspipe\\游戏包\\gba_aria_of_sorrow_souls.detectors.showcase.json"
+    ],
+    "snapshots": {
+      "F:\\开源掌机教程\\_工具脚本\\taspipe\\游戏包\\知识库\\index.json": {
+        "present": true,
+        "bytes": 3766455,
+        "mtime_ns": 1795595717772747200,
+        "sha256": "05907ec85146f386325285ccd4d2008d8bc28d50d8ec4e2461c14a9351f03f7d"
+      },
+      "F:\\开源掌机教程\\_工具脚本\\taspipe\\游戏包\\知识库\\index_hybrid.json": {
+        "present": true,
+        "bytes": 3803917,
+        "mtime_ns": 1795595718719399200,
+        "sha256": "c478a8d3e830530f56882e8d9a0b3c7adae6521c897f7b03bfb9c84c95a40fb8"
+      },
+      "F:\\开源掌机教程\\_工具脚本\\taspipe\\游戏包\\知识库\\corpus_map.json": {
+        "present": true,
+        "bytes": 34439,
+        "mtime_ns": 1795594994860859500,
+        "sha256": "e49bb480ad4aa58d0ce97a47af7fabe49a7453fde90d01631350b3bf662342df"
+      },
+      "F:\\开源掌机教程\\_工具脚本\\taspipe\\游戏包\\来源库\\sources.json": {
+        "present": true,
+        "bytes": 78163,
+        "mtime_ns": 1795614011492637800,
+        "sha256": "456576759073e46fb303a02538e6769f9837d883b633b9c4a1cc8781fc87285f"
+      },
+      "F:\\开源掌机教程\\_工具脚本\\taspipe\\游戏包\\知识库\\query_log.jsonl": {
+        "present": true,
+        "bytes": 1044,
+        "mtime_ns": 1795463914085772600,
+        "sha256": "f73c57ae2080d8f525bdd5cdfb52b0a50f1cc5cf0cca5b89c4003b803602a91d"
+      },
+      "F:\\开源掌机教程\\_工具脚本\\taspipe\\游戏包\\电竞事实库\\facts_v1.db": {
+        "present": true,
+        "bytes": 2056192,
+        "mtime_ns": 1795464415053952300,
+        "sha256": "32f029f41629cb3774e701a705d521aa49550c76deabbc0affc760bec264d5c1"
+      },
+      "F:\\开源掌机教程\\选题决策层\\kb快照\\index.json": {
+        "present": true,
+        "bytes": 3723668,
+        "mtime_ns": 1795548337618108300,
+        "sha256": "24873c80464624968281f2edb85dbc00c277eae8ab702e0398b9987817e82787"
+      },
+      "F:\\开源掌机教程\\_工具脚本\\taspipe\\游戏包\\gba_aria_of_sorrow_souls.detectors.showcase.json": {
+        "present": true,
+        "bytes": 25251,
+        "mtime_ns": 1795617020272614100,
+        "sha256": "d153693e95d5c488a4347cc53cbde3fd5427b3cbf7ef0fdbc5ceec04c1e01593"
+      }
+    },
+    "aria_candidate_only": false
+  },
+  "pdf_qc": {
+    "all_ok": true,
+    "pages": 6,
+    "check_count": 17,
+    "report": "F:\\开源掌机教程\\知识库P1_20261118\\megaman2_production_technical_20261125\\qc\\render_qa.json",
+    "pdf": "F:\\开源掌机教程\\洛克人2生产技术域交付_2026-11-25.pdf",
+    "markdown": "F:\\开源掌机教程\\洛克人2生产技术域交付_2026-11-25.md",
+    "pdf_sha256": "9df330841f7dbbf1229beb26580247472ffe541d12956cf1eb7c82ab38ee42a4",
+    "markdown_sha256": "fd12f26c0dceee8ada32b8e234ed8c676efb73f12c3d995ef817e5dbbca7028d"
+  },
+  "code_sha256": {
+    "kb": "cf9d69aa40329b9e1ff4b2d086abbddf54de9ea89ab581c093c3df1ab8463264",
+    "kb_route": "566e96b2ea4b7f26858250f5d1e434c2a92671b7345486d12c2ffae6837eb6ee",
+    "kb_megaman2": "ae3050cc729cbe407330f2b16b59459186781aad338e2e97f6422df6ab9a4347",
+    "kb_answer": "6a75e63b0e77c3e560ea8373c695e15a85076ce4444ebfe0005207d0ddec6f05",
+    "sources": "fc47682d686f7c04b7fcb5c74d46a0760da4c5a7e4258358442dbd4958e2704c",
+    "kb_selftest_gates": "b06212a5bd704a779a946eef578661fab3843f78c130aac57e5a0d3874656d28",
+    "sources_selftest_gates": "c5532152b62c66a4d3bad5582ec5efd4374203b58a8c906bba9b5691e8bc693a",
+    "selftest": "591915c94bd184f448b8c3155e2ebf8ac3b24bc5086265fed1a056fa97fa0cc8",
+    "知识对照": "84e7953e0cac1346c0c4b6a5c62dcb25d5037ee448012f5f8c40d48d489c3ee6",
+    "选题卡": "c90566574c7ae4a548299bddebc0facc5eec0cc60ef83894497c1bcffda0eb42",
+    "evaluator": "4ec41f16db2547c7b5008a92ff905b332432378cfb4bb1f4777da29e1d5c15f0",
+    "render_qc": "3999f2a7c97ee4840417563579b73bb63472d831f87d5fda22619289357bf1a2",
+    "finalizer": "69d8633cd524898dd37b1a9ce9bea0369b1482d05e930e4bf14bef45a6c341f7"
+  },
+  "artifacts": {
+    "_工具脚本/_task_logs/mm2_production_technical_eval_20261125_final.txt": {
+      "path": "F:\\开源掌机教程\\_工具脚本\\_task_logs\\mm2_production_technical_eval_20261125_final.txt",
+      "bytes": 859,
+      "sha256": "d38710e61344b7d4c576632f0d7ce5fd2fe261d1aaff97324a657972965e3f0a"
+    },
+    "_工具脚本/_task_logs/mm2_production_technical_full_selftest_20261125_final.txt": {
+      "path": "F:\\开源掌机教程\\_工具脚本\\_task_logs\\mm2_production_technical_full_selftest_20261125_final.txt",
+      "bytes": 166905,
+      "sha256": "292532583f6c009e1d04e85ca35fd092cae1b82ac2cebaced0163ca83089b576"
+    },
+    "_工具脚本/_task_logs/mm2_production_technical_kb_selftest_20261125_final.txt": {
+      "path": "F:\\开源掌机教程\\_工具脚本\\_task_logs\\mm2_production_technical_kb_selftest_20261125_final.txt",
+      "bytes": 74821,
+      "sha256": "86eeef83aa22f72ec1976932226ff743364ed5149e6e7b5f9a7b7697bcc13a3f"
+    },
+    "_工具脚本/_task_logs/mm2_production_technical_pdf_qc_20261125_final.txt": {
+      "path": "F:\\开源掌机教程\\_工具脚本\\_task_logs\\mm2_production_technical_pdf_qc_20261125_final.txt",
+      "bytes": 5546,
+      "sha256": "2046c9fe996238b60416865b05e87c6ba145e7d02c64bf414c22ce25e686e459"
+    },
+    "_工具脚本/_task_logs/mm2_production_technical_sources_selftest_20261125_final.txt": {
+      "path": "F:\\开源掌机教程\\_工具脚本\\_task_logs\\mm2_production_technical_sources_selftest_20261125_final.txt",
+      "bytes": 6013,
+      "sha256": "e79cfc2ad2150cd9f56fe7893e544d677f6479c51ceb85a149e53415b32be6b2"
+    },
+    "_工具脚本/taspipe/kb.py": {
+      "path": "F:\\开源掌机教程\\_工具脚本\\taspipe\\kb.py",
+      "bytes": 102100,
+      "sha256": "cf9d69aa40329b9e1ff4b2d086abbddf54de9ea89ab581c093c3df1ab8463264"
+    },
+    "_工具脚本/taspipe/kb_answer.py": {
+      "path": "F:\\开源掌机教程\\_工具脚本\\taspipe\\kb_answer.py",
+      "bytes": 13086,
+      "sha256": "6a75e63b0e77c3e560ea8373c695e15a85076ce4444ebfe0005207d0ddec6f05"
+    },
+    "_工具脚本/taspipe/kb_megaman2.py": {
+      "path": "F:\\开源掌机教程\\_工具脚本\\taspipe\\kb_megaman2.py",
+      "bytes": 24724,
+      "sha256": "ae3050cc729cbe407330f2b16b59459186781aad338e2e97f6422df6ab9a4347"
+    },
+    "_工具脚本/taspipe/kb_route.py": {
+      "path": "F:\\开源掌机教程\\_工具脚本\\taspipe\\kb_route.py",
+      "bytes": 18911,
+      "sha256": "566e96b2ea4b7f26858250f5d1e434c2a92671b7345486d12c2ffae6837eb6ee"
+    },
+    "_工具脚本/taspipe/kb_selftest_gates.py": {
+      "path": "F:\\开源掌机教程\\_工具脚本\\taspipe\\kb_selftest_gates.py",
+      "bytes": 225465,
+      "sha256": "b06212a5bd704a779a946eef578661fab3843f78c130aac57e5a0d3874656d28"
+    },
+    "_工具脚本/taspipe/selftest.py": {
+      "path": "F:\\开源掌机教程\\_工具脚本\\taspipe\\selftest.py",
+      "bytes": 345311,
+      "sha256": "591915c94bd184f448b8c3155e2ebf8ac3b24bc5086265fed1a056fa97fa0cc8"
+    },
+    "_工具脚本/taspipe/sources.py": {
+      "path": "F:\\开源掌机教程\\_工具脚本\\taspipe\\sources.py",
+      "bytes": 47214,
+      "sha256": "fc47682d686f7c04b7fcb5c74d46a0760da4c5a7e4258358442dbd4958e2704c"
+    },
+    "_工具脚本/taspipe/sources_selftest_gates.py": {
+      "path": "F:\\开源掌机教程\\_工具脚本\\taspipe\\sources_selftest_gates.py",
+      "bytes": 30271,
+      "sha256": "c5532152b62c66a4d3bad5582ec5efd4374203b58a8c906bba9b5691e8bc693a"
+    },
+    "_工具脚本/taspipe/游戏包/gba_aria_of_sorrow_souls.detectors.showcase.json": {
+      "path": "F:\\开源掌机教程\\_工具脚本\\taspipe\\游戏包\\gba_aria_of_sorrow_souls.detectors.showcase.json",
+      "bytes": 25251,
+      "sha256": "d153693e95d5c488a4347cc53cbde3fd5427b3cbf7ef0fdbc5ceec04c1e01593"
+    },
+    "_工具脚本/taspipe/游戏包/来源库/sources.json": {
+      "path": "F:\\开源掌机教程\\_工具脚本\\taspipe\\游戏包\\来源库\\sources.json",
+      "bytes": 78163,
+      "sha256": "456576759073e46fb303a02538e6769f9837d883b633b9c4a1cc8781fc87285f"
+    },
+    "_工具脚本/taspipe/游戏包/来源库/取证/mm2_tasvideos_acceleration_20261125.txt": {
+      "path": "F:\\开源掌机教程\\_工具脚本\\taspipe\\游戏包\\来源库\\取证\\mm2_tasvideos_acceleration_20261125.txt",
+      "bytes": 1293,
+      "sha256": "2eeb193eafbce3fdaeddca59a32459098ae4d152191680ae4fe91c3687362831"
+    },
+    "_工具脚本/taspipe/游戏包/来源库/取证/mm2_tasvideos_climb_transform_20261125.txt": {
+      "path": "F:\\开源掌机教程\\_工具脚本\\taspipe\\游戏包\\来源库\\取证\\mm2_tasvideos_climb_transform_20261125.txt",
+      "bytes": 738,
+      "sha256": "3acb7987e6d9f373c90433a93fe320f79b5ca0da04cfb57bd7306119db414f9a"
+    },
+    "_工具脚本/taspipe/游戏包/来源库/取证/mm2_tasvideos_coordinates_20261125.txt": {
+      "path": "F:\\开源掌机教程\\_工具脚本\\taspipe\\游戏包\\来源库\\取证\\mm2_tasvideos_coordinates_20261125.txt",
+      "bytes": 1446,
+      "sha256": "932fd37ed4b9d9e3ac5161317d3e069ec8d53cbcabb89b0baee15b03f5010fc9"
+    },
+    "_工具脚本/taspipe/游戏包/来源库/取证/mm2_tasvideos_jump_20261125.txt": {
+      "path": "F:\\开源掌机教程\\_工具脚本\\taspipe\\游戏包\\来源库\\取证\\mm2_tasvideos_jump_20261125.txt",
+      "bytes": 910,
+      "sha256": "2f8b6d41ce8f6cc0833ff92ef97a02ff70c06d71e3396843d9ed57851aab988c"
+    },
+    "_工具脚本/taspipe/游戏包/来源库/取证/mm2_tasvideos_jump_horizontal_20261125.txt": {
+      "path": "F:\\开源掌机教程\\_工具脚本\\taspipe\\游戏包\\来源库\\取证\\mm2_tasvideos_jump_horizontal_20261125.txt",
+      "bytes": 818,
+      "sha256": "8f2f36609458b26044441323d2306c687d435c2cfa9f03526191ef667318127a"
+    },
+    "_工具脚本/taspipe/游戏包/来源库/取证/mm2_tasvideos_object_table_20261125.txt": {
+      "path": "F:\\开源掌机教程\\_工具脚本\\taspipe\\游戏包\\来源库\\取证\\mm2_tasvideos_object_table_20261125.txt",
+      "bytes": 664,
+      "sha256": "792c65e4d14ef07711429b09c0a6fd881caab39dbacce72c8f3fa97c2a4d882e"
+    },
+    "_工具脚本/taspipe/游戏包/来源库/取证/mm2_tasvideos_walking_20261125.txt": {
+      "path": "F:\\开源掌机教程\\_工具脚本\\taspipe\\游戏包\\来源库\\取证\\mm2_tasvideos_walking_20261125.txt",
+      "bytes": 460,
+      "sha256": "5e58f52be5cdeaf0430aabc5c84ced0f87ba23ea4377eca56e4670bf95743220"
+    },
+    "_工具脚本/taspipe/游戏包/知识库/corpus_map.json": {
+      "path": "F:\\开源掌机教程\\_工具脚本\\taspipe\\游戏包\\知识库\\corpus_map.json",
+      "bytes": 34439,
+      "sha256": "e49bb480ad4aa58d0ce97a47af7fabe49a7453fde90d01631350b3bf662342df"
+    },
+    "_工具脚本/taspipe/游戏包/知识库/index.json": {
+      "path": "F:\\开源掌机教程\\_工具脚本\\taspipe\\游戏包\\知识库\\index.json",
+      "bytes": 3766455,
+      "sha256": "05907ec85146f386325285ccd4d2008d8bc28d50d8ec4e2461c14a9351f03f7d"
+    },
+    "_工具脚本/taspipe/游戏包/知识库/index_hybrid.json": {
+      "path": "F:\\开源掌机教程\\_工具脚本\\taspipe\\游戏包\\知识库\\index_hybrid.json",
+      "bytes": 3803917,
+      "sha256": "c478a8d3e830530f56882e8d9a0b3c7adae6521c897f7b03bfb9c84c95a40fb8"
+    },
+    "洛克人2生产技术域交付_2026-11-25.md": {
+      "path": "F:\\开源掌机教程\\洛克人2生产技术域交付_2026-11-25.md",
+      "bytes": 15061,
+      "sha256": "fd12f26c0dceee8ada32b8e234ed8c676efb73f12c3d995ef817e5dbbca7028d"
+    },
+    "洛克人2生产技术域交付_2026-11-25.pdf": {
+      "path": "F:\\开源掌机教程\\洛克人2生产技术域交付_2026-11-25.pdf",
+      "bytes": 564650,
+      "sha256": "9df330841f7dbbf1229beb26580247472ffe541d12956cf1eb7c82ab38ee42a4"
+    },
+    "知识库P1_20261118/finalize_megaman2_production_technical_20261125.py": {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\finalize_megaman2_production_technical_20261125.py",
+      "bytes": 12496,
+      "sha256": "69d8633cd524898dd37b1a9ce9bea0369b1482d05e930e4bf14bef45a6c341f7"
+    },
+    "知识库P1_20261118/megaman2_production_technical_20261125/cards.json": {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\megaman2_production_technical_20261125\\cards.json",
+      "bytes": 42644,
+      "sha256": "7737f7d2106dd2c8bf4db76454d445435f6662fc7ff7e3c4cca51a9a491320fe"
+    },
+    "知识库P1_20261118/megaman2_production_technical_20261125/cards.md": {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\megaman2_production_technical_20261125\\cards.md",
+      "bytes": 9657,
+      "sha256": "a33ca079b3e0e17f4dad921331e4b6407b50f775c21128d31ac581c9721dece8"
+    },
+    "知识库P1_20261118/megaman2_production_technical_20261125/contract.json": {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\megaman2_production_technical_20261125\\contract.json",
+      "bytes": 1345,
+      "sha256": "feb10b44b96e8ce8f4ab2435127db55edfbb15f1ca66f97340376ca989b1cff5"
+    },
+    "知识库P1_20261118/megaman2_production_technical_20261125/eval_production_technical.py": {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\megaman2_production_technical_20261125\\eval_production_technical.py",
+      "bytes": 28704,
+      "sha256": "4ec41f16db2547c7b5008a92ff905b332432378cfb4bb1f4777da29e1d5c15f0"
+    },
+    "知识库P1_20261118/megaman2_production_technical_20261125/eval_report.json": {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\megaman2_production_technical_20261125\\eval_report.json",
+      "bytes": 541795,
+      "sha256": "26043f54072b41ca279ab5322e4911221add840881c65f7ebf6b221d5750693b"
+    },
+    "知识库P1_20261118/megaman2_production_technical_20261125/eval_report.md": {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\megaman2_production_technical_20261125\\eval_report.md",
+      "bytes": 4524,
+      "sha256": "0528c331df6e80dab50526aea94cf5c98d3ca03a02aa8712de5bfb49c08c9132"
+    },
+    "知识库P1_20261118/megaman2_production_technical_20261125/qc/contact_sheet.png": {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\megaman2_production_technical_20261125\\qc\\contact_sheet.png",
+      "bytes": 564089,
+      "sha256": "245b720c3ca39207acdb3cd221589c3832703a0cbba74300a833efcb0b9bcbe8"
+    },
+    "知识库P1_20261118/megaman2_production_technical_20261125/qc/crosscheck_query_log.jsonl": {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\megaman2_production_technical_20261125\\qc\\crosscheck_query_log.jsonl",
+      "bytes": 44295,
+      "sha256": "7abd642bfbde52509a5959df5eb360d5c4b448b45e2fc06e402b8c5f63a42e7f"
+    },
+    "知识库P1_20261118/megaman2_production_technical_20261125/qc/kb_audit_base.json": {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\megaman2_production_technical_20261125\\qc\\kb_audit_base.json",
+      "bytes": 22458,
+      "sha256": "e8c983c80bfb4945908312f0aa3dcfdc82c1a923951967ad88367e08d7d8d6c9"
+    },
+    "知识库P1_20261118/megaman2_production_technical_20261125/qc/kb_audit_hybrid.json": {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\megaman2_production_technical_20261125\\qc\\kb_audit_hybrid.json",
+      "bytes": 22458,
+      "sha256": "4f1842fb38fcea71aa3b153dbade8aed6ad34b5ed2ef2a695f4c5cece0fa4896"
+    },
+    "知识库P1_20261118/megaman2_production_technical_20261125/qc/page_01.png": {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\megaman2_production_technical_20261125\\qc\\page_01.png",
+      "bytes": 231948,
+      "sha256": "8ea0031c741b0bef8352912410bd5d7f1430a72ce6fb5a62ef05836e20ad8b7e"
+    },
+    "知识库P1_20261118/megaman2_production_technical_20261125/qc/page_05.png": {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\megaman2_production_technical_20261125\\qc\\page_05.png",
+      "bytes": 193123,
+      "sha256": "dafd215c94fac8f20a30791ef617995ed76a34a45813b4d516b142481aa9e5f6"
+    },
+    "知识库P1_20261118/megaman2_production_technical_20261125/qc/page_06.png": {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\megaman2_production_technical_20261125\\qc\\page_06.png",
+      "bytes": 144521,
+      "sha256": "1f136aec31872b8cba1befe873aba8199cb71195fe434034a07d53201b997665"
+    },
+    "知识库P1_20261118/megaman2_production_technical_20261125/qc/production_query_log.jsonl": {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\megaman2_production_technical_20261125\\qc\\production_query_log.jsonl",
+      "bytes": 82923,
+      "sha256": "64237f097126466bc02ae5f3cabdb570006422dcac31436d72b923764452c52a"
+    },
+    "知识库P1_20261118/megaman2_production_technical_20261125/qc/render_qa.json": {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\megaman2_production_technical_20261125\\qc\\render_qa.json",
+      "bytes": 4448,
+      "sha256": "859dd4df88ff4ede97748f7bce23e27dc7ef303039846209104cdbb583c6716f"
+    },
+    "知识库P1_20261118/megaman2_production_technical_20261125/qc/report.html": {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\megaman2_production_technical_20261125\\qc\\report.html",
+      "bytes": 23945,
+      "sha256": "88200fe93de96006102ffb0bdd9a5d1441ec8185412544edc8abc7e7e0c99f1f"
+    },
+    "知识库P1_20261118/megaman2_production_technical_20261125/qc/sources_audit.json": {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\megaman2_production_technical_20261125\\qc\\sources_audit.json",
+      "bytes": 17232,
+      "sha256": "a236bdcd1bf1206f4c80df346b843cd49817d8123600c7d056d15d64c1c54c33"
+    },
+    "知识库P1_20261118/megaman2_production_technical_20261125/scope.json": {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\megaman2_production_technical_20261125\\scope.json",
+      "bytes": 1199,
+      "sha256": "4319ad2ec05d3ad7732015afa5ea1486256ad5e2369b75e4558373286149dcc6"
+    },
+    "知识库P1_20261118/render_qc_megaman2_production_technical_20261125.py": {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\render_qc_megaman2_production_technical_20261125.py",
+      "bytes": 12990,
+      "sha256": "3999f2a7c97ee4840417563579b73bb63472d831f87d5fda22619289357bf1a2"
+    },
+    "选题决策层/知识对照.py": {
+      "path": "F:\\开源掌机教程\\选题决策层\\知识对照.py",
+      "bytes": 10759,
+      "sha256": "84e7953e0cac1346c0c4b6a5c62dcb25d5037ee448012f5f8c40d48d489c3ee6"
+    },
+    "选题决策层/选题卡.py": {
+      "path": "F:\\开源掌机教程\\选题决策层\\选题卡.py",
+      "bytes": 4921,
+      "sha256": "c90566574c7ae4a548299bddebc0facc5eec0cc60ef83894497c1bcffda0eb42"
+    }
+  },
+  "delivery_fingerprint": {
+    "algorithm": "SHA-256 over UTF-8 lines: relative_path NUL sha256 NUL bytes; sorted by relative_path; manifest excludes itself",
+    "sha256": "39843d4e9ecefed661ee9e49e97433787d1ee3bc7f10881a806c3f9297e7aad8",
+    "artifact_count": 49,
+    "excludes_self": true
+  },
+  "remaining": [
+    "PAL、美版、日版 ROM 哈希身份及跨地区等价",
+    "全部武器、敌人、关卡、道具和结局",
+    "洛克人2出招表",
+    "内存字典、标题目录与 TAS 出版物元数据的生产权威升级",
+    "官方说明书候选索引的生产权威升级",
+    "完整游戏时间轴或实机玩法验证",
+    "任何游戏、任何问题的完整准确或绝对零幻觉保证"
+  ],
+  "next_actions": [
+    "继续用真实查询回流抽查开放问题，不用冻结样本宣称永久零错误",
+    "只有取得可核验地区 ROM 身份后，才建立对应地区版本并验证跨版关系",
+    "后续新增武器、敌人、关卡等资料时逐项登记来源与资格，不将候选材料自动升格",
+    "dense 与 NLI 仍待正确性和授权数据稳定后单独评估，当前默认保持 BM25"
+  ],
+  "external_generative_model_calls": 0,
+  "paid_api_calls": 0,
+  "backend_restart_performed": false,
+  "commit_or_push_performed": false
+}

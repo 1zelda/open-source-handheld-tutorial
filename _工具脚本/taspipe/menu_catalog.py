@@ -45,8 +45,8 @@ def selection_macro(group, value, domain):
             {"addr": group["slot_addr"], "value": value, "domain": domain}
         ]
     offset = value - int(navigate["start_id"])
-    if offset <= 0:
-        raise SchemaError(f"{group['id']} ID={value} 必须大于导航起点")
+    if offset < 0:
+        raise SchemaError(f"{group['id']} ID={value} 必须不小于导航起点")
     row, column = divmod(offset, int(navigate["columns"]))
     steps = list(group["menu_steps"])
     steps.extend([navigate["row_step"]] * row)
@@ -89,8 +89,21 @@ def load_config(path):
         if not isinstance(gid, str) or not gid or gid in ids:
             raise SchemaError("group.id 必须唯一且非空")
         ids.add(gid)
-        if type(group.get("slot_addr")) is not int or group["slot_addr"] < 0:
+        readback = group.get("slot_readback", True)
+        if not isinstance(readback, bool):
+            raise SchemaError(f"{gid}.slot_readback 必须为布尔值")
+        slot_addr = group.get("slot_addr")
+        if readback and (type(slot_addr) is not int or slot_addr < 0):
             raise SchemaError(f"{gid}.slot_addr 必须为非负整数")
+        if not readback and slot_addr is not None and (type(slot_addr) is not int or slot_addr < 0):
+            raise SchemaError(f"{gid}.slot_addr 为 null 或非负整数")
+        base_patches = group.get("base_patches") or []
+        if not isinstance(base_patches, list):
+            raise SchemaError(f"{gid}.base_patches 必须为列表")
+        for patch in base_patches:
+            if (not isinstance(patch, dict) or type(patch.get("addr")) is not int or patch["addr"] < 0
+                    or type(patch.get("value")) is not int or not 0 <= patch["value"] <= 255):
+                raise SchemaError(f"{gid}.base_patches 每项必须含非负 addr 与 0..255 value")
         if type(group.get("count")) is not int or not 1 <= group["count"] <= 255:
             raise SchemaError(f"{gid}.count 必须为 1..255 整数")
         region = group.get("identity_region")
@@ -105,11 +118,13 @@ def load_config(path):
                 raise SchemaError(f"{gid}.navigate.columns 必须为正整数")
             if type(navigate.get("start_id")) is not int or not 0 <= navigate["start_id"] < 255:
                 raise SchemaError(f"{gid}.navigate.start_id 必须为 0..254")
-            if navigate["start_id"] + group["count"] > 255:
+            if navigate["start_id"] + group["count"] - 1 > 255:
                 raise SchemaError(f"{gid} 导航 ID 范围超出 0..255")
             for key in ("row_step", "column_step", "confirm"):
                 if not isinstance(navigate.get(key), str) or not navigate[key]:
                     raise SchemaError(f"{gid}.navigate.{key} 必须为非空字符串")
+        elif slot_addr is None:
+            raise SchemaError(f"{gid} 非导航模式必须提供 slot_addr")
     workers = doc.get("workers", 1)
     if type(workers) is not int or workers < 1:
         raise SchemaError("workers 必须为正整数")
@@ -174,15 +189,17 @@ def capture_group(config, group, out_root, work_root):
             shutil.copyfile(base_shot_ascii, base_shot)
             macro_frames = 0
             for value in range(1, int(group["count"]) + 1):
-                row = {"group_id": gid, "id": value, "slot_addr": group["slot_addr"]}
+                row = {"group_id": gid, "id": value, "slot_addr": group.get("slot_addr")}
                 try:
                     stem = f"{gid}_{value:03d}"
                     shot_ascii = Path(sess.work) / "catalog" / f"{stem}.png"
                     state_ascii = Path(sess.work) / "catalog" / f"{stem}.state"
                     macro, patches = selection_macro(group, value, profile["domain"])
                     macro_frames = len(macro.split(","))
-                    sess.attempt(base, spec=macro, shot=str(shot_ascii), save=str(state_ascii), patches=patches)
-                    got = sess.read(group["slot_addr"], profile["domain"])
+                    all_patches = [{**patch, "domain": patch.get("domain", profile["domain"])}
+                                   for patch in list(group.get("base_patches") or []) + patches]
+                    sess.attempt(base, spec=macro, shot=str(shot_ascii), save=str(state_ascii), patches=all_patches)
+                    got = sess.read(group["slot_addr"], profile["domain"]) if group.get("slot_readback", True) else None
                     shot = group_out / f"{stem}.png"
                     state = group_out / f"{stem}.state"
                     identity = group_out / f"{stem}_identity.png"
@@ -190,9 +207,12 @@ def capture_group(config, group, out_root, work_root):
                     shutil.copyfile(state_ascii, state)
                     shot_sha, menu_differs = sha256(shot), sha256(shot) != sha256(base_shot)
                     identity_sha = identity_crop(shot, group["identity_region"], identity)
-                    row.update(status="captured" if got == value and menu_differs else
-                               ("readback_mismatch" if got != value else "menu_not_reached"),
-                               readback=got, shot=str(shot), state=str(state),
+                    if group.get("slot_readback", True):
+                        status = "captured" if got == value and menu_differs else (
+                            "readback_mismatch" if got != value else "menu_not_reached")
+                    else:
+                        status = "captured" if menu_differs else "menu_not_reached"
+                    row.update(status=status, readback=got, shot=str(shot), state=str(state),
                                shot_sha256=shot_sha, state_sha256=sha256(state),
                                identity=str(identity), identity_sha256=identity_sha,
                                menu_differs_from_gameplay=menu_differs)

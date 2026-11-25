@@ -1,0 +1,1050 @@
+{
+  "schema_version": "ram_calibration/1.0",
+  "mode": "verify",
+  "game_id": "castlevania_aria_gba",
+  "case_id": "blue_soul_2_verify_vs_empty",
+  "rom_sha1": "40AAB076A528F52E93260BB98D91A40039E0DA02",
+  "core": "mGBA",
+  "system": "GBA",
+  "domain": "EWRAM",
+  "recipe": {
+    "schema_version": "ram_calibration/1.0",
+    "game_id": "castlevania_aria_gba",
+    "note": "蓝魂实帧抽查后的首批 verify 短名单；只验槽位、MP 消费与正反例画面，不替代中文菜单身份验收。",
+    "profile": {
+      "rom": "F:/BaiduNetdiskDownload/rom/gba/恶魔城晓月圆舞曲.gba",
+      "rom_sha1": "40aab076a528f52e93260bb98d91a40039e0da02",
+      "bizhawk": "F:/开源掌机教程/02-模拟器库/BizHawk/BizHawk-2.11.1",
+      "isolated_slot": true,
+      "core": "mGBA",
+      "system": "GBA",
+      "domain": "EWRAM",
+      "state_package": {
+        "game_id": "castlevania_aria_gba",
+        "profile_id": "aria_us_40aab076",
+        "revision": "r20261125T120000"
+      },
+      "window": {
+        "start": 78429,
+        "length": 128
+      }
+    },
+    "base_state": "blue_buer",
+    "macros": {
+      "guardian_120": "R"
+    },
+    "cases": [
+      {
+        "kind": "scenario",
+        "base_state": "blue_buer",
+        "arms": [
+          {
+            "name": "blue_2",
+            "steps": [
+              {
+                "macro": "-",
+                "extra": 0,
+                "patches": [
+                  {
+                    "addr": 78430,
+                    "value": 2
+                  }
+                ],
+                "expect": [
+                  {
+                    "addr": 78430,
+                    "value": 2
+                  },
+                  {
+                    "addr": 78448,
+                    "width": 2,
+                    "value": 80
+                  }
+                ],
+                "screen": {
+                  "reference": "$base",
+                  "relation": "equal"
+                }
+              },
+              {
+                "state": "$previous",
+                "macro": "@guardian_120",
+                "extra": 119,
+                "capture_frames": 120,
+                "expect": [
+                  {
+                    "addr": 78430,
+                    "value": 2
+                  },
+                  {
+                    "addr": 78448,
+                    "width": 2,
+                    "op": "<",
+                    "value": 80
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "blue0",
+            "steps": [
+              {
+                "macro": "-",
+                "extra": 0,
+                "patches": [
+                  {
+                    "addr": 78430,
+                    "value": 0
+                  }
+                ],
+                "expect": [
+                  {
+                    "addr": 78430,
+                    "value": 0
+                  },
+                  {
+                    "addr": 78448,
+                    "width": 2,
+                    "value": 80
+                  }
+                ],
+                "screen": {
+                  "reference": "$base",
+                  "relation": "equal"
+                }
+              },
+              {
+                "state": "$previous",
+                "macro": "@guardian_120",
+                "extra": 119,
+                "capture_frames": 120,
+                "expect": [
+                  {
+                    "addr": 78430,
+                    "value": 0
+                  },
+                  {
+                    "addr": 78448,
+                    "width": 2,
+                    "value": 80
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "comparisons": [
+          {
+            "left": "blue_2",
+            "right": "blue0",
+            "left_step": 1,
+            "right_step": 1,
+            "relation": "different",
+            "frames": [
+              12,
+              30,
+              60,
+              90,
+              "final"
+            ]
+          }
+        ],
+        "claims": [
+          {
+            "name": "blue_soul_equipped_id",
+            "addr": 78430,
+            "width": 1,
+            "level": "gameplay",
+            "note": "同一战斗初态只改蓝魂槽，R 键产生实帧差异；不据此认定中文菜单名或全部蓝魂身份。"
+          },
+          {
+            "name": "current_mp",
+            "addr": 78448,
+            "width": 2,
+            "level": "consumption",
+            "note": "目标蓝魂激活后 MP 低于 80，空槽保持 80；不固定具体消耗值。"
+          }
+        ],
+        "id": "blue_soul_2_verify_vs_empty"
+      },
+      {
+        "kind": "scenario",
+        "base_state": "blue_buer",
+        "arms": [
+          {
+            "name": "blue_4",
+            "steps": [
+              {
+                "macro": "-",
+                "extra": 0,
+                "patches": [
+                  {
+                    "addr": 78430,
+                    "value": 4
+                  }
+                ],
+                "expect": [
+                  {
+                    "addr": 78430,
+                    "value": 4
+                  },
+                  {
+                    "addr": 78448,
+                    "width": 2,
+                    "value": 80
+                  }
+                ],
+                "screen": {
+                  "reference": "$base",
+                  "relation": "equal"
+                }
+              },
+              {
+                "state": "$previous",
+                "macro": "@guardian_120",
+                "extra": 119,
+                "capture_frames": 120,
+                "expect": [
+                  {
+                    "addr": 78430,
+                    "value": 4
+                  },
+                  {
+                    "addr": 78448,
+                    "width": 2,
+                    "op": "<",
+                    "value": 80
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "blue0",
+            "steps": [
+              {
+                "macro": "-",
+                "extra": 0,
+                "patches": [
+                  {
+                    "addr": 78430,
+                    "value": 0
+                  }
+                ],
+                "expect": [
+                  {
+                    "addr": 78430,
+                    "value": 0
+                  },
+                  {
+                    "addr": 78448,
+                    "width": 2,
+                    "value": 80
+                  }
+                ],
+                "screen": {
+                  "reference": "$base",
+                  "relation": "equal"
+                }
+              },
+              {
+                "state": "$previous",
+                "macro": "@guardian_120",
+                "extra": 119,
+                "capture_frames": 120,
+                "expect": [
+                  {
+                    "addr": 78430,
+                    "value": 0
+                  },
+                  {
+                    "addr": 78448,
+                    "width": 2,
+                    "value": 80
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "comparisons": [
+          {
+            "left": "blue_4",
+            "right": "blue0",
+            "left_step": 1,
+            "right_step": 1,
+            "relation": "different",
+            "frames": [
+              12,
+              30,
+              60,
+              90,
+              "final"
+            ]
+          }
+        ],
+        "claims": [
+          {
+            "name": "blue_soul_equipped_id",
+            "addr": 78430,
+            "width": 1,
+            "level": "gameplay",
+            "note": "同一战斗初态只改蓝魂槽，R 键产生实帧差异；不据此认定中文菜单名或全部蓝魂身份。"
+          },
+          {
+            "name": "current_mp",
+            "addr": 78448,
+            "width": 2,
+            "level": "consumption",
+            "note": "目标蓝魂激活后 MP 低于 80，空槽保持 80；不固定具体消耗值。"
+          }
+        ],
+        "id": "blue_soul_4_verify_vs_empty"
+      },
+      {
+        "kind": "scenario",
+        "base_state": "blue_buer",
+        "arms": [
+          {
+            "name": "blue_6",
+            "steps": [
+              {
+                "macro": "-",
+                "extra": 0,
+                "patches": [
+                  {
+                    "addr": 78430,
+                    "value": 6
+                  }
+                ],
+                "expect": [
+                  {
+                    "addr": 78430,
+                    "value": 6
+                  },
+                  {
+                    "addr": 78448,
+                    "width": 2,
+                    "value": 80
+                  }
+                ],
+                "screen": {
+                  "reference": "$base",
+                  "relation": "equal"
+                }
+              },
+              {
+                "state": "$previous",
+                "macro": "@guardian_120",
+                "extra": 119,
+                "capture_frames": 120,
+                "expect": [
+                  {
+                    "addr": 78430,
+                    "value": 6
+                  },
+                  {
+                    "addr": 78448,
+                    "width": 2,
+                    "op": "<",
+                    "value": 80
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "blue0",
+            "steps": [
+              {
+                "macro": "-",
+                "extra": 0,
+                "patches": [
+                  {
+                    "addr": 78430,
+                    "value": 0
+                  }
+                ],
+                "expect": [
+                  {
+                    "addr": 78430,
+                    "value": 0
+                  },
+                  {
+                    "addr": 78448,
+                    "width": 2,
+                    "value": 80
+                  }
+                ],
+                "screen": {
+                  "reference": "$base",
+                  "relation": "equal"
+                }
+              },
+              {
+                "state": "$previous",
+                "macro": "@guardian_120",
+                "extra": 119,
+                "capture_frames": 120,
+                "expect": [
+                  {
+                    "addr": 78430,
+                    "value": 0
+                  },
+                  {
+                    "addr": 78448,
+                    "width": 2,
+                    "value": 80
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "comparisons": [
+          {
+            "left": "blue_6",
+            "right": "blue0",
+            "left_step": 1,
+            "right_step": 1,
+            "relation": "different",
+            "frames": [
+              12,
+              30,
+              60,
+              90,
+              "final"
+            ]
+          }
+        ],
+        "claims": [
+          {
+            "name": "blue_soul_equipped_id",
+            "addr": 78430,
+            "width": 1,
+            "level": "gameplay",
+            "note": "同一战斗初态只改蓝魂槽，R 键产生实帧差异；不据此认定中文菜单名或全部蓝魂身份。"
+          },
+          {
+            "name": "current_mp",
+            "addr": 78448,
+            "width": 2,
+            "level": "consumption",
+            "note": "目标蓝魂激活后 MP 低于 80，空槽保持 80；不固定具体消耗值。"
+          }
+        ],
+        "id": "blue_soul_6_verify_vs_empty"
+      },
+      {
+        "kind": "scenario",
+        "base_state": "blue_buer",
+        "arms": [
+          {
+            "name": "blue_13",
+            "steps": [
+              {
+                "macro": "-",
+                "extra": 0,
+                "patches": [
+                  {
+                    "addr": 78430,
+                    "value": 13
+                  }
+                ],
+                "expect": [
+                  {
+                    "addr": 78430,
+                    "value": 13
+                  },
+                  {
+                    "addr": 78448,
+                    "width": 2,
+                    "value": 80
+                  }
+                ],
+                "screen": {
+                  "reference": "$base",
+                  "relation": "equal"
+                }
+              },
+              {
+                "state": "$previous",
+                "macro": "@guardian_120",
+                "extra": 119,
+                "capture_frames": 120,
+                "expect": [
+                  {
+                    "addr": 78430,
+                    "value": 13
+                  },
+                  {
+                    "addr": 78448,
+                    "width": 2,
+                    "op": "<",
+                    "value": 80
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "blue0",
+            "steps": [
+              {
+                "macro": "-",
+                "extra": 0,
+                "patches": [
+                  {
+                    "addr": 78430,
+                    "value": 0
+                  }
+                ],
+                "expect": [
+                  {
+                    "addr": 78430,
+                    "value": 0
+                  },
+                  {
+                    "addr": 78448,
+                    "width": 2,
+                    "value": 80
+                  }
+                ],
+                "screen": {
+                  "reference": "$base",
+                  "relation": "equal"
+                }
+              },
+              {
+                "state": "$previous",
+                "macro": "@guardian_120",
+                "extra": 119,
+                "capture_frames": 120,
+                "expect": [
+                  {
+                    "addr": 78430,
+                    "value": 0
+                  },
+                  {
+                    "addr": 78448,
+                    "width": 2,
+                    "value": 80
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "comparisons": [
+          {
+            "left": "blue_13",
+            "right": "blue0",
+            "left_step": 1,
+            "right_step": 1,
+            "relation": "different",
+            "frames": [
+              12,
+              30,
+              60,
+              90,
+              "final"
+            ]
+          }
+        ],
+        "claims": [
+          {
+            "name": "blue_soul_equipped_id",
+            "addr": 78430,
+            "width": 1,
+            "level": "gameplay",
+            "note": "同一战斗初态只改蓝魂槽，R 键产生实帧差异；不据此认定中文菜单名或全部蓝魂身份。"
+          },
+          {
+            "name": "current_mp",
+            "addr": 78448,
+            "width": 2,
+            "level": "consumption",
+            "note": "目标蓝魂激活后 MP 低于 80，空槽保持 80；不固定具体消耗值。"
+          }
+        ],
+        "id": "blue_soul_13_verify_vs_empty"
+      },
+      {
+        "kind": "scenario",
+        "base_state": "blue_buer",
+        "arms": [
+          {
+            "name": "blue_22",
+            "steps": [
+              {
+                "macro": "-",
+                "extra": 0,
+                "patches": [
+                  {
+                    "addr": 78430,
+                    "value": 22
+                  }
+                ],
+                "expect": [
+                  {
+                    "addr": 78430,
+                    "value": 22
+                  },
+                  {
+                    "addr": 78448,
+                    "width": 2,
+                    "value": 80
+                  }
+                ],
+                "screen": {
+                  "reference": "$base",
+                  "relation": "equal"
+                }
+              },
+              {
+                "state": "$previous",
+                "macro": "@guardian_120",
+                "extra": 119,
+                "capture_frames": 120,
+                "expect": [
+                  {
+                    "addr": 78430,
+                    "value": 22
+                  },
+                  {
+                    "addr": 78448,
+                    "width": 2,
+                    "op": "<",
+                    "value": 80
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "blue0",
+            "steps": [
+              {
+                "macro": "-",
+                "extra": 0,
+                "patches": [
+                  {
+                    "addr": 78430,
+                    "value": 0
+                  }
+                ],
+                "expect": [
+                  {
+                    "addr": 78430,
+                    "value": 0
+                  },
+                  {
+                    "addr": 78448,
+                    "width": 2,
+                    "value": 80
+                  }
+                ],
+                "screen": {
+                  "reference": "$base",
+                  "relation": "equal"
+                }
+              },
+              {
+                "state": "$previous",
+                "macro": "@guardian_120",
+                "extra": 119,
+                "capture_frames": 120,
+                "expect": [
+                  {
+                    "addr": 78430,
+                    "value": 0
+                  },
+                  {
+                    "addr": 78448,
+                    "width": 2,
+                    "value": 80
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "comparisons": [
+          {
+            "left": "blue_22",
+            "right": "blue0",
+            "left_step": 1,
+            "right_step": 1,
+            "relation": "different",
+            "frames": [
+              12,
+              30,
+              60,
+              90,
+              "final"
+            ]
+          }
+        ],
+        "claims": [
+          {
+            "name": "blue_soul_equipped_id",
+            "addr": 78430,
+            "width": 1,
+            "level": "gameplay",
+            "note": "同一战斗初态只改蓝魂槽，R 键产生实帧差异；不据此认定中文菜单名或全部蓝魂身份。"
+          },
+          {
+            "name": "current_mp",
+            "addr": 78448,
+            "width": 2,
+            "level": "consumption",
+            "note": "目标蓝魂激活后 MP 低于 80，空槽保持 80；不固定具体消耗值。"
+          }
+        ],
+        "id": "blue_soul_22_verify_vs_empty"
+      }
+    ]
+  },
+  "base_state": {
+    "name": "blue_buer",
+    "path": "F:\\开源掌机教程\\04-游戏资源库\\TAS输入录像库\\状态资产\\castlevania_aria_gba\\aria_us_40aab076\\r20261125T120000\\states\\blue_buer.state"
+  },
+  "cache_key": "d4b4f6a4126d16e69607e81caaeb2fe032c9be86097ecc26db7722e42b7df803",
+  "arms": {
+    "blue_2": {
+      "steps": [
+        {
+          "index": 0,
+          "source_state": "F:\\开源掌机教程\\04-游戏资源库\\TAS输入录像库\\状态资产\\castlevania_aria_gba\\aria_us_40aab076\\r20261125T120000\\states\\blue_buer.state",
+          "attempt_state": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_blue_soul_verify_shortlist_20261125\\blue_soul_2_verify_vs_empty\\blue_soul_2_verify_vs_empty_blue_2_s00_input.state",
+          "patches": [
+            {
+              "addr": 78430,
+              "value": 2
+            }
+          ],
+          "macro": "-",
+          "frames": 0,
+          "attempt": {
+            "id": 4,
+            "ok": true,
+            "data": "9314"
+          },
+          "shot": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_blue_soul_verify_shortlist_20261125\\blue_soul_2_verify_vs_empty\\blue_soul_2_verify_vs_empty_blue_2_s00.png",
+          "state": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_blue_soul_verify_shortlist_20261125\\blue_soul_2_verify_vs_empty\\blue_soul_2_verify_vs_empty_blue_2_s00.state",
+          "ram": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_blue_soul_verify_shortlist_20261125\\blue_soul_2_verify_vs_empty\\blue_soul_2_verify_vs_empty_blue_2_s00.bin",
+          "expect": [
+            {
+              "addr": 78430,
+              "width": 1,
+              "op": "==",
+              "want": 2,
+              "got": 2,
+              "pass": true
+            },
+            {
+              "addr": 78448,
+              "width": 2,
+              "op": "==",
+              "want": 80,
+              "got": 80,
+              "pass": true
+            }
+          ],
+          "actual_core": "BizHawk.Emulation.Cores.Nintendo.GBA.MGBAHawk",
+          "screen": {
+            "reference": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_blue_soul_verify_shortlist_20261125\\blue_soul_2_verify_vs_empty\\blue_soul_2_verify_vs_empty_base_anchor.png",
+            "relation": "equal",
+            "max_changed_fraction": null,
+            "pass": true,
+            "changed_pixels": 0,
+            "changed_fraction": 0.0,
+            "total_pixels": 38400,
+            "equal": true,
+            "bbox": null
+          }
+        },
+        {
+          "index": 1,
+          "source_state": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_blue_soul_verify_shortlist_20261125\\blue_soul_2_verify_vs_empty\\blue_soul_2_verify_vs_empty_blue_2_s00.state",
+          "attempt_state": "F:/taspipe_scratch/ram_calibration/0126edc7056b34c1/blue_soul_2_verify_vs_empty_blue_2_1.state",
+          "patches": [],
+          "macro": "R",
+          "frames": 120,
+          "attempt": {
+            "id": 5,
+            "ok": true,
+            "data": "9434"
+          },
+          "shot": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_blue_soul_verify_shortlist_20261125\\blue_soul_2_verify_vs_empty\\blue_soul_2_verify_vs_empty_blue_2_s01.png",
+          "state": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_blue_soul_verify_shortlist_20261125\\blue_soul_2_verify_vs_empty\\blue_soul_2_verify_vs_empty_blue_2_s01.state",
+          "ram": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_blue_soul_verify_shortlist_20261125\\blue_soul_2_verify_vs_empty\\blue_soul_2_verify_vs_empty_blue_2_s01.bin",
+          "expect": [
+            {
+              "addr": 78430,
+              "width": 1,
+              "op": "==",
+              "want": 2,
+              "got": 2,
+              "pass": true
+            },
+            {
+              "addr": 78448,
+              "width": 2,
+              "op": "<",
+              "want": 80,
+              "got": 22,
+              "pass": true
+            }
+          ],
+          "actual_core": "BizHawk.Emulation.Cores.Nintendo.GBA.MGBAHawk",
+          "frames_dir": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_blue_soul_verify_shortlist_20261125\\blue_soul_2_verify_vs_empty\\blue_soul_2_verify_vs_empty_blue_2_s01_frames",
+          "captured_frames": 120
+        }
+      ]
+    },
+    "blue0": {
+      "steps": [
+        {
+          "index": 0,
+          "source_state": "F:\\开源掌机教程\\04-游戏资源库\\TAS输入录像库\\状态资产\\castlevania_aria_gba\\aria_us_40aab076\\r20261125T120000\\states\\blue_buer.state",
+          "attempt_state": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_blue_soul_verify_shortlist_20261125\\blue_soul_2_verify_vs_empty\\blue_soul_2_verify_vs_empty_blue0_s00_input.state",
+          "patches": [
+            {
+              "addr": 78430,
+              "value": 0
+            }
+          ],
+          "macro": "-",
+          "frames": 0,
+          "attempt": {
+            "id": 8,
+            "ok": true,
+            "data": "9314"
+          },
+          "shot": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_blue_soul_verify_shortlist_20261125\\blue_soul_2_verify_vs_empty\\blue_soul_2_verify_vs_empty_blue0_s00.png",
+          "state": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_blue_soul_verify_shortlist_20261125\\blue_soul_2_verify_vs_empty\\blue_soul_2_verify_vs_empty_blue0_s00.state",
+          "ram": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_blue_soul_verify_shortlist_20261125\\blue_soul_2_verify_vs_empty\\blue_soul_2_verify_vs_empty_blue0_s00.bin",
+          "expect": [
+            {
+              "addr": 78430,
+              "width": 1,
+              "op": "==",
+              "want": 0,
+              "got": 0,
+              "pass": true
+            },
+            {
+              "addr": 78448,
+              "width": 2,
+              "op": "==",
+              "want": 80,
+              "got": 80,
+              "pass": true
+            }
+          ],
+          "actual_core": "BizHawk.Emulation.Cores.Nintendo.GBA.MGBAHawk",
+          "screen": {
+            "reference": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_blue_soul_verify_shortlist_20261125\\blue_soul_2_verify_vs_empty\\blue_soul_2_verify_vs_empty_base_anchor.png",
+            "relation": "equal",
+            "max_changed_fraction": null,
+            "pass": true,
+            "changed_pixels": 0,
+            "changed_fraction": 0.0,
+            "total_pixels": 38400,
+            "equal": true,
+            "bbox": null
+          }
+        },
+        {
+          "index": 1,
+          "source_state": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_blue_soul_verify_shortlist_20261125\\blue_soul_2_verify_vs_empty\\blue_soul_2_verify_vs_empty_blue0_s00.state",
+          "attempt_state": "F:/taspipe_scratch/ram_calibration/0126edc7056b34c1/blue_soul_2_verify_vs_empty_blue0_1.state",
+          "patches": [],
+          "macro": "R",
+          "frames": 120,
+          "attempt": {
+            "id": 9,
+            "ok": true,
+            "data": "9434"
+          },
+          "shot": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_blue_soul_verify_shortlist_20261125\\blue_soul_2_verify_vs_empty\\blue_soul_2_verify_vs_empty_blue0_s01.png",
+          "state": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_blue_soul_verify_shortlist_20261125\\blue_soul_2_verify_vs_empty\\blue_soul_2_verify_vs_empty_blue0_s01.state",
+          "ram": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_blue_soul_verify_shortlist_20261125\\blue_soul_2_verify_vs_empty\\blue_soul_2_verify_vs_empty_blue0_s01.bin",
+          "expect": [
+            {
+              "addr": 78430,
+              "width": 1,
+              "op": "==",
+              "want": 0,
+              "got": 0,
+              "pass": true
+            },
+            {
+              "addr": 78448,
+              "width": 2,
+              "op": "==",
+              "want": 80,
+              "got": 80,
+              "pass": true
+            }
+          ],
+          "actual_core": "BizHawk.Emulation.Cores.Nintendo.GBA.MGBAHawk",
+          "frames_dir": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_blue_soul_verify_shortlist_20261125\\blue_soul_2_verify_vs_empty\\blue_soul_2_verify_vs_empty_blue0_s01_frames",
+          "captured_frames": 120
+        }
+      ]
+    }
+  },
+  "preparation": [],
+  "evidence": [
+    "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_blue_soul_verify_shortlist_20261125\\blue_soul_2_verify_vs_empty\\blue_soul_2_verify_vs_empty_base_anchor.png",
+    "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_blue_soul_verify_shortlist_20261125\\blue_soul_2_verify_vs_empty\\blue_soul_2_verify_vs_empty_blue0_s00.bin",
+    "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_blue_soul_verify_shortlist_20261125\\blue_soul_2_verify_vs_empty\\blue_soul_2_verify_vs_empty_blue0_s00.png",
+    "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_blue_soul_verify_shortlist_20261125\\blue_soul_2_verify_vs_empty\\blue_soul_2_verify_vs_empty_blue0_s00.state",
+    "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_blue_soul_verify_shortlist_20261125\\blue_soul_2_verify_vs_empty\\blue_soul_2_verify_vs_empty_blue0_s00_input.state",
+    "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_blue_soul_verify_shortlist_20261125\\blue_soul_2_verify_vs_empty\\blue_soul_2_verify_vs_empty_blue0_s01.bin",
+    "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_blue_soul_verify_shortlist_20261125\\blue_soul_2_verify_vs_empty\\blue_soul_2_verify_vs_empty_blue0_s01.png",
+    "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_blue_soul_verify_shortlist_20261125\\blue_soul_2_verify_vs_empty\\blue_soul_2_verify_vs_empty_blue0_s01.state",
+    "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_blue_soul_verify_shortlist_20261125\\blue_soul_2_verify_vs_empty\\blue_soul_2_verify_vs_empty_blue0_s01_frames\\f0012.png",
+    "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_blue_soul_verify_shortlist_20261125\\blue_soul_2_verify_vs_empty\\blue_soul_2_verify_vs_empty_blue0_s01_frames\\f0030.png",
+    "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_blue_soul_verify_shortlist_20261125\\blue_soul_2_verify_vs_empty\\blue_soul_2_verify_vs_empty_blue0_s01_frames\\f0060.png",
+    "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_blue_soul_verify_shortlist_20261125\\blue_soul_2_verify_vs_empty\\blue_soul_2_verify_vs_empty_blue0_s01_frames\\f0090.png",
+    "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_blue_soul_verify_shortlist_20261125\\blue_soul_2_verify_vs_empty\\blue_soul_2_verify_vs_empty_blue_2_s00.bin",
+    "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_blue_soul_verify_shortlist_20261125\\blue_soul_2_verify_vs_empty\\blue_soul_2_verify_vs_empty_blue_2_s00.png",
+    "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_blue_soul_verify_shortlist_20261125\\blue_soul_2_verify_vs_empty\\blue_soul_2_verify_vs_empty_blue_2_s00.state",
+    "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_blue_soul_verify_shortlist_20261125\\blue_soul_2_verify_vs_empty\\blue_soul_2_verify_vs_empty_blue_2_s00_input.state",
+    "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_blue_soul_verify_shortlist_20261125\\blue_soul_2_verify_vs_empty\\blue_soul_2_verify_vs_empty_blue_2_s01.bin",
+    "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_blue_soul_verify_shortlist_20261125\\blue_soul_2_verify_vs_empty\\blue_soul_2_verify_vs_empty_blue_2_s01.png",
+    "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_blue_soul_verify_shortlist_20261125\\blue_soul_2_verify_vs_empty\\blue_soul_2_verify_vs_empty_blue_2_s01.state",
+    "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_blue_soul_verify_shortlist_20261125\\blue_soul_2_verify_vs_empty\\blue_soul_2_verify_vs_empty_blue_2_s01_frames\\f0012.png",
+    "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_blue_soul_verify_shortlist_20261125\\blue_soul_2_verify_vs_empty\\blue_soul_2_verify_vs_empty_blue_2_s01_frames\\f0030.png",
+    "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_blue_soul_verify_shortlist_20261125\\blue_soul_2_verify_vs_empty\\blue_soul_2_verify_vs_empty_blue_2_s01_frames\\f0060.png",
+    "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_blue_soul_verify_shortlist_20261125\\blue_soul_2_verify_vs_empty\\blue_soul_2_verify_vs_empty_blue_2_s01_frames\\f0090.png",
+    "F:\\开源掌机教程\\04-游戏资源库\\TAS输入录像库\\状态资产\\castlevania_aria_gba\\aria_us_40aab076\\r20261125T120000\\states\\blue_buer.state"
+  ],
+  "emulator_slot": {
+    "root": "F:\\taspipe_scratch\\tas_matrix_20261125_034934_34760_0df3e72c",
+    "bizhawk": "F:\\taspipe_scratch\\tas_matrix_20261125_034934_34760_0df3e72c\\slots\\36bbfaa504d0\\slot_0\\BizHawk-2.11.1",
+    "system": "GBA",
+    "core": "mGBA"
+  },
+  "comparisons": [
+    {
+      "left": "blue_2",
+      "right": "blue0",
+      "relation": "different",
+      "frames": [
+        {
+          "frame": 12,
+          "left": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_blue_soul_verify_shortlist_20261125\\blue_soul_2_verify_vs_empty\\blue_soul_2_verify_vs_empty_blue_2_s01_frames\\f0012.png",
+          "right": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_blue_soul_verify_shortlist_20261125\\blue_soul_2_verify_vs_empty\\blue_soul_2_verify_vs_empty_blue0_s01_frames\\f0012.png",
+          "pass": true,
+          "changed_pixels": 525,
+          "changed_fraction": 0.013671875,
+          "total_pixels": 38400,
+          "equal": false,
+          "bbox": [
+            86,
+            11,
+            137,
+            144
+          ]
+        },
+        {
+          "frame": 30,
+          "left": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_blue_soul_verify_shortlist_20261125\\blue_soul_2_verify_vs_empty\\blue_soul_2_verify_vs_empty_blue_2_s01_frames\\f0030.png",
+          "right": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_blue_soul_verify_shortlist_20261125\\blue_soul_2_verify_vs_empty\\blue_soul_2_verify_vs_empty_blue0_s01_frames\\f0030.png",
+          "pass": true,
+          "changed_pixels": 442,
+          "changed_fraction": 0.011510416666666667,
+          "total_pixels": 38400,
+          "equal": false,
+          "bbox": [
+            83,
+            11,
+            161,
+            144
+          ]
+        },
+        {
+          "frame": 60,
+          "left": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_blue_soul_verify_shortlist_20261125\\blue_soul_2_verify_vs_empty\\blue_soul_2_verify_vs_empty_blue_2_s01_frames\\f0060.png",
+          "right": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_blue_soul_verify_shortlist_20261125\\blue_soul_2_verify_vs_empty\\blue_soul_2_verify_vs_empty_blue0_s01_frames\\f0060.png",
+          "pass": true,
+          "changed_pixels": 489,
+          "changed_fraction": 0.012734375,
+          "total_pixels": 38400,
+          "equal": false,
+          "bbox": [
+            72,
+            11,
+            128,
+            144
+          ]
+        },
+        {
+          "frame": 90,
+          "left": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_blue_soul_verify_shortlist_20261125\\blue_soul_2_verify_vs_empty\\blue_soul_2_verify_vs_empty_blue_2_s01_frames\\f0090.png",
+          "right": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_blue_soul_verify_shortlist_20261125\\blue_soul_2_verify_vs_empty\\blue_soul_2_verify_vs_empty_blue0_s01_frames\\f0090.png",
+          "pass": true,
+          "changed_pixels": 523,
+          "changed_fraction": 0.013619791666666667,
+          "total_pixels": 38400,
+          "equal": false,
+          "bbox": [
+            60,
+            11,
+            128,
+            144
+          ]
+        },
+        {
+          "frame": "final",
+          "left": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_blue_soul_verify_shortlist_20261125\\blue_soul_2_verify_vs_empty\\blue_soul_2_verify_vs_empty_blue_2_s01.png",
+          "right": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_blue_soul_verify_shortlist_20261125\\blue_soul_2_verify_vs_empty\\blue_soul_2_verify_vs_empty_blue0_s01.png",
+          "pass": true,
+          "changed_pixels": 561,
+          "changed_fraction": 0.014609375,
+          "total_pixels": 38400,
+          "equal": false,
+          "bbox": [
+            49,
+            11,
+            129,
+            144
+          ]
+        }
+      ],
+      "pass": true
+    }
+  ],
+  "checks": {
+    "preparation": true,
+    "expectations": true,
+    "comparisons": true,
+    "frame_counts": true,
+    "screen_anchors": true,
+    "gba_core": true
+  },
+  "status": "pass",
+  "verified_fields": [
+    {
+      "name": "blue_soul_equipped_id",
+      "addr": 78430,
+      "width": 1,
+      "level": "gameplay",
+      "note": "同一战斗初态只改蓝魂槽，R 键产生实帧差异；不据此认定中文菜单名或全部蓝魂身份。",
+      "case_id": "blue_soul_2_verify_vs_empty"
+    },
+    {
+      "name": "current_mp",
+      "addr": 78448,
+      "width": 2,
+      "level": "consumption",
+      "note": "目标蓝魂激活后 MP 低于 80，空槽保持 80；不固定具体消耗值。",
+      "case_id": "blue_soul_2_verify_vs_empty"
+    }
+  ]
+}

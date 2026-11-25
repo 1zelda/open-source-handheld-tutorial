@@ -1,0 +1,175 @@
+{
+  "schema_version": "ram_calibration/1.0",
+  "report": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_blue_soul_verify_shortlist_20261125\\blue_soul_4_verify_vs_empty\\report.json",
+  "report_sha256": "3bd84b4cabd5b7530e5fa711f5a6af08c3bdf3a7a98ba801a5137de5e126f260",
+  "status": "pass",
+  "mode": "verify",
+  "game_id": "castlevania_aria_gba",
+  "case_id": "blue_soul_4_verify_vs_empty",
+  "cache_key": "d4b4f6a4126d16e69607e81caaeb2fe032c9be86097ecc26db7722e42b7df803",
+  "recipe_sha256": "abe79ab83846a76a4e1d245dedc8bcb8eee28844aefe1da51487557b42900ccc",
+  "verified_fields": [
+    {
+      "name": "blue_soul_equipped_id",
+      "addr": 78430,
+      "width": 1,
+      "level": "gameplay",
+      "note": "同一战斗初态只改蓝魂槽，R 键产生实帧差异；不据此认定中文菜单名或全部蓝魂身份。",
+      "case_id": "blue_soul_4_verify_vs_empty"
+    },
+    {
+      "name": "current_mp",
+      "addr": 78448,
+      "width": 2,
+      "level": "consumption",
+      "note": "目标蓝魂激活后 MP 低于 80，空槽保持 80；不固定具体消耗值。",
+      "case_id": "blue_soul_4_verify_vs_empty"
+    }
+  ],
+  "evidence": [
+    {
+      "source": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_blue_soul_verify_shortlist_20261125\\blue_soul_4_verify_vs_empty\\blue_soul_4_verify_vs_empty_base_anchor.png",
+      "path": "evidence/000_blue_soul_4_verify_vs_empty_base_anchor.png",
+      "sha256": "0f757788c8b71ff9015102d5e4738e314658729896ef430d49b41e0baff10562",
+      "bytes": 14946
+    },
+    {
+      "source": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_blue_soul_verify_shortlist_20261125\\blue_soul_4_verify_vs_empty\\blue_soul_4_verify_vs_empty_blue0_s00.bin",
+      "path": "evidence/001_blue_soul_4_verify_vs_empty_blue0_s00.bin",
+      "sha256": "5062b950ff5d7f385b268f7be9d67e7837c8f047a1cabf6a94638f71ada11d34",
+      "bytes": 128
+    },
+    {
+      "source": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_blue_soul_verify_shortlist_20261125\\blue_soul_4_verify_vs_empty\\blue_soul_4_verify_vs_empty_blue0_s00.png",
+      "path": "evidence/002_blue_soul_4_verify_vs_empty_blue0_s00.png",
+      "sha256": "0f757788c8b71ff9015102d5e4738e314658729896ef430d49b41e0baff10562",
+      "bytes": 14946
+    },
+    {
+      "source": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_blue_soul_verify_shortlist_20261125\\blue_soul_4_verify_vs_empty\\blue_soul_4_verify_vs_empty_blue0_s00.state",
+      "path": "evidence/003_blue_soul_4_verify_vs_empty_blue0_s00.state",
+      "sha256": "e6abc55fba9635036c3ad507efbdee8aaec3148f824e2b834bc32583f5c2329e",
+      "bytes": 70421
+    },
+    {
+      "source": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_blue_soul_verify_shortlist_20261125\\blue_soul_4_verify_vs_empty\\blue_soul_4_verify_vs_empty_blue0_s00_input.state",
+      "path": "evidence/004_blue_soul_4_verify_vs_empty_blue0_s00_input.state",
+      "sha256": "1ebd734b6c93067decf39d25748dff4f7ed3dfedbd9129ab844f458a874631f0",
+      "bytes": 70421
+    },
+    {
+      "source": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_blue_soul_verify_shortlist_20261125\\blue_soul_4_verify_vs_empty\\blue_soul_4_verify_vs_empty_blue0_s01.bin",
+      "path": "evidence/005_blue_soul_4_verify_vs_empty_blue0_s01.bin",
+      "sha256": "5062b950ff5d7f385b268f7be9d67e7837c8f047a1cabf6a94638f71ada11d34",
+      "bytes": 128
+    },
+    {
+      "source": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_blue_soul_verify_shortlist_20261125\\blue_soul_4_verify_vs_empty\\blue_soul_4_verify_vs_empty_blue0_s01.png",
+      "path": "evidence/006_blue_soul_4_verify_vs_empty_blue0_s01.png",
+      "sha256": "58783bf5be33267279153ae156a19fa2a397ff5d3e89f75198444a904a966c7a",
+      "bytes": 15025
+    },
+    {
+      "source": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_blue_soul_verify_shortlist_20261125\\blue_soul_4_verify_vs_empty\\blue_soul_4_verify_vs_empty_blue0_s01.state",
+      "path": "evidence/007_blue_soul_4_verify_vs_empty_blue0_s01.state",
+      "sha256": "7edc2cd5e7e6b38c415037989acdc1f3dc11ad0727a936b02def7ea443937415",
+      "bytes": 70445
+    },
+    {
+      "source": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_blue_soul_verify_shortlist_20261125\\blue_soul_4_verify_vs_empty\\blue_soul_4_verify_vs_empty_blue0_s01_frames\\f0012.png",
+      "path": "evidence/008_f0012.png",
+      "sha256": "ee2f667bba54a43319a63d93702759929b7a83998492da9b2113f5338187a7e7",
+      "bytes": 14969
+    },
+    {
+      "source": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_blue_soul_verify_shortlist_20261125\\blue_soul_4_verify_vs_empty\\blue_soul_4_verify_vs_empty_blue0_s01_frames\\f0030.png",
+      "path": "evidence/009_f0030.png",
+      "sha256": "1d5facf59c66016ffc643571a7be9fba02831b431fd9df1fddb82af4efafd9ba",
+      "bytes": 15001
+    },
+    {
+      "source": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_blue_soul_verify_shortlist_20261125\\blue_soul_4_verify_vs_empty\\blue_soul_4_verify_vs_empty_blue0_s01_frames\\f0060.png",
+      "path": "evidence/010_f0060.png",
+      "sha256": "9f52d957fd12456e251d72d97e9b01f98dd089f7e94d479e01528fbc3ecd8c24",
+      "bytes": 15019
+    },
+    {
+      "source": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_blue_soul_verify_shortlist_20261125\\blue_soul_4_verify_vs_empty\\blue_soul_4_verify_vs_empty_blue0_s01_frames\\f0090.png",
+      "path": "evidence/011_f0090.png",
+      "sha256": "e0c5e58a16c9d2380c4b05f6f8585b32e02793b79e18bc66e0ad85c8f581a855",
+      "bytes": 15016
+    },
+    {
+      "source": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_blue_soul_verify_shortlist_20261125\\blue_soul_4_verify_vs_empty\\blue_soul_4_verify_vs_empty_blue_4_s00.bin",
+      "path": "evidence/012_blue_soul_4_verify_vs_empty_blue_4_s00.bin",
+      "sha256": "decff71bd29e19fc9a6c07e3e876d12985771861aa74ed576fff9eb9d56e0007",
+      "bytes": 128
+    },
+    {
+      "source": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_blue_soul_verify_shortlist_20261125\\blue_soul_4_verify_vs_empty\\blue_soul_4_verify_vs_empty_blue_4_s00.png",
+      "path": "evidence/013_blue_soul_4_verify_vs_empty_blue_4_s00.png",
+      "sha256": "0f757788c8b71ff9015102d5e4738e314658729896ef430d49b41e0baff10562",
+      "bytes": 14946
+    },
+    {
+      "source": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_blue_soul_verify_shortlist_20261125\\blue_soul_4_verify_vs_empty\\blue_soul_4_verify_vs_empty_blue_4_s00.state",
+      "path": "evidence/014_blue_soul_4_verify_vs_empty_blue_4_s00.state",
+      "sha256": "c2f1b16e44b5889cf3b7e8279eb8b06b7bb498c66cf0e48f46a7899043ddebc8",
+      "bytes": 70422
+    },
+    {
+      "source": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_blue_soul_verify_shortlist_20261125\\blue_soul_4_verify_vs_empty\\blue_soul_4_verify_vs_empty_blue_4_s00_input.state",
+      "path": "evidence/015_blue_soul_4_verify_vs_empty_blue_4_s00_input.state",
+      "sha256": "c2f1b16e44b5889cf3b7e8279eb8b06b7bb498c66cf0e48f46a7899043ddebc8",
+      "bytes": 70422
+    },
+    {
+      "source": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_blue_soul_verify_shortlist_20261125\\blue_soul_4_verify_vs_empty\\blue_soul_4_verify_vs_empty_blue_4_s01.bin",
+      "path": "evidence/016_blue_soul_4_verify_vs_empty_blue_4_s01.bin",
+      "sha256": "b1221ed743cfeac877184791c4fbfab4c4fd3b1979857e8f1b2f635d93579e84",
+      "bytes": 128
+    },
+    {
+      "source": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_blue_soul_verify_shortlist_20261125\\blue_soul_4_verify_vs_empty\\blue_soul_4_verify_vs_empty_blue_4_s01.png",
+      "path": "evidence/017_blue_soul_4_verify_vs_empty_blue_4_s01.png",
+      "sha256": "0026be22f8422477ac420c92c58197d1ff9c2f35500a157e0d2e4425d90abe57",
+      "bytes": 15234
+    },
+    {
+      "source": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_blue_soul_verify_shortlist_20261125\\blue_soul_4_verify_vs_empty\\blue_soul_4_verify_vs_empty_blue_4_s01.state",
+      "path": "evidence/018_blue_soul_4_verify_vs_empty_blue_4_s01.state",
+      "sha256": "5d3f28dd65555b1eb0d3150533686015eafc2d95351ea43b8fbac5d5d7fd9fa4",
+      "bytes": 71551
+    },
+    {
+      "source": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_blue_soul_verify_shortlist_20261125\\blue_soul_4_verify_vs_empty\\blue_soul_4_verify_vs_empty_blue_4_s01_frames\\f0012.png",
+      "path": "evidence/019_f0012.png",
+      "sha256": "5ee56714c49f3fdfced2bdc1a1e4816a81e2fb3b5340af00d31a09e7c09c8103",
+      "bytes": 15067
+    },
+    {
+      "source": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_blue_soul_verify_shortlist_20261125\\blue_soul_4_verify_vs_empty\\blue_soul_4_verify_vs_empty_blue_4_s01_frames\\f0030.png",
+      "path": "evidence/020_f0030.png",
+      "sha256": "7d609b4aaf8ef1082fbb716f3527e47e5ac5e78e912c90ee0fd49dd02d4e3bac",
+      "bytes": 15290
+    },
+    {
+      "source": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_blue_soul_verify_shortlist_20261125\\blue_soul_4_verify_vs_empty\\blue_soul_4_verify_vs_empty_blue_4_s01_frames\\f0060.png",
+      "path": "evidence/021_f0060.png",
+      "sha256": "1258fa4ea0da06abf8666f63a0909ca167f32df9f277a3cfa2e537fe8d3da0cf",
+      "bytes": 15228
+    },
+    {
+      "source": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_blue_soul_verify_shortlist_20261125\\blue_soul_4_verify_vs_empty\\blue_soul_4_verify_vs_empty_blue_4_s01_frames\\f0090.png",
+      "path": "evidence/022_f0090.png",
+      "sha256": "d25b899d6b147818dd05084a0662c16fea6ca2c2b6525cd8d198f0c2a6dec6e6",
+      "bytes": 15317
+    },
+    {
+      "source": "F:\\开源掌机教程\\04-游戏资源库\\TAS输入录像库\\状态资产\\castlevania_aria_gba\\aria_us_40aab076\\r20261125T120000\\states\\blue_buer.state",
+      "path": "evidence/023_blue_buer.state",
+      "sha256": "8a8b1a53ebfd2d61c7bfb1ed5ee429cff5e6c0d98d17d31fa83071349295166c",
+      "bytes": 70422
+    }
+  ]
+}

@@ -1,0 +1,228 @@
+{
+  "schema_version": "gameplay_binding_preflight_fingerprints/1.0",
+  "generated_at": "2026-11-25T15:01:39.848541+00:00",
+  "code": {
+    "sources_audit": {
+      "path": "_工具脚本/taspipe/sources.py",
+      "bytes": 47214,
+      "sha256": "fc47682d686f7c04b7fcb5c74d46a0760da4c5a7e4258358442dbd4958e2704c",
+      "role": "代码"
+    },
+    "sources_selftest_gates": {
+      "path": "_工具脚本/taspipe/sources_selftest_gates.py",
+      "bytes": 30271,
+      "sha256": "c5532152b62c66a4d3bad5582ec5efd4374203b58a8c906bba9b5691e8bc693a",
+      "role": "代码"
+    },
+    "kb": {
+      "path": "_工具脚本/taspipe/kb.py",
+      "bytes": 102100,
+      "sha256": "cf9d69aa40329b9e1ff4b2d086abbddf54de9ea89ab581c093c3df1ab8463264",
+      "role": "代码"
+    },
+    "kb_selftest_gates": {
+      "path": "_工具脚本/taspipe/kb_selftest_gates.py",
+      "bytes": 225465,
+      "sha256": "b06212a5bd704a779a946eef578661fab3843f78c130aac57e5a0d3874656d28",
+      "role": "代码"
+    },
+    "cross_platform_gates": {
+      "path": "_工具脚本/taspipe/cross_platform_selftest_gates.py",
+      "bytes": 16963,
+      "sha256": "887dfe6631c5860c1e68a148d4f060c67f909708157e1847e8c6a4e232cb31bc",
+      "role": "代码"
+    },
+    "showcase": {
+      "path": "_工具脚本/taspipe/showcase.py",
+      "bytes": 56906,
+      "sha256": "947c7949a8fc1aeded5d5255286a08194b269f40427f986977a7472b502d3591",
+      "role": "代码"
+    },
+    "audit_gameplay": {
+      "path": "知识库P1_20261118/kb_final_20261125_gameplay_binding/audit_gameplay_verify_evidence_20261125.py",
+      "bytes": 10447,
+      "sha256": "cfc4fd116835d800761ff2de13ff022c7b108b80e35ff47fb1d16f557e04d489",
+      "role": "代码"
+    },
+    "bind_gameplay": {
+      "path": "知识库P1_20261118/kb_final_20261125_gameplay_binding/bind_gameplay_verify_evidence_20261125.py",
+      "bytes": 11526,
+      "sha256": "5e5b8cd1790c22b64c094259dc0264530951593bddf9a434c39ba6b6c6235a71",
+      "role": "代码"
+    },
+    "verify_gameplay": {
+      "path": "知识库P1_20261118/kb_final_20261125_gameplay_binding/verify_gameplay_binding_20261125.py",
+      "bytes": 5788,
+      "sha256": "669d13174ec98db8ad86c2aff53dcbcb438e5eb2d511e92d91872b30ff1491e7",
+      "role": "代码"
+    },
+    "prepare_delivery": {
+      "path": "知识库P1_20261118/kb_final_20261125_gameplay_binding/prepare_gameplay_binding_delivery_20261125.py",
+      "bytes": 8439,
+      "sha256": "2756e4c4056430d84f9440e56870020363e3550fa2492465114bc6b64121c05b",
+      "role": "代码"
+    },
+    "build_report": {
+      "path": "知识库P1_20261118/kb_final_20261125_gameplay_binding/build_report_gameplay_binding_20261125.py",
+      "bytes": 10335,
+      "sha256": "d538e68f067abf67acefb959c0247f583feeeac9946a936a21012ffcd0e43193",
+      "role": "代码"
+    },
+    "render_qc": {
+      "path": "知识库P1_20261118/kb_final_20261125_gameplay_binding/render_qc_gameplay_binding_20261125.py",
+      "bytes": 8661,
+      "sha256": "3bb848805480ca2b9fd956508195f09a8f9c73c029a048d17c95d1d2163e9a46",
+      "role": "代码"
+    },
+    "finalize_delivery": {
+      "path": "知识库P1_20261118/kb_final_20261125_gameplay_binding/finalize_gameplay_binding_delivery_20261125.py",
+      "bytes": 18142,
+      "sha256": "042e0af918f4caf121e7b81b8ed611dbd458aaaad07a2cbf41b2ec3cfc6a2408",
+      "role": "代码"
+    }
+  },
+  "data": {
+    "source_registry": {
+      "path": "_工具脚本/taspipe/游戏包/来源库/sources.json",
+      "bytes": 81937,
+      "sha256": "da9a6d361e9588b3c5e49bfc0d2bbeac591f3da5d8b0941c316bcd5e071e91f7",
+      "role": "数据"
+    },
+    "source_catalog_md": {
+      "path": "_工具脚本/taspipe/游戏包/复古游戏文献来源库.md",
+      "bytes": 67775,
+      "sha256": "a9ef6ab6e73b3b09b846b248a22161f358d6776614a8472fdb7dea9907d63893",
+      "role": "数据"
+    },
+    "menu_catalog": {
+      "path": "_工具脚本/taspipe/游戏包/gba_aria_of_sorrow_souls.menu_catalog.json",
+      "bytes": 361311,
+      "sha256": "11c828e027204fc5c1cba67b47670be8702e5f745d48d86581b0939be6979da4",
+      "role": "数据"
+    },
+    "corpus_map": {
+      "path": "_工具脚本/taspipe/游戏包/知识库/corpus_map.json",
+      "bytes": 53417,
+      "sha256": "6ee6446b03c56a7d83bc3c109a730ee779ec03d324c2d88c3d5442b79b3c1d99",
+      "role": "数据"
+    },
+    "index": {
+      "path": "_工具脚本/taspipe/游戏包/知识库/index.json",
+      "bytes": 3766455,
+      "sha256": "05907ec85146f386325285ccd4d2008d8bc28d50d8ec4e2461c14a9351f03f7d",
+      "role": "数据"
+    },
+    "gameplay_binding": {
+      "path": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/gameplay_verify_binding_20261125/gameplay_evidence_binding_20261125.json",
+      "bytes": 56568,
+      "sha256": "80f262c7305b63a7983cd4bf15f4e2ee4d619bc36a70d3e949d0a66adc00721b",
+      "role": "数据"
+    },
+    "gameplay_inventory": {
+      "path": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/gameplay_verify_binding_20261125/artifact_inventory.json",
+      "bytes": 154259,
+      "sha256": "bd670f75c033019d5cb464f00f412d9643e9199cdfe5a9205a5bffd87ac4657c",
+      "role": "数据"
+    },
+    "gameplay_audit": {
+      "path": "知识库P1_20261118/kb_final_20261125_gameplay_binding/gameplay_evidence_audit_20261125.json",
+      "bytes": 53443,
+      "sha256": "d24cd089784213fe0048a55a8db8fe47a0ba4cace7926dd325f7c5ce56fa3d4d",
+      "role": "数据"
+    },
+    "gameplay_verification": {
+      "path": "知识库P1_20261118/kb_final_20261125_gameplay_binding/gameplay_binding_verification_20261125.json",
+      "bytes": 99181,
+      "sha256": "cdaa88340a35d5f1983f0d1f2382a77887cf231b656d359a0214ed663cffb542",
+      "role": "数据"
+    },
+    "source_audit": {
+      "path": "知识库P1_20261118/kb_final_20261125_gameplay_binding/source_audit_gameplay_binding_20261125.json",
+      "bytes": 15102,
+      "sha256": "16ed808bd793b532920c72fc812fe3ab4ef3c08689ffdb571713a9dceb67ba2d",
+      "role": "数据"
+    },
+    "kb_audit": {
+      "path": "知识库P1_20261118/kb_final_20261125_gameplay_binding/kb_audit_gameplay_binding_20261125.json",
+      "bytes": 21848,
+      "sha256": "7705f824c9f62b632699db64986ca51b49dbc4d932e460ea42d11e651613657d",
+      "role": "数据"
+    },
+    "coverage": {
+      "path": "知识库P1_20261118/kb_final_20261125_gameplay_binding/coverage_gameplay_binding_20261125.json",
+      "bytes": 44355,
+      "sha256": "981914e559a1fc3a4cdf08a74af93115c43c56da5f32592ec9262e89f86deb5e",
+      "role": "数据"
+    }
+  },
+  "gates": {
+    "project_selftest": [
+      1551,
+      1551
+    ],
+    "kb_selftest": [
+      336,
+      336
+    ],
+    "cross_platform_selftest": [
+      33,
+      33
+    ],
+    "sources_selftest": [
+      74,
+      74
+    ],
+    "topic_selftest": [
+      166,
+      166
+    ]
+  },
+  "protected_delivery": {
+    "checked": 1301,
+    "unchanged": 1301
+  },
+  "source_audit": {
+    "counts": {
+      "pass": 8,
+      "fail": 0,
+      "inconclusive": 1,
+      "sources": 104,
+      "packs": 26,
+      "elements_checked": 208,
+      "elements_supported": 208
+    },
+    "weak_total": 141,
+    "menu_weak": 95,
+    "detector_weak": 6
+  },
+  "kb_audit": {
+    "pass": 6,
+    "fail": 0,
+    "inconclusive": 3,
+    "entries": 75,
+    "revisions": 15,
+    "chunks": 826
+  },
+  "coverage": {
+    "present_unverified": 6,
+    "registered_empty": 9,
+    "verified": 11
+  },
+  "gameplay": {
+    "elements": 114,
+    "verified": 19,
+    "false": 95,
+    "detector_false": 114,
+    "copied_files": 519,
+    "copied_bytes": 14958586
+  },
+  "production_defaults": {
+    "top_window": 3,
+    "fragment_policy": null,
+    "fact_selector": null,
+    "strict_production_default": false,
+    "dense_production_default": false,
+    "gba_platform_gate": false,
+    "commercial_rom_or_bios_ingested": false
+  }
+}

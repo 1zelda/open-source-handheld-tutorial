@@ -1,0 +1,98 @@
+{
+  "schema_version": 1,
+  "checked_at": "2026-11-26T02:51:07.840045+08:00",
+  "status": "blocked",
+  "ready_to_send": false,
+  "sending_performed": false,
+  "external_network_calls": 0,
+  "receipt": "F:\\开源掌机教程\\_工具脚本\\taspipe\\游戏包\\电竞事实库\\A1_授权申请发送回执_复核_2026-11-25.json",
+  "policy": "F:\\开源掌机教程\\_工具脚本\\taspipe\\游戏包\\电竞事实库\\source_policy_v1.json",
+  "drafts": [
+    {
+      "id": "A1_GRID",
+      "review_copy": "F:\\开源掌机教程\\_工具脚本\\taspipe\\游戏包\\电竞事实库\\A1_GRID_商用授权咨询_发送复核_2026-11-25.eml",
+      "defects": [],
+      "policy": {
+        "source_id": "E05",
+        "commercial_use": "denied",
+        "automated_access": "unknown",
+        "local_retention": "unknown"
+      },
+      "to": [
+        "sales@grid.gg"
+      ],
+      "subject": "Commercial licensing enquiry - local esports fact-checking knowledge base",
+      "from_present": false,
+      "x_unsent": "1",
+      "body_chars": 2030,
+      "bytes": 2319,
+      "sha256": "dd851fceecbd26727429ed657834da8d4d0baa31500a9353e5f79daf35ad09a6"
+    },
+    {
+      "id": "A1_Liquipedia",
+      "review_copy": "F:\\开源掌机教程\\_工具脚本\\taspipe\\游戏包\\电竞事实库\\A1_Liquipedia_LPDB授权咨询_发送复核_2026-11-25.eml",
+      "defects": [],
+      "policy": {
+        "source_id": "E06",
+        "commercial_use": "unknown",
+        "automated_access": "unknown",
+        "local_retention": "unknown"
+      },
+      "to": [
+        "contact@liquipedia.net"
+      ],
+      "subject": "LPDB access and commercial use enquiry - local fact-checking knowledge base",
+      "from_present": false,
+      "x_unsent": "1",
+      "body_chars": 1633,
+      "bytes": 1909,
+      "sha256": "6687698a2c3549555d9183cdfe4155627498082195ca0398fb8299e375374f70"
+    },
+    {
+      "id": "A1_OpenDota",
+      "review_copy": "F:\\开源掌机教程\\_工具脚本\\taspipe\\游戏包\\电竞事实库\\A1_OpenDota_数据用途咨询_发送复核_2026-11-25.eml",
+      "defects": [],
+      "policy": {
+        "source_id": "E09",
+        "commercial_use": "unknown",
+        "automated_access": "allowed",
+        "local_retention": "unknown"
+      },
+      "to": [
+        "support@opendota.com"
+      ],
+      "subject": "OpenDota API data use and commercial licensing enquiry",
+      "from_present": false,
+      "x_unsent": "1",
+      "body_chars": 1534,
+      "bytes": 1791,
+      "sha256": "417c85ffd4a6a3951ce1be8dd60dcc15e5dd7a2b59b6693f09353971a21896d2"
+    }
+  ],
+  "identity_inputs": {
+    "channel_url": null,
+    "channel_uid": null,
+    "channel_name": null,
+    "signature_or_legal_name": null,
+    "contact_email": null,
+    "note": "项目内唯一 B站 UID 296732 是 DOTA2 官方参考账号，不是用户频道，未采用。"
+  },
+  "account_snapshot": {
+    "source": "receipt_snapshot",
+    "outlook_accounts": 0,
+    "last_probe_at": "2026-11-25"
+  },
+  "defects": [],
+  "identity_blockers": [
+    "identity_missing:channel_url",
+    "identity_missing:signature_or_legal_name",
+    "identity_missing:contact_email"
+  ],
+  "blockers": [
+    "identity_missing:channel_url",
+    "identity_missing:signature_or_legal_name",
+    "identity_missing:contact_email",
+    "sender_account_missing"
+  ],
+  "next_action": "补齐频道 URL、署名/主体名称、联系邮箱并配置真实发件账号；重新运行本脚本后，人工核对 From 与正文再发送。"
+}

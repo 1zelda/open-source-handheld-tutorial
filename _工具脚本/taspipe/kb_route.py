@@ -91,7 +91,7 @@ DOMAINS = {
 
 # 意图判定顺序敏感：value 先于 count（"SHA1是多少"是取值不是数数）
 INTENT_RULES = [
-    ("value_lookup", re.compile(r"CRC32|crc32|SHA1|sha1|指纹|校验和|哈希|多少字节|文件大小|内存地址|地址是")),
+    ("value_lookup", re.compile(r"CRC32|crc32|SHA1|sha1|指纹|校验和|哈希|多少字节|文件大小|内存地址|地址是|(?:速度|坐标)(?:是)?多少")),
     ("count", re.compile(r"多少|几种|几名|几场|几个|几支|总数|一共")),
     ("identity", re.compile(r"哪个|哪支|哪位|谁|什么位置|位置(?:是|为)?什么|什么角色|签名")),
     ("yesno", re.compile(r"能不能|可不可以|能否|是否|会不会|关不关|关得掉")),

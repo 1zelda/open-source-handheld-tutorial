@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "status": "evaluated_isolated_v2_manual",
-  "taken_at": "2026-11-25T12:01:03Z",
+  "taken_at": "2026-11-25T14:24:35Z",
   "candidate_revision": "megaman2_nes_us_manual",
   "candidate_scope": "RAM/tooling plus scan-verified official-manual excerpts; not a whole-game knowledge base",
   "index_chunks": 24,
@@ -16291,9 +16291,9 @@
       },
       "F:\\开源掌机教程\\_工具脚本\\taspipe\\游戏包\\来源库\\sources.json": {
         "present": true,
-        "bytes": 67824,
-        "mtime_ns": 1795594832233969800,
-        "sha256": "e6aa6f94154d35e3c6a6e095f73e4b2eeb5ce6fbaa59aba1a6790fb7b7a97aa9"
+        "bytes": 78163,
+        "mtime_ns": 1795614011492637800,
+        "sha256": "456576759073e46fb303a02538e6769f9837d883b633b9c4a1cc8781fc87285f"
       },
       "F:\\开源掌机教程\\_工具脚本\\taspipe\\游戏包\\知识库\\query_log.jsonl": {
         "present": true,
@@ -16353,9 +16353,9 @@
       },
       "F:\\开源掌机教程\\_工具脚本\\taspipe\\游戏包\\来源库\\sources.json": {
         "present": true,
-        "bytes": 67824,
-        "mtime_ns": 1795594832233969800,
-        "sha256": "e6aa6f94154d35e3c6a6e095f73e4b2eeb5ce6fbaa59aba1a6790fb7b7a97aa9"
+        "bytes": 78163,
+        "mtime_ns": 1795614011492637800,
+        "sha256": "456576759073e46fb303a02538e6769f9837d883b633b9c4a1cc8781fc87285f"
       },
       "F:\\开源掌机教程\\_工具脚本\\taspipe\\游戏包\\知识库\\query_log.jsonl": {
         "present": true,
@@ -16404,7 +16404,7 @@
   "query_log": {
     "path": "F:\\开源掌机教程\\知识库P1_20261118\\megaman2_candidate_v2_manual_20261125\\qc\\isolated_eval_query_log_20261125.jsonl",
     "lines": 36,
-    "sha256": "a2ec9311bb97d74bfa54f602ba201899f60314b26e49b5cc150df7d07bcd789c"
+    "sha256": "a4952ee2c5e538d4821d385634ef007532e666752efd4a2ff8124f491676faeb"
   },
   "external_generative_model_calls": 0,
   "paid_api_calls": 0

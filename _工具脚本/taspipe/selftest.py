@@ -2538,6 +2538,18 @@ def test_statejump():
        "probe 双闸：缺 BizHawk 目录 => 能力 False（反证格仍立）")
 
 
+def _showcase_acceptance():
+    return {
+        "action_checks": [{"check_id": "action_bright", "plugin_id": "frame_luma_range",
+                           "params": {"min": 200, "max": 255}, "required": True}],
+        "effect_requirement": "required",
+        "effect_checks": [{"check_id": "effect_bright", "plugin_id": "frame_luma_range",
+                           "params": {"min": 200, "max": 255}, "required": True}],
+        "capture_checks": [{"check_id": "capture_luma", "plugin_id": "frame_luma_range",
+                            "params": {"min": 0, "max": 255}, "required": True}],
+    }
+
+
 def test_showcase():
     import copy
     import json
@@ -2593,6 +2605,7 @@ def test_showcase():
             "detection": {"frame": 1, "success_checks": [{
                 "check_id": "bright", "plugin_id": "frame_luma_range",
                 "params": {"min": 200, "max": 255}, "required": True}]},
+            **_showcase_acceptance(),
             "negative_control": {"macro": None}
         }]
     }
@@ -2681,8 +2694,61 @@ def test_showcase():
         ok(det_bad["verdict"] == "fail", "showcase 反证：反例也过同检测器 => fail")
         bad_el = copy.deepcopy(doc["elements"][0])
         bad_el["detection"]["success_checks"][0]["plugin_id"] = "not_registered"
+        bad_el["action_checks"][0]["plugin_id"] = "not_registered"
         det_inc = SC.verify_detection(bad_el, str(white), str(black))
-        ok(det_inc["verdict"] == "inconclusive", "showcase 检测：证据不足不得算 pass")
+        ok(det_inc["verdict"] == "inconclusive" and det_inc["acceptance"]["verdict"] == "inconclusive",
+           "showcase 检测：证据不足不得算 pass")
+
+        missing = copy.deepcopy(doc)
+        del missing["elements"][0]["action_checks"]
+        raises(lambda: SC.validate_spec(missing), "三类验收：缺动作检查不得进入生产")
+        missing = copy.deepcopy(doc)
+        missing["elements"][0]["effect_requirement"] = "required"
+        missing["elements"][0]["effect_checks"] = []
+        raises(lambda: SC.validate_spec(missing), "三类验收：要求效果但缺检查不得默认通过")
+        missing = copy.deepcopy(doc)
+        missing["elements"][0]["effect_requirement"] = "not_applicable"
+        raises(lambda: SC.validate_spec(missing), "三类验收：效果不适用不得夹带效果检查")
+        optional = copy.deepcopy(doc)
+        optional["elements"][0]["effect_requirement"] = "not_applicable"
+        optional["elements"][0]["effect_checks"] = []
+        SC.validate_spec(optional)
+        optional_result = SC.verify_detection(optional["elements"][0], str(white), str(black))
+        ok(optional_result["acceptance"]["verdict"] == "pass"
+           and optional_result["acceptance"]["dimensions"]["effect"]["verdict"] == "pass",
+           "三类验收：仅显式 not_applicable 可免除效果检查")
+        candidate_only = SC.verify_detection({"detection": doc["elements"][0]["detection"]},
+                                             str(white), str(black))
+        ok(candidate_only["verdict"] == "pass"
+           and candidate_only["acceptance"]["verdict"] == "inconclusive",
+           "三类验收：候选像素差分通过仍不得作为正式交付")
+        action_fail = SC.verify_detection(doc["elements"][0], str(black), str(white))
+        ok(action_fail["acceptance"]["dimensions"]["action"]["verdict"] == "fail"
+           and action_fail["acceptance"]["verdict"] == "fail",
+           "三类验收：动作失败独立拒绝，不靠效果或拍摄抵消")
+        effect_fail = copy.deepcopy(doc["elements"][0])
+        effect_fail["effect_checks"][0]["params"] = {"min": 0, "max": 10}
+        er = SC.verify_detection(effect_fail, str(white), str(black))
+        ok(er["acceptance"]["dimensions"]["action"]["verdict"] == "pass"
+           and er["acceptance"]["dimensions"]["effect"]["verdict"] == "fail"
+           and er["acceptance"]["verdict"] == "fail",
+           "三类验收：动作通过但效果失败仍拒绝")
+        capture_fail = copy.deepcopy(doc["elements"][0])
+        capture_fail["capture_checks"][0]["params"] = {"min": 256, "max": 300}
+        cr = SC.verify_detection(capture_fail, str(white), str(black))
+        ok(cr["acceptance"]["dimensions"]["capture"]["verdict"] == "fail"
+           and cr["acceptance"]["verdict"] == "fail",
+           "三类验收：动作/效果通过但拍摄失败仍拒绝")
+        sequence_el = copy.deepcopy(doc["elements"][0])
+        sequence_el["capture_checks"][0]["params"] = {"min": 200, "max": 255}
+        sr = SC.verify_detection(sequence_el, str(white), str(black),
+                                 positive_frames=[str(white), str(black)])
+        ok(sr["acceptance"]["dimensions"]["capture"]["verdict"] == "fail"
+           and sr["acceptance"]["dimensions"]["capture"]["checked_frames"] == 2,
+           "三类验收：首帧合格但后续黑帧仍不得判拍摄通过")
+        broken = copy.deepcopy(doc)
+        broken["elements"][0]["capture_checks"][0]["check_id"] = "action_bright"
+        raises(lambda: SC.validate_spec(broken), "三类验收：跨维度重复 check_id 被拒")
 
         broken = td / "broken_frames"; broken.mkdir()
         (broken / "f0000.png").write_bytes(b"not a png")
@@ -2743,6 +2809,9 @@ def test_showcase():
             ok(Path(result["deliverable_ref"]).is_file()
                and (out / "controls" / "test_weapon_negative.mp4").is_file(),
                "showcase 产物：正式合辑与反例片段均真实落盘")
+            ok(result["elements"][0]["detection"]["acceptance"]["dimensions"]["capture"]["checked_frames"] == 5
+               and len(result["elements"][0]["evidence_ref"]["positive_frames"]) == 5,
+               "三类验收产物：拍摄检查覆盖并保留全部五帧正例证据")
             calls = FakeSession.instances[0].calls
             ok(len(calls) == 2 and calls[0]["total"] == calls[1]["total"] == 5
                and calls[1]["spec"] is None,
@@ -2754,10 +2823,51 @@ def test_showcase():
                "showcase 逐要素 base：特殊场景覆盖公共 base，正反例仍共享同一快照")
             ok(FakeSession.instances[0].closed is True,
                "showcase 会话：生产结束关闭 EmuHawk")
+            rejected_doc = copy.deepcopy(doc)
+            rejected_doc["elements"][0]["effect_checks"][0]["params"] = {"min": 256, "max": 300}
+            rejected_pack = td / "rejected.showcase.json"
+            rejected_pack.write_text(json.dumps(rejected_doc), encoding="utf-8")
+            rejected = SC.run(rejected_pack, td / "rejected_out", template="none",
+                              work_dir=str(td / "work"), session_factory=FakeSession,
+                              encoder=fake_encode, concatenator=fake_concat)
+            ok(rejected["status"] == "partial" and rejected["verdict"] == "fail"
+               and rejected["deliverable_ref"] is None
+               and rejected["coverage"]["acceptance_passed"] == {
+                   "action": 1, "effect": 0, "capture": 1},
+               "三类验收生产闸：效果失败不得生成合辑或计为交付")
+
+            class LateBlackSession(FakeSession):
+                def dump(self, frames_dir, spec=None, extra=0, state=None, patches=None):
+                    total = SC._macro_frames(spec) + extra
+                    self.calls.append({"spec": spec, "extra": extra, "total": total,
+                                       "state": state, "patches": patches})
+                    frames = Path(frames_dir)
+                    frames.mkdir(parents=True, exist_ok=True)
+                    for i in range(total):
+                        color = (0, 0, 0) if not spec or i == 4 else (255, 255, 255)
+                        Image.new("RGB", (8, 8), color).save(frames / f"f{i:04d}.png")
+                    return total
+
+            late_doc = copy.deepcopy(doc)
+            late_doc["elements"][0]["capture_checks"][0]["params"] = {"min": 200, "max": 255}
+            late_pack = td / "late_black.showcase.json"
+            late_pack.write_text(json.dumps(late_doc), encoding="utf-8")
+            late = SC.run(late_pack, td / "late_black_out", template="none",
+                          work_dir=str(td / "work"), session_factory=LateBlackSession,
+                          encoder=fake_encode, concatenator=fake_concat)
+            late_capture = late["elements"][0]["detection"]["acceptance"]["dimensions"]["capture"]
+            ok(late["verdict"] == "fail" and late["deliverable_ref"] is None
+               and late["coverage"]["acceptance_passed"] == {"action": 1, "effect": 1, "capture": 0}
+               and late_capture["verdict"] == "fail"
+               and late_capture["scope"] == "all_positive_frames"
+               and late_capture["checked_frames"] == 5,
+               "三类验收生产反证：首帧白、后续帧黑仍须拒绝拍摄并禁止出合辑")
+
+            sessions_after_rejection = len(FakeSession.instances)
             again = SC.run(pack, out, template="none", work_dir=str(td / "work"),
                            session_factory=FakeSession, encoder=fake_encode,
                            concatenator=fake_concat)
-            ok(again["status"] == "done" and len(FakeSession.instances) == 1,
+            ok(again["status"] == "done" and len(FakeSession.instances) == sessions_after_rejection,
                "showcase 续跑：同指纹复用要素与合辑，不重启采集会话")
 
             partial_doc = copy.deepcopy(doc)
@@ -3050,7 +3160,8 @@ def test_state_capture_contract():
                 "negative_control": {"macro": "B,,", "patches": [{"addr": 16, "value": 0}]},
                 "detection": {"frame": 1, "success_checks": [{
                     "check_id": "bright", "plugin_id": "frame_luma_range",
-                    "params": {"min": 200, "max": 255}, "required": True}]}}]}
+                    "params": {"min": 200, "max": 255}, "required": True}]},
+                **_showcase_acceptance()}]}
 
         def write_pack(name, value):
             path = root / f"{name}.json"
@@ -3250,7 +3361,8 @@ def test_capture_judge_separation():
                 "negative_control": {"macro": "B,,", "patches": [{"addr": 16, "value": 0}]},
                 "detection": {"frame": 1, "success_checks": [{
                     "check_id": "bright", "plugin_id": "frame_luma_range",
-                    "params": {"min": 200, "max": 255}, "required": True}]}}]}
+                    "params": {"min": 200, "max": 255}, "required": True}]},
+                **_showcase_acceptance()}]}
         pack = root / "sep.showcase.json"
         pack.write_text(json.dumps(doc), encoding="utf-8")
         element = doc["elements"][0]
@@ -3312,9 +3424,11 @@ def test_capture_judge_separation():
             target = root / f"{out_dir}.json"
             target.write_text(json.dumps(value), encoding="utf-8")
             before = len(calls)
+            acceptance_sha = SC._acceptance_impl_sha()
             with patch.object(SC.SJ, "StateSession", Session), \
                  patch.object(SC, "_concat_videos", concat), \
                  patch.object(SC, "_video_frames", return_value=4), \
+                 patch.object(SC, "_acceptance_impl_sha", return_value=acceptance_sha), \
                  patch.object(SC, "verify_detection", wraps=SC.verify_detection) as vd:
                 result = SC.run(str(target), root / out_dir, ffmpeg="false",
                                 ffprobe="false", encoder=encode)
@@ -3332,8 +3446,10 @@ def test_capture_judge_separation():
         loose["elements"][0]["detection"]["success_checks"][0]["params"] = {"min": 0, "max": 10}
         flipped, dumps, judged = run(loose, "sep")
         ok(dumps == 0, f"判据分离：只改判据不得重录（实际重录 {dumps} 次）")
-        ok(judged == 1 and flipped["elements"][0]["verdict"] == "fail",
-           "判据分离：改宽的判据必须当场把要素判成 fail")
+        ok(judged == 1
+           and flipped["elements"][0]["detection"]["verdict"] == "fail"
+           and flipped["elements"][0]["detection"]["acceptance"]["verdict"] == "pass",
+           "判据分离：候选检测变宽须重判为 fail，独立验收仍 pass")
 
         strict, dumps, judged = run(doc, "sep")
         ok(dumps == 0 and judged == 1 and strict["elements"][0]["verdict"] == "pass",
@@ -3482,7 +3598,8 @@ def test_state_profile_gate():
                 "negative_control": {"macro": "B,,", "patches": [{"addr": 16, "value": 0}]},
                 "detection": {"frame": 1, "success_checks": [{
                     "check_id": "bright", "plugin_id": "frame_luma_range",
-                    "params": {"min": 200, "max": 255}, "required": True}]}}]}
+                    "params": {"min": 200, "max": 255}, "required": True}]},
+                **_showcase_acceptance()}]}
 
         def write_pack(name, value):
             p = root / f"{name}.json"
@@ -3900,6 +4017,8 @@ def test_bundle():
     with tempfile.TemporaryDirectory() as td:
         td = Path(td)
         doc = json.loads(pack_src.read_text(encoding="utf-8"))
+        for element in doc["elements"]:
+            element.update(_showcase_acceptance())
         pack = td / "mini.showcase.json"
         pack.write_text(json.dumps(doc, ensure_ascii=False), encoding="utf-8")
 
@@ -4428,6 +4547,7 @@ def test_base_state_provenance():
             "detection": {"frame": 1, "success_checks": [{
                 "check_id": "bright", "plugin_id": "frame_luma_range",
                 "params": {"min": 200, "max": 255}, "required": True}]},
+            **_showcase_acceptance(),
             "negative_control": {"macro": None}
         }]
     }
@@ -5163,6 +5283,7 @@ def main():
     test_ram_calibration()
     test_scout_summary()
     test_detector_calibration()
+    test_detector_promotion()
     test_smv_converter_contract()
     test_sources_registry()
     test_kb_corpus()
@@ -5201,6 +5322,11 @@ def test_scout_summary():
 def test_detector_calibration():
     from .detector_calibration_selftest import main as run_detector_calibration
     ok(run_detector_calibration() == 0, "对齐差分、闪白拒绝、颜色标定、样本分离与全时间轴审计自检通过")
+
+
+def test_detector_promotion():
+    from .detector_promotion_selftest import main as run_detector_promotion
+    ok(run_detector_promotion() == 0, "检测器晋升的旧报告/样本重叠/指纹漂移/参考帧/正式帧闸门自检通过")
 
 
 def test_cheat_candidates():

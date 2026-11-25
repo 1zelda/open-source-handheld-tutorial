@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "status": "frozen_production_technical_subdomain",
+  "date": "2026-11-25",
+  "domain": "megaman2",
+  "game_id": "megaman2",
+  "platform": "NES",
+  "revision": "megaman2_nes_tasvideos_rockman2",
+  "source_id": "tasvideos_rockman_data_mm2_extract",
+  "source_url": "https://tasvideos.org/GameResources/NES/Rockman/Data",
+  "production_route_wired": true,
+  "production_consumer_wired": true,
+  "candidate_only": false,
+  "whole_game_knowledge_base": false,
+  "index_path": "_工具脚本/taspipe/游戏包/知识库/index.json",
+  "map_path": "_工具脚本/taspipe/游戏包/知识库/corpus_map.json",
+  "registry_path": "_工具脚本/taspipe/游戏包/来源库/sources.json",
+  "source_qualification_required": {
+    "status": "verified_read",
+    "authority": "authoritative"
+  },
+  "selected_evidence_rule": "每个 pass 必须恰好有一条 selected_evidence，且来源、revision、资格与取证路径全部通过生产复核",
+  "retrieval_defaults": {
+    "backend": "bm25",
+    "fragment_policy": null,
+    "dense_default": false,
+    "nli_default": false,
+    "strict_is_explicit_shadow_arm": true
+  },
+  "regional_identity": {
+    "pal_us_jp_equivalence_verified": false,
+    "explicit_region_rom_questions": "version_not_collected"
+  },
+  "external_generative_model_calls": 0,
+  "paid_api_calls": 0
+}

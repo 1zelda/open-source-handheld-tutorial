@@ -25,6 +25,7 @@ VALUE_SUBTYPES = [
     (re.compile(r"SHA1|sha1|指纹|哈希|校验和"), re.compile(r"[0-9a-fA-F]{40}")),
     (re.compile(r"字节|文件大小|多大"), re.compile(r"\d[\d,]*\s*(B|字节|KB|MB|GB)")),
     (re.compile(r"地址"), re.compile(r"(0x|\$)[0-9A-Fa-f]{2,4}")),
+    (re.compile(r"速度|坐标"), re.compile(r"(?<![0-9A-Fa-f])[0-9A-Fa-f]{2}\.[0-9A-Fa-f]{2}(?![0-9A-Fa-f])")),
 ]
 
 COUNT_RE = re.compile(r"[0-9一二三四五六七八九十两]+\s*(种|名|人|场|个|支|条|回|試合)")
@@ -200,7 +201,8 @@ def _count_ok(q, text):
     t = _norm(text)
     for qrx, units in COUNT_ASK:
         if qrx.search(q):
-            return any(re.search(r"\d+\s*" + re.escape(u), t) for u in units)
+            return any(re.search(r"\d+(?:\s*\([^)]*\))?\s*" + re.escape(u), t)
+                       for u in units)
     return bool(COUNT_RE.search(t))
 
 

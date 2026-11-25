@@ -1,0 +1,31 @@
+{
+  "all_ok": true,
+  "gates": {
+    "project": {
+      "pass": 1551,
+      "total": 1551
+    },
+    "kb": {
+      "pass": 336,
+      "total": 336
+    },
+    "sources": {
+      "pass": 74,
+      "total": 74
+    },
+    "cross_platform": {
+      "pass": 33,
+      "total": 33
+    }
+  },
+  "live_queries": true,
+  "cleanup": {
+    "removed": false,
+    "already_absent": true,
+    "path": "C:\\Users\\Administrator\\.qoder\\tmp\\megaman2_manual_20261125",
+    "file_count": 0,
+    "total_bytes": 0,
+    "exists_after": false
+  },
+  "manifest": "F:\\开源掌机教程\\知识库P1_20261118\\megaman2_delivery_manifest_v2_manual_20261125.json"
+}

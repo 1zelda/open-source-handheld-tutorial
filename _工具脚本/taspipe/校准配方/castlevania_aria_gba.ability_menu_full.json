@@ -1,0 +1,46 @@
+{
+  "schema_version": "menu_catalog/1.1",
+  "game_id": "castlevania_aria_gba",
+  "note": "能力魂8项真实菜单导航；候选库存区0x13386-0x13389仅作一次性开荒补丁，不把可写或菜单显示升级为gameplay验收。",
+  "profile": {
+    "rom": "F:/BaiduNetdiskDownload/rom/gba/恶魔城晓月圆舞曲.gba",
+    "rom_sha1": "40aab076a528f52e93260bb98d91a40039e0da02",
+    "bizhawk": "F:/开源掌机教程/02-模拟器库/BizHawk/BizHawk-2.11.1",
+    "core": "mGBA",
+    "system": "GBA",
+    "domain": "EWRAM",
+    "state_package": {
+      "game_id": "castlevania_aria_gba",
+      "profile_id": "aria_us_40aab076",
+      "revision": "r20261125T224904"
+    }
+  },
+  "base_state": "base",
+  "workers": 1,
+  "groups": [
+    {
+      "id": "ability",
+      "label": "能力魂候选",
+      "slot_addr": null,
+      "slot_readback": false,
+      "count": 8,
+      "menu_steps": ["Start", "Down", "Down", "Down", "Down", "A"],
+      "identity_region": [6, 78, 234, 126],
+      "base_patches": [
+        {"addr": 78726, "value": 255},
+        {"addr": 78727, "value": 255},
+        {"addr": 78728, "value": 255},
+        {"addr": 78729, "value": 255}
+      ],
+      "navigate": {
+        "columns": 2,
+        "start_id": 1,
+        "row_step": "Down",
+        "column_step": "Right",
+        "confirm": "A"
+      },
+      "key_gap": 16,
+      "tail": 40
+    }
+  ]
+}

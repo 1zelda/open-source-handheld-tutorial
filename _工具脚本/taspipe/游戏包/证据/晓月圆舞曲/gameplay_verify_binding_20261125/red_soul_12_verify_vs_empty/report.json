@@ -1,0 +1,1208 @@
+{
+  "schema_version": "ram_calibration/1.0",
+  "mode": "verify",
+  "game_id": "castlevania_aria_gba",
+  "case_id": "red_soul_12_verify_vs_empty",
+  "rom_sha1": "40AAB076A528F52E93260BB98D91A40039E0DA02",
+  "core": "mGBA",
+  "system": "GBA",
+  "domain": "EWRAM",
+  "recipe": {
+    "schema_version": "ram_calibration/1.0",
+    "game_id": "castlevania_aria_gba",
+    "note": "红魂实帧抽查后的首批 verify 短名单；只验槽位、MP 消费与正反例画面，不替代中文菜单身份验收。",
+    "profile": {
+      "rom": "F:/BaiduNetdiskDownload/rom/gba/恶魔城晓月圆舞曲.gba",
+      "rom_sha1": "40aab076a528f52e93260bb98d91a40039e0da02",
+      "bizhawk": "F:/开源掌机教程/02-模拟器库/BizHawk/BizHawk-2.11.1",
+      "isolated_slot": true,
+      "core": "mGBA",
+      "system": "GBA",
+      "domain": "EWRAM",
+      "state_package": {
+        "game_id": "castlevania_aria_gba",
+        "profile_id": "aria_us_40aab076",
+        "revision": "r20261125T120000"
+      },
+      "window": {
+        "start": 78429,
+        "length": 128
+      }
+    },
+    "base_state": "base",
+    "macros": {
+      "up_b": "Up+B"
+    },
+    "cases": [
+      {
+        "kind": "scenario",
+        "base_state": "base",
+        "arms": [
+          {
+            "name": "red_4",
+            "steps": [
+              {
+                "macro": "-",
+                "extra": 0,
+                "patches": [
+                  {
+                    "addr": 78429,
+                    "value": 4
+                  }
+                ],
+                "expect": [
+                  {
+                    "addr": 78429,
+                    "value": 4
+                  },
+                  {
+                    "addr": 78448,
+                    "width": 2,
+                    "value": 80
+                  }
+                ],
+                "screen": {
+                  "reference": "$base",
+                  "relation": "equal"
+                }
+              },
+              {
+                "state": "$previous",
+                "macro": "@up_b",
+                "extra": 89,
+                "capture_frames": 90,
+                "expect": [
+                  {
+                    "addr": 78429,
+                    "value": 4
+                  },
+                  {
+                    "addr": 78448,
+                    "width": 2,
+                    "op": "<",
+                    "value": 80
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "red0",
+            "steps": [
+              {
+                "macro": "-",
+                "extra": 0,
+                "patches": [
+                  {
+                    "addr": 78429,
+                    "value": 0
+                  }
+                ],
+                "expect": [
+                  {
+                    "addr": 78429,
+                    "value": 0
+                  },
+                  {
+                    "addr": 78448,
+                    "width": 2,
+                    "value": 80
+                  }
+                ],
+                "screen": {
+                  "reference": "$base",
+                  "relation": "equal"
+                }
+              },
+              {
+                "state": "$previous",
+                "macro": "@up_b",
+                "extra": 89,
+                "capture_frames": 90,
+                "expect": [
+                  {
+                    "addr": 78429,
+                    "value": 0
+                  },
+                  {
+                    "addr": 78448,
+                    "width": 2,
+                    "value": 80
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "comparisons": [
+          {
+            "left": "red_4",
+            "right": "red0",
+            "left_step": 1,
+            "right_step": 1,
+            "relation": "different",
+            "frames": [
+              8,
+              12,
+              20,
+              40,
+              60,
+              "final"
+            ]
+          }
+        ],
+        "claims": [
+          {
+            "name": "red_soul_equipped_id",
+            "addr": 78429,
+            "width": 1,
+            "level": "gameplay",
+            "note": "同一战斗初态只改红魂槽，Up+B 产生实帧差异；不据此认定中文菜单名或全部红魂身份。"
+          },
+          {
+            "name": "current_mp",
+            "addr": 78448,
+            "width": 2,
+            "level": "consumption",
+            "note": "目标红魂施法后 MP 低于 80，空槽保持 80；不固定具体消耗值。"
+          }
+        ],
+        "id": "red_soul_4_verify_vs_empty"
+      },
+      {
+        "kind": "scenario",
+        "base_state": "base",
+        "arms": [
+          {
+            "name": "red_5",
+            "steps": [
+              {
+                "macro": "-",
+                "extra": 0,
+                "patches": [
+                  {
+                    "addr": 78429,
+                    "value": 5
+                  }
+                ],
+                "expect": [
+                  {
+                    "addr": 78429,
+                    "value": 5
+                  },
+                  {
+                    "addr": 78448,
+                    "width": 2,
+                    "value": 80
+                  }
+                ],
+                "screen": {
+                  "reference": "$base",
+                  "relation": "equal"
+                }
+              },
+              {
+                "state": "$previous",
+                "macro": "@up_b",
+                "extra": 89,
+                "capture_frames": 90,
+                "expect": [
+                  {
+                    "addr": 78429,
+                    "value": 5
+                  },
+                  {
+                    "addr": 78448,
+                    "width": 2,
+                    "op": "<",
+                    "value": 80
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "red0",
+            "steps": [
+              {
+                "macro": "-",
+                "extra": 0,
+                "patches": [
+                  {
+                    "addr": 78429,
+                    "value": 0
+                  }
+                ],
+                "expect": [
+                  {
+                    "addr": 78429,
+                    "value": 0
+                  },
+                  {
+                    "addr": 78448,
+                    "width": 2,
+                    "value": 80
+                  }
+                ],
+                "screen": {
+                  "reference": "$base",
+                  "relation": "equal"
+                }
+              },
+              {
+                "state": "$previous",
+                "macro": "@up_b",
+                "extra": 89,
+                "capture_frames": 90,
+                "expect": [
+                  {
+                    "addr": 78429,
+                    "value": 0
+                  },
+                  {
+                    "addr": 78448,
+                    "width": 2,
+                    "value": 80
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "comparisons": [
+          {
+            "left": "red_5",
+            "right": "red0",
+            "left_step": 1,
+            "right_step": 1,
+            "relation": "different",
+            "frames": [
+              8,
+              12,
+              20,
+              40,
+              60,
+              "final"
+            ]
+          }
+        ],
+        "claims": [
+          {
+            "name": "red_soul_equipped_id",
+            "addr": 78429,
+            "width": 1,
+            "level": "gameplay",
+            "note": "同一战斗初态只改红魂槽，Up+B 产生实帧差异；不据此认定中文菜单名或全部红魂身份。"
+          },
+          {
+            "name": "current_mp",
+            "addr": 78448,
+            "width": 2,
+            "level": "consumption",
+            "note": "目标红魂施法后 MP 低于 80，空槽保持 80；不固定具体消耗值。"
+          }
+        ],
+        "id": "red_soul_5_verify_vs_empty"
+      },
+      {
+        "kind": "scenario",
+        "base_state": "base",
+        "arms": [
+          {
+            "name": "red_12",
+            "steps": [
+              {
+                "macro": "-",
+                "extra": 0,
+                "patches": [
+                  {
+                    "addr": 78429,
+                    "value": 12
+                  }
+                ],
+                "expect": [
+                  {
+                    "addr": 78429,
+                    "value": 12
+                  },
+                  {
+                    "addr": 78448,
+                    "width": 2,
+                    "value": 80
+                  }
+                ],
+                "screen": {
+                  "reference": "$base",
+                  "relation": "equal"
+                }
+              },
+              {
+                "state": "$previous",
+                "macro": "@up_b",
+                "extra": 89,
+                "capture_frames": 90,
+                "expect": [
+                  {
+                    "addr": 78429,
+                    "value": 12
+                  },
+                  {
+                    "addr": 78448,
+                    "width": 2,
+                    "op": "<",
+                    "value": 80
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "red0",
+            "steps": [
+              {
+                "macro": "-",
+                "extra": 0,
+                "patches": [
+                  {
+                    "addr": 78429,
+                    "value": 0
+                  }
+                ],
+                "expect": [
+                  {
+                    "addr": 78429,
+                    "value": 0
+                  },
+                  {
+                    "addr": 78448,
+                    "width": 2,
+                    "value": 80
+                  }
+                ],
+                "screen": {
+                  "reference": "$base",
+                  "relation": "equal"
+                }
+              },
+              {
+                "state": "$previous",
+                "macro": "@up_b",
+                "extra": 89,
+                "capture_frames": 90,
+                "expect": [
+                  {
+                    "addr": 78429,
+                    "value": 0
+                  },
+                  {
+                    "addr": 78448,
+                    "width": 2,
+                    "value": 80
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "comparisons": [
+          {
+            "left": "red_12",
+            "right": "red0",
+            "left_step": 1,
+            "right_step": 1,
+            "relation": "different",
+            "frames": [
+              8,
+              12,
+              20,
+              40,
+              60,
+              "final"
+            ]
+          }
+        ],
+        "claims": [
+          {
+            "name": "red_soul_equipped_id",
+            "addr": 78429,
+            "width": 1,
+            "level": "gameplay",
+            "note": "同一战斗初态只改红魂槽，Up+B 产生实帧差异；不据此认定中文菜单名或全部红魂身份。"
+          },
+          {
+            "name": "current_mp",
+            "addr": 78448,
+            "width": 2,
+            "level": "consumption",
+            "note": "目标红魂施法后 MP 低于 80，空槽保持 80；不固定具体消耗值。"
+          }
+        ],
+        "id": "red_soul_12_verify_vs_empty"
+      },
+      {
+        "kind": "scenario",
+        "base_state": "base",
+        "arms": [
+          {
+            "name": "red_24",
+            "steps": [
+              {
+                "macro": "-",
+                "extra": 0,
+                "patches": [
+                  {
+                    "addr": 78429,
+                    "value": 24
+                  }
+                ],
+                "expect": [
+                  {
+                    "addr": 78429,
+                    "value": 24
+                  },
+                  {
+                    "addr": 78448,
+                    "width": 2,
+                    "value": 80
+                  }
+                ],
+                "screen": {
+                  "reference": "$base",
+                  "relation": "equal"
+                }
+              },
+              {
+                "state": "$previous",
+                "macro": "@up_b",
+                "extra": 89,
+                "capture_frames": 90,
+                "expect": [
+                  {
+                    "addr": 78429,
+                    "value": 24
+                  },
+                  {
+                    "addr": 78448,
+                    "width": 2,
+                    "op": "<",
+                    "value": 80
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "red0",
+            "steps": [
+              {
+                "macro": "-",
+                "extra": 0,
+                "patches": [
+                  {
+                    "addr": 78429,
+                    "value": 0
+                  }
+                ],
+                "expect": [
+                  {
+                    "addr": 78429,
+                    "value": 0
+                  },
+                  {
+                    "addr": 78448,
+                    "width": 2,
+                    "value": 80
+                  }
+                ],
+                "screen": {
+                  "reference": "$base",
+                  "relation": "equal"
+                }
+              },
+              {
+                "state": "$previous",
+                "macro": "@up_b",
+                "extra": 89,
+                "capture_frames": 90,
+                "expect": [
+                  {
+                    "addr": 78429,
+                    "value": 0
+                  },
+                  {
+                    "addr": 78448,
+                    "width": 2,
+                    "value": 80
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "comparisons": [
+          {
+            "left": "red_24",
+            "right": "red0",
+            "left_step": 1,
+            "right_step": 1,
+            "relation": "different",
+            "frames": [
+              8,
+              12,
+              20,
+              40,
+              60,
+              "final"
+            ]
+          }
+        ],
+        "claims": [
+          {
+            "name": "red_soul_equipped_id",
+            "addr": 78429,
+            "width": 1,
+            "level": "gameplay",
+            "note": "同一战斗初态只改红魂槽，Up+B 产生实帧差异；不据此认定中文菜单名或全部红魂身份。"
+          },
+          {
+            "name": "current_mp",
+            "addr": 78448,
+            "width": 2,
+            "level": "consumption",
+            "note": "目标红魂施法后 MP 低于 80，空槽保持 80；不固定具体消耗值。"
+          }
+        ],
+        "id": "red_soul_24_verify_vs_empty"
+      },
+      {
+        "kind": "scenario",
+        "base_state": "base",
+        "arms": [
+          {
+            "name": "red_31",
+            "steps": [
+              {
+                "macro": "-",
+                "extra": 0,
+                "patches": [
+                  {
+                    "addr": 78429,
+                    "value": 31
+                  }
+                ],
+                "expect": [
+                  {
+                    "addr": 78429,
+                    "value": 31
+                  },
+                  {
+                    "addr": 78448,
+                    "width": 2,
+                    "value": 80
+                  }
+                ],
+                "screen": {
+                  "reference": "$base",
+                  "relation": "equal"
+                }
+              },
+              {
+                "state": "$previous",
+                "macro": "@up_b",
+                "extra": 89,
+                "capture_frames": 90,
+                "expect": [
+                  {
+                    "addr": 78429,
+                    "value": 31
+                  },
+                  {
+                    "addr": 78448,
+                    "width": 2,
+                    "op": "<",
+                    "value": 80
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "red0",
+            "steps": [
+              {
+                "macro": "-",
+                "extra": 0,
+                "patches": [
+                  {
+                    "addr": 78429,
+                    "value": 0
+                  }
+                ],
+                "expect": [
+                  {
+                    "addr": 78429,
+                    "value": 0
+                  },
+                  {
+                    "addr": 78448,
+                    "width": 2,
+                    "value": 80
+                  }
+                ],
+                "screen": {
+                  "reference": "$base",
+                  "relation": "equal"
+                }
+              },
+              {
+                "state": "$previous",
+                "macro": "@up_b",
+                "extra": 89,
+                "capture_frames": 90,
+                "expect": [
+                  {
+                    "addr": 78429,
+                    "value": 0
+                  },
+                  {
+                    "addr": 78448,
+                    "width": 2,
+                    "value": 80
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "comparisons": [
+          {
+            "left": "red_31",
+            "right": "red0",
+            "left_step": 1,
+            "right_step": 1,
+            "relation": "different",
+            "frames": [
+              8,
+              12,
+              20,
+              40,
+              60,
+              "final"
+            ]
+          }
+        ],
+        "claims": [
+          {
+            "name": "red_soul_equipped_id",
+            "addr": 78429,
+            "width": 1,
+            "level": "gameplay",
+            "note": "同一战斗初态只改红魂槽，Up+B 产生实帧差异；不据此认定中文菜单名或全部红魂身份。"
+          },
+          {
+            "name": "current_mp",
+            "addr": 78448,
+            "width": 2,
+            "level": "consumption",
+            "note": "目标红魂施法后 MP 低于 80，空槽保持 80；不固定具体消耗值。"
+          }
+        ],
+        "id": "red_soul_31_verify_vs_empty"
+      },
+      {
+        "kind": "scenario",
+        "base_state": "base",
+        "arms": [
+          {
+            "name": "red_37",
+            "steps": [
+              {
+                "macro": "-",
+                "extra": 0,
+                "patches": [
+                  {
+                    "addr": 78429,
+                    "value": 37
+                  }
+                ],
+                "expect": [
+                  {
+                    "addr": 78429,
+                    "value": 37
+                  },
+                  {
+                    "addr": 78448,
+                    "width": 2,
+                    "value": 80
+                  }
+                ],
+                "screen": {
+                  "reference": "$base",
+                  "relation": "equal"
+                }
+              },
+              {
+                "state": "$previous",
+                "macro": "@up_b",
+                "extra": 89,
+                "capture_frames": 90,
+                "expect": [
+                  {
+                    "addr": 78429,
+                    "value": 37
+                  },
+                  {
+                    "addr": 78448,
+                    "width": 2,
+                    "op": "<",
+                    "value": 80
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "red0",
+            "steps": [
+              {
+                "macro": "-",
+                "extra": 0,
+                "patches": [
+                  {
+                    "addr": 78429,
+                    "value": 0
+                  }
+                ],
+                "expect": [
+                  {
+                    "addr": 78429,
+                    "value": 0
+                  },
+                  {
+                    "addr": 78448,
+                    "width": 2,
+                    "value": 80
+                  }
+                ],
+                "screen": {
+                  "reference": "$base",
+                  "relation": "equal"
+                }
+              },
+              {
+                "state": "$previous",
+                "macro": "@up_b",
+                "extra": 89,
+                "capture_frames": 90,
+                "expect": [
+                  {
+                    "addr": 78429,
+                    "value": 0
+                  },
+                  {
+                    "addr": 78448,
+                    "width": 2,
+                    "value": 80
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "comparisons": [
+          {
+            "left": "red_37",
+            "right": "red0",
+            "left_step": 1,
+            "right_step": 1,
+            "relation": "different",
+            "frames": [
+              8,
+              12,
+              20,
+              40,
+              60,
+              "final"
+            ]
+          }
+        ],
+        "claims": [
+          {
+            "name": "red_soul_equipped_id",
+            "addr": 78429,
+            "width": 1,
+            "level": "gameplay",
+            "note": "同一战斗初态只改红魂槽，Up+B 产生实帧差异；不据此认定中文菜单名或全部红魂身份。"
+          },
+          {
+            "name": "current_mp",
+            "addr": 78448,
+            "width": 2,
+            "level": "consumption",
+            "note": "目标红魂施法后 MP 低于 80，空槽保持 80；不固定具体消耗值。"
+          }
+        ],
+        "id": "red_soul_37_verify_vs_empty"
+      }
+    ]
+  },
+  "base_state": {
+    "name": "base",
+    "path": "F:\\开源掌机教程\\04-游戏资源库\\TAS输入录像库\\状态资产\\castlevania_aria_gba\\aria_us_40aab076\\r20261125T120000\\states\\base.state"
+  },
+  "cache_key": "53fb1d3ba447171e286e0e46a9b417891393cf143ee775ae107c23de626b451e",
+  "arms": {
+    "red_12": {
+      "steps": [
+        {
+          "index": 0,
+          "source_state": "F:\\开源掌机教程\\04-游戏资源库\\TAS输入录像库\\状态资产\\castlevania_aria_gba\\aria_us_40aab076\\r20261125T120000\\states\\base.state",
+          "attempt_state": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_red_soul_verify_shortlist_20261125\\red_soul_12_verify_vs_empty\\red_soul_12_verify_vs_empty_red_12_s00_input.state",
+          "patches": [
+            {
+              "addr": 78429,
+              "value": 12
+            }
+          ],
+          "macro": "-",
+          "frames": 0,
+          "attempt": {
+            "id": 4,
+            "ok": true,
+            "data": "9108"
+          },
+          "shot": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_red_soul_verify_shortlist_20261125\\red_soul_12_verify_vs_empty\\red_soul_12_verify_vs_empty_red_12_s00.png",
+          "state": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_red_soul_verify_shortlist_20261125\\red_soul_12_verify_vs_empty\\red_soul_12_verify_vs_empty_red_12_s00.state",
+          "ram": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_red_soul_verify_shortlist_20261125\\red_soul_12_verify_vs_empty\\red_soul_12_verify_vs_empty_red_12_s00.bin",
+          "expect": [
+            {
+              "addr": 78429,
+              "width": 1,
+              "op": "==",
+              "want": 12,
+              "got": 12,
+              "pass": true
+            },
+            {
+              "addr": 78448,
+              "width": 2,
+              "op": "==",
+              "want": 80,
+              "got": 80,
+              "pass": true
+            }
+          ],
+          "actual_core": "BizHawk.Emulation.Cores.Nintendo.GBA.MGBAHawk",
+          "screen": {
+            "reference": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_red_soul_verify_shortlist_20261125\\red_soul_12_verify_vs_empty\\red_soul_12_verify_vs_empty_base_anchor.png",
+            "relation": "equal",
+            "max_changed_fraction": null,
+            "pass": true,
+            "changed_pixels": 0,
+            "changed_fraction": 0.0,
+            "total_pixels": 38400,
+            "equal": true,
+            "bbox": null
+          }
+        },
+        {
+          "index": 1,
+          "source_state": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_red_soul_verify_shortlist_20261125\\red_soul_12_verify_vs_empty\\red_soul_12_verify_vs_empty_red_12_s00.state",
+          "attempt_state": "F:/taspipe_scratch/ram_calibration/781bb659492c4234/red_soul_12_verify_vs_empty_red_12_1.state",
+          "patches": [],
+          "macro": "Up+B",
+          "frames": 90,
+          "attempt": {
+            "id": 5,
+            "ok": true,
+            "data": "9198"
+          },
+          "shot": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_red_soul_verify_shortlist_20261125\\red_soul_12_verify_vs_empty\\red_soul_12_verify_vs_empty_red_12_s01.png",
+          "state": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_red_soul_verify_shortlist_20261125\\red_soul_12_verify_vs_empty\\red_soul_12_verify_vs_empty_red_12_s01.state",
+          "ram": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_red_soul_verify_shortlist_20261125\\red_soul_12_verify_vs_empty\\red_soul_12_verify_vs_empty_red_12_s01.bin",
+          "expect": [
+            {
+              "addr": 78429,
+              "width": 1,
+              "op": "==",
+              "want": 12,
+              "got": 12,
+              "pass": true
+            },
+            {
+              "addr": 78448,
+              "width": 2,
+              "op": "<",
+              "want": 80,
+              "got": 63,
+              "pass": true
+            }
+          ],
+          "actual_core": "BizHawk.Emulation.Cores.Nintendo.GBA.MGBAHawk",
+          "frames_dir": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_red_soul_verify_shortlist_20261125\\red_soul_12_verify_vs_empty\\red_soul_12_verify_vs_empty_red_12_s01_frames",
+          "captured_frames": 90
+        }
+      ]
+    },
+    "red0": {
+      "steps": [
+        {
+          "index": 0,
+          "source_state": "F:\\开源掌机教程\\04-游戏资源库\\TAS输入录像库\\状态资产\\castlevania_aria_gba\\aria_us_40aab076\\r20261125T120000\\states\\base.state",
+          "attempt_state": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_red_soul_verify_shortlist_20261125\\red_soul_12_verify_vs_empty\\red_soul_12_verify_vs_empty_red0_s00_input.state",
+          "patches": [
+            {
+              "addr": 78429,
+              "value": 0
+            }
+          ],
+          "macro": "-",
+          "frames": 0,
+          "attempt": {
+            "id": 8,
+            "ok": true,
+            "data": "9108"
+          },
+          "shot": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_red_soul_verify_shortlist_20261125\\red_soul_12_verify_vs_empty\\red_soul_12_verify_vs_empty_red0_s00.png",
+          "state": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_red_soul_verify_shortlist_20261125\\red_soul_12_verify_vs_empty\\red_soul_12_verify_vs_empty_red0_s00.state",
+          "ram": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_red_soul_verify_shortlist_20261125\\red_soul_12_verify_vs_empty\\red_soul_12_verify_vs_empty_red0_s00.bin",
+          "expect": [
+            {
+              "addr": 78429,
+              "width": 1,
+              "op": "==",
+              "want": 0,
+              "got": 0,
+              "pass": true
+            },
+            {
+              "addr": 78448,
+              "width": 2,
+              "op": "==",
+              "want": 80,
+              "got": 80,
+              "pass": true
+            }
+          ],
+          "actual_core": "BizHawk.Emulation.Cores.Nintendo.GBA.MGBAHawk",
+          "screen": {
+            "reference": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_red_soul_verify_shortlist_20261125\\red_soul_12_verify_vs_empty\\red_soul_12_verify_vs_empty_base_anchor.png",
+            "relation": "equal",
+            "max_changed_fraction": null,
+            "pass": true,
+            "changed_pixels": 0,
+            "changed_fraction": 0.0,
+            "total_pixels": 38400,
+            "equal": true,
+            "bbox": null
+          }
+        },
+        {
+          "index": 1,
+          "source_state": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_red_soul_verify_shortlist_20261125\\red_soul_12_verify_vs_empty\\red_soul_12_verify_vs_empty_red0_s00.state",
+          "attempt_state": "F:/taspipe_scratch/ram_calibration/781bb659492c4234/red_soul_12_verify_vs_empty_red0_1.state",
+          "patches": [],
+          "macro": "Up+B",
+          "frames": 90,
+          "attempt": {
+            "id": 9,
+            "ok": true,
+            "data": "9198"
+          },
+          "shot": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_red_soul_verify_shortlist_20261125\\red_soul_12_verify_vs_empty\\red_soul_12_verify_vs_empty_red0_s01.png",
+          "state": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_red_soul_verify_shortlist_20261125\\red_soul_12_verify_vs_empty\\red_soul_12_verify_vs_empty_red0_s01.state",
+          "ram": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_red_soul_verify_shortlist_20261125\\red_soul_12_verify_vs_empty\\red_soul_12_verify_vs_empty_red0_s01.bin",
+          "expect": [
+            {
+              "addr": 78429,
+              "width": 1,
+              "op": "==",
+              "want": 0,
+              "got": 0,
+              "pass": true
+            },
+            {
+              "addr": 78448,
+              "width": 2,
+              "op": "==",
+              "want": 80,
+              "got": 80,
+              "pass": true
+            }
+          ],
+          "actual_core": "BizHawk.Emulation.Cores.Nintendo.GBA.MGBAHawk",
+          "frames_dir": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_red_soul_verify_shortlist_20261125\\red_soul_12_verify_vs_empty\\red_soul_12_verify_vs_empty_red0_s01_frames",
+          "captured_frames": 90
+        }
+      ]
+    }
+  },
+  "preparation": [],
+  "evidence": [
+    "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_red_soul_verify_shortlist_20261125\\red_soul_12_verify_vs_empty\\red_soul_12_verify_vs_empty_base_anchor.png",
+    "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_red_soul_verify_shortlist_20261125\\red_soul_12_verify_vs_empty\\red_soul_12_verify_vs_empty_red0_s00.bin",
+    "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_red_soul_verify_shortlist_20261125\\red_soul_12_verify_vs_empty\\red_soul_12_verify_vs_empty_red0_s00.png",
+    "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_red_soul_verify_shortlist_20261125\\red_soul_12_verify_vs_empty\\red_soul_12_verify_vs_empty_red0_s00.state",
+    "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_red_soul_verify_shortlist_20261125\\red_soul_12_verify_vs_empty\\red_soul_12_verify_vs_empty_red0_s00_input.state",
+    "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_red_soul_verify_shortlist_20261125\\red_soul_12_verify_vs_empty\\red_soul_12_verify_vs_empty_red0_s01.bin",
+    "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_red_soul_verify_shortlist_20261125\\red_soul_12_verify_vs_empty\\red_soul_12_verify_vs_empty_red0_s01.png",
+    "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_red_soul_verify_shortlist_20261125\\red_soul_12_verify_vs_empty\\red_soul_12_verify_vs_empty_red0_s01.state",
+    "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_red_soul_verify_shortlist_20261125\\red_soul_12_verify_vs_empty\\red_soul_12_verify_vs_empty_red0_s01_frames\\f0008.png",
+    "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_red_soul_verify_shortlist_20261125\\red_soul_12_verify_vs_empty\\red_soul_12_verify_vs_empty_red0_s01_frames\\f0012.png",
+    "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_red_soul_verify_shortlist_20261125\\red_soul_12_verify_vs_empty\\red_soul_12_verify_vs_empty_red0_s01_frames\\f0020.png",
+    "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_red_soul_verify_shortlist_20261125\\red_soul_12_verify_vs_empty\\red_soul_12_verify_vs_empty_red0_s01_frames\\f0040.png",
+    "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_red_soul_verify_shortlist_20261125\\red_soul_12_verify_vs_empty\\red_soul_12_verify_vs_empty_red0_s01_frames\\f0060.png",
+    "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_red_soul_verify_shortlist_20261125\\red_soul_12_verify_vs_empty\\red_soul_12_verify_vs_empty_red_12_s00.bin",
+    "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_red_soul_verify_shortlist_20261125\\red_soul_12_verify_vs_empty\\red_soul_12_verify_vs_empty_red_12_s00.png",
+    "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_red_soul_verify_shortlist_20261125\\red_soul_12_verify_vs_empty\\red_soul_12_verify_vs_empty_red_12_s00.state",
+    "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_red_soul_verify_shortlist_20261125\\red_soul_12_verify_vs_empty\\red_soul_12_verify_vs_empty_red_12_s00_input.state",
+    "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_red_soul_verify_shortlist_20261125\\red_soul_12_verify_vs_empty\\red_soul_12_verify_vs_empty_red_12_s01.bin",
+    "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_red_soul_verify_shortlist_20261125\\red_soul_12_verify_vs_empty\\red_soul_12_verify_vs_empty_red_12_s01.png",
+    "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_red_soul_verify_shortlist_20261125\\red_soul_12_verify_vs_empty\\red_soul_12_verify_vs_empty_red_12_s01.state",
+    "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_red_soul_verify_shortlist_20261125\\red_soul_12_verify_vs_empty\\red_soul_12_verify_vs_empty_red_12_s01_frames\\f0008.png",
+    "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_red_soul_verify_shortlist_20261125\\red_soul_12_verify_vs_empty\\red_soul_12_verify_vs_empty_red_12_s01_frames\\f0012.png",
+    "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_red_soul_verify_shortlist_20261125\\red_soul_12_verify_vs_empty\\red_soul_12_verify_vs_empty_red_12_s01_frames\\f0020.png",
+    "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_red_soul_verify_shortlist_20261125\\red_soul_12_verify_vs_empty\\red_soul_12_verify_vs_empty_red_12_s01_frames\\f0040.png",
+    "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_red_soul_verify_shortlist_20261125\\red_soul_12_verify_vs_empty\\red_soul_12_verify_vs_empty_red_12_s01_frames\\f0060.png",
+    "F:\\开源掌机教程\\04-游戏资源库\\TAS输入录像库\\状态资产\\castlevania_aria_gba\\aria_us_40aab076\\r20261125T120000\\states\\base.state"
+  ],
+  "emulator_slot": {
+    "root": "F:\\taspipe_scratch\\tas_matrix_20261125_034842_43260_8d60ff2f",
+    "bizhawk": "F:\\taspipe_scratch\\tas_matrix_20261125_034842_43260_8d60ff2f\\slots\\36bbfaa504d0\\slot_0\\BizHawk-2.11.1",
+    "system": "GBA",
+    "core": "mGBA"
+  },
+  "comparisons": [
+    {
+      "left": "red_12",
+      "right": "red0",
+      "relation": "different",
+      "frames": [
+        {
+          "frame": 8,
+          "left": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_red_soul_verify_shortlist_20261125\\red_soul_12_verify_vs_empty\\red_soul_12_verify_vs_empty_red_12_s01_frames\\f0008.png",
+          "right": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_red_soul_verify_shortlist_20261125\\red_soul_12_verify_vs_empty\\red_soul_12_verify_vs_empty_red0_s01_frames\\f0008.png",
+          "pass": true,
+          "changed_pixels": 652,
+          "changed_fraction": 0.016979166666666667,
+          "total_pixels": 38400,
+          "equal": false,
+          "bbox": [
+            81,
+            11,
+            146,
+            144
+          ]
+        },
+        {
+          "frame": 12,
+          "left": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_red_soul_verify_shortlist_20261125\\red_soul_12_verify_vs_empty\\red_soul_12_verify_vs_empty_red_12_s01_frames\\f0012.png",
+          "right": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_red_soul_verify_shortlist_20261125\\red_soul_12_verify_vs_empty\\red_soul_12_verify_vs_empty_red0_s01_frames\\f0012.png",
+          "pass": true,
+          "changed_pixels": 661,
+          "changed_fraction": 0.017213541666666665,
+          "total_pixels": 38400,
+          "equal": false,
+          "bbox": [
+            81,
+            11,
+            147,
+            144
+          ]
+        },
+        {
+          "frame": 20,
+          "left": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_red_soul_verify_shortlist_20261125\\red_soul_12_verify_vs_empty\\red_soul_12_verify_vs_empty_red_12_s01_frames\\f0020.png",
+          "right": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_red_soul_verify_shortlist_20261125\\red_soul_12_verify_vs_empty\\red_soul_12_verify_vs_empty_red0_s01_frames\\f0020.png",
+          "pass": true,
+          "changed_pixels": 662,
+          "changed_fraction": 0.017239583333333332,
+          "total_pixels": 38400,
+          "equal": false,
+          "bbox": [
+            81,
+            11,
+            138,
+            144
+          ]
+        },
+        {
+          "frame": 40,
+          "left": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_red_soul_verify_shortlist_20261125\\red_soul_12_verify_vs_empty\\red_soul_12_verify_vs_empty_red_12_s01_frames\\f0040.png",
+          "right": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_red_soul_verify_shortlist_20261125\\red_soul_12_verify_vs_empty\\red_soul_12_verify_vs_empty_red0_s01_frames\\f0040.png",
+          "pass": true,
+          "changed_pixels": 1325,
+          "changed_fraction": 0.034505208333333336,
+          "total_pixels": 38400,
+          "equal": false,
+          "bbox": [
+            81,
+            11,
+            208,
+            160
+          ]
+        },
+        {
+          "frame": 60,
+          "left": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_red_soul_verify_shortlist_20261125\\red_soul_12_verify_vs_empty\\red_soul_12_verify_vs_empty_red_12_s01_frames\\f0060.png",
+          "right": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_red_soul_verify_shortlist_20261125\\red_soul_12_verify_vs_empty\\red_soul_12_verify_vs_empty_red0_s01_frames\\f0060.png",
+          "pass": true,
+          "changed_pixels": 71,
+          "changed_fraction": 0.0018489583333333333,
+          "total_pixels": 38400,
+          "equal": false,
+          "bbox": [
+            81,
+            11,
+            127,
+            140
+          ]
+        },
+        {
+          "frame": "final",
+          "left": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_red_soul_verify_shortlist_20261125\\red_soul_12_verify_vs_empty\\red_soul_12_verify_vs_empty_red_12_s01.png",
+          "right": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_red_soul_verify_shortlist_20261125\\red_soul_12_verify_vs_empty\\red_soul_12_verify_vs_empty_red0_s01.png",
+          "pass": true,
+          "changed_pixels": 71,
+          "changed_fraction": 0.0018489583333333333,
+          "total_pixels": 38400,
+          "equal": false,
+          "bbox": [
+            81,
+            11,
+            127,
+            140
+          ]
+        }
+      ],
+      "pass": true
+    }
+  ],
+  "checks": {
+    "preparation": true,
+    "expectations": true,
+    "comparisons": true,
+    "frame_counts": true,
+    "screen_anchors": true,
+    "gba_core": true
+  },
+  "status": "pass",
+  "verified_fields": [
+    {
+      "name": "red_soul_equipped_id",
+      "addr": 78429,
+      "width": 1,
+      "level": "gameplay",
+      "note": "同一战斗初态只改红魂槽，Up+B 产生实帧差异；不据此认定中文菜单名或全部红魂身份。",
+      "case_id": "red_soul_12_verify_vs_empty"
+    },
+    {
+      "name": "current_mp",
+      "addr": 78448,
+      "width": 2,
+      "level": "consumption",
+      "note": "目标红魂施法后 MP 低于 80，空槽保持 80；不固定具体消耗值。",
+      "case_id": "red_soul_12_verify_vs_empty"
+    }
+  ]
+}

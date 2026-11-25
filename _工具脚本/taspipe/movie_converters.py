@@ -168,6 +168,22 @@ def parse_smv(path: Path) -> dict:
     }
 
 
+def snes_declared_sram_bytes(rom: bytes) -> int:
+    if len(rom) < 0x8000:
+        raise MovieConvertError("SNES ROM 太短，不能校验卡带头")
+    map_mode = rom[0x7FD5] & 0x30
+    if map_mode == 0x20:
+        map_offset = 0x7FC0
+    elif map_mode == 0x30:
+        map_offset = 0xFFC0
+    else:
+        raise MovieConvertError(f"不支持的 SNES 卡带映射模式: 0x{map_mode:02x}")
+    if map_offset + 0x20 > len(rom):
+        raise MovieConvertError("SNES ROM 卡带头超出文件范围")
+    declared_code = rom[map_offset + 0x18]
+    return (1024 << declared_code) if declared_code else 0
+
+
 def bake_snes9x_core_state(parsed: dict, rom, bizhawk, work=None, domain=None):
     if parsed.get("format") != "smv" or not parsed.get("from_reset"):
         raise MovieConvertError("只有从复位开始且带内置 SRAM 的 SMV 需要烘焙 CoreState")
@@ -188,22 +204,32 @@ def bake_snes9x_core_state(parsed: dict, rom, bizhawk, work=None, domain=None):
     try:
         rom_path = work_dir / "rom.sfc"
         tas_replay.materialize_rom(str(rom), str(rom_path))
+        declared_sram = snes_declared_sram_bytes(rom_path.read_bytes())
         with SJ.StateSession(str(rom_path), str(bizhawk), core="Snes9x", system="SNES",
                              work=str(work_dir / "session")) as session:
             names = {row["name"]: row["size"] for row in session.domains()}
-            if domain is None:
-                candidates = [name for name in names if name == "Save RAM"]
-                if not candidates:
-                    candidates = [name for name in names
-                                  if ("save" in name.lower() or "sram" in name.lower())
-                                  and names[name] == len(data)]
-                if len(candidates) != 1:
-                    raise MovieConvertError(f"无法唯一确定 SNES Save RAM 域: {candidates}；可选域={names}")
-                domain = candidates[0]
-            if names.get(domain) != len(data):
+            if declared_sram == 0:
+                if domain not in (None, "Save RAM"):
+                    raise MovieConvertError("无卡带 SRAM 的电影只能注入原生 Snes9x 的 0x55 初始内存")
+                domain = "Save RAM"
+                seed_data = b"\x55" * 0x20000
+                seed_kind = "snes_wram_power_on"
+            else:
+                if domain is None:
+                    candidates = [name for name in names if name == "Save RAM"]
+                    if not candidates:
+                        candidates = [name for name in names
+                                      if ("save" in name.lower() or "sram" in name.lower())
+                                      and names[name] == len(data)]
+                    if len(candidates) != 1:
+                        raise MovieConvertError(f"无法唯一确定 SNES Save RAM 域: {candidates}；可选域={names}")
+                    domain = candidates[0]
+                seed_data = data
+                seed_kind = "cartridge_sram"
+            if names.get(domain) != len(seed_data):
                 raise MovieConvertError(
-                    f"Save RAM 域大小不符: {domain}={names.get(domain)}，需要 {len(data)}")
-            state_path, response = session.seed_ram(data, domain, name="anchor")
+                    f"初始内存域大小不符: {domain}={names.get(domain)}，需要 {len(seed_data)}")
+            state_path, response = session.seed_ram(seed_data, domain, name="anchor")
             frame_text, byte_text = response.split()
             core_state = Path(state_path).read_bytes()
     except Exception as exc:
@@ -214,8 +240,11 @@ def bake_snes9x_core_state(parsed: dict, rom, bizhawk, work=None, domain=None):
         td.cleanup()
     return core_state, {
         "domain": domain,
-        "sram_bytes": int(byte_text),
-        "sram_sha256": parsed["savestate_sha256"],
+        "seed_kind": seed_kind,
+        "declared_sram_bytes": declared_sram,
+        "seed_bytes": int(byte_text),
+        "seed_sha256": hashlib.sha256(seed_data).hexdigest(),
+        "source_sram_sha256": parsed["savestate_sha256"],
         "anchor_frame": int(frame_text),
         "core_state_bytes": len(core_state),
         "core_state_sha256": hashlib.sha256(core_state).hexdigest(),

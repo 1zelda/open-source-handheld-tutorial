@@ -1,0 +1,665 @@
+{
+  "schema_version": "ram_calibration/1.0",
+  "mode": "verify",
+  "game_id": "castlevania_aria_gba",
+  "case_id": "red_soul_47_resource_verify",
+  "rom_sha1": "40AAB076A528F52E93260BB98D91A40039E0DA02",
+  "core": "mGBA",
+  "system": "GBA",
+  "domain": "EWRAM",
+  "recipe": {
+    "schema_version": "ram_calibration/1.0",
+    "game_id": "castlevania_aria_gba",
+    "note": "独立检测器标定采集；只取红魂35/47，强制重跑，不复用旧帧。",
+    "profile": {
+      "rom": "F:/BaiduNetdiskDownload/rom/gba/恶魔城晓月圆舞曲.gba",
+      "rom_sha1": "40aab076a528f52e93260bb98d91a40039e0da02",
+      "bizhawk": "F:/开源掌机教程/02-模拟器库/BizHawk/BizHawk-2.11.1",
+      "isolated_slot": true,
+      "core": "mGBA",
+      "system": "GBA",
+      "domain": "EWRAM",
+      "state_package": {
+        "game_id": "castlevania_aria_gba",
+        "profile_id": "aria_us_40aab076",
+        "revision": "r20261125T145623"
+      },
+      "window": {
+        "start": 78429,
+        "length": 128
+      }
+    },
+    "base_state": "base",
+    "macros": {
+      "up_b": "Up+B"
+    },
+    "cases": [
+      {
+        "kind": "scenario",
+        "base_state": "base",
+        "arms": [
+          {
+            "name": "red_35",
+            "steps": [
+              {
+                "macro": "-",
+                "extra": 0,
+                "patches": [
+                  {
+                    "addr": 78429,
+                    "value": 35
+                  }
+                ],
+                "expect": [
+                  {
+                    "addr": 78429,
+                    "value": 35
+                  },
+                  {
+                    "addr": 78448,
+                    "width": 2,
+                    "value": 80
+                  }
+                ],
+                "screen": {
+                  "reference": "$base",
+                  "relation": "equal"
+                }
+              },
+              {
+                "state": "$previous",
+                "macro": "@up_b",
+                "extra": 89,
+                "capture_frames": 90,
+                "expect": [
+                  {
+                    "addr": 78429,
+                    "value": 35
+                  },
+                  {
+                    "addr": 78448,
+                    "width": 2,
+                    "op": "<",
+                    "value": 80
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "red0",
+            "steps": [
+              {
+                "macro": "-",
+                "extra": 0,
+                "patches": [
+                  {
+                    "addr": 78429,
+                    "value": 0
+                  }
+                ],
+                "expect": [
+                  {
+                    "addr": 78429,
+                    "value": 0
+                  },
+                  {
+                    "addr": 78448,
+                    "width": 2,
+                    "value": 80
+                  }
+                ],
+                "screen": {
+                  "reference": "$base",
+                  "relation": "equal"
+                }
+              },
+              {
+                "state": "$previous",
+                "macro": "@up_b",
+                "extra": 89,
+                "capture_frames": 90,
+                "expect": [
+                  {
+                    "addr": 78429,
+                    "value": 0
+                  },
+                  {
+                    "addr": 78448,
+                    "width": 2,
+                    "value": 80
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "comparisons": [
+          {
+            "left": "red_35",
+            "right": "red0",
+            "left_step": 1,
+            "right_step": 1,
+            "relation": "different",
+            "frames": [
+              8,
+              12,
+              20,
+              40,
+              60,
+              "final"
+            ]
+          }
+        ],
+        "claims": [
+          {
+            "addr": 78429,
+            "level": "gameplay",
+            "note": "固定Up+B路线后目标红魂槽仍保持；正例只改该槽，负例改为0。"
+          },
+          {
+            "addr": 78448,
+            "level": "gameplay",
+            "note": "固定Up+B路线末帧MP低于初始80；只验证资源消耗，不自动判定技能语义或检测器。"
+          }
+        ],
+        "id": "red_soul_35_resource_verify"
+      },
+      {
+        "kind": "scenario",
+        "base_state": "base",
+        "arms": [
+          {
+            "name": "red_47",
+            "steps": [
+              {
+                "macro": "-",
+                "extra": 0,
+                "patches": [
+                  {
+                    "addr": 78429,
+                    "value": 47
+                  }
+                ],
+                "expect": [
+                  {
+                    "addr": 78429,
+                    "value": 47
+                  },
+                  {
+                    "addr": 78448,
+                    "width": 2,
+                    "value": 80
+                  }
+                ],
+                "screen": {
+                  "reference": "$base",
+                  "relation": "equal"
+                }
+              },
+              {
+                "state": "$previous",
+                "macro": "@up_b",
+                "extra": 89,
+                "capture_frames": 90,
+                "expect": [
+                  {
+                    "addr": 78429,
+                    "value": 47
+                  },
+                  {
+                    "addr": 78448,
+                    "width": 2,
+                    "op": "<",
+                    "value": 80
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "red0",
+            "steps": [
+              {
+                "macro": "-",
+                "extra": 0,
+                "patches": [
+                  {
+                    "addr": 78429,
+                    "value": 0
+                  }
+                ],
+                "expect": [
+                  {
+                    "addr": 78429,
+                    "value": 0
+                  },
+                  {
+                    "addr": 78448,
+                    "width": 2,
+                    "value": 80
+                  }
+                ],
+                "screen": {
+                  "reference": "$base",
+                  "relation": "equal"
+                }
+              },
+              {
+                "state": "$previous",
+                "macro": "@up_b",
+                "extra": 89,
+                "capture_frames": 90,
+                "expect": [
+                  {
+                    "addr": 78429,
+                    "value": 0
+                  },
+                  {
+                    "addr": 78448,
+                    "width": 2,
+                    "value": 80
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "comparisons": [
+          {
+            "left": "red_47",
+            "right": "red0",
+            "left_step": 1,
+            "right_step": 1,
+            "relation": "different",
+            "frames": [
+              8,
+              12,
+              20,
+              40,
+              60,
+              "final"
+            ]
+          }
+        ],
+        "claims": [
+          {
+            "addr": 78429,
+            "level": "gameplay",
+            "note": "固定Up+B路线后目标红魂槽仍保持；正例只改该槽，负例改为0。"
+          },
+          {
+            "addr": 78448,
+            "level": "gameplay",
+            "note": "固定Up+B路线末帧MP低于初始80；只验证资源消耗，不自动判定技能语义或检测器。"
+          }
+        ],
+        "id": "red_soul_47_resource_verify"
+      }
+    ]
+  },
+  "base_state": {
+    "name": "base",
+    "path": "F:\\开源掌机教程\\04-游戏资源库\\TAS输入录像库\\状态资产\\castlevania_aria_gba\\aria_us_40aab076\\r20261125T145623\\states\\base.state"
+  },
+  "cache_key": "e3f2e8d9ff28617df1ececf212702047a8559dbd86eea5714a4199a44783edde",
+  "capture_provenance": {
+    "run_id": "d7aa9b04099641e8a049e57690027b5a",
+    "process_id": 52564,
+    "started_at": "2026-11-25T12:59:20.835095+00:00",
+    "force": true,
+    "out_dir": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_soul_detector_independent_v1_20261125\\acceptance\\red_soul_47_resource_verify",
+    "implementation_sha256": "c07795f9d886bc2da0dc6da3b3cbf17019da66c2e796d937c3136f00fba55153",
+    "finished_at": "2026-11-25T12:59:41.004047+00:00"
+  },
+  "arms": {
+    "red_47": {
+      "steps": [
+        {
+          "index": 0,
+          "source_state": "F:\\开源掌机教程\\04-游戏资源库\\TAS输入录像库\\状态资产\\castlevania_aria_gba\\aria_us_40aab076\\r20261125T145623\\states\\base.state",
+          "attempt_state": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_soul_detector_independent_v1_20261125\\acceptance\\red_soul_47_resource_verify\\red_soul_47_resource_verify_red_47_s00_input.state",
+          "patches": [
+            {
+              "addr": 78429,
+              "value": 47
+            }
+          ],
+          "macro": "-",
+          "frames": 0,
+          "attempt": {
+            "id": 4,
+            "ok": true,
+            "data": "9108"
+          },
+          "shot": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_soul_detector_independent_v1_20261125\\acceptance\\red_soul_47_resource_verify\\red_soul_47_resource_verify_red_47_s00.png",
+          "state": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_soul_detector_independent_v1_20261125\\acceptance\\red_soul_47_resource_verify\\red_soul_47_resource_verify_red_47_s00.state",
+          "ram": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_soul_detector_independent_v1_20261125\\acceptance\\red_soul_47_resource_verify\\red_soul_47_resource_verify_red_47_s00.bin",
+          "expect": [
+            {
+              "addr": 78429,
+              "width": 1,
+              "op": "==",
+              "want": 47,
+              "got": 47,
+              "pass": true
+            },
+            {
+              "addr": 78448,
+              "width": 2,
+              "op": "==",
+              "want": 80,
+              "got": 80,
+              "pass": true
+            }
+          ],
+          "actual_core": "BizHawk.Emulation.Cores.Nintendo.GBA.MGBAHawk",
+          "screen": {
+            "reference": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_soul_detector_independent_v1_20261125\\acceptance\\red_soul_47_resource_verify\\red_soul_47_resource_verify_base_anchor.png",
+            "relation": "equal",
+            "max_changed_fraction": null,
+            "pass": true,
+            "changed_pixels": 0,
+            "changed_fraction": 0.0,
+            "total_pixels": 38400,
+            "equal": true,
+            "bbox": null
+          }
+        },
+        {
+          "index": 1,
+          "source_state": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_soul_detector_independent_v1_20261125\\acceptance\\red_soul_47_resource_verify\\red_soul_47_resource_verify_red_47_s00.state",
+          "attempt_state": "F:/taspipe_scratch/ram_calibration/71099376f3195539/red_soul_47_resource_verify_red_47_1.state",
+          "patches": [],
+          "macro": "Up+B",
+          "frames": 90,
+          "attempt": {
+            "id": 5,
+            "ok": true,
+            "data": "9198"
+          },
+          "shot": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_soul_detector_independent_v1_20261125\\acceptance\\red_soul_47_resource_verify\\red_soul_47_resource_verify_red_47_s01.png",
+          "state": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_soul_detector_independent_v1_20261125\\acceptance\\red_soul_47_resource_verify\\red_soul_47_resource_verify_red_47_s01.state",
+          "ram": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_soul_detector_independent_v1_20261125\\acceptance\\red_soul_47_resource_verify\\red_soul_47_resource_verify_red_47_s01.bin",
+          "expect": [
+            {
+              "addr": 78429,
+              "width": 1,
+              "op": "==",
+              "want": 47,
+              "got": 47,
+              "pass": true
+            },
+            {
+              "addr": 78448,
+              "width": 2,
+              "op": "<",
+              "want": 80,
+              "got": 1,
+              "pass": true
+            }
+          ],
+          "actual_core": "BizHawk.Emulation.Cores.Nintendo.GBA.MGBAHawk",
+          "frames_dir": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_soul_detector_independent_v1_20261125\\acceptance\\red_soul_47_resource_verify\\red_soul_47_resource_verify_red_47_s01_frames",
+          "captured_frames": 90
+        }
+      ]
+    },
+    "red0": {
+      "steps": [
+        {
+          "index": 0,
+          "source_state": "F:\\开源掌机教程\\04-游戏资源库\\TAS输入录像库\\状态资产\\castlevania_aria_gba\\aria_us_40aab076\\r20261125T145623\\states\\base.state",
+          "attempt_state": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_soul_detector_independent_v1_20261125\\acceptance\\red_soul_47_resource_verify\\red_soul_47_resource_verify_red0_s00_input.state",
+          "patches": [
+            {
+              "addr": 78429,
+              "value": 0
+            }
+          ],
+          "macro": "-",
+          "frames": 0,
+          "attempt": {
+            "id": 8,
+            "ok": true,
+            "data": "9108"
+          },
+          "shot": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_soul_detector_independent_v1_20261125\\acceptance\\red_soul_47_resource_verify\\red_soul_47_resource_verify_red0_s00.png",
+          "state": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_soul_detector_independent_v1_20261125\\acceptance\\red_soul_47_resource_verify\\red_soul_47_resource_verify_red0_s00.state",
+          "ram": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_soul_detector_independent_v1_20261125\\acceptance\\red_soul_47_resource_verify\\red_soul_47_resource_verify_red0_s00.bin",
+          "expect": [
+            {
+              "addr": 78429,
+              "width": 1,
+              "op": "==",
+              "want": 0,
+              "got": 0,
+              "pass": true
+            },
+            {
+              "addr": 78448,
+              "width": 2,
+              "op": "==",
+              "want": 80,
+              "got": 80,
+              "pass": true
+            }
+          ],
+          "actual_core": "BizHawk.Emulation.Cores.Nintendo.GBA.MGBAHawk",
+          "screen": {
+            "reference": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_soul_detector_independent_v1_20261125\\acceptance\\red_soul_47_resource_verify\\red_soul_47_resource_verify_base_anchor.png",
+            "relation": "equal",
+            "max_changed_fraction": null,
+            "pass": true,
+            "changed_pixels": 0,
+            "changed_fraction": 0.0,
+            "total_pixels": 38400,
+            "equal": true,
+            "bbox": null
+          }
+        },
+        {
+          "index": 1,
+          "source_state": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_soul_detector_independent_v1_20261125\\acceptance\\red_soul_47_resource_verify\\red_soul_47_resource_verify_red0_s00.state",
+          "attempt_state": "F:/taspipe_scratch/ram_calibration/71099376f3195539/red_soul_47_resource_verify_red0_1.state",
+          "patches": [],
+          "macro": "Up+B",
+          "frames": 90,
+          "attempt": {
+            "id": 9,
+            "ok": true,
+            "data": "9198"
+          },
+          "shot": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_soul_detector_independent_v1_20261125\\acceptance\\red_soul_47_resource_verify\\red_soul_47_resource_verify_red0_s01.png",
+          "state": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_soul_detector_independent_v1_20261125\\acceptance\\red_soul_47_resource_verify\\red_soul_47_resource_verify_red0_s01.state",
+          "ram": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_soul_detector_independent_v1_20261125\\acceptance\\red_soul_47_resource_verify\\red_soul_47_resource_verify_red0_s01.bin",
+          "expect": [
+            {
+              "addr": 78429,
+              "width": 1,
+              "op": "==",
+              "want": 0,
+              "got": 0,
+              "pass": true
+            },
+            {
+              "addr": 78448,
+              "width": 2,
+              "op": "==",
+              "want": 80,
+              "got": 80,
+              "pass": true
+            }
+          ],
+          "actual_core": "BizHawk.Emulation.Cores.Nintendo.GBA.MGBAHawk",
+          "frames_dir": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_soul_detector_independent_v1_20261125\\acceptance\\red_soul_47_resource_verify\\red_soul_47_resource_verify_red0_s01_frames",
+          "captured_frames": 90
+        }
+      ]
+    }
+  },
+  "preparation": [],
+  "evidence": [
+    "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_soul_detector_independent_v1_20261125\\acceptance\\red_soul_47_resource_verify\\red_soul_47_resource_verify_base_anchor.png",
+    "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_soul_detector_independent_v1_20261125\\acceptance\\red_soul_47_resource_verify\\red_soul_47_resource_verify_red0_s00.bin",
+    "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_soul_detector_independent_v1_20261125\\acceptance\\red_soul_47_resource_verify\\red_soul_47_resource_verify_red0_s00.png",
+    "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_soul_detector_independent_v1_20261125\\acceptance\\red_soul_47_resource_verify\\red_soul_47_resource_verify_red0_s00.state",
+    "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_soul_detector_independent_v1_20261125\\acceptance\\red_soul_47_resource_verify\\red_soul_47_resource_verify_red0_s00_input.state",
+    "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_soul_detector_independent_v1_20261125\\acceptance\\red_soul_47_resource_verify\\red_soul_47_resource_verify_red0_s01.bin",
+    "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_soul_detector_independent_v1_20261125\\acceptance\\red_soul_47_resource_verify\\red_soul_47_resource_verify_red0_s01.png",
+    "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_soul_detector_independent_v1_20261125\\acceptance\\red_soul_47_resource_verify\\red_soul_47_resource_verify_red0_s01.state",
+    "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_soul_detector_independent_v1_20261125\\acceptance\\red_soul_47_resource_verify\\red_soul_47_resource_verify_red0_s01_frames\\f0008.png",
+    "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_soul_detector_independent_v1_20261125\\acceptance\\red_soul_47_resource_verify\\red_soul_47_resource_verify_red0_s01_frames\\f0012.png",
+    "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_soul_detector_independent_v1_20261125\\acceptance\\red_soul_47_resource_verify\\red_soul_47_resource_verify_red0_s01_frames\\f0020.png",
+    "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_soul_detector_independent_v1_20261125\\acceptance\\red_soul_47_resource_verify\\red_soul_47_resource_verify_red0_s01_frames\\f0040.png",
+    "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_soul_detector_independent_v1_20261125\\acceptance\\red_soul_47_resource_verify\\red_soul_47_resource_verify_red0_s01_frames\\f0060.png",
+    "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_soul_detector_independent_v1_20261125\\acceptance\\red_soul_47_resource_verify\\red_soul_47_resource_verify_red_47_s00.bin",
+    "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_soul_detector_independent_v1_20261125\\acceptance\\red_soul_47_resource_verify\\red_soul_47_resource_verify_red_47_s00.png",
+    "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_soul_detector_independent_v1_20261125\\acceptance\\red_soul_47_resource_verify\\red_soul_47_resource_verify_red_47_s00.state",
+    "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_soul_detector_independent_v1_20261125\\acceptance\\red_soul_47_resource_verify\\red_soul_47_resource_verify_red_47_s00_input.state",
+    "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_soul_detector_independent_v1_20261125\\acceptance\\red_soul_47_resource_verify\\red_soul_47_resource_verify_red_47_s01.bin",
+    "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_soul_detector_independent_v1_20261125\\acceptance\\red_soul_47_resource_verify\\red_soul_47_resource_verify_red_47_s01.png",
+    "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_soul_detector_independent_v1_20261125\\acceptance\\red_soul_47_resource_verify\\red_soul_47_resource_verify_red_47_s01.state",
+    "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_soul_detector_independent_v1_20261125\\acceptance\\red_soul_47_resource_verify\\red_soul_47_resource_verify_red_47_s01_frames\\f0008.png",
+    "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_soul_detector_independent_v1_20261125\\acceptance\\red_soul_47_resource_verify\\red_soul_47_resource_verify_red_47_s01_frames\\f0012.png",
+    "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_soul_detector_independent_v1_20261125\\acceptance\\red_soul_47_resource_verify\\red_soul_47_resource_verify_red_47_s01_frames\\f0020.png",
+    "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_soul_detector_independent_v1_20261125\\acceptance\\red_soul_47_resource_verify\\red_soul_47_resource_verify_red_47_s01_frames\\f0040.png",
+    "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_soul_detector_independent_v1_20261125\\acceptance\\red_soul_47_resource_verify\\red_soul_47_resource_verify_red_47_s01_frames\\f0060.png",
+    "F:\\开源掌机教程\\04-游戏资源库\\TAS输入录像库\\状态资产\\castlevania_aria_gba\\aria_us_40aab076\\r20261125T145623\\states\\base.state"
+  ],
+  "emulator_slot": {
+    "root": "F:\\taspipe_scratch\\tas_matrix_20261125_205920_52564_6879163e",
+    "bizhawk": "F:\\taspipe_scratch\\tas_matrix_20261125_205920_52564_6879163e\\slots\\36bbfaa504d0\\slot_0\\BizHawk-2.11.1",
+    "system": "GBA",
+    "core": "mGBA"
+  },
+  "comparisons": [
+    {
+      "left": "red_47",
+      "right": "red0",
+      "relation": "different",
+      "frames": [
+        {
+          "frame": 8,
+          "left": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_soul_detector_independent_v1_20261125\\acceptance\\red_soul_47_resource_verify\\red_soul_47_resource_verify_red_47_s01_frames\\f0008.png",
+          "right": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_soul_detector_independent_v1_20261125\\acceptance\\red_soul_47_resource_verify\\red_soul_47_resource_verify_red0_s01_frames\\f0008.png",
+          "pass": true,
+          "changed_pixels": 733,
+          "changed_fraction": 0.019088541666666667,
+          "total_pixels": 38400,
+          "equal": false,
+          "bbox": [
+            81,
+            11,
+            146,
+            144
+          ]
+        },
+        {
+          "frame": 12,
+          "left": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_soul_detector_independent_v1_20261125\\acceptance\\red_soul_47_resource_verify\\red_soul_47_resource_verify_red_47_s01_frames\\f0012.png",
+          "right": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_soul_detector_independent_v1_20261125\\acceptance\\red_soul_47_resource_verify\\red_soul_47_resource_verify_red0_s01_frames\\f0012.png",
+          "pass": true,
+          "changed_pixels": 753,
+          "changed_fraction": 0.019609375,
+          "total_pixels": 38400,
+          "equal": false,
+          "bbox": [
+            74,
+            11,
+            147,
+            144
+          ]
+        },
+        {
+          "frame": 20,
+          "left": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_soul_detector_independent_v1_20261125\\acceptance\\red_soul_47_resource_verify\\red_soul_47_resource_verify_red_47_s01_frames\\f0020.png",
+          "right": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_soul_detector_independent_v1_20261125\\acceptance\\red_soul_47_resource_verify\\red_soul_47_resource_verify_red0_s01_frames\\f0020.png",
+          "pass": true,
+          "changed_pixels": 691,
+          "changed_fraction": 0.017994791666666666,
+          "total_pixels": 38400,
+          "equal": false,
+          "bbox": [
+            62,
+            11,
+            154,
+            144
+          ]
+        },
+        {
+          "frame": 40,
+          "left": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_soul_detector_independent_v1_20261125\\acceptance\\red_soul_47_resource_verify\\red_soul_47_resource_verify_red_47_s01_frames\\f0040.png",
+          "right": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_soul_detector_independent_v1_20261125\\acceptance\\red_soul_47_resource_verify\\red_soul_47_resource_verify_red0_s01_frames\\f0040.png",
+          "pass": true,
+          "changed_pixels": 691,
+          "changed_fraction": 0.017994791666666666,
+          "total_pixels": 38400,
+          "equal": false,
+          "bbox": [
+            33,
+            11,
+            174,
+            144
+          ]
+        },
+        {
+          "frame": 60,
+          "left": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_soul_detector_independent_v1_20261125\\acceptance\\red_soul_47_resource_verify\\red_soul_47_resource_verify_red_47_s01_frames\\f0060.png",
+          "right": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_soul_detector_independent_v1_20261125\\acceptance\\red_soul_47_resource_verify\\red_soul_47_resource_verify_red0_s01_frames\\f0060.png",
+          "pass": true,
+          "changed_pixels": 356,
+          "changed_fraction": 0.009270833333333334,
+          "total_pixels": 38400,
+          "equal": false,
+          "bbox": [
+            33,
+            11,
+            183,
+            143
+          ]
+        },
+        {
+          "frame": "final",
+          "left": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_soul_detector_independent_v1_20261125\\acceptance\\red_soul_47_resource_verify\\red_soul_47_resource_verify_red_47_s01.png",
+          "right": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_soul_detector_independent_v1_20261125\\acceptance\\red_soul_47_resource_verify\\red_soul_47_resource_verify_red0_s01.png",
+          "pass": true,
+          "changed_pixels": 37428,
+          "changed_fraction": 0.9746875,
+          "total_pixels": 38400,
+          "equal": false,
+          "bbox": [
+            0,
+            0,
+            240,
+            160
+          ]
+        }
+      ],
+      "pass": true
+    }
+  ],
+  "checks": {
+    "preparation": true,
+    "expectations": true,
+    "comparisons": true,
+    "frame_counts": true,
+    "screen_anchors": true,
+    "gba_core": true
+  },
+  "status": "pass",
+  "verified_fields": [
+    {
+      "addr": 78429,
+      "level": "gameplay",
+      "note": "固定Up+B路线后目标红魂槽仍保持；正例只改该槽，负例改为0。",
+      "case_id": "red_soul_47_resource_verify"
+    },
+    {
+      "addr": 78448,
+      "level": "gameplay",
+      "note": "固定Up+B路线末帧MP低于初始80；只验证资源消耗，不自动判定技能语义或检测器。",
+      "case_id": "red_soul_47_resource_verify"
+    }
+  ]
+}

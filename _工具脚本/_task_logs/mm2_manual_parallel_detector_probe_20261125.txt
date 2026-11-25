@@ -1,0 +1,15 @@
+PASS P1 合法2.0报告可晋升并保留原始label/kind
+PASS P2 晋升不冒充玩法/语义/全时间轴/平台验收
+PASS P3 GBA平台闸门仍保持blocked
+PASS P4 对齐检测器冻结负例参考帧且正反例复验通过
+PASS P5 非overwrite重复晋升拒绝覆盖
+PASS P6 overwrite仅复用同哈希参考帧并允许幂等重生成
+PASS P7 旧1.0同集报告不得晋升
+PASS P8 标定/验收源帧重叠不得晋升
+PASS P9 detect.py实现指纹漂移后必须重新标定
+PASS P10 对齐检测器缺冻结参考帧资产时拒绝
+PASS P11 正式采集帧正反例复验失败不得写包
+PASS P12 缺拍摄验收声明不得晋升
+PASS P13 拍摄验收失败不得写包
+PASS P14 主验收帧合格但其他正例帧拍摄失败不得晋升
+DETECTOR PROMOTION SELFTEST 14/14

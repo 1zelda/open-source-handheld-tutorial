@@ -1,0 +1,1110 @@
+{
+  "schema_version": "ram_calibration/1.0",
+  "mode": "verify",
+  "game_id": "castlevania_aria_gba",
+  "case_id": "yellow_soul_27_hp_advantage",
+  "rom_sha1": "40AAB076A528F52E93260BB98D91A40039E0DA02",
+  "core": "mGBA",
+  "system": "GBA",
+  "domain": "EWRAM",
+  "recipe": {
+    "schema_version": "ram_calibration/1.0",
+    "game_id": "castlevania_aria_gba",
+    "note": "黄魂10/15/26/27/28/29固定受击路线末帧HP优势验证；只证明这些候选在该路线中最终HP高于空魂对照292，不自动判定具体机制或检测器。",
+    "profile": {
+      "rom": "F:/BaiduNetdiskDownload/rom/gba/恶魔城晓月圆舞曲.gba",
+      "rom_sha1": "40aab076a528f52e93260bb98d91a40039e0da02",
+      "bizhawk": "F:/开源掌机教程/02-模拟器库/BizHawk/BizHawk-2.11.1",
+      "isolated_slot": true,
+      "core": "mGBA",
+      "system": "GBA",
+      "domain": "EWRAM",
+      "state_package": {
+        "game_id": "castlevania_aria_gba",
+        "profile_id": "aria_us_40aab076",
+        "revision": "r20261125T145623"
+      },
+      "window": {
+        "start": 78429,
+        "length": 128
+      }
+    },
+    "base_state": "yellow_damage_route",
+    "macros": {
+      "yellow_damage": "Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,B,B,B,B,B,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,"
+    },
+    "cases": [
+      {
+        "kind": "scenario",
+        "base_state": "yellow_damage_route",
+        "arms": [
+          {
+            "name": "yellow_10",
+            "steps": [
+              {
+                "macro": "-",
+                "extra": 0,
+                "patches": [
+                  {
+                    "addr": 78431,
+                    "value": 10
+                  }
+                ],
+                "expect": [
+                  {
+                    "addr": 78431,
+                    "value": 10
+                  },
+                  {
+                    "addr": 78448,
+                    "width": 2,
+                    "value": 80
+                  }
+                ],
+                "screen": {
+                  "reference": "$base",
+                  "relation": "equal"
+                }
+              },
+              {
+                "state": "$previous",
+                "macro": "@yellow_damage",
+                "extra": 88,
+                "capture_frames": 226,
+                "expect": [
+                  {
+                    "addr": 78431,
+                    "value": 10
+                  },
+                  {
+                    "addr": 78446,
+                    "width": 2,
+                    "op": ">",
+                    "value": 292
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "yellow0",
+            "steps": [
+              {
+                "macro": "-",
+                "extra": 0,
+                "patches": [
+                  {
+                    "addr": 78431,
+                    "value": 0
+                  }
+                ],
+                "expect": [
+                  {
+                    "addr": 78431,
+                    "value": 0
+                  },
+                  {
+                    "addr": 78448,
+                    "width": 2,
+                    "value": 80
+                  }
+                ],
+                "screen": {
+                  "reference": "$base",
+                  "relation": "equal"
+                }
+              },
+              {
+                "state": "$previous",
+                "macro": "@yellow_damage",
+                "extra": 88,
+                "capture_frames": 226,
+                "expect": [
+                  {
+                    "addr": 78431,
+                    "value": 0
+                  },
+                  {
+                    "addr": 78446,
+                    "width": 2,
+                    "value": 292
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "comparisons": [
+          {
+            "left": "yellow_10",
+            "right": "yellow0",
+            "left_step": 1,
+            "right_step": 1,
+            "relation": "different",
+            "frames": [
+              120,
+              164,
+              225
+            ]
+          }
+        ],
+        "claims": [
+          {
+            "addr": 78431,
+            "level": "gameplay",
+            "note": "固定受击路线后目标黄魂槽仍保持；正例只改该槽，负例改为0。"
+          },
+          {
+            "addr": 78446,
+            "level": "gameplay",
+            "note": "固定受击路线末帧当前HP严格高于空魂对照292；这是路线结果，不单独区分回血、减伤或行动变化。"
+          }
+        ],
+        "id": "yellow_soul_10_hp_advantage"
+      },
+      {
+        "kind": "scenario",
+        "base_state": "yellow_damage_route",
+        "arms": [
+          {
+            "name": "yellow_15",
+            "steps": [
+              {
+                "macro": "-",
+                "extra": 0,
+                "patches": [
+                  {
+                    "addr": 78431,
+                    "value": 15
+                  }
+                ],
+                "expect": [
+                  {
+                    "addr": 78431,
+                    "value": 15
+                  },
+                  {
+                    "addr": 78448,
+                    "width": 2,
+                    "value": 80
+                  }
+                ],
+                "screen": {
+                  "reference": "$base",
+                  "relation": "equal"
+                }
+              },
+              {
+                "state": "$previous",
+                "macro": "@yellow_damage",
+                "extra": 88,
+                "capture_frames": 226,
+                "expect": [
+                  {
+                    "addr": 78431,
+                    "value": 15
+                  },
+                  {
+                    "addr": 78446,
+                    "width": 2,
+                    "op": ">",
+                    "value": 292
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "yellow0",
+            "steps": [
+              {
+                "macro": "-",
+                "extra": 0,
+                "patches": [
+                  {
+                    "addr": 78431,
+                    "value": 0
+                  }
+                ],
+                "expect": [
+                  {
+                    "addr": 78431,
+                    "value": 0
+                  },
+                  {
+                    "addr": 78448,
+                    "width": 2,
+                    "value": 80
+                  }
+                ],
+                "screen": {
+                  "reference": "$base",
+                  "relation": "equal"
+                }
+              },
+              {
+                "state": "$previous",
+                "macro": "@yellow_damage",
+                "extra": 88,
+                "capture_frames": 226,
+                "expect": [
+                  {
+                    "addr": 78431,
+                    "value": 0
+                  },
+                  {
+                    "addr": 78446,
+                    "width": 2,
+                    "value": 292
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "comparisons": [
+          {
+            "left": "yellow_15",
+            "right": "yellow0",
+            "left_step": 1,
+            "right_step": 1,
+            "relation": "different",
+            "frames": [
+              120,
+              164,
+              225
+            ]
+          }
+        ],
+        "claims": [
+          {
+            "addr": 78431,
+            "level": "gameplay",
+            "note": "固定受击路线后目标黄魂槽仍保持；正例只改该槽，负例改为0。"
+          },
+          {
+            "addr": 78446,
+            "level": "gameplay",
+            "note": "固定受击路线末帧当前HP严格高于空魂对照292；这是路线结果，不单独区分回血、减伤或行动变化。"
+          }
+        ],
+        "id": "yellow_soul_15_hp_advantage"
+      },
+      {
+        "kind": "scenario",
+        "base_state": "yellow_damage_route",
+        "arms": [
+          {
+            "name": "yellow_26",
+            "steps": [
+              {
+                "macro": "-",
+                "extra": 0,
+                "patches": [
+                  {
+                    "addr": 78431,
+                    "value": 26
+                  }
+                ],
+                "expect": [
+                  {
+                    "addr": 78431,
+                    "value": 26
+                  },
+                  {
+                    "addr": 78448,
+                    "width": 2,
+                    "value": 80
+                  }
+                ],
+                "screen": {
+                  "reference": "$base",
+                  "relation": "equal"
+                }
+              },
+              {
+                "state": "$previous",
+                "macro": "@yellow_damage",
+                "extra": 88,
+                "capture_frames": 226,
+                "expect": [
+                  {
+                    "addr": 78431,
+                    "value": 26
+                  },
+                  {
+                    "addr": 78446,
+                    "width": 2,
+                    "op": ">",
+                    "value": 292
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "yellow0",
+            "steps": [
+              {
+                "macro": "-",
+                "extra": 0,
+                "patches": [
+                  {
+                    "addr": 78431,
+                    "value": 0
+                  }
+                ],
+                "expect": [
+                  {
+                    "addr": 78431,
+                    "value": 0
+                  },
+                  {
+                    "addr": 78448,
+                    "width": 2,
+                    "value": 80
+                  }
+                ],
+                "screen": {
+                  "reference": "$base",
+                  "relation": "equal"
+                }
+              },
+              {
+                "state": "$previous",
+                "macro": "@yellow_damage",
+                "extra": 88,
+                "capture_frames": 226,
+                "expect": [
+                  {
+                    "addr": 78431,
+                    "value": 0
+                  },
+                  {
+                    "addr": 78446,
+                    "width": 2,
+                    "value": 292
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "comparisons": [
+          {
+            "left": "yellow_26",
+            "right": "yellow0",
+            "left_step": 1,
+            "right_step": 1,
+            "relation": "different",
+            "frames": [
+              120,
+              164,
+              225
+            ]
+          }
+        ],
+        "claims": [
+          {
+            "addr": 78431,
+            "level": "gameplay",
+            "note": "固定受击路线后目标黄魂槽仍保持；正例只改该槽，负例改为0。"
+          },
+          {
+            "addr": 78446,
+            "level": "gameplay",
+            "note": "固定受击路线末帧当前HP严格高于空魂对照292；这是路线结果，不单独区分回血、减伤或行动变化。"
+          }
+        ],
+        "id": "yellow_soul_26_hp_advantage"
+      },
+      {
+        "kind": "scenario",
+        "base_state": "yellow_damage_route",
+        "arms": [
+          {
+            "name": "yellow_27",
+            "steps": [
+              {
+                "macro": "-",
+                "extra": 0,
+                "patches": [
+                  {
+                    "addr": 78431,
+                    "value": 27
+                  }
+                ],
+                "expect": [
+                  {
+                    "addr": 78431,
+                    "value": 27
+                  },
+                  {
+                    "addr": 78448,
+                    "width": 2,
+                    "value": 80
+                  }
+                ],
+                "screen": {
+                  "reference": "$base",
+                  "relation": "equal"
+                }
+              },
+              {
+                "state": "$previous",
+                "macro": "@yellow_damage",
+                "extra": 88,
+                "capture_frames": 226,
+                "expect": [
+                  {
+                    "addr": 78431,
+                    "value": 27
+                  },
+                  {
+                    "addr": 78446,
+                    "width": 2,
+                    "op": ">",
+                    "value": 292
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "yellow0",
+            "steps": [
+              {
+                "macro": "-",
+                "extra": 0,
+                "patches": [
+                  {
+                    "addr": 78431,
+                    "value": 0
+                  }
+                ],
+                "expect": [
+                  {
+                    "addr": 78431,
+                    "value": 0
+                  },
+                  {
+                    "addr": 78448,
+                    "width": 2,
+                    "value": 80
+                  }
+                ],
+                "screen": {
+                  "reference": "$base",
+                  "relation": "equal"
+                }
+              },
+              {
+                "state": "$previous",
+                "macro": "@yellow_damage",
+                "extra": 88,
+                "capture_frames": 226,
+                "expect": [
+                  {
+                    "addr": 78431,
+                    "value": 0
+                  },
+                  {
+                    "addr": 78446,
+                    "width": 2,
+                    "value": 292
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "comparisons": [
+          {
+            "left": "yellow_27",
+            "right": "yellow0",
+            "left_step": 1,
+            "right_step": 1,
+            "relation": "different",
+            "frames": [
+              120,
+              164,
+              225
+            ]
+          }
+        ],
+        "claims": [
+          {
+            "addr": 78431,
+            "level": "gameplay",
+            "note": "固定受击路线后目标黄魂槽仍保持；正例只改该槽，负例改为0。"
+          },
+          {
+            "addr": 78446,
+            "level": "gameplay",
+            "note": "固定受击路线末帧当前HP严格高于空魂对照292；这是路线结果，不单独区分回血、减伤或行动变化。"
+          }
+        ],
+        "id": "yellow_soul_27_hp_advantage"
+      },
+      {
+        "kind": "scenario",
+        "base_state": "yellow_damage_route",
+        "arms": [
+          {
+            "name": "yellow_28",
+            "steps": [
+              {
+                "macro": "-",
+                "extra": 0,
+                "patches": [
+                  {
+                    "addr": 78431,
+                    "value": 28
+                  }
+                ],
+                "expect": [
+                  {
+                    "addr": 78431,
+                    "value": 28
+                  },
+                  {
+                    "addr": 78448,
+                    "width": 2,
+                    "value": 80
+                  }
+                ],
+                "screen": {
+                  "reference": "$base",
+                  "relation": "equal"
+                }
+              },
+              {
+                "state": "$previous",
+                "macro": "@yellow_damage",
+                "extra": 88,
+                "capture_frames": 226,
+                "expect": [
+                  {
+                    "addr": 78431,
+                    "value": 28
+                  },
+                  {
+                    "addr": 78446,
+                    "width": 2,
+                    "op": ">",
+                    "value": 292
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "yellow0",
+            "steps": [
+              {
+                "macro": "-",
+                "extra": 0,
+                "patches": [
+                  {
+                    "addr": 78431,
+                    "value": 0
+                  }
+                ],
+                "expect": [
+                  {
+                    "addr": 78431,
+                    "value": 0
+                  },
+                  {
+                    "addr": 78448,
+                    "width": 2,
+                    "value": 80
+                  }
+                ],
+                "screen": {
+                  "reference": "$base",
+                  "relation": "equal"
+                }
+              },
+              {
+                "state": "$previous",
+                "macro": "@yellow_damage",
+                "extra": 88,
+                "capture_frames": 226,
+                "expect": [
+                  {
+                    "addr": 78431,
+                    "value": 0
+                  },
+                  {
+                    "addr": 78446,
+                    "width": 2,
+                    "value": 292
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "comparisons": [
+          {
+            "left": "yellow_28",
+            "right": "yellow0",
+            "left_step": 1,
+            "right_step": 1,
+            "relation": "different",
+            "frames": [
+              120,
+              164,
+              225
+            ]
+          }
+        ],
+        "claims": [
+          {
+            "addr": 78431,
+            "level": "gameplay",
+            "note": "固定受击路线后目标黄魂槽仍保持；正例只改该槽，负例改为0。"
+          },
+          {
+            "addr": 78446,
+            "level": "gameplay",
+            "note": "固定受击路线末帧当前HP严格高于空魂对照292；这是路线结果，不单独区分回血、减伤或行动变化。"
+          }
+        ],
+        "id": "yellow_soul_28_hp_advantage"
+      },
+      {
+        "kind": "scenario",
+        "base_state": "yellow_damage_route",
+        "arms": [
+          {
+            "name": "yellow_29",
+            "steps": [
+              {
+                "macro": "-",
+                "extra": 0,
+                "patches": [
+                  {
+                    "addr": 78431,
+                    "value": 29
+                  }
+                ],
+                "expect": [
+                  {
+                    "addr": 78431,
+                    "value": 29
+                  },
+                  {
+                    "addr": 78448,
+                    "width": 2,
+                    "value": 80
+                  }
+                ],
+                "screen": {
+                  "reference": "$base",
+                  "relation": "equal"
+                }
+              },
+              {
+                "state": "$previous",
+                "macro": "@yellow_damage",
+                "extra": 88,
+                "capture_frames": 226,
+                "expect": [
+                  {
+                    "addr": 78431,
+                    "value": 29
+                  },
+                  {
+                    "addr": 78446,
+                    "width": 2,
+                    "op": ">",
+                    "value": 292
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "yellow0",
+            "steps": [
+              {
+                "macro": "-",
+                "extra": 0,
+                "patches": [
+                  {
+                    "addr": 78431,
+                    "value": 0
+                  }
+                ],
+                "expect": [
+                  {
+                    "addr": 78431,
+                    "value": 0
+                  },
+                  {
+                    "addr": 78448,
+                    "width": 2,
+                    "value": 80
+                  }
+                ],
+                "screen": {
+                  "reference": "$base",
+                  "relation": "equal"
+                }
+              },
+              {
+                "state": "$previous",
+                "macro": "@yellow_damage",
+                "extra": 88,
+                "capture_frames": 226,
+                "expect": [
+                  {
+                    "addr": 78431,
+                    "value": 0
+                  },
+                  {
+                    "addr": 78446,
+                    "width": 2,
+                    "value": 292
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "comparisons": [
+          {
+            "left": "yellow_29",
+            "right": "yellow0",
+            "left_step": 1,
+            "right_step": 1,
+            "relation": "different",
+            "frames": [
+              120,
+              164,
+              225
+            ]
+          }
+        ],
+        "claims": [
+          {
+            "addr": 78431,
+            "level": "gameplay",
+            "note": "固定受击路线后目标黄魂槽仍保持；正例只改该槽，负例改为0。"
+          },
+          {
+            "addr": 78446,
+            "level": "gameplay",
+            "note": "固定受击路线末帧当前HP严格高于空魂对照292；这是路线结果，不单独区分回血、减伤或行动变化。"
+          }
+        ],
+        "id": "yellow_soul_29_hp_advantage"
+      }
+    ]
+  },
+  "base_state": {
+    "name": "yellow_damage_route",
+    "path": "F:\\开源掌机教程\\04-游戏资源库\\TAS输入录像库\\状态资产\\castlevania_aria_gba\\aria_us_40aab076\\r20261125T145623\\states\\yellow_damage_route.state"
+  },
+  "cache_key": "150211abb21765c29c031282ee90df63d541a87cd100a905570f63ee0a40e4f6",
+  "arms": {
+    "yellow_27": {
+      "steps": [
+        {
+          "index": 0,
+          "source_state": "F:\\开源掌机教程\\04-游戏资源库\\TAS输入录像库\\状态资产\\castlevania_aria_gba\\aria_us_40aab076\\r20261125T145623\\states\\yellow_damage_route.state",
+          "attempt_state": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_yellow_hp_advantage_verify2_20261125\\yellow_soul_27_hp_advantage\\yellow_soul_27_hp_advantage_yellow_27_s00_input.state",
+          "patches": [
+            {
+              "addr": 78431,
+              "value": 27
+            }
+          ],
+          "macro": "-",
+          "frames": 0,
+          "attempt": {
+            "id": 4,
+            "ok": true,
+            "data": "9586"
+          },
+          "shot": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_yellow_hp_advantage_verify2_20261125\\yellow_soul_27_hp_advantage\\yellow_soul_27_hp_advantage_yellow_27_s00.png",
+          "state": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_yellow_hp_advantage_verify2_20261125\\yellow_soul_27_hp_advantage\\yellow_soul_27_hp_advantage_yellow_27_s00.state",
+          "ram": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_yellow_hp_advantage_verify2_20261125\\yellow_soul_27_hp_advantage\\yellow_soul_27_hp_advantage_yellow_27_s00.bin",
+          "expect": [
+            {
+              "addr": 78431,
+              "width": 1,
+              "op": "==",
+              "want": 27,
+              "got": 27,
+              "pass": true
+            },
+            {
+              "addr": 78448,
+              "width": 2,
+              "op": "==",
+              "want": 80,
+              "got": 80,
+              "pass": true
+            }
+          ],
+          "actual_core": "BizHawk.Emulation.Cores.Nintendo.GBA.MGBAHawk",
+          "screen": {
+            "reference": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_yellow_hp_advantage_verify2_20261125\\yellow_soul_27_hp_advantage\\yellow_soul_27_hp_advantage_base_anchor.png",
+            "relation": "equal",
+            "max_changed_fraction": null,
+            "pass": true,
+            "changed_pixels": 0,
+            "changed_fraction": 0.0,
+            "total_pixels": 38400,
+            "equal": true,
+            "bbox": null
+          }
+        },
+        {
+          "index": 1,
+          "source_state": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_yellow_hp_advantage_verify2_20261125\\yellow_soul_27_hp_advantage\\yellow_soul_27_hp_advantage_yellow_27_s00.state",
+          "attempt_state": "F:/taspipe_scratch/ram_calibration/a13b04710b428f45/yellow_soul_27_hp_advantage_yellow_27_1.state",
+          "patches": [],
+          "macro": "Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,B,B,B,B,B,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,",
+          "frames": 226,
+          "attempt": {
+            "id": 5,
+            "ok": true,
+            "data": "9812"
+          },
+          "shot": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_yellow_hp_advantage_verify2_20261125\\yellow_soul_27_hp_advantage\\yellow_soul_27_hp_advantage_yellow_27_s01.png",
+          "state": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_yellow_hp_advantage_verify2_20261125\\yellow_soul_27_hp_advantage\\yellow_soul_27_hp_advantage_yellow_27_s01.state",
+          "ram": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_yellow_hp_advantage_verify2_20261125\\yellow_soul_27_hp_advantage\\yellow_soul_27_hp_advantage_yellow_27_s01.bin",
+          "expect": [
+            {
+              "addr": 78431,
+              "width": 1,
+              "op": "==",
+              "want": 27,
+              "got": 27,
+              "pass": true
+            },
+            {
+              "addr": 78446,
+              "width": 2,
+              "op": ">",
+              "want": 292,
+              "got": 308,
+              "pass": true
+            }
+          ],
+          "actual_core": "BizHawk.Emulation.Cores.Nintendo.GBA.MGBAHawk",
+          "frames_dir": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_yellow_hp_advantage_verify2_20261125\\yellow_soul_27_hp_advantage\\yellow_soul_27_hp_advantage_yellow_27_s01_frames",
+          "captured_frames": 226
+        }
+      ]
+    },
+    "yellow0": {
+      "steps": [
+        {
+          "index": 0,
+          "source_state": "F:\\开源掌机教程\\04-游戏资源库\\TAS输入录像库\\状态资产\\castlevania_aria_gba\\aria_us_40aab076\\r20261125T145623\\states\\yellow_damage_route.state",
+          "attempt_state": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_yellow_hp_advantage_verify2_20261125\\yellow_soul_27_hp_advantage\\yellow_soul_27_hp_advantage_yellow0_s00_input.state",
+          "patches": [
+            {
+              "addr": 78431,
+              "value": 0
+            }
+          ],
+          "macro": "-",
+          "frames": 0,
+          "attempt": {
+            "id": 8,
+            "ok": true,
+            "data": "9586"
+          },
+          "shot": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_yellow_hp_advantage_verify2_20261125\\yellow_soul_27_hp_advantage\\yellow_soul_27_hp_advantage_yellow0_s00.png",
+          "state": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_yellow_hp_advantage_verify2_20261125\\yellow_soul_27_hp_advantage\\yellow_soul_27_hp_advantage_yellow0_s00.state",
+          "ram": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_yellow_hp_advantage_verify2_20261125\\yellow_soul_27_hp_advantage\\yellow_soul_27_hp_advantage_yellow0_s00.bin",
+          "expect": [
+            {
+              "addr": 78431,
+              "width": 1,
+              "op": "==",
+              "want": 0,
+              "got": 0,
+              "pass": true
+            },
+            {
+              "addr": 78448,
+              "width": 2,
+              "op": "==",
+              "want": 80,
+              "got": 80,
+              "pass": true
+            }
+          ],
+          "actual_core": "BizHawk.Emulation.Cores.Nintendo.GBA.MGBAHawk",
+          "screen": {
+            "reference": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_yellow_hp_advantage_verify2_20261125\\yellow_soul_27_hp_advantage\\yellow_soul_27_hp_advantage_base_anchor.png",
+            "relation": "equal",
+            "max_changed_fraction": null,
+            "pass": true,
+            "changed_pixels": 0,
+            "changed_fraction": 0.0,
+            "total_pixels": 38400,
+            "equal": true,
+            "bbox": null
+          }
+        },
+        {
+          "index": 1,
+          "source_state": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_yellow_hp_advantage_verify2_20261125\\yellow_soul_27_hp_advantage\\yellow_soul_27_hp_advantage_yellow0_s00.state",
+          "attempt_state": "F:/taspipe_scratch/ram_calibration/a13b04710b428f45/yellow_soul_27_hp_advantage_yellow0_1.state",
+          "patches": [],
+          "macro": "Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,Right,B,B,B,B,B,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,",
+          "frames": 226,
+          "attempt": {
+            "id": 9,
+            "ok": true,
+            "data": "9812"
+          },
+          "shot": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_yellow_hp_advantage_verify2_20261125\\yellow_soul_27_hp_advantage\\yellow_soul_27_hp_advantage_yellow0_s01.png",
+          "state": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_yellow_hp_advantage_verify2_20261125\\yellow_soul_27_hp_advantage\\yellow_soul_27_hp_advantage_yellow0_s01.state",
+          "ram": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_yellow_hp_advantage_verify2_20261125\\yellow_soul_27_hp_advantage\\yellow_soul_27_hp_advantage_yellow0_s01.bin",
+          "expect": [
+            {
+              "addr": 78431,
+              "width": 1,
+              "op": "==",
+              "want": 0,
+              "got": 0,
+              "pass": true
+            },
+            {
+              "addr": 78446,
+              "width": 2,
+              "op": "==",
+              "want": 292,
+              "got": 292,
+              "pass": true
+            }
+          ],
+          "actual_core": "BizHawk.Emulation.Cores.Nintendo.GBA.MGBAHawk",
+          "frames_dir": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_yellow_hp_advantage_verify2_20261125\\yellow_soul_27_hp_advantage\\yellow_soul_27_hp_advantage_yellow0_s01_frames",
+          "captured_frames": 226
+        }
+      ]
+    }
+  },
+  "preparation": [],
+  "evidence": [
+    "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_yellow_hp_advantage_verify2_20261125\\yellow_soul_27_hp_advantage\\yellow_soul_27_hp_advantage_base_anchor.png",
+    "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_yellow_hp_advantage_verify2_20261125\\yellow_soul_27_hp_advantage\\yellow_soul_27_hp_advantage_yellow0_s00.bin",
+    "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_yellow_hp_advantage_verify2_20261125\\yellow_soul_27_hp_advantage\\yellow_soul_27_hp_advantage_yellow0_s00.png",
+    "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_yellow_hp_advantage_verify2_20261125\\yellow_soul_27_hp_advantage\\yellow_soul_27_hp_advantage_yellow0_s00.state",
+    "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_yellow_hp_advantage_verify2_20261125\\yellow_soul_27_hp_advantage\\yellow_soul_27_hp_advantage_yellow0_s00_input.state",
+    "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_yellow_hp_advantage_verify2_20261125\\yellow_soul_27_hp_advantage\\yellow_soul_27_hp_advantage_yellow0_s01.bin",
+    "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_yellow_hp_advantage_verify2_20261125\\yellow_soul_27_hp_advantage\\yellow_soul_27_hp_advantage_yellow0_s01.png",
+    "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_yellow_hp_advantage_verify2_20261125\\yellow_soul_27_hp_advantage\\yellow_soul_27_hp_advantage_yellow0_s01.state",
+    "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_yellow_hp_advantage_verify2_20261125\\yellow_soul_27_hp_advantage\\yellow_soul_27_hp_advantage_yellow0_s01_frames\\f0120.png",
+    "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_yellow_hp_advantage_verify2_20261125\\yellow_soul_27_hp_advantage\\yellow_soul_27_hp_advantage_yellow0_s01_frames\\f0164.png",
+    "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_yellow_hp_advantage_verify2_20261125\\yellow_soul_27_hp_advantage\\yellow_soul_27_hp_advantage_yellow0_s01_frames\\f0225.png",
+    "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_yellow_hp_advantage_verify2_20261125\\yellow_soul_27_hp_advantage\\yellow_soul_27_hp_advantage_yellow_27_s00.bin",
+    "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_yellow_hp_advantage_verify2_20261125\\yellow_soul_27_hp_advantage\\yellow_soul_27_hp_advantage_yellow_27_s00.png",
+    "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_yellow_hp_advantage_verify2_20261125\\yellow_soul_27_hp_advantage\\yellow_soul_27_hp_advantage_yellow_27_s00.state",
+    "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_yellow_hp_advantage_verify2_20261125\\yellow_soul_27_hp_advantage\\yellow_soul_27_hp_advantage_yellow_27_s00_input.state",
+    "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_yellow_hp_advantage_verify2_20261125\\yellow_soul_27_hp_advantage\\yellow_soul_27_hp_advantage_yellow_27_s01.bin",
+    "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_yellow_hp_advantage_verify2_20261125\\yellow_soul_27_hp_advantage\\yellow_soul_27_hp_advantage_yellow_27_s01.png",
+    "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_yellow_hp_advantage_verify2_20261125\\yellow_soul_27_hp_advantage\\yellow_soul_27_hp_advantage_yellow_27_s01.state",
+    "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_yellow_hp_advantage_verify2_20261125\\yellow_soul_27_hp_advantage\\yellow_soul_27_hp_advantage_yellow_27_s01_frames\\f0120.png",
+    "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_yellow_hp_advantage_verify2_20261125\\yellow_soul_27_hp_advantage\\yellow_soul_27_hp_advantage_yellow_27_s01_frames\\f0164.png",
+    "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_yellow_hp_advantage_verify2_20261125\\yellow_soul_27_hp_advantage\\yellow_soul_27_hp_advantage_yellow_27_s01_frames\\f0225.png",
+    "F:\\开源掌机教程\\04-游戏资源库\\TAS输入录像库\\状态资产\\castlevania_aria_gba\\aria_us_40aab076\\r20261125T145623\\states\\yellow_damage_route.state"
+  ],
+  "emulator_slot": {
+    "root": "F:\\taspipe_scratch\\tas_matrix_20261125_153438_29156_9516ae40",
+    "bizhawk": "F:\\taspipe_scratch\\tas_matrix_20261125_153438_29156_9516ae40\\slots\\36bbfaa504d0\\slot_0\\BizHawk-2.11.1",
+    "system": "GBA",
+    "core": "mGBA"
+  },
+  "comparisons": [
+    {
+      "left": "yellow_27",
+      "right": "yellow0",
+      "relation": "different",
+      "frames": [
+        {
+          "frame": 120,
+          "left": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_yellow_hp_advantage_verify2_20261125\\yellow_soul_27_hp_advantage\\yellow_soul_27_hp_advantage_yellow_27_s01_frames\\f0120.png",
+          "right": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_yellow_hp_advantage_verify2_20261125\\yellow_soul_27_hp_advantage\\yellow_soul_27_hp_advantage_yellow0_s01_frames\\f0120.png",
+          "pass": true,
+          "changed_pixels": 62,
+          "changed_fraction": 0.0016145833333333333,
+          "total_pixels": 38400,
+          "equal": false,
+          "bbox": [
+            12,
+            6,
+            109,
+            114
+          ]
+        },
+        {
+          "frame": 164,
+          "left": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_yellow_hp_advantage_verify2_20261125\\yellow_soul_27_hp_advantage\\yellow_soul_27_hp_advantage_yellow_27_s01_frames\\f0164.png",
+          "right": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_yellow_hp_advantage_verify2_20261125\\yellow_soul_27_hp_advantage\\yellow_soul_27_hp_advantage_yellow0_s01_frames\\f0164.png",
+          "pass": true,
+          "changed_pixels": 44,
+          "changed_fraction": 0.0011458333333333333,
+          "total_pixels": 38400,
+          "equal": false,
+          "bbox": [
+            12,
+            6,
+            94,
+            14
+          ]
+        },
+        {
+          "frame": 225,
+          "left": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_yellow_hp_advantage_verify2_20261125\\yellow_soul_27_hp_advantage\\yellow_soul_27_hp_advantage_yellow_27_s01_frames\\f0225.png",
+          "right": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_yellow_hp_advantage_verify2_20261125\\yellow_soul_27_hp_advantage\\yellow_soul_27_hp_advantage_yellow0_s01_frames\\f0225.png",
+          "pass": true,
+          "changed_pixels": 62,
+          "changed_fraction": 0.0016145833333333333,
+          "total_pixels": 38400,
+          "equal": false,
+          "bbox": [
+            7,
+            6,
+            109,
+            121
+          ]
+        }
+      ],
+      "pass": true
+    }
+  ],
+  "checks": {
+    "preparation": true,
+    "expectations": true,
+    "comparisons": true,
+    "frame_counts": true,
+    "screen_anchors": true,
+    "gba_core": true
+  },
+  "status": "pass",
+  "verified_fields": [
+    {
+      "addr": 78431,
+      "level": "gameplay",
+      "note": "固定受击路线后目标黄魂槽仍保持；正例只改该槽，负例改为0。",
+      "case_id": "yellow_soul_27_hp_advantage"
+    },
+    {
+      "addr": 78446,
+      "level": "gameplay",
+      "note": "固定受击路线末帧当前HP严格高于空魂对照292；这是路线结果，不单独区分回血、减伤或行动变化。",
+      "case_id": "yellow_soul_27_hp_advantage"
+    }
+  ]
+}

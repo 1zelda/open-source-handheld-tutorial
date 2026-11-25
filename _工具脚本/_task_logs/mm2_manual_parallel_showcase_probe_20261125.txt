@@ -1,0 +1,64 @@
+  [1] showcase 指令：dump 原子携带 base+RAM patches
+  [2] showcase 指令：非法 RAM patch 地址被拒
+  [3] patch 指令：逐帧语义显式上线格式
+  [4] patch 指令：一次性与逐帧补丁混用被拒
+  [5] patch 指令：未知补丁时序被拒
+  [6] showcase 模板：读档+patches 在逐帧采集前原子执行，无空闲帧漂移
+  [7] patch 模板：逐帧补丁在每帧结束后恢复并覆盖截图刷新帧，一次性补丁不跨帧
+  [8] showcase 契约：dump 返回实际采集帧数而非模拟器绝对 framecount
+  [9] showcase schema：完整单要素包通过校验
+  [10] showcase schema：清单调研 draft 不得生产
+  [11] showcase schema：检测帧越出采集窗被拒
+  [12] showcase schema：未知检测插件在采集前拒
+  [13] showcase plan：ROM/base/EmuHawk/完整清单齐全才 ready
+  [14] auto/showcase：指纹输入含 pack+ROM+base
+  [15] auto/showcase：plan 走 showcase 分支，不要求 TAS 出版物
+  [16] showcase 获取：包内路径挪盘 => 按哈希命中本地索引，不判死
+  [17] showcase 获取：本地也没有且没注入钩子 => 诚实 blocked（不自动抓商业全集）
+  [18] showcase 获取：注入网盘 resolver 后走通（网盘优先）
+  [19] showcase 获取：resolver 交回哈希不符件 => blocked，不拿错版本出片
+  [20] showcase 获取：包内件哈希不符仍 blocked（RAM 地址按版本标的）
+  [21] showcase plan：resources 报解析后的 ROM，run 不再各判一套
+  [22] showcase plan：ROM 取不到 => blocked（不带着 None 路径往下跑）
+  [23] showcase 音频：audio=True 显式 blocked（不静默出哑片给解说工厂）
+  [24] auto/showcase：spec.audio 透传到 showcase 并被诚实拦下
+  [25] showcase 检测：正例过+中立反例拒 => pass
+  [26] showcase 反证：反例也过同检测器 => fail
+  [27] showcase 检测：证据不足不得算 pass
+  [28] 三类验收：缺动作检查不得进入生产
+  [29] 三类验收：要求效果但缺检查不得默认通过
+  [30] 三类验收：效果不适用不得夹带效果检查
+  [31] 三类验收：仅显式 not_applicable 可免除效果检查
+  [32] 三类验收：候选像素差分通过仍不得作为正式交付
+  [33] 三类验收：动作失败独立拒绝，不靠效果或拍摄抵消
+  [34] 三类验收：动作通过但效果失败仍拒绝
+  [35] 三类验收：动作/效果通过但拍摄失败仍拒绝
+  [36] 三类验收：首帧合格但后续黑帧仍不得判拍摄通过
+  [37] 三类验收：跨维度重复 check_id 被拒
+  [38] showcase 帧闸：半 PNG/假 PNG 不得进入编码
+  [39] showcase 生产：单要素正/反例+编码+合辑全链 done
+  [40] showcase 产物：正式合辑与反例片段均真实落盘
+  [41] 三类验收产物：拍摄检查覆盖并保留全部五帧正例证据
+  [42] showcase 对照：正/反例同 base 同总帧数，反例默认中立
+  [43] showcase 对照：反例继承相同 RAM 前置补丁，隔离宏效果
+  [44] showcase 逐要素 base：特殊场景覆盖公共 base，正反例仍共享同一快照
+  [45] showcase 会话：生产结束关闭 EmuHawk
+  [46] 三类验收生产闸：效果失败不得生成合辑或计为交付
+  [47] 三类验收生产反证：首帧白、后续帧黑仍须拒绝拍摄并禁止出合辑
+  [48] showcase 续跑：同指纹复用要素与合辑，不重启采集会话
+  [49] showcase 全量闸：清单 1/2 未 authoring 齐全，不许直接全量跑
+  [50] showcase --only：单要素可试跑但不生成正式全量合辑
+  [51] showcase 缺口：delivery 五字段齐全才过 schema
+  [52] showcase 缺口：未注册的 status 被拒
+  [53] showcase 缺口：没写批准日期被拒
+  [54] showcase 缺口：没说清缺哪一步被拒
+  [55] showcase 缺口：plan 把必交数减到 1 并点名缺口要素
+  [56] showcase 缺口：7/8 型产物照出正式合辑，不必等最后一格
+  [57] showcase 缺口：分母仍是 2，full_collection=False 不许冒充全量
+  [58] showcase 缺口：产物里逐条点名谁挂起、谁批的、哪天
+  [59] showcase 缺口：挂起要素不采集、不进合辑
+  [60] showcase 缺口：只为本轮必交要素起一次会话
+  [61] showcase 缺口：--only 显式点名仍可重试，挂起不等于封死
+  [62] showcase 缺口：拿声明把必交要素清空 => 拦死
+  [63] auto/showcase：run 生产入口已接线
+showcase selftest OK

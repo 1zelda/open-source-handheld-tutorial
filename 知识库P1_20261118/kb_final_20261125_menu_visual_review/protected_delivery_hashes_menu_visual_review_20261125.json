@@ -1,0 +1,210 @@
+{
+  "status": "pass",
+  "checked": 34,
+  "files": [
+    {
+      "path": "知识库P1_20261118/kb_final_20261124/artifact_inventory_after_strict_citation_fix_20261124.json",
+      "expected": "e728670c4aea20544a0bc719432435b1d7efc34bbce52e80d88ea99e8ac8b9fd",
+      "actual": "e728670c4aea20544a0bc719432435b1d7efc34bbce52e80d88ea99e8ac8b9fd",
+      "unchanged": true
+    },
+    {
+      "path": "知识库P1_20261118/kb_final_20261124/final_manifest_after_strict_citation_fix_20261124.json",
+      "expected": "7855b800e0862ce551e3aeb211f362c931f27ba067869f4de3b532f30ba2d934",
+      "actual": "7855b800e0862ce551e3aeb211f362c931f27ba067869f4de3b532f30ba2d934",
+      "unchanged": true
+    },
+    {
+      "path": "知识库P1_20261118/kb_final_20261124_source_inheritance/artifact_inventory_source_inheritance_20261124.json",
+      "expected": "256484703f4cf1cba8df3163c025d01e175aa1c4b901a7f98e0a912a56d3a5c9",
+      "actual": "256484703f4cf1cba8df3163c025d01e175aa1c4b901a7f98e0a912a56d3a5c9",
+      "unchanged": true
+    },
+    {
+      "path": "知识库P1_20261118/kb_final_20261124_source_inheritance/final_manifest_source_inheritance_20261124.json",
+      "expected": "7bbcce947e1fe0afdeb90836eecbe52390090e284ada8516d6897ff69ce8a4d7",
+      "actual": "7bbcce947e1fe0afdeb90836eecbe52390090e284ada8516d6897ff69ce8a4d7",
+      "unchanged": true
+    },
+    {
+      "path": "知识库P1_20261118/kb_final_20261125_menu_evidence_binding/artifact_inventory_menu_evidence_binding_20261125.json",
+      "expected": "26379681cfb741010fdd5329d5a126f632cf11e868932d378807ba9a78bed0e1",
+      "actual": "26379681cfb741010fdd5329d5a126f632cf11e868932d378807ba9a78bed0e1",
+      "unchanged": true
+    },
+    {
+      "path": "知识库P1_20261118/kb_final_20261125_menu_evidence_binding/artifact_inventory_menu_evidence_binding_20261125.md",
+      "expected": "36f89300949dd3b614d60df8c280a8b5dc9bf1b72ed48c5c6c28fd8a99c50d06",
+      "actual": "36f89300949dd3b614d60df8c280a8b5dc9bf1b72ed48c5c6c28fd8a99c50d06",
+      "unchanged": true
+    },
+    {
+      "path": "知识库P1_20261118/kb_final_20261125_menu_evidence_binding/artifact_inventory_verification_menu_evidence_binding_20261125.json",
+      "expected": "6327f83fe18a294a175f855b30eee32a8b5457ef2bf841d10b0a14d85ab72d5f",
+      "actual": "6327f83fe18a294a175f855b30eee32a8b5457ef2bf841d10b0a14d85ab72d5f",
+      "unchanged": true
+    },
+    {
+      "path": "知识库P1_20261118/kb_final_20261125_menu_evidence_binding/coverage_menu_evidence_binding_20261125.log",
+      "expected": "244d9505399379e73e066c3be97b9a0706cc0546323c3014543ecf1234c0f39c",
+      "actual": "244d9505399379e73e066c3be97b9a0706cc0546323c3014543ecf1234c0f39c",
+      "unchanged": true
+    },
+    {
+      "path": "知识库P1_20261118/kb_final_20261125_menu_evidence_binding/cross_platform_menu_evidence_binding_20261125.log",
+      "expected": "df44e52548c3d65bdd7bb22274f9e7a8cf50556a2270c8c4cc95bb9acf921ca6",
+      "actual": "df44e52548c3d65bdd7bb22274f9e7a8cf50556a2270c8c4cc95bb9acf921ca6",
+      "unchanged": true
+    },
+    {
+      "path": "知识库P1_20261118/kb_final_20261125_menu_evidence_binding/final_delivery_verification_menu_evidence_binding_20261125.json",
+      "expected": "0fbb80a4d461268da8c80d19c4d001e6fd14003e55e30ff9b43bc6ef1de16ad0",
+      "actual": "0fbb80a4d461268da8c80d19c4d001e6fd14003e55e30ff9b43bc6ef1de16ad0",
+      "unchanged": true
+    },
+    {
+      "path": "知识库P1_20261118/kb_final_20261125_menu_evidence_binding/final_manifest_menu_evidence_binding_20261125.json",
+      "expected": "c29b871c23c7d296bbb0a8a70e819af227353322388a2257a88c18d94da84655",
+      "actual": "c29b871c23c7d296bbb0a8a70e819af227353322388a2257a88c18d94da84655",
+      "unchanged": true
+    },
+    {
+      "path": "知识库P1_20261118/kb_final_20261125_menu_evidence_binding/finalize_menu_evidence_delivery_20261125.py",
+      "expected": "135d7694bbb35e13e33fc5e713c2f879c753bbafd8958f4907e6ac77f7c4022c",
+      "actual": "135d7694bbb35e13e33fc5e713c2f879c753bbafd8958f4907e6ac77f7c4022c",
+      "unchanged": true
+    },
+    {
+      "path": "知识库P1_20261118/kb_final_20261125_menu_evidence_binding/kb_audit_menu_evidence_binding_20261125.json",
+      "expected": "e8c983c80bfb4945908312f0aa3dcfdc82c1a923951967ad88367e08d7d8d6c9",
+      "actual": "e8c983c80bfb4945908312f0aa3dcfdc82c1a923951967ad88367e08d7d8d6c9",
+      "unchanged": true
+    },
+    {
+      "path": "知识库P1_20261118/kb_final_20261125_menu_evidence_binding/kb_audit_menu_evidence_binding_20261125.log",
+      "expected": "4d85f8727d562445e9d1a8dfff87082cf89e08a920cf309b5ad44e89174f2229",
+      "actual": "4d85f8727d562445e9d1a8dfff87082cf89e08a920cf309b5ad44e89174f2229",
+      "unchanged": true
+    },
+    {
+      "path": "知识库P1_20261118/kb_final_20261125_menu_evidence_binding/kb_selftest_menu_evidence_binding_20261125.log",
+      "expected": "50b064fc8f5105592bbc4329c61bd9b7b5fb9a554a007f5b4b20d7e43fdb8093",
+      "actual": "50b064fc8f5105592bbc4329c61bd9b7b5fb9a554a007f5b4b20d7e43fdb8093",
+      "unchanged": true
+    },
+    {
+      "path": "知识库P1_20261118/kb_final_20261125_menu_evidence_binding/pdf_qc_menu_evidence_binding_20261125.log",
+      "expected": "26177fb5fee864fe9f9ae2f7fb10185e52a34066da3e0bb99d85e160f2220796",
+      "actual": "26177fb5fee864fe9f9ae2f7fb10185e52a34066da3e0bb99d85e160f2220796",
+      "unchanged": true
+    },
+    {
+      "path": "知识库P1_20261118/kb_final_20261125_menu_evidence_binding/preflight_fingerprints_menu_evidence_binding_20261125.json",
+      "expected": "2a7af1aa6ca19cbc1410be75cf7a6d5c3a727fe555344cd732e50cccd768d3fc",
+      "actual": "2a7af1aa6ca19cbc1410be75cf7a6d5c3a727fe555344cd732e50cccd768d3fc",
+      "unchanged": true
+    },
+    {
+      "path": "知识库P1_20261118/kb_final_20261125_menu_evidence_binding/protected_delivery_hashes_20261125.json",
+      "expected": "cef364939a4144d94c9e2a192e7d0220dbc2d7163e93b7860685de854325e55d",
+      "actual": "cef364939a4144d94c9e2a192e7d0220dbc2d7163e93b7860685de854325e55d",
+      "unchanged": true
+    },
+    {
+      "path": "知识库P1_20261118/kb_final_20261125_menu_evidence_binding/render_qc_menu_evidence_binding_20261125.py",
+      "expected": "02366394f86b7c1edcbe397c065151674dbc9cb87c74fdf6d1ec0002d4512509",
+      "actual": "02366394f86b7c1edcbe397c065151674dbc9cb87c74fdf6d1ec0002d4512509",
+      "unchanged": true
+    },
+    {
+      "path": "知识库P1_20261118/kb_final_20261125_menu_evidence_binding/report_qc_menu_evidence_binding_20261125/contact_sheet.png",
+      "expected": "bb1e05efe52265600408df312c04c09872c3c23f10ac01efe5c85963d5ab950d",
+      "actual": "bb1e05efe52265600408df312c04c09872c3c23f10ac01efe5c85963d5ab950d",
+      "unchanged": true
+    },
+    {
+      "path": "知识库P1_20261118/kb_final_20261125_menu_evidence_binding/report_qc_menu_evidence_binding_20261125/page_01.png",
+      "expected": "776de628d0bb22c54e8136a809d24371ca4d2b07ca649b8a1b976b8f55a52533",
+      "actual": "776de628d0bb22c54e8136a809d24371ca4d2b07ca649b8a1b976b8f55a52533",
+      "unchanged": true
+    },
+    {
+      "path": "知识库P1_20261118/kb_final_20261125_menu_evidence_binding/report_qc_menu_evidence_binding_20261125/page_03.png",
+      "expected": "d276d642d9d9661c448a145e514404e3dca4148c758ecb3ded20c36f2a2bcbdb",
+      "actual": "d276d642d9d9661c448a145e514404e3dca4148c758ecb3ded20c36f2a2bcbdb",
+      "unchanged": true
+    },
+    {
+      "path": "知识库P1_20261118/kb_final_20261125_menu_evidence_binding/report_qc_menu_evidence_binding_20261125/page_04.png",
+      "expected": "eb7f730b77671ca7d551f89e2c31f9c4237d31c97816e991c7f9ecf64bdab979",
+      "actual": "eb7f730b77671ca7d551f89e2c31f9c4237d31c97816e991c7f9ecf64bdab979",
+      "unchanged": true
+    },
+    {
+      "path": "知识库P1_20261118/kb_final_20261125_menu_evidence_binding/report_qc_menu_evidence_binding_20261125/render_qa.json",
+      "expected": "9a546441f723bc123453f4cfb45f8e9265d1c703c26fa7e2ca02513c5a57012d",
+      "actual": "9a546441f723bc123453f4cfb45f8e9265d1c703c26fa7e2ca02513c5a57012d",
+      "unchanged": true
+    },
+    {
+      "path": "知识库P1_20261118/kb_final_20261125_menu_evidence_binding/report_qc_menu_evidence_binding_20261125/report.html",
+      "expected": "e5e85a559954f51aff0bfe3a3c099abf5cce5b60fe932bd853cbbc954593406c",
+      "actual": "e5e85a559954f51aff0bfe3a3c099abf5cce5b60fe932bd853cbbc954593406c",
+      "unchanged": true
+    },
+    {
+      "path": "知识库P1_20261118/kb_final_20261125_menu_evidence_binding/selftest_menu_evidence_binding_20261125.log",
+      "expected": "9753ef9d0ef6bd1e644f2c61172c8db21d2a81c8bdbbeafacff9e4fc5f26c161",
+      "actual": "9753ef9d0ef6bd1e644f2c61172c8db21d2a81c8bdbbeafacff9e4fc5f26c161",
+      "unchanged": true
+    },
+    {
+      "path": "知识库P1_20261118/kb_final_20261125_menu_evidence_binding/source_audit.json",
+      "expected": "81a6ae6cfe4adf251d8a7d9153e64b173a40ba6d177b0faff123d3c094a28d49",
+      "actual": "81a6ae6cfe4adf251d8a7d9153e64b173a40ba6d177b0faff123d3c094a28d49",
+      "unchanged": true
+    },
+    {
+      "path": "知识库P1_20261118/kb_final_20261125_menu_evidence_binding/sources_selftest_menu_evidence_binding_20261125.log",
+      "expected": "e79cfc2ad2150cd9f56fe7893e544d677f6479c51ceb85a149e53415b32be6b2",
+      "actual": "e79cfc2ad2150cd9f56fe7893e544d677f6479c51ceb85a149e53415b32be6b2",
+      "unchanged": true
+    },
+    {
+      "path": "知识库P1_20261118/kb_final_20261125_menu_evidence_binding/topic_selftest_menu_evidence_binding_20261125.log",
+      "expected": "aed86117fa44632b158eac0767d0e6fbcc1d62535d26bab9d32f3e54b83636a9",
+      "actual": "aed86117fa44632b158eac0767d0e6fbcc1d62535d26bab9d32f3e54b83636a9",
+      "unchanged": true
+    },
+    {
+      "path": "知识库改进优化指导_2026-11-24_strict片段修正回填.md",
+      "expected": "66c1bdeb0f3cde492751cbfbea237c6ff3083eb4218927481b5a833139635657",
+      "actual": "66c1bdeb0f3cde492751cbfbea237c6ff3083eb4218927481b5a833139635657",
+      "unchanged": true
+    },
+    {
+      "path": "知识库改进优化指导_2026-11-24_来源继承修正回填.md",
+      "expected": "ca1894547caf36f7f53a0c7ee26703823b89e856007d064b4e993806710cf728",
+      "actual": "ca1894547caf36f7f53a0c7ee26703823b89e856007d064b4e993806710cf728",
+      "unchanged": true
+    },
+    {
+      "path": "知识库改进优化指导_2026-11-25_晓月菜单证据固化与来源覆盖修正.md",
+      "expected": "96881ae5c0b93eb9ff367539de4b27f51834a7f76a18abe33d4d21ed752fd7d0",
+      "actual": "96881ae5c0b93eb9ff367539de4b27f51834a7f76a18abe33d4d21ed752fd7d0",
+      "unchanged": true
+    },
+    {
+      "path": "知识库改进优化指导_2026-11-25_晓月菜单证据固化与来源覆盖修正.pdf",
+      "expected": "735b1f81a0222c37411ef57a3105cdbcf208d5d5875c8dd04bc65ff66dba4a86",
+      "actual": "735b1f81a0222c37411ef57a3105cdbcf208d5d5875c8dd04bc65ff66dba4a86",
+      "unchanged": true
+    },
+    {
+      "path": "知识库改进优化指导_2026-11-25_来源审计修正回填.pdf",
+      "expected": "7ebb18b529b21f930aca6a11df1580c01dcd6a0396beff6c6466792fae9d4bea",
+      "actual": "7ebb18b529b21f930aca6a11df1580c01dcd6a0396beff6c6466792fae9d4bea",
+      "unchanged": true
+    }
+  ]
+}

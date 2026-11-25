@@ -1,5 +1,5 @@
 {
-  "schema_version": "aria_soul_menu_catalog/1.1",
+  "schema_version": "aria_soul_menu_catalog/1.2",
   "game_id": "castlevania_aria_gba",
   "game_title": "恶魔城：晓月圆舞曲（中文版）",
   "platform": "GBA",
@@ -12,7 +12,7 @@
     "revision": "r20261125T145623"
   },
   "status": "complete",
-  "scope": "menu_identity_and_description_only",
+  "scope": "menu_identity_description_and_scoped_gameplay",
   "catalog": {
     "sources": [
       {
@@ -138,6 +138,34 @@
         ],
         "note": "仅绑定114项真实菜单身份、RAM回读、名称与效果文本观察；保持candidate，gameplay_verified与detector_verified均为false。",
         "evidence_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_catalog_report.json"
+      },
+      {
+        "source_id": "local_aria_gameplay_verify_20261125",
+        "url": "",
+        "status": "verified_read",
+        "verified_date": "2026-11-25",
+        "element_ids": [
+          "aria_red_004",
+          "aria_red_005",
+          "aria_red_012",
+          "aria_red_024",
+          "aria_red_031",
+          "aria_red_037",
+          "aria_blue_002",
+          "aria_blue_004",
+          "aria_blue_006",
+          "aria_blue_013",
+          "aria_blue_022",
+          "aria_red_035",
+          "aria_red_047",
+          "aria_yellow_010",
+          "aria_yellow_015",
+          "aria_yellow_026",
+          "aria_yellow_027",
+          "aria_yellow_028",
+          "aria_yellow_029"
+        ],
+        "evidence_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/gameplay_verify_binding_20261125/gameplay_evidence_binding_20261125.json"
       }
     ]
   },
@@ -158,7 +186,7 @@
   },
   "name_observation": {
     "path": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_names_observed.json",
-    "sha256": "ad2f9ec2aee31c976095707669946b17ad4478bb5e6fd180619a1996e123c922"
+    "sha256": "dca7ce9f5e814231030777ee1aa97821092ce90bfc1d37b1fbc0a1051aa17506"
   },
   "effect_observation": {
     "path": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_effects_observed.json",
@@ -221,14 +249,20 @@
       "id": 1,
       "slot_addr": 78429,
       "slot_hex": "0x1325D",
-      "name_zh": "大骷髅",
+      "name_zh": "飞骷髅",
       "effect_text": "发出魔力之枪",
       "evidence_level": "menu_capture_and_manual_observation",
       "gameplay_verified": false,
       "detector_verified": false,
       "name_observation": {
         "method": "manual_visual_read_from_real_menu_identity_crop",
-        "second_visual_review": false
+        "second_visual_review": true,
+        "original_name": "大骷髅",
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "corrected_to_screenshot"
       },
       "effect_observation": {
         "method": "manual_visual_read_from_real_menu_effect_region",
@@ -237,7 +271,13 @@
           118,
           238,
           153
-        ]
+        ],
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "capture": {
         "status": "captured",
@@ -277,7 +317,12 @@
       "detector_verified": false,
       "name_observation": {
         "method": "manual_visual_read_from_real_menu_identity_crop",
-        "second_visual_review": false
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "effect_observation": {
         "method": "manual_visual_read_from_real_menu_effect_region",
@@ -286,7 +331,13 @@
           118,
           238,
           153
-        ]
+        ],
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "capture": {
         "status": "captured",
@@ -326,7 +377,12 @@
       "detector_verified": false,
       "name_observation": {
         "method": "manual_visual_read_from_real_menu_identity_crop",
-        "second_visual_review": false
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "effect_observation": {
         "method": "manual_visual_read_from_real_menu_effect_region",
@@ -335,7 +391,13 @@
           118,
           238,
           153
-        ]
+        ],
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "capture": {
         "status": "captured",
@@ -371,11 +433,16 @@
       "name_zh": "半鱼人",
       "effect_text": "发射水炮",
       "evidence_level": "menu_capture_and_manual_observation",
-      "gameplay_verified": false,
+      "gameplay_verified": true,
       "detector_verified": false,
       "name_observation": {
         "method": "manual_visual_read_from_real_menu_identity_crop",
-        "second_visual_review": false
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "effect_observation": {
         "method": "manual_visual_read_from_real_menu_effect_region",
@@ -384,7 +451,13 @@
           118,
           238,
           153
-        ]
+        ],
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "capture": {
         "status": "captured",
@@ -409,7 +482,39 @@
           "sha256": "71c9ef81eed91d9d602228674f334077637c307445a2c08aba07904ed5da3ef4"
         }
       },
-      "element_id": "aria_red_004"
+      "element_id": "aria_red_004",
+      "gameplay_evidence": {
+        "source_id": "local_aria_gameplay_verify_20261125",
+        "status": "fixed_route_pass",
+        "case_id": "red_soul_4_verify_vs_empty",
+        "evidence_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/gameplay_verify_binding_20261125/gameplay_evidence_binding_20261125.json",
+        "report": {
+          "path": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/gameplay_verify_binding_20261125/red_soul_4_verify_vs_empty/report.json",
+          "bytes": 41570,
+          "sha256": "0022ad0f684ca89403f40123099f2f00b7158898062a5bcff96e690ccfbd1bd5"
+        },
+        "state_revision": "r20261125T120000",
+        "archive_revision": "r20261125T040115",
+        "slot": {
+          "addr": 78429,
+          "positive": 4,
+          "negative": 0
+        },
+        "metric": {
+          "addr": 78448,
+          "positive": 67,
+          "negative": 80,
+          "name": "current_mp"
+        },
+        "captured_frames_per_arm": 90,
+        "comparison": {
+          "equal_frames": 0,
+          "different_frames": 90,
+          "pass": true
+        },
+        "proves": "固定战斗初态只改对应槽位并执行角色宏；目标槽保持、MP低于80，空槽保持80，抽样帧存在真实差异。",
+        "does_not_prove": "不证明伤害、射程、全部招式语义、中文菜单装备流程或任意场景稳定性。"
+      }
     },
     {
       "group": "red",
@@ -420,11 +525,16 @@
       "name_zh": "斧装甲",
       "effect_text": "投斧",
       "evidence_level": "menu_capture_and_manual_observation",
-      "gameplay_verified": false,
+      "gameplay_verified": true,
       "detector_verified": false,
       "name_observation": {
         "method": "manual_visual_read_from_real_menu_identity_crop",
-        "second_visual_review": false
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "effect_observation": {
         "method": "manual_visual_read_from_real_menu_effect_region",
@@ -433,7 +543,13 @@
           118,
           238,
           153
-        ]
+        ],
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "capture": {
         "status": "captured",
@@ -458,7 +574,39 @@
           "sha256": "07b12eaccc62f30b9ef8397eae5031a00f1d3cf261a706f0bee05a93855dcf2f"
         }
       },
-      "element_id": "aria_red_005"
+      "element_id": "aria_red_005",
+      "gameplay_evidence": {
+        "source_id": "local_aria_gameplay_verify_20261125",
+        "status": "fixed_route_pass",
+        "case_id": "red_soul_5_verify_vs_empty",
+        "evidence_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/gameplay_verify_binding_20261125/gameplay_evidence_binding_20261125.json",
+        "report": {
+          "path": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/gameplay_verify_binding_20261125/red_soul_5_verify_vs_empty/report.json",
+          "bytes": 41565,
+          "sha256": "614b8c28bbe45c43c011953b788bf041ef83cbbe052628223674bf40bb585f97"
+        },
+        "state_revision": "r20261125T120000",
+        "archive_revision": "r20261125T040115",
+        "slot": {
+          "addr": 78429,
+          "positive": 5,
+          "negative": 0
+        },
+        "metric": {
+          "addr": 78448,
+          "positive": 59,
+          "negative": 80,
+          "name": "current_mp"
+        },
+        "captured_frames_per_arm": 90,
+        "comparison": {
+          "equal_frames": 0,
+          "different_frames": 90,
+          "pass": true
+        },
+        "proves": "固定战斗初态只改对应槽位并执行角色宏；目标槽保持、MP低于80，空槽保持80，抽样帧存在真实差异。",
+        "does_not_prove": "不证明伤害、射程、全部招式语义、中文菜单装备流程或任意场景稳定性。"
+      }
     },
     {
       "group": "red",
@@ -473,7 +621,12 @@
       "detector_verified": false,
       "name_observation": {
         "method": "manual_visual_read_from_real_menu_identity_crop",
-        "second_visual_review": false
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "effect_observation": {
         "method": "manual_visual_read_from_real_menu_effect_region",
@@ -482,7 +635,13 @@
           118,
           238,
           153
-        ]
+        ],
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "capture": {
         "status": "captured",
@@ -522,7 +681,12 @@
       "detector_verified": false,
       "name_observation": {
         "method": "manual_visual_read_from_real_menu_identity_crop",
-        "second_visual_review": false
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "effect_observation": {
         "method": "manual_visual_read_from_real_menu_effect_region",
@@ -531,7 +695,13 @@
           118,
           238,
           153
-        ]
+        ],
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "capture": {
         "status": "captured",
@@ -571,7 +741,12 @@
       "detector_verified": false,
       "name_observation": {
         "method": "manual_visual_read_from_real_menu_identity_crop",
-        "second_visual_review": false
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "effect_observation": {
         "method": "manual_visual_read_from_real_menu_effect_region",
@@ -580,7 +755,13 @@
           118,
           238,
           153
-        ]
+        ],
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "capture": {
         "status": "captured",
@@ -620,7 +801,12 @@
       "detector_verified": false,
       "name_observation": {
         "method": "manual_visual_read_from_real_menu_identity_crop",
-        "second_visual_review": false
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "effect_observation": {
         "method": "manual_visual_read_from_real_menu_effect_region",
@@ -629,7 +815,13 @@
           118,
           238,
           153
-        ]
+        ],
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "capture": {
         "status": "captured",
@@ -669,7 +861,12 @@
       "detector_verified": false,
       "name_observation": {
         "method": "manual_visual_read_from_real_menu_identity_crop",
-        "second_visual_review": false
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "effect_observation": {
         "method": "manual_visual_read_from_real_menu_effect_region",
@@ -678,7 +875,13 @@
           118,
           238,
           153
-        ]
+        ],
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "capture": {
         "status": "captured",
@@ -718,7 +921,12 @@
       "detector_verified": false,
       "name_observation": {
         "method": "manual_visual_read_from_real_menu_identity_crop",
-        "second_visual_review": false
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "effect_observation": {
         "method": "manual_visual_read_from_real_menu_effect_region",
@@ -727,7 +935,13 @@
           118,
           238,
           153
-        ]
+        ],
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "capture": {
         "status": "captured",
@@ -763,11 +977,16 @@
       "name_zh": "小恶魔",
       "effect_text": "发出真空之刃",
       "evidence_level": "menu_capture_and_manual_observation",
-      "gameplay_verified": false,
+      "gameplay_verified": true,
       "detector_verified": false,
       "name_observation": {
         "method": "manual_visual_read_from_real_menu_identity_crop",
-        "second_visual_review": false
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "effect_observation": {
         "method": "manual_visual_read_from_real_menu_effect_region",
@@ -776,7 +995,13 @@
           118,
           238,
           153
-        ]
+        ],
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "capture": {
         "status": "captured",
@@ -801,7 +1026,39 @@
           "sha256": "143e14d5ea5b0b0d39826a84f424f5c55657181492dfe52b85f050348f6952af"
         }
       },
-      "element_id": "aria_red_012"
+      "element_id": "aria_red_012",
+      "gameplay_evidence": {
+        "source_id": "local_aria_gameplay_verify_20261125",
+        "status": "fixed_route_pass",
+        "case_id": "red_soul_12_verify_vs_empty",
+        "evidence_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/gameplay_verify_binding_20261125/gameplay_evidence_binding_20261125.json",
+        "report": {
+          "path": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/gameplay_verify_binding_20261125/red_soul_12_verify_vs_empty/report.json",
+          "bytes": 41755,
+          "sha256": "a1f7f739d09c23e960ca7b6b560b341294049e2614670ea438e1b4138a4e8473"
+        },
+        "state_revision": "r20261125T120000",
+        "archive_revision": "r20261125T040115",
+        "slot": {
+          "addr": 78429,
+          "positive": 12,
+          "negative": 0
+        },
+        "metric": {
+          "addr": 78448,
+          "positive": 63,
+          "negative": 80,
+          "name": "current_mp"
+        },
+        "captured_frames_per_arm": 90,
+        "comparison": {
+          "equal_frames": 0,
+          "different_frames": 90,
+          "pass": true
+        },
+        "proves": "固定战斗初态只改对应槽位并执行角色宏；目标槽保持、MP低于80，空槽保持80，抽样帧存在真实差异。",
+        "does_not_prove": "不证明伤害、射程、全部招式语义、中文菜单装备流程或任意场景稳定性。"
+      }
     },
     {
       "group": "red",
@@ -816,7 +1073,12 @@
       "detector_verified": false,
       "name_observation": {
         "method": "manual_visual_read_from_real_menu_identity_crop",
-        "second_visual_review": false
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "effect_observation": {
         "method": "manual_visual_read_from_real_menu_effect_region",
@@ -825,7 +1087,13 @@
           118,
           238,
           153
-        ]
+        ],
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "capture": {
         "status": "captured",
@@ -865,7 +1133,12 @@
       "detector_verified": false,
       "name_observation": {
         "method": "manual_visual_read_from_real_menu_identity_crop",
-        "second_visual_review": false
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "effect_observation": {
         "method": "manual_visual_read_from_real_menu_effect_region",
@@ -874,7 +1147,13 @@
           118,
           238,
           153
-        ]
+        ],
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "capture": {
         "status": "captured",
@@ -914,7 +1193,12 @@
       "detector_verified": false,
       "name_observation": {
         "method": "manual_visual_read_from_real_menu_identity_crop",
-        "second_visual_review": false
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "effect_observation": {
         "method": "manual_visual_read_from_real_menu_effect_region",
@@ -923,7 +1207,13 @@
           118,
           238,
           153
-        ]
+        ],
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "capture": {
         "status": "captured",
@@ -963,7 +1253,12 @@
       "detector_verified": false,
       "name_observation": {
         "method": "manual_visual_read_from_real_menu_identity_crop",
-        "second_visual_review": false
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "effect_observation": {
         "method": "manual_visual_read_from_real_menu_effect_region",
@@ -972,7 +1267,13 @@
           118,
           238,
           153
-        ]
+        ],
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "capture": {
         "status": "captured",
@@ -1012,7 +1313,12 @@
       "detector_verified": false,
       "name_observation": {
         "method": "manual_visual_read_from_real_menu_identity_crop",
-        "second_visual_review": false
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "effect_observation": {
         "method": "manual_visual_read_from_real_menu_effect_region",
@@ -1021,7 +1327,13 @@
           118,
           238,
           153
-        ]
+        ],
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "capture": {
         "status": "captured",
@@ -1061,7 +1373,12 @@
       "detector_verified": false,
       "name_observation": {
         "method": "manual_visual_read_from_real_menu_identity_crop",
-        "second_visual_review": false
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "effect_observation": {
         "method": "manual_visual_read_from_real_menu_effect_region",
@@ -1070,7 +1387,13 @@
           118,
           238,
           153
-        ]
+        ],
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "capture": {
         "status": "captured",
@@ -1110,7 +1433,12 @@
       "detector_verified": false,
       "name_observation": {
         "method": "manual_visual_read_from_real_menu_identity_crop",
-        "second_visual_review": false
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "effect_observation": {
         "method": "manual_visual_read_from_real_menu_effect_region",
@@ -1119,7 +1447,13 @@
           118,
           238,
           153
-        ]
+        ],
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "capture": {
         "status": "captured",
@@ -1159,7 +1493,12 @@
       "detector_verified": false,
       "name_observation": {
         "method": "manual_visual_read_from_real_menu_identity_crop",
-        "second_visual_review": false
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "effect_observation": {
         "method": "manual_visual_read_from_real_menu_effect_region",
@@ -1168,7 +1507,13 @@
           118,
           238,
           153
-        ]
+        ],
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "capture": {
         "status": "captured",
@@ -1208,7 +1553,12 @@
       "detector_verified": false,
       "name_observation": {
         "method": "manual_visual_read_from_real_menu_identity_crop",
-        "second_visual_review": false
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "effect_observation": {
         "method": "manual_visual_read_from_real_menu_effect_region",
@@ -1217,7 +1567,13 @@
           118,
           238,
           153
-        ]
+        ],
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "capture": {
         "status": "captured",
@@ -1257,7 +1613,12 @@
       "detector_verified": false,
       "name_observation": {
         "method": "manual_visual_read_from_real_menu_identity_crop",
-        "second_visual_review": false
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "effect_observation": {
         "method": "manual_visual_read_from_real_menu_effect_region",
@@ -1266,7 +1627,13 @@
           118,
           238,
           153
-        ]
+        ],
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "capture": {
         "status": "captured",
@@ -1306,7 +1673,12 @@
       "detector_verified": false,
       "name_observation": {
         "method": "manual_visual_read_from_real_menu_identity_crop",
-        "second_visual_review": false
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "effect_observation": {
         "method": "manual_visual_read_from_real_menu_effect_region",
@@ -1315,7 +1687,13 @@
           118,
           238,
           153
-        ]
+        ],
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "capture": {
         "status": "captured",
@@ -1351,11 +1729,16 @@
       "name_zh": "魔鸟",
       "effect_text": "投出刀刃般的羽毛",
       "evidence_level": "menu_capture_and_manual_observation",
-      "gameplay_verified": false,
+      "gameplay_verified": true,
       "detector_verified": false,
       "name_observation": {
         "method": "manual_visual_read_from_real_menu_identity_crop",
-        "second_visual_review": false
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "effect_observation": {
         "method": "manual_visual_read_from_real_menu_effect_region",
@@ -1364,7 +1747,13 @@
           118,
           238,
           153
-        ]
+        ],
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "capture": {
         "status": "captured",
@@ -1389,7 +1778,39 @@
           "sha256": "f192a22493121440471e2e9bf87840f5825407622a8333b7b92396cff1e002dd"
         }
       },
-      "element_id": "aria_red_024"
+      "element_id": "aria_red_024",
+      "gameplay_evidence": {
+        "source_id": "local_aria_gameplay_verify_20261125",
+        "status": "fixed_route_pass",
+        "case_id": "red_soul_24_verify_vs_empty",
+        "evidence_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/gameplay_verify_binding_20261125/gameplay_evidence_binding_20261125.json",
+        "report": {
+          "path": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/gameplay_verify_binding_20261125/red_soul_24_verify_vs_empty/report.json",
+          "bytes": 41745,
+          "sha256": "394ba9a09af48c8c826aa3abb9a794634d1cc527b04b156bf50dc7af029557cc"
+        },
+        "state_revision": "r20261125T120000",
+        "archive_revision": "r20261125T040115",
+        "slot": {
+          "addr": 78429,
+          "positive": 24,
+          "negative": 0
+        },
+        "metric": {
+          "addr": 78448,
+          "positive": 56,
+          "negative": 80,
+          "name": "current_mp"
+        },
+        "captured_frames_per_arm": 90,
+        "comparison": {
+          "equal_frames": 0,
+          "different_frames": 90,
+          "pass": true
+        },
+        "proves": "固定战斗初态只改对应槽位并执行角色宏；目标槽保持、MP低于80，空槽保持80，抽样帧存在真实差异。",
+        "does_not_prove": "不证明伤害、射程、全部招式语义、中文菜单装备流程或任意场景稳定性。"
+      }
     },
     {
       "group": "red",
@@ -1404,7 +1825,12 @@
       "detector_verified": false,
       "name_observation": {
         "method": "manual_visual_read_from_real_menu_identity_crop",
-        "second_visual_review": false
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "effect_observation": {
         "method": "manual_visual_read_from_real_menu_effect_region",
@@ -1413,7 +1839,13 @@
           118,
           238,
           153
-        ]
+        ],
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "capture": {
         "status": "captured",
@@ -1453,7 +1885,12 @@
       "detector_verified": false,
       "name_observation": {
         "method": "manual_visual_read_from_real_menu_identity_crop",
-        "second_visual_review": false
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "effect_observation": {
         "method": "manual_visual_read_from_real_menu_effect_region",
@@ -1462,7 +1899,13 @@
           118,
           238,
           153
-        ]
+        ],
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "capture": {
         "status": "captured",
@@ -1502,7 +1945,12 @@
       "detector_verified": false,
       "name_observation": {
         "method": "manual_visual_read_from_real_menu_identity_crop",
-        "second_visual_review": false
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "effect_observation": {
         "method": "manual_visual_read_from_real_menu_effect_region",
@@ -1511,7 +1959,13 @@
           118,
           238,
           153
-        ]
+        ],
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "capture": {
         "status": "captured",
@@ -1551,7 +2005,12 @@
       "detector_verified": false,
       "name_observation": {
         "method": "manual_visual_read_from_real_menu_identity_crop",
-        "second_visual_review": false
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "effect_observation": {
         "method": "manual_visual_read_from_real_menu_effect_region",
@@ -1560,7 +2019,13 @@
           118,
           238,
           153
-        ]
+        ],
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "capture": {
         "status": "captured",
@@ -1600,7 +2065,12 @@
       "detector_verified": false,
       "name_observation": {
         "method": "manual_visual_read_from_real_menu_identity_crop",
-        "second_visual_review": false
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "effect_observation": {
         "method": "manual_visual_read_from_real_menu_effect_region",
@@ -1609,7 +2079,13 @@
           118,
           238,
           153
-        ]
+        ],
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "capture": {
         "status": "captured",
@@ -1649,7 +2125,12 @@
       "detector_verified": false,
       "name_observation": {
         "method": "manual_visual_read_from_real_menu_identity_crop",
-        "second_visual_review": false
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "effect_observation": {
         "method": "manual_visual_read_from_real_menu_effect_region",
@@ -1658,7 +2139,13 @@
           118,
           238,
           153
-        ]
+        ],
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "capture": {
         "status": "captured",
@@ -1694,11 +2181,16 @@
       "name_zh": "噩梦",
       "effect_text": "召唤出噩梦攻击",
       "evidence_level": "menu_capture_and_manual_observation",
-      "gameplay_verified": false,
+      "gameplay_verified": true,
       "detector_verified": false,
       "name_observation": {
         "method": "manual_visual_read_from_real_menu_identity_crop",
-        "second_visual_review": false
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "effect_observation": {
         "method": "manual_visual_read_from_real_menu_effect_region",
@@ -1707,7 +2199,13 @@
           118,
           238,
           153
-        ]
+        ],
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "capture": {
         "status": "captured",
@@ -1732,7 +2230,39 @@
           "sha256": "14815fba35263650f85c07848597c4b2df9f12010845099de7fd36492ef9224b"
         }
       },
-      "element_id": "aria_red_031"
+      "element_id": "aria_red_031",
+      "gameplay_evidence": {
+        "source_id": "local_aria_gameplay_verify_20261125",
+        "status": "fixed_route_pass",
+        "case_id": "red_soul_31_verify_vs_empty",
+        "evidence_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/gameplay_verify_binding_20261125/gameplay_evidence_binding_20261125.json",
+        "report": {
+          "path": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/gameplay_verify_binding_20261125/red_soul_31_verify_vs_empty/report.json",
+          "bytes": 41735,
+          "sha256": "e10b9fb8436bc11544053538b693ca6d2e081e17ac204b591afc9ca7c359fb69"
+        },
+        "state_revision": "r20261125T120000",
+        "archive_revision": "r20261125T040115",
+        "slot": {
+          "addr": 78429,
+          "positive": 31,
+          "negative": 0
+        },
+        "metric": {
+          "addr": 78448,
+          "positive": 51,
+          "negative": 80,
+          "name": "current_mp"
+        },
+        "captured_frames_per_arm": 90,
+        "comparison": {
+          "equal_frames": 0,
+          "different_frames": 90,
+          "pass": true
+        },
+        "proves": "固定战斗初态只改对应槽位并执行角色宏；目标槽保持、MP低于80，空槽保持80，抽样帧存在真实差异。",
+        "does_not_prove": "不证明伤害、射程、全部招式语义、中文菜单装备流程或任意场景稳定性。"
+      }
     },
     {
       "group": "red",
@@ -1747,7 +2277,12 @@
       "detector_verified": false,
       "name_observation": {
         "method": "manual_visual_read_from_real_menu_identity_crop",
-        "second_visual_review": false
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "effect_observation": {
         "method": "manual_visual_read_from_real_menu_effect_region",
@@ -1756,7 +2291,13 @@
           118,
           238,
           153
-        ]
+        ],
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "capture": {
         "status": "captured",
@@ -1796,7 +2337,12 @@
       "detector_verified": false,
       "name_observation": {
         "method": "manual_visual_read_from_real_menu_identity_crop",
-        "second_visual_review": true
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "effect_observation": {
         "method": "manual_visual_read_from_real_menu_effect_region",
@@ -1805,7 +2351,13 @@
           118,
           238,
           153
-        ]
+        ],
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "capture": {
         "status": "captured",
@@ -1845,7 +2397,12 @@
       "detector_verified": false,
       "name_observation": {
         "method": "manual_visual_read_from_real_menu_identity_crop",
-        "second_visual_review": false
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "effect_observation": {
         "method": "manual_visual_read_from_real_menu_effect_region",
@@ -1854,7 +2411,13 @@
           118,
           238,
           153
-        ]
+        ],
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "capture": {
         "status": "captured",
@@ -1890,11 +2453,16 @@
       "name_zh": "虎人",
       "effect_text": "蕴含浑身之力的直拳",
       "evidence_level": "menu_capture_and_manual_observation",
-      "gameplay_verified": false,
+      "gameplay_verified": true,
       "detector_verified": false,
       "name_observation": {
         "method": "manual_visual_read_from_real_menu_identity_crop",
-        "second_visual_review": false
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "effect_observation": {
         "method": "manual_visual_read_from_real_menu_effect_region",
@@ -1903,7 +2471,13 @@
           118,
           238,
           153
-        ]
+        ],
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "capture": {
         "status": "captured",
@@ -1928,7 +2502,39 @@
           "sha256": "0fae5ff68368a8ca02fc9510abc40045ef7da32ba3232da79576619f425804cb"
         }
       },
-      "element_id": "aria_red_035"
+      "element_id": "aria_red_035",
+      "gameplay_evidence": {
+        "source_id": "local_aria_gameplay_verify_20261125",
+        "status": "fixed_route_pass",
+        "case_id": "red_soul_35_resource_verify",
+        "evidence_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/gameplay_verify_binding_20261125/gameplay_evidence_binding_20261125.json",
+        "report": {
+          "path": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/gameplay_verify_binding_20261125/red_soul_35_resource_verify/report.json",
+          "bytes": 26287,
+          "sha256": "ebd93a96c3c29b589a2319a27e04afb47985392c614b682de41bd725ebb1b1aa"
+        },
+        "state_revision": "r20261125T145623",
+        "archive_revision": "r20261125T153709",
+        "slot": {
+          "addr": 78429,
+          "positive": 35,
+          "negative": 0
+        },
+        "metric": {
+          "addr": 78448,
+          "positive": 41,
+          "negative": 80,
+          "name": "current_mp"
+        },
+        "captured_frames_per_arm": 90,
+        "comparison": {
+          "equal_frames": 0,
+          "different_frames": 90,
+          "pass": true
+        },
+        "proves": "固定战斗初态只改对应槽位并执行角色宏；目标槽保持、MP低于80，空槽保持80，抽样帧存在真实差异。",
+        "does_not_prove": "不证明伤害、射程、全部招式语义、中文菜单装备流程或任意场景稳定性。"
+      }
     },
     {
       "group": "red",
@@ -1943,7 +2549,12 @@
       "detector_verified": false,
       "name_observation": {
         "method": "manual_visual_read_from_real_menu_identity_crop",
-        "second_visual_review": false
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "effect_observation": {
         "method": "manual_visual_read_from_real_menu_effect_region",
@@ -1952,7 +2563,13 @@
           118,
           238,
           153
-        ]
+        ],
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "capture": {
         "status": "captured",
@@ -1988,11 +2605,16 @@
       "name_zh": "比夫隆",
       "effect_text": "地之爆炎",
       "evidence_level": "menu_capture_and_manual_observation",
-      "gameplay_verified": false,
+      "gameplay_verified": true,
       "detector_verified": false,
       "name_observation": {
         "method": "manual_visual_read_from_real_menu_identity_crop",
-        "second_visual_review": false
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "effect_observation": {
         "method": "manual_visual_read_from_real_menu_effect_region",
@@ -2001,7 +2623,13 @@
           118,
           238,
           153
-        ]
+        ],
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "capture": {
         "status": "captured",
@@ -2026,7 +2654,39 @@
           "sha256": "3f8374c8c59410e4c9bc0dcefea54385406db0cc1064f7dd346622852a0aa30e"
         }
       },
-      "element_id": "aria_red_037"
+      "element_id": "aria_red_037",
+      "gameplay_evidence": {
+        "source_id": "local_aria_gameplay_verify_20261125",
+        "status": "fixed_route_pass",
+        "case_id": "red_soul_37_verify_vs_empty",
+        "evidence_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/gameplay_verify_binding_20261125/gameplay_evidence_binding_20261125.json",
+        "report": {
+          "path": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/gameplay_verify_binding_20261125/red_soul_37_verify_vs_empty/report.json",
+          "bytes": 41720,
+          "sha256": "2ff1b255cc1b4ff64e04388fcabda453caa37a42c6b6e4e27b70bd5d85cbb138"
+        },
+        "state_revision": "r20261125T120000",
+        "archive_revision": "r20261125T040115",
+        "slot": {
+          "addr": 78429,
+          "positive": 37,
+          "negative": 0
+        },
+        "metric": {
+          "addr": 78448,
+          "positive": 46,
+          "negative": 80,
+          "name": "current_mp"
+        },
+        "captured_frames_per_arm": 90,
+        "comparison": {
+          "equal_frames": 0,
+          "different_frames": 90,
+          "pass": true
+        },
+        "proves": "固定战斗初态只改对应槽位并执行角色宏；目标槽保持、MP低于80，空槽保持80，抽样帧存在真实差异。",
+        "does_not_prove": "不证明伤害、射程、全部招式语义、中文菜单装备流程或任意场景稳定性。"
+      }
     },
     {
       "group": "red",
@@ -2041,7 +2701,12 @@
       "detector_verified": false,
       "name_observation": {
         "method": "manual_visual_read_from_real_menu_identity_crop",
-        "second_visual_review": false
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "effect_observation": {
         "method": "manual_visual_read_from_real_menu_effect_region",
@@ -2050,7 +2715,13 @@
           118,
           238,
           153
-        ]
+        ],
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "capture": {
         "status": "captured",
@@ -2090,7 +2761,12 @@
       "detector_verified": false,
       "name_observation": {
         "method": "manual_visual_read_from_real_menu_identity_crop",
-        "second_visual_review": false
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "effect_observation": {
         "method": "manual_visual_read_from_real_menu_effect_region",
@@ -2099,7 +2775,13 @@
           118,
           238,
           153
-        ]
+        ],
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "capture": {
         "status": "captured",
@@ -2139,7 +2821,12 @@
       "detector_verified": false,
       "name_observation": {
         "method": "manual_visual_read_from_real_menu_identity_crop",
-        "second_visual_review": false
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "effect_observation": {
         "method": "manual_visual_read_from_real_menu_effect_region",
@@ -2148,7 +2835,13 @@
           118,
           238,
           153
-        ]
+        ],
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "capture": {
         "status": "captured",
@@ -2188,7 +2881,12 @@
       "detector_verified": false,
       "name_observation": {
         "method": "manual_visual_read_from_real_menu_identity_crop",
-        "second_visual_review": false
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "effect_observation": {
         "method": "manual_visual_read_from_real_menu_effect_region",
@@ -2197,7 +2895,13 @@
           118,
           238,
           153
-        ]
+        ],
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "capture": {
         "status": "captured",
@@ -2237,7 +2941,12 @@
       "detector_verified": false,
       "name_observation": {
         "method": "manual_visual_read_from_real_menu_identity_crop",
-        "second_visual_review": false
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "effect_observation": {
         "method": "manual_visual_read_from_real_menu_effect_region",
@@ -2246,7 +2955,13 @@
           118,
           238,
           153
-        ]
+        ],
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "capture": {
         "status": "captured",
@@ -2286,7 +3001,12 @@
       "detector_verified": false,
       "name_observation": {
         "method": "manual_visual_read_from_real_menu_identity_crop",
-        "second_visual_review": false
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "effect_observation": {
         "method": "manual_visual_read_from_real_menu_effect_region",
@@ -2295,7 +3015,13 @@
           118,
           238,
           153
-        ]
+        ],
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "capture": {
         "status": "captured",
@@ -2335,7 +3061,12 @@
       "detector_verified": false,
       "name_observation": {
         "method": "manual_visual_read_from_real_menu_identity_crop",
-        "second_visual_review": false
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "effect_observation": {
         "method": "manual_visual_read_from_real_menu_effect_region",
@@ -2344,7 +3075,13 @@
           118,
           238,
           153
-        ]
+        ],
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "capture": {
         "status": "captured",
@@ -2384,7 +3121,12 @@
       "detector_verified": false,
       "name_observation": {
         "method": "manual_visual_read_from_real_menu_identity_crop",
-        "second_visual_review": false
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "effect_observation": {
         "method": "manual_visual_read_from_real_menu_effect_region",
@@ -2393,7 +3135,13 @@
           118,
           238,
           153
-        ]
+        ],
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "capture": {
         "status": "captured",
@@ -2433,7 +3181,12 @@
       "detector_verified": false,
       "name_observation": {
         "method": "manual_visual_read_from_real_menu_identity_crop",
-        "second_visual_review": false
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "effect_observation": {
         "method": "manual_visual_read_from_real_menu_effect_region",
@@ -2442,7 +3195,13 @@
           118,
           238,
           153
-        ]
+        ],
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "capture": {
         "status": "captured",
@@ -2478,11 +3237,16 @@
       "name_zh": "圆盘装甲",
       "effect_text": "破坏力超群的炸弹",
       "evidence_level": "menu_capture_and_manual_observation",
-      "gameplay_verified": false,
+      "gameplay_verified": true,
       "detector_verified": false,
       "name_observation": {
         "method": "manual_visual_read_from_real_menu_identity_crop",
-        "second_visual_review": false
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "effect_observation": {
         "method": "manual_visual_read_from_real_menu_effect_region",
@@ -2491,7 +3255,13 @@
           118,
           238,
           153
-        ]
+        ],
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "capture": {
         "status": "captured",
@@ -2516,7 +3286,39 @@
           "sha256": "a51e717d4e2fb1061e8008cde95338082518c6cb42814e84af8e7765c080157c"
         }
       },
-      "element_id": "aria_red_047"
+      "element_id": "aria_red_047",
+      "gameplay_evidence": {
+        "source_id": "local_aria_gameplay_verify_20261125",
+        "status": "fixed_route_pass",
+        "case_id": "red_soul_47_resource_verify",
+        "evidence_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/gameplay_verify_binding_20261125/gameplay_evidence_binding_20261125.json",
+        "report": {
+          "path": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/gameplay_verify_binding_20261125/red_soul_47_resource_verify/report.json",
+          "bytes": 26287,
+          "sha256": "06cbfb720f5c3d6f5ea7ddc2c36c22b3630b505010edde0a1f8cd6fa59eddd94"
+        },
+        "state_revision": "r20261125T145623",
+        "archive_revision": "r20261125T153709",
+        "slot": {
+          "addr": 78429,
+          "positive": 47,
+          "negative": 0
+        },
+        "metric": {
+          "addr": 78448,
+          "positive": 1,
+          "negative": 80,
+          "name": "current_mp"
+        },
+        "captured_frames_per_arm": 90,
+        "comparison": {
+          "equal_frames": 0,
+          "different_frames": 90,
+          "pass": true
+        },
+        "proves": "固定战斗初态只改对应槽位并执行角色宏；目标槽保持、MP低于80，空槽保持80，抽样帧存在真实差异。",
+        "does_not_prove": "不证明伤害、射程、全部招式语义、中文菜单装备流程或任意场景稳定性。"
+      }
     },
     {
       "group": "red",
@@ -2531,7 +3333,12 @@
       "detector_verified": false,
       "name_observation": {
         "method": "manual_visual_read_from_real_menu_identity_crop",
-        "second_visual_review": false
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "effect_observation": {
         "method": "manual_visual_read_from_real_menu_effect_region",
@@ -2540,7 +3347,13 @@
           118,
           238,
           153
-        ]
+        ],
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "capture": {
         "status": "captured",
@@ -2580,7 +3393,12 @@
       "detector_verified": false,
       "name_observation": {
         "method": "manual_visual_read_from_real_menu_identity_crop",
-        "second_visual_review": false
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "effect_observation": {
         "method": "manual_visual_read_from_real_menu_effect_region",
@@ -2589,7 +3407,13 @@
           118,
           238,
           153
-        ]
+        ],
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "capture": {
         "status": "captured",
@@ -2629,7 +3453,12 @@
       "detector_verified": false,
       "name_observation": {
         "method": "manual_visual_read_from_real_menu_identity_crop",
-        "second_visual_review": false
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "effect_observation": {
         "method": "manual_visual_read_from_real_menu_effect_region",
@@ -2638,7 +3467,13 @@
           118,
           238,
           153
-        ]
+        ],
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "capture": {
         "status": "captured",
@@ -2678,7 +3513,12 @@
       "detector_verified": false,
       "name_observation": {
         "method": "manual_visual_read_from_real_menu_identity_crop",
-        "second_visual_review": false
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "effect_observation": {
         "method": "manual_visual_read_from_real_menu_effect_region",
@@ -2687,7 +3527,13 @@
           118,
           238,
           153
-        ]
+        ],
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "capture": {
         "status": "captured",
@@ -2727,7 +3573,12 @@
       "detector_verified": false,
       "name_observation": {
         "method": "manual_visual_read_from_real_menu_identity_crop",
-        "second_visual_review": false
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "effect_observation": {
         "method": "manual_visual_read_from_real_menu_effect_region",
@@ -2736,7 +3587,13 @@
           118,
           238,
           153
-        ]
+        ],
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "capture": {
         "status": "captured",
@@ -2776,7 +3633,12 @@
       "detector_verified": false,
       "name_observation": {
         "method": "manual_visual_read_from_real_menu_identity_crop",
-        "second_visual_review": false
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "effect_observation": {
         "method": "manual_visual_read_from_real_menu_effect_region",
@@ -2785,7 +3647,13 @@
           118,
           238,
           153
-        ]
+        ],
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "capture": {
         "status": "captured",
@@ -2825,7 +3693,12 @@
       "detector_verified": false,
       "name_observation": {
         "method": "manual_visual_read_from_real_menu_identity_crop",
-        "second_visual_review": false
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "effect_observation": {
         "method": "manual_visual_read_from_real_menu_effect_region",
@@ -2834,7 +3707,13 @@
           118,
           238,
           153
-        ]
+        ],
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "capture": {
         "status": "captured",
@@ -2874,7 +3753,12 @@
       "detector_verified": false,
       "name_observation": {
         "method": "manual_visual_read_from_real_menu_identity_crop",
-        "second_visual_review": false
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "effect_observation": {
         "method": "manual_visual_read_from_real_menu_effect_region",
@@ -2883,7 +3767,13 @@
           118,
           238,
           153
-        ]
+        ],
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "capture": {
         "status": "captured",
@@ -2923,7 +3813,12 @@
       "detector_verified": false,
       "name_observation": {
         "method": "manual_visual_read_from_real_menu_identity_crop",
-        "second_visual_review": false
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "effect_observation": {
         "method": "manual_visual_read_from_real_menu_effect_region",
@@ -2932,7 +3827,13 @@
           118,
           238,
           153
-        ]
+        ],
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "capture": {
         "status": "captured",
@@ -2968,11 +3869,16 @@
       "name_zh": "大蝙蝠",
       "effect_text": "变身成蝙蝠飞行",
       "evidence_level": "menu_capture_and_manual_observation",
-      "gameplay_verified": false,
+      "gameplay_verified": true,
       "detector_verified": false,
       "name_observation": {
         "method": "manual_visual_read_from_real_menu_identity_crop",
-        "second_visual_review": false
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "effect_observation": {
         "method": "manual_visual_read_from_real_menu_effect_region",
@@ -2981,7 +3887,13 @@
           118,
           238,
           153
-        ]
+        ],
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "capture": {
         "status": "captured",
@@ -3006,7 +3918,39 @@
           "sha256": "c74f88477f868345426132a96c75fd397eb96bb778b7ae19b85923f805cedad1"
         }
       },
-      "element_id": "aria_blue_002"
+      "element_id": "aria_blue_002",
+      "gameplay_evidence": {
+        "source_id": "local_aria_gameplay_verify_20261125",
+        "status": "fixed_route_pass",
+        "case_id": "blue_soul_2_verify_vs_empty",
+        "evidence_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/gameplay_verify_binding_20261125/gameplay_evidence_binding_20261125.json",
+        "report": {
+          "path": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/gameplay_verify_binding_20261125/blue_soul_2_verify_vs_empty/report.json",
+          "bytes": 37150,
+          "sha256": "231a42fc8b92e1c94d27f0fb5c84077ee9dbe14ef8203687920526232a09feac"
+        },
+        "state_revision": "r20261125T120000",
+        "archive_revision": "r20261125T040115",
+        "slot": {
+          "addr": 78430,
+          "positive": 2,
+          "negative": 0
+        },
+        "metric": {
+          "addr": 78448,
+          "positive": 22,
+          "negative": 80,
+          "name": "current_mp"
+        },
+        "captured_frames_per_arm": 120,
+        "comparison": {
+          "equal_frames": 0,
+          "different_frames": 120,
+          "pass": true
+        },
+        "proves": "固定战斗初态只改对应槽位并执行角色宏；目标槽保持、MP低于80，空槽保持80，抽样帧存在真实差异。",
+        "does_not_prove": "不证明伤害、射程、全部招式语义、中文菜单装备流程或任意场景稳定性。"
+      }
     },
     {
       "group": "blue",
@@ -3021,7 +3965,12 @@
       "detector_verified": false,
       "name_observation": {
         "method": "manual_visual_read_from_real_menu_identity_crop",
-        "second_visual_review": false
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "effect_observation": {
         "method": "manual_visual_read_from_real_menu_effect_region",
@@ -3030,7 +3979,13 @@
           118,
           238,
           153
-        ]
+        ],
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "capture": {
         "status": "captured",
@@ -3066,11 +4021,16 @@
       "name_zh": "布艾尔",
       "effect_text": "发出回转之炎",
       "evidence_level": "menu_capture_and_manual_observation",
-      "gameplay_verified": false,
+      "gameplay_verified": true,
       "detector_verified": false,
       "name_observation": {
         "method": "manual_visual_read_from_real_menu_identity_crop",
-        "second_visual_review": false
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "effect_observation": {
         "method": "manual_visual_read_from_real_menu_effect_region",
@@ -3079,7 +4039,13 @@
           118,
           238,
           153
-        ]
+        ],
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "capture": {
         "status": "captured",
@@ -3104,7 +4070,39 @@
           "sha256": "1920713433f5062cc6766e9166a982809ac1e18b4153df0678a90f4728c49e50"
         }
       },
-      "element_id": "aria_blue_004"
+      "element_id": "aria_blue_004",
+      "gameplay_evidence": {
+        "source_id": "local_aria_gameplay_verify_20261125",
+        "status": "fixed_route_pass",
+        "case_id": "blue_soul_4_verify_vs_empty",
+        "evidence_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/gameplay_verify_binding_20261125/gameplay_evidence_binding_20261125.json",
+        "report": {
+          "path": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/gameplay_verify_binding_20261125/blue_soul_4_verify_vs_empty/report.json",
+          "bytes": 37154,
+          "sha256": "3bd84b4cabd5b7530e5fa711f5a6af08c3bdf3a7a98ba801a5137de5e126f260"
+        },
+        "state_revision": "r20261125T120000",
+        "archive_revision": "r20261125T040115",
+        "slot": {
+          "addr": 78430,
+          "positive": 4,
+          "negative": 0
+        },
+        "metric": {
+          "addr": 78448,
+          "positive": 72,
+          "negative": 80,
+          "name": "current_mp"
+        },
+        "captured_frames_per_arm": 120,
+        "comparison": {
+          "equal_frames": 0,
+          "different_frames": 120,
+          "pass": true
+        },
+        "proves": "固定战斗初态只改对应槽位并执行角色宏；目标槽保持、MP低于80，空槽保持80，抽样帧存在真实差异。",
+        "does_not_prove": "不证明伤害、射程、全部招式语义、中文菜单装备流程或任意场景稳定性。"
+      }
     },
     {
       "group": "blue",
@@ -3119,7 +4117,12 @@
       "detector_verified": false,
       "name_observation": {
         "method": "manual_visual_read_from_real_menu_identity_crop",
-        "second_visual_review": false
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "effect_observation": {
         "method": "manual_visual_read_from_real_menu_effect_region",
@@ -3128,7 +4131,13 @@
           118,
           238,
           153
-        ]
+        ],
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "capture": {
         "status": "captured",
@@ -3164,11 +4173,16 @@
       "name_zh": "大鬼魂",
       "effect_text": "覆盖全身的保护层",
       "evidence_level": "menu_capture_and_manual_observation",
-      "gameplay_verified": false,
+      "gameplay_verified": true,
       "detector_verified": false,
       "name_observation": {
         "method": "manual_visual_read_from_real_menu_identity_crop",
-        "second_visual_review": false
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "effect_observation": {
         "method": "manual_visual_read_from_real_menu_effect_region",
@@ -3177,7 +4191,13 @@
           118,
           238,
           153
-        ]
+        ],
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "capture": {
         "status": "captured",
@@ -3202,7 +4222,39 @@
           "sha256": "3c453d09341867afb4f9a124f1e2e427b41613291e9a1db21374166a8a857aef"
         }
       },
-      "element_id": "aria_blue_006"
+      "element_id": "aria_blue_006",
+      "gameplay_evidence": {
+        "source_id": "local_aria_gameplay_verify_20261125",
+        "status": "fixed_route_pass",
+        "case_id": "blue_soul_6_verify_vs_empty",
+        "evidence_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/gameplay_verify_binding_20261125/gameplay_evidence_binding_20261125.json",
+        "report": {
+          "path": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/gameplay_verify_binding_20261125/blue_soul_6_verify_vs_empty/report.json",
+          "bytes": 37168,
+          "sha256": "f16cdefa4daa52019ae22662ff9fca5a70ffc9cea00107f1bf1241a5ca4b990f"
+        },
+        "state_revision": "r20261125T120000",
+        "archive_revision": "r20261125T040115",
+        "slot": {
+          "addr": 78430,
+          "positive": 6,
+          "negative": 0
+        },
+        "metric": {
+          "addr": 78448,
+          "positive": 72,
+          "negative": 80,
+          "name": "current_mp"
+        },
+        "captured_frames_per_arm": 120,
+        "comparison": {
+          "equal_frames": 0,
+          "different_frames": 120,
+          "pass": true
+        },
+        "proves": "固定战斗初态只改对应槽位并执行角色宏；目标槽保持、MP低于80，空槽保持80，抽样帧存在真实差异。",
+        "does_not_prove": "不证明伤害、射程、全部招式语义、中文菜单装备流程或任意场景稳定性。"
+      }
     },
     {
       "group": "blue",
@@ -3217,7 +4269,12 @@
       "detector_verified": false,
       "name_observation": {
         "method": "manual_visual_read_from_real_menu_identity_crop",
-        "second_visual_review": false
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "effect_observation": {
         "method": "manual_visual_read_from_real_menu_effect_region",
@@ -3226,7 +4283,13 @@
           118,
           238,
           153
-        ]
+        ],
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "capture": {
         "status": "captured",
@@ -3266,7 +4329,12 @@
       "detector_verified": false,
       "name_observation": {
         "method": "manual_visual_read_from_real_menu_identity_crop",
-        "second_visual_review": false
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "effect_observation": {
         "method": "manual_visual_read_from_real_menu_effect_region",
@@ -3275,7 +4343,13 @@
           118,
           238,
           153
-        ]
+        ],
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "capture": {
         "status": "captured",
@@ -3315,7 +4389,12 @@
       "detector_verified": false,
       "name_observation": {
         "method": "manual_visual_read_from_real_menu_identity_crop",
-        "second_visual_review": true
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "effect_observation": {
         "method": "manual_visual_read_from_real_menu_effect_region",
@@ -3324,7 +4403,13 @@
           118,
           238,
           153
-        ]
+        ],
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "capture": {
         "status": "captured",
@@ -3364,7 +4449,12 @@
       "detector_verified": false,
       "name_observation": {
         "method": "manual_visual_read_from_real_menu_identity_crop",
-        "second_visual_review": false
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "effect_observation": {
         "method": "manual_visual_read_from_real_menu_effect_region",
@@ -3373,7 +4463,13 @@
           118,
           238,
           153
-        ]
+        ],
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "capture": {
         "status": "captured",
@@ -3413,7 +4509,12 @@
       "detector_verified": false,
       "name_observation": {
         "method": "manual_visual_read_from_real_menu_identity_crop",
-        "second_visual_review": false
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "effect_observation": {
         "method": "manual_visual_read_from_real_menu_effect_region",
@@ -3422,7 +4523,13 @@
           118,
           238,
           153
-        ]
+        ],
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "capture": {
         "status": "captured",
@@ -3462,7 +4569,12 @@
       "detector_verified": false,
       "name_observation": {
         "method": "manual_visual_read_from_real_menu_identity_crop",
-        "second_visual_review": false
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "effect_observation": {
         "method": "manual_visual_read_from_real_menu_effect_region",
@@ -3471,7 +4583,13 @@
           118,
           238,
           153
-        ]
+        ],
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "capture": {
         "status": "captured",
@@ -3504,14 +4622,20 @@
       "id": 13,
       "slot_addr": 78430,
       "slot_hex": "0x1325E",
-      "name_zh": "大骷髅",
+      "name_zh": "幻魔士",
       "effect_text": "影子协助攻击",
       "evidence_level": "menu_capture_and_manual_observation",
-      "gameplay_verified": false,
+      "gameplay_verified": true,
       "detector_verified": false,
       "name_observation": {
         "method": "manual_visual_read_from_real_menu_identity_crop",
-        "second_visual_review": false
+        "second_visual_review": true,
+        "original_name": "大骷髅",
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "corrected_to_screenshot"
       },
       "effect_observation": {
         "method": "manual_visual_read_from_real_menu_effect_region",
@@ -3520,7 +4644,13 @@
           118,
           238,
           153
-        ]
+        ],
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "capture": {
         "status": "captured",
@@ -3545,7 +4675,39 @@
           "sha256": "08c6d9c2265a9bf49b9b7c5ae2703b88b4af836a85587eb8cab265639dd7cb69"
         }
       },
-      "element_id": "aria_blue_013"
+      "element_id": "aria_blue_013",
+      "gameplay_evidence": {
+        "source_id": "local_aria_gameplay_verify_20261125",
+        "status": "fixed_route_pass",
+        "case_id": "blue_soul_13_verify_vs_empty",
+        "evidence_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/gameplay_verify_binding_20261125/gameplay_evidence_binding_20261125.json",
+        "report": {
+          "path": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/gameplay_verify_binding_20261125/blue_soul_13_verify_vs_empty/report.json",
+          "bytes": 37311,
+          "sha256": "44f6ab00480a9e605106c14d2c3dfb07b246cf39386cbc767639b58af2877dea"
+        },
+        "state_revision": "r20261125T120000",
+        "archive_revision": "r20261125T040115",
+        "slot": {
+          "addr": 78430,
+          "positive": 13,
+          "negative": 0
+        },
+        "metric": {
+          "addr": 78448,
+          "positive": 72,
+          "negative": 80,
+          "name": "current_mp"
+        },
+        "captured_frames_per_arm": 120,
+        "comparison": {
+          "equal_frames": 0,
+          "different_frames": 120,
+          "pass": true
+        },
+        "proves": "固定战斗初态只改对应槽位并执行角色宏；目标槽保持、MP低于80，空槽保持80，抽样帧存在真实差异。",
+        "does_not_prove": "不证明伤害、射程、全部招式语义、中文菜单装备流程或任意场景稳定性。"
+      }
     },
     {
       "group": "blue",
@@ -3560,7 +4722,12 @@
       "detector_verified": false,
       "name_observation": {
         "method": "manual_visual_read_from_real_menu_identity_crop",
-        "second_visual_review": false
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "effect_observation": {
         "method": "manual_visual_read_from_real_menu_effect_region",
@@ -3569,7 +4736,13 @@
           118,
           238,
           153
-        ]
+        ],
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "capture": {
         "status": "captured",
@@ -3609,7 +4782,12 @@
       "detector_verified": false,
       "name_observation": {
         "method": "manual_visual_read_from_real_menu_identity_crop",
-        "second_visual_review": false
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "effect_observation": {
         "method": "manual_visual_read_from_real_menu_effect_region",
@@ -3618,7 +4796,13 @@
           118,
           238,
           153
-        ]
+        ],
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "capture": {
         "status": "captured",
@@ -3658,7 +4842,12 @@
       "detector_verified": false,
       "name_observation": {
         "method": "manual_visual_read_from_real_menu_identity_crop",
-        "second_visual_review": true
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "effect_observation": {
         "method": "manual_visual_read_from_real_menu_effect_region",
@@ -3667,7 +4856,13 @@
           118,
           238,
           153
-        ]
+        ],
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "capture": {
         "status": "captured",
@@ -3707,7 +4902,12 @@
       "detector_verified": false,
       "name_observation": {
         "method": "manual_visual_read_from_real_menu_identity_crop",
-        "second_visual_review": false
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "effect_observation": {
         "method": "manual_visual_read_from_real_menu_effect_region",
@@ -3716,7 +4916,13 @@
           118,
           238,
           153
-        ]
+        ],
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "capture": {
         "status": "captured",
@@ -3756,7 +4962,12 @@
       "detector_verified": false,
       "name_observation": {
         "method": "manual_visual_read_from_real_menu_identity_crop",
-        "second_visual_review": false
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "effect_observation": {
         "method": "manual_visual_read_from_real_menu_effect_region",
@@ -3765,7 +4976,13 @@
           118,
           238,
           153
-        ]
+        ],
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "capture": {
         "status": "captured",
@@ -3805,7 +5022,12 @@
       "detector_verified": false,
       "name_observation": {
         "method": "manual_visual_read_from_real_menu_identity_crop",
-        "second_visual_review": false
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "effect_observation": {
         "method": "manual_visual_read_from_real_menu_effect_region",
@@ -3814,7 +5036,13 @@
           118,
           238,
           153
-        ]
+        ],
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "capture": {
         "status": "captured",
@@ -3854,7 +5082,12 @@
       "detector_verified": false,
       "name_observation": {
         "method": "manual_visual_read_from_real_menu_identity_crop",
-        "second_visual_review": false
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "effect_observation": {
         "method": "manual_visual_read_from_real_menu_effect_region",
@@ -3863,7 +5096,13 @@
           118,
           238,
           153
-        ]
+        ],
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "capture": {
         "status": "captured",
@@ -3903,7 +5142,12 @@
       "detector_verified": false,
       "name_observation": {
         "method": "manual_visual_read_from_real_menu_identity_crop",
-        "second_visual_review": false
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "effect_observation": {
         "method": "manual_visual_read_from_real_menu_effect_region",
@@ -3912,7 +5156,13 @@
           118,
           238,
           153
-        ]
+        ],
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "capture": {
         "status": "captured",
@@ -3948,11 +5198,16 @@
       "name_zh": "子恶魔",
       "effect_text": "召唤使魔「子恶魔」",
       "evidence_level": "menu_capture_and_manual_observation",
-      "gameplay_verified": false,
+      "gameplay_verified": true,
       "detector_verified": false,
       "name_observation": {
         "method": "manual_visual_read_from_real_menu_identity_crop",
-        "second_visual_review": false
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "effect_observation": {
         "method": "manual_visual_read_from_real_menu_effect_region",
@@ -3961,7 +5216,13 @@
           118,
           238,
           153
-        ]
+        ],
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "capture": {
         "status": "captured",
@@ -3986,7 +5247,39 @@
           "sha256": "12568f4e7206acac31e4e5113021fcffb27cb9c2c3ade077a4bdb4d23bd0c863"
         }
       },
-      "element_id": "aria_blue_022"
+      "element_id": "aria_blue_022",
+      "gameplay_evidence": {
+        "source_id": "local_aria_gameplay_verify_20261125",
+        "status": "fixed_route_pass",
+        "case_id": "blue_soul_22_verify_vs_empty",
+        "evidence_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/gameplay_verify_binding_20261125/gameplay_evidence_binding_20261125.json",
+        "report": {
+          "path": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/gameplay_verify_binding_20261125/blue_soul_22_verify_vs_empty/report.json",
+          "bytes": 37301,
+          "sha256": "d36b6ec8ffde914d527e5ff3339b4e0be3b7e043696a0765e66859e4b43adf69"
+        },
+        "state_revision": "r20261125T120000",
+        "archive_revision": "r20261125T040115",
+        "slot": {
+          "addr": 78430,
+          "positive": 22,
+          "negative": 0
+        },
+        "metric": {
+          "addr": 78448,
+          "positive": 76,
+          "negative": 80,
+          "name": "current_mp"
+        },
+        "captured_frames_per_arm": 120,
+        "comparison": {
+          "equal_frames": 0,
+          "different_frames": 120,
+          "pass": true
+        },
+        "proves": "固定战斗初态只改对应槽位并执行角色宏；目标槽保持、MP低于80，空槽保持80，抽样帧存在真实差异。",
+        "does_not_prove": "不证明伤害、射程、全部招式语义、中文菜单装备流程或任意场景稳定性。"
+      }
     },
     {
       "group": "blue",
@@ -4001,7 +5294,12 @@
       "detector_verified": false,
       "name_observation": {
         "method": "manual_visual_read_from_real_menu_identity_crop",
-        "second_visual_review": false
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "effect_observation": {
         "method": "manual_visual_read_from_real_menu_effect_region",
@@ -4010,7 +5308,13 @@
           118,
           238,
           153
-        ]
+        ],
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "capture": {
         "status": "captured",
@@ -4050,7 +5354,12 @@
       "detector_verified": false,
       "name_observation": {
         "method": "manual_visual_read_from_real_menu_identity_crop",
-        "second_visual_review": false
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "effect_observation": {
         "method": "manual_visual_read_from_real_menu_effect_region",
@@ -4059,7 +5368,13 @@
           118,
           238,
           153
-        ]
+        ],
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "capture": {
         "status": "captured",
@@ -4099,7 +5414,12 @@
       "detector_verified": false,
       "name_observation": {
         "method": "manual_visual_read_from_real_menu_identity_crop",
-        "second_visual_review": false
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "effect_observation": {
         "method": "manual_visual_read_from_real_menu_effect_region",
@@ -4108,7 +5428,13 @@
           118,
           238,
           153
-        ]
+        ],
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "capture": {
         "status": "captured",
@@ -4148,7 +5474,12 @@
       "detector_verified": false,
       "name_observation": {
         "method": "manual_visual_read_from_real_menu_identity_crop",
-        "second_visual_review": false
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "effect_observation": {
         "method": "manual_visual_read_from_real_menu_effect_region",
@@ -4157,7 +5488,13 @@
           118,
           238,
           153
-        ]
+        ],
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "capture": {
         "status": "captured",
@@ -4197,7 +5534,12 @@
       "detector_verified": false,
       "name_observation": {
         "method": "manual_visual_read_from_real_menu_identity_crop",
-        "second_visual_review": false
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "effect_observation": {
         "method": "manual_visual_read_from_real_menu_effect_region",
@@ -4206,7 +5548,13 @@
           118,
           238,
           153
-        ]
+        ],
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "capture": {
         "status": "captured",
@@ -4246,7 +5594,12 @@
       "detector_verified": false,
       "name_observation": {
         "method": "manual_visual_read_from_real_menu_identity_crop",
-        "second_visual_review": false
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "effect_observation": {
         "method": "manual_visual_read_from_real_menu_effect_region",
@@ -4255,7 +5608,13 @@
           118,
           238,
           153
-        ]
+        ],
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "capture": {
         "status": "captured",
@@ -4295,7 +5654,12 @@
       "detector_verified": false,
       "name_observation": {
         "method": "manual_visual_read_from_real_menu_identity_crop",
-        "second_visual_review": false
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "effect_observation": {
         "method": "manual_visual_read_from_real_menu_effect_region",
@@ -4304,7 +5668,13 @@
           118,
           238,
           153
-        ]
+        ],
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "capture": {
         "status": "captured",
@@ -4344,7 +5714,12 @@
       "detector_verified": false,
       "name_observation": {
         "method": "manual_visual_read_from_real_menu_identity_crop",
-        "second_visual_review": false
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "effect_observation": {
         "method": "manual_visual_read_from_real_menu_effect_region",
@@ -4353,7 +5728,13 @@
           118,
           238,
           153
-        ]
+        ],
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "capture": {
         "status": "captured",
@@ -4393,7 +5774,12 @@
       "detector_verified": false,
       "name_observation": {
         "method": "manual_visual_read_from_real_menu_identity_crop",
-        "second_visual_review": false
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "effect_observation": {
         "method": "manual_visual_read_from_real_menu_effect_region",
@@ -4402,7 +5788,13 @@
           118,
           238,
           153
-        ]
+        ],
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "capture": {
         "status": "captured",
@@ -4442,7 +5834,12 @@
       "detector_verified": false,
       "name_observation": {
         "method": "manual_visual_read_from_real_menu_identity_crop",
-        "second_visual_review": false
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "effect_observation": {
         "method": "manual_visual_read_from_real_menu_effect_region",
@@ -4451,7 +5848,13 @@
           118,
           238,
           153
-        ]
+        ],
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "capture": {
         "status": "captured",
@@ -4491,7 +5894,12 @@
       "detector_verified": false,
       "name_observation": {
         "method": "manual_visual_read_from_real_menu_identity_crop",
-        "second_visual_review": false
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "effect_observation": {
         "method": "manual_visual_read_from_real_menu_effect_region",
@@ -4500,7 +5908,13 @@
           118,
           238,
           153
-        ]
+        ],
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "capture": {
         "status": "captured",
@@ -4536,11 +5950,16 @@
       "name_zh": "巨虫",
       "effect_text": "静止不动时HP\n缓慢回复",
       "evidence_level": "menu_capture_and_manual_observation",
-      "gameplay_verified": false,
+      "gameplay_verified": true,
       "detector_verified": false,
       "name_observation": {
         "method": "manual_visual_read_from_real_menu_identity_crop",
-        "second_visual_review": false
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "effect_observation": {
         "method": "manual_visual_read_from_real_menu_effect_region",
@@ -4549,7 +5968,13 @@
           118,
           238,
           153
-        ]
+        ],
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "capture": {
         "status": "captured",
@@ -4574,7 +5999,39 @@
           "sha256": "a3aed828a2986c37e0c0abb482fedae2ff0e64ba7752444a7f796c691dfb7b0c"
         }
       },
-      "element_id": "aria_yellow_010"
+      "element_id": "aria_yellow_010",
+      "gameplay_evidence": {
+        "source_id": "local_aria_gameplay_verify_20261125",
+        "status": "fixed_route_pass",
+        "case_id": "yellow_soul_10_hp_advantage",
+        "evidence_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/gameplay_verify_binding_20261125/gameplay_evidence_binding_20261125.json",
+        "report": {
+          "path": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/gameplay_verify_binding_20261125/yellow_soul_10_hp_advantage/report.json",
+          "bytes": 39597,
+          "sha256": "64f06662d41f3d984c717bc21516a01874fccff812676cff3eb37c50bb074d11"
+        },
+        "state_revision": "r20261125T145623",
+        "archive_revision": "r20261125T153709",
+        "slot": {
+          "addr": 78431,
+          "positive": 10,
+          "negative": 0
+        },
+        "metric": {
+          "addr": 78446,
+          "positive": 302,
+          "negative": 292,
+          "name": "current_hp"
+        },
+        "captured_frames_per_arm": 226,
+        "comparison": {
+          "equal_frames": 0,
+          "different_frames": 226,
+          "pass": true
+        },
+        "proves": "固定受击路线末HP为302，空槽对照为292；正例末帧高于空魂。",
+        "does_not_prove": "不把蓝魂10的表现外推为其他黄魂，不单凭末HP判定完整机制。"
+      }
     },
     {
       "group": "yellow",
@@ -4589,7 +6046,12 @@
       "detector_verified": false,
       "name_observation": {
         "method": "manual_visual_read_from_real_menu_identity_crop",
-        "second_visual_review": false
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "effect_observation": {
         "method": "manual_visual_read_from_real_menu_effect_region",
@@ -4598,7 +6060,13 @@
           118,
           238,
           153
-        ]
+        ],
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "capture": {
         "status": "captured",
@@ -4638,7 +6106,12 @@
       "detector_verified": false,
       "name_observation": {
         "method": "manual_visual_read_from_real_menu_identity_crop",
-        "second_visual_review": false
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "effect_observation": {
         "method": "manual_visual_read_from_real_menu_effect_region",
@@ -4647,7 +6120,13 @@
           118,
           238,
           153
-        ]
+        ],
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "capture": {
         "status": "captured",
@@ -4687,7 +6166,12 @@
       "detector_verified": false,
       "name_observation": {
         "method": "manual_visual_read_from_real_menu_identity_crop",
-        "second_visual_review": false
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "effect_observation": {
         "method": "manual_visual_read_from_real_menu_effect_region",
@@ -4696,7 +6180,13 @@
           118,
           238,
           153
-        ]
+        ],
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "capture": {
         "status": "captured",
@@ -4736,7 +6226,12 @@
       "detector_verified": false,
       "name_observation": {
         "method": "manual_visual_read_from_real_menu_identity_crop",
-        "second_visual_review": false
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "effect_observation": {
         "method": "manual_visual_read_from_real_menu_effect_region",
@@ -4745,7 +6240,13 @@
           118,
           238,
           153
-        ]
+        ],
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "capture": {
         "status": "captured",
@@ -4781,11 +6282,16 @@
       "name_zh": "蛇尾鸟",
       "effect_text": "防御力上升攻击力下降",
       "evidence_level": "menu_capture_and_manual_observation",
-      "gameplay_verified": false,
+      "gameplay_verified": true,
       "detector_verified": false,
       "name_observation": {
         "method": "manual_visual_read_from_real_menu_identity_crop",
-        "second_visual_review": false
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "effect_observation": {
         "method": "manual_visual_read_from_real_menu_effect_region",
@@ -4794,7 +6300,13 @@
           118,
           238,
           153
-        ]
+        ],
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "capture": {
         "status": "captured",
@@ -4819,7 +6331,39 @@
           "sha256": "4cb0c31907f63d2d6de3dbb63df187856e8d159a1fd1a72e8b07e3a17bbbcd02"
         }
       },
-      "element_id": "aria_yellow_015"
+      "element_id": "aria_yellow_015",
+      "gameplay_evidence": {
+        "source_id": "local_aria_gameplay_verify_20261125",
+        "status": "fixed_route_pass",
+        "case_id": "yellow_soul_15_hp_advantage",
+        "evidence_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/gameplay_verify_binding_20261125/gameplay_evidence_binding_20261125.json",
+        "report": {
+          "path": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/gameplay_verify_binding_20261125/yellow_soul_15_hp_advantage/report.json",
+          "bytes": 39573,
+          "sha256": "3513fc52bfc86af0666cde4a64145eb9c81580ee1ec32b70bb4e45f393a0584b"
+        },
+        "state_revision": "r20261125T145623",
+        "archive_revision": "r20261125T153709",
+        "slot": {
+          "addr": 78431,
+          "positive": 15,
+          "negative": 0
+        },
+        "metric": {
+          "addr": 78446,
+          "positive": 300,
+          "negative": 292,
+          "name": "current_hp"
+        },
+        "captured_frames_per_arm": 226,
+        "comparison": {
+          "equal_frames": 0,
+          "different_frames": 226,
+          "pass": true
+        },
+        "proves": "固定受击路线末HP高于空魂对照292；只证明该ID在该路线中的末HP优势。",
+        "does_not_prove": "不证明防御升降、CON精确点数或单次受击伤害；同路线末HP相同的项目不得据此区分机制。"
+      }
     },
     {
       "group": "yellow",
@@ -4834,7 +6378,12 @@
       "detector_verified": false,
       "name_observation": {
         "method": "manual_visual_read_from_real_menu_identity_crop",
-        "second_visual_review": false
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "effect_observation": {
         "method": "manual_visual_read_from_real_menu_effect_region",
@@ -4843,7 +6392,13 @@
           118,
           238,
           153
-        ]
+        ],
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "capture": {
         "status": "captured",
@@ -4883,7 +6438,12 @@
       "detector_verified": false,
       "name_observation": {
         "method": "manual_visual_read_from_real_menu_identity_crop",
-        "second_visual_review": false
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "effect_observation": {
         "method": "manual_visual_read_from_real_menu_effect_region",
@@ -4892,7 +6452,13 @@
           118,
           238,
           153
-        ]
+        ],
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "capture": {
         "status": "captured",
@@ -4932,7 +6498,12 @@
       "detector_verified": false,
       "name_observation": {
         "method": "manual_visual_read_from_real_menu_identity_crop",
-        "second_visual_review": false
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "effect_observation": {
         "method": "manual_visual_read_from_real_menu_effect_region",
@@ -4941,7 +6512,13 @@
           118,
           238,
           153
-        ]
+        ],
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "capture": {
         "status": "captured",
@@ -4981,7 +6558,12 @@
       "detector_verified": false,
       "name_observation": {
         "method": "manual_visual_read_from_real_menu_identity_crop",
-        "second_visual_review": false
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "effect_observation": {
         "method": "manual_visual_read_from_real_menu_effect_region",
@@ -4990,7 +6572,13 @@
           118,
           238,
           153
-        ]
+        ],
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "capture": {
         "status": "captured",
@@ -5030,7 +6618,12 @@
       "detector_verified": false,
       "name_observation": {
         "method": "manual_visual_read_from_real_menu_identity_crop",
-        "second_visual_review": false
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "effect_observation": {
         "method": "manual_visual_read_from_real_menu_effect_region",
@@ -5039,7 +6632,13 @@
           118,
           238,
           153
-        ]
+        ],
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "capture": {
         "status": "captured",
@@ -5079,7 +6678,12 @@
       "detector_verified": false,
       "name_observation": {
         "method": "manual_visual_read_from_real_menu_identity_crop",
-        "second_visual_review": true
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "effect_observation": {
         "method": "manual_visual_read_from_real_menu_effect_region",
@@ -5088,7 +6692,13 @@
           118,
           238,
           153
-        ]
+        ],
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "capture": {
         "status": "captured",
@@ -5128,7 +6738,12 @@
       "detector_verified": false,
       "name_observation": {
         "method": "manual_visual_read_from_real_menu_identity_crop",
-        "second_visual_review": false
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "effect_observation": {
         "method": "manual_visual_read_from_real_menu_effect_region",
@@ -5137,7 +6752,13 @@
           118,
           238,
           153
-        ]
+        ],
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "capture": {
         "status": "captured",
@@ -5177,7 +6798,12 @@
       "detector_verified": false,
       "name_observation": {
         "method": "manual_visual_read_from_real_menu_identity_crop",
-        "second_visual_review": false
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "effect_observation": {
         "method": "manual_visual_read_from_real_menu_effect_region",
@@ -5186,7 +6812,13 @@
           118,
           238,
           153
-        ]
+        ],
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "capture": {
         "status": "captured",
@@ -5226,7 +6858,12 @@
       "detector_verified": false,
       "name_observation": {
         "method": "manual_visual_read_from_real_menu_identity_crop",
-        "second_visual_review": false
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "effect_observation": {
         "method": "manual_visual_read_from_real_menu_effect_region",
@@ -5235,7 +6872,13 @@
           118,
           238,
           153
-        ]
+        ],
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "capture": {
         "status": "captured",
@@ -5275,7 +6918,12 @@
       "detector_verified": false,
       "name_observation": {
         "method": "manual_visual_read_from_real_menu_identity_crop",
-        "second_visual_review": false
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "effect_observation": {
         "method": "manual_visual_read_from_real_menu_effect_region",
@@ -5284,7 +6932,13 @@
           118,
           238,
           153
-        ]
+        ],
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "capture": {
         "status": "captured",
@@ -5320,11 +6974,16 @@
       "name_zh": "白骨龙",
       "effect_text": "CON上升1",
       "evidence_level": "menu_capture_and_manual_observation",
-      "gameplay_verified": false,
+      "gameplay_verified": true,
       "detector_verified": false,
       "name_observation": {
         "method": "manual_visual_read_from_real_menu_identity_crop",
-        "second_visual_review": false
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "effect_observation": {
         "method": "manual_visual_read_from_real_menu_effect_region",
@@ -5333,7 +6992,13 @@
           118,
           238,
           153
-        ]
+        ],
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "capture": {
         "status": "captured",
@@ -5358,7 +7023,39 @@
           "sha256": "c2b431bf7bfe93b6aa6d41acfa82c340d0b510205af1bb6bd4c995aed660c361"
         }
       },
-      "element_id": "aria_yellow_026"
+      "element_id": "aria_yellow_026",
+      "gameplay_evidence": {
+        "source_id": "local_aria_gameplay_verify_20261125",
+        "status": "fixed_route_pass",
+        "case_id": "yellow_soul_26_hp_advantage",
+        "evidence_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/gameplay_verify_binding_20261125/gameplay_evidence_binding_20261125.json",
+        "report": {
+          "path": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/gameplay_verify_binding_20261125/yellow_soul_26_hp_advantage/report.json",
+          "bytes": 39573,
+          "sha256": "6c8140b91b8bb14b85a8dd752f12799c9cf27fd076e84429829b767bd3b13189"
+        },
+        "state_revision": "r20261125T145623",
+        "archive_revision": "r20261125T153709",
+        "slot": {
+          "addr": 78431,
+          "positive": 26,
+          "negative": 0
+        },
+        "metric": {
+          "addr": 78446,
+          "positive": 300,
+          "negative": 292,
+          "name": "current_hp"
+        },
+        "captured_frames_per_arm": 226,
+        "comparison": {
+          "equal_frames": 0,
+          "different_frames": 226,
+          "pass": true
+        },
+        "proves": "固定受击路线末HP高于空魂对照292；只证明该ID在该路线中的末HP优势。",
+        "does_not_prove": "不证明防御升降、CON精确点数或单次受击伤害；同路线末HP相同的项目不得据此区分机制。"
+      }
     },
     {
       "group": "yellow",
@@ -5369,11 +7066,16 @@
       "name_zh": "古代龙神",
       "effect_text": "CON上升2",
       "evidence_level": "menu_capture_and_manual_observation",
-      "gameplay_verified": false,
+      "gameplay_verified": true,
       "detector_verified": false,
       "name_observation": {
         "method": "manual_visual_read_from_real_menu_identity_crop",
-        "second_visual_review": false
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "effect_observation": {
         "method": "manual_visual_read_from_real_menu_effect_region",
@@ -5382,7 +7084,13 @@
           118,
           238,
           153
-        ]
+        ],
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "capture": {
         "status": "captured",
@@ -5407,7 +7115,39 @@
           "sha256": "ea8e56d2188f5f02fd54902d7a1149c7803ecc9360402ab7d5e0ac787b7c4bc8"
         }
       },
-      "element_id": "aria_yellow_027"
+      "element_id": "aria_yellow_027",
+      "gameplay_evidence": {
+        "source_id": "local_aria_gameplay_verify_20261125",
+        "status": "fixed_route_pass",
+        "case_id": "yellow_soul_27_hp_advantage",
+        "evidence_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/gameplay_verify_binding_20261125/gameplay_evidence_binding_20261125.json",
+        "report": {
+          "path": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/gameplay_verify_binding_20261125/yellow_soul_27_hp_advantage/report.json",
+          "bytes": 39599,
+          "sha256": "df506c0599850b7633b896b70137f2ccfb915c8cb5b6d348188417c55fccee58"
+        },
+        "state_revision": "r20261125T145623",
+        "archive_revision": "r20261125T153709",
+        "slot": {
+          "addr": 78431,
+          "positive": 27,
+          "negative": 0
+        },
+        "metric": {
+          "addr": 78446,
+          "positive": 308,
+          "negative": 292,
+          "name": "current_hp"
+        },
+        "captured_frames_per_arm": 226,
+        "comparison": {
+          "equal_frames": 0,
+          "different_frames": 226,
+          "pass": true
+        },
+        "proves": "固定受击路线末HP高于空魂对照292；只证明该ID在该路线中的末HP优势。",
+        "does_not_prove": "不证明防御升降、CON精确点数或单次受击伤害；同路线末HP相同的项目不得据此区分机制。"
+      }
     },
     {
       "group": "yellow",
@@ -5418,11 +7158,16 @@
       "name_zh": "石化牛",
       "effect_text": "CON上升3",
       "evidence_level": "menu_capture_and_manual_observation",
-      "gameplay_verified": false,
+      "gameplay_verified": true,
       "detector_verified": false,
       "name_observation": {
         "method": "manual_visual_read_from_real_menu_identity_crop",
-        "second_visual_review": false
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "effect_observation": {
         "method": "manual_visual_read_from_real_menu_effect_region",
@@ -5431,7 +7176,13 @@
           118,
           238,
           153
-        ]
+        ],
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "capture": {
         "status": "captured",
@@ -5456,7 +7207,39 @@
           "sha256": "6fe626547e4077dec8d3aeb2ee9ff04454480aa95ad0f59882c6b5f2d8b48957"
         }
       },
-      "element_id": "aria_yellow_028"
+      "element_id": "aria_yellow_028",
+      "gameplay_evidence": {
+        "source_id": "local_aria_gameplay_verify_20261125",
+        "status": "fixed_route_pass",
+        "case_id": "yellow_soul_28_hp_advantage",
+        "evidence_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/gameplay_verify_binding_20261125/gameplay_evidence_binding_20261125.json",
+        "report": {
+          "path": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/gameplay_verify_binding_20261125/yellow_soul_28_hp_advantage/report.json",
+          "bytes": 39589,
+          "sha256": "5c2705fba16cce1d0901d5078d8966ec3bc993b680d90feceb8997b60194ff61"
+        },
+        "state_revision": "r20261125T145623",
+        "archive_revision": "r20261125T153709",
+        "slot": {
+          "addr": 78431,
+          "positive": 28,
+          "negative": 0
+        },
+        "metric": {
+          "addr": 78446,
+          "positive": 316,
+          "negative": 292,
+          "name": "current_hp"
+        },
+        "captured_frames_per_arm": 226,
+        "comparison": {
+          "equal_frames": 0,
+          "different_frames": 226,
+          "pass": true
+        },
+        "proves": "固定受击路线末HP高于空魂对照292；只证明该ID在该路线中的末HP优势。",
+        "does_not_prove": "不证明防御升降、CON精确点数或单次受击伤害；同路线末HP相同的项目不得据此区分机制。"
+      }
     },
     {
       "group": "yellow",
@@ -5467,11 +7250,16 @@
       "name_zh": "死亡十字军",
       "effect_text": "CON上升4",
       "evidence_level": "menu_capture_and_manual_observation",
-      "gameplay_verified": false,
+      "gameplay_verified": true,
       "detector_verified": false,
       "name_observation": {
         "method": "manual_visual_read_from_real_menu_identity_crop",
-        "second_visual_review": false
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "effect_observation": {
         "method": "manual_visual_read_from_real_menu_effect_region",
@@ -5480,7 +7268,13 @@
           118,
           238,
           153
-        ]
+        ],
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "capture": {
         "status": "captured",
@@ -5505,7 +7299,39 @@
           "sha256": "36fb59f187fb71d164c406821eb7ccb7628d99bae173b0b3b158d9587e5850ca"
         }
       },
-      "element_id": "aria_yellow_029"
+      "element_id": "aria_yellow_029",
+      "gameplay_evidence": {
+        "source_id": "local_aria_gameplay_verify_20261125",
+        "status": "fixed_route_pass",
+        "case_id": "yellow_soul_29_hp_advantage",
+        "evidence_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/gameplay_verify_binding_20261125/gameplay_evidence_binding_20261125.json",
+        "report": {
+          "path": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/gameplay_verify_binding_20261125/yellow_soul_29_hp_advantage/report.json",
+          "bytes": 39589,
+          "sha256": "598e96341d8a45943dc35c37a00d443378567a92e8bb7302b7dd9eeb514824ce"
+        },
+        "state_revision": "r20261125T145623",
+        "archive_revision": "r20261125T153709",
+        "slot": {
+          "addr": 78431,
+          "positive": 29,
+          "negative": 0
+        },
+        "metric": {
+          "addr": 78446,
+          "positive": 316,
+          "negative": 292,
+          "name": "current_hp"
+        },
+        "captured_frames_per_arm": 226,
+        "comparison": {
+          "equal_frames": 0,
+          "different_frames": 226,
+          "pass": true
+        },
+        "proves": "固定受击路线末HP高于空魂对照292；只证明该ID在该路线中的末HP优势。",
+        "does_not_prove": "不证明防御升降、CON精确点数或单次受击伤害；同路线末HP相同的项目不得据此区分机制。"
+      }
     },
     {
       "group": "yellow",
@@ -5520,7 +7346,12 @@
       "detector_verified": false,
       "name_observation": {
         "method": "manual_visual_read_from_real_menu_identity_crop",
-        "second_visual_review": false
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "effect_observation": {
         "method": "manual_visual_read_from_real_menu_effect_region",
@@ -5529,7 +7360,13 @@
           118,
           238,
           153
-        ]
+        ],
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "capture": {
         "status": "captured",
@@ -5569,7 +7406,12 @@
       "detector_verified": false,
       "name_observation": {
         "method": "manual_visual_read_from_real_menu_identity_crop",
-        "second_visual_review": false
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "effect_observation": {
         "method": "manual_visual_read_from_real_menu_effect_region",
@@ -5578,7 +7420,13 @@
           118,
           238,
           153
-        ]
+        ],
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "capture": {
         "status": "captured",
@@ -5618,7 +7466,12 @@
       "detector_verified": false,
       "name_observation": {
         "method": "manual_visual_read_from_real_menu_identity_crop",
-        "second_visual_review": false
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "effect_observation": {
         "method": "manual_visual_read_from_real_menu_effect_region",
@@ -5627,7 +7480,13 @@
           118,
           238,
           153
-        ]
+        ],
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "capture": {
         "status": "captured",
@@ -5667,7 +7526,12 @@
       "detector_verified": false,
       "name_observation": {
         "method": "manual_visual_read_from_real_menu_identity_crop",
-        "second_visual_review": false
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "effect_observation": {
         "method": "manual_visual_read_from_real_menu_effect_region",
@@ -5676,7 +7540,13 @@
           118,
           238,
           153
-        ]
+        ],
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "capture": {
         "status": "captured",
@@ -5716,7 +7586,12 @@
       "detector_verified": false,
       "name_observation": {
         "method": "manual_visual_read_from_real_menu_identity_crop",
-        "second_visual_review": false
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "effect_observation": {
         "method": "manual_visual_read_from_real_menu_effect_region",
@@ -5725,7 +7600,13 @@
           118,
           238,
           153
-        ]
+        ],
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "capture": {
         "status": "captured",
@@ -5765,7 +7646,12 @@
       "detector_verified": false,
       "name_observation": {
         "method": "manual_visual_read_from_real_menu_identity_crop",
-        "second_visual_review": false
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "effect_observation": {
         "method": "manual_visual_read_from_real_menu_effect_region",
@@ -5774,7 +7660,13 @@
           118,
           238,
           153
-        ]
+        ],
+        "second_visual_review": true,
+        "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+        "human_visual_review": false,
+        "reviewed_on": "2026-11-25",
+        "review_report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+        "review_result": "match"
       },
       "capture": {
         "status": "captured",
@@ -5823,5 +7715,41 @@
     "report_sha256": "384c0a8a184985625689059e0501765f1a94c185a041cf717790fd8722e6b010",
     "stable_element_ids": 114,
     "media_files_verified": 342
+  },
+  "visual_review": {
+    "report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_visual_review_20261125.json",
+    "report_sha256": "3a01172b11ad89adc20c572c35c344bca88e4579a0e3e4c6497025428ea52237",
+    "reviewed_on": "2026-11-25",
+    "reviewer_type": "ai_assisted_frozen_frame_visual_review",
+    "human_visual_review": false,
+    "elements": 114,
+    "initial_name_matches": 112,
+    "name_corrections": 2,
+    "final_name_matches": 114,
+    "effect_matches": 114,
+    "unresolved": 0,
+    "effect_ocr_exact": 69,
+    "effect_ocr_visual_only": 45,
+    "qualification_unchanged": true,
+    "source_status": "candidate",
+    "gameplay_verified": false,
+    "detector_verified": false,
+    "production_platform_gate_verified": false
+  },
+  "gameplay_verification": {
+    "source_id": "local_aria_gameplay_verify_20261125",
+    "status": "pass_with_fixed_route_scope",
+    "verified_date": "2026-11-25",
+    "report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/gameplay_verify_binding_20261125/gameplay_evidence_binding_20261125.json",
+    "report_sha256": "80f262c7305b63a7983cd4bf15f4e2ee4d619bc36a70d3e949d0a66adc00721b",
+    "elements_verified": 19,
+    "elements_unverified": 95,
+    "detector_verified": 0,
+    "platform_verified": false,
+    "state_revisions": [
+      "r20261125T120000",
+      "r20261125T145623"
+    ],
+    "boundary": "只回绑报告中逐项验证的固定路线；菜单身份、其余玩法、全部检测器和平台总闸门资格不变。"
   }
 }

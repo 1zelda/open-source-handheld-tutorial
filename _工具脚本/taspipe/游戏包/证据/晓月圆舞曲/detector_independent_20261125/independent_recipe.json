@@ -1,0 +1,275 @@
+{
+  "schema_version": "detector_calibration/2.0",
+  "kind": "visual_detector_candidate_calibration",
+  "game_id": "castlevania_aria_gba",
+  "rom_sha1": "40aab076a528f52e93260bb98d91a40039e0da02",
+  "cases": [
+    {
+      "case_id": "red_soul_35_camera_aligned",
+      "method": "aligned_difference",
+      "separation_method": "independent_capture",
+      "calibration_sample_set_id": "red_soul_35_camera_aligned_independent_calibration",
+      "acceptance_sample_set_id": "red_soul_35_camera_aligned_independent_acceptance",
+      "calib_pos_dir": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_soul_detector_independent_v1_20261125\\calibration\\red_soul_35_resource_verify\\red_soul_35_resource_verify_red_35_s01_frames",
+      "calib_neg_dir": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_soul_detector_independent_v1_20261125\\calibration\\red_soul_35_resource_verify\\red_soul_35_resource_verify_red0_s01_frames",
+      "accept_pos_dir": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_soul_detector_independent_v1_20261125\\acceptance\\red_soul_35_resource_verify\\red_soul_35_resource_verify_red_35_s01_frames",
+      "accept_neg_dir": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_soul_detector_independent_v1_20261125\\acceptance\\red_soul_35_resource_verify\\red_soul_35_resource_verify_red0_s01_frames",
+      "region": [
+        0.229167,
+        0.46875,
+        0.5,
+        0.9375
+      ],
+      "frame_range": [
+        8,
+        40
+      ],
+      "primary_frame": 40,
+      "controls": [
+        {
+          "label": "initial_frame",
+          "side": "positive",
+          "frame": 0,
+          "reference_frame": 0,
+          "expect": "fail"
+        },
+        {
+          "label": "later_attack_frame",
+          "side": "positive",
+          "frame": 40,
+          "reference_frame": 40,
+          "expect": "pass"
+        },
+        {
+          "label": "empty_soul_same_frame",
+          "side": "negative",
+          "frame": 12,
+          "reference_frame": 12,
+          "expect": "fail"
+        }
+      ],
+      "timeline": {
+        "negative_all_fail": true,
+        "expectations": [
+          {
+            "label": "before_paired_attack",
+            "side": "positive",
+            "start": 0,
+            "end": 1,
+            "expect": "all_fail"
+          },
+          {
+            "label": "paired_attack_window",
+            "side": "positive",
+            "start": 2,
+            "end": 89,
+            "expect": "all_pass"
+          }
+        ]
+      },
+      "alignment_region": [
+        0.0,
+        0.125,
+        1.0,
+        0.4875
+      ],
+      "max_shift": 24,
+      "max_dy": 4,
+      "max_global_changed_fraction": 0.25
+    },
+    {
+      "case_id": "red_soul_47_local_attack",
+      "method": "aligned_difference",
+      "separation_method": "independent_capture",
+      "calibration_sample_set_id": "red_soul_47_local_attack_independent_calibration",
+      "acceptance_sample_set_id": "red_soul_47_local_attack_independent_acceptance",
+      "calib_pos_dir": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_soul_detector_independent_v1_20261125\\calibration\\red_soul_47_resource_verify\\red_soul_47_resource_verify_red_47_s01_frames",
+      "calib_neg_dir": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_soul_detector_independent_v1_20261125\\calibration\\red_soul_47_resource_verify\\red_soul_47_resource_verify_red0_s01_frames",
+      "accept_pos_dir": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_soul_detector_independent_v1_20261125\\acceptance\\red_soul_47_resource_verify\\red_soul_47_resource_verify_red_47_s01_frames",
+      "accept_neg_dir": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_soul_detector_independent_v1_20261125\\acceptance\\red_soul_47_resource_verify\\red_soul_47_resource_verify_red0_s01_frames",
+      "region": [
+        0.25,
+        0.46875,
+        0.645833,
+        0.9375
+      ],
+      "frame_range": [
+        8,
+        40
+      ],
+      "primary_frame": 30,
+      "controls": [
+        {
+          "label": "early_pair_below_threshold",
+          "side": "positive",
+          "frame": 0,
+          "reference_frame": 0,
+          "expect": "fail"
+        },
+        {
+          "label": "local_attack_frame",
+          "side": "positive",
+          "frame": 30,
+          "reference_frame": 30,
+          "expect": "pass"
+        },
+        {
+          "label": "fullscreen_flash_rejected",
+          "side": "positive",
+          "frame": 88,
+          "reference_frame": 88,
+          "expect": "fail"
+        },
+        {
+          "label": "empty_soul_same_frame",
+          "side": "negative",
+          "frame": 18,
+          "reference_frame": 18,
+          "expect": "fail"
+        }
+      ],
+      "timeline": {
+        "negative_all_fail": true,
+        "expectations": [
+          {
+            "label": "before_local_attack",
+            "side": "positive",
+            "start": 0,
+            "end": 1,
+            "expect": "all_fail"
+          },
+          {
+            "label": "local_attack_window",
+            "side": "positive",
+            "start": 2,
+            "end": 41,
+            "expect": "all_pass"
+          },
+          {
+            "label": "after_local_attack",
+            "side": "positive",
+            "start": 42,
+            "end": 80,
+            "expect": "all_fail"
+          },
+          {
+            "label": "fullscreen_flash_window_rejected",
+            "side": "positive",
+            "start": 81,
+            "end": 89,
+            "expect": "all_fail"
+          }
+        ]
+      },
+      "alignment_region": [
+        0.0,
+        0.125,
+        1.0,
+        0.4875
+      ],
+      "max_shift": 0,
+      "max_dy": 0,
+      "max_global_changed_fraction": 0.25
+    },
+    {
+      "case_id": "yellow_soul_10_healing_popup",
+      "method": "color_region",
+      "separation_method": "independent_capture",
+      "calibration_sample_set_id": "yellow_soul_10_healing_popup_independent_calibration",
+      "acceptance_sample_set_id": "yellow_soul_10_healing_popup_independent_acceptance",
+      "calib_pos_dir": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_soul_detector_independent_v1_20261125\\calibration\\yellow_soul_10_hp_advantage\\yellow_soul_10_hp_advantage_yellow_10_s01_frames",
+      "calib_neg_dir": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_soul_detector_independent_v1_20261125\\calibration\\yellow_soul_10_hp_advantage\\yellow_soul_10_hp_advantage_yellow0_s01_frames",
+      "accept_pos_dir": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_soul_detector_independent_v1_20261125\\acceptance\\yellow_soul_10_hp_advantage\\yellow_soul_10_hp_advantage_yellow_10_s01_frames",
+      "accept_neg_dir": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_soul_detector_independent_v1_20261125\\acceptance\\yellow_soul_10_hp_advantage\\yellow_soul_10_hp_advantage_yellow0_s01_frames",
+      "region": [
+        0.4,
+        0.6125,
+        0.5,
+        0.725
+      ],
+      "frame_range": [
+        105,
+        118
+      ],
+      "primary_frame": 185,
+      "controls": [
+        {
+          "label": "before_popup",
+          "side": "positive",
+          "frame": 100,
+          "expect": "fail"
+        },
+        {
+          "label": "popup_start",
+          "side": "positive",
+          "frame": 109,
+          "expect": "pass"
+        },
+        {
+          "label": "popup_observed",
+          "side": "positive",
+          "frame": 112,
+          "expect": "pass"
+        },
+        {
+          "label": "empty_soul_start",
+          "side": "negative",
+          "frame": 0,
+          "expect": "fail"
+        },
+        {
+          "label": "empty_soul_same_frame",
+          "side": "negative",
+          "frame": 112,
+          "expect": "fail"
+        },
+        {
+          "label": "empty_soul_final",
+          "side": "negative",
+          "frame": 225,
+          "expect": "fail"
+        }
+      ],
+      "timeline": {
+        "negative_all_fail": true,
+        "expectations": [
+          {
+            "label": "before_first_popup",
+            "side": "positive",
+            "start": 0,
+            "end": 108,
+            "expect": "all_fail"
+          },
+          {
+            "label": "first_popup_window",
+            "side": "positive",
+            "start": 109,
+            "end": 126,
+            "expect": "all_pass"
+          },
+          {
+            "label": "between_popups",
+            "side": "positive",
+            "start": 127,
+            "end": 169,
+            "expect": "all_fail"
+          },
+          {
+            "label": "second_popup_window",
+            "side": "positive",
+            "start": 170,
+            "end": 187,
+            "expect": "all_pass"
+          },
+          {
+            "label": "after_second_popup",
+            "side": "positive",
+            "start": 188,
+            "end": 225,
+            "expect": "all_fail"
+          }
+        ]
+      }
+    }
+  ]
+}

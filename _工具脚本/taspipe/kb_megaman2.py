@@ -131,13 +131,27 @@ def _retrieval_query(q):
         for rx, source_form in ZH_SOURCE_TERM_FORMS:
             present = re.search(r"(?<![a-z0-9])" + re.escape(source_form)
                                 + r"(?![a-z0-9])", text, re.I)
-            if rx.search(text) and not present:
+            if (rx.search(text) and not present
+                    and not (jump_x and source_form == "jumps")):
                 text += " " + source_form
         if jump_x:
             for source_form in ("jumping", "falling"):
                 if not re.search(r"(?<![a-z0-9])" + source_form + r"(?![a-z0-9])", text, re.I):
                     text += " " + source_form
     return text
+
+
+def _speed_axis_ok(q, text):
+    normalized = unicodedata.normalize("NFKC", text or "")
+    asks_x = re.search(r"(?<![a-z0-9])x\s*(?:speed|速度)(?![a-z0-9])",
+                       unicodedata.normalize("NFKC", q), re.I)
+    asks_y = re.search(r"(?<![a-z0-9])y\s*(?:speed|速度)(?![a-z0-9])",
+                       unicodedata.normalize("NFKC", q), re.I)
+    if asks_x and not re.search(r"(?<![a-z0-9])(?:x\s*speed|xspd)(?![a-z0-9])", normalized, re.I):
+        return False
+    if asks_y and not re.search(r"(?<![a-z0-9])(?:y\s*speed|yspd)(?![a-z0-9])", normalized, re.I):
+        return False
+    return True
 
 
 def _revision_for(text):
@@ -388,9 +402,13 @@ def ask(q, mode="default", log_path=None, topk=8, top_window=3, assume_revision=
                 or (production and hit.get("source_id") != allowed_source)
                 or not path_ok):
             invalid.append(hit.get("chunk_id"))
-    if raw.get("status") == "pass" and (len(selected) != 1 or invalid):
+    axis_ok = True
+    if raw.get("status") == "pass" and len(selected) == 1:
+        selected_chunk = index_chunks.get(selected[0].get("chunk_id"), {})
+        axis_ok = _speed_axis_ok(q, selected_chunk.get("text") or selected[0].get("snippet") or "")
+    if raw.get("status") == "pass" and (len(selected) != 1 or invalid or not axis_ok):
         result = _blocked(route, q, mode, refusal_override="candidate_evidence_invalid",
-                          reason_override="候选出证未通过来源/revision/路径/资格复核；失败关闭",
+                          reason_override="出证未通过来源/revision/路径/资格/问题轴向复核；失败关闭",
                           production=production)
         return _finish(result, q, mode, log_path, production=production)
 

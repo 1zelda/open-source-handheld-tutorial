@@ -1,0 +1,1327 @@
+{
+  "schema_version": "aria_gameplay_verify_evidence_audit/1.0",
+  "audited_at": "2026-11-25T14:35:32.617937+00:00",
+  "status": "pass",
+  "all_checks_ok": true,
+  "checks": {
+    "cases_19": true,
+    "unique_cases_19": true,
+    "red_blue_13": true,
+    "yellow_6": true,
+    "all_verify_pass": true,
+    "evidence_460": true,
+    "all_report_manifest_hashes": true,
+    "all_recipe_manifest_hashes": true,
+    "actual_core_uniform": true,
+    "rom_uniform": true,
+    "no_detector_or_platform_claim": true
+  },
+  "scope": "只读逐案复核19份正式玩法正反例；通过后才可把对应19项菜单目录回绑为限定路线gameplay_verified=true。",
+  "not_granted": {
+    "detector_verified": false,
+    "platform_verified": false,
+    "human_visual_review": false,
+    "strict_production_default": false,
+    "dense_production_default": false
+  },
+  "cases": [
+    {
+      "case_id": "red_soul_4_verify_vs_empty",
+      "element": {
+        "group": "red",
+        "id": 4,
+        "name_zh": "半鱼人"
+      },
+      "source": {
+        "archive_revision": "r20261125T040115",
+        "state_revision": "r20261125T120000"
+      },
+      "rom_sha1": "40AAB076A528F52E93260BB98D91A40039E0DA02",
+      "actual_core": "BizHawk.Emulation.Cores.Nintendo.GBA.MGBAHawk",
+      "slot": {
+        "addr": 78429,
+        "positive": 4,
+        "negative": 0
+      },
+      "metric": {
+        "addr": 78448,
+        "positive": 67,
+        "negative": 80,
+        "name": "current_mp"
+      },
+      "captured_frames_per_arm": 90,
+      "comparison": {
+        "equal_frames": 0,
+        "different_frames": 90,
+        "pass": true
+      },
+      "report": {
+        "path": "04-游戏资源库/TAS输入录像库/状态资产/castlevania_aria_gba/aria_us_40aab076/r20261125T040115/calibration/red_soul_4_verify_vs_empty/report.json",
+        "bytes": 41570,
+        "sha256": "0022ad0f684ca89403f40123099f2f00b7158898062a5bcff96e690ccfbd1bd5"
+      },
+      "recipe": {
+        "path": "04-游戏资源库/TAS输入录像库/状态资产/castlevania_aria_gba/aria_us_40aab076/r20261125T040115/calibration/red_soul_4_verify_vs_empty/recipe.json",
+        "bytes": 21337,
+        "sha256": "b6fa88aac1eb46d4a64efe6c421f121bbbea8f617e02739adbe311a2625545cd"
+      },
+      "manifest": {
+        "path": "04-游戏资源库/TAS输入录像库/状态资产/castlevania_aria_gba/aria_us_40aab076/r20261125T040115/calibration/red_soul_4_verify_vs_empty/manifest.json",
+        "bytes": 10586,
+        "sha256": "20f5abb258f48e4d56c4214b23de84a6fab9bc07b1f905d412b3a33341680e3a"
+      },
+      "evidence_files": 26,
+      "evidence_bytes": 719928,
+      "verified_fields": [
+        {
+          "name": "red_soul_equipped_id",
+          "addr": 78429,
+          "width": 1,
+          "level": "gameplay",
+          "note": "同一战斗初态只改红魂槽，Up+B 产生实帧差异；不据此认定中文菜单名或全部红魂身份。",
+          "case_id": "red_soul_4_verify_vs_empty"
+        },
+        {
+          "name": "current_mp",
+          "addr": 78448,
+          "width": 2,
+          "level": "consumption",
+          "note": "目标红魂施法后 MP 低于 80，空槽保持 80；不固定具体消耗值。",
+          "case_id": "red_soul_4_verify_vs_empty"
+        }
+      ],
+      "scope": {
+        "proves": "固定战斗初态只改对应槽位并执行角色宏；目标槽保持、MP低于80，空槽保持80，抽样帧存在真实差异。",
+        "does_not_prove": "不证明伤害、射程、全部招式语义、中文菜单装备流程或任意场景稳定性。"
+      }
+    },
+    {
+      "case_id": "red_soul_5_verify_vs_empty",
+      "element": {
+        "group": "red",
+        "id": 5,
+        "name_zh": "斧装甲"
+      },
+      "source": {
+        "archive_revision": "r20261125T040115",
+        "state_revision": "r20261125T120000"
+      },
+      "rom_sha1": "40AAB076A528F52E93260BB98D91A40039E0DA02",
+      "actual_core": "BizHawk.Emulation.Cores.Nintendo.GBA.MGBAHawk",
+      "slot": {
+        "addr": 78429,
+        "positive": 5,
+        "negative": 0
+      },
+      "metric": {
+        "addr": 78448,
+        "positive": 59,
+        "negative": 80,
+        "name": "current_mp"
+      },
+      "captured_frames_per_arm": 90,
+      "comparison": {
+        "equal_frames": 0,
+        "different_frames": 90,
+        "pass": true
+      },
+      "report": {
+        "path": "04-游戏资源库/TAS输入录像库/状态资产/castlevania_aria_gba/aria_us_40aab076/r20261125T040115/calibration/red_soul_5_verify_vs_empty/report.json",
+        "bytes": 41565,
+        "sha256": "614b8c28bbe45c43c011953b788bf041ef83cbbe052628223674bf40bb585f97"
+      },
+      "recipe": {
+        "path": "04-游戏资源库/TAS输入录像库/状态资产/castlevania_aria_gba/aria_us_40aab076/r20261125T040115/calibration/red_soul_5_verify_vs_empty/recipe.json",
+        "bytes": 21337,
+        "sha256": "b6fa88aac1eb46d4a64efe6c421f121bbbea8f617e02739adbe311a2625545cd"
+      },
+      "manifest": {
+        "path": "04-游戏资源库/TAS输入录像库/状态资产/castlevania_aria_gba/aria_us_40aab076/r20261125T040115/calibration/red_soul_5_verify_vs_empty/manifest.json",
+        "bytes": 10586,
+        "sha256": "c2a17462c946c7151146f2eea99bf162fc044bec4f3e670d12095ea4a78b23cf"
+      },
+      "evidence_files": 26,
+      "evidence_bytes": 723475,
+      "verified_fields": [
+        {
+          "name": "red_soul_equipped_id",
+          "addr": 78429,
+          "width": 1,
+          "level": "gameplay",
+          "note": "同一战斗初态只改红魂槽，Up+B 产生实帧差异；不据此认定中文菜单名或全部红魂身份。",
+          "case_id": "red_soul_5_verify_vs_empty"
+        },
+        {
+          "name": "current_mp",
+          "addr": 78448,
+          "width": 2,
+          "level": "consumption",
+          "note": "目标红魂施法后 MP 低于 80，空槽保持 80；不固定具体消耗值。",
+          "case_id": "red_soul_5_verify_vs_empty"
+        }
+      ],
+      "scope": {
+        "proves": "固定战斗初态只改对应槽位并执行角色宏；目标槽保持、MP低于80，空槽保持80，抽样帧存在真实差异。",
+        "does_not_prove": "不证明伤害、射程、全部招式语义、中文菜单装备流程或任意场景稳定性。"
+      }
+    },
+    {
+      "case_id": "red_soul_12_verify_vs_empty",
+      "element": {
+        "group": "red",
+        "id": 12,
+        "name_zh": "小恶魔"
+      },
+      "source": {
+        "archive_revision": "r20261125T040115",
+        "state_revision": "r20261125T120000"
+      },
+      "rom_sha1": "40AAB076A528F52E93260BB98D91A40039E0DA02",
+      "actual_core": "BizHawk.Emulation.Cores.Nintendo.GBA.MGBAHawk",
+      "slot": {
+        "addr": 78429,
+        "positive": 12,
+        "negative": 0
+      },
+      "metric": {
+        "addr": 78448,
+        "positive": 63,
+        "negative": 80,
+        "name": "current_mp"
+      },
+      "captured_frames_per_arm": 90,
+      "comparison": {
+        "equal_frames": 0,
+        "different_frames": 90,
+        "pass": true
+      },
+      "report": {
+        "path": "04-游戏资源库/TAS输入录像库/状态资产/castlevania_aria_gba/aria_us_40aab076/r20261125T040115/calibration/red_soul_12_verify_vs_empty/report.json",
+        "bytes": 41755,
+        "sha256": "a1f7f739d09c23e960ca7b6b560b341294049e2614670ea438e1b4138a4e8473"
+      },
+      "recipe": {
+        "path": "04-游戏资源库/TAS输入录像库/状态资产/castlevania_aria_gba/aria_us_40aab076/r20261125T040115/calibration/red_soul_12_verify_vs_empty/recipe.json",
+        "bytes": 21337,
+        "sha256": "b6fa88aac1eb46d4a64efe6c421f121bbbea8f617e02739adbe311a2625545cd"
+      },
+      "manifest": {
+        "path": "04-游戏资源库/TAS输入录像库/状态资产/castlevania_aria_gba/aria_us_40aab076/r20261125T040115/calibration/red_soul_12_verify_vs_empty/manifest.json",
+        "bytes": 10674,
+        "sha256": "eabc37c554e29d1beeb5f91be61d417109c7018abb3589183911732990755e61"
+      },
+      "evidence_files": 26,
+      "evidence_bytes": 721451,
+      "verified_fields": [
+        {
+          "name": "red_soul_equipped_id",
+          "addr": 78429,
+          "width": 1,
+          "level": "gameplay",
+          "note": "同一战斗初态只改红魂槽，Up+B 产生实帧差异；不据此认定中文菜单名或全部红魂身份。",
+          "case_id": "red_soul_12_verify_vs_empty"
+        },
+        {
+          "name": "current_mp",
+          "addr": 78448,
+          "width": 2,
+          "level": "consumption",
+          "note": "目标红魂施法后 MP 低于 80，空槽保持 80；不固定具体消耗值。",
+          "case_id": "red_soul_12_verify_vs_empty"
+        }
+      ],
+      "scope": {
+        "proves": "固定战斗初态只改对应槽位并执行角色宏；目标槽保持、MP低于80，空槽保持80，抽样帧存在真实差异。",
+        "does_not_prove": "不证明伤害、射程、全部招式语义、中文菜单装备流程或任意场景稳定性。"
+      }
+    },
+    {
+      "case_id": "red_soul_24_verify_vs_empty",
+      "element": {
+        "group": "red",
+        "id": 24,
+        "name_zh": "魔鸟"
+      },
+      "source": {
+        "archive_revision": "r20261125T040115",
+        "state_revision": "r20261125T120000"
+      },
+      "rom_sha1": "40AAB076A528F52E93260BB98D91A40039E0DA02",
+      "actual_core": "BizHawk.Emulation.Cores.Nintendo.GBA.MGBAHawk",
+      "slot": {
+        "addr": 78429,
+        "positive": 24,
+        "negative": 0
+      },
+      "metric": {
+        "addr": 78448,
+        "positive": 56,
+        "negative": 80,
+        "name": "current_mp"
+      },
+      "captured_frames_per_arm": 90,
+      "comparison": {
+        "equal_frames": 0,
+        "different_frames": 90,
+        "pass": true
+      },
+      "report": {
+        "path": "04-游戏资源库/TAS输入录像库/状态资产/castlevania_aria_gba/aria_us_40aab076/r20261125T040115/calibration/red_soul_24_verify_vs_empty/report.json",
+        "bytes": 41745,
+        "sha256": "394ba9a09af48c8c826aa3abb9a794634d1cc527b04b156bf50dc7af029557cc"
+      },
+      "recipe": {
+        "path": "04-游戏资源库/TAS输入录像库/状态资产/castlevania_aria_gba/aria_us_40aab076/r20261125T040115/calibration/red_soul_24_verify_vs_empty/recipe.json",
+        "bytes": 21337,
+        "sha256": "b6fa88aac1eb46d4a64efe6c421f121bbbea8f617e02739adbe311a2625545cd"
+      },
+      "manifest": {
+        "path": "04-游戏资源库/TAS输入录像库/状态资产/castlevania_aria_gba/aria_us_40aab076/r20261125T040115/calibration/red_soul_24_verify_vs_empty/manifest.json",
+        "bytes": 10674,
+        "sha256": "8ce8fdbbc35451dd714fd587beb479de66370be8be958009f97d9b5977bae81f"
+      },
+      "evidence_files": 26,
+      "evidence_bytes": 719981,
+      "verified_fields": [
+        {
+          "name": "red_soul_equipped_id",
+          "addr": 78429,
+          "width": 1,
+          "level": "gameplay",
+          "note": "同一战斗初态只改红魂槽，Up+B 产生实帧差异；不据此认定中文菜单名或全部红魂身份。",
+          "case_id": "red_soul_24_verify_vs_empty"
+        },
+        {
+          "name": "current_mp",
+          "addr": 78448,
+          "width": 2,
+          "level": "consumption",
+          "note": "目标红魂施法后 MP 低于 80，空槽保持 80；不固定具体消耗值。",
+          "case_id": "red_soul_24_verify_vs_empty"
+        }
+      ],
+      "scope": {
+        "proves": "固定战斗初态只改对应槽位并执行角色宏；目标槽保持、MP低于80，空槽保持80，抽样帧存在真实差异。",
+        "does_not_prove": "不证明伤害、射程、全部招式语义、中文菜单装备流程或任意场景稳定性。"
+      }
+    },
+    {
+      "case_id": "red_soul_31_verify_vs_empty",
+      "element": {
+        "group": "red",
+        "id": 31,
+        "name_zh": "噩梦"
+      },
+      "source": {
+        "archive_revision": "r20261125T040115",
+        "state_revision": "r20261125T120000"
+      },
+      "rom_sha1": "40AAB076A528F52E93260BB98D91A40039E0DA02",
+      "actual_core": "BizHawk.Emulation.Cores.Nintendo.GBA.MGBAHawk",
+      "slot": {
+        "addr": 78429,
+        "positive": 31,
+        "negative": 0
+      },
+      "metric": {
+        "addr": 78448,
+        "positive": 51,
+        "negative": 80,
+        "name": "current_mp"
+      },
+      "captured_frames_per_arm": 90,
+      "comparison": {
+        "equal_frames": 0,
+        "different_frames": 90,
+        "pass": true
+      },
+      "report": {
+        "path": "04-游戏资源库/TAS输入录像库/状态资产/castlevania_aria_gba/aria_us_40aab076/r20261125T040115/calibration/red_soul_31_verify_vs_empty/report.json",
+        "bytes": 41735,
+        "sha256": "e10b9fb8436bc11544053538b693ca6d2e081e17ac204b591afc9ca7c359fb69"
+      },
+      "recipe": {
+        "path": "04-游戏资源库/TAS输入录像库/状态资产/castlevania_aria_gba/aria_us_40aab076/r20261125T040115/calibration/red_soul_31_verify_vs_empty/recipe.json",
+        "bytes": 21337,
+        "sha256": "b6fa88aac1eb46d4a64efe6c421f121bbbea8f617e02739adbe311a2625545cd"
+      },
+      "manifest": {
+        "path": "04-游戏资源库/TAS输入录像库/状态资产/castlevania_aria_gba/aria_us_40aab076/r20261125T040115/calibration/red_soul_31_verify_vs_empty/manifest.json",
+        "bytes": 10674,
+        "sha256": "44a72ced3e4387130a82a9f6270c9b4f57d916930818cfd0acf3114112a6f5c1"
+      },
+      "evidence_files": 26,
+      "evidence_bytes": 721694,
+      "verified_fields": [
+        {
+          "name": "red_soul_equipped_id",
+          "addr": 78429,
+          "width": 1,
+          "level": "gameplay",
+          "note": "同一战斗初态只改红魂槽，Up+B 产生实帧差异；不据此认定中文菜单名或全部红魂身份。",
+          "case_id": "red_soul_31_verify_vs_empty"
+        },
+        {
+          "name": "current_mp",
+          "addr": 78448,
+          "width": 2,
+          "level": "consumption",
+          "note": "目标红魂施法后 MP 低于 80，空槽保持 80；不固定具体消耗值。",
+          "case_id": "red_soul_31_verify_vs_empty"
+        }
+      ],
+      "scope": {
+        "proves": "固定战斗初态只改对应槽位并执行角色宏；目标槽保持、MP低于80，空槽保持80，抽样帧存在真实差异。",
+        "does_not_prove": "不证明伤害、射程、全部招式语义、中文菜单装备流程或任意场景稳定性。"
+      }
+    },
+    {
+      "case_id": "red_soul_37_verify_vs_empty",
+      "element": {
+        "group": "red",
+        "id": 37,
+        "name_zh": "比夫隆"
+      },
+      "source": {
+        "archive_revision": "r20261125T040115",
+        "state_revision": "r20261125T120000"
+      },
+      "rom_sha1": "40AAB076A528F52E93260BB98D91A40039E0DA02",
+      "actual_core": "BizHawk.Emulation.Cores.Nintendo.GBA.MGBAHawk",
+      "slot": {
+        "addr": 78429,
+        "positive": 37,
+        "negative": 0
+      },
+      "metric": {
+        "addr": 78448,
+        "positive": 46,
+        "negative": 80,
+        "name": "current_mp"
+      },
+      "captured_frames_per_arm": 90,
+      "comparison": {
+        "equal_frames": 0,
+        "different_frames": 90,
+        "pass": true
+      },
+      "report": {
+        "path": "04-游戏资源库/TAS输入录像库/状态资产/castlevania_aria_gba/aria_us_40aab076/r20261125T040115/calibration/red_soul_37_verify_vs_empty/report.json",
+        "bytes": 41720,
+        "sha256": "2ff1b255cc1b4ff64e04388fcabda453caa37a42c6b6e4e27b70bd5d85cbb138"
+      },
+      "recipe": {
+        "path": "04-游戏资源库/TAS输入录像库/状态资产/castlevania_aria_gba/aria_us_40aab076/r20261125T040115/calibration/red_soul_37_verify_vs_empty/recipe.json",
+        "bytes": 21337,
+        "sha256": "b6fa88aac1eb46d4a64efe6c421f121bbbea8f617e02739adbe311a2625545cd"
+      },
+      "manifest": {
+        "path": "04-游戏资源库/TAS输入录像库/状态资产/castlevania_aria_gba/aria_us_40aab076/r20261125T040115/calibration/red_soul_37_verify_vs_empty/manifest.json",
+        "bytes": 10674,
+        "sha256": "f86626c3552308a026f4be8982bc6f5f0d1e679b5396cb2071c7c65b8160a35d"
+      },
+      "evidence_files": 26,
+      "evidence_bytes": 725537,
+      "verified_fields": [
+        {
+          "name": "red_soul_equipped_id",
+          "addr": 78429,
+          "width": 1,
+          "level": "gameplay",
+          "note": "同一战斗初态只改红魂槽，Up+B 产生实帧差异；不据此认定中文菜单名或全部红魂身份。",
+          "case_id": "red_soul_37_verify_vs_empty"
+        },
+        {
+          "name": "current_mp",
+          "addr": 78448,
+          "width": 2,
+          "level": "consumption",
+          "note": "目标红魂施法后 MP 低于 80，空槽保持 80；不固定具体消耗值。",
+          "case_id": "red_soul_37_verify_vs_empty"
+        }
+      ],
+      "scope": {
+        "proves": "固定战斗初态只改对应槽位并执行角色宏；目标槽保持、MP低于80，空槽保持80，抽样帧存在真实差异。",
+        "does_not_prove": "不证明伤害、射程、全部招式语义、中文菜单装备流程或任意场景稳定性。"
+      }
+    },
+    {
+      "case_id": "blue_soul_2_verify_vs_empty",
+      "element": {
+        "group": "blue",
+        "id": 2,
+        "name_zh": "大蝙蝠"
+      },
+      "source": {
+        "archive_revision": "r20261125T040115",
+        "state_revision": "r20261125T120000"
+      },
+      "rom_sha1": "40AAB076A528F52E93260BB98D91A40039E0DA02",
+      "actual_core": "BizHawk.Emulation.Cores.Nintendo.GBA.MGBAHawk",
+      "slot": {
+        "addr": 78430,
+        "positive": 2,
+        "negative": 0
+      },
+      "metric": {
+        "addr": 78448,
+        "positive": 22,
+        "negative": 80,
+        "name": "current_mp"
+      },
+      "captured_frames_per_arm": 120,
+      "comparison": {
+        "equal_frames": 0,
+        "different_frames": 120,
+        "pass": true
+      },
+      "report": {
+        "path": "04-游戏资源库/TAS输入录像库/状态资产/castlevania_aria_gba/aria_us_40aab076/r20261125T040115/calibration/blue_soul_2_verify_vs_empty/report.json",
+        "bytes": 37150,
+        "sha256": "231a42fc8b92e1c94d27f0fb5c84077ee9dbe14ef8203687920526232a09feac"
+      },
+      "recipe": {
+        "path": "04-游戏资源库/TAS输入录像库/状态资产/castlevania_aria_gba/aria_us_40aab076/r20261125T040115/calibration/blue_soul_2_verify_vs_empty/recipe.json",
+        "bytes": 18003,
+        "sha256": "abe79ab83846a76a4e1d245dedc8bcb8eee28844aefe1da51487557b42900ccc"
+      },
+      "manifest": {
+        "path": "04-游戏资源库/TAS输入录像库/状态资产/castlevania_aria_gba/aria_us_40aab076/r20261125T040115/calibration/blue_soul_2_verify_vs_empty/manifest.json",
+        "bytes": 10021,
+        "sha256": "edd24ced596eaf6c78fe2f63663328b0a928d3ebe0583100b01eb185595c1aaf"
+      },
+      "evidence_files": 24,
+      "evidence_bytes": 688257,
+      "verified_fields": [
+        {
+          "name": "blue_soul_equipped_id",
+          "addr": 78430,
+          "width": 1,
+          "level": "gameplay",
+          "note": "同一战斗初态只改蓝魂槽，R 键产生实帧差异；不据此认定中文菜单名或全部蓝魂身份。",
+          "case_id": "blue_soul_2_verify_vs_empty"
+        },
+        {
+          "name": "current_mp",
+          "addr": 78448,
+          "width": 2,
+          "level": "consumption",
+          "note": "目标蓝魂激活后 MP 低于 80，空槽保持 80；不固定具体消耗值。",
+          "case_id": "blue_soul_2_verify_vs_empty"
+        }
+      ],
+      "scope": {
+        "proves": "固定战斗初态只改对应槽位并执行角色宏；目标槽保持、MP低于80，空槽保持80，抽样帧存在真实差异。",
+        "does_not_prove": "不证明伤害、射程、全部招式语义、中文菜单装备流程或任意场景稳定性。"
+      }
+    },
+    {
+      "case_id": "blue_soul_4_verify_vs_empty",
+      "element": {
+        "group": "blue",
+        "id": 4,
+        "name_zh": "布艾尔"
+      },
+      "source": {
+        "archive_revision": "r20261125T040115",
+        "state_revision": "r20261125T120000"
+      },
+      "rom_sha1": "40AAB076A528F52E93260BB98D91A40039E0DA02",
+      "actual_core": "BizHawk.Emulation.Cores.Nintendo.GBA.MGBAHawk",
+      "slot": {
+        "addr": 78430,
+        "positive": 4,
+        "negative": 0
+      },
+      "metric": {
+        "addr": 78448,
+        "positive": 72,
+        "negative": 80,
+        "name": "current_mp"
+      },
+      "captured_frames_per_arm": 120,
+      "comparison": {
+        "equal_frames": 0,
+        "different_frames": 120,
+        "pass": true
+      },
+      "report": {
+        "path": "04-游戏资源库/TAS输入录像库/状态资产/castlevania_aria_gba/aria_us_40aab076/r20261125T040115/calibration/blue_soul_4_verify_vs_empty/report.json",
+        "bytes": 37154,
+        "sha256": "3bd84b4cabd5b7530e5fa711f5a6af08c3bdf3a7a98ba801a5137de5e126f260"
+      },
+      "recipe": {
+        "path": "04-游戏资源库/TAS输入录像库/状态资产/castlevania_aria_gba/aria_us_40aab076/r20261125T040115/calibration/blue_soul_4_verify_vs_empty/recipe.json",
+        "bytes": 18003,
+        "sha256": "abe79ab83846a76a4e1d245dedc8bcb8eee28844aefe1da51487557b42900ccc"
+      },
+      "manifest": {
+        "path": "04-游戏资源库/TAS输入录像库/状态资产/castlevania_aria_gba/aria_us_40aab076/r20261125T040115/calibration/blue_soul_4_verify_vs_empty/manifest.json",
+        "bytes": 10021,
+        "sha256": "fe2e91af9bac544ed23919e2b65cafc5f2c84c2c19e2080eb8accd0153179c9d"
+      },
+      "evidence_files": 24,
+      "evidence_bytes": 690620,
+      "verified_fields": [
+        {
+          "name": "blue_soul_equipped_id",
+          "addr": 78430,
+          "width": 1,
+          "level": "gameplay",
+          "note": "同一战斗初态只改蓝魂槽，R 键产生实帧差异；不据此认定中文菜单名或全部蓝魂身份。",
+          "case_id": "blue_soul_4_verify_vs_empty"
+        },
+        {
+          "name": "current_mp",
+          "addr": 78448,
+          "width": 2,
+          "level": "consumption",
+          "note": "目标蓝魂激活后 MP 低于 80，空槽保持 80；不固定具体消耗值。",
+          "case_id": "blue_soul_4_verify_vs_empty"
+        }
+      ],
+      "scope": {
+        "proves": "固定战斗初态只改对应槽位并执行角色宏；目标槽保持、MP低于80，空槽保持80，抽样帧存在真实差异。",
+        "does_not_prove": "不证明伤害、射程、全部招式语义、中文菜单装备流程或任意场景稳定性。"
+      }
+    },
+    {
+      "case_id": "blue_soul_6_verify_vs_empty",
+      "element": {
+        "group": "blue",
+        "id": 6,
+        "name_zh": "大鬼魂"
+      },
+      "source": {
+        "archive_revision": "r20261125T040115",
+        "state_revision": "r20261125T120000"
+      },
+      "rom_sha1": "40AAB076A528F52E93260BB98D91A40039E0DA02",
+      "actual_core": "BizHawk.Emulation.Cores.Nintendo.GBA.MGBAHawk",
+      "slot": {
+        "addr": 78430,
+        "positive": 6,
+        "negative": 0
+      },
+      "metric": {
+        "addr": 78448,
+        "positive": 72,
+        "negative": 80,
+        "name": "current_mp"
+      },
+      "captured_frames_per_arm": 120,
+      "comparison": {
+        "equal_frames": 0,
+        "different_frames": 120,
+        "pass": true
+      },
+      "report": {
+        "path": "04-游戏资源库/TAS输入录像库/状态资产/castlevania_aria_gba/aria_us_40aab076/r20261125T040115/calibration/blue_soul_6_verify_vs_empty/report.json",
+        "bytes": 37168,
+        "sha256": "f16cdefa4daa52019ae22662ff9fca5a70ffc9cea00107f1bf1241a5ca4b990f"
+      },
+      "recipe": {
+        "path": "04-游戏资源库/TAS输入录像库/状态资产/castlevania_aria_gba/aria_us_40aab076/r20261125T040115/calibration/blue_soul_6_verify_vs_empty/recipe.json",
+        "bytes": 18003,
+        "sha256": "abe79ab83846a76a4e1d245dedc8bcb8eee28844aefe1da51487557b42900ccc"
+      },
+      "manifest": {
+        "path": "04-游戏资源库/TAS输入录像库/状态资产/castlevania_aria_gba/aria_us_40aab076/r20261125T040115/calibration/blue_soul_6_verify_vs_empty/manifest.json",
+        "bytes": 10021,
+        "sha256": "b8275e5e9c1c85b9c3cb76abe29046935eb24d8d3fdf6765ead2929d2715c4c2"
+      },
+      "evidence_files": 24,
+      "evidence_bytes": 688894,
+      "verified_fields": [
+        {
+          "name": "blue_soul_equipped_id",
+          "addr": 78430,
+          "width": 1,
+          "level": "gameplay",
+          "note": "同一战斗初态只改蓝魂槽，R 键产生实帧差异；不据此认定中文菜单名或全部蓝魂身份。",
+          "case_id": "blue_soul_6_verify_vs_empty"
+        },
+        {
+          "name": "current_mp",
+          "addr": 78448,
+          "width": 2,
+          "level": "consumption",
+          "note": "目标蓝魂激活后 MP 低于 80，空槽保持 80；不固定具体消耗值。",
+          "case_id": "blue_soul_6_verify_vs_empty"
+        }
+      ],
+      "scope": {
+        "proves": "固定战斗初态只改对应槽位并执行角色宏；目标槽保持、MP低于80，空槽保持80，抽样帧存在真实差异。",
+        "does_not_prove": "不证明伤害、射程、全部招式语义、中文菜单装备流程或任意场景稳定性。"
+      }
+    },
+    {
+      "case_id": "blue_soul_13_verify_vs_empty",
+      "element": {
+        "group": "blue",
+        "id": 13,
+        "name_zh": "幻魔士"
+      },
+      "source": {
+        "archive_revision": "r20261125T040115",
+        "state_revision": "r20261125T120000"
+      },
+      "rom_sha1": "40AAB076A528F52E93260BB98D91A40039E0DA02",
+      "actual_core": "BizHawk.Emulation.Cores.Nintendo.GBA.MGBAHawk",
+      "slot": {
+        "addr": 78430,
+        "positive": 13,
+        "negative": 0
+      },
+      "metric": {
+        "addr": 78448,
+        "positive": 72,
+        "negative": 80,
+        "name": "current_mp"
+      },
+      "captured_frames_per_arm": 120,
+      "comparison": {
+        "equal_frames": 0,
+        "different_frames": 120,
+        "pass": true
+      },
+      "report": {
+        "path": "04-游戏资源库/TAS输入录像库/状态资产/castlevania_aria_gba/aria_us_40aab076/r20261125T040115/calibration/blue_soul_13_verify_vs_empty/report.json",
+        "bytes": 37311,
+        "sha256": "44f6ab00480a9e605106c14d2c3dfb07b246cf39386cbc767639b58af2877dea"
+      },
+      "recipe": {
+        "path": "04-游戏资源库/TAS输入录像库/状态资产/castlevania_aria_gba/aria_us_40aab076/r20261125T040115/calibration/blue_soul_13_verify_vs_empty/recipe.json",
+        "bytes": 18003,
+        "sha256": "abe79ab83846a76a4e1d245dedc8bcb8eee28844aefe1da51487557b42900ccc"
+      },
+      "manifest": {
+        "path": "04-游戏资源库/TAS输入录像库/状态资产/castlevania_aria_gba/aria_us_40aab076/r20261125T040115/calibration/blue_soul_13_verify_vs_empty/manifest.json",
+        "bytes": 10104,
+        "sha256": "163e7e41d745225b562312c74566043f6519ca7dc38374fdec87f6e08baf8fbf"
+      },
+      "evidence_files": 24,
+      "evidence_bytes": 691918,
+      "verified_fields": [
+        {
+          "name": "blue_soul_equipped_id",
+          "addr": 78430,
+          "width": 1,
+          "level": "gameplay",
+          "note": "同一战斗初态只改蓝魂槽，R 键产生实帧差异；不据此认定中文菜单名或全部蓝魂身份。",
+          "case_id": "blue_soul_13_verify_vs_empty"
+        },
+        {
+          "name": "current_mp",
+          "addr": 78448,
+          "width": 2,
+          "level": "consumption",
+          "note": "目标蓝魂激活后 MP 低于 80，空槽保持 80；不固定具体消耗值。",
+          "case_id": "blue_soul_13_verify_vs_empty"
+        }
+      ],
+      "scope": {
+        "proves": "固定战斗初态只改对应槽位并执行角色宏；目标槽保持、MP低于80，空槽保持80，抽样帧存在真实差异。",
+        "does_not_prove": "不证明伤害、射程、全部招式语义、中文菜单装备流程或任意场景稳定性。"
+      }
+    },
+    {
+      "case_id": "blue_soul_22_verify_vs_empty",
+      "element": {
+        "group": "blue",
+        "id": 22,
+        "name_zh": "子恶魔"
+      },
+      "source": {
+        "archive_revision": "r20261125T040115",
+        "state_revision": "r20261125T120000"
+      },
+      "rom_sha1": "40AAB076A528F52E93260BB98D91A40039E0DA02",
+      "actual_core": "BizHawk.Emulation.Cores.Nintendo.GBA.MGBAHawk",
+      "slot": {
+        "addr": 78430,
+        "positive": 22,
+        "negative": 0
+      },
+      "metric": {
+        "addr": 78448,
+        "positive": 76,
+        "negative": 80,
+        "name": "current_mp"
+      },
+      "captured_frames_per_arm": 120,
+      "comparison": {
+        "equal_frames": 0,
+        "different_frames": 120,
+        "pass": true
+      },
+      "report": {
+        "path": "04-游戏资源库/TAS输入录像库/状态资产/castlevania_aria_gba/aria_us_40aab076/r20261125T040115/calibration/blue_soul_22_verify_vs_empty/report.json",
+        "bytes": 37301,
+        "sha256": "d36b6ec8ffde914d527e5ff3339b4e0be3b7e043696a0765e66859e4b43adf69"
+      },
+      "recipe": {
+        "path": "04-游戏资源库/TAS输入录像库/状态资产/castlevania_aria_gba/aria_us_40aab076/r20261125T040115/calibration/blue_soul_22_verify_vs_empty/recipe.json",
+        "bytes": 18003,
+        "sha256": "abe79ab83846a76a4e1d245dedc8bcb8eee28844aefe1da51487557b42900ccc"
+      },
+      "manifest": {
+        "path": "04-游戏资源库/TAS输入录像库/状态资产/castlevania_aria_gba/aria_us_40aab076/r20261125T040115/calibration/blue_soul_22_verify_vs_empty/manifest.json",
+        "bytes": 10104,
+        "sha256": "829f45904e06fd1f61dcb49ceafed463306aac0ec676f7f155cf751895704152"
+      },
+      "evidence_files": 24,
+      "evidence_bytes": 690185,
+      "verified_fields": [
+        {
+          "name": "blue_soul_equipped_id",
+          "addr": 78430,
+          "width": 1,
+          "level": "gameplay",
+          "note": "同一战斗初态只改蓝魂槽，R 键产生实帧差异；不据此认定中文菜单名或全部蓝魂身份。",
+          "case_id": "blue_soul_22_verify_vs_empty"
+        },
+        {
+          "name": "current_mp",
+          "addr": 78448,
+          "width": 2,
+          "level": "consumption",
+          "note": "目标蓝魂激活后 MP 低于 80，空槽保持 80；不固定具体消耗值。",
+          "case_id": "blue_soul_22_verify_vs_empty"
+        }
+      ],
+      "scope": {
+        "proves": "固定战斗初态只改对应槽位并执行角色宏；目标槽保持、MP低于80，空槽保持80，抽样帧存在真实差异。",
+        "does_not_prove": "不证明伤害、射程、全部招式语义、中文菜单装备流程或任意场景稳定性。"
+      }
+    },
+    {
+      "case_id": "red_soul_35_resource_verify",
+      "element": {
+        "group": "red",
+        "id": 35,
+        "name_zh": "虎人"
+      },
+      "source": {
+        "archive_revision": "r20261125T153709",
+        "state_revision": "r20261125T145623"
+      },
+      "rom_sha1": "40AAB076A528F52E93260BB98D91A40039E0DA02",
+      "actual_core": "BizHawk.Emulation.Cores.Nintendo.GBA.MGBAHawk",
+      "slot": {
+        "addr": 78429,
+        "positive": 35,
+        "negative": 0
+      },
+      "metric": {
+        "addr": 78448,
+        "positive": 41,
+        "negative": 80,
+        "name": "current_mp"
+      },
+      "captured_frames_per_arm": 90,
+      "comparison": {
+        "equal_frames": 0,
+        "different_frames": 90,
+        "pass": true
+      },
+      "report": {
+        "path": "04-游戏资源库/TAS输入录像库/状态资产/castlevania_aria_gba/aria_us_40aab076/r20261125T153709/calibration/red_soul_35_resource_verify/report.json",
+        "bytes": 26287,
+        "sha256": "ebd93a96c3c29b589a2319a27e04afb47985392c614b682de41bd725ebb1b1aa"
+      },
+      "recipe": {
+        "path": "04-游戏资源库/TAS输入录像库/状态资产/castlevania_aria_gba/aria_us_40aab076/r20261125T153709/calibration/red_soul_35_resource_verify/recipe.json",
+        "bytes": 7446,
+        "sha256": "aad0a0a1a4689b423622a2e7a43da37e952c0b9badccce2bbf3d1d86562997ec"
+      },
+      "manifest": {
+        "path": "04-游戏资源库/TAS输入录像库/状态资产/castlevania_aria_gba/aria_us_40aab076/r20261125T153709/calibration/red_soul_35_resource_verify/manifest.json",
+        "bytes": 10401,
+        "sha256": "58666d714af6414588e58a35cd975ecc1b5695aeb63110daea845a4a592ab0ec"
+      },
+      "evidence_files": 26,
+      "evidence_bytes": 713151,
+      "verified_fields": [
+        {
+          "addr": 78429,
+          "level": "gameplay",
+          "note": "固定Up+B路线后目标红魂槽仍保持；正例只改该槽，负例改为0。",
+          "case_id": "red_soul_35_resource_verify"
+        },
+        {
+          "addr": 78448,
+          "level": "gameplay",
+          "note": "固定Up+B路线末帧MP低于初始80；只验证资源消耗，不自动判定技能语义或检测器。",
+          "case_id": "red_soul_35_resource_verify"
+        }
+      ],
+      "scope": {
+        "proves": "固定战斗初态只改对应槽位并执行角色宏；目标槽保持、MP低于80，空槽保持80，抽样帧存在真实差异。",
+        "does_not_prove": "不证明伤害、射程、全部招式语义、中文菜单装备流程或任意场景稳定性。"
+      }
+    },
+    {
+      "case_id": "red_soul_47_resource_verify",
+      "element": {
+        "group": "red",
+        "id": 47,
+        "name_zh": "圆盘装甲"
+      },
+      "source": {
+        "archive_revision": "r20261125T153709",
+        "state_revision": "r20261125T145623"
+      },
+      "rom_sha1": "40AAB076A528F52E93260BB98D91A40039E0DA02",
+      "actual_core": "BizHawk.Emulation.Cores.Nintendo.GBA.MGBAHawk",
+      "slot": {
+        "addr": 78429,
+        "positive": 47,
+        "negative": 0
+      },
+      "metric": {
+        "addr": 78448,
+        "positive": 1,
+        "negative": 80,
+        "name": "current_mp"
+      },
+      "captured_frames_per_arm": 90,
+      "comparison": {
+        "equal_frames": 0,
+        "different_frames": 90,
+        "pass": true
+      },
+      "report": {
+        "path": "04-游戏资源库/TAS输入录像库/状态资产/castlevania_aria_gba/aria_us_40aab076/r20261125T153709/calibration/red_soul_47_resource_verify/report.json",
+        "bytes": 26287,
+        "sha256": "06cbfb720f5c3d6f5ea7ddc2c36c22b3630b505010edde0a1f8cd6fa59eddd94"
+      },
+      "recipe": {
+        "path": "04-游戏资源库/TAS输入录像库/状态资产/castlevania_aria_gba/aria_us_40aab076/r20261125T153709/calibration/red_soul_47_resource_verify/recipe.json",
+        "bytes": 7446,
+        "sha256": "aad0a0a1a4689b423622a2e7a43da37e952c0b9badccce2bbf3d1d86562997ec"
+      },
+      "manifest": {
+        "path": "04-游戏资源库/TAS输入录像库/状态资产/castlevania_aria_gba/aria_us_40aab076/r20261125T153709/calibration/red_soul_47_resource_verify/manifest.json",
+        "bytes": 10401,
+        "sha256": "508a131e4966691be41be9060db66a67a16d1cf1d2d772ede8674bedee1af93a"
+      },
+      "evidence_files": 26,
+      "evidence_bytes": 723692,
+      "verified_fields": [
+        {
+          "addr": 78429,
+          "level": "gameplay",
+          "note": "固定Up+B路线后目标红魂槽仍保持；正例只改该槽，负例改为0。",
+          "case_id": "red_soul_47_resource_verify"
+        },
+        {
+          "addr": 78448,
+          "level": "gameplay",
+          "note": "固定Up+B路线末帧MP低于初始80；只验证资源消耗，不自动判定技能语义或检测器。",
+          "case_id": "red_soul_47_resource_verify"
+        }
+      ],
+      "scope": {
+        "proves": "固定战斗初态只改对应槽位并执行角色宏；目标槽保持、MP低于80，空槽保持80，抽样帧存在真实差异。",
+        "does_not_prove": "不证明伤害、射程、全部招式语义、中文菜单装备流程或任意场景稳定性。"
+      }
+    },
+    {
+      "case_id": "yellow_soul_10_hp_advantage",
+      "element": {
+        "group": "yellow",
+        "id": 10,
+        "name_zh": "巨虫"
+      },
+      "source": {
+        "archive_revision": "r20261125T153709",
+        "state_revision": "r20261125T145623"
+      },
+      "rom_sha1": "40AAB076A528F52E93260BB98D91A40039E0DA02",
+      "actual_core": "BizHawk.Emulation.Cores.Nintendo.GBA.MGBAHawk",
+      "slot": {
+        "addr": 78431,
+        "positive": 10,
+        "negative": 0
+      },
+      "metric": {
+        "addr": 78446,
+        "positive": 302,
+        "negative": 292,
+        "name": "current_hp"
+      },
+      "captured_frames_per_arm": 226,
+      "comparison": {
+        "equal_frames": 0,
+        "different_frames": 226,
+        "pass": true
+      },
+      "report": {
+        "path": "04-游戏资源库/TAS输入录像库/状态资产/castlevania_aria_gba/aria_us_40aab076/r20261125T153709/calibration/yellow_soul_10_hp_advantage/report.json",
+        "bytes": 39597,
+        "sha256": "64f06662d41f3d984c717bc21516a01874fccff812676cff3eb37c50bb074d11"
+      },
+      "recipe": {
+        "path": "04-游戏资源库/TAS输入录像库/状态资产/castlevania_aria_gba/aria_us_40aab076/r20261125T153709/calibration/yellow_soul_10_hp_advantage/recipe.json",
+        "bytes": 21119,
+        "sha256": "326cbd1a88093e643643c0d8cbbc308975b9f4f32e200a5c9e64666f37fb7183"
+      },
+      "manifest": {
+        "path": "04-游戏资源库/TAS输入录像库/状态资产/castlevania_aria_gba/aria_us_40aab076/r20261125T153709/calibration/yellow_soul_10_hp_advantage/manifest.json",
+        "bytes": 9347,
+        "sha256": "cfb496c743ddcdc254ee7c84a4d6fab9ea70266992e12881cb6a6d8680d539c3"
+      },
+      "evidence_files": 22,
+      "evidence_bytes": 733154,
+      "verified_fields": [
+        {
+          "addr": 78431,
+          "level": "gameplay",
+          "note": "固定受击路线后目标黄魂槽仍保持；正例只改该槽，负例改为0。",
+          "case_id": "yellow_soul_10_hp_advantage"
+        },
+        {
+          "addr": 78446,
+          "level": "gameplay",
+          "note": "固定受击路线末帧当前HP严格高于空魂对照292；这是路线结果，不单独区分回血、减伤或行动变化。",
+          "case_id": "yellow_soul_10_hp_advantage"
+        }
+      ],
+      "scope": {
+        "proves": "固定受击路线末HP为302，空槽对照为292；正例末帧高于空魂。",
+        "does_not_prove": "不把蓝魂10的表现外推为其他黄魂，不单凭末HP判定完整机制。"
+      }
+    },
+    {
+      "case_id": "yellow_soul_15_hp_advantage",
+      "element": {
+        "group": "yellow",
+        "id": 15,
+        "name_zh": "蛇尾鸟"
+      },
+      "source": {
+        "archive_revision": "r20261125T153709",
+        "state_revision": "r20261125T145623"
+      },
+      "rom_sha1": "40AAB076A528F52E93260BB98D91A40039E0DA02",
+      "actual_core": "BizHawk.Emulation.Cores.Nintendo.GBA.MGBAHawk",
+      "slot": {
+        "addr": 78431,
+        "positive": 15,
+        "negative": 0
+      },
+      "metric": {
+        "addr": 78446,
+        "positive": 300,
+        "negative": 292,
+        "name": "current_hp"
+      },
+      "captured_frames_per_arm": 226,
+      "comparison": {
+        "equal_frames": 0,
+        "different_frames": 226,
+        "pass": true
+      },
+      "report": {
+        "path": "04-游戏资源库/TAS输入录像库/状态资产/castlevania_aria_gba/aria_us_40aab076/r20261125T153709/calibration/yellow_soul_15_hp_advantage/report.json",
+        "bytes": 39573,
+        "sha256": "3513fc52bfc86af0666cde4a64145eb9c81580ee1ec32b70bb4e45f393a0584b"
+      },
+      "recipe": {
+        "path": "04-游戏资源库/TAS输入录像库/状态资产/castlevania_aria_gba/aria_us_40aab076/r20261125T153709/calibration/yellow_soul_15_hp_advantage/recipe.json",
+        "bytes": 21119,
+        "sha256": "326cbd1a88093e643643c0d8cbbc308975b9f4f32e200a5c9e64666f37fb7183"
+      },
+      "manifest": {
+        "path": "04-游戏资源库/TAS输入录像库/状态资产/castlevania_aria_gba/aria_us_40aab076/r20261125T153709/calibration/yellow_soul_15_hp_advantage/manifest.json",
+        "bytes": 9347,
+        "sha256": "a741c86ed5fc5e9fe94c51e49768635ac4bd6eff11591d1cabf49a4d9eb51b3b"
+      },
+      "evidence_files": 22,
+      "evidence_bytes": 733238,
+      "verified_fields": [
+        {
+          "addr": 78431,
+          "level": "gameplay",
+          "note": "固定受击路线后目标黄魂槽仍保持；正例只改该槽，负例改为0。",
+          "case_id": "yellow_soul_15_hp_advantage"
+        },
+        {
+          "addr": 78446,
+          "level": "gameplay",
+          "note": "固定受击路线末帧当前HP严格高于空魂对照292；这是路线结果，不单独区分回血、减伤或行动变化。",
+          "case_id": "yellow_soul_15_hp_advantage"
+        }
+      ],
+      "scope": {
+        "proves": "固定受击路线末HP高于空魂对照292；只证明该ID在该路线中的末HP优势。",
+        "does_not_prove": "不证明防御升降、CON精确点数或单次受击伤害；同路线末HP相同的项目不得据此区分机制。"
+      }
+    },
+    {
+      "case_id": "yellow_soul_26_hp_advantage",
+      "element": {
+        "group": "yellow",
+        "id": 26,
+        "name_zh": "白骨龙"
+      },
+      "source": {
+        "archive_revision": "r20261125T153709",
+        "state_revision": "r20261125T145623"
+      },
+      "rom_sha1": "40AAB076A528F52E93260BB98D91A40039E0DA02",
+      "actual_core": "BizHawk.Emulation.Cores.Nintendo.GBA.MGBAHawk",
+      "slot": {
+        "addr": 78431,
+        "positive": 26,
+        "negative": 0
+      },
+      "metric": {
+        "addr": 78446,
+        "positive": 300,
+        "negative": 292,
+        "name": "current_hp"
+      },
+      "captured_frames_per_arm": 226,
+      "comparison": {
+        "equal_frames": 0,
+        "different_frames": 226,
+        "pass": true
+      },
+      "report": {
+        "path": "04-游戏资源库/TAS输入录像库/状态资产/castlevania_aria_gba/aria_us_40aab076/r20261125T153709/calibration/yellow_soul_26_hp_advantage/report.json",
+        "bytes": 39573,
+        "sha256": "6c8140b91b8bb14b85a8dd752f12799c9cf27fd076e84429829b767bd3b13189"
+      },
+      "recipe": {
+        "path": "04-游戏资源库/TAS输入录像库/状态资产/castlevania_aria_gba/aria_us_40aab076/r20261125T153709/calibration/yellow_soul_26_hp_advantage/recipe.json",
+        "bytes": 21119,
+        "sha256": "326cbd1a88093e643643c0d8cbbc308975b9f4f32e200a5c9e64666f37fb7183"
+      },
+      "manifest": {
+        "path": "04-游戏资源库/TAS输入录像库/状态资产/castlevania_aria_gba/aria_us_40aab076/r20261125T153709/calibration/yellow_soul_26_hp_advantage/manifest.json",
+        "bytes": 9347,
+        "sha256": "be0f056e22da1d7246480dc1cdb0c58ff9c583347f7f3557a2d291df1c019be8"
+      },
+      "evidence_files": 22,
+      "evidence_bytes": 733158,
+      "verified_fields": [
+        {
+          "addr": 78431,
+          "level": "gameplay",
+          "note": "固定受击路线后目标黄魂槽仍保持；正例只改该槽，负例改为0。",
+          "case_id": "yellow_soul_26_hp_advantage"
+        },
+        {
+          "addr": 78446,
+          "level": "gameplay",
+          "note": "固定受击路线末帧当前HP严格高于空魂对照292；这是路线结果，不单独区分回血、减伤或行动变化。",
+          "case_id": "yellow_soul_26_hp_advantage"
+        }
+      ],
+      "scope": {
+        "proves": "固定受击路线末HP高于空魂对照292；只证明该ID在该路线中的末HP优势。",
+        "does_not_prove": "不证明防御升降、CON精确点数或单次受击伤害；同路线末HP相同的项目不得据此区分机制。"
+      }
+    },
+    {
+      "case_id": "yellow_soul_27_hp_advantage",
+      "element": {
+        "group": "yellow",
+        "id": 27,
+        "name_zh": "古代龙神"
+      },
+      "source": {
+        "archive_revision": "r20261125T153709",
+        "state_revision": "r20261125T145623"
+      },
+      "rom_sha1": "40AAB076A528F52E93260BB98D91A40039E0DA02",
+      "actual_core": "BizHawk.Emulation.Cores.Nintendo.GBA.MGBAHawk",
+      "slot": {
+        "addr": 78431,
+        "positive": 27,
+        "negative": 0
+      },
+      "metric": {
+        "addr": 78446,
+        "positive": 308,
+        "negative": 292,
+        "name": "current_hp"
+      },
+      "captured_frames_per_arm": 226,
+      "comparison": {
+        "equal_frames": 0,
+        "different_frames": 226,
+        "pass": true
+      },
+      "report": {
+        "path": "04-游戏资源库/TAS输入录像库/状态资产/castlevania_aria_gba/aria_us_40aab076/r20261125T153709/calibration/yellow_soul_27_hp_advantage/report.json",
+        "bytes": 39599,
+        "sha256": "df506c0599850b7633b896b70137f2ccfb915c8cb5b6d348188417c55fccee58"
+      },
+      "recipe": {
+        "path": "04-游戏资源库/TAS输入录像库/状态资产/castlevania_aria_gba/aria_us_40aab076/r20261125T153709/calibration/yellow_soul_27_hp_advantage/recipe.json",
+        "bytes": 21119,
+        "sha256": "326cbd1a88093e643643c0d8cbbc308975b9f4f32e200a5c9e64666f37fb7183"
+      },
+      "manifest": {
+        "path": "04-游戏资源库/TAS输入录像库/状态资产/castlevania_aria_gba/aria_us_40aab076/r20261125T153709/calibration/yellow_soul_27_hp_advantage/manifest.json",
+        "bytes": 9347,
+        "sha256": "a6a64dffc17c657096d6c24476dcbc1dbe387a2ee8b5475eacc8cb2a8dc0e71b"
+      },
+      "evidence_files": 22,
+      "evidence_bytes": 733124,
+      "verified_fields": [
+        {
+          "addr": 78431,
+          "level": "gameplay",
+          "note": "固定受击路线后目标黄魂槽仍保持；正例只改该槽，负例改为0。",
+          "case_id": "yellow_soul_27_hp_advantage"
+        },
+        {
+          "addr": 78446,
+          "level": "gameplay",
+          "note": "固定受击路线末帧当前HP严格高于空魂对照292；这是路线结果，不单独区分回血、减伤或行动变化。",
+          "case_id": "yellow_soul_27_hp_advantage"
+        }
+      ],
+      "scope": {
+        "proves": "固定受击路线末HP高于空魂对照292；只证明该ID在该路线中的末HP优势。",
+        "does_not_prove": "不证明防御升降、CON精确点数或单次受击伤害；同路线末HP相同的项目不得据此区分机制。"
+      }
+    },
+    {
+      "case_id": "yellow_soul_28_hp_advantage",
+      "element": {
+        "group": "yellow",
+        "id": 28,
+        "name_zh": "石化牛"
+      },
+      "source": {
+        "archive_revision": "r20261125T153709",
+        "state_revision": "r20261125T145623"
+      },
+      "rom_sha1": "40AAB076A528F52E93260BB98D91A40039E0DA02",
+      "actual_core": "BizHawk.Emulation.Cores.Nintendo.GBA.MGBAHawk",
+      "slot": {
+        "addr": 78431,
+        "positive": 28,
+        "negative": 0
+      },
+      "metric": {
+        "addr": 78446,
+        "positive": 316,
+        "negative": 292,
+        "name": "current_hp"
+      },
+      "captured_frames_per_arm": 226,
+      "comparison": {
+        "equal_frames": 0,
+        "different_frames": 226,
+        "pass": true
+      },
+      "report": {
+        "path": "04-游戏资源库/TAS输入录像库/状态资产/castlevania_aria_gba/aria_us_40aab076/r20261125T153709/calibration/yellow_soul_28_hp_advantage/report.json",
+        "bytes": 39589,
+        "sha256": "5c2705fba16cce1d0901d5078d8966ec3bc993b680d90feceb8997b60194ff61"
+      },
+      "recipe": {
+        "path": "04-游戏资源库/TAS输入录像库/状态资产/castlevania_aria_gba/aria_us_40aab076/r20261125T153709/calibration/yellow_soul_28_hp_advantage/recipe.json",
+        "bytes": 21119,
+        "sha256": "326cbd1a88093e643643c0d8cbbc308975b9f4f32e200a5c9e64666f37fb7183"
+      },
+      "manifest": {
+        "path": "04-游戏资源库/TAS输入录像库/状态资产/castlevania_aria_gba/aria_us_40aab076/r20261125T153709/calibration/yellow_soul_28_hp_advantage/manifest.json",
+        "bytes": 9347,
+        "sha256": "141d1ea082c90d63f2ea9974a458d4727f1be5c4313697b1b40992c260d7884e"
+      },
+      "evidence_files": 22,
+      "evidence_bytes": 733153,
+      "verified_fields": [
+        {
+          "addr": 78431,
+          "level": "gameplay",
+          "note": "固定受击路线后目标黄魂槽仍保持；正例只改该槽，负例改为0。",
+          "case_id": "yellow_soul_28_hp_advantage"
+        },
+        {
+          "addr": 78446,
+          "level": "gameplay",
+          "note": "固定受击路线末帧当前HP严格高于空魂对照292；这是路线结果，不单独区分回血、减伤或行动变化。",
+          "case_id": "yellow_soul_28_hp_advantage"
+        }
+      ],
+      "scope": {
+        "proves": "固定受击路线末HP高于空魂对照292；只证明该ID在该路线中的末HP优势。",
+        "does_not_prove": "不证明防御升降、CON精确点数或单次受击伤害；同路线末HP相同的项目不得据此区分机制。"
+      }
+    },
+    {
+      "case_id": "yellow_soul_29_hp_advantage",
+      "element": {
+        "group": "yellow",
+        "id": 29,
+        "name_zh": "死亡十字军"
+      },
+      "source": {
+        "archive_revision": "r20261125T153709",
+        "state_revision": "r20261125T145623"
+      },
+      "rom_sha1": "40AAB076A528F52E93260BB98D91A40039E0DA02",
+      "actual_core": "BizHawk.Emulation.Cores.Nintendo.GBA.MGBAHawk",
+      "slot": {
+        "addr": 78431,
+        "positive": 29,
+        "negative": 0
+      },
+      "metric": {
+        "addr": 78446,
+        "positive": 316,
+        "negative": 292,
+        "name": "current_hp"
+      },
+      "captured_frames_per_arm": 226,
+      "comparison": {
+        "equal_frames": 0,
+        "different_frames": 226,
+        "pass": true
+      },
+      "report": {
+        "path": "04-游戏资源库/TAS输入录像库/状态资产/castlevania_aria_gba/aria_us_40aab076/r20261125T153709/calibration/yellow_soul_29_hp_advantage/report.json",
+        "bytes": 39589,
+        "sha256": "598e96341d8a45943dc35c37a00d443378567a92e8bb7302b7dd9eeb514824ce"
+      },
+      "recipe": {
+        "path": "04-游戏资源库/TAS输入录像库/状态资产/castlevania_aria_gba/aria_us_40aab076/r20261125T153709/calibration/yellow_soul_29_hp_advantage/recipe.json",
+        "bytes": 21119,
+        "sha256": "326cbd1a88093e643643c0d8cbbc308975b9f4f32e200a5c9e64666f37fb7183"
+      },
+      "manifest": {
+        "path": "04-游戏资源库/TAS输入录像库/状态资产/castlevania_aria_gba/aria_us_40aab076/r20261125T153709/calibration/yellow_soul_29_hp_advantage/manifest.json",
+        "bytes": 9347,
+        "sha256": "ec54862cf2ece5aeafc5e42da14654618786807fc6c65b8c546ad54c404de770"
+      },
+      "evidence_files": 22,
+      "evidence_bytes": 733152,
+      "verified_fields": [
+        {
+          "addr": 78431,
+          "level": "gameplay",
+          "note": "固定受击路线后目标黄魂槽仍保持；正例只改该槽，负例改为0。",
+          "case_id": "yellow_soul_29_hp_advantage"
+        },
+        {
+          "addr": 78446,
+          "level": "gameplay",
+          "note": "固定受击路线末帧当前HP严格高于空魂对照292；这是路线结果，不单独区分回血、减伤或行动变化。",
+          "case_id": "yellow_soul_29_hp_advantage"
+        }
+      ],
+      "scope": {
+        "proves": "固定受击路线末HP高于空魂对照292；只证明该ID在该路线中的末HP优势。",
+        "does_not_prove": "不证明防御升降、CON精确点数或单次受击伤害；同路线末HP相同的项目不得据此区分机制。"
+      }
+    }
+  ]
+}

@@ -1,0 +1,183 @@
+{
+  "schema_version": "ram_calibration/1.0",
+  "report": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_red_resource_verify_20261125\\red_soul_47_resource_verify\\report.json",
+  "report_sha256": "06cbfb720f5c3d6f5ea7ddc2c36c22b3630b505010edde0a1f8cd6fa59eddd94",
+  "status": "pass",
+  "mode": "verify",
+  "game_id": "castlevania_aria_gba",
+  "case_id": "red_soul_47_resource_verify",
+  "cache_key": "57fb2b127fcfaa26e71c44853403c03c8880654b19919ddbe3d3b0c89ecc18e2",
+  "recipe_sha256": "aad0a0a1a4689b423622a2e7a43da37e952c0b9badccce2bbf3d1d86562997ec",
+  "verified_fields": [
+    {
+      "addr": 78429,
+      "level": "gameplay",
+      "note": "固定Up+B路线后目标红魂槽仍保持；正例只改该槽，负例改为0。",
+      "case_id": "red_soul_47_resource_verify"
+    },
+    {
+      "addr": 78448,
+      "level": "gameplay",
+      "note": "固定Up+B路线末帧MP低于初始80；只验证资源消耗，不自动判定技能语义或检测器。",
+      "case_id": "red_soul_47_resource_verify"
+    }
+  ],
+  "evidence": [
+    {
+      "source": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_red_resource_verify_20261125\\red_soul_47_resource_verify\\red_soul_47_resource_verify_base_anchor.png",
+      "path": "evidence/000_red_soul_47_resource_verify_base_anchor.png",
+      "sha256": "0f757788c8b71ff9015102d5e4738e314658729896ef430d49b41e0baff10562",
+      "bytes": 14946
+    },
+    {
+      "source": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_red_resource_verify_20261125\\red_soul_47_resource_verify\\red_soul_47_resource_verify_red0_s00.bin",
+      "path": "evidence/001_red_soul_47_resource_verify_red0_s00.bin",
+      "sha256": "5ac3f757da6b6fd78bcd1c32117e89e2e8810a2070d8d1d1caadceeffb4c0b5f",
+      "bytes": 128
+    },
+    {
+      "source": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_red_resource_verify_20261125\\red_soul_47_resource_verify\\red_soul_47_resource_verify_red0_s00.png",
+      "path": "evidence/002_red_soul_47_resource_verify_red0_s00.png",
+      "sha256": "0f757788c8b71ff9015102d5e4738e314658729896ef430d49b41e0baff10562",
+      "bytes": 14946
+    },
+    {
+      "source": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_red_resource_verify_20261125\\red_soul_47_resource_verify\\red_soul_47_resource_verify_red0_s00.state",
+      "path": "evidence/003_red_soul_47_resource_verify_red0_s00.state",
+      "sha256": "15d45a52a5dd079ced76b2347e913d8723879f136c8d8b738db036f4da62cd06",
+      "bytes": 70591
+    },
+    {
+      "source": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_red_resource_verify_20261125\\red_soul_47_resource_verify\\red_soul_47_resource_verify_red0_s00_input.state",
+      "path": "evidence/004_red_soul_47_resource_verify_red0_s00_input.state",
+      "sha256": "15d45a52a5dd079ced76b2347e913d8723879f136c8d8b738db036f4da62cd06",
+      "bytes": 70591
+    },
+    {
+      "source": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_red_resource_verify_20261125\\red_soul_47_resource_verify\\red_soul_47_resource_verify_red0_s01.bin",
+      "path": "evidence/005_red_soul_47_resource_verify_red0_s01.bin",
+      "sha256": "5ac3f757da6b6fd78bcd1c32117e89e2e8810a2070d8d1d1caadceeffb4c0b5f",
+      "bytes": 128
+    },
+    {
+      "source": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_red_resource_verify_20261125\\red_soul_47_resource_verify\\red_soul_47_resource_verify_red0_s01.png",
+      "path": "evidence/006_red_soul_47_resource_verify_red0_s01.png",
+      "sha256": "9f52d957fd12456e251d72d97e9b01f98dd089f7e94d479e01528fbc3ecd8c24",
+      "bytes": 15019
+    },
+    {
+      "source": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_red_resource_verify_20261125\\red_soul_47_resource_verify\\red_soul_47_resource_verify_red0_s01.state",
+      "path": "evidence/007_red_soul_47_resource_verify_red0_s01.state",
+      "sha256": "5340ec36d92a8eb7158146b7a9eb5951aa9f8d62fb4fd58598e9c72c1bc3522b",
+      "bytes": 70363
+    },
+    {
+      "source": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_red_resource_verify_20261125\\red_soul_47_resource_verify\\red_soul_47_resource_verify_red0_s01_frames\\f0008.png",
+      "path": "evidence/008_f0008.png",
+      "sha256": "6ac6e6508ef21e093a5c4e3cb6820b50743b7eb934fe5bae283f4599c4da2e57",
+      "bytes": 15025
+    },
+    {
+      "source": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_red_resource_verify_20261125\\red_soul_47_resource_verify\\red_soul_47_resource_verify_red0_s01_frames\\f0012.png",
+      "path": "evidence/009_f0012.png",
+      "sha256": "f9553b7ea6f62adbc978441fc36fb1253e088bbbdf936efe015afae6c6c4b508",
+      "bytes": 15023
+    },
+    {
+      "source": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_red_resource_verify_20261125\\red_soul_47_resource_verify\\red_soul_47_resource_verify_red0_s01_frames\\f0020.png",
+      "path": "evidence/010_f0020.png",
+      "sha256": "4775d0200d530d2471860fe7cd6a30a32e27e1534c928492543ba411b3c5b66b",
+      "bytes": 15000
+    },
+    {
+      "source": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_red_resource_verify_20261125\\red_soul_47_resource_verify\\red_soul_47_resource_verify_red0_s01_frames\\f0040.png",
+      "path": "evidence/011_f0040.png",
+      "sha256": "ee2f667bba54a43319a63d93702759929b7a83998492da9b2113f5338187a7e7",
+      "bytes": 14969
+    },
+    {
+      "source": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_red_resource_verify_20261125\\red_soul_47_resource_verify\\red_soul_47_resource_verify_red0_s01_frames\\f0060.png",
+      "path": "evidence/012_f0060.png",
+      "sha256": "e0c5e58a16c9d2380c4b05f6f8585b32e02793b79e18bc66e0ad85c8f581a855",
+      "bytes": 15016
+    },
+    {
+      "source": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_red_resource_verify_20261125\\red_soul_47_resource_verify\\red_soul_47_resource_verify_red_47_s00.bin",
+      "path": "evidence/013_red_soul_47_resource_verify_red_47_s00.bin",
+      "sha256": "7148b8a22c898ff4344217f201dd47c6c8edc79e19f22f90a4cb42d83bbce7e7",
+      "bytes": 128
+    },
+    {
+      "source": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_red_resource_verify_20261125\\red_soul_47_resource_verify\\red_soul_47_resource_verify_red_47_s00.png",
+      "path": "evidence/014_red_soul_47_resource_verify_red_47_s00.png",
+      "sha256": "0f757788c8b71ff9015102d5e4738e314658729896ef430d49b41e0baff10562",
+      "bytes": 14946
+    },
+    {
+      "source": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_red_resource_verify_20261125\\red_soul_47_resource_verify\\red_soul_47_resource_verify_red_47_s00.state",
+      "path": "evidence/015_red_soul_47_resource_verify_red_47_s00.state",
+      "sha256": "7359c7964c0b90d62e69d5c65bcc72997f12033b1d21643de72c3b7f22460870",
+      "bytes": 70595
+    },
+    {
+      "source": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_red_resource_verify_20261125\\red_soul_47_resource_verify\\red_soul_47_resource_verify_red_47_s00_input.state",
+      "path": "evidence/016_red_soul_47_resource_verify_red_47_s00_input.state",
+      "sha256": "7359c7964c0b90d62e69d5c65bcc72997f12033b1d21643de72c3b7f22460870",
+      "bytes": 70595
+    },
+    {
+      "source": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_red_resource_verify_20261125\\red_soul_47_resource_verify\\red_soul_47_resource_verify_red_47_s01.bin",
+      "path": "evidence/017_red_soul_47_resource_verify_red_47_s01.bin",
+      "sha256": "09516e313aac93d5db88103cb8d01d75d9ce61a0262503a662a4056bcf0f3d10",
+      "bytes": 128
+    },
+    {
+      "source": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_red_resource_verify_20261125\\red_soul_47_resource_verify\\red_soul_47_resource_verify_red_47_s01.png",
+      "path": "evidence/018_red_soul_47_resource_verify_red_47_s01.png",
+      "sha256": "e7641b5622880d0b9ee5f98915c11351a6dd6fca59f143d1714af5797842f683",
+      "bytes": 15220
+    },
+    {
+      "source": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_red_resource_verify_20261125\\red_soul_47_resource_verify\\red_soul_47_resource_verify_red_47_s01.state",
+      "path": "evidence/019_red_soul_47_resource_verify_red_47_s01.state",
+      "sha256": "c7f68cca5e34debc492d4112ebe2e662203b80723b918d60f7be9735394cd3c4",
+      "bytes": 74260
+    },
+    {
+      "source": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_red_resource_verify_20261125\\red_soul_47_resource_verify\\red_soul_47_resource_verify_red_47_s01_frames\\f0008.png",
+      "path": "evidence/020_f0008.png",
+      "sha256": "b958deeef5a603e2ba26520f31b14e2ea2d3294f41eeb5383b536e214149e1a2",
+      "bytes": 15074
+    },
+    {
+      "source": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_red_resource_verify_20261125\\red_soul_47_resource_verify\\red_soul_47_resource_verify_red_47_s01_frames\\f0012.png",
+      "path": "evidence/021_f0012.png",
+      "sha256": "2a9c3f92e67cce6bd9682c26fc8269e18e845972025120a11c947bc0bbae728c",
+      "bytes": 15087
+    },
+    {
+      "source": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_red_resource_verify_20261125\\red_soul_47_resource_verify\\red_soul_47_resource_verify_red_47_s01_frames\\f0020.png",
+      "path": "evidence/022_f0020.png",
+      "sha256": "6102dcd1f0a831b40e2164266146e3e617695a4a7d6f236783698e50ed0d80e6",
+      "bytes": 15099
+    },
+    {
+      "source": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_red_resource_verify_20261125\\red_soul_47_resource_verify\\red_soul_47_resource_verify_red_47_s01_frames\\f0040.png",
+      "path": "evidence/023_f0040.png",
+      "sha256": "bfc3603f697e7b09563dd42fc74fe32a92a0410add139f40196bcc0f65fdc756",
+      "bytes": 15177
+    },
+    {
+      "source": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_red_resource_verify_20261125\\red_soul_47_resource_verify\\red_soul_47_resource_verify_red_47_s01_frames\\f0060.png",
+      "path": "evidence/024_f0060.png",
+      "sha256": "cab396ea0fb01f1321a9bbb3a32f0438db41d2a98845746052adc6e908c4bed1",
+      "bytes": 15044
+    },
+    {
+      "source": "F:\\开源掌机教程\\04-游戏资源库\\TAS输入录像库\\状态资产\\castlevania_aria_gba\\aria_us_40aab076\\r20261125T145623\\states\\base.state",
+      "path": "evidence/025_base.state",
+      "sha256": "f1b4b4914a937f03b106104d1234d54b2dea54c89ba84c603ce61fc26afcc1ea",
+      "bytes": 70594
+    }
+  ]
+}

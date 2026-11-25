@@ -1,0 +1,485 @@
+{
+  "all_ok": true,
+  "probes": [
+    {
+      "id": "manual_controls",
+      "q": "洛克人2美版官方说明书里跳跃和射击：A 键和 B 键分别控制什么？",
+      "ok": true,
+      "result": {
+        "status": "pass",
+        "refusal": null,
+        "reason_code": null,
+        "backend": "megaman2",
+        "index_used": "index.json",
+        "index_sha256": "864ce8e3724414a95f851fac669ac2fddaa0e8f4fe37e8116ab1f707247a3225",
+        "answer_text": "洛克人2 官方说明书：A键 B键 跳跃 射击 爬梯 START 暂停 无敌（美国NES手册第4至5页）\n来源：Capcom《MEGA MAN 2》美国 NES 官方说明书，任天堂官方数字复刻。\n核验：已读扫描页；中文为说明，英文为短引文；未收全本。\n左和右用于移动，跳跃或下落时仍可移动；上和下用于上下爬梯。\n> Pushing RIGHT and LEFT on the controller moves Mega Man right and left. This works even when he is jumping or falling.\nA键用于跳跃，按住越久跳得越高；在梯顶按上起跳会跌下梯子。\n> The A button is used for jumping. The longer you hold the button down, the higher Mega Man will jump.\nB键用于射击，跳跃或下落时也能射击。\n> The B button is used for shooting. ... Mega Man can shoot while he is jumping or falling.\nSTART用于切换武器、使用能量晶体、查看生命并暂停游戏。\n> The START button is used for changing weapons, using energy crystals, ... It is also a convenient way to pause the game.\nMega Man受击后约有一到两秒无敌。\n> When Mega Man is damaged, he is invulnerable for a second or two.",
+        "selected_evidence": [
+          {
+            "chunk_id": "66705aa313c7",
+            "score": 13.357,
+            "source_id": "nintendo_mega_man_2_nes_us_manual",
+            "status": "verified_read",
+            "authority": "authoritative",
+            "revision": "megaman2_nes_us_manual",
+            "game_id": "megaman2",
+            "platform": "NES",
+            "revision_match": true,
+            "locator": "知识库P1_20261118/megaman2_candidate_v2_manual_20261125/evidence/mm2_manual_controls_20261125.txt#L1-L19",
+            "heading": "",
+            "matched_terms": [
+              "官方",
+              "射击",
+              "方说",
+              "明书",
+              "说明",
+              "跳跃"
+            ],
+            "snippet": "洛克人2 官方说明书：A键 B键 跳跃 射击 爬梯 START 暂停 无敌（美国NES手册第4至5页）\n来源：Capcom《MEGA MAN 2》美国 NES 官方说明书，任天堂官方数字复刻。\n核验：已读扫描页；中文为说明，英文为短引文；未收全本。\n左和右用于移动，跳跃或下落时仍可移动；上和下用于上下爬梯。\n> Pushing RIGHT and LEFT on the controller moves Mega Man right and left. This works ",
+            "answerability": {
+              "answerable": true,
+              "intent": "topic",
+              "focus_ok": true,
+              "pattern_ok": true,
+              "intent_ok": true,
+              "focus_hit": [
+                "官方",
+                "射击",
+                "方说",
+                "明书",
+                "说明",
+                "跳跃"
+              ],
+              "url_list": false,
+              "topic_anchor_ok": true,
+              "exclusive_attribution_ok": true,
+              "position_subject_ok": true,
+              "position_subjects": [],
+              "shot_method_ok": true,
+              "player_role_ok": true,
+              "ending_capability_ok": true,
+              "input_sequence_ok": true,
+              "team_shot_ok": true,
+              "technique_ok": true,
+              "multiplayer_mode_ok": true
+            },
+            "fragment_provenance": {
+              "policy": "strict",
+              "eligible": true,
+              "reason": "eligible_fragment",
+              "relevant_segments": 6,
+              "eligible_segments": 5,
+              "reference_segments": 1,
+              "retracted_segments": 0,
+              "evidence_excerpt": "洛克人2 官方说明书：A键 B键 跳跃 射击 爬梯 START 暂停 无敌（美国NES手册第4至5页）"
+            }
+          }
+        ],
+        "candidate_only": true,
+        "whole_game_knowledge_base": false,
+        "production_route_wired": true
+      }
+    },
+    {
+      "id": "manual_energy",
+      "q": "洛克人2官方说明书里 energy crystal 有什么作用，怎么使用？",
+      "ok": true,
+      "result": {
+        "status": "pass",
+        "refusal": null,
+        "reason_code": null,
+        "backend": "megaman2",
+        "index_used": "index.json",
+        "index_sha256": "864ce8e3724414a95f851fac669ac2fddaa0e8f4fe37e8116ab1f707247a3225",
+        "answer_text": "洛克人2 官方说明书：Energy Meter life energy pellet ball crystal 武器能量 1UP（美国NES手册第6至7页）\n来源：Capcom《MEGA MAN 2》美国 NES 官方说明书，任天堂官方数字复刻。\n核验：已读扫描页；中文为说明，英文为短引文；未收全本。\n左上角Energy Meter显示还能承受多少伤害，归零时失去一条Mega Man生命。\n> When the meter reaches zero points, one Mega Man life will be lost.\nenergy pellet和energy ball补充少量生命能量；energy crystal是满能量，可在电量低时使用。\n> There is also an energy crystal. This is a full load of energy that Mega Man can carry around with him.\n按START选择Energy crystal，再按START将能量补满，然后重新选武器并按START。\n> Push the START button again to fill your energy back up to maximum.\n选择标准Mega Man以外的武器时会出现第二能量表，表示当前武器剩余能量。\n> This tells how much charge remains in the current weapon.\n1 UP增加一名玩家。\n> 1 UP. Adds One Player.",
+        "selected_evidence": [
+          {
+            "chunk_id": "a953e342d9a0",
+            "score": 15.078,
+            "source_id": "nintendo_mega_man_2_nes_us_manual",
+            "status": "verified_read",
+            "authority": "authoritative",
+            "revision": "megaman2_nes_us_manual",
+            "game_id": "megaman2",
+            "platform": "NES",
+            "revision_match": true,
+            "locator": "知识库P1_20261118/megaman2_candidate_v2_manual_20261125/evidence/mm2_manual_energy_20261125.txt#L1-L19",
+            "heading": "",
+            "matched_terms": [
+              "crystal",
+              "energy",
+              "使用",
+              "官方",
+              "方说",
+              "明书",
+              "说明"
+            ],
+            "snippet": "洛克人2 官方说明书：Energy Meter life energy pellet ball crystal 武器能量 1UP（美国NES手册第6至7页）\n来源：Capcom《MEGA MAN 2》美国 NES 官方说明书，任天堂官方数字复刻。\n核验：已读扫描页；中文为说明，英文为短引文；未收全本。\n左上角Energy Meter显示还能承受多少伤害，归零时失去一条Mega Man生命。\n> When the meter reaches zero points, one M",
+            "answerability": {
+              "answerable": true,
+              "intent": "howto",
+              "focus_ok": true,
+              "pattern_ok": true,
+              "intent_ok": true,
+              "focus_hit": [
+                "crystal",
+                "energy",
+                "使用",
+                "官方",
+                "方说",
+                "明书"
+              ],
+              "url_list": false,
+              "topic_anchor_ok": true,
+              "exclusive_attribution_ok": true,
+              "position_subject_ok": true,
+              "position_subjects": [],
+              "shot_method_ok": true,
+              "player_role_ok": true,
+              "ending_capability_ok": true,
+              "input_sequence_ok": true,
+              "team_shot_ok": true,
+              "technique_ok": true,
+              "multiplayer_mode_ok": true
+            },
+            "fragment_provenance": {
+              "policy": "strict",
+              "eligible": true,
+              "reason": "eligible_fragment",
+              "relevant_segments": 9,
+              "eligible_segments": 8,
+              "reference_segments": 1,
+              "retracted_segments": 0,
+              "evidence_excerpt": "洛克人2 官方说明书：Energy Meter life energy pellet ball crystal 武器能量 1UP（美国NES手册第6至7页）"
+            }
+          }
+        ],
+        "candidate_only": true,
+        "whole_game_knowledge_base": false,
+        "production_route_wired": true
+      }
+    },
+    {
+      "id": "manual_metal_blade",
+      "q": "洛克人2官方说明书里 Metal Blade 的投掷方向、数量和用途是什么？",
+      "ok": true,
+      "result": {
+        "status": "pass",
+        "refusal": null,
+        "reason_code": null,
+        "backend": "megaman2",
+        "index_used": "index.json",
+        "index_sha256": "864ce8e3724414a95f851fac669ac2fddaa0e8f4fe37e8116ab1f707247a3225",
+        "answer_text": "Metal Man的Metal Blade最多向任意方向投掷三枚，被说明书称为最佳通用武器且持续时间长。\n> This is probably the best general purpose weapon and the energy lasts a long time.\nCrash Man的Crash Bomber可掷向墙壁，短暂延迟后爆炸，可用于穿过某些墙壁。\n> Crash Bomber can be thrown at walls and will detonate after a short delay.",
+        "selected_evidence": [
+          {
+            "chunk_id": "e5dd353e2356",
+            "score": 13.598,
+            "source_id": "nintendo_mega_man_2_nes_us_manual",
+            "status": "verified_read",
+            "authority": "authoritative",
+            "revision": "megaman2_nes_us_manual",
+            "game_id": "megaman2",
+            "platform": "NES",
+            "revision_match": true,
+            "locator": "知识库P1_20261118/megaman2_candidate_v2_manual_20261125/evidence/mm2_manual_weapons_20261125.txt#L24-L28",
+            "heading": "",
+            "matched_terms": [
+              "blade",
+              "metal",
+              "投掷",
+              "方向",
+              "明书",
+              "说明"
+            ],
+            "snippet": "Metal Man的Metal Blade最多向任意方向投掷三枚，被说明书称为最佳通用武器且持续时间长。\n> This is probably the best general purpose weapon and the energy lasts a long time.\nCrash Man的Crash Bomber可掷向墙壁，短暂延迟后爆炸，可用于穿过某些墙壁。\n> Crash Bomber can be thrown at walls and will detonate",
+            "answerability": {
+              "answerable": true,
+              "intent": "topic",
+              "focus_ok": true,
+              "pattern_ok": true,
+              "intent_ok": true,
+              "focus_hit": [
+                "blade",
+                "metal",
+                "投掷",
+                "方向",
+                "明书",
+                "说明"
+              ],
+              "url_list": false,
+              "topic_anchor_ok": true,
+              "exclusive_attribution_ok": true,
+              "position_subject_ok": true,
+              "position_subjects": [],
+              "shot_method_ok": true,
+              "player_role_ok": true,
+              "ending_capability_ok": true,
+              "input_sequence_ok": true,
+              "team_shot_ok": true,
+              "technique_ok": true,
+              "multiplayer_mode_ok": true
+            },
+            "fragment_provenance": {
+              "policy": "strict",
+              "eligible": true,
+              "reason": "eligible_fragment",
+              "relevant_segments": 1,
+              "eligible_segments": 1,
+              "reference_segments": 0,
+              "retracted_segments": 0,
+              "evidence_excerpt": "Metal Man的Metal Blade最多向任意方向投掷三枚，被说明书称为最佳通用武器且持续时间长"
+            }
+          }
+        ],
+        "candidate_only": true,
+        "whole_game_knowledge_base": false,
+        "production_route_wired": true
+      }
+    },
+    {
+      "id": "manual_crash_bomber",
+      "q": "洛克人2官方说明书里 Crash Bomber 有什么用途？",
+      "ok": true,
+      "result": {
+        "status": "pass",
+        "refusal": null,
+        "reason_code": null,
+        "backend": "megaman2",
+        "index_used": "index.json",
+        "index_sha256": "864ce8e3724414a95f851fac669ac2fddaa0e8f4fe37e8116ab1f707247a3225",
+        "answer_text": "Metal Man的Metal Blade最多向任意方向投掷三枚，被说明书称为最佳通用武器且持续时间长。\n> This is probably the best general purpose weapon and the energy lasts a long time.\nCrash Man的Crash Bomber可掷向墙壁，短暂延迟后爆炸，可用于穿过某些墙壁。\n> Crash Bomber can be thrown at walls and will detonate after a short delay.",
+        "selected_evidence": [
+          {
+            "chunk_id": "e5dd353e2356",
+            "score": 10.4,
+            "source_id": "nintendo_mega_man_2_nes_us_manual",
+            "status": "verified_read",
+            "authority": "authoritative",
+            "revision": "megaman2_nes_us_manual",
+            "game_id": "megaman2",
+            "platform": "NES",
+            "revision_match": true,
+            "locator": "知识库P1_20261118/megaman2_candidate_v2_manual_20261125/evidence/mm2_manual_weapons_20261125.txt#L24-L28",
+            "heading": "",
+            "matched_terms": [
+              "bomber",
+              "crash",
+              "明书",
+              "说明"
+            ],
+            "snippet": "Metal Man的Metal Blade最多向任意方向投掷三枚，被说明书称为最佳通用武器且持续时间长。\n> This is probably the best general purpose weapon and the energy lasts a long time.\nCrash Man的Crash Bomber可掷向墙壁，短暂延迟后爆炸，可用于穿过某些墙壁。\n> Crash Bomber can be thrown at walls and will detonate",
+            "answerability": {
+              "answerable": true,
+              "intent": "topic",
+              "focus_ok": true,
+              "pattern_ok": true,
+              "intent_ok": true,
+              "focus_hit": [
+                "bomber",
+                "crash",
+                "明书",
+                "说明"
+              ],
+              "url_list": false,
+              "topic_anchor_ok": true,
+              "exclusive_attribution_ok": true,
+              "position_subject_ok": true,
+              "position_subjects": [],
+              "shot_method_ok": true,
+              "player_role_ok": true,
+              "ending_capability_ok": true,
+              "input_sequence_ok": true,
+              "team_shot_ok": true,
+              "technique_ok": true,
+              "multiplayer_mode_ok": true
+            },
+            "fragment_provenance": {
+              "policy": "strict",
+              "eligible": true,
+              "reason": "eligible_fragment",
+              "relevant_segments": 3,
+              "eligible_segments": 3,
+              "reference_segments": 0,
+              "retracted_segments": 0,
+              "evidence_excerpt": "Crash Bomber can be thrown at walls and will detonate after a short delay."
+            }
+          }
+        ],
+        "candidate_only": true,
+        "whole_game_knowledge_base": false,
+        "production_route_wired": true
+      }
+    },
+    {
+      "id": "technical_production",
+      "q": "洛克人2 的 walking speed 是什么？",
+      "ok": true,
+      "result": {
+        "status": "pass",
+        "refusal": null,
+        "reason_code": null,
+        "backend": "megaman2",
+        "index_used": "index.json",
+        "index_sha256": "05907ec85146f386325285ccd4d2008d8bc28d50d8ec4e2461c14a9351f03f7d",
+        "answer_text": "> Origin: _工具脚本/taspipe/游戏包/来源库/取证/tasvideos_gameresources_rockman_data_2026-11-23.txt\n> Original line ranges: 281-287\n> Qualification: Source-scoped technical evidence; no PAL/US regional equivalence is asserted.\nWalking\nWalking speed\nIn Rockman 1 and 2, during walking, Rockman’s X speed is 01.60.\nIn Rockman 3 and 4, during walking, Rockman’s X speed is 01.4C.",
+        "selected_evidence": [
+          {
+            "chunk_id": "b7dbf0bfc214",
+            "score": 21.78,
+            "source_id": "tasvideos_rockman_data_mm2_extract",
+            "status": "verified_read",
+            "authority": "authoritative",
+            "revision": "megaman2_nes_tasvideos_rockman2",
+            "game_id": "megaman2",
+            "platform": "NES",
+            "revision_match": true,
+            "locator": "_工具脚本/taspipe/游戏包/来源库/取证/mm2_tasvideos_walking_20261125.txt#L2-L12",
+            "heading": "Rockman 2 walking speed — verbatim extract",
+            "matched_terms": [
+              "speed",
+              "walking"
+            ],
+            "snippet": "> Origin: _工具脚本/taspipe/游戏包/来源库/取证/tasvideos_gameresources_rockman_data_2026-11-23.txt\n> Original line ranges: 281-287\n> Qualification: Source-scoped technical evidence; no PAL/US regional equivalence is asserted.\nWalking\nWalking speed\nIn R",
+            "answerability": {
+              "answerable": true,
+              "intent": "topic",
+              "focus_ok": true,
+              "pattern_ok": true,
+              "intent_ok": true,
+              "focus_hit": [
+                "speed",
+                "walking"
+              ],
+              "url_list": false,
+              "topic_anchor_ok": true,
+              "exclusive_attribution_ok": true,
+              "position_subject_ok": true,
+              "position_subjects": [],
+              "shot_method_ok": true,
+              "player_role_ok": true,
+              "ending_capability_ok": true,
+              "input_sequence_ok": true,
+              "team_shot_ok": true,
+              "technique_ok": true,
+              "multiplayer_mode_ok": true
+            },
+            "fragment_provenance": {
+              "policy": "strict",
+              "eligible": true,
+              "reason": "eligible_fragment",
+              "relevant_segments": 4,
+              "eligible_segments": 4,
+              "reference_segments": 0,
+              "retracted_segments": 0,
+              "evidence_excerpt": "In Rockman 1 and 2, during walking, Rockman’s X speed is 01.60."
+            }
+          }
+        ],
+        "candidate_only": false,
+        "whole_game_knowledge_base": false,
+        "production_route_wired": true
+      }
+    },
+    {
+      "id": "jp_manual_refused",
+      "q": "洛克人2 日版官方说明书里 Crash Bomber 有什么用途？",
+      "ok": true,
+      "result": {
+        "status": "inconclusive",
+        "refusal": "version_not_collected",
+        "reason_code": "version_not_collected",
+        "backend": "megaman2",
+        "index_used": null,
+        "index_sha256": null,
+        "answer_text": "",
+        "selected_evidence": [],
+        "candidate_only": false,
+        "whole_game_knowledge_base": false,
+        "production_route_wired": true
+      }
+    },
+    {
+      "id": "multi_domain_not_merged",
+      "q": "洛克人2 的 walking speed 和拳皇98 的必杀射门分别是什么？",
+      "ok": true,
+      "result": {
+        "status": "inconclusive",
+        "refusal": "multi_domain_needs_split",
+        "reason_code": null,
+        "backend": null,
+        "index_used": "index.json",
+        "index_sha256": "05907ec85146f386325285ccd4d2008d8bc28d50d8ec4e2461c14a9351f03f7d",
+        "answer_text": "",
+        "selected_evidence": [],
+        "candidate_only": null,
+        "whole_game_knowledge_base": null,
+        "production_route_wired": null
+      },
+      "megaman2_domain": {
+        "status": "pass",
+        "refusal": null,
+        "reason_code": null,
+        "backend": "megaman2",
+        "index_used": "index.json",
+        "index_sha256": "05907ec85146f386325285ccd4d2008d8bc28d50d8ec4e2461c14a9351f03f7d",
+        "answer_text": "> Origin: _工具脚本/taspipe/游戏包/来源库/取证/tasvideos_gameresources_rockman_data_2026-11-23.txt\n> Original line ranges: 281-287\n> Qualification: Source-scoped technical evidence; no PAL/US regional equivalence is asserted.\nWalking\nWalking speed\nIn Rockman 1 and 2, during walking, Rockman’s X speed is 01.60.\nIn Rockman 3 and 4, during walking, Rockman’s X speed is 01.4C.",
+        "selected_evidence": [
+          {
+            "chunk_id": "b7dbf0bfc214",
+            "score": 21.78,
+            "source_id": "tasvideos_rockman_data_mm2_extract",
+            "status": "verified_read",
+            "authority": "authoritative",
+            "revision": "megaman2_nes_tasvideos_rockman2",
+            "game_id": "megaman2",
+            "platform": "NES",
+            "revision_match": true,
+            "locator": "_工具脚本/taspipe/游戏包/来源库/取证/mm2_tasvideos_walking_20261125.txt#L2-L12",
+            "heading": "Rockman 2 walking speed — verbatim extract",
+            "matched_terms": [
+              "speed",
+              "walking"
+            ],
+            "snippet": "> Origin: _工具脚本/taspipe/游戏包/来源库/取证/tasvideos_gameresources_rockman_data_2026-11-23.txt\n> Original line ranges: 281-287\n> Qualification: Source-scoped technical evidence; no PAL/US regional equivalence is asserted.\nWalking\nWalking speed\nIn R",
+            "answerability": {
+              "answerable": true,
+              "intent": "topic",
+              "focus_ok": true,
+              "pattern_ok": true,
+              "intent_ok": true,
+              "focus_hit": [
+                "speed",
+                "walking"
+              ],
+              "url_list": false,
+              "topic_anchor_ok": true,
+              "exclusive_attribution_ok": true,
+              "position_subject_ok": true,
+              "position_subjects": [],
+              "shot_method_ok": true,
+              "player_role_ok": true,
+              "ending_capability_ok": true,
+              "input_sequence_ok": true,
+              "team_shot_ok": true,
+              "technique_ok": true,
+              "multiplayer_mode_ok": true
+            },
+            "fragment_provenance": {
+              "policy": "strict",
+              "eligible": true,
+              "reason": "eligible_fragment",
+              "relevant_segments": 4,
+              "eligible_segments": 4,
+              "reference_segments": 0,
+              "retracted_segments": 0,
+              "evidence_excerpt": "In Rockman 1 and 2, during walking, Rockman’s X speed is 01.60."
+            }
+          }
+        ],
+        "candidate_only": false,
+        "whole_game_knowledge_base": false,
+        "production_route_wired": true
+      }
+    }
+  ]
+}

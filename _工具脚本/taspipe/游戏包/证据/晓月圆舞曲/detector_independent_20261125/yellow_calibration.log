@@ -1,0 +1,19 @@
+{
+  "schema_version": "ram_calibration/1.0",
+  "mode": "scout",
+  "recipe": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_soul_detector_independent_v1_20261125\\yellow_capture_recipe.json",
+  "out": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_soul_detector_independent_v1_20261125\\calibration",
+  "workers": 1,
+  "total": 1,
+  "counts": {
+    "candidates_only": 1
+  },
+  "cases": [
+    {
+      "case_id": "yellow_soul_10_hp_advantage",
+      "status": "candidates_only",
+      "reused": false,
+      "report": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_soul_detector_independent_v1_20261125\\calibration\\yellow_soul_10_hp_advantage\\report.json"
+    }
+  ]
+}

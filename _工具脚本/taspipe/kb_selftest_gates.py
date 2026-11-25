@@ -403,8 +403,13 @@ def run_kb_gates(ok_fn=None, raises_fn=None):
                               K.tokens)["answerable"] is True,
                "知识库 [63] 跨语量词映射：日文『試合』与中文『场』都能答场数")
             ok(K.annotate("加速需要多少帧？", "Rockman 2 accelerates for 7 frames.", K.tokens)["answerable"] is True
+               and K.annotate("减速需要多少帧？", "Rockman 2 decelerates for 8 (decimal) frames.", K.tokens)["answerable"] is True
                and K.annotate("加速需要多少帧？", "加速需要 7 条。", K.tokens)["answerable"] is False,
-               "知识库 [63b] 帧数量词映射：多少帧只接受帧/frames，不许条/场串答")
+               "知识库 [63b] 帧数量词映射：多少帧只接受帧/frames（含十进制括注），不许条/场串答")
+            ok(KR.classify_intent("步行速度是多少？") == "value_lookup"
+               and K.annotate("步行速度是多少？", "In Rockman 2, during walking, Rockman’s X speed is 01.60.", K.tokens)["answerable"] is True
+               and K.annotate("步行速度是多少？", "步行速度是 7 条。", K.tokens)["answerable"] is False,
+               "知识库 [63c] 速度取值意图：速度多少按数值取值而非数数，答案必须含十六进制速度/坐标值")
             q = K.query("暗号词", game="testgame", revision="tg_jp", index_path=ij, map_path=mpja)
             ok(q["status"] == "inconclusive" and "top3" in q["reason"]
                and q["counts"]["strong"] >= 1,
@@ -1482,6 +1487,9 @@ def run_kb_gates(ok_fn=None, raises_fn=None):
                 "# Rockman 2 technical fixture\n\n"
                 "Walking speed\nIn Rockman 1 and 2, during walking, Rockman’s X speed is 01.60.\n\n"
                 "Jumping\nIn Rockman 1 and 2, when Rockman jumps, his Y speed is set to 04.DF.\n\n"
+                "Horizontal motion while jumping\nIn Rockman 1 and 2, during jumping/falling into some direction, Rockman’s X speed is 01.50.\n\n"
+                "Acceleration\nIn Rockman 2, when Rockman accelerates from non-full speed, his X speed is 00.20 for 7 frames before gaining full speed.\n\n"
+                "Deceleration\nIn Rockman 2, when Rockman decelerates from full speed, his X speed is 00.80 for 8 (decimal) frames before halting completely.\n\n"
                 "Memory addresses\nGame Screen# X (hi,lo) Xspd (hi,lo) Y (hi,lo) Yspd (hi,lo)\n"
                 "Rockman 2 $440 $460:$480 $600:$620 $4A0:$4C0 $640:$660\n",
                 encoding="utf-8")
@@ -1510,7 +1518,10 @@ def run_kb_gates(ok_fn=None, raises_fn=None):
             _mm2_pos = [K.query_auto(q, topk=3, **_mm2_kw)
                         for q in ("洛克人2 的 walking speed 是什么？",
                                   "洛克人2 步行速度是多少",
-                                  "洛克人2 跳跃 Y 速度是什么")]
+                                  "洛克人2 跳跃 Y 速度是什么",
+                                  "洛克人2 跳跃时 X speed 是什么？",
+                                  "洛克人2 从静止加速需要多少帧？",
+                                  "洛克人2 从全速停止需要多少帧？")]
             _mm2_strict = K.query_auto("洛克人2 的 walking speed 是什么？", topk=3,
                                        fragment_policy="strict", **_mm2_kw)
             _mm2_explicit = K.query_auto("X speed 内存地址是什么", topk=3,
@@ -1530,8 +1541,15 @@ def run_kb_gates(ok_fn=None, raises_fn=None):
                    for r in (*_mm2_pos, _mm2_strict, _mm2_explicit))
                and "01.60" in _mm2_pos[0].get("answer_text", "")
                and "04.DF" in _mm2_pos[2].get("answer_text", "")
+               and "01.50" in _mm2_pos[3].get("answer_text", "")
+               and "7 frames" in _mm2_pos[4].get("answer_text", "")
+               and "8 (decimal) frames" in _mm2_pos[5].get("answer_text", "")
                and "$600:$620" in _mm2_explicit.get("answer_text", ""),
-               "知识库 [277] Targeted 生产正例：中英文/strict/显式revision均生产索引唯一出证，来源与路径受生产白名单约束")
+               "知识库 [277] Targeted 生产正例：中英文/strict/显式revision/跳跃轴向/加速减速帧数均生产索引唯一出证，来源与路径受生产白名单约束")
+            ok(M._speed_axis_ok("跳跃时 X speed 是什么？", "when Rockman jumps, his Y speed is set to 04.DF") is False
+               and M._speed_axis_ok("跳跃时 Y speed 是什么？", "during jumping, Rockman’s X speed is 01.50") is False
+               and M._speed_axis_ok("X speed 内存地址是什么？", "Xspd (hi,lo) $600:$620") is True,
+               "知识库 [277b] Targeted 速度轴向反证：X/Y 轴不得互答，Xspd 地址字段仍可作 X 轴证据")
             _mm2_move = K.query_auto("洛克人2 出招表", topk=3, **_mm2_kw)
             _mm2_pal = K.query_auto("洛克人2 PAL 版 walking speed", topk=3, **_mm2_kw)
             _mm2_other = K.query_auto("Mega Man 2: The Power Fighters walking speed", topk=3, **_mm2_kw)
@@ -1896,6 +1914,35 @@ def run_kb_gates(ok_fn=None, raises_fn=None):
                and _mm2_old_before == {str(p): (p.stat().st_mtime_ns, _sha(p)) for p in _mm2_old_inputs}
                and _mm2_v2_before == {str(p): (p.stat().st_mtime_ns, _sha(p)) for p in _mm2_v2_inputs},
                "知识库 [292] Targeted 洛克人2说明书冻结与旧候选回归：25题金标可回溯、8短摘录无PDF、旧技术题双臂全过、哈希失败关闭且新旧候选零写动")
+
+            _mm2_tech_specs = (
+                ("洛克人2 X 坐标向哪个方向增加？", "mm2_tasvideos_coordinates_20261125.txt", "right"),
+                ("洛克人2 跳跃时 Y speed 初始值是什么？", "mm2_tasvideos_jump_20261125.txt", "04.DF"),
+                ("洛克人2 攀爬速度是多少？", "mm2_tasvideos_climb_transform_20261125.txt", "00.C0"),
+                ("洛克人2 跳跃时 X speed 是什么？", "mm2_tasvideos_jump_horizontal_20261125.txt", "01.50"),
+                ("洛克人2 步行速度是多少？", "mm2_tasvideos_walking_20261125.txt", "01.60"),
+                ("洛克人2 从静止加速需要多少帧？", "mm2_tasvideos_acceleration_20261125.txt", "7 frames"),
+                ("洛克人2 从全速停止需要多少帧？", "mm2_tasvideos_acceleration_20261125.txt", "8 (decimal) frames"),
+                ("洛克人2 Xspd 内存地址范围是什么？", "mm2_tasvideos_object_table_20261125.txt", "$600:$620"),
+            )
+            _mm2_tech_kw = {"index_path": old_k["INDEX_JSON"], "map_path": old_k["CORPUS_MAP"],
+                            "reg": S.load_registry(old_s["REG_JSON"])}
+            _mm2_tech_results = [K.query_auto(q, topk=5, **_mm2_tech_kw)
+                                 for q, _, _ in _mm2_tech_specs]
+            ok(all(r.get("status") == "pass" and r.get("backend") == "megaman2"
+                   and r.get("index_sha256") == _sha(old_k["INDEX_JSON"])
+                   and r.get("candidate_only") is False
+                   and r.get("whole_game_knowledge_base") is False
+                   and r.get("production_route_wired") is True
+                   and len(r.get("selected_evidence") or []) == 1
+                   and r["selected_evidence"][0].get("source_id") == M.PRODUCTION_SOURCE_ID
+                   and r["selected_evidence"][0].get("revision") == M.TECHNICAL_REVISION
+                   and stem in r["selected_evidence"][0].get("locator", "")
+                   and fact in r.get("answer_text", "")
+                   for r, (_, stem, fact) in zip(_mm2_tech_results, _mm2_tech_specs))
+               and len({r["selected_evidence"][0]["locator"].split("#L", 1)[0]
+                        for r in _mm2_tech_results}) == 7,
+               "知识库 [293] Targeted 洛克人2生产技术七文件：坐标/跳跃Y/攀爬/跳跃X/步行/加减速/对象表逐文件命中，唯一出证且不冒充地区ROM等价")
 
             _v2db = _etd / "legacy_v2.db"
             _v2schema = Path(KE.__file__).resolve().parent / "游戏包" / "电竞事实库" / "schema_v2.sql"

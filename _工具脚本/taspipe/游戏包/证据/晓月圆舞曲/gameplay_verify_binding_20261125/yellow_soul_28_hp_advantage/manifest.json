@@ -1,0 +1,159 @@
+{
+  "schema_version": "ram_calibration/1.0",
+  "report": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_yellow_hp_advantage_verify2_20261125\\yellow_soul_28_hp_advantage\\report.json",
+  "report_sha256": "5c2705fba16cce1d0901d5078d8966ec3bc993b680d90feceb8997b60194ff61",
+  "status": "pass",
+  "mode": "verify",
+  "game_id": "castlevania_aria_gba",
+  "case_id": "yellow_soul_28_hp_advantage",
+  "cache_key": "150211abb21765c29c031282ee90df63d541a87cd100a905570f63ee0a40e4f6",
+  "recipe_sha256": "326cbd1a88093e643643c0d8cbbc308975b9f4f32e200a5c9e64666f37fb7183",
+  "verified_fields": [
+    {
+      "addr": 78431,
+      "level": "gameplay",
+      "note": "固定受击路线后目标黄魂槽仍保持；正例只改该槽，负例改为0。",
+      "case_id": "yellow_soul_28_hp_advantage"
+    },
+    {
+      "addr": 78446,
+      "level": "gameplay",
+      "note": "固定受击路线末帧当前HP严格高于空魂对照292；这是路线结果，不单独区分回血、减伤或行动变化。",
+      "case_id": "yellow_soul_28_hp_advantage"
+    }
+  ],
+  "evidence": [
+    {
+      "source": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_yellow_hp_advantage_verify2_20261125\\yellow_soul_28_hp_advantage\\yellow_soul_28_hp_advantage_base_anchor.png",
+      "path": "evidence/000_yellow_soul_28_hp_advantage_base_anchor.png",
+      "sha256": "13a924071c03fc195361118ea7f44a54de095f6d6fbe50bb7a55c9238cf0c636",
+      "bytes": 19829
+    },
+    {
+      "source": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_yellow_hp_advantage_verify2_20261125\\yellow_soul_28_hp_advantage\\yellow_soul_28_hp_advantage_yellow0_s00.bin",
+      "path": "evidence/001_yellow_soul_28_hp_advantage_yellow0_s00.bin",
+      "sha256": "5062b950ff5d7f385b268f7be9d67e7837c8f047a1cabf6a94638f71ada11d34",
+      "bytes": 128
+    },
+    {
+      "source": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_yellow_hp_advantage_verify2_20261125\\yellow_soul_28_hp_advantage\\yellow_soul_28_hp_advantage_yellow0_s00.png",
+      "path": "evidence/002_yellow_soul_28_hp_advantage_yellow0_s00.png",
+      "sha256": "13a924071c03fc195361118ea7f44a54de095f6d6fbe50bb7a55c9238cf0c636",
+      "bytes": 19829
+    },
+    {
+      "source": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_yellow_hp_advantage_verify2_20261125\\yellow_soul_28_hp_advantage\\yellow_soul_28_hp_advantage_yellow0_s00.state",
+      "path": "evidence/003_yellow_soul_28_hp_advantage_yellow0_s00.state",
+      "sha256": "ba8b1825a69fa42c3df4b1e3268f54d1e9efffdc580ec9fbd896958cb37e0293",
+      "bytes": 73793
+    },
+    {
+      "source": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_yellow_hp_advantage_verify2_20261125\\yellow_soul_28_hp_advantage\\yellow_soul_28_hp_advantage_yellow0_s00_input.state",
+      "path": "evidence/004_yellow_soul_28_hp_advantage_yellow0_s00_input.state",
+      "sha256": "9f929b41a6747c575dd51976ee898a3ce76a27de00e7b0efa49a732b9df36b9e",
+      "bytes": 73793
+    },
+    {
+      "source": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_yellow_hp_advantage_verify2_20261125\\yellow_soul_28_hp_advantage\\yellow_soul_28_hp_advantage_yellow0_s01.bin",
+      "path": "evidence/005_yellow_soul_28_hp_advantage_yellow0_s01.bin",
+      "sha256": "3e842eb174ba6460175d12a37484c13eb6cd974daad0ac155a534e103e479c43",
+      "bytes": 128
+    },
+    {
+      "source": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_yellow_hp_advantage_verify2_20261125\\yellow_soul_28_hp_advantage\\yellow_soul_28_hp_advantage_yellow0_s01.png",
+      "path": "evidence/006_yellow_soul_28_hp_advantage_yellow0_s01.png",
+      "sha256": "79dc48920ddc6bbcee3b61c268f748a40cff097322d2cc7311751a25a973c9ae",
+      "bytes": 19568
+    },
+    {
+      "source": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_yellow_hp_advantage_verify2_20261125\\yellow_soul_28_hp_advantage\\yellow_soul_28_hp_advantage_yellow0_s01.state",
+      "path": "evidence/007_yellow_soul_28_hp_advantage_yellow0_s01.state",
+      "sha256": "1396e0f2e94cc11178909a9b86d41a5505912f817f7ec611e4e665508bd7514c",
+      "bytes": 73641
+    },
+    {
+      "source": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_yellow_hp_advantage_verify2_20261125\\yellow_soul_28_hp_advantage\\yellow_soul_28_hp_advantage_yellow0_s01_frames\\f0120.png",
+      "path": "evidence/008_f0120.png",
+      "sha256": "e16086081b0300b46a3a4ec2c6cb89a26c7c022d6b4071e51982944256db8418",
+      "bytes": 19592
+    },
+    {
+      "source": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_yellow_hp_advantage_verify2_20261125\\yellow_soul_28_hp_advantage\\yellow_soul_28_hp_advantage_yellow0_s01_frames\\f0164.png",
+      "path": "evidence/009_f0164.png",
+      "sha256": "cab42069426c66a806ab2caea3b3f2224718cb8401c7852067e73559ad98e884",
+      "bytes": 19702
+    },
+    {
+      "source": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_yellow_hp_advantage_verify2_20261125\\yellow_soul_28_hp_advantage\\yellow_soul_28_hp_advantage_yellow0_s01_frames\\f0225.png",
+      "path": "evidence/010_f0225.png",
+      "sha256": "79dc48920ddc6bbcee3b61c268f748a40cff097322d2cc7311751a25a973c9ae",
+      "bytes": 19568
+    },
+    {
+      "source": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_yellow_hp_advantage_verify2_20261125\\yellow_soul_28_hp_advantage\\yellow_soul_28_hp_advantage_yellow_28_s00.bin",
+      "path": "evidence/011_yellow_soul_28_hp_advantage_yellow_28_s00.bin",
+      "sha256": "5221332c44f7c43224677371042a5f11035fb8ff61ad31d622ea2fc45c748547",
+      "bytes": 128
+    },
+    {
+      "source": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_yellow_hp_advantage_verify2_20261125\\yellow_soul_28_hp_advantage\\yellow_soul_28_hp_advantage_yellow_28_s00.png",
+      "path": "evidence/012_yellow_soul_28_hp_advantage_yellow_28_s00.png",
+      "sha256": "13a924071c03fc195361118ea7f44a54de095f6d6fbe50bb7a55c9238cf0c636",
+      "bytes": 19829
+    },
+    {
+      "source": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_yellow_hp_advantage_verify2_20261125\\yellow_soul_28_hp_advantage\\yellow_soul_28_hp_advantage_yellow_28_s00.state",
+      "path": "evidence/013_yellow_soul_28_hp_advantage_yellow_28_s00.state",
+      "sha256": "35a733f77baa44c0dd245e351208d8ce711ca8dcac955f4fea34e30500f1603f",
+      "bytes": 73794
+    },
+    {
+      "source": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_yellow_hp_advantage_verify2_20261125\\yellow_soul_28_hp_advantage\\yellow_soul_28_hp_advantage_yellow_28_s00_input.state",
+      "path": "evidence/014_yellow_soul_28_hp_advantage_yellow_28_s00_input.state",
+      "sha256": "0c11834cf278b14d1f195aaed778c8dee59690c95f28906c55ccf4d2be797442",
+      "bytes": 73794
+    },
+    {
+      "source": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_yellow_hp_advantage_verify2_20261125\\yellow_soul_28_hp_advantage\\yellow_soul_28_hp_advantage_yellow_28_s01.bin",
+      "path": "evidence/015_yellow_soul_28_hp_advantage_yellow_28_s01.bin",
+      "sha256": "a2f14b64112954d6d99f007062462e7eca19f0c00d3841dd18e673ce508cb125",
+      "bytes": 128
+    },
+    {
+      "source": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_yellow_hp_advantage_verify2_20261125\\yellow_soul_28_hp_advantage\\yellow_soul_28_hp_advantage_yellow_28_s01.png",
+      "path": "evidence/016_yellow_soul_28_hp_advantage_yellow_28_s01.png",
+      "sha256": "1008f8c020026b97c732cee2be5d528755c0cafa9329bde764c710ede4431819",
+      "bytes": 19581
+    },
+    {
+      "source": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_yellow_hp_advantage_verify2_20261125\\yellow_soul_28_hp_advantage\\yellow_soul_28_hp_advantage_yellow_28_s01.state",
+      "path": "evidence/017_yellow_soul_28_hp_advantage_yellow_28_s01.state",
+      "sha256": "dcd036b2525346b1469dc7580f38ff930caeaababa2d23cde9af5ba4f1b41a0a",
+      "bytes": 73663
+    },
+    {
+      "source": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_yellow_hp_advantage_verify2_20261125\\yellow_soul_28_hp_advantage\\yellow_soul_28_hp_advantage_yellow_28_s01_frames\\f0120.png",
+      "path": "evidence/018_f0120.png",
+      "sha256": "9ff9896b6c0badc96934a88bceee5073b2f707a4754354cf49b1e7a309b70c79",
+      "bytes": 19588
+    },
+    {
+      "source": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_yellow_hp_advantage_verify2_20261125\\yellow_soul_28_hp_advantage\\yellow_soul_28_hp_advantage_yellow_28_s01_frames\\f0164.png",
+      "path": "evidence/019_f0164.png",
+      "sha256": "2b67014fd8222a0dcf4e68054de7275e26af3f4fdc1614d4d5396ff6892c8768",
+      "bytes": 19703
+    },
+    {
+      "source": "F:\\taspipe_scratch\\gba_parallel_20261124\\aria_yellow_hp_advantage_verify2_20261125\\yellow_soul_28_hp_advantage\\yellow_soul_28_hp_advantage_yellow_28_s01_frames\\f0225.png",
+      "path": "evidence/020_f0225.png",
+      "sha256": "1008f8c020026b97c732cee2be5d528755c0cafa9329bde764c710ede4431819",
+      "bytes": 19581
+    },
+    {
+      "source": "F:\\开源掌机教程\\04-游戏资源库\\TAS输入录像库\\状态资产\\castlevania_aria_gba\\aria_us_40aab076\\r20261125T145623\\states\\yellow_damage_route.state",
+      "path": "evidence/021_yellow_damage_route.state",
+      "sha256": "86fdb893a4b47137e6ae91e7f32e4c3c0c1b9f53a0474edf231431ab55da3c4e",
+      "bytes": 73793
+    }
+  ]
+}

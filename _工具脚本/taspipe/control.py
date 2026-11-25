@@ -720,7 +720,7 @@ def _arm_doc(spec, entry, index, samples):
     steps, consumed = [], 0
     steps.extend(deepcopy(step) for step in spec["steps"] if step.get("op") == "seed_ram")
     capture = next((step for step in spec["steps"] if step.get("op") == "checkpoint"), {})
-    ram_fields = {k: deepcopy(capture[k]) for k in ("ram", "ram_domain", "ram_addr", "ram_bytes") if k in capture}
+    ram_fields = {k: deepcopy(capture[k]) for k in ("ram", "ram_domain", "ram_addr", "ram_bytes", "memory_dumps") if k in capture}
     for j, sample in enumerate(samples):
         frames = "end" if sample == "end" else sample - consumed
         if frames != "end":
@@ -849,9 +849,9 @@ def _run_arms(spec, base, parent, work_root, timeout, executor=None, allow=()):
     if any(arm["core_identity"] != "pass" for arm in arms):
         verdict, why = "fail", "参照臂或候选臂缺少零帧实际核心身份通过证据"
     elif not seed_valid:
-        verdict, why = "fail", "初始 SRAM 注入在参照臂或候选臂缺少零帧全量回读证据"
+        verdict, why = "fail", "初始内存在参照臂或候选臂缺少零帧全量回读证据"
     elif any(seed is not None for seed in seeds) and not seed_identical:
-        verdict, why = "fail", "各臂初始 SRAM 注入域、地址、长度或执行时点不一致"
+        verdict, why = "fail", "各臂初始内存注入域、地址、长度或执行时点不一致"
     elif not (len([x for x in logs if x]) == len(logs) and len(set(logs)) == 1):
         verdict, why = "fail", "各臂 Input Log.txt 摘要不一致，不能作为同输入同步证据"
     else:
@@ -959,13 +959,32 @@ def normalize(doc, base):
     _text(profile["core"], "core")
     if profile["system"] != PLATFORM_SPECS[platform]["system"]:
         raise SchemaError("profile.system 与 platform 不一致")
-    if not isinstance(profile.get("sync_settings", {}), dict):
-        raise SchemaError("sync_settings 必须是对象")
-    if platform != "NES" and profile.get("sync_settings"):
-        raise SchemaError("本版 sync_settings 仅支持 NES 控制器拓扑")
-    if profile.get("sync_settings"):
-        _object(profile["sync_settings"], {"NesLeftPort", "NesRightPort"}, label="sync_settings")
-        if any(v not in ("ControllerNES", "UnpluggedNES") for v in profile["sync_settings"].values()):
+    sync = profile.get("sync_settings", {})
+    if not isinstance(sync, dict):
+        raise SchemaError("profile.sync_settings 必须是对象")
+    if platform == "SNES" and sync:
+        identity = core_identity_expectation(platform, profile["core"])
+        deterministic = identity.get("deterministic_setting")
+        if not deterministic:
+            raise SchemaError("SNES sync_settings 当前仅支持 BSNES/BSNESv115+ 确定性开机设置")
+        key, value = deterministic["key"], deterministic["value"]
+        allowed = {key, "LeftPort", "RightPort"}
+        if profile["core"] == "BSNESv115+":
+            allowed.add("FastPPU")
+        _object(sync, allowed, {key}, "sync_settings")
+        if "FastPPU" in sync and type(sync["FastPPU"]) is not bool:
+            raise SchemaError("FastPPU 必须是布尔值")
+        actual = sync[key]
+        if type(actual) is not type(value) or actual != value:
+            raise SchemaError(f"SNES 冷启动必须显式使用确定性设置 {key}={value!r}")
+        for port in ("LeftPort", "RightPort"):
+            if port in sync and (type(sync[port]) is not int or sync[port] not in (0, 1)):
+                raise SchemaError(f"{port} 必须是整数 0（未连接）或 1（控制器）")
+    elif platform != "NES" and sync:
+        raise SchemaError("本版 sync_settings 仅支持 NES 控制器拓扑和 SNES BSNES 确定性开机设置")
+    if platform == "NES" and sync:
+        _object(sync, {"NesLeftPort", "NesRightPort"}, label="sync_settings")
+        if any(v not in ("ControllerNES", "UnpluggedNES") for v in sync.values()):
             raise SchemaError("本版拓扑只支持 ControllerNES/UnpluggedNES")
     start = doc.setdefault("start", {"kind": "boot"})
     _object(start, {"kind", "path", "sha256"}, {"kind"}, "start")
@@ -992,7 +1011,7 @@ def normalize(doc, base):
         op = raw.get("op")
         fields = {"advance": {"frames"}, "macro": {"name", "repeat"}, "input": {"segments"},
                   "replay": {"frames"}, "takeover": set(),
-                  "checkpoint": {"name", "ram", "ram_domain", "ram_addr", "ram_bytes", "registers"}, "load": {"name"},
+                  "checkpoint": {"name", "ram", "ram_domain", "ram_addr", "ram_bytes", "memory_dumps", "registers"}, "load": {"name"},
                   "seed_ram": {"path", "sha256", "domain", "addr", "bytes"},
                   "patch": {"writes"}, "observe": {"watches"}, "assert": {"checks"},
                   "until": {"checks", "max_frames", "players"}, "screenshot": {"name"}}
@@ -1037,6 +1056,21 @@ def normalize(doc, base):
                     step["ram_bytes"] = _address(step["ram_bytes"])
                     if step["ram_bytes"] == 0:
                         raise SchemaError("checkpoint.ram_bytes 必须大于 0")
+                if "memory_dumps" in step:
+                    dumps, dump_names = [], set()
+                    for item in _list(step["memory_dumps"], "checkpoint.memory_dumps"):
+                        _object(item, {"name", "domain", "addr", "bytes"}, {"name", "domain", "addr", "bytes"},
+                                "checkpoint.memory_dumps")
+                        dump_name = _name(item["name"], "checkpoint.memory_dumps.name")
+                        if dump_name in dump_names:
+                            raise SchemaError(f"重复内存导出名: {dump_name}")
+                        dump_names.add(dump_name)
+                        size = _address(item["bytes"])
+                        if size == 0:
+                            raise SchemaError("checkpoint.memory_dumps.bytes 必须大于 0")
+                        dumps.append({"name": dump_name, "domain": _text(item["domain"], "checkpoint.memory_dumps.domain"),
+                                      "addr": _address(item["addr"]), "bytes": size})
+                    step["memory_dumps"] = dumps
             elif op == "screenshot":
                 if name in shots:
                     raise SchemaError(f"截图不可覆盖: {name}")

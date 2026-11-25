@@ -1,0 +1,502 @@
+{
+  "schema": "kb_final_manifest_menu_evidence_binding_v1",
+  "generated_at": "2026-11-25T13:06:05.275236+00:00",
+  "scope": "晓月圆舞曲114项菜单证据固化、稳定ID、候选来源覆盖与审计反证格；旧交付不变。",
+  "all_checks_ok": true,
+  "production_defaults": {
+    "top_window": 3,
+    "fragment_policy": null,
+    "fact_selector": null,
+    "strict_production_default": false,
+    "dense_production_default": false,
+    "gba_platform_gate": false,
+    "commercial_rom_or_bios_ingested": false
+  },
+  "preflight": {
+    "schema": "menu_evidence_delivery_preflight_v1",
+    "generated_on": "2026-11-25",
+    "source_audit": {
+      "pass": 8,
+      "fail": 0,
+      "inconclusive": 1,
+      "sources": 102,
+      "packs": 24,
+      "elements_checked": 202,
+      "elements_supported": 202
+    },
+    "weak_elements": 154,
+    "menu_weak_elements": 114,
+    "legacy_weak_elements": 40,
+    "coverage": {
+      "present_unverified": 6,
+      "registered_empty": 9,
+      "verified": 11
+    },
+    "coverage_rows": 26,
+    "menu": {
+      "source_report": {
+        "path": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/source_capture_report.json",
+        "sha256": "fba4a630fef8f35a9adffb3734816b7603e554d8b0456c7b8551e2662bb665e9"
+      },
+      "source_config": {
+        "path": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_catalog_nav_full.json",
+        "sha256": "93d3a7a10230b86b45338a3677e3c355baf46c8eee26e85eab815ac26047d64d"
+      },
+      "name_observation": {
+        "path": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_names_observed.json",
+        "sha256": "ad2f9ec2aee31c976095707669946b17ad4478bb5e6fd180619a1996e123c922"
+      },
+      "effect_observation": {
+        "path": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_effects_observed.json",
+        "sha256": "3ad433fb21d3b5ddddeded6a2d9ee5fc5c45334af6bfbec6c4cdc7bbaca8e67f",
+        "region": [
+          45,
+          118,
+          238,
+          153
+        ]
+      }
+    },
+    "menu_evidence_binding": {
+      "source_id": "local_aria_menu_catalog_20261125",
+      "report": "_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/menu_catalog_nav_full_20261125/menu_catalog_report.json",
+      "report_sha256": "384c0a8a184985625689059e0501765f1a94c185a041cf717790fd8722e6b010",
+      "stable_element_ids": 114,
+      "media_files_verified": 342
+    },
+    "code": {
+      "sources_audit": {
+        "path": "F:\\开源掌机教程\\_工具脚本\\taspipe\\sources.py",
+        "bytes": 47214,
+        "sha256": "fc47682d686f7c04b7fcb5c74d46a0760da4c5a7e4258358442dbd4958e2704c"
+      },
+      "sources_selftest_gates": {
+        "path": "F:\\开源掌机教程\\_工具脚本\\taspipe\\sources_selftest_gates.py",
+        "bytes": 30271,
+        "sha256": "c5532152b62c66a4d3bad5582ec5efd4374203b58a8c906bba9b5691e8bc693a"
+      },
+      "kb": {
+        "path": "F:\\开源掌机教程\\_工具脚本\\taspipe\\kb.py",
+        "bytes": 102100,
+        "sha256": "cf9d69aa40329b9e1ff4b2d086abbddf54de9ea89ab581c093c3df1ab8463264"
+      },
+      "kb_selftest_gates": {
+        "path": "F:\\开源掌机教程\\_工具脚本\\taspipe\\kb_selftest_gates.py",
+        "bytes": 220892,
+        "sha256": "df2f2ef03ae3aa86aea1656ea604caf3e1116211b87fcb3e1b5ab077e22c5512"
+      }
+    },
+    "data": {
+      "source_registry": {
+        "path": "F:\\开源掌机教程\\_工具脚本\\taspipe\\游戏包\\来源库\\sources.json",
+        "bytes": 69563,
+        "sha256": "8f1b9b6e0beb08aa1eeed20c12770a673dce830d4543201b0f8a8bbfe4ea2680"
+      },
+      "menu_catalog": {
+        "path": "F:\\开源掌机教程\\_工具脚本\\taspipe\\游戏包\\gba_aria_of_sorrow_souls.menu_catalog.json",
+        "bytes": 252190,
+        "sha256": "09ccf152482b4f044b5a39fe82b9cb1a99135892c88c8da8687cbebb6f8b3354"
+      },
+      "corpus_map": {
+        "path": "F:\\开源掌机教程\\_工具脚本\\taspipe\\游戏包\\知识库\\corpus_map.json",
+        "bytes": 34439,
+        "sha256": "e49bb480ad4aa58d0ce97a47af7fabe49a7453fde90d01631350b3bf662342df"
+      },
+      "index": {
+        "path": "F:\\开源掌机教程\\_工具脚本\\taspipe\\游戏包\\知识库\\index.json",
+        "bytes": 3766455,
+        "sha256": "05907ec85146f386325285ccd4d2008d8bc28d50d8ec4e2461c14a9351f03f7d"
+      },
+      "menu_evidence_report": {
+        "path": "F:\\开源掌机教程\\_工具脚本\\taspipe\\游戏包\\证据\\晓月圆舞曲\\menu_catalog_nav_full_20261125\\menu_catalog_report.json",
+        "bytes": 109914,
+        "sha256": "384c0a8a184985625689059e0501765f1a94c185a041cf717790fd8722e6b010"
+      }
+    },
+    "gates": {
+      "project_selftest": [
+        1534,
+        1534
+      ],
+      "kb_selftest": [
+        333,
+        333
+      ],
+      "cross_platform_selftest": [
+        33,
+        33
+      ],
+      "sources_selftest": [
+        74,
+        74
+      ],
+      "topic_selftest": [
+        166,
+        166
+      ]
+    }
+  },
+  "gates": {
+    "project_selftest": {
+      "passed": 1534,
+      "total": 1534,
+      "ok": true,
+      "log": {
+        "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_evidence_binding\\selftest_menu_evidence_binding_20261125.log",
+        "bytes": 164115,
+        "sha256": "9753ef9d0ef6bd1e644f2c61172c8db21d2a81c8bdbbeafacff9e4fc5f26c161",
+        "role": "闸门日志"
+      }
+    },
+    "kb_selftest": {
+      "passed": 333,
+      "total": 333,
+      "ok": true,
+      "log": {
+        "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_evidence_binding\\kb_selftest_menu_evidence_binding_20261125.log",
+        "bytes": 74334,
+        "sha256": "50b064fc8f5105592bbc4329c61bd9b7b5fb9a554a007f5b4b20d7e43fdb8093",
+        "role": "闸门日志"
+      }
+    },
+    "cross_platform_selftest": {
+      "passed": 33,
+      "total": 33,
+      "ok": true,
+      "log": {
+        "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_evidence_binding\\cross_platform_menu_evidence_binding_20261125.log",
+        "bytes": 2685,
+        "sha256": "df44e52548c3d65bdd7bb22274f9e7a8cf50556a2270c8c4cc95bb9acf921ca6",
+        "role": "闸门日志"
+      }
+    },
+    "sources_selftest": {
+      "passed": 74,
+      "total": 74,
+      "ok": true,
+      "log": {
+        "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_evidence_binding\\sources_selftest_menu_evidence_binding_20261125.log",
+        "bytes": 6013,
+        "sha256": "e79cfc2ad2150cd9f56fe7893e544d677f6479c51ceb85a149e53415b32be6b2",
+        "role": "闸门日志"
+      }
+    },
+    "topic_selftest": {
+      "passed": 166,
+      "total": 166,
+      "ok": true,
+      "log": {
+        "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_evidence_binding\\topic_selftest_menu_evidence_binding_20261125.log",
+        "bytes": 10576,
+        "sha256": "aed86117fa44632b158eac0767d0e6fbcc1d62535d26bab9d32f3e54b83636a9",
+        "role": "闸门日志"
+      }
+    }
+  },
+  "audits": {
+    "sources": {
+      "status": "inconclusive",
+      "counts": {
+        "pass": 8,
+        "fail": 0,
+        "inconclusive": 1,
+        "sources": 102,
+        "packs": 24,
+        "elements_checked": 202,
+        "elements_supported": 202
+      },
+      "artifact": {
+        "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_evidence_binding\\source_audit.json",
+        "bytes": 16111,
+        "sha256": "81a6ae6cfe4adf251d8a7d9153e64b173a40ba6d177b0faff123d3c094a28d49",
+        "role": "来源审计"
+      }
+    },
+    "kb": {
+      "status": "inconclusive",
+      "counts": {
+        "pass": 6,
+        "fail": 0,
+        "inconclusive": 3,
+        "entries": 55,
+        "revisions": 15,
+        "chunks": 826
+      },
+      "artifact": {
+        "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_evidence_binding\\kb_audit_menu_evidence_binding_20261125.json",
+        "bytes": 22458,
+        "sha256": "e8c983c80bfb4945908312f0aa3dcfdc82c1a923951967ad88367e08d7d8d6c9",
+        "role": "知识库审计"
+      }
+    }
+  },
+  "menu_evidence": {
+    "elements": 114,
+    "media_files": 342,
+    "media_bytes": 6874438,
+    "missing_files": 0,
+    "hash_mismatches": 0,
+    "source_status": "candidate",
+    "gameplay_verified": false,
+    "detector_verified": false,
+    "platform_gate_verified": false
+  },
+  "pdf_qc": {
+    "pages": 4,
+    "checks": 32,
+    "artifact": {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_evidence_binding\\report_qc_menu_evidence_binding_20261125\\render_qa.json",
+      "bytes": 1529,
+      "sha256": "9a546441f723bc123453f4cfb45f8e9265d1c703c26fa7e2ca02513c5a57012d",
+      "role": "PDF质检"
+    },
+    "pdf": {
+      "path": "F:\\开源掌机教程\\知识库改进优化指导_2026-11-25_晓月菜单证据固化与来源覆盖修正.pdf",
+      "bytes": 444375,
+      "sha256": "735b1f81a0222c37411ef57a3105cdbcf208d5d5875c8dd04bc65ff66dba4a86",
+      "role": "报告PDF"
+    }
+  },
+  "protected_delivery": {
+    "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_evidence_binding\\protected_delivery_hashes_20261125.json",
+    "bytes": 2282,
+    "sha256": "cef364939a4144d94c9e2a192e7d0220dbc2d7163e93b7860685de854325e55d",
+    "role": "旧交付保护"
+  },
+  "checks": {
+    "code:sources_audit": true,
+    "code:sources_selftest_gates": true,
+    "code:kb": true,
+    "code:kb_selftest_gates": true,
+    "data:source_registry": true,
+    "data:menu_catalog": true,
+    "data:corpus_map": true,
+    "data:index": true,
+    "data:menu_evidence_report": true,
+    "source_audit_fail_zero": true,
+    "source_coverage_202_of_202": true,
+    "kb_audit_fail_zero": true,
+    "index_chunks_826": true,
+    "weak_elements_154": true,
+    "menu_weak_elements_114": true,
+    "legacy_weak_elements_40": true,
+    "coverage_counts": true,
+    "menu_114_unique_stable_ids": true,
+    "menu_source_candidate": true,
+    "menu_all_gameplay_false": true,
+    "menu_all_detector_false": true,
+    "menu_342_media_hashes": true,
+    "menu_ref:source_report": true,
+    "menu_ref:source_config": true,
+    "menu_ref:name_observation": true,
+    "menu_ref:effect_observation": true,
+    "menu_ref:legacy_patch_audit": true,
+    "registry_menu_source_candidate": true,
+    "registry_pack_status_match": true,
+    "old_deliveries_unchanged": true,
+    "pdf_qc_all_true": true,
+    "pdf_hash_match": true,
+    "pdf_pages_positive": true,
+    "gba_platform_gate_false": true
+  },
+  "files": [
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_evidence_binding\\coverage_menu_evidence_binding_20261125.log",
+      "bytes": 44357,
+      "sha256": "244d9505399379e73e066c3be97b9a0706cc0546323c3014543ecf1234c0f39c",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_evidence_binding\\cross_platform_menu_evidence_binding_20261125.log",
+      "bytes": 2685,
+      "sha256": "df44e52548c3d65bdd7bb22274f9e7a8cf50556a2270c8c4cc95bb9acf921ca6",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_evidence_binding\\finalize_menu_evidence_delivery_20261125.py",
+      "bytes": 16225,
+      "sha256": "135d7694bbb35e13e33fc5e713c2f879c753bbafd8958f4907e6ac77f7c4022c",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_evidence_binding\\kb_audit_menu_evidence_binding_20261125.json",
+      "bytes": 22458,
+      "sha256": "e8c983c80bfb4945908312f0aa3dcfdc82c1a923951967ad88367e08d7d8d6c9",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_evidence_binding\\kb_audit_menu_evidence_binding_20261125.log",
+      "bytes": 21848,
+      "sha256": "4d85f8727d562445e9d1a8dfff87082cf89e08a920cf309b5ad44e89174f2229",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_evidence_binding\\kb_selftest_menu_evidence_binding_20261125.log",
+      "bytes": 74334,
+      "sha256": "50b064fc8f5105592bbc4329c61bd9b7b5fb9a554a007f5b4b20d7e43fdb8093",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_evidence_binding\\pdf_qc_menu_evidence_binding_20261125.log",
+      "bytes": 1531,
+      "sha256": "26177fb5fee864fe9f9ae2f7fb10185e52a34066da3e0bb99d85e160f2220796",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_evidence_binding\\preflight_fingerprints_menu_evidence_binding_20261125.json",
+      "bytes": 4463,
+      "sha256": "2a7af1aa6ca19cbc1410be75cf7a6d5c3a727fe555344cd732e50cccd768d3fc",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_evidence_binding\\protected_delivery_hashes_20261125.json",
+      "bytes": 2282,
+      "sha256": "cef364939a4144d94c9e2a192e7d0220dbc2d7163e93b7860685de854325e55d",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_evidence_binding\\render_qc_menu_evidence_binding_20261125.py",
+      "bytes": 13672,
+      "sha256": "02366394f86b7c1edcbe397c065151674dbc9cb87c74fdf6d1ec0002d4512509",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_evidence_binding\\report_qc_menu_evidence_binding_20261125\\contact_sheet.png",
+      "bytes": 368745,
+      "sha256": "bb1e05efe52265600408df312c04c09872c3c23f10ac01efe5c85963d5ab950d",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_evidence_binding\\report_qc_menu_evidence_binding_20261125\\page_01.png",
+      "bytes": 229380,
+      "sha256": "776de628d0bb22c54e8136a809d24371ca4d2b07ca649b8a1b976b8f55a52533",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_evidence_binding\\report_qc_menu_evidence_binding_20261125\\page_03.png",
+      "bytes": 176162,
+      "sha256": "d276d642d9d9661c448a145e514404e3dca4148c758ecb3ded20c36f2a2bcbdb",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_evidence_binding\\report_qc_menu_evidence_binding_20261125\\page_04.png",
+      "bytes": 130859,
+      "sha256": "eb7f730b77671ca7d551f89e2c31f9c4237d31c97816e991c7f9ecf64bdab979",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_evidence_binding\\report_qc_menu_evidence_binding_20261125\\render_qa.json",
+      "bytes": 1529,
+      "sha256": "9a546441f723bc123453f4cfb45f8e9265d1c703c26fa7e2ca02513c5a57012d",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_evidence_binding\\report_qc_menu_evidence_binding_20261125\\report.html",
+      "bytes": 16657,
+      "sha256": "e5e85a559954f51aff0bfe3a3c099abf5cce5b60fe932bd853cbbc954593406c",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_evidence_binding\\selftest_menu_evidence_binding_20261125.log",
+      "bytes": 164115,
+      "sha256": "9753ef9d0ef6bd1e644f2c61172c8db21d2a81c8bdbbeafacff9e4fc5f26c161",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_evidence_binding\\source_audit.json",
+      "bytes": 16111,
+      "sha256": "81a6ae6cfe4adf251d8a7d9153e64b173a40ba6d177b0faff123d3c094a28d49",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_evidence_binding\\sources_selftest_menu_evidence_binding_20261125.log",
+      "bytes": 6013,
+      "sha256": "e79cfc2ad2150cd9f56fe7893e544d677f6479c51ceb85a149e53415b32be6b2",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库P1_20261118\\kb_final_20261125_menu_evidence_binding\\topic_selftest_menu_evidence_binding_20261125.log",
+      "bytes": 10576,
+      "sha256": "aed86117fa44632b158eac0767d0e6fbcc1d62535d26bab9d32f3e54b83636a9",
+      "role": "交付工件"
+    },
+    {
+      "path": "F:\\开源掌机教程\\_工具脚本\\taspipe\\sources.py",
+      "bytes": 47214,
+      "sha256": "fc47682d686f7c04b7fcb5c74d46a0760da4c5a7e4258358442dbd4958e2704c",
+      "role": "生产修正或报告"
+    },
+    {
+      "path": "F:\\开源掌机教程\\_工具脚本\\taspipe\\sources_selftest_gates.py",
+      "bytes": 30271,
+      "sha256": "c5532152b62c66a4d3bad5582ec5efd4374203b58a8c906bba9b5691e8bc693a",
+      "role": "生产修正或报告"
+    },
+    {
+      "path": "F:\\开源掌机教程\\_工具脚本\\taspipe\\游戏包\\来源库\\sources.json",
+      "bytes": 69563,
+      "sha256": "8f1b9b6e0beb08aa1eeed20c12770a673dce830d4543201b0f8a8bbfe4ea2680",
+      "role": "生产修正或报告"
+    },
+    {
+      "path": "F:\\开源掌机教程\\_工具脚本\\taspipe\\游戏包\\复古游戏文献来源库.md",
+      "bytes": 63512,
+      "sha256": "7bf6faf504605a25372b10bd512910a09df812550043f20557551bd8d7b6795f",
+      "role": "生产修正或报告"
+    },
+    {
+      "path": "F:\\开源掌机教程\\_工具脚本\\taspipe\\游戏包\\gba_aria_of_sorrow_souls.menu_catalog.json",
+      "bytes": 252190,
+      "sha256": "09ccf152482b4f044b5a39fe82b9cb1a99135892c88c8da8687cbebb6f8b3354",
+      "role": "生产修正或报告"
+    },
+    {
+      "path": "F:\\开源掌机教程\\_工具脚本\\taspipe\\游戏包\\证据\\晓月圆舞曲\\menu_catalog_nav_full_20261125\\menu_catalog_report.json",
+      "bytes": 109914,
+      "sha256": "384c0a8a184985625689059e0501765f1a94c185a041cf717790fd8722e6b010",
+      "role": "生产修正或报告"
+    },
+    {
+      "path": "F:\\开源掌机教程\\_工具脚本\\taspipe\\游戏包\\证据\\晓月圆舞曲\\menu_catalog_nav_full_20261125\\source_capture_report.json",
+      "bytes": 103263,
+      "sha256": "fba4a630fef8f35a9adffb3734816b7603e554d8b0456c7b8551e2662bb665e9",
+      "role": "生产修正或报告"
+    },
+    {
+      "path": "F:\\开源掌机教程\\_工具脚本\\taspipe\\游戏包\\证据\\晓月圆舞曲\\menu_catalog_nav_full_20261125\\menu_catalog_nav_full.json",
+      "bytes": 1912,
+      "sha256": "93d3a7a10230b86b45338a3677e3c355baf46c8eee26e85eab815ac26047d64d",
+      "role": "生产修正或报告"
+    },
+    {
+      "path": "F:\\开源掌机教程\\_工具脚本\\taspipe\\游戏包\\证据\\晓月圆舞曲\\menu_catalog_nav_full_20261125\\menu_names_observed.json",
+      "bytes": 1945,
+      "sha256": "ad2f9ec2aee31c976095707669946b17ad4478bb5e6fd180619a1996e123c922",
+      "role": "生产修正或报告"
+    },
+    {
+      "path": "F:\\开源掌机教程\\_工具脚本\\taspipe\\游戏包\\证据\\晓月圆舞曲\\menu_catalog_nav_full_20261125\\menu_effects_observed.json",
+      "bytes": 3748,
+      "sha256": "3ad433fb21d3b5ddddeded6a2d9ee5fc5c45334af6bfbec6c4cdc7bbaca8e67f",
+      "role": "生产修正或报告"
+    },
+    {
+      "path": "F:\\开源掌机教程\\_工具脚本\\taspipe\\游戏包\\证据\\晓月圆舞曲\\menu_catalog_nav_full_20261125\\menu_patch_vs_nav_audit.json",
+      "bytes": 128873,
+      "sha256": "6b81e8596353c22574a3417abea62b0b4c04d77b40ce3127297db2083aef5b4b",
+      "role": "生产修正或报告"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库改进优化指导_2026-11-25_晓月菜单证据固化与来源覆盖修正.md",
+      "bytes": 12001,
+      "sha256": "96881ae5c0b93eb9ff367539de4b27f51834a7f76a18abe33d4d21ed752fd7d0",
+      "role": "生产修正或报告"
+    },
+    {
+      "path": "F:\\开源掌机教程\\知识库改进优化指导_2026-11-25_晓月菜单证据固化与来源覆盖修正.pdf",
+      "bytes": 444375,
+      "sha256": "735b1f81a0222c37411ef57a3105cdbcf208d5d5875c8dd04bc65ff66dba4a86",
+      "role": "生产修正或报告"
+    }
+  ]
+}

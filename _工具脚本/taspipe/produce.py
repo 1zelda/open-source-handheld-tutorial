@@ -48,8 +48,8 @@ def build_spec(movie: Path, rom: str, bizhawk: Path, core: str, system: str,
         seed = dict(seed_ram)
         seed["id"] = "seed_initial_sram"
         seed["op"] = "seed_ram"
-        if core != "BSNES" or system != "SNES":
-            raise SchemaError("当前只允许向 SNES BSNES 冷启动电影注入初始 SRAM")
+        if system != "SNES" or core not in ("BSNES", "BSNESv115+", "Snes9x"):
+            raise SchemaError("当前只允许向 SNES BSNES/BSNESv115+/Snes9x 电影注入初始内存")
         source = Path(seed["path"])
         if not source.is_file() or source.stat().st_size != seed["bytes"]:
             raise SchemaError("初始 SRAM 文件缺失或长度不符")
@@ -63,6 +63,8 @@ def build_spec(movie: Path, rom: str, bizhawk: Path, core: str, system: str,
         if system == "SNES" and core in ("BSNES", "BSNESv115+"):
             # BSNES 默认 System Bus 为 16MB；逐字节导出 115 次会主导全片耗时。
             checkpoint.update(ram_domain="System Bus", ram_addr=0x7E0000, ram_bytes=0x20000)
+        elif system == "SNES" and core == "Snes9x":
+            checkpoint.update(ram_domain="WRAM", ram_addr=0, ram_bytes=0x20000)
         steps.append(checkpoint)
         previous = frame
     verify = {"length": {"frames": frames, "tolerance": 1e-12,
@@ -116,6 +118,30 @@ def _read_json(path: Path):
     return json.loads(path.read_text(encoding="utf-8"))
 
 
+def _manual_seed_identity(seed_ram: dict | None) -> dict | None:
+    if seed_ram is None:
+        return None
+    if not isinstance(seed_ram, dict):
+        raise SchemaError("初始内存规格必须是对象")
+    required = {"path", "sha256", "domain", "addr", "bytes"}
+    if set(seed_ram) != required:
+        raise SchemaError("初始内存规格只能包含 path/sha256/domain/addr/bytes")
+    source = Path(seed_ram["path"])
+    if not source.is_file():
+        raise SchemaError("初始内存文件缺失")
+    size = source.stat().st_size
+    if type(seed_ram["addr"]) is not int or seed_ram["addr"] < 0:
+        raise SchemaError("初始内存地址必须是非负整数")
+    if type(seed_ram["bytes"]) is not int or seed_ram["bytes"] < 1 or size != seed_ram["bytes"]:
+        raise SchemaError("初始内存文件长度不符")
+    if not isinstance(seed_ram["domain"], str) or not seed_ram["domain"].strip():
+        raise SchemaError("初始内存域不能为空")
+    if sha256_file(source) != seed_ram["sha256"]:
+        raise SchemaError("初始内存 SHA-256 不符")
+    return {"path": str(source.resolve()), "sha256": seed_ram["sha256"],
+            "domain": seed_ram["domain"], "addr": seed_ram["addr"], "bytes": size}
+
+
 def _write_json(path: Path, value):
     control.write_json(path, value)
 
@@ -154,66 +180,73 @@ def _read_rom_bytes(rom: str) -> bytes:
 def _prepare_bsnes_seed(parsed: dict, original_rom: str, out: Path) -> tuple[str, dict]:
     out.mkdir(parents=True, exist_ok=True)
     rom = _read_rom_bytes(original_rom)
-    if len(rom) < 0x8000:
-        raise SchemaError("SNES ROM 太短，不能校验卡带头")
-    map_mode = rom[0x7FD5] & 0x30
-    if map_mode == 0x20:
-        map_offset = 0x7FC0
-    elif map_mode == 0x30:
-        map_offset = 0xFFC0
-    else:
-        raise SchemaError(f"不支持的 SNES 卡带映射模式: 0x{map_mode:02x}")
-    if map_offset + 0x20 > len(rom):
-        raise SchemaError("SNES ROM 卡带头超出文件范围")
+    declared = movie_converters.snes_declared_sram_bytes(rom)
     sram = parsed.get("savestate_data")
     if not isinstance(sram, bytes) or not sram:
         raise SchemaError("BSNES FROM_RESET SMV 缺少内置初始 SRAM")
     if len(sram) & (len(sram) - 1) or not 1024 <= len(sram) <= 0x20000:
         raise SchemaError("SMV 初始 SRAM 必须是 1KB 至 128KB 的二次幂长度")
-    declared_code = rom[map_offset + 0x18]
-    declared = (1024 << declared_code) if declared_code else 0
-    changed = []
     effective_rom = str(Path(original_rom).resolve())
-    if declared != len(sram):
-        patched = bytearray(rom)
-        patched[map_offset + 0x18] = (len(sram).bit_length() - 1) - 10
-        changed.append(map_offset + 0x18)
-        patched[map_offset + 0x1C:map_offset + 0x20] = b"\0" * 4
-        checksum = sum(patched) & 0xFFFF
-        complement = checksum ^ 0xFFFF
-        struct.pack_into("<HH", patched, map_offset + 0x1C, checksum, complement)
-        changed.extend(range(map_offset + 0x1C, map_offset + 0x20))
-        rom_path = (out / "rom_sram_patched.sfc").resolve()
-        rom_path.write_bytes(patched)
-        effective_rom = str(rom_path)
-        rom = bytes(patched)
-    seed_path = (out / "initial_sram.bin").resolve()
-    seed_path.write_bytes(sram)
-    digest = hashlib.sha256(sram).hexdigest()
+    changed = []
+    if declared == 0:
+        seed_data = b"\x55" * 0x20000
+        seed = {"domain": "System Bus", "addr": 0x7E0000, "bytes": len(seed_data)}
+        seed_kind = "snes_wram_power_on"
+    else:
+        if declared != len(sram):
+            map_mode = rom[0x7FD5] & 0x30
+            map_offset = 0x7FC0 if map_mode == 0x20 else 0xFFC0
+            patched = bytearray(rom)
+            patched[map_offset + 0x18] = (len(sram).bit_length() - 1) - 10
+            changed.append(map_offset + 0x18)
+            patched[map_offset + 0x1C:map_offset + 0x20] = b"\0" * 4
+            checksum = sum(patched) & 0xFFFF
+            complement = checksum ^ 0xFFFF
+            struct.pack_into("<HH", patched, map_offset + 0x1C, checksum, complement)
+            changed.extend(range(map_offset + 0x1C, map_offset + 0x20))
+            rom_path = (out / "rom_sram_patched.sfc").resolve()
+            rom_path.write_bytes(patched)
+            effective_rom = str(rom_path)
+            rom = bytes(patched)
+        seed_data = sram
+        seed = {"domain": "CARTRAM", "addr": 0, "bytes": len(seed_data)}
+        seed_kind = "cartridge_sram"
+    seed_path = (out / "initial_memory.bin").resolve()
+    seed_path.write_bytes(seed_data)
+    digest = hashlib.sha256(seed_data).hexdigest()
     evidence = {
         "seed_ram": {"id": "seed_initial_sram", "op": "seed_ram", "path": str(seed_path),
-                     "sha256": digest, "domain": "CARTRAM", "addr": 0, "bytes": len(sram)},
-        "effective_rom": str(Path(effective_rom).resolve()),
+                     "sha256": digest, **seed},
+        "effective_rom": effective_rom,
         "effective_rom_sha1": sha1_resource(effective_rom).lower(),
         "effective_rom_sha256": sha256_file(effective_rom),
         "source_rom": str(Path(original_rom).resolve()),
         "source_rom_sha1": sha1_resource(original_rom).lower(),
         "declared_sram_bytes": declared,
-        "initial_sram_bytes": len(sram),
-        "initial_sram_sha256": digest,
+        "embedded_sram_bytes": len(sram),
+        "embedded_sram_sha256": parsed.get("savestate_sha256", hashlib.sha256(sram).hexdigest()),
+        "seed_kind": seed_kind,
+        "seed_bytes": len(seed_data),
+        "seed_sha256": digest,
         "patched_header_offsets": [f"0x{offset:x}" for offset in changed],
     }
     return effective_rom, evidence
 
 
 def _prepare_movie(source: Path, out: Path, rom: str, bizhawk: Path, core: str,
-                   core_state: Path | None) -> tuple[Path, dict]:
+                   core_state: Path | None, seed_ram: dict | None = None) -> tuple[Path, dict]:
     target = out / "movie.bk2"
     report_path = out / "conversion.json"
     source_hash = sha256_file(source)
     core_state_id = _core_state_identity(core_state)
     effective_rom = rom
+    manual_seed = _manual_seed_identity(seed_ram)
     seed_evidence = None
+    if manual_seed is not None and source.suffix.lower() != ".bk2":
+        raise SchemaError("手工初始内存注入只支持 BK2 生产；SMV 请使用转换器生成的初始内存")
+    if manual_seed is not None:
+        seed_evidence = {"seed_ram": {"id": "seed_initial_sram", "op": "seed_ram", **manual_seed},
+                         "seed_kind": "explicit_power_on", "effective_rom": str(Path(rom).resolve())}
     if source.suffix.lower() != ".bk2" and core == "BSNES":
         parsed = movie_converters.parse_smv(source)
         if parsed.get("platform") != "SNES" or not parsed.get("from_reset"):
@@ -231,7 +264,7 @@ def _prepare_movie(source: Path, out: Path, rom: str, bizhawk: Path, core: str,
         return target, {"status": "reused", "source": str(source.resolve()),
                         "source_sha256": source_hash, "out": str(target.resolve()),
                         "sha256": sha256_file(target), "effective_rom": str(Path(effective_rom).resolve()),
-                        "seed_ram": None, "report": None}
+                        "seed_ram": manual_seed, "seed_evidence": seed_evidence, "report": None}
     if target.exists():
         previous = _read_json(report_path) if report_path.is_file() else {}
         if (previous.get("source_sha256") == source_hash and previous.get("sha256") == sha256_file(target)
@@ -340,7 +373,8 @@ def verify_evidence(report: dict) -> list[str]:
 
 
 def inspect_result(report: dict, frames: int, sample_count: int,
-                   acceptance: dict | None = None, interval: int = 600) -> dict:
+                   acceptance: dict | None = None, interval: int = 600,
+                   seed_ram: dict | None = None) -> dict:
     errors = []
     verification = report.get("verification") or {}
     runtime = report.get("runtime") or {}
@@ -363,13 +397,26 @@ def inspect_result(report: dict, frames: int, sample_count: int,
     events = runtime.get("events") or []
     seed_starts = [event for event in events if event.get("op") == "seed_ram" and event.get("kind") == "step_started"]
     seed_done = [event for event in events if event.get("op") == "seed_ram" and event.get("kind") == "step_done"]
-    if len(seed_starts) != len(seed_done):
-        errors.append("初始 SRAM 注入缺少完整执行事件")
-    for event in seed_done:
-        data = event.get("seed_ram") or {}
-        if (not data.get("sha256_verified_by_runner") or type(data.get("bytes")) is not int
-                or data.get("bytes") < 1 or event.get("frame") != 0 or event.get("consumed_inputs") != 0):
-            errors.append("初始 SRAM 注入没有零帧全量回读证据")
+    if seed_ram is None:
+        if seed_starts or seed_done:
+            errors.append("生产任务未声明初始内存，却出现注入事件")
+    else:
+        if len(seed_starts) != 1 or len(seed_done) != 1:
+            errors.append("初始内存注入缺少完整执行事件")
+        elif seed_starts[0].get("step_id") != seed_ram.get("id") or seed_done[0].get("step_id") != seed_ram.get("id"):
+            errors.append("初始内存注入事件与声明步骤不一致")
+        else:
+            for event in (seed_starts[0], seed_done[0]):
+                if (event.get("frame") != 0 or event.get("frames_advanced") != 0
+                        or event.get("consumed_inputs") != 0):
+                    errors.append("初始内存注入没有零帧零输入证据")
+            data = seed_done[0].get("seed_ram") or {}
+            if (not data.get("sha256_verified_by_runner")
+                    or data.get("domain") != seed_ram.get("domain")
+                    or data.get("start") != seed_ram.get("addr")
+                    or type(data.get("bytes")) is not int
+                    or data.get("bytes") != seed_ram.get("bytes")):
+                errors.append("初始内存注入域、地址、长度或零帧全量回读证据不符")
     picture = report.get("picture") or {}
     if not picture.get("measured") or picture.get("dead_tail") is not False:
         errors.append("画面测量未完成或发现死尾")
@@ -524,7 +571,8 @@ def request_identity(source: Path, rom: str, out: Path, bizhawk: Path, core: str
                      core_state: Path | None, arms: list[dict] | None,
                      speed: str = "unthrottled", sync_samples=None,
                      ffmpeg: str = "ffmpeg", ffprobe: str = "ffprobe",
-                     acceptance: dict | None = None, allow: tuple[str, ...] = ()) -> str:
+                     acceptance: dict | None = None, allow: tuple[str, ...] = (),
+                     seed_ram: dict | None = None) -> str:
     payload = {"source": str(Path(source).resolve()), "source_sha256": sha256_file(source),
                "rom": str(Path(rom).resolve()), "rom_sha1": sha1_resource(rom).lower(),
                "out": str(Path(out).resolve()), "bizhawk": str(Path(bizhawk).resolve()),
@@ -532,7 +580,8 @@ def request_identity(source: Path, rom: str, out: Path, bizhawk: Path, core: str
                "fps": float(fps) if fps is not None else None, "speed": speed,
                "core_state": _core_state_identity(core_state), "arms": arms,
                "sync_samples": sync_samples, "ffmpeg": ffmpeg, "ffprobe": ffprobe,
-               "acceptance": acceptance, "allow": list(allow)}
+               "acceptance": acceptance, "allow": list(allow),
+               "seed_ram": _manual_seed_identity(seed_ram)}
     encoded = json.dumps(payload, ensure_ascii=False, sort_keys=True,
                          separators=(",", ":"), default=str).encode("utf-8")
     return hashlib.sha256(encoded).hexdigest()
@@ -553,14 +602,16 @@ def produce(source: Path, rom: str, out: Path, bizhawk: Path, core: str,
             acceptance: dict | None = None, capture: bool = True,
             fps: float | None = None, executor=None, arms: list[dict] | None = None,
             speed: str = "unthrottled", allow: tuple[str, ...] = (),
-            sync_samples=None, ffmpeg: str = "ffmpeg", ffprobe: str = "ffprobe") -> dict:
+            sync_samples=None, ffmpeg: str = "ffmpeg", ffprobe: str = "ffprobe",
+            seed_ram: dict | None = None) -> dict:
     if speed not in ("realtime", "unthrottled"):
         raise SchemaError("生产速度只能是 realtime 或 unthrottled")
     allow = tuple(allow)
+    manual_seed = _manual_seed_identity(seed_ram)
     source, out, bizhawk = source.resolve(), out.resolve(), bizhawk.resolve()
     request_sha256 = request_identity(source, rom, out, bizhawk, core, game, interval,
                                       capture, fps, core_state, arms, speed, sync_samples,
-                                      ffmpeg, ffprobe, acceptance, allow)
+                                      ffmpeg, ffprobe, acceptance, allow, manual_seed)
     if out.exists() and any(out.iterdir()):
         manifest_path = out / "production_manifest.json"
         if manifest_path.is_file():
@@ -573,19 +624,24 @@ def produce(source: Path, rom: str, out: Path, bizhawk: Path, core: str,
     manifest_path = out / "production_manifest.json"
     base = {"source": str(source), "rom": str(Path(rom).resolve()), "out": str(out),
             "bizhawk": str(bizhawk), "core": core, "speed": speed, "allow": list(allow),
-            "ffmpeg": ffmpeg, "ffprobe": ffprobe, "request_sha256": request_sha256}
+            "ffmpeg": ffmpeg, "ffprobe": ffprobe, "seed_ram": manual_seed,
+            "request_sha256": request_sha256}
     try:
-        movie, conversion = _prepare_movie(source, out, rom, bizhawk, core, core_state)
+        movie, conversion = _prepare_movie(source, out, rom, bizhawk, core, core_state, manual_seed)
         header, frames, length, platform, system, actual_core = _movie_identity(movie)
         if actual_core != core:
             raise SchemaError(f"电影核心 {actual_core} != 请求核心 {core}")
         effective_rom = conversion.get("effective_rom", rom)
+        effective_seed = manual_seed or (conversion.get("seed_evidence") or {}).get("seed_ram")
+        if effective_seed is not None and manual_seed is None:
+            effective_seed = _manual_seed_identity({
+                key: effective_seed[key] for key in ("path", "sha256", "domain", "addr", "bytes")})
         spec = build_spec(movie, effective_rom, bizhawk, core, system, platform, frames,
                           game, interval, capture, fps, arms, speed,
-                          (conversion.get("seed_evidence") or {}).get("seed_ram"), sync_samples,
-                          ffmpeg, ffprobe)
+                          effective_seed, sync_samples, ffmpeg, ffprobe)
         spec_path = out / "production_spec.json"
         _write_json(spec_path, spec)
+        declared_seed = next((step for step in spec["steps"] if step.get("op") == "seed_ram"), None)
         result = control.run(spec, out, out / "control", work_root=work_root or out / "work",
                              timeout=timeout, executor=executor, allow=allow)
         result.setdefault("artifacts", []).append(asset(str(movie)))
@@ -597,7 +653,7 @@ def produce(source: Path, rom: str, out: Path, bizhawk: Path, core: str,
                 asset(seed_evidence["seed_ram"]["path"]), asset(seed_evidence["effective_rom"])])
         result.setdefault("artifacts", []).extend(build_contact_sheets(result, out))
         inspection = inspect_result(result, frames, len(sample_frames(frames, interval)),
-                                    acceptance, interval)
+                                    acceptance, interval, declared_seed)
         video_inspection = inspect_video(result, frames, ffmpeg, ffprobe) if capture else {
             "pass": True, "errors": [], "evidence": {"skipped": "capture disabled"}}
         inspection["errors"].extend(video_inspection["errors"])
@@ -651,6 +707,7 @@ def main(argv=None) -> int:
     parser.add_argument("--timeout", type=float, default=1800)
     parser.add_argument("--work-root", default="")
     parser.add_argument("--core-state", default="")
+    parser.add_argument("--seed-ram", default="", help="BK2 零帧初始内存注入 JSON（path/sha256/domain/addr/bytes）")
     parser.add_argument("--acceptance", default="")
     parser.add_argument("--arms", default="")
     parser.add_argument("--sync-samples", default="", help="all 或逗号分隔帧号；默认开头/中段/结尾")
@@ -677,6 +734,7 @@ def main(argv=None) -> int:
     if not core:
         raise SchemaError("非 BK2 生产必须显式指定 --core")
     acceptance = _read_json(Path(args.acceptance).resolve()) if args.acceptance else None
+    seed_ram = _read_json(Path(args.seed_ram).resolve()) if args.seed_ram else None
     arms = _read_json(Path(args.arms).resolve()) if args.arms else None
     sync_samples = None
     if args.sync_samples:
@@ -688,7 +746,7 @@ def main(argv=None) -> int:
                      core_state=Path(args.core_state).resolve() if args.core_state else None,
                      acceptance=acceptance, capture=not args.no_video, fps=args.fps, arms=arms,
                      speed=args.speed, allow=tuple(args.allow), sync_samples=sync_samples,
-                     ffmpeg=args.ffmpeg, ffprobe=args.ffprobe)
+                     ffmpeg=args.ffmpeg, ffprobe=args.ffprobe, seed_ram=seed_ram)
     print(json.dumps(result, ensure_ascii=False, indent=2))
     return 0 if result.get("status") == "accepted" else 2
 

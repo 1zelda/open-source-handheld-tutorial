@@ -85,7 +85,10 @@
       "revision": "nekketsu_kakutou_densetsu_fc_jp",
       "kind": "prose",
       "authority": "authoritative",
-      "element_types": ["说明书", "基础档案"],
+      "element_types": [
+        "说明书",
+        "基础档案"
+      ],
       "note": "ARC SYSTEM WORKS 官方页：身份、发售日、人数、模式与输入项决定强度的直接表述"
     },
     {
@@ -94,7 +97,12 @@
       "revision": "nekketsu_kakutou_densetsu_fc_jp",
       "kind": "prose",
       "authority": "authoritative",
-      "element_types": ["说明书", "出招表", "攻略", "基础档案"],
+      "element_types": [
+        "说明书",
+        "出招表",
+        "攻略",
+        "基础档案"
+      ],
       "note": "TJC-NA 日版说明书短摘录：四项创建输入、4格斗类型、6能力、10个人必杀、2合体形态、80舞台与15胜门槛"
     },
     {
@@ -103,7 +111,10 @@
       "revision": "nekketsu_kakutou_densetsu_fc_jp",
       "kind": "prose",
       "authority": "reference_only",
-      "element_types": ["出招表", "攻略"],
+      "element_types": [
+        "出招表",
+        "攻略"
+      ],
       "note": "二手FAQ：生日→KT公式与星座相性；原站rahga未取回且未由本机ROM复算，不得升权威"
     },
     {
@@ -112,7 +123,10 @@
       "revision": "nekketsu_kakutou_densetsu_fc_revB_patch",
       "kind": "prose",
       "authority": "reference_only",
-      "element_types": ["版本对照", "基础档案"],
+      "element_types": [
+        "版本对照",
+        "基础档案"
+      ],
       "note": "DvD Rev.B NES四人手柄补丁边界；不得回填原版FC能力"
     },
     {
@@ -473,7 +487,10 @@
       "revision": "megaman2_nes_tasvideos_rockman2",
       "kind": "prose",
       "authority": "authoritative",
-      "element_types": ["帧数据", "基础档案"],
+      "element_types": [
+        "帧数据",
+        "基础档案"
+      ],
       "note": "Rockman 2 坐标系统权威原文摘录；仅文档范围，不主张地区 ROM 等价。"
     },
     {
@@ -482,7 +499,10 @@
       "revision": "megaman2_nes_tasvideos_rockman2",
       "kind": "prose",
       "authority": "authoritative",
-      "element_types": ["帧数据", "基础档案"],
+      "element_types": [
+        "帧数据",
+        "基础档案"
+      ],
       "note": "Rockman 2 跳跃初速度、滞空与帧数据权威原文摘录；仅文档范围。"
     },
     {
@@ -491,7 +511,10 @@
       "revision": "megaman2_nes_tasvideos_rockman2",
       "kind": "prose",
       "authority": "authoritative",
-      "element_types": ["帧数据", "基础档案"],
+      "element_types": [
+        "帧数据",
+        "基础档案"
+      ],
       "note": "Rockman 2 攀爬与状态变换权威原文摘录；仅文档范围。"
     },
     {
@@ -500,7 +523,10 @@
       "revision": "megaman2_nes_tasvideos_rockman2",
       "kind": "prose",
       "authority": "authoritative",
-      "element_types": ["帧数据", "基础档案"],
+      "element_types": [
+        "帧数据",
+        "基础档案"
+      ],
       "note": "Rockman 2 水平跳跃速度权威原文摘录；仅文档范围。"
     },
     {
@@ -509,7 +535,10 @@
       "revision": "megaman2_nes_tasvideos_rockman2",
       "kind": "prose",
       "authority": "authoritative",
-      "element_types": ["帧数据", "基础档案"],
+      "element_types": [
+        "帧数据",
+        "基础档案"
+      ],
       "note": "Rockman 2 步行与奔跑速度权威原文摘录；仅文档范围。"
     },
     {
@@ -518,7 +547,10 @@
       "revision": "megaman2_nes_tasvideos_rockman2",
       "kind": "prose",
       "authority": "authoritative",
-      "element_types": ["帧数据", "基础档案"],
+      "element_types": [
+        "帧数据",
+        "基础档案"
+      ],
       "note": "Rockman 2 加速度与减速度权威原文摘录；仅文档范围。"
     },
     {
@@ -527,7 +559,10 @@
       "revision": "megaman2_nes_tasvideos_rockman2",
       "kind": "table",
       "authority": "authoritative",
-      "element_types": ["帧数据", "基础档案"],
+      "element_types": [
+        "帧数据",
+        "基础档案"
+      ],
       "note": "Rockman 2 对象编号与对象 RAM 表权威原文摘录；仅文档范围。"
     },
     {
@@ -579,7 +614,10 @@
       "authority": "authoritative",
       "index": false,
       "reason": "结构化画面检测取证报告，在册备查但不进 BM25；覆盖四项稳定战斗初态画面事件，不证明菜单装备、黄魂或飞冰魂身份。",
-      "element_types": ["视频验证", "帧数据"],
+      "element_types": [
+        "视频验证",
+        "帧数据"
+      ],
       "note": "4/4 正例通过、反例拒绝、导出通过；三套状态回存语义指纹一致。"
     },
     {
@@ -590,7 +628,10 @@
       "authority": "authoritative",
       "index": false,
       "reason": "成片抽图，在册备查但不进 BM25；仅对应主武器挥击事件。",
-      "element_types": ["视频验证", "帧数据"],
+      "element_types": [
+        "视频验证",
+        "帧数据"
+      ],
       "note": "aria_showcase3 成片事件抽图 01。"
     },
     {
@@ -601,7 +642,10 @@
       "authority": "authoritative",
       "index": false,
       "reason": "成片抽图，在册备查但不进 BM25；仅对应半鱼人水流事件。",
-      "element_types": ["视频验证", "帧数据"],
+      "element_types": [
+        "视频验证",
+        "帧数据"
+      ],
       "note": "aria_showcase3 成片事件抽图 02。"
     },
     {
@@ -612,7 +656,10 @@
       "authority": "authoritative",
       "index": false,
       "reason": "成片抽图，在册备查但不进 BM25；仅对应魔鸟羽刃事件，不证明飞冰魂别名。",
-      "element_types": ["视频验证", "帧数据"],
+      "element_types": [
+        "视频验证",
+        "帧数据"
+      ],
       "note": "aria_showcase3 成片事件抽图 03。"
     },
     {
@@ -623,7 +670,10 @@
       "authority": "authoritative",
       "index": false,
       "reason": "成片抽图，在册备查但不进 BM25；仅对应布艾尔双火焰事件。",
-      "element_types": ["视频验证", "帧数据"],
+      "element_types": [
+        "视频验证",
+        "帧数据"
+      ],
       "note": "aria_showcase3 成片事件抽图 04。"
     },
     {
@@ -632,7 +682,10 @@
       "revision": "castlevania_aria_gba",
       "kind": "prose",
       "authority": "reference_only",
-      "element_types": ["帧数据", "出招表"],
+      "element_types": [
+        "帧数据",
+        "出招表"
+      ],
       "note": "百度知道社区金手指地址；仅作候选与交叉证据，缺 ROM SHA1、汉化版和内核身份。"
     },
     {
@@ -641,7 +694,9 @@
       "revision": "castlevania_aria_gba",
       "kind": "prose",
       "authority": "cross_version",
-      "element_types": ["帧数据"],
+      "element_types": [
+        "帧数据"
+      ],
       "note": "USA 反编译算法与结构参考；ROM SHA1 与当前中文版不同，地址不得直接搬用。"
     },
     {
@@ -652,7 +707,11 @@
       "authority": "reference_only",
       "index": false,
       "reason": "通用 RAM 校准工具取证，在册备查但不进 BM25；没有生产问答消费方，索引由 KB 线统一决策。",
-      "element_types": ["必杀宏", "金手指", "视频验证"],
+      "element_types": [
+        "必杀宏",
+        "金手指",
+        "视频验证"
+      ],
       "note": "BizHawk/mGBA 可调用接口、GUI 边界、金手指格式边界与本作宏检索口径。"
     },
     {
@@ -663,7 +722,10 @@
       "authority": "authoritative",
       "index": false,
       "reason": "结构化配方实跑报告，在册备查但不进 BM25；只覆盖魔鸟装备槽与 MP 消费。",
-      "element_types": ["视频验证", "帧数据"],
+      "element_types": [
+        "视频验证",
+        "帧数据"
+      ],
       "note": "installed_v5 pass：MP 80→56 / 80→80，人工画面正反例已验收。"
     },
     {
@@ -674,7 +736,10 @@
       "authority": "authoritative",
       "index": false,
       "reason": "结构化状态包版实跑报告，在册备查但不进 BM25；只覆盖魔鸟装备槽与 MP 消费。",
-      "element_types": ["视频验证", "帧数据"],
+      "element_types": [
+        "视频验证",
+        "帧数据"
+      ],
       "note": "package_v6 pass；9 张关键 PNG 与 v5 SHA256 相同，同命令复跑 reused=true。"
     },
     {
@@ -683,7 +748,11 @@
       "revision": "castlevania_aria_gba",
       "kind": "prose",
       "authority": "authoritative",
-      "element_types": ["帧数据", "出招表", "视频验证"],
+      "element_types": [
+        "帧数据",
+        "出招表",
+        "视频验证"
+      ],
       "note": "当前 ROM 的限定字段菜单与 gameplay 实测；字段层级分别记账，平台总闸门仍为 false。"
     },
     {
@@ -694,7 +763,10 @@
       "authority": "authoritative",
       "index": false,
       "reason": "结构化 gameplay 正反例报告，在册备查但不进 BM25；仅证明黄魂 ID=22 对同一僵尸的伤害差异。",
-      "element_types": ["视频验证", "帧数据"],
+      "element_types": [
+        "视频验证",
+        "帧数据"
+      ],
       "note": "同状态正反例：伤害 22 对 17；不扩展为全部黄魂机制。"
     },
     {
@@ -705,8 +777,311 @@
       "authority": "authoritative",
       "index": false,
       "reason": "结构化物品消费正反例报告，在册备查但不进 BM25；只证明回复药消费点，不证明真实拾取或整段物品数组。",
-      "element_types": ["视频验证", "帧数据"],
+      "element_types": [
+        "视频验证",
+        "帧数据"
+      ],
       "note": "受损 HP 使用回复药后 100→200、数量 1→0；满 HP 拒绝使用。"
+    },
+    {
+      "path": "F:/开源掌机教程/_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/gameplay_verify_binding_20261125/gameplay_evidence_binding_20261125.json",
+      "source_id": "local_aria_gameplay_verify_20261125",
+      "revision": "castlevania_aria_gba",
+      "kind": "table",
+      "authority": "authoritative",
+      "index": false,
+      "reason": "本机mGBA固定路线正反例结构化取证，在册备查但不进BM25；资格只覆盖报告中明确验证的槽位、RAM结果和抽样帧差异。",
+      "element_types": [
+        "出招表",
+        "视频验证",
+        "帧数据"
+      ],
+      "note": "19项固定路线玩法绑定总报告；逐案列出正反例、RAM、抽样帧、范围与禁止外推项。"
+    },
+    {
+      "path": "F:/开源掌机教程/_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/gameplay_verify_binding_20261125/red_soul_4_verify_vs_empty/report.json",
+      "source_id": "local_aria_gameplay_verify_20261125",
+      "revision": "castlevania_aria_gba",
+      "kind": "table",
+      "authority": "authoritative",
+      "index": false,
+      "reason": "本机mGBA固定路线正反例结构化取证，在册备查但不进BM25；资格只覆盖报告中明确验证的槽位、RAM结果和抽样帧差异。",
+      "element_types": [
+        "出招表",
+        "视频验证",
+        "帧数据"
+      ],
+      "note": "red_soul_4_verify_vs_empty：固定战斗初态只改对应槽位并执行角色宏；目标槽保持、MP低于80，空槽保持80，抽样帧存在真实差异。 不证明伤害、射程、全部招式语义、中文菜单装备流程或任意场景稳定性。"
+    },
+    {
+      "path": "F:/开源掌机教程/_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/gameplay_verify_binding_20261125/red_soul_5_verify_vs_empty/report.json",
+      "source_id": "local_aria_gameplay_verify_20261125",
+      "revision": "castlevania_aria_gba",
+      "kind": "table",
+      "authority": "authoritative",
+      "index": false,
+      "reason": "本机mGBA固定路线正反例结构化取证，在册备查但不进BM25；资格只覆盖报告中明确验证的槽位、RAM结果和抽样帧差异。",
+      "element_types": [
+        "出招表",
+        "视频验证",
+        "帧数据"
+      ],
+      "note": "red_soul_5_verify_vs_empty：固定战斗初态只改对应槽位并执行角色宏；目标槽保持、MP低于80，空槽保持80，抽样帧存在真实差异。 不证明伤害、射程、全部招式语义、中文菜单装备流程或任意场景稳定性。"
+    },
+    {
+      "path": "F:/开源掌机教程/_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/gameplay_verify_binding_20261125/red_soul_12_verify_vs_empty/report.json",
+      "source_id": "local_aria_gameplay_verify_20261125",
+      "revision": "castlevania_aria_gba",
+      "kind": "table",
+      "authority": "authoritative",
+      "index": false,
+      "reason": "本机mGBA固定路线正反例结构化取证，在册备查但不进BM25；资格只覆盖报告中明确验证的槽位、RAM结果和抽样帧差异。",
+      "element_types": [
+        "出招表",
+        "视频验证",
+        "帧数据"
+      ],
+      "note": "red_soul_12_verify_vs_empty：固定战斗初态只改对应槽位并执行角色宏；目标槽保持、MP低于80，空槽保持80，抽样帧存在真实差异。 不证明伤害、射程、全部招式语义、中文菜单装备流程或任意场景稳定性。"
+    },
+    {
+      "path": "F:/开源掌机教程/_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/gameplay_verify_binding_20261125/red_soul_24_verify_vs_empty/report.json",
+      "source_id": "local_aria_gameplay_verify_20261125",
+      "revision": "castlevania_aria_gba",
+      "kind": "table",
+      "authority": "authoritative",
+      "index": false,
+      "reason": "本机mGBA固定路线正反例结构化取证，在册备查但不进BM25；资格只覆盖报告中明确验证的槽位、RAM结果和抽样帧差异。",
+      "element_types": [
+        "出招表",
+        "视频验证",
+        "帧数据"
+      ],
+      "note": "red_soul_24_verify_vs_empty：固定战斗初态只改对应槽位并执行角色宏；目标槽保持、MP低于80，空槽保持80，抽样帧存在真实差异。 不证明伤害、射程、全部招式语义、中文菜单装备流程或任意场景稳定性。"
+    },
+    {
+      "path": "F:/开源掌机教程/_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/gameplay_verify_binding_20261125/red_soul_31_verify_vs_empty/report.json",
+      "source_id": "local_aria_gameplay_verify_20261125",
+      "revision": "castlevania_aria_gba",
+      "kind": "table",
+      "authority": "authoritative",
+      "index": false,
+      "reason": "本机mGBA固定路线正反例结构化取证，在册备查但不进BM25；资格只覆盖报告中明确验证的槽位、RAM结果和抽样帧差异。",
+      "element_types": [
+        "出招表",
+        "视频验证",
+        "帧数据"
+      ],
+      "note": "red_soul_31_verify_vs_empty：固定战斗初态只改对应槽位并执行角色宏；目标槽保持、MP低于80，空槽保持80，抽样帧存在真实差异。 不证明伤害、射程、全部招式语义、中文菜单装备流程或任意场景稳定性。"
+    },
+    {
+      "path": "F:/开源掌机教程/_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/gameplay_verify_binding_20261125/red_soul_37_verify_vs_empty/report.json",
+      "source_id": "local_aria_gameplay_verify_20261125",
+      "revision": "castlevania_aria_gba",
+      "kind": "table",
+      "authority": "authoritative",
+      "index": false,
+      "reason": "本机mGBA固定路线正反例结构化取证，在册备查但不进BM25；资格只覆盖报告中明确验证的槽位、RAM结果和抽样帧差异。",
+      "element_types": [
+        "出招表",
+        "视频验证",
+        "帧数据"
+      ],
+      "note": "red_soul_37_verify_vs_empty：固定战斗初态只改对应槽位并执行角色宏；目标槽保持、MP低于80，空槽保持80，抽样帧存在真实差异。 不证明伤害、射程、全部招式语义、中文菜单装备流程或任意场景稳定性。"
+    },
+    {
+      "path": "F:/开源掌机教程/_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/gameplay_verify_binding_20261125/blue_soul_2_verify_vs_empty/report.json",
+      "source_id": "local_aria_gameplay_verify_20261125",
+      "revision": "castlevania_aria_gba",
+      "kind": "table",
+      "authority": "authoritative",
+      "index": false,
+      "reason": "本机mGBA固定路线正反例结构化取证，在册备查但不进BM25；资格只覆盖报告中明确验证的槽位、RAM结果和抽样帧差异。",
+      "element_types": [
+        "出招表",
+        "视频验证",
+        "帧数据"
+      ],
+      "note": "blue_soul_2_verify_vs_empty：固定战斗初态只改对应槽位并执行角色宏；目标槽保持、MP低于80，空槽保持80，抽样帧存在真实差异。 不证明伤害、射程、全部招式语义、中文菜单装备流程或任意场景稳定性。"
+    },
+    {
+      "path": "F:/开源掌机教程/_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/gameplay_verify_binding_20261125/blue_soul_4_verify_vs_empty/report.json",
+      "source_id": "local_aria_gameplay_verify_20261125",
+      "revision": "castlevania_aria_gba",
+      "kind": "table",
+      "authority": "authoritative",
+      "index": false,
+      "reason": "本机mGBA固定路线正反例结构化取证，在册备查但不进BM25；资格只覆盖报告中明确验证的槽位、RAM结果和抽样帧差异。",
+      "element_types": [
+        "出招表",
+        "视频验证",
+        "帧数据"
+      ],
+      "note": "blue_soul_4_verify_vs_empty：固定战斗初态只改对应槽位并执行角色宏；目标槽保持、MP低于80，空槽保持80，抽样帧存在真实差异。 不证明伤害、射程、全部招式语义、中文菜单装备流程或任意场景稳定性。"
+    },
+    {
+      "path": "F:/开源掌机教程/_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/gameplay_verify_binding_20261125/blue_soul_6_verify_vs_empty/report.json",
+      "source_id": "local_aria_gameplay_verify_20261125",
+      "revision": "castlevania_aria_gba",
+      "kind": "table",
+      "authority": "authoritative",
+      "index": false,
+      "reason": "本机mGBA固定路线正反例结构化取证，在册备查但不进BM25；资格只覆盖报告中明确验证的槽位、RAM结果和抽样帧差异。",
+      "element_types": [
+        "出招表",
+        "视频验证",
+        "帧数据"
+      ],
+      "note": "blue_soul_6_verify_vs_empty：固定战斗初态只改对应槽位并执行角色宏；目标槽保持、MP低于80，空槽保持80，抽样帧存在真实差异。 不证明伤害、射程、全部招式语义、中文菜单装备流程或任意场景稳定性。"
+    },
+    {
+      "path": "F:/开源掌机教程/_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/gameplay_verify_binding_20261125/blue_soul_13_verify_vs_empty/report.json",
+      "source_id": "local_aria_gameplay_verify_20261125",
+      "revision": "castlevania_aria_gba",
+      "kind": "table",
+      "authority": "authoritative",
+      "index": false,
+      "reason": "本机mGBA固定路线正反例结构化取证，在册备查但不进BM25；资格只覆盖报告中明确验证的槽位、RAM结果和抽样帧差异。",
+      "element_types": [
+        "出招表",
+        "视频验证",
+        "帧数据"
+      ],
+      "note": "blue_soul_13_verify_vs_empty：固定战斗初态只改对应槽位并执行角色宏；目标槽保持、MP低于80，空槽保持80，抽样帧存在真实差异。 不证明伤害、射程、全部招式语义、中文菜单装备流程或任意场景稳定性。"
+    },
+    {
+      "path": "F:/开源掌机教程/_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/gameplay_verify_binding_20261125/blue_soul_22_verify_vs_empty/report.json",
+      "source_id": "local_aria_gameplay_verify_20261125",
+      "revision": "castlevania_aria_gba",
+      "kind": "table",
+      "authority": "authoritative",
+      "index": false,
+      "reason": "本机mGBA固定路线正反例结构化取证，在册备查但不进BM25；资格只覆盖报告中明确验证的槽位、RAM结果和抽样帧差异。",
+      "element_types": [
+        "出招表",
+        "视频验证",
+        "帧数据"
+      ],
+      "note": "blue_soul_22_verify_vs_empty：固定战斗初态只改对应槽位并执行角色宏；目标槽保持、MP低于80，空槽保持80，抽样帧存在真实差异。 不证明伤害、射程、全部招式语义、中文菜单装备流程或任意场景稳定性。"
+    },
+    {
+      "path": "F:/开源掌机教程/_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/gameplay_verify_binding_20261125/red_soul_35_resource_verify/report.json",
+      "source_id": "local_aria_gameplay_verify_20261125",
+      "revision": "castlevania_aria_gba",
+      "kind": "table",
+      "authority": "authoritative",
+      "index": false,
+      "reason": "本机mGBA固定路线正反例结构化取证，在册备查但不进BM25；资格只覆盖报告中明确验证的槽位、RAM结果和抽样帧差异。",
+      "element_types": [
+        "出招表",
+        "视频验证",
+        "帧数据"
+      ],
+      "note": "red_soul_35_resource_verify：固定战斗初态只改对应槽位并执行角色宏；目标槽保持、MP低于80，空槽保持80，抽样帧存在真实差异。 不证明伤害、射程、全部招式语义、中文菜单装备流程或任意场景稳定性。"
+    },
+    {
+      "path": "F:/开源掌机教程/_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/gameplay_verify_binding_20261125/red_soul_47_resource_verify/report.json",
+      "source_id": "local_aria_gameplay_verify_20261125",
+      "revision": "castlevania_aria_gba",
+      "kind": "table",
+      "authority": "authoritative",
+      "index": false,
+      "reason": "本机mGBA固定路线正反例结构化取证，在册备查但不进BM25；资格只覆盖报告中明确验证的槽位、RAM结果和抽样帧差异。",
+      "element_types": [
+        "出招表",
+        "视频验证",
+        "帧数据"
+      ],
+      "note": "red_soul_47_resource_verify：固定战斗初态只改对应槽位并执行角色宏；目标槽保持、MP低于80，空槽保持80，抽样帧存在真实差异。 不证明伤害、射程、全部招式语义、中文菜单装备流程或任意场景稳定性。"
+    },
+    {
+      "path": "F:/开源掌机教程/_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/gameplay_verify_binding_20261125/yellow_soul_10_hp_advantage/report.json",
+      "source_id": "local_aria_gameplay_verify_20261125",
+      "revision": "castlevania_aria_gba",
+      "kind": "table",
+      "authority": "authoritative",
+      "index": false,
+      "reason": "本机mGBA固定路线正反例结构化取证，在册备查但不进BM25；资格只覆盖报告中明确验证的槽位、RAM结果和抽样帧差异。",
+      "element_types": [
+        "出招表",
+        "视频验证",
+        "帧数据"
+      ],
+      "note": "yellow_soul_10_hp_advantage：固定受击路线末HP为302，空槽对照为292；正例末帧高于空魂。 不把蓝魂10的表现外推为其他黄魂，不单凭末HP判定完整机制。"
+    },
+    {
+      "path": "F:/开源掌机教程/_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/gameplay_verify_binding_20261125/yellow_soul_15_hp_advantage/report.json",
+      "source_id": "local_aria_gameplay_verify_20261125",
+      "revision": "castlevania_aria_gba",
+      "kind": "table",
+      "authority": "authoritative",
+      "index": false,
+      "reason": "本机mGBA固定路线正反例结构化取证，在册备查但不进BM25；资格只覆盖报告中明确验证的槽位、RAM结果和抽样帧差异。",
+      "element_types": [
+        "出招表",
+        "视频验证",
+        "帧数据"
+      ],
+      "note": "yellow_soul_15_hp_advantage：固定受击路线末HP高于空魂对照292；只证明该ID在该路线中的末HP优势。 不证明防御升降、CON精确点数或单次受击伤害；同路线末HP相同的项目不得据此区分机制。"
+    },
+    {
+      "path": "F:/开源掌机教程/_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/gameplay_verify_binding_20261125/yellow_soul_26_hp_advantage/report.json",
+      "source_id": "local_aria_gameplay_verify_20261125",
+      "revision": "castlevania_aria_gba",
+      "kind": "table",
+      "authority": "authoritative",
+      "index": false,
+      "reason": "本机mGBA固定路线正反例结构化取证，在册备查但不进BM25；资格只覆盖报告中明确验证的槽位、RAM结果和抽样帧差异。",
+      "element_types": [
+        "出招表",
+        "视频验证",
+        "帧数据"
+      ],
+      "note": "yellow_soul_26_hp_advantage：固定受击路线末HP高于空魂对照292；只证明该ID在该路线中的末HP优势。 不证明防御升降、CON精确点数或单次受击伤害；同路线末HP相同的项目不得据此区分机制。"
+    },
+    {
+      "path": "F:/开源掌机教程/_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/gameplay_verify_binding_20261125/yellow_soul_27_hp_advantage/report.json",
+      "source_id": "local_aria_gameplay_verify_20261125",
+      "revision": "castlevania_aria_gba",
+      "kind": "table",
+      "authority": "authoritative",
+      "index": false,
+      "reason": "本机mGBA固定路线正反例结构化取证，在册备查但不进BM25；资格只覆盖报告中明确验证的槽位、RAM结果和抽样帧差异。",
+      "element_types": [
+        "出招表",
+        "视频验证",
+        "帧数据"
+      ],
+      "note": "yellow_soul_27_hp_advantage：固定受击路线末HP高于空魂对照292；只证明该ID在该路线中的末HP优势。 不证明防御升降、CON精确点数或单次受击伤害；同路线末HP相同的项目不得据此区分机制。"
+    },
+    {
+      "path": "F:/开源掌机教程/_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/gameplay_verify_binding_20261125/yellow_soul_28_hp_advantage/report.json",
+      "source_id": "local_aria_gameplay_verify_20261125",
+      "revision": "castlevania_aria_gba",
+      "kind": "table",
+      "authority": "authoritative",
+      "index": false,
+      "reason": "本机mGBA固定路线正反例结构化取证，在册备查但不进BM25；资格只覆盖报告中明确验证的槽位、RAM结果和抽样帧差异。",
+      "element_types": [
+        "出招表",
+        "视频验证",
+        "帧数据"
+      ],
+      "note": "yellow_soul_28_hp_advantage：固定受击路线末HP高于空魂对照292；只证明该ID在该路线中的末HP优势。 不证明防御升降、CON精确点数或单次受击伤害；同路线末HP相同的项目不得据此区分机制。"
+    },
+    {
+      "path": "F:/开源掌机教程/_工具脚本/taspipe/游戏包/证据/晓月圆舞曲/gameplay_verify_binding_20261125/yellow_soul_29_hp_advantage/report.json",
+      "source_id": "local_aria_gameplay_verify_20261125",
+      "revision": "castlevania_aria_gba",
+      "kind": "table",
+      "authority": "authoritative",
+      "index": false,
+      "reason": "本机mGBA固定路线正反例结构化取证，在册备查但不进BM25；资格只覆盖报告中明确验证的槽位、RAM结果和抽样帧差异。",
+      "element_types": [
+        "出招表",
+        "视频验证",
+        "帧数据"
+      ],
+      "note": "yellow_soul_29_hp_advantage：固定受击路线末HP高于空魂对照292；只证明该ID在该路线中的末HP优势。 不证明防御升降、CON精确点数或单次受击伤害；同路线末HP相同的项目不得据此区分机制。"
     }
   ]
 }

@@ -2,8 +2,9 @@
 """Statejump 全量要素盘点生产器：共享 base → 逐要素正/反例采集 → 检测 → 合辑。
 
 知识包离线 authored，运行时零 LLM。每个要素均从同一 base.state 原子读档、可选 RAM
-前置补丁、逐帧宏采集；中立反例与正例总帧数相同并跑同一检测器。只有正例 pass、
-反例 fail 才算要素通过，inconclusive 不静默放行。
+前置补丁、逐帧宏采集；动作、效果、拍摄三类验收独立声明。动作/效果要求正例 pass、
+反例 fail；拍摄要求正例检查 pass。三类缺检或 inconclusive 不静默放行，效果不适用须显式声明。
+detection.success_checks 只保留为候选视觉判据，不能单独授权交付。
 
 部分知识包可用 --only 做单要素生产试跑，但不会生成正式合辑或报全量 done。
 完整知识包必须 catalog.expected_total == len(elements)，全部通过后才输出 reel.mp4。
@@ -15,6 +16,7 @@
 """
 import argparse
 import hashlib
+import inspect
 import json
 import os
 import re
@@ -84,6 +86,45 @@ def _load_json(pack_path):
 # MM1 Super Arm 认 7/8 交付）。没声明的要素照旧走全量闸，缺一个就拦死。
 GAP_STATUSES = {"blocked_routing", "needs_external_tool", "version_unsupported"}
 GAP_FIELDS = ("reason", "decided_by", "decided_on")
+ACCEPTANCE_FIELDS = ("action_checks", "effect_requirement", "effect_checks", "capture_checks")
+EFFECT_REQUIREMENTS = {"required", "not_applicable"}
+
+
+def acceptance_declaration(element):
+    return {key: element.get(key) for key in ACCEPTANCE_FIELDS}
+
+
+def _validate_acceptance(element, eid):
+    missing = [key for key in ACCEPTANCE_FIELDS if key not in element]
+    if missing:
+        raise SchemaError(f"{eid}: 缺三类验收声明 {missing}；像素候选不得自动晋升为交付")
+    groups = []
+    seen = set()
+    for key in ("action_checks", "effect_checks", "capture_checks"):
+        specs = element[key]
+        if not isinstance(specs, list) or (key != "effect_checks" and not specs):
+            raise SchemaError(f"{eid}: {key} 须为非空 CheckSpec 列表")
+        for raw in specs:
+            if not isinstance(raw, dict):
+                raise SchemaError(f"{eid}: {key} 每项须为 CheckSpec 对象")
+            check = CheckSpec(**raw).validate()
+            if check.check_id in seen:
+                raise SchemaError(f"{eid}: 三类验收 check_id 重复 {check.check_id}")
+            seen.add(check.check_id)
+            if check.required is not True:
+                raise SchemaError(f"{eid}: 正式验收检查 {check.check_id} 必须 required=true")
+            if check.plugin_id not in detect.PLUGINS:
+                raise SchemaError(f"{eid}: 未注册验收插件 {check.plugin_id}")
+            groups.append(check)
+    requirement = element["effect_requirement"]
+    if requirement not in EFFECT_REQUIREMENTS:
+        raise SchemaError(f"{eid}: effect_requirement 须为 {sorted(EFFECT_REQUIREMENTS)}")
+    if requirement == "required" and not element["effect_checks"]:
+        raise SchemaError(f"{eid}: effect_requirement=required 时 effect_checks 不能为空")
+    if requirement == "not_applicable" and element["effect_checks"]:
+        raise SchemaError(f"{eid}: effect_requirement=not_applicable 时 effect_checks 必须为空")
+    return groups
+
 
 
 def delivery_gaps(doc):
@@ -186,6 +227,7 @@ def validate_spec(doc):
             check = CheckSpec(**raw).validate()
             if check.plugin_id not in detect.PLUGINS:
                 raise SchemaError(f"{eid}: 未注册检测插件 {check.plugin_id}")
+        _validate_acceptance(el, eid)
         negative = el.get("negative_control") or {}
         if not isinstance(negative, dict):
             raise SchemaError(f"{eid}: negative_control 须为对象")
@@ -420,6 +462,16 @@ def _detector_impl_sha():
     return hashlib.sha256(Path(detect.__file__).with_suffix(".py").read_bytes()).hexdigest()
 
 
+def _acceptance_impl_sha():
+    source = "\n".join(inspect.getsource(fn) for fn in (
+        acceptance_declaration, _validate_acceptance, _check_verdict,
+        _pair_verdict, _acceptance_dimension, _capture_dimension,
+        _acceptance_verdict, verify_detection,
+    ))
+    return hashlib.sha256(source.encode("utf-8")).hexdigest()
+
+
+
 def capture_params(element, doc, platform, fps, state_path):
     """采集指纹参数：只列能改变录制像素的输入。
 
@@ -440,14 +492,14 @@ def capture_params(element, doc, platform, fps, state_path):
 
 
 def judge_params(element):
-    """判定指纹参数 = 判据声明 + 判据实现字节；证据图本身进 fingerprint 的 files。"""
-    return {"detection": element["detection"], "detector_impl": _detector_impl_sha()}
+    """判定指纹参数 = 候选判据 + 三类验收声明 + 各自实现字节。"""
+    return {"detection": element["detection"],
+            "acceptance": acceptance_declaration(element),
+            "detector_impl": _detector_impl_sha(),
+            "acceptance_impl": _acceptance_impl_sha()}
 
 
-def verify_detection(element, positive_frame, negative_frame):
-    specs = element["detection"]["success_checks"]
-    pos = [detect.run_check(s, positive_frame) for s in specs]
-    neg = [detect.run_check(s, negative_frame) for s in specs]
+def _pair_verdict(pos, neg):
     pv, nv = _check_verdict(pos), _check_verdict(neg)
     if pv == Verdict.FAIL or nv == Verdict.PASS:
         verdict = Verdict.FAIL
@@ -455,14 +507,93 @@ def verify_detection(element, positive_frame, negative_frame):
         verdict = Verdict.PASS
     else:
         verdict = Verdict.INCONCLUSIVE
+    return verdict, pv, nv
+
+
+def _acceptance_dimension(name, specs, positive_frame, negative_frame,
+                          requirement="required", declared=True, paired=True,
+                          positive_frames=None):
+    if not declared:
+        return {"requirement": requirement, "declared": False,
+                "verdict": Verdict.INCONCLUSIVE.value, "checks": [],
+                "reason": f"缺 {name} 验收声明"}
+    if requirement == "not_applicable":
+        return {"requirement": requirement, "declared": True,
+                "verdict": Verdict.PASS.value, "checks": [],
+                "reason": "要素作者显式声明效果不适用；不以缺检代替通过"}
+    pos = [detect.run_check(s, positive_frame) for s in specs]
+    if paired:
+        neg = [detect.run_check(s, negative_frame) for s in specs]
+        verdict, pv, nv = _pair_verdict(pos, neg)
+        return {"requirement": requirement, "declared": True,
+                "verdict": verdict.value, "scope": "checked_positive_and_negative_frame",
+                "positive": {"verdict": pv.value, "checks": [to_dict(c) for c in pos]},
+                "negative": {"verdict": nv.value, "rejected": nv == Verdict.FAIL,
+                             "checks": [to_dict(c) for c in neg]}}
+    pv = _check_verdict(pos)
+    return {"requirement": requirement, "declared": True,
+            "verdict": pv.value, "scope": "checked_positive_frame_only",
+            "positive": {"verdict": pv.value, "checks": [to_dict(c) for c in pos]},
+            "reason": "拍摄结论只覆盖显式检查的取证帧，不自动证明整段过程或声音同步"}
+
+
+def _capture_dimension(specs, positive_frame, positive_frames):
+    if positive_frames is None:
+        return _acceptance_dimension("capture", specs, positive_frame, None, paired=False)
+    if not positive_frames:
+        return {"requirement": "required", "declared": True,
+                "verdict": Verdict.INCONCLUSIVE.value, "checks": [],
+                "reason": "拍摄检查缺正例帧序列"}
+    results = [detect.run_check(spec, frame)
+               for spec in specs for frame in positive_frames]
+    verdict = _check_verdict(results)
+    return {"requirement": "required", "declared": True,
+            "verdict": verdict.value, "scope": "all_positive_frames",
+            "checked_frames": len(positive_frames),
+            "positive": {"verdict": verdict.value,
+                         "checks": [to_dict(c) for c in results]},
+            "reason": "拍摄检查覆盖全部正例帧；声音同步仍需独立音频能力，不以无声片代替"}
+
+
+def _acceptance_verdict(dimensions):
+    values = [Verdict(row["verdict"]) for row in dimensions.values()]
+    if Verdict.FAIL in values:
+        return Verdict.FAIL
+    if Verdict.INCONCLUSIVE in values:
+        return Verdict.INCONCLUSIVE
+    return Verdict.PASS
+
+
+def verify_detection(element, positive_frame, negative_frame, positive_frames=None):
+    specs = element.get("detection", {}).get("success_checks", [])
+    pos = [detect.run_check(s, positive_frame) for s in specs]
+    neg = [detect.run_check(s, negative_frame) for s in specs]
+    candidate, pv, nv = _pair_verdict(pos, neg)
+    declared = any(key in element for key in ACCEPTANCE_FIELDS)
+    dimensions = {
+        "action": _acceptance_dimension(
+            "action", element.get("action_checks", []), positive_frame, negative_frame,
+            declared=declared),
+        "effect": _acceptance_dimension(
+            "effect", element.get("effect_checks", []), positive_frame, negative_frame,
+            requirement=element.get("effect_requirement", "required"), declared=declared),
+        "capture": (_capture_dimension(element.get("capture_checks", []),
+                                       positive_frame, positive_frames)
+                    if declared else _acceptance_dimension(
+                        "capture", [], positive_frame, negative_frame, declared=False)),
+    }
     return {
-        "verdict": verdict.value,
+        "verdict": candidate.value,
+        "candidate_only": True,
+        "acceptance": {"verdict": _acceptance_verdict(dimensions).value,
+                       "dimensions": dimensions},
         "positive": {"frame": positive_frame, "verdict": pv.value,
                      "checks": [to_dict(c) for c in pos]},
         "negative": {"frame": negative_frame, "verdict": nv.value,
                      "rejected": nv == Verdict.FAIL,
                      "checks": [to_dict(c) for c in neg]},
     }
+
 
 
 def _concat_videos(clips, out_path, ffmpeg="ffmpeg"):
@@ -676,12 +807,21 @@ def run(pack_path, out_dir, only=None, template=None, work_dir=None, fps=None,
                 detect_frame = frames[element["detection"]["frame"]]
                 evidence = evidence_dir / f"{element['element_id']}_{side}.png"
                 shutil.copyfile(detect_frame, evidence)
+                retained_frames = [str(evidence)]
+                if not negative:
+                    retained_dir = evidence_dir / f"{element['element_id']}_positive_frames"
+                    retained_dir.mkdir(parents=True, exist_ok=True)
+                    retained_frames = []
+                    for index, frame in enumerate(frames):
+                        retained = retained_dir / f"f{index:04d}.png"
+                        shutil.copyfile(frame, retained)
+                        retained_frames.append(str(retained))
                 clip = (controls_dir / f"{element['element_id']}_negative.mp4" if negative
                         else clips_dir / f"{element['element_id']}.mp4")
                 encoder(str(frames_dir), fps, str(clip), ffmpeg=ffmpeg)
                 if not clip.is_file() or clip.stat().st_size == 0:
                     raise RuntimeError(f"编码产物缺失: {clip}")
-                return str(clip), str(evidence)
+                return str(clip), str(evidence), retained_frames
 
             profile_abort = None
             for eid in selected:
@@ -696,12 +836,15 @@ def run(pack_path, out_dir, only=None, template=None, work_dir=None, fps=None,
                     evidence = cap_result.get("evidence_ref") or {
                         "positive": cap_result["detection"]["positive"]["frame"],
                         "negative": cap_result["detection"]["negative"]["frame"]}
-                else:
+                    if not evidence.get("positive_frames"):
+                        reuse = None
+                if not reuse:
                     job = led.register("capture", eid, cap_fp)
                     try:
-                        positive_clip, positive_evidence = capture(element, negative=False)
-                        negative_clip, negative_evidence = capture(element, negative=True)
-                        evidence = {"positive": positive_evidence, "negative": negative_evidence}
+                        positive_clip, positive_evidence, positive_frames = capture(element, negative=False)
+                        negative_clip, negative_evidence, _ = capture(element, negative=True)
+                        evidence = {"positive": positive_evidence, "negative": negative_evidence,
+                                    "positive_frames": positive_frames}
                         cap_result = {
                             "element_id": eid, "label": element["label"], "kind": element["kind"],
                             "state_origin": "display_patch" if element["trigger"].get("patches") else "normal_prefix",
@@ -712,7 +855,8 @@ def run(pack_path, out_dir, only=None, template=None, work_dir=None, fps=None,
                         _write_json(result_path, cap_result)
                         # 采集条目只对"录到了规定帧数且画面完整"负责；要素过没过归判定条目。
                         led.complete(job, [positive_clip, negative_clip,
-                                          positive_evidence, negative_evidence], Verdict.PASS.value)
+                                          positive_evidence, negative_evidence,
+                                          *positive_frames], Verdict.PASS.value)
                     except SJ.StateProfileMismatch as e:
                         profile_abort = e.report
                         break
@@ -725,20 +869,21 @@ def run(pack_path, out_dir, only=None, template=None, work_dir=None, fps=None,
 
                 if "error" not in cap_result:
                     # 判定独立成条：判据/判据实现变了只重判这两张证据图，不重录（计划书 §10.3）。
-                    judge_fp = fingerprint([evidence["positive"], evidence["negative"]],
+                    judge_fp = fingerprint(evidence["positive_frames"] + [evidence["negative"]],
                                            judge_params(element))
                     if not led.reusable("verify", eid, judge_fp):
                         vjob = led.register("verify", eid, judge_fp, deps=[f"capture:{eid}"])
                         detection = verify_detection(element, evidence["positive"],
-                                                     evidence["negative"])
+                                                     evidence["negative"],
+                                                     positive_frames=evidence["positive_frames"])
                         cap_result["detection"] = detection
-                        cap_result["verdict"] = detection["verdict"]
+                        cap_result["verdict"] = detection["acceptance"]["verdict"]
                         _write_json(result_path, cap_result)
-                        if detection["verdict"] == Verdict.FAIL.value:
+                        if cap_result["verdict"] == Verdict.FAIL.value:
                             led.fail(vjob, FailureCode.CAPTURE_WRONG_SEGMENT,
-                                     f"{eid}: 正例未过或反例误放")
+                                     f"{eid}: 动作/效果/拍摄至少一项失败")
                         else:
-                            led.complete(vjob, [str(result_path)], detection["verdict"])
+                            led.complete(vjob, [str(result_path)], cap_result["verdict"])
 
                 result = dict(cap_result)
                 result["deliverable_ref"] = None
@@ -793,6 +938,12 @@ def run(pack_path, out_dir, only=None, template=None, work_dir=None, fps=None,
     passed = sum(1 for r in results
                  if r.get("verdict") == Verdict.PASS.value
                  and r.get("export_verdict") == Verdict.PASS.value)
+    dimension_counts = {
+        name: sum(1 for r in results
+                  if r.get("detection", {}).get("acceptance", {}).get(
+                      "dimensions", {}).get(name, {}).get("verdict") == Verdict.PASS.value)
+        for name in ("action", "effect", "capture")
+    }
     hard_fail = any(r.get("verdict") == Verdict.FAIL.value
                     or r.get("export_verdict") == Verdict.FAIL.value for r in results)
     deliverable = None
@@ -851,6 +1002,7 @@ def run(pack_path, out_dir, only=None, template=None, work_dir=None, fps=None,
         "coverage": {"authored": len(doc["elements"]), "selected": len(selected),
                      "expected_total": expected_total, "required": required,
                      "delivered": passed, "full_collection": full_collection,
+                     "acceptance_passed": dimension_counts,
                      "gaps": [{"element_id": eid, "status": gap["status"],
                                "reason": gap["reason"], "note": gap["note"],
                                "decided_by": gap["decided_by"],
@@ -861,7 +1013,10 @@ def run(pack_path, out_dir, only=None, template=None, work_dir=None, fps=None,
         "preview_ref": deliverable if deliverable and not complete else None,
         "reel_verdict": reel_verdict, "ledger": led.summary(),
         "state_profile_gates": list(gate_reports.values()),
-        "note": "合辑只在必交要素（expected_total 减去已声明缺口）正例过、反例拒、导出过后生成；"
+        "note": "候选像素判据不等于正式验收；动作、效果、拍摄三类检查独立判定，"
+                "效果不适用须显式声明，任一缺检或 inconclusive 均不交付。"
+                "拍摄检查覆盖全部正例帧，不自动证明声音同步；audio=True 仍由平台能力闸拒绝。"
+                "合辑只在必交要素（expected_total 减去已声明缺口）三类验收过、反例拒、导出过后生成；"
                 "coverage.full_collection=False 表示清单仍有未出片要素，此时产物是缺口版而非全量，"
                 "缺口逐条点名在 coverage.gaps，不许靠改 expected_total 或删要素掩盖",
     }

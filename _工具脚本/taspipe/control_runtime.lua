@@ -736,6 +736,13 @@ local function tick()
         if s.ram ~= false then
             cp.ram = dump_ram(prefix .. ".ram", s.ram_domain, s.ram_addr, s.ram_bytes)
         end
+        if s.memory_dumps then
+            cp.memory_dumps = {}
+            for _, dump in ipairs(s.memory_dumps) do
+                local path = prefix .. ".memory_" .. dump.name
+                cp.memory_dumps[dump.name] = dump_ram(path, dump.domain, dump.addr, dump.bytes)
+            end
+        end
         if s.registers then cp.cpu_registers = cpu_registers() end
         same_frame(before, "checkpoint state/screenshot/RAM/registers")
         checkpoints[s.name] = cp

@@ -1,0 +1,71 @@
+{
+  "status": "inconclusive",
+  "counts": {
+    "pass": 8,
+    "fail": 0,
+    "inconclusive": 1,
+    "entries": 18,
+    "revisions": 5,
+    "chunks": 24
+  },
+  "checks": [
+    {
+      "check_id": "map_schema",
+      "verdict": "pass",
+      "reason": "18 份语料 / 5 个版本分区全部通过 schema",
+      "detail": []
+    },
+    {
+      "check_id": "evidence_coverage",
+      "verdict": "pass",
+      "reason": "verified_read 的每份取证正文都在册（或显式排除并给理由）",
+      "detail": []
+    },
+    {
+      "check_id": "source_binding",
+      "verdict": "pass",
+      "reason": "每份语料都绑定库内来源且在该来源 evidence 列表内",
+      "detail": []
+    },
+    {
+      "check_id": "identity_conflict",
+      "verdict": "pass",
+      "reason": "语料版本分区与来源 games_hit 一致",
+      "detail": []
+    },
+    {
+      "check_id": "index_sync",
+      "verdict": "pass",
+      "reason": "索引与源文件 sha256、块正文 sha1 一致",
+      "detail": []
+    },
+    {
+      "check_id": "chunk_provenance",
+      "verdict": "pass",
+      "reason": "每块都带库内 source_id + 已定义 revision + 当期 status",
+      "detail": []
+    },
+    {
+      "check_id": "authoritative_ready",
+      "verdict": "inconclusive",
+      "reason": "以下版本没有 verified_read+authoritative 正文，只能给线索不能给定论",
+      "detail": [
+        "megaman2_nes_memory_dictionary_unverified: 0 块 verified_read+authoritative",
+        "megaman2_nes_tas_publications: 0 块 verified_read+authoritative",
+        "megaman2_nes_title_catalog: 0 块 verified_read+authoritative"
+      ]
+    },
+    {
+      "check_id": "authority_inheritance",
+      "verdict": "pass",
+      "reason": "authoritative 件无明标二手转述段",
+      "detail": []
+    },
+    {
+      "check_id": "retraction_markers",
+      "verdict": "pass",
+      "reason": "无撤回/作废段",
+      "detail": []
+    }
+  ]
+}

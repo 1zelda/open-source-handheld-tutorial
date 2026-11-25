@@ -73,8 +73,8 @@ from taspipe import control as C
 from taspipe import produce as P
 from taspipe import registry as R
 from taspipe.retro_platforms import PLATFORM_SPECS
-from taspipe.schema import (SchemaError, adopt_state_sync_settings, asset, core_identity_expectation,
-                            state_sync_settings, verify_core_identity)
+from taspipe.schema import (SchemaError, adopt_state_sync_settings, apply_movie_sync_settings, asset,
+                            core_identity_expectation, state_sync_settings, verify_core_identity)
 
 REAL_RUN = C.run
 REAL_WRITE_JSON = C.write_json
@@ -408,6 +408,24 @@ class NormalizeTests(Fixture):
             with self.subTest(fields=fields), self.assertRaises(SchemaError):
                 C.normalize(self.session(steps=[{"id": "save", "op": "checkpoint", "name": "slot", **fields}]), self.base)
 
+    def test_checkpoint_multiple_memory_dumps_are_normalized(self):
+        dump = {"name": "cgram", "domain": "CGRAM", "addr": "0x0", "bytes": "0x200"}
+        step = {"id": "save", "op": "checkpoint", "name": "ppu", "ram": False,
+                "memory_dumps": [dump]}
+        program = C.normalize(self.session(steps=[step]), self.base)[1]
+        self.assertEqual(program["steps"][0]["memory_dumps"],
+                         [{**dump, "addr": 0, "bytes": 0x200}])
+
+    def test_checkpoint_multiple_memory_dumps_reject_invalid_values(self):
+        valid = {"name": "vram", "domain": "VRAM", "addr": 0, "bytes": 0x10000}
+        bad = [None, {}, [{**valid, "name": "same"}, {**valid, "name": "same"}],
+               [{k: v for k, v in valid.items() if k != "domain"}],
+               [{**valid, "addr": True}], [{**valid, "bytes": 0}], [{**valid, "extra": 1}]]
+        for dumps in bad:
+            with self.subTest(dumps=dumps), self.assertRaises(SchemaError):
+                C.normalize(self.session(steps=[{"id": "save", "op": "checkpoint", "name": "ppu",
+                                                 "memory_dumps": dumps}]), self.base)
+
     def test_checkpoint_cpu_registers_are_explicit_and_boolean(self):
         doc = self.session(steps=[{"id": "save", "op": "checkpoint", "name": "cpu", "registers": True}])
         _, program = C.normalize(doc, self.base)
@@ -439,6 +457,43 @@ class NormalizeTests(Fixture):
         for fields in ({"bytes": 0}, {"bytes": True}, {"addr": -1}, {"domain": ""}, {"sha256": "ab"}):
             with self.subTest(fields=fields), self.assertRaises(SchemaError):
                 C.normalize(self.session(steps=[{**base, **fields}]), self.base)
+
+    def test_snes_deterministic_core_settings_are_whitelisted(self):
+        for core, key, value in (("BSNES", "RandomizedInitialState", False),
+                                 ("BSNESv115+", "Entropy", 0)):
+            with self.subTest(core=core):
+                doc = self.session()
+                doc["platform"] = "SNES"
+                doc["profile"] = {"bizhawk": str(self.bh), "system": "SNES", "core": core,
+                                  "sync_settings": {"LeftPort": 1, "RightPort": 1, key: value}}
+                _, program = C.normalize(doc, self.base)
+                self.assertEqual(program["sync_settings"], doc["profile"]["sync_settings"])
+
+    def test_snes_core_settings_reject_nondeterminism_and_wrong_platform(self):
+        cases = [
+            ("BSNES", {"RandomizedInitialState": True}),
+            ("BSNESv115+", {"Entropy": 1}),
+            ("Snes9x", {"Entropy": 0}),
+            ("NesHawk", {"Entropy": 0}),
+        ]
+        for core, sync in cases:
+            with self.subTest(core=core, sync=sync), self.assertRaises(SchemaError):
+                doc = self.session()
+                doc["platform"] = "SNES"
+                doc["profile"] = {"bizhawk": str(self.bh), "system": "SNES", "core": core, "sync_settings": sync}
+                C.normalize(doc, self.base)
+
+    def test_bsnes115_fast_ppu_setting_is_explicit_and_boolean(self):
+        doc = self.session()
+        doc["platform"] = "SNES"
+        doc["profile"] = {"bizhawk": str(self.bh), "system": "SNES", "core": "BSNESv115+",
+                          "sync_settings": {"Entropy": 0, "FastPPU": False}}
+        _, program = C.normalize(doc, self.base)
+        self.assertIs(program["sync_settings"]["FastPPU"], False)
+        for value in (0, "false", None):
+            with self.subTest(value=value), self.assertRaises(SchemaError):
+                doc["profile"]["sync_settings"]["FastPPU"] = value
+                C.normalize(doc, self.base)
 
     def test_duplicate_step_id_rejected(self):
         with self.assertRaises(SchemaError):
@@ -1056,9 +1111,24 @@ class CoreIdentityTests(Fixture):
         self.assertIn("BsnesCore", core_identity_expectation("SNES", "BSNESv115+")["sync_type"])
         self.assertIn("Snes9x", core_identity_expectation("SNES", "Snes9x")["sync_type"])
 
+    def test_identity_requires_deterministic_bsnes_startup_settings(self):
+        for core, key, value in (("BSNES", "RandomizedInitialState", False),
+                                 ("BSNESv115+", "Entropy", 0)):
+            with self.subTest(core=core):
+                expected = core_identity_expectation("SNES", core)
+                sync = {"o": {"$type": expected["sync_type"], key: value}}
+                mount = f"Mouting `{expected['waterbox']}`\n"
+                self.assertEqual(verify_core_identity(expected, sync, mount)["verdict"], "pass")
+                for actual in (None, 1 if core == "BSNESv115+" else True):
+                    bad = {"o": {"$type": expected["sync_type"], key: actual}}
+                    result = verify_core_identity(expected, bad, mount)
+                    self.assertEqual(result["verdict"], "fail")
+                    self.assertIn(key, result["reason"])
+
     def test_identity_requires_zero_frame_clr_type_and_matching_waterbox(self):
         expected = core_identity_expectation("SNES", "BSNES")
-        sync = {"o": {"$type": expected["sync_type"], "RightPort": 1}}
+        sync = {"o": {"$type": expected["sync_type"], "RightPort": 1,
+                      "RandomizedInitialState": False}}
         passed = verify_core_identity(expected, sync, "Mouting `libsnes.wbx` @123\n")
         self.assertEqual(passed["verdict"], "pass")
         self.assertTrue(passed.get("reason"), "身份成功分支也必须提供回执原因")
@@ -1079,6 +1149,30 @@ class CoreIdentityTests(Fixture):
         self.assertEqual(key, "BizHawk.Emulation.Cores.Nintendo.SNES.LibsnesCore")
         self.assertEqual(adopted, sync["o"])
         self.assertEqual(adopted["RightPort"], 1)
+
+    def test_movie_override_establishes_deterministic_settings_without_mutating_source(self):
+        expected = core_identity_expectation("SNES", "BSNESv115+")
+        original = self.put("source.bk2", b"placeholder")
+        with zipfile.ZipFile(original, "w", compression=zipfile.ZIP_DEFLATED) as movie:
+            movie.writestr("Header.txt", "Core BSNESv115+\n")
+            movie.writestr("Input Log.txt", "|..|........|\n")
+            movie.writestr("SyncSettings.json", json.dumps({"o": {
+                "$type": expected["sync_type"], "LeftPort": 1, "RightPort": 1}}))
+            movie.writestr("Core.bin", b"state-bytes")
+        source_digest = sha256(original)
+        derived = self.base / "derived.bk2"
+        derived.write_bytes(original.read_bytes())
+        applied = apply_movie_sync_settings(derived, expected, {"Entropy": 0, "LeftPort": 1, "RightPort": 1})
+        self.assertEqual(applied["o"]["Entropy"], 0)
+        self.assertEqual(sha256(original), source_digest)
+        with zipfile.ZipFile(derived) as movie:
+            sync = state_sync_settings(derived)
+            self.assertEqual(movie.read("Core.bin"), b"state-bytes")
+            self.assertEqual(movie.read("Input Log.txt"), b"|..|........|\n")
+        self.assertEqual(sync["o"]["Entropy"], 0)
+        self.assertEqual(verify_core_identity(expected, sync, "Mouting `bsnes.wbx`\n")["verdict"], "pass")
+        with self.assertRaises(SchemaError):
+            apply_movie_sync_settings(derived, expected, {"Entropy": 1})
 
     def test_identity_admission_restarts_tick_before_movie_replay(self):
         lua = LUA_RUNTIME_SOURCE
@@ -2283,7 +2377,8 @@ class ProductionGateTests(Fixture):
                 if step["op"] == "checkpoint":
                     self.assertEqual((step["ram_domain"], step["ram_addr"], step["ram_bytes"]),
                                      ("System Bus", 0x7E0000, 0x20000))
-        self.assertNotIn("ram_domain", spec["steps"][1])
+        self.assertEqual(spec["steps"][1]["ram_domain"], "WRAM")
+        self.assertEqual(spec["steps"][1]["ram_bytes"], 0x20000)
         arm = C._arm_doc(bsnes, {"label": "candidate", "core": "BSNES",
                                  "bizhawk": str(self.base / "BizHawk-2.9.1"),
                                  "movie": {"path": str(self.movie), "sha256": sha256(self.movie)}}, 1, [1, "end"])
@@ -2317,23 +2412,94 @@ class ProductionGateTests(Fixture):
             P.build_spec(self.movie, str(self.rom), self.base / "BizHawk", "BSNES", "SNES",
                          "SNES", 10, FAMOUS_NES, seed_ram=seed_spec)
 
+    def test_explicit_bk2_seed_is_fingerprinted_and_forwarded_to_production(self):
+        seed = self.base / "explicit_wram.bin"
+        seed.write_bytes(b"\x55" * 1024)
+        seed_spec = {"path": str(seed), "sha256": sha256(seed), "domain": "WRAM",
+                     "addr": 0, "bytes": 1024}
+        args = (self.movie, str(self.rom), self.base / "production", self.base / "BizHawk",
+                "Snes9x", FAMOUS_NES)
+        original = P.request_identity(*args, 4, False, None, None, None, seed_ram=None)
+        seeded = P.request_identity(*args, 4, False, None, None, None, seed_ram=seed_spec)
+        self.assertNotEqual(original, seeded)
+        report = self.passing_report()
+        report["runtime"]["events"] = [
+            {"op": "seed_ram", "kind": "step_started", "step_id": "seed_initial_sram",
+             "frame": 0, "frames_advanced": 0, "consumed_inputs": 0},
+            {"op": "seed_ram", "kind": "step_done", "step_id": "seed_initial_sram",
+             "frame": 0, "frames_advanced": 0, "consumed_inputs": 0,
+             "seed_ram": {"domain": "WRAM", "start": 0, "bytes": 1024,
+                          "sha256_verified_by_runner": True}}]
+        with mock.patch.object(P, "_prepare_movie", return_value=(self.movie, {"status": "reused"})), \
+             mock.patch.object(P, "_movie_identity", return_value=({}, self.frames, {}, "SNES", "SNES", "Snes9x")), \
+             mock.patch.object(P.control, "run", return_value=report) as run, \
+             mock.patch.object(P, "run_regressions", return_value={"pass": True, "tests": []}):
+            manifest = P.produce(*args, acceptance=self.acceptance, capture=False, seed_ram=seed_spec)
+        self.assertEqual(manifest["status"], "accepted", manifest.get("inspection"))
+        spec = run.call_args.args[0]
+        self.assertEqual(spec["steps"][0]["op"], "seed_ram")
+        self.assertEqual(spec["steps"][0]["domain"], "WRAM")
+        self.assertEqual(spec["steps"][0]["sha256"], seed_spec["sha256"])
+        seed.write_bytes(b"\x56" * 1024)
+        with self.assertRaises(SchemaError):
+            P.produce(*args, acceptance=self.acceptance, capture=False, seed_ram=seed_spec)
+
     def test_seed_readback_evidence_is_mandatory(self):
         report = self.passing_report()
-        report["runtime"]["events"] = [{"op": "seed_ram", "kind": "step_started", "frame": 0}]
-        checked = P.inspect_result(report, self.frames, len(self.samples), self.acceptance)
+        report["runtime"]["events"] = [
+            {"op": "seed_ram", "kind": "step_started", "step_id": "seed_initial_sram",
+             "frame": 0, "frames_advanced": 0, "consumed_inputs": 0},
+            {"op": "seed_ram", "kind": "step_done", "step_id": "seed_initial_sram",
+             "frame": 0, "frames_advanced": 0, "consumed_inputs": 0,
+             "seed_ram": {"domain": "WRAM", "start": 0, "bytes": 1024,
+                          "sha256_verified_by_runner": True}}]
+        seed_spec = {"id": "seed_initial_sram", "domain": "WRAM", "addr": 0, "bytes": 1024}
+        self.assertTrue(P.inspect_result(report, self.frames, len(self.samples), self.acceptance,
+                                         seed_ram=seed_spec)["pass"])
+        report["runtime"]["events"] = report["runtime"]["events"][:1]
+        checked = P.inspect_result(report, self.frames, len(self.samples), self.acceptance,
+                                   seed_ram=seed_spec)
         self.assertFalse(checked["pass"])
-        self.assertTrue(any("SRAM 注入缺少完整" in error for error in checked["errors"]))
-        report["runtime"]["events"].append({"op": "seed_ram", "kind": "step_done", "frame": 0,
-                                            "consumed_inputs": 0, "seed_ram": {"bytes": 1024,
-                                            "sha256_verified_by_runner": False}})
-        checked = P.inspect_result(report, self.frames, len(self.samples), self.acceptance)
+        self.assertTrue(any("初始内存注入缺少完整" in error for error in checked["errors"]))
+        done = {"op": "seed_ram", "kind": "step_done", "step_id": "seed_initial_sram",
+                "frame": 0, "frames_advanced": 0, "consumed_inputs": 0,
+                "seed_ram": {"domain": "WRAM", "start": 0, "bytes": 1024,
+                             "sha256_verified_by_runner": False}}
+        report["runtime"]["events"].append(done)
+        checked = P.inspect_result(report, self.frames, len(self.samples), self.acceptance,
+                                   seed_ram=seed_spec)
         self.assertFalse(checked["pass"])
         self.assertTrue(any("零帧全量回读" in error for error in checked["errors"]))
+        done["seed_ram"]["sha256_verified_by_runner"] = True
+        for field, value in (("domain", "CARTRAM"), ("start", 1), ("bytes", 1023)):
+            original = done["seed_ram"][field]
+            done["seed_ram"][field] = value
+            checked = P.inspect_result(report, self.frames, len(self.samples), self.acceptance,
+                                       seed_ram=seed_spec)
+            self.assertFalse(checked["pass"], field)
+            self.assertTrue(any("域、地址、长度" in error for error in checked["errors"]), field)
+            done["seed_ram"][field] = original
+        self.assertTrue(P.inspect_result(report, self.frames, len(self.samples), self.acceptance,
+                                         seed_ram=seed_spec)["pass"])
+        self.assertFalse(P.inspect_result(report, self.frames, len(self.samples), self.acceptance)["pass"])
+
+    def test_snes9x_seed_and_wram_capture_are_supported(self):
+        seed = self.base / "wram.bin"
+        seed.write_bytes(b"\x55" * 0x20000)
+        seed_spec = {"path": str(seed), "sha256": sha256(seed), "domain": "WRAM",
+                     "addr": 0, "bytes": len(seed.read_bytes())}
+        spec = P.build_spec(self.movie, str(self.rom), self.base / "BizHawk", "Snes9x", "SNES",
+                            "SNES", 10, FAMOUS_NES, interval=4, seed_ram=seed_spec)
+        self.assertEqual(spec["steps"][0]["domain"], "WRAM")
+        for step in spec["steps"]:
+            if step["op"] == "checkpoint":
+                self.assertEqual((step["ram_domain"], step["ram_addr"], step["ram_bytes"]),
+                                 ("WRAM", 0, 0x20000))
 
     def test_bsnes_seed_patches_only_ram_header_and_checksum(self):
         rom = bytearray(b"\x60" * 0x8000)
         rom[0x7FD5] = 0x21
-        rom[0x7FD8] = 0
+        rom[0x7FD8] = 2
         rom_path = self.base / "seed_header.sfc"
         rom_path.write_bytes(rom)
         parsed = {"savestate_data": b"\x60" * 2048}
@@ -2347,8 +2513,27 @@ class ProductionGateTests(Fixture):
         self.assertEqual(int.from_bytes(patched[0x7FDC:0x7FDE], "little"), checksum)
         self.assertEqual(int.from_bytes(patched[0x7FDE:0x7FE0], "little"), checksum ^ 0xFFFF)
         self.assertEqual(evidence["seed_ram"]["bytes"], 2048)
-        self.assertEqual(evidence["declared_sram_bytes"], 0)
+        self.assertEqual(evidence["declared_sram_bytes"], 4096)
         self.assertEqual(Path(effective).stat().st_size, len(rom))
+
+    def test_bsnes_seed_without_cartridge_sram_uses_native_wram_pattern(self):
+        rom = bytearray(b"\x60" * 0x8000)
+        rom[0x7FD5] = 0x21
+        rom[0x7FD8] = 0
+        rom_path = self.base / "no_sram.sfc"
+        rom_path.write_bytes(rom)
+        parsed = {"savestate_data": b"\x60" * 2048,
+                  "savestate_sha256": hashlib.sha256(b"\x60" * 2048).hexdigest()}
+        out = self.base / "no_sram_conversion"
+        out.mkdir()
+        effective, evidence = P._prepare_bsnes_seed(parsed, str(rom_path), out)
+        self.assertEqual(effective, str(rom_path))
+        seed = evidence["seed_ram"]
+        self.assertEqual((seed["domain"], seed["addr"], seed["bytes"]),
+                         ("System Bus", 0x7E0000, 0x20000))
+        self.assertEqual(Path(seed["path"]).read_bytes(), b"\x55" * 0x20000)
+        self.assertEqual(evidence["seed_kind"], "snes_wram_power_on")
+        self.assertEqual(evidence["patched_header_offsets"], [])
 
     def test_acceptance_locks_real_final_frame_without_rerunning(self):
         report = self.passing_report()
