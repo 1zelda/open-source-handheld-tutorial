@@ -131,6 +131,68 @@ def _color_case(pos_dir, neg_dir, case_id="color", accept_pos_dir=None, accept_n
     }
 
 
+def _capture_pair(root, label, pos_dir, neg_dir, process_id, force=True, acceptance=False):
+    report_path = root / f"{label}_report.json"
+    started = "2026-11-25T10:00:00+00:00"
+    finished = "2026-11-25T10:01:00+00:00"
+    report = {
+        "schema_version": "ram_calibration/1.0",
+        "mode": "verify" if acceptance else "scout",
+        "game_id": "synthetic",
+        "case_id": label,
+        "rom_sha1": "00",
+        "system": "NES",
+        "core": "NesHawk",
+        "status": "pass" if acceptance else "candidates_only",
+        "base_state": {"name": "base", "path": str(root / "base.state")},
+        "capture_provenance": {
+            "run_id": label,
+            "process_id": process_id,
+            "started_at": started,
+            "finished_at": finished,
+            "force": force,
+            "out_dir": str(root.resolve()),
+            "implementation_sha256": "00",
+        },
+        "arms": {},
+    }
+    for side, directory in (("pos", pos_dir), ("neg", neg_dir)):
+        report["arms"][side] = {"steps": [{
+            "index": 0,
+            "frames_dir": str(directory.resolve()),
+            "captured_frames": 4,
+            "attempt": {"ok": True},
+        }]}
+    report_path.write_text(json.dumps(report), encoding="utf-8")
+    report_sha = DC._sha256(report_path)
+    for side, directory in (("pos", pos_dir), ("neg", neg_dir)):
+        manifest = {
+            "schema_version": "detector_capture/1.0",
+            "capture_id": f"{label}:{side}:0",
+            "run_id": label,
+            "process_id": process_id,
+            "started_at": started,
+            "finished_at": finished,
+            "force": force,
+            "source_report": str(report_path.resolve()),
+            "source_report_sha256": report_sha,
+            "source_report_status": report["status"],
+            "game_id": "synthetic",
+            "rom_sha1": "00",
+            "system": "NES",
+            "core": "NesHawk",
+            "base_state": report["base_state"],
+            "arm": side,
+            "step_index": 0,
+            "frames_dir": str(directory.resolve()),
+            "captured_frames": 4,
+            "frames": [{"destination_frame": index,
+                        "sha256": DC._sha256(directory / f"f{index:04d}.png")}
+                       for index in range(4)],
+        }
+        (directory / "capture_manifest.json").write_text(json.dumps(manifest), encoding="utf-8")
+
+
 def t_aligned(root):
     pos_dir, neg_dir = _aligned_series(root, effect=True, flash=True)
     calibration = UA.calibrate_aligned_element_detector(
@@ -207,6 +269,8 @@ def t_color(root):
 def t_recipe(root):
     calib_pos, calib_neg = _color_series(root / "recipe" / "calibration", seed=1)
     accept_pos, accept_neg = _color_series(root / "recipe" / "acceptance", seed=2)
+    _capture_pair(root, "calibration", calib_pos, calib_neg, process_id=101)
+    _capture_pair(root, "acceptance", accept_pos, accept_neg, process_id=202, acceptance=True)
     case = _color_case(calib_pos, calib_neg, accept_pos_dir=accept_pos, accept_neg_dir=accept_neg)
     recipe = {"schema_version": DC.SCHEMA_VERSION, "game_id": "synthetic", "cases": [case]}
     recipe_path = root / "recipe.json"
@@ -216,7 +280,10 @@ def t_recipe(root):
     check("D10 分离样本配置入口真实写出 JSON/Markdown 且全帧审计通过", report["status"] == "pass"
           and out_path.is_file() and out_path.with_suffix(".md").is_file()
           and report["cases"][0]["timeline_audit"]["paired_frames"] == 4
-          and report["calibration_acceptance_separated"] is True, str(report["counts"]))
+          and report["calibration_acceptance_separated"] is True
+          and report["cases"][0]["sample_isolation"]["independent_runs"]["calibration"]["pos"]["process_id"] == 101
+          and report["cases"][0]["sample_isolation"]["independent_runs"]["acceptance"]["pos"]["process_id"] == 202,
+          str(report["counts"]))
     check("D11 报告不冒充玩法、语义身份、平台或未采集时间轴验收",
           report["gameplay_verified"] is False and report["semantic_identity_verified"] is False
           and report["platform_verified"] is False and report["full_game_timeline_verified"] is False)
@@ -305,6 +372,9 @@ def t_recipe(root):
     for path in broken_calib_pos.glob("f*.png"):
         Image.open(path).save(broken_calib_neg / path.name)
     broken_accept_pos, broken_accept_neg = _aligned_series(root / "isolation" / "acceptance", effect=True, seed=1)
+    _capture_pair(root / "isolation", "broken_calibration", broken_calib_pos, broken_calib_neg, process_id=303)
+    _capture_pair(root / "isolation", "broken_acceptance", broken_accept_pos, broken_accept_neg,
+                  process_id=404, acceptance=True)
     isolated = {
         "schema_version": DC.SCHEMA_VERSION,
         "game_id": "synthetic",
@@ -320,6 +390,62 @@ def t_recipe(root):
     check("D20 单案例标定失败不中断其他案例且总报告失败",
           isolated_report["counts"] == {"pass": 1, "error": 1}
           and isolated_report["status"] == "failed", str(isolated_report["counts"]))
+
+    manifest_path = accept_pos / "capture_manifest.json"
+    original_manifest = manifest_path.read_bytes()
+    manifest_path.unlink()
+    try:
+        DC.validate_recipe(recipe)
+        rejected = False
+    except ValueError:
+        rejected = True
+    finally:
+        manifest_path.write_bytes(original_manifest)
+    check("D21 independent_capture 缺运行清单时拒绝", rejected)
+
+    _capture_pair(root, "calibration", calib_pos, calib_neg, process_id=202)
+    try:
+        DC.validate_recipe(recipe)
+        rejected = False
+    except ValueError:
+        rejected = True
+    finally:
+        _capture_pair(root, "calibration", calib_pos, calib_neg, process_id=101)
+    check("D22 标定与验收来自同一进程时拒绝", rejected)
+
+    _capture_pair(root, "calibration", calib_pos, calib_neg, process_id=101, force=False)
+    try:
+        DC.validate_recipe(recipe)
+        rejected = False
+    except ValueError:
+        rejected = True
+    finally:
+        _capture_pair(root, "calibration", calib_pos, calib_neg, process_id=101)
+    check("D23 非 --force 的缓存运行不能充当独立采集", rejected)
+
+    calibration_report = root / "calibration_report.json"
+    original_report = calibration_report.read_bytes()
+    calibration_report.write_bytes(original_report + b"\n")
+    try:
+        DC.validate_recipe(recipe)
+        rejected = False
+    except ValueError:
+        rejected = True
+    finally:
+        calibration_report.write_bytes(original_report)
+    check("D24 源报告漂移后 manifest 指纹失配并拒绝", rejected)
+
+    frame_path = accept_pos / "f0001.png"
+    original_frame = frame_path.read_bytes()
+    Image.new("RGB", (96, 64), "black").save(frame_path)
+    try:
+        DC.validate_recipe(recipe)
+        rejected = False
+    except ValueError:
+        rejected = True
+    finally:
+        frame_path.write_bytes(original_frame)
+    check("D25 验收帧被替换后逐帧 SHA256 闸门拒绝", rejected)
 
 
 def main():
